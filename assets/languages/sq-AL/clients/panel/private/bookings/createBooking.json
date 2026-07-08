@@ -1,0 +1,36 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Nuk u krijua rezervimi"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke krijuar rezervimin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Rezervimi u krijua"
+    }
+  },
+  "form": {
+    "endAtLabel": "Ora e mbarimit",
+    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "orderIdLabel": "Porosia",
+    "orderIdPlaceholder": "Zgjidh porosinë",
+    "startAtLabel": "Ora e fillimit",
+    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "timezoneLabel": "Zona orare",
+    "timezonePlaceholder": "UTC"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo rezervimin"
+  },
+  "formHeader": {
+    "description": "Planifiko një rezervim shërbimi për një porosi.",
+    "title": "Krijo rezervim"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/createBooking.tsx",
+  "title": "Title"
+}

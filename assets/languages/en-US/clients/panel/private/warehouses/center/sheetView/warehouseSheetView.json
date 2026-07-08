@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx",
+  "warehouseSubtitle": "Warehouse details",
+  "overview": "Overview",
+  "name": "Name",
+  "code": "Code",
+  "isDefault": "Default",
+  "isActive": "Active",
+  "street": "Street",
+  "postalCode": "Postal code"
+}

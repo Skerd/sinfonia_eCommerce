@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/createWarehouse.tsx",
+  "title": "Krijo magazinë",
+  "form": {
+    "nameLabel": "Emri",
+    "codeLabel": "Kodi",
+    "isDefaultLabel": "Magazina parazgjedhur",
+    "isActiveLabel": "Aktive",
+    "addressSectionTitle": "Adresa",
+    "countryLabel": "Shteti",
+    "countryPlaceholder": "Zgjidh shtetin",
+    "stateLabel": "Rajoni",
+    "statePlaceholder": "Zgjidh rajonin",
+    "cityLabel": "Qyteti",
+    "cityPlaceholder": "Zgjidh qytetin",
+    "streetLabel": "Rruga",
+    "streetPlaceholder": "Adresa",
+    "postalCodeLabel": "Kodi postar",
+    "postalCodePlaceholder": "Kodi postar"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
+  "inventorySubtitle": "Regjistri i inventarit",
+  "overview": "Përmbledhje",
+  "warehouse": "Magazina",
+  "quantityOnHand": "Në dispozicion",
+  "quantityReserved": "E rezervuar",
+  "quantityAvailable": "E disponueshme",
+  "reorderPoint": "Pika e riporositjes",
+  "reorderQuantity": "Sasia e riporositjes"
+}

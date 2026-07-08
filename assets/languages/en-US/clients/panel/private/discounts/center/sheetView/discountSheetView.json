@@ -1,0 +1,28 @@
+{
+  "appliesTo": "Applies To",
+  "code": "Code",
+  "discountAppliesTo": {
+    "category": "Category",
+    "collection": "Collection",
+    "order": "Order",
+    "product": "Product"
+  },
+  "discountSubtitle": "Discount details",
+  "discountType": {
+    "buy_x_get_y": "Buy X Get Y",
+    "fixed": "Fixed",
+    "free_shipping": "Free Shipping",
+    "percentage": "Percentage"
+  },
+  "endsAt": "Ends At",
+  "isActive": "Active",
+  "minimumOrderAmount": "Minimum Order Amount",
+  "minimumQuantity": "Minimum Quantity",
+  "overview": "Overview",
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx",
+  "startsAt": "Starts At",
+  "title": "Title",
+  "type": "Type",
+  "usageCount": "Usage Count",
+  "value": "Value"
+}

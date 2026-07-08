@@ -1,0 +1,40 @@
+{
+  "form": {
+    "appliesToLabel": "Applies to",
+    "buyQuantityLabel": "Buy Quantity Label",
+    "buyXGetYSectionTitle": "Buy XGet YSection Title",
+    "codeLabel": "Code",
+    "customerGroupsLabel": "Customer Groups Label",
+    "discountAppliesTo": {
+      "category": "Category",
+      "collection": "Collection",
+      "order": "Order",
+      "product": "Product"
+    },
+    "discountType": {
+      "buy_x_get_y": "Buy X Get Y",
+      "fixed": "Fixed",
+      "free_shipping": "Free Shipping",
+      "percentage": "Percentage"
+    },
+    "endsAtLabel": "Ends at",
+    "getProductIdsLabel": "Get Product Ids Label",
+    "getQuantityLabel": "Get Quantity Label",
+    "isActiveLabel": "Active",
+    "minimumOrderAmountLabel": "Minimum order amount",
+    "minimumQuantityLabel": "Minimum quantity",
+    "selectCategory": "Select Category",
+    "selectCollection": "Select Collection",
+    "selectCustomerGroup": "Select Customer Group",
+    "selectProduct": "Select Product",
+    "startsAtLabel": "Starts at",
+    "targetIdsLabel": "Target Ids Label",
+    "titleLabel": "Title",
+    "typeLabel": "Type",
+    "usageLimitLabel": "Usage limit",
+    "usageLimitPerCustomerLabel": "Usage limit per customer",
+    "valueLabel": "Value"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/createDiscount.tsx",
+  "title": "Krijo zbritje"
+}

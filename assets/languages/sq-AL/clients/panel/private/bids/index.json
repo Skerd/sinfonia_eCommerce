@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
+  "title": "Ofertat",
+  "description": "Shiko dhe menaxho ofertat për kërkesat e detyrave.",
+  "createBid": "Krijo ofertë",
+  "fields": {
+    "amount": "Shuma",
+    "currency": "Valuta",
+    "proposal": "Propozimi",
+    "deliveryDays": "Ditë dorëzimi",
+    "status": "Statusi",
+    "bidder": "Ofertues",
+    "taskRequest": "Kërkesë detyre",
+    "createdAt": "Krijuar"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "status": { "pending": "Në pritje", "accepted": "Pranuar", "rejected": "Refuzuar" },
+  "accept": "Prano",
+  "reject": "Refuzo / Tërhiq"
+}

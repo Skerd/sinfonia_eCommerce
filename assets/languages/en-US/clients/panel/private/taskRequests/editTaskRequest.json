@@ -1,0 +1,61 @@
+{
+  "address": "Address",
+  "editDescription": "Update fields you are allowed to change.",
+  "editTitle": "Edit task request",
+  "errorDescription": "Check the link or return to the list and try again.",
+  "errorTitle": "Could not load task request",
+  "form": {
+    "addressPrivacyAlert": "Providers cannot see your exact address until you accept a bid. Your full address is shared only with the provider you choose, after you have agreed on the work.",
+    "budgetMaxLabel": "Budget (max)",
+    "budgetMinLabel": "Budget (min)",
+    "categoryLabel": "Category",
+    "cityLabel": "City",
+    "cityPlaceholder": "Select city",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select country",
+    "currencyLabel": "Currency",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description Placeholder",
+    "editStatusSection": "Status",
+    "expiresAtLabel": "Expires",
+    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "imageGalleryLabel": "Image gallery",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "mainImageLabel": "Main image",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code",
+    "section": {
+      "budget": "Budget",
+      "currencyExpires": "Currency and expiry",
+      "description": "Details",
+      "general": "General",
+      "images": "Images",
+      "video": "Video"
+    },
+    "stateLabel": "State",
+    "statePlaceholder": "Select state",
+    "statusLabel": "Status",
+    "streetLabel": "Street",
+    "streetPlaceholder": "Street address",
+    "taskRequestStatus": {
+      "awarded": "Awarded",
+      "closed": "Closed",
+      "open": "Open"
+    },
+    "titleLabel": "Title",
+    "videoGalleryLabel": "Video gallery"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "formHeader": {
+    "description": "Update your request details.",
+    "title": "Edit task request"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
+  "title": "Title"
+}

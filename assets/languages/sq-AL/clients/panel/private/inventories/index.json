@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
+  "title": "Inventari",
+  "description": "Nivelet e stokut nëpër magazina.",
+  "createInventory": "Krijo inventar",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "product": "Produkti",
+    "warehouse": "Magazina",
+    "quantityOnHand": "Në gjendje",
+    "quantityReserved": "Rezervuar",
+    "quantityAvailable": "Në dispozicion",
+    "reorderPoint": "Pika e riporositjes"
+  }
+}

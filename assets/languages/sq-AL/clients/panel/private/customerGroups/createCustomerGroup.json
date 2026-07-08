@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/createCustomerGroup.tsx",
+  "title": "Krijo grup klientësh",
+  "form": {
+    "nameLabel": "Name",
+    "descriptionLabel": "Description",
+    "isDefaultLabel": "Default group"
+  }
+}

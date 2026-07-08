@@ -1,0 +1,42 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not create package"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Creating package"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Package created"
+    }
+  },
+  "form": {
+    "currencyLabel": "Currency",
+    "deliveryDaysLabel": "Delivery days",
+    "deliveryDaysPlaceholder": "e.g. 3",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "What's included in this package...",
+    "idLabel": "Id Label",
+    "listingIdLabel": "Listing",
+    "listingIdPlaceholder": "Select listing",
+    "nameLabel": "Package name",
+    "namePlaceholder": "e.g. Basic, Standard, Premium",
+    "priceAmountLabel": "Price",
+    "priceAmountPlaceholder": "0.00",
+    "sortOrderLabel": "Display order",
+    "sortOrderPlaceholder": "e.g. 1"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create package"
+  },
+  "formHeader": {
+    "description": "Define a service tier that customers can select when ordering from a listing.",
+    "title": "Create listing package"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
+  "title": "Title"
+}

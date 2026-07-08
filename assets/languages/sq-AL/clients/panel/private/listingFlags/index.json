@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerceMarketplace/clients/panel/private/listingFlags/index.tsx",
+  "title": "Raportimet e Listimeve",
+  "description": "Shqyrtoni raportimet e dërguara nga përdoruesit për listim të papërshtatshëm.",
+  "createListingFlag": "Krijo raportim",
+  "fields": {
+    "listing": "Listimi",
+    "reason": "Arsyeja",
+    "status": "Statusi",
+    "user": "Raportuesi",
+    "comment": "Komenti",
+    "resolution": "Zgjidhja",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "reviewed": "Shqyrtuar",
+        "dismissed": "Hedhur poshtë"
+      },
+      "reason": {
+        "inappropriate": "Përmbajtje e papërshtatshme",
+        "spam": "Spam",
+        "misleading": "Mashtruese",
+        "other": "Tjetër"
+      }
+    }
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
+  "title": "Profilet e Ofruesve",
+  "description": "Shiko dhe modifiko profilet e ofruesve.",
+  "fields": {
+    "provider": "Ofruesi",
+    "bio": "Bio",
+    "skills": "Aftësi",
+    "rating": "Vlerësimi",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

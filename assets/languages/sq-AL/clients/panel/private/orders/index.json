@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
+  "title": "Porositë",
+  "description": "Menaxho porositë e shërbimeve ndërmjet klientëve dhe ofruesve.",
+  "createOrder": "Krijo porosi",
+  "fields": {
+    "status": "Statusi",
+    "customer": "Klienti",
+    "provider": "Ofruesi",
+    "amount": "Shuma",
+    "currency": "Valuta",
+    "deliveryDueDate": "Data e dorëzimit",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "status": {
+    "pending": "Në pritje",
+    "in_progress": "Në progres",
+    "submitted": "Dorëzuar",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar",
+    "disputed": "Kontestuar"
+  }
+}

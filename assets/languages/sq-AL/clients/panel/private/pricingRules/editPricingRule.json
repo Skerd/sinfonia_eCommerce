@@ -1,0 +1,35 @@
+{
+  "form": {
+    "appliesToLabel": "Applies to",
+    "customerGroupsLabel": "Customer Groups Label",
+    "endsAtLabel": "Ends at",
+    "isActiveLabel": "Active",
+    "minimumOrderAmountLabel": "Minimum order amount",
+    "minimumQuantityLabel": "Minimum quantity",
+    "nameLabel": "Name",
+    "pricingRuleAppliesTo": {
+      "all": "All",
+      "category": "Category",
+      "collection": "Collection",
+      "customer_group": "Customer Group",
+      "product": "Product"
+    },
+    "pricingRuleType": {
+      "fixed_discount": "Fixed Discount",
+      "fixed_price": "Fixed Price",
+      "percentage_discount": "Percentage Discount",
+      "surcharge": "Surcharge"
+    },
+    "priorityLabel": "Priority",
+    "selectCategory": "Select Category",
+    "selectCollection": "Select Collection",
+    "selectCustomerGroup": "Select Customer Group",
+    "selectProduct": "Select Product",
+    "startsAtLabel": "Starts at",
+    "targetIdsLabel": "Target Ids Label",
+    "typeLabel": "Type",
+    "valueLabel": "Value"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
+  "title": "Ndrysho rregullin e çmimit"
+}

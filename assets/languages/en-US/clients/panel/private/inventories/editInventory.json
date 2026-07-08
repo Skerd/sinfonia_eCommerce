@@ -1,0 +1,12 @@
+{
+  "form": {
+    "productLabel": "Product Label",
+    "quantityOnHandLabel": "Quantity On Hand Label",
+    "reorderPointLabel": "Reorder point",
+    "reorderQuantityLabel": "Reorder quantity",
+    "variantLabel": "Variant Label",
+    "warehouseLabel": "Warehouse Label"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Edit inventory"
+}

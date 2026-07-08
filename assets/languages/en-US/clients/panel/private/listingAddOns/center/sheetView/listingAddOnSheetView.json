@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx",
+  "failedTitle": "Failed to load listing add-on",
+  "failedDescription": "Something went wrong while loading this listing add-on. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "listingAddOnSubtitle": "Listing Add-On",
+  "overview": "Overview",
+  "name": "Name",
+  "listing": "Listing",
+  "priceAmount": "Price",
+  "currency": "Currency",
+  "deliveryDays": "Delivery (days)",
+  "createdAt": "Created"
+}

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
+  "title": "Zonat e transportit",
+  "description": "Përcaktoni tarifat e transportit sipas gjeografisë.",
+  "createShippingZone": "Krijo zonë transporti",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
+  "title": "Edit warehouse",
+  "form": {
+    "nameLabel": "Name",
+    "codeLabel": "Code",
+    "isDefaultLabel": "Default warehouse",
+    "isActiveLabel": "Active",
+    "addressSectionTitle": "Address",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select country",
+    "stateLabel": "State / region",
+    "statePlaceholder": "Select state",
+    "cityLabel": "City",
+    "cityPlaceholder": "Select city",
+    "streetLabel": "Street",
+    "streetPlaceholder": "Street address",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code"
+  }
+}

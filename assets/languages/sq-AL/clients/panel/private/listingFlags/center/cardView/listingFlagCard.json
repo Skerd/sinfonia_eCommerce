@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerceMarketplace/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx",
+  "listing": "Listimi",
+  "reason": "Arsyeja",
+  "reporter": "Raportuesi",
+  "status": "Statusi",
+  "status_values": {
+    "pending": "Në pritje",
+    "reviewed": "Shqyrtuar",
+    "dismissed": "Hedhur poshtë"
+  },
+  "reason_values": {
+    "inappropriate": "Përmbajtje e papërshtatshme",
+    "spam": "Spam",
+    "misleading": "Mashtruese",
+    "other": "Tjetër"
+  }
+}

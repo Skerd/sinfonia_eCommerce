@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
+  "title": "Reviews",
+  "description": "View ratings and reviews left by customers.",
+  "createReview": "Create review",
+  "fields": {
+    "rating": "Rating",
+    "comment": "Comment",
+    "reviewer": "Reviewer",
+    "order": "Order",
+    "listing": "Listing",
+    "listingId": "Listing",
+    "orderId": "Order",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters..."
+}

@@ -1,0 +1,22 @@
+{
+  "collectionSubtitle": "Detajet e koleksionit",
+  "collectionType": {
+    "dynamic": "Dinamik",
+    "manual": "Manual"
+  },
+  "isVisible": "I dukshëm",
+  "overview": "Përmbledhje",
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx",
+  "productCount": "Produktet",
+  "publishedAt": "Publiko më",
+  "ruleCondition": {
+    "all": "All",
+    "any": "Any"
+  },
+  "ruleConditionLabels": {
+    "all": "Të gjitha rregullat (AND)",
+    "any": "Çdo rregull (OR)"
+  },
+  "slug": "Slug",
+  "type": "Lloji"
+}

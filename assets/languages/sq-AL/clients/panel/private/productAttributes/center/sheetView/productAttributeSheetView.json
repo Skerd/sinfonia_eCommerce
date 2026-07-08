@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
+  "productAttributeSubtitle": "Detajet e atributit",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "position": "Pozicioni",
+  "isVisibleOnProductPage": "I dukshëm në faqen e produktit",
+  "isUsedForVariants": "Përdoret për variantet",
+  "valueCount": "Vlerat"
+}

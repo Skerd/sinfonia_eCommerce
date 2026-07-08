@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
+  "title": "Koleksionet",
+  "description": "Grupo produktet në koleksione.",
+  "createCollection": "Krijo koleksion",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "slug": "Slug",
+    "type": "Lloji",
+    "isVisible": "I dukshëm",
+    "position": "Pozicioni",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

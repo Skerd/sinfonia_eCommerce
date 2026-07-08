@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
+  "title": "Warehouses",
+  "description": "Manage the locations that hold your stock.",
+  "createWarehouse": "Create warehouse",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "code": "Code",
+    "isDefault": "Default",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

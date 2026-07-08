@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/sheetView/orderSheetView.tsx",
+  "order": "Porosia",
+  "listingLabel": "Listimi",
+  "listing": {
+    "title": "Listimi"
+  },
+  "taskRequest": "Kërkesë detyre",
+  "bid": "Oferta",
+  "customer": "Klienti",
+  "provider": "Ofruesi",
+  "amount": "Shuma",
+  "currency": "Valuta",
+  "deliveryDueDate": "Data e dorëzimit",
+  "status": "Statusi",
+  "createdAt": "Krijuar",
+  "overview": "Përmbledhje",
+  "references": "Referencat",
+  "failedTitle": "Dështoi ngarkimi i porosisë",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të porosisë. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "orderStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
+}

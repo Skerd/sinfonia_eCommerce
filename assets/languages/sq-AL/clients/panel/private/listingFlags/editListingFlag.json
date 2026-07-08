@@ -1,0 +1,59 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Nuk u përditësua raportimi"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke ruajtur shqyrtimin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Raportimi u përditësua"
+    }
+  },
+  "deactivate": "Deactivate",
+  "dismissed": "Dismissed",
+  "editDescription": "Përditëso statusin dhe zgjidhjen e këtij raportimi.",
+  "editTitle": "Shqyrto raportimin",
+  "errorDescription": "Kontrollo lidhjen ose kthehu te lista dhe provo përsëri.",
+  "errorTitle": "Nuk u ngarkua raportimi",
+  "form": {
+    "commentLabel": "Comment Label",
+    "idLabel": "Id Label",
+    "listingActionLabel": "Veprimi ndaj listimit",
+    "listingAction_values": {
+      "deactivate": "Çaktivizo listimin",
+      "none": "Pa veprim",
+      "remove": "Hiq listimin"
+    },
+    "listingIdLabel": "Listing Id Label",
+    "reasonLabel": "Reason Label",
+    "resolutionLabel": "Zgjidhja",
+    "resolutionPlaceholder": "Përshkruaj rezultatin...",
+    "statusLabel": "Statusi",
+    "status_values": {
+      "dismissed": "Hedhur poshtë",
+      "pending": "Në pritje",
+      "reviewed": "Shqyrtuar"
+    }
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  },
+  "formHeader": {
+    "description": "Cakto status, zgjidhje dhe veprim ndaj listimit.",
+    "title": "Shqyrto raportimin"
+  },
+  "inappropriate": "Inappropriate",
+  "misleading": "Misleading",
+  "none": "None",
+  "other": "Other",
+  "path": "src/modules/eCommerceMarketplace/clients/panel/private/listingFlags/editListingFlag.tsx",
+  "pending": "Pending",
+  "reviewed": "Reviewed",
+  "spam": "Spam",
+  "title": "Title"
+}

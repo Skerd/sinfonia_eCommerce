@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx",
+  "warehouseSubtitle": "Detajet e magazinës",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "code": "Kodi",
+  "isDefault": "Parazgjedhur",
+  "isActive": "Aktive",
+  "street": "Rruga",
+  "postalCode": "Kodi postar"
+}

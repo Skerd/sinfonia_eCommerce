@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
+  "title": "Atributet e produktit",
+  "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
+  "createProductAttribute": "Krijo atribut",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "position": "Position",
+    "isVisibleOnProductPage": "Visible on product page",
+    "isUsedForVariants": "Used for variants",
+    "values": "Values",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

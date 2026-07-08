@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/createInventory.tsx",
+  "title": "Create inventory",
+  "form": {
+    "productLabel": "Product",
+    "productPlaceholder": "Select product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Select variant (optional)",
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Select warehouse",
+    "quantityOnHandLabel": "Quantity on hand",
+    "reorderPointLabel": "Reorder point",
+    "reorderQuantityLabel": "Reorder quantity"
+  }
+}

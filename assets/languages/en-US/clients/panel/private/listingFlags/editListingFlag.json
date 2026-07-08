@@ -1,0 +1,59 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not update flag"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Saving review"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Flag updated"
+    }
+  },
+  "deactivate": "Deactivate",
+  "dismissed": "Dismissed",
+  "editDescription": "Update the status and resolution of this report.",
+  "editTitle": "Review listing flag",
+  "errorDescription": "Check the link or return to the list and try again.",
+  "errorTitle": "Could not load report",
+  "form": {
+    "commentLabel": "Comment Label",
+    "idLabel": "Id Label",
+    "listingActionLabel": "Listing action",
+    "listingAction_values": {
+      "deactivate": "Deactivate listing",
+      "none": "No action",
+      "remove": "Remove listing"
+    },
+    "listingIdLabel": "Listing Id Label",
+    "reasonLabel": "Reason Label",
+    "resolutionLabel": "Resolution",
+    "resolutionPlaceholder": "Describe the outcome...",
+    "statusLabel": "Status",
+    "status_values": {
+      "dismissed": "Dismissed",
+      "pending": "Pending",
+      "reviewed": "Reviewed"
+    }
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  },
+  "formHeader": {
+    "description": "Set a status, resolution, and any listing action to take.",
+    "title": "Review listing flag"
+  },
+  "inappropriate": "Inappropriate",
+  "misleading": "Misleading",
+  "none": "None",
+  "other": "Other",
+  "path": "src/modules/eCommerceMarketplace/clients/panel/private/listingFlags/editListingFlag.tsx",
+  "pending": "Pending",
+  "reviewed": "Reviewed",
+  "spam": "Spam",
+  "title": "Title"
+}

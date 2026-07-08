@@ -1,0 +1,38 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not create add-on"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Creating add-on"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Add-on created"
+    }
+  },
+  "form": {
+    "currencyLabel": "Currency",
+    "deliveryDaysLabel": "Delivery days",
+    "deliveryDaysPlaceholder": "e.g. 2",
+    "idLabel": "Id Label",
+    "listingIdLabel": "Listing",
+    "listingIdPlaceholder": "Select listing",
+    "nameLabel": "Add-on name",
+    "namePlaceholder": "e.g. Express delivery",
+    "priceAmountLabel": "Price",
+    "priceAmountPlaceholder": "0.00"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create add-on"
+  },
+  "formHeader": {
+    "description": "Add an optional service or upgrade that customers can purchase alongside a listing.",
+    "title": "Create listing add-on"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/createListingAddOn.tsx",
+  "title": "Title"
+}

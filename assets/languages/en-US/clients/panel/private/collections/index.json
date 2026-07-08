@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
+  "title": "Collections",
+  "description": "Group products into curated collections.",
+  "createCollection": "Create collection",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "slug": "Slug",
+    "type": "Type",
+    "isVisible": "Visible",
+    "position": "Position",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

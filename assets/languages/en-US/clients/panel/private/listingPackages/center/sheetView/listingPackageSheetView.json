@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx",
+  "failedTitle": "Failed to load listing package",
+  "failedDescription": "Something went wrong while loading this listing package. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "listingPackageSubtitle": "Listing Package",
+  "overview": "Overview",
+  "description": "Description",
+  "name": "Name",
+  "listing": "Listing",
+  "priceAmount": "Price",
+  "currency": "Currency",
+  "deliveryDays": "Delivery (days)",
+  "displayOrder": "Display order",
+  "createdAt": "Created"
+}

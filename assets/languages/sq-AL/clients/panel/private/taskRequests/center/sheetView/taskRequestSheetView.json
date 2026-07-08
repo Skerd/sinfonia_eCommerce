@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx",
+  "taskRequest": "Kërkesa për detyrë",
+  "overview": "Përmbledhje",
+  "description": "Përshkrimi",
+  "section": {
+    "generalInfo": "Përmbledhje",
+    "description": "Përshkrimi",
+    "media": "Galeria"
+  },
+  "status": "Statusi",
+  "name": "Emri",
+  "title": "Titulli",
+  "category": "Kategoria",
+  "budgetMin": "Buxheti (min)",
+  "budgetMax": "Buxheti (max)",
+  "currency": "Monedha",
+  "address": "Adresa",
+  "country": "Shteti",
+  "state": "Rajoni",
+  "city": "Qyteti",
+  "street": "Rruga",
+  "postalCode": "Kodi postar",
+  "latitude": "Gjerësia gjeografike",
+  "longitude": "Gjatësia gjeografike",
+  "expiresAt": "Skadon",
+  "gallery": "Galeria",
+  "failedTitle": "Dështoi ngarkimi i kërkesës për detyrë",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kërkesës. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "taskRequestStatus": {
+    "open": "Hapur",
+    "closed": "Mbyllur",
+    "awarded": "Dhuruar"
+  }
+}

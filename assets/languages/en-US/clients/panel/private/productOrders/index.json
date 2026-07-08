@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
+  "title": "Product orders",
+  "description": "Track and manage customer orders.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "orderNumber": "Order number",
+    "customer": "Customer",
+    "status": "Status",
+    "paymentStatus": "Payment",
+    "grandTotal": "Total",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

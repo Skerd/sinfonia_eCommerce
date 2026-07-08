@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
+  "title": "Promotions",
+  "description": "Manage featured and sponsored listing promotions.",
+  "createPromotion": "Create promotion",
+  "fields": {
+    "listing": "Listing",
+    "type": "Type",
+    "startAt": "Start",
+    "endAt": "End",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "type": { "featured": "Featured", "sponsored": "Sponsored" }
+}

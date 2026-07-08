@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/center/sheetView/listingSheetView.tsx",
+  "failedTitle": "Dështoi ngarkimi i listimit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të listimit. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "listingSubtitle": "Listimi",
+  "name": "Emri",
+  "priceCurrency": "Valuta",
+  "title": "Titulli",
+  "overview": "Përmbledhje",
+  "address": "Vendndodhja",
+  "country": "Shteti",
+  "state": "Rajoni / gjendja",
+  "description": "Përshkrimi",
+  "status": "Statusi",
+  "pricingType": "Lloji i çmimit",
+  "city": "Qyteti",
+  "category": "Kategoria",
+  "provider": "Ofruesi",
+  "company": "Kompania",
+  "price": "Çmimi",
+  "deliveryDays": "Dorëzimi (ditë)",
+  "tags": "Etiketat",
+  "requirements": "Kërkesat",
+  "faqs": "Pyetje të shpeshta",
+  "promotions": "Promocione",
+  "promotion": "Promocion",
+  "listingPackages": "Paketat",
+  "listingPackage": "Paketa",
+  "listingAddOns": "Shtesat",
+  "listingAddOn": "Shtesa",
+  "promotionType": {
+    "featured": "I veçuar",
+    "sponsored": "I sponsorizuar"
+  },
+  "toggleReferenceListView": "Ndrysho pamjen",
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "gallery": "Galeria",
+  "listingStatus": {
+    "draft": "Draft",
+    "active": "Aktiv",
+    "inactive": "Joaktiv"
+  },
+  "listingPricingType": {
+    "fixed": "Çmim fiks",
+    "hourly": "Në orë"
+  },
+  "form": {}
+}

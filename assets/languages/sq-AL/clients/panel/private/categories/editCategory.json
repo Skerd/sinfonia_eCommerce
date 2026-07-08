@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/editCategory.tsx",
+  "editTitle": "Redakto kategorinë",
+  "editDescription": "Përditësoni detajet e kategorisë.",
+  "errorTitle": "Nuk u ngarkua kategoria",
+  "errorDescription": "Nuk mund të ngarkohej kategoria. Provoni përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrit",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri i kategorisë",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Slug për URL",
+    "parentCategoryLabel": "Kategoria prind",
+    "parentCategoryPlaceholder": "Opsionale",
+    "parentIdLabel": "Prindi",
+    "orderLabel": "Rendi",
+    "orderPlaceholder": "0",
+    "editCategoryTitle": "Redakto kategorinë",
+    "editCategoryDescription": "Përditësoni të dhënat e kategorisë."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur kategorinë",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategoria u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot kategoria",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Redakto kategorinë",
+    "description": "Përditësoni detajet e kategorisë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

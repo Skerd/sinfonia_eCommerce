@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx",
+  "failedTitle": "Failed to load provider profile",
+  "failedDescription": "Something went wrong while loading this provider profile. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "providerProfileSubtitle": "Provider Profile",
+  "overview": "Overview",
+  "user": "Provider",
+  "bio": "Bio",
+  "skills": "Skills",
+  "portfolio": "Portfolio",
+  "rating": "Rating",
+  "ratingCount": "Total ratings",
+  "completionRate": "Completion rate",
+  "createdAt": "Created"
+}

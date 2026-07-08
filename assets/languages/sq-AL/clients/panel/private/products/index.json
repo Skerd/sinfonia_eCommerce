@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
+  "title": "Produktet",
+  "description": "Menaxho produktet në katalogun tënd.",
+  "createProduct": "Krijo produkt",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "title": "Titulli",
+    "sku": "SKU",
+    "type": "Lloji",
+    "status": "Statusi",
+    "price": "Çmimi",
+    "brand": "Marka",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

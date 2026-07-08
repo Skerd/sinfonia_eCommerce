@@ -1,0 +1,40 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Nuk u përditësua paketa"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Po ruhet paketa"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Paketa u përditësua"
+    }
+  },
+  "editDescription": "Përditëso detajet e kësaj pakete shërbimi.",
+  "editTitle": "Ndrysho paketën e listimit",
+  "errorDescription": "Kontrollo lidhjen ose kthehu te lista dhe provo sërisht.",
+  "errorTitle": "Nuk u ngarkua paketa",
+  "form": {
+    "currencyLabel": "Monedha",
+    "deliveryDaysLabel": "Ditë dorëzimi",
+    "descriptionLabel": "Përshkrimi",
+    "idLabel": "Id Label",
+    "listingIdLabel": "Listing Id Label",
+    "nameLabel": "Emri i paketës",
+    "priceAmountLabel": "Çmimi",
+    "sortOrderLabel": "Rendi i shfaqjes"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  },
+  "formHeader": {
+    "description": "Modifiko emrin, çmimin ose kohën e dorëzimit të paketës.",
+    "title": "Ndrysho paketën e listimit"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/editListingPackage.tsx",
+  "title": "Title"
+}

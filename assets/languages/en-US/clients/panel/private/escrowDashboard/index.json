@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/escrowDashboard/index.tsx",
+  "title": "Escrow Summary",
+  "description": "Financial summary of escrow transactions by currency.",
+  "currency": "Currency", "holds": "Holds", "releases": "Releases",
+  "refunds": "Refunds", "fees": "Fees (Platform)", "net": "Net to Platform",
+  "startDate": "From", "endDate": "To", "apply": "Apply filter", "noData": "No escrow data found.",
+  "loading": "Loading..."
+}

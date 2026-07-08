@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
+  "title": "Titulli",
+  "name": "Emri",
+  "status": "Statusi",
+  "price": "Çmimi",
+  "category": "Kategoria",
+  "city": "Qyteti",
+  "perHour": "orë",
+  "days": "ditë",
+  "from": "Nga",
+  "featured": "I veçuar",
+  "sponsored": "I sponsorizuar",
+  "statuses": {
+    "active": "Aktiv",
+    "draft": "Draft",
+    "inactive": "Jo aktiv"
+  }
+}

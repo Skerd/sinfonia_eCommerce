@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerAvailability/center/sheetView/providerAvailabilitySheetView.tsx",
+  "failedTitle": "Failed to load availability",
+  "failedDescription": "Something went wrong while loading this availability slot. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "providerAvailabilitySubtitle": "Provider Availability",
+  "overview": "Overview",
+  "provider": "Provider",
+  "dayOfWeek": "Day of week",
+  "startTime": "Start time",
+  "endTime": "End time",
+  "timezone": "Timezone",
+  "createdAt": "Created",
+  "weekday": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  }
+}

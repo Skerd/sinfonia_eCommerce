@@ -1,0 +1,9 @@
+{
+  "active": "Active",
+  "country": "Country",
+  "inactive": "Inactive",
+  "name": "Name",
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/cardView/taxZoneCard.tsx",
+  "priority": "Priority",
+  "rates": "Rates"
+}

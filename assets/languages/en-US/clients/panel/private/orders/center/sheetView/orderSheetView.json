@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/sheetView/orderSheetView.tsx",
+  "order": "Order",
+  "listingLabel": "Listing",
+  "listing": {
+    "title": "Listing"
+  },
+  "taskRequest": "Task request",
+  "bid": "Bid",
+  "customer": "Customer",
+  "provider": "Provider",
+  "amount": "Amount",
+  "currency": "Currency",
+  "deliveryDueDate": "Due date",
+  "status": "Status",
+  "createdAt": "Created",
+  "overview": "Overview",
+  "references": "References",
+  "failedTitle": "Failed to load order",
+  "failedDescription": "Something went wrong while loading this order. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "orderStatus": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/escrowDashboard/index.tsx",
+  "title": "Përmbledhje Eskro",
+  "description": "Përmbledhje financiare e transaksioneve eskro sipas valutës.",
+  "currency": "Valuta", "holds": "Bllokime", "releases": "Lëshime",
+  "refunds": "Rimbursime", "fees": "Tarifa (Platforma)", "net": "Neto platforma",
+  "startDate": "Nga", "endDate": "Deri", "apply": "Apliko filtrin", "noData": "Nuk u gjetën të dhëna eskro.",
+  "loading": "Duke ngarkuar..."
+}

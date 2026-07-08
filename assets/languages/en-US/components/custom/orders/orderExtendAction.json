@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/orderExtendAction.tsx",
+  "extend": {
+    "title": "Extend delivery date",
+    "description": "Add extra days to the delivery due date. Only the provider can extend an active order.",
+    "additionalDaysLabel": "Additional days",
+    "additionalDaysHint": "Enter a value between 1 and 90 days.",
+    "confirm": "Extend delivery",
+    "axios": {
+      "start": { "title": "Extending order", "time": 3000 },
+      "success": { "title": "Order extended successfully", "time": 3000 },
+      "error": { "title": "Could not extend order, please try again", "time": 3000 }
+    }
+  },
+  "cancel": "Cancel"
+}

@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
+  "orderStatus": {
+    "pending": "Në pritje",
+    "confirmed": "Konfirmuar",
+    "processing": "Në përpunim",
+    "shipped": "Dërguar",
+    "delivered": "Dorëzuar",
+    "cancelled": "Anuluar",
+    "refunded": "Rimbursuar"
+  },
+  "items": "artikuj"
+}

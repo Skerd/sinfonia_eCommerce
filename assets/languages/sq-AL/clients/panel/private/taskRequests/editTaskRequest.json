@@ -1,0 +1,61 @@
+{
+  "address": "Adresa",
+  "editDescription": "Përditësoni fushat që ju lejohen.",
+  "editTitle": "Ndrysho kërkesën",
+  "errorDescription": "Kontrolloni lidhjen ose kthehuni te lista.",
+  "errorTitle": "Nuk u ngarkua kërkesa",
+  "form": {
+    "addressPrivacyAlert": "Ofruesit nuk e shohin adresën tuaj të saktë derisa të pranoni një ofertë. Adresa e plotë u jepet vetëm ofruesit që zgjidhni, pasi të keni rënë dakord për punën.",
+    "budgetMaxLabel": "Buxheti (max)",
+    "budgetMinLabel": "Buxheti (min)",
+    "categoryLabel": "Kategoria",
+    "cityLabel": "Qyteti",
+    "cityPlaceholder": "Zgjidh qytetin",
+    "countryLabel": "Shteti",
+    "countryPlaceholder": "Zgjidh shtetin",
+    "currencyLabel": "Monedha",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Description Placeholder",
+    "editStatusSection": "Statusi",
+    "expiresAtLabel": "Skadon",
+    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "imageGalleryLabel": "Galeria e imazheve",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "Gjerësia",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "Gjatësia",
+    "mainImageLabel": "Imazhi kryesor",
+    "postalCodeLabel": "Kodi postar",
+    "postalCodePlaceholder": "Kodi postar",
+    "section": {
+      "budget": "Buxheti",
+      "currencyExpires": "Monedha dhe skadimi",
+      "description": "Detajet",
+      "general": "Të përgjithshme",
+      "images": "Imazhet",
+      "video": "Video"
+    },
+    "stateLabel": "Rajoni / gjendja",
+    "statePlaceholder": "Zgjidh rajonin",
+    "statusLabel": "Statusi",
+    "streetLabel": "Rruga",
+    "streetPlaceholder": "Adresa",
+    "taskRequestStatus": {
+      "awarded": "Dhuruar",
+      "closed": "Mbyllur",
+      "open": "Hapur"
+    },
+    "titleLabel": "Titulli",
+    "videoGalleryLabel": "Galeria e videove"
+  },
+  "formButtons": {
+    "cancel": "Anullo",
+    "submit": "Përditëso"
+  },
+  "formHeader": {
+    "description": "Përditësoni detajet.",
+    "title": "Ndrysho kërkesën"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
+  "title": "Title"
+}

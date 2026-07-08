@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
+  "title": "Rregullat e çmimeve",
+  "description": "Automatizoni ndryshimet e çmimeve sipas segmentit ose produktit.",
+  "createPricingRule": "Krijo rregull çmimi",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "type": "Type",
+    "value": "Value",
+    "priority": "Priority",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

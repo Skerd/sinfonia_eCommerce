@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
+  "name": "Name",
+  "title": "Title",
+  "status": "Status",
+  "price": "Price",
+  "category": "Category",
+  "city": "City",
+  "perHour": "h",
+  "days": "d",
+  "from": "From",
+  "featured": "Featured",
+  "sponsored": "Sponsored",
+  "statuses": {
+    "active": "Active",
+    "draft": "Draft",
+    "inactive": "Inactive"
+  }
+}

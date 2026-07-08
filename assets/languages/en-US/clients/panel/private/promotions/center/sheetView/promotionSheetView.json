@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/sheetView/promotionSheetView.tsx",
+  "overview": "Overview",
+  "name": "Name",
+  "promotion": "Promotion",
+  "listing": "Listing",
+  "type": "Type",
+  "startAt": "Start date",
+  "endAt": "End date",
+  "createdAt": "Created",
+  "failedTitle": "Failed to load promotion",
+  "failedDescription": "Something went wrong while loading this promotion. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "type_values": {
+    "featured": "Featured",
+    "sponsored": "Sponsored"
+  },
+  "listingStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "lifecycleStatus": "Lifecycle",
+  "lifecycleStatuses": {
+    "active": "Active",
+    "paused": "Paused",
+    "stopped": "Stopped"
+  },
+  "stopReasonSection": "Stop reason",
+  "stopReason": "Reason"
+}

@@ -1,0 +1,22 @@
+{
+  "collectionSubtitle": "Collection details",
+  "collectionType": {
+    "dynamic": "Dynamic",
+    "manual": "Manual"
+  },
+  "isVisible": "Visible",
+  "overview": "Overview",
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx",
+  "productCount": "Products",
+  "publishedAt": "Publish at",
+  "ruleCondition": {
+    "all": "All",
+    "any": "Any"
+  },
+  "ruleConditionLabels": {
+    "all": "All rules (AND)",
+    "any": "Any rule (OR)"
+  },
+  "slug": "Slug",
+  "type": "Type"
+}

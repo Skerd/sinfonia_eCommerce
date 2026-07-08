@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx",
+  "productSubtitle": "Product details",
+  "overview": "Overview",
+  "type": "Type",
+  "status": "Status",
+  "sku": "SKU",
+  "price": "Price",
+  "brand": "Brand",
+  "featured": "Featured",
+  "ratingAverage": "Rating",
+  "reviewCount": "Reviews",
+  "productType": {
+    "physical": "Physical",
+    "digital": "Digital",
+    "service": "Service",
+    "variable": "Variable",
+    "bundle": "Bundle",
+    "gift_card": "Gift card"
+  },
+  "productStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "archived": "Archived"
+  }
+}

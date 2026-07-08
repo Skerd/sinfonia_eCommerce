@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
+  "title": "CMS Blocks",
+  "description": "Manage storefront content blocks and their display order.",
+  "createCmsBlock": "Create CMS block",
+  "reorderBlocks": "Reorder blocks",
+  "reorderTitle": "Reorder CMS blocks",
+  "reorderDescription": "Drag blocks to change their display order on the storefront.",
+  "searchPlaceholder": "Search or add filters...",
+  "empty": "No blocks to reorder.",
+  "cancel": "Cancel",
+  "save": "Save order",
+  "saving": "Saving...",
+  "saveSuccess": "Block order saved.",
+  "saveError": "Failed to save block order.",
+  "loadError": "Failed to load blocks.",
+  "fields": {
+    "title": "Title",
+    "type": "Type",
+    "position": "Position",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

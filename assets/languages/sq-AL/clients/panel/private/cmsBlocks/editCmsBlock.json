@@ -1,0 +1,38 @@
+{
+  "form": {
+    "abTestVariantLabel": "A/B test variant",
+    "cmsBlockType": {
+      "announcement_bar": "Announcement Bar",
+      "best_sellers": "Best Sellers",
+      "category_showcase": "Category Showcase",
+      "custom_html": "Custom Html",
+      "featured_collection": "Featured Collection",
+      "flash_sale": "Flash Sale",
+      "grid": "Grid",
+      "hero_banner": "Hero Banner",
+      "promotional_section": "Promotional Section",
+      "slider": "Slider",
+      "trending": "Trending",
+      "video": "Video"
+    },
+    "configLabel": "Configuration (JSON)",
+    "configPlaceholder": "Config Placeholder",
+    "endsAtLabel": "Ends at",
+    "isActiveLabel": "Active",
+    "positionLabel": "Position",
+    "startsAtLabel": "Starts at",
+    "titleLabel": "Title",
+    "typeLabel": "Type",
+    "visibilityDevice": {
+      "desktop": "Desktop",
+      "mobile": "Mobile",
+      "tablet": "Tablet"
+    },
+    "visibilityDevicesLabel": "Visibility Devices Label",
+    "visibilityRegionsLabel": "Visibility Regions Label",
+    "visibilityRegionsPlaceholder": "Visibility Regions Placeholder",
+    "visibilitySectionTitle": "Visibility Section Title"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/editCmsBlock.tsx",
+  "title": "Edit CMS block"
+}

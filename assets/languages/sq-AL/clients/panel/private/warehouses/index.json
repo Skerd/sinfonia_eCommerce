@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
+  "title": "Magazinat",
+  "description": "Menaxho vendndodhjet që mbajnë stokun tënd.",
+  "createWarehouse": "Krijo magazinë",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "code": "Kodi",
+    "isDefault": "Parazgjedhur",
+    "isActive": "Aktiv",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

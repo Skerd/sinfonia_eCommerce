@@ -1,0 +1,12 @@
+{
+  "form": {
+    "productLabel": "Product Label",
+    "quantityOnHandLabel": "Quantity On Hand Label",
+    "reorderPointLabel": "Pika e riporositjes",
+    "reorderQuantityLabel": "Sasia e riporositjes",
+    "variantLabel": "Variant Label",
+    "warehouseLabel": "Warehouse Label"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Ndrysho inventarin"
+}

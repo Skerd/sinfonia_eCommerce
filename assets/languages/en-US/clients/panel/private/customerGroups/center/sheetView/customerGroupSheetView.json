@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
+  "customerGroupSubtitle": "Customer group details",
+  "overview": "Overview",
+  "name": "Name",
+  "memberCount": "Members",
+  "isDefault": "Default"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
+  "title": "Porositë e produkteve",
+  "description": "Gjurmo dhe menaxho porositë e klientëve.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "orderNumber": "Numri i porosisë",
+    "customer": "Klienti",
+    "status": "Statusi",
+    "paymentStatus": "Pagesa",
+    "grandTotal": "Totali",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

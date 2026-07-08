@@ -1,0 +1,34 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Nuk u dërgua vlerësimi"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke dërguar vlerësimin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Vlerësimi u dërgua"
+    }
+  },
+  "form": {
+    "commentLabel": "Komenti",
+    "commentPlaceholder": "Ndaj përvojën tënde...",
+    "orderIdLabel": "Porosia",
+    "orderIdPlaceholder": "Zgjidh porosinë",
+    "ratingLabel": "Vlerësimi",
+    "ratingPlaceholder": "1–5"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Dërgo vlerësimin"
+  },
+  "formHeader": {
+    "description": "Dërgo vlerësim dhe koment për një porosi të përfunduar.",
+    "title": "Shto vlerësim"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
+  "title": "Title"
+}

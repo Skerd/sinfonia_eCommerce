@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
+  "title": "Products",
+  "description": "Manage the products in your catalog.",
+  "createProduct": "Create product",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "title": "Title",
+    "sku": "SKU",
+    "type": "Type",
+    "status": "Status",
+    "price": "Price",
+    "brand": "Brand",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

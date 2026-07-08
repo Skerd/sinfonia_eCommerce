@@ -1,0 +1,26 @@
+{
+  "grandTotal": "Totali",
+  "orderNumber": "Numri i porosisë",
+  "overview": "Përmbledhje",
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx",
+  "paymentStatus": "Pagesa",
+  "productOrderPaymentStatus": {
+    "unpaid": "E papaguar",
+    "authorized": "E autorizuar",
+    "paid": "E paguar",
+    "partially_refunded": "E rimbursuar pjesërisht",
+    "refunded": "E rimbursuar",
+    "voided": "E anuluar"
+  },
+  "productOrderStatus": {
+    "cancelled": "Anuluar",
+    "confirmed": "Konfirmuar",
+    "delivered": "Dorëzuar",
+    "pending": "Në pritje",
+    "processing": "Në përpunim",
+    "refunded": "Rimbursuar",
+    "shipped": "Dërguar"
+  },
+  "productOrderSubtitle": "Detajet e porosisë",
+  "status": "Statusi"
+}

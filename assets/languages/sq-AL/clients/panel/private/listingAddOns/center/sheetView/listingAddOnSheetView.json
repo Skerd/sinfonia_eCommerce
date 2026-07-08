@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx",
+  "failedTitle": "Dështoi ngarkimi i shtesës së listimit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të shtesës së listimit. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "listingAddOnSubtitle": "Shtesë listimi",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "listing": "Listimi",
+  "priceAmount": "Çmimi",
+  "currency": "Valuta",
+  "deliveryDays": "Dorëzimi (ditë)",
+  "createdAt": "Krijuar"
+}

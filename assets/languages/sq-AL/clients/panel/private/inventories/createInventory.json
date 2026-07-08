@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/createInventory.tsx",
+  "title": "Krijo inventar",
+  "form": {
+    "productLabel": "Produkti",
+    "productPlaceholder": "Zgjidh produktin",
+    "variantLabel": "Varianti",
+    "variantPlaceholder": "Zgjidh variantin (opsionale)",
+    "warehouseLabel": "Magazina",
+    "warehousePlaceholder": "Zgjidh magazinën",
+    "quantityOnHandLabel": "Sasia në dispozicion",
+    "reorderPointLabel": "Pika e riporositjes",
+    "reorderQuantityLabel": "Sasia e riporositjes"
+  }
+}

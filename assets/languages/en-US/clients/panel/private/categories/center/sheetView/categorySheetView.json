@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/center/sheetView/categorySheetView.tsx",
+  "failedTitle": "Failed to load category",
+  "failedDescription": "Something went wrong while loading this category. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "categorySubtitle": "Category",
+  "name": "Name",
+  "overview": "Overview",
+  "slug": "Slug",
+  "order": "Order",
+  "parentCategory": "Parent category"
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
+  "title": "Kërkesat për detyra",
+  "description": "Publikoni dhe menaxhoni kërkesat e blerësit për oferta, punë me porosi ose prokurim.",
+  "createTaskRequest": "Krijo kërkesë detyre",
+  "fields": {
+    "title": "Titulli",
+    "requesterId": "Kërkuesi",
+    "categoryId": "Kategoria",
+    "addressCityId": "Qyteti",
+    "status": "Statusi",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

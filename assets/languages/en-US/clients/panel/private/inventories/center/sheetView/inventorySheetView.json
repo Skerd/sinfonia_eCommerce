@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
+  "inventorySubtitle": "Inventory record",
+  "overview": "Overview",
+  "warehouse": "Warehouse",
+  "quantityOnHand": "On hand",
+  "quantityReserved": "Reserved",
+  "quantityAvailable": "Available",
+  "reorderPoint": "Reorder point",
+  "reorderQuantity": "Reorder quantity"
+}

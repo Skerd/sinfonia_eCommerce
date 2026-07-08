@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/createCategory.tsx",
+  "form": {
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri i kategorisë",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Bosh për gjenerim nga emri",
+    "parentCategoryLabel": "Kategoria prind",
+    "parentCategoryPlaceholder": "Opsionale",
+    "parentIdLabel": "Prindi",
+    "orderLabel": "Rendi",
+    "orderPlaceholder": "0",
+    "createCategoryTitle": "Krijo kategori",
+    "createCategoryDescription": "Shtoni një kategori për të organizuar produktet në katalog."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar kategorinë",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategoria u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot kategoria",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo kategori",
+    "description": "Shtoni një kategori për të organizuar produktet në katalog."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo kategori"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
+  "title": "Kategoritë",
+  "description": "Konfiguroni kategoritë e produkteve për katalogët në qiramarrjen tuaj.",
+  "createCategory": "Krijo kategori",
+  "fields": {
+    "name": "Emri",
+    "slug": "Slug",
+    "order": "Rendi",
+    "parent": "Kategori kryesore",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

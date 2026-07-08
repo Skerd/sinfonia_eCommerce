@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
+  "productAttributeSubtitle": "Attribute details",
+  "overview": "Overview",
+  "name": "Name",
+  "position": "Position",
+  "isVisibleOnProductPage": "Visible on product page",
+  "isUsedForVariants": "Used for variants",
+  "valueCount": "Values"
+}

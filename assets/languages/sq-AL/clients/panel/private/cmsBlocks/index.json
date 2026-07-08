@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
+  "title": "Blloqet CMS",
+  "description": "Menaxhoni blloqet e përmbajtjes së dyqanit dhe renditjen e tyre.",
+  "createCmsBlock": "Krijo bllok CMS",
+  "reorderBlocks": "Rirendit blloqet",
+  "reorderTitle": "Rirendit blloqet CMS",
+  "reorderDescription": "Zvarritni blloqet për të ndryshuar rendin e shfaqjes në dyqan.",
+  "searchPlaceholder": "Search or add filters...",
+  "empty": "No blocks to reorder.",
+  "cancel": "Cancel",
+  "save": "Ruaj rendin",
+  "saving": "Saving...",
+  "saveSuccess": "Rendi i blloqeve u ruajt.",
+  "saveError": "Failed to save block order.",
+  "loadError": "Failed to load blocks.",
+  "fields": {
+    "title": "Title",
+    "type": "Type",
+    "position": "Position",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
+  "title": "Provider Profiles",
+  "description": "View and edit provider profiles.",
+  "fields": {
+    "provider": "Provider",
+    "bio": "Bio",
+    "skills": "Skills",
+    "rating": "Rating",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters..."
+}

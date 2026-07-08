@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerceMarketplace/clients/panel/private/listingFlags/index.tsx",
+  "title": "Listing Flags",
+  "description": "Review reports submitted by users for inappropriate listings.",
+  "createListingFlag": "Create listing flag",
+  "fields": {
+    "listing": "Listing",
+    "reason": "Reason",
+    "status": "Status",
+    "user": "Reporter",
+    "comment": "Comment",
+    "resolution": "Resolution",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "reviewed": "Reviewed",
+        "dismissed": "Dismissed"
+      },
+      "reason": {
+        "inappropriate": "Inappropriate content",
+        "spam": "Spam",
+        "misleading": "Misleading",
+        "other": "Other"
+      }
+    }
+  },
+  "searchPlaceholder": "Search or add filters..."
+}

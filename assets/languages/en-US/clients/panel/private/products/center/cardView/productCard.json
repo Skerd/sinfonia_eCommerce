@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "productStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "archived": "Archived"
+  },
+  "productType": {
+    "physical": "Physical",
+    "digital": "Digital",
+    "service": "Service",
+    "variable": "Variable",
+    "bundle": "Bundle",
+    "gift_card": "Gift card"
+  }
+}

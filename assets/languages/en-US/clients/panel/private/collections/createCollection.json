@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
+  "title": "Create collection",
+  "form": {
+    "nameLabel": "Name",
+    "slugLabel": "Slug",
+    "typeLabel": "Collection type",
+    "descriptionLabel": "Description",
+    "mainImageLabel": "Cover image",
+    "isVisibleLabel": "Visible on storefront",
+    "positionLabel": "Sort position",
+    "publishedAtLabel": "Publish at",
+    "mediaSectionTitle": "Media",
+    "manualSectionTitle": "Manual products",
+    "productsLabel": "Products",
+    "selectProduct": "Search products…",
+    "removeProduct": "Remove product",
+    "dynamicSectionTitle": "Dynamic rules",
+    "ruleConditionLabel": "Match condition",
+    "rulesSectionTitle": "Rules",
+    "ruleAddRow": "Add rule",
+    "ruleRemoveRow": "Remove rule",
+    "ruleRowTitle": "New rule",
+    "ruleFieldLabel": "Field",
+    "ruleOperatorLabel": "Operator",
+    "ruleValueLabel": "Value",
+    "seoSectionTitle": "SEO",
+    "seoTitleLabel": "SEO title",
+    "seoDescriptionLabel": "SEO description",
+    "collectionType": {
+      "manual": "Manual",
+      "dynamic": "Dynamic"
+    },
+    "ruleCondition": {
+      "all": "All rules (AND)",
+      "any": "Any rule (OR)"
+    },
+    "ruleField": {
+      "tag": "Tag",
+      "brand": "Brand",
+      "category": "Category",
+      "price": "Price",
+      "vendor": "Vendor",
+      "inventory_level": "Inventory level",
+      "product_type": "Product type"
+    },
+    "ruleOperator": {
+      "equals": "Equals",
+      "not_equals": "Not equals",
+      "contains": "Contains",
+      "not_contains": "Does not contain",
+      "greater_than": "Greater than",
+      "less_than": "Less than",
+      "starts_with": "Starts with"
+    }
+  }
+}

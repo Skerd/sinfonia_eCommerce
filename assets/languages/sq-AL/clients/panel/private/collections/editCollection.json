@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
+  "title": "Ndrysho koleksionin",
+  "form": {
+    "nameLabel": "Emri",
+    "slugLabel": "Slug",
+    "typeLabel": "Lloji i koleksionit",
+    "descriptionLabel": "Përshkrimi",
+    "mainImageLabel": "Imazhi i kopertinës",
+    "isVisibleLabel": "I dukshëm në dyqan",
+    "positionLabel": "Pozicioni i renditjes",
+    "publishedAtLabel": "Publiko më",
+    "mediaSectionTitle": "Media",
+    "manualSectionTitle": "Produkte manuale",
+    "productsLabel": "Produktet",
+    "selectProduct": "Kërko produkte…",
+    "removeProduct": "Hiq produktin",
+    "dynamicSectionTitle": "Rregulla dinamike",
+    "ruleConditionLabel": "Kushti i përputhjes",
+    "rulesSectionTitle": "Rregullat",
+    "ruleAddRow": "Shto rregull",
+    "ruleRemoveRow": "Hiq rregullin",
+    "ruleRowTitle": "Rregull i ri",
+    "ruleFieldLabel": "Fusha",
+    "ruleOperatorLabel": "Operatori",
+    "ruleValueLabel": "Vlera",
+    "seoSectionTitle": "SEO",
+    "seoTitleLabel": "Titulli SEO",
+    "seoDescriptionLabel": "Përshkrimi SEO",
+    "collectionType": {
+      "manual": "Manual",
+      "dynamic": "Dinamik"
+    },
+    "ruleCondition": {
+      "all": "Të gjitha rregullat (AND)",
+      "any": "Çdo rregull (OR)"
+    },
+    "ruleField": {
+      "tag": "Etiketë",
+      "brand": "Markë",
+      "category": "Kategori",
+      "price": "Çmimi",
+      "vendor": "Furnizues",
+      "inventory_level": "Niveli i inventarit",
+      "product_type": "Lloji i produktit"
+    },
+    "ruleOperator": {
+      "equals": "Barazohet me",
+      "not_equals": "Nuk barazohet me",
+      "contains": "Përmban",
+      "not_contains": "Nuk përmban",
+      "greater_than": "Më i madh se",
+      "less_than": "Më i vogël se",
+      "starts_with": "Fillon me"
+    }
+  }
+}

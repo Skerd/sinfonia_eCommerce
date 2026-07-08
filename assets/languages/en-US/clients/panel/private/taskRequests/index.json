@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
+  "title": "Task requests",
+  "description": "Post and manage buyer requests for quotes, custom work, or procurement.",
+  "createTaskRequest": "Create task request",
+  "fields": {
+    "title": "Title",
+    "requesterId": "Requester",
+    "categoryId": "Category",
+    "addressCityId": "City",
+    "status": "Status",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters..."
+}

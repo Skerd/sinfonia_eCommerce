@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
+  "title": "Rezervimet",
+  "description": "Menaxho rezervimet e shërbimeve.",
+  "createBooking": "Krijo rezervim",
+  "fields": {
+    "order": "Porosia",
+    "provider": "Ofruesi",
+    "startAt": "Fillim",
+    "endAt": "Mbarim",
+    "timezone": "Zona orare",
+    "status": "Statusi",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "status": { "scheduled": "Planifikuar", "in_progress": "Në progres", "completed": "Përfunduar", "cancelled": "Anuluar" }
+}

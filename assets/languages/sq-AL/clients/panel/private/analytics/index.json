@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
+  "title": "Analitika",
+  "description": "Ndiqni të ardhurat, porositë, inventarin dhe aktivitetin e shportave.",
+  "refresh": "Rifresko",
+  "errorTitle": "Failed to load analytics",
+  "errorDescription": "Something went wrong while fetching dashboard data.",
+  "revenueChartTitle": "Të ardhurat ditore",
+  "noChartData": "No revenue data for this period.",
+  "period": {
+    "7d": "7 ditë",
+    "30d": "30 ditë",
+    "90d": "90 ditë",
+    "1y": "1 vit"
+  },
+  "kpi": {
+    "totalRevenue": "Total revenue",
+    "totalRevenueDesc": "Paid orders in period",
+    "orderCount": "Orders",
+    "orderCountDesc": "Paid orders in period",
+    "averageOrderValue": "Avg. order value",
+    "averageOrderValueDesc": "Revenue per paid order",
+    "abandonedCarts": "Abandoned carts",
+    "abandonedCartsDesc": "Carts inactive over 1 hour",
+    "lowStock": "Low stock",
+    "lowStockDesc": "SKUs below reorder point",
+    "outOfStock": "Out of stock",
+    "outOfStockDesc": "SKUs with no available quantity",
+    "totalOnHand": "Units on hand",
+    "totalOnHandDesc": "Total inventory quantity",
+    "activeProducts": "Products",
+    "activeProductsDesc": "Products by status"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "form": {
+    "carrierLabel": "Carrier Label",
+    "countriesLabel": "Countries",
+    "estimatedDeliveryDaysLabel": "Estimated Delivery Days Label",
+    "isActiveLabel": "Active",
+    "maxOrderAmountLabel": "Max Order Amount Label",
+    "maxWeightLabel": "Max Weight Label",
+    "minOrderAmountLabel": "Min Order Amount Label",
+    "minWeightLabel": "Min Weight Label",
+    "nameLabel": "Name",
+    "postalCodePatternsLabel": "Postal code patterns",
+    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
+    "rateAddRow": "Rate Add Row",
+    "rateConditionsSectionTitle": "Rate Conditions Section Title",
+    "rateNameLabel": "Rate Name Label",
+    "ratePriceLabel": "Rate Price Label",
+    "rateRemoveRow": "Rate Remove Row",
+    "rateTypeLabel": "Rate Type Label",
+    "ratesSectionTitle": "Rates Section Title",
+    "selectCountry": "Select Country",
+    "selectState": "Select State",
+    "shippingRateType": {
+      "flat": "Flat",
+      "free": "Free",
+      "price": "Price",
+      "quantity": "Quantity",
+      "weight": "Weight"
+    },
+    "statesLabel": "States"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/createShippingZone.tsx",
+  "title": "Create shipping zone"
+}

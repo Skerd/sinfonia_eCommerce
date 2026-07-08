@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/editCategory.tsx",
+  "editTitle": "Edit category",
+  "editDescription": "Update category details.",
+  "errorTitle": "Failed to load category",
+  "errorDescription": "Could not load this category. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "nameLabel": "Name",
+    "namePlaceholder": "Category name",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "URL slug",
+    "parentCategoryLabel": "Parent category",
+    "parentCategoryPlaceholder": "Optional parent",
+    "parentIdLabel": "Parent",
+    "orderLabel": "Sort order",
+    "orderPlaceholder": "0",
+    "editCategoryTitle": "Edit category",
+    "editCategoryDescription": "Update category information."
+  },
+  "axios": {
+    "start": {
+      "title": "Saving category",
+      "time": 3000
+    },
+    "success": {
+      "title": "Category updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update category",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit category",
+    "description": "Update category details."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

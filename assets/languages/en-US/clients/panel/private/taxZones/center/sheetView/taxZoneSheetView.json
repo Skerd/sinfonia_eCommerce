@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx",
+  "taxZoneSubtitle": "Tax zone details",
+  "overview": "Overview",
+  "name": "Name",
+  "country": "Country",
+  "priority": "Priority",
+  "isActive": "Active"
+}

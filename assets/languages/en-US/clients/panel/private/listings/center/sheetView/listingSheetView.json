@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/center/sheetView/listingSheetView.tsx",
+  "failedTitle": "Failed to load listing",
+  "failedDescription": "Something went wrong while loading this listing. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "listingSubtitle": "Listing",
+  "name": "Name",
+  "priceCurrency": "Currency",
+  "title": "Title",
+  "overview": "Overview",
+  "address": "Location",
+  "country": "Country",
+  "state": "Region / state",
+  "description": "Description",
+  "status": "Status",
+  "pricingType": "Pricing",
+  "city": "City",
+  "category": "Category",
+  "provider": "Provider",
+  "company": "Company",
+  "price": "Price",
+  "deliveryDays": "Delivery (days)",
+  "tags": "Tags",
+  "requirements": "Requirements",
+  "faqs": "FAQs",
+  "promotions": "Promotions",
+  "promotion": "Promotion",
+  "listingPackages": "Packages",
+  "listingPackage": "Package",
+  "listingAddOns": "Add-ons",
+  "listingAddOn": "Add-on",
+  "promotionType": {
+    "featured": "Featured",
+    "sponsored": "Sponsored"
+  },
+  "toggleReferenceListView": "Toggle view",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "gallery": "Gallery",
+  "listingStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "listingPricingType": {
+    "fixed": "Fixed price",
+    "hourly": "Hourly rate"
+  },
+  "form": {}
+}

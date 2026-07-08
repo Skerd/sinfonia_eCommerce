@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
+  "title": "Pricing Rules",
+  "description": "Automate price adjustments by segment or product.",
+  "createPricingRule": "Create pricing rule",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "type": "Type",
+    "value": "Value",
+    "priority": "Priority",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

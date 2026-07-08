@@ -1,0 +1,28 @@
+{
+  "appliesTo": "Applies To",
+  "endsAt": "Ends At",
+  "isActive": "Active",
+  "minimumOrderAmount": "Minimum Order Amount",
+  "minimumQuantity": "Minimum Quantity",
+  "name": "Name",
+  "overview": "Overview",
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx",
+  "pricingRuleAppliesTo": {
+    "all": "All",
+    "category": "Category",
+    "collection": "Collection",
+    "customer_group": "Customer Group",
+    "product": "Product"
+  },
+  "pricingRuleSubtitle": "Pricing rule details",
+  "pricingRuleType": {
+    "fixed_discount": "Fixed Discount",
+    "fixed_price": "Fixed Price",
+    "percentage_discount": "Percentage Discount",
+    "surcharge": "Surcharge"
+  },
+  "priority": "Priority",
+  "startsAt": "Starts At",
+  "type": "Type",
+  "value": "Value"
+}

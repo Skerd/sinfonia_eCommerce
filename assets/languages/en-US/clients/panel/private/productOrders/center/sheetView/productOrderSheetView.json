@@ -1,0 +1,26 @@
+{
+  "grandTotal": "Total",
+  "orderNumber": "Order number",
+  "overview": "Overview",
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx",
+  "paymentStatus": "Payment",
+  "productOrderPaymentStatus": {
+    "unpaid": "Unpaid",
+    "authorized": "Authorized",
+    "paid": "Paid",
+    "partially_refunded": "Partially refunded",
+    "refunded": "Refunded",
+    "voided": "Voided"
+  },
+  "productOrderStatus": {
+    "cancelled": "Cancelled",
+    "confirmed": "Confirmed",
+    "delivered": "Delivered",
+    "pending": "Pending",
+    "processing": "Processing",
+    "refunded": "Refunded",
+    "shipped": "Shipped"
+  },
+  "productOrderSubtitle": "Order details",
+  "status": "Status"
+}

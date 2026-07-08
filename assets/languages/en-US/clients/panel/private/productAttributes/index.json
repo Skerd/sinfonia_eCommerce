@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
+  "title": "Product Attributes",
+  "description": "Define product options such as size, color, and material.",
+  "createProductAttribute": "Create attribute",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "position": "Position",
+    "isVisibleOnProductPage": "Visible on product page",
+    "isUsedForVariants": "Used for variants",
+    "values": "Values",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

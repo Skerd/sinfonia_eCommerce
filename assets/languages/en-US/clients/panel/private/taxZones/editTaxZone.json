@@ -1,0 +1,27 @@
+{
+  "form": {
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select country",
+    "isActiveLabel": "Active",
+    "isCompoundLabel": "Is Compound Label",
+    "nameLabel": "Name",
+    "postalCodePatternsLabel": "Postal code patterns",
+    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
+    "priorityLabel": "Priority",
+    "rateAddRow": "Rate Add Row",
+    "rateAppliesToLabel": "Rate Applies To Label",
+    "rateNameLabel": "Rate Name Label",
+    "rateRemoveRow": "Rate Remove Row",
+    "rateValueLabel": "Rate Value Label",
+    "ratesSectionTitle": "Rates Section Title",
+    "selectState": "Select State",
+    "statesLabel": "States",
+    "taxRateAppliesTo": {
+      "all": "All",
+      "digital": "Digital",
+      "physical": "Physical"
+    }
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
+  "title": "Edit tax zone"
+}

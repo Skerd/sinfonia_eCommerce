@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
+  "title": "Inventory",
+  "description": "Stock levels across your warehouses.",
+  "createInventory": "Create inventory",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "product": "Product",
+    "warehouse": "Warehouse",
+    "quantityOnHand": "On hand",
+    "quantityReserved": "Reserved",
+    "quantityAvailable": "Available",
+    "reorderPoint": "Reorder point"
+  }
+}

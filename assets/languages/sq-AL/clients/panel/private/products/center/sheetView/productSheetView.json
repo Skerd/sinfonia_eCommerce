@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx",
+  "productSubtitle": "Detajet e produktit",
+  "overview": "Përmbledhje",
+  "type": "Lloji",
+  "status": "Statusi",
+  "sku": "SKU",
+  "price": "Çmimi",
+  "brand": "Marka",
+  "featured": "I veçuar",
+  "ratingAverage": "Vlerësimi",
+  "reviewCount": "Vlerësime",
+  "productType": {
+    "physical": "Fizik",
+    "digital": "Dixhital",
+    "service": "Shërbim",
+    "variable": "I ndryshueshëm",
+    "bundle": "Paketë",
+    "gift_card": "Kartë dhuratë"
+  },
+  "productStatus": {
+    "draft": "Skicë",
+    "active": "Aktiv",
+    "archived": "Arkivuar"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Listimet",
+  "description": "Menaxho listimet e produkteve dhe shërbimeve për dyqanin në qiramarrje.",
+  "createListing": "Krijo listim",
+  "fields": {
+    "title": "Titulli",
+    "categoryId": "Kategoria",
+    "providerId": "Ofruesi",
+    "addressCityId": "Qyteti",
+    "status": "Statusi",
+    "tags": "Etiketat",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

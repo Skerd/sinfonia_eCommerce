@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
+  "title": "Zbritjet",
+  "description": "Menaxhoni kodet promocionale dhe zbritjet automatike.",
+  "createDiscount": "Krijo zbritje",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "title": "Title",
+    "code": "Code",
+    "type": "Type",
+    "value": "Value",
+    "isActive": "Active",
+    "startsAt": "Starts at",
+    "endsAt": "Ends at",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

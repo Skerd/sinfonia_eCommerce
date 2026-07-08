@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/cardView/listingPackageCard.tsx",
+  "name": "Emri",
+  "listing": "Listimi",
+  "priceAmount": "Çmimi",
+  "deliveryDays": "Ditë dorëzimi",
+  "displayOrder": "Renditja",
+  "days": "d"
+}

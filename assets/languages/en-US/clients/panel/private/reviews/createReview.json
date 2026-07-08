@@ -1,0 +1,34 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not submit review"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Submitting review"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Review submitted"
+    }
+  },
+  "form": {
+    "commentLabel": "Comment",
+    "commentPlaceholder": "Share your experience...",
+    "orderIdLabel": "Order",
+    "orderIdPlaceholder": "Select order",
+    "ratingLabel": "Rating",
+    "ratingPlaceholder": "1–5"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Submit review"
+  },
+  "formHeader": {
+    "description": "Submit a rating and feedback for a completed order.",
+    "title": "Create review"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
+  "title": "Title"
+}
