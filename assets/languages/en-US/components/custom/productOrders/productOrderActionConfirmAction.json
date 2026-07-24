@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
+  "cancel": "Cancel",
+  "confirm": {
+    "title": "Confirm order",
+    "description": "Acknowledge this order and mark it as confirmed.",
+    "confirm": "Confirm",
+    "axios": {
+      "success": "Order confirmed",
+      "error": "Could not confirm order"
+    }
+  },
+  "markProcessing": {
+    "title": "Mark as processing",
+    "description": "Mark this order as being prepared for shipment.",
+    "confirm": "Mark processing",
+    "axios": {
+      "success": "Order marked as processing",
+      "error": "Could not update order"
+    }
+  },
+  "cancelOrder": {
+    "title": "Cancel order",
+    "description": "Cancels this order and releases any reserved stock. Paid orders must be refunded first.",
+    "confirm": "Cancel order",
+    "axios": {
+      "success": "Order cancelled",
+      "error": "Could not cancel order"
+    }
+  }
+}

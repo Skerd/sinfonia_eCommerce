@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx",
+  "name": "Emri",
+  "type": "Lloji",
+  "sequence": "Renditja",
+  "active": "Aktive",
+  "inactive": "Joaktive",
+  "paymentType": {
+    "cash": "Cash",
+    "card": "Kartë",
+    "bank": "Bankë",
+    "customer_account": "Llogari klienti",
+    "other": "Tjetër"
+  }
+}

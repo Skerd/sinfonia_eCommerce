@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
+  "title": "Krijo përmbushje",
+  "form": {
+    "orderLabel": "Porosia",
+    "orderPlaceholder": "Zgjidh porosinë",
+    "statusLabel": "Statusi",
+    "carrierLabel": "Transportuesi",
+    "trackingNumberLabel": "Numri i gjurmimit",
+    "trackingUrlLabel": "URL e gjurmimit",
+    "shippedAtLabel": "Dërguar më",
+    "estimatedDeliveryAtLabel": "Dorëzimi i pritur",
+    "deliveredAtLabel": "Dorëzuar më",
+    "notesLabel": "Shënime",
+    "itemsSectionTitle": "Artikujt",
+    "itemAddRow": "Shto artikull",
+    "itemRemoveRow": "Hiq artikullin",
+    "itemRowTitle": "Artikulli",
+    "orderItemIdLabel": "ID e artikullit të porosisë",
+    "quantityLabel": "Sasia",
+    "fulfillmentStatus": {
+      "pending": "Në pritje",
+      "shipped": "Dërguar",
+      "delivered": "Dorëzuar",
+      "failed": "Dështoi"
+    }
+  }
+}

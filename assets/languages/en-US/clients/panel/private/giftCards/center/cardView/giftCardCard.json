@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/cardView/giftCardCard.tsx",
+  "status": "Status",
+  "balance": "Balance",
+  "purchasedBy": "Purchased by",
+  "giftCardStatus": {
+    "active": "Active",
+    "depleted": "Depleted",
+    "disabled": "Disabled"
+  }
+}

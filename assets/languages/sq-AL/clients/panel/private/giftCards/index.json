@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/index.tsx",
+  "title": "Kartat dhuratë",
+  "description": "Kredi dyqani e lëshuar nga sistemi — shiko balancat, çaktivizo kodet e kompromentuara.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "code": "Kodi",
+    "status": "Statusi",
+    "balance": "Balanca"
+  }
+}

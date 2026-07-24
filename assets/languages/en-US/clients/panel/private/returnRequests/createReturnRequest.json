@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
+  "title": "Create return request",
+  "form": {
+    "orderLabel": "Order",
+    "orderPlaceholder": "Select order",
+    "typeLabel": "Type",
+    "statusLabel": "Status",
+    "refundAmountLabel": "Refund amount",
+    "customerNoteLabel": "Customer note",
+    "adminNoteLabel": "Admin note",
+    "itemsSectionTitle": "Items",
+    "itemAddRow": "Add item",
+    "itemRemoveRow": "Remove item",
+    "itemRowTitle": "Item",
+    "orderItemIdLabel": "Order item id",
+    "quantityLabel": "Quantity",
+    "reasonLabel": "Reason",
+    "returnType": {
+      "return": "Return",
+      "exchange": "Exchange",
+      "refund": "Refund"
+    },
+    "returnStatus": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "received": "Received",
+      "completed": "Completed"
+    }
+  }
+}

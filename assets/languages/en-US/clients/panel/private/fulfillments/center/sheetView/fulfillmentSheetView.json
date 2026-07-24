@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx",
+  "overview": "Overview",
+  "fulfillmentSubtitle": "Fulfillment details",
+  "status": "Status",
+  "carrier": "Carrier",
+  "trackingNumber": "Tracking number",
+  "trackingUrl": "Tracking URL",
+  "shippedAt": "Shipped at",
+  "estimatedDeliveryAt": "Estimated delivery",
+  "deliveredAt": "Delivered at",
+  "notes": "Notes",
+  "fulfillmentStatus": {
+    "pending": "Pending",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "failed": "Failed"
+  }
+}

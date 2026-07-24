@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx",
+  "overview": "Overview",
+  "productVariantSubtitle": "Variant details",
+  "sku": "SKU",
+  "barcode": "Barcode",
+  "price": "Price",
+  "compareAtPrice": "Compare-at price",
+  "status": "Status",
+  "position": "Position",
+  "weight": "Weight",
+  "trackInventory": "Track inventory",
+  "variantStatus": {
+    "active": "Active",
+    "inactive": "Inactive"
+  }
+}

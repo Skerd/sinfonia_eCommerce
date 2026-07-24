@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
+  "title": "Product variants",
+  "description": "Manage SKU-level variants of products.",
+  "createProductVariant": "Create variant",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "sku": "SKU",
+    "price": "Price",
+    "status": "Status",
+    "barcode": "Barcode"
+  }
+}

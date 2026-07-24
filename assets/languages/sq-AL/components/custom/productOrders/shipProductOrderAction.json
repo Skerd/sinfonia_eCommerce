@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx",
+  "cancel": "Anulo",
+  "ship": {
+    "title": "Dërgo porosinë",
+    "description": "Krijon një përmbushje me të dhënat e gjurmimit dhe e shënon porosinë si të dërguar.",
+    "carrierLabel": "Transportuesi",
+    "trackingNumberLabel": "Numri i gjurmimit",
+    "trackingUrlLabel": "URL e gjurmimit",
+    "confirm": "Dërgo",
+    "axios": {
+      "success": "Porosia u dërgua",
+      "error": "Porosia nuk u dërgua dot"
+    }
+  }
+}

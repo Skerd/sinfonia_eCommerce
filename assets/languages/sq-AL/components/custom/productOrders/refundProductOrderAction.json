@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx",
+  "cancel": "Anulo",
+  "refund": {
+    "title": "Rimburso porosinë",
+    "description": "Rimburson pagesën e kapur përmes portës së pagesës.",
+    "amountLabel": "Shuma",
+    "amountHint": "Lëre bosh për rimbursim të plotë.",
+    "reasonLabel": "Arsyeja",
+    "confirm": "Rimburso",
+    "axios": {
+      "success": "Porosia u rimbursua",
+      "error": "Porosia nuk u rimbursua dot"
+    }
+  }
+}

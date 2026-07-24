@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx",
+  "fiscalConfigSubtitle": "Fiscalization config",
+  "overview": "Overview",
+  "name": "Name",
+  "nipt": "NIPT",
+  "tcrCode": "TCR code",
+  "businessUnitCode": "Business unit",
+  "softCode": "Software code",
+  "operatorCode": "Operator code",
+  "environment": "Environment",
+  "hasCertificate": "Certificate",
+  "isActive": "Active",
+  "autoFiscalizePos": "Auto-fiscalize POS",
+  "autoEinvoice": "Auto e-invoice"
+}

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx",
+  "overview": "Përmbledhje",
+  "customerAddressSubtitle": "Detajet e adresës",
+  "firstName": "Emri",
+  "lastName": "Mbiemri",
+  "street": "Rruga",
+  "city": "Qyteti",
+  "state": "Rajoni",
+  "postalCode": "Kodi postar",
+  "phone": "Telefoni",
+  "label": "Etiketa",
+  "isDefault": "Parazgjedhur"
+}

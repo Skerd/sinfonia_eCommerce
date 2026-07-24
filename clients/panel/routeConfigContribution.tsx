@@ -2,6 +2,7 @@ import AllCategories from "@eCommerceModule/clients/panel/private/categories";
 import CreateCategory from "@eCommerceModule/clients/panel/private/categories/createCategory.tsx";
 import EditCategory from "@eCommerceModule/clients/panel/private/categories/editCategory.tsx";
 import EscrowDashboard from "@eCommerceModule/clients/panel/private/escrowDashboard";
+import SystemMap from "@eCommerceModule/clients/panel/private/systemMap";
 import AllProducts from "@eCommerceModule/clients/panel/private/products/index.tsx";
 import CreateProduct from "@eCommerceModule/clients/panel/private/products/createProduct.tsx";
 import EditProduct from "@eCommerceModule/clients/panel/private/products/editProduct.tsx";
@@ -37,6 +38,33 @@ import AllPricingRules from "@eCommerceModule/clients/panel/private/pricingRules
 import CreatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/createPricingRule.tsx";
 import EditPricingRule from "@eCommerceModule/clients/panel/private/pricingRules/editPricingRule.tsx";
 import ECommerceAnalytics from "@eCommerceModule/clients/panel/private/analytics/index.tsx";
+import AllFulfillments from "@eCommerceModule/clients/panel/private/fulfillments/index.tsx";
+import CreateFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/createFulfillment.tsx";
+import EditFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/editFulfillment.tsx";
+import AllReturnRequests from "@eCommerceModule/clients/panel/private/returnRequests/index.tsx";
+import CreateReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/createReturnRequest.tsx";
+import EditReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/editReturnRequest.tsx";
+import AllPaymentTransactions from "@eCommerceModule/clients/panel/private/paymentTransactions/index.tsx";
+import AllProductVariants from "@eCommerceModule/clients/panel/private/productVariants/index.tsx";
+import CreateProductVariant from "@eCommerceModule/clients/panel/private/productVariants/createProductVariant.tsx";
+import EditProductVariant from "@eCommerceModule/clients/panel/private/productVariants/editProductVariant.tsx";
+import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
+import AllProductReviews from "@eCommerceModule/clients/panel/private/productReviews/index.tsx";
+import AllGiftCards from "@eCommerceModule/clients/panel/private/giftCards/index.tsx";
+import CreateCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/createCustomerAddress.tsx";
+import EditCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/editCustomerAddress.tsx";
+import AllPosPaymentMethods from "@eCommerceModule/clients/panel/private/posPaymentMethods/index.tsx";
+import CreatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx";
+import EditPosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx";
+import AllPosConfigs from "@eCommerceModule/clients/panel/private/posConfigs/index.tsx";
+import CreatePosConfig from "@eCommerceModule/clients/panel/private/posConfigs/createPosConfig.tsx";
+import EditPosConfig from "@eCommerceModule/clients/panel/private/posConfigs/editPosConfig.tsx";
+import AllPosSessions from "@eCommerceModule/clients/panel/private/posSessions/index.tsx";
+import AllPosOrders from "@eCommerceModule/clients/panel/private/posOrders/index.tsx";
+import PosTill from "@eCommerceModule/clients/panel/private/pos/index.tsx";
+import AllFiscalConfigs from "@eCommerceModule/clients/panel/private/fiscalConfigs/index.tsx";
+import CreateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx";
+import EditFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx";
 import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/clients/panel/moduleContributions/routeConfigContribution.types.ts";
 
 function safeDecode(value: string | null): string | undefined {
@@ -93,8 +121,38 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         const customerGroupId = searchParams.get("customerGroupId") || undefined;
         const pricingRuleId = searchParams.get("pricingRuleId") || undefined;
 
+        if (resource === "systemmap") {
+            return <SystemMap />;
+        }
         if (resource === "escrowdashboard") {
             return <EscrowDashboard />;
+        }
+        if (resource === "pos") {
+            return <PosTill />;
+        }
+        if (resource === "pospaymentmethods") {
+            const posPaymentMethodId = searchParams.get("posPaymentMethodId") || undefined;
+            if (action === "create") return <CreatePosPaymentMethod />;
+            if (action === "edit" && posPaymentMethodId) return <EditPosPaymentMethod entityId={posPaymentMethodId} />;
+            return <AllPosPaymentMethods />;
+        }
+        if (resource === "posconfigs") {
+            const posConfigId = searchParams.get("posConfigId") || undefined;
+            if (action === "create") return <CreatePosConfig />;
+            if (action === "edit" && posConfigId) return <EditPosConfig entityId={posConfigId} />;
+            return <AllPosConfigs />;
+        }
+        if (resource === "possessions") {
+            return <AllPosSessions />;
+        }
+        if (resource === "posorders") {
+            return <AllPosOrders />;
+        }
+        if (resource === "fiscalconfigs") {
+            const fiscalConfigId = searchParams.get("fiscalConfigId") || undefined;
+            if (action === "create") return <CreateFiscalConfig />;
+            if (action === "edit" && fiscalConfigId) return <EditFiscalConfig entityId={fiscalConfigId} />;
+            return <AllFiscalConfigs />;
         }
         if (resource === "products") {
             if (action === "create") return <CreateProduct />;
@@ -156,6 +214,49 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "analytics") {
             return <ECommerceAnalytics />;
+        }
+        if (resource === "fulfillments") {
+            const fulfillmentId = searchParams.get("fulfillmentId") || undefined;
+            if (action === "create") return <CreateFulfillment />;
+            if (action === "edit" && fulfillmentId) return <EditFulfillment entityId={fulfillmentId} />;
+            return <AllFulfillments />;
+        }
+        if (resource === "returnrequests") {
+            const returnRequestId = searchParams.get("returnRequestId") || undefined;
+            if (action === "create") return <CreateReturnRequest />;
+            if (action === "edit" && returnRequestId) return <EditReturnRequest entityId={returnRequestId} />;
+            return <AllReturnRequests />;
+        }
+        if (resource === "paymenttransactions") {
+            return <AllPaymentTransactions />;
+        }
+        if (resource === "productreviews") {
+            return <AllProductReviews />;
+        }
+        if (resource === "giftcards") {
+            return <AllGiftCards />;
+        }
+        if (resource === "productvariants") {
+            const productVariantId = searchParams.get("productVariantId") || undefined;
+            const productVariantTitle = safeDecode(searchParams.get("productVariantTitle")) || undefined;
+            if (action === "create") return <CreateProductVariant />;
+            if (action === "edit" && productVariantId) return <EditProductVariant entityId={productVariantId} entityName={productVariantTitle} />;
+            return <AllProductVariants />;
+        }
+        if (resource === "customeraddresses") {
+            const customerAddressId = searchParams.get("customerAddressId") || undefined;
+            if (action === "create") return <CreateCustomerAddress />;
+            if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
+            return <AllCustomerAddresses />;
+        }
+        // Categories are primarily managed under tenancy systemSettings; this
+        // Product Commerce route keeps them discoverable for shop operators (§0.15).
+        if (resource === "categories") {
+            const categoryId = searchParams.get("categoryId") || undefined;
+            const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
+            if (action === "create") return <CreateCategory />;
+            if (action === "edit" && categoryId) return <EditCategory categoryId={categoryId} categoryName={categoryName} />;
+            return <AllCategories />;
         }
         return undefined;
     },

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
+  "title": "Customer addresses",
+  "description": "Manage customer shipping and billing addresses.",
+  "createCustomerAddress": "Create address",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "street": "Street",
+    "city": "City",
+    "phone": "Phone"
+  }
+}

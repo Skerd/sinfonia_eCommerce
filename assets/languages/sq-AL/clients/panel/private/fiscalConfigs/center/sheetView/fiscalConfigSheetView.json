@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx",
+  "fiscalConfigSubtitle": "Konfigurim fiskalizimi",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "nipt": "NIPT",
+  "tcrCode": "Kodi TCR",
+  "businessUnitCode": "Njësia e biznesit",
+  "softCode": "Kodi i softuerit",
+  "operatorCode": "Kodi i operatorit",
+  "environment": "Mjedisi",
+  "hasCertificate": "Certifikata",
+  "isActive": "Aktive",
+  "autoFiscalizePos": "Fiskalizim auto POS",
+  "autoEinvoice": "E-faturë auto"
+}

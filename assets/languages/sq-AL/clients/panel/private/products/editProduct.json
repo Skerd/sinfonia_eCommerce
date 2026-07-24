@@ -14,7 +14,6 @@
     "descriptionLabel": "Përshkrimi",
     "tagsLabel": "Etiketa",
     "removeTag": "Hiq etiketën",
-
     "identifiersSectionTitle": "Identifikuesit",
     "skuLabel": "SKU",
     "barcodeLabel": "Barkodi",
@@ -25,7 +24,6 @@
     "mpnLabel": "MPN",
     "hsCodeLabel": "Kodi HS",
     "countryOfOriginLabel": "Vendi i origjinës",
-
     "pricingSectionTitle": "Çmimet",
     "priceLabel": "Çmimi",
     "compareAtPriceLabel": "Çmimi krahasues",
@@ -39,7 +37,6 @@
     "minOrderQtyLabel": "Sasia min. e porosisë",
     "maxOrderQtyLabel": "Sasia maks. e porosisë",
     "stepQtyLabel": "Hapi i sasisë",
-
     "inventorySectionTitle": "Inventari",
     "trackInventoryLabel": "Gjurmo inventarin",
     "allowBackorderLabel": "Lejo porosi mbrapa",
@@ -48,7 +45,6 @@
     "backorderLimitLabel": "Limiti i porosive mbrapa",
     "preorderEnabledLabel": "Aktivizo parashitjen",
     "preorderAvailableAtLabel": "Parashitja e disponueshme më",
-
     "shippingSectionTitle": "Transporti",
     "weightLabel": "Pesha",
     "weightUnitLabel": "Njësia e peshës",
@@ -60,7 +56,6 @@
     "shippingClassLabel": "Klasa e transportit",
     "isHazmatLabel": "Material i rrezikshëm",
     "requiresShippingLabel": "Kërkon transport",
-
     "organizationSectionTitle": "Organizimi",
     "categoriesLabel": "Kategoritë",
     "selectCategory": "Zgjidh kategorinë",
@@ -68,13 +63,11 @@
     "collectionsLabel": "Koleksionet",
     "selectCollection": "Zgjidh koleksionin",
     "removeCollection": "Hiq koleksionin",
-
     "variantsSectionTitle": "Variantet dhe opsionet",
     "hasVariantsLabel": "Ka variante",
     "variantOptionsLabel": "Opsionet e varianteve",
     "selectAttribute": "Zgjidh atributin",
     "removeAttribute": "Hiq atributin",
-
     "mainImageLabel": "Imazhi kryesor",
     "galleryLabel": "Galeria",
     "documentsLabel": "Dokumentet",
@@ -82,7 +75,6 @@
     "videoUrlsLabel": "URL-të e videove",
     "videoUrlPlaceholder": "https://…",
     "removeVideoUrl": "Hiq videon",
-
     "contentSectionTitle": "Përmbajtja",
     "highlightsLabel": "Pikat kryesore",
     "removeHighlight": "Hiq pikën",
@@ -94,7 +86,6 @@
     "faqRowTitle": "Pyetje",
     "faqQuestionLabel": "Pyetja",
     "faqAnswerLabel": "Përgjigja",
-
     "attributesSectionTitle": "Atributet",
     "attributeAddRow": "Shto atribut",
     "attributeRemoveRow": "Hiq atributin",
@@ -108,7 +99,6 @@
     "specificationRowTitle": "Specifikim",
     "specLabelLabel": "Etiketa",
     "specValueLabel": "Vlera",
-
     "merchandisingSectionTitle": "Promovimi",
     "relatedProductsLabel": "Produkte të ngjashme",
     "upsellsLabel": "Shitje shtesë",
@@ -118,7 +108,6 @@
     "removeProduct": "Hiq produktin",
     "badgesLabel": "Shenjat",
     "removeBadge": "Hiq shenjën",
-
     "seoSectionTitle": "SEO",
     "seoMetaTitleLabel": "Meta titulli",
     "seoCanonicalUrlLabel": "URL kanonike",
@@ -132,7 +121,6 @@
     "seoOpenGraphDescriptionLabel": "Përshkrimi Open Graph",
     "seoMetaKeywordsLabel": "Fjalët kyçe meta",
     "removeKeyword": "Hiq fjalën kyçe",
-
     "productType": {
       "physical": "Fizik",
       "digital": "Dixhital",
@@ -159,6 +147,14 @@
     "twitterCard": {
       "summary": "Përmbledhje",
       "summary_large_image": "Përmbledhje me imazh të madh"
-    }
+    },
+    "bundleComponentsSectionTitle": "Komponentët e paketës",
+    "bundleComponentAddRow": "Shto komponent",
+    "bundleComponentRemoveRow": "Hiq komponentin",
+    "bundleComponentRowTitle": "Komponenti",
+    "bundleComponentProductLabel": "Produkti",
+    "bundleComponentQuantityLabel": "Sasia",
+    "downloadLimitLabel": "Limiti i shkarkimeve (për blerje)",
+    "downloadExpiryDaysLabel": "Vlefshmëria e shkarkimit (ditë)"
   }
 }

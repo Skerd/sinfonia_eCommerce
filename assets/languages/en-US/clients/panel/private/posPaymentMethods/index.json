@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
+  "title": "POS Payment Methods",
+  "description": "Configure cash, card, and other till payment methods.",
+  "createPosPaymentMethod": "Create payment method",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "type": "Type",
+    "sequence": "Sequence",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

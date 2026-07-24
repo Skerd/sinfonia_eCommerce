@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/cardView/posOrderCard.tsx",
+  "name": "Emri",
+  "state": "Gjendja",
+  "customer": "Klienti",
+  "amountTotal": "Totali",
+  "payments": "Pagesat",
+  "orderState": {
+    "draft": "Draft",
+    "paid": "Paguar",
+    "cancel": "Anuluar",
+    "refunded": "Rimbursuar"
+  }
+}

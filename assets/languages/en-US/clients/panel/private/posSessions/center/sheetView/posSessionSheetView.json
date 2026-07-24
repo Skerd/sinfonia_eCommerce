@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
+  "overview": "Overview",
+  "name": "Name",
+  "state": "State",
+  "config": "POS config",
+  "openingBalance": "Opening balance",
+  "closingBalance": "Closing balance",
+  "expectedCash": "Expected cash",
+  "cashRegisterBalance": "Cash register",
+  "orderCount": "Orders",
+  "totalSales": "Total sales",
+  "totalCash": "Cash",
+  "totalCard": "Card",
+  "notes": "Notes",
+  "sessionState": {
+    "opening_control": "Opening",
+    "opened": "Opened",
+    "closing_control": "Closing",
+    "closed": "Closed"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx",
+  "cancel": "Cancel",
+  "ship": {
+    "title": "Ship order",
+    "description": "Creates a fulfillment with the tracking details and marks the order as shipped.",
+    "carrierLabel": "Carrier",
+    "trackingNumberLabel": "Tracking number",
+    "trackingUrlLabel": "Tracking URL",
+    "confirm": "Ship",
+    "axios": {
+      "success": "Order shipped",
+      "error": "Could not ship order"
+    }
+  }
+}

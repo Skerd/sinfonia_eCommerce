@@ -1,0 +1,271 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
+  "title": "Pika e Shitjes",
+  "backToConfigs": "Kthehu te konfigurimet",
+  "back": "Dil",
+  "cashIn": "Cash Hyrje",
+  "cashOut": "Cash Dalje",
+  "closeSession": "Mbyll Seancën",
+  "closeSessionDescription": "Numëroni arkën dhe mbyllni këtë seancë.",
+  "cash": "Cash",
+  "orders": "Porosi",
+  "sessionSales": "Shitjet e seancës",
+  "cart": "Porosia",
+  "items": "artikuj",
+  "searchPlaceholder": "Kërko produkte…",
+  "barcodePlaceholder": "Skano barkodin",
+  "catalogEmpty": "Nuk u gjetën produkte.",
+  "categories": {
+    "all": "Të gjitha"
+  },
+  "cartEmpty": "Prekni një produkt për të filluar porosinë.",
+  "customerName": "Klienti",
+  "walkIn": "Klient i rastit",
+  "orderDiscount": "Zbritje porosie",
+  "lineDiscount": "Zbritje artikulli",
+  "subtotal": "Nëntotali",
+  "discount": "Zbritje",
+  "total": "Totali",
+  "paymentMethods": "Pagesa",
+  "splitPayments": "pagesa",
+  "split": {
+    "title": "Ndaj faturën",
+    "description": "Ndajeni porosinë në pjesë të barabarta (alla romana) ose sipas artikujve, si në restorantet italiane.",
+    "equal": "E barabartë (alla romana)",
+    "equalHint": "Shumë e njëjtë për person. Vendosni cash/kartë për çdo pjesë.",
+    "items": "Sipas artikujve",
+    "itemsHint": "Zgjidhni çfarë paguan ky person, merrni pagesën, pastaj vazhdoni me të mbeturat.",
+    "guests": "Persona",
+    "perPerson": "Për person",
+    "apply": "Apliko ndarjen e barabartë",
+    "startItems": "Zgjidh artikujt",
+    "shareTotal": "Kjo pjesë",
+    "payShare": "Paguaj pjesën",
+    "cancel": "Anulo ndarjen",
+    "guest": "Personi",
+    "selectItems": "Caktoni artikujt për këtë person",
+    "shareNote": "Pjesë e ndarjes së faturës"
+  },
+  "numpad": {
+    "clear": "C",
+    "quantity": "Sasia",
+    "amount": "Shuma"
+  },
+  "noPaymentMethods": "Nuk ka metoda pagese në këtë konfigurim.",
+  "remaining": "Mbetur",
+  "change": "Kusuri",
+  "exact": "Saktë",
+  "newOrder": "Pastro",
+  "hold": "Mbaj",
+  "pay": "Paguaj",
+  "payConfirm": "Konfirmo pagesën",
+  "payConfirmHint": "Prek përsëri për të konfirmuar — anulohet pas {n}s",
+  "remove": "Hiq",
+  "amount": "Shuma",
+  "held": {
+    "title": "Porosi të mbajtura",
+    "description": "Karroca të parkuara për këtë seancë. Rifilloni për të vazhduar shitjen.",
+    "empty": "Nuk ka porosi të mbajtura.",
+    "resume": "Rifillo"
+  },
+  "customerSearch": {
+    "placeholder": "Kërko klient ose emër walk-in…",
+    "clear": "Pastro",
+    "searching": "Duke kërkuar…",
+    "empty": "Nuk u gjetën klientë"
+  },
+  "variantDialog": {
+    "title": "Zgjidh variantin",
+    "description": "Zgjidhni një variant për ta shtuar në karrocë.",
+    "empty": "Nuk ka variante.",
+    "stock": "Stok"
+  },
+  "refundDialog": {
+    "title": "Rimbursim",
+    "description": "Zgjidhni sasitë për rimbursim",
+    "empty": "Nuk ka rreshta në këtë porosi.",
+    "pinLabel": "PIN i menaxherit",
+    "pinRequired": "PIN i menaxherit është i detyrueshëm",
+    "total": "Totali i rimbursimit",
+    "submit": "Rimburso",
+    "selectAll": "Rimburso të mbeturat",
+    "success": "Porosia u rimbursua",
+    "failed": "Rimbursimi dështoi",
+    "remaining": "Mbeten",
+    "alreadyRefunded": "Rimbursuar",
+    "fullyRefunded": "Plotësisht i rimbursuar",
+    "nothingLeft": "Nuk ka më asgjë për të rimbursuar në këtë porosi."
+  },
+  "pinDialog": {
+    "pinLabel": "PIN i menaxherit"
+  },
+  "sessionOrders": {
+    "title": "Porositë e seancës",
+    "description": "Porosi të paguara dhe të rimbursuara në këtë seancë.",
+    "empty": "Ende pa porosi.",
+    "reprint": "Riprinto",
+    "refund": "Rimburso"
+  },
+  "refund": {
+    "title": "Rimbursim",
+    "description": "Rimburso plotësisht ose sipas sasive të rreshtave.",
+    "full": "Rimbursim i plotë",
+    "lines": "Sipas rreshtave",
+    "selectedTotal": "Totali i rimbursimit",
+    "confirm": "Rimburso"
+  },
+  "variants": {
+    "title": "Zgjidh variantin",
+    "description": "zgjidhni një variant",
+    "badge": "variante"
+  },
+  "stock": {
+    "qty": "Stok",
+    "out": "Pa stok"
+  },
+  "pin": {
+    "title": "PIN i menaxherit",
+    "description": "Vendosni PIN-in e menaxherit për të vazhduar.",
+    "label": "PIN",
+    "discount": "PIN i menaxherit kërkohet për zbritje",
+    "cashOut": "PIN i menaxherit kërkohet për cash out",
+    "refund": "PIN i menaxherit kërkohet për rimbursime"
+  },
+  "recon": {
+    "opening": "Bilanci fillestar",
+    "card": "Kartë",
+    "difference": "Diferenca e cash",
+    "differenceReason": "Arsyeja e diferencës",
+    "differenceReasonPlaceholder": "E detyrueshme kur cash i numëruar ≠ i pritur",
+    "heldWarning": "{count} porosi të mbajtura duhet rifilluar ose hequr para mbylljes."
+  },
+  "shortcuts": {
+    "hint": "F1 ndihmë · F2 paguaj · F4 mbaj · F3 të mbajtura · F6 porosi · Esc pastro"
+  },
+  "info": {
+    "title": "Ndihma e arkës",
+    "description": "Shkurtoret e tastierës dhe si funksionojnë mjetet kryesore.",
+    "shortcutsTitle": "Shkurtoret e tastierës",
+    "featuresTitle": "Funksionet",
+    "keys": {
+      "f1": "Hap këtë ndihmë",
+      "f2": "Paguaj porosinë aktuale (shtyp dy herë për konfirmim)",
+      "f3": "Hap porositë e mbajtura",
+      "f4": "Mbaj / parko karrocën aktuale",
+      "f6": "Porositë e seancës & riprintimi",
+      "f8": "Fokus te fusha e barkodit",
+      "f9": "Shfaq/fshih panelin e pagesës",
+      "esc": "Pastro karrocën (kur nuk ka dialog të hapur)",
+      "qty": "Rrit / ul sasinë e rreshtit të zgjedhur",
+      "delete": "Hiq rreshtin e zgjedhur"
+    },
+    "features": {
+      "holdTitle": "Porosi të mbajtura",
+      "holdBody": "Parkoni një porosi të papërfunduar me Mbaj (F4). Rifilloni ose hiqeni më vonë nga Porositë e mbajtura (F3). Pagesa e një porosie të rifilluar ruan të njëjtin numër.",
+      "ordersTitle": "Porositë e seancës",
+      "ordersBody": "Hapni Porositë (F6) për të parë faturat e paguara/rimbursuara të kësaj seance dhe për të riprintuar.",
+      "reconTitle": "Mbyllja me rakordim",
+      "reconBody": "Mbyllja tregon cash-in e pritur, shitjet sipas metodës dhe diferencën me cash-in e numëruar. Arsyeja kërkohet kur nuk përputhen. Porositë e mbajtura duhet pastruar më parë.",
+      "payTitle": "Pagesa të sigurta",
+      "payBody": "Pagesa duhet shtypur dy herë (ose F2 dy herë) për të shmangur klikimet e gabuara. Çdo pagesë dërgon edhe një çelës idempotence që riprovimi të mos tarifojë dy herë. Mbështeten pagesat e ndara dhe terminali bankar.",
+      "splitTitle": "Ndarja e faturës",
+      "splitBody": "Përdorni ikonën e gërshërëve për ndarje të barabartë (alla romana) ose sipas artikujve. Paguani pjesën e një personi, pastaj vazhdoni me të mbeturat.",
+      "customerTitle": "Klient CRM",
+      "customerBody": "Kërkoni përdoruesit e kompanisë nga fusha e klientit. Emrat walk-in funksionojnë edhe pa llogari.",
+      "refundTitle": "Rimbursimet",
+      "refundBody": "Nga Porositë e seancës, rimbursoni një faturë të paguar plotësisht ose sipas sasive. Stoku restokohet për rreshtat e kthyera kur inventari ndiqet.",
+      "stockTitle": "Stoku & variantet",
+      "stockBody": "Pllakat tregojnë sasinë në dorë. Oversell mund të lejohet për konfigurim. Produktet me shumë variante hapin zgjedhës; barkodet mund të gjejnë një variant specifik.",
+      "pinTitle": "PIN i menaxherit",
+      "pinBody": "Konfigurimet mund të kërkojnë PIN menaxheri për zbritje, cash-out dhe rimbursime. Vendoseni PIN-in te konfigurimi POS."
+    }
+  },
+  "terminal": {
+    "ready": "Terminal bankar POS",
+    "connected": "I lidhur",
+    "localHttpHint": "Pagesa dërgon shumën te ura lokale e terminalit bankar.",
+    "manualHint": "Konfirmoni pagesën në terminalin bankar, pastaj përfundoni Pagesën.",
+    "notConfigured": "Metoda e kartës nuk ka terminal — pagesa vetëm regjistron shitjen.",
+    "charge": "Ngarko terminalin",
+    "charging": "Duke pritur terminalin…"
+  },
+  "reason": "Arsyeja",
+  "notes": "Shënime",
+  "cancel": "Anulo",
+  "confirm": "Konfirmo",
+  "busy": "Duke punuar…",
+  "expectedCash": "Cash i pritur",
+  "cashRegister": "Arka",
+  "closingBalance": "Bilanci përfundimtar",
+  "picker": {
+    "title": "Zgjidhni arkën",
+    "description": "Zgjidhni cilën dyqan / arke të hapni.",
+    "empty": "Nuk ka konfigurime POS aktive. Krijoni një në Konfigurimet POS.",
+    "open": "Hap arkën"
+  },
+  "openSession": {
+    "title": "Hap Seancën",
+    "description": "Hapni një seancë të re arke për të filluar shitjen.",
+    "for": "Hap seancën për",
+    "openingBalance": "Bilanci fillestar",
+    "notes": "Shënime",
+    "submit": "Hap Seancën"
+  },
+  "receipt": {
+    "title": "Pagesa u krye",
+    "print": "Printo faturën",
+    "order": "Porosia",
+    "ref": "Ref",
+    "date": "Data",
+    "defaultFooter": "Faleminderit për blerjen!",
+    "fiscalQr": "Kodi QR fiskal",
+    "nslf": "NSLF",
+    "nivf": "NIVF",
+    "fiscalDemo": "Verifikim fiskal (demo)"
+  },
+  "sessionState": {
+    "opening_control": "Hapje",
+    "opened": "Hapur",
+    "closing_control": "Mbyllje",
+    "closed": "Mbyllur"
+  },
+  "toast": {
+    "sessionOpened": "Seanca u hap",
+    "sessionClosed": "Seanca u mbyll",
+    "cashIn": "Cash u shtua",
+    "cashOut": "Cash u hoq",
+    "productAdded": "Produkti u shtua",
+    "paid": "Porosia u pagua",
+    "splitApplied": "Fatura u nda në pjesë të barabarta",
+    "sharePaid": "Pjesa u pagua — vazhdoni me artikujt e mbetur",
+    "held": "Porosia u mbajt",
+    "resumed": "Porosia e mbajtur u rifillua",
+    "heldDiscarded": "Porosia e mbajtur u hoq",
+    "refunded": "Porosia u rimbursua"
+  },
+  "errors": {
+    "catalogFailed": "Katalogu nuk u ngarkua",
+    "sessionFailed": "Seanca nuk u ngarkua",
+    "configsFailed": "Konfigurimet POS nuk u ngarkuan",
+    "openSessionFailed": "Seanca nuk u hap",
+    "cashMoveFailed": "Lëvizja e cash dështoi",
+    "closeSessionFailed": "Seanca nuk u mbyll",
+    "barcodeNotFound": "Barkodi nuk u gjet",
+    "invalidAmount": "Vendosni një shumë të vlefshme",
+    "payFailed": "Pagesa dështoi",
+    "terminalFailed": "Pagesa në terminal dështoi",
+    "splitFailed": "Ndarja e faturës dështoi",
+    "holdFailed": "Porosia nuk u mbajt",
+    "heldLoadFailed": "Porositë e mbajtura nuk u ngarkuan",
+    "heldDeleteFailed": "Porosia e mbajtur nuk u hoq",
+    "ordersLoadFailed": "Porositë e seancës nuk u ngarkuan",
+    "reprintFailed": "Fatura nuk u riprintua",
+    "differenceReasonRequired": "Shpjegoni diferencën e cash para mbylljes",
+    "heldOrdersBlockClose": "Rifilloni ose hiqni porositë e mbajtura para mbylljes",
+    "customerSearchFailed": "Kërkimi i klientëve dështoi",
+    "insufficientStock": "Nuk ka stok të mjaftueshëm për këtë sasi",
+    "outOfStock": "Produkti është pa stok",
+    "pinInvalid": "PIN i menaxherit është i pavlefshëm",
+    "refundFailed": "Rimbursimi dështoi"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/editCustomerAddress.tsx",
+  "title": "Adresat e klientëve",
+  "form": {
+    "firstNameLabel": "Emri",
+    "lastNameLabel": "Mbiemri",
+    "streetLabel": "Rruga",
+    "cityLabel": "Qyteti",
+    "stateLabel": "Rajoni",
+    "postalCodeLabel": "Kodi postar",
+    "phoneLabel": "Telefoni",
+    "countryLabel": "Shteti",
+    "countryPlaceholder": "Zgjidh shtetin",
+    "labelLabel": "Etiketa",
+    "isDefaultLabel": "Adresa e parazgjedhur"
+  }
+}

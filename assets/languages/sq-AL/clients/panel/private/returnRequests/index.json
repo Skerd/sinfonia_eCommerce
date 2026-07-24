@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
+  "title": "Kërkesat për kthim",
+  "description": "Menaxhoni kthimet, këmbimet dhe rimbursimet.",
+  "createReturnRequest": "Krijo kërkesë kthimi",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "type": "Lloji",
+    "status": "Statusi",
+    "refundAmount": "Shuma e rimbursimit"
+  }
+}

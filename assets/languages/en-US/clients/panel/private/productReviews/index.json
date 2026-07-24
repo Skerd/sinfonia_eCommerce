@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
+  "title": "Product reviews",
+  "description": "Moderate buyer reviews (created via the storefront after a paid order).",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "rating": "Rating",
+    "title": "Title",
+    "comment": "Comment"
+  }
+}

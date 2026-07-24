@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
+  "title": "Konfigurime fiskale",
+  "description": "Cilësimet e fiskalizimit CIS dhe e-faturës (NIPT, TCR, certifikata).",
+  "createFiscalConfig": "Krijo konfigurim fiskal",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "nipt": "NIPT",
+    "tcrCode": "Kodi TCR",
+    "environment": "Mjedisi",
+    "isActive": "Aktive",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

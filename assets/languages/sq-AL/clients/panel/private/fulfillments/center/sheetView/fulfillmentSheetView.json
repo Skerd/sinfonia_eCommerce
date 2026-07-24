@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx",
+  "overview": "Përmbledhje",
+  "fulfillmentSubtitle": "Detajet e përmbushjes",
+  "status": "Statusi",
+  "carrier": "Transportuesi",
+  "trackingNumber": "Numri i gjurmimit",
+  "trackingUrl": "URL e gjurmimit",
+  "shippedAt": "Dërguar më",
+  "estimatedDeliveryAt": "Dorëzimi i pritur",
+  "deliveredAt": "Dorëzuar më",
+  "notes": "Shënime",
+  "fulfillmentStatus": {
+    "pending": "Në pritje",
+    "shipped": "Dërguar",
+    "delivered": "Dorëzuar",
+    "failed": "Dështoi"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
+  "name": "Emri",
+  "state": "Gjendja",
+  "orderCount": "Porosi",
+  "totalSales": "Shitjet totale",
+  "sessionState": {
+    "opening_control": "Hapje",
+    "opened": "Hapur",
+    "closing_control": "Mbyllje",
+    "closed": "Mbyllur"
+  }
+}

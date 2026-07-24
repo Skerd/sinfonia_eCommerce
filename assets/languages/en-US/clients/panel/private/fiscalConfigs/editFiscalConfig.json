@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx",
+  "title": "Edit fiscal config",
+  "formHeader": {
+    "title": "Edit fiscal config",
+    "description": "Update Albanian CIS fiscalization and e-invoice settings."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  },
+  "form": {
+    "nameLabel": "Name",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Software code (SoftCode)",
+    "maintainerCodeLabel": "Maintainer code",
+    "businessUnitCodeLabel": "Business unit code",
+    "operatorCodeLabel": "Operator code",
+    "tcrCodeLabel": "TCR code (from CIS)",
+    "tcrIntIdLabel": "TCR internal ID",
+    "tcrTypeLabel": "TCR type",
+    "tcrType": {
+      "REGULAR": "Regular",
+      "VENDING": "Vending"
+    },
+    "environmentLabel": "Environment",
+    "environment": {
+      "test": "Test",
+      "production": "Production"
+    },
+    "fiscalizationUrlLabel": "Fiscalization SOAP URL",
+    "einvoiceUrlLabel": "E-invoice SOAP URL",
+    "selfcareUrlLabel": "Selfcare / verify URL",
+    "proxyUrlLabel": "HTTPS proxy (optional)",
+    "sellerNameLabel": "Seller name",
+    "sellerAddressLabel": "Seller address",
+    "sellerTownLabel": "Seller town",
+    "sellerCountryLabel": "Seller country code (ALB)",
+    "certificateBase64Label": "PKCS#12 certificate (base64) — leave empty to keep",
+    "certificatePasswordLabel": "Certificate password",
+    "isVatRegisteredLabel": "VAT registered",
+    "autoFiscalizePosLabel": "Auto-fiscalize POS payments",
+    "autoEinvoiceLabel": "Auto-create e-invoice after fiscalization",
+    "clearCertificateLabel": "Clear stored certificate",
+    "isActiveLabel": "Active"
+  }
+}

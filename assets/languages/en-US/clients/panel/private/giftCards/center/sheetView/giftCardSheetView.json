@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/sheetView/giftCardSheetView.tsx",
+  "overview": "Overview",
+  "giftCardSubtitle": "Gift card details",
+  "code": "Code",
+  "status": "Status",
+  "balance": "Balance",
+  "initialBalance": "Initial balance",
+  "expiresAt": "Expires at",
+  "createdAt": "Created at",
+  "giftCardStatus": {
+    "active": "Active",
+    "depleted": "Depleted",
+    "disabled": "Disabled"
+  }
+}

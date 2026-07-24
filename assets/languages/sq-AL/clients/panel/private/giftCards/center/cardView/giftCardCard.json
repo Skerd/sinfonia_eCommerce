@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/cardView/giftCardCard.tsx",
+  "status": "Statusi",
+  "balance": "Balanca",
+  "purchasedBy": "Blerë nga",
+  "giftCardStatus": {
+    "active": "Aktive",
+    "depleted": "E shpenzuar",
+    "disabled": "E çaktivizuar"
+  }
+}

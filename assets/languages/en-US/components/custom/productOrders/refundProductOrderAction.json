@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx",
+  "cancel": "Cancel",
+  "refund": {
+    "title": "Refund order",
+    "description": "Refunds the captured payment through the payment gateway.",
+    "amountLabel": "Amount",
+    "amountHint": "Leave empty for a full refund.",
+    "reasonLabel": "Reason",
+    "confirm": "Refund",
+    "axios": {
+      "success": "Order refunded",
+      "error": "Could not refund order"
+    }
+  }
+}

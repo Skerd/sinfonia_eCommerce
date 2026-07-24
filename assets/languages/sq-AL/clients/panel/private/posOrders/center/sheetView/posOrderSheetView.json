@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "state": "Gjendja",
+  "session": "Seanca",
+  "config": "Konfigurimi POS",
+  "customerName": "Klienti",
+  "amountTotal": "Totali",
+  "amountPaid": "Paguar",
+  "amountReturn": "Kusuri",
+  "discountTotal": "Zbritje",
+  "note": "Shënim",
+  "orderState": {
+    "draft": "Draft",
+    "paid": "Paguar",
+    "cancel": "Anuluar",
+    "refunded": "Rimbursuar"
+  }
+}

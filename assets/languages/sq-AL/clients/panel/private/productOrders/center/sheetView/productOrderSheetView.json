@@ -22,5 +22,20 @@
     "shipped": "Dërguar"
   },
   "productOrderSubtitle": "Detajet e porosisë",
-  "status": "Statusi"
+  "status": "Statusi",
+  "totals": "Totalet",
+  "fulfillmentStatus": "Përmbushja",
+  "email": "Email",
+  "phone": "Telefoni",
+  "subtotal": "Nëntotali",
+  "discountTotal": "Zbritja",
+  "shippingTotal": "Transporti",
+  "taxTotal": "Taksa",
+  "createdAt": "Krijuar më",
+  "productOrderFulfillmentStatus": {
+    "unfulfilled": "E papërmbushur",
+    "partially_fulfilled": "Pjesërisht e përmbushur",
+    "fulfilled": "E përmbushur",
+    "returned": "E kthyer"
+  }
 }

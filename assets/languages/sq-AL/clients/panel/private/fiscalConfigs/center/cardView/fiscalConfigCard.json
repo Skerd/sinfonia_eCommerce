@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx",
+  "name": "Emri",
+  "nipt": "NIPT",
+  "tcrCode": "TCR",
+  "certificate": "Certifikata",
+  "certificateYes": "E ngarkuar",
+  "certificateNo": "Mungon"
+}

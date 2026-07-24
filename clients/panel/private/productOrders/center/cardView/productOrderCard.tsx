@@ -15,6 +15,14 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ConfirmOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx";
+import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markProcessingDropdown.tsx";
+import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
+import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
+import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
+import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
+import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
 function statusColor(status: string): string {
     switch (status) {
@@ -43,6 +51,7 @@ type ProductOrderCardProps = WithLanguageType & {
     order: ProductOrder;
     onDelete?: (deleted?: ProductOrder, response?: DeletedData) => void;
     onRestore?: () => void;
+    onOrderUpdated?: (order: ProductOrder) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
 };
@@ -52,6 +61,7 @@ function ProductOrderCard({
     resolveLanguageKey,
     onDelete: onDeleteProp,
     onRestore: onRestoreProp,
+    onOrderUpdated,
     hideActions = false,
     sheetOnly = false,
 }: ProductOrderCardProps) {
@@ -95,6 +105,14 @@ function ProductOrderCard({
 
     const colors = statusColor(order.status);
 
+    const applyOrderUpdate = (patch: Partial<ProductOrder>) => {
+        setOrder((prev) => {
+            const updated = {...prev, ...patch};
+            onOrderUpdated?.(updated);
+            return updated;
+        });
+    };
+
     return (
         <>
             {!sheetOnly && (
@@ -133,7 +151,14 @@ function ProductOrderCard({
                                             onAction={(a: string) => setAction(a)}
                                             editPath=""
                                             hideEdit
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ConfirmOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
+                                            <MarkProcessingDropdown order={order} onAction={(a: string) => setAction(a)} />
+                                            <ShipOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
+                                            <CancelOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
+                                            <RefundOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -204,6 +229,50 @@ function ProductOrderCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/productOrder/restore"
+                        />
+                    )}
+                    {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
+                        <ProductOrderActionConfirmAction
+                            orderId={order._id}
+                            displayName={order.orderNumber}
+                            actionKey={action as ProductOrderConfirmActionKey}
+                            openAlert
+                            url={`/api/eCommerce/productOrder/${action}`}
+                            onSuccess={(newStatus) => {
+                                applyOrderUpdate({status: newStatus});
+                                setAction("");
+                            }}
+                            onCancel={() => setAction("")}
+                        />
+                    )}
+                    {action === "ship" && (
+                        <ShipProductOrderAction
+                            orderId={order._id}
+                            displayName={order.orderNumber}
+                            openAlert
+                            url="/api/eCommerce/productOrder/ship"
+                            onSuccess={() => {
+                                applyOrderUpdate({status: "shipped", fulfillmentStatus: "fulfilled"});
+                                setAction("");
+                            }}
+                            onCancel={() => setAction("")}
+                        />
+                    )}
+                    {action === "refund" && (
+                        <RefundProductOrderAction
+                            orderId={order._id}
+                            displayName={order.orderNumber}
+                            openAlert
+                            url="/api/eCommerce/productOrder/refund"
+                            onSuccess={(fullRefund) => {
+                                applyOrderUpdate(
+                                    fullRefund
+                                        ? {paymentStatus: "refunded", status: "refunded"}
+                                        : {paymentStatus: "partially_refunded"},
+                                );
+                                setAction("");
+                            }}
+                            onCancel={() => setAction("")}
                         />
                     )}
                 </>

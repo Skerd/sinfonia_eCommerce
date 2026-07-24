@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
+  "title": "Create fulfillment",
+  "form": {
+    "orderLabel": "Order",
+    "orderPlaceholder": "Select order",
+    "statusLabel": "Status",
+    "carrierLabel": "Carrier",
+    "trackingNumberLabel": "Tracking number",
+    "trackingUrlLabel": "Tracking URL",
+    "shippedAtLabel": "Shipped at",
+    "estimatedDeliveryAtLabel": "Estimated delivery",
+    "deliveredAtLabel": "Delivered at",
+    "notesLabel": "Notes",
+    "itemsSectionTitle": "Items",
+    "itemAddRow": "Add item",
+    "itemRemoveRow": "Remove item",
+    "itemRowTitle": "Item",
+    "orderItemIdLabel": "Order item id",
+    "quantityLabel": "Quantity",
+    "fulfillmentStatus": {
+      "pending": "Pending",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "failed": "Failed"
+    }
+  }
+}

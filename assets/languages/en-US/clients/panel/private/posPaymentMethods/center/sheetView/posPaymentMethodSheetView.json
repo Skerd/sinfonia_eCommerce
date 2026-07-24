@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx",
+  "overview": "Overview",
+  "name": "Name",
+  "type": "Type",
+  "sequence": "Sequence",
+  "isActive": "Active",
+  "cashQuickAmounts": "Cash quick amounts",
+  "terminalEnabled": "Bank POS terminal",
+  "terminalProviderLabel": "Terminal provider",
+  "terminalHost": "Terminal host",
+  "terminalPort": "Terminal port",
+  "terminalId": "Terminal ID",
+  "terminalPath": "Terminal path",
+  "paymentType": {
+    "cash": "Cash",
+    "card": "Card",
+    "bank": "Bank",
+    "customer_account": "Customer account",
+    "other": "Other"
+  },
+  "terminalProvider": {
+    "manual": "Manual",
+    "local_http": "Local HTTP"
+  }
+}

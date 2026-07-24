@@ -5,6 +5,14 @@ import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductOrderCard from "./center/cardView/productOrderCard.tsx";
+import ConfirmOrderDropdown from "./center/actions/confirmOrderDropdown.tsx";
+import MarkProcessingDropdown from "./center/actions/markProcessingDropdown.tsx";
+import ShipOrderDropdown from "./center/actions/shipOrderDropdown.tsx";
+import CancelOrderDropdown from "./center/actions/cancelOrderDropdown.tsx";
+import RefundOrderDropdown from "./center/actions/refundOrderDropdown.tsx";
+import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
+import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
 function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
     return (
@@ -14,15 +22,82 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
             accessModel="productOrders"
             tableConfigKey="productOrders"
             buildEditPath={() => ""}
-            rowActionMenu={{hideEdit: true}}
+            rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-            renderCard={(order, onDelete, onRestore) => (
+            renderActionMenuChildren={(order, bindRowAction) => (
+                <>
+                    <ConfirmOrderDropdown order={order} onAction={bindRowAction} />
+                    <MarkProcessingDropdown order={order} onAction={bindRowAction} />
+                    <ShipOrderDropdown order={order} onAction={bindRowAction} />
+                    <CancelOrderDropdown order={order} onAction={bindRowAction} />
+                    <RefundOrderDropdown order={order} onAction={bindRowAction} />
+                </>
+            )}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                if (action === "confirm" || action === "markProcessing" || action === "cancel") {
+                    return (
+                        <ProductOrderActionConfirmAction
+                            orderId={entity._id}
+                            displayName={entity.orderNumber}
+                            actionKey={action as ProductOrderConfirmActionKey}
+                            openAlert
+                            url={`/api/eCommerce/productOrder/${action}`}
+                            onSuccess={(newStatus) => {
+                                listRef.current?.updateRow?.(entity._id, {status: newStatus} as Partial<ProductOrder>);
+                                resetAction();
+                            }}
+                            onCancel={resetAction}
+                        />
+                    );
+                }
+                if (action === "ship") {
+                    return (
+                        <ShipProductOrderAction
+                            orderId={entity._id}
+                            displayName={entity.orderNumber}
+                            openAlert
+                            url="/api/eCommerce/productOrder/ship"
+                            onSuccess={() => {
+                                listRef.current?.updateRow?.(entity._id, {
+                                    status: "shipped",
+                                    fulfillmentStatus: "fulfilled",
+                                } as Partial<ProductOrder>);
+                                resetAction();
+                            }}
+                            onCancel={resetAction}
+                        />
+                    );
+                }
+                if (action === "refund") {
+                    return (
+                        <RefundProductOrderAction
+                            orderId={entity._id}
+                            displayName={entity.orderNumber}
+                            openAlert
+                            url="/api/eCommerce/productOrder/refund"
+                            onSuccess={(fullRefund) => {
+                                listRef.current?.updateRow?.(
+                                    entity._id,
+                                    (fullRefund
+                                        ? {paymentStatus: "refunded", status: "refunded"}
+                                        : {paymentStatus: "partially_refunded"}) as Partial<ProductOrder>,
+                                );
+                                resetAction();
+                            }}
+                            onCancel={resetAction}
+                        />
+                    );
+                }
+                return null;
+            }}
+            renderCard={(order, onDelete, onRestore, listRef) => (
                 <ProductOrderCard
                     order={order}
                     onDelete={(row: ProductOrder | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(order)}
+                    onOrderUpdated={(updated) => listRef.current?.updateRow?.(order._id, updated as Partial<ProductOrder>)}
                 />
             )}
         />

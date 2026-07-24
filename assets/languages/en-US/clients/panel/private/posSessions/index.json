@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
+  "title": "POS Sessions",
+  "description": "Till sessions opened and closed from the Point of Sale.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "state": "State",
+    "orderCount": "Orders",
+    "totalSales": "Total sales",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

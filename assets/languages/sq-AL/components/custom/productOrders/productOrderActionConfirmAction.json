@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
+  "cancel": "Anulo",
+  "confirm": {
+    "title": "Konfirmo porosinë",
+    "description": "Prano këtë porosi dhe shënoje si të konfirmuar.",
+    "confirm": "Konfirmo",
+    "axios": {
+      "success": "Porosia u konfirmua",
+      "error": "Porosia nuk u konfirmua dot"
+    }
+  },
+  "markProcessing": {
+    "title": "Shëno si në përpunim",
+    "description": "Shëno porosinë si në përgatitje për dërgesë.",
+    "confirm": "Në përpunim",
+    "axios": {
+      "success": "Porosia u shënua në përpunim",
+      "error": "Porosia nuk u përditësua dot"
+    }
+  },
+  "cancelOrder": {
+    "title": "Anulo porosinë",
+    "description": "Anulon këtë porosi dhe liron stokun e rezervuar. Porositë e paguara duhen rimbursuar më parë.",
+    "confirm": "Anulo porosinë",
+    "axios": {
+      "success": "Porosia u anulua",
+      "error": "Porosia nuk u anulua dot"
+    }
+  }
+}

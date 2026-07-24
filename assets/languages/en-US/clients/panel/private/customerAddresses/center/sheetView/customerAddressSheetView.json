@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx",
+  "overview": "Overview",
+  "customerAddressSubtitle": "Address details",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "street": "Street",
+  "city": "City",
+  "state": "State",
+  "postalCode": "Postal code",
+  "phone": "Phone",
+  "label": "Label",
+  "isDefault": "Default"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "state": "Gjendja",
+  "config": "Konfigurimi POS",
+  "openingBalance": "Bilanci fillestar",
+  "closingBalance": "Bilanci përfundimtar",
+  "expectedCash": "Cash i pritur",
+  "cashRegisterBalance": "Arka",
+  "orderCount": "Porosi",
+  "totalSales": "Shitjet totale",
+  "totalCash": "Cash",
+  "totalCard": "Kartë",
+  "notes": "Shënime",
+  "sessionState": {
+    "opening_control": "Hapje",
+    "opened": "Hapur",
+    "closing_control": "Mbyllje",
+    "closed": "Mbyllur"
+  }
+}

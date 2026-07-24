@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx",
+  "overview": "Përmbledhje",
+  "productVariantSubtitle": "Detajet e variantit",
+  "sku": "SKU",
+  "barcode": "Barkodi",
+  "price": "Çmimi",
+  "compareAtPrice": "Çmimi i krahasimit",
+  "status": "Statusi",
+  "position": "Pozicioni",
+  "weight": "Pesha",
+  "trackInventory": "Gjurmo inventarin",
+  "variantStatus": {
+    "active": "Aktiv",
+    "inactive": "Joaktiv"
+  }
+}

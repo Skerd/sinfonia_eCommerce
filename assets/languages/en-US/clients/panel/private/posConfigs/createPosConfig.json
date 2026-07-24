@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
+  "title": "Create POS config",
+  "form": {
+    "nameLabel": "Name",
+    "paymentMethodsLabel": "Payment methods",
+    "warehouseLabel": "Warehouse",
+    "currencyLabel": "Currency",
+    "receiptHeaderLabel": "Receipt header",
+    "receiptFooterLabel": "Receipt footer",
+    "ifaceBarcodeScannerLabel": "Barcode scanner",
+    "ifaceCashControlLabel": "Cash control",
+    "allowDiscountLabel": "Allow discount",
+    "allowQuantityChangeLabel": "Allow quantity change",
+    "allowOversellLabel": "Allow oversell",
+    "pinForDiscountLabel": "PIN for discount",
+    "pinForCashOutLabel": "PIN for cash out",
+    "pinForRefundLabel": "PIN for refund",
+    "managerPinLabel": "Manager PIN",
+    "clearManagerPinLabel": "Clear manager PIN",
+    "isActiveLabel": "Active",
+    "selectWarehouse": "Select warehouse",
+    "selectCurrency": "Select currency",
+    "selectPaymentMethod": "Select payment method"
+  }
+}

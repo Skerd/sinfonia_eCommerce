@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "type": "Lloji",
+  "sequence": "Renditja",
+  "isActive": "Aktive",
+  "cashQuickAmounts": "Shumat e shpejta (cash)",
+  "terminalEnabled": "Terminal bankar POS",
+  "terminalProviderLabel": "Furnizuesi i terminalit",
+  "terminalHost": "Host i terminalit",
+  "terminalPort": "Porta e terminalit",
+  "terminalId": "ID e terminalit",
+  "terminalPath": "Rruga e terminalit",
+  "paymentType": {
+    "cash": "Cash",
+    "card": "Kartë",
+    "bank": "Bankë",
+    "customer_account": "Llogari klienti",
+    "other": "Other"
+  },
+  "terminalProvider": {
+    "manual": "Manuale",
+    "local_http": "HTTP lokale"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx",
+  "overview": "Përmbledhje",
+  "returnRequestSubtitle": "Detajet e kërkesës",
+  "type": "Lloji",
+  "status": "Statusi",
+  "refundAmount": "Shuma e rimbursimit",
+  "customerNote": "Shënimi i klientit",
+  "adminNote": "Shënimi i administratorit",
+  "returnType": {
+    "return": "Kthim",
+    "exchange": "Këmbim",
+    "refund": "Rimbursim"
+  },
+  "returnStatus": {
+    "pending": "Në pritje",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "received": "Pranuar",
+    "completed": "Përfunduar"
+  }
+}

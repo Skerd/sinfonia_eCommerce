@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/cardView/fulfillmentCard.tsx",
+  "status": "Status",
+  "carrier": "Carrier",
+  "trackingNumber": "Tracking number",
+  "fulfillmentStatus": {
+    "pending": "Pending",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "failed": "Failed"
+  }
+}

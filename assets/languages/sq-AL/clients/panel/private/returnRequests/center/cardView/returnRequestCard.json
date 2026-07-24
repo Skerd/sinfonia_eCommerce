@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "type": "Lloji",
+  "status": "Statusi",
+  "refundAmount": "Shuma e rimbursimit",
+  "returnType": {
+    "return": "Kthim",
+    "exchange": "Këmbim",
+    "refund": "Rimbursim"
+  },
+  "returnStatus": {
+    "pending": "Në pritje",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "received": "Pranuar",
+    "completed": "Përfunduar"
+  }
+}

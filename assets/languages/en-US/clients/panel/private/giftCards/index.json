@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/index.tsx",
+  "title": "Gift cards",
+  "description": "System-issued store credit — inspect balances, disable compromised codes.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "code": "Code",
+    "status": "Status",
+    "balance": "Balance"
+  }
+}

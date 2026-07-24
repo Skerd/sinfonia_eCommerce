@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
+  "title": "Fiscal configs",
+  "description": "Albanian CIS fiscalization and e-invoice settings (NIPT, TCR, certificates).",
+  "createFiscalConfig": "Create fiscal config",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "nipt": "NIPT",
+    "tcrCode": "TCR code",
+    "environment": "Environment",
+    "isActive": "Active",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}

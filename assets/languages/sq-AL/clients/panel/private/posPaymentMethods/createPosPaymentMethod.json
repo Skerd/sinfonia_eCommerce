@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx",
+  "title": "Krijo metodë pagese",
+  "form": {
+    "nameLabel": "Emri",
+    "typeLabel": "Lloji",
+    "isActiveLabel": "Aktive",
+    "sequenceLabel": "Renditja",
+    "cashQuickAmountsLabel": "Shumat e shpejta (cash)",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalEnabledLabel": "Lidh terminalin bankar POS",
+    "terminalProviderLabel": "Furnizuesi i terminalit",
+    "terminalHostLabel": "Host / IP e terminalit",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Porta e terminalit",
+    "terminalIdLabel": "ID e terminalit",
+    "terminalIdPlaceholder": "TID / POIID",
+    "terminalPathLabel": "Rruga e terminalit",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Cash",
+      "card": "Kartë",
+      "bank": "Bankë",
+      "customer_account": "Llogari klienti",
+      "other": "Tjetër"
+    },
+    "terminalProvider": {
+      "manual": "Manuale (terminal i jashtëm)",
+      "local_http": "Ura lokale HTTP"
+    }
+  }
+}

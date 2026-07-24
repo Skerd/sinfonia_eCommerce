@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
+  "title": "Create address",
+  "form": {
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "streetLabel": "Street",
+    "cityLabel": "City",
+    "stateLabel": "State",
+    "postalCodeLabel": "Postal code",
+    "phoneLabel": "Phone",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select country",
+    "labelLabel": "Label",
+    "isDefaultLabel": "Default address"
+  }
+}

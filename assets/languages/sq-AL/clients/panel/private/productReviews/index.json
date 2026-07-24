@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
+  "title": "Vlerësimet e produkteve",
+  "description": "Modero vlerësimet e blerësve (krijohen nga dyqani pas porosisë së paguar).",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "rating": "Vlerësimi",
+    "title": "Titulli",
+    "comment": "Komenti"
+  }
+}

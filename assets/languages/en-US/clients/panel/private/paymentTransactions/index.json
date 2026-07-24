@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/paymentTransactions/index.tsx",
+  "title": "Payment transactions",
+  "description": "System-generated payment ledger (read-only).",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "gateway": "Gateway",
+    "status": "Status",
+    "amount": "Amount",
+    "type": "Type"
+  }
+}

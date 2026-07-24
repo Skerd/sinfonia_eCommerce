@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
+  "title": "Harta e sistemit eCommerce",
+  "description": "Hartë interaktive e modeleve të katalogut eCommerce, rrjedhës së pagesës dhe aftësive të modulit. Lëvizni, zmadhoni dhe klikoni nyjet për detaje.",
+  "tabs": {
+    "models": "Grafiku i modeleve",
+    "flows": "Si funksionon",
+    "capabilities": "Aftësitë"
+  }
+}

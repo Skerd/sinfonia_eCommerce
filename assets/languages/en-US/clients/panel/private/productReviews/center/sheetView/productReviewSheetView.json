@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx",
+  "overview": "Overview",
+  "productReviewSubtitle": "Review details",
+  "rating": "Rating",
+  "title": "Title",
+  "comment": "Comment",
+  "createdAt": "Created at"
+}

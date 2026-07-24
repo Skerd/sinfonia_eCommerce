@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/sheetView/giftCardSheetView.tsx",
+  "overview": "Përmbledhje",
+  "giftCardSubtitle": "Detajet e kartës dhuratë",
+  "code": "Kodi",
+  "status": "Statusi",
+  "balance": "Balanca",
+  "initialBalance": "Balanca fillestare",
+  "expiresAt": "Skadon më",
+  "createdAt": "Krijuar më",
+  "giftCardStatus": {
+    "active": "Aktive",
+    "depleted": "E shpenzuar",
+    "disabled": "E çaktivizuar"
+  }
+}

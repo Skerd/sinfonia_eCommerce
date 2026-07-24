@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx",
+  "title": "Create payment method",
+  "form": {
+    "nameLabel": "Name",
+    "typeLabel": "Type",
+    "isActiveLabel": "Active",
+    "sequenceLabel": "Sequence",
+    "cashQuickAmountsLabel": "Cash quick amounts",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalEnabledLabel": "Connect bank POS terminal",
+    "terminalProviderLabel": "Terminal provider",
+    "terminalHostLabel": "Terminal host / IP",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Terminal port",
+    "terminalIdLabel": "Terminal ID",
+    "terminalIdPlaceholder": "TID / POIID",
+    "terminalPathLabel": "Terminal path",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Cash",
+      "card": "Card",
+      "bank": "Bank",
+      "customer_account": "Customer account",
+      "other": "Other"
+    },
+    "terminalProvider": {
+      "manual": "Manual (external terminal)",
+      "local_http": "Local HTTP bridge"
+    }
+  }
+}

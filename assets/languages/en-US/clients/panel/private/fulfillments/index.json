@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
+  "title": "Fulfillments",
+  "description": "Track shipments and delivery of product orders.",
+  "createFulfillment": "Create fulfillment",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "status": "Status",
+    "carrier": "Carrier",
+    "trackingNumber": "Tracking number",
+    "shippedAt": "Shipped at",
+    "deliveredAt": "Delivered at"
+  }
+}

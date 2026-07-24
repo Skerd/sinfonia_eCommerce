@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
+  "title": "Seancat POS",
+  "description": "Seancat e arkës të hapura dhe mbyllura nga Pika e Shitjes.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "state": "Gjendja",
+    "orderCount": "Porosi",
+    "totalSales": "Shitjet totale",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "firstName": "First name",
+  "street": "Street",
+  "city": "City",
+  "phone": "Phone"
+}

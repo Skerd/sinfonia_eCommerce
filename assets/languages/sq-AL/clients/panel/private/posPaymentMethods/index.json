@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
+  "title": "Metodat e Pagesës POS",
+  "description": "Konfiguroni metodat e pagesës në arkë: cash, kartë dhe të tjera.",
+  "createPosPaymentMethod": "Krijo metodë pagese",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "type": "Lloji",
+    "sequence": "Renditja",
+    "isActive": "Aktive",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

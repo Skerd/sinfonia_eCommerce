@@ -7,6 +7,14 @@ import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/pri
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ConfirmOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx";
+import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markProcessingDropdown.tsx";
+import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
+import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
+import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
+import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
+import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
 export type ProductOrderSheetViewOwnProps = {
     open: boolean;
@@ -29,6 +37,7 @@ function ProductOrderSheetView({
     fetchId,
 }: ProductOrderSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(orderProp || {_id: fetchId});
+    const [action, setAction] = useState<string>("");
     const access = useAccess("productOrders");
     const viewConfig = useViewConfig("productOrders", "sheet");
 
@@ -42,23 +51,85 @@ function ProductOrderSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asOrder = sheetData as ProductOrder;
+
+    const applyOrderUpdate = (patch: Partial<ProductOrder>) => {
+        setSheetData((prev) => ({...prev, ...patch}));
+    };
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/productOrder/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/productOrder/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ConfirmOrderDropdown order={asOrder} onAction={setAction} />
+                        <MarkProcessingDropdown order={asOrder} onAction={setAction} />
+                        <ShipOrderDropdown order={asOrder} onAction={setAction} />
+                        <CancelOrderDropdown order={asOrder} onAction={setAction} />
+                        <RefundOrderDropdown order={asOrder} onAction={setAction} />
+                    </>
+                }
+            />
+            {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
+                <ProductOrderActionConfirmAction
+                    orderId={String(asOrder._id)}
+                    displayName={asOrder.orderNumber}
+                    actionKey={action as ProductOrderConfirmActionKey}
+                    openAlert
+                    url={`/api/eCommerce/productOrder/${action}`}
+                    onSuccess={(newStatus) => {
+                        applyOrderUpdate({status: newStatus});
+                        setAction("");
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+            {action === "ship" && (
+                <ShipProductOrderAction
+                    orderId={String(asOrder._id)}
+                    displayName={asOrder.orderNumber}
+                    openAlert
+                    url="/api/eCommerce/productOrder/ship"
+                    onSuccess={() => {
+                        applyOrderUpdate({status: "shipped", fulfillmentStatus: "fulfilled"});
+                        setAction("");
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+            {action === "refund" && (
+                <RefundProductOrderAction
+                    orderId={String(asOrder._id)}
+                    displayName={asOrder.orderNumber}
+                    openAlert
+                    url="/api/eCommerce/productOrder/refund"
+                    onSuccess={(fullRefund) => {
+                        applyOrderUpdate(
+                            fullRefund
+                                ? {paymentStatus: "refunded", status: "refunded"}
+                                : {paymentStatus: "partially_refunded"},
+                        );
+                        setAction("");
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+        </>
     );
 }
 

@@ -1,0 +1,271 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
+  "title": "Point of Sale",
+  "backToConfigs": "Back to configs",
+  "back": "Exit",
+  "cashIn": "Cash In",
+  "cashOut": "Cash Out",
+  "closeSession": "Close Session",
+  "closeSessionDescription": "Count the drawer and close this till session.",
+  "cash": "Cash",
+  "orders": "Orders",
+  "sessionSales": "Session sales",
+  "cart": "Order",
+  "items": "items",
+  "searchPlaceholder": "Search products…",
+  "barcodePlaceholder": "Scan barcode",
+  "catalogEmpty": "No products found.",
+  "categories": {
+    "all": "All"
+  },
+  "cartEmpty": "Tap a product to start the order.",
+  "customerName": "Customer",
+  "walkIn": "Walk-in Customer",
+  "orderDiscount": "Order discount",
+  "lineDiscount": "Line discount",
+  "subtotal": "Subtotal",
+  "discount": "Discount",
+  "total": "Total",
+  "paymentMethods": "Payment",
+  "splitPayments": "payments",
+  "split": {
+    "title": "Split bill",
+    "description": "Divide the order equally (alla romana) or by items, like in Italian restaurants.",
+    "equal": "Equal (alla romana)",
+    "equalHint": "Same amount per guest. Assign cash/card on each share.",
+    "items": "By items",
+    "itemsHint": "Choose what this guest pays, charge their share, then continue with the rest.",
+    "guests": "Guests",
+    "perPerson": "Per person",
+    "apply": "Apply equal split",
+    "startItems": "Select items",
+    "shareTotal": "This share",
+    "payShare": "Pay share",
+    "cancel": "Cancel split",
+    "guest": "Guest",
+    "selectItems": "Assign items to this guest",
+    "shareNote": "Bill split share"
+  },
+  "numpad": {
+    "clear": "C",
+    "quantity": "Quantity",
+    "amount": "Amount"
+  },
+  "noPaymentMethods": "No payment methods on this config.",
+  "remaining": "Remaining",
+  "change": "Change",
+  "exact": "Exact",
+  "newOrder": "Clear",
+  "hold": "Hold",
+  "pay": "Pay",
+  "payConfirm": "Confirm pay",
+  "payConfirmHint": "Tap again to confirm — cancels in {n}s",
+  "remove": "Remove",
+  "amount": "Amount",
+  "held": {
+    "title": "Held orders",
+    "description": "Parked carts for this session. Resume to continue selling.",
+    "empty": "No held orders.",
+    "resume": "Resume"
+  },
+  "customerSearch": {
+    "placeholder": "Search customer or walk-in name…",
+    "clear": "Clear",
+    "searching": "Searching…",
+    "empty": "No matching customers"
+  },
+  "variantDialog": {
+    "title": "Choose variant",
+    "description": "Select a variant to add to the cart.",
+    "empty": "No variants available.",
+    "stock": "Stock"
+  },
+  "refundDialog": {
+    "title": "Refund order",
+    "description": "Choose quantities to refund",
+    "empty": "No lines on this order.",
+    "pinLabel": "Manager PIN",
+    "pinRequired": "Manager PIN is required",
+    "total": "Refund total",
+    "submit": "Refund",
+    "selectAll": "Refund all remaining",
+    "success": "Order refunded",
+    "failed": "Refund failed",
+    "remaining": "Left",
+    "alreadyRefunded": "Refunded",
+    "fullyRefunded": "Fully refunded",
+    "nothingLeft": "Nothing left to refund on this order."
+  },
+  "pinDialog": {
+    "pinLabel": "Manager PIN"
+  },
+  "sessionOrders": {
+    "title": "Session orders",
+    "description": "Paid and refunded orders in this till session.",
+    "empty": "No orders yet.",
+    "reprint": "Reprint",
+    "refund": "Refund"
+  },
+  "refund": {
+    "title": "Refund order",
+    "description": "Refund in full or select line quantities.",
+    "full": "Full refund",
+    "lines": "By lines",
+    "selectedTotal": "Refund total",
+    "confirm": "Refund"
+  },
+  "variants": {
+    "title": "Choose variant",
+    "description": "select a variant",
+    "badge": "variants"
+  },
+  "stock": {
+    "qty": "Stock",
+    "out": "Out"
+  },
+  "pin": {
+    "title": "Manager PIN",
+    "description": "Enter the manager PIN to continue.",
+    "label": "PIN",
+    "discount": "Manager PIN required for discounts",
+    "cashOut": "Manager PIN required for cash out",
+    "refund": "Manager PIN required for refunds"
+  },
+  "recon": {
+    "opening": "Opening balance",
+    "card": "Card",
+    "difference": "Cash difference",
+    "differenceReason": "Difference reason",
+    "differenceReasonPlaceholder": "Required when counted cash ≠ expected",
+    "heldWarning": "{count} held order(s) must be resumed or discarded before closing."
+  },
+  "shortcuts": {
+    "hint": "F1 help · F2 pay · F4 hold · F3 held · F6 orders · Esc clear"
+  },
+  "info": {
+    "title": "Till help",
+    "description": "Keyboard shortcuts and how the main till tools work.",
+    "shortcutsTitle": "Keyboard shortcuts",
+    "featuresTitle": "Features",
+    "keys": {
+      "f1": "Open this help",
+      "f2": "Pay current order (press twice to confirm)",
+      "f3": "Open held orders",
+      "f4": "Hold / park current cart",
+      "f6": "Session orders & reprint",
+      "f8": "Focus barcode field",
+      "f9": "Toggle payment panel",
+      "esc": "Clear cart (when no dialog is open)",
+      "qty": "Increase / decrease selected line qty",
+      "delete": "Remove selected cart line"
+    },
+    "features": {
+      "holdTitle": "Held carts",
+      "holdBody": "Park an unfinished order with Hold (F4). Resume or discard it later from Held orders (F3). Paying a resumed hold keeps the same order number.",
+      "ordersTitle": "Session orders",
+      "ordersBody": "Open Orders (F6) to see paid/refunded tickets from this session and reprint a receipt.",
+      "reconTitle": "Close reconciliation",
+      "reconBody": "Closing shows expected cash, sales by tender, and the difference vs counted cash. A reason is required when they differ. Held drafts must be cleared first.",
+      "payTitle": "Safe payments",
+      "payBody": "Pay must be pressed twice (or F2 twice) to confirm and avoid misclicks. Each pay also sends an idempotency key so a retry will not charge twice. Split payments and bank terminal charge are supported.",
+      "splitTitle": "Bill split",
+      "splitBody": "Use the scissors icon for equal (alla romana) or by-item splits. Pay one guest’s share, then continue with the rest.",
+      "customerTitle": "CRM customer",
+      "customerBody": "Search linked company users from the customer field. Walk-in names still work when no account is selected.",
+      "refundTitle": "Refunds",
+      "refundBody": "From Session orders, refund a paid ticket in full or by line quantity. Stock restocks for returned lines when inventory is tracked.",
+      "stockTitle": "Stock & variants",
+      "stockBody": "Tiles show on-hand qty. Oversell can be allowed per config. Multi-variant products open a picker; barcodes can resolve a specific variant.",
+      "pinTitle": "Manager PIN",
+      "pinBody": "Configs can require a manager PIN for discounts, cash-out, and refunds. Set the PIN on the POS config."
+    }
+  },
+  "terminal": {
+    "ready": "Bank POS terminal",
+    "connected": "Connected",
+    "localHttpHint": "Pay will send the amount to the local bank terminal bridge.",
+    "manualHint": "Confirm the charge on the bank terminal, then complete Pay.",
+    "notConfigured": "Card method has no terminal configured — pay records the sale only.",
+    "charge": "Charge terminal",
+    "charging": "Waiting for terminal…"
+  },
+  "reason": "Reason",
+  "notes": "Notes",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "busy": "Working…",
+  "expectedCash": "Expected cash",
+  "cashRegister": "Cash register",
+  "closingBalance": "Closing balance",
+  "picker": {
+    "title": "Select a register",
+    "description": "Choose which shop till to open.",
+    "empty": "No active POS configs. Create one under POS Configs first.",
+    "open": "Open till"
+  },
+  "openSession": {
+    "title": "Open Session",
+    "description": "Open a new till session to start selling.",
+    "for": "Open session for",
+    "openingBalance": "Opening balance",
+    "notes": "Notes",
+    "submit": "Open Session"
+  },
+  "receipt": {
+    "title": "Payment successful",
+    "print": "Print receipt",
+    "order": "Order",
+    "ref": "Ref",
+    "date": "Date",
+    "defaultFooter": "Thank you for your purchase!",
+    "fiscalQr": "Fiscal QR code",
+    "nslf": "NSLF",
+    "nivf": "NIVF",
+    "fiscalDemo": "Fiscal verify (demo)"
+  },
+  "sessionState": {
+    "opening_control": "Opening",
+    "opened": "Open",
+    "closing_control": "Closing",
+    "closed": "Closed"
+  },
+  "toast": {
+    "sessionOpened": "Session opened",
+    "sessionClosed": "Session closed",
+    "cashIn": "Cash added",
+    "cashOut": "Cash removed",
+    "productAdded": "Product added",
+    "paid": "Order paid",
+    "splitApplied": "Bill split into equal shares",
+    "sharePaid": "Share paid — continue with remaining items",
+    "held": "Order held",
+    "resumed": "Held order resumed",
+    "heldDiscarded": "Held order discarded",
+    "refunded": "Order refunded"
+  },
+  "errors": {
+    "catalogFailed": "Could not load catalog",
+    "sessionFailed": "Could not load session",
+    "configsFailed": "Could not load POS configs",
+    "openSessionFailed": "Could not open session",
+    "cashMoveFailed": "Cash move failed",
+    "closeSessionFailed": "Could not close session",
+    "barcodeNotFound": "Barcode not found",
+    "invalidAmount": "Enter a valid amount",
+    "payFailed": "Payment failed",
+    "terminalFailed": "Terminal payment failed",
+    "splitFailed": "Could not split the bill",
+    "holdFailed": "Could not hold order",
+    "heldLoadFailed": "Could not load held orders",
+    "heldDeleteFailed": "Could not discard held order",
+    "ordersLoadFailed": "Could not load session orders",
+    "reprintFailed": "Could not reprint receipt",
+    "differenceReasonRequired": "Explain the cash difference before closing",
+    "heldOrdersBlockClose": "Resume or discard held orders before closing",
+    "customerSearchFailed": "Could not search customers",
+    "insufficientStock": "Not enough stock for this quantity",
+    "outOfStock": "Product is out of stock",
+    "pinInvalid": "Invalid manager PIN",
+    "refundFailed": "Refund failed"
+  }
+}

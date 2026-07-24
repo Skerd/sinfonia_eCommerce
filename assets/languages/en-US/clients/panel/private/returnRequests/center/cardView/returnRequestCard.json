@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "type": "Type",
+  "status": "Status",
+  "refundAmount": "Refund amount",
+  "returnType": {
+    "return": "Return",
+    "exchange": "Exchange",
+    "refund": "Refund"
+  },
+  "returnStatus": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "received": "Received",
+    "completed": "Completed"
+  }
+}

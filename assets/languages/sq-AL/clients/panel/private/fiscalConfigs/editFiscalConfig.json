@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx",
+  "title": "Ndrysho konfigurimin fiskal",
+  "formHeader": {
+    "title": "Ndrysho konfigurimin fiskal",
+    "description": "Përditësoni cilësimet e fiskalizimit CIS dhe e-faturës."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  },
+  "form": {
+    "nameLabel": "Emri",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Kodi i softuerit (SoftCode)",
+    "maintainerCodeLabel": "Kodi i mirëmbajtësit",
+    "businessUnitCodeLabel": "Kodi i njësisë së biznesit",
+    "operatorCodeLabel": "Kodi i operatorit",
+    "tcrCodeLabel": "Kodi TCR (nga CIS)",
+    "tcrIntIdLabel": "ID e brendshme TCR",
+    "tcrTypeLabel": "Lloji TCR",
+    "tcrType": {
+      "REGULAR": "E rregullt",
+      "VENDING": "Automat"
+    },
+    "environmentLabel": "Mjedisi",
+    "environment": {
+      "test": "Test",
+      "production": "Prodhim"
+    },
+    "fiscalizationUrlLabel": "URL SOAP fiskalizimi",
+    "einvoiceUrlLabel": "URL SOAP e-fatura",
+    "selfcareUrlLabel": "URL selfcare / verifikimi",
+    "proxyUrlLabel": "Proxy HTTPS (opsionale)",
+    "sellerNameLabel": "Emri i shitësit",
+    "sellerAddressLabel": "Adresa e shitësit",
+    "sellerTownLabel": "Qyteti i shitësit",
+    "sellerCountryLabel": "Kodi i shtetit (ALB)",
+    "certificateBase64Label": "Certifikata PKCS#12 (base64) — lëreni bosh për ta mbajtur",
+    "certificatePasswordLabel": "Fjalëkalimi i certifikatës",
+    "isVatRegisteredLabel": "I regjistruar në TVSH",
+    "autoFiscalizePosLabel": "Fiskalizo automatikisht pagesat POS",
+    "autoEinvoiceLabel": "Krijo automatikisht e-faturë pas fiskalizimit",
+    "clearCertificateLabel": "Fshi certifikatën e ruajtur",
+    "isActiveLabel": "Aktive"
+  }
+}

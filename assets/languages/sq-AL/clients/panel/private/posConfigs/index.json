@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
+  "title": "Konfigurimet POS",
+  "description": "Dyqanet dhe cilësimet e arkës.",
+  "createPosConfig": "Krijo konfigurim POS",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "warehouse": "Magazina",
+    "isActive": "Aktive",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

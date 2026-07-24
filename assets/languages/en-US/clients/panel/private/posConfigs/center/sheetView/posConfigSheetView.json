@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx",
+  "overview": "Overview",
+  "name": "Name",
+  "warehouse": "Warehouse",
+  "paymentMethods": "Payment methods",
+  "currency": "Currency",
+  "receiptHeader": "Receipt header",
+  "receiptFooter": "Receipt footer",
+  "ifaceBarcodeScanner": "Barcode scanner",
+  "ifaceCashControl": "Cash control",
+  "allowDiscount": "Allow discount",
+  "allowQuantityChange": "Allow quantity change",
+  "isActive": "Active"
+}

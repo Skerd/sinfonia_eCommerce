@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/paymentTransactions/index.tsx",
+  "title": "Transaksionet e pagesave",
+  "description": "Regjistri i pagesave i gjeneruar nga sistemi (vetëm lexim).",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "gateway": "Porta e pagesës",
+    "status": "Statusi",
+    "amount": "Shuma",
+    "type": "Lloji"
+  }
+}

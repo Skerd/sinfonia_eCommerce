@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
+  "name": "Name",
+  "state": "State",
+  "orderCount": "Orders",
+  "totalSales": "Total sales",
+  "sessionState": {
+    "opening_control": "Opening",
+    "opened": "Opened",
+    "closing_control": "Closing",
+    "closed": "Closed"
+  }
+}

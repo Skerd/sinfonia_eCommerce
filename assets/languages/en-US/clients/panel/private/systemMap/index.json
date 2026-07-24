@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
+  "title": "eCommerce System Map",
+  "description": "Interactive map of catalog eCommerce models, checkout flow, and module capabilities. Pan, zoom, and click nodes for details.",
+  "tabs": {
+    "models": "Model graph",
+    "flows": "How it works",
+    "capabilities": "Capabilities"
+  }
+}

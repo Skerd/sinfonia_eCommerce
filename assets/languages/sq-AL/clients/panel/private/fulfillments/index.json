@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
+  "title": "Përmbushjet",
+  "description": "Ndiqni dërgesat dhe dorëzimin e porosive.",
+  "createFulfillment": "Krijo përmbushje",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "status": "Statusi",
+    "carrier": "Transportuesi",
+    "trackingNumber": "Numri i gjurmimit",
+    "shippedAt": "Dërguar më",
+    "deliveredAt": "Dorëzuar më"
+  }
+}

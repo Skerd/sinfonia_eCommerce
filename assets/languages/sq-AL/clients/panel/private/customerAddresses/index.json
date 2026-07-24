@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
+  "title": "Adresat e klientëve",
+  "description": "Menaxhoni adresat e dërgesës dhe faturimit.",
+  "createCustomerAddress": "Krijo adresë",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "firstName": "Emri",
+    "lastName": "Mbiemri",
+    "street": "Rruga",
+    "city": "Qyteti",
+    "phone": "Telefoni"
+  }
+}

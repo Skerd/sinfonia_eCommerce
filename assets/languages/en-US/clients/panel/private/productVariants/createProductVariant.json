@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/createProductVariant.tsx",
+  "title": "Create variant",
+  "form": {
+    "productLabel": "Product",
+    "productPlaceholder": "Select product",
+    "statusLabel": "Status",
+    "skuLabel": "SKU",
+    "barcodeLabel": "Barcode",
+    "priceLabel": "Price",
+    "compareAtPriceLabel": "Compare-at price",
+    "costPriceLabel": "Cost price",
+    "weightLabel": "Weight",
+    "positionLabel": "Position",
+    "trackInventoryLabel": "Track inventory",
+    "attributesSectionTitle": "Attributes",
+    "attributeAddRow": "Add attribute",
+    "attributeRemoveRow": "Remove attribute",
+    "attributeRowTitle": "Attribute",
+    "attributeLabel": "Attribute",
+    "valueLabel": "Value",
+    "variantStatus": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  }
+}

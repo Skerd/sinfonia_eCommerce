@@ -14,7 +14,6 @@
     "descriptionLabel": "Description",
     "tagsLabel": "Tags",
     "removeTag": "Remove tag",
-
     "identifiersSectionTitle": "Identifiers",
     "skuLabel": "SKU",
     "barcodeLabel": "Barcode",
@@ -25,7 +24,6 @@
     "mpnLabel": "MPN",
     "hsCodeLabel": "HS code",
     "countryOfOriginLabel": "Country of origin",
-
     "pricingSectionTitle": "Pricing",
     "priceLabel": "Price",
     "compareAtPriceLabel": "Compare-at price",
@@ -39,7 +37,6 @@
     "minOrderQtyLabel": "Min. order quantity",
     "maxOrderQtyLabel": "Max. order quantity",
     "stepQtyLabel": "Order step quantity",
-
     "inventorySectionTitle": "Inventory",
     "trackInventoryLabel": "Track inventory",
     "allowBackorderLabel": "Allow backorder",
@@ -48,7 +45,6 @@
     "backorderLimitLabel": "Backorder limit",
     "preorderEnabledLabel": "Enable preorder",
     "preorderAvailableAtLabel": "Preorder available at",
-
     "shippingSectionTitle": "Shipping",
     "weightLabel": "Weight",
     "weightUnitLabel": "Weight unit",
@@ -60,7 +56,6 @@
     "shippingClassLabel": "Shipping class",
     "isHazmatLabel": "Hazardous material",
     "requiresShippingLabel": "Requires shipping",
-
     "organizationSectionTitle": "Organization",
     "categoriesLabel": "Categories",
     "selectCategory": "Select category",
@@ -68,13 +63,11 @@
     "collectionsLabel": "Collections",
     "selectCollection": "Select collection",
     "removeCollection": "Remove collection",
-
     "variantsSectionTitle": "Variants & options",
     "hasVariantsLabel": "Has variants",
     "variantOptionsLabel": "Variant options",
     "selectAttribute": "Select attribute",
     "removeAttribute": "Remove attribute",
-
     "mainImageLabel": "Main image",
     "galleryLabel": "Gallery",
     "documentsLabel": "Documents",
@@ -82,7 +75,6 @@
     "videoUrlsLabel": "Video URLs",
     "videoUrlPlaceholder": "https://…",
     "removeVideoUrl": "Remove video",
-
     "contentSectionTitle": "Content",
     "highlightsLabel": "Highlights",
     "removeHighlight": "Remove highlight",
@@ -94,7 +86,6 @@
     "faqRowTitle": "FAQ",
     "faqQuestionLabel": "Question",
     "faqAnswerLabel": "Answer",
-
     "attributesSectionTitle": "Attributes",
     "attributeAddRow": "Add attribute",
     "attributeRemoveRow": "Remove attribute",
@@ -108,7 +99,6 @@
     "specificationRowTitle": "Specification",
     "specLabelLabel": "Label",
     "specValueLabel": "Value",
-
     "merchandisingSectionTitle": "Merchandising",
     "relatedProductsLabel": "Related products",
     "upsellsLabel": "Upsells",
@@ -118,7 +108,6 @@
     "removeProduct": "Remove product",
     "badgesLabel": "Badges",
     "removeBadge": "Remove badge",
-
     "seoSectionTitle": "SEO",
     "seoMetaTitleLabel": "Meta title",
     "seoCanonicalUrlLabel": "Canonical URL",
@@ -132,7 +121,6 @@
     "seoOpenGraphDescriptionLabel": "Open Graph description",
     "seoMetaKeywordsLabel": "Meta keywords",
     "removeKeyword": "Remove keyword",
-
     "productType": {
       "physical": "Physical",
       "digital": "Digital",
@@ -159,6 +147,14 @@
     "twitterCard": {
       "summary": "Summary",
       "summary_large_image": "Summary large image"
-    }
+    },
+    "bundleComponentsSectionTitle": "Bundle components",
+    "bundleComponentAddRow": "Add component",
+    "bundleComponentRemoveRow": "Remove component",
+    "bundleComponentRowTitle": "Component",
+    "bundleComponentProductLabel": "Product",
+    "bundleComponentQuantityLabel": "Quantity",
+    "downloadLimitLabel": "Download limit (per purchase)",
+    "downloadExpiryDaysLabel": "Download link validity (days)"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
+  "title": "Return requests",
+  "description": "Handle returns, exchanges and refund requests.",
+  "createReturnRequest": "Create return request",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "type": "Type",
+    "status": "Status",
+    "refundAmount": "Refund amount"
+  }
+}

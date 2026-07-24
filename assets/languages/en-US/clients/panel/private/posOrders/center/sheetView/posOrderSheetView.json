@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx",
+  "overview": "Overview",
+  "name": "Name",
+  "state": "State",
+  "session": "Session",
+  "config": "POS config",
+  "customerName": "Customer",
+  "amountTotal": "Total",
+  "amountPaid": "Paid",
+  "amountReturn": "Change",
+  "discountTotal": "Discount",
+  "note": "Note",
+  "orderState": {
+    "draft": "Draft",
+    "paid": "Paid",
+    "cancel": "Cancelled",
+    "refunded": "Refunded"
+  }
+}

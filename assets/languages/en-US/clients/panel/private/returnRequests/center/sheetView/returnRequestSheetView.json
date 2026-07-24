@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx",
+  "overview": "Overview",
+  "returnRequestSubtitle": "Return request details",
+  "type": "Type",
+  "status": "Status",
+  "refundAmount": "Refund amount",
+  "customerNote": "Customer note",
+  "adminNote": "Admin note",
+  "returnType": {
+    "return": "Return",
+    "exchange": "Exchange",
+    "refund": "Refund"
+  },
+  "returnStatus": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "received": "Received",
+    "completed": "Completed"
+  }
+}

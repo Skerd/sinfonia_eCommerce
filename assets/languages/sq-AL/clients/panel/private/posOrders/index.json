@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
+  "title": "Porositë POS",
+  "description": "Porositë e përfunduara në arka të Pikës së Shitjes.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "state": "Gjendja",
+    "amountTotal": "Totali",
+    "customerName": "Klienti",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

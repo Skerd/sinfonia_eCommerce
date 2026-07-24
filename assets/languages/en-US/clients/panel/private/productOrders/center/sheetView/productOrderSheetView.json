@@ -22,5 +22,20 @@
     "shipped": "Shipped"
   },
   "productOrderSubtitle": "Order details",
-  "status": "Status"
+  "status": "Status",
+  "totals": "Totals",
+  "fulfillmentStatus": "Fulfillment",
+  "email": "Email",
+  "phone": "Phone",
+  "subtotal": "Subtotal",
+  "discountTotal": "Discount",
+  "shippingTotal": "Shipping",
+  "taxTotal": "Tax",
+  "createdAt": "Created at",
+  "productOrderFulfillmentStatus": {
+    "unfulfilled": "Unfulfilled",
+    "partially_fulfilled": "Partially fulfilled",
+    "fulfilled": "Fulfilled",
+    "returned": "Returned"
+  }
 }

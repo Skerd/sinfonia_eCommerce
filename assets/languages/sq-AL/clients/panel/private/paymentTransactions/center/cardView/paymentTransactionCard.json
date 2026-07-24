@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/paymentTransactions/center/cardView/paymentTransactionCard.tsx",
+  "gateway": "Porta e pagesës",
+  "status": "Statusi",
+  "amount": "Shuma",
+  "type": "Lloji",
+  "gatewayTransactionId": "gatewayTransactionId"
+}

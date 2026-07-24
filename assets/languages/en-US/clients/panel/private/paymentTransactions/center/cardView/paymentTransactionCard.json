@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/paymentTransactions/center/cardView/paymentTransactionCard.tsx",
+  "gateway": "Gateway",
+  "status": "Status",
+  "amount": "Amount",
+  "type": "Type",
+  "gatewayTransactionId": "gatewayTransactionId"
+}

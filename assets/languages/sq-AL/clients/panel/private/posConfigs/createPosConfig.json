@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
+  "title": "Krijo konfigurim POS",
+  "form": {
+    "nameLabel": "Emri",
+    "paymentMethodsLabel": "Metodat e pagesës",
+    "warehouseLabel": "Magazina",
+    "currencyLabel": "Monedha",
+    "receiptHeaderLabel": "Koka e faturës",
+    "receiptFooterLabel": "Fundi i faturës",
+    "ifaceBarcodeScannerLabel": "Skaner barkodi",
+    "ifaceCashControlLabel": "Kontroll cash",
+    "allowDiscountLabel": "Lejo zbritje",
+    "allowQuantityChangeLabel": "Lejo ndryshim sasie",
+    "allowOversellLabel": "Lejo oversell",
+    "pinForDiscountLabel": "PIN për zbritje",
+    "pinForCashOutLabel": "PIN për cash out",
+    "pinForRefundLabel": "PIN për rimbursim",
+    "managerPinLabel": "PIN i menaxherit",
+    "clearManagerPinLabel": "Fshi PIN-in e menaxherit",
+    "isActiveLabel": "Aktive",
+    "selectWarehouse": "Zgjidh magazinën",
+    "selectCurrency": "Zgjidh monedhën",
+    "selectPaymentMethod": "Zgjidh metodën e pagesës"
+  }
+}

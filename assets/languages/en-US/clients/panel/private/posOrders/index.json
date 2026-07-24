@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
+  "title": "POS Orders",
+  "description": "Orders completed at the Point of Sale till.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "state": "State",
+    "amountTotal": "Total",
+    "customerName": "Customer",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  }
+}
