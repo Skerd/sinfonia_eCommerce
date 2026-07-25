@@ -1,7 +1,6 @@
 import AllCategories from "@eCommerceModule/clients/panel/private/categories";
 import CreateCategory from "@eCommerceModule/clients/panel/private/categories/createCategory.tsx";
 import EditCategory from "@eCommerceModule/clients/panel/private/categories/editCategory.tsx";
-import EscrowDashboard from "@eCommerceModule/clients/panel/private/escrowDashboard";
 import SystemMap from "@eCommerceModule/clients/panel/private/systemMap";
 import AllProducts from "@eCommerceModule/clients/panel/private/products/index.tsx";
 import CreateProduct from "@eCommerceModule/clients/panel/private/products/createProduct.tsx";
@@ -123,9 +122,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
 
         if (resource === "systemmap") {
             return <SystemMap />;
-        }
-        if (resource === "escrowdashboard") {
-            return <EscrowDashboard />;
         }
         if (resource === "pos") {
             return <PosTill />;

@@ -9,7 +9,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
     getNavGroups(resolveLanguageKey: ResolveLanguageKey): NavGroup[] {
         const productCommerceItems: NavItem[] = [
             {title: resolveLanguageKey("menus.eCommerce.systemMap.title"), url: "/eCommerce/systemmap", icon: Network, permissions: [], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerce.escrowDashboard.title"), url: "/eCommerce/escrowdashboard", icon: DollarSign, permissions: [], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.pos.title"), url: "/eCommerce/pos", icon: Monitor, permissions: [], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.pospaymentmethods.title"), url: "/eCommerce/pospaymentmethods", icon: CreditCard, permissions: [], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.posconfigs.title"), url: "/eCommerce/posconfigs", icon: Settings2, permissions: [], usersPermissions: [], atLeastOnePermission: true},

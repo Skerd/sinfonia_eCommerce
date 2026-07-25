@@ -21,7 +21,7 @@ function EscrowDashboard({ resolveLanguageKey }: WithLanguageType) {
     useEffect(() => {
         setLoading(true);
         apiClient
-            .post<EscrowSummary>("/api/eCommerce/escrowTransaction/summary", {})
+            .post<EscrowSummary>("/api/finance/escrowTransaction/summary", {})
             .then((res) => {
                 setSummary(res.data.byCurrency ?? []);
                 setStuckHolds(res.data.stuckHolds ?? []);
