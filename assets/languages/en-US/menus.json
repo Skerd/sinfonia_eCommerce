@@ -1,0 +1,105 @@
+{
+  "eCommerce": {
+    "title": "eCommerce",
+    "escrowDashboard": {
+      "title": "Escrow Dashboard"
+    },
+    "pos": {
+      "title": "Point of Sale"
+    },
+    "pospaymentmethods": {
+      "title": "POS Payment Methods"
+    },
+    "posconfigs": {
+      "title": "POS Configs"
+    },
+    "possessions": {
+      "title": "POS Sessions"
+    },
+    "posorders": {
+      "title": "POS Orders"
+    },
+    "fiscalconfigs": {
+      "title": "Fiscal / E-Invoice"
+    },
+    "systemMap": {
+      "title": "System Map"
+    },
+    "productCommerce": {
+      "title": "Product Commerce"
+    },
+    "products": {
+      "title": "Products"
+    },
+    "collections": {
+      "title": "Collections"
+    },
+    "productorders": {
+      "title": "Product Orders"
+    },
+    "inventories": {
+      "title": "Inventory"
+    },
+    "warehouses": {
+      "title": "Warehouses"
+    },
+    "productattributes": {
+      "title": "Product Attributes"
+    },
+    "discounts": {
+      "title": "Discounts"
+    },
+    "taxzones": {
+      "title": "Tax Zones"
+    },
+    "shippingzones": {
+      "title": "Shipping Zones"
+    },
+    "cmsblocks": {
+      "title": "CMS Blocks"
+    },
+    "customergroups": {
+      "title": "Customer Groups"
+    },
+    "pricingrules": {
+      "title": "Pricing Rules"
+    },
+    "analytics": {
+      "title": "Analytics"
+    },
+    "fulfillments": {
+      "title": "Fulfillments"
+    },
+    "returnrequests": {
+      "title": "Return requests"
+    },
+    "paymenttransactions": {
+      "title": "Payment transactions"
+    },
+    "productvariants": {
+      "title": "Product variants"
+    },
+    "customeraddresses": {
+      "title": "Customer addresses"
+    },
+    "categories": {
+      "title": "Categories"
+    },
+    "productreviews": {
+      "title": "Product reviews"
+    },
+    "giftcards": {
+      "title": "Gift cards"
+    }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "eCommerce": {
+        "title": "eCommerce"
+      },
+      "categories": {
+        "title": "Categories"
+      }
+    }
+  }
+}

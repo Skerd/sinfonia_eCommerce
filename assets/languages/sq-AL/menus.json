@@ -1,0 +1,105 @@
+{
+  "eCommerce": {
+    "title": "eCommerce",
+    "escrowDashboard": {
+      "title": "Paneli Eskro"
+    },
+    "pos": {
+      "title": "Pika e Shitjes"
+    },
+    "pospaymentmethods": {
+      "title": "Metodat e Pagesës POS"
+    },
+    "posconfigs": {
+      "title": "Konfigurimet POS"
+    },
+    "possessions": {
+      "title": "Seancat POS"
+    },
+    "posorders": {
+      "title": "Porositë POS"
+    },
+    "fiscalconfigs": {
+      "title": "Fiskalizimi / E-Fatura"
+    },
+    "systemMap": {
+      "title": "Harta e sistemit"
+    },
+    "productCommerce": {
+      "title": "Tregtia e produkteve"
+    },
+    "products": {
+      "title": "Produktet"
+    },
+    "collections": {
+      "title": "Koleksionet"
+    },
+    "productorders": {
+      "title": "Porositë e produkteve"
+    },
+    "inventories": {
+      "title": "Inventari"
+    },
+    "warehouses": {
+      "title": "Magazinat"
+    },
+    "productattributes": {
+      "title": "Atributet e produkteve"
+    },
+    "discounts": {
+      "title": "Zbritjet"
+    },
+    "taxzones": {
+      "title": "Zonat tatimore"
+    },
+    "shippingzones": {
+      "title": "Zonat e transportit"
+    },
+    "cmsblocks": {
+      "title": "Blloqet CMS"
+    },
+    "customergroups": {
+      "title": "Grupet e klientëve"
+    },
+    "pricingrules": {
+      "title": "Rregullat e çmimeve"
+    },
+    "analytics": {
+      "title": "Analitika"
+    },
+    "fulfillments": {
+      "title": "Përmbushjet"
+    },
+    "returnrequests": {
+      "title": "Kërkesat për kthim"
+    },
+    "paymenttransactions": {
+      "title": "Transaksionet e pagesave"
+    },
+    "productvariants": {
+      "title": "Variantet e produkteve"
+    },
+    "customeraddresses": {
+      "title": "Adresat e klientëve"
+    },
+    "categories": {
+      "title": "Kategoritë"
+    },
+    "productreviews": {
+      "title": "Vlerësimet e produkteve"
+    },
+    "giftcards": {
+      "title": "Kartat dhuratë"
+    }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "eCommerce": {
+        "title": "E-tregtia"
+      },
+      "categories": {
+        "title": "Kategoritë"
+      }
+    }
+  }
+}
