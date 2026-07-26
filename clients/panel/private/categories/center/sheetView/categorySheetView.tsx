@@ -38,8 +38,8 @@ function CategorySheetView({
     fetchId,
 }: CategorySheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(categoryProp || {_id: fetchId});
-    const access = useAccess("listingCategories");
-    const viewConfig = useViewConfig("listingcategories", "sheet");
+    const access = useAccess("productcategories");
+    const viewConfig = useViewConfig("productcategories", "sheet");
 
     useEffect(() => {
         if (!categoryProp) return;

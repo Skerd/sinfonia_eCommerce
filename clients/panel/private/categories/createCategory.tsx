@@ -27,9 +27,9 @@ function CreateCategory({
     onFormDataChange,
 }: CreateCategoryProps) {
     const navigate = useNavigate();
-    const {create} = useAccess("listingCategories");
+    const {create} = useAccess("productcategories");
 
-    const viewConfig = useViewConfig("listingcategories", "form:create");
+    const viewConfig = useViewConfig("productcategories", "form:create");
     const formSchema = createCategoryFormSchema(languageCode, resolveLanguageKey("form"));
 
     if (!create) {

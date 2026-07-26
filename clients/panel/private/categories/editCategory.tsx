@@ -33,7 +33,7 @@ function EditCategory({
     categoryName,
 }: EditCategoryProps) {
     const navigate = useNavigate();
-    const {write, read} = useAccess("listingCategories");
+    const {write, read} = useAccess("productcategories");
     const writeFields = (write || {}) as Record<string, boolean | object | undefined>;
     const readFields = (read || {}) as Record<string, boolean | object | undefined>;
 
@@ -42,7 +42,7 @@ function EditCategory({
     const [loadingCategory, setLoadingCategory] = useState(true);
     const [categoryError, setCategoryError] = useState(false);
 
-    const viewConfig = useViewConfig("listingcategories", "form:edit");
+    const viewConfig = useViewConfig("productcategories", "form:edit");
     const formSchema = editCategoryFormSchema(languageCode, resolveLanguageKey("form"), writeFields, readFields);
 
     useEffect(() => {

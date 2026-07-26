@@ -69,7 +69,7 @@ function CategoryCard({
         }
     };
 
-    const {read, restore} = useAccess("listingCategories");
+    const {read, restore} = useAccess("productcategories");
 
     useEffect(() => {
         setCategory(categoryProp);
@@ -116,7 +116,7 @@ function CategoryCard({
                                 {!hideActions && (
                                     <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
                                         <ActionMenu
-                                            accessModel={"listingCategories"}
+                                            accessModel={"productcategories"}
                                             deletedData={category}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={categoryEditPath(category)}
@@ -164,7 +164,7 @@ function CategoryCard({
                     )}
                     {action === "delete" && (
                         <DeleteAction
-                            accessModel={"listingCategories"}
+                            accessModel={"productcategories"}
                             deleteId={category._id}
                             openAlert={action === "delete"}
                             name={read?.name && category.name}
@@ -176,7 +176,7 @@ function CategoryCard({
                     )}
                     {action === "restore" && (
                         <RestoreAction
-                            accessModel={"listingCategories"}
+                            accessModel={"productcategories"}
                             deleteId={category._id}
                             openAlert={action === "restore"}
                             name={read?.name && category.name}
