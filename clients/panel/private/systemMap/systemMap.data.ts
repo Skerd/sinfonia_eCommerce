@@ -1,4 +1,4 @@
-import type {SystemMapDataset} from "./systemMap.types.ts";
+import type {SystemMapDataset} from "@coreModule/components/custom/systemMap/systemMap.types.ts";
 
 /**
  * Hand-curated System Map for the eCommerce (catalog) module only.
@@ -27,7 +27,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Taxonomy tree for catalog products (also reused by marketplace).",
             keyFields: ["name", "slug", "parent", "path"],
             apiPath: "/api/eCommerce/category",
-            panelRoute: "/eCommerce/categories",
+            panelRoute: "/tenancy/systemSettings/categories",
             position: {x: 280, y: 40},
         },
         {

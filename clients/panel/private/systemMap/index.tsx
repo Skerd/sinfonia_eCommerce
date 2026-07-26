@@ -3,9 +3,9 @@ import {compose} from "redux";
 import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
-import {ModelGraph} from "./ModelGraph.tsx";
-import {FlowDiagram} from "./FlowDiagram.tsx";
-import {CapabilitiesView} from "./CapabilitiesView.tsx";
+import {ModelGraph} from "@coreModule/components/custom/systemMap/ModelGraph.tsx";
+import {FlowDiagram} from "@coreModule/components/custom/systemMap/FlowDiagram.tsx";
+import {CapabilitiesView} from "@coreModule/components/custom/systemMap/CapabilitiesView.tsx";
 import {ECOMMERCE_SYSTEM_MAP} from "./systemMap.data.ts";
 
 function SystemMap({resolveLanguageKey}: WithLanguageType) {
