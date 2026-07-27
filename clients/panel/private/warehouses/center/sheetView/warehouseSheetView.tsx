@@ -7,8 +7,12 @@ import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
+import DeactivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx";
+import ActivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx";
+import DeactivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx";
 
-const LIST_BASE = "/eCommerce/warehouses";
+const LIST_BASE = "/tenancy/systemSettings/warehouses";
 
 export type WarehouseSheetViewOwnProps = {
     open: boolean;
@@ -18,6 +22,7 @@ export type WarehouseSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function warehouseEditPath(warehouse: Warehouse) {
@@ -36,10 +41,16 @@ function WarehouseSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: WarehouseSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(warehouseProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("warehouses");
     const viewConfig = useViewConfig("warehouses", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!warehouseProp) return;
@@ -51,24 +62,58 @@ function WarehouseSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as Warehouse;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/warehouse/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={warehouseEditPath(sheetData as Warehouse)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/warehouse/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={warehouseEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivateWarehouse entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivateWarehouse entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activateWarehouse" && (
+                <ActivateWarehouseDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "deactivateWarehouse" && (
+                <DeactivateWarehouseDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+        </>
     );
 }
 

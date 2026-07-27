@@ -4,11 +4,53 @@
   "description": "Seancat e arkës të hapura dhe mbyllura nga Pika e Shitjes.",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "state": {
+        "opening_control": "Hapje",
+        "opened": "Hapur",
+        "closing_control": "Mbyllje",
+        "closed": "Mbyllur"
+      },
+      "cashMoves": {
+        "type": {
+          "type": {
+            "in": "Hyrje cash",
+            "out": "Dalje cash"
+          }
+        }
+      }
+    },
     "name": "Emri",
+    "config": "Konfigurimi POS",
     "state": "Gjendja",
+    "openedBy": "Hapur nga",
+    "closedBy": "Mbyllur nga",
+    "openedAt": "Hapur më",
+    "closedAt": "Mbyllur më",
+    "openingBalance": "Bilanci fillestar",
+    "closingBalance": "Bilanci përfundimtar",
+    "expectedCash": "Cash i pritur",
+    "cashRegisterBalance": "Arka",
+    "cashMoves": {
+      "type": {
+        "type": "Lloji i lëvizjes",
+        "amount": "Shuma e lëvizjes",
+        "reason": "Arsyeja e lëvizjes",
+        "at": "Lëvizja më",
+        "by": "Lëvizja nga",
+        "default": "Parazgjedhja e lëvizjeve"
+      },
+      "default": "Parazgjedhja e lëvizjeve"
+    },
     "orderCount": "Porosi",
     "totalSales": "Shitjet totale",
+    "totalCash": "Cash",
+    "totalCard": "Kartë",
+    "notes": "Shënime",
+    "company": "Kompania",
     "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

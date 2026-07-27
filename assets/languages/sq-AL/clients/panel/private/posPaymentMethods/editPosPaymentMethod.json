@@ -1,18 +1,26 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx",
   "title": "Ndrysho metodën e pagesës",
+  "errorTitle": "Nuk u ngarkua metoda e pagesës",
+  "errorDescription": "Nuk mund të ngarkohej kjo metodë pagese. Provoni përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrit",
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i metodës së pagesës",
     "typeLabel": "Lloji",
     "isActiveLabel": "Aktive",
     "sequenceLabel": "Renditja",
+    "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Shumat e shpejta (cash)",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Terminal bankar POS",
     "terminalEnabledLabel": "Lidh terminalin bankar POS",
+    "terminalForcesCardHint": "Lidhja e terminalit bankar POS vendos llojin në Kartë. Shkëputja e vendos në Cash.",
     "terminalProviderLabel": "Furnizuesi i terminalit",
     "terminalHostLabel": "Host / IP e terminalit",
     "terminalHostPlaceholder": "192.168.1.50",
     "terminalPortLabel": "Porta e terminalit",
+    "terminalPortPlaceholder": "8080",
     "terminalIdLabel": "ID e terminalit",
     "terminalIdPlaceholder": "TID / POIID",
     "terminalPathLabel": "Rruga e terminalit",
@@ -28,5 +36,27 @@
       "manual": "Manuale (terminal i jashtëm)",
       "local_http": "Ura lokale HTTP"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur metodën e pagesës",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metoda e pagesës u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot metoda e pagesës",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho metodën e pagesës",
+    "description": "Përditësoni llojin e pagesës, shumat e shpejta cash dhe lidhjen me terminalin bankar."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

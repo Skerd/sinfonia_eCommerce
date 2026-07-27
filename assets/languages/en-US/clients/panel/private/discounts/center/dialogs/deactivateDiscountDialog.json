@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx",
+  "title": "Deactivate discount",
+  "description": "This discount will no longer apply until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating discount…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Discount deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate discount",
+      "time": 3000
+    }
+  }
+}

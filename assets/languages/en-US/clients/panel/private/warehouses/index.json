@@ -7,9 +7,21 @@
   "fields": {
     "name": "Name",
     "code": "Code",
+    "address": {
+      "country": "Country",
+      "state": "State",
+      "city": "City",
+      "street": "Street",
+      "postalCode": "Postal code",
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    },
     "isDefault": "Default",
     "isActive": "Active",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

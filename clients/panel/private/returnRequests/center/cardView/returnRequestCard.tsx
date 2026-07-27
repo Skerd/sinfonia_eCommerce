@@ -17,13 +17,17 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx";
+import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
+import ApproveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx";
+import RejectReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx";
 
 const LIST_BASE = "/eCommerce/returnrequests";
 
 function returnRequestEditPath(entity: ReturnRequest) {
     const params = new URLSearchParams();
     params.set("returnRequestId", entity._id);
-    if ((entity as any).type) params.set("returnRequestTitle", encodeURIComponent(String((entity as any).type)));
+    if (entity.type) params.set("returnRequestTitle", encodeURIComponent(String(entity.type)));
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
@@ -78,7 +82,7 @@ function ReturnRequestCard({
     if (hideAfterDeletion) {
         return <></>;
     }
-    if (!restore && (entity as any).deletedAt != null) {
+    if (!restore && entity.deletedAt != null) {
         return <></>;
     }
     if (!read || !Object.keys(read).length) {
@@ -93,18 +97,20 @@ function ReturnRequestCard({
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
-                        {((read as any).deletedBy || (read as any).deletedAt) && (
-                            <DeletedInfo deletedAt={(entity as any).deletedAt} deletedBy={(entity as any).deletedBy} />
+                        {(read.deletedBy || read.deletedAt) && (
+                            <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
                         )}
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
                                     <HiddenElement showLock randomLength={0}>
-                                        {(read as any)?.type && (
+                                        {read?.type && (
                                             <>
-                                                {(entity as any).type ? (
+                                                {entity.type ? (
                                                     <TooltipDisplayer tooltip={resolveLanguageKey("type")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{String((entity as any).type)}</div>
+                                                        <div className="font-semibold text-base leading-tight truncate">
+                                                            {resolveLanguageKey("returnType." + entity.type)}
+                                                        </div>
                                                     </TooltipDisplayer>
                                                 ) : (
                                                     <ValueNotSet />
@@ -120,7 +126,11 @@ function ReturnRequestCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={returnRequestEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ApproveReturnRequest entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <RejectReturnRequest entity={entity} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -129,20 +139,20 @@ function ReturnRequestCard({
                                     <InfoRow
                                         label={resolveLanguageKey("type")}
                                         icon={IconRefresh}
-                                        show={!!(read as any)?.type}
-                                        value={(entity as any).type ? resolveLanguageKey("returnType." + (entity as any).type) : undefined}
+                                        show={!!read?.type}
+                                        value={entity.type ? resolveLanguageKey("returnType." + entity.type) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("status")}
                                         icon={IconTag}
-                                        show={!!(read as any)?.status}
-                                        value={(entity as any).status ? resolveLanguageKey("returnStatus." + (entity as any).status) : undefined}
+                                        show={!!read?.status}
+                                        value={entity.status ? resolveLanguageKey("returnStatus." + entity.status) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("refundAmount")}
                                         icon={IconCurrencyDollar}
-                                        show={!!(read as any)?.refundAmount}
-                                        value={(entity as any).refundAmount != null ? String((entity as any).refundAmount) : undefined}
+                                        show={!!read?.refundAmount}
+                                        value={entity.refundAmount != null ? String(entity.refundAmount) : undefined}
                                     />
                                 </div>
                             </div>
@@ -161,6 +171,7 @@ function ReturnRequestCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setEntity(row as ReturnRequest)}
                         />
                     )}
                     {action === "delete" && (
@@ -168,8 +179,8 @@ function ReturnRequestCard({
                             accessModel={"returnRequests"}
                             deleteId={entity._id}
                             openAlert={action === "delete"}
-                            name={(read as any)?.type && String((entity as any).type ?? "")}
-                            confirmName={(read as any)?.type && String((entity as any).type ?? "")}
+                            name={read?.type && String(entity.type ?? "")}
+                            confirmName={read?.type && String(entity.type ?? "")}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/returnRequest"
@@ -180,11 +191,27 @@ function ReturnRequestCard({
                             accessModel={"returnRequests"}
                             deleteId={entity._id}
                             openAlert={action === "restore"}
-                            name={(read as any)?.type && String((entity as any).type ?? "")}
-                            confirmName={(read as any)?.type && String((entity as any).type ?? "")}
+                            name={read?.type && String(entity.type ?? "")}
+                            confirmName={read?.type && String(entity.type ?? "")}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/returnRequest/restore"
+                        />
+                    )}
+                    {action === "approveReturnRequest" && (
+                        <ApproveReturnRequestDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
+                        />
+                    )}
+                    {action === "rejectReturnRequest" && (
+                        <RejectReturnRequestDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
                         />
                     )}
                 </>

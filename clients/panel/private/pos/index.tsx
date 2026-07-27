@@ -81,13 +81,14 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
         pinOpen,
         pinBusy,
         pinTitle,
+        pinManagers,
         resolveManagerPin,
         resetManagerPin,
         markDiscountUnlocked,
         isDiscountUnlocked,
         onPinDialogOpenChange,
         onPinConfirm,
-    } = usePosManagerPin(configId, resolveLanguageKey);
+    } = usePosManagerPin(configId, config?.managers, resolveLanguageKey);
 
     const [openSessionOpen, setOpenSessionOpen] = useState(false);
     const [openingBalance, setOpeningBalance] = useState("0");
@@ -130,7 +131,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
     } | null>(null);
     const payRequestIdRef = useRef<string | null>(null);
 
-    const currencyCode = config?.currencyLabel?.abbreviation || "EUR";
+    const currencyCode = config?.currency?.abbreviation || "EUR";
     const money = useCallback((n: number) => formatMoney(n, currencyCode), [currencyCode]);
 
     const paymentMethods = useMemo(
@@ -449,10 +450,12 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
             return;
         }
         let managerPin: string | undefined;
+        let managerId: string | undefined;
         if (cashMoveOpen === "out" && config?.pinForCashOut && config?.hasManagerPin) {
-            const pin = await resolveManagerPin(true, "pin.cashOut");
-            if (pin === null) return;
-            managerPin = pin || undefined;
+            const auth = await resolveManagerPin(true, "pin.cashOut");
+            if (auth === null) return;
+            managerPin = auth?.pin;
+            managerId = auth?.managerId;
         }
         setCashMoveBusy(true);
         try {
@@ -462,6 +465,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 amount,
                 reason: cashMoveReason || undefined,
                 managerPin,
+                managerId,
             });
             setSession(res.data.data);
             setCashMoveOpen(null);
@@ -506,7 +510,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
             setPayments([]);
             setActivePaymentId(null);
             setHeldOrderId(null);
-            navigate("/eCommerce/posconfigs");
+            navigate("/tenancy/systemSettings/posconfigs");
         } catch {
             toast.error(rk("errors.closeSessionFailed"));
         } finally {
@@ -587,16 +591,22 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
 
     const resumeHeld = (order: PosOrder) => {
         setCart(
-            (order.lines ?? []).map((line) => ({
-                key: line.variant ? `${line.product}:${line.variant}` : line.product,
-                productId: line.product,
-                variantId: line.variant,
-                title: line.productName,
-                sku: line.productSku,
-                unitPrice: line.unitPrice,
-                quantity: line.quantity,
-                discountPercent: line.discountPercent ?? 0,
-            })),
+            (order.lines ?? []).map((line) => {
+                const productId =
+                    typeof line.product === "object" && line.product
+                        ? line.product._id
+                        : String(line.product ?? "");
+                return {
+                    key: line.variant ? `${productId}:${line.variant}` : productId,
+                    productId,
+                    variantId: line.variant,
+                    title: line.productName,
+                    sku: line.productSku,
+                    unitPrice: line.unitPrice,
+                    quantity: line.quantity,
+                    discountPercent: line.discountPercent ?? 0,
+                };
+            }),
         );
         setOrderDiscountPercent(order.orderDiscountPercent ?? 0);
         setCustomerName(order.customerName ?? order.customer?.name ?? "");
@@ -752,8 +762,8 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
     const ensureDiscountUnlocked = async (): Promise<boolean> => {
         if (!config?.pinForDiscount || !config?.hasManagerPin) return true;
         if (isDiscountUnlocked()) return true;
-        const pin = await resolveManagerPin(true, "pin.discount");
-        if (pin === null) return false;
+        const auth = await resolveManagerPin(true, "pin.discount");
+        if (auth === null) return false;
         markDiscountUnlocked();
         return true;
     };
@@ -1059,10 +1069,12 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
         const hasDiscount =
             orderDiscountPercent > 0 || orderLines.some((l) => l.discountPercent > 0);
         let managerPin: string | undefined;
+        let managerId: string | undefined;
         if (hasDiscount && config?.pinForDiscount && config?.hasManagerPin) {
-            const pin = await resolveManagerPin(true, "pin.discount");
-            if (pin === null) return;
-            managerPin = pin || undefined;
+            const auth = await resolveManagerPin(true, "pin.discount");
+            if (auth === null) return;
+            managerPin = auth?.pin;
+            managerId = auth?.managerId;
         }
 
         setPaying(true);
@@ -1120,6 +1132,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 heldOrderId: !payingShare && heldOrderId ? heldOrderId : undefined,
                 clientRequestId: payRequestIdRef.current,
                 managerPin,
+                managerId,
                 lines: orderLines.map((l) => ({
                     productId: l.productId,
                     variantId: l.variantId,
@@ -1271,7 +1284,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 onOpeningBalanceChange={setOpeningBalance}
                 onOpeningNotesChange={setOpeningNotes}
                 onSubmit={() => void openSession()}
-                onCancel={() => navigate("/eCommerce/posconfigs")}
+                onCancel={() => navigate("/tenancy/systemSettings/posconfigs")}
             />
         );
     }
@@ -1451,6 +1464,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 pinOpen={pinOpen}
                 pinBusy={pinBusy}
                 pinTitle={pinTitle}
+                pinManagers={pinManagers}
                 onPinOpenChange={onPinDialogOpenChange}
                 onPinConfirm={onPinConfirm}
                 variantProduct={variantProduct}
@@ -1472,6 +1486,11 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 }}
                 refundOrder={refundOrder}
                 requireRefundPin={!!config?.pinForRefund && !!config?.hasManagerPin}
+                onRequestRefundAuth={async () => {
+                    const auth = await resolveManagerPin(true, "pin.refund");
+                    if (!auth) return null;
+                    return {managerPin: auth.pin, managerId: auth.managerId};
+                }}
                 onRefundOpenChange={(open) => {
                     if (!open) setRefundOrder(null);
                 }}

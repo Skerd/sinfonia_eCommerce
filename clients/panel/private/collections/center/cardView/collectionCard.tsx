@@ -4,12 +4,13 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
+import {Card, CardContent} from "@coreModule/components/uiKit/ui/card";
+import {Badge} from "@coreModule/components/uiKit/ui/badge";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import {IconBox, IconEye, IconEyeOff, IconPhoto} from "@tabler/icons-react";
+import {IconPhoto} from "@tabler/icons-react";
 import CollectionSheetView from "@eCommerceModule/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -83,35 +84,46 @@ function CollectionCard({
         return <HiddenElement />;
     }
 
+    const typeLabel = collection.type
+        ? resolveLanguageKey("collectionType." + collection.type)
+        : undefined;
+    const productCount = collection.productCount ?? 0;
+
     return (
         <>
             {!sheetOnly && (
                 <Card
                     className={cn(
-                        "group p-0 h-full relative overflow-hidden transition-all duration-300",
-                        "hover:shadow-xl hover:cursor-pointer",
-                        "border border-border/60 shadow-sm gap-2 pb-2",
+                        "group h-full w-full gap-0 overflow-hidden py-0 shadow-none hover:cursor-pointer",
                     )}
                     onClick={() => setAction("view")}
                 >
-                    {/* ── Image ─────────────────────────────────────────── */}
-                    <div className="relative h-32 overflow-hidden bg-muted">
+                    <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
                         {collection.mainImage ? (
                             <img
                                 src={`/api/auxiliary/media/${collection.mainImage._id}`}
                                 alt={collection.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="absolute inset-0 size-full object-cover"
                             />
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                <IconPhoto className="w-12 h-12 text-muted-foreground/15" />
+                            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
+                                <IconPhoto className="size-10 text-muted-foreground/15" />
                             </div>
                         )}
 
-                        <div className="absolute inset-0 transform-gpu bg-linear-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
+                        <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
+                            {read?.type && typeLabel && (
+                                <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                    {typeLabel}
+                                </Badge>
+                            )}
+                        </div>
 
                         {!hideActions && (
-                            <div className="absolute top-2 right-2" onClick={(e) => e.stopPropagation()}>
+                            <div
+                                className="absolute top-2 right-2 z-20"
+                                onClick={(e) => e.stopPropagation()}
+                            >
                                 <ActionMenu
                                     accessModel={"productCollections"}
                                     deletedData={collection}
@@ -120,57 +132,43 @@ function CollectionCard({
                                 />
                             </div>
                         )}
+                    </figure>
 
-                        <div className="absolute bottom-2 left-2 flex items-center gap-1.5">
-                            {read?.type && collection.type && (
-                                <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20">
-                                    {resolveLanguageKey("collectionType." + collection.type)}
-                                </span>
-                            )}
-                            {read?.isVisible && collection.isVisible != null && (
-                                <span
-                                    className={cn(
-                                        "inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm border border-white/20",
-                                        collection.isVisible ? "bg-emerald-500/80 text-white" : "bg-black/40 text-white/80",
-                                    )}
-                                >
-                                    {collection.isVisible ? <IconEye className="w-3 h-3" /> : <IconEyeOff className="w-3 h-3" />}
-                                    {resolveLanguageKey(collection.isVisible ? "visible" : "hidden")}
-                                </span>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* ── Deleted banner ────────────────────────────────── */}
                     {(read.deletedBy || read.deletedAt) && (
                         <DeletedInfo deletedAt={collection.deletedAt} deletedBy={collection.deletedBy} />
                     )}
 
-                    {/* ── Content ───────────────────────────────────────── */}
-                    <div className="px-3 py-1 flex flex-col gap-2">
-                        <HiddenElement showLock randomLength={0}>
-                            {read?.name && (
-                                <h3 className="font-semibold text-sm leading-snug line-clamp-2 text-foreground min-h-6">
-                                    {collection.name || <ValueNotSet />}
-                                </h3>
-                            )}
-                        </HiddenElement>
+                    <CardContent className="space-y-2.5 px-4 pb-3">
+                        <div>
+                            <HiddenElement showLock randomLength={0}>
+                                {read?.name && (
+                                    <div className="line-clamp-2 text-base font-bold leading-snug">
+                                        {collection.name || <ValueNotSet />}
+                                    </div>
+                                )}
+                            </HiddenElement>
+                        </div>
 
                         {read?.description && collection.description && (
-                            <p className="text-xs text-muted-foreground line-clamp-1 leading-normal -mt-0.5">
+                            <p className="text-muted-foreground line-clamp-2 text-xs">
                                 {collection.description}
                             </p>
                         )}
 
-                        <div className="h-px bg-border" />
-
-                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                            <IconBox className="w-3.5 h-3.5 shrink-0" />
-                            <span>
-                                {collection.productCount ?? 0} {resolveLanguageKey("products")}
+                        <div className="flex items-center justify-between gap-2">
+                            <span className="text-muted-foreground truncate text-xs">
+                                {productCount} {resolveLanguageKey("products")}
                             </span>
+                            {read?.isVisible && collection.isVisible != null && (
+                                <Badge
+                                    variant={collection.isVisible ? "outline" : "destructive"}
+                                    className="shrink-0 px-1.5 py-0 text-[10px]"
+                                >
+                                    {resolveLanguageKey(collection.isVisible ? "visible" : "hidden")}
+                                </Badge>
+                            )}
                         </div>
-                    </div>
+                    </CardContent>
                 </Card>
             )}
 

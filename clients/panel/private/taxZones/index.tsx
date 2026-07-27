@@ -11,7 +11,7 @@ export function taxZoneEditPath(tz: {_id: string; name?: string}) {
     const params = new URLSearchParams();
     params.set("taxZoneId", tz._id);
     if (tz.name) params.set("taxZoneName", encodeURIComponent(tz.name));
-    return `/eCommerce/taxzones/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/taxzones/edit?${params.toString()}`;
 }
 
 function AllTaxZones({resolveLanguageKey}: WithLanguageType) {
@@ -21,7 +21,7 @@ function AllTaxZones({resolveLanguageKey}: WithLanguageType) {
             collectionName="taxZones"
             accessModel="taxZones"
             tableConfigKey="taxZones"
-            createPath="/eCommerce/taxzones/create"
+            createPath="/tenancy/systemSettings/taxzones/create"
             createIcon={<IconPlus />}
             createLanguageKey="createTaxZone"
             buildEditPath={taxZoneEditPath}

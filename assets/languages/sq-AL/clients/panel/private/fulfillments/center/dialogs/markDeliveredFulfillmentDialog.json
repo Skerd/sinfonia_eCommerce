@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
+  "title": "Shëno përmbushjen si dorëzuar",
+  "description": "Konfirmo që kjo përmbushje e dërguar është dorëzuar.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale",
+  "cancel": "Anulo",
+  "confirm": "Shëno si dorëzuar",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke shënuar si dorëzuar…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përmbushja u shënua si dorëzuar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u shënua si dorëzuar",
+      "time": 3000
+    }
+  }
+}

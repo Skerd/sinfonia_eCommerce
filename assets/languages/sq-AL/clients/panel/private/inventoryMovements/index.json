@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
+  "title": "Lëvizjet e inventarit",
+  "description": "Regjistri i plotë i rifornizimeve, çregjistrimeve, shitjeve dhe ndryshimeve të tjera.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "reason": "Arsyeja",
+    "quantity": "Sasia",
+    "product": "Produkti",
+    "warehouse": "Magazina",
+    "occurredAt": "Ndodhur më",
+    "receiptNumber": "Nr. fature"
+  }
+}

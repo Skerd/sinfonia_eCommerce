@@ -5,12 +5,43 @@
   "createFiscalConfig": "Create fiscal config",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "environment": {
+        "test": "Test",
+        "production": "Production"
+      },
+      "tcrType": {
+        "REGULAR": "Regular",
+        "VENDING": "Vending"
+      }
+    },
     "name": "Name",
     "nipt": "NIPT",
+    "softCode": "Software code",
+    "maintainerCode": "Maintainer code",
+    "businessUnitCode": "Business unit code",
+    "operatorCode": "Operator code",
     "tcrCode": "TCR code",
+    "tcrIntId": "TCR internal ID",
+    "tcrType": "TCR type",
+    "fiscalizationUrl": "Fiscalization URL",
+    "einvoiceUrl": "E-invoice URL",
+    "selfcareUrl": "Selfcare URL",
+    "proxyUrl": "Proxy URL",
+    "sellerName": "Seller name",
+    "sellerAddress": "Seller address",
+    "sellerTown": "Seller town",
+    "sellerCountry": "Seller country",
+    "isVatRegistered": "VAT registered",
+    "autoFiscalizePos": "Auto-fiscalize POS",
+    "autoEinvoice": "Auto e-invoice",
     "environment": "Environment",
+    "hasCertificate": "Certificate",
     "isActive": "Active",
+    "company": "Company",
     "createdBy": "Created by",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

@@ -5,10 +5,24 @@
   "createCustomerAddress": "Krijo adresë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "firstName": "Emri",
-    "lastName": "Mbiemri",
+    "user": "Klienti",
+    "firstName": "Emri i marrësit",
+    "lastName": "Mbiemri i marrësit",
+    "phone": "Telefoni",
     "street": "Rruga",
     "city": "Qyteti",
-    "phone": "Telefoni"
+    "state": "Rajoni",
+    "postalCode": "Kodi postar",
+    "country": "Shteti",
+    "latitude": "Gjerësia gjeografike",
+    "longitude": "Gjatësia gjeografike",
+    "isDefault": "Parazgjedhur",
+    "label": "Etiketa",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

@@ -4,12 +4,16 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {IconPlus, IconArrowsSort, IconUsers} from "@tabler/icons-react";
+import {IconPlus, IconArrowsSort} from "@tabler/icons-react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import CmsBlockCard from "./center/cardView/cmsBlockCard.tsx";
+import CmsBlockSheetView from "./center/sheetView/cmsBlockSheetView.tsx";
 import ReorderCmsBlocksModal from "./reorderCmsBlocksModal.tsx";
+import ActivateCmsBlock from "./center/actions/activateCmsBlock.tsx";
+import DeactivateCmsBlock from "./center/actions/deactivateCmsBlock.tsx";
+import ActivateCmsBlockDialog from "./center/dialogs/activateCmsBlockDialog.tsx";
+import DeactivateCmsBlockDialog from "./center/dialogs/deactivateCmsBlockDialog.tsx";
 
 export function cmsBlockEditPath(block: {_id: string; title?: string}) {
     const params = new URLSearchParams();
@@ -30,6 +34,7 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                 collectionName="cmsBlocks"
                 accessModel="cmsBlocks"
                 tableConfigKey="cmsBlocks"
+                rowActionMenu={{allowMenuForCustomChildren: true}}
                 createPath="/eCommerce/cmsblocks/create"
                 createIcon={<IconPlus />}
                 createLanguageKey="createCmsBlock"
@@ -43,11 +48,58 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                         {String(resolveLanguageKey("reorderBlocks") ?? "Reorder blocks")}
                     </Button>
                 }
+                renderActionMenuChildren={(_entity, bindRowAction) => (
+                    <>
+                        <ActivateCmsBlock entity={_entity} onAction={bindRowAction} />
+                        <DeactivateCmsBlock entity={_entity} onAction={bindRowAction} />
+                    </>
+                )}
+                renderSheetActionMenuChildren={(_entity, bindRowAction) => (
+                    <>
+                        <ActivateCmsBlock entity={_entity} onAction={bindRowAction} />
+                        <DeactivateCmsBlock entity={_entity} onAction={bindRowAction} />
+                    </>
+                )}
+                renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                    if (action === "activateCmsBlock") {
+                        return (
+                            <ActivateCmsBlockDialog
+                                open={true}
+                                onClose={resetAction}
+                                entity={entity}
+                                onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            />
+                        );
+                    }
+                    if (action === "deactivateCmsBlock") {
+                        return (
+                            <DeactivateCmsBlockDialog
+                                open={true}
+                                onClose={resetAction}
+                                entity={entity}
+                                onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            />
+                        );
+                    }
+                    return null;
+                }}
                 renderCard={(cmsBlock, onDelete, onRestore) => (
                     <CmsBlockCard
                         cmsBlock={cmsBlock}
                         onDelete={(row: CmsBlock | undefined, response?: DeletedData) => onDelete(row, response)}
                         onRestore={() => onRestore(cmsBlock)}
+                    />
+                )}
+                renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                    <CmsBlockSheetView
+                        open={open}
+                        onOpenChange={(opened: boolean) => { if (!opened) onOpenChange(); }}
+                        cmsBlock={entity}
+                        onDelete={onDelete}
+                        onRestore={onRestore}
+                        onSheetRowPatched={(row: Record<string, unknown>) => {
+                            listRef.current?.updateRow?.(entity._id, row as Partial<CmsBlock>);
+                        }}
                     />
                 )}
             />

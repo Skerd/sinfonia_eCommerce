@@ -1,10 +1,12 @@
 {
-  "name": "Name",
+  "name": "Emri",
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
-  "position": "Position",
-  "usedForVariants": "Used For Variants",
-  "values": "Values",
-  "variants": "Variants",
-  "visible": "Visible",
-  "visibleOnProductPage": "Visible On Product Page"
+  "position": "Pozicioni",
+  "usedForVariants": "Përdoret për variantet",
+  "values": "Vlerat",
+  "variants": "Variantet",
+  "visible": "I dukshëm",
+  "visibleOnProductPage": "I dukshëm në faqen e produktit",
+  "yes": "Po",
+  "no": "Jo"
 }

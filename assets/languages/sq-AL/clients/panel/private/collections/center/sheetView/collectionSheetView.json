@@ -1,22 +1,62 @@
 {
-  "collectionSubtitle": "Detajet e koleksionit",
-  "collectionType": {
-    "dynamic": "Dinamik",
-    "manual": "Manual"
-  },
-  "isVisible": "I dukshëm",
-  "overview": "Përmbledhje",
   "path": "src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx",
+  "collectionSubtitle": "Detajet e koleksionit",
+  "failedTitle": "Ngarkimi i koleksionit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të koleksionit. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovuar marrjen e të dhënave.",
+  "overview": "Përmbledhje",
+  "content": "Përmbajtja",
+  "media": "Media",
+  "products": "Produktet",
+  "rules": "Rregullat",
+  "seo": "SEO",
+  "compactView": "Kompakte",
+  "cardsView": "Kartela",
+  "toggleReferenceListView": "Ndërro pamjen e listës",
+  "yes": "Po",
+  "no": "Jo",
+  "name": "Emri",
+  "type": "Lloji",
+  "slug": "Slug",
+  "isVisible": "I dukshëm",
+  "position": "Pozicioni",
   "productCount": "Produktet",
-  "publishedAt": "Publiko më",
   "ruleCondition": {
-    "all": "All",
-    "any": "Any"
-  },
-  "ruleConditionLabels": {
     "all": "Të gjitha rregullat (AND)",
     "any": "Çdo rregull (OR)"
   },
-  "slug": "Slug",
-  "type": "Lloji"
+  "publishedAt": "Publiko më",
+  "company": "Kompania",
+  "createdAt": "Krijuar",
+  "updatedAt": "Përditësuar",
+  "description": "Përshkrimi",
+  "mainImage": "Imazhi i kopertinës",
+  "product": "Produkti",
+  "ruleField": {
+    "tag": "Etiketë",
+    "brand": "Markë",
+    "category": "Kategori",
+    "price": "Çmimi",
+    "vendor": "Furnizues",
+    "inventory_level": "Niveli i inventarit",
+    "product_type": "Lloji i produktit"
+  },
+  "ruleOperator": {
+    "equals": "Barazohet me",
+    "not_equals": "Nuk barazohet me",
+    "contains": "Përmban",
+    "not_contains": "Nuk përmban",
+    "greater_than": "Më i madh se",
+    "less_than": "Më i vogël se",
+    "starts_with": "Fillon me"
+  },
+  "ruleFieldLabel": "Fusha",
+  "ruleOperatorLabel": "Operatori",
+  "ruleValue": "Vlera",
+  "seoTitle": "Titulli SEO",
+  "seoDescription": "Përshkrimi SEO",
+  "collectionType": {
+    "dynamic": "Dinamik",
+    "manual": "Manual"
+  }
 }

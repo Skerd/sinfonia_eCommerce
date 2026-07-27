@@ -11,7 +11,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PaymentTransaction} from "armonia/src/modules/eCommerce/api/eCommerce/private/paymentTransaction/paymentTransaction.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconCreditCard, IconActivity, IconCurrencyDollar} from "@tabler/icons-react";
+import {IconCreditCard, IconActivity, IconCurrencyDollar, IconTag} from "@tabler/icons-react";
 import PaymentTransactionSheetView from "@eCommerceModule/clients/panel/private/paymentTransactions/center/sheetView/paymentTransactionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
@@ -98,11 +98,37 @@ function PaymentTransactionCard({
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
                                     <HiddenElement showLock randomLength={0}>
-                                        {(read as any)?.gatewayTransactionId && (
+                                        {((read as any)?.gatewayTransactionId || (read as any)?.type) && (
                                             <>
-                                                {(entity as any).gatewayTransactionId ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("gatewayTransactionId")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{String((entity as any).gatewayTransactionId)}</div>
+                                                {(entity as any).displayTitle ||
+                                                (entity as any).gatewayTransactionId ||
+                                                (entity as any).amountDisplay ? (
+                                                    <TooltipDisplayer
+                                                        tooltip={resolveLanguageKey(
+                                                            (entity as any).gatewayTransactionId
+                                                                ? "gatewayTransactionId"
+                                                                : "type",
+                                                        )}
+                                                    >
+                                                        <div className="font-semibold text-base leading-tight truncate">
+                                                            {String(
+                                                                (entity as any).gatewayTransactionId ||
+                                                                    [
+                                                                        (() => {
+                                                                            const key = `paymentTransactionType.${String((entity as any).type)}`;
+                                                                            const resolved = resolveLanguageKey(key);
+                                                                            return resolved !== key
+                                                                                ? resolved
+                                                                                : String((entity as any).type ?? "");
+                                                                        })(),
+                                                                        (entity as any).amountDisplay ||
+                                                                            (entity as any).displayTitle,
+                                                                    ]
+                                                                        .filter(Boolean)
+                                                                        .join(" · ") ||
+                                                                    (entity as any).displayTitle,
+                                                            )}
+                                                        </div>
                                                     </TooltipDisplayer>
                                                 ) : (
                                                     <ValueNotSet />
@@ -126,22 +152,55 @@ function PaymentTransactionCard({
                             <div className="space-y-2 text-sm px-4 pt-0">
                                 <div className="flex flex-col space-y-1">
                                     <InfoRow
+                                        label={resolveLanguageKey("type")}
+                                        icon={IconTag}
+                                        show={!!(read as any)?.type}
+                                        value={
+                                            (entity as any).type != null
+                                                ? (() => {
+                                                      const key = `paymentTransactionType.${String((entity as any).type)}`;
+                                                      const resolved = resolveLanguageKey(key);
+                                                      return resolved !== key ? resolved : String((entity as any).type);
+                                                  })()
+                                                : undefined
+                                        }
+                                    />
+                                    <InfoRow
                                         label={resolveLanguageKey("gateway")}
                                         icon={IconCreditCard}
                                         show={!!(read as any)?.gateway}
-                                        value={(entity as any).gateway != null ? String((entity as any).gateway) : undefined}
+                                        value={
+                                            (entity as any).gateway != null
+                                                ? (() => {
+                                                      const key = `paymentTransactionGateway.${String((entity as any).gateway)}`;
+                                                      const resolved = resolveLanguageKey(key);
+                                                      return resolved !== key ? resolved : String((entity as any).gateway);
+                                                  })()
+                                                : undefined
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("status")}
                                         icon={IconActivity}
+                                        value={
+                                            (entity as any).status != null
+                                                ? (() => {
+                                                      const key = `paymentTransactionStatus.${String((entity as any).status)}`;
+                                                      const resolved = resolveLanguageKey(key);
+                                                      return resolved !== key ? resolved : String((entity as any).status);
+                                                  })()
+                                                : undefined
+                                        }
                                         show={!!(read as any)?.status}
-                                        value={(entity as any).status != null ? String((entity as any).status) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("amount")}
                                         icon={IconCurrencyDollar}
                                         show={!!(read as any)?.amount}
-                                        value={(entity as any).amount != null ? String((entity as any).amount) : undefined}
+                                        value={
+                                            (entity as any).amountDisplay ??
+                                            ((entity as any).amount != null ? String((entity as any).amount) : undefined)
+                                        }
                                     />
                                 </div>
                             </div>

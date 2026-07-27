@@ -3,12 +3,31 @@
   "title": "Zonat e transportit",
   "description": "Përcaktoni tarifat e transportit sipas gjeografisë.",
   "createShippingZone": "Krijo zonë transporti",
-  "searchPlaceholder": "Search or add filters...",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "name": "Name",
-    "isActive": "Active",
-    "createdBy": "Created by",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "name": "Emri",
+    "countries": "Vendet",
+    "states": "Shtetet",
+    "postalCodePatterns": "Modelet e kodit postar",
+    "rates": {
+      "name": "Emri i tarifës",
+      "type": "Lloji i tarifës",
+      "price": "Çmimi i tarifës",
+      "carrier": "Transportuesi",
+      "estimatedDeliveryDays": "Ditët e vlerësuara të dorëzimit",
+      "conditions": {
+        "minWeight": "Pesha minimale",
+        "maxWeight": "Pesha maksimale",
+        "minOrderAmount": "Shuma minimale e porosisë",
+        "maxOrderAmount": "Shuma maksimale e porosisë"
+      }
+    },
+    "isActive": "Aktive",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

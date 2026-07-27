@@ -1,11 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx",
   "warehouseSubtitle": "Warehouse details",
+  "failedTitle": "Failed to load warehouse",
+  "failedDescription": "Something went wrong while loading this warehouse. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "overview": "Overview",
+  "address": "Address",
   "name": "Name",
   "code": "Code",
   "isDefault": "Default",
   "isActive": "Active",
+  "company": "Company",
+  "country": "Country",
+  "state": "State / region",
+  "city": "City",
   "street": "Street",
-  "postalCode": "Postal code"
+  "postalCode": "Postal code",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "yes": "Yes",
+  "no": "No"
 }

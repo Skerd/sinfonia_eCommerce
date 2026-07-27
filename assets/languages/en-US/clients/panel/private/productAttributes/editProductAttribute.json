@@ -1,7 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
   "title": "Edit attribute",
+  "errorTitle": "Failed to load attribute",
+  "errorDescription": "Could not load this attribute. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "nameLabel": "Name",
     "positionLabel": "Position",
     "isVisibleOnProductPageLabel": "Visible on product page",
@@ -9,5 +12,27 @@
     "valuesLabel": "Values",
     "valuesPlaceholder": "Add a value and press Enter",
     "removeValue": "Remove value"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving attribute",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attribute updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update attribute",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit attribute",
+    "description": "Update the name, values, visibility, and variant settings."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

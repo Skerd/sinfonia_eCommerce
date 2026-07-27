@@ -5,8 +5,24 @@
   "createReturnRequest": "Krijo kërkesë kthimi",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "order": "Porosia",
     "type": "Lloji",
     "status": "Statusi",
-    "refundAmount": "Shuma e rimbursimit"
+    "items": {
+      "orderItemId": "ID e artikullit të porosisë",
+      "quantity": "Sasia",
+      "reason": "Arsyeja"
+    },
+    "refundAmount": "Shuma e rimbursimit",
+    "customerNote": "Shënimi i klientit",
+    "adminNote": "Shënimi i administratorit",
+    "resolvedBy": "Zgjidhur nga",
+    "resolvedAt": "Zgjidhur më",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

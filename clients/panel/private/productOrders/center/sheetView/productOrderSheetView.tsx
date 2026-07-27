@@ -43,7 +43,13 @@ function ProductOrderSheetView({
 
     useEffect(() => {
         if (!orderProp) return;
-        setSheetData(orderProp);
+        setSheetData((prev) => ({
+            ...orderProp,
+            // Keep /single enrichments (list rows don't include related payment txs).
+            paymentTransactions:
+                (orderProp as ProductOrder).paymentTransactions ??
+                (prev as ProductOrder).paymentTransactions,
+        }));
     }, [orderProp]);
 
     const entityId = orderProp?._id ?? fetchId;
@@ -62,7 +68,7 @@ function ProductOrderSheetView({
             <SheetViewRenderer
                 config={viewConfig}
                 url="/api/eCommerce/productOrder/single"
-                fetchId={fetchId}
+                fetchId={fetchId ?? orderProp?._id}
                 onDataFetched={(data) => {
                     setSheetData(data);
                 }}

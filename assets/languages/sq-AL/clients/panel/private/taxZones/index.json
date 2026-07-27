@@ -3,14 +3,25 @@
   "title": "Zonat tatimore",
   "description": "Konfiguroni normat tatimore sipas vendit dhe rajonit.",
   "createTaxZone": "Krijo zonë tatimore",
-  "searchPlaceholder": "Search or add filters...",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "name": "Name",
-    "country": "Country",
-    "priority": "Priority",
-    "isActive": "Active",
-    "createdBy": "Created by",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "name": "Emri",
+    "country": "Shteti",
+    "states": "Shtetet",
+    "postalCodePatterns": "Modelet e kodit postar",
+    "rates": {
+      "name": "Emri i tarifës",
+      "rate": "Norma",
+      "isCompound": "I përbërë",
+      "appliesTo": "Tarifa zbatohet për"
+    },
+    "priority": "Prioriteti",
+    "isActive": "Aktive",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

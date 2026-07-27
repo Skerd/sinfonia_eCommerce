@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/deductInventory.tsx",
+  "title": "Deduct inventory",
+  "description": "Write off or remove stock and keep a full movement log.",
+  "missingInventoryId": "Missing inventory id. Open deduct from an inventory row."
+}

@@ -9,7 +9,7 @@ export default createGenericCreatePage<CreateCustomerGroupFormType>({
     accessModel: "customerGroups",
     apiUrl: "/api/eCommerce/customerGroup",
     schema: createCustomerGroupFormSchema,
-    defaultValues: {name: "", description: ""},
-    successPath: "/eCommerce/customergroups",
+    defaultValues: {name: "", description: "", isDefault: false},
+    successPath: "/tenancy/systemSettings/customergroups",
     submitIcon: <IconPlus />,
 });

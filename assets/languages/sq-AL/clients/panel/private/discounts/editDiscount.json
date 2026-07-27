@@ -1,40 +1,85 @@
 {
-  "form": {
-    "appliesToLabel": "Applies to",
-    "buyQuantityLabel": "Buy Quantity Label",
-    "buyXGetYSectionTitle": "Buy XGet YSection Title",
-    "codeLabel": "Code",
-    "customerGroupsLabel": "Customer Groups Label",
-    "discountAppliesTo": {
-      "category": "Category",
-      "collection": "Collection",
-      "order": "Order",
-      "product": "Product"
-    },
-    "discountType": {
-      "buy_x_get_y": "Buy X Get Y",
-      "fixed": "Fixed",
-      "free_shipping": "Free Shipping",
-      "percentage": "Percentage"
-    },
-    "endsAtLabel": "Ends at",
-    "getProductIdsLabel": "Get Product Ids Label",
-    "getQuantityLabel": "Get Quantity Label",
-    "isActiveLabel": "Active",
-    "minimumOrderAmountLabel": "Minimum order amount",
-    "minimumQuantityLabel": "Minimum quantity",
-    "selectCategory": "Select Category",
-    "selectCollection": "Select Collection",
-    "selectCustomerGroup": "Select Customer Group",
-    "selectProduct": "Select Product",
-    "startsAtLabel": "Starts at",
-    "targetIdsLabel": "Target Ids Label",
-    "titleLabel": "Title",
-    "typeLabel": "Type",
-    "usageLimitLabel": "Usage limit",
-    "usageLimitPerCustomerLabel": "Usage limit per customer",
-    "valueLabel": "Value"
-  },
   "path": "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
-  "title": "Ndrysho zbritjen"
+  "title": "Ndrysho zbritjen",
+  "errorTitle": "Nuk u ngarkua zbritja",
+  "errorDescription": "Nuk mund të ngarkohej kjo zbritje. Provoni përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrit",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli i zbritjes",
+    "codeLabel": "Kodi",
+    "codePlaceholder": "Kod promocional opsional",
+    "typeLabel": "Lloji",
+    "appliesToLabel": "Aplikohet te",
+    "valueLabel": "Vlera",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Aktive",
+    "startsAtLabel": "Fillon më",
+    "endsAtLabel": "Përfundon më",
+    "minimumOrderAmountLabel": "Shuma minimale e porosisë",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Sasia minimale",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Limiti i përdorimit",
+    "usageLimitPlaceholder": "Pa limit nëse bosh",
+    "usageLimitPerCustomerLabel": "Limiti i përdorimit për klient",
+    "usageLimitPerCustomerPlaceholder": "Pa limit nëse bosh",
+    "generalSectionTitle": "Të përgjithshme",
+    "scheduleSectionTitle": "Orari",
+    "limitsSectionTitle": "Limitet",
+    "targetsSectionTitle": "Objektivat",
+    "customerGroupsSectionTitle": "Grupet e klientëve",
+    "targetIdsLabel": "Objektivat",
+    "productsLabel": "Produktet",
+    "collectionsLabel": "Koleksionet",
+    "categoriesLabel": "Kategoritë",
+    "customerGroupsLabel": "Grupet e klientëve",
+    "buyXGetYSectionTitle": "Bli X merr Y",
+    "buyQuantityLabel": "Sasia e blerjes",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Sasia e marrjes",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Produktet e marrjes",
+    "selectProduct": "Zgjidh produktin",
+    "selectCollection": "Zgjidh koleksionin",
+    "selectCategory": "Zgjidh kategorinë",
+    "selectCustomerGroup": "Zgjidh grupin e klientëve",
+    "removeTarget": "Hiq objektivin",
+    "removeCustomerGroup": "Hiq grupin e klientëve",
+    "removeProduct": "Hiq produktin",
+    "discountType": {
+      "percentage": "Përqindje",
+      "fixed": "Shumë fikse",
+      "free_shipping": "Transport falas",
+      "buy_x_get_y": "Bli X merr Y"
+    },
+    "discountAppliesTo": {
+      "order": "Porosia e plotë",
+      "product": "Produktet",
+      "collection": "Koleksionet",
+      "category": "Kategoritë"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur zbritjen",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zbritja u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot zbritja",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho zbritjen",
+    "description": "Përditësoni rregullat, limitet, objektivat dhe orarin e zbritjes."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
 }

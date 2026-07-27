@@ -14,6 +14,7 @@ export default createGenericEditPage<ProductVariant, EditProductVariantFormType>
         ...data,
         product: data.product?._id ?? data.product,
         currency: data.currency?._id ?? data.currency,
+        mainImage: data.mainImage?._id ?? data.mainImage,
         attributeCombination: (data.attributeCombination ?? []).map((c: any) => ({
             attribute: c.attribute?._id ?? c.attribute,
             value: c.value,

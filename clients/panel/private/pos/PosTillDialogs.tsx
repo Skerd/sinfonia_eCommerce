@@ -96,8 +96,9 @@ type Props = {
     pinOpen: boolean;
     pinBusy: boolean;
     pinTitle: string;
+    pinManagers?: { _id: string; label: string }[];
     onPinOpenChange: (open: boolean) => void;
-    onPinConfirm: (pin: string) => void;
+    onPinConfirm: (pin: string, managerId: string) => void;
 
     variantProduct: CatalogProduct | null;
     onVariantClose: () => void;
@@ -112,6 +113,7 @@ type Props = {
 
     refundOrder: PosOrder | null;
     requireRefundPin: boolean;
+    onRequestRefundAuth?: () => Promise<{managerPin: string; managerId: string} | null>;
     onRefundOpenChange: (open: boolean) => void;
     onRefunded: () => void;
 };
@@ -173,6 +175,7 @@ export default function PosTillDialogs({
     pinOpen,
     pinBusy,
     pinTitle,
+    pinManagers,
     onPinOpenChange,
     onPinConfirm,
     variantProduct,
@@ -181,6 +184,7 @@ export default function PosTillDialogs({
     allowOversell,
     refundOrder,
     requireRefundPin,
+    onRequestRefundAuth,
     onRefundOpenChange,
     onRefunded,
 }: Props) {
@@ -190,7 +194,12 @@ export default function PosTillDialogs({
                 open={pinOpen}
                 onOpenChange={onPinOpenChange}
                 title={pinTitle || rk("pin.title")}
-                description={rk("pin.description")}
+                description={
+                    pinManagers && pinManagers.length > 1
+                        ? rk("pin.selectThenEnter")
+                        : rk("pin.description")
+                }
+                managers={pinManagers}
                 rk={rk}
                 busy={pinBusy}
                 onConfirm={onPinConfirm}
@@ -210,6 +219,7 @@ export default function PosTillDialogs({
                 order={refundOrder}
                 open={!!refundOrder}
                 requirePin={requireRefundPin}
+                requestManagerAuth={onRequestRefundAuth}
                 money={money}
                 rk={rk}
                 onOpenChange={onRefundOpenChange}

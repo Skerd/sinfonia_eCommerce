@@ -4,9 +4,9 @@
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
   "pricingRuleType": {
-    "fixed_discount": "Fixed Discount",
-    "fixed_price": "Fixed Price",
-    "percentage_discount": "Percentage Discount",
+    "fixed_discount": "Fixed discount",
+    "fixed_price": "Fixed price",
+    "percentage_discount": "Percentage discount",
     "surcharge": "Surcharge"
   },
   "priority": "Priority",

@@ -4,5 +4,25 @@
   "status": "Statusi",
   "amount": "Shuma",
   "type": "Lloji",
-  "gatewayTransactionId": "gatewayTransactionId"
+  "gatewayTransactionId": "ID e transaksionit",
+  "paymentTransactionType": {
+    "charge": "Ngarkesë",
+    "refund": "Rimbursim",
+    "payout": "Pagesë dalëse",
+    "dispute": "Mosmarrëveshje"
+  },
+  "paymentTransactionStatus": {
+    "pending": "Në pritje",
+    "succeeded": "I suksesshëm",
+    "failed": "I dështuar",
+    "refunded": "I rimbursuar",
+    "partially_refunded": "I rimbursuar pjesërisht",
+    "disputed": "Në mosmarrëveshje"
+  },
+  "paymentTransactionGateway": {
+    "stripe": "Stripe",
+    "paypal": "PayPal",
+    "manual": "Manuale",
+    "wallet": "Portofol"
+  }
 }

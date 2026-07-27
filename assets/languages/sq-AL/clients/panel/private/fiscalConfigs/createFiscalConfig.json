@@ -10,6 +10,11 @@
     "submit": "Krijo"
   },
   "form": {
+    "generalSectionTitle": "Të përgjithshme",
+    "cisCodesSectionTitle": "Kodet CIS",
+    "endpointsSectionTitle": "Endpoint-et e shërbimit",
+    "sellerSectionTitle": "Të dhënat e shitësit",
+    "certificateSectionTitle": "Certifikata",
     "nameLabel": "Emri",
     "niptLabel": "NIPT / NUIS",
     "softCodeLabel": "Kodi i softuerit (SoftCode)",
@@ -40,8 +45,20 @@
     "certificatePasswordLabel": "Fjalëkalimi i certifikatës",
     "isVatRegisteredLabel": "I regjistruar në TVSH",
     "autoFiscalizePosLabel": "Fiskalizo automatikisht pagesat POS",
-    "autoEinvoiceLabel": "Krijo automatikisht e-faturë pas fiskalizimit",
-    "clearCertificateLabel": "Fshi certifikatën e ruajtur",
-    "isActiveLabel": "Aktive"
+    "autoEinvoiceLabel": "Krijo automatikisht e-faturë pas fiskalizimit"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar konfigurimin fiskal",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi fiskal u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot konfigurimi fiskal",
+      "time": 3000
+    }
   }
 }

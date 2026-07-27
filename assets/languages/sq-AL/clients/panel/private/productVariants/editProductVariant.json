@@ -1,27 +1,65 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
-  "title": "Variantet e produkteve",
+  "title": "Ndrysho variantin",
+  "errorTitle": "Dështoi ngarkimi i variantit",
+  "errorDescription": "Nuk u ngarkua dot ky variant produkti. Provo përsëri.",
   "form": {
+    "generalSectionTitle": "Të përgjithshme",
+    "pricingSectionTitle": "Çmimet",
+    "physicalSectionTitle": "Fizike",
+    "mediaSectionTitle": "Media",
     "productLabel": "Produkti",
     "productPlaceholder": "Zgjidh produktin",
     "statusLabel": "Statusi",
     "skuLabel": "SKU",
+    "skuPlaceholder": "SKU e variantit",
     "barcodeLabel": "Barkodi",
+    "barcodePlaceholder": "Barkodi",
+    "positionLabel": "Pozicioni",
+    "trackInventoryLabel": "Gjurmo inventarin",
     "priceLabel": "Çmimi",
     "compareAtPriceLabel": "Çmimi i krahasimit",
     "costPriceLabel": "Çmimi i kostos",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
     "weightLabel": "Pesha",
-    "positionLabel": "Pozicioni",
-    "trackInventoryLabel": "Gjurmo inventarin",
-    "attributesSectionTitle": "Atributet",
+    "dimensionLengthLabel": "Gjatësia",
+    "dimensionWidthLabel": "Gjerësia",
+    "dimensionHeightLabel": "Lartësia",
+    "mainImageLabel": "Imazhi kryesor",
+    "attributesSectionTitle": "Kombinimi i atributeve",
     "attributeAddRow": "Shto atribut",
     "attributeRemoveRow": "Hiq atributin",
-    "attributeRowTitle": "Atributi",
+    "attributeRowTitle": "Atribut pa titull",
     "attributeLabel": "Atributi",
+    "attributePlaceholder": "Zgjidh atributin",
     "valueLabel": "Vlera",
+    "valuePlaceholder": "Vlera e atributit",
     "variantStatus": {
       "active": "Aktiv",
       "inactive": "Joaktiv"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur variantin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Varianti u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot variantin",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho variantin",
+    "description": "Përditëso çmimet, atributet dhe cilësimet e inventarit për këtë SKU."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

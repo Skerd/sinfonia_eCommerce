@@ -7,15 +7,20 @@
     "typeLabel": "Type",
     "statusLabel": "Status",
     "refundAmountLabel": "Refund amount",
+    "refundAmountPlaceholder": "0",
     "customerNoteLabel": "Customer note",
+    "customerNotePlaceholder": "Optional note from the customer",
     "adminNoteLabel": "Admin note",
+    "adminNotePlaceholder": "Optional internal note",
     "itemsSectionTitle": "Items",
     "itemAddRow": "Add item",
     "itemRemoveRow": "Remove item",
     "itemRowTitle": "Item",
     "orderItemIdLabel": "Order item id",
+    "orderItemIdPlaceholder": "Order line id",
     "quantityLabel": "Quantity",
     "reasonLabel": "Reason",
+    "reasonPlaceholder": "Why is this item being returned?",
     "returnType": {
       "return": "Return",
       "exchange": "Exchange",
@@ -28,5 +33,27 @@
       "received": "Received",
       "completed": "Completed"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Creating return request",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return request created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create return request",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create return request",
+    "description": "Request a return, exchange, or refund for an order."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create return request"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
+  "title": "Aktivizo metodën e pagesës",
+  "description": "Kjo metodë pagese do të jetë e disponueshme në arkat që e përdorin.",
+  "cancel": "Anulo",
+  "confirm": "Aktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar metodën e pagesës…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metoda e pagesës u aktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u aktivizua dot metoda e pagesës",
+      "time": 3000
+    }
+  }
+}

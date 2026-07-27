@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx",
+  "title": "Çaktivizo bllokun CMS",
+  "description": "Ky bllok do të fshihet nga dyqani derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar bllokun CMS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Blloku CMS u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot blloku CMS",
+      "time": 3000
+    }
+  }
+}

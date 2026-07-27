@@ -6,5 +6,7 @@
   "position": "Pozicioni",
   "isVisibleOnProductPage": "I dukshëm në faqen e produktit",
   "isUsedForVariants": "Përdoret për variantet",
-  "valueCount": "Vlerat"
+  "values": "Vlerat",
+  "yes": "Po",
+  "no": "Jo"
 }

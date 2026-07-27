@@ -1,8 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
   "customerGroupSubtitle": "Customer group details",
+  "failedTitle": "Failed to load customer group",
+  "failedDescription": "Something went wrong while loading this customer group. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "overview": "Overview",
   "name": "Name",
+  "description": "Description",
   "memberCount": "Members",
-  "isDefault": "Default"
+  "isDefault": "Default",
+  "company": "Company",
+  "yes": "Yes",
+  "no": "No"
 }

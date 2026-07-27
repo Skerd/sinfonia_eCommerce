@@ -7,6 +7,10 @@ import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
+import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
+import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 
 export type InventorySheetViewOwnProps = {
     open: boolean;
@@ -16,7 +20,21 @@ export type InventorySheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onInventoryUpdated?: (updated?: Inventory) => void;
 };
+
+async function fetchMovementsForInventory(inventoryId: string) {
+    try {
+        const res = await apiClient.post<{data?: unknown[]}>("/api/eCommerce/inventoryMovement", {
+            inventoryId,
+            page: 1,
+            limit: 200,
+        });
+        return Array.isArray(res.data?.data) ? res.data.data : [];
+    } catch {
+        return [];
+    }
+}
 
 function InventorySheetView({
     open,
@@ -27,14 +45,27 @@ function InventorySheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onInventoryUpdated,
 }: InventorySheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(inventoryProp || {_id: fetchId});
+    const [action, setAction] = useState<string>("");
+    const [fetchKey, setFetchKey] = useState(0);
     const access = useAccess("inventories");
     const viewConfig = useViewConfig("inventories", "sheet");
 
     useEffect(() => {
         if (!inventoryProp) return;
-        setSheetData(inventoryProp);
+        setSheetData((prev) => {
+            const next: Record<string, unknown> = {
+                ...inventoryProp,
+            };
+            for (const [key, value] of Object.entries(prev)) {
+                if (!(key in inventoryProp) || (inventoryProp as Record<string, unknown>)[key] === undefined) {
+                    next[key] = value;
+                }
+            }
+            return next;
+        });
     }, [inventoryProp]);
 
     const entityId = inventoryProp?._id ?? fetchId;
@@ -42,23 +73,55 @@ function InventorySheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asInventory = sheetData as Inventory;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/inventory/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-        />
+        <>
+            <SheetViewRenderer
+                key={fetchKey}
+                config={viewConfig}
+                url="/api/eCommerce/inventory/single"
+                fetchId={fetchId ?? inventoryProp?._id}
+                onDataFetched={async (data) => {
+                    const next = {...(data || {})} as Record<string, unknown>;
+                    const id = String(next._id ?? entityId);
+                    if (!Array.isArray(next.movements) || next.movements.length === 0) {
+                        next.movements = await fetchMovementsForInventory(id);
+                    }
+                    setSheetData(next);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <RestockInventoryDropdown inventory={asInventory} onAction={setAction} />
+                        <DeductInventoryDropdown inventory={asInventory} onAction={setAction} />
+                    </>
+                }
+            />
+            {(action === "restock" || action === "deduct") && (
+                <InventoryStockMoveAction
+                    inventoryId={String(asInventory._id)}
+                    displayName={asInventory.product?.title}
+                    mode={action}
+                    openAlert
+                    url={`/api/eCommerce/inventory/${action}`}
+                    onSuccess={(updated) => {
+                        setAction("");
+                        setFetchKey((k) => k + 1);
+                        onInventoryUpdated?.(updated);
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+        </>
     );
 }
 

@@ -1,38 +1,62 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
+  "title": "Create CMS block",
+  "formHeader": {
+    "title": "Create CMS block",
+    "description": "Add a storefront content block with schedule and visibility rules."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create"
+  },
   "form": {
-    "abTestVariantLabel": "A/B test variant",
-    "cmsBlockType": {
-      "announcement_bar": "Announcement Bar",
-      "best_sellers": "Best Sellers",
-      "category_showcase": "Category Showcase",
-      "custom_html": "Custom Html",
-      "featured_collection": "Featured Collection",
-      "flash_sale": "Flash Sale",
-      "grid": "Grid",
-      "hero_banner": "Hero Banner",
-      "promotional_section": "Promotional Section",
-      "slider": "Slider",
-      "trending": "Trending",
-      "video": "Video"
-    },
-    "configLabel": "Configuration (JSON)",
-    "configPlaceholder": "Config Placeholder",
-    "endsAtLabel": "Ends at",
-    "isActiveLabel": "Active",
-    "positionLabel": "Position",
-    "startsAtLabel": "Starts at",
+    "generalSectionTitle": "General",
+    "configSectionTitle": "Configuration",
+    "visibilitySectionTitle": "Visibility",
     "titleLabel": "Title",
     "typeLabel": "Type",
+    "positionLabel": "Position",
+    "abTestVariantLabel": "A/B test variant",
+    "startsAtLabel": "Starts at",
+    "endsAtLabel": "Ends at",
+    "configLabel": "Configuration (JSON)",
+    "configPlaceholder": "{\n  \"headline\": \"Welcome\"\n}",
+    "visibilityDevicesLabel": "Devices",
+    "visibilityRegionsLabel": "Regions",
+    "visibilityRegionsPlaceholder": "Add region code",
+    "removeRegion": "Remove region",
+    "cmsBlockType": {
+      "hero_banner": "Hero banner",
+      "slider": "Slider",
+      "featured_collection": "Featured collection",
+      "trending": "Trending",
+      "best_sellers": "Best sellers",
+      "flash_sale": "Flash sale",
+      "announcement_bar": "Announcement bar",
+      "custom_html": "Custom HTML",
+      "video": "Video",
+      "grid": "Grid",
+      "category_showcase": "Category showcase",
+      "promotional_section": "Promotional section"
+    },
     "visibilityDevice": {
       "desktop": "Desktop",
       "mobile": "Mobile",
       "tablet": "Tablet"
-    },
-    "visibilityDevicesLabel": "Visibility Devices Label",
-    "visibilityRegionsLabel": "Visibility Regions Label",
-    "visibilityRegionsPlaceholder": "Visibility Regions Placeholder",
-    "visibilitySectionTitle": "Visibility Section Title"
+    }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
-  "title": "Create CMS block"
+  "axios": {
+    "start": {
+      "title": "Creating CMS block",
+      "time": 3000
+    },
+    "success": {
+      "title": "CMS block created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create CMS block",
+      "time": 3000
+    }
+  }
 }

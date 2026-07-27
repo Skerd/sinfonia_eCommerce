@@ -5,16 +5,37 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useState} from "react";
 import {Card} from "@coreModule/components/ui/card.tsx";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconActivity, IconCash, IconUser} from "@tabler/icons-react";
+import {IconCash, IconPackage, IconUser} from "@tabler/icons-react";
 import PosOrderSheetView from "@eCommerceModule/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
+import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
+import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
+import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
+
+function stateColor(state: string): string {
+    switch (state) {
+        case "paid":
+            return "text-emerald-600 bg-emerald-500";
+        case "draft":
+            return "text-amber-600 bg-amber-500";
+        case "cancel":
+        case "refunded":
+            return "text-red-600 bg-red-500";
+        default:
+            return "text-sky-600 bg-sky-500";
+    }
+}
+
+function formatMoney(amount: number | undefined | null): string {
+    const n = (amount ?? 0).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
+    return n;
+}
 
 type PosOrderCardProps = WithLanguageType & {
     entity: PosOrder;
@@ -79,6 +100,8 @@ function PosOrderCard({
         [entity.customer?.name, entity.customer?.surname].filter(Boolean).join(" ") ||
         undefined;
 
+    const colors = stateColor(entity.state);
+
     return (
         <>
             {!sheetOnly && (
@@ -90,22 +113,22 @@ function PosOrderCard({
                         {(read.deletedBy || read.deletedAt) && (
                             <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
                         )}
-                        <div className="w-full min-w-0 py-3">
-                            <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
+                        <div className="w-full min-w-0 py-3 px-4">
+                            <div className="flex justify-between items-start gap-2">
                                 <div className="min-w-0 flex-1">
                                     <HiddenElement showLock randomLength={0}>
                                         {read?.name && (
-                                            <>
-                                                {entity.name ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{entity.name}</div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
+                                            <div className="font-semibold text-base leading-tight truncate">
+                                                {entity.name || <ValueNotSet />}
+                                            </div>
                                         )}
                                     </HiddenElement>
+                                    {customerDisplay && (
+                                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
+                                            <IconUser className="w-3.5 h-3.5 shrink-0" />
+                                            <span className="truncate">{customerDisplay}</span>
+                                        </div>
+                                    )}
                                 </div>
                                 {!hideActions && (
                                     <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
@@ -115,57 +138,91 @@ function PosOrderCard({
                                             onAction={(a: string) => setAction(a)}
                                             editPath=""
                                             hideEdit
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ReprintPosOrder entity={entity} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
-                            <div className="space-y-2 text-sm px-4 pt-0">
-                                <div className="flex flex-col space-y-1">
-                                    <InfoRow
-                                        label={resolveLanguageKey("state")}
-                                        icon={IconActivity}
-                                        show={!!read?.state}
-                                        value={entity.state ? resolveLanguageKey("orderState." + entity.state) : undefined}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("customer")}
-                                        icon={IconUser}
-                                        show={!!(read as any)?.customerName || !!(read as any)?.customer}
-                                        value={customerDisplay}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("amountTotal")}
-                                        icon={IconCash}
-                                        show={!!read?.amountTotal}
-                                        value={entity.amountTotal != null ? String(entity.amountTotal) : undefined}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("payments")}
-                                        icon={IconCash}
-                                        show={!!(read as any)?.payments && !!entity.payments?.length}
-                                        value={entity.payments
-                                            ?.map(
-                                                (p) =>
-                                                    `${p.paymentMethodName || p.paymentMethodLabel?.name || "—"}: ${p.amount}`,
-                                            )
-                                            .join(" · ")}
-                                    />
-                                </div>
+
+                            <div className="flex items-center justify-between gap-2 mt-3">
+                                {read?.state && entity.state && (
+                                    <span
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                            colors.split(" ")[0],
+                                        )}
+                                    >
+                                        <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
+                                        {resolveLanguageKey("orderState." + entity.state)}
+                                    </span>
+                                )}
+                                {read?.amountTotal && (
+                                    <span className="font-bold text-base text-foreground leading-none ml-auto inline-flex items-center gap-1">
+                                        <IconCash className="w-3.5 h-3.5 text-muted-foreground" />
+                                        {formatMoney(entity.amountTotal)}
+                                    </span>
+                                )}
                             </div>
+
+                            {read?.lines && entity.lines && (
+                                <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
+                                    <IconPackage className="w-3.5 h-3.5 shrink-0" />
+                                    <span>
+                                        {entity.lines.length} {resolveLanguageKey("items")}
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </Card>
             )}
 
-            {!!action && action === "view" && (
-                <PosOrderSheetView
-                    open={action === "view"}
-                    onOpenChange={() => setAction("")}
-                    entity={entity}
-                    fetchId={entity._id}
-                    onDelete={onDelete}
-                    onRestore={onRestore}
-                />
+            {!!action && (
+                <>
+                    {action === "view" && (
+                        <PosOrderSheetView
+                            open={action === "view"}
+                            onOpenChange={() => setAction("")}
+                            entity={entity}
+                            fetchId={entity._id}
+                            onDelete={onDelete}
+                            onRestore={onRestore}
+                        />
+                    )}
+                    {action === "delete" && (
+                        <DeleteAction
+                            accessModel={"posOrders"}
+                            deleteId={entity._id}
+                            openAlert={action === "delete"}
+                            name={read?.name && entity.name}
+                            confirmName={read?.name && entity.name}
+                            onSuccess={onDelete}
+                            onCancel={() => setAction("")}
+                            url="/api/eCommerce/posOrder"
+                        />
+                    )}
+                    {action === "restore" && (
+                        <RestoreAction
+                            accessModel={"posOrders"}
+                            deleteId={entity._id}
+                            openAlert={action === "restore"}
+                            name={read?.name && entity.name}
+                            confirmName={read?.name && entity.name}
+                            onSuccess={onRestore}
+                            onCancel={() => setAction("")}
+                            url="/api/eCommerce/posOrder/restore"
+                        />
+                    )}
+                    {action === "reprintPosOrder" && (
+                        <ReprintPosOrderDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                        />
+                    )}
+                </>
             )}
         </>
     );

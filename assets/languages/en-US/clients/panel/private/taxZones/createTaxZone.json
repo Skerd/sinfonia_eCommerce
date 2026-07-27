@@ -1,27 +1,54 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/createTaxZone.tsx",
+  "title": "Create tax zone",
   "form": {
+    "generalSectionTitle": "General",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
-    "isActiveLabel": "Active",
-    "isCompoundLabel": "Is Compound Label",
-    "nameLabel": "Name",
-    "postalCodePatternsLabel": "Postal code patterns",
-    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
     "priorityLabel": "Priority",
-    "rateAddRow": "Rate Add Row",
-    "rateAppliesToLabel": "Rate Applies To Label",
-    "rateNameLabel": "Rate Name Label",
-    "rateRemoveRow": "Rate Remove Row",
-    "rateValueLabel": "Rate Value Label",
-    "ratesSectionTitle": "Rates Section Title",
-    "selectState": "Select State",
-    "statesLabel": "States",
+    "isActiveLabel": "Active",
+    "statesLabel": "States / regions",
+    "selectState": "Select state",
+    "removeState": "Remove state",
+    "postalCodePatternsLabel": "Postal code patterns",
+    "postalCodePatternsPlaceholder": "e.g. 1000* or AL-*",
+    "removePostalCodePattern": "Remove pattern",
+    "ratesSectionTitle": "Tax rates",
+    "rateAddRow": "Add rate",
+    "rateRemoveRow": "Remove rate",
+    "rateRowTitle": "Untitled rate",
+    "rateNameLabel": "Rate name",
+    "rateValueLabel": "Rate (%)",
+    "rateAppliesToLabel": "Applies to",
+    "isCompoundLabel": "Compound rate",
     "taxRateAppliesTo": {
-      "all": "All",
-      "digital": "Digital",
-      "physical": "Physical"
+      "all": "All products",
+      "physical": "Physical",
+      "digital": "Digital"
     }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/taxZones/createTaxZone.tsx",
-  "title": "Create tax zone"
+  "axios": {
+    "start": {
+      "title": "Creating tax zone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tax zone created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create tax zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create tax zone",
+    "description": "Define destination geography and the tax rates applied at checkout."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create tax zone"
+  }
 }

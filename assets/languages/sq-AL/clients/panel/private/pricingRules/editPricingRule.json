@@ -1,35 +1,72 @@
 {
-  "form": {
-    "appliesToLabel": "Applies to",
-    "customerGroupsLabel": "Customer Groups Label",
-    "endsAtLabel": "Ends at",
-    "isActiveLabel": "Active",
-    "minimumOrderAmountLabel": "Minimum order amount",
-    "minimumQuantityLabel": "Minimum quantity",
-    "nameLabel": "Name",
-    "pricingRuleAppliesTo": {
-      "all": "All",
-      "category": "Category",
-      "collection": "Collection",
-      "customer_group": "Customer Group",
-      "product": "Product"
-    },
-    "pricingRuleType": {
-      "fixed_discount": "Fixed Discount",
-      "fixed_price": "Fixed Price",
-      "percentage_discount": "Percentage Discount",
-      "surcharge": "Surcharge"
-    },
-    "priorityLabel": "Priority",
-    "selectCategory": "Select Category",
-    "selectCollection": "Select Collection",
-    "selectCustomerGroup": "Select Customer Group",
-    "selectProduct": "Select Product",
-    "startsAtLabel": "Starts at",
-    "targetIdsLabel": "Target Ids Label",
-    "typeLabel": "Type",
-    "valueLabel": "Value"
-  },
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
-  "title": "Ndrysho rregullin e çmimit"
+  "title": "Ndrysho rregullin e çmimit",
+  "errorTitle": "Dështoi ngarkimi i rregullit të çmimit",
+  "errorDescription": "Nuk u ngarkua dot ky rregull çmimi. Provo përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri i rregullit të çmimit",
+    "typeLabel": "Lloji",
+    "appliesToLabel": "Aplikohet te",
+    "valueLabel": "Vlera",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Prioriteti",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Fillon më",
+    "endsAtLabel": "Përfundon më",
+    "minimumOrderAmountLabel": "Shuma minimale e porosisë",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Sasia minimale",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "Të përgjithshme",
+    "scheduleSectionTitle": "Orari",
+    "limitsSectionTitle": "Limitet",
+    "customerGroupsSectionTitle": "Grupet e klientëve",
+    "productsLabel": "Produktet",
+    "collectionsLabel": "Koleksionet",
+    "categoriesLabel": "Kategoritë",
+    "customerGroupsLabel": "Grupet e klientëve",
+    "selectProduct": "Zgjidh produktin",
+    "selectCollection": "Zgjidh koleksionin",
+    "selectCategory": "Zgjidh kategorinë",
+    "selectCustomerGroup": "Zgjidh grupin e klientëve",
+    "removeTarget": "Hiq objektivin",
+    "removeCustomerGroup": "Hiq grupin e klientëve",
+    "pricingRuleType": {
+      "percentage_discount": "Zbritje përqindje",
+      "fixed_discount": "Zbritje fikse",
+      "fixed_price": "Çmim fiks",
+      "surcharge": "Shtesë"
+    },
+    "pricingRuleAppliesTo": {
+      "all": "Të gjitha",
+      "product": "Produktet",
+      "collection": "Koleksionet",
+      "category": "Kategoritë",
+      "customer_group": "Grupet e klientëve"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur rregullin e çmimit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rregulli i çmimit u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot rregulli i çmimit",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho rregullin e çmimit",
+    "description": "Përditëso rregullimet e çmimeve, objektivat, limitet dhe orarin."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
 }

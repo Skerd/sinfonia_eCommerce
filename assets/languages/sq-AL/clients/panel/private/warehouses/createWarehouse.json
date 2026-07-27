@@ -3,9 +3,10 @@
   "title": "Krijo magazinë",
   "form": {
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i magazinës",
     "codeLabel": "Kodi",
+    "codePlaceholder": "Kodi i magazinës",
     "isDefaultLabel": "Magazina parazgjedhur",
-    "isActiveLabel": "Aktive",
     "addressSectionTitle": "Adresa",
     "countryLabel": "Shteti",
     "countryPlaceholder": "Zgjidh shtetin",
@@ -16,6 +17,32 @@
     "streetLabel": "Rruga",
     "streetPlaceholder": "Adresa",
     "postalCodeLabel": "Kodi postar",
-    "postalCodePlaceholder": "Kodi postar"
+    "postalCodePlaceholder": "Kodi postar",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "Gjerësia gjeografike",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "Gjatësia gjeografike"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar magazinën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazina u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot magazina",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo magazinë",
+    "description": "Shto një vendndodhje stoku me adresë dhe pin në hartë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo magazinë"
   }
 }

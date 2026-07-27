@@ -9,6 +9,9 @@
     "order": "Order",
     "parent": "Parent category",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   },

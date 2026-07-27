@@ -3,7 +3,31 @@
   "title": "Create customer group",
   "form": {
     "nameLabel": "Name",
+    "namePlaceholder": "Group name",
     "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Optional description",
     "isDefaultLabel": "Default group"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating customer group",
+      "time": 3000
+    },
+    "success": {
+      "title": "Customer group created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create customer group",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create customer group",
+    "description": "Define a customer group for pricing rules and membership."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create customer group"
   }
 }

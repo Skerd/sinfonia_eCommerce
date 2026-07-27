@@ -5,12 +5,57 @@
   "createCollection": "Create collection",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "type": {
+        "manual": "Manual",
+        "dynamic": "Dynamic"
+      },
+      "ruleCondition": {
+        "all": "All rules (AND)",
+        "any": "Any rule (OR)"
+      },
+      "rules": {
+        "field": {
+          "tag": "Tag",
+          "brand": "Brand",
+          "category": "Category",
+          "price": "Price",
+          "vendor": "Vendor",
+          "inventory_level": "Inventory level",
+          "product_type": "Product type"
+        },
+        "operator": {
+          "equals": "Equals",
+          "not_equals": "Not equals",
+          "contains": "Contains",
+          "not_contains": "Does not contain",
+          "greater_than": "Greater than",
+          "less_than": "Less than",
+          "starts_with": "Starts with"
+        }
+      }
+    },
+    "type": "Type",
     "name": "Name",
     "slug": "Slug",
-    "type": "Type",
+    "description": "Description",
+    "mainImage": "Cover image",
     "isVisible": "Visible",
     "position": "Position",
+    "products": "Products",
+    "ruleCondition": "Match condition",
+    "rules": {
+      "field": "Rule field",
+      "operator": "Rule operator",
+      "value": "Rule value"
+    },
+    "seoTitle": "SEO title",
+    "seoDescription": "SEO description",
+    "publishedAt": "Publish at",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

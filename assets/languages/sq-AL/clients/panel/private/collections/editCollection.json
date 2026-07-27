@@ -1,14 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
   "title": "Ndrysho koleksionin",
+  "errorTitle": "Ngarkimi i koleksionit dështoi",
+  "errorDescription": "Nuk u ngarkua dot ky koleksion. Provo përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrimit",
+    "generalSectionTitle": "Të përgjithshme",
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i koleksionit",
     "slugLabel": "Slug",
+    "slugPlaceholder": "gjenerohet-nga-emri",
     "typeLabel": "Lloji i koleksionit",
     "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrim opsional për këtë koleksion",
     "mainImageLabel": "Imazhi i kopertinës",
     "isVisibleLabel": "I dukshëm në dyqan",
     "positionLabel": "Pozicioni i renditjes",
+    "positionPlaceholder": "0",
     "publishedAtLabel": "Publiko më",
     "mediaSectionTitle": "Media",
     "manualSectionTitle": "Produkte manuale",
@@ -24,9 +32,12 @@
     "ruleFieldLabel": "Fusha",
     "ruleOperatorLabel": "Operatori",
     "ruleValueLabel": "Vlera",
+    "ruleValuePlaceholder": "Vlera e rregullit",
     "seoSectionTitle": "SEO",
     "seoTitleLabel": "Titulli SEO",
+    "seoTitlePlaceholder": "Titull SEO opsional",
     "seoDescriptionLabel": "Përshkrimi SEO",
+    "seoDescriptionPlaceholder": "Përshkrim SEO opsional",
     "collectionType": {
       "manual": "Manual",
       "dynamic": "Dinamik"
@@ -53,5 +64,27 @@
       "less_than": "Më i vogël se",
       "starts_with": "Fillon me"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur koleksionin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Koleksioni u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot koleksioni",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho koleksionin",
+    "description": "Përditëso detajet, produktet ose rregullat dinamike të koleksionit."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

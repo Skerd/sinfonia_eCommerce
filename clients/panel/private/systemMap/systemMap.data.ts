@@ -62,7 +62,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "SKU-level variant of a variable product (size, color, etc.).",
             keyFields: ["product", "price", "sku", "attributes"],
             apiPath: "/api/eCommerce/productVariant",
-            panelRoute: "/eCommerce/productvariants",
+            panelRoute: "/tenancy/systemSettings/productvariants",
             position: {x: 40, y: 320},
         },
         {
@@ -82,9 +82,9 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             cluster: "catalog",
             module: "eCommerce",
             description: "Configurable attribute definition used by variants.",
-            keyFields: ["name", "options"],
+            keyFields: ["name", "values"],
             apiPath: "/api/eCommerce/productAttribute",
-            panelRoute: "/eCommerce/productattributes",
+            panelRoute: "/tenancy/systemSettings/productattributes",
             position: {x: 40, y: 460},
         },
         {
@@ -95,7 +95,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Catalog pricing adjustments by product, category, or customer group.",
             keyFields: ["name", "scope", "adjustment", "priority"],
             apiPath: "/api/eCommerce/pricingRule",
-            panelRoute: "/eCommerce/pricingrules",
+            panelRoute: "/tenancy/systemSettings/pricingrules",
             position: {x: 280, y: 460},
         },
         {
@@ -106,7 +106,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Physical stock location that owns inventory rows.",
             keyFields: ["name", "address", "active"],
             apiPath: "/api/eCommerce/warehouse",
-            panelRoute: "/eCommerce/warehouses",
+            panelRoute: "/tenancy/systemSettings/warehouses",
             position: {x: 40, y: 600},
         },
         {
@@ -125,8 +125,10 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             label: "InventoryMovement",
             cluster: "catalog",
             module: "eCommerce",
-            description: "Audit trail of stock changes (restock, sale, return, adjustment).",
-            keyFields: ["inventory", "type", "quantity", "reason"],
+            description: "Audit trail of stock changes (restock, write-off, sale, return, adjustment) with receipt metadata.",
+            keyFields: ["reason", "quantity", "manufacturer", "receiptNumber", "occurredAt"],
+            apiPath: "/api/eCommerce/inventoryMovement",
+            panelRoute: "/eCommerce/inventorymovements",
             position: {x: 280, y: 740},
         },
         {
@@ -148,7 +150,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Buyer segments used by pricing rules and promotions.",
             keyFields: ["name", "members"],
             apiPath: "/api/eCommerce/customerGroup",
-            panelRoute: "/eCommerce/customergroups",
+            panelRoute: "/tenancy/systemSettings/customergroups",
             position: {x: 800, y: 40},
         },
         {
@@ -159,7 +161,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Percent, fixed, free-shipping, or BXGY promotion codes.",
             keyFields: ["code", "type", "value", "rules", "status"],
             apiPath: "/api/eCommerce/discount",
-            panelRoute: "/eCommerce/discounts",
+            panelRoute: "/tenancy/systemSettings/discounts",
             position: {x: 800, y: 160},
         },
         {
@@ -204,7 +206,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Geo tax rules used during checkout address step.",
             keyFields: ["name", "regions", "rates"],
             apiPath: "/api/eCommerce/taxZone",
-            panelRoute: "/eCommerce/taxzones",
+            panelRoute: "/tenancy/systemSettings/taxzones",
             position: {x: 800, y: 400},
         },
         {
@@ -215,7 +217,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Geo shipping rates offered at checkout.",
             keyFields: ["name", "regions", "rates"],
             apiPath: "/api/eCommerce/shippingZone",
-            panelRoute: "/eCommerce/shippingzones",
+            panelRoute: "/tenancy/systemSettings/shippingzones",
             position: {x: 800, y: 520},
         },
         {

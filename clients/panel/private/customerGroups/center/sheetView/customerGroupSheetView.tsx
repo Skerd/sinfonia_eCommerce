@@ -7,8 +7,10 @@ import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/pr
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
+import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 
-const LIST_BASE = "/eCommerce/customergroups";
+const LIST_BASE = "/tenancy/systemSettings/customergroups";
 
 export type CustomerGroupSheetViewOwnProps = {
     open: boolean;
@@ -17,6 +19,7 @@ export type CustomerGroupSheetViewOwnProps = {
     hideActions?: boolean;
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
+    onMembersChanged?: () => void;
     fetchId?: string;
 };
 
@@ -35,9 +38,11 @@ function CustomerGroupSheetView({
     hideActions = false,
     onDelete = () => {},
     onRestore = () => {},
+    onMembersChanged,
     fetchId,
 }: CustomerGroupSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(customerGroupProp || {_id: fetchId});
+    const [memberAction, setMemberAction] = useState<string>("");
     const access = useAccess("customerGroups");
     const viewConfig = useViewConfig("customerGroups", "sheet");
 
@@ -47,28 +52,47 @@ function CustomerGroupSheetView({
     }, [customerGroupProp]);
 
     const entityId = customerGroupProp?._id ?? fetchId;
+    const customerGroup = sheetData as CustomerGroup;
 
     if (!viewConfig) return null;
     if (!entityId) return null;
 
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/customerGroup/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={customerGroupEditPath(sheetData as CustomerGroup)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/customerGroup/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={customerGroupEditPath(customerGroup)}
+                actionMenuAllowCustomChildren
+                onActionMenuAction={(a) => setMemberAction(a)}
+                actionMenuChildren={
+                    <CustomerGroupRowMenuExtras
+                        customerGroup={customerGroup}
+                        onAction={(a) => setMemberAction(a)}
+                    />
+                }
+            />
+            {memberAction === "manageMembers" && (
+                <ManageMembersDialog
+                    open
+                    onClose={() => setMemberAction("")}
+                    customerGroup={customerGroup}
+                    onSuccess={onMembersChanged}
+                />
+            )}
+        </>
     );
 }
 

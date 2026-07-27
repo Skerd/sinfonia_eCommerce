@@ -1,5 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "salePercentOff": "{{percent}}% Off",
+  "timerDays": "Days",
+  "timerHours": "Hours",
+  "timerMins": "Mins",
+  "timerSecs": "Sec",
   "productStatus": {
     "draft": "Draft",
     "active": "Active",

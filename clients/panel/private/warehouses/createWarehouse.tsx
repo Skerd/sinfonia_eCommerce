@@ -9,7 +9,15 @@ export default createGenericCreatePage<CreateWarehouseFormType>({
     accessModel: "warehouses",
     apiUrl: "/api/eCommerce/warehouse",
     schema: createWarehouseFormSchema,
-    defaultValues: {name: "", code: "", isDefault: false, isActive: true, address: {}},
-    successPath: "/eCommerce/warehouses",
+    defaultValues: {
+        name: "",
+        code: "",
+        isDefault: false,
+        address: {
+            latitude: 41.3275,
+            longitude: 19.8189,
+        },
+    },
+    successPath: "/tenancy/systemSettings/warehouses",
     submitIcon: <IconPlus />,
 });

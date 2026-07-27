@@ -1,9 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx",
   "overview": "Overview",
+  "content": "Review",
+  "related": "Related",
+  "deletion": "Deletion",
   "productReviewSubtitle": "Review details",
+  "displayTitle": "Review",
   "rating": "Rating",
   "title": "Title",
   "comment": "Comment",
-  "createdAt": "Created at"
+  "order": "Order",
+  "product": "Product",
+  "reviewer": "Reviewer",
+  "company": "Company",
+  "createdBy": "Created by",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

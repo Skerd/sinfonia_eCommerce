@@ -5,9 +5,32 @@
   "createProductVariant": "Create variant",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "product": "Product",
     "sku": "SKU",
+    "barcode": "Barcode",
+    "attributeCombination": {
+      "attribute": "Attribute",
+      "value": "Value"
+    },
     "price": "Price",
+    "compareAtPrice": "Compare-at price",
+    "costPrice": "Cost price",
+    "currency": "Currency",
+    "weight": "Weight",
+    "dimensions": {
+      "length": "Length",
+      "width": "Width",
+      "height": "Height"
+    },
+    "mainImage": "Main image",
+    "position": "Position",
     "status": "Status",
-    "barcode": "Barcode"
+    "trackInventory": "Track inventory",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx",
+  "title": "Deactivate fiscal config",
+  "description": "This fiscal config will not be used for fiscalization until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating fiscal config…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fiscal config deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate fiscal config",
+      "time": 3000
+    }
+  }
+}

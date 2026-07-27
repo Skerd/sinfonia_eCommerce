@@ -27,7 +27,6 @@ function AllProducts({resolveLanguageKey}: WithLanguageType) {
             buildEditPath={productEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderCard={(product, onDelete, onRestore) => (
                 <ProductCard
                     product={product}

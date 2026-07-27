@@ -6,8 +6,27 @@
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
+    "countries": "Countries",
+    "states": "States",
+    "postalCodePatterns": "Postal code patterns",
+    "rates": {
+      "name": "Rate name",
+      "type": "Rate type",
+      "price": "Rate price",
+      "carrier": "Carrier",
+      "estimatedDeliveryDays": "Est. delivery days",
+      "conditions": {
+        "minWeight": "Min weight",
+        "maxWeight": "Max weight",
+        "minOrderAmount": "Min order amount",
+        "maxOrderAmount": "Max order amount"
+      }
+    },
     "isActive": "Active",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

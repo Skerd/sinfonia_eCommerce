@@ -12,7 +12,10 @@ export default createGenericEditPage<CustomerAddress, EditCustomerAddressFormTyp
     schema: editCustomerAddressFormSchema,
     mapEntityData: (data: any) => ({
         ...data,
+        user: data.user?._id ?? data.user,
         country: data.country?._id ?? data.country,
+        latitude: data.latitude ?? 41.3275,
+        longitude: data.longitude ?? 19.8189,
     }),
     submitIcon: <Save />,
 });

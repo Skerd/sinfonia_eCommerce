@@ -1,9 +1,36 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/editCustomerGroup.tsx",
   "title": "Edit customer group",
+  "errorTitle": "Failed to load customer group",
+  "errorDescription": "Could not load this customer group. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "nameLabel": "Name",
+    "namePlaceholder": "Group name",
     "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Optional description",
     "isDefaultLabel": "Default group"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving customer group",
+      "time": 3000
+    },
+    "success": {
+      "title": "Customer group updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update customer group",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit customer group",
+    "description": "Update the name, description, and default group setting."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

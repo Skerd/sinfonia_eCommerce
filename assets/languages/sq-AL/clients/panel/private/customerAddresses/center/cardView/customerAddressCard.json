@@ -3,5 +3,7 @@
   "firstName": "Emri",
   "street": "Rruga",
   "city": "Qyteti",
-  "phone": "Telefoni"
+  "phone": "Telefoni",
+  "defaultAddress": "Parazgjedhur",
+  "notDefault": "Jo parazgjedhur"
 }

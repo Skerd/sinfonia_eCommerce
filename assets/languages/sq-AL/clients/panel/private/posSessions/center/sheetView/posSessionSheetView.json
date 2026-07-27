@@ -1,9 +1,24 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
+  "posSessionSubtitle": "Detajet e seancës",
   "overview": "Përmbledhje",
+  "balances": "Bilancet",
+  "totals": "Totalet",
+  "cashMoves": "Lëvizjet e cash",
+  "notes": "Shënime",
+  "compactView": "Kompakte",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndrysho pamjen e listës",
   "name": "Emri",
   "state": "Gjendja",
   "config": "Konfigurimi POS",
+  "openedBy": "Hapur nga",
+  "closedBy": "Mbyllur nga",
+  "openedAt": "Hapur më",
+  "closedAt": "Mbyllur më",
+  "company": "Kompania",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
   "openingBalance": "Bilanci fillestar",
   "closingBalance": "Bilanci përfundimtar",
   "expectedCash": "Cash i pritur",
@@ -12,11 +27,19 @@
   "totalSales": "Shitjet totale",
   "totalCash": "Cash",
   "totalCard": "Kartë",
-  "notes": "Shënime",
-  "sessionState": {
+  "cashMoveType": "Lloji",
+  "cashMoveAmount": "Shuma",
+  "cashMoveReason": "Arsyeja",
+  "cashMoveAt": "Më",
+  "cashMoveBy": "Nga",
+  "posSessionState": {
     "opening_control": "Hapje",
     "opened": "Hapur",
     "closing_control": "Mbyllje",
     "closed": "Mbyllur"
+  },
+  "posCashMoveType": {
+    "in": "Hyrje cash",
+    "out": "Dalje cash"
   }
 }

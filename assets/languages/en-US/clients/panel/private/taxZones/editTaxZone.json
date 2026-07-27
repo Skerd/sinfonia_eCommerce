@@ -1,27 +1,56 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
+  "title": "Edit tax zone",
+  "errorTitle": "Failed to load tax zone",
+  "errorDescription": "Could not load this tax zone. Try again.",
   "form": {
+    "generalSectionTitle": "General",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
-    "isActiveLabel": "Active",
-    "isCompoundLabel": "Is Compound Label",
-    "nameLabel": "Name",
-    "postalCodePatternsLabel": "Postal code patterns",
-    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
     "priorityLabel": "Priority",
-    "rateAddRow": "Rate Add Row",
-    "rateAppliesToLabel": "Rate Applies To Label",
-    "rateNameLabel": "Rate Name Label",
-    "rateRemoveRow": "Rate Remove Row",
-    "rateValueLabel": "Rate Value Label",
-    "ratesSectionTitle": "Rates Section Title",
-    "selectState": "Select State",
-    "statesLabel": "States",
+    "isActiveLabel": "Active",
+    "statesLabel": "States / regions",
+    "selectState": "Select state",
+    "removeState": "Remove state",
+    "postalCodePatternsLabel": "Postal code patterns",
+    "postalCodePatternsPlaceholder": "e.g. 1000* or AL-*",
+    "removePostalCodePattern": "Remove pattern",
+    "ratesSectionTitle": "Tax rates",
+    "rateAddRow": "Add rate",
+    "rateRemoveRow": "Remove rate",
+    "rateRowTitle": "Untitled rate",
+    "rateNameLabel": "Rate name",
+    "rateValueLabel": "Rate (%)",
+    "rateAppliesToLabel": "Applies to",
+    "isCompoundLabel": "Compound rate",
     "taxRateAppliesTo": {
-      "all": "All",
-      "digital": "Digital",
-      "physical": "Physical"
+      "all": "All products",
+      "physical": "Physical",
+      "digital": "Digital"
     }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
-  "title": "Edit tax zone"
+  "axios": {
+    "start": {
+      "title": "Saving tax zone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tax zone updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update tax zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit tax zone",
+    "description": "Update destination geography and tax rates for this zone."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
 }

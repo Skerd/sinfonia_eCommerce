@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
+  "title": "Mark fulfillment as delivered",
+  "description": "Confirm that this shipped fulfillment has been delivered.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes",
+  "cancel": "Cancel",
+  "confirm": "Mark as delivered",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Marking as delivered…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment marked as delivered",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark as delivered",
+      "time": 3000
+    }
+  }
+}

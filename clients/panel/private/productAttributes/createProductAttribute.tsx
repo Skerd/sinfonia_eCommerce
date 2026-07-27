@@ -10,6 +10,6 @@ export default createGenericCreatePage<CreateProductAttributeFormType>({
     apiUrl: "/api/eCommerce/productAttribute",
     schema: createProductAttributeFormSchema,
     defaultValues: {name: "", values: [], isVisibleOnProductPage: true, isUsedForVariants: false, position: 0} as unknown as CreateProductAttributeFormType,
-    successPath: "/eCommerce/productattributes",
+    successPath: "/tenancy/systemSettings/productattributes",
     submitIcon: <IconPlus />,
 });

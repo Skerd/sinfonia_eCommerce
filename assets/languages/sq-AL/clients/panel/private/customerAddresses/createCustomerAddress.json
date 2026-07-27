@@ -2,16 +2,52 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
   "title": "Krijo adresë",
   "form": {
-    "firstNameLabel": "Emri",
-    "lastNameLabel": "Mbiemri",
+    "userLabel": "Klienti",
+    "userPlaceholder": "Zgjidh klientin",
+    "firstNameLabel": "Emri i marrësit",
+    "firstNamePlaceholder": "Emri në paketë",
+    "lastNameLabel": "Mbiemri i marrësit",
+    "lastNamePlaceholder": "Mbiemri në paketë",
     "streetLabel": "Rruga",
+    "streetPlaceholder": "Adresa e rrugës",
     "cityLabel": "Qyteti",
+    "cityPlaceholder": "Qyteti",
     "stateLabel": "Rajoni",
+    "statePlaceholder": "Rajoni ose shteti",
     "postalCodeLabel": "Kodi postar",
+    "postalCodePlaceholder": "Kodi postar",
     "phoneLabel": "Telefoni",
+    "phonePlaceholder": "Numri i telefonit",
     "countryLabel": "Shteti",
     "countryPlaceholder": "Zgjidh shtetin",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "19.8189",
     "labelLabel": "Etiketa",
+    "labelPlaceholder": "Shtëpi, punë, …",
     "isDefaultLabel": "Adresa e parazgjedhur"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar adresën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresa u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Adresa nuk u krijua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo adresë",
+    "description": "Lidh një adresë me një klient, vendos marrësin, vendndodhjen dhe pin-in në hartë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo adresë"
   }
 }

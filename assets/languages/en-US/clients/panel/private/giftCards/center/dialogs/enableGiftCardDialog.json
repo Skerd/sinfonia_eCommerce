@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/dialogs/enableGiftCardDialog.tsx",
+  "title": "Enable gift card",
+  "description": "This gift card code will become redeemable again on the storefront.",
+  "cancel": "Cancel",
+  "confirm": "Enable",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Enabling gift card…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gift card enabled",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not enable gift card",
+      "time": 3000
+    }
+  }
+}

@@ -1,11 +1,29 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/giftCards/index.tsx",
   "title": "Gift cards",
-  "description": "System-issued store credit — inspect balances, disable compromised codes.",
+  "description": "System-issued store credit — inspect balances, enable or disable codes.",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "status": {
+        "active": "Active",
+        "depleted": "Depleted",
+        "disabled": "Disabled"
+      }
+    },
     "code": "Code",
     "status": "Status",
-    "balance": "Balance"
+    "balance": "Balance",
+    "initialBalance": "Initial balance",
+    "currency": "Currency",
+    "purchasedBy": "Purchased by",
+    "order": "Order",
+    "expiresAt": "Expires at",
+    "company": "Company",
+    "createdBy": "Created by",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

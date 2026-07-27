@@ -1,9 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx",
   "overview": "Përmbledhje",
+  "content": "Vlerësimi",
+  "related": "Lidhjet",
+  "deletion": "Fshirja",
   "productReviewSubtitle": "Detajet e vlerësimit",
+  "displayTitle": "Vlerësimi",
   "rating": "Vlerësimi",
   "title": "Titulli",
   "comment": "Komenti",
-  "createdAt": "Krijuar më"
+  "order": "Porosia",
+  "product": "Produkti",
+  "reviewer": "Vlerësuesi",
+  "company": "Kompania",
+  "createdBy": "Krijuar nga",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

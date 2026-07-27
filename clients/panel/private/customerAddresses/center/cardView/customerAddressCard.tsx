@@ -17,13 +17,15 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx";
+import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx";
 
 const LIST_BASE = "/eCommerce/customeraddresses";
 
 function customerAddressEditPath(entity: CustomerAddress) {
     const params = new URLSearchParams();
     params.set("customerAddressId", entity._id);
-    if ((entity as any).firstName) params.set("customerAddressTitle", encodeURIComponent(String((entity as any).firstName)));
+    if (entity.firstName) params.set("customerAddressTitle", encodeURIComponent(String(entity.firstName)));
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
@@ -78,12 +80,14 @@ function CustomerAddressCard({
     if (hideAfterDeletion) {
         return <></>;
     }
-    if (!restore && (entity as any).deletedAt != null) {
+    if (!restore && entity.deletedAt != null) {
         return <></>;
     }
     if (!read || !Object.keys(read).length) {
         return <HiddenElement />;
     }
+
+    const displayName = [entity.firstName, entity.lastName].filter(Boolean).join(" ");
 
     return (
         <>
@@ -93,18 +97,20 @@ function CustomerAddressCard({
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
-                        {((read as any).deletedBy || (read as any).deletedAt) && (
-                            <DeletedInfo deletedAt={(entity as any).deletedAt} deletedBy={(entity as any).deletedBy} />
+                        {(read.deletedBy || read.deletedAt) && (
+                            <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
                         )}
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
                                     <HiddenElement showLock randomLength={0}>
-                                        {(read as any)?.firstName && (
+                                        {read?.firstName && (
                                             <>
-                                                {(entity as any).firstName ? (
+                                                {displayName ? (
                                                     <TooltipDisplayer tooltip={resolveLanguageKey("firstName")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{String((entity as any).firstName)}</div>
+                                                        <div className="font-semibold text-base leading-tight truncate">
+                                                            {displayName}
+                                                        </div>
                                                     </TooltipDisplayer>
                                                 ) : (
                                                     <ValueNotSet />
@@ -120,7 +126,13 @@ function CustomerAddressCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={customerAddressEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <SetDefaultCustomerAddress
+                                                entity={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -129,22 +141,38 @@ function CustomerAddressCard({
                                     <InfoRow
                                         label={resolveLanguageKey("street")}
                                         icon={IconMapPin}
-                                        show={!!(read as any)?.street}
-                                        value={(entity as any).street != null ? String((entity as any).street) : undefined}
+                                        show={!!read?.street}
+                                        value={entity.street != null ? String(entity.street) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("city")}
                                         icon={IconMapPin}
-                                        show={!!(read as any)?.city}
-                                        value={(entity as any).city != null ? String((entity as any).city) : undefined}
+                                        show={!!read?.city}
+                                        value={entity.city != null ? String(entity.city) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("phone")}
                                         icon={IconPhone}
-                                        show={!!(read as any)?.phone}
-                                        value={(entity as any).phone != null ? String((entity as any).phone) : undefined}
+                                        show={!!read?.phone}
+                                        value={entity.phone != null ? String(entity.phone) : undefined}
                                     />
                                 </div>
+                                {read?.isDefault && entity.isDefault != null && (
+                                    <span
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                            entity.isDefault ? "text-amber-600" : "text-muted-foreground",
+                                        )}
+                                    >
+                                        <span
+                                            className={cn(
+                                                "w-1.5 h-1.5 rounded-full shrink-0",
+                                                entity.isDefault ? "bg-amber-500" : "bg-muted-foreground/40",
+                                            )}
+                                        />
+                                        {resolveLanguageKey(entity.isDefault ? "defaultAddress" : "notDefault")}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -161,6 +189,7 @@ function CustomerAddressCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setEntity(row as CustomerAddress)}
                         />
                     )}
                     {action === "delete" && (
@@ -168,8 +197,8 @@ function CustomerAddressCard({
                             accessModel={"customerAddresses"}
                             deleteId={entity._id}
                             openAlert={action === "delete"}
-                            name={(read as any)?.firstName && String((entity as any).firstName ?? "")}
-                            confirmName={(read as any)?.firstName && String((entity as any).firstName ?? "")}
+                            name={read?.firstName && displayName}
+                            confirmName={read?.firstName && displayName}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/customerAddress"
@@ -180,11 +209,19 @@ function CustomerAddressCard({
                             accessModel={"customerAddresses"}
                             deleteId={entity._id}
                             openAlert={action === "restore"}
-                            name={(read as any)?.firstName && String((entity as any).firstName ?? "")}
-                            confirmName={(read as any)?.firstName && String((entity as any).firstName ?? "")}
+                            name={read?.firstName && displayName}
+                            confirmName={read?.firstName && displayName}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/customerAddress/restore"
+                        />
+                    )}
+                    {action === "setDefaultCustomerAddress" && (
+                        <SetDefaultCustomerAddressDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
                         />
                     )}
                 </>

@@ -5,10 +5,24 @@
   "createFulfillment": "Create fulfillment",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "order": "Order",
     "status": "Status",
+    "items": {
+      "orderItemId": "Order item id",
+      "quantity": "Quantity"
+    },
     "carrier": "Carrier",
     "trackingNumber": "Tracking number",
+    "trackingUrl": "Tracking URL",
     "shippedAt": "Shipped at",
-    "deliveredAt": "Delivered at"
+    "estimatedDeliveryAt": "Estimated delivery",
+    "deliveredAt": "Delivered at",
+    "notes": "Notes",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

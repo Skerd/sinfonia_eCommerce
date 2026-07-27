@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx",
+  "title": "Manage members",
+  "description": "Add or remove users from this customer group.",
+  "addMemberLabel": "Add member",
+  "userPlaceholder": "Select a user",
+  "add": "Add",
+  "adding": "Adding...",
+  "membersLabel": "Members",
+  "noMembers": "No members in this group yet.",
+  "close": "Close",
+  "addSuccess": "Member added.",
+  "addError": "Failed to add member.",
+  "removeSuccess": "Member removed.",
+  "removeError": "Failed to remove member.",
+  "loadError": "Failed to load members."
+}

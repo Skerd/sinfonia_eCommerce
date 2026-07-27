@@ -5,5 +5,7 @@
   "tcrCode": "TCR",
   "certificate": "Certifikata",
   "certificateYes": "E ngarkuar",
-  "certificateNo": "Mungon"
+  "certificateNo": "Mungon",
+  "active": "Aktive",
+  "inactive": "Joaktive"
 }

@@ -3,16 +3,21 @@
   "title": "Create payment method",
   "form": {
     "nameLabel": "Name",
+    "namePlaceholder": "Payment method name",
     "typeLabel": "Type",
     "isActiveLabel": "Active",
     "sequenceLabel": "Sequence",
+    "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Cash quick amounts",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Bank POS terminal",
     "terminalEnabledLabel": "Connect bank POS terminal",
+    "terminalForcesCardHint": "Connecting a bank POS terminal sets the type to Card. Disconnecting sets it to Cash.",
     "terminalProviderLabel": "Terminal provider",
     "terminalHostLabel": "Terminal host / IP",
     "terminalHostPlaceholder": "192.168.1.50",
     "terminalPortLabel": "Terminal port",
+    "terminalPortPlaceholder": "8080",
     "terminalIdLabel": "Terminal ID",
     "terminalIdPlaceholder": "TID / POIID",
     "terminalPathLabel": "Terminal path",
@@ -28,5 +33,27 @@
       "manual": "Manual (external terminal)",
       "local_http": "Local HTTP bridge"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Creating payment method",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment method created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create payment method",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create payment method",
+    "description": "Define a till payment method, optional cash chips, and bank terminal connection."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create payment method"
   }
 }

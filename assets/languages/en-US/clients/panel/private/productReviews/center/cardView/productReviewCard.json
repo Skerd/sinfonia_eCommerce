@@ -1,6 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/cardView/productReviewCard.tsx",
+  "byAuthor": "By {name}",
+  "verifiedPurchase": "Verified Purchase",
   "rating": "Rating",
+  "title": "Title",
   "product": "Product",
+  "order": "Order",
   "reviewer": "Reviewer"
 }

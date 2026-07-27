@@ -17,8 +17,12 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/activatePricingRule.tsx";
+import DeactivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/deactivatePricingRule.tsx";
+import ActivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx";
+import DeactivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx";
 
-const LIST_BASE = "/eCommerce/pricingrules";
+const LIST_BASE = "/tenancy/systemSettings/pricingrules";
 
 function pricingRuleEditPath(pricingRule: PricingRule) {
     const params = new URLSearchParams();
@@ -120,7 +124,11 @@ function PricingRuleCard({
                                             deletedData={pricingRule}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={pricingRuleEditPath(pricingRule)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivatePricingRule entity={pricingRule} onAction={(a: string) => setAction(a)} />
+                                            <DeactivatePricingRule entity={pricingRule} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -177,6 +185,7 @@ function PricingRuleCard({
                             fetchId={pricingRule._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setPricingRule(row as PricingRule)}
                         />
                     )}
                     {action === "delete" && (
@@ -201,6 +210,22 @@ function PricingRuleCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/pricingRule/restore"
+                        />
+                    )}
+                    {action === "activatePricingRule" && (
+                        <ActivatePricingRuleDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={pricingRule}
+                            onSuccess={(row) => setPricingRule(row)}
+                        />
+                    )}
+                    {action === "deactivatePricingRule" && (
+                        <DeactivatePricingRuleDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={pricingRule}
+                            onSuccess={(row) => setPricingRule(row)}
                         />
                     )}
                 </>

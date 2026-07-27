@@ -17,8 +17,14 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/activatePosPaymentMethod.tsx";
+import DeactivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/deactivatePosPaymentMethod.tsx";
+import TestPosTerminalConnection from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/testPosTerminalConnection.tsx";
+import ActivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx";
+import DeactivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx";
+import TestPosTerminalConnectionDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx";
 
-const LIST_BASE = "/eCommerce/pospaymentmethods";
+const LIST_BASE = "/tenancy/systemSettings/pospaymentmethods";
 
 function posPaymentMethodEditPath(entity: PosPaymentMethod) {
     const params = new URLSearchParams();
@@ -120,7 +126,12 @@ function PosPaymentMethodCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={posPaymentMethodEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <TestPosTerminalConnection entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <ActivatePosPaymentMethod entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <DeactivatePosPaymentMethod entity={entity} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -171,6 +182,7 @@ function PosPaymentMethodCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setEntity(row as PosPaymentMethod)}
                         />
                     )}
                     {action === "delete" && (
@@ -195,6 +207,29 @@ function PosPaymentMethodCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/posPaymentMethod/restore"
+                        />
+                    )}
+                    {action === "activatePosPaymentMethod" && (
+                        <ActivatePosPaymentMethodDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(method) => setEntity(method)}
+                        />
+                    )}
+                    {action === "deactivatePosPaymentMethod" && (
+                        <DeactivatePosPaymentMethodDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(method) => setEntity(method)}
+                        />
+                    )}
+                    {action === "testPosTerminalConnection" && (
+                        <TestPosTerminalConnectionDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
                         />
                     )}
                 </>

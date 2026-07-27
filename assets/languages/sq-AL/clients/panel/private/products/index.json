@@ -5,13 +5,145 @@
   "createProduct": "Krijo produkt",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "title": "Titulli",
-    "sku": "SKU",
+    "!enums": {
+      "type": {
+        "physical": "Fizik",
+        "digital": "Dixhital",
+        "service": "Shërbim",
+        "variable": "I ndryshueshëm",
+        "bundle": "Paketë",
+        "gift_card": "Kartë dhuratë"
+      },
+      "status": {
+        "draft": "Draft",
+        "active": "Aktiv",
+        "archived": "Arkivuar"
+      },
+      "weightUnit": {
+        "kg": "kg",
+        "lb": "lb",
+        "g": "g",
+        "oz": "oz"
+      },
+      "dimensionUnit": {
+        "cm": "cm",
+        "in": "inç"
+      },
+      "seo": {
+        "twitterCard": {
+          "summary": "Përmbledhje",
+          "summary_large_image": "Përmbledhje me imazh të madh"
+        }
+      }
+    },
     "type": "Lloji",
-    "status": "Statusi",
-    "price": "Çmimi",
+    "title": "Titulli",
+    "slug": "Slug",
+    "description": "Përshkrimi",
+    "shortDescription": "Përshkrim i shkurtër",
+    "highlights": "Pikat kryesore",
+    "careInstructions": "Udhëzime kujdesi",
+    "warranty": "Garancia",
+    "faqs": {
+      "question": "Pyetja",
+      "answer": "Përgjigja"
+    },
+    "sku": "SKU",
+    "barcode": "Barkodi",
+    "gtin": "GTIN",
+    "upc": "UPC",
+    "ean": "EAN",
+    "isbn": "ISBN",
+    "mpn": "MPN",
+    "hsCode": "Kodi HS",
+    "countryOfOrigin": "Vendi i origjinës",
     "brand": "Marka",
+    "vendor": "Furnitori",
+    "tags": "Etiketa",
+    "categories": "Kategoritë",
+    "collections": "Koleksionet",
+    "price": "Çmimi",
+    "compareAtPrice": "Çmimi krahasues",
+    "costPrice": "Kostoja",
+    "msrp": "MSRP",
+    "saleStartsAt": "Ulja fillon",
+    "saleEndsAt": "Ulja mbaron",
+    "taxable": "I tatueshëm",
+    "taxClass": "Klasa e taksës",
+    "minOrderQty": "Sasia min. e porosisë",
+    "maxOrderQty": "Sasia maks. e porosisë",
+    "stepQty": "Hapi i sasisë",
+    "currency": "Monedha",
+    "weight": "Pesha",
+    "weightUnit": "Njësia e peshës",
+    "dimensions": {
+      "length": "Gjatësia",
+      "width": "Gjerësia",
+      "height": "Lartësia"
+    },
+    "dimensionUnit": "Njësia e dimensioneve",
+    "volumetricWeight": "Pesha volumetrike",
+    "shippingClass": "Klasa e transportit",
+    "isHazmat": "Material i rrezikshëm",
+    "requiresShipping": "Kërkon transport",
+    "trackInventory": "Gjurmo inventarin",
+    "allowBackorder": "Lejo porosi mbrapa",
+    "lowStockThreshold": "Pragu i stokut të ulët",
+    "safetyStock": "Stoku i sigurisë",
+    "backorderLimit": "Limiti i porosive mbrapa",
+    "preorderEnabled": "Parashitja e aktivizuar",
+    "preorderAvailableAt": "Parashitja e disponueshme më",
+    "availableForSale": "I disponueshëm për shitje",
+    "mainImage": "Imazhi kryesor",
+    "gallery": "Galeria",
+    "videoUrls": "URL-të e videove",
+    "documents": "Dokumentet",
+    "variantOptions": "Opsionet e varianteve",
+    "hasVariants": "Ka variante",
+    "defaultVariant": "Varianti i paracaktuar",
+    "bundleComponents": {
+      "product": "Produkti i paketës",
+      "quantity": "Sasia"
+    },
+    "downloadLimit": "Limiti i shkarkimeve",
+    "downloadExpiryDays": "Skadenca e shkarkimit (ditë)",
+    "relatedProducts": "Produkte të ngjashme",
+    "upsells": "Shitje shtesë",
+    "crossSells": "Shitje të kryqëzuara",
+    "frequentlyBoughtTogether": "Blihen shpesh së bashku",
+    "featured": "I veçuar",
+    "badges": "Shenjat",
+    "ratingAverage": "Vlerësimi",
+    "ratingCount": "Numri i vlerësimeve",
+    "reviewCount": "Recensionet",
+    "status": "Statusi",
+    "publishedAt": "Publikuar",
+    "attributes": {
+      "name": "Emri i atributit",
+      "values": "Vlerat e atributit"
+    },
+    "specifications": {
+      "label": "Etiketa e specifikimit",
+      "value": "Vlera e specifikimit"
+    },
+    "seo": {
+      "metaTitle": "Meta titulli",
+      "metaDescription": "Meta përshkrimi",
+      "metaKeywords": "Fjalët kyçe meta",
+      "canonicalUrl": "URL kanonike",
+      "openGraphTitle": "Titulli Open Graph",
+      "openGraphDescription": "Përshkrimi Open Graph",
+      "openGraphImage": "Imazhi Open Graph",
+      "twitterCard": "Karta Twitter",
+      "structuredDataType": "Lloji i të dhënave të strukturuara",
+      "sitemapInclude": "Përfshij në sitemap",
+      "sitemapPriority": "Prioriteti i sitemap",
+      "noIndex": "Pa indeksim"
+    },
     "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

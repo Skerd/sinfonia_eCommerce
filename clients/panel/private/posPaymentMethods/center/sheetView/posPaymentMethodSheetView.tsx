@@ -7,8 +7,14 @@ import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/activatePosPaymentMethod.tsx";
+import DeactivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/deactivatePosPaymentMethod.tsx";
+import TestPosTerminalConnection from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/testPosTerminalConnection.tsx";
+import ActivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx";
+import DeactivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx";
+import TestPosTerminalConnectionDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx";
 
-const LIST_BASE = "/eCommerce/pospaymentmethods";
+const LIST_BASE = "/tenancy/systemSettings/pospaymentmethods";
 
 export type PosPaymentMethodSheetViewOwnProps = {
     open: boolean;
@@ -18,6 +24,7 @@ export type PosPaymentMethodSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function posPaymentMethodEditPath(entity: PosPaymentMethod) {
@@ -36,10 +43,16 @@ function PosPaymentMethodSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: PosPaymentMethodSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("posPaymentMethods");
     const viewConfig = useViewConfig("posPaymentMethods", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!entityProp) return;
@@ -51,24 +64,66 @@ function PosPaymentMethodSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as PosPaymentMethod;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/posPaymentMethod/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={posPaymentMethodEditPath(sheetData as PosPaymentMethod)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/posPaymentMethod/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={posPaymentMethodEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <TestPosTerminalConnection entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <ActivatePosPaymentMethod entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivatePosPaymentMethod entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activatePosPaymentMethod" && (
+                <ActivatePosPaymentMethodDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(method) => {
+                        setSheetData(method);
+                        onSheetRowPatched?.(method);
+                    }}
+                />
+            )}
+            {action === "deactivatePosPaymentMethod" && (
+                <DeactivatePosPaymentMethodDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(method) => {
+                        setSheetData(method);
+                        onSheetRowPatched?.(method);
+                    }}
+                />
+            )}
+            {action === "testPosTerminalConnection" && (
+                <TestPosTerminalConnectionDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                />
+            )}
+        </>
     );
 }
 

@@ -1,15 +1,15 @@
 {
-  "active": "Active",
-  "inactive": "Inactive",
-  "name": "Name",
+  "active": "Aktive",
+  "inactive": "Joaktive",
+  "name": "Emri",
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
   "pricingRuleType": {
-    "fixed_discount": "Fixed Discount",
-    "fixed_price": "Fixed Price",
-    "percentage_discount": "Percentage Discount",
-    "surcharge": "Surcharge"
+    "fixed_discount": "Zbritje fikse",
+    "fixed_price": "Çmim fiks",
+    "percentage_discount": "Zbritje përqindje",
+    "surcharge": "Shtesë"
   },
-  "priority": "Priority",
-  "type": "Type",
-  "value": "Value"
+  "priority": "Prioriteti",
+  "type": "Lloji",
+  "value": "Vlera"
 }

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
+  "cancel": "Cancel",
+  "restock": {
+    "title": "Restock inventory",
+    "description": "Add stock received from a supplier or manufacturer. This movement is logged with receipt details.",
+    "quantityLabel": "Quantity to add",
+    "manufacturerLabel": "Manufacturer / supplier",
+    "receiptNumberLabel": "Receipt / delivery note #",
+    "occurredAtLabel": "Date received",
+    "unitCostLabel": "Unit cost",
+    "batchLotLabel": "Batch / lot",
+    "expiryDateLabel": "Expiry date",
+    "receiptsLabel": "Receipt attachments",
+    "noteLabel": "Note",
+    "confirm": "Restock",
+    "axios": {
+      "success": "Stock restocked successfully",
+      "error": "Failed to restock inventory"
+    }
+  },
+  "deduct": {
+    "title": "Deduct / write-off",
+    "description": "Remove stock (damage, loss, or write-off). This movement is logged with optional receipt details.",
+    "quantityLabel": "Quantity to remove",
+    "manufacturerLabel": "Manufacturer / supplier",
+    "receiptNumberLabel": "Reference / receipt #",
+    "occurredAtLabel": "Date of write-off",
+    "unitCostLabel": "Unit cost",
+    "batchLotLabel": "Batch / lot",
+    "expiryDateLabel": "Expiry date",
+    "receiptsLabel": "Attachments",
+    "noteLabel": "Note",
+    "confirm": "Deduct",
+    "axios": {
+      "success": "Stock deducted successfully",
+      "error": "Failed to deduct inventory"
+    }
+  }
+}

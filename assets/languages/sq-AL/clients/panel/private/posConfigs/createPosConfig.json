@@ -3,11 +3,18 @@
   "title": "Krijo konfigurim POS",
   "form": {
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i arkës",
     "paymentMethodsLabel": "Metodat e pagesës",
-    "warehouseLabel": "Magazina",
+    "managersLabel": "Menaxherët",
+    "warehousesLabel": "Magazinat",
+    "warehousePlaceholder": "Zgjidh magazinën",
     "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
     "receiptHeaderLabel": "Koka e faturës",
+    "receiptHeaderPlaceholder": "Printohet në krye të faturës",
     "receiptFooterLabel": "Fundi i faturës",
+    "receiptFooterPlaceholder": "Printohet në fund të faturës",
+    "tillOptionsSectionTitle": "Opsionet e arkës",
     "ifaceBarcodeScannerLabel": "Skaner barkodi",
     "ifaceCashControlLabel": "Kontroll cash",
     "allowDiscountLabel": "Lejo zbritje",
@@ -16,11 +23,35 @@
     "pinForDiscountLabel": "PIN për zbritje",
     "pinForCashOutLabel": "PIN për cash out",
     "pinForRefundLabel": "PIN për rimbursim",
-    "managerPinLabel": "PIN i menaxherit",
-    "clearManagerPinLabel": "Fshi PIN-in e menaxherit",
     "isActiveLabel": "Aktive",
-    "selectWarehouse": "Zgjidh magazinën",
+    "selectWarehouse": "Shto magazinë",
+    "removeWarehouse": "Hiq magazinën",
     "selectCurrency": "Zgjidh monedhën",
-    "selectPaymentMethod": "Zgjidh metodën e pagesës"
+    "selectPaymentMethod": "Zgjidh metodën e pagesës",
+    "removePaymentMethod": "Hiq metodën e pagesës",
+    "selectManager": "Zgjidh menaxherin",
+    "removeManager": "Hiq menaxherin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar konfigurimin POS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi POS u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot konfigurimi POS",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo konfigurim POS",
+    "description": "Konfiguroni një arke: magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo konfigurimin POS"
   }
 }

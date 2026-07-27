@@ -15,11 +15,38 @@
   "saveError": "Failed to save block order.",
   "loadError": "Failed to load blocks.",
   "fields": {
+    "!enums": {
+      "type": {
+        "hero_banner": "Hero banner",
+        "slider": "Slider",
+        "featured_collection": "Featured collection",
+        "trending": "Trending",
+        "best_sellers": "Best sellers",
+        "flash_sale": "Flash sale",
+        "announcement_bar": "Announcement bar",
+        "custom_html": "Custom HTML",
+        "video": "Video",
+        "grid": "Grid",
+        "category_showcase": "Category showcase",
+        "promotional_section": "Promotional section"
+      }
+    },
     "title": "Title",
     "type": "Type",
     "position": "Position",
     "isActive": "Active",
+    "config": "Configuration",
+    "startsAt": "Starts at",
+    "endsAt": "Ends at",
+    "visibility": {
+      "devices": "Devices",
+      "regions": "Regions"
+    },
+    "abTestVariant": "A/B variant",
+    "company": "Company",
     "createdBy": "Created by",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

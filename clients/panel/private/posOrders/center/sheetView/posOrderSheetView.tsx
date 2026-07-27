@@ -7,6 +7,8 @@ import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
+import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
 
 export type PosOrderSheetViewOwnProps = {
     open: boolean;
@@ -29,12 +31,24 @@ function PosOrderSheetView({
     fetchId,
 }: PosOrderSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("posOrders");
     const viewConfig = useViewConfig("posOrders", "sheet");
 
     useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
+
+    useEffect(() => {
         if (!entityProp) return;
-        setSheetData(entityProp);
+        setSheetData((prev) => ({
+            ...entityProp,
+            lineProducts: entityProp.lineProducts ?? (prev as PosOrder).lineProducts,
+            productOrderLabel: entityProp.productOrderLabel ?? (prev as PosOrder).productOrderLabel,
+            refundOfLabel: entityProp.refundOfLabel ?? (prev as PosOrder).refundOfLabel,
+            sessionLabel: entityProp.sessionLabel ?? (prev as PosOrder).sessionLabel,
+            configLabel: entityProp.configLabel ?? (prev as PosOrder).configLabel,
+        }));
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -42,23 +56,39 @@ function PosOrderSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asOrder = sheetData as PosOrder;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/posOrder/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/posOrder/single"
+                fetchId={fetchId ?? entityProp?._id}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                hideEdit
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <ReprintPosOrder entity={asOrder} onAction={(a: string) => setAction(a)} />
+                }
+            />
+            {action === "reprintPosOrder" && (
+                <ReprintPosOrderDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asOrder}
+                />
+            )}
+        </>
     );
 }
 

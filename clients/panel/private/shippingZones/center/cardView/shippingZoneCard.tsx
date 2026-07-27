@@ -18,7 +18,7 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 
-const LIST_BASE = "/eCommerce/shippingzones";
+const LIST_BASE = "/tenancy/systemSettings/shippingzones";
 
 function shippingZoneEditPath(shippingZone: ShippingZone) {
     const params = new URLSearchParams();

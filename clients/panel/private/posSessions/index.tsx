@@ -24,7 +24,6 @@ function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
             buildEditPath={posSessionEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderCard={(entity, onDelete, onRestore) => (
                 <PosSessionCard
                     entity={entity}

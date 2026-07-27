@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
+  "title": "Reject return request",
+  "description": "Reject this pending return request. Optionally explain why.",
+  "reasonLabel": "Rejection reason",
+  "reasonPlaceholder": "Optional reason for rejection",
+  "cancel": "Cancel",
+  "confirm": "Reject",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Rejecting return request…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return request rejected",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not reject return request",
+      "time": 3000
+    }
+  }
+}

@@ -17,8 +17,10 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
+import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 
-const LIST_BASE = "/eCommerce/customergroups";
+const LIST_BASE = "/tenancy/systemSettings/customergroups";
 
 function customerGroupEditPath(customerGroup: CustomerGroup) {
     const params = new URLSearchParams();
@@ -33,6 +35,7 @@ type CustomerGroupCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onMembersChanged?: () => void;
 };
 
 function CustomerGroupCard({
@@ -42,6 +45,7 @@ function CustomerGroupCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onMembersChanged,
 }: CustomerGroupCardProps) {
     const [action, setAction] = useState<string>("");
     const [customerGroup, setCustomerGroup] = useState<CustomerGroup>(customerGroupProp);
@@ -126,7 +130,13 @@ function CustomerGroupCard({
                                             deletedData={customerGroup}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={customerGroupEditPath(customerGroup)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <CustomerGroupRowMenuExtras
+                                                customerGroup={customerGroup}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -156,6 +166,15 @@ function CustomerGroupCard({
                             fetchId={customerGroup._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onMembersChanged={onMembersChanged}
+                        />
+                    )}
+                    {action === "manageMembers" && (
+                        <ManageMembersDialog
+                            open
+                            onClose={() => setAction("")}
+                            customerGroup={customerGroup}
+                            onSuccess={onMembersChanged}
                         />
                     )}
                     {action === "delete" && (

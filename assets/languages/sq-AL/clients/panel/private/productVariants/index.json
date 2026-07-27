@@ -5,9 +5,32 @@
   "createProductVariant": "Krijo variant",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "product": "Produkti",
     "sku": "SKU",
+    "barcode": "Barkodi",
+    "attributeCombination": {
+      "attribute": "Atributi",
+      "value": "Vlera"
+    },
     "price": "Çmimi",
+    "compareAtPrice": "Çmimi krahasues",
+    "costPrice": "Çmimi i kostos",
+    "currency": "Monedha",
+    "weight": "Pesha",
+    "dimensions": {
+      "length": "Gjatësia",
+      "width": "Gjerësia",
+      "height": "Lartësia"
+    },
+    "mainImage": "Imazhi kryesor",
+    "position": "Pozicioni",
     "status": "Statusi",
-    "barcode": "Barkodi"
+    "trackInventory": "Ndjek inventarin",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

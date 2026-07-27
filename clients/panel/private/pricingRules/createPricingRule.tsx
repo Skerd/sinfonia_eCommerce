@@ -15,8 +15,9 @@ export default createGenericCreatePage<CreatePricingRuleFormType>({
         value: 0,
         appliesTo: "all",
         priority: 0,
-        isActive: true,
-    },
-    successPath: "/eCommerce/pricingrules",
+        customerGroups: [],
+        targetIds: [],
+    } as unknown as CreatePricingRuleFormType,
+    successPath: "/tenancy/systemSettings/pricingrules",
     submitIcon: <IconPlus />,
 });

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx",
+  "title": "Testo lidhjen e terminalit",
+  "description": "Kontrollo urën e terminalit bankar POS pa kryer një pagesë.",
+  "cancel": "Anulo",
+  "confirm": "Testo lidhjen",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke testuar lidhjen e terminalit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Testi i lidhjes së terminalit u krye me sukses.",
+      "time": 3000
+    },
+    "error": {
+      "title": "Testi i lidhjes së terminalit dështoi",
+      "time": 3000
+    }
+  }
+}

@@ -18,7 +18,7 @@ import RestoreAction from "@coreModule/components/custom/actions/restoreAction.t
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 
-const LIST_BASE = "/eCommerce/productvariants";
+const LIST_BASE = "/tenancy/systemSettings/productvariants";
 
 function productVariantEditPath(entity: ProductVariant) {
     const params = new URLSearchParams();

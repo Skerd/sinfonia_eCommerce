@@ -11,14 +11,15 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductAttribute} from "armonia/src/modules/eCommerce/api/eCommerce/private/productAttribute/productAttribute.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconHash, IconList, IconTag} from "@tabler/icons-react";
+import {IconEye, IconHash, IconList, IconStack} from "@tabler/icons-react";
 import ProductAttributeSheetView from "@eCommerceModule/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 
-const LIST_BASE = "/eCommerce/productattributes";
+const LIST_BASE = "/tenancy/systemSettings/productattributes";
 
 function productAttributeEditPath(attribute: ProductAttribute) {
     const params = new URLSearchParams();
@@ -85,7 +86,9 @@ function ProductAttributeCard({
         return <HiddenElement />;
     }
 
-    const valuesCount = productAttribute.values?.length ?? 0;
+    const values = productAttribute.values ?? [];
+    const previewValues = values.slice(0, 4);
+    const remainingValues = values.length - previewValues.length;
 
     return (
         <>
@@ -127,33 +130,50 @@ function ProductAttributeCard({
                                 )}
                             </div>
                             <div className="space-y-2 text-sm px-4 pt-0">
-                                <div className="flex flex-col space-y-1">
-                                    <InfoRow
-                                        label={resolveLanguageKey("values")}
-                                        icon={IconList}
-                                        show={!!read?.values}
-                                        value={String(valuesCount)}
-                                    />
+                                <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                                     <InfoRow
                                         label={resolveLanguageKey("position")}
                                         icon={IconHash}
                                         show={!!read?.position}
                                         value={productAttribute.position != null ? String(productAttribute.position) : undefined}
                                     />
+                                    <InfoRow
+                                        label={resolveLanguageKey("visible")}
+                                        icon={IconEye}
+                                        show={!!read?.isVisibleOnProductPage}
+                                        value={resolveLanguageKey(productAttribute.isVisibleOnProductPage ? "yes" : "no")}
+                                    />
+                                    <InfoRow
+                                        label={resolveLanguageKey("variants")}
+                                        icon={IconStack}
+                                        show={!!read?.isUsedForVariants}
+                                        value={resolveLanguageKey(productAttribute.isUsedForVariants ? "yes" : "no")}
+                                    />
                                 </div>
-                                <div className="flex flex-wrap gap-2">
-                                    {read?.isVisibleOnProductPage && productAttribute.isVisibleOnProductPage && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-blue-400/20 text-blue-700">
-                                            <IconTag className="w-3 h-3" />
-                                            {resolveLanguageKey("visibleOnProductPage")}
-                                        </span>
-                                    )}
-                                    {read?.isUsedForVariants && productAttribute.isUsedForVariants && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-violet-400/20 text-violet-700">
-                                            {resolveLanguageKey("usedForVariants")}
-                                        </span>
-                                    )}
-                                </div>
+                                {!!read?.values && (
+                                    <div className="pt-0.5">
+                                        <div className="flex items-center gap-1 text-muted-foreground mb-1.5">
+                                            <IconList size={18} className="hidden md:block shrink-0" />
+                                            <p className="text-sm font-medium">{resolveLanguageKey("values")}</p>
+                                        </div>
+                                        {previewValues.length > 0 ? (
+                                            <div className="flex flex-wrap gap-1">
+                                                {previewValues.map((value, index) => (
+                                                    <Badge key={`${value}-${index}`} variant="outline" className="font-normal">
+                                                        {value}
+                                                    </Badge>
+                                                ))}
+                                                {remainingValues > 0 && (
+                                                    <Badge variant="secondary" className="font-normal tabular-nums">
+                                                        +{remainingValues}
+                                                    </Badge>
+                                                )}
+                                            </div>
+                                        ) : (
+                                            <ValueNotSet />
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,13 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {compose} from "redux";
+import {toast} from "sonner";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import type {CustomerGroupMember} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroupMember/customerGroupMember.dto.ts";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import CustomAvatar from "@coreModule/components/custom/customAvatar.tsx";
 import {
     Dialog,
     DialogContent,
@@ -15,70 +20,92 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {IconTrash} from "@tabler/icons-react";
-import {toast} from "sonner";
 
-type ManageMembersModalProps = {
+type Props = WithLanguageType & {
     open: boolean;
-    onOpenChange: (open: boolean) => void;
+    onClose: () => void;
     customerGroup: CustomerGroup;
-    resolveLanguageKey: (key: string) => unknown;
     onSuccess?: () => void;
 };
 
 function memberDisplayName(member: CustomerGroupMember): string {
     const user = member.user;
     const full = [user?.name, user?.surname].filter(Boolean).join(" ");
-    return full || user?.email || user?._id || "";
+    return full || user?._id || "";
 }
 
-export default function ManageMembersModal({
+function ManageMembersDialog({
     open,
-    onOpenChange,
+    onClose,
     customerGroup,
-    resolveLanguageKey,
     onSuccess,
-}: ManageMembersModalProps) {
+    resolveLanguageKey,
+}: Props) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
+    const resolveLanguageKeyRef = useRef(resolveLanguageKey);
+    resolveLanguageKeyRef.current = resolveLanguageKey;
+
     const [members, setMembers] = useState<CustomerGroupMember[]>([]);
     const [loading, setLoading] = useState(false);
     const [selectedUserId, setSelectedUserId] = useState<string | undefined>(undefined);
     const [adding, setAdding] = useState(false);
     const [removingUserId, setRemovingUserId] = useState<string | null>(null);
 
-    const loadMembers = useCallback(async () => {
-        setLoading(true);
-        try {
-            const res = await apiClient.post<{data: CustomerGroupMember[]; total: number}>(
-                "/api/eCommerce/customerGroup/members/list",
-                {customerGroupId: customerGroup._id, page: 1, limit: 100},
-            );
-            setMembers(res.data.data ?? []);
-        } catch {
-            toast.error(rk("loadError"));
-            setMembers([]);
-        } finally {
-            setLoading(false);
-        }
-    }, [customerGroup._id, rk]);
-
     useEffect(() => {
-        if (open) {
-            setSelectedUserId(undefined);
-            void loadMembers();
-        }
-    }, [open, loadMembers]);
+        if (!open) return;
+
+        setSelectedUserId(undefined);
+        const controller = new AbortController();
+        let cancelled = false;
+
+        const loadMembers = async () => {
+            setLoading(true);
+            try {
+                const res = await apiClient.post<{data: CustomerGroupMember[]; total: number}>(
+                    "/api/eCommerce/customerGroup/members/list",
+                    {customerGroupId: customerGroup._id, page: 1, limit: 100},
+                    {signal: controller.signal},
+                );
+                if (cancelled) return;
+                setMembers(res.data.data ?? []);
+            } catch (error) {
+                const isCanceled =
+                    cancelled ||
+                    controller.signal.aborted ||
+                    (error as {code?: string})?.code === "ERR_CANCELED";
+                if (isCanceled) return;
+                toast.error(String(resolveLanguageKeyRef.current("loadError") ?? "loadError"));
+                setMembers([]);
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
+        };
+
+        void loadMembers();
+
+        return () => {
+            cancelled = true;
+            controller.abort();
+        };
+    }, [open, customerGroup._id]);
 
     const handleAdd = async () => {
         if (!selectedUserId) return;
         setAdding(true);
         try {
-            await apiClient.post("/api/eCommerce/customerGroup/members", {
-                user: selectedUserId,
-                customerGroup: customerGroup._id,
-            });
+            const res = await apiClient.post<{data: CustomerGroupMember}>(
+                "/api/eCommerce/customerGroup/members",
+                {
+                    userId: selectedUserId,
+                    customerGroup: customerGroup._id,
+                },
+            );
             toast.success(rk("addSuccess"));
             setSelectedUserId(undefined);
-            await loadMembers();
+            const created = res.data.data;
+            if (created) {
+                setMembers((prev) => (prev.some((m) => m._id === created._id) ? prev : [...prev, created]));
+            }
             onSuccess?.();
         } catch {
             toast.error(rk("addError"));
@@ -88,6 +115,7 @@ export default function ManageMembersModal({
     };
 
     const handleRemove = async (userId: string) => {
+        if (!userId) return;
         setRemovingUserId(userId);
         try {
             await apiClient.delete("/api/eCommerce/customerGroup/members", {
@@ -104,12 +132,14 @@ export default function ManageMembersModal({
     };
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
+        <Dialog open={open} onOpenChange={(next) => { if (!next) onClose(); }}>
             <DialogContent className="max-w-lg">
                 <DialogHeader>
-                    <DialogTitle>{rk("membersModalTitle")}</DialogTitle>
+                    <DialogTitle>{rk("title")}</DialogTitle>
                     <DialogDescription>
-                        {customerGroup.name ? `${rk("membersModalDescription")} — ${customerGroup.name}` : rk("membersModalDescription")}
+                        {customerGroup.name
+                            ? `${rk("description")} — ${customerGroup.name}`
+                            : rk("description")}
                     </DialogDescription>
                 </DialogHeader>
 
@@ -118,12 +148,12 @@ export default function ManageMembersModal({
                     <div className="flex gap-2">
                         <ApiSelect
                             apiUrl="/api/company/users/select"
-                            method="POST"
                             placeholder={rk("userPlaceholder")}
                             value={selectedUserId}
-                            onValueChange={(v: string | string[] | undefined) => setSelectedUserId(typeof v === "string" ? v : undefined)}
+                            onValueChange={(v: string | string[] | undefined) =>
+                                setSelectedUserId(typeof v === "string" ? v : undefined)
+                            }
                             className="flex-1"
-                            resolveLanguageKey={resolveLanguageKey}
                         />
                         <Button type="button" onClick={() => void handleAdd()} disabled={!selectedUserId || adding}>
                             {adding ? rk("adding") : rk("add")}
@@ -144,19 +174,20 @@ export default function ManageMembersModal({
                                 return (
                                     <li
                                         key={member._id}
-                                        className="flex items-center justify-between rounded-md border px-3 py-2"
+                                        className="flex items-center justify-between gap-3 rounded-md border px-3 py-2"
                                     >
-                                        <div className="min-w-0">
+                                        <div className="flex min-w-0 items-center gap-3">
+                                            <CustomAvatar
+                                                user={member.user}
+                                                avatarClassName="size-8 shrink-0"
+                                            />
                                             <p className="truncate text-sm font-medium">{memberDisplayName(member)}</p>
-                                            {member.user?.email && (
-                                                <p className="truncate text-xs text-muted-foreground">{member.user.email}</p>
-                                            )}
                                         </div>
                                         <Button
                                             type="button"
                                             variant="ghost"
                                             size="icon"
-                                            disabled={removingUserId === userId}
+                                            disabled={!userId || removingUserId === userId}
                                             onClick={() => void handleRemove(userId)}
                                         >
                                             <IconTrash size={16} />
@@ -168,8 +199,8 @@ export default function ManageMembersModal({
                     )}
                 </div>
 
-                <DialogFooter>
-                    <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
+                <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
+                    <Button type="button" variant="outline" onClick={onClose}>
                         {rk("close")}
                     </Button>
                 </DialogFooter>
@@ -177,3 +208,8 @@ export default function ManageMembersModal({
         </Dialog>
     );
 }
+
+export default compose(
+    withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx"),
+    withDebug(true, true),
+)(ManageMembersDialog);

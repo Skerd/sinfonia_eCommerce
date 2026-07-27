@@ -17,6 +17,10 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/actions/activateFiscalConfig.tsx";
+import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/actions/deactivateFiscalConfig.tsx";
+import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
+import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 
 const LIST_BASE = "/eCommerce/fiscalconfigs";
 
@@ -114,7 +118,11 @@ function FiscalConfigCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={fiscalConfigEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateFiscalConfig entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateFiscalConfig entity={entity} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -141,6 +149,22 @@ function FiscalConfigCard({
                                             : resolveLanguageKey("certificateNo")
                                     }
                                 />
+                                {read?.isActive && entity.isActive != null && (
+                                    <span
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                            entity.isActive ? "text-emerald-600" : "text-muted-foreground",
+                                        )}
+                                    >
+                                        <span
+                                            className={cn(
+                                                "w-1.5 h-1.5 rounded-full shrink-0",
+                                                entity.isActive ? "bg-emerald-500" : "bg-muted-foreground/40",
+                                            )}
+                                        />
+                                        {resolveLanguageKey(entity.isActive ? "active" : "inactive")}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -157,6 +181,7 @@ function FiscalConfigCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setEntity(row as FiscalConfig)}
                         />
                     )}
                     {action === "delete" && (
@@ -179,6 +204,22 @@ function FiscalConfigCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/fiscalConfig"
+                        />
+                    )}
+                    {action === "activateFiscalConfig" && (
+                        <ActivateFiscalConfigDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
+                        />
+                    )}
+                    {action === "deactivateFiscalConfig" && (
+                        <DeactivateFiscalConfigDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
                         />
                     )}
                 </>

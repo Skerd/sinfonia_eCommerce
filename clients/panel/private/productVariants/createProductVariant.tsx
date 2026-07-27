@@ -10,6 +10,6 @@ export default createGenericCreatePage<CreateProductVariantFormType>({
     apiUrl: "/api/eCommerce/productVariant",
     schema: createProductVariantFormSchema,
     defaultValues: {product: "", status: "active", trackInventory: true, attributeCombination: []} as unknown as CreateProductVariantFormType,
-    successPath: "/eCommerce/productvariants",
+    successPath: "/tenancy/systemSettings/productvariants",
     submitIcon: <IconPlus />,
 });

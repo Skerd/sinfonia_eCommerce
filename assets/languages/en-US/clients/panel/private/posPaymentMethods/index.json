@@ -8,8 +8,18 @@
     "name": "Name",
     "type": "Type",
     "sequence": "Sequence",
+    "cashQuickAmounts": "Cash quick amounts",
+    "terminalEnabled": "Terminal enabled",
+    "terminalProvider": "Terminal provider",
+    "terminalHost": "Terminal host",
+    "terminalPort": "Terminal port",
+    "terminalId": "Terminal ID",
+    "terminalPath": "Terminal path",
     "isActive": "Active",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

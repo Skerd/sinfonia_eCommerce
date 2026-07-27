@@ -3,6 +3,7 @@
   "status": "Statusi",
   "balance": "Balanca",
   "purchasedBy": "Blerë nga",
+  "ofInitial": "nga {amount}",
   "giftCardStatus": {
     "active": "Aktive",
     "depleted": "E shpenzuar",

@@ -3,15 +3,18 @@
   "title": "Atributet e produktit",
   "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
   "createProductAttribute": "Krijo atribut",
-  "searchPlaceholder": "Search or add filters...",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "name": "Name",
-    "position": "Position",
-    "isVisibleOnProductPage": "Visible on product page",
-    "isUsedForVariants": "Used for variants",
-    "values": "Values",
-    "createdBy": "Created by",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "name": "Emri",
+    "position": "Pozicioni",
+    "isVisibleOnProductPage": "I dukshëm në faqen e produktit",
+    "isUsedForVariants": "Përdoret për variantet",
+    "values": "Vlerat",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

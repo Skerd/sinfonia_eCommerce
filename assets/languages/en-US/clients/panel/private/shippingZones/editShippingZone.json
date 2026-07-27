@@ -1,34 +1,64 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
+  "title": "Edit shipping zone",
+  "errorTitle": "Failed to load shipping zone",
+  "errorDescription": "Could not load this shipping zone. Try again.",
   "form": {
-    "carrierLabel": "Carrier Label",
-    "countriesLabel": "Countries",
-    "estimatedDeliveryDaysLabel": "Estimated Delivery Days Label",
-    "isActiveLabel": "Active",
-    "maxOrderAmountLabel": "Max Order Amount Label",
-    "maxWeightLabel": "Max Weight Label",
-    "minOrderAmountLabel": "Min Order Amount Label",
-    "minWeightLabel": "Min Weight Label",
+    "generalSectionTitle": "General",
+    "geographySectionTitle": "Geography",
     "nameLabel": "Name",
+    "isActiveLabel": "Active",
+    "countriesLabel": "Countries",
+    "statesLabel": "States / regions",
+    "selectCountry": "Select country",
+    "selectState": "Select state",
+    "removeCountry": "Remove country",
+    "removeState": "Remove state",
     "postalCodePatternsLabel": "Postal code patterns",
-    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
-    "rateAddRow": "Rate Add Row",
-    "rateConditionsSectionTitle": "Rate Conditions Section Title",
-    "rateNameLabel": "Rate Name Label",
-    "ratePriceLabel": "Rate Price Label",
-    "rateRemoveRow": "Rate Remove Row",
-    "rateTypeLabel": "Rate Type Label",
-    "ratesSectionTitle": "Rates Section Title",
-    "selectCountry": "Select Country",
-    "selectState": "Select State",
+    "postalCodePatternsPlaceholder": "e.g. 1000* or AL-*",
+    "removePostalCodePattern": "Remove pattern",
+    "ratesSectionTitle": "Shipping rates",
+    "rateAddRow": "Add rate",
+    "rateRemoveRow": "Remove rate",
+    "rateRowTitle": "Untitled rate",
+    "rateNameLabel": "Rate name",
+    "rateTypeLabel": "Rate type",
+    "ratePriceLabel": "Price",
+    "carrierLabel": "Carrier",
+    "estimatedDeliveryDaysLabel": "Estimated delivery days",
+    "rateConditionsSectionTitle": "Conditions",
+    "minWeightLabel": "Min weight",
+    "maxWeightLabel": "Max weight",
+    "minOrderAmountLabel": "Min order amount",
+    "maxOrderAmountLabel": "Max order amount",
     "shippingRateType": {
       "flat": "Flat",
-      "free": "Free",
-      "price": "Price",
+      "weight": "Weight-based",
+      "price": "Order amount",
       "quantity": "Quantity",
-      "weight": "Weight"
-    },
-    "statesLabel": "States"
+      "free": "Free"
+    }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
-  "title": "Edit shipping zone"
+  "axios": {
+    "start": {
+      "title": "Saving shipping zone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Shipping zone updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update shipping zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit shipping zone",
+    "description": "Update destination geography and shipping rates for this zone."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
 }

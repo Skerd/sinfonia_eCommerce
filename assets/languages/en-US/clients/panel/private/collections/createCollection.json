@@ -2,13 +2,18 @@
   "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
   "title": "Create collection",
   "form": {
+    "generalSectionTitle": "General",
     "nameLabel": "Name",
+    "namePlaceholder": "Collection name",
     "slugLabel": "Slug",
+    "slugPlaceholder": "auto-generated-from-name",
     "typeLabel": "Collection type",
     "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Optional description for this collection",
     "mainImageLabel": "Cover image",
     "isVisibleLabel": "Visible on storefront",
     "positionLabel": "Sort position",
+    "positionPlaceholder": "0",
     "publishedAtLabel": "Publish at",
     "mediaSectionTitle": "Media",
     "manualSectionTitle": "Manual products",
@@ -24,9 +29,12 @@
     "ruleFieldLabel": "Field",
     "ruleOperatorLabel": "Operator",
     "ruleValueLabel": "Value",
+    "ruleValuePlaceholder": "Rule value",
     "seoSectionTitle": "SEO",
     "seoTitleLabel": "SEO title",
+    "seoTitlePlaceholder": "Optional SEO title",
     "seoDescriptionLabel": "SEO description",
+    "seoDescriptionPlaceholder": "Optional SEO description",
     "collectionType": {
       "manual": "Manual",
       "dynamic": "Dynamic"
@@ -53,5 +61,27 @@
       "less_than": "Less than",
       "starts_with": "Starts with"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Creating collection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create collection",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create collection",
+    "description": "Group products manually or with dynamic matching rules."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create collection"
   }
 }

@@ -4,5 +4,25 @@
   "status": "Status",
   "amount": "Amount",
   "type": "Type",
-  "gatewayTransactionId": "gatewayTransactionId"
+  "gatewayTransactionId": "Gateway transaction id",
+  "paymentTransactionType": {
+    "charge": "Charge",
+    "refund": "Refund",
+    "payout": "Payout",
+    "dispute": "Dispute"
+  },
+  "paymentTransactionStatus": {
+    "pending": "Pending",
+    "succeeded": "Succeeded",
+    "failed": "Failed",
+    "refunded": "Refunded",
+    "partially_refunded": "Partially refunded",
+    "disputed": "Disputed"
+  },
+  "paymentTransactionGateway": {
+    "stripe": "Stripe",
+    "paypal": "PayPal",
+    "manual": "Manual",
+    "wallet": "Wallet"
+  }
 }

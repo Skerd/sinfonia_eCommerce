@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx",
+  "title": "Aktivizo zbritjen",
+  "description": "Kjo zbritje do të jetë e disponueshme për shportat dhe pagesën.",
+  "cancel": "Anulo",
+  "confirm": "Aktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar zbritjen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zbritja u aktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u aktivizua dot zbritja",
+      "time": 3000
+    }
+  }
+}

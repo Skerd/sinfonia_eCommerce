@@ -4,11 +4,53 @@
   "description": "Till sessions opened and closed from the Point of Sale.",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "state": {
+        "opening_control": "Opening",
+        "opened": "Opened",
+        "closing_control": "Closing",
+        "closed": "Closed"
+      },
+      "cashMoves": {
+        "type": {
+          "type": {
+            "in": "Cash in",
+            "out": "Cash out"
+          }
+        }
+      }
+    },
     "name": "Name",
+    "config": "POS config",
     "state": "State",
+    "openedBy": "Opened by",
+    "closedBy": "Closed by",
+    "openedAt": "Opened at",
+    "closedAt": "Closed at",
+    "openingBalance": "Opening balance",
+    "closingBalance": "Closing balance",
+    "expectedCash": "Expected cash",
+    "cashRegisterBalance": "Cash register",
+    "cashMoves": {
+      "type": {
+        "type": "Cash move type",
+        "amount": "Cash move amount",
+        "reason": "Cash move reason",
+        "at": "Cash move at",
+        "by": "Cash move by",
+        "default": "Cash moves default"
+      },
+      "default": "Cash moves default"
+    },
     "orderCount": "Orders",
     "totalSales": "Total sales",
+    "totalCash": "Cash",
+    "totalCard": "Card",
+    "notes": "Notes",
+    "company": "Company",
     "createdBy": "Created by",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

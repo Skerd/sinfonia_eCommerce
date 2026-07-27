@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
+  "title": "Vendos si adresë e parazgjedhur",
+  "description": "Kjo adresë do të bëhet e parazgjedhur për klientin. Çdo parazgjedhje tjetër do të hiqet.",
+  "cancel": "Anulo",
+  "confirm": "Vendos si parazgjedhur",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke vendosur adresën e parazgjedhur…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresa e parazgjedhur u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Adresa e parazgjedhur nuk u vendos",
+      "time": 3000
+    }
+  }
+}

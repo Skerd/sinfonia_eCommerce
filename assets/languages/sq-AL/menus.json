@@ -40,6 +40,9 @@
     "inventories": {
       "title": "Inventari"
     },
+    "inventorymovements": {
+      "title": "Lëvizjet e stokut"
+    },
     "warehouses": {
       "title": "Magazinat"
     },
@@ -82,9 +85,6 @@
     "customeraddresses": {
       "title": "Adresat e klientëve"
     },
-    "categories": {
-      "title": "Kategoritë"
-    },
     "productreviews": {
       "title": "Vlerësimet e produkteve"
     },
@@ -99,6 +99,39 @@
       },
       "categories": {
         "title": "Kategoritë e produkteve"
+      },
+      "pos": {
+        "title": "POS"
+      },
+      "posconfigs": {
+        "title": "Konfigurimet POS"
+      },
+      "pospaymentmethods": {
+        "title": "Metodat e pagesës"
+      },
+      "customergroups": {
+        "title": "Grupet e klientëve"
+      },
+      "discounts": {
+        "title": "Zbritjet"
+      },
+      "pricingrules": {
+        "title": "Rregullat e çmimeve"
+      },
+      "taxzones": {
+        "title": "Zonat tatimore"
+      },
+      "shippingzones": {
+        "title": "Zonat e transportit"
+      },
+      "warehouses": {
+        "title": "Magazinat"
+      },
+      "productattributes": {
+        "title": "Atributet e produkteve"
+      },
+      "productvariants": {
+        "title": "Variantet e produkteve"
       }
     }
   }

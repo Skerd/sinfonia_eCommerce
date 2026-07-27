@@ -4,8 +4,17 @@
   "description": "Moderate buyer reviews (created via the storefront after a paid order).",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "order": "Order",
+    "product": "Product",
     "rating": "Rating",
     "title": "Title",
-    "comment": "Comment"
+    "comment": "Comment",
+    "reviewer": "Reviewer",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

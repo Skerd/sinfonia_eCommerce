@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
+  "title": "Inventory movements",
+  "description": "Full ledger of restocks, write-offs, sales, and other stock changes.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "reason": "Reason",
+    "quantity": "Quantity",
+    "product": "Product",
+    "warehouse": "Warehouse",
+    "occurredAt": "Occurred at",
+    "receiptNumber": "Receipt #"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx",
+  "title": "Fshi PIN-in e menaxherit",
+  "description": "Vendosni PIN-in aktual dy herë për të konfirmuar fshirjen. Opsionet që kërkojnë PIN do të çaktivizohen.",
+  "pinLabel": "PIN aktual",
+  "confirmPinLabel": "Konfirmo PIN",
+  "pinMismatch": "Konfirmimi i PIN nuk përputhet",
+  "cancel": "Anulo",
+  "confirm": "Fshi PIN",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke fshirë PIN-in e menaxherit",
+      "time": 3000
+    },
+    "success": {
+      "title": "PIN i menaxherit u fshi",
+      "time": 3000
+    },
+    "error": {
+      "title": "PIN i menaxherit nuk u fshi",
+      "time": 3000
+    }
+  }
+}

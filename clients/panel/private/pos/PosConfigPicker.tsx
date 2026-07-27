@@ -23,7 +23,7 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
                     <p className="mt-1 text-sm text-muted-foreground">{rk("picker.description")}</p>
                 </div>
                 <Button variant="outline" className="border-border bg-card text-foreground hover:bg-muted" asChild>
-                    <Link to="/eCommerce/posconfigs">
+                    <Link to="/tenancy/systemSettings/posconfigs">
                         <ArrowLeft className="size-4" />
                         {rk("backToConfigs")}
                     </Link>
@@ -46,8 +46,10 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
                                 <Monitor className="size-5" />
                             </div>
                             <div className="text-lg font-semibold tracking-tight">{c.name}</div>
-                            {c.warehouseLabel?.name && (
-                                <div className="mt-1 text-sm text-muted-foreground">{c.warehouseLabel.name}</div>
+                            {!!c.warehouses?.length && (
+                                <div className="mt-1 text-sm text-muted-foreground">
+                                    {c.warehouses.map((w) => w.name).filter(Boolean).join(", ")}
+                                </div>
                             )}
                             <div className="mt-4 text-xs font-medium uppercase tracking-wide text-emerald-600/80 dark:text-emerald-400/80 opacity-0 transition-opacity group-hover:opacity-100">
                                 {rk("picker.open")} →

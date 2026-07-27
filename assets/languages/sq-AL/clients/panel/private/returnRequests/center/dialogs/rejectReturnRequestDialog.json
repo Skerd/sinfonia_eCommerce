@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
+  "title": "Refuzo kërkesën për kthim",
+  "description": "Refuzo këtë kërkesë në pritje. Opsionalisht shpjego arsyen.",
+  "reasonLabel": "Arsyeja e refuzimit",
+  "reasonPlaceholder": "Arsye opsionale e refuzimit",
+  "cancel": "Anulo",
+  "confirm": "Refuzo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke refuzuar kërkesën…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa u refuzua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa nuk u refuzua",
+      "time": 3000
+    }
+  }
+}

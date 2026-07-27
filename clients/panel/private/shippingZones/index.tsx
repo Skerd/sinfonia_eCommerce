@@ -11,7 +11,7 @@ export function shippingZoneEditPath(sz: {_id: string; name?: string}) {
     const params = new URLSearchParams();
     params.set("shippingZoneId", sz._id);
     if (sz.name) params.set("shippingZoneName", encodeURIComponent(sz.name));
-    return `/eCommerce/shippingzones/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/shippingzones/edit?${params.toString()}`;
 }
 
 function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
@@ -21,7 +21,7 @@ function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
             collectionName="shippingZones"
             accessModel="shippingZones"
             tableConfigKey="shippingZones"
-            createPath="/eCommerce/shippingzones/create"
+            createPath="/tenancy/systemSettings/shippingzones/create"
             createIcon={<IconPlus />}
             createLanguageKey="createShippingZone"
             buildEditPath={shippingZoneEditPath}

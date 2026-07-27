@@ -11,6 +11,7 @@ export default createGenericCreatePage<CreatePosConfigFormType>({
     schema: createPosConfigFormSchema,
     defaultValues: {
         name: "",
+        warehouses: [],
         ifaceBarcodeScanner: true,
         ifaceCashControl: true,
         allowDiscount: true,
@@ -21,6 +22,6 @@ export default createGenericCreatePage<CreatePosConfigFormType>({
         pinForRefund: false,
         isActive: true,
     } as unknown as CreatePosConfigFormType,
-    successPath: "/eCommerce/posconfigs",
+    successPath: "/tenancy/systemSettings/posconfigs",
     submitIcon: <IconPlus />,
 });

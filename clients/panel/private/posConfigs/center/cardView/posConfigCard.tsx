@@ -19,8 +19,13 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import PosConfigRowMenuExtras from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/posConfigRowMenuExtras.tsx";
+import SetManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx";
+import ChangeManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/changeManagerPinDialog.tsx";
+import ClearManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx";
+import RequestManagerPinResetDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx";
 
-const LIST_BASE = "/eCommerce/posconfigs";
+const LIST_BASE = "/tenancy/systemSettings/posconfigs";
 
 function posConfigEditPath(entity: PosConfig) {
     const params = new URLSearchParams();
@@ -33,6 +38,7 @@ type PosConfigCardProps = WithLanguageType & {
     entity: PosConfig;
     onDelete?: (deleted?: PosConfig, response?: DeletedData) => void;
     onRestore?: () => void;
+    onPinUpdated?: (updated: Partial<PosConfig>) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
 };
@@ -42,6 +48,7 @@ function PosConfigCard({
     resolveLanguageKey,
     onDelete: onDeleteProp,
     onRestore: onRestoreProp,
+    onPinUpdated,
     hideActions = false,
     sheetOnly = false,
 }: PosConfigCardProps) {
@@ -71,6 +78,12 @@ function PosConfigCard({
         }
     };
 
+    const applyPinUpdate = (updated: Partial<PosConfig>) => {
+        setEntity((prev) => ({...prev, ...updated}));
+        onPinUpdated?.(updated);
+        setAction("");
+    };
+
     const {read, restore} = useAccess("posConfigs");
 
     useEffect(() => {
@@ -88,6 +101,7 @@ function PosConfigCard({
     }
 
     const methodCount = entity.paymentMethodLabels?.length ?? entity.paymentMethods?.length;
+    const warehouseCount = entity.warehouses?.length;
 
     return (
         <>
@@ -124,17 +138,23 @@ function PosConfigCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={posConfigEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <PosConfigRowMenuExtras
+                                                config={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
                             <div className="space-y-2 text-sm px-4 pt-0">
                                 <div className="flex flex-col space-y-1">
                                     <InfoRow
-                                        label={resolveLanguageKey("warehouse")}
+                                        label={resolveLanguageKey("warehouses")}
                                         icon={IconBuildingWarehouse}
-                                        show={!!(read as any)?.warehouse}
-                                        value={entity.warehouseLabel?.name}
+                                        show={!!(read as any)?.warehouses}
+                                        value={warehouseCount != null ? String(warehouseCount) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("paymentMethods")}
@@ -191,6 +211,7 @@ function PosConfigCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onPinUpdated={applyPinUpdate}
                         />
                     )}
                     {action === "delete" && (
@@ -215,6 +236,37 @@ function PosConfigCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/posConfig/restore"
+                        />
+                    )}
+                    {action === "setManagerPin" && (
+                        <SetManagerPinDialog
+                            open
+                            onClose={() => setAction("")}
+                            config={entity}
+                            onSuccess={applyPinUpdate}
+                        />
+                    )}
+                    {action === "changeManagerPin" && (
+                        <ChangeManagerPinDialog
+                            open
+                            onClose={() => setAction("")}
+                            config={entity}
+                            onSuccess={applyPinUpdate}
+                        />
+                    )}
+                    {action === "clearManagerPin" && (
+                        <ClearManagerPinDialog
+                            open
+                            onClose={() => setAction("")}
+                            config={entity}
+                            onSuccess={applyPinUpdate}
+                        />
+                    )}
+                    {action === "requestManagerPinReset" && (
+                        <RequestManagerPinResetDialog
+                            open
+                            onClose={() => setAction("")}
+                            config={entity}
                         />
                     )}
                 </>

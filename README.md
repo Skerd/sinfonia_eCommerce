@@ -42,7 +42,7 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 |-------------|-------------|-------------|
 | `products` | `/eCommerce/products` | Product catalog |
 | `productVariants` | `/eCommerce/productvariants` | SKU-level variants |
-| `productAttributes` | `/eCommerce/productattributes` | Configurable attributes |
+| `productAttributes` | `/tenancy/systemSettings/productattributes` | Configurable attributes |
 | `categories` | `/eCommerce/categories` | Categories (also under tenancy systemSettings) |
 | `collections` | `/eCommerce/collections` | Merchandising collections |
 | `productOrders` | `/eCommerce/productorders` | Orders (confirm / process / ship / cancel / refund actions) |
@@ -54,12 +54,12 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `giftCards` | `/eCommerce/giftcards` | Gift card balances (system-issued, disable via edit) |
 | `inventories` | `/eCommerce/inventories` | Stock levels |
 | `warehouses` | `/eCommerce/warehouses` | Warehouses |
-| `discounts` | `/eCommerce/discounts` | Discounts |
+| `discounts` | `/tenancy/systemSettings/discounts` | Discounts |
 | `taxZones` | `/eCommerce/taxzones` | Tax configuration |
 | `shippingZones` | `/eCommerce/shippingzones` | Shipping zones |
 | `cmsBlocks` | `/eCommerce/cmsblocks` | CMS blocks |
 | `customerGroups` | `/eCommerce/customergroups` | Customer groups |
-| `pricingRules` | `/eCommerce/pricingrules` | Pricing rules |
+| `pricingRules` | `/tenancy/systemSettings/pricingrules` | Pricing rules |
 | `analytics` | `/eCommerce/analytics` | Analytics dashboard |
 | `escrowDashboard` | `/eCommerce/escrowdashboard` | Escrow overview |
 | `systemMap` | `/eCommerce/systemmap` | Catalog eCommerce architecture map (models, checkout flow, capabilities) |

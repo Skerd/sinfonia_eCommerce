@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx",
+  "title": "Mark fulfillment as failed",
+  "description": "Mark this fulfillment as failed. Optionally explain why.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional reason for failure",
+  "cancel": "Cancel",
+  "confirm": "Mark as failed",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Marking as failed…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment marked as failed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark as failed",
+      "time": 3000
+    }
+  }
+}

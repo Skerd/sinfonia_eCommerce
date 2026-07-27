@@ -7,8 +7,12 @@ import type {PricingRule} from "armonia/src/modules/eCommerce/api/eCommerce/priv
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/activatePricingRule.tsx";
+import DeactivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/deactivatePricingRule.tsx";
+import ActivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx";
+import DeactivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx";
 
-const LIST_BASE = "/eCommerce/pricingrules";
+const LIST_BASE = "/tenancy/systemSettings/pricingrules";
 
 export type PricingRuleSheetViewOwnProps = {
     open: boolean;
@@ -18,6 +22,7 @@ export type PricingRuleSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function pricingRuleEditPath(pricingRule: PricingRule) {
@@ -36,10 +41,16 @@ function PricingRuleSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: PricingRuleSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(pricingRuleProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("pricingRules");
     const viewConfig = useViewConfig("pricingRules", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!pricingRuleProp) return;
@@ -51,24 +62,58 @@ function PricingRuleSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as PricingRule;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/pricingRule/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={pricingRuleEditPath(sheetData as PricingRule)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/pricingRule/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={pricingRuleEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivatePricingRule entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivatePricingRule entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activatePricingRule" && (
+                <ActivatePricingRuleDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "deactivatePricingRule" && (
+                <DeactivatePricingRuleDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+        </>
     );
 }
 

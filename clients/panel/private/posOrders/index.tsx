@@ -5,13 +5,9 @@ import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import PosOrderCard from "./center/cardView/posOrderCard.tsx";
-
-export function posOrderEditPath(entity: {_id: string; name?: string}) {
-    const params = new URLSearchParams();
-    params.set("posOrderId", entity._id);
-    if (entity.name) params.set("posOrderTitle", encodeURIComponent(entity.name));
-    return `/eCommerce/posorders/edit?${params.toString()}`;
-}
+import PosOrderSheetView from "./center/sheetView/posOrderSheetView.tsx";
+import ReprintPosOrder from "./center/actions/reprintPosOrder.tsx";
+import ReprintPosOrderDialog from "./center/dialogs/reprintPosOrderDialog.tsx";
 
 function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
     return (
@@ -21,15 +17,44 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
             accessModel="posOrders"
             tableConfigKey="posOrders"
             hideCreate
-            buildEditPath={posOrderEditPath}
+            buildEditPath={() => ""}
+            rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            renderActionMenuChildren={(entity, bindRowAction) => (
+                <ReprintPosOrder entity={entity} onAction={bindRowAction} />
+            )}
+            renderSheetActionMenuChildren={(entity, bindRowAction) => (
+                <ReprintPosOrder entity={entity} onAction={bindRowAction} />
+            )}
+            renderFloatingModals={({action, entity, resetAction}) => {
+                if (action === "reprintPosOrder") {
+                    return (
+                        <ReprintPosOrderDialog
+                            open={true}
+                            onClose={resetAction}
+                            entity={entity}
+                        />
+                    );
+                }
+                return null;
+            }}
             renderCard={(entity, onDelete, onRestore) => (
                 <PosOrderCard
                     entity={entity}
                     onDelete={(row: PosOrder | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
+                />
+            )}
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore}) => (
+                <PosOrderSheetView
+                    open={open}
+                    onOpenChange={(opened: boolean) => {
+                        if (!opened) onOpenChange();
+                    }}
+                    entity={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
                 />
             )}
         />

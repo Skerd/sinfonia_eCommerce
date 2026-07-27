@@ -132,7 +132,7 @@ export default function PosTillHeader({
                     {rk("closeSession")}
                 </Button>
                 <Button size="sm" variant="ghost" className="h-8 text-muted-foreground hover:bg-muted hover:text-foreground" asChild>
-                    <Link to="/eCommerce/posconfigs">
+                    <Link to="/tenancy/systemSettings/posconfigs">
                         <ArrowLeft className="size-3.5" />
                         {rk("back")}
                     </Link>

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx",
+  "title": "Riprinto faturën",
+  "description": "Shiko dhe printo faturën për këtë porosi POS.",
+  "loading": "Duke ngarkuar faturën…",
+  "cancel": "Anulo",
+  "confirm": "Printo",
+  "order": "Porosia",
+  "ref": "Ref",
+  "date": "Data",
+  "customer": "Klienti",
+  "walkIn": "Klient i rastit",
+  "discount": "Zbritje",
+  "total": "Totali",
+  "change": "Kusuri",
+  "defaultFooter": "Faleminderit për blerjen!",
+  "fallbackShop": "POS",
+  "errors": {
+    "loadFailed": "Nuk u ngarkua fatura për këtë porosi."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ngarkuar faturën…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fatura është gati",
+      "time": 2000
+    },
+    "error": {
+      "title": "Nuk u ngarkua fatura",
+      "time": 3000
+    }
+  }
+}

@@ -1,8 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
-  "customerGroupSubtitle": "Customer group details",
-  "overview": "Overview",
-  "name": "Name",
-  "memberCount": "Members",
-  "isDefault": "Default"
+  "customerGroupSubtitle": "Detajet e grupit të klientëve",
+  "failedTitle": "Nuk u ngarkua grupi i klientëve",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij grupi klientësh. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "overview": "Përmbledhje",
+  "name": "Emri",
+  "description": "Përshkrimi",
+  "memberCount": "Anëtarë",
+  "isDefault": "Parazgjedhur",
+  "company": "Kompania",
+  "yes": "Po",
+  "no": "Jo"
 }

@@ -5,8 +5,24 @@
   "createReturnRequest": "Create return request",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "order": "Order",
     "type": "Type",
     "status": "Status",
-    "refundAmount": "Refund amount"
+    "items": {
+      "orderItemId": "Order item id",
+      "quantity": "Quantity",
+      "reason": "Reason"
+    },
+    "refundAmount": "Refund amount",
+    "customerNote": "Customer note",
+    "adminNote": "Admin note",
+    "resolvedBy": "Resolved by",
+    "resolvedAt": "Resolved at",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

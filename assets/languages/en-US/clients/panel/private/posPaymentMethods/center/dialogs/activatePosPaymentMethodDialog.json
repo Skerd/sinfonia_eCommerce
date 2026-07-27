@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
+  "title": "Activate payment method",
+  "description": "This payment method will be available on tills that use it.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating payment method…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment method activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate payment method",
+      "time": 3000
+    }
+  }
+}

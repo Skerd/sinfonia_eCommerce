@@ -6,9 +6,35 @@
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
+    "paymentMethods": "Metodat e pagesës",
+    "managers": "Menaxherët",
+    "managerPins": {
+      "user": "Menaxheri",
+      "pinHash": "Hash i PIN-it",
+      "pinReset": {
+        "code": "Kodi i rivendosjes së PIN-it",
+        "date": "Data e rivendosjes së PIN-it",
+        "opened": "Rivendosja e PIN-it e hapur"
+      }
+    },
     "warehouse": "Magazina",
+    "warehouses": "Magazinat",
+    "currency": "Monedha",
+    "receiptHeader": "Kreu i faturës",
+    "receiptFooter": "Fundi i faturës",
+    "ifaceBarcodeScanner": "Skener barkodi",
+    "ifaceCashControl": "Kontrolli i cash-it",
+    "allowDiscount": "Lejo zbritje",
+    "allowQuantityChange": "Lejo ndryshim sasie",
+    "allowOversell": "Lejo shitje mbi stok",
+    "pinForDiscount": "PIN për zbritje",
+    "pinForCashOut": "PIN për cash out",
+    "pinForRefund": "PIN për rimbursim",
     "isActive": "Aktive",
     "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

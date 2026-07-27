@@ -1,13 +1,38 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
   "title": "Ndrysho atributin",
+  "errorTitle": "Ngarkimi i atributit dështoi",
+  "errorDescription": "Nuk u ngarkua dot ky atribut. Provo përsëri.",
   "form": {
-    "nameLabel": "Name",
-    "positionLabel": "Position",
-    "isVisibleOnProductPageLabel": "Visible on product page",
-    "isUsedForVariantsLabel": "Used for variants",
-    "valuesLabel": "Values",
-    "valuesPlaceholder": "Add a value and press Enter",
-    "removeValue": "Remove value"
+    "_idLabel": "ID e regjistrimit",
+    "nameLabel": "Emri",
+    "positionLabel": "Pozicioni",
+    "isVisibleOnProductPageLabel": "I dukshëm në faqen e produktit",
+    "isUsedForVariantsLabel": "Përdoret për variantet",
+    "valuesLabel": "Vlerat",
+    "valuesPlaceholder": "Shto një vlerë dhe shtyp Enter",
+    "removeValue": "Hiq vlerën"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur atributin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Atributi u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot atributi",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho atributin",
+    "description": "Përditësoni emrin, vlerat, dukshmërinë dhe cilësimet e varianteve."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

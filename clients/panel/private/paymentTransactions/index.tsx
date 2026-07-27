@@ -24,7 +24,6 @@ function AllPaymentTransactions({resolveLanguageKey}: WithLanguageType) {
             buildEditPath={paymentTransactionEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/paymentTransactions/center/sheetView/paymentTransactionSheetView.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderCard={(entity, onDelete, onRestore) => (
                 <PaymentTransactionCard
                     entity={entity}

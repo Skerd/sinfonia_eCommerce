@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx",
+  "title": "Clear manager PIN",
+  "description": "Enter the current PIN twice to confirm clearing it. PIN-required till options will be turned off.",
+  "pinLabel": "Current PIN",
+  "confirmPinLabel": "Confirm PIN",
+  "pinMismatch": "PIN confirmation does not match",
+  "cancel": "Cancel",
+  "confirm": "Clear PIN",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Clearing manager PIN",
+      "time": 3000
+    },
+    "success": {
+      "title": "Manager PIN cleared",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not clear manager PIN",
+      "time": 3000
+    }
+  }
+}

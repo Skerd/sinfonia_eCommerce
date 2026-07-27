@@ -1,27 +1,65 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
-  "title": "Product variants",
+  "title": "Edit variant",
+  "errorTitle": "Failed to load variant",
+  "errorDescription": "Could not load this product variant. Try again.",
   "form": {
+    "generalSectionTitle": "General",
+    "pricingSectionTitle": "Pricing",
+    "physicalSectionTitle": "Physical",
+    "mediaSectionTitle": "Media",
     "productLabel": "Product",
     "productPlaceholder": "Select product",
     "statusLabel": "Status",
     "skuLabel": "SKU",
+    "skuPlaceholder": "Variant SKU",
     "barcodeLabel": "Barcode",
+    "barcodePlaceholder": "Barcode",
+    "positionLabel": "Position",
+    "trackInventoryLabel": "Track inventory",
     "priceLabel": "Price",
     "compareAtPriceLabel": "Compare-at price",
     "costPriceLabel": "Cost price",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
     "weightLabel": "Weight",
-    "positionLabel": "Position",
-    "trackInventoryLabel": "Track inventory",
-    "attributesSectionTitle": "Attributes",
+    "dimensionLengthLabel": "Length",
+    "dimensionWidthLabel": "Width",
+    "dimensionHeightLabel": "Height",
+    "mainImageLabel": "Main image",
+    "attributesSectionTitle": "Attribute combination",
     "attributeAddRow": "Add attribute",
     "attributeRemoveRow": "Remove attribute",
-    "attributeRowTitle": "Attribute",
+    "attributeRowTitle": "Untitled attribute",
     "attributeLabel": "Attribute",
+    "attributePlaceholder": "Select attribute",
     "valueLabel": "Value",
+    "valuePlaceholder": "Attribute value",
     "variantStatus": {
       "active": "Active",
       "inactive": "Inactive"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving variant",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variant updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update variant",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit variant",
+    "description": "Update pricing, attributes, and inventory settings for this SKU."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

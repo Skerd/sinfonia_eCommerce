@@ -48,7 +48,12 @@ export default createGenericEditPage<Product, EditProductFormType>({
         const wf = writeFields as Record<string, any>;
         const out: Record<string, unknown> = {_id: data._id};
         for (const key of SCALAR_FIELDS) {
-            if (wf[key]) out[key] = (data as any)[key];
+            if (!wf[key]) continue;
+            if (key === "currency") {
+                out.currency = refId((data as any).currency) || undefined;
+                continue;
+            }
+            out[key] = (data as any)[key];
         }
         for (const key of ID_ARRAY_FIELDS) {
             if (wf[key]) out[key] = ((data as any)[key] ?? []).map(refId);
@@ -61,21 +66,31 @@ export default createGenericEditPage<Product, EditProductFormType>({
         }
         return out as EditProductFormType;
     },
-    buildFormExtras: (_id, _params, entity) => ({
-        enableLocalFileMultipart: true,
-        editMediaExistingList: [
-            ...(entity?.mainImage ? [entity.mainImage] : []),
-            ...(entity?.gallery ?? []),
-            ...(entity?.documents ?? []),
-        ],
-        categories: entity?.categories?.map((c: any) => ({value: c._id, label: c.name})) ?? [],
-        collections: entity?.collections?.map((c: any) => ({value: c._id, label: c.name})) ?? [],
-        variantOptions: entity?.variantOptions?.map((a: any) => ({value: a._id, label: a.name})) ?? [],
-        relatedProducts: entity?.relatedProducts?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
-        upsells: entity?.upsells?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
-        crossSells: entity?.crossSells?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
-        frequentlyBoughtTogether: entity?.frequentlyBoughtTogether?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
-    }),
+    buildFormExtras: (_id, _params, entity) => {
+        const currency = entity?.currency as {_id?: string; name?: string; symbol?: string; abbreviation?: string} | undefined;
+        const currencyLabel = currency
+            ? [currency.symbol, currency.name || currency.abbreviation].filter(Boolean).join(" ").trim()
+            : "";
+        return {
+            enableLocalFileMultipart: true,
+            editMediaExistingList: [
+                ...(entity?.mainImage ? [entity.mainImage] : []),
+                ...(entity?.gallery ?? []),
+                ...(entity?.documents ?? []),
+            ],
+            categories: entity?.categories?.map((c: any) => ({value: c._id, label: c.name})) ?? [],
+            collections: entity?.collections?.map((c: any) => ({value: c._id, label: c.name})) ?? [],
+            variantOptions: entity?.variantOptions?.map((a: any) => ({value: a._id, label: a.name})) ?? [],
+            relatedProducts: entity?.relatedProducts?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
+            upsells: entity?.upsells?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
+            crossSells: entity?.crossSells?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
+            frequentlyBoughtTogether: entity?.frequentlyBoughtTogether?.map((p: any) => ({value: p._id, label: p.title})) ?? [],
+            currencyDefaultOptions:
+                currency?._id && currencyLabel
+                    ? [{value: currency._id, label: currencyLabel}]
+                    : [],
+        };
+    },
     mapSubmitPayload: (data, {writeFields}) => {
         const wf = writeFields as Record<string, boolean | undefined>;
         const {mainImage, gallery, documents, ...rest} = data as Record<string, unknown>;

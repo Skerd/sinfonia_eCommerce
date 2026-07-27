@@ -14,14 +14,11 @@ import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import EditFormViewRenderer from "@coreModule/components/viewEngine/editFormViewRenderer.tsx";
 import {editCategoryFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/editCategory.form.validator.ts";
-import type {z} from "zod";
 
 type EditCategoryProps = WithLanguageType & WithAxiosType<Category, EditCategoryFormType> & {
     categoryId?: string;
     categoryName?: string;
 };
-
-type EditFormData = z.infer<ReturnType<typeof editCategoryFormSchema>>;
 
 function EditCategory({
     resolveLanguageKey,
@@ -73,12 +70,13 @@ function EditCategory({
             });
     }, [categoryId, forceReload]);
 
-    function onSubmit(data: EditFormData) {
-        const postBody: EditCategoryFormType = {
+    function onSubmit(data: EditCategoryFormType) {
+        // Mutable bag — InferEditForm from `as const` SchemaDef is readonly-mapped.
+        const postBody: Record<string, unknown> = {
             _id: categoryId || "",
         };
 
-        if (writeFields.name) postBody.name = data.name as string;
+        if (writeFields.name) postBody.name = data.name;
         if (writeFields.slug) postBody.slug = data.slug;
         if (writeFields.parent) {
             const pid = data.parent;
@@ -95,12 +93,12 @@ function EditCategory({
     }
     if (!viewConfig) return null;
 
-    console.log("writeFields", writeFields);
-
     return (
-        <EditFormViewRenderer<EditFormData>
+        <EditFormViewRenderer<EditCategoryFormType>
             config={viewConfig}
             resolveLanguageKey={resolveLanguageKey}
+            // Zod 4 schema vs @hookform/resolvers typed for Zod 3
+            //@ts-expect-error
             formSchema={formSchema}
             initialValues={
                 categoryData && {

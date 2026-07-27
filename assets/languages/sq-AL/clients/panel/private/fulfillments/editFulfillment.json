@@ -1,22 +1,30 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
-  "title": "Përmbushjet",
+  "title": "Ndrysho përmbushjen",
+  "errorTitle": "Ngarkimi i përmbushjes dështoi",
+  "errorDescription": "Përmbushja nuk u ngarkua. Provoni përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrimit",
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
     "statusLabel": "Statusi",
     "carrierLabel": "Transportuesi",
+    "carrierPlaceholder": "Emri i transportuesit",
     "trackingNumberLabel": "Numri i gjurmimit",
+    "trackingNumberPlaceholder": "Numri i gjurmimit",
     "trackingUrlLabel": "URL e gjurmimit",
+    "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Dërguar më",
     "estimatedDeliveryAtLabel": "Dorëzimi i pritur",
     "deliveredAtLabel": "Dorëzuar më",
     "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime opsionale",
     "itemsSectionTitle": "Artikujt",
     "itemAddRow": "Shto artikull",
     "itemRemoveRow": "Hiq artikullin",
     "itemRowTitle": "Artikulli",
     "orderItemIdLabel": "ID e artikullit të porosisë",
+    "orderItemIdPlaceholder": "ID e rreshtit të porosisë",
     "quantityLabel": "Sasia",
     "fulfillmentStatus": {
       "pending": "Në pritje",
@@ -24,5 +32,27 @@
       "delivered": "Dorëzuar",
       "failed": "Dështoi"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur përmbushjen",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përmbushja u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Përmbushja nuk u përditësua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho përmbushjen",
+    "description": "Përditëso statusin, gjurmimin, datat, shënimet dhe artikujt."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

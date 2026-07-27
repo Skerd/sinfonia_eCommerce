@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
+  "title": "Reset manager PIN",
+  "description": "Choose a new manager PIN for this till.",
+  "verifyingTitle": "Verifying reset link",
+  "verifyingDescription": "Please wait while we validate your reset link.",
+  "invalidTitle": "Invalid or expired link",
+  "invalidDescription": "This reset link is invalid or has expired. Request a new one from the POS config menu.",
+  "successTitle": "PIN updated",
+  "successDescription": "The manager PIN was reset successfully. You can sign in and use the till.",
+  "errorTitle": "Could not reset PIN",
+  "errorDescription": "Something went wrong while saving the new PIN. Try again.",
+  "tryAgain": "Try again",
+  "submit": "Save new PIN",
+  "form": {
+    "pinLabel": "New PIN",
+    "confirmPinLabel": "Confirm PIN",
+    "resetCodeLabel": "Reset code",
+    "pinMismatch": "PIN confirmation does not match"
+  }
+}

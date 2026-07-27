@@ -18,8 +18,13 @@ export default createGenericEditPage<Warehouse, EditWarehouseFormType>({
                 country: data.address.country?._id,
                 state: data.address.state?._id,
                 city: data.address.city?._id,
+                latitude: data.address.latitude ?? 41.3275,
+                longitude: data.address.longitude ?? 19.8189,
             }
-            : undefined,
+            : {
+                latitude: 41.3275,
+                longitude: 19.8189,
+            },
     }),
     submitIcon: <Save />,
 });

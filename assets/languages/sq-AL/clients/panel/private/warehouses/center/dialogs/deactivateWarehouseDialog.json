@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx",
+  "title": "Çaktivizo magazinën",
+  "description": "Kjo magazinë nuk do të përdoret derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar magazinën…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazina u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot magazina",
+      "time": 3000
+    }
+  }
+}

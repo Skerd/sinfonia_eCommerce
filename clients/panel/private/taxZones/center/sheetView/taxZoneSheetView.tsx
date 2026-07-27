@@ -8,7 +8,7 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 
-const LIST_BASE = "/eCommerce/taxzones";
+const LIST_BASE = "/tenancy/systemSettings/taxzones";
 
 export type TaxZoneSheetViewOwnProps = {
     open: boolean;

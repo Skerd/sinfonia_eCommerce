@@ -6,5 +6,7 @@
   "position": "Position",
   "isVisibleOnProductPage": "Visible on product page",
   "isUsedForVariants": "Used for variants",
-  "valueCount": "Values"
+  "values": "Values",
+  "yes": "Yes",
+  "no": "No"
 }

@@ -11,6 +11,9 @@
     "isUsedForVariants": "Used for variants",
     "values": "Values",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

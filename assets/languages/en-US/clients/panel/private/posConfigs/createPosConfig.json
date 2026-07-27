@@ -3,11 +3,18 @@
   "title": "Create POS config",
   "form": {
     "nameLabel": "Name",
+    "namePlaceholder": "Register name",
     "paymentMethodsLabel": "Payment methods",
-    "warehouseLabel": "Warehouse",
+    "managersLabel": "Managers",
+    "warehousesLabel": "Warehouses",
+    "warehousePlaceholder": "Select warehouse",
     "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
     "receiptHeaderLabel": "Receipt header",
+    "receiptHeaderPlaceholder": "Printed at the top of the receipt",
     "receiptFooterLabel": "Receipt footer",
+    "receiptFooterPlaceholder": "Printed at the bottom of the receipt",
+    "tillOptionsSectionTitle": "Till options",
     "ifaceBarcodeScannerLabel": "Barcode scanner",
     "ifaceCashControlLabel": "Cash control",
     "allowDiscountLabel": "Allow discount",
@@ -16,11 +23,35 @@
     "pinForDiscountLabel": "PIN for discount",
     "pinForCashOutLabel": "PIN for cash out",
     "pinForRefundLabel": "PIN for refund",
-    "managerPinLabel": "Manager PIN",
-    "clearManagerPinLabel": "Clear manager PIN",
     "isActiveLabel": "Active",
-    "selectWarehouse": "Select warehouse",
+    "selectWarehouse": "Add warehouse",
+    "removeWarehouse": "Remove warehouse",
     "selectCurrency": "Select currency",
-    "selectPaymentMethod": "Select payment method"
+    "selectPaymentMethod": "Select payment method",
+    "removePaymentMethod": "Remove payment method",
+    "selectManager": "Select manager",
+    "removeManager": "Remove manager"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating POS config",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create POS config",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create POS config",
+    "description": "Set up a shop till: warehouses, payment methods, receipt text, and till rules."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create POS config"
   }
 }

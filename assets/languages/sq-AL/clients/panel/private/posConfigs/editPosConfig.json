@@ -1,13 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/editPosConfig.tsx",
   "title": "Ndrysho konfigurimin POS",
+  "errorTitle": "Nuk u ngarkua konfigurimi POS",
+  "errorDescription": "Nuk mund të ngarkohej ky konfigurim POS. Provoni përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrit",
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i arkës",
     "paymentMethodsLabel": "Metodat e pagesës",
-    "warehouseLabel": "Magazina",
+    "managersLabel": "Menaxherët",
+    "warehousesLabel": "Magazinat",
+    "warehousePlaceholder": "Zgjidh magazinën",
     "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
     "receiptHeaderLabel": "Koka e faturës",
+    "receiptHeaderPlaceholder": "Printohet në krye të faturës",
     "receiptFooterLabel": "Fundi i faturës",
+    "receiptFooterPlaceholder": "Printohet në fund të faturës",
+    "tillOptionsSectionTitle": "Opsionet e arkës",
     "ifaceBarcodeScannerLabel": "Skaner barkodi",
     "ifaceCashControlLabel": "Kontroll cash",
     "allowDiscountLabel": "Lejo zbritje",
@@ -16,11 +26,35 @@
     "pinForDiscountLabel": "PIN për zbritje",
     "pinForCashOutLabel": "PIN për cash out",
     "pinForRefundLabel": "PIN për rimbursim",
-    "managerPinLabel": "PIN i menaxherit (bosh për të mbajtur)",
-    "clearManagerPinLabel": "Fshi PIN-in e menaxherit",
     "isActiveLabel": "Aktive",
-    "selectWarehouse": "Zgjidh magazinën",
+    "selectWarehouse": "Shto magazinë",
+    "removeWarehouse": "Hiq magazinën",
     "selectCurrency": "Zgjidh monedhën",
-    "selectPaymentMethod": "Zgjidh metodën e pagesës"
+    "selectPaymentMethod": "Zgjidh metodën e pagesës",
+    "removePaymentMethod": "Hiq metodën e pagesës",
+    "selectManager": "Zgjidh menaxherin",
+    "removeManager": "Hiq menaxherin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur konfigurimin POS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi POS u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot konfigurimi POS",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho konfigurimin POS",
+    "description": "Përditësoni magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

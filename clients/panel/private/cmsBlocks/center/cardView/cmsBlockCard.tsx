@@ -17,6 +17,10 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/activateCmsBlock.tsx";
+import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/deactivateCmsBlock.tsx";
+import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
+import DeactivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx";
 
 const LIST_BASE = "/eCommerce/cmsblocks";
 
@@ -120,7 +124,11 @@ function CmsBlockCard({
                                             deletedData={cmsBlock}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={cmsBlockEditPath(cmsBlock)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateCmsBlock entity={cmsBlock} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateCmsBlock entity={cmsBlock} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -171,6 +179,7 @@ function CmsBlockCard({
                             fetchId={cmsBlock._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setCmsBlock(row as CmsBlock)}
                         />
                     )}
                     {action === "delete" && (
@@ -195,6 +204,22 @@ function CmsBlockCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/cmsBlock/restore"
+                        />
+                    )}
+                    {action === "activateCmsBlock" && (
+                        <ActivateCmsBlockDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={cmsBlock}
+                            onSuccess={(row) => setCmsBlock(row)}
+                        />
+                    )}
+                    {action === "deactivateCmsBlock" && (
+                        <DeactivateCmsBlockDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={cmsBlock}
+                            onSuccess={(row) => setCmsBlock(row)}
                         />
                     )}
                 </>

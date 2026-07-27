@@ -6,17 +6,22 @@
     "orderPlaceholder": "Select order",
     "statusLabel": "Status",
     "carrierLabel": "Carrier",
+    "carrierPlaceholder": "Carrier name",
     "trackingNumberLabel": "Tracking number",
+    "trackingNumberPlaceholder": "Tracking number",
     "trackingUrlLabel": "Tracking URL",
+    "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Shipped at",
     "estimatedDeliveryAtLabel": "Estimated delivery",
     "deliveredAtLabel": "Delivered at",
     "notesLabel": "Notes",
+    "notesPlaceholder": "Optional notes",
     "itemsSectionTitle": "Items",
     "itemAddRow": "Add item",
     "itemRemoveRow": "Remove item",
     "itemRowTitle": "Item",
     "orderItemIdLabel": "Order item id",
+    "orderItemIdPlaceholder": "Order line id",
     "quantityLabel": "Quantity",
     "fulfillmentStatus": {
       "pending": "Pending",
@@ -24,5 +29,27 @@
       "delivered": "Delivered",
       "failed": "Failed"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Creating fulfillment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create fulfillment",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create fulfillment",
+    "description": "Create a shipment for an order with tracking and items."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create fulfillment"
   }
 }

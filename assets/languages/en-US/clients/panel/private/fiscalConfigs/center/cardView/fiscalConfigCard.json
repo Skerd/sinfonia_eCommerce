@@ -5,5 +5,7 @@
   "tcrCode": "TCR",
   "certificate": "Certificate",
   "certificateYes": "Uploaded",
-  "certificateNo": "Missing"
+  "certificateNo": "Missing",
+  "active": "Active",
+  "inactive": "Inactive"
 }

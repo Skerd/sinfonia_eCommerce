@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/restockInventory.tsx",
+  "title": "Restock inventory",
+  "description": "Record incoming stock with manufacturer, receipt, and related details.",
+  "missingInventoryId": "Missing inventory id. Open restock from an inventory row."
+}

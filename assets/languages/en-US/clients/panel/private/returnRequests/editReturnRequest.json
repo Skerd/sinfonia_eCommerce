@@ -1,21 +1,29 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/editReturnRequest.tsx",
-  "title": "Return requests",
+  "title": "Edit return request",
+  "errorTitle": "Failed to load return request",
+  "errorDescription": "Could not load this return request. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "orderLabel": "Order",
     "orderPlaceholder": "Select order",
     "typeLabel": "Type",
     "statusLabel": "Status",
     "refundAmountLabel": "Refund amount",
+    "refundAmountPlaceholder": "0",
     "customerNoteLabel": "Customer note",
+    "customerNotePlaceholder": "Optional note from the customer",
     "adminNoteLabel": "Admin note",
+    "adminNotePlaceholder": "Optional internal note",
     "itemsSectionTitle": "Items",
     "itemAddRow": "Add item",
     "itemRemoveRow": "Remove item",
     "itemRowTitle": "Item",
     "orderItemIdLabel": "Order item id",
+    "orderItemIdPlaceholder": "Order line id",
     "quantityLabel": "Quantity",
     "reasonLabel": "Reason",
+    "reasonPlaceholder": "Why is this item being returned?",
     "returnType": {
       "return": "Return",
       "exchange": "Exchange",
@@ -28,5 +36,27 @@
       "received": "Received",
       "completed": "Completed"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving return request",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return request updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update return request",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit return request",
+    "description": "Update return type, status, notes, refund amount, and items."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

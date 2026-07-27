@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/giftCards/center/dialogs/disableGiftCardDialog.tsx",
+  "title": "Disable gift card",
+  "description": "This gift card code will no longer be redeemable until it is enabled again.",
+  "cancel": "Cancel",
+  "confirm": "Disable",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Disabling gift card…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gift card disabled",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not disable gift card",
+      "time": 3000
+    }
+  }
+}

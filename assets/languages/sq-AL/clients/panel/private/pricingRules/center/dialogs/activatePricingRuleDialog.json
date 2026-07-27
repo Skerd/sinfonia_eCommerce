@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx",
+  "title": "Aktivizo rregullin e çmimit",
+  "description": "Ky rregull çmimi do të fillojë të zbatohet në çmimet e katalogut që përputhen.",
+  "cancel": "Anulo",
+  "confirm": "Aktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar rregullin e çmimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rregulli i çmimit u aktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u aktivizua dot rregulli i çmimit",
+      "time": 3000
+    }
+  }
+}

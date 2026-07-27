@@ -7,9 +7,20 @@
   "fields": {
     "name": "Name",
     "country": "Country",
+    "states": "States",
+    "postalCodePatterns": "Postal code patterns",
+    "rates": {
+      "name": "Rate name",
+      "rate": "Rate",
+      "isCompound": "Compound",
+      "appliesTo": "Rate applies to"
+    },
     "priority": "Priority",
     "isActive": "Active",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

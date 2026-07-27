@@ -1,10 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/cardView/posOrderCard.tsx",
-  "name": "Name",
-  "state": "State",
-  "customer": "Customer",
-  "amountTotal": "Total",
-  "payments": "Payments",
+  "items": "items",
   "orderState": {
     "draft": "Draft",
     "paid": "Paid",

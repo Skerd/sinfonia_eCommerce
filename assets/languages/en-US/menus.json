@@ -40,6 +40,9 @@
     "inventories": {
       "title": "Inventory"
     },
+    "inventorymovements": {
+      "title": "Stock movements"
+    },
     "warehouses": {
       "title": "Warehouses"
     },
@@ -82,9 +85,6 @@
     "customeraddresses": {
       "title": "Customer addresses"
     },
-    "categories": {
-      "title": "Categories"
-    },
     "productreviews": {
       "title": "Product reviews"
     },
@@ -99,6 +99,39 @@
       },
       "categories": {
         "title": "Product Categories"
+      },
+      "pos": {
+        "title": "POS"
+      },
+      "posconfigs": {
+        "title": "POS Configs"
+      },
+      "pospaymentmethods": {
+        "title": "Payment Methods"
+      },
+      "customergroups": {
+        "title": "Customer Groups"
+      },
+      "discounts": {
+        "title": "Discounts"
+      },
+      "pricingrules": {
+        "title": "Pricing Rules"
+      },
+      "taxzones": {
+        "title": "Tax Zones"
+      },
+      "shippingzones": {
+        "title": "Shipping Zones"
+      },
+      "warehouses": {
+        "title": "Warehouses"
+      },
+      "productattributes": {
+        "title": "Product Attributes"
+      },
+      "productvariants": {
+        "title": "Product Variants"
       }
     }
   }

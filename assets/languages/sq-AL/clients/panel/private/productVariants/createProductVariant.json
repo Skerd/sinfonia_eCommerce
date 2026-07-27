@@ -2,26 +2,62 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/createProductVariant.tsx",
   "title": "Krijo variant",
   "form": {
+    "generalSectionTitle": "Të përgjithshme",
+    "pricingSectionTitle": "Çmimet",
+    "physicalSectionTitle": "Fizike",
+    "mediaSectionTitle": "Media",
     "productLabel": "Produkti",
     "productPlaceholder": "Zgjidh produktin",
     "statusLabel": "Statusi",
     "skuLabel": "SKU",
+    "skuPlaceholder": "SKU e variantit",
     "barcodeLabel": "Barkodi",
+    "barcodePlaceholder": "Barkodi",
+    "positionLabel": "Pozicioni",
+    "trackInventoryLabel": "Gjurmo inventarin",
     "priceLabel": "Çmimi",
     "compareAtPriceLabel": "Çmimi i krahasimit",
     "costPriceLabel": "Çmimi i kostos",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
     "weightLabel": "Pesha",
-    "positionLabel": "Pozicioni",
-    "trackInventoryLabel": "Gjurmo inventarin",
-    "attributesSectionTitle": "Atributet",
+    "dimensionLengthLabel": "Gjatësia",
+    "dimensionWidthLabel": "Gjerësia",
+    "dimensionHeightLabel": "Lartësia",
+    "mainImageLabel": "Imazhi kryesor",
+    "attributesSectionTitle": "Kombinimi i atributeve",
     "attributeAddRow": "Shto atribut",
     "attributeRemoveRow": "Hiq atributin",
-    "attributeRowTitle": "Atributi",
+    "attributeRowTitle": "Atribut pa titull",
     "attributeLabel": "Atributi",
+    "attributePlaceholder": "Zgjidh atributin",
     "valueLabel": "Vlera",
+    "valuePlaceholder": "Vlera e atributit",
     "variantStatus": {
       "active": "Aktiv",
       "inactive": "Joaktiv"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar variantin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Varianti u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot variantin",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo variant",
+    "description": "Shto një variant në nivel SKU me çmime, atribute dhe cilësime inventari."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo variant"
   }
 }

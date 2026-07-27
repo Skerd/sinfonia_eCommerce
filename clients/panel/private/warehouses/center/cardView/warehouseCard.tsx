@@ -17,8 +17,12 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
+import DeactivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx";
+import ActivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx";
+import DeactivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx";
 
-const LIST_BASE = "/eCommerce/warehouses";
+const LIST_BASE = "/tenancy/systemSettings/warehouses";
 
 function warehouseEditPath(warehouse: Warehouse) {
     const params = new URLSearchParams();
@@ -134,7 +138,11 @@ function WarehouseCard({
                                             deletedData={warehouse}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={warehouseEditPath(warehouse)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -185,6 +193,7 @@ function WarehouseCard({
                             fetchId={warehouse._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setWarehouse(row as Warehouse)}
                         />
                     )}
                     {action === "delete" && (
@@ -209,6 +218,22 @@ function WarehouseCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/warehouse/restore"
+                        />
+                    )}
+                    {action === "activateWarehouse" && (
+                        <ActivateWarehouseDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={warehouse}
+                            onSuccess={(row) => setWarehouse(row)}
+                        />
+                    )}
+                    {action === "deactivateWarehouse" && (
+                        <DeactivateWarehouseDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={warehouse}
+                            onSuccess={(row) => setWarehouse(row)}
                         />
                     )}
                 </>

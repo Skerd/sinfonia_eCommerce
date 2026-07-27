@@ -9,7 +9,17 @@ export default createGenericCreatePage<CreateCustomerAddressFormType>({
     accessModel: "customerAddresses",
     apiUrl: "/api/eCommerce/customerAddress",
     schema: createCustomerAddressFormSchema,
-    defaultValues: {firstName: "", lastName: "", street: "", city: "", country: "", isDefault: false} as unknown as CreateCustomerAddressFormType,
+    defaultValues: {
+        user: "",
+        firstName: "",
+        lastName: "",
+        street: "",
+        city: "",
+        country: "",
+        latitude: 41.3275,
+        longitude: 19.8189,
+        isDefault: false,
+    } as unknown as CreateCustomerAddressFormType,
     successPath: "/eCommerce/customeraddresses",
     submitIcon: <IconPlus />,
 });

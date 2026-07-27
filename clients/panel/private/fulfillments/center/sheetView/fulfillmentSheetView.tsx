@@ -7,6 +7,12 @@ import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/priv
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ShipFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx";
+import MarkDeliveredFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markDeliveredFulfillment.tsx";
+import MarkFailedFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markFailedFulfillment.tsx";
+import ShipFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx";
+import MarkDeliveredFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx";
+import MarkFailedFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx";
 
 const LIST_BASE = "/eCommerce/fulfillments";
 
@@ -18,12 +24,13 @@ export type FulfillmentSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function fulfillmentEditPath(entity: Fulfillment) {
     const params = new URLSearchParams();
     params.set("fulfillmentId", entity._id);
-    if ((entity as any).trackingNumber) params.set("fulfillmentTitle", encodeURIComponent(String((entity as any).trackingNumber)));
+    if (entity.trackingNumber) params.set("fulfillmentTitle", encodeURIComponent(String(entity.trackingNumber)));
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
@@ -36,10 +43,16 @@ function FulfillmentSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: FulfillmentSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("fulfillments");
     const viewConfig = useViewConfig("fulfillments", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!entityProp) return;
@@ -51,24 +64,70 @@ function FulfillmentSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as Fulfillment;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/fulfillment/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={fulfillmentEditPath(sheetData as Fulfillment)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/fulfillment/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={fulfillmentEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ShipFulfillment entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <MarkDeliveredFulfillment entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <MarkFailedFulfillment entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "shipFulfillment" && (
+                <ShipFulfillmentDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "markDeliveredFulfillment" && (
+                <MarkDeliveredFulfillmentDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "markFailedFulfillment" && (
+                <MarkFailedFulfillmentDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+        </>
     );
 }
 

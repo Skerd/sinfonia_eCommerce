@@ -3,5 +3,7 @@
   "firstName": "First name",
   "street": "Street",
   "city": "City",
-  "phone": "Phone"
+  "phone": "Phone",
+  "defaultAddress": "Default",
+  "notDefault": "Not default"
 }

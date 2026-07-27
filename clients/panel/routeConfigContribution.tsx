@@ -14,6 +14,9 @@ import EditWarehouse from "@eCommerceModule/clients/panel/private/warehouses/edi
 import AllInventories from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import CreateInventory from "@eCommerceModule/clients/panel/private/inventories/createInventory.tsx";
 import EditInventory from "@eCommerceModule/clients/panel/private/inventories/editInventory.tsx";
+import RestockInventory from "@eCommerceModule/clients/panel/private/inventories/restockInventory.tsx";
+import DeductInventory from "@eCommerceModule/clients/panel/private/inventories/deductInventory.tsx";
+import AllInventoryMovements from "@eCommerceModule/clients/panel/private/inventoryMovements/index.tsx";
 import AllCollections from "@eCommerceModule/clients/panel/private/collections/index.tsx";
 import CreateCollection from "@eCommerceModule/clients/panel/private/collections/createCollection.tsx";
 import EditCollection from "@eCommerceModule/clients/panel/private/collections/editCollection.tsx";
@@ -96,6 +99,69 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 }
                 return <AllCategories />;
             }
+            if (resource === "posconfigs") {
+                const posConfigId = searchParams.get("posConfigId") || undefined;
+                if (action === "create") return <CreatePosConfig />;
+                if (action === "edit" && posConfigId) return <EditPosConfig entityId={posConfigId} />;
+                return <AllPosConfigs />;
+            }
+            if (resource === "pospaymentmethods") {
+                const posPaymentMethodId = searchParams.get("posPaymentMethodId") || undefined;
+                if (action === "create") return <CreatePosPaymentMethod />;
+                if (action === "edit" && posPaymentMethodId) return <EditPosPaymentMethod entityId={posPaymentMethodId} />;
+                return <AllPosPaymentMethods />;
+            }
+            if (resource === "customergroups") {
+                const customerGroupId = searchParams.get("customerGroupId") || undefined;
+                if (action === "create") return <CreateCustomerGroup />;
+                if (action === "edit" && customerGroupId) return <EditCustomerGroup entityId={customerGroupId} />;
+                return <AllCustomerGroups />;
+            }
+            if (resource === "discounts") {
+                const discountId = searchParams.get("discountId") || undefined;
+                if (action === "create") return <CreateDiscount />;
+                if (action === "edit" && discountId) return <EditDiscount entityId={discountId} />;
+                return <AllDiscounts />;
+            }
+            if (resource === "pricingrules") {
+                const pricingRuleId = searchParams.get("pricingRuleId") || undefined;
+                if (action === "create") return <CreatePricingRule />;
+                if (action === "edit" && pricingRuleId) return <EditPricingRule entityId={pricingRuleId} />;
+                return <AllPricingRules />;
+            }
+            if (resource === "warehouses") {
+                const warehouseId = searchParams.get("warehouseId") || undefined;
+                if (action === "create") return <CreateWarehouse />;
+                if (action === "edit" && warehouseId) return <EditWarehouse entityId={warehouseId} />;
+                return <AllWarehouses />;
+            }
+            if (resource === "productattributes") {
+                const attributeId = searchParams.get("attributeId") || undefined;
+                if (action === "create") return <CreateProductAttribute />;
+                if (action === "edit" && attributeId) return <EditProductAttribute entityId={attributeId} />;
+                return <AllProductAttributes />;
+            }
+            if (resource === "shippingzones") {
+                const shippingZoneId = searchParams.get("shippingZoneId") || undefined;
+                if (action === "create") return <CreateShippingZone />;
+                if (action === "edit" && shippingZoneId) return <EditShippingZone entityId={shippingZoneId} />;
+                return <AllShippingZones />;
+            }
+            if (resource === "taxzones") {
+                const taxZoneId = searchParams.get("taxZoneId") || undefined;
+                if (action === "create") return <CreateTaxZone />;
+                if (action === "edit" && taxZoneId) return <EditTaxZone entityId={taxZoneId} />;
+                return <AllTaxZones />;
+            }
+            if (resource === "productvariants") {
+                const productVariantId = searchParams.get("productVariantId") || undefined;
+                const productVariantTitle = safeDecode(searchParams.get("productVariantTitle")) || undefined;
+                if (action === "create") return <CreateProductVariant />;
+                if (action === "edit" && productVariantId) {
+                    return <EditProductVariant entityId={productVariantId} entityName={productVariantTitle} />;
+                }
+                return <AllProductVariants />;
+            }
             return undefined;
         }
 
@@ -107,36 +173,17 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         const action = segments[2];
         const productId = searchParams.get("productId") || undefined;
         const productTitle = safeDecode(searchParams.get("productTitle")) || undefined;
-        const attributeId = searchParams.get("attributeId") || undefined;
-        const warehouseId = searchParams.get("warehouseId") || undefined;
         const inventoryId = searchParams.get("inventoryId") || undefined;
         const inventoryTitle = safeDecode(searchParams.get("inventoryTitle")) || undefined;
         const collectionId = searchParams.get("collectionId") || undefined;
         const collectionTitle = safeDecode(searchParams.get("collectionTitle")) || undefined;
-        const discountId = searchParams.get("discountId") || undefined;
-        const taxZoneId = searchParams.get("taxZoneId") || undefined;
-        const shippingZoneId = searchParams.get("shippingZoneId") || undefined;
         const cmsBlockId = searchParams.get("cmsBlockId") || undefined;
-        const customerGroupId = searchParams.get("customerGroupId") || undefined;
-        const pricingRuleId = searchParams.get("pricingRuleId") || undefined;
 
         if (resource === "systemmap") {
             return <SystemMap />;
         }
         if (resource === "pos") {
             return <PosTill />;
-        }
-        if (resource === "pospaymentmethods") {
-            const posPaymentMethodId = searchParams.get("posPaymentMethodId") || undefined;
-            if (action === "create") return <CreatePosPaymentMethod />;
-            if (action === "edit" && posPaymentMethodId) return <EditPosPaymentMethod entityId={posPaymentMethodId} />;
-            return <AllPosPaymentMethods />;
-        }
-        if (resource === "posconfigs") {
-            const posConfigId = searchParams.get("posConfigId") || undefined;
-            if (action === "create") return <CreatePosConfig />;
-            if (action === "edit" && posConfigId) return <EditPosConfig entityId={posConfigId} />;
-            return <AllPosConfigs />;
         }
         if (resource === "possessions") {
             return <AllPosSessions />;
@@ -155,20 +202,15 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             if (action === "edit" && productId) return <EditProduct entityId={productId} entityName={productTitle} />;
             return <AllProducts />;
         }
-        if (resource === "productattributes") {
-            if (action === "create") return <CreateProductAttribute />;
-            if (action === "edit" && attributeId) return <EditProductAttribute entityId={attributeId} />;
-            return <AllProductAttributes />;
-        }
-        if (resource === "warehouses") {
-            if (action === "create") return <CreateWarehouse />;
-            if (action === "edit" && warehouseId) return <EditWarehouse entityId={warehouseId} />;
-            return <AllWarehouses />;
-        }
         if (resource === "inventories") {
             if (action === "create") return <CreateInventory />;
             if (action === "edit" && inventoryId) return <EditInventory entityId={inventoryId} entityName={inventoryTitle} />;
+            if (action === "restock") return <RestockInventory />;
+            if (action === "deduct") return <DeductInventory />;
             return <AllInventories />;
+        }
+        if (resource === "inventorymovements") {
+            return <AllInventoryMovements />;
         }
         if (resource === "collections") {
             if (action === "create") return <CreateCollection />;
@@ -178,35 +220,10 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         if (resource === "productorders") {
             return <AllProductOrders />;
         }
-        if (resource === "discounts") {
-            if (action === "create") return <CreateDiscount />;
-            if (action === "edit" && discountId) return <EditDiscount entityId={discountId} />;
-            return <AllDiscounts />;
-        }
-        if (resource === "taxzones") {
-            if (action === "create") return <CreateTaxZone />;
-            if (action === "edit" && taxZoneId) return <EditTaxZone entityId={taxZoneId} />;
-            return <AllTaxZones />;
-        }
-        if (resource === "shippingzones") {
-            if (action === "create") return <CreateShippingZone />;
-            if (action === "edit" && shippingZoneId) return <EditShippingZone entityId={shippingZoneId} />;
-            return <AllShippingZones />;
-        }
         if (resource === "cmsblocks") {
             if (action === "create") return <CreateCmsBlock />;
             if (action === "edit" && cmsBlockId) return <EditCmsBlock entityId={cmsBlockId} />;
             return <AllCmsBlocks />;
-        }
-        if (resource === "customergroups") {
-            if (action === "create") return <CreateCustomerGroup />;
-            if (action === "edit" && customerGroupId) return <EditCustomerGroup entityId={customerGroupId} />;
-            return <AllCustomerGroups />;
-        }
-        if (resource === "pricingrules") {
-            if (action === "create") return <CreatePricingRule />;
-            if (action === "edit" && pricingRuleId) return <EditPricingRule entityId={pricingRuleId} />;
-            return <AllPricingRules />;
         }
         if (resource === "analytics") {
             return <ECommerceAnalytics />;
@@ -232,27 +249,11 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         if (resource === "giftcards") {
             return <AllGiftCards />;
         }
-        if (resource === "productvariants") {
-            const productVariantId = searchParams.get("productVariantId") || undefined;
-            const productVariantTitle = safeDecode(searchParams.get("productVariantTitle")) || undefined;
-            if (action === "create") return <CreateProductVariant />;
-            if (action === "edit" && productVariantId) return <EditProductVariant entityId={productVariantId} entityName={productVariantTitle} />;
-            return <AllProductVariants />;
-        }
         if (resource === "customeraddresses") {
             const customerAddressId = searchParams.get("customerAddressId") || undefined;
             if (action === "create") return <CreateCustomerAddress />;
             if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
             return <AllCustomerAddresses />;
-        }
-        // Categories are primarily managed under tenancy systemSettings; this
-        // Product Commerce route keeps them discoverable for shop operators (§0.15).
-        if (resource === "categories") {
-            const categoryId = searchParams.get("categoryId") || undefined;
-            const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
-            if (action === "create") return <CreateCategory />;
-            if (action === "edit" && categoryId) return <EditCategory categoryId={categoryId} categoryName={categoryName} />;
-            return <AllCategories />;
         }
         return undefined;
     },

@@ -34,7 +34,15 @@ function PosSessionSheetView({
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData(entityProp);
+        setSheetData((prev) => ({
+            ...entityProp,
+            // Keep /single enrichments (list rows may omit nested labels).
+            configLabel: entityProp.configLabel ?? (prev as PosSession).configLabel,
+            openedBy: entityProp.openedBy ?? (prev as PosSession).openedBy,
+            closedBy: entityProp.closedBy ?? (prev as PosSession).closedBy,
+            cashMoves: entityProp.cashMoves ?? (prev as PosSession).cashMoves,
+            company: entityProp.company ?? (prev as PosSession).company,
+        }));
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -46,7 +54,7 @@ function PosSessionSheetView({
         <SheetViewRenderer
             config={viewConfig}
             url="/api/eCommerce/posSession/single"
-            fetchId={fetchId}
+            fetchId={fetchId ?? entityProp?._id}
             onDataFetched={(data) => {
                 setSheetData(data);
             }}

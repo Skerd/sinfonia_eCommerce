@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
+  "title": "Mark fulfillment as shipped",
+  "description": "Set tracking details and mark this pending fulfillment as shipped.",
+  "carrierLabel": "Carrier",
+  "carrierPlaceholder": "Carrier name",
+  "trackingNumberLabel": "Tracking number",
+  "trackingNumberPlaceholder": "Tracking number",
+  "trackingUrlLabel": "Tracking URL",
+  "trackingUrlPlaceholder": "https://…",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes",
+  "cancel": "Cancel",
+  "confirm": "Mark as shipped",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Marking as shipped…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment marked as shipped",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark as shipped",
+      "time": 3000
+    }
+  }
+}

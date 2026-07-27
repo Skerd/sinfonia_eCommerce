@@ -3,6 +3,11 @@ import {createGenericCreatePage} from "@coreModule/components/entityPage/createG
 import {createDiscountFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/createDiscount.form.validator.ts";
 import type {CreateDiscountFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.schema-def.ts";
 
+function toFormDateTime(d: Date): string {
+    const pad = (n: number) => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
 export default createGenericCreatePage<CreateDiscountFormType>({
     languagePath: "src/modules/eCommerce/clients/panel/private/discounts/createDiscount.tsx",
     collectionName: "discounts",
@@ -14,9 +19,10 @@ export default createGenericCreatePage<CreateDiscountFormType>({
         type: "percentage",
         value: 0,
         appliesTo: "order",
-        isActive: true,
-        startsAt: new Date().toISOString().split("T")[0],
+        startsAt: toFormDateTime(new Date()),
+        customerGroups: [],
+        targetIds: [],
     } as unknown as CreateDiscountFormType,
-    successPath: "/eCommerce/discounts",
+    successPath: "/tenancy/systemSettings/discounts",
     submitIcon: <IconPlus />,
 });

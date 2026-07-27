@@ -1,11 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx",
   "warehouseSubtitle": "Detajet e magazinës",
+  "failedTitle": "Ngarkimi i magazinës dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj magazine. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovuar marrjen e të dhënave.",
   "overview": "Përmbledhje",
+  "address": "Adresa",
   "name": "Emri",
   "code": "Kodi",
   "isDefault": "Parazgjedhur",
   "isActive": "Aktive",
+  "company": "Kompania",
+  "country": "Shteti",
+  "state": "Rajoni",
+  "city": "Qyteti",
   "street": "Rruga",
-  "postalCode": "Kodi postar"
+  "postalCode": "Kodi postar",
+  "latitude": "Gjerësia gjeografike",
+  "longitude": "Gjatësia gjeografike",
+  "yes": "Po",
+  "no": "Jo"
 }

@@ -2,13 +2,18 @@
   "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
   "title": "Krijo koleksion",
   "form": {
+    "generalSectionTitle": "Të përgjithshme",
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i koleksionit",
     "slugLabel": "Slug",
+    "slugPlaceholder": "gjenerohet-nga-emri",
     "typeLabel": "Lloji i koleksionit",
     "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrim opsional për këtë koleksion",
     "mainImageLabel": "Imazhi i kopertinës",
     "isVisibleLabel": "I dukshëm në dyqan",
     "positionLabel": "Pozicioni i renditjes",
+    "positionPlaceholder": "0",
     "publishedAtLabel": "Publiko më",
     "mediaSectionTitle": "Media",
     "manualSectionTitle": "Produkte manuale",
@@ -24,9 +29,12 @@
     "ruleFieldLabel": "Fusha",
     "ruleOperatorLabel": "Operatori",
     "ruleValueLabel": "Vlera",
+    "ruleValuePlaceholder": "Vlera e rregullit",
     "seoSectionTitle": "SEO",
     "seoTitleLabel": "Titulli SEO",
+    "seoTitlePlaceholder": "Titull SEO opsional",
     "seoDescriptionLabel": "Përshkrimi SEO",
+    "seoDescriptionPlaceholder": "Përshkrim SEO opsional",
     "collectionType": {
       "manual": "Manual",
       "dynamic": "Dinamik"
@@ -53,5 +61,27 @@
       "less_than": "Më i vogël se",
       "starts_with": "Fillon me"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar koleksionin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Koleksioni u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot koleksioni",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo koleksion",
+    "description": "Grupo produktet manualisht ose me rregulla dinamike."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo koleksionin"
   }
 }

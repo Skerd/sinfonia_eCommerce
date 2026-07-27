@@ -9,10 +9,26 @@
     "code": "Code",
     "type": "Type",
     "value": "Value",
+    "appliesTo": "Applies to",
+    "targetIds": "Targets",
+    "minimumOrderAmount": "Minimum order amount",
+    "minimumQuantity": "Minimum quantity",
+    "usageLimit": "Usage limit",
+    "usageLimitPerCustomer": "Usage limit per customer",
+    "usageCount": "Usage count",
+    "customerGroups": "Customer groups",
     "isActive": "Active",
     "startsAt": "Starts at",
     "endsAt": "Ends at",
+    "buyXGetY": {
+      "buyQuantity": "Buy quantity",
+      "getQuantity": "Get quantity",
+      "getProductIds": "Free products"
+    },
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

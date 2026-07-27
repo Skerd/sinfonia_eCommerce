@@ -11,13 +11,10 @@ import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {createCategoryFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/createCategory.form.validator.ts";
-import type {z} from "zod";
 
 const LIST_PATH = "/tenancy/systemSettings/categories";
 
 type CreateCategoryProps = WithLanguageType & WithAxiosType<Category, CreateCategoryFormType> & {};
-
-type CreateCategoryFormData = z.infer<ReturnType<typeof createCategoryFormSchema>>;
 
 function CreateCategory({
     resolveLanguageKey,
@@ -37,7 +34,7 @@ function CreateCategory({
     }
     if (!viewConfig) return null;
 
-    function onSubmit(data: CreateCategoryFormData) {
+    function onSubmit(data: CreateCategoryFormType) {
         const postBody: CreateCategoryFormType = {
             name: data.name,
             slug: data.slug?.trim() || undefined,
@@ -48,11 +45,12 @@ function CreateCategory({
     }
 
     return (
-        <FormViewRenderer<CreateCategoryFormData>
+        <FormViewRenderer<CreateCategoryFormType>
             config={viewConfig}
             resolveLanguageKey={resolveLanguageKey}
-            formSchema={formSchema}
+            // Zod 4 schema vs @hookform/resolvers typed for Zod 3
             //@ts-expect-error
+            formSchema={formSchema}
             defaultValues={{}}
             loading={loading}
             innerRef={innerRef}

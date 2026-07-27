@@ -8,8 +8,18 @@
     "name": "Emri",
     "type": "Lloji",
     "sequence": "Renditja",
+    "cashQuickAmounts": "Shumat e shpejta cash",
+    "terminalEnabled": "Terminali aktiv",
+    "terminalProvider": "Ofruesi i terminalit",
+    "terminalHost": "Host i terminalit",
+    "terminalPort": "Porta e terminalit",
+    "terminalId": "ID e terminalit",
+    "terminalPath": "Path i terminalit",
     "isActive": "Aktive",
     "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

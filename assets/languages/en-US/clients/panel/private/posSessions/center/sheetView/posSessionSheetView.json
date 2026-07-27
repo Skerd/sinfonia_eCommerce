@@ -1,9 +1,24 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
+  "posSessionSubtitle": "Session details",
   "overview": "Overview",
+  "balances": "Balances",
+  "totals": "Totals",
+  "cashMoves": "Cash moves",
+  "notes": "Notes",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "toggleReferenceListView": "Toggle list layout",
   "name": "Name",
   "state": "State",
   "config": "POS config",
+  "openedBy": "Opened by",
+  "closedBy": "Closed by",
+  "openedAt": "Opened at",
+  "closedAt": "Closed at",
+  "company": "Company",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
   "openingBalance": "Opening balance",
   "closingBalance": "Closing balance",
   "expectedCash": "Expected cash",
@@ -12,11 +27,19 @@
   "totalSales": "Total sales",
   "totalCash": "Cash",
   "totalCard": "Card",
-  "notes": "Notes",
-  "sessionState": {
+  "cashMoveType": "Type",
+  "cashMoveAmount": "Amount",
+  "cashMoveReason": "Reason",
+  "cashMoveAt": "At",
+  "cashMoveBy": "By",
+  "posSessionState": {
     "opening_control": "Opening",
     "opened": "Opened",
     "closing_control": "Closing",
     "closed": "Closed"
+  },
+  "posCashMoveType": {
+    "in": "Cash in",
+    "out": "Cash out"
   }
 }

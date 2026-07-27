@@ -1,27 +1,56 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
+  "title": "Ndrysho zonën tatimore",
+  "errorTitle": "Dështoi ngarkimi i zonës tatimore",
+  "errorDescription": "Nuk u ngarkua dot kjo zonë tatimore. Provo përsëri.",
   "form": {
-    "countryLabel": "Country",
-    "countryPlaceholder": "Select country",
-    "isActiveLabel": "Active",
-    "isCompoundLabel": "Is Compound Label",
-    "nameLabel": "Name",
-    "postalCodePatternsLabel": "Postal code patterns",
-    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
-    "priorityLabel": "Priority",
-    "rateAddRow": "Rate Add Row",
-    "rateAppliesToLabel": "Rate Applies To Label",
-    "rateNameLabel": "Rate Name Label",
-    "rateRemoveRow": "Rate Remove Row",
-    "rateValueLabel": "Rate Value Label",
-    "ratesSectionTitle": "Rates Section Title",
-    "selectState": "Select State",
-    "statesLabel": "States",
+    "generalSectionTitle": "Të përgjithshme",
+    "geographySectionTitle": "Gjeografia",
+    "nameLabel": "Emri",
+    "countryLabel": "Shteti",
+    "countryPlaceholder": "Zgjidh shtetin",
+    "priorityLabel": "Prioriteti",
+    "isActiveLabel": "Aktive",
+    "statesLabel": "Rajonet",
+    "selectState": "Zgjidh rajonin",
+    "removeState": "Hiq rajonin",
+    "postalCodePatternsLabel": "Modelet e kodit postar",
+    "postalCodePatternsPlaceholder": "p.sh. 1000* ose AL-*",
+    "removePostalCodePattern": "Hiq modelin",
+    "ratesSectionTitle": "Tarifat tatimore",
+    "rateAddRow": "Shto tarifë",
+    "rateRemoveRow": "Hiq tarifën",
+    "rateRowTitle": "Tarifë pa titull",
+    "rateNameLabel": "Emri i tarifës",
+    "rateValueLabel": "Tarifa (%)",
+    "rateAppliesToLabel": "Aplikohet për",
+    "isCompoundLabel": "Tarifë e përbërë",
     "taxRateAppliesTo": {
-      "all": "All",
-      "digital": "Digital",
-      "physical": "Physical"
+      "all": "Të gjitha produktet",
+      "physical": "Fizike",
+      "digital": "Dixhitale"
     }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
-  "title": "Ndrysho zonën tatimore"
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur zonën tatimore",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zona tatimore u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot zona tatimore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho zonën tatimore",
+    "description": "Përditëso gjeografinë e destinacionit dhe tarifat tatimore për këtë zonë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
 }

@@ -3,13 +3,14 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
+import {useEffect, useMemo, useState} from "react";
+import {Card, CardContent} from "@coreModule/components/uiKit/ui/card";
+import {Badge} from "@coreModule/components/uiKit/ui/badge";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import {IconBarcode, IconPhoto} from "@tabler/icons-react";
+import {IconPhoto, IconStar} from "@tabler/icons-react";
 import ProductSheetView from "@eCommerceModule/clients/panel/private/products/center/sheetView/productSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -25,15 +26,87 @@ function productEditPath(product: Product) {
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
-function formatPrice(product: Product): string | undefined {
-    if (product.price == null) return undefined;
+function formatMoney(amount: number, product: Product): string {
     const c = product.currency;
     const prefix = c?.symbol?.trim() || c?.abbreviation?.trim();
-    const n = product.price.toLocaleString(undefined, {
+    const n = amount.toLocaleString(undefined, {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
     });
     return prefix ? `${prefix} ${n}` : n;
+}
+
+type TimeLeft = {days: number; hours: number; minutes: number; seconds: number};
+
+function getTimeLeft(endsAt: Date, now = new Date()): TimeLeft | null {
+    const diff = endsAt.getTime() - now.getTime();
+    if (diff <= 0) return null;
+    const totalSeconds = Math.floor(diff / 1000);
+    return {
+        days: Math.floor(totalSeconds / 86400),
+        hours: Math.floor((totalSeconds % 86400) / 3600),
+        minutes: Math.floor((totalSeconds % 3600) / 60),
+        seconds: totalSeconds % 60,
+    };
+}
+
+function isWithinSaleWindow(product: Product, now = new Date()): boolean {
+    if (product.saleStartsAt) {
+        const start = new Date(product.saleStartsAt);
+        if (!Number.isNaN(start.getTime()) && start > now) return false;
+    }
+    if (product.saleEndsAt) {
+        const end = new Date(product.saleEndsAt);
+        if (!Number.isNaN(end.getTime()) && end < now) return false;
+    }
+    return true;
+}
+
+function SaleCountdown({
+    endsAt,
+    resolveLanguageKey,
+}: {
+    endsAt: string;
+    resolveLanguageKey: (key: string) => string;
+}) {
+    const endDate = useMemo(() => new Date(endsAt), [endsAt]);
+    const [time, setTime] = useState<TimeLeft | null>(() => getTimeLeft(endDate));
+
+    useEffect(() => {
+        if (Number.isNaN(endDate.getTime())) {
+            setTime(null);
+            return;
+        }
+        setTime(getTimeLeft(endDate));
+        const timer = setInterval(() => setTime(getTimeLeft(endDate)), 1000);
+        return () => clearInterval(timer);
+    }, [endDate]);
+
+    if (!time) return null;
+
+    const cells: {value: number; labelKey: string}[] = [
+        {value: time.days, labelKey: "timerDays"},
+        {value: time.hours, labelKey: "timerHours"},
+        {value: time.minutes, labelKey: "timerMins"},
+        {value: time.seconds, labelKey: "timerSecs"},
+    ];
+
+    return (
+        <div className="pointer-events-none w-full rounded-md bg-amber-400/95 px-1.5 py-1.5 shadow-sm backdrop-blur-[2px] dark:bg-amber-700/95">
+            <div className="grid grid-cols-4 gap-0.5 text-center">
+                {cells.map(({value, labelKey}) => (
+                    <div key={labelKey} className="min-w-0 px-0.5">
+                        <div className="text-xs font-bold tabular-nums leading-none text-amber-950 dark:text-amber-50">
+                            {String(value).padStart(2, "0")}
+                        </div>
+                        <div className="mt-0.5 text-[8px] font-medium uppercase leading-none tracking-wide text-amber-950/70 dark:text-amber-50/70">
+                            {resolveLanguageKey(labelKey)}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 type ProductCardProps = WithLanguageType & {
@@ -94,37 +167,77 @@ function ProductCard({
         return <HiddenElement />;
     }
 
-    const priceStr = formatPrice(product);
+    const description = product.shortDescription || product.description;
+    const rating = product.ratingAverage;
+    const typeLabel = product.type
+        ? resolveLanguageKey("productType." + product.type)
+        : undefined;
+    const isActive = product.status === "active";
+
+    const hasCompare =
+        product.compareAtPrice != null &&
+        product.price != null &&
+        product.compareAtPrice > product.price;
+    // Show sale chrome whenever compare-at is higher; window only gates the live timer.
+    const showSalePrice = hasCompare;
+    const priceStr = product.price != null ? formatMoney(product.price, product) : undefined;
+    const compareStr =
+        product.compareAtPrice != null ? formatMoney(product.compareAtPrice, product) : undefined;
+    const savingsPercent =
+        showSalePrice && product.compareAtPrice && product.price != null
+            ? Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)
+            : 0;
+    const saleEndsAtMs = product.saleEndsAt ? new Date(product.saleEndsAt).getTime() : NaN;
+    const showTimer =
+        !!product.saleEndsAt &&
+        !Number.isNaN(saleEndsAtMs) &&
+        saleEndsAtMs > Date.now() &&
+        isWithinSaleWindow(product);
 
     return (
         <>
             {!sheetOnly && (
                 <Card
                     className={cn(
-                        "group p-0 h-full relative overflow-hidden transition-all duration-300",
-                        "hover:shadow-xl hover:cursor-pointer",
-                        "border border-border/60 shadow-sm gap-2 pb-2",
+                        "group h-full w-full gap-0 overflow-hidden py-0 shadow-none hover:cursor-pointer",
                     )}
                     onClick={() => setAction("view")}
                 >
-                    {/* ── Image ─────────────────────────────────────────── */}
-                    <div className="relative h-40 overflow-hidden bg-muted">
+                    <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
                         {product.mainImage ? (
                             <img
                                 src={`/api/auxiliary/media/${product.mainImage._id}`}
                                 alt={product.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="absolute inset-0 size-full object-cover"
                             />
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                <IconPhoto className="w-14 h-14 text-muted-foreground/15" />
+                            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
+                                <IconPhoto className="size-10 text-muted-foreground/15" />
                             </div>
                         )}
 
-                        <div className="absolute inset-0 transform-gpu bg-linear-to-t from-black/65 via-black/10 to-transparent pointer-events-none" />
+                        {/* Top-left: type + % off */}
+                        <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
+                            {read?.type && typeLabel && (
+                                <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                    {typeLabel}
+                                </Badge>
+                            )}
+                            {showSalePrice && savingsPercent > 0 && (
+                                <Badge variant="destructive" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                    {resolveLanguageKey("salePercentOff").replace(
+                                        "{{percent}}",
+                                        String(savingsPercent),
+                                    )}
+                                </Badge>
+                            )}
+                        </div>
 
                         {!hideActions && (
-                            <div className="absolute top-2 right-2" onClick={(e) => e.stopPropagation()}>
+                            <div
+                                className="absolute top-2 right-2 z-20"
+                                onClick={(e) => e.stopPropagation()}
+                            >
                                 <ActionMenu
                                     accessModel={"products"}
                                     deletedData={product}
@@ -134,62 +247,82 @@ function ProductCard({
                             </div>
                         )}
 
-                        {/* status badge */}
-                        {read?.status && product.status && (
-                            <div className="absolute bottom-2 left-2">
-                                <span
-                                    className={cn(
-                                        "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/20 shadow-sm",
-                                        product.status === "active"
-                                            ? "bg-emerald-500/85 text-white"
-                                            : product.status === "draft"
-                                              ? "bg-amber-400/85 text-amber-950"
-                                              : "bg-muted-foreground/70 text-white",
-                                    )}
-                                >
-                                    {resolveLanguageKey("productStatus." + product.status)}
-                                </span>
+                        {/* Bottom of image/gallery: sale countdown */}
+                        {showTimer && product.saleEndsAt && (
+                            <div className="absolute inset-x-2 bottom-2 z-20">
+                                <SaleCountdown
+                                    endsAt={product.saleEndsAt}
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
                             </div>
                         )}
-                    </div>
+                    </figure>
 
-                    {/* ── Deleted banner ────────────────────────────────── */}
                     {(read.deletedBy || read.deletedAt) && (
                         <DeletedInfo deletedAt={product.deletedAt} deletedBy={product.deletedBy} />
                     )}
 
-                    {/* ── Content ───────────────────────────────────────── */}
-                    <div className="px-3 py-1 flex flex-col gap-2">
-                        <HiddenElement showLock randomLength={0}>
-                            {read?.title && (
-                                <h3 className="font-semibold text-sm leading-snug line-clamp-2 text-foreground min-h-6">
-                                    {product.title || <ValueNotSet />}
-                                </h3>
-                            )}
-                        </HiddenElement>
+                    <CardContent className="space-y-2.5 px-4 pb-3">
+                        <div>
+                            <HiddenElement showLock randomLength={0}>
+                                {read?.title && (
+                                    <div className="line-clamp-2 text-base font-bold leading-snug">
+                                        {product.title || <ValueNotSet />}
+                                    </div>
+                                )}
+                            </HiddenElement>
 
-                        {read?.sku && product.sku && (
-                            <span className="flex items-center gap-1 text-xs text-muted-foreground truncate">
-                                <IconBarcode className="w-3.5 h-3.5 shrink-0" />
-                                <span className="truncate">{product.sku}</span>
-                            </span>
-                        )}
-
-                        <div className="h-px bg-border" />
-
-                        <div className="flex items-end justify-between gap-2">
-                            {read?.type && product.type && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary/80 font-medium">
-                                    {resolveLanguageKey("productType." + product.type)}
-                                </span>
-                            )}
-                            {read?.price && priceStr !== undefined && (
-                                <span className="ml-auto font-bold text-base text-foreground leading-none">
-                                    {priceStr}
-                                </span>
+                            {read?.ratingAverage && rating != null && (
+                                <div className="mt-1.5 flex items-center gap-0.5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <IconStar
+                                            key={i}
+                                            className={cn(
+                                                "size-3",
+                                                i < Math.floor(rating)
+                                                    ? "fill-current text-yellow-400"
+                                                    : "text-muted-foreground/40",
+                                            )}
+                                        />
+                                    ))}
+                                    <span className="text-muted-foreground ml-1.5 text-[10px]">
+                                        ({rating.toFixed(1)})
+                                    </span>
+                                </div>
                             )}
                         </div>
-                    </div>
+
+                        {(read?.shortDescription || read?.description) && description && (
+                            <p className="text-muted-foreground line-clamp-2 text-xs">
+                                {description}
+                            </p>
+                        )}
+
+                        <div className="flex items-center justify-between gap-2">
+                            {read?.price && priceStr !== undefined ? (
+                                <div className="flex min-w-0 items-end gap-1.5">
+                                    <span className="text-base font-semibold leading-none">
+                                        {priceStr}
+                                    </span>
+                                    {showSalePrice && read?.compareAtPrice && compareStr && (
+                                        <span className="text-muted-foreground mb-px truncate text-xs line-through">
+                                            {compareStr}
+                                        </span>
+                                    )}
+                                </div>
+                            ) : (
+                                <span />
+                            )}
+                            {read?.status && product.status && (
+                                <Badge
+                                    variant={isActive ? "outline" : "destructive"}
+                                    className="shrink-0 px-1.5 py-0 text-[10px]"
+                                >
+                                    {resolveLanguageKey("productStatus." + product.status)}
+                                </Badge>
+                            )}
+                        </div>
+                    </CardContent>
                 </Card>
             )}
 

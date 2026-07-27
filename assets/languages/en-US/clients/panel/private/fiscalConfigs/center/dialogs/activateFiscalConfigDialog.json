@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx",
+  "title": "Activate fiscal config",
+  "description": "This fiscal config will be available for POS fiscalization and e-invoice.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating fiscal config…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fiscal config activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate fiscal config",
+      "time": 3000
+    }
+  }
+}

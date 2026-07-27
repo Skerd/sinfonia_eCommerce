@@ -5,12 +5,43 @@
   "createFiscalConfig": "Krijo konfigurim fiskal",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "environment": {
+        "test": "Test",
+        "production": "Prodhim"
+      },
+      "tcrType": {
+        "REGULAR": "E rregullt",
+        "VENDING": "Automat"
+      }
+    },
     "name": "Emri",
     "nipt": "NIPT",
+    "softCode": "Kodi i softuerit",
+    "maintainerCode": "Kodi i mirëmbajtësit",
+    "businessUnitCode": "Kodi i njësisë së biznesit",
+    "operatorCode": "Kodi i operatorit",
     "tcrCode": "Kodi TCR",
+    "tcrIntId": "ID e brendshme TCR",
+    "tcrType": "Lloji TCR",
+    "fiscalizationUrl": "URL fiskalizimi",
+    "einvoiceUrl": "URL e-fatura",
+    "selfcareUrl": "URL selfcare",
+    "proxyUrl": "URL proxy",
+    "sellerName": "Emri i shitësit",
+    "sellerAddress": "Adresa e shitësit",
+    "sellerTown": "Qyteti i shitësit",
+    "sellerCountry": "Shteti i shitësit",
+    "isVatRegistered": "I regjistruar në TVSH",
+    "autoFiscalizePos": "Fiskalizim auto POS",
+    "autoEinvoice": "E-faturë auto",
     "environment": "Mjedisi",
+    "hasCertificate": "Certifikata",
     "isActive": "Aktive",
+    "company": "Kompania",
     "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

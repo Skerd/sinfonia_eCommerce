@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "quantity": "Qty",
+  "beforeAfter": "Before → after",
+  "receipt": "Receipt",
+  "reasons": {
+    "restock": "Restock",
+    "sale": "Sale",
+    "return": "Return",
+    "adjustment": "Adjustment",
+    "damage": "Damage",
+    "transfer_in": "Transfer in",
+    "transfer_out": "Transfer out",
+    "initial": "Initial",
+    "write_off": "Write-off"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx",
+  "title": "Deactivate warehouse",
+  "description": "This warehouse will no longer be used until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating warehouse…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Warehouse deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate warehouse",
+      "time": 3000
+    }
+  }
+}

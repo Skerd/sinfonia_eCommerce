@@ -1,38 +1,62 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
+  "title": "Krijo bllok CMS",
+  "formHeader": {
+    "title": "Krijo bllok CMS",
+    "description": "Shtoni një bllok përmbajtjeje me orar dhe rregulla shfaqjeje."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo"
+  },
   "form": {
-    "abTestVariantLabel": "A/B test variant",
+    "generalSectionTitle": "Të përgjithshme",
+    "configSectionTitle": "Konfigurimi",
+    "visibilitySectionTitle": "Shfaqja",
+    "titleLabel": "Titulli",
+    "typeLabel": "Lloji",
+    "positionLabel": "Pozicioni",
+    "abTestVariantLabel": "Varianti A/B",
+    "startsAtLabel": "Fillon",
+    "endsAtLabel": "Mbaron",
+    "configLabel": "Konfigurimi (JSON)",
+    "configPlaceholder": "{\n  \"headline\": \"Mirë se vini\"\n}",
+    "visibilityDevicesLabel": "Pajisjet",
+    "visibilityRegionsLabel": "Rajonet",
+    "visibilityRegionsPlaceholder": "Shto kod rajoni",
+    "removeRegion": "Hiq rajonin",
     "cmsBlockType": {
-      "announcement_bar": "Announcement Bar",
-      "best_sellers": "Best Sellers",
-      "category_showcase": "Category Showcase",
-      "custom_html": "Custom Html",
-      "featured_collection": "Featured Collection",
-      "flash_sale": "Flash Sale",
-      "grid": "Grid",
-      "hero_banner": "Hero Banner",
-      "promotional_section": "Promotional Section",
+      "hero_banner": "Banner hero",
       "slider": "Slider",
-      "trending": "Trending",
-      "video": "Video"
+      "featured_collection": "Koleksion i veçuar",
+      "trending": "Në trend",
+      "best_sellers": "Më të shiturat",
+      "flash_sale": "Ofertë e shpejtë",
+      "announcement_bar": "Shirit njoftimi",
+      "custom_html": "HTML i personalizuar",
+      "video": "Video",
+      "grid": "Rrjetë",
+      "category_showcase": "Vitrinë kategorish",
+      "promotional_section": "Seksion promocional"
     },
-    "configLabel": "Configuration (JSON)",
-    "configPlaceholder": "Config Placeholder",
-    "endsAtLabel": "Ends at",
-    "isActiveLabel": "Active",
-    "positionLabel": "Position",
-    "startsAtLabel": "Starts at",
-    "titleLabel": "Title",
-    "typeLabel": "Type",
     "visibilityDevice": {
       "desktop": "Desktop",
-      "mobile": "Mobile",
+      "mobile": "Celular",
       "tablet": "Tablet"
-    },
-    "visibilityDevicesLabel": "Visibility Devices Label",
-    "visibilityRegionsLabel": "Visibility Regions Label",
-    "visibilityRegionsPlaceholder": "Visibility Regions Placeholder",
-    "visibilitySectionTitle": "Visibility Section Title"
+    }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
-  "title": "Create CMS block"
+  "axios": {
+    "start": {
+      "title": "Duke krijuar bllokun CMS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Blloku CMS u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot blloku CMS",
+      "time": 3000
+    }
+  }
 }

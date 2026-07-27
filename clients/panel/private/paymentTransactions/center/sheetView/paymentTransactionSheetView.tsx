@@ -8,8 +8,6 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 
-const LIST_BASE = "/eCommerce/paymenttransactions";
-
 export type PaymentTransactionSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
@@ -19,13 +17,6 @@ export type PaymentTransactionSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
 };
-
-function paymentTransactionEditPath(entity: PaymentTransaction) {
-    const params = new URLSearchParams();
-    params.set("paymentTransactionId", entity._id);
-    if ((entity as any).gatewayTransactionId) params.set("paymentTransactionTitle", encodeURIComponent(String((entity as any).gatewayTransactionId)));
-    return `${LIST_BASE}/edit?${params.toString()}`;
-}
 
 function PaymentTransactionSheetView({
     open,
@@ -43,7 +34,14 @@ function PaymentTransactionSheetView({
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData(entityProp);
+        setSheetData((prev) => ({
+            ...entityProp,
+            amountDisplay: entityProp.amountDisplay ?? (prev as PaymentTransaction).amountDisplay,
+            refundedAmountDisplay:
+                entityProp.refundedAmountDisplay ?? (prev as PaymentTransaction).refundedAmountDisplay,
+            metadataDisplay: entityProp.metadataDisplay ?? (prev as PaymentTransaction).metadataDisplay,
+            displayTitle: entityProp.displayTitle ?? (prev as PaymentTransaction).displayTitle,
+        }));
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -55,7 +53,7 @@ function PaymentTransactionSheetView({
         <SheetViewRenderer
             config={viewConfig}
             url="/api/eCommerce/paymentTransaction/single"
-            fetchId={fetchId}
+            fetchId={fetchId ?? entityProp?._id}
             onDataFetched={(data) => {
                 setSheetData(data);
             }}
@@ -65,9 +63,10 @@ function PaymentTransactionSheetView({
             resolveLanguageKey={resolveLanguageKey}
             access={access}
             hideActions={hideActions}
+            hideEdit
+            hideDelete
             onDelete={onDelete}
             onRestore={onRestore}
-            
         />
     );
 }

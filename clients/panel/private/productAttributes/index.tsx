@@ -11,7 +11,7 @@ export function productAttributeEditPath(attr: {_id: string; name?: string}) {
     const params = new URLSearchParams();
     params.set("attributeId", attr._id);
     if (attr.name) params.set("attributeName", encodeURIComponent(attr.name));
-    return `/eCommerce/productattributes/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/productattributes/edit?${params.toString()}`;
 }
 
 function AllProductAttributes({resolveLanguageKey}: WithLanguageType) {
@@ -21,7 +21,7 @@ function AllProductAttributes({resolveLanguageKey}: WithLanguageType) {
             collectionName="productAttributes"
             accessModel="productAttributes"
             tableConfigKey="productAttributes"
-            createPath="/eCommerce/productattributes/create"
+            createPath="/tenancy/systemSettings/productattributes/create"
             createIcon={<IconPlus />}
             createLanguageKey="createProductAttribute"
             buildEditPath={productAttributeEditPath}

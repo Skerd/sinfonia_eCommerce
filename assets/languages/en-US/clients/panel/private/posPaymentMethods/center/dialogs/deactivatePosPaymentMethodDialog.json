@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx",
+  "title": "Deactivate payment method",
+  "description": "This payment method will be removed from POS configs and will no longer be available on tills until activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating payment method…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment method deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate payment method",
+      "time": 3000
+    }
+  }
+}

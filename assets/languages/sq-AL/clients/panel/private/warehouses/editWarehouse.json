@@ -1,11 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
   "title": "Ndrysho magazinën",
+  "errorTitle": "Ngarkimi i magazinës dështoi",
+  "errorDescription": "Nuk u ngarkua dot kjo magazinë. Provo përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrimit",
     "nameLabel": "Emri",
+    "namePlaceholder": "Emri i magazinës",
     "codeLabel": "Kodi",
+    "codePlaceholder": "Kodi i magazinës",
     "isDefaultLabel": "Magazina parazgjedhur",
-    "isActiveLabel": "Aktive",
     "addressSectionTitle": "Adresa",
     "countryLabel": "Shteti",
     "countryPlaceholder": "Zgjidh shtetin",
@@ -16,6 +20,32 @@
     "streetLabel": "Rruga",
     "streetPlaceholder": "Adresa",
     "postalCodeLabel": "Kodi postar",
-    "postalCodePlaceholder": "Kodi postar"
+    "postalCodePlaceholder": "Kodi postar",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "Gjerësia gjeografike",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "Gjatësia gjeografike"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur magazinën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazina u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot magazina",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho magazinën",
+    "description": "Përditëso emrin, statusin parazgjedhur dhe adresën."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

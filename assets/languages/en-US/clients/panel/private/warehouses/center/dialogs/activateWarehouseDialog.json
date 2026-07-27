@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx",
+  "title": "Activate warehouse",
+  "description": "This warehouse will become available for inventory and fulfillment.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating warehouse…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Warehouse activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate warehouse",
+      "time": 3000
+    }
+  }
+}

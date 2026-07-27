@@ -2,16 +2,52 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
   "title": "Create address",
   "form": {
-    "firstNameLabel": "First name",
-    "lastNameLabel": "Last name",
+    "userLabel": "Customer",
+    "userPlaceholder": "Select customer",
+    "firstNameLabel": "Recipient first name",
+    "firstNamePlaceholder": "First name on the package",
+    "lastNameLabel": "Recipient last name",
+    "lastNamePlaceholder": "Last name on the package",
     "streetLabel": "Street",
+    "streetPlaceholder": "Street address",
     "cityLabel": "City",
+    "cityPlaceholder": "City",
     "stateLabel": "State",
+    "statePlaceholder": "State or region",
     "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code",
     "phoneLabel": "Phone",
+    "phonePlaceholder": "Phone number",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "19.8189",
     "labelLabel": "Label",
+    "labelPlaceholder": "Home, work, …",
     "isDefaultLabel": "Default address"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating address",
+      "time": 3000
+    },
+    "success": {
+      "title": "Address created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create address",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create address",
+    "description": "Link an address to a customer, set the recipient, location, and map pin."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create address"
   }
 }

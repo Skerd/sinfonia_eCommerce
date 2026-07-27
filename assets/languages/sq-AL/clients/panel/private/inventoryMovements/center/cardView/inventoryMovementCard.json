@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "quantity": "Sasia",
+  "beforeAfter": "Para → pas",
+  "receipt": "Fatura",
+  "reasons": {
+    "restock": "Rifornizim",
+    "sale": "Shitje",
+    "return": "Kthim",
+    "adjustment": "Rregullim",
+    "damage": "Dëmtim",
+    "transfer_in": "Transferim hyrës",
+    "transfer_out": "Transferim dalës",
+    "initial": "Fillestar",
+    "write_off": "Çregjistrim"
+  }
+}

@@ -1,13 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/editPosConfig.tsx",
   "title": "Edit POS config",
+  "errorTitle": "Failed to load POS config",
+  "errorDescription": "Could not load this POS config. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "nameLabel": "Name",
+    "namePlaceholder": "Register name",
     "paymentMethodsLabel": "Payment methods",
-    "warehouseLabel": "Warehouse",
+    "managersLabel": "Managers",
+    "warehousesLabel": "Warehouses",
+    "warehousePlaceholder": "Select warehouse",
     "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
     "receiptHeaderLabel": "Receipt header",
+    "receiptHeaderPlaceholder": "Printed at the top of the receipt",
     "receiptFooterLabel": "Receipt footer",
+    "receiptFooterPlaceholder": "Printed at the bottom of the receipt",
+    "tillOptionsSectionTitle": "Till options",
     "ifaceBarcodeScannerLabel": "Barcode scanner",
     "ifaceCashControlLabel": "Cash control",
     "allowDiscountLabel": "Allow discount",
@@ -16,11 +26,35 @@
     "pinForDiscountLabel": "PIN for discount",
     "pinForCashOutLabel": "PIN for cash out",
     "pinForRefundLabel": "PIN for refund",
-    "managerPinLabel": "Manager PIN (leave blank to keep)",
-    "clearManagerPinLabel": "Clear manager PIN",
     "isActiveLabel": "Active",
-    "selectWarehouse": "Select warehouse",
+    "selectWarehouse": "Add warehouse",
+    "removeWarehouse": "Remove warehouse",
     "selectCurrency": "Select currency",
-    "selectPaymentMethod": "Select payment method"
+    "selectPaymentMethod": "Select payment method",
+    "removePaymentMethod": "Remove payment method",
+    "selectManager": "Select manager",
+    "removeManager": "Remove manager"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving POS config",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update POS config",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit POS config",
+    "description": "Update warehouses, payment methods, receipt text, and till rules."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

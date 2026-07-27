@@ -11,7 +11,7 @@ export function productVariantEditPath(entity: {_id: string; sku?: string}) {
     const params = new URLSearchParams();
     params.set("productVariantId", entity._id);
     if (entity.sku) params.set("productVariantTitle", encodeURIComponent(String(entity.sku)));
-    return `/eCommerce/productvariants/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/productvariants/edit?${params.toString()}`;
 }
 
 function AllProductVariants({resolveLanguageKey}: WithLanguageType) {
@@ -21,7 +21,7 @@ function AllProductVariants({resolveLanguageKey}: WithLanguageType) {
             collectionName="productVariants"
             accessModel="productVariants"
             tableConfigKey="productVariants"
-            createPath="/eCommerce/productvariants/create"
+            createPath="/tenancy/systemSettings/productvariants/create"
             createIcon={<IconPlus />}
             createLanguageKey="createProductVariant"
             buildEditPath={productVariantEditPath}

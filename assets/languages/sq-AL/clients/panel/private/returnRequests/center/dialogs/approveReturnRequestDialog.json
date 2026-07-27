@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
+  "title": "Mirato kërkesën për kthim",
+  "description": "Mirato këtë kërkesë në pritje. Mund të vendosësh shumën e rimbursimit dhe një shënim administratori.",
+  "refundAmountLabel": "Shuma e rimbursimit",
+  "refundAmountPlaceholder": "0",
+  "notesLabel": "Shënimi i administratorit",
+  "notesPlaceholder": "Shënim opsional për miratimin",
+  "cancel": "Anulo",
+  "confirm": "Mirato",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke miratuar kërkesën…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa u miratua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa nuk u miratua",
+      "time": 3000
+    }
+  }
+}

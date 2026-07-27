@@ -5,12 +5,57 @@
   "createCollection": "Krijo koleksion",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "type": {
+        "manual": "Manual",
+        "dynamic": "Dinamik"
+      },
+      "ruleCondition": {
+        "all": "Të gjitha rregullat (AND)",
+        "any": "Çdo rregull (OR)"
+      },
+      "rules": {
+        "field": {
+          "tag": "Etiketë",
+          "brand": "Markë",
+          "category": "Kategori",
+          "price": "Çmimi",
+          "vendor": "Furnizues",
+          "inventory_level": "Niveli i inventarit",
+          "product_type": "Lloji i produktit"
+        },
+        "operator": {
+          "equals": "Barazohet me",
+          "not_equals": "Nuk barazohet me",
+          "contains": "Përmban",
+          "not_contains": "Nuk përmban",
+          "greater_than": "Më i madh se",
+          "less_than": "Më i vogël se",
+          "starts_with": "Fillon me"
+        }
+      }
+    },
+    "type": "Lloji",
     "name": "Emri",
     "slug": "Slug",
-    "type": "Lloji",
+    "description": "Përshkrimi",
+    "mainImage": "Imazhi i kopertinës",
     "isVisible": "I dukshëm",
     "position": "Pozicioni",
+    "products": "Produktet",
+    "ruleCondition": "Kushti i përputhjes",
+    "rules": {
+      "field": "Fusha e rregullit",
+      "operator": "Operatori i rregullit",
+      "value": "Vlera e rregullit"
+    },
+    "seoTitle": "Titulli SEO",
+    "seoDescription": "Përshkrimi SEO",
+    "publishedAt": "Publiko më",
     "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

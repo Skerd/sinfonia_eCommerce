@@ -25,7 +25,6 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
             rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderActionMenuChildren={(order, bindRowAction) => (
                 <>
                     <ConfirmOrderDropdown order={order} onAction={bindRowAction} />

@@ -1,14 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
   "title": "Edit collection",
+  "errorTitle": "Failed to load collection",
+  "errorDescription": "Could not load this collection. Try again.",
   "form": {
+    "_idLabel": "Record ID",
+    "generalSectionTitle": "General",
     "nameLabel": "Name",
+    "namePlaceholder": "Collection name",
     "slugLabel": "Slug",
+    "slugPlaceholder": "auto-generated-from-name",
     "typeLabel": "Collection type",
     "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Optional description for this collection",
     "mainImageLabel": "Cover image",
     "isVisibleLabel": "Visible on storefront",
     "positionLabel": "Sort position",
+    "positionPlaceholder": "0",
     "publishedAtLabel": "Publish at",
     "mediaSectionTitle": "Media",
     "manualSectionTitle": "Manual products",
@@ -24,9 +32,12 @@
     "ruleFieldLabel": "Field",
     "ruleOperatorLabel": "Operator",
     "ruleValueLabel": "Value",
+    "ruleValuePlaceholder": "Rule value",
     "seoSectionTitle": "SEO",
     "seoTitleLabel": "SEO title",
+    "seoTitlePlaceholder": "Optional SEO title",
     "seoDescriptionLabel": "SEO description",
+    "seoDescriptionPlaceholder": "Optional SEO description",
     "collectionType": {
       "manual": "Manual",
       "dynamic": "Dynamic"
@@ -53,5 +64,27 @@
       "less_than": "Less than",
       "starts_with": "Starts with"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving collection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update collection",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit collection",
+    "description": "Update collection details, products, or dynamic rules."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

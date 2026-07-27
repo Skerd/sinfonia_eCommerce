@@ -34,7 +34,10 @@ function ProductReviewSheetView({
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData(entityProp);
+        setSheetData((prev) => ({
+            ...entityProp,
+            displayTitle: entityProp.displayTitle ?? (prev as ProductReview).displayTitle,
+        }));
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -46,7 +49,7 @@ function ProductReviewSheetView({
         <SheetViewRenderer
             config={viewConfig}
             url="/api/eCommerce/productReview/single"
-            fetchId={fetchId}
+            fetchId={fetchId ?? entityProp?._id}
             onDataFetched={(data) => {
                 setSheetData(data);
             }}
@@ -56,6 +59,7 @@ function ProductReviewSheetView({
             resolveLanguageKey={resolveLanguageKey}
             access={access}
             hideActions={hideActions}
+            hideEdit
             onDelete={onDelete}
             onRestore={onRestore}
         />

@@ -2,12 +2,34 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/createProductAttribute.tsx",
   "title": "Krijo atribut",
   "form": {
-    "nameLabel": "Name",
-    "positionLabel": "Position",
-    "isVisibleOnProductPageLabel": "Visible on product page",
-    "isUsedForVariantsLabel": "Used for variants",
-    "valuesLabel": "Values",
-    "valuesPlaceholder": "Add a value and press Enter",
-    "removeValue": "Remove value"
+    "nameLabel": "Emri",
+    "positionLabel": "Pozicioni",
+    "isVisibleOnProductPageLabel": "I dukshëm në faqen e produktit",
+    "isUsedForVariantsLabel": "Përdoret për variantet",
+    "valuesLabel": "Vlerat",
+    "valuesPlaceholder": "Shto një vlerë dhe shtyp Enter",
+    "removeValue": "Hiq vlerën"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar atributin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Atributi u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot atributi",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo atribut",
+    "description": "Përcaktoni një atribut si madhësia ose ngjyra, me vlera opsionale për variantet."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo atribut"
   }
 }

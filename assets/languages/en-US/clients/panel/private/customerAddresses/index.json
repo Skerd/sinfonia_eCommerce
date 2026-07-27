@@ -5,10 +5,24 @@
   "createCustomerAddress": "Create address",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "firstName": "First name",
-    "lastName": "Last name",
+    "user": "Customer",
+    "firstName": "Recipient first name",
+    "lastName": "Recipient last name",
+    "phone": "Phone",
     "street": "Street",
     "city": "City",
-    "phone": "Phone"
+    "state": "State",
+    "postalCode": "Postal code",
+    "country": "Country",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "isDefault": "Default",
+    "label": "Label",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
   }
 }

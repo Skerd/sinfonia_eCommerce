@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx",
+  "title": "Set manager PIN",
+  "description": "Enter the new PIN twice. Both fields must match.",
+  "pinLabel": "New PIN",
+  "confirmPinLabel": "Confirm PIN",
+  "pinMismatch": "PIN confirmation does not match",
+  "pinTooShort": "PIN must be at least 4 characters",
+  "cancel": "Cancel",
+  "confirm": "Save PIN",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Saving manager PIN",
+      "time": 3000
+    },
+    "success": {
+      "title": "Manager PIN saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not set manager PIN",
+      "time": 3000
+    }
+  }
+}

@@ -1,35 +1,69 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/createPricingRule.tsx",
+  "title": "Create pricing rule",
   "form": {
-    "appliesToLabel": "Applies to",
-    "customerGroupsLabel": "Customer Groups Label",
-    "endsAtLabel": "Ends at",
-    "isActiveLabel": "Active",
-    "minimumOrderAmountLabel": "Minimum order amount",
-    "minimumQuantityLabel": "Minimum quantity",
     "nameLabel": "Name",
-    "pricingRuleAppliesTo": {
-      "all": "All",
-      "category": "Category",
-      "collection": "Collection",
-      "customer_group": "Customer Group",
-      "product": "Product"
-    },
+    "namePlaceholder": "Pricing rule name",
+    "typeLabel": "Type",
+    "appliesToLabel": "Applies to",
+    "valueLabel": "Value",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Priority",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Starts at",
+    "endsAtLabel": "Ends at",
+    "minimumOrderAmountLabel": "Minimum order amount",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Minimum quantity",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "General",
+    "scheduleSectionTitle": "Schedule",
+    "limitsSectionTitle": "Limits",
+    "customerGroupsSectionTitle": "Customer groups",
+    "productsLabel": "Products",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Categories",
+    "customerGroupsLabel": "Customer groups",
+    "selectProduct": "Select product",
+    "selectCollection": "Select collection",
+    "selectCategory": "Select category",
+    "selectCustomerGroup": "Select customer group",
+    "removeTarget": "Remove target",
+    "removeCustomerGroup": "Remove customer group",
     "pricingRuleType": {
-      "fixed_discount": "Fixed Discount",
-      "fixed_price": "Fixed Price",
-      "percentage_discount": "Percentage Discount",
+      "percentage_discount": "Percentage discount",
+      "fixed_discount": "Fixed discount",
+      "fixed_price": "Fixed price",
       "surcharge": "Surcharge"
     },
-    "priorityLabel": "Priority",
-    "selectCategory": "Select Category",
-    "selectCollection": "Select Collection",
-    "selectCustomerGroup": "Select Customer Group",
-    "selectProduct": "Select Product",
-    "startsAtLabel": "Starts at",
-    "targetIdsLabel": "Target Ids Label",
-    "typeLabel": "Type",
-    "valueLabel": "Value"
+    "pricingRuleAppliesTo": {
+      "all": "All",
+      "product": "Products",
+      "collection": "Collections",
+      "category": "Categories",
+      "customer_group": "Customer groups"
+    }
   },
-  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/createPricingRule.tsx",
-  "title": "Create pricing rule"
+  "axios": {
+    "start": {
+      "title": "Creating pricing rule",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pricing rule created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create pricing rule",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create pricing rule",
+    "description": "Set catalog price adjustments by product, category, collection, or customer group."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create pricing rule"
+  }
 }

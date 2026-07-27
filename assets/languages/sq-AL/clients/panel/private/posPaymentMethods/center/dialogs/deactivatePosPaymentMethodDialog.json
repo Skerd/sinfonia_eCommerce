@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx",
+  "title": "Çaktivizo metodën e pagesës",
+  "description": "Kjo metodë pagese do të hiqet nga konfigurimet POS dhe nuk do të jetë e disponueshme në arkë derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar metodën e pagesës…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metoda e pagesës u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot metoda e pagesës",
+      "time": 3000
+    }
+  }
+}

@@ -86,6 +86,7 @@
     "empty": "Nuk ka rreshta në këtë porosi.",
     "pinLabel": "PIN i menaxherit",
     "pinRequired": "PIN i menaxherit është i detyrueshëm",
+    "pinHint": "Do të zgjidhni menaxherin dhe do të vendosni PIN-in e tij/saj kur konfirmoni.",
     "total": "Totali i rimbursimit",
     "submit": "Rimburso",
     "selectAll": "Rimburso të mbeturat",
@@ -97,7 +98,9 @@
     "nothingLeft": "Nuk ka më asgjë për të rimbursuar në këtë porosi."
   },
   "pinDialog": {
-    "pinLabel": "PIN i menaxherit"
+    "pinLabel": "PIN i menaxherit",
+    "selectManager": "Zgjidh menaxherin",
+    "changeManager": "Ndrysho"
   },
   "sessionOrders": {
     "title": "Porositë e seancës",
@@ -124,8 +127,9 @@
     "out": "Pa stok"
   },
   "pin": {
-    "title": "PIN i menaxherit",
+    "title": "Miratimi i menaxherit",
     "description": "Vendosni PIN-in e menaxherit për të vazhduar.",
+    "selectThenEnter": "Zgjidhni menaxherin që miraton, pastaj vendosni PIN-in e tij/saj.",
     "label": "PIN",
     "discount": "PIN i menaxherit kërkohet për zbritje",
     "cashOut": "PIN i menaxherit kërkohet për cash out",
@@ -200,7 +204,7 @@
   "picker": {
     "title": "Zgjidhni arkën",
     "description": "Zgjidhni cilën dyqan / arke të hapni.",
-    "empty": "Nuk ka konfigurime POS aktive. Krijoni një në Konfigurimet POS.",
+    "empty": "Nuk ka konfigurime POS aktive. Krijoni një te Konfigurimet → E-tregtia → POS.",
     "open": "Hap arkën"
   },
   "openSession": {
@@ -266,6 +270,7 @@
     "insufficientStock": "Nuk ka stok të mjaftueshëm për këtë sasi",
     "outOfStock": "Produkti është pa stok",
     "pinInvalid": "PIN i menaxherit është i pavlefshëm",
+    "noManagersWithPin": "Nuk ka menaxherë me PIN të caktuar në këtë kasë",
     "refundFailed": "Rimbursimi dështoi"
   }
 }

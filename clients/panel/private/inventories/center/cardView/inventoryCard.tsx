@@ -14,11 +14,15 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {inventoryEditPath} from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
+import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
+import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 
 type InventoryCardProps = WithLanguageType & {
     inventory: Inventory;
     onDelete?: (deleted?: Inventory, response?: DeletedData) => void;
     onRestore?: () => void;
+    onInventoryUpdated?: (updated?: Inventory) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
 };
@@ -27,6 +31,7 @@ function InventoryCard({
     inventory: inventoryProp,
     resolveLanguageKey,
     onDelete: onDeleteProp,
+    onInventoryUpdated,
     hideActions = false,
     sheetOnly = false,
 }: InventoryCardProps) {
@@ -94,7 +99,10 @@ function InventoryCard({
                                         deletedData={inventory}
                                         onAction={(a: string) => setAction(a)}
                                         editPath={inventoryEditPath(inventory)}
-                                    />
+                                    >
+                                        <RestockInventoryDropdown inventory={inventory} onAction={setAction} />
+                                        <DeductInventoryDropdown inventory={inventory} onAction={setAction} />
+                                    </ActionMenu>
                                 </div>
                             )}
                         </div>
@@ -141,6 +149,10 @@ function InventoryCard({
                             inventory={inventory}
                             fetchId={inventory._id}
                             onDelete={onDelete}
+                            onInventoryUpdated={(updated) => {
+                                if (updated) setInventory(updated);
+                                onInventoryUpdated?.(updated);
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -153,6 +165,21 @@ function InventoryCard({
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/inventory"
+                        />
+                    )}
+                    {(action === "restock" || action === "deduct") && (
+                        <InventoryStockMoveAction
+                            inventoryId={inventory._id}
+                            displayName={inventory.product?.title}
+                            mode={action}
+                            openAlert
+                            url={`/api/eCommerce/inventory/${action}`}
+                            onSuccess={(updated) => {
+                                if (updated) setInventory(updated);
+                                onInventoryUpdated?.(updated);
+                                setAction("");
+                            }}
+                            onCancel={() => setAction("")}
                         />
                     )}
                 </>

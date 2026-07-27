@@ -10,6 +10,12 @@
     "submit": "Ruaj"
   },
   "form": {
+    "generalSectionTitle": "Të përgjithshme",
+    "cisCodesSectionTitle": "Kodet CIS",
+    "endpointsSectionTitle": "Endpoint-et e shërbimit",
+    "sellerSectionTitle": "Të dhënat e shitësit",
+    "certificateSectionTitle": "Certifikata",
+    "certificateManageSectionTitle": "Menaxho certifikatën",
     "nameLabel": "Emri",
     "niptLabel": "NIPT / NUIS",
     "softCodeLabel": "Kodi i softuerit (SoftCode)",
@@ -41,7 +47,20 @@
     "isVatRegisteredLabel": "I regjistruar në TVSH",
     "autoFiscalizePosLabel": "Fiskalizo automatikisht pagesat POS",
     "autoEinvoiceLabel": "Krijo automatikisht e-faturë pas fiskalizimit",
-    "clearCertificateLabel": "Fshi certifikatën e ruajtur",
-    "isActiveLabel": "Aktive"
+    "clearCertificateLabel": "Fshi certifikatën e ruajtur"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur konfigurimin fiskal",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi fiskal u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot konfigurimi fiskal",
+      "time": 3000
+    }
   }
 }

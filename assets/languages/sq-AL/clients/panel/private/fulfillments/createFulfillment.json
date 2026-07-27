@@ -6,17 +6,22 @@
     "orderPlaceholder": "Zgjidh porosinë",
     "statusLabel": "Statusi",
     "carrierLabel": "Transportuesi",
+    "carrierPlaceholder": "Emri i transportuesit",
     "trackingNumberLabel": "Numri i gjurmimit",
+    "trackingNumberPlaceholder": "Numri i gjurmimit",
     "trackingUrlLabel": "URL e gjurmimit",
+    "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Dërguar më",
     "estimatedDeliveryAtLabel": "Dorëzimi i pritur",
     "deliveredAtLabel": "Dorëzuar më",
     "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime opsionale",
     "itemsSectionTitle": "Artikujt",
     "itemAddRow": "Shto artikull",
     "itemRemoveRow": "Hiq artikullin",
     "itemRowTitle": "Artikulli",
     "orderItemIdLabel": "ID e artikullit të porosisë",
+    "orderItemIdPlaceholder": "ID e rreshtit të porosisë",
     "quantityLabel": "Sasia",
     "fulfillmentStatus": {
       "pending": "Në pritje",
@@ -24,5 +29,27 @@
       "delivered": "Dorëzuar",
       "failed": "Dështoi"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar përmbushjen",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përmbushja u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Përmbushja nuk u krijua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo përmbushje",
+    "description": "Krijo një dërgesë për një porosi me gjurmim dhe artikuj."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo përmbushje"
   }
 }

@@ -1,11 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
   "title": "Edit warehouse",
+  "errorTitle": "Failed to load warehouse",
+  "errorDescription": "Could not load this warehouse. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "nameLabel": "Name",
+    "namePlaceholder": "Warehouse name",
     "codeLabel": "Code",
+    "codePlaceholder": "Warehouse code",
     "isDefaultLabel": "Default warehouse",
-    "isActiveLabel": "Active",
     "addressSectionTitle": "Address",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
@@ -16,6 +20,32 @@
     "streetLabel": "Street",
     "streetPlaceholder": "Street address",
     "postalCodeLabel": "Postal code",
-    "postalCodePlaceholder": "Postal code"
+    "postalCodePlaceholder": "Postal code",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving warehouse",
+      "time": 3000
+    },
+    "success": {
+      "title": "Warehouse updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update warehouse",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit warehouse",
+    "description": "Update the name, default setting, and address."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

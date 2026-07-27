@@ -1,22 +1,30 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
-  "title": "Fulfillments",
+  "title": "Edit fulfillment",
+  "errorTitle": "Failed to load fulfillment",
+  "errorDescription": "Could not load this fulfillment. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "orderLabel": "Order",
     "orderPlaceholder": "Select order",
     "statusLabel": "Status",
     "carrierLabel": "Carrier",
+    "carrierPlaceholder": "Carrier name",
     "trackingNumberLabel": "Tracking number",
+    "trackingNumberPlaceholder": "Tracking number",
     "trackingUrlLabel": "Tracking URL",
+    "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Shipped at",
     "estimatedDeliveryAtLabel": "Estimated delivery",
     "deliveredAtLabel": "Delivered at",
     "notesLabel": "Notes",
+    "notesPlaceholder": "Optional notes",
     "itemsSectionTitle": "Items",
     "itemAddRow": "Add item",
     "itemRemoveRow": "Remove item",
     "itemRowTitle": "Item",
     "orderItemIdLabel": "Order item id",
+    "orderItemIdPlaceholder": "Order line id",
     "quantityLabel": "Quantity",
     "fulfillmentStatus": {
       "pending": "Pending",
@@ -24,5 +32,27 @@
       "delivered": "Delivered",
       "failed": "Failed"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving fulfillment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update fulfillment",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit fulfillment",
+    "description": "Update shipment status, tracking, dates, notes, and items."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
   }
 }

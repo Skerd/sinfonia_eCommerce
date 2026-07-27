@@ -8,7 +8,7 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 
-const LIST_BASE = "/eCommerce/productattributes";
+const LIST_BASE = "/tenancy/systemSettings/productattributes";
 
 export type ProductAttributeSheetViewOwnProps = {
     open: boolean;

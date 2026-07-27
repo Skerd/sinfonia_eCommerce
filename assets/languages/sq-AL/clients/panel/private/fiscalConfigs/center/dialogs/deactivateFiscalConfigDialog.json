@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx",
+  "title": "Çaktivizo konfigurimin fiskal",
+  "description": "Ky konfigurim fiskal nuk do të përdoret për fiskalizim derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar konfigurimin fiskal…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi fiskal u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot konfigurimi fiskal",
+      "time": 3000
+    }
+  }
+}

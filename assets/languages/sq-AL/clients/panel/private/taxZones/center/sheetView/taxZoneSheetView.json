@@ -1,9 +1,35 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx",
-  "taxZoneSubtitle": "Tax zone details",
-  "overview": "Overview",
-  "name": "Name",
-  "country": "Country",
-  "priority": "Priority",
-  "isActive": "Active"
+  "taxZoneSubtitle": "Detajet e zonës tatimore",
+  "failedTitle": "Dështoi ngarkimi i zonës tatimore",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj zone tatimore. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovuar marrjen e të dhënave.",
+  "overview": "Përmbledhje",
+  "geography": "Gjeografia",
+  "rates": "Tarifat tatimore",
+  "name": "Emri",
+  "isActive": "Aktive",
+  "priority": "Prioriteti",
+  "company": "Kompania",
+  "createdAt": "Krijuar",
+  "country": "Shteti",
+  "states": "Rajonet",
+  "postalCodePatterns": "Modelet e kodit postar",
+  "state": "Rajoni",
+  "rateValue": "Tarifa (%)",
+  "rateAppliesTo": "Aplikohet për",
+  "isCompound": "E përbërë",
+  "compactView": "Kompakte",
+  "cardsView": "Karta",
+  "yes": "Po",
+  "no": "Jo",
+  "yesNo": {
+    "true": "Po",
+    "false": "Jo"
+  },
+  "taxRateAppliesTo": {
+    "all": "Të gjitha produktet",
+    "physical": "Fizike",
+    "digital": "Dixhitale"
+  }
 }

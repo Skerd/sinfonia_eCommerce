@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx",
+  "title": "Activate discount",
+  "description": "This discount will become available for carts and checkout.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating discount…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Discount activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate discount",
+      "time": 3000
+    }
+  }
+}

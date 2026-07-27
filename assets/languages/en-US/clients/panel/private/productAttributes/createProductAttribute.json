@@ -9,5 +9,27 @@
     "valuesLabel": "Values",
     "valuesPlaceholder": "Add a value and press Enter",
     "removeValue": "Remove value"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating attribute",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attribute created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create attribute",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create attribute",
+    "description": "Define an attribute such as size or color, with optional values for variants."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create attribute"
   }
 }

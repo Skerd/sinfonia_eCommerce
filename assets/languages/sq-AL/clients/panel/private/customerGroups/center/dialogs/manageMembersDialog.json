@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx",
+  "title": "Menaxho anëtarët",
+  "description": "Shtoni ose hiqni përdorues nga ky grup klientësh.",
+  "addMemberLabel": "Shto anëtar",
+  "userPlaceholder": "Zgjidhni një përdorues",
+  "add": "Shto",
+  "adding": "Duke shtuar...",
+  "membersLabel": "Anëtarët",
+  "noMembers": "Nuk ka anëtarë në këtë grup ende.",
+  "close": "Mbyll",
+  "addSuccess": "Anëtari u shtua.",
+  "addError": "Shtimi i anëtarit dështoi.",
+  "removeSuccess": "Anëtari u hoq.",
+  "removeError": "Heqja e anëtarit dështoi.",
+  "loadError": "Ngarkimi i anëtarëve dështoi."
+}

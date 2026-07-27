@@ -7,6 +7,9 @@
   "errorDescription": "Something went wrong while fetching dashboard data.",
   "revenueChartTitle": "Daily revenue",
   "noChartData": "No revenue data for this period.",
+  "chart": {
+    "revenue": "Revenue"
+  },
   "period": {
     "7d": "7 days",
     "30d": "30 days",

@@ -86,6 +86,7 @@
     "empty": "No lines on this order.",
     "pinLabel": "Manager PIN",
     "pinRequired": "Manager PIN is required",
+    "pinHint": "You will select a manager and enter their PIN when confirming.",
     "total": "Refund total",
     "submit": "Refund",
     "selectAll": "Refund all remaining",
@@ -97,7 +98,9 @@
     "nothingLeft": "Nothing left to refund on this order."
   },
   "pinDialog": {
-    "pinLabel": "Manager PIN"
+    "pinLabel": "Manager PIN",
+    "selectManager": "Select manager",
+    "changeManager": "Change"
   },
   "sessionOrders": {
     "title": "Session orders",
@@ -124,8 +127,9 @@
     "out": "Out"
   },
   "pin": {
-    "title": "Manager PIN",
+    "title": "Manager approval",
     "description": "Enter the manager PIN to continue.",
+    "selectThenEnter": "Select the approving manager, then enter their PIN.",
     "label": "PIN",
     "discount": "Manager PIN required for discounts",
     "cashOut": "Manager PIN required for cash out",
@@ -200,7 +204,7 @@
   "picker": {
     "title": "Select a register",
     "description": "Choose which shop till to open.",
-    "empty": "No active POS configs. Create one under POS Configs first.",
+    "empty": "No active POS configs. Create one under Configurations → eCommerce → POS first.",
     "open": "Open till"
   },
   "openSession": {
@@ -266,6 +270,7 @@
     "insufficientStock": "Not enough stock for this quantity",
     "outOfStock": "Product is out of stock",
     "pinInvalid": "Invalid manager PIN",
+    "noManagersWithPin": "No managers with a PIN are assigned to this till",
     "refundFailed": "Refund failed"
   }
 }

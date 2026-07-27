@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx",
+  "title": "Shëno përmbushjen si dështuar",
+  "description": "Shëno këtë përmbushje si dështuar. Opsionalisht shpjego arsyen.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Arsye opsionale e dështimit",
+  "cancel": "Anulo",
+  "confirm": "Shëno si dështuar",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke shënuar si dështuar…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përmbushja u shënua si dështuar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u shënua si dështuar",
+      "time": 3000
+    }
+  }
+}

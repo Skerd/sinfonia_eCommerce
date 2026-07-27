@@ -9,6 +9,9 @@
     "order": "Rendi",
     "parent": "Kategori kryesore",
     "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   },

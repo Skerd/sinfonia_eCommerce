@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
+  "cancel": "Anulo",
+  "restock": {
+    "title": "Rifornizo inventarin",
+    "description": "Shto stok të marrë nga furnitori ose prodhuesi. Lëvizja regjistrohet me detajet e faturës.",
+    "quantityLabel": "Sasia për t'u shtuar",
+    "manufacturerLabel": "Prodhuesi / furnitori",
+    "receiptNumberLabel": "Nr. i faturës / dërgesës",
+    "occurredAtLabel": "Data e marrjes",
+    "unitCostLabel": "Kosto për njësi",
+    "batchLotLabel": "Partia / loti",
+    "expiryDateLabel": "Data e skadencës",
+    "receiptsLabel": "Bashkëngjitjet e faturës",
+    "noteLabel": "Shënim",
+    "confirm": "Rifornizo",
+    "axios": {
+      "success": "Stoku u rifornizua me sukses",
+      "error": "Rifornizimi i inventarit dështoi"
+    }
+  },
+  "deduct": {
+    "title": "Zbrit / çregjistro",
+    "description": "Hiq stok (dëmtim, humbje ose çregjistrim). Lëvizja regjistrohet me detaje opsionale.",
+    "quantityLabel": "Sasia për t'u hequr",
+    "manufacturerLabel": "Prodhuesi / furnitori",
+    "receiptNumberLabel": "Nr. i referencës / faturës",
+    "occurredAtLabel": "Data e çregjistrimit",
+    "unitCostLabel": "Kosto për njësi",
+    "batchLotLabel": "Partia / loti",
+    "expiryDateLabel": "Data e skadencës",
+    "receiptsLabel": "Bashkëngjitjet",
+    "noteLabel": "Shënim",
+    "confirm": "Zbrit",
+    "axios": {
+      "success": "Stoku u zbrit me sukses",
+      "error": "Zbritja e inventarit dështoi"
+    }
+  }
+}

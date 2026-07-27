@@ -2,9 +2,11 @@
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
   "position": "Position",
-  "usedForVariants": "Used For Variants",
+  "usedForVariants": "Used for variants",
   "values": "Values",
   "variants": "Variants",
   "visible": "Visible",
-  "visibleOnProductPage": "Visible On Product Page"
+  "visibleOnProductPage": "Visible on product page",
+  "yes": "Yes",
+  "no": "No"
 }

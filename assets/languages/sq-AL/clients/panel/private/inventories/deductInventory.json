@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/deductInventory.tsx",
+  "title": "Zbrit inventarin",
+  "description": "Çregjistro ose hiq stok dhe ruaj një regjistër të plotë lëvizjesh.",
+  "missingInventoryId": "Mungon ID e inventarit. Hap zbritjen nga një rresht inventari."
+}

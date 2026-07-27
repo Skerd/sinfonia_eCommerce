@@ -17,8 +17,12 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
+import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
+import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
+import DeactivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx";
 
-const LIST_BASE = "/eCommerce/discounts";
+const LIST_BASE = "/tenancy/systemSettings/discounts";
 
 function discountEditPath(discount: Discount) {
     const params = new URLSearchParams();
@@ -120,7 +124,11 @@ function DiscountCard({
                                             deletedData={discount}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={discountEditPath(discount)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateDiscount entity={discount} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateDiscount entity={discount} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -177,6 +185,7 @@ function DiscountCard({
                             fetchId={discount._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setDiscount(row as Discount)}
                         />
                     )}
                     {action === "delete" && (
@@ -201,6 +210,22 @@ function DiscountCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/discount/restore"
+                        />
+                    )}
+                    {action === "activateDiscount" && (
+                        <ActivateDiscountDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={discount}
+                            onSuccess={(row) => setDiscount(row)}
+                        />
+                    )}
+                    {action === "deactivateDiscount" && (
+                        <DeactivateDiscountDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={discount}
+                            onSuccess={(row) => setDiscount(row)}
                         />
                     )}
                 </>

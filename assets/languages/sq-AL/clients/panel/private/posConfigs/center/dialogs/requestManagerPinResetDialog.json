@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx",
+  "title": "Harrova PIN-in e menaxherit",
+  "description": "Do t'ju dërgojmë një lidhje rivendosjeje në emailin e llogarisë. Hapni lidhjen për të vendosur një PIN të ri.",
+  "sentTitle": "Kontrolloni emailin",
+  "sentDescription": "Nëse emaili i llogarisë është i konfiguruar, u dërgua një lidhje rivendosjeje. Lidhja skadon pas 24 orëve.",
+  "cancel": "Anulo",
+  "confirm": "Dërgo emailin e rivendosjes",
+  "done": "U krye",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke dërguar emailin e rivendosjes",
+      "time": 3000
+    },
+    "success": {
+      "title": "Emaili i rivendosjes u dërgua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Emaili i rivendosjes nuk u dërgua",
+      "time": 3000
+    }
+  }
+}

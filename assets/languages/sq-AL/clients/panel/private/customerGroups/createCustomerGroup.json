@@ -2,8 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/createCustomerGroup.tsx",
   "title": "Krijo grup klientësh",
   "form": {
-    "nameLabel": "Name",
-    "descriptionLabel": "Description",
-    "isDefaultLabel": "Default group"
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri i grupit",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrim opsional",
+    "isDefaultLabel": "Grupi i parazgjedhur"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar grupin e klientëve",
+      "time": 3000
+    },
+    "success": {
+      "title": "Grupi i klientëve u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot grupi i klientëve",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo grup klientësh",
+    "description": "Përcaktoni një grup klientësh për rregulla çmimesh dhe anëtarësi."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo grupin e klientëve"
   }
 }

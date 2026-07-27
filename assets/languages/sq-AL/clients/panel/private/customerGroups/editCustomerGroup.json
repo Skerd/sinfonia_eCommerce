@@ -1,9 +1,36 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/editCustomerGroup.tsx",
   "title": "Ndrysho grupin e klientëve",
+  "errorTitle": "Nuk u ngarkua grupi i klientëve",
+  "errorDescription": "Nuk mund të ngarkohej ky grup klientësh. Provoni përsëri.",
   "form": {
-    "nameLabel": "Name",
-    "descriptionLabel": "Description",
-    "isDefaultLabel": "Default group"
+    "_idLabel": "ID e regjistrit",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri i grupit",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrim opsional",
+    "isDefaultLabel": "Grupi i parazgjedhur"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur grupin e klientëve",
+      "time": 3000
+    },
+    "success": {
+      "title": "Grupi i klientëve u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot grupi i klientëve",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho grupin e klientëve",
+    "description": "Përditësoni emrin, përshkrimin dhe cilësimin e grupit të parazgjedhur."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

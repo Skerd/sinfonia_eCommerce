@@ -222,8 +222,19 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                                         <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
                                         <XAxis dataKey="date" tick={{fontSize: 11}} />
                                         <YAxis tick={{fontSize: 11}} tickFormatter={(v) => formatMoney(Number(v))} />
-                                        <Tooltip formatter={(value: number) => formatMoney(value)} />
-                                        <Bar dataKey="revenue" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                                        <Tooltip
+                                            formatter={(value: number) => [formatMoney(value), rk("chart.revenue")]}
+                                            cursor={{fill: "var(--muted)", fillOpacity: 0.4}}
+                                            contentStyle={{
+                                                backgroundColor: "var(--card)",
+                                                border: "1px solid var(--border)",
+                                                borderRadius: "0.75rem",
+                                                color: "var(--card-foreground)",
+                                            }}
+                                            itemStyle={{color: "var(--card-foreground)"}}
+                                            labelStyle={{color: "var(--card-foreground)"}}
+                                        />
+                                        <Bar dataKey="revenue" name={rk("chart.revenue")} fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
+  "title": "Approve return request",
+  "description": "Approve this pending return request. You can set a refund amount and an admin note.",
+  "refundAmountLabel": "Refund amount",
+  "refundAmountPlaceholder": "0",
+  "notesLabel": "Admin note",
+  "notesPlaceholder": "Optional note for this approval",
+  "cancel": "Cancel",
+  "confirm": "Approve",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Approving return request…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return request approved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not approve return request",
+      "time": 3000
+    }
+  }
+}

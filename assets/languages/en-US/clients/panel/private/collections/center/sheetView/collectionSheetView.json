@@ -1,22 +1,62 @@
 {
-  "collectionSubtitle": "Collection details",
-  "collectionType": {
-    "dynamic": "Dynamic",
-    "manual": "Manual"
-  },
-  "isVisible": "Visible",
-  "overview": "Overview",
   "path": "src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx",
+  "collectionSubtitle": "Collection details",
+  "failedTitle": "Failed to load collection",
+  "failedDescription": "Something went wrong while loading this collection. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "overview": "Overview",
+  "content": "Content",
+  "media": "Media",
+  "products": "Products",
+  "rules": "Rules",
+  "seo": "SEO",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "toggleReferenceListView": "Toggle list layout",
+  "yes": "Yes",
+  "no": "No",
+  "name": "Name",
+  "type": "Type",
+  "slug": "Slug",
+  "isVisible": "Visible",
+  "position": "Position",
   "productCount": "Products",
-  "publishedAt": "Publish at",
   "ruleCondition": {
-    "all": "All",
-    "any": "Any"
-  },
-  "ruleConditionLabels": {
     "all": "All rules (AND)",
     "any": "Any rule (OR)"
   },
-  "slug": "Slug",
-  "type": "Type"
+  "publishedAt": "Publish at",
+  "company": "Company",
+  "createdAt": "Created",
+  "updatedAt": "Updated",
+  "description": "Description",
+  "mainImage": "Cover image",
+  "product": "Product",
+  "ruleField": {
+    "tag": "Tag",
+    "brand": "Brand",
+    "category": "Category",
+    "price": "Price",
+    "vendor": "Vendor",
+    "inventory_level": "Inventory level",
+    "product_type": "Product type"
+  },
+  "ruleOperator": {
+    "equals": "Equals",
+    "not_equals": "Not equals",
+    "contains": "Contains",
+    "not_contains": "Does not contain",
+    "greater_than": "Greater than",
+    "less_than": "Less than",
+    "starts_with": "Starts with"
+  },
+  "ruleFieldLabel": "Field",
+  "ruleOperatorLabel": "Operator",
+  "ruleValue": "Value",
+  "seoTitle": "SEO title",
+  "seoDescription": "SEO description",
+  "collectionType": {
+    "dynamic": "Dynamic",
+    "manual": "Manual"
+  }
 }

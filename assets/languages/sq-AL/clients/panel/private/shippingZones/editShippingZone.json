@@ -1,34 +1,64 @@
 {
-  "form": {
-    "carrierLabel": "Carrier Label",
-    "countriesLabel": "Countries",
-    "estimatedDeliveryDaysLabel": "Estimated Delivery Days Label",
-    "isActiveLabel": "Active",
-    "maxOrderAmountLabel": "Max Order Amount Label",
-    "maxWeightLabel": "Max Weight Label",
-    "minOrderAmountLabel": "Min Order Amount Label",
-    "minWeightLabel": "Min Weight Label",
-    "nameLabel": "Name",
-    "postalCodePatternsLabel": "Postal code patterns",
-    "postalCodePatternsPlaceholder": "Postal Code Patterns Placeholder",
-    "rateAddRow": "Rate Add Row",
-    "rateConditionsSectionTitle": "Rate Conditions Section Title",
-    "rateNameLabel": "Rate Name Label",
-    "ratePriceLabel": "Rate Price Label",
-    "rateRemoveRow": "Rate Remove Row",
-    "rateTypeLabel": "Rate Type Label",
-    "ratesSectionTitle": "Rates Section Title",
-    "selectCountry": "Select Country",
-    "selectState": "Select State",
-    "shippingRateType": {
-      "flat": "Flat",
-      "free": "Free",
-      "price": "Price",
-      "quantity": "Quantity",
-      "weight": "Weight"
-    },
-    "statesLabel": "States"
-  },
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
-  "title": "Ndrysho zonën e transportit"
+  "title": "Ndrysho zonën e transportit",
+  "errorTitle": "Dështoi ngarkimi i zonës së transportit",
+  "errorDescription": "Nuk u ngarkua dot kjo zonë transporti. Provo përsëri.",
+  "form": {
+    "generalSectionTitle": "Të përgjithshme",
+    "geographySectionTitle": "Gjeografia",
+    "nameLabel": "Emri",
+    "isActiveLabel": "Aktive",
+    "countriesLabel": "Shtetet",
+    "statesLabel": "Rajonet",
+    "selectCountry": "Zgjidh shtetin",
+    "selectState": "Zgjidh rajonin",
+    "removeCountry": "Hiq shtetin",
+    "removeState": "Hiq rajonin",
+    "postalCodePatternsLabel": "Modelet e kodit postar",
+    "postalCodePatternsPlaceholder": "p.sh. 1000* ose AL-*",
+    "removePostalCodePattern": "Hiq modelin",
+    "ratesSectionTitle": "Tarifat e transportit",
+    "rateAddRow": "Shto tarifë",
+    "rateRemoveRow": "Hiq tarifën",
+    "rateRowTitle": "Tarifë pa titull",
+    "rateNameLabel": "Emri i tarifës",
+    "rateTypeLabel": "Lloji i tarifës",
+    "ratePriceLabel": "Çmimi",
+    "carrierLabel": "Transportuesi",
+    "estimatedDeliveryDaysLabel": "Ditët e vlerësuara të dorëzimit",
+    "rateConditionsSectionTitle": "Kushtet",
+    "minWeightLabel": "Pesha minimale",
+    "maxWeightLabel": "Pesha maksimale",
+    "minOrderAmountLabel": "Shuma minimale e porosisë",
+    "maxOrderAmountLabel": "Shuma maksimale e porosisë",
+    "shippingRateType": {
+      "flat": "Fikse",
+      "weight": "Sipas peshës",
+      "price": "Sipas shumës së porosisë",
+      "quantity": "Sipas sasisë",
+      "free": "Falas"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur zonën e transportit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zona e transportit u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot zona e transportit",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho zonën e transportit",
+    "description": "Përditëso gjeografinë e destinacionit dhe tarifat e transportit për këtë zonë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
 }

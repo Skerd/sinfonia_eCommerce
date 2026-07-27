@@ -6,21 +6,48 @@
   "reorderBlocks": "Rirendit blloqet",
   "reorderTitle": "Rirendit blloqet CMS",
   "reorderDescription": "Zvarritni blloqet për të ndryshuar rendin e shfaqjes në dyqan.",
-  "searchPlaceholder": "Search or add filters...",
-  "empty": "No blocks to reorder.",
-  "cancel": "Cancel",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "empty": "Nuk ka blloqe për t'u rirenditur.",
+  "cancel": "Anulo",
   "save": "Ruaj rendin",
-  "saving": "Saving...",
+  "saving": "Duke ruajtur...",
   "saveSuccess": "Rendi i blloqeve u ruajt.",
-  "saveError": "Failed to save block order.",
-  "loadError": "Failed to load blocks.",
+  "saveError": "Rendi i blloqeve nuk u ruajt.",
+  "loadError": "Blloqet nuk u ngarkuan.",
   "fields": {
-    "title": "Title",
-    "type": "Type",
-    "position": "Position",
-    "isActive": "Active",
-    "createdBy": "Created by",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "!enums": {
+      "type": {
+        "hero_banner": "Banner hero",
+        "slider": "Slider",
+        "featured_collection": "Koleksion i veçuar",
+        "trending": "Në trend",
+        "best_sellers": "Më të shiturat",
+        "flash_sale": "Ofertë e shpejtë",
+        "announcement_bar": "Shirit njoftimi",
+        "custom_html": "HTML i personalizuar",
+        "video": "Video",
+        "grid": "Rrjetë",
+        "category_showcase": "Vitrinë kategorish",
+        "promotional_section": "Seksion promocional"
+      }
+    },
+    "title": "Titulli",
+    "type": "Lloji",
+    "position": "Pozicioni",
+    "isActive": "Aktive",
+    "config": "Konfigurimi",
+    "startsAt": "Fillon",
+    "endsAt": "Mbaron",
+    "visibility": {
+      "devices": "Pajisjet",
+      "regions": "Rajonet"
+    },
+    "abTestVariant": "Varianti A/B",
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

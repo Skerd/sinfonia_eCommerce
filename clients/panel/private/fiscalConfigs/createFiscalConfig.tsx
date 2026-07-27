@@ -23,7 +23,6 @@ export default createGenericCreatePage<CreateFiscalConfigFormType>({
         isVatRegistered: true,
         autoFiscalizePos: false,
         autoEinvoice: false,
-        isActive: true,
     } as unknown as CreateFiscalConfigFormType,
     successPath: "/eCommerce/fiscalconfigs",
     submitIcon: <IconPlus />,

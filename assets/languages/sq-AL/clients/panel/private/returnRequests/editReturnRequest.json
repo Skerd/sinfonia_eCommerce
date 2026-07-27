@@ -1,21 +1,29 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/editReturnRequest.tsx",
-  "title": "Kërkesat për kthim",
+  "title": "Ndrysho kërkesën për kthim",
+  "errorTitle": "Ngarkimi i kërkesës dështoi",
+  "errorDescription": "Kërkesa nuk u ngarkua. Provoni përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrimit",
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
     "typeLabel": "Lloji",
     "statusLabel": "Statusi",
     "refundAmountLabel": "Shuma e rimbursimit",
+    "refundAmountPlaceholder": "0",
     "customerNoteLabel": "Shënimi i klientit",
+    "customerNotePlaceholder": "Shënim opsional nga klienti",
     "adminNoteLabel": "Shënimi i administratorit",
+    "adminNotePlaceholder": "Shënim i brendshëm opsional",
     "itemsSectionTitle": "Artikujt",
     "itemAddRow": "Shto artikull",
     "itemRemoveRow": "Hiq artikullin",
     "itemRowTitle": "Artikulli",
     "orderItemIdLabel": "ID e artikullit të porosisë",
+    "orderItemIdPlaceholder": "ID e rreshtit të porosisë",
     "quantityLabel": "Sasia",
     "reasonLabel": "Arsyeja",
+    "reasonPlaceholder": "Pse po kthehet ky artikull?",
     "returnType": {
       "return": "Kthim",
       "exchange": "Këmbim",
@@ -28,5 +36,27 @@
       "received": "Pranuar",
       "completed": "Përfunduar"
     }
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur kërkesën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa nuk u përditësua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho kërkesën për kthim",
+    "description": "Përditëso llojin, statusin, shënimet, shumën e rimbursimit dhe artikujt."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   }
 }

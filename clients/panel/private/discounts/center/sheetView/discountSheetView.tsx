@@ -7,8 +7,12 @@ import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
+import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
+import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
+import DeactivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx";
 
-const LIST_BASE = "/eCommerce/discounts";
+const LIST_BASE = "/tenancy/systemSettings/discounts";
 
 export type DiscountSheetViewOwnProps = {
     open: boolean;
@@ -18,6 +22,7 @@ export type DiscountSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function discountEditPath(discount: Discount) {
@@ -36,10 +41,16 @@ function DiscountSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: DiscountSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(discountProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("discounts");
     const viewConfig = useViewConfig("discounts", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!discountProp) return;
@@ -51,24 +62,58 @@ function DiscountSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as Discount;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/discount/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={discountEditPath(sheetData as Discount)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/discount/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={discountEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivateDiscount entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivateDiscount entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activateDiscount" && (
+                <ActivateDiscountDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "deactivateDiscount" && (
+                <DeactivateDiscountDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+        </>
     );
 }
 

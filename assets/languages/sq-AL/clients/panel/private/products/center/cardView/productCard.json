@@ -1,5 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "salePercentOff": "{{percent}}% Ulje",
+  "timerDays": "Ditë",
+  "timerHours": "Orë",
+  "timerMins": "Min",
+  "timerSecs": "Sek",
   "productStatus": {
     "draft": "Skicë",
     "active": "Aktiv",

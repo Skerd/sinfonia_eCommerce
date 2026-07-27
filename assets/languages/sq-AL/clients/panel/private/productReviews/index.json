@@ -4,8 +4,17 @@
   "description": "Modero vlerësimet e blerësve (krijohen nga dyqani pas porosisë së paguar).",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "order": "Porosia",
+    "product": "Produkti",
     "rating": "Vlerësimi",
     "title": "Titulli",
-    "comment": "Komenti"
+    "comment": "Komenti",
+    "reviewer": "Vlerësuesi",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

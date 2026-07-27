@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
+  "title": "Shëno përmbushjen si dërguar",
+  "description": "Vendos detajet e gjurmimit dhe shëno këtë përmbushje në pritje si dërguar.",
+  "carrierLabel": "Transportuesi",
+  "carrierPlaceholder": "Emri i transportuesit",
+  "trackingNumberLabel": "Numri i gjurmimit",
+  "trackingNumberPlaceholder": "Numri i gjurmimit",
+  "trackingUrlLabel": "URL e gjurmimit",
+  "trackingUrlPlaceholder": "https://…",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale",
+  "cancel": "Anulo",
+  "confirm": "Shëno si dërguar",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke shënuar si dërguar…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përmbushja u shënua si dërguar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u shënua si dërguar",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
+  "title": "Rivendos PIN-in e menaxherit",
+  "description": "Zgjidhni një PIN të ri menaxheri për këtë arke.",
+  "verifyingTitle": "Duke verifikuar lidhjen",
+  "verifyingDescription": "Ju lutemi prisni ndërsa verifikojmë lidhjen e rivendosjes.",
+  "invalidTitle": "Lidhje e pavlefshme ose e skaduar",
+  "invalidDescription": "Kjo lidhje rivendosjeje është e pavlefshme ose ka skaduar. Kërkoni një të re nga menuja e konfigurimit POS.",
+  "successTitle": "PIN u përditësua",
+  "successDescription": "PIN i menaxherit u rivendos me sukses. Mund të hyni dhe të përdorni arkën.",
+  "errorTitle": "PIN nuk u rivendos",
+  "errorDescription": "Ndodhi një gabim gjatë ruajtjes së PIN-it të ri. Provoni përsëri.",
+  "tryAgain": "Provo përsëri",
+  "submit": "Ruaj PIN-in e ri",
+  "form": {
+    "pinLabel": "PIN i ri",
+    "confirmPinLabel": "Konfirmo PIN",
+    "resetCodeLabel": "Kodi i rivendosjes",
+    "pinMismatch": "Konfirmimi i PIN nuk përputhet"
+  }
+}

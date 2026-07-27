@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx",
+  "title": "Vendos PIN-in e menaxherit",
+  "description": "Vendosni PIN-in e ri dy herë. Fushat duhet të përputhen.",
+  "pinLabel": "PIN i ri",
+  "confirmPinLabel": "Konfirmo PIN",
+  "pinMismatch": "Konfirmimi i PIN nuk përputhet",
+  "pinTooShort": "PIN duhet të ketë të paktën 4 karaktere",
+  "cancel": "Anulo",
+  "confirm": "Ruaj PIN",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur PIN-in e menaxherit",
+      "time": 3000
+    },
+    "success": {
+      "title": "PIN i menaxherit u ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "PIN i menaxherit nuk u vendos",
+      "time": 3000
+    }
+  }
+}

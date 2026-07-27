@@ -7,6 +7,10 @@ import type {FiscalConfig} from "armonia/src/modules/eCommerce/api/eCommerce/pri
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/actions/activateFiscalConfig.tsx";
+import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/actions/deactivateFiscalConfig.tsx";
+import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
+import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 
 const LIST_BASE = "/eCommerce/fiscalconfigs";
 
@@ -18,6 +22,7 @@ export type FiscalConfigSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function fiscalConfigEditPath(entity: FiscalConfig) {
@@ -36,10 +41,16 @@ function FiscalConfigSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: FiscalConfigSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("fiscalConfigs");
     const viewConfig = useViewConfig("fiscalConfigs", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!entityProp) return;
@@ -49,22 +60,56 @@ function FiscalConfigSheetView({
     const entityId = entityProp?._id ?? fetchId;
     if (!viewConfig || !entityId) return null;
 
+    const asEntity = sheetData as FiscalConfig;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/fiscalConfig/single"
-            fetchId={fetchId}
-            onDataFetched={data => setSheetData(data)}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={fiscalConfigEditPath(sheetData as FiscalConfig)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/fiscalConfig/single"
+                fetchId={fetchId}
+                onDataFetched={data => setSheetData(data)}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={fiscalConfigEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivateFiscalConfig entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivateFiscalConfig entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activateFiscalConfig" && (
+                <ActivateFiscalConfigDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+            {action === "deactivateFiscalConfig" && (
+                <DeactivateFiscalConfigDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(row) => {
+                        setSheetData(row);
+                        onSheetRowPatched?.(row);
+                    }}
+                />
+            )}
+        </>
     );
 }
 

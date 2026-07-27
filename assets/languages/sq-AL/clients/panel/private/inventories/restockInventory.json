@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/restockInventory.tsx",
+  "title": "Rifornizo inventarin",
+  "description": "Regjistro stokun hyrës me prodhuesin, faturën dhe detaje të tjera.",
+  "missingInventoryId": "Mungon ID e inventarit. Hap rifornizimin nga një rresht inventari."
+}

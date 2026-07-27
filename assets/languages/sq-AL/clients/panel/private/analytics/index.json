@@ -6,7 +6,10 @@
   "errorTitle": "Failed to load analytics",
   "errorDescription": "Something went wrong while fetching dashboard data.",
   "revenueChartTitle": "Të ardhurat ditore",
-  "noChartData": "No revenue data for this period.",
+  "noChartData": "Nuk ka të dhëna të të ardhurave për këtë periudhë.",
+  "chart": {
+    "revenue": "Të ardhurat"
+  },
   "period": {
     "7d": "7 ditë",
     "30d": "30 ditë",

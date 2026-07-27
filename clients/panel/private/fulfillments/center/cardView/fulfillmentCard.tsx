@@ -17,13 +17,19 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ShipFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx";
+import MarkDeliveredFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markDeliveredFulfillment.tsx";
+import MarkFailedFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markFailedFulfillment.tsx";
+import ShipFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx";
+import MarkDeliveredFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx";
+import MarkFailedFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx";
 
 const LIST_BASE = "/eCommerce/fulfillments";
 
 function fulfillmentEditPath(entity: Fulfillment) {
     const params = new URLSearchParams();
     params.set("fulfillmentId", entity._id);
-    if ((entity as any).trackingNumber) params.set("fulfillmentTitle", encodeURIComponent(String((entity as any).trackingNumber)));
+    if (entity.trackingNumber) params.set("fulfillmentTitle", encodeURIComponent(String(entity.trackingNumber)));
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
@@ -78,7 +84,7 @@ function FulfillmentCard({
     if (hideAfterDeletion) {
         return <></>;
     }
-    if (!restore && (entity as any).deletedAt != null) {
+    if (!restore && entity.deletedAt != null) {
         return <></>;
     }
     if (!read || !Object.keys(read).length) {
@@ -93,18 +99,20 @@ function FulfillmentCard({
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
-                        {((read as any).deletedBy || (read as any).deletedAt) && (
-                            <DeletedInfo deletedAt={(entity as any).deletedAt} deletedBy={(entity as any).deletedBy} />
+                        {(read.deletedBy || read.deletedAt) && (
+                            <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
                         )}
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
                                     <HiddenElement showLock randomLength={0}>
-                                        {(read as any)?.trackingNumber && (
+                                        {read?.trackingNumber && (
                                             <>
-                                                {(entity as any).trackingNumber ? (
+                                                {entity.trackingNumber ? (
                                                     <TooltipDisplayer tooltip={resolveLanguageKey("trackingNumber")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{String((entity as any).trackingNumber)}</div>
+                                                        <div className="font-semibold text-base leading-tight truncate">
+                                                            {entity.trackingNumber}
+                                                        </div>
                                                     </TooltipDisplayer>
                                                 ) : (
                                                     <ValueNotSet />
@@ -120,7 +128,12 @@ function FulfillmentCard({
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={fulfillmentEditPath(entity)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ShipFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <MarkDeliveredFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
+                                            <MarkFailedFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -129,20 +142,20 @@ function FulfillmentCard({
                                     <InfoRow
                                         label={resolveLanguageKey("status")}
                                         icon={IconTag}
-                                        show={!!(read as any)?.status}
-                                        value={(entity as any).status ? resolveLanguageKey("fulfillmentStatus." + (entity as any).status) : undefined}
+                                        show={!!read?.status}
+                                        value={entity.status ? resolveLanguageKey("fulfillmentStatus." + entity.status) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("carrier")}
                                         icon={IconTruck}
-                                        show={!!(read as any)?.carrier}
-                                        value={(entity as any).carrier != null ? String((entity as any).carrier) : undefined}
+                                        show={!!read?.carrier}
+                                        value={entity.carrier != null ? String(entity.carrier) : undefined}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("trackingNumber")}
                                         icon={IconHash}
-                                        show={!!(read as any)?.trackingNumber}
-                                        value={(entity as any).trackingNumber != null ? String((entity as any).trackingNumber) : undefined}
+                                        show={!!read?.trackingNumber}
+                                        value={entity.trackingNumber != null ? String(entity.trackingNumber) : undefined}
                                     />
                                 </div>
                             </div>
@@ -161,6 +174,7 @@ function FulfillmentCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => setEntity(row as Fulfillment)}
                         />
                     )}
                     {action === "delete" && (
@@ -168,8 +182,8 @@ function FulfillmentCard({
                             accessModel={"fulfillments"}
                             deleteId={entity._id}
                             openAlert={action === "delete"}
-                            name={(read as any)?.trackingNumber && String((entity as any).trackingNumber ?? "")}
-                            confirmName={(read as any)?.trackingNumber && String((entity as any).trackingNumber ?? "")}
+                            name={read?.trackingNumber && String(entity.trackingNumber ?? "")}
+                            confirmName={read?.trackingNumber && String(entity.trackingNumber ?? "")}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/fulfillment"
@@ -180,11 +194,35 @@ function FulfillmentCard({
                             accessModel={"fulfillments"}
                             deleteId={entity._id}
                             openAlert={action === "restore"}
-                            name={(read as any)?.trackingNumber && String((entity as any).trackingNumber ?? "")}
-                            confirmName={(read as any)?.trackingNumber && String((entity as any).trackingNumber ?? "")}
+                            name={read?.trackingNumber && String(entity.trackingNumber ?? "")}
+                            confirmName={read?.trackingNumber && String(entity.trackingNumber ?? "")}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/fulfillment/restore"
+                        />
+                    )}
+                    {action === "shipFulfillment" && (
+                        <ShipFulfillmentDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
+                        />
+                    )}
+                    {action === "markDeliveredFulfillment" && (
+                        <MarkDeliveredFulfillmentDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
+                        />
+                    )}
+                    {action === "markFailedFulfillment" && (
+                        <MarkFailedFulfillmentDialog
+                            open={true}
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(row) => setEntity(row)}
                         />
                     )}
                 </>

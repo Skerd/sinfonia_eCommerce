@@ -1,40 +1,85 @@
 {
-  "form": {
-    "appliesToLabel": "Applies to",
-    "buyQuantityLabel": "Buy Quantity Label",
-    "buyXGetYSectionTitle": "Buy XGet YSection Title",
-    "codeLabel": "Code",
-    "customerGroupsLabel": "Customer Groups Label",
-    "discountAppliesTo": {
-      "category": "Category",
-      "collection": "Collection",
-      "order": "Order",
-      "product": "Product"
-    },
-    "discountType": {
-      "buy_x_get_y": "Buy X Get Y",
-      "fixed": "Fixed",
-      "free_shipping": "Free Shipping",
-      "percentage": "Percentage"
-    },
-    "endsAtLabel": "Ends at",
-    "getProductIdsLabel": "Get Product Ids Label",
-    "getQuantityLabel": "Get Quantity Label",
-    "isActiveLabel": "Active",
-    "minimumOrderAmountLabel": "Minimum order amount",
-    "minimumQuantityLabel": "Minimum quantity",
-    "selectCategory": "Select Category",
-    "selectCollection": "Select Collection",
-    "selectCustomerGroup": "Select Customer Group",
-    "selectProduct": "Select Product",
-    "startsAtLabel": "Starts at",
-    "targetIdsLabel": "Target Ids Label",
-    "titleLabel": "Title",
-    "typeLabel": "Type",
-    "usageLimitLabel": "Usage limit",
-    "usageLimitPerCustomerLabel": "Usage limit per customer",
-    "valueLabel": "Value"
-  },
   "path": "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
-  "title": "Edit discount"
+  "title": "Edit discount",
+  "errorTitle": "Failed to load discount",
+  "errorDescription": "Could not load this discount. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Discount title",
+    "codeLabel": "Code",
+    "codePlaceholder": "Optional promo code",
+    "typeLabel": "Type",
+    "appliesToLabel": "Applies to",
+    "valueLabel": "Value",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Active",
+    "startsAtLabel": "Starts at",
+    "endsAtLabel": "Ends at",
+    "minimumOrderAmountLabel": "Minimum order amount",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Minimum quantity",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Usage limit",
+    "usageLimitPlaceholder": "Unlimited if empty",
+    "usageLimitPerCustomerLabel": "Usage limit per customer",
+    "usageLimitPerCustomerPlaceholder": "Unlimited if empty",
+    "generalSectionTitle": "General",
+    "scheduleSectionTitle": "Schedule",
+    "limitsSectionTitle": "Limits",
+    "targetsSectionTitle": "Targets",
+    "customerGroupsSectionTitle": "Customer groups",
+    "targetIdsLabel": "Targets",
+    "productsLabel": "Products",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Categories",
+    "customerGroupsLabel": "Customer groups",
+    "buyXGetYSectionTitle": "Buy X get Y",
+    "buyQuantityLabel": "Buy quantity",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Get quantity",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Get products",
+    "selectProduct": "Select product",
+    "selectCollection": "Select collection",
+    "selectCategory": "Select category",
+    "selectCustomerGroup": "Select customer group",
+    "removeTarget": "Remove target",
+    "removeCustomerGroup": "Remove customer group",
+    "removeProduct": "Remove product",
+    "discountType": {
+      "percentage": "Percentage",
+      "fixed": "Fixed amount",
+      "free_shipping": "Free shipping",
+      "buy_x_get_y": "Buy X get Y"
+    },
+    "discountAppliesTo": {
+      "order": "Entire order",
+      "product": "Products",
+      "collection": "Collections",
+      "category": "Categories"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving discount",
+      "time": 3000
+    },
+    "success": {
+      "title": "Discount updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update discount",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit discount",
+    "description": "Update discount rules, limits, targets, and schedule."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
 }

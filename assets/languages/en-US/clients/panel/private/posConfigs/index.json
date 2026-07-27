@@ -6,9 +6,35 @@
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
+    "paymentMethods": "Payment methods",
+    "managers": "Managers",
+    "managerPins": {
+      "user": "Manager",
+      "pinHash": "PIN hash",
+      "pinReset": {
+        "code": "PIN reset code",
+        "date": "PIN reset date",
+        "opened": "PIN reset opened"
+      }
+    },
     "warehouse": "Warehouse",
+    "warehouses": "Warehouses",
+    "currency": "Currency",
+    "receiptHeader": "Receipt header",
+    "receiptFooter": "Receipt footer",
+    "ifaceBarcodeScanner": "Barcode scanner",
+    "ifaceCashControl": "Cash control",
+    "allowDiscount": "Allow discount",
+    "allowQuantityChange": "Allow quantity change",
+    "allowOversell": "Allow oversell",
+    "pinForDiscount": "PIN for discount",
+    "pinForCashOut": "PIN for cash out",
+    "pinForRefund": "PIN for refund",
     "isActive": "Active",
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

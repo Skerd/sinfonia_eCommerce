@@ -5,13 +5,145 @@
   "createProduct": "Create product",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "title": "Title",
-    "sku": "SKU",
+    "!enums": {
+      "type": {
+        "physical": "Physical",
+        "digital": "Digital",
+        "service": "Service",
+        "variable": "Variable",
+        "bundle": "Bundle",
+        "gift_card": "Gift card"
+      },
+      "status": {
+        "draft": "Draft",
+        "active": "Active",
+        "archived": "Archived"
+      },
+      "weightUnit": {
+        "kg": "kg",
+        "lb": "lb",
+        "g": "g",
+        "oz": "oz"
+      },
+      "dimensionUnit": {
+        "cm": "cm",
+        "in": "in"
+      },
+      "seo": {
+        "twitterCard": {
+          "summary": "Summary",
+          "summary_large_image": "Summary large image"
+        }
+      }
+    },
     "type": "Type",
-    "status": "Status",
-    "price": "Price",
+    "title": "Title",
+    "slug": "Slug",
+    "description": "Description",
+    "shortDescription": "Short description",
+    "highlights": "Highlights",
+    "careInstructions": "Care instructions",
+    "warranty": "Warranty",
+    "faqs": {
+      "question": "Question",
+      "answer": "Answer"
+    },
+    "sku": "SKU",
+    "barcode": "Barcode",
+    "gtin": "GTIN",
+    "upc": "UPC",
+    "ean": "EAN",
+    "isbn": "ISBN",
+    "mpn": "MPN",
+    "hsCode": "HS code",
+    "countryOfOrigin": "Country of origin",
     "brand": "Brand",
+    "vendor": "Vendor",
+    "tags": "Tags",
+    "categories": "Categories",
+    "collections": "Collections",
+    "price": "Price",
+    "compareAtPrice": "Compare-at price",
+    "costPrice": "Cost price",
+    "msrp": "MSRP",
+    "saleStartsAt": "Sale starts",
+    "saleEndsAt": "Sale ends",
+    "taxable": "Taxable",
+    "taxClass": "Tax class",
+    "minOrderQty": "Min. order qty",
+    "maxOrderQty": "Max. order qty",
+    "stepQty": "Order step qty",
+    "currency": "Currency",
+    "weight": "Weight",
+    "weightUnit": "Weight unit",
+    "dimensions": {
+      "length": "Length",
+      "width": "Width",
+      "height": "Height"
+    },
+    "dimensionUnit": "Dimension unit",
+    "volumetricWeight": "Volumetric weight",
+    "shippingClass": "Shipping class",
+    "isHazmat": "Hazardous material",
+    "requiresShipping": "Requires shipping",
+    "trackInventory": "Track inventory",
+    "allowBackorder": "Allow backorder",
+    "lowStockThreshold": "Low stock threshold",
+    "safetyStock": "Safety stock",
+    "backorderLimit": "Backorder limit",
+    "preorderEnabled": "Preorder enabled",
+    "preorderAvailableAt": "Preorder available at",
+    "availableForSale": "Available for sale",
+    "mainImage": "Main image",
+    "gallery": "Gallery",
+    "videoUrls": "Video URLs",
+    "documents": "Documents",
+    "variantOptions": "Variant options",
+    "hasVariants": "Has variants",
+    "defaultVariant": "Default variant",
+    "bundleComponents": {
+      "product": "Bundle product",
+      "quantity": "Quantity"
+    },
+    "downloadLimit": "Download limit",
+    "downloadExpiryDays": "Download expiry (days)",
+    "relatedProducts": "Related products",
+    "upsells": "Upsells",
+    "crossSells": "Cross-sells",
+    "frequentlyBoughtTogether": "Frequently bought together",
+    "featured": "Featured",
+    "badges": "Badges",
+    "ratingAverage": "Rating",
+    "ratingCount": "Rating count",
+    "reviewCount": "Reviews",
+    "status": "Status",
+    "publishedAt": "Published",
+    "attributes": {
+      "name": "Attribute name",
+      "values": "Attribute values"
+    },
+    "specifications": {
+      "label": "Specification label",
+      "value": "Specification value"
+    },
+    "seo": {
+      "metaTitle": "Meta title",
+      "metaDescription": "Meta description",
+      "metaKeywords": "Meta keywords",
+      "canonicalUrl": "Canonical URL",
+      "openGraphTitle": "Open Graph title",
+      "openGraphDescription": "Open Graph description",
+      "openGraphImage": "Open Graph image",
+      "twitterCard": "Twitter card",
+      "structuredDataType": "Structured data type",
+      "sitemapInclude": "Include in sitemap",
+      "sitemapPriority": "Sitemap priority",
+      "noIndex": "No index"
+    },
     "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

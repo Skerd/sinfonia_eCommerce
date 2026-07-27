@@ -10,6 +10,12 @@
     "submit": "Save"
   },
   "form": {
+    "generalSectionTitle": "General",
+    "cisCodesSectionTitle": "CIS codes",
+    "endpointsSectionTitle": "Service endpoints",
+    "sellerSectionTitle": "Seller details",
+    "certificateSectionTitle": "Certificate",
+    "certificateManageSectionTitle": "Manage certificate",
     "nameLabel": "Name",
     "niptLabel": "NIPT / NUIS",
     "softCodeLabel": "Software code (SoftCode)",
@@ -41,7 +47,20 @@
     "isVatRegisteredLabel": "VAT registered",
     "autoFiscalizePosLabel": "Auto-fiscalize POS payments",
     "autoEinvoiceLabel": "Auto-create e-invoice after fiscalization",
-    "clearCertificateLabel": "Clear stored certificate",
-    "isActiveLabel": "Active"
+    "clearCertificateLabel": "Clear stored certificate"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving fiscal config",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fiscal config updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update fiscal config",
+      "time": 3000
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx",
+  "title": "Aktivizo konfigurimin fiskal",
+  "description": "Ky konfigurim fiskal do të jetë i disponueshëm për fiskalizimin POS dhe e-faturën.",
+  "cancel": "Anulo",
+  "confirm": "Aktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar konfigurimin fiskal…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konfigurimi fiskal u aktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u aktivizua dot konfigurimi fiskal",
+      "time": 3000
+    }
+  }
+}

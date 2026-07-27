@@ -23,23 +23,32 @@ type Props = {
     money: (n: number) => string;
     rk: (key: string) => string;
     requirePin: boolean;
+    /** Shared manager-picker + PIN flow from the till host. */
+    requestManagerAuth?: () => Promise<{managerPin: string; managerId: string} | null>;
 };
 
 function remainingQty(line: PosOrderLine): number {
     return Math.max(0, Number(line.quantity) - Number(line.quantityRefunded ?? 0));
 }
 
-export default function PosRefundDialog({open, order, onOpenChange, onRefunded, money, rk, requirePin}: Props) {
+export default function PosRefundDialog({
+    open,
+    order,
+    onOpenChange,
+    onRefunded,
+    money,
+    rk,
+    requirePin,
+    requestManagerAuth,
+}: Props) {
     const [qtyByLine, setQtyByLine] = useState<Record<string, number>>({});
     const [reason, setReason] = useState("");
-    const [pin, setPin] = useState("");
     const [busy, setBusy] = useState(false);
 
     useEffect(() => {
         if (open) {
             setQtyByLine({});
             setReason("");
-            setPin("");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- reset only when dialog opens for a given order
     }, [open, order?._id]);
@@ -61,16 +70,25 @@ export default function PosRefundDialog({open, order, onOpenChange, onRefunded, 
 
     const submit = async () => {
         if (!order || !hasSelection || busy) return;
-        if (requirePin && !pin.trim()) {
-            toast.error(rk("refundDialog.pinRequired"));
-            return;
+        let managerPin: string | undefined;
+        let managerId: string | undefined;
+        if (requirePin) {
+            if (!requestManagerAuth) {
+                toast.error(rk("refundDialog.pinRequired"));
+                return;
+            }
+            const auth = await requestManagerAuth();
+            if (!auth) return;
+            managerPin = auth.managerPin;
+            managerId = auth.managerId;
         }
         setBusy(true);
         try {
             await apiClient.post("/api/eCommerce/pos/refund", {
                 _id: order._id,
                 reason: reason.trim() || undefined,
-                managerPin: requirePin ? pin.trim() : undefined,
+                managerPin,
+                managerId,
                 lines: refundableLines
                     .filter((line) => (qtyByLine[line._id ?? ""] ?? 0) > 0)
                     .map((line) => ({lineId: line._id, quantity: qtyByLine[line._id ?? ""]})),
@@ -179,19 +197,9 @@ export default function PosRefundDialog({open, order, onOpenChange, onRefunded, 
                         <label className="text-xs font-medium text-muted-foreground">{rk("reason")}</label>
                         <Input value={reason} onChange={(e) => setReason(e.target.value)} />
                     </div>
-                    {requirePin && (
-                        <div className="space-y-1">
-                            <label className="text-xs font-medium text-muted-foreground">{rk("refundDialog.pinLabel")}</label>
-                            <Input
-                                type="password"
-                                inputMode="numeric"
-                                autoComplete="off"
-                                value={pin}
-                                onChange={(e) => setPin(e.target.value)}
-                                className="tracking-[0.35em]"
-                            />
-                        </div>
-                    )}
+                    {requirePin ? (
+                        <p className="text-[11px] text-muted-foreground">{rk("refundDialog.pinHint")}</p>
+                    ) : null}
                     <div className="flex items-center justify-between text-sm">
                         <span className="text-muted-foreground">{rk("refundDialog.total")}</span>
                         <span className="font-semibold tabular-nums">{money(refundTotal)}</span>
@@ -204,7 +212,7 @@ export default function PosRefundDialog({open, order, onOpenChange, onRefunded, 
                     <Button
                         variant="destructive"
                         onClick={() => void submit()}
-                        disabled={busy || !hasSelection || (requirePin && !pin.trim())}
+                        disabled={busy || !hasSelection}
                     >
                         {busy ? rk("busy") : rk("refundDialog.submit")}
                     </Button>

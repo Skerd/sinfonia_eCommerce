@@ -5,10 +5,24 @@
   "createFulfillment": "Krijo përmbushje",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "order": "Porosia",
     "status": "Statusi",
+    "items": {
+      "orderItemId": "ID e artikullit të porosisë",
+      "quantity": "Sasia"
+    },
     "carrier": "Transportuesi",
     "trackingNumber": "Numri i gjurmimit",
+    "trackingUrl": "URL e gjurmimit",
     "shippedAt": "Dërguar më",
-    "deliveredAt": "Dorëzuar më"
+    "estimatedDeliveryAt": "Dorëzimi i pritur",
+    "deliveredAt": "Dorëzuar më",
+    "notes": "Shënime",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
   }
 }

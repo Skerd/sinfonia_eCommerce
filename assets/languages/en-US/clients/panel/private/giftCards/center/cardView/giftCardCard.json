@@ -3,6 +3,7 @@
   "status": "Status",
   "balance": "Balance",
   "purchasedBy": "Purchased by",
+  "ofInitial": "of {amount}",
   "giftCardStatus": {
     "active": "Active",
     "depleted": "Depleted",
