@@ -51,7 +51,6 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `returnRequests` | `/eCommerce/returnrequests` | Returns, exchanges, refunds |
 | `customerAddresses` | `/eCommerce/customeraddresses` | Customer addresses |
 | `productReviews` | `/eCommerce/productreviews` | Review moderation (created via storefront, purchase-gated) |
-| `giftCards` | `/eCommerce/giftcards` | Gift card balances (system-issued, disable via edit) |
 | `inventories` | `/eCommerce/inventories` | Stock levels |
 | `warehouses` | `/eCommerce/warehouses` | Warehouses |
 | `discounts` | `/tenancy/systemSettings/discounts` | Discounts |
@@ -61,7 +60,6 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `customerGroups` | `/eCommerce/customergroups` | Customer groups |
 | `pricingRules` | `/tenancy/systemSettings/pricingrules` | Pricing rules |
 | `analytics` | `/eCommerce/analytics` | Analytics dashboard |
-| `escrowDashboard` | `/eCommerce/escrowdashboard` | Escrow overview |
 | `systemMap` | `/eCommerce/systemmap` | Catalog eCommerce architecture map (models, checkout flow, capabilities) |
 
 Each resource folder typically contains `index.tsx` (list), `create*.tsx`, and `edit*.tsx` pages built on core entity page / view engine primitives.
