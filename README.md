@@ -10,6 +10,7 @@ Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present 
 
 ```
 eCommerce/
+├── apps/shop/                  # Vite shop client (index.html + entry)
 ├── assets/languages/           # Module i18n (en-US, sq-AL)
 ├── clients/panel/
 │   ├── private/<resource>/     # List, create, edit pages
@@ -27,7 +28,7 @@ eCommerce/
 ## Storefront (shop app)
 
 The buyer-facing storefront is a separate Vite client: run with `VITE_SINFONIA_APP=shop`
-(registered in `src/apps/registry.ts`, entry under `src/apps/shop/`). Pages are hand-built
+(discovered from `src/modules/eCommerce/apps/shop/`). Pages are hand-built
 React (no ViewConfig) hitting the public maestro routes `shopProducts`, `shopProduct`,
 `shopTaxonomy`, `shopConfig`, `cmsBlock/public`, plus the authenticated cart/checkout
 routers. Cart and checkout require a signed-in user (JWT in localStorage — shared origin
