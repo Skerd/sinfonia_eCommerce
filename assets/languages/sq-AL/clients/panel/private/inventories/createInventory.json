@@ -11,5 +11,27 @@
     "quantityOnHandLabel": "Sasia në dispozicion",
     "reorderPointLabel": "Pika e riporositjes",
     "reorderQuantityLabel": "Sasia e riporositjes"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar inventarin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventari u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua dot inventari",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo inventar",
+    "description": "Lidh një produkt me një magazinë dhe vendos nivelet fillestare të stokut."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo inventar"
   }
 }

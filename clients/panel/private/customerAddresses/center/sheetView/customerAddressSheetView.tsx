@@ -21,6 +21,7 @@ export type CustomerAddressSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
     onSheetRowPatched?: (row: Record<string, unknown>) => void;
+    onDefaultChanged?: (addressId: string) => void;
 };
 
 function customerAddressEditPath(entity: CustomerAddress) {
@@ -40,6 +41,7 @@ function CustomerAddressSheetView({
     onRestore = () => {},
     fetchId,
     onSheetRowPatched,
+    onDefaultChanged,
 }: CustomerAddressSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
     const [action, setAction] = useState("");
@@ -91,9 +93,10 @@ function CustomerAddressSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isDefault: true}));
+                        onSheetRowPatched?.({isDefault: true});
+                        onDefaultChanged?.(asEntity._id);
                     }}
                 />
             )}

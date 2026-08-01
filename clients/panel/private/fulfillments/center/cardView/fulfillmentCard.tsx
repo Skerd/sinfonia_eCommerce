@@ -206,7 +206,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={(patch) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "markDeliveredFulfillment" && (
@@ -214,7 +214,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={(patch) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "markFailedFulfillment" && (
@@ -222,7 +222,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={(patch) => setEntity({...entity, ...patch})}
                         />
                     )}
                 </>

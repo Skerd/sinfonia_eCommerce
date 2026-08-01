@@ -20,6 +20,7 @@ type Props = {
     money: (n: number) => string;
     rk: (key: string) => string;
     ifaceCashControl: boolean;
+    isPaused?: boolean;
     onInfo: () => void;
     onHeld: () => void;
     onOrders: () => void;
@@ -34,6 +35,7 @@ export default function PosTillHeader({
     money,
     rk,
     ifaceCashControl,
+    isPaused = false,
     onInfo,
     onHeld,
     onOrders,
@@ -42,7 +44,27 @@ export default function PosTillHeader({
     onCloseSession,
 }: Props) {
     return (
-        <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2 print:hidden">
+        <>
+            {isPaused && (
+                <div
+                    className={cn(
+                        "shrink-0 border-b px-3 py-2 text-sm print:hidden",
+                        config?.isCompanyPaused
+                            ? "border-destructive/40 bg-destructive/10 text-destructive"
+                            : "border-amber-500/40 bg-amber-500/15 text-amber-900 dark:text-amber-100",
+                    )}
+                >
+                    <div className="font-semibold">
+                        {config?.isCompanyPaused ? rk("paused.companyBanner") : rk("paused.banner")}
+                    </div>
+                    {(config?.isCompanyPaused ? config.companyPauseReason : config?.pauseReason) ? (
+                        <div className="text-xs opacity-80">
+                            {config?.isCompanyPaused ? config.companyPauseReason : config?.pauseReason}
+                        </div>
+                    ) : null}
+                </div>
+            )}
+            <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2 print:hidden">
             <div className="flex min-w-0 flex-1 items-center gap-3">
                 <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
                     <Monitor className="size-4" />
@@ -54,12 +76,20 @@ export default function PosTillHeader({
                         <span
                             className={cn(
                                 "inline-flex items-center rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
-                                session.state === "opened"
-                                    ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
-                                    : "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+                                isPaused
+                                    ? config?.isCompanyPaused
+                                      ? "bg-destructive/15 text-destructive"
+                                      : "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                                    : session.state === "opened"
+                                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+                                      : "bg-amber-500/15 text-amber-600 dark:text-amber-400",
                             )}
                         >
-                            {rk(`sessionState.${session.state}`)}
+                            {isPaused
+                                ? config?.isCompanyPaused
+                                  ? rk("paused.companyBadge")
+                                  : rk("paused.badge")
+                                : rk(`sessionState.${session.state}`)}
                         </span>
                         <span className="tabular-nums">
                             {rk("cash")}: {money(session.cashRegisterBalance ?? 0)}
@@ -107,6 +137,7 @@ export default function PosTillHeader({
                             variant="outline"
                             className="h-8 border-border bg-background text-foreground hover:bg-muted"
                             onClick={onCashIn}
+                            disabled={isPaused}
                         >
                             <Banknote className="size-3.5" />
                             {rk("cashIn")}
@@ -116,6 +147,7 @@ export default function PosTillHeader({
                             variant="outline"
                             className="h-8 border-border bg-background text-foreground hover:bg-muted"
                             onClick={onCashOut}
+                            disabled={isPaused}
                         >
                             <BanknoteArrowDown className="size-3.5" />
                             {rk("cashOut")}
@@ -139,5 +171,6 @@ export default function PosTillHeader({
                 </Button>
             </div>
         </header>
+        </>
     );
 }

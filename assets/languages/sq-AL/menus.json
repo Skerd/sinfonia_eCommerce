@@ -1,9 +1,6 @@
 {
   "eCommerce": {
     "title": "eCommerce",
-    "escrowDashboard": {
-      "title": "Paneli Eskro"
-    },
     "pos": {
       "title": "Pika e Shitjes"
     },
@@ -76,9 +73,6 @@
     "returnrequests": {
       "title": "Kërkesat për kthim"
     },
-    "paymenttransactions": {
-      "title": "Transaksionet e pagesave"
-    },
     "productvariants": {
       "title": "Variantet e produkteve"
     },
@@ -87,9 +81,6 @@
     },
     "productreviews": {
       "title": "Vlerësimet e produkteve"
-    },
-    "giftcards": {
-      "title": "Kartat dhuratë"
     }
   },
   "tenancy": {
@@ -132,6 +123,12 @@
       },
       "productvariants": {
         "title": "Variantet e produkteve"
+      },
+      "fiscalconfigs": {
+        "title": "Fiskale / E-faturë"
+      },
+      "cmsblocks": {
+        "title": "Blloqet CMS"
       }
     }
   }

@@ -11,5 +11,27 @@
     "quantityOnHandLabel": "Quantity on hand",
     "reorderPointLabel": "Reorder point",
     "reorderQuantityLabel": "Reorder quantity"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating inventory",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventory created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create inventory",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create inventory",
+    "description": "Link a product to a warehouse and set starting stock levels."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create inventory"
   }
 }

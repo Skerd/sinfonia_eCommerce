@@ -15,6 +15,7 @@
   "cashQuickAmounts": "Cash quick amounts",
   "terminalEnabled": "Bank POS terminal",
   "terminalProviderLabel": "Terminal provider",
+  "terminalProtocolLabel": "Protocol",
   "terminalHost": "Terminal host",
   "terminalPort": "Terminal port",
   "terminalId": "Terminal ID",
@@ -29,5 +30,9 @@
   "terminalProvider": {
     "manual": "Manual",
     "local_http": "Local HTTP"
+  },
+  "terminalProtocol": {
+    "http": "HTTP",
+    "https": "HTTPS"
   }
 }

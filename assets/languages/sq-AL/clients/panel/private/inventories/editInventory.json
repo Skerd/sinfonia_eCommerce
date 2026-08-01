@@ -1,8 +1,33 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Ndrysho inventarin",
+  "errorTitle": "Ngarkimi i inventarit dështoi",
+  "errorDescription": "Nuk u ngarkua dot ky inventar. Provo përsëri.",
   "form": {
+    "_idLabel": "ID e regjistrimit",
     "reorderPointLabel": "Pika e riporositjes",
     "reorderQuantityLabel": "Sasia e riporositjes"
   },
-  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
-  "title": "Ndrysho inventarin"
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur inventarin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventari u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u përditësua dot inventari",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho inventarin",
+    "description": "Përditëso pragjet e riporositjes për këtë rresht stoku."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
 }

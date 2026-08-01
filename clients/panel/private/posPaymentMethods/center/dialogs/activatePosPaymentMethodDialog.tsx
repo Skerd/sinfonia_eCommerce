@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.dto.ts";
 
 type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<PosPaymentMethod, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: PosPaymentMethod;
-        onSuccess?: (method: PosPaymentMethod) => void;
+        onSuccess?: () => void;
     };
 
 function ActivatePosPaymentMethodDialog({
@@ -35,8 +36,8 @@ function ActivatePosPaymentMethodDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: PosPaymentMethod) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -72,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
     ),
-    withAxios<PosPaymentMethod, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/posPaymentMethod/activate", method: "POST", data: {}},
         true,
     ),

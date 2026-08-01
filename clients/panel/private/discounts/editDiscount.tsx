@@ -36,19 +36,24 @@ export default createGenericEditPage<Discount, EditDiscountFormType>({
     accessModel: "discounts",
     apiUrl: "/api/eCommerce/discount",
     schema: editDiscountFormSchema,
-    mapEntityData: (data) => ({
-        ...data,
-        targetIds: data.targetIds ?? data.targets?.map((t) => t._id),
-        customerGroups: data.customerGroups ?? data.customerGroupRefs?.map((g) => g._id),
-        buyXGetY: data.buyXGetY
-            ? {
-                  ...data.buyXGetY,
-                  getProductIds: data.buyXGetY.getProductIds ?? data.buyXGetY.getProducts?.map((p) => p._id) ?? [],
-              }
-            : undefined,
-        startsAt: toFormDateTime(data.startsAt),
-        endsAt: toFormDateTime(data.endsAt),
-    }),
+    mapEntityData: (data) => {
+        const isBxgy = data.type === "buy_x_get_y";
+        return {
+            ...data,
+            ...(isBxgy
+                ? {appliesTo: "product" as const, value: 0, targetIds: []}
+                : {targetIds: data.targetIds ?? data.targets?.map((t) => t._id)}),
+            customerGroups: data.customerGroups ?? data.customerGroupRefs?.map((g) => g._id),
+            buyXGetY: data.buyXGetY
+                ? {
+                      ...data.buyXGetY,
+                      getProductIds: data.buyXGetY.getProductIds ?? data.buyXGetY.getProducts?.map((p) => p._id) ?? [],
+                  }
+                : undefined,
+            startsAt: toFormDateTime(data.startsAt),
+            endsAt: toFormDateTime(data.endsAt),
+        };
+    },
     buildFormExtras: (_entityId, _params, entity) => {
         if (entity) {
             if (discountChipLabelState.loadedId !== entity._id) {

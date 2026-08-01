@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx",
+  "title": "Activate tax zone",
+  "description": "This tax zone will be used when calculating tax at checkout.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating tax zone…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tax zone activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate tax zone",
+      "time": 3000
+    }
+  }
+}

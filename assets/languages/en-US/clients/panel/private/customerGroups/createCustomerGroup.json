@@ -5,8 +5,7 @@
     "nameLabel": "Name",
     "namePlaceholder": "Group name",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Optional description",
-    "isDefaultLabel": "Default group"
+    "descriptionPlaceholder": "Optional description"
   },
   "axios": {
     "start": {

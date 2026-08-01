@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/activatePosConfigDialog.tsx",
+  "title": "Activate POS config",
+  "description": "This till configuration will be available for opening the POS.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating POS config…",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate POS config",
+      "time": 3000
+    }
+  }
+}

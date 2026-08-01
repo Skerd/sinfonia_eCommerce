@@ -1,6 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx",
   "overview": "Overview",
+  "address": "Address",
   "related": "Related",
   "customerAddressSubtitle": "Address details",
   "failedTitle": "Failed to load address",
@@ -18,7 +19,7 @@
   "latitude": "Latitude",
   "longitude": "Longitude",
   "country": "Country",
-  "user": "Customer",
+  "customer": "Customer",
   "createdBy": "Created by",
   "company": "Company",
   "yes": "Yes",

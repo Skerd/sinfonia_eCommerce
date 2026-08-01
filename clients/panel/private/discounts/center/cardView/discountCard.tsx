@@ -37,6 +37,7 @@ type DiscountCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function DiscountCard({
@@ -46,6 +47,7 @@ function DiscountCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: DiscountCardProps) {
     const [action, setAction] = useState<string>("");
     const [discount, setDiscount] = useState<Discount>(discountProp);
@@ -185,6 +187,10 @@ function DiscountCard({
                             fetchId={discount._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onActiveChanged={(isActive) => {
+                                setDiscount((prev) => ({...prev, isActive}));
+                                onActiveChanged?.(isActive);
+                            }}
                             onSheetRowPatched={(row) => setDiscount(row as Discount)}
                         />
                     )}
@@ -217,7 +223,10 @@ function DiscountCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={discount}
-                            onSuccess={(row) => setDiscount(row)}
+                            onSuccess={() => {
+                                setDiscount((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivateDiscount" && (
@@ -225,7 +234,10 @@ function DiscountCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={discount}
-                            onSuccess={(row) => setDiscount(row)}
+                            onSuccess={() => {
+                                setDiscount((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                 </>

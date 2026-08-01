@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type EntityListRefs} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -15,6 +15,22 @@ export function customerAddressEditPath(entity: {_id: string; firstName?: string
     params.set("customerAddressId", entity._id);
     if (entity.firstName) params.set("customerAddressTitle", encodeURIComponent(String(entity.firstName)));
     return `/eCommerce/customeraddresses/edit?${params.toString()}`;
+}
+
+function applySetDefaultToList(
+    listRef: EntityListRefs<CustomerAddress> | null | undefined,
+    defaultAddress: CustomerAddress,
+) {
+    const ownerId = defaultAddress.customer?._id;
+    listRef?.current?.mapRows?.((row) => {
+        if (row._id === defaultAddress._id) return {isDefault: true};
+        if (!row.isDefault) return;
+        if (ownerId) {
+            if (row.customer?._id === ownerId) return {isDefault: false};
+            return;
+        }
+        return {isDefault: false};
+    });
 }
 
 function AllCustomerAddresses({resolveLanguageKey}: WithLanguageType) {
@@ -45,17 +61,18 @@ function AllCustomerAddresses({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            onSuccess={() => applySetDefaultToList(listRef, entity)}
                         />
                     );
                 }
                 return null;
             }}
-            renderCard={(entity, onDelete, onRestore) => (
+            renderCard={(entity, onDelete, onRestore, listRef) => (
                 <CustomerAddressCard
                     entity={entity}
                     onDelete={(row: CustomerAddress | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
+                    onDefaultChanged={() => applySetDefaultToList(listRef, entity)}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -67,6 +84,7 @@ function AllCustomerAddresses({resolveLanguageKey}: WithLanguageType) {
                     entity={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
+                    onDefaultChanged={() => applySetDefaultToList(listRef, entity)}
                     onSheetRowPatched={(row: Record<string, unknown>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<CustomerAddress>);
                     }}

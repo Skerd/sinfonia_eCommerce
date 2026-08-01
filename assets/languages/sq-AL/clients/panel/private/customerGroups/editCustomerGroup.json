@@ -8,8 +8,7 @@
     "nameLabel": "Emri",
     "namePlaceholder": "Emri i grupit",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Përshkrim opsional",
-    "isDefaultLabel": "Grupi i parazgjedhur"
+    "descriptionPlaceholder": "Përshkrim opsional"
   },
   "axios": {
     "start": {
@@ -27,7 +26,7 @@
   },
   "formHeader": {
     "title": "Ndrysho grupin e klientëve",
-    "description": "Përditësoni emrin, përshkrimin dhe cilësimin e grupit të parazgjedhur."
+    "description": "Përditësoni emrin dhe përshkrimin."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PricingRule} from "armonia/src/modules/eCommerce/api/eCommerce/private/pricingRule/pricingRule.dto.ts";
 
 type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<PricingRule, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: PricingRule;
-        onSuccess?: (pricingRule: PricingRule) => void;
+        onSuccess?: () => void;
     };
 
 function DeactivatePricingRuleDialog({
@@ -35,8 +36,8 @@ function DeactivatePricingRuleDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: PricingRule) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -57,7 +58,6 @@ function DeactivatePricingRuleDialog({
                     </Button>
                     <Button
                         type="button"
-                        variant="destructive"
                         disabled={loading}
                         onClick={() => onFilterChange({_id: entity._id})}
                     >
@@ -73,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx",
     ),
-    withAxios<PricingRule, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/pricingRule/deactivate", method: "POST", data: {}},
         true,
     ),

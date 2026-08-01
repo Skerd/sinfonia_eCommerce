@@ -13,5 +13,7 @@
   "addError": "Failed to add member.",
   "removeSuccess": "Member removed.",
   "removeError": "Failed to remove member.",
-  "loadError": "Failed to load members."
+  "loadError": "Failed to load members.",
+  "previousPage": "Previous",
+  "nextPage": "Next"
 }

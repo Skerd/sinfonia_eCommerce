@@ -1,9 +1,6 @@
 {
   "eCommerce": {
     "title": "eCommerce",
-    "escrowDashboard": {
-      "title": "Escrow Dashboard"
-    },
     "pos": {
       "title": "Point of Sale"
     },
@@ -76,9 +73,6 @@
     "returnrequests": {
       "title": "Return requests"
     },
-    "paymenttransactions": {
-      "title": "Payment transactions"
-    },
     "productvariants": {
       "title": "Product variants"
     },
@@ -87,9 +81,6 @@
     },
     "productreviews": {
       "title": "Product reviews"
-    },
-    "giftcards": {
-      "title": "Gift cards"
     }
   },
   "tenancy": {
@@ -132,6 +123,12 @@
       },
       "productvariants": {
         "title": "Product Variants"
+      },
+      "fiscalconfigs": {
+        "title": "Fiscal / E-Invoice"
+      },
+      "cmsblocks": {
+        "title": "CMS Blocks"
       }
     }
   }

@@ -7,6 +7,16 @@
   "cashOut": "Cash Out",
   "closeSession": "Close Session",
   "closeSessionDescription": "Count the drawer and close this till session.",
+  "paused": {
+    "banner": "POS paused by admin — selling is blocked. You can discard held carts and close the till.",
+    "companyBanner": "All company POS tills are paused — this is not a single-till pause. Selling is blocked. You can discard held carts and close the till.",
+    "badge": "Paused",
+    "companyBadge": "Company paused",
+    "forceClosedToast": "This till session was force-closed by an admin pause."
+  },
+  "inactive": {
+    "banner": "This POS till is inactive and cannot be opened."
+  },
   "cash": "Cash",
   "orders": "Orders",
   "sessionSales": "Session sales",

@@ -9,8 +9,10 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
 import DeactivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx";
+import SetDefaultWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/setDefaultWarehouse.tsx";
 import ActivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx";
 import DeactivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx";
+import SetDefaultWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/warehouses";
 
@@ -23,6 +25,7 @@ export type WarehouseSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
     onSheetRowPatched?: (row: Record<string, unknown>) => void;
+    onDefaultChanged?: (warehouseId: string) => void;
 };
 
 function warehouseEditPath(warehouse: Warehouse) {
@@ -42,6 +45,7 @@ function WarehouseSheetView({
     onRestore = () => {},
     fetchId,
     onSheetRowPatched,
+    onDefaultChanged,
 }: WarehouseSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(warehouseProp || {_id: fetchId});
     const [action, setAction] = useState("");
@@ -86,19 +90,31 @@ function WarehouseSheetView({
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <>
+                        <SetDefaultWarehouse entity={asEntity} onAction={(a: string) => setAction(a)} />
                         <ActivateWarehouse entity={asEntity} onAction={(a: string) => setAction(a)} />
                         <DeactivateWarehouse entity={asEntity} onAction={(a: string) => setAction(a)} />
                     </>
                 }
             />
+            {action === "setDefaultWarehouse" && (
+                <SetDefaultWarehouseDialog
+                    open
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isDefault: true}));
+                        onDefaultChanged?.(asEntity._id);
+                    }}
+                />
+            )}
             {action === "activateWarehouse" && (
                 <ActivateWarehouseDialog
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
                     }}
                 />
             )}
@@ -107,9 +123,9 @@ function WarehouseSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
                     }}
                 />
             )}

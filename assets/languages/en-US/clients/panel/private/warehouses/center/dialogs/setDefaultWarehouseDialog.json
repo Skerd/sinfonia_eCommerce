@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx",
+  "title": "Make default warehouse",
+  "description": "This will make this warehouse the default, and the current default one will be reassigned.",
+  "cancel": "Cancel",
+  "confirm": "Make default",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Setting default warehouse…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Default warehouse updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not set default warehouse",
+      "time": 3000
+    }
+  }
+}

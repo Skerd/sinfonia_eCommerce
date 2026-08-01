@@ -14,19 +14,20 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 
 type PostPayload = {
-    fulfillmentId: string;
+    _id: string;
     notes?: string;
 };
 
 type Props = WithLanguageType &
-    WithAxiosType<Fulfillment, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: Fulfillment;
-        onSuccess?: (row: Fulfillment) => void;
+        onSuccess?: (patch: Partial<Fulfillment>) => void;
     };
 
 function MarkDeliveredFulfillmentDialog({
@@ -42,8 +43,12 @@ function MarkDeliveredFulfillmentDialog({
     const [notes, setNotes] = useState(entity.notes ?? "");
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: Fulfillment) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.({
+                status: "delivered",
+                deliveredAt: new Date().toISOString(),
+                notes: notes.trim() || entity.notes,
+            });
             onClose();
         },
         error: () => {
@@ -81,7 +86,7 @@ function MarkDeliveredFulfillmentDialog({
                         disabled={loading}
                         onClick={() =>
                             onFilterChange({
-                                fulfillmentId: entity._id,
+                                _id: entity._id,
                                 notes: notes.trim() || undefined,
                             })
                         }
@@ -98,7 +103,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
     ),
-    withAxios<Fulfillment, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/fulfillment/markDelivered", method: "POST", data: {}},
         true,
     ),

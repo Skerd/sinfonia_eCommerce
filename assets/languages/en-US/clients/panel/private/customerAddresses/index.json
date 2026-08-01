@@ -5,7 +5,7 @@
   "createCustomerAddress": "Create address",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "user": "Customer",
+    "customer": "Customer",
     "firstName": "Recipient first name",
     "lastName": "Recipient last name",
     "phone": "Phone",

@@ -18,6 +18,16 @@ export type ProductReviewSheetViewOwnProps = {
     fetchId?: string;
 };
 
+/** Client-only header label — not part of the API DTO. */
+function withSheetTitle(review: ProductReview): ProductReview & {displayTitle: string} {
+    const displayTitle =
+        review.title?.trim() ||
+        review.product?.title ||
+        (review.rating != null ? `${review.rating}★` : undefined) ||
+        review._id;
+    return {...review, displayTitle};
+}
+
 function ProductReviewSheetView({
     open,
     onOpenChange,
@@ -28,16 +38,15 @@ function ProductReviewSheetView({
     onRestore = () => {},
     fetchId,
 }: ProductReviewSheetViewOwnProps & WithLanguageType) {
-    const [sheetData, setSheetData] = useState<Record<string, unknown>>(entityProp || {_id: fetchId});
+    const [sheetData, setSheetData] = useState<Record<string, unknown>>(
+        entityProp ? withSheetTitle(entityProp) : {_id: fetchId},
+    );
     const access = useAccess("productReviews");
     const viewConfig = useViewConfig("productReviews", "sheet");
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData((prev) => ({
-            ...entityProp,
-            displayTitle: entityProp.displayTitle ?? (prev as ProductReview).displayTitle,
-        }));
+        setSheetData(withSheetTitle(entityProp));
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -51,7 +60,7 @@ function ProductReviewSheetView({
             url="/api/eCommerce/productReview/single"
             fetchId={fetchId ?? entityProp?._id}
             onDataFetched={(data) => {
-                setSheetData(data);
+                setSheetData(withSheetTitle(data as ProductReview));
             }}
             data={sheetData}
             open={open}

@@ -5,8 +5,8 @@
   "errorDescription": "Could not load this address. Try again.",
   "form": {
     "_idLabel": "Record ID",
-    "userLabel": "Customer",
-    "userPlaceholder": "Select customer",
+    "customerLabel": "Customer",
+    "customerPlaceholder": "Select customer",
     "firstNameLabel": "Recipient first name",
     "firstNamePlaceholder": "First name on the package",
     "lastNameLabel": "Recipient last name",
@@ -14,9 +14,9 @@
     "streetLabel": "Street",
     "streetPlaceholder": "Street address",
     "cityLabel": "City",
-    "cityPlaceholder": "City",
+    "cityPlaceholder": "Select city",
     "stateLabel": "State",
-    "statePlaceholder": "State or region",
+    "statePlaceholder": "Select state",
     "postalCodeLabel": "Postal code",
     "postalCodePlaceholder": "Postal code",
     "phoneLabel": "Phone",
@@ -28,8 +28,7 @@
     "longitudeLabel": "Longitude",
     "longitudePlaceholder": "19.8189",
     "labelLabel": "Label",
-    "labelPlaceholder": "Home, work, …",
-    "isDefaultLabel": "Default address"
+    "labelPlaceholder": "Home, work, …"
   },
   "axios": {
     "start": {

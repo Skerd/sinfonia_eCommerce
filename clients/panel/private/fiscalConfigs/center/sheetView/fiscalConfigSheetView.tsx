@@ -12,7 +12,7 @@ import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fisca
 import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
 import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 
-const LIST_BASE = "/eCommerce/fiscalconfigs";
+const LIST_BASE = "/tenancy/systemSettings/fiscalconfigs";
 
 export type FiscalConfigSheetViewOwnProps = {
     open: boolean;
@@ -92,9 +92,9 @@ function FiscalConfigSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
                     }}
                 />
             )}
@@ -103,9 +103,9 @@ function FiscalConfigSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
                     }}
                 />
             )}

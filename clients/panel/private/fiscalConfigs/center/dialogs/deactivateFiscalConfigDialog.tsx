@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {FiscalConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/fiscalConfig.dto.ts";
 
 type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<FiscalConfig, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: FiscalConfig;
-        onSuccess?: (config: FiscalConfig) => void;
+        onSuccess?: () => void;
     };
 
 function DeactivateFiscalConfigDialog({
@@ -35,8 +36,8 @@ function DeactivateFiscalConfigDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: FiscalConfig) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -72,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx",
     ),
-    withAxios<FiscalConfig, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/fiscalConfig/deactivate", method: "POST", data: {}},
         true,
     ),

@@ -99,9 +99,10 @@ function FulfillmentSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={(patch) => {
+                        const next = {...sheetData, ...patch};
+                        setSheetData(next);
+                        onSheetRowPatched?.(next);
                     }}
                 />
             )}
@@ -110,9 +111,10 @@ function FulfillmentSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={(patch) => {
+                        const next = {...sheetData, ...patch};
+                        setSheetData(next);
+                        onSheetRowPatched?.(next);
                     }}
                 />
             )}
@@ -121,9 +123,10 @@ function FulfillmentSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={(patch) => {
+                        const next = {...sheetData, ...patch};
+                        setSheetData(next);
+                        onSheetRowPatched?.(next);
                     }}
                 />
             )}

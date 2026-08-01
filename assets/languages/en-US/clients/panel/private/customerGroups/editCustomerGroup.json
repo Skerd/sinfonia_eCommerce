@@ -8,8 +8,7 @@
     "nameLabel": "Name",
     "namePlaceholder": "Group name",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Optional description",
-    "isDefaultLabel": "Default group"
+    "descriptionPlaceholder": "Optional description"
   },
   "axios": {
     "start": {
@@ -27,7 +26,7 @@
   },
   "formHeader": {
     "title": "Edit customer group",
-    "description": "Update the name, description, and default group setting."
+    "description": "Update the name and description."
   },
   "formButtons": {
     "cancel": "Cancel",

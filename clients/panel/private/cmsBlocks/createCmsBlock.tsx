@@ -31,6 +31,6 @@ export default createGenericCreatePage<CreateCmsBlockFormType>({
         ...data,
         config: parseConfigForSubmit((data as any).config),
     }),
-    successPath: "/eCommerce/cmsblocks",
+    successPath: "/tenancy/systemSettings/cmsblocks",
     submitIcon: <IconPlus />,
 });

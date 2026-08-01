@@ -5,7 +5,7 @@
   "createCustomerAddress": "Krijo adresë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "user": "Klienti",
+    "customer": "Klienti",
     "firstName": "Emri i marrësit",
     "lastName": "Mbiemri i marrësit",
     "phone": "Telefoni",

@@ -19,8 +19,10 @@ import RestoreAction from "@coreModule/components/custom/actions/restoreAction.t
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
 import DeactivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx";
+import SetDefaultWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/setDefaultWarehouse.tsx";
 import ActivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx";
 import DeactivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx";
+import SetDefaultWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/warehouses";
 
@@ -43,6 +45,8 @@ type WarehouseCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onDefaultChanged?: (warehouseId: string) => void;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function WarehouseCard({
@@ -52,6 +56,8 @@ function WarehouseCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onDefaultChanged,
+    onActiveChanged,
 }: WarehouseCardProps) {
     const [action, setAction] = useState<string>("");
     const [warehouse, setWarehouse] = useState<Warehouse>(warehouseProp);
@@ -140,6 +146,7 @@ function WarehouseCard({
                                             editPath={warehouseEditPath(warehouse)}
                                             allowMenuForCustomChildren
                                         >
+                                            <SetDefaultWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
                                             <ActivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
                                             <DeactivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
                                         </ActionMenu>
@@ -193,7 +200,27 @@ function WarehouseCard({
                             fetchId={warehouse._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setWarehouse(row as Warehouse)}
+                            onDefaultChanged={(warehouseId) => {
+                                setWarehouse((prev) => ({...prev, isDefault: true, _id: warehouseId}));
+                                onDefaultChanged?.(warehouseId);
+                            }}
+                            onSheetRowPatched={(row) => {
+                                setWarehouse((prev) => ({...prev, ...row}) as Warehouse);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
+                        />
+                    )}
+                    {action === "setDefaultWarehouse" && (
+                        <SetDefaultWarehouseDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={warehouse}
+                            onSuccess={() => {
+                                setWarehouse((prev) => ({...prev, isDefault: true}));
+                                onDefaultChanged?.(warehouse._id);
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -225,7 +252,10 @@ function WarehouseCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={warehouse}
-                            onSuccess={(row) => setWarehouse(row)}
+                            onSuccess={() => {
+                                setWarehouse((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivateWarehouse" && (
@@ -233,7 +263,10 @@ function WarehouseCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={warehouse}
-                            onSuccess={(row) => setWarehouse(row)}
+                            onSuccess={() => {
+                                setWarehouse((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                 </>

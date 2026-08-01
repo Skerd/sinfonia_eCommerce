@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 
 type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<CmsBlock, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: CmsBlock;
-        onSuccess?: (block: CmsBlock) => void;
+        onSuccess?: () => void;
     };
 
 function ActivateCmsBlockDialog({
@@ -35,8 +36,8 @@ function ActivateCmsBlockDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: CmsBlock) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -72,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx",
     ),
-    withAxios<CmsBlock, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/cmsBlock/activate", method: "POST", data: {}},
         true,
     ),

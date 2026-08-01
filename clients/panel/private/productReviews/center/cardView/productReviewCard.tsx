@@ -48,7 +48,7 @@ function formatReviewerName(review: ProductReview): string {
 function reviewCardTitle(review: ProductReview): string {
     const title = review.title?.trim();
     if (title) return title;
-    return review.product?.title || review.displayTitle || `${review.rating}/5`;
+    return review.product?.title || `${review.rating}/5`;
 }
 
 function ProductReviewCard({
@@ -107,7 +107,7 @@ function ProductReviewCard({
     const avatarSrc = review.reviewer?.photo
         ? `/api/auxiliary/media/${review.reviewer.photo}`
         : undefined;
-    const confirmName = review.displayTitle || title;
+    const confirmName = title;
     const verified = Boolean(review.order?._id);
     const relativeDate = review.createdAt
         ? formatDistanceToNow(new Date(review.createdAt), {addSuffix: true})

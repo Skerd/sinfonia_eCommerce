@@ -43,11 +43,11 @@ function PosOrderSheetView({
         if (!entityProp) return;
         setSheetData((prev) => ({
             ...entityProp,
-            lineProducts: entityProp.lineProducts ?? (prev as PosOrder).lineProducts,
-            productOrderLabel: entityProp.productOrderLabel ?? (prev as PosOrder).productOrderLabel,
-            refundOfLabel: entityProp.refundOfLabel ?? (prev as PosOrder).refundOfLabel,
-            sessionLabel: entityProp.sessionLabel ?? (prev as PosOrder).sessionLabel,
-            configLabel: entityProp.configLabel ?? (prev as PosOrder).configLabel,
+            // Keep /single enrichments (list rows may omit nested refs).
+            productOrder: entityProp.productOrder ?? (prev as PosOrder).productOrder,
+            refundOf: entityProp.refundOf ?? (prev as PosOrder).refundOf,
+            session: entityProp.session ?? (prev as PosOrder).session,
+            config: entityProp.config ?? (prev as PosOrder).config,
         }));
     }, [entityProp]);
 

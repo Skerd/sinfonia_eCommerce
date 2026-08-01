@@ -7,6 +7,16 @@
   "cashOut": "Cash Dalje",
   "closeSession": "Mbyll Seancën",
   "closeSessionDescription": "Numëroni arkën dhe mbyllni këtë seancë.",
+  "paused": {
+    "banner": "POS i pauzuar nga admin — shitjet janë të bllokuara. Mund të hidhni karrocat e mbajtura dhe të mbyllni arkën.",
+    "companyBanner": "Të gjitha arkat POS të kompanisë janë në pauzë — kjo nuk është pauzë e një arke. Shitjet janë të bllokuara. Mund të hidhni karrocat e mbajtura dhe të mbyllni arkën.",
+    "badge": "Në pauzë",
+    "companyBadge": "Kompania në pauzë",
+    "forceClosedToast": "Kjo seancë arke u mbyll me forcë nga pauza e adminit."
+  },
+  "inactive": {
+    "banner": "Kjo arkë POS është joaktive dhe nuk mund të hapet."
+  },
   "cash": "Cash",
   "orders": "Porosi",
   "sessionSales": "Shitjet e seancës",

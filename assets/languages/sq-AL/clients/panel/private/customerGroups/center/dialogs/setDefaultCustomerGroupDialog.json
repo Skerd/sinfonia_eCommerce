@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx",
+  "title": "Bëje grupin e klientëve të parazgjedhur",
+  "description": "Kjo do ta bëjë këtë grup klientësh të parazgjedhur, dhe grupi aktual i parazgjedhur do të ri-caktohet.",
+  "cancel": "Anulo",
+  "confirm": "Bëje të parazgjedhur",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke vendosur grupin e parazgjedhur…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Grupi i parazgjedhur u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Grupi i parazgjedhur nuk u vendos",
+      "time": 3000
+    }
+  }
+}

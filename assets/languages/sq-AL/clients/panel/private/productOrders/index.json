@@ -4,12 +4,93 @@
   "description": "Gjurmo dhe menaxho porositë e klientëve.",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "confirmed": "Konfirmuar",
+        "processing": "Në përpunim",
+        "shipped": "Dërguar",
+        "delivered": "Dorëzuar",
+        "cancelled": "Anuluar",
+        "refunded": "Rimbursuar"
+      },
+      "paymentStatus": {
+        "unpaid": "E papaguar",
+        "authorized": "E autorizuar",
+        "paid": "E paguar",
+        "partially_refunded": "E rimbursuar pjesërisht",
+        "refunded": "E rimbursuar",
+        "voided": "E anuluar"
+      },
+      "fulfillmentStatus": {
+        "unfulfilled": "E papërmbushur",
+        "partially_fulfilled": "Pjesërisht e përmbushur",
+        "fulfilled": "E përmbushur",
+        "returned": "E kthyer"
+      }
+    },
     "orderNumber": "Numri i porosisë",
     "customer": "Klienti",
-    "status": "Statusi",
-    "paymentStatus": "Pagesa",
+    "email": "Email",
+    "phone": "Telefoni",
+    "items": "Artikujt",
+    "subtotal": "Nëntotali",
+    "discountTotal": "Zbritja",
+    "shippingTotal": "Transporti",
+    "taxTotal": "Taksa",
     "grandTotal": "Totali",
+    "currency": "Monedha",
+    "shippingAddress": {
+      "firstName": "Emri i dërgimit",
+      "lastName": "Mbiemri i dërgimit",
+      "phone": "Telefoni i dërgimit",
+      "street": "Rruga e dërgimit",
+      "city": "Qyteti i dërgimit",
+      "state": "Shteti i dërgimit",
+      "postalCode": "Kodi postar i dërgimit",
+      "country": "Vendi i dërgimit"
+    },
+    "billingAddress": {
+      "firstName": "Emri i faturimit",
+      "lastName": "Mbiemri i faturimit",
+      "phone": "Telefoni i faturimit",
+      "street": "Rruga e faturimit",
+      "city": "Qyteti i faturimit",
+      "state": "Shteti i faturimit",
+      "postalCode": "Kodi postar i faturimit",
+      "country": "Vendi i faturimit"
+    },
+    "paymentStatus": "Pagesa",
+    "fulfillmentStatus": "Përmbushja",
+    "status": "Statusi",
+    "appliedDiscounts": {
+      "discount": "Zbritja e aplikuar",
+      "code": "Kodi i zbritjes",
+      "amount": "Shuma e zbritjes"
+    },
+    "taxBreakdown": {
+      "name": "Emri i taksës",
+      "rate": "Norma e taksës",
+      "amount": "Shuma e taksës"
+    },
+    "shippingRate": {
+      "name": "Tarifa e transportit",
+      "carrier": "Transportuesi",
+      "price": "Çmimi i transportit"
+    },
+    "notes": "Shënime",
+    "internalNotes": "Shënime të brendshme",
+    "stripePaymentIntentId": "Stripe payment intent",
+    "idempotencyKey": "Çelësi i idempotencës",
+    "giftCard": {
+      "giftCard": "Karta dhuratë",
+      "code": "Kodi i kartës dhuratë",
+      "amount": "Shuma e kartës dhuratë"
+    },
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
     "createdAt": "Krijuar",
+    "updatedAt": "Përditësuar",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"
   }

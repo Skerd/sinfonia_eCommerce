@@ -48,7 +48,6 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `productOrders` | `/eCommerce/productorders` | Orders (confirm / process / ship / cancel / refund actions) |
 | `fulfillments` | `/eCommerce/fulfillments` | Shipments and tracking |
 | `returnRequests` | `/eCommerce/returnrequests` | Returns, exchanges, refunds |
-| `paymentTransactions` | `/eCommerce/paymenttransactions` | Payment ledger (read-only) |
 | `customerAddresses` | `/eCommerce/customeraddresses` | Customer addresses |
 | `productReviews` | `/eCommerce/productreviews` | Review moderation (created via storefront, purchase-gated) |
 | `giftCards` | `/eCommerce/giftcards` | Gift card balances (system-issued, disable via edit) |

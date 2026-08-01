@@ -3,6 +3,16 @@
   "title": "Konfigurimet POS",
   "description": "Dyqanet dhe cilësimet e arkës.",
   "createPosConfig": "Krijo konfigurim POS",
+  "bulkMenu": {
+    "triggerAria": "Kontrollet e kompanisë për POS",
+    "label": "Kontrollet e kompanisë",
+    "hint": "Ndalim emergjent për çdo arkë",
+    "lockedReasonPrefix": "Arsyeja e pauzës së kompanisë",
+    "pauseAll": "Pauzo të gjitha arkat",
+    "pauseAllHint": "Kyç kompaninë dhe mbyll me forcë seancat e hapura",
+    "resumeAll": "Rifillo të gjitha arkat",
+    "resumeAllHint": "Pastro kyçin e kompanisë dhe çdo pauzë arke"
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",

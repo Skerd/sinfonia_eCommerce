@@ -5,8 +5,7 @@
     "nameLabel": "Emri",
     "namePlaceholder": "Emri i grupit",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Përshkrim opsional",
-    "isDefaultLabel": "Grupi i parazgjedhur"
+    "descriptionPlaceholder": "Përshkrim opsional"
   },
   "axios": {
     "start": {

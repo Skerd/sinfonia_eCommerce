@@ -13,5 +13,7 @@
   "addError": "Shtimi i anëtarit dështoi.",
   "removeSuccess": "Anëtari u hoq.",
   "removeError": "Heqja e anëtarit dështoi.",
-  "loadError": "Ngarkimi i anëtarëve dështoi."
+  "loadError": "Ngarkimi i anëtarëve dështoi.",
+  "previousPage": "E mëparshme",
+  "nextPage": "Tjetra"
 }

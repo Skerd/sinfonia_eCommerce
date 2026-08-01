@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
+  "title": "Të rifillohen të gjitha arkat POS?",
+  "description": "Pastron kyçin e kompanisë dhe çdo pauzë arke. Arkatari duhet të hapë një seancë të re për të shitur.",
+  "cancel": "Anulo",
+  "confirm": "Rifillo të gjitha",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {"title": "Duke rifilluar të gjitha arkat…", "time": 3000},
+    "success": {"title": "Të gjitha arkat u rifilluan", "time": 3000},
+    "error": {"title": "Nuk u rifilluan të gjitha arkat", "time": 3000}
+  }
+}

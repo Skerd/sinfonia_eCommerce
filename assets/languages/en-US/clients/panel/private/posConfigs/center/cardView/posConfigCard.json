@@ -5,5 +5,7 @@
   "paymentMethods": "Payment methods",
   "active": "Active",
   "inactive": "Inactive",
+  "paused": "Paused",
+  "companyPaused": "Company paused",
   "openPos": "Open POS"
 }

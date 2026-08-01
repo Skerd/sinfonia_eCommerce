@@ -3,11 +3,8 @@
   "form": {
     "nameLabel": "Emri",
     "namePlaceholder": "Emri i kategorisë",
-    "slugLabel": "Slug",
-    "slugPlaceholder": "Bosh për gjenerim nga emri",
     "parentCategoryLabel": "Kategoria prind",
     "parentCategoryPlaceholder": "Opsionale",
-    "parentIdLabel": "Prindi",
     "orderLabel": "Rendi",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Krijo kategori",

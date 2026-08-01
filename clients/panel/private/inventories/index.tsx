@@ -9,7 +9,9 @@ import InventoryCard from "./center/cardView/inventoryCard.tsx";
 import InventorySheetView from "./center/sheetView/inventorySheetView.tsx";
 import RestockInventoryDropdown from "./center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "./center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsMenuItem from "./center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
+import ViewInventoryMovementsDialog from "./center/dialogs/viewInventoryMovementsDialog.tsx";
 
 export function inventoryEditPath(inventory: {_id: string; product?: {title?: string}}) {
     const params = new URLSearchParams();
@@ -60,11 +62,21 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderActionMenuChildren={(inventory, bindRowAction) => (
                 <>
+                    <ViewInventoryMovementsMenuItem inventory={inventory} onAction={bindRowAction} />
                     <RestockInventoryDropdown inventory={inventory} onAction={bindRowAction} />
                     <DeductInventoryDropdown inventory={inventory} onAction={bindRowAction} />
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                if (action === "viewInventoryMovements") {
+                    return (
+                        <ViewInventoryMovementsDialog
+                            open
+                            onClose={resetAction}
+                            inventory={entity}
+                        />
+                    );
+                }
                 if (action === "restock" || action === "deduct") {
                     return (
                         <InventoryStockMoveAction

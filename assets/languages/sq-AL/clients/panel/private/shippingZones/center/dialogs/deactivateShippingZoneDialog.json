@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/deactivateShippingZoneDialog.tsx",
+  "title": "Çaktivizo zonën e transportit",
+  "description": "Kjo zonë transporti nuk do të përdoret për llogaritjen e tarifave derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar zonën e transportit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zona e transportit u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot zona e transportit",
+      "time": 3000
+    }
+  }
+}

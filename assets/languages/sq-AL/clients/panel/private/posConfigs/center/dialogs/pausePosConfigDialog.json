@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
+  "title": "Të pauzohet kjo arkë POS?",
+  "description": "Seancat e hapura në këtë arkë do të mbyllen me forcë: karroca e mbajtur anulohet dhe cash vendoset te shuma e pritur. Ngarkimet në terminal anulohen sipas mundësisë. Shitjet mbeten të bllokuara derisa të rifilloni.",
+  "reasonLabel": "Arsyeja (opsionale)",
+  "reasonPlaceholder": "p.sh. Çmime të gabuara / dyshim për mashtrim",
+  "cancel": "Anulo",
+  "confirm": "Pauzo arkën",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {"title": "Duke pauzuar arkën POS…", "time": 3000},
+    "success": {"title": "Arka POS u pauzua", "time": 3000},
+    "error": {"title": "Nuk u pauzua arka POS", "time": 3000}
+  }
+}

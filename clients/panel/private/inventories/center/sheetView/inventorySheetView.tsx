@@ -9,8 +9,9 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 
 export type InventorySheetViewOwnProps = {
     open: boolean;
@@ -22,19 +23,6 @@ export type InventorySheetViewOwnProps = {
     fetchId?: string;
     onInventoryUpdated?: (updated?: Inventory) => void;
 };
-
-async function fetchMovementsForInventory(inventoryId: string) {
-    try {
-        const res = await apiClient.post<{data?: unknown[]}>("/api/eCommerce/inventoryMovement", {
-            inventoryId,
-            page: 1,
-            limit: 200,
-        });
-        return Array.isArray(res.data?.data) ? res.data.data : [];
-    } catch {
-        return [];
-    }
-}
 
 function InventorySheetView({
     open,
@@ -82,14 +70,7 @@ function InventorySheetView({
                 config={viewConfig}
                 url="/api/eCommerce/inventory/single"
                 fetchId={fetchId ?? inventoryProp?._id}
-                onDataFetched={async (data) => {
-                    const next = {...(data || {})} as Record<string, unknown>;
-                    const id = String(next._id ?? entityId);
-                    if (!Array.isArray(next.movements) || next.movements.length === 0) {
-                        next.movements = await fetchMovementsForInventory(id);
-                    }
-                    setSheetData(next);
-                }}
+                onDataFetched={(data) => setSheetData(data || {})}
                 data={sheetData}
                 open={open}
                 onOpenChange={onOpenChange}
@@ -101,11 +82,19 @@ function InventorySheetView({
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <>
+                        <ViewInventoryMovementsMenuItem inventory={asInventory} onAction={setAction} />
                         <RestockInventoryDropdown inventory={asInventory} onAction={setAction} />
                         <DeductInventoryDropdown inventory={asInventory} onAction={setAction} />
                     </>
                 }
             />
+            {action === "viewInventoryMovements" && (
+                <ViewInventoryMovementsDialog
+                    open
+                    onClose={() => setAction("")}
+                    inventory={asInventory}
+                />
+            )}
             {(action === "restock" || action === "deduct") && (
                 <InventoryStockMoveAction
                     inventoryId={String(asInventory._id)}

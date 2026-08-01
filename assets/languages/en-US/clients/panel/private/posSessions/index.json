@@ -31,17 +31,7 @@
     "closingBalance": "Closing balance",
     "expectedCash": "Expected cash",
     "cashRegisterBalance": "Cash register",
-    "cashMoves": {
-      "type": {
-        "type": "Cash move type",
-        "amount": "Cash move amount",
-        "reason": "Cash move reason",
-        "at": "Cash move at",
-        "by": "Cash move by",
-        "default": "Cash moves default"
-      },
-      "default": "Cash moves default"
-    },
+    "cashMoves": "Cash moves",
     "orderCount": "Orders",
     "totalSales": "Total sales",
     "totalCash": "Cash",

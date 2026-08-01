@@ -20,10 +20,18 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import PosConfigRowMenuExtras from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/posConfigRowMenuExtras.tsx";
+import ActivatePosConfig from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/activatePosConfig.tsx";
+import DeactivatePosConfig from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/deactivatePosConfig.tsx";
+import PausePosConfig from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/pausePosConfig.tsx";
+import ResumePosConfig from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/resumePosConfig.tsx";
 import SetManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx";
 import ChangeManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/changeManagerPinDialog.tsx";
 import ClearManagerPinDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx";
 import RequestManagerPinResetDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx";
+import ActivatePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/activatePosConfigDialog.tsx";
+import DeactivatePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx";
+import PausePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx";
+import ResumePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/posconfigs";
 
@@ -39,6 +47,8 @@ type PosConfigCardProps = WithLanguageType & {
     onDelete?: (deleted?: PosConfig, response?: DeletedData) => void;
     onRestore?: () => void;
     onPinUpdated?: (updated: Partial<PosConfig>) => void;
+    onActiveChanged?: (isActive: boolean) => void;
+    onPausedChanged?: (patch: Partial<PosConfig>) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
 };
@@ -49,6 +59,8 @@ function PosConfigCard({
     onDelete: onDeleteProp,
     onRestore: onRestoreProp,
     onPinUpdated,
+    onActiveChanged,
+    onPausedChanged,
     hideActions = false,
     sheetOnly = false,
 }: PosConfigCardProps) {
@@ -100,7 +112,7 @@ function PosConfigCard({
         return <HiddenElement />;
     }
 
-    const methodCount = entity.paymentMethodLabels?.length ?? entity.paymentMethods?.length;
+    const methodCount = entity.paymentMethods?.length;
     const warehouseCount = entity.warehouses?.length;
 
     return (
@@ -140,6 +152,22 @@ function PosConfigCard({
                                             editPath={posConfigEditPath(entity)}
                                             allowMenuForCustomChildren
                                         >
+                                            <PausePosConfig
+                                                entity={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                            <ResumePosConfig
+                                                entity={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                            <ActivatePosConfig
+                                                entity={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
+                                            <DeactivatePosConfig
+                                                entity={entity}
+                                                onAction={(a: string) => setAction(a)}
+                                            />
                                             <PosConfigRowMenuExtras
                                                 config={entity}
                                                 onAction={(a: string) => setAction(a)}
@@ -164,23 +192,36 @@ function PosConfigCard({
                                     />
                                 </div>
                                 <div className="flex items-center justify-between gap-2 pt-1">
-                                    {read?.isActive && entity.isActive != null && (
-                                        <span
-                                            className={cn(
-                                                "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                                entity.isActive ? "text-emerald-600" : "text-muted-foreground",
-                                            )}
-                                        >
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        {read?.isActive && entity.isActive != null && (
                                             <span
                                                 className={cn(
-                                                    "w-1.5 h-1.5 rounded-full shrink-0",
-                                                    entity.isActive ? "bg-emerald-500" : "bg-muted-foreground/40",
+                                                    "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                                    entity.isActive ? "text-emerald-600" : "text-muted-foreground",
                                                 )}
-                                            />
-                                            {resolveLanguageKey(entity.isActive ? "active" : "inactive")}
-                                        </span>
-                                    )}
-                                    {entity.isActive !== false && !entity.deletedAt && (
+                                            >
+                                                <span
+                                                    className={cn(
+                                                        "w-1.5 h-1.5 rounded-full shrink-0",
+                                                        entity.isActive ? "bg-emerald-500" : "bg-muted-foreground/40",
+                                                    )}
+                                                />
+                                                {resolveLanguageKey(entity.isActive ? "active" : "inactive")}
+                                            </span>
+                                        )}
+                                        {entity.isCompanyPaused ? (
+                                            <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-destructive">
+                                                <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-destructive" />
+                                                {resolveLanguageKey("companyPaused")}
+                                            </span>
+                                        ) : entity.isPaused ? (
+                                            <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
+                                                <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-amber-500" />
+                                                {resolveLanguageKey("paused")}
+                                            </span>
+                                        ) : null}
+                                    </div>
+                                    {entity.isActive !== false && !entity.isPaused && !entity.deletedAt && (
                                         <Button
                                             asChild
                                             size="sm"
@@ -212,6 +253,12 @@ function PosConfigCard({
                             onDelete={onDelete}
                             onRestore={onRestore}
                             onPinUpdated={applyPinUpdate}
+                            onSheetRowPatched={(row) => {
+                                setEntity((prev) => ({...prev, ...row}) as PosConfig);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -236,6 +283,50 @@ function PosConfigCard({
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/posConfig/restore"
+                        />
+                    )}
+                    {action === "activatePosConfig" && (
+                        <ActivatePosConfigDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
+                        />
+                    )}
+                    {action === "deactivatePosConfig" && (
+                        <DeactivatePosConfigDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
+                        />
+                    )}
+                    {action === "pausePosConfig" && (
+                        <PausePosConfigDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(patch) => {
+                                setEntity((prev) => ({...prev, ...patch}));
+                                onPausedChanged?.(patch);
+                            }}
+                        />
+                    )}
+                    {action === "resumePosConfig" && (
+                        <ResumePosConfigDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={(patch) => {
+                                setEntity((prev) => ({...prev, ...patch}));
+                                onPausedChanged?.(patch);
+                            }}
                         />
                     )}
                     {action === "setManagerPin" && (

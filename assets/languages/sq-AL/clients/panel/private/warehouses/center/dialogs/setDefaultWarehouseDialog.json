@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx",
+  "title": "Bëje magazinën parazgjedhur",
+  "description": "Kjo do ta bëjë këtë magazinë parazgjedhur, dhe ajo aktuale do të rizgjidhet.",
+  "cancel": "Anulo",
+  "confirm": "Bëje parazgjedhur",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke vendosur magazinën parazgjedhur…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazina parazgjedhur u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u vendos dot magazina parazgjedhur",
+      "time": 3000
+    }
+  }
+}

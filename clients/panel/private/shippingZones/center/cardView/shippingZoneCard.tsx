@@ -17,6 +17,10 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateShippingZone from "@eCommerceModule/clients/panel/private/shippingZones/center/actions/activateShippingZone.tsx";
+import DeactivateShippingZone from "@eCommerceModule/clients/panel/private/shippingZones/center/actions/deactivateShippingZone.tsx";
+import ActivateShippingZoneDialog from "@eCommerceModule/clients/panel/private/shippingZones/center/dialogs/activateShippingZoneDialog.tsx";
+import DeactivateShippingZoneDialog from "@eCommerceModule/clients/panel/private/shippingZones/center/dialogs/deactivateShippingZoneDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/shippingzones";
 
@@ -33,6 +37,7 @@ type ShippingZoneCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function ShippingZoneCard({
@@ -42,6 +47,7 @@ function ShippingZoneCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: ShippingZoneCardProps) {
     const [action, setAction] = useState<string>("");
     const [shippingZone, setShippingZone] = useState<ShippingZone>(shippingZoneProp);
@@ -120,7 +126,11 @@ function ShippingZoneCard({
                                             deletedData={shippingZone}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={shippingZoneEditPath(shippingZone)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateShippingZone entity={shippingZone} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateShippingZone entity={shippingZone} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -171,6 +181,34 @@ function ShippingZoneCard({
                             fetchId={shippingZone._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => {
+                                setShippingZone((prev) => ({...prev, ...row}) as ShippingZone);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
+                        />
+                    )}
+                    {action === "activateShippingZone" && (
+                        <ActivateShippingZoneDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={shippingZone}
+                            onSuccess={() => {
+                                setShippingZone((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
+                        />
+                    )}
+                    {action === "deactivateShippingZone" && (
+                        <DeactivateShippingZoneDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={shippingZone}
+                            onSuccess={() => {
+                                setShippingZone((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                     {action === "delete" && (

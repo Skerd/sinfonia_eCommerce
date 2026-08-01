@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
 
 type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<Discount, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: Discount;
-        onSuccess?: (discount: Discount) => void;
+        onSuccess?: () => void;
     };
 
 function DeactivateDiscountDialog({
@@ -35,8 +36,8 @@ function DeactivateDiscountDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: Discount) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -57,7 +58,6 @@ function DeactivateDiscountDialog({
                     </Button>
                     <Button
                         type="button"
-                        variant="destructive"
                         disabled={loading}
                         onClick={() => onFilterChange({_id: entity._id})}
                     >
@@ -73,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx",
     ),
-    withAxios<Discount, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/discount/deactivate", method: "POST", data: {}},
         true,
     ),

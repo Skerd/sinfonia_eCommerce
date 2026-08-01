@@ -4,12 +4,93 @@
   "description": "Track and manage customer orders.",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled",
+        "refunded": "Refunded"
+      },
+      "paymentStatus": {
+        "unpaid": "Unpaid",
+        "authorized": "Authorized",
+        "paid": "Paid",
+        "partially_refunded": "Partially refunded",
+        "refunded": "Refunded",
+        "voided": "Voided"
+      },
+      "fulfillmentStatus": {
+        "unfulfilled": "Unfulfilled",
+        "partially_fulfilled": "Partially fulfilled",
+        "fulfilled": "Fulfilled",
+        "returned": "Returned"
+      }
+    },
     "orderNumber": "Order number",
     "customer": "Customer",
-    "status": "Status",
-    "paymentStatus": "Payment",
+    "email": "Email",
+    "phone": "Phone",
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "discountTotal": "Discount",
+    "shippingTotal": "Shipping",
+    "taxTotal": "Tax",
     "grandTotal": "Total",
+    "currency": "Currency",
+    "shippingAddress": {
+      "firstName": "Shipping first name",
+      "lastName": "Shipping last name",
+      "phone": "Shipping phone",
+      "street": "Shipping street",
+      "city": "Shipping city",
+      "state": "Shipping state",
+      "postalCode": "Shipping postal code",
+      "country": "Shipping country"
+    },
+    "billingAddress": {
+      "firstName": "Billing first name",
+      "lastName": "Billing last name",
+      "phone": "Billing phone",
+      "street": "Billing street",
+      "city": "Billing city",
+      "state": "Billing state",
+      "postalCode": "Billing postal code",
+      "country": "Billing country"
+    },
+    "paymentStatus": "Payment",
+    "fulfillmentStatus": "Fulfillment",
+    "status": "Status",
+    "appliedDiscounts": {
+      "discount": "Applied discount",
+      "code": "Discount code",
+      "amount": "Discount amount"
+    },
+    "taxBreakdown": {
+      "name": "Tax name",
+      "rate": "Tax rate",
+      "amount": "Tax amount"
+    },
+    "shippingRate": {
+      "name": "Shipping rate",
+      "carrier": "Shipping carrier",
+      "price": "Shipping price"
+    },
+    "notes": "Notes",
+    "internalNotes": "Internal notes",
+    "stripePaymentIntentId": "Stripe payment intent",
+    "idempotencyKey": "Idempotency key",
+    "giftCard": {
+      "giftCard": "Gift card",
+      "code": "Gift card code",
+      "amount": "Gift card amount"
+    },
+    "company": "Company",
+    "createdBy": "Created by",
     "createdAt": "Created",
+    "updatedAt": "Updated",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted by"
   }

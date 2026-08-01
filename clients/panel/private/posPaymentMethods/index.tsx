@@ -66,7 +66,7 @@ function AllPosPaymentMethods({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(method) => listRef.current?.updateRow?.(entity._id, method)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: true})}
                         />
                     );
                 }
@@ -76,17 +76,18 @@ function AllPosPaymentMethods({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(method) => listRef.current?.updateRow?.(entity._id, method)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: false})}
                         />
                     );
                 }
                 return null;
             }}
-            renderCard={(entity, onDelete, onRestore) => (
+            renderCard={(entity, onDelete, onRestore, listRef) => (
                 <PosPaymentMethodCard
                     entity={entity}
                     onDelete={(row: PosPaymentMethod | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
+                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

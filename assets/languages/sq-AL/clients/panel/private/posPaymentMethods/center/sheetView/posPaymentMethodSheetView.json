@@ -15,6 +15,7 @@
   "cashQuickAmounts": "Shumat e shpejta (cash)",
   "terminalEnabled": "Terminal bankar POS",
   "terminalProviderLabel": "Furnizuesi i terminalit",
+  "terminalProtocolLabel": "Protokoli",
   "terminalHost": "Host i terminalit",
   "terminalPort": "Porta e terminalit",
   "terminalId": "ID e terminalit",
@@ -29,5 +30,9 @@
   "terminalProvider": {
     "manual": "Manuale",
     "local_http": "HTTP lokale"
+  },
+  "terminalProtocol": {
+    "http": "HTTP",
+    "https": "HTTPS"
   }
 }

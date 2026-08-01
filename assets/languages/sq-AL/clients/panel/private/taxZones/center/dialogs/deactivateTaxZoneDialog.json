@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx",
+  "title": "Çaktivizo zonën tatimore",
+  "description": "Kjo zonë tatimore nuk do të përdoret për llogaritjen e tatimit derisa të aktivizohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Çaktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke çaktivizuar zonën tatimore…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zona tatimore u çaktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u çaktivizua dot zona tatimore",
+      "time": 3000
+    }
+  }
+}

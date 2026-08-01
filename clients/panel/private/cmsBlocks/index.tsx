@@ -19,7 +19,7 @@ export function cmsBlockEditPath(block: {_id: string; title?: string}) {
     const params = new URLSearchParams();
     params.set("cmsBlockId", block._id);
     if (block.title) params.set("cmsBlockTitle", encodeURIComponent(block.title));
-    return `/eCommerce/cmsblocks/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/cmsblocks/edit?${params.toString()}`;
 }
 
 function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
@@ -35,7 +35,7 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                 accessModel="cmsBlocks"
                 tableConfigKey="cmsBlocks"
                 rowActionMenu={{allowMenuForCustomChildren: true}}
-                createPath="/eCommerce/cmsblocks/create"
+                createPath="/tenancy/systemSettings/cmsblocks/create"
                 createIcon={<IconPlus />}
                 createLanguageKey="createCmsBlock"
                 buildEditPath={cmsBlockEditPath}
@@ -67,7 +67,7 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                                 open={true}
                                 onClose={resetAction}
                                 entity={entity}
-                                onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                                onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: true})}
                             />
                         );
                     }
@@ -77,17 +77,18 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                                 open={true}
                                 onClose={resetAction}
                                 entity={entity}
-                                onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                                onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: false})}
                             />
                         );
                     }
                     return null;
                 }}
-                renderCard={(cmsBlock, onDelete, onRestore) => (
+                renderCard={(cmsBlock, onDelete, onRestore, listRef) => (
                     <CmsBlockCard
                         cmsBlock={cmsBlock}
                         onDelete={(row: CmsBlock | undefined, response?: DeletedData) => onDelete(row, response)}
                         onRestore={() => onRestore(cmsBlock)}
+                        onActiveChanged={(isActive) => listRef.current?.updateRow?.(cmsBlock._id, {isActive})}
                     />
                 )}
                 renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

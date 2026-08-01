@@ -6,7 +6,6 @@
     "namePlaceholder": "Warehouse name",
     "codeLabel": "Code",
     "codePlaceholder": "Warehouse code",
-    "isDefaultLabel": "Default warehouse",
     "addressSectionTitle": "Address",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",

@@ -5,5 +5,7 @@
   "paymentMethods": "Metodat e pagesës",
   "active": "Aktive",
   "inactive": "Joaktive",
+  "paused": "Në pauzë",
+  "companyPaused": "Kompania në pauzë",
   "openPos": "Hap POS"
 }

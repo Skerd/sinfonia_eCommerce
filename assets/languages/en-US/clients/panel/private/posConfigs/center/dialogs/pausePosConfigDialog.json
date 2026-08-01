@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
+  "title": "Pause this POS till?",
+  "description": "Open sessions on this till will be force-closed: held carts are cancelled and cash is set to the expected drawer amount. Terminal charges are cancelled best-effort. Selling stays blocked until you resume.",
+  "reasonLabel": "Reason (optional)",
+  "reasonPlaceholder": "e.g. Wrong prices / suspected fraud",
+  "cancel": "Cancel",
+  "confirm": "Pause till",
+  "busy": "Working…",
+  "axios": {
+    "start": {"title": "Pausing POS till…", "time": 3000},
+    "success": {"title": "POS till paused", "time": 3000},
+    "error": {"title": "Could not pause POS till", "time": 3000}
+  }
+}

@@ -31,17 +31,7 @@
     "closingBalance": "Bilanci përfundimtar",
     "expectedCash": "Cash i pritur",
     "cashRegisterBalance": "Arka",
-    "cashMoves": {
-      "type": {
-        "type": "Lloji i lëvizjes",
-        "amount": "Shuma e lëvizjes",
-        "reason": "Arsyeja e lëvizjes",
-        "at": "Lëvizja më",
-        "by": "Lëvizja nga",
-        "default": "Parazgjedhja e lëvizjeve"
-      },
-      "default": "Parazgjedhja e lëvizjeve"
-    },
+    "cashMoves": "Lëvizjet cash",
     "orderCount": "Porosi",
     "totalSales": "Shitjet totale",
     "totalCash": "Cash",

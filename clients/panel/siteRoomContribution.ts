@@ -15,6 +15,8 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         productvariants: "productVariants_configurations",
         posconfigs: "posConfigs_configurations",
         pospaymentmethods: "posPaymentMethods_configurations",
+        fiscalconfigs: "fiscalConfigs_configurations",
+        cmsblocks: "cmsBlocks_configurations",
     },
 };
 

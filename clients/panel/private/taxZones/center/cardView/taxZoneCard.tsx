@@ -17,6 +17,10 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import ActivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/activateTaxZone.tsx";
+import DeactivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/deactivateTaxZone.tsx";
+import ActivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx";
+import DeactivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/taxzones";
 
@@ -33,6 +37,7 @@ type TaxZoneCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function TaxZoneCard({
@@ -42,6 +47,7 @@ function TaxZoneCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: TaxZoneCardProps) {
     const [action, setAction] = useState<string>("");
     const [taxZone, setTaxZone] = useState<TaxZone>(taxZoneProp);
@@ -120,7 +126,11 @@ function TaxZoneCard({
                                             deletedData={taxZone}
                                             onAction={(a: string) => setAction(a)}
                                             editPath={taxZoneEditPath(taxZone)}
-                                        />
+                                            allowMenuForCustomChildren
+                                        >
+                                            <ActivateTaxZone entity={taxZone} onAction={(a: string) => setAction(a)} />
+                                            <DeactivateTaxZone entity={taxZone} onAction={(a: string) => setAction(a)} />
+                                        </ActionMenu>
                                     </div>
                                 )}
                             </div>
@@ -177,6 +187,34 @@ function TaxZoneCard({
                             fetchId={taxZone._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onSheetRowPatched={(row) => {
+                                setTaxZone((prev) => ({...prev, ...row}) as TaxZone);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
+                        />
+                    )}
+                    {action === "activateTaxZone" && (
+                        <ActivateTaxZoneDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={taxZone}
+                            onSuccess={() => {
+                                setTaxZone((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
+                        />
+                    )}
+                    {action === "deactivateTaxZone" && (
+                        <DeactivateTaxZoneDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={taxZone}
+                            onSuccess={() => {
+                                setTaxZone((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                     {action === "delete" && (

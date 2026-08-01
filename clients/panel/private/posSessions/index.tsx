@@ -6,13 +6,6 @@ import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/priva
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import PosSessionCard from "./center/cardView/posSessionCard.tsx";
 
-export function posSessionEditPath(entity: {_id: string; name?: string}) {
-    const params = new URLSearchParams();
-    params.set("posSessionId", entity._id);
-    if (entity.name) params.set("posSessionTitle", encodeURIComponent(entity.name));
-    return `/eCommerce/possessions/edit?${params.toString()}`;
-}
-
 function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
     return (
         <EntityListPage<PosSession>
@@ -21,7 +14,8 @@ function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
             accessModel="posSessions"
             tableConfigKey="posSessions"
             hideCreate
-            buildEditPath={posSessionEditPath}
+            buildEditPath={() => ""}
+            rowActionMenu={{hideEdit: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx"
             renderCard={(entity, onDelete, onRestore) => (

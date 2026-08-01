@@ -55,6 +55,7 @@ export type PaymentLine = {
     label?: string;
     terminalEnabled?: boolean;
     terminalProvider?: string;
+    terminalProtocol?: string;
     terminalHost?: string;
     terminalPort?: number;
     terminalId?: string;

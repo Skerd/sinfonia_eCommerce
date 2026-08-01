@@ -39,6 +39,7 @@ type PosPaymentMethodCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function PosPaymentMethodCard({
@@ -48,6 +49,7 @@ function PosPaymentMethodCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: PosPaymentMethodCardProps) {
     const [action, setAction] = useState<string>("");
     const [entity, setEntity] = useState<PosPaymentMethod>(entityProp);
@@ -182,7 +184,12 @@ function PosPaymentMethodCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setEntity(row as PosPaymentMethod)}
+                            onSheetRowPatched={(row) => {
+                                setEntity((prev) => ({...prev, ...row}) as PosPaymentMethod);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -214,7 +221,10 @@ function PosPaymentMethodCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(method) => setEntity(method)}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivatePosPaymentMethod" && (
@@ -222,7 +232,10 @@ function PosPaymentMethodCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(method) => setEntity(method)}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                     {action === "testPosTerminalConnection" && (

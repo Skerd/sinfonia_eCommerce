@@ -8,7 +8,6 @@
     "nameLabel": "Emri",
     "namePlaceholder": "Emri i metodës së pagesës",
     "typeLabel": "Lloji",
-    "isActiveLabel": "Aktive",
     "sequenceLabel": "Renditja",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Shumat e shpejta (cash)",
@@ -17,6 +16,7 @@
     "terminalEnabledLabel": "Lidh terminalin bankar POS",
     "terminalForcesCardHint": "Lidhja e terminalit bankar POS vendos llojin në Kartë. Shkëputja e vendos në Cash.",
     "terminalProviderLabel": "Furnizuesi i terminalit",
+    "terminalProtocolLabel": "Protokoli",
     "terminalHostLabel": "Host / IP e terminalit",
     "terminalHostPlaceholder": "192.168.1.50",
     "terminalPortLabel": "Porta e terminalit",
@@ -35,6 +35,10 @@
     "terminalProvider": {
       "manual": "Manuale (terminal i jashtëm)",
       "local_http": "Ura lokale HTTP"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
     }
   },
   "axios": {

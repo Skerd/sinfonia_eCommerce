@@ -80,6 +80,7 @@ function ProductOrderSheetView({
                 hideActions={hideActions}
                 onDelete={onDelete}
                 onRestore={onRestore}
+                hideEdit
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <>

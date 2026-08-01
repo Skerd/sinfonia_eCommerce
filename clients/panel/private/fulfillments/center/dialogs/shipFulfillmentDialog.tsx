@@ -15,10 +15,11 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 
 type PostPayload = {
-    fulfillmentId: string;
+    _id: string;
     carrier?: string;
     trackingNumber?: string;
     trackingUrl?: string;
@@ -26,11 +27,11 @@ type PostPayload = {
 };
 
 type Props = WithLanguageType &
-    WithAxiosType<Fulfillment, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: Fulfillment;
-        onSuccess?: (row: Fulfillment) => void;
+        onSuccess?: (patch: Partial<Fulfillment>) => void;
     };
 
 function ShipFulfillmentDialog({
@@ -49,8 +50,15 @@ function ShipFulfillmentDialog({
     const [notes, setNotes] = useState(entity.notes ?? "");
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: Fulfillment) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.({
+                status: "shipped",
+                shippedAt: new Date().toISOString(),
+                carrier: carrier.trim() || undefined,
+                trackingNumber: trackingNumber.trim() || undefined,
+                trackingUrl: trackingUrl.trim() || undefined,
+                notes: notes.trim() || entity.notes,
+            });
             onClose();
         },
         error: () => {
@@ -118,7 +126,7 @@ function ShipFulfillmentDialog({
                         disabled={loading}
                         onClick={() =>
                             onFilterChange({
-                                fulfillmentId: entity._id,
+                                _id: entity._id,
                                 carrier: carrier.trim() || undefined,
                                 trackingNumber: trackingNumber.trim() || undefined,
                                 trackingUrl: trackingUrl.trim() || undefined,
@@ -138,7 +146,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
     ),
-    withAxios<Fulfillment, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/fulfillment/ship", method: "POST", data: {}},
         true,
     ),

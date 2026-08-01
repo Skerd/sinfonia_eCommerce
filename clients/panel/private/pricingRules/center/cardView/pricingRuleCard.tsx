@@ -37,6 +37,7 @@ type PricingRuleCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function PricingRuleCard({
@@ -46,6 +47,7 @@ function PricingRuleCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: PricingRuleCardProps) {
     const [action, setAction] = useState<string>("");
     const [pricingRule, setPricingRule] = useState<PricingRule>(pricingRuleProp);
@@ -185,6 +187,10 @@ function PricingRuleCard({
                             fetchId={pricingRule._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onActiveChanged={(isActive) => {
+                                setPricingRule((prev) => ({...prev, isActive}));
+                                onActiveChanged?.(isActive);
+                            }}
                             onSheetRowPatched={(row) => setPricingRule(row as PricingRule)}
                         />
                     )}
@@ -217,7 +223,10 @@ function PricingRuleCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={pricingRule}
-                            onSuccess={(row) => setPricingRule(row)}
+                            onSuccess={() => {
+                                setPricingRule((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivatePricingRule" && (
@@ -225,7 +234,10 @@ function PricingRuleCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={pricingRule}
-                            onSuccess={(row) => setPricingRule(row)}
+                            onSuccess={() => {
+                                setPricingRule((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                 </>

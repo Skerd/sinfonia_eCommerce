@@ -34,15 +34,7 @@ function PosSessionSheetView({
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData((prev) => ({
-            ...entityProp,
-            // Keep /single enrichments (list rows may omit nested labels).
-            configLabel: entityProp.configLabel ?? (prev as PosSession).configLabel,
-            openedBy: entityProp.openedBy ?? (prev as PosSession).openedBy,
-            closedBy: entityProp.closedBy ?? (prev as PosSession).closedBy,
-            cashMoves: entityProp.cashMoves ?? (prev as PosSession).cashMoves,
-            company: entityProp.company ?? (prev as PosSession).company,
-        }));
+        setSheetData(entityProp as unknown as Record<string, unknown>);
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -64,6 +56,7 @@ function PosSessionSheetView({
             resolveLanguageKey={resolveLanguageKey}
             access={access}
             hideActions={hideActions}
+            hideEdit
             onDelete={onDelete}
             onRestore={onRestore}
         />

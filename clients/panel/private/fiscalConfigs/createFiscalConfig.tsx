@@ -24,6 +24,6 @@ export default createGenericCreatePage<CreateFiscalConfigFormType>({
         autoFiscalizePos: false,
         autoEinvoice: false,
     } as unknown as CreateFiscalConfigFormType,
-    successPath: "/eCommerce/fiscalconfigs",
+    successPath: "/tenancy/systemSettings/fiscalconfigs",
     submitIcon: <IconPlus />,
 });

@@ -16,7 +16,9 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {inventoryEditPath} from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
+import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 
 type InventoryCardProps = WithLanguageType & {
     inventory: Inventory;
@@ -100,6 +102,7 @@ function InventoryCard({
                                         onAction={(a: string) => setAction(a)}
                                         editPath={inventoryEditPath(inventory)}
                                     >
+                                        <ViewInventoryMovementsMenuItem inventory={inventory} onAction={setAction} />
                                         <RestockInventoryDropdown inventory={inventory} onAction={setAction} />
                                         <DeductInventoryDropdown inventory={inventory} onAction={setAction} />
                                     </ActionMenu>
@@ -165,6 +168,13 @@ function InventoryCard({
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/inventory"
+                        />
+                    )}
+                    {action === "viewInventoryMovements" && (
+                        <ViewInventoryMovementsDialog
+                            open
+                            onClose={() => setAction("")}
+                            inventory={inventory}
                         />
                     )}
                     {(action === "restock" || action === "deduct") && (

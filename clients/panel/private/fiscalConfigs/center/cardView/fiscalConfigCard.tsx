@@ -22,7 +22,7 @@ import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fisca
 import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
 import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 
-const LIST_BASE = "/eCommerce/fiscalconfigs";
+const LIST_BASE = "/tenancy/systemSettings/fiscalconfigs";
 
 function fiscalConfigEditPath(entity: FiscalConfig) {
     const params = new URLSearchParams();
@@ -37,6 +37,7 @@ type FiscalConfigCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function FiscalConfigCard({
@@ -46,6 +47,7 @@ function FiscalConfigCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: FiscalConfigCardProps) {
     const [action, setAction] = useState<string>("");
     const [entity, setEntity] = useState<FiscalConfig>(entityProp);
@@ -181,7 +183,12 @@ function FiscalConfigCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setEntity(row as FiscalConfig)}
+                            onSheetRowPatched={(row) => {
+                                setEntity((prev) => ({...prev, ...row}) as FiscalConfig);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -211,7 +218,10 @@ function FiscalConfigCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivateFiscalConfig" && (
@@ -219,7 +229,10 @@ function FiscalConfigCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                 </>

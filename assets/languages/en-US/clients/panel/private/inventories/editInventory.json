@@ -1,8 +1,33 @@
 {
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Edit inventory",
+  "errorTitle": "Failed to load inventory",
+  "errorDescription": "Could not load this inventory. Try again.",
   "form": {
+    "_idLabel": "Record ID",
     "reorderPointLabel": "Reorder point",
     "reorderQuantityLabel": "Reorder quantity"
   },
-  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
-  "title": "Edit inventory"
+  "axios": {
+    "start": {
+      "title": "Saving inventory",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventory updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update inventory",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit inventory",
+    "description": "Update reorder thresholds for this stock row."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
 }

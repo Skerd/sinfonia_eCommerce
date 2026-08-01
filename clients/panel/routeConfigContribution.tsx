@@ -46,13 +46,11 @@ import EditFulfillment from "@eCommerceModule/clients/panel/private/fulfillments
 import AllReturnRequests from "@eCommerceModule/clients/panel/private/returnRequests/index.tsx";
 import CreateReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/createReturnRequest.tsx";
 import EditReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/editReturnRequest.tsx";
-import AllPaymentTransactions from "@eCommerceModule/clients/panel/private/paymentTransactions/index.tsx";
 import AllProductVariants from "@eCommerceModule/clients/panel/private/productVariants/index.tsx";
 import CreateProductVariant from "@eCommerceModule/clients/panel/private/productVariants/createProductVariant.tsx";
 import EditProductVariant from "@eCommerceModule/clients/panel/private/productVariants/editProductVariant.tsx";
 import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
 import AllProductReviews from "@eCommerceModule/clients/panel/private/productReviews/index.tsx";
-import AllGiftCards from "@eCommerceModule/clients/panel/private/giftCards/index.tsx";
 import CreateCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/createCustomerAddress.tsx";
 import EditCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/editCustomerAddress.tsx";
 import AllPosPaymentMethods from "@eCommerceModule/clients/panel/private/posPaymentMethods/index.tsx";
@@ -162,6 +160,18 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 }
                 return <AllProductVariants />;
             }
+            if (resource === "fiscalconfigs") {
+                const fiscalConfigId = searchParams.get("fiscalConfigId") || undefined;
+                if (action === "create") return <CreateFiscalConfig />;
+                if (action === "edit" && fiscalConfigId) return <EditFiscalConfig entityId={fiscalConfigId} />;
+                return <AllFiscalConfigs />;
+            }
+            if (resource === "cmsblocks") {
+                const cmsBlockId = searchParams.get("cmsBlockId") || undefined;
+                if (action === "create") return <CreateCmsBlock />;
+                if (action === "edit" && cmsBlockId) return <EditCmsBlock entityId={cmsBlockId} />;
+                return <AllCmsBlocks />;
+            }
             return undefined;
         }
 
@@ -177,8 +187,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         const inventoryTitle = safeDecode(searchParams.get("inventoryTitle")) || undefined;
         const collectionId = searchParams.get("collectionId") || undefined;
         const collectionTitle = safeDecode(searchParams.get("collectionTitle")) || undefined;
-        const cmsBlockId = searchParams.get("cmsBlockId") || undefined;
-
         if (resource === "systemmap") {
             return <SystemMap />;
         }
@@ -190,12 +198,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "posorders") {
             return <AllPosOrders />;
-        }
-        if (resource === "fiscalconfigs") {
-            const fiscalConfigId = searchParams.get("fiscalConfigId") || undefined;
-            if (action === "create") return <CreateFiscalConfig />;
-            if (action === "edit" && fiscalConfigId) return <EditFiscalConfig entityId={fiscalConfigId} />;
-            return <AllFiscalConfigs />;
         }
         if (resource === "products") {
             if (action === "create") return <CreateProduct />;
@@ -220,11 +222,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         if (resource === "productorders") {
             return <AllProductOrders />;
         }
-        if (resource === "cmsblocks") {
-            if (action === "create") return <CreateCmsBlock />;
-            if (action === "edit" && cmsBlockId) return <EditCmsBlock entityId={cmsBlockId} />;
-            return <AllCmsBlocks />;
-        }
         if (resource === "analytics") {
             return <ECommerceAnalytics />;
         }
@@ -240,14 +237,8 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             if (action === "edit" && returnRequestId) return <EditReturnRequest entityId={returnRequestId} />;
             return <AllReturnRequests />;
         }
-        if (resource === "paymenttransactions") {
-            return <AllPaymentTransactions />;
-        }
         if (resource === "productreviews") {
             return <AllProductReviews />;
-        }
-        if (resource === "giftcards") {
-            return <AllGiftCards />;
         }
         if (resource === "customeraddresses") {
             const customerAddressId = searchParams.get("customerAddressId") || undefined;

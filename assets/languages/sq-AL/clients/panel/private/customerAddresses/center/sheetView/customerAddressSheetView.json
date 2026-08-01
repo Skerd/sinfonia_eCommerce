@@ -1,6 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx",
   "overview": "Përmbledhje",
+  "address": "Adresa",
   "related": "Të lidhura",
   "customerAddressSubtitle": "Detajet e adresës",
   "failedTitle": "Ngarkimi i adresës dështoi",
@@ -18,7 +19,7 @@
   "latitude": "Gjerësia gjeografike",
   "longitude": "Gjatësia gjeografike",
   "country": "Shteti",
-  "user": "Klienti",
+  "customer": "Klienti",
   "createdBy": "Krijuar nga",
   "company": "Kompania",
   "yes": "Po",

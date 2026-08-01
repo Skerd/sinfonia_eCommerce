@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/activateShippingZoneDialog.tsx",
+  "title": "Activate shipping zone",
+  "description": "This shipping zone will be used when calculating shipping rates.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating shipping zone…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Shipping zone activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate shipping zone",
+      "time": 3000
+    }
+  }
+}

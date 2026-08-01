@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx",
+  "title": "Deactivate tax zone",
+  "description": "This tax zone will no longer be used for tax calculation until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating tax zone…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tax zone deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate tax zone",
+      "time": 3000
+    }
+  }
+}

@@ -5,8 +5,8 @@
   "errorDescription": "Adresa nuk u ngarkua. Provoni përsëri.",
   "form": {
     "_idLabel": "ID e regjistrimit",
-    "userLabel": "Klienti",
-    "userPlaceholder": "Zgjidh klientin",
+    "customerLabel": "Klienti",
+    "customerPlaceholder": "Zgjidh klientin",
     "firstNameLabel": "Emri i marrësit",
     "firstNamePlaceholder": "Emri në paketë",
     "lastNameLabel": "Mbiemri i marrësit",
@@ -14,9 +14,9 @@
     "streetLabel": "Rruga",
     "streetPlaceholder": "Adresa e rrugës",
     "cityLabel": "Qyteti",
-    "cityPlaceholder": "Qyteti",
+    "cityPlaceholder": "Zgjidh qytetin",
     "stateLabel": "Rajoni",
-    "statePlaceholder": "Rajoni ose shteti",
+    "statePlaceholder": "Zgjidh rajonin",
     "postalCodeLabel": "Kodi postar",
     "postalCodePlaceholder": "Kodi postar",
     "phoneLabel": "Telefoni",
@@ -28,8 +28,7 @@
     "longitudeLabel": "Gjatësia gjeografike",
     "longitudePlaceholder": "19.8189",
     "labelLabel": "Etiketa",
-    "labelPlaceholder": "Shtëpi, punë, …",
-    "isDefaultLabel": "Adresa e parazgjedhur"
+    "labelPlaceholder": "Shtëpi, punë, …"
   },
   "axios": {
     "start": {

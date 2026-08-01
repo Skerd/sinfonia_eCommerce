@@ -12,16 +12,17 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 
-type PostPayload = {customerAddressId: string};
+type PostPayload = {_id: string};
 
 type Props = WithLanguageType &
-    WithAxiosType<CustomerAddress, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: CustomerAddress;
-        onSuccess?: (row: CustomerAddress) => void;
+        onSuccess?: () => void;
     };
 
 function SetDefaultCustomerAddressDialog({
@@ -35,8 +36,8 @@ function SetDefaultCustomerAddressDialog({
     onSuccess,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
-        success: (data: CustomerAddress) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.();
             onClose();
         },
         error: () => {
@@ -58,7 +59,7 @@ function SetDefaultCustomerAddressDialog({
                     <Button
                         type="button"
                         disabled={loading}
-                        onClick={() => onFilterChange({customerAddressId: entity._id})}
+                        onClick={() => onFilterChange({_id: entity._id})}
                     >
                         {loading ? resolveLanguageKey("busy") : resolveLanguageKey("confirm")}
                     </Button>
@@ -72,7 +73,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
     ),
-    withAxios<CustomerAddress, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/customerAddress/setDefault", method: "POST", data: {}},
         true,
     ),

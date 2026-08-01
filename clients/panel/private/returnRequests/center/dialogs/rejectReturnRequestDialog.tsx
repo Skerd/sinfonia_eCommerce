@@ -14,19 +14,20 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 
 type PostPayload = {
-    returnRequestId: string;
+    _id: string;
     reason?: string;
 };
 
 type Props = WithLanguageType &
-    WithAxiosType<ReturnRequest, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: ReturnRequest;
-        onSuccess?: (row: ReturnRequest) => void;
+        onSuccess?: (patch: Partial<ReturnRequest>) => void;
     };
 
 function RejectReturnRequestDialog({
@@ -42,8 +43,12 @@ function RejectReturnRequestDialog({
     const [reason, setReason] = useState(entity.adminNote ?? "");
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: ReturnRequest) => {
-            onSuccess?.(data);
+        success: () => {
+            onSuccess?.({
+                status: "rejected",
+                adminNote: reason.trim() || entity.adminNote,
+                resolvedAt: new Date().toISOString(),
+            });
             onClose();
         },
         error: () => {
@@ -82,7 +87,7 @@ function RejectReturnRequestDialog({
                         disabled={loading}
                         onClick={() =>
                             onFilterChange({
-                                returnRequestId: entity._id,
+                                _id: entity._id,
                                 reason: reason.trim() || undefined,
                             })
                         }
@@ -99,7 +104,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
     ),
-    withAxios<ReturnRequest, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/returnRequest/reject", method: "POST", data: {}},
         true,
     ),

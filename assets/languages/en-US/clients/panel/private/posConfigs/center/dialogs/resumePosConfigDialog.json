@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
+  "title": "Resume this POS till?",
+  "description": "Clears the pause on this till only. A company-wide lock (if active) is not cleared. Cashiers must open a new session to sell again.",
+  "cancel": "Cancel",
+  "confirm": "Resume till",
+  "busy": "Working…",
+  "axios": {
+    "start": {"title": "Resuming POS till…", "time": 3000},
+    "success": {"title": "POS till resumed", "time": 3000},
+    "error": {"title": "Could not resume POS till", "time": 3000}
+  }
+}

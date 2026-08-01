@@ -12,7 +12,6 @@ export default createGenericCreatePage<CreateTaxZoneFormType>({
     defaultValues: {
         name: "",
         country: "",
-        isActive: true,
         priority: 0,
         rates: [{name: "Default", rate: 0, isCompound: false, appliesTo: "all"}],
     } as unknown as CreateTaxZoneFormType,

@@ -35,6 +35,7 @@ type CustomerAddressCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onDefaultChanged?: (addressId: string) => void;
 };
 
 function CustomerAddressCard({
@@ -44,6 +45,7 @@ function CustomerAddressCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onDefaultChanged,
 }: CustomerAddressCardProps) {
     const [action, setAction] = useState<string>("");
     const [entity, setEntity] = useState<CustomerAddress>(entityProp);
@@ -148,7 +150,7 @@ function CustomerAddressCard({
                                         label={resolveLanguageKey("city")}
                                         icon={IconMapPin}
                                         show={!!read?.city}
-                                        value={entity.city != null ? String(entity.city) : undefined}
+                                        value={entity.city?.name}
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("phone")}
@@ -189,6 +191,10 @@ function CustomerAddressCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            onDefaultChanged={(addressId) => {
+                                setEntity((prev) => ({...prev, isDefault: true, _id: addressId}));
+                                onDefaultChanged?.(addressId);
+                            }}
                             onSheetRowPatched={(row) => setEntity(row as CustomerAddress)}
                         />
                     )}
@@ -221,7 +227,10 @@ function CustomerAddressCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={() => {
+                                setEntity((prev) => ({...prev, isDefault: true}));
+                                onDefaultChanged?.(entity._id);
+                            }}
                         />
                     )}
                 </>

@@ -203,7 +203,7 @@ function ReturnRequestCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={(patch) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "rejectReturnRequest" && (
@@ -211,7 +211,7 @@ function ReturnRequestCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(row) => setEntity(row)}
+                            onSuccess={(patch) => setEntity({...entity, ...patch})}
                         />
                     )}
                 </>

@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx",
   "productOrderSubtitle": "Order details",
+  "failedTitle": "Failed to load product order",
+  "failedDescription": "Something went wrong while loading this product order. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "overview": "Overview",
   "products": "Products",
   "product": "Product",

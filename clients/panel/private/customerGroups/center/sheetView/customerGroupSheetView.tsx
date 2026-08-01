@@ -9,6 +9,7 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
+import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/customergroups";
 
@@ -19,7 +20,8 @@ export type CustomerGroupSheetViewOwnProps = {
     hideActions?: boolean;
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
-    onMembersChanged?: () => void;
+    onMembersChanged?: (memberCountDelta: 1 | -1) => void;
+    onDefaultChanged?: (groupId: string) => void;
     fetchId?: string;
 };
 
@@ -39,6 +41,7 @@ function CustomerGroupSheetView({
     onDelete = () => {},
     onRestore = () => {},
     onMembersChanged,
+    onDefaultChanged,
     fetchId,
 }: CustomerGroupSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(customerGroupProp || {_id: fetchId});
@@ -89,7 +92,24 @@ function CustomerGroupSheetView({
                     open
                     onClose={() => setMemberAction("")}
                     customerGroup={customerGroup}
-                    onSuccess={onMembersChanged}
+                    onSuccess={(delta) => {
+                        setSheetData((prev) => ({
+                            ...prev,
+                            memberCount: Math.max(0, (Number(prev.memberCount) || 0) + delta),
+                        }));
+                        onMembersChanged?.(delta);
+                    }}
+                />
+            )}
+            {memberAction === "setDefaultCustomerGroup" && (
+                <SetDefaultCustomerGroupDialog
+                    open
+                    onClose={() => setMemberAction("")}
+                    entity={customerGroup}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isDefault: true}));
+                        onDefaultChanged?.(customerGroup._id);
+                    }}
                 />
             )}
         </>

@@ -20,7 +20,6 @@ export default createGenericCreatePage<CreatePosConfigFormType>({
         pinForDiscount: false,
         pinForCashOut: false,
         pinForRefund: false,
-        isActive: true,
     } as unknown as CreatePosConfigFormType,
     successPath: "/tenancy/systemSettings/posconfigs",
     submitIcon: <IconPlus />,

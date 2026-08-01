@@ -12,7 +12,6 @@ export default createGenericCreatePage<CreateShippingZoneFormType>({
     defaultValues: {
         name: "",
         countries: [],
-        isActive: true,
         rates: [{name: "Default", type: "flat", price: 0}],
     } as unknown as CreateShippingZoneFormType,
     successPath: "/tenancy/systemSettings/shippingzones",

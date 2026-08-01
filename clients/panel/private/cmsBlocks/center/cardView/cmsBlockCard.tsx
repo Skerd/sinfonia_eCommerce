@@ -22,7 +22,7 @@ import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks
 import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
 import DeactivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx";
 
-const LIST_BASE = "/eCommerce/cmsblocks";
+const LIST_BASE = "/tenancy/systemSettings/cmsblocks";
 
 function cmsBlockEditPath(cmsBlock: CmsBlock) {
     const params = new URLSearchParams();
@@ -37,6 +37,7 @@ type CmsBlockCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function CmsBlockCard({
@@ -46,6 +47,7 @@ function CmsBlockCard({
     onRestore: onRestoreProp,
     hideActions = false,
     sheetOnly = false,
+    onActiveChanged,
 }: CmsBlockCardProps) {
     const [action, setAction] = useState<string>("");
     const [cmsBlock, setCmsBlock] = useState<CmsBlock>(cmsBlockProp);
@@ -179,7 +181,12 @@ function CmsBlockCard({
                             fetchId={cmsBlock._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setCmsBlock(row as CmsBlock)}
+                            onSheetRowPatched={(row) => {
+                                setCmsBlock((prev) => ({...prev, ...row}) as CmsBlock);
+                                if (typeof row.isActive === "boolean") {
+                                    onActiveChanged?.(row.isActive);
+                                }
+                            }}
                         />
                     )}
                     {action === "delete" && (
@@ -211,7 +218,10 @@ function CmsBlockCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={cmsBlock}
-                            onSuccess={(row) => setCmsBlock(row)}
+                            onSuccess={() => {
+                                setCmsBlock((prev) => ({...prev, isActive: true}));
+                                onActiveChanged?.(true);
+                            }}
                         />
                     )}
                     {action === "deactivateCmsBlock" && (
@@ -219,7 +229,10 @@ function CmsBlockCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={cmsBlock}
-                            onSuccess={(row) => setCmsBlock(row)}
+                            onSuccess={() => {
+                                setCmsBlock((prev) => ({...prev, isActive: false}));
+                                onActiveChanged?.(false);
+                            }}
                         />
                     )}
                 </>

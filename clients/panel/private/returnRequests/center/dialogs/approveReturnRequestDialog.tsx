@@ -15,20 +15,21 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
+import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 
 type PostPayload = {
-    returnRequestId: string;
+    _id: string;
     refundAmount?: number;
     notes?: string;
 };
 
 type Props = WithLanguageType &
-    WithAxiosType<ReturnRequest, PostPayload> & {
+    WithAxiosType<ActionMessage, PostPayload> & {
         open: boolean;
         onClose: () => void;
         entity: ReturnRequest;
-        onSuccess?: (row: ReturnRequest) => void;
+        onSuccess?: (patch: Partial<ReturnRequest>) => void;
     };
 
 function ApproveReturnRequestDialog({
@@ -47,8 +48,14 @@ function ApproveReturnRequestDialog({
     const [notes, setNotes] = useState(entity.adminNote ?? "");
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: ReturnRequest) => {
-            onSuccess?.(data);
+        success: () => {
+            const parsed = refundAmount.trim() === "" ? undefined : Number(refundAmount);
+            onSuccess?.({
+                status: "approved",
+                refundAmount: parsed != null && !Number.isNaN(parsed) ? parsed : entity.refundAmount,
+                adminNote: notes.trim() || entity.adminNote,
+                resolvedAt: new Date().toISOString(),
+            });
             onClose();
         },
         error: () => {
@@ -59,7 +66,7 @@ function ApproveReturnRequestDialog({
     const submit = () => {
         const parsed = refundAmount.trim() === "" ? undefined : Number(refundAmount);
         onFilterChange({
-            returnRequestId: entity._id,
+            _id: entity._id,
             refundAmount: parsed != null && !Number.isNaN(parsed) ? parsed : undefined,
             notes: notes.trim() || undefined,
         });
@@ -115,7 +122,7 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
     ),
-    withAxios<ReturnRequest, PostPayload>(
+    withAxios<ActionMessage, PostPayload>(
         {url: "/api/eCommerce/returnRequest/approve", method: "POST", data: {}},
         true,
     ),

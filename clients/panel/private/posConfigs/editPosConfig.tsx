@@ -25,7 +25,7 @@ export default createGenericEditPage<PosConfig, EditPosConfigFormType>({
     schema: editPosConfigFormSchema,
     mapEntityData: (data) => ({
         ...data,
-        paymentMethods: data.paymentMethods ?? data.paymentMethodLabels?.map((m) => m._id),
+        paymentMethods: data.paymentMethods?.map((m) => m._id) ?? [],
         managers: data.managers?.map((m) => m._id) ?? [],
         warehouses: data.warehouses?.map((w) => w._id) ?? [],
         currency: data.currency?._id,
@@ -38,7 +38,7 @@ export default createGenericEditPage<PosConfig, EditPosConfigFormType>({
                 posConfigChipLabelState.managers.current = {};
                 posConfigChipLabelState.warehouses.current = {};
             }
-            for (const method of entity.paymentMethodLabels ?? []) {
+            for (const method of entity.paymentMethods ?? []) {
                 if (method?._id && method.name) {
                     posConfigChipLabelState.paymentMethods.current[method._id] = method.name;
                 }
@@ -57,7 +57,7 @@ export default createGenericEditPage<PosConfig, EditPosConfigFormType>({
             }
         }
         const paymentMethodOptions =
-            entity?.paymentMethodLabels
+            entity?.paymentMethods
                 ?.filter((m) => !!m?._id && !!m.name)
                 .map((m) => ({value: m._id, label: m.name})) ?? [];
         const managerOptions =

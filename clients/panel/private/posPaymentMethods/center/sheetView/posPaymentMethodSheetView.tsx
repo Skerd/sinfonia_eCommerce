@@ -99,9 +99,10 @@ function PosPaymentMethodSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(method) => {
-                        setSheetData(method);
-                        onSheetRowPatched?.(method);
+                    onSuccess={() => {
+                        const patch = {isActive: true};
+                        setSheetData((prev) => ({...prev, ...patch}));
+                        onSheetRowPatched?.(patch);
                     }}
                 />
             )}
@@ -110,9 +111,10 @@ function PosPaymentMethodSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(method) => {
-                        setSheetData(method);
-                        onSheetRowPatched?.(method);
+                    onSuccess={() => {
+                        const patch = {isActive: false};
+                        setSheetData((prev) => ({...prev, ...patch}));
+                        onSheetRowPatched?.(patch);
                     }}
                 />
             )}

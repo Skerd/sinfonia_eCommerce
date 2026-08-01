@@ -23,6 +23,7 @@ export type DiscountSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
     onSheetRowPatched?: (row: Record<string, unknown>) => void;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function discountEditPath(discount: Discount) {
@@ -42,6 +43,7 @@ function DiscountSheetView({
     onRestore = () => {},
     fetchId,
     onSheetRowPatched,
+    onActiveChanged,
 }: DiscountSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(discountProp || {_id: fetchId});
     const [action, setAction] = useState("");
@@ -96,9 +98,10 @@ function DiscountSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
+                        onActiveChanged?.(true);
                     }}
                 />
             )}
@@ -107,9 +110,10 @@ function DiscountSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
+                        onActiveChanged?.(false);
                     }}
                 />
             )}

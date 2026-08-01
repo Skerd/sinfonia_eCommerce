@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
+  "title": "Pause all POS tills?",
+  "description": "Applies a company-wide lock and stamps every till. Open sessions are force-closed (holds cancelled, cash set to expected). New tills created while locked also cannot sell until Resume all. Terminal voids are best-effort.",
+  "reasonLabel": "Reason (optional)",
+  "reasonPlaceholder": "e.g. Fiscal / network outage",
+  "cancel": "Cancel",
+  "confirm": "Pause all",
+  "busy": "Working…",
+  "axios": {
+    "start": {"title": "Pausing all POS tills…", "time": 3000},
+    "success": {"title": "All POS tills paused", "time": 3000},
+    "error": {"title": "Could not pause all POS tills", "time": 3000}
+  }
+}

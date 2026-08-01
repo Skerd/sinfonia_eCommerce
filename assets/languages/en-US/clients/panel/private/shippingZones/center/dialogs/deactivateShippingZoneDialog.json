@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/deactivateShippingZoneDialog.tsx",
+  "title": "Deactivate shipping zone",
+  "description": "This shipping zone will no longer be used for rate calculation until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating shipping zone…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Shipping zone deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate shipping zone",
+      "time": 3000
+    }
+  }
+}

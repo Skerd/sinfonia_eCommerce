@@ -12,7 +12,6 @@ export default createGenericCreatePage<CreateWarehouseFormType>({
     defaultValues: {
         name: "",
         code: "",
-        isDefault: false,
         address: {
             latitude: 41.3275,
             longitude: 19.8189,

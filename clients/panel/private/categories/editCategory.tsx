@@ -77,7 +77,6 @@ function EditCategory({
         };
 
         if (writeFields.name) postBody.name = data.name;
-        if (writeFields.slug) postBody.slug = data.slug;
         if (writeFields.parent) {
             const pid = data.parent;
             if (pid === "") postBody.parent = null;
@@ -104,7 +103,6 @@ function EditCategory({
                 categoryData && {
                     _id: categoryData._id,
                     name: writeFields.name ? categoryData.name : undefined,
-                    slug: writeFields.slug ? categoryData.slug : undefined,
                     parent: writeFields.parent ? categoryData.parent?._id : undefined,
                     order: writeFields.order ? categoryData.order : undefined,
                 }

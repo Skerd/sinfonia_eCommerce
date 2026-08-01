@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
+  "title": "Të pauzohen të gjitha arkat POS?",
+  "description": "Aplikon një kyç në nivel kompanie dhe shënon çdo arkë. Seancat e hapura mbyllen me forcë. Arkat e reja gjatë kyçit nuk mund të shesin derisa Resume all. Anulimi i terminalit është sipas mundësisë.",
+  "reasonLabel": "Arsyeja (opsionale)",
+  "reasonPlaceholder": "p.sh. Ndërprerje fiskale / rrjeti",
+  "cancel": "Anulo",
+  "confirm": "Pauzo të gjitha",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {"title": "Duke pauzuar të gjitha arkat…", "time": 3000},
+    "success": {"title": "Të gjitha arkat u pauzuan", "time": 3000},
+    "error": {"title": "Nuk u pauzuan të gjitha arkat", "time": 3000}
+  }
+}

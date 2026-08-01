@@ -5,7 +5,6 @@ import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import PosOrderCard from "./center/cardView/posOrderCard.tsx";
-import PosOrderSheetView from "./center/sheetView/posOrderSheetView.tsx";
 import ReprintPosOrder from "./center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "./center/dialogs/reprintPosOrderDialog.tsx";
 
@@ -22,9 +21,6 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx"
             renderActionMenuChildren={(entity, bindRowAction) => (
-                <ReprintPosOrder entity={entity} onAction={bindRowAction} />
-            )}
-            renderSheetActionMenuChildren={(entity, bindRowAction) => (
                 <ReprintPosOrder entity={entity} onAction={bindRowAction} />
             )}
             renderFloatingModals={({action, entity, resetAction}) => {
@@ -44,17 +40,6 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
                     entity={entity}
                     onDelete={(row: PosOrder | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
-                />
-            )}
-            renderSheet={({entity, open, onOpenChange, onDelete, onRestore}) => (
-                <PosOrderSheetView
-                    open={open}
-                    onOpenChange={(opened: boolean) => {
-                        if (!opened) onOpenChange();
-                    }}
-                    entity={entity}
-                    onDelete={onDelete}
-                    onRestore={onRestore}
                 />
             )}
         />

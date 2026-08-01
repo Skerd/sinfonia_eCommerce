@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
+  "title": "Të rifillohet kjo arkë POS?",
+  "description": "Pastron pauzën vetëm për këtë arkë. Kyçi i kompanisë (nëse është aktiv) nuk pastrohet. Arkatari duhet të hapë një seancë të re për të shitur.",
+  "cancel": "Anulo",
+  "confirm": "Rifillo arkën",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {"title": "Duke rifilluar arkën POS…", "time": 3000},
+    "success": {"title": "Arka POS u rifillua", "time": 3000},
+    "error": {"title": "Nuk u rifillua arka POS", "time": 3000}
+  }
+}

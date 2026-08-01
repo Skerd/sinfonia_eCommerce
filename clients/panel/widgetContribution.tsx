@@ -74,24 +74,6 @@ const DiscountSheetViewLazy = lazy(
 const DiscountCardLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/discounts/center/cardView/discountCard.tsx"),
 );
-const GiftCardSheetViewLazy = lazy(
-    () => import("@eCommerceModule/clients/panel/private/giftCards/center/sheetView/giftCardSheetView.tsx"),
-);
-const GiftCardCardLazy = lazy(
-    () => import("@eCommerceModule/clients/panel/private/giftCards/center/cardView/giftCardCard.tsx"),
-);
-const PaymentTransactionSheetViewLazy = lazy(
-    () =>
-        import(
-            "@eCommerceModule/clients/panel/private/paymentTransactions/center/sheetView/paymentTransactionSheetView.tsx"
-        ),
-);
-const PaymentTransactionCardLazy = lazy(
-    () =>
-        import(
-            "@eCommerceModule/clients/panel/private/paymentTransactions/center/cardView/paymentTransactionCard.tsx"
-        ),
-);
 const ProductOrderSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx"),
 );
@@ -161,10 +143,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#PosManagerSheetView": PosManagerSheetViewLazy,
         "#DiscountSheetView": DiscountSheetViewLazy,
         "#DiscountCard": DiscountCardLazy,
-        "#GiftCardSheetView": GiftCardSheetViewLazy,
-        "#GiftCardCard": GiftCardCardLazy,
-        "#PaymentTransactionSheetView": PaymentTransactionSheetViewLazy,
-        "#PaymentTransactionCard": PaymentTransactionCardLazy,
         "#ProductOrderSheetView": ProductOrderSheetViewLazy,
         "#ProductOrderCard": ProductOrderCardLazy,
         "#PosOrderSheetView": PosOrderSheetViewLazy,
@@ -188,8 +166,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#CustomerGroupCard": "customerGroup",
         "#WarehouseCard": "warehouse",
         "#DiscountCard": "discount",
-        "#GiftCardCard": "entity",
-        "#PaymentTransactionCard": "entity",
         "#ProductOrderCard": "order",
         "#PosOrderCard": "entity",
         "#ProductReviewCard": "review",
@@ -215,11 +191,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#CategorySheetView": {url: "/api/eCommerce/category/single", labelFields: ["name"]},
         "#CustomerGroupSheetView": {url: "/api/eCommerce/customerGroup/single", labelFields: ["name"]},
         "#DiscountSheetView": {url: "/api/eCommerce/discount/single", labelFields: ["title", "code"]},
-        "#GiftCardSheetView": {url: "/api/eCommerce/giftCard/single", labelFields: ["code"]},
-        "#PaymentTransactionSheetView": {
-            url: "/api/eCommerce/paymentTransaction/single",
-            labelFields: ["gatewayTransactionId", "type", "status"],
-        },
         "#ProductOrderSheetView": {
             url: "/api/eCommerce/productOrder/single",
             labelFields: ["orderNumber", "status"],
@@ -238,7 +209,7 @@ const eCommerceWidgetContribution: WidgetContribution = {
         },
         "#ProductReviewSheetView": {
             url: "/api/eCommerce/productReview/single",
-            labelFields: ["title", "rating", "displayTitle"],
+            labelFields: ["title", "product.title", "rating"],
         },
         "#InventorySheetView": {
             url: "/api/eCommerce/inventory/single",

@@ -19,6 +19,7 @@ import RestoreAction from "@coreModule/components/custom/actions/restoreAction.t
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
+import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/customergroups";
 
@@ -35,7 +36,8 @@ type CustomerGroupCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
-    onMembersChanged?: () => void;
+    onMembersChanged?: (memberCountDelta: 1 | -1) => void;
+    onDefaultChanged?: (groupId: string) => void;
 };
 
 function CustomerGroupCard({
@@ -46,6 +48,7 @@ function CustomerGroupCard({
     hideActions = false,
     sheetOnly = false,
     onMembersChanged,
+    onDefaultChanged,
 }: CustomerGroupCardProps) {
     const [action, setAction] = useState<string>("");
     const [customerGroup, setCustomerGroup] = useState<CustomerGroup>(customerGroupProp);
@@ -167,6 +170,10 @@ function CustomerGroupCard({
                             onDelete={onDelete}
                             onRestore={onRestore}
                             onMembersChanged={onMembersChanged}
+                            onDefaultChanged={(groupId) => {
+                                setCustomerGroup((prev) => ({...prev, isDefault: true, _id: groupId}));
+                                onDefaultChanged?.(groupId);
+                            }}
                         />
                     )}
                     {action === "manageMembers" && (
@@ -174,7 +181,24 @@ function CustomerGroupCard({
                             open
                             onClose={() => setAction("")}
                             customerGroup={customerGroup}
-                            onSuccess={onMembersChanged}
+                            onSuccess={(delta) => {
+                                setCustomerGroup((prev) => ({
+                                    ...prev,
+                                    memberCount: Math.max(0, (prev.memberCount ?? 0) + delta),
+                                }));
+                                onMembersChanged?.(delta);
+                            }}
+                        />
+                    )}
+                    {action === "setDefaultCustomerGroup" && (
+                        <SetDefaultCustomerGroupDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={customerGroup}
+                            onSuccess={() => {
+                                setCustomerGroup((prev) => ({...prev, isDefault: true}));
+                                onDefaultChanged?.(customerGroup._id);
+                            }}
                         />
                     )}
                     {action === "delete" && (

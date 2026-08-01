@@ -16,7 +16,7 @@ export function fiscalConfigEditPath(entity: {_id: string; name?: string}) {
     const params = new URLSearchParams();
     params.set("fiscalConfigId", entity._id);
     if (entity.name) params.set("fiscalConfigTitle", encodeURIComponent(entity.name));
-    return `/eCommerce/fiscalconfigs/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/fiscalconfigs/edit?${params.toString()}`;
 }
 
 function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
@@ -27,7 +27,7 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
             accessModel="fiscalConfigs"
             tableConfigKey="fiscalConfigs"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath="/eCommerce/fiscalconfigs/create"
+            createPath="/tenancy/systemSettings/fiscalconfigs/create"
             createIcon={<IconPlus />}
             createLanguageKey="createFiscalConfig"
             buildEditPath={fiscalConfigEditPath}
@@ -53,7 +53,7 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: true})}
                         />
                     );
                 }
@@ -63,17 +63,18 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: false})}
                         />
                     );
                 }
                 return null;
             }}
-            renderCard={(entity, onDelete, onRestore) => (
+            renderCard={(entity, onDelete, onRestore, listRef) => (
                 <FiscalConfigCard
                     entity={entity}
                     onDelete={(row: FiscalConfig | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
+                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

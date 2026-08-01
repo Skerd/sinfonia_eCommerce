@@ -8,7 +8,6 @@
     "nameLabel": "Name",
     "namePlaceholder": "Payment method name",
     "typeLabel": "Type",
-    "isActiveLabel": "Active",
     "sequenceLabel": "Sequence",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Cash quick amounts",
@@ -17,6 +16,7 @@
     "terminalEnabledLabel": "Connect bank POS terminal",
     "terminalForcesCardHint": "Connecting a bank POS terminal sets the type to Card. Disconnecting sets it to Cash.",
     "terminalProviderLabel": "Terminal provider",
+    "terminalProtocolLabel": "Protocol",
     "terminalHostLabel": "Terminal host / IP",
     "terminalHostPlaceholder": "192.168.1.50",
     "terminalPortLabel": "Terminal port",
@@ -35,6 +35,10 @@
     "terminalProvider": {
       "manual": "Manual (external terminal)",
       "local_http": "Local HTTP bridge"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
     }
   },
   "axios": {

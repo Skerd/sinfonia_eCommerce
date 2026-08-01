@@ -12,11 +12,11 @@ export default createGenericCreatePage<CreatePosPaymentMethodFormType>({
     defaultValues: {
         name: "",
         type: "cash",
-        isActive: true,
         sequence: 0,
         cashQuickAmounts: "0.1,0.2,0.5,1,5,10,20,50,100",
         terminalEnabled: false,
         terminalProvider: "manual",
+        terminalProtocol: "http",
         terminalHost: "",
         terminalPort: 8080,
         terminalId: "",

@@ -7,6 +7,10 @@ import type {TaxZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/activateTaxZone.tsx";
+import DeactivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/deactivateTaxZone.tsx";
+import ActivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx";
+import DeactivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/taxzones";
 
@@ -18,6 +22,7 @@ export type TaxZoneSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function taxZoneEditPath(taxZone: TaxZone) {
@@ -36,10 +41,16 @@ function TaxZoneSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: TaxZoneSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(taxZoneProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("taxZones");
     const viewConfig = useViewConfig("taxZones", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!taxZoneProp) return;
@@ -51,24 +62,58 @@ function TaxZoneSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as TaxZone;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/taxZone/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={taxZoneEditPath(sheetData as TaxZone)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/taxZone/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={taxZoneEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivateTaxZone entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivateTaxZone entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activateTaxZone" && (
+                <ActivateTaxZoneDialog
+                    open
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
+                    }}
+                />
+            )}
+            {action === "deactivateTaxZone" && (
+                <DeactivateTaxZoneDialog
+                    open
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
+                    }}
+                />
+            )}
+        </>
     );
 }
 

@@ -9,7 +9,6 @@
     "namePlaceholder": "Warehouse name",
     "codeLabel": "Code",
     "codePlaceholder": "Warehouse code",
-    "isDefaultLabel": "Default warehouse",
     "addressSectionTitle": "Address",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
@@ -42,7 +41,7 @@
   },
   "formHeader": {
     "title": "Edit warehouse",
-    "description": "Update the name, default setting, and address."
+    "description": "Update the name and address."
   },
   "formButtons": {
     "cancel": "Cancel",

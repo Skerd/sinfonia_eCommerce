@@ -3,11 +3,8 @@
   "form": {
     "nameLabel": "Name",
     "namePlaceholder": "Category name",
-    "slugLabel": "Slug",
-    "slugPlaceholder": "Leave blank to generate from name",
     "parentCategoryLabel": "Parent category",
     "parentCategoryPlaceholder": "Optional root category",
-    "parentIdLabel": "Parent",
     "orderLabel": "Sort order",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Create category",

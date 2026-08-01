@@ -3,6 +3,16 @@
   "title": "POS Configs",
   "description": "Point of sale shops and till settings.",
   "createPosConfig": "Create POS config",
+  "bulkMenu": {
+    "triggerAria": "Company POS controls",
+    "label": "Company controls",
+    "hint": "Emergency stop for every till",
+    "lockedReasonPrefix": "Company pause reason",
+    "pauseAll": "Pause all tills",
+    "pauseAllHint": "Lock the company and force-close open sessions",
+    "resumeAll": "Resume all tills",
+    "resumeAllHint": "Clear the company lock and every till pause"
+  },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",

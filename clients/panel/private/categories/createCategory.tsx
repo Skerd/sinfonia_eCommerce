@@ -37,9 +37,8 @@ function CreateCategory({
     function onSubmit(data: CreateCategoryFormType) {
         const postBody: CreateCategoryFormType = {
             name: data.name,
-            slug: data.slug?.trim() || undefined,
-            parentId: data.parentId || undefined,
-            order: data.order ?? 0,
+            parent: data.parent || undefined,
+            order: data.order,
         };
         onFormDataChange(postBody);
     }

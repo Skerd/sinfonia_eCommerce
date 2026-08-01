@@ -53,7 +53,7 @@ function AllDiscounts({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: true})}
                         />
                     );
                 }
@@ -63,17 +63,18 @@ function AllDiscounts({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(row) => listRef.current?.updateRow?.(entity._id, row)}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {isActive: false})}
                         />
                     );
                 }
                 return null;
             }}
-            renderCard={(discount, onDelete, onRestore) => (
+            renderCard={(discount, onDelete, onRestore, listRef) => (
                 <DiscountCard
                     discount={discount}
                     onDelete={(row: Discount | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(discount)}
+                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(discount._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -83,6 +84,7 @@ function AllDiscounts({resolveLanguageKey}: WithLanguageType) {
                     discount={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
+                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
                     onSheetRowPatched={(row: Record<string, unknown>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<Discount>);
                     }}

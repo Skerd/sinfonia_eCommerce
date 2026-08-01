@@ -23,6 +23,7 @@ export type PricingRuleSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
     onSheetRowPatched?: (row: Record<string, unknown>) => void;
+    onActiveChanged?: (isActive: boolean) => void;
 };
 
 function pricingRuleEditPath(pricingRule: PricingRule) {
@@ -42,6 +43,7 @@ function PricingRuleSheetView({
     onRestore = () => {},
     fetchId,
     onSheetRowPatched,
+    onActiveChanged,
 }: PricingRuleSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(pricingRuleProp || {_id: fetchId});
     const [action, setAction] = useState("");
@@ -96,9 +98,10 @@ function PricingRuleSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
+                        onActiveChanged?.(true);
                     }}
                 />
             )}
@@ -107,9 +110,10 @@ function PricingRuleSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        setSheetData(row);
-                        onSheetRowPatched?.(row);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
+                        onActiveChanged?.(false);
                     }}
                 />
             )}

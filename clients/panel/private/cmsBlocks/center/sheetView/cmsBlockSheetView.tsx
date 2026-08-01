@@ -12,7 +12,7 @@ import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks
 import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
 import DeactivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx";
 
-const LIST_BASE = "/eCommerce/cmsblocks";
+const LIST_BASE = "/tenancy/systemSettings/cmsblocks";
 
 export type CmsBlockSheetViewOwnProps = {
     open: boolean;
@@ -112,10 +112,9 @@ function CmsBlockSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        const next = withConfigText(row as Record<string, unknown>);
-                        setSheetData(next);
-                        onSheetRowPatched?.(next);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: true}));
+                        onSheetRowPatched?.({isActive: true});
                     }}
                 />
             )}
@@ -124,10 +123,9 @@ function CmsBlockSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(row) => {
-                        const next = withConfigText(row as Record<string, unknown>);
-                        setSheetData(next);
-                        onSheetRowPatched?.(next);
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isActive: false}));
+                        onSheetRowPatched?.({isActive: false});
                     }}
                 />
             )}

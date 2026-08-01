@@ -37,7 +37,7 @@ function GiftCardsPage() {
         let cancelled = false;
         (async () => {
             try {
-                const res = await apiClient.post<{data: MyGiftCard[]}>("/api/eCommerce/giftCard/my", {});
+                const res = await apiClient.post<{data: MyGiftCard[]}>("/api/finance/giftCard/my", {});
                 if (!cancelled) setCards(res.data.data ?? []);
             } catch {
                 if (!cancelled) setCards([]);
