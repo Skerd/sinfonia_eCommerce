@@ -11,7 +11,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconTag, IconTruck, IconHash} from "@tabler/icons-react";
+import {IconTag, IconTruck} from "@tabler/icons-react";
 import FulfillmentSheetView from "@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
@@ -105,20 +105,18 @@ function FulfillmentCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.trackingNumber && (
-                                            <>
-                                                {entity.trackingNumber ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("trackingNumber")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">
-                                                            {entity.trackingNumber}
-                                                        </div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
+                                    <HiddenElement randomLength={10}>
+                                        {read?.trackingNumber ? (
+                                            entity.trackingNumber ? (
+                                                <TooltipDisplayer tooltip={resolveLanguageKey("trackingNumber")}>
+                                                    <div className="font-semibold text-base leading-tight truncate">
+                                                        {entity.trackingNumber}
+                                                    </div>
+                                                </TooltipDisplayer>
+                                            ) : (
+                                                <ValueNotSet />
+                                            )
+                                        ) : null}
                                     </HiddenElement>
                                 </div>
                                 {!hideActions && (
@@ -142,20 +140,26 @@ function FulfillmentCard({
                                     <InfoRow
                                         label={resolveLanguageKey("status")}
                                         icon={IconTag}
-                                        show={!!read?.status}
-                                        value={entity.status ? resolveLanguageKey("fulfillmentStatus." + entity.status) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.status ? 0 : 6}>
+                                                {!!read?.status && entity.status
+                                                    ? resolveLanguageKey("fulfillmentStatus." + entity.status)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("carrier")}
                                         icon={IconTruck}
-                                        show={!!read?.carrier}
-                                        value={entity.carrier != null ? String(entity.carrier) : undefined}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("trackingNumber")}
-                                        icon={IconHash}
-                                        show={!!read?.trackingNumber}
-                                        value={entity.trackingNumber != null ? String(entity.trackingNumber) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.carrier ? 0 : 8}>
+                                                {!!read?.carrier && entity.carrier != null
+                                                    ? String(entity.carrier)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                 </div>
                             </div>

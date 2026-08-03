@@ -26,9 +26,15 @@ function productEditPath(product: Product) {
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
-function formatMoney(amount: number, product: Product): string {
+function formatMoney(
+    amount: number,
+    product: Product,
+    currencyRead?: {keys?: {symbol?: unknown; abbreviation?: unknown}},
+): string {
     const c = product.currency;
-    const prefix = c?.symbol?.trim() || c?.abbreviation?.trim();
+    const symbol = currencyRead?.keys?.symbol ? c?.symbol?.trim() : undefined;
+    const abbreviation = currencyRead?.keys?.abbreviation ? c?.abbreviation?.trim() : undefined;
+    const prefix = symbol || abbreviation;
     const n = amount.toLocaleString(undefined, {
         minimumFractionDigits: 0,
         maximumFractionDigits: 2,
@@ -168,31 +174,17 @@ function ProductCard({
     }
 
     const description = product.shortDescription || product.description;
+    const canReadDescription = !!(read?.shortDescription || read?.description);
     const rating = product.ratingAverage;
-    const typeLabel = product.type
-        ? resolveLanguageKey("productType." + product.type)
-        : undefined;
+    const typeLabel = product.type ? resolveLanguageKey("productType." + product.type) : undefined;
     const isActive = product.status === "active";
 
-    const hasCompare =
-        product.compareAtPrice != null &&
-        product.price != null &&
-        product.compareAtPrice > product.price;
-    // Show sale chrome whenever compare-at is higher; window only gates the live timer.
-    const showSalePrice = hasCompare;
-    const priceStr = product.price != null ? formatMoney(product.price, product) : undefined;
-    const compareStr =
-        product.compareAtPrice != null ? formatMoney(product.compareAtPrice, product) : undefined;
-    const savingsPercent =
-        showSalePrice && product.compareAtPrice && product.price != null
-            ? Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)
-            : 0;
-    const saleEndsAtMs = product.saleEndsAt ? new Date(product.saleEndsAt).getTime() : NaN;
-    const showTimer =
-        !!product.saleEndsAt &&
-        !Number.isNaN(saleEndsAtMs) &&
-        saleEndsAtMs > Date.now() &&
-        isWithinSaleWindow(product);
+    const {price, compareAtPrice, saleEndsAt} = product;
+    const onSale = price != null && compareAtPrice != null && compareAtPrice > price;
+    const savingsPercent = onSale ? Math.round(((compareAtPrice - price) / compareAtPrice) * 100) : 0;
+    const priceStr = price != null ? formatMoney(price, product, read?.currency) : undefined;
+    const compareStr = compareAtPrice != null ? formatMoney(compareAtPrice, product, read?.currency) : undefined;
+    const showTimer = !!saleEndsAt && isWithinSaleWindow(product) && getTimeLeft(new Date(saleEndsAt)) != null;
 
     return (
         <>
@@ -204,33 +196,45 @@ function ProductCard({
                     onClick={() => setAction("view")}
                 >
                     <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
-                        {product.mainImage ? (
-                            <img
-                                src={`/api/auxiliary/media/${product.mainImage._id}`}
-                                alt={product.title}
-                                className="absolute inset-0 size-full object-cover"
-                            />
-                        ) : (
-                            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                <IconPhoto className="size-10 text-muted-foreground/15" />
-                            </div>
-                        )}
+                        <HiddenElement randomLength={read?.mainImage ? 0 : 12}>
+                            {!!read?.mainImage && (
+                                product.mainImage? (
+                                    <img
+                                        src={`/api/auxiliary/media/${product.mainImage._id}`}
+                                        alt={read?.title ? product.title : ""}
+                                        className="absolute inset-0 size-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
+                                        <IconPhoto className="size-10 text-muted-foreground/15" />
+                                    </div>
+                                )
+                            )}
+                        </HiddenElement>
 
                         {/* Top-left: type + % off */}
                         <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
-                            {read?.type && typeLabel && (
-                                <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
-                                    {typeLabel}
-                                </Badge>
-                            )}
-                            {showSalePrice && savingsPercent > 0 && (
-                                <Badge variant="destructive" className="pointer-events-auto text-[10px] px-1.5 py-0">
-                                    {resolveLanguageKey("salePercentOff").replace(
-                                        "{{percent}}",
-                                        String(savingsPercent),
-                                    )}
-                                </Badge>
-                            )}
+                            <HiddenElement randomLength={read?.type ? 0 : 6}>
+                                {!!read?.type && typeLabel ? (
+                                    <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                        {typeLabel}
+                                    </Badge>
+                                ) : null}
+                            </HiddenElement>
+                            {(onSale && savingsPercent > 0) || !(read?.compareAtPrice && read?.price) ? (
+                                <HiddenElement
+                                    randomLength={read?.compareAtPrice && read?.price ? 0 : 4}
+                                >
+                                    {!!(read?.compareAtPrice && read?.price) && onSale && savingsPercent > 0 ? (
+                                        <Badge variant="destructive" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                            {resolveLanguageKey("salePercentOff").replace(
+                                                "{{percent}}",
+                                                String(savingsPercent),
+                                            )}
+                                        </Badge>
+                                    ) : null}
+                                </HiddenElement>
+                            ) : null}
                         </div>
 
                         {!hideActions && (
@@ -248,14 +252,18 @@ function ProductCard({
                         )}
 
                         {/* Bottom of image/gallery: sale countdown */}
-                        {showTimer && product.saleEndsAt && (
+                        {(showTimer && !!saleEndsAt) || !read?.saleEndsAt ? (
                             <div className="absolute inset-x-2 bottom-2 z-20">
-                                <SaleCountdown
-                                    endsAt={product.saleEndsAt}
-                                    resolveLanguageKey={resolveLanguageKey}
-                                />
+                                <HiddenElement randomLength={read?.saleEndsAt ? 0 : 10}>
+                                    {!!read?.saleEndsAt && showTimer && saleEndsAt ? (
+                                        <SaleCountdown
+                                            endsAt={saleEndsAt}
+                                            resolveLanguageKey={resolveLanguageKey}
+                                        />
+                                    ) : null}
+                                </HiddenElement>
                             </div>
-                        )}
+                        ) : null}
                     </figure>
 
                     {(read.deletedBy || read.deletedAt) && (
@@ -264,63 +272,81 @@ function ProductCard({
 
                     <CardContent className="space-y-2.5 px-4 pb-3">
                         <div>
-                            <HiddenElement showLock randomLength={0}>
-                                {read?.title && (
+                            <HiddenElement randomLength={10}>
+                                {read?.title ? (
                                     <div className="line-clamp-2 text-base font-bold leading-snug">
                                         {product.title || <ValueNotSet />}
                                     </div>
-                                )}
+                                ) : null}
                             </HiddenElement>
 
-                            {read?.ratingAverage && rating != null && (
-                                <div className="mt-1.5 flex items-center gap-0.5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <IconStar
-                                            key={i}
-                                            className={cn(
-                                                "size-3",
-                                                i < Math.floor(rating)
-                                                    ? "fill-current text-yellow-400"
-                                                    : "text-muted-foreground/40",
-                                            )}
-                                        />
-                                    ))}
-                                    <span className="text-muted-foreground ml-1.5 text-[10px]">
-                                        ({rating.toFixed(1)})
-                                    </span>
+                            {(rating != null || !read?.ratingAverage) && (
+                                <div className="mt-1.5">
+                                    <HiddenElement randomLength={read?.ratingAverage ? 0 : 6}>
+                                        {!!read?.ratingAverage && rating != null ? (
+                                            <div className="flex items-center gap-0.5">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <IconStar
+                                                        key={i}
+                                                        className={cn(
+                                                            "size-3",
+                                                            i < Math.floor(rating)
+                                                                ? "fill-current text-yellow-400"
+                                                                : "text-muted-foreground/40",
+                                                        )}
+                                                    />
+                                                ))}
+                                                <span className="text-muted-foreground ml-1.5 text-[10px]">
+                                                    ({rating.toFixed(1)})
+                                                </span>
+                                            </div>
+                                        ) : null}
+                                    </HiddenElement>
                                 </div>
                             )}
                         </div>
 
-                        {(read?.shortDescription || read?.description) && description && (
-                            <p className="text-muted-foreground line-clamp-2 text-xs">
-                                {description}
-                            </p>
+                        {(!!description || !canReadDescription) && (
+                            <HiddenElement randomLength={canReadDescription ? 0 : 16}>
+                                {canReadDescription && description ? (
+                                    <p className="text-muted-foreground line-clamp-2 text-xs">
+                                        {description}
+                                    </p>
+                                ) : null}
+                            </HiddenElement>
                         )}
 
                         <div className="flex items-center justify-between gap-2">
-                            {read?.price && priceStr !== undefined ? (
-                                <div className="flex min-w-0 items-end gap-1.5">
-                                    <span className="text-base font-semibold leading-none">
-                                        {priceStr}
-                                    </span>
-                                    {showSalePrice && read?.compareAtPrice && compareStr && (
-                                        <span className="text-muted-foreground mb-px truncate text-xs line-through">
-                                            {compareStr}
+                            <HiddenElement randomLength={read?.price ? 0 : 8}>
+                                {!!read?.price && priceStr !== undefined ? (
+                                    <div className="flex min-w-0 items-end gap-1.5">
+                                        <span className="text-base font-semibold leading-none">
+                                            {priceStr}
                                         </span>
-                                    )}
-                                </div>
-                            ) : (
-                                <span />
-                            )}
-                            {read?.status && product.status && (
-                                <Badge
-                                    variant={isActive ? "outline" : "destructive"}
-                                    className="shrink-0 px-1.5 py-0 text-[10px]"
-                                >
-                                    {resolveLanguageKey("productStatus." + product.status)}
-                                </Badge>
-                            )}
+                                        {(onSale && !!compareStr) || !read?.compareAtPrice ? (
+                                            <HiddenElement
+                                                randomLength={read?.compareAtPrice ? 0 : 6}
+                                            >
+                                                {!!read?.compareAtPrice && onSale && compareStr ? (
+                                                    <span className="text-muted-foreground mb-px truncate text-xs line-through">
+                                                        {compareStr}
+                                                    </span>
+                                                ) : null}
+                                            </HiddenElement>
+                                        ) : null}
+                                    </div>
+                                ) : null}
+                            </HiddenElement>
+                            <HiddenElement randomLength={read?.status ? 0 : 6}>
+                                {!!read?.status && product.status ? (
+                                    <Badge
+                                        variant={isActive ? "outline" : "destructive"}
+                                        className="shrink-0 px-1.5 py-0 text-[10px]"
+                                    >
+                                        {resolveLanguageKey("productStatus." + product.status)}
+                                    </Badge>
+                                ) : null}
+                            </HiddenElement>
                         </div>
                     </CardContent>
                 </Card>

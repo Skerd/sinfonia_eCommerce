@@ -105,7 +105,7 @@ function DiscountCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.title && (
                                             <>
                                                 {discount.title ? (

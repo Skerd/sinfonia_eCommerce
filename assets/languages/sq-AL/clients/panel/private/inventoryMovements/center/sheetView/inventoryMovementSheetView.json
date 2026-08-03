@@ -10,7 +10,7 @@
   "quantityBefore": "Para",
   "quantityAfter": "Pas",
   "occurredAt": "Ndodhur më",
-  "createdAt": "Regjistruar më",
+  "createdAt": "Krijuar më",
   "manufacturer": "Prodhuesi",
   "receiptNumber": "Nr. fature",
   "unitCost": "Kosto për njësi",
@@ -20,6 +20,9 @@
   "product": "Produkti",
   "variant": "Varianti",
   "warehouse": "Magazina",
+  "lifecycle": "Cikli i jetës",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
   "reasons": {
     "restock": "Rifornizim",
     "sale": "Shitje",

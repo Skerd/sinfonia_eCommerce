@@ -10,6 +10,12 @@
     "quantityOnHand": "On hand",
     "quantityReserved": "Reserved",
     "quantityAvailable": "Available",
-    "reorderPoint": "Reorder point"
+    "reorderPoint": "Reorder point",
+    "reorderQuantity": "Reorder quantity",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
   }
 }

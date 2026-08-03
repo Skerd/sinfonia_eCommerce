@@ -9,6 +9,9 @@
     "product": "Product",
     "warehouse": "Warehouse",
     "occurredAt": "Occurred at",
-    "receiptNumber": "Receipt #"
+    "receiptNumber": "Receipt #",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "createdBy": "Created by"
   }
 }

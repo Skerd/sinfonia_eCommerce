@@ -18,6 +18,12 @@
   "postalCode": "Kodi postar",
   "latitude": "Gjerësia gjeografike",
   "longitude": "Gjatësia gjeografike",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga",
   "yes": "Po",
   "no": "Jo"
 }

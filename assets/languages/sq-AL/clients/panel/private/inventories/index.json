@@ -10,6 +10,12 @@
     "quantityOnHand": "Në gjendje",
     "quantityReserved": "Rezervuar",
     "quantityAvailable": "Në dispozicion",
-    "reorderPoint": "Pika e riporositjes"
+    "reorderPoint": "Pika e riporositjes",
+    "reorderQuantity": "Sasia e riporositjes",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
   }
 }

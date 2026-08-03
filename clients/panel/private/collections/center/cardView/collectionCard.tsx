@@ -88,6 +88,7 @@ function CollectionCard({
         ? resolveLanguageKey("collectionType." + collection.type)
         : undefined;
     const productCount = collection.productCount ?? 0;
+    const description = collection.description;
 
     return (
         <>
@@ -99,24 +100,30 @@ function CollectionCard({
                     onClick={() => setAction("view")}
                 >
                     <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
-                        {collection.mainImage ? (
-                            <img
-                                src={`/api/auxiliary/media/${collection.mainImage._id}`}
-                                alt={collection.name}
-                                className="absolute inset-0 size-full object-cover"
-                            />
-                        ) : (
-                            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                <IconPhoto className="size-10 text-muted-foreground/15" />
-                            </div>
-                        )}
+                        <HiddenElement randomLength={read?.mainImage ? 0 : 12}>
+                            {!!read?.mainImage && (
+                                collection.mainImage ? (
+                                    <img
+                                        src={`/api/auxiliary/media/${collection.mainImage._id}`}
+                                        alt={read?.name ? collection.name : ""}
+                                        className="absolute inset-0 size-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
+                                        <IconPhoto className="size-10 text-muted-foreground/15" />
+                                    </div>
+                                )
+                            )}
+                        </HiddenElement>
 
                         <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
-                            {read?.type && typeLabel && (
-                                <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
-                                    {typeLabel}
-                                </Badge>
-                            )}
+                            <HiddenElement randomLength={read?.type ? 0 : 6}>
+                                {!!read?.type && typeLabel ? (
+                                    <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                        {typeLabel}
+                                    </Badge>
+                                ) : null}
+                            </HiddenElement>
                         </div>
 
                         {!hideActions && (
@@ -140,33 +147,39 @@ function CollectionCard({
 
                     <CardContent className="space-y-2.5 px-4 pb-3">
                         <div>
-                            <HiddenElement showLock randomLength={0}>
-                                {read?.name && (
+                            <HiddenElement randomLength={10}>
+                                {read?.name ? (
                                     <div className="line-clamp-2 text-base font-bold leading-snug">
                                         {collection.name || <ValueNotSet />}
                                     </div>
-                                )}
+                                ) : null}
                             </HiddenElement>
                         </div>
 
-                        {read?.description && collection.description && (
-                            <p className="text-muted-foreground line-clamp-2 text-xs">
-                                {collection.description}
-                            </p>
+                        {(!!description || !read?.description) && (
+                            <HiddenElement randomLength={read?.description ? 0 : 16}>
+                                {!!read?.description && description ? (
+                                    <p className="text-muted-foreground line-clamp-2 text-xs">
+                                        {description}
+                                    </p>
+                                ) : null}
+                            </HiddenElement>
                         )}
 
                         <div className="flex items-center justify-between gap-2">
                             <span className="text-muted-foreground truncate text-xs">
                                 {productCount} {resolveLanguageKey("products")}
                             </span>
-                            {read?.isVisible && collection.isVisible != null && (
-                                <Badge
-                                    variant={collection.isVisible ? "outline" : "destructive"}
-                                    className="shrink-0 px-1.5 py-0 text-[10px]"
-                                >
-                                    {resolveLanguageKey(collection.isVisible ? "visible" : "hidden")}
-                                </Badge>
-                            )}
+                            <HiddenElement randomLength={read?.isVisible ? 0 : 6}>
+                                {!!read?.isVisible && collection.isVisible != null ? (
+                                    <Badge
+                                        variant={collection.isVisible ? "outline" : "destructive"}
+                                        className="shrink-0 px-1.5 py-0 text-[10px]"
+                                    >
+                                        {resolveLanguageKey(collection.isVisible ? "visible" : "hidden")}
+                                    </Badge>
+                                ) : null}
+                            </HiddenElement>
                         </div>
                     </CardContent>
                 </Card>

@@ -40,9 +40,14 @@ function statusColor(status: string): string {
     }
 }
 
-function formatMoney(order: ProductOrder): string {
+function formatMoney(
+    order: ProductOrder,
+    currencyRead?: {keys?: {symbol?: unknown; abbreviation?: unknown}},
+): string {
     const c = order.currency;
-    const prefix = c?.symbol?.trim() || c?.abbreviation?.trim();
+    const symbol = currencyRead?.keys?.symbol ? c?.symbol?.trim() : undefined;
+    const abbreviation = currencyRead?.keys?.abbreviation ? c?.abbreviation?.trim() : undefined;
+    const prefix = symbol || abbreviation;
     const n = (order.grandTotal ?? 0).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
     return prefix ? `${prefix} ${n}` : n;
 }
@@ -104,6 +109,7 @@ function ProductOrderCard({
     }
 
     const colors = statusColor(order.status);
+    const itemCount = order.items?.length;
 
     const applyOrderUpdate = (patch: Partial<ProductOrder>) => {
         setOrder((prev) => {
@@ -127,19 +133,25 @@ function ProductOrderCard({
                         <div className="w-full min-w-0 py-3 px-4">
                             <div className="flex justify-between items-start gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.orderNumber && (
+                                    <HiddenElement randomLength={10}>
+                                        {read?.orderNumber ? (
                                             <div className="font-semibold text-base leading-tight truncate">
                                                 {order.orderNumber || <ValueNotSet />}
                                             </div>
-                                        )}
+                                        ) : null}
                                     </HiddenElement>
-                                    {read?.customer && order.customer && (
+                                    {(!!order.customer || !read?.customer) && (
                                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                                             <IconUser className="w-3.5 h-3.5 shrink-0" />
-                                            <span className="truncate">
-                                                {order.customer.name} {order.customer.surname}
-                                            </span>
+                                            <HiddenElement randomLength={read?.customer ? 0 : 8}>
+                                                {!!read?.customer ? (
+                                                    <span className="truncate">
+                                                        {read?.customer?.keys?.name ? order.customer?.name ?? "" : ""}
+                                                        {read?.customer?.keys?.name && read?.customer?.keys?.surname ? " " : ""}
+                                                        {read?.customer?.keys?.surname ? order.customer?.surname ?? "" : ""}
+                                                    </span>
+                                                ) : null}
+                                            </HiddenElement>
                                         </div>
                                     )}
                                 </div>
@@ -164,30 +176,38 @@ function ProductOrderCard({
                             </div>
 
                             <div className="flex items-center justify-between gap-2 mt-3">
-                                {read?.status && order.status && (
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                            colors.split(" ")[0],
-                                        )}
-                                    >
-                                        <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
-                                        {resolveLanguageKey("orderStatus." + order.status)}
-                                    </span>
-                                )}
-                                {read?.grandTotal && (
-                                    <span className="font-bold text-base text-foreground leading-none ml-auto">
-                                        {formatMoney(order)}
-                                    </span>
-                                )}
+                                <HiddenElement randomLength={read?.status ? 0 : 6}>
+                                    {!!read?.status && order.status ? (
+                                        <span
+                                            className={cn(
+                                                "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                                colors.split(" ")[0],
+                                            )}
+                                        >
+                                            <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
+                                            {resolveLanguageKey("orderStatus." + order.status)}
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
+                                <HiddenElement randomLength={read?.grandTotal ? 0 : 8}>
+                                    {!!read?.grandTotal ? (
+                                        <span className="font-bold text-base text-foreground leading-none ml-auto">
+                                            {formatMoney(order, read?.currency)}
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
 
-                            {read?.items && order.items && (
+                            {(itemCount != null || !read?.items) && (
                                 <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
                                     <IconPackage className="w-3.5 h-3.5 shrink-0" />
-                                    <span>
-                                        {order.items.length} {resolveLanguageKey("items")}
-                                    </span>
+                                    <HiddenElement randomLength={read?.items ? 0 : 6}>
+                                        {!!read?.items && itemCount != null ? (
+                                            <span>
+                                                {itemCount} {resolveLanguageKey("items")}
+                                            </span>
+                                        ) : null}
+                                    </HiddenElement>
                                 </div>
                             )}
                         </div>

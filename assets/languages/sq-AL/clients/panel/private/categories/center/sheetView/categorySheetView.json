@@ -5,8 +5,14 @@
   "failedTooltipDescription": "Klikoni për të rifituar të dhënat.",
   "categorySubtitle": "Kategori",
   "overview": "Përmbledhje",
+  "lifecycle": "Cikli i jetës",
   "name": "Emri",
   "slug": "Slug",
   "order": "Rendi",
-  "parentCategory": "Kategoria prind"
+  "parentCategory": "Kategoria prind",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

@@ -106,7 +106,7 @@ function CustomerGroupCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1 flex items-center gap-2">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.name && (
                                             <>
                                                 {customerGroup.name ? (
@@ -144,8 +144,12 @@ function CustomerGroupCard({
                                 )}
                             </div>
                             <div className="space-y-2 text-sm px-4 pt-0">
-                                {read?.description && customerGroup.description && (
-                                    <p className="text-xs text-muted-foreground line-clamp-2">{customerGroup.description}</p>
+                                {read?.description ? (
+                                    customerGroup.description ? (
+                                        <p className="text-xs text-muted-foreground line-clamp-2">{customerGroup.description}</p>
+                                    ) : null
+                                ) : (
+                                    <HiddenElement showLock randomLength={8} />
                                 )}
                                 <InfoRow
                                     label={resolveLanguageKey("memberCount")}

@@ -9,6 +9,9 @@
     "product": "Produkti",
     "warehouse": "Magazina",
     "occurredAt": "Ndodhur më",
-    "receiptNumber": "Nr. fature"
+    "receiptNumber": "Nr. fature",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga"
   }
 }

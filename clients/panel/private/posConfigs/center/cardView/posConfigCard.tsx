@@ -129,7 +129,7 @@ function PosConfigCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.name && (
                                             <>
                                                 {entity.name ? (
@@ -209,12 +209,12 @@ function PosConfigCard({
                                                 {resolveLanguageKey(entity.isActive ? "active" : "inactive")}
                                             </span>
                                         )}
-                                        {entity.isCompanyPaused ? (
+                                        {read?.pausedAt && entity.isCompanyPaused ? (
                                             <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-destructive">
                                                 <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-destructive" />
                                                 {resolveLanguageKey("companyPaused")}
                                             </span>
-                                        ) : entity.isPaused ? (
+                                        ) : read?.pausedAt && entity.isPaused ? (
                                             <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
                                                 <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-amber-500" />
                                                 {resolveLanguageKey("paused")}

@@ -41,5 +41,5 @@ function AllProductAttributes({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productAttributes"),
 )(AllProductAttributes);

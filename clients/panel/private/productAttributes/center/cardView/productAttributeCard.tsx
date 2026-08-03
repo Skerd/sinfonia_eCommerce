@@ -104,7 +104,7 @@ function ProductAttributeCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.name && (
                                             <>
                                                 {productAttribute.name ? (
@@ -150,7 +150,7 @@ function ProductAttributeCard({
                                         value={resolveLanguageKey(productAttribute.isUsedForVariants ? "yes" : "no")}
                                     />
                                 </div>
-                                {!!read?.values && (
+                                {!!read?.values ? (
                                     <div className="pt-0.5">
                                         <div className="flex items-center gap-1 text-muted-foreground mb-1.5">
                                             <IconList size={18} className="hidden md:block shrink-0" />
@@ -172,6 +172,14 @@ function ProductAttributeCard({
                                         ) : (
                                             <ValueNotSet />
                                         )}
+                                    </div>
+                                ) : (
+                                    <div className="pt-0.5">
+                                        <div className="flex items-center gap-1 text-muted-foreground mb-1.5">
+                                            <IconList size={18} className="hidden md:block shrink-0" />
+                                            <p className="text-sm font-medium">{resolveLanguageKey("values")}</p>
+                                        </div>
+                                        <HiddenElement showLock randomLength={8} />
                                     </div>
                                 )}
                             </div>

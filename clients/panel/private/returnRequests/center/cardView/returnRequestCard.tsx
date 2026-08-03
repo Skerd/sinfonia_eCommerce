@@ -11,7 +11,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconRefresh, IconTag, IconCurrencyDollar} from "@tabler/icons-react";
+import {IconTag, IconCurrencyDollar} from "@tabler/icons-react";
 import ReturnRequestSheetView from "@eCommerceModule/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
@@ -103,20 +103,18 @@ function ReturnRequestCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.type && (
-                                            <>
-                                                {entity.type ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("type")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">
-                                                            {resolveLanguageKey("returnType." + entity.type)}
-                                                        </div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
+                                    <HiddenElement randomLength={10}>
+                                        {read?.type ? (
+                                            entity.type ? (
+                                                <TooltipDisplayer tooltip={resolveLanguageKey("type")}>
+                                                    <div className="font-semibold text-base leading-tight truncate">
+                                                        {resolveLanguageKey("returnType." + entity.type)}
+                                                    </div>
+                                                </TooltipDisplayer>
+                                            ) : (
+                                                <ValueNotSet />
+                                            )
+                                        ) : null}
                                     </HiddenElement>
                                 </div>
                                 {!hideActions && (
@@ -137,22 +135,28 @@ function ReturnRequestCard({
                             <div className="space-y-2 text-sm px-4 pt-0">
                                 <div className="flex flex-col space-y-1">
                                     <InfoRow
-                                        label={resolveLanguageKey("type")}
-                                        icon={IconRefresh}
-                                        show={!!read?.type}
-                                        value={entity.type ? resolveLanguageKey("returnType." + entity.type) : undefined}
-                                    />
-                                    <InfoRow
                                         label={resolveLanguageKey("status")}
                                         icon={IconTag}
-                                        show={!!read?.status}
-                                        value={entity.status ? resolveLanguageKey("returnStatus." + entity.status) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.status ? 0 : 6}>
+                                                {!!read?.status && entity.status
+                                                    ? resolveLanguageKey("returnStatus." + entity.status)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("refundAmount")}
                                         icon={IconCurrencyDollar}
-                                        show={!!read?.refundAmount}
-                                        value={entity.refundAmount != null ? String(entity.refundAmount) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.refundAmount ? 0 : 8}>
+                                                {!!read?.refundAmount && entity.refundAmount != null
+                                                    ? String(entity.refundAmount)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                 </div>
                             </div>

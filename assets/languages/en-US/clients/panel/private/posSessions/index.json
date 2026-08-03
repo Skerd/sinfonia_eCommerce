@@ -39,9 +39,9 @@
     "notes": "Notes",
     "company": "Company",
     "createdBy": "Created by",
-    "createdAt": "Created",
-    "updatedAt": "Updated",
-    "deletedAt": "Deleted",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
     "deletedBy": "Deleted by"
   }
 }

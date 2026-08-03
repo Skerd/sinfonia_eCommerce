@@ -52,24 +52,38 @@ function InventoryMovementCard({
                     <div className="w-full min-w-0 py-3 px-4">
                         <div className="flex justify-between items-start gap-2">
                             <div className="min-w-0 flex-1">
-                                <div className="font-semibold text-sm leading-tight capitalize">
-                                    {resolveLanguageKey(`reasons.${movement.reason}`, true) || movement.reason || (
-                                        <ValueNotSet />
-                                    )}
-                                </div>
-                                {movement.product?.title && (
+                                <HiddenElement randomLength={10}>
+                                    {!!read?.reason ? (
+                                        <div className="font-semibold text-sm leading-tight capitalize">
+                                            {resolveLanguageKey(`reasons.${movement.reason}`, true) || movement.reason || (
+                                                <ValueNotSet />
+                                            )}
+                                        </div>
+                                    ) : null}
+                                </HiddenElement>
+                                {(!!movement.product || !read?.product) && (
                                     <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                                         <IconPackage className="w-3.5 h-3.5 shrink-0" />
-                                        <span className="truncate">{movement.product.title}</span>
+                                        <HiddenElement randomLength={read?.product?.keys?.title ? 0 : 8}>
+                                            {!!read?.product?.keys?.title && movement.product?.title ? (
+                                                <span className="truncate">{movement.product.title}</span>
+                                            ) : null}
+                                        </HiddenElement>
                                     </div>
                                 )}
-                                {movement.warehouse?.name && (
+                                {(!!movement.warehouse || !read?.warehouse) && (
                                     <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                                         <IconBuildingWarehouse className="w-3.5 h-3.5 shrink-0" />
-                                        <span className="truncate">
-                                            {movement.warehouse.name}
-                                            {movement.warehouse.code ? ` (${movement.warehouse.code})` : ""}
-                                        </span>
+                                        <HiddenElement randomLength={read?.warehouse ? 0 : 8}>
+                                            {!!read?.warehouse ? (
+                                                <span className="truncate">
+                                                    {read?.warehouse?.keys?.name ? movement.warehouse?.name ?? "" : ""}
+                                                    {read?.warehouse?.keys?.code && movement.warehouse?.code
+                                                        ? ` (${movement.warehouse.code})`
+                                                        : ""}
+                                                </span>
+                                            ) : null}
+                                        </HiddenElement>
                                     </div>
                                 )}
                             </div>
@@ -93,40 +107,57 @@ function InventoryMovementCard({
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("quantity")}
                                 </div>
-                                <div className={cn("font-bold text-sm", isPositive ? "text-emerald-600" : "text-amber-700")}>
-                                    {isPositive ? `+${qty}` : qty}
-                                </div>
+                                <HiddenElement randomLength={read?.quantity ? 0 : 4}>
+                                    {!!read?.quantity ? (
+                                        <div className={cn("font-bold text-sm", isPositive ? "text-emerald-600" : "text-amber-700")}>
+                                            {isPositive ? `+${qty}` : qty}
+                                        </div>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                             <div>
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("beforeAfter")}
                                 </div>
-                                <div className="font-bold text-sm tabular-nums">
-                                    {movement.quantityBefore ?? 0}→{movement.quantityAfter ?? 0}
+                                <div className="font-bold text-sm tabular-nums inline-flex items-center justify-center gap-0.5 w-full">
+                                    <HiddenElement randomLength={read?.quantityBefore ? 0 : 4}>
+                                        {!!read?.quantityBefore ? (movement.quantityBefore ?? 0) : null}
+                                    </HiddenElement>
+                                    <span aria-hidden>→</span>
+                                    <HiddenElement randomLength={read?.quantityAfter ? 0 : 4}>
+                                        {!!read?.quantityAfter ? (movement.quantityAfter ?? 0) : null}
+                                    </HiddenElement>
                                 </div>
                             </div>
                             <div>
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("receipt")}
                                 </div>
-                                <div className="font-bold text-sm truncate">
-                                    {movement.receiptNumber || "—"}
-                                </div>
+                                <HiddenElement randomLength={read?.receiptNumber ? 0 : 6}>
+                                    {!!read?.receiptNumber ? (
+                                        <div className="font-bold text-sm truncate">
+                                            {movement.receiptNumber || "—"}
+                                        </div>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                         </div>
 
-                        {(movement.manufacturer || movement.occurredAt) && (
-                            <div className="mt-2 text-[11px] text-muted-foreground truncate">
-                                {[
-                                    movement.manufacturer,
-                                    movement.occurredAt
-                                        ? new Date(movement.occurredAt).toLocaleString()
-                                        : null,
-                                ]
-                                    .filter(Boolean)
-                                    .join(" · ")}
-                            </div>
-                        )}
+                        <div className="mt-2 text-[11px] text-muted-foreground truncate flex items-center gap-1">
+                            <HiddenElement randomLength={read?.manufacturer ? 0 : 8}>
+                                {!!read?.manufacturer && movement.manufacturer ? (
+                                    <span>{movement.manufacturer}</span>
+                                ) : null}
+                            </HiddenElement>
+                            {!!read?.manufacturer && movement.manufacturer && !!read?.occurredAt && movement.occurredAt ? (
+                                <span aria-hidden>·</span>
+                            ) : null}
+                            <HiddenElement randomLength={read?.occurredAt ? 0 : 10}>
+                                {!!read?.occurredAt && movement.occurredAt ? (
+                                    <span>{new Date(movement.occurredAt).toLocaleString()}</span>
+                                ) : null}
+                            </HiddenElement>
+                        </div>
                     </div>
                 </Card>
             )}

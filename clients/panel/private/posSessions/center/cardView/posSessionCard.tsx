@@ -88,18 +88,16 @@ function PosSessionCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.name && (
-                                            <>
-                                                {entity.name ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{entity.name}</div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
+                                    <HiddenElement randomLength={10}>
+                                        {read?.name ? (
+                                            entity.name ? (
+                                                <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
+                                                    <div className="font-semibold text-base leading-tight truncate">{entity.name}</div>
+                                                </TooltipDisplayer>
+                                            ) : (
+                                                <ValueNotSet />
+                                            )
+                                        ) : null}
                                     </HiddenElement>
                                 </div>
                                 {!hideActions && (
@@ -119,20 +117,38 @@ function PosSessionCard({
                                     <InfoRow
                                         label={resolveLanguageKey("state")}
                                         icon={IconActivity}
-                                        show={!!read?.state}
-                                        value={entity.state ? resolveLanguageKey("sessionState." + entity.state) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.state ? 0 : 6}>
+                                                {!!read?.state && entity.state
+                                                    ? resolveLanguageKey("sessionState." + entity.state)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("orderCount")}
                                         icon={IconShoppingCart}
-                                        show={!!read?.orderCount}
-                                        value={entity.orderCount != null ? String(entity.orderCount) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.orderCount ? 0 : 6}>
+                                                {!!read?.orderCount && entity.orderCount != null
+                                                    ? String(entity.orderCount)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("totalSales")}
                                         icon={IconCash}
-                                        show={!!read?.totalSales}
-                                        value={entity.totalSales != null ? String(entity.totalSales) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.totalSales ? 0 : 8}>
+                                                {!!read?.totalSales && entity.totalSales != null
+                                                    ? String(entity.totalSales)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                 </div>
                             </div>

@@ -20,6 +20,12 @@
   "terminalPort": "Terminal port",
   "terminalId": "Terminal ID",
   "terminalPath": "Terminal path",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by",
   "paymentType": {
     "cash": "Cash",
     "card": "Card",

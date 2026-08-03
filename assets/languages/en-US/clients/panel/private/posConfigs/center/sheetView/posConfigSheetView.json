@@ -36,5 +36,11 @@
   "pinForCashOut": "PIN for cash out",
   "pinForRefund": "PIN for refund",
   "receiptHeader": "Receipt header",
-  "receiptFooter": "Receipt footer"
+  "receiptFooter": "Receipt footer",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

@@ -189,5 +189,5 @@ function AllCategories({resolveLanguageKey}: AllCategoriesProps) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/categories/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, false, "productcategories"),
 )(AllCategories);

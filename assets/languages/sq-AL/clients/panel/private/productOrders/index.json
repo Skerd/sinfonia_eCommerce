@@ -89,9 +89,9 @@
     },
     "company": "Kompania",
     "createdBy": "Krijuar nga",
-    "createdAt": "Krijuar",
-    "updatedAt": "Përditësuar",
-    "deletedAt": "Fshirë",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
     "deletedBy": "Fshirë nga"
   }
 }

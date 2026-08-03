@@ -6,7 +6,13 @@
   "categorySubtitle": "Category",
   "name": "Name",
   "overview": "Overview",
+  "lifecycle": "Lifecycle",
   "slug": "Slug",
   "order": "Order",
-  "parentCategory": "Parent category"
+  "parentCategory": "Parent category",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

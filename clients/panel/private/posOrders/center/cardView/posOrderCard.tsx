@@ -95,12 +95,20 @@ function PosOrderCard({
         return <HiddenElement />;
     }
 
-    const customerDisplay =
-        entity.customerName ||
-        [entity.customer?.name, entity.customer?.surname].filter(Boolean).join(" ") ||
-        undefined;
-
+    const canReadCustomer = !!(read?.customer || read?.customerName);
+    const customerFromName = read?.customerName && entity.customerName ? entity.customerName : undefined;
+    const customerFromRef =
+        read?.customer && (read?.customer?.keys?.name || read?.customer?.keys?.surname)
+            ? [
+                  read?.customer?.keys?.name ? entity.customer?.name : "",
+                  read?.customer?.keys?.surname ? entity.customer?.surname : "",
+              ]
+                  .filter(Boolean)
+                  .join(" ") || undefined
+            : undefined;
+    const customerDisplay = customerFromName || customerFromRef;
     const colors = stateColor(entity.state);
+    const lineCount = entity.lines?.length;
 
     return (
         <>
@@ -116,17 +124,21 @@ function PosOrderCard({
                         <div className="w-full min-w-0 py-3 px-4">
                             <div className="flex justify-between items-start gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.name && (
+                                    <HiddenElement randomLength={10}>
+                                        {read?.name ? (
                                             <div className="font-semibold text-base leading-tight truncate">
                                                 {entity.name || <ValueNotSet />}
                                             </div>
-                                        )}
+                                        ) : null}
                                     </HiddenElement>
-                                    {customerDisplay && (
+                                    {(!!customerDisplay || !canReadCustomer) && (
                                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                                             <IconUser className="w-3.5 h-3.5 shrink-0" />
-                                            <span className="truncate">{customerDisplay}</span>
+                                            <HiddenElement randomLength={canReadCustomer ? 0 : 8}>
+                                                {canReadCustomer && customerDisplay ? (
+                                                    <span className="truncate">{customerDisplay}</span>
+                                                ) : null}
+                                            </HiddenElement>
                                         </div>
                                     )}
                                 </div>
@@ -147,31 +159,39 @@ function PosOrderCard({
                             </div>
 
                             <div className="flex items-center justify-between gap-2 mt-3">
-                                {read?.state && entity.state && (
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                            colors.split(" ")[0],
-                                        )}
-                                    >
-                                        <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
-                                        {resolveLanguageKey("orderState." + entity.state)}
-                                    </span>
-                                )}
-                                {read?.amountTotal && (
-                                    <span className="font-bold text-base text-foreground leading-none ml-auto inline-flex items-center gap-1">
-                                        <IconCash className="w-3.5 h-3.5 text-muted-foreground" />
-                                        {formatMoney(entity.amountTotal)}
-                                    </span>
-                                )}
+                                <HiddenElement randomLength={read?.state ? 0 : 6}>
+                                    {!!read?.state && entity.state ? (
+                                        <span
+                                            className={cn(
+                                                "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                                colors.split(" ")[0],
+                                            )}
+                                        >
+                                            <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
+                                            {resolveLanguageKey("orderState." + entity.state)}
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
+                                <HiddenElement randomLength={read?.amountTotal ? 0 : 8}>
+                                    {!!read?.amountTotal ? (
+                                        <span className="font-bold text-base text-foreground leading-none ml-auto inline-flex items-center gap-1">
+                                            <IconCash className="w-3.5 h-3.5 text-muted-foreground" />
+                                            {formatMoney(entity.amountTotal)}
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
 
-                            {read?.lines && entity.lines && (
+                            {(lineCount != null || !read?.lines) && (
                                 <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
                                     <IconPackage className="w-3.5 h-3.5 shrink-0" />
-                                    <span>
-                                        {entity.lines.length} {resolveLanguageKey("items")}
-                                    </span>
+                                    <HiddenElement randomLength={read?.lines ? 0 : 6}>
+                                        {!!read?.lines && lineCount != null ? (
+                                            <span>
+                                                {lineCount} {resolveLanguageKey("items")}
+                                            </span>
+                                        ) : null}
+                                    </HiddenElement>
                                 </div>
                             )}
                         </div>

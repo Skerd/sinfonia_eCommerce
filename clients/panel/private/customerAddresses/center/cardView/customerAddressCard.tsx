@@ -89,7 +89,13 @@ function CustomerAddressCard({
         return <HiddenElement />;
     }
 
-    const displayName = [entity.firstName, entity.lastName].filter(Boolean).join(" ");
+    const displayName = [
+        read?.firstName ? entity.firstName : "",
+        read?.lastName ? entity.lastName : "",
+    ]
+        .filter(Boolean)
+        .join(" ");
+    const canReadName = !!(read?.firstName || read?.lastName);
 
     return (
         <>
@@ -105,20 +111,18 @@ function CustomerAddressCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
-                                        {read?.firstName && (
-                                            <>
-                                                {displayName ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("firstName")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">
-                                                            {displayName}
-                                                        </div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
+                                    <HiddenElement randomLength={10}>
+                                        {canReadName ? (
+                                            displayName ? (
+                                                <TooltipDisplayer tooltip={resolveLanguageKey("firstName")}>
+                                                    <div className="font-semibold text-base leading-tight truncate">
+                                                        {displayName}
+                                                    </div>
+                                                </TooltipDisplayer>
+                                            ) : (
+                                                <ValueNotSet />
+                                            )
+                                        ) : null}
                                     </HiddenElement>
                                 </div>
                                 {!hideActions && (
@@ -143,38 +147,58 @@ function CustomerAddressCard({
                                     <InfoRow
                                         label={resolveLanguageKey("street")}
                                         icon={IconMapPin}
-                                        show={!!read?.street}
-                                        value={entity.street != null ? String(entity.street) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.street ? 0 : 10}>
+                                                {!!read?.street && entity.street != null
+                                                    ? String(entity.street)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("city")}
                                         icon={IconMapPin}
-                                        show={!!read?.city}
-                                        value={entity.city?.name}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.city?.keys?.name ? 0 : 8}>
+                                                {!!read?.city?.keys?.name && entity.city?.name
+                                                    ? entity.city.name
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                     <InfoRow
                                         label={resolveLanguageKey("phone")}
                                         icon={IconPhone}
-                                        show={!!read?.phone}
-                                        value={entity.phone != null ? String(entity.phone) : undefined}
+                                        show
+                                        value={
+                                            <HiddenElement randomLength={read?.phone ? 0 : 8}>
+                                                {!!read?.phone && entity.phone != null
+                                                    ? String(entity.phone)
+                                                    : null}
+                                            </HiddenElement>
+                                        }
                                     />
                                 </div>
-                                {read?.isDefault && entity.isDefault != null && (
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                            entity.isDefault ? "text-amber-600" : "text-muted-foreground",
-                                        )}
-                                    >
+                                <HiddenElement randomLength={read?.isDefault ? 0 : 6}>
+                                    {!!read?.isDefault && entity.isDefault != null ? (
                                         <span
                                             className={cn(
-                                                "w-1.5 h-1.5 rounded-full shrink-0",
-                                                entity.isDefault ? "bg-amber-500" : "bg-muted-foreground/40",
+                                                "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                                entity.isDefault ? "text-amber-600" : "text-muted-foreground",
                                             )}
-                                        />
-                                        {resolveLanguageKey(entity.isDefault ? "defaultAddress" : "notDefault")}
-                                    </span>
-                                )}
+                                        >
+                                            <span
+                                                className={cn(
+                                                    "w-1.5 h-1.5 rounded-full shrink-0",
+                                                    entity.isDefault ? "bg-amber-500" : "bg-muted-foreground/40",
+                                                )}
+                                            />
+                                            {resolveLanguageKey(entity.isDefault ? "defaultAddress" : "notDefault")}
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                         </div>
                     </div>
@@ -203,8 +227,8 @@ function CustomerAddressCard({
                             accessModel={"customerAddresses"}
                             deleteId={entity._id}
                             openAlert={action === "delete"}
-                            name={read?.firstName && displayName}
-                            confirmName={read?.firstName && displayName}
+                            name={canReadName && displayName}
+                            confirmName={canReadName && displayName}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/customerAddress"
@@ -215,8 +239,8 @@ function CustomerAddressCard({
                             accessModel={"customerAddresses"}
                             deleteId={entity._id}
                             openAlert={action === "restore"}
-                            name={read?.firstName && displayName}
-                            confirmName={read?.firstName && displayName}
+                            name={canReadName && displayName}
+                            confirmName={canReadName && displayName}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/customerAddress/restore"

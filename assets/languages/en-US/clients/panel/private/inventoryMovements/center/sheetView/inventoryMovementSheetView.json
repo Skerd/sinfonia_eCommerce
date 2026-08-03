@@ -10,7 +10,7 @@
   "quantityBefore": "Before",
   "quantityAfter": "After",
   "occurredAt": "Occurred at",
-  "createdAt": "Logged at",
+  "createdAt": "Created at",
   "manufacturer": "Manufacturer",
   "receiptNumber": "Receipt #",
   "unitCost": "Unit cost",
@@ -20,6 +20,9 @@
   "product": "Product",
   "variant": "Variant",
   "warehouse": "Warehouse",
+  "lifecycle": "Lifecycle",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
   "reasons": {
     "restock": "Restock",
     "sale": "Sale",

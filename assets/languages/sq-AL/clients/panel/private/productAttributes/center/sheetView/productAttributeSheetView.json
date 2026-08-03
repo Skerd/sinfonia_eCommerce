@@ -2,11 +2,17 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
   "productAttributeSubtitle": "Detajet e atributit",
   "overview": "Përmbledhje",
+  "lifecycle": "Cikli i jetës",
   "name": "Emri",
   "position": "Pozicioni",
   "isVisibleOnProductPage": "I dukshëm në faqen e produktit",
   "isUsedForVariants": "Përdoret për variantet",
   "values": "Vlerat",
   "yes": "Po",
-  "no": "Jo"
+  "no": "Jo",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

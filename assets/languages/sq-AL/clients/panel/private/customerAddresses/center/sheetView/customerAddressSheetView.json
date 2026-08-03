@@ -22,6 +22,11 @@
   "customer": "Klienti",
   "createdBy": "Krijuar nga",
   "company": "Kompania",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga",
   "yes": "Po",
   "no": "Jo"
 }

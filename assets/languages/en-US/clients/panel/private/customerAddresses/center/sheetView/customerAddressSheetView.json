@@ -22,6 +22,11 @@
   "customer": "Customer",
   "createdBy": "Created by",
   "company": "Company",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by",
   "yes": "Yes",
   "no": "No"
 }

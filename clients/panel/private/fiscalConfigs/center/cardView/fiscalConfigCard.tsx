@@ -99,7 +99,7 @@ function FiscalConfigCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.name && (
                                             <>
                                                 {entity.name ? (
@@ -206,8 +206,10 @@ function FiscalConfigCard({
                     {action === "restore" && (
                         <RestoreAction
                             accessModel={"fiscalConfigs"}
-                            restoreId={entity._id}
+                            deleteId={entity._id}
                             openAlert={action === "restore"}
+                            name={read?.name && entity.name}
+                            confirmName={read?.name && entity.name}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/fiscalConfig"

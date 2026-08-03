@@ -40,11 +40,6 @@ function Stars({value}: {value: number}) {
     );
 }
 
-function formatReviewerName(review: ProductReview): string {
-    const {name, surname} = review.reviewer ?? {};
-    return [name, surname].filter(Boolean).join(" ").trim() || "—";
-}
-
 function reviewCardTitle(review: ProductReview): string {
     const title = review.title?.trim();
     if (title) return title;
@@ -77,7 +72,7 @@ function ProductReviewCard({
         if (onRestoreProp) {
             onRestoreProp();
         } else {
-            setReview({...review, deletedAt: undefined, deletedBy: undefined} as ProductReview);
+            setReview({...review, deletedAt: undefined, deletedBy: undefined});
         }
     };
 
@@ -90,7 +85,7 @@ function ProductReviewCard({
     if (hideAfterDeletion) {
         return <></>;
     }
-    if (!restore && (review as any).deletedAt != null) {
+    if (!restore && review.deletedAt != null) {
         return <></>;
     }
     if (!read || !Object.keys(read).length) {
@@ -99,15 +94,25 @@ function ProductReviewCard({
 
     const rating = typeof review.rating === "number" ? review.rating : 0;
     const title = reviewCardTitle(review);
-    const reviewerName = formatReviewerName(review);
-    const reviewerInitials = [review.reviewer?.name?.[0], review.reviewer?.surname?.[0]]
+    const canReadReviewerName = !!(read?.reviewer?.keys?.name || read?.reviewer?.keys?.surname);
+    const reviewerName = [
+        read?.reviewer?.keys?.name ? review.reviewer?.name : "",
+        read?.reviewer?.keys?.surname ? review.reviewer?.surname : "",
+    ]
+        .filter(Boolean)
+        .join(" ")
+        .trim();
+    const reviewerInitials = [
+        read?.reviewer?.keys?.name ? review.reviewer?.name?.[0] : "",
+        read?.reviewer?.keys?.surname ? review.reviewer?.surname?.[0] : "",
+    ]
         .filter(Boolean)
         .join("")
         .toUpperCase();
-    const avatarSrc = review.reviewer?.photo
-        ? `/api/auxiliary/media/${review.reviewer.photo}`
-        : undefined;
-    const confirmName = title;
+    const avatarSrc =
+        read?.reviewer?.keys?.photo && review.reviewer?.photo
+            ? `/api/auxiliary/media/${review.reviewer.photo}`
+            : undefined;
     const verified = Boolean(review.order?._id);
     const relativeDate = review.createdAt
         ? formatDistanceToNow(new Date(review.createdAt), {addSuffix: true})
@@ -123,23 +128,32 @@ function ProductReviewCard({
                     )}
                     onClick={() => setAction("view")}
                 >
-                    {((read as any).deletedBy || (read as any).deletedAt) && (
-                        <DeletedInfo deletedAt={(review as any).deletedAt} deletedBy={(review as any).deletedBy} />
+                    {(read.deletedBy || read.deletedAt) && (
+                        <DeletedInfo deletedAt={review.deletedAt} deletedBy={review.deletedBy} />
                     )}
 
                     <div className="flex items-start justify-between gap-3">
                         <div className="flex min-w-0 items-center gap-2.5">
-                            {(read as any)?.reviewer && (
-                                <Avatar className="size-9 shrink-0">
-                                    {avatarSrc && <AvatarImage src={avatarSrc} alt={reviewerName} />}
-                                    <AvatarFallback className="text-[10px] font-semibold">
-                                        {reviewerInitials || "?"}
-                                    </AvatarFallback>
-                                </Avatar>
-                            )}
-                            <span className="truncate text-sm font-medium">
-                                {resolveLanguageKey("byAuthor").replace("{name}", reviewerName)}
-                            </span>
+                            <HiddenElement randomLength={read?.reviewer ? 0 : 4}>
+                                {!!read?.reviewer ? (
+                                    <Avatar className="size-9 shrink-0">
+                                        {avatarSrc && <AvatarImage src={avatarSrc} alt={reviewerName || undefined} />}
+                                        <AvatarFallback className="text-[10px] font-semibold">
+                                            {reviewerInitials || "?"}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                ) : null}
+                            </HiddenElement>
+                            <HiddenElement randomLength={canReadReviewerName ? 0 : 10}>
+                                {canReadReviewerName ? (
+                                    <span className="truncate text-sm font-medium">
+                                        {resolveLanguageKey("byAuthor").replace(
+                                            "{name}",
+                                            reviewerName || "—",
+                                        )}
+                                    </span>
+                                ) : null}
+                            </HiddenElement>
                         </div>
                         {!hideActions && (
                             <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
@@ -155,30 +169,48 @@ function ProductReviewCard({
                     </div>
 
                     <div className="mt-4 space-y-1.5">
-                        {(read as any)?.rating && <Stars value={rating} />}
-                        <p className="font-semibold leading-snug">{title}</p>
-                        {(read as any)?.comment && review.comment && (
-                            <p className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">
-                                {review.comment}
-                            </p>
+                        <HiddenElement randomLength={read?.rating ? 0 : 6}>
+                            {!!read?.rating ? <Stars value={rating} /> : null}
+                        </HiddenElement>
+                        <HiddenElement randomLength={10}>
+                            {!!read?.title ? (
+                                <p className="font-semibold leading-snug">{title}</p>
+                            ) : null}
+                        </HiddenElement>
+                        {(!!review.comment || !read?.comment) && (
+                            <HiddenElement randomLength={read?.comment ? 0 : 16}>
+                                {!!read?.comment && review.comment ? (
+                                    <p className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">
+                                        {review.comment}
+                                    </p>
+                                ) : null}
+                            </HiddenElement>
                         )}
                     </div>
 
-                    {(relativeDate || verified) && (
+                    {(relativeDate || verified || !read?.createdAt || !read?.order) && (
                         <div className="mt-3 flex min-w-0 items-center gap-2 text-xs text-muted-foreground">
-                            {relativeDate && (
-                                <span className="shrink-0 whitespace-nowrap">{relativeDate}</span>
+                            {(!!relativeDate || !read?.createdAt) && (
+                                <HiddenElement randomLength={read?.createdAt ? 0 : 8}>
+                                    {!!read?.createdAt && relativeDate ? (
+                                        <span className="shrink-0 whitespace-nowrap">{relativeDate}</span>
+                                    ) : null}
+                                </HiddenElement>
                             )}
-                            {relativeDate && verified && (
+                            {!!read?.createdAt && relativeDate && verified && !!read?.order && (
                                 <span className="shrink-0 select-none opacity-50" aria-hidden>
                                     ·
                                 </span>
                             )}
-                            {verified && (
-                                <span className="inline-flex min-w-0 items-center gap-1 text-emerald-600">
-                                    <CheckCircleIcon className="size-3.5 shrink-0" />
-                                    <span className="truncate">{resolveLanguageKey("verifiedPurchase")}</span>
-                                </span>
+                            {(verified || !read?.order) && (
+                                <HiddenElement randomLength={read?.order ? 0 : 10}>
+                                    {!!read?.order && verified ? (
+                                        <span className="inline-flex min-w-0 items-center gap-1 text-emerald-600">
+                                            <CheckCircleIcon className="size-3.5 shrink-0" />
+                                            <span className="truncate">{resolveLanguageKey("verifiedPurchase")}</span>
+                                        </span>
+                                    ) : null}
+                                </HiddenElement>
                             )}
                         </div>
                     )}
@@ -186,18 +218,20 @@ function ProductReviewCard({
                     <div className="border-t mt-2"></div>
 
                     <div className="mt-auto flex items-center justify-between gap-2 pt-3 mt-4">
-                        {(read as any)?.product && review.product?.title ? (
-                            <span className="truncate text-sm text-muted-foreground">
-                                {review.product.title}
-                            </span>
-                        ) : (
-                            <span />
-                        )}
-                        {(read as any)?.order && review.order?.orderNumber && (
-                            <span className="shrink-0 text-sm font-medium text-muted-foreground">
-                                {review.order.orderNumber}
-                            </span>
-                        )}
+                        <HiddenElement randomLength={read?.product?.keys?.title ? 0 : 10}>
+                            {!!read?.product?.keys?.title && review.product?.title ? (
+                                <span className="truncate text-sm text-muted-foreground">
+                                    {review.product.title}
+                                </span>
+                            ) : null}
+                        </HiddenElement>
+                        <HiddenElement randomLength={read?.order?.keys?.orderNumber ? 0 : 8}>
+                            {!!read?.order?.keys?.orderNumber && review.order?.orderNumber ? (
+                                <span className="shrink-0 text-sm font-medium text-muted-foreground">
+                                    {review.order.orderNumber}
+                                </span>
+                            ) : null}
+                        </HiddenElement>
                     </div>
                 </div>
             )}
@@ -219,8 +253,8 @@ function ProductReviewCard({
                             accessModel={"productReviews"}
                             deleteId={review._id}
                             openAlert={action === "delete"}
-                            name={String(confirmName)}
-                            confirmName={String(confirmName)}
+                            name={read?.title && title}
+                            confirmName={read?.title && title}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/productReview"
@@ -231,8 +265,8 @@ function ProductReviewCard({
                             accessModel={"productReviews"}
                             deleteId={review._id}
                             openAlert={action === "restore"}
-                            name={String(confirmName)}
-                            confirmName={String(confirmName)}
+                            name={read?.title && title}
+                            confirmName={read?.title && title}
                             onSuccess={onRestore}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/productReview/restore"

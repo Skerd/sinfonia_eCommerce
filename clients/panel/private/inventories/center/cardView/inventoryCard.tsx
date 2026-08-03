@@ -8,6 +8,7 @@ import {Card} from "@coreModule/components/ui/card.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
+import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import {IconAlertTriangle, IconBuildingWarehouse} from "@tabler/icons-react";
 import InventorySheetView from "@eCommerceModule/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
@@ -75,22 +76,33 @@ function InventoryCard({
                     )}
                     onClick={() => setAction("view")}
                 >
-                    <div className="w-full min-w-0 py-3 px-4">
+                    <div className="flex w-full items-stretch">
+                        {(read.deletedBy || read.deletedAt) && (
+                            <DeletedInfo deletedAt={inventory.deletedAt} deletedBy={inventory.deletedBy} />
+                        )}
+                        <div className="w-full min-w-0 py-3 px-4">
                         <div className="flex justify-between items-start gap-2">
                             <div className="min-w-0 flex-1">
-                                <HiddenElement showLock randomLength={0}>
-                                    {read?.product && (
+                                <HiddenElement randomLength={read?.product?.keys?.title ? 0 : 10}>
+                                    {!!read?.product?.keys?.title ? (
                                         <div className="font-semibold text-sm leading-tight line-clamp-2">
                                             {inventory.product?.title || <ValueNotSet />}
                                         </div>
-                                    )}
+                                    ) : null}
                                 </HiddenElement>
-                                {read?.warehouse && inventory.warehouse && (
+                                {(!!inventory.warehouse || !read?.warehouse) && (
                                     <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
                                         <IconBuildingWarehouse className="w-3.5 h-3.5 shrink-0" />
-                                        <span className="truncate">
-                                            {inventory.warehouse.name} ({inventory.warehouse.code})
-                                        </span>
+                                        <HiddenElement randomLength={read?.warehouse ? 0 : 8}>
+                                            {!!read?.warehouse ? (
+                                                <span className="truncate">
+                                                    {read?.warehouse?.keys?.name ? inventory.warehouse?.name ?? "" : ""}
+                                                    {read?.warehouse?.keys?.code && inventory.warehouse?.code
+                                                        ? ` (${inventory.warehouse.code})`
+                                                        : ""}
+                                                </span>
+                                            ) : null}
+                                        </HiddenElement>
                                     </div>
                                 )}
                             </div>
@@ -115,30 +127,45 @@ function InventoryCard({
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("onHand")}
                                 </div>
-                                <div className="font-bold text-sm">{inventory.quantityOnHand ?? 0}</div>
+                                <HiddenElement randomLength={read?.quantityOnHand ? 0 : 4}>
+                                    {!!read?.quantityOnHand ? (
+                                        <div className="font-bold text-sm">{inventory.quantityOnHand ?? 0}</div>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                             <div>
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("reserved")}
                                 </div>
-                                <div className="font-bold text-sm">{inventory.quantityReserved ?? 0}</div>
+                                <HiddenElement randomLength={read?.quantityReserved ? 0 : 4}>
+                                    {!!read?.quantityReserved ? (
+                                        <div className="font-bold text-sm">{inventory.quantityReserved ?? 0}</div>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                             <div>
                                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("available")}
                                 </div>
-                                <div className={cn("font-bold text-sm", isLowStock ? "text-amber-600" : "text-emerald-600")}>
-                                    {available}
-                                </div>
+                                <HiddenElement randomLength={read?.quantityAvailable ? 0 : 4}>
+                                    {!!read?.quantityAvailable ? (
+                                        <div className={cn("font-bold text-sm", isLowStock ? "text-amber-600" : "text-emerald-600")}>
+                                            {available}
+                                        </div>
+                                    ) : null}
+                                </HiddenElement>
                             </div>
                         </div>
 
-                        {isLowStock && (
-                            <div className="flex items-center gap-1 text-[11px] font-medium text-amber-600 mt-2">
-                                <IconAlertTriangle className="w-3.5 h-3.5 shrink-0" />
-                                {resolveLanguageKey("lowStock")}
-                            </div>
-                        )}
+                        <HiddenElement randomLength={read?.quantityAvailable && read?.reorderPoint ? 0 : 8}>
+                            {!!(read?.quantityAvailable && read?.reorderPoint) && isLowStock ? (
+                                <div className="flex items-center gap-1 text-[11px] font-medium text-amber-600 mt-2">
+                                    <IconAlertTriangle className="w-3.5 h-3.5 shrink-0" />
+                                    {resolveLanguageKey("lowStock")}
+                                </div>
+                            ) : null}
+                        </HiddenElement>
+                    </div>
                     </div>
                 </Card>
             )}
@@ -163,8 +190,8 @@ function InventoryCard({
                             accessModel={"inventories"}
                             deleteId={inventory._id}
                             openAlert={action === "delete"}
-                            name={read?.product && inventory.product?.title}
-                            confirmName={read?.product && inventory.product?.title}
+                            name={read?.product?.keys?.title && inventory.product?.title}
+                            confirmName={read?.product?.keys?.title && inventory.product?.title}
                             onSuccess={onDelete}
                             onCancel={() => setAction("")}
                             url="/api/eCommerce/inventory"

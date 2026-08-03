@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
+import {useEffect, useState, type ReactNode} from "react";
 import {Card} from "@coreModule/components/ui/card.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
@@ -33,10 +33,27 @@ function warehouseEditPath(warehouse: Warehouse) {
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
-function formatLocation(warehouse: Warehouse): string | undefined {
+function formatLocation(
+    warehouse: Warehouse,
+    addressRead?: {keys?: {city?: {keys?: {name?: unknown}} | unknown; country?: {keys?: {name?: unknown}} | unknown}},
+): ReactNode | undefined {
     const a = warehouse.address;
     if (!a) return undefined;
-    return [a.city?.name, a.country?.name].filter(Boolean).join(", ") || undefined;
+    const cityAllowed = !!(addressRead?.keys?.city as {keys?: {name?: unknown}} | undefined)?.keys?.name
+        || !!addressRead?.keys?.city;
+    const countryAllowed = !!(addressRead?.keys?.country as {keys?: {name?: unknown}} | undefined)?.keys?.name
+        || !!addressRead?.keys?.country;
+    return (
+        <span className="inline-flex flex-wrap items-center gap-1">
+            <HiddenElement randomLength={6}>
+                {cityAllowed && a.city?.name ? <span>{a.city.name}</span> : null}
+            </HiddenElement>
+            {cityAllowed && countryAllowed && a.city?.name && a.country?.name ? <span>,</span> : null}
+            <HiddenElement randomLength={6}>
+                {countryAllowed && a.country?.name ? <span>{a.country.name}</span> : null}
+            </HiddenElement>
+        </span>
+    );
 }
 
 type WarehouseCardProps = WithLanguageType & {
@@ -101,7 +118,7 @@ function WarehouseCard({
         return <HiddenElement />;
     }
 
-    const location = formatLocation(warehouse);
+    const location = formatLocation(warehouse, read?.address);
 
     return (
         <>
@@ -117,7 +134,7 @@ function WarehouseCard({
                         <div className="w-full min-w-0 py-3">
                             <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
                                 <div className="min-w-0 flex-1 flex items-center gap-2">
-                                    <HiddenElement showLock randomLength={0}>
+                                    <HiddenElement randomLength={10}>
                                         {read?.name && (
                                             <>
                                                 {warehouse.name ? (
@@ -164,7 +181,7 @@ function WarehouseCard({
                                     <InfoRow
                                         label={resolveLanguageKey("location")}
                                         icon={IconMapPin}
-                                        show={!!read?.address && !!location}
+                                        show={!!read?.address}
                                         value={location}
                                     />
                                 </div>

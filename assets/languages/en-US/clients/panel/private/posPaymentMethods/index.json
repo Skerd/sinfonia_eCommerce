@@ -18,9 +18,9 @@
     "isActive": "Active",
     "createdBy": "Created by",
     "company": "Company",
-    "createdAt": "Created",
-    "updatedAt": "Updated",
-    "deletedAt": "Deleted",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
     "deletedBy": "Deleted by"
   }
 }
