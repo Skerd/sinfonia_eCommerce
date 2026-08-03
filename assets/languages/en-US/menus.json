@@ -5,22 +5,22 @@
       "title": "Point of Sale"
     },
     "pospaymentmethods": {
-      "title": "POS Payment Methods"
+      "title": "POS payment methods"
     },
     "posconfigs": {
-      "title": "POS Configs"
+      "title": "POS configs"
     },
     "possessions": {
-      "title": "POS Sessions"
+      "title": "POS sessions"
     },
     "posorders": {
-      "title": "POS Orders"
+      "title": "POS orders"
     },
     "fiscalconfigs": {
       "title": "Fiscal / E-Invoice"
     },
     "systemMap": {
-      "title": "System Map"
+      "title": "System map"
     },
     "productCommerce": {
       "title": "eCommerce"
@@ -32,7 +32,7 @@
       "title": "Collections"
     },
     "productorders": {
-      "title": "Product Orders"
+      "title": "Product orders"
     },
     "inventories": {
       "title": "Inventory"
@@ -44,25 +44,25 @@
       "title": "Warehouses"
     },
     "productattributes": {
-      "title": "Product Attributes"
+      "title": "Product attributes"
     },
     "discounts": {
       "title": "Discounts"
     },
     "taxzones": {
-      "title": "Tax Zones"
+      "title": "Tax zones"
     },
     "shippingzones": {
-      "title": "Shipping Zones"
+      "title": "Shipping zones"
     },
     "cmsblocks": {
-      "title": "CMS Blocks"
+      "title": "CMS blocks"
     },
     "customergroups": {
-      "title": "Customer Groups"
+      "title": "Customer groups"
     },
     "pricingrules": {
-      "title": "Pricing Rules"
+      "title": "Pricing rules"
     },
     "analytics": {
       "title": "Analytics"
@@ -89,46 +89,61 @@
         "title": "eCommerce"
       },
       "categories": {
-        "title": "Product Categories"
+        "title": "Product categories"
       },
       "pos": {
         "title": "POS"
       },
       "posconfigs": {
-        "title": "POS Configs"
+        "title": "POS configs"
       },
       "pospaymentmethods": {
-        "title": "Payment Methods"
+        "title": "Payment methods"
       },
       "customergroups": {
-        "title": "Customer Groups"
+        "title": "Customer groups"
       },
       "discounts": {
         "title": "Discounts"
       },
       "pricingrules": {
-        "title": "Pricing Rules"
+        "title": "Pricing rules"
       },
       "taxzones": {
-        "title": "Tax Zones"
+        "title": "Tax zones"
       },
       "shippingzones": {
-        "title": "Shipping Zones"
+        "title": "Shipping zones"
       },
       "warehouses": {
         "title": "Warehouses"
       },
       "productattributes": {
-        "title": "Product Attributes"
+        "title": "Product attributes"
       },
       "productvariants": {
-        "title": "Product Variants"
+        "title": "Product variants"
       },
       "fiscalconfigs": {
         "title": "Fiscal / E-Invoice"
       },
       "cmsblocks": {
-        "title": "CMS Blocks"
+        "title": "CMS blocks"
+      },
+      "products": {
+        "title": "Products"
+      },
+      "collections": {
+        "title": "Collections"
+      },
+      "productorders": {
+        "title": "Product orders"
+      },
+      "inventories": {
+        "title": "Inventory"
+      },
+      "analytics": {
+        "title": "Analytics"
       }
     }
   }

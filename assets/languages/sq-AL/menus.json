@@ -129,6 +129,21 @@
       },
       "cmsblocks": {
         "title": "Blloqet CMS"
+      },
+      "products": {
+        "title": "Produktet"
+      },
+      "collections": {
+        "title": "Koleksionet"
+      },
+      "productorders": {
+        "title": "Porositë e produkteve"
+      },
+      "inventories": {
+        "title": "Inventari"
+      },
+      "analytics": {
+        "title": "Analitika"
       }
     }
   }
