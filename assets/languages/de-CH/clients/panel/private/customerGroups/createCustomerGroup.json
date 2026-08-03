@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/createCustomerGroup.tsx",
+  "title": "Customer group erstellen",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Group name",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Optional beschreibung"
+  },
+  "axios": {
+    "start": {
+      "title": "Customer group wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Customer group erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen customer group",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Customer group erstellen",
+    "description": "Define a customer group für pricing rules und membership."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Customer group erstellen"
+  }
+}

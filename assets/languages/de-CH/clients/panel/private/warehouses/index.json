@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
+  "title": "Warehouses",
+  "description": "Die locations that hold ihr stock. verwalten",
+  "createWarehouse": "Warehouse erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "code": "Code",
+    "address": {
+      "country": "Land",
+      "state": "Kanton",
+      "city": "Ort",
+      "street": "Strasse",
+      "postalCode": "Postleitzahl",
+      "latitude": "Breitengrad",
+      "longitude": "Längengrad"
+    },
+    "isDefault": "Default",
+    "isActive": "Aktiv",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/createTaxZone.tsx",
+  "title": "Steuer zone erstellen",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "priorityLabel": "Priority",
+    "statesLabel": "States / regions",
+    "selectState": "Kanton auswählen",
+    "removeState": "Entfernen kanton",
+    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
+    "removePostalCodePattern": "Entfernen pattern",
+    "ratesSectionTitle": "Steuer rates",
+    "rateAddRow": "Satz hinzufügen",
+    "rateRemoveRow": "Entfernen satz",
+    "rateRowTitle": "Untitled satz",
+    "rateNameLabel": "Satz name",
+    "rateValueLabel": "Satz (%)",
+    "rateAppliesToLabel": "Applies bis",
+    "isCompoundLabel": "Compound satz",
+    "taxRateAppliesTo": {
+      "all": "Alle produkte",
+      "physical": "Physical",
+      "digital": "Digital"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Steuer zone wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Steuer zone erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen steuer zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Steuer zone erstellen",
+    "description": "Define destination geography und die steuer rates applied am kasse."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Steuer zone erstellen"
+  }
+}

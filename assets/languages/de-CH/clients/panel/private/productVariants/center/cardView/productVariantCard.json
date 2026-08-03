@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/cardView/productVariantCard.tsx",
+  "sku": "SKU",
+  "price": "Preis",
+  "status": "Status",
+  "variantStatus": {
+    "active": "Aktiv",
+    "inactive": "Inaktiv"
+  }
+}

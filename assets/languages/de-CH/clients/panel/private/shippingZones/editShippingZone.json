@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
+  "title": "Versand zone bearbeiten",
+  "errorTitle": "Versand zone konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese versand zone. Versuchen erneut.",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
+    "countriesLabel": "Countries",
+    "statesLabel": "States / regions",
+    "selectCountry": "Land auswählen",
+    "selectState": "Kanton auswählen",
+    "removeCountry": "Entfernen land",
+    "removeState": "Entfernen kanton",
+    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
+    "removePostalCodePattern": "Entfernen pattern",
+    "ratesSectionTitle": "Versand rates",
+    "rateAddRow": "Satz hinzufügen",
+    "rateRemoveRow": "Entfernen satz",
+    "rateRowTitle": "Untitled satz",
+    "rateNameLabel": "Satz name",
+    "rateTypeLabel": "Satz typ",
+    "ratePriceLabel": "Preis",
+    "carrierLabel": "Carrier",
+    "estimatedDeliveryDaysLabel": "Estimated delivery tage",
+    "rateConditionsSectionTitle": "Conditions",
+    "minWeightLabel": "Min weight",
+    "maxWeightLabel": "Max weight",
+    "minOrderAmountLabel": "Min auftrag betrag",
+    "maxOrderAmountLabel": "Max auftrag betrag",
+    "shippingRateType": {
+      "flat": "Flat",
+      "weight": "Weight-based",
+      "price": "Auftrag betrag",
+      "quantity": "Menge",
+      "free": "Free"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving versand zone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Versand zone aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren versand zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Versand zone bearbeiten",
+    "description": "Aktualisieren destination geography und versand rates für diese zone."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

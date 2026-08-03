@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
+  "title": "Fulfillment erstellen",
+  "form": {
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bestellung auswählen",
+    "statusLabel": "Status",
+    "carrierLabel": "Carrier",
+    "carrierPlaceholder": "Carrier name",
+    "trackingNumberLabel": "Tracking nummer",
+    "trackingNumberPlaceholder": "Tracking nummer",
+    "trackingUrlLabel": "Tracking URL",
+    "trackingUrlPlaceholder": "https://…",
+    "shippedAtLabel": "Shipped am",
+    "estimatedDeliveryAtLabel": "Estimated delivery",
+    "deliveredAtLabel": "Delivered am",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Optional notizen",
+    "itemsSectionTitle": "Positionen",
+    "itemAddRow": "Position hinzufügen",
+    "itemRemoveRow": "Entfernen position",
+    "itemRowTitle": "Position",
+    "orderItemIdLabel": "Auftrag position id",
+    "orderItemIdPlaceholder": "Auftrag position id",
+    "quantityLabel": "Menge",
+    "fulfillmentStatus": {
+      "pending": "Ausstehend",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "failed": "Fehlgeschlagen"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Fulfillment wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen fulfillment",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Fulfillment erstellen",
+    "description": "A shipment für ein auftrag mit tracking und positionen. erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Fulfillment erstellen"
+  }
+}

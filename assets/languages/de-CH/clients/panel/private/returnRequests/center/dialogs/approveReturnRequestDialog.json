@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
+  "title": "Genehmigen return antrag",
+  "description": "Genehmigen diese ausstehend return antrag. Sie can set a rückerstattung betrag und ein admin note.",
+  "refundAmountLabel": "Rückerstattung betrag",
+  "refundAmountPlaceholder": "0",
+  "notesLabel": "Admin note",
+  "notesPlaceholder": "Optional note für diese freigabe",
+  "cancel": "Abbrechen",
+  "confirm": "Genehmigen",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Approving return antrag…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return antrag genehmigt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht genehmigen return antrag",
+      "time": 3000
+    }
+  }
+}

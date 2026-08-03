@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "confirmed": "Confirmed",
+    "processing": "Processing",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Storniert",
+    "refunded": "Refunded"
+  },
+  "items": "positionen"
+}

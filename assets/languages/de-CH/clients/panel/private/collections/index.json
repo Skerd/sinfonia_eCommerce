@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
+  "title": "Collections",
+  "description": "Group produkte into curated collections.",
+  "createCollection": "Collection erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "manual": "Manuell",
+        "dynamic": "Dynamic"
+      },
+      "ruleCondition": {
+        "all": "Alle rules (UND)",
+        "any": "Any rule (ODER)"
+      },
+      "rules": {
+        "field": {
+          "tag": "Tag",
+          "brand": "Brand",
+          "category": "Kategorie",
+          "price": "Preis",
+          "vendor": "Lieferant",
+          "inventory_level": "Inventory level",
+          "product_type": "Produkt typ"
+        },
+        "operator": {
+          "equals": "Equals",
+          "not_equals": "Nicht equals",
+          "contains": "Contains",
+          "not_contains": "Does nicht contain",
+          "greater_than": "Greater than",
+          "less_than": "Less than",
+          "starts_with": "Starts mit"
+        }
+      }
+    },
+    "type": "Typ",
+    "name": "Name",
+    "slug": "Slug",
+    "description": "Beschreibung",
+    "mainImage": "Cover bild",
+    "isVisible": "Visible",
+    "position": "Position",
+    "products": "Produkte",
+    "ruleCondition": "Match condition",
+    "rules": {
+      "field": "Rule field",
+      "operator": "Rule operator",
+      "value": "Rule wert"
+    },
+    "seoTitle": "SEO bezeichnung",
+    "seoDescription": "SEO beschreibung",
+    "publishedAt": "Publizieren am",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

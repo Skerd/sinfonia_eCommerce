@@ -1,0 +1,66 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx",
+  "title": "Fiscal config bearbeiten",
+  "formHeader": {
+    "title": "Fiscal config bearbeiten",
+    "description": "Aktualisieren Albanian CIS fiscalization und e-rechnung einstellungen."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  },
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "cisCodesSectionTitle": "CIS codes",
+    "endpointsSectionTitle": "Service endpoints",
+    "sellerSectionTitle": "Verkäufer details",
+    "certificateSectionTitle": "Certificate",
+    "certificateManageSectionTitle": "Certificate verwalten",
+    "nameLabel": "Name",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Software code (SoftCode)",
+    "maintainerCodeLabel": "Maintainer code",
+    "businessUnitCodeLabel": "Business einheit code",
+    "operatorCodeLabel": "Operator code",
+    "tcrCodeLabel": "TCR code (von CIS)",
+    "tcrIntIdLabel": "TCR internal ID",
+    "tcrTypeLabel": "TCR typ",
+    "tcrType": {
+      "REGULAR": "Regular",
+      "VENDING": "Vending"
+    },
+    "environmentLabel": "Environment",
+    "environment": {
+      "test": "Test",
+      "production": "Production"
+    },
+    "fiscalizationUrlLabel": "Fiscalization SOAP URL",
+    "einvoiceUrlLabel": "E-rechnung SOAP URL",
+    "selfcareUrlLabel": "Selfcare / verifizieren URL",
+    "proxyUrlLabel": "HTTPS proxy (optional)",
+    "sellerNameLabel": "Verkäufer name",
+    "sellerAddressLabel": "Verkäufer adresse",
+    "sellerTownLabel": "Verkäufer town",
+    "sellerCountryLabel": "Verkäufer land code (ALB)",
+    "certificateBase64Label": "PKCS#12 certificate (base64) — leave empty bis keep",
+    "certificatePasswordLabel": "Certificate passwort",
+    "isVatRegisteredLabel": "MWST registered",
+    "autoFiscalizePosLabel": "Auto-fiscalize POS payments",
+    "autoEinvoiceLabel": "Auto-erstellen e-rechnung after fiscalization",
+    "clearCertificateLabel": "Leeren stored certificate"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving fiscal config",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fiscal config aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren fiscal config",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/createShippingZone.tsx",
+  "title": "Versand zone erstellen",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
+    "countriesLabel": "Countries",
+    "statesLabel": "States / regions",
+    "selectCountry": "Land auswählen",
+    "selectState": "Kanton auswählen",
+    "removeCountry": "Entfernen land",
+    "removeState": "Entfernen kanton",
+    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
+    "removePostalCodePattern": "Entfernen pattern",
+    "ratesSectionTitle": "Versand rates",
+    "rateAddRow": "Satz hinzufügen",
+    "rateRemoveRow": "Entfernen satz",
+    "rateRowTitle": "Untitled satz",
+    "rateNameLabel": "Satz name",
+    "rateTypeLabel": "Satz typ",
+    "ratePriceLabel": "Preis",
+    "carrierLabel": "Carrier",
+    "estimatedDeliveryDaysLabel": "Estimated delivery tage",
+    "rateConditionsSectionTitle": "Conditions",
+    "minWeightLabel": "Min weight",
+    "maxWeightLabel": "Max weight",
+    "minOrderAmountLabel": "Min auftrag betrag",
+    "maxOrderAmountLabel": "Max auftrag betrag",
+    "shippingRateType": {
+      "flat": "Flat",
+      "weight": "Weight-based",
+      "price": "Auftrag betrag",
+      "quantity": "Menge",
+      "free": "Free"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Versand zone wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Versand zone erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen versand zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Versand zone erstellen",
+    "description": "Define destination geography und die versand rates offered am kasse."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Versand zone erstellen"
+  }
+}

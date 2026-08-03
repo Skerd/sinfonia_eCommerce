@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
+  "title": "CMS Blocks",
+  "description": "Storefront content blocks und their display auftrag. verwalten",
+  "createCmsBlock": "CMS block erstellen",
+  "reorderBlocks": "Reorder blocks",
+  "reorderTitle": "Reorder CMS blocks",
+  "reorderDescription": "Drag blocks bis change their display auftrag on die storefront.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "empty": "Keine blocks bis reorder.",
+  "cancel": "Abbrechen",
+  "save": "Speichern auftrag",
+  "saving": "Wird gespeichert...",
+  "saveSuccess": "Block auftrag gespeichert.",
+  "saveError": "Fehlgeschlagen bis speichern block auftrag.",
+  "loadError": "Blocks. konnten nicht geladen werden",
+  "fields": {
+    "!enums": {
+      "type": {
+        "hero_banner": "Hero banner",
+        "slider": "Slider",
+        "featured_collection": "Featured collection",
+        "trending": "Trending",
+        "best_sellers": "Best sellers",
+        "flash_sale": "Flash verkauf",
+        "announcement_bar": "Announcement bar",
+        "custom_html": "Custom HTML",
+        "video": "Video",
+        "grid": "Grid",
+        "category_showcase": "Kategorie showcase",
+        "promotional_section": "Promotional section"
+      }
+    },
+    "title": "Bezeichnung",
+    "type": "Typ",
+    "position": "Position",
+    "isActive": "Aktiv",
+    "config": "Konfiguration",
+    "startsAt": "Starts am",
+    "endsAt": "Ends am",
+    "visibility": {
+      "devices": "Geräte",
+      "regions": "Regions"
+    },
+    "abTestVariant": "A/B variant",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

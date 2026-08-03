@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/editCustomerGroup.tsx",
+  "title": "Customer group bearbeiten",
+  "errorTitle": "Customer group konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese customer group. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "nameLabel": "Name",
+    "namePlaceholder": "Group name",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Optional beschreibung"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving customer group",
+      "time": 3000
+    },
+    "success": {
+      "title": "Customer group aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren customer group",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Customer group bearbeiten",
+    "description": "Aktualisieren die name und beschreibung."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

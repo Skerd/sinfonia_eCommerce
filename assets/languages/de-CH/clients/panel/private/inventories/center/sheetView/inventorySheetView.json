@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
+  "inventorySubtitle": "Inventory protokoll",
+  "overview": "Übersicht",
+  "related": "Zugehörig",
+  "product": "Produkt",
+  "variant": "Variant",
+  "warehouse": "Warehouse",
+  "quantityOnHand": "On hand",
+  "quantityReserved": "Reserviert",
+  "quantityAvailable": "Verfügbar",
+  "reorderPoint": "Reorder point",
+  "reorderQuantity": "Reorder menge",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
+}

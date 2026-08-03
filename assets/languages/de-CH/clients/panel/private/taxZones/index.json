@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
+  "title": "Steuer Zones",
+  "description": "Configure steuer rates von land und region.",
+  "createTaxZone": "Steuer zone erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "country": "Land",
+    "states": "States",
+    "postalCodePatterns": "Post code patterns",
+    "rates": {
+      "name": "Satz name",
+      "rate": "Satz",
+      "isCompound": "Compound",
+      "appliesTo": "Satz applies bis"
+    },
+    "priority": "Priority",
+    "isActive": "Aktiv",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

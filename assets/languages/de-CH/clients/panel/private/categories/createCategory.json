@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/createCategory.tsx",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Kategorie name",
+    "parentCategoryLabel": "Parent kategorie",
+    "parentCategoryPlaceholder": "Optional root kategorie",
+    "orderLabel": "Sortierreihenfolge",
+    "orderPlaceholder": "0",
+    "createCategoryTitle": "Kategorie erstellen",
+    "createCategoryDescription": "A kategorie bis organize produkte in ihr catalog. hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Kategorie wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategorie erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen kategorie",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Kategorie erstellen",
+    "description": "A kategorie bis organize produkte in ihr catalog. hinzufügen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Kategorie erstellen"
+  }
+}

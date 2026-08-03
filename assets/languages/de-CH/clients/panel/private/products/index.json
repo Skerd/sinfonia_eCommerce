@@ -1,0 +1,150 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
+  "title": "Produkte",
+  "description": "Die produkte in ihr catalog. verwalten",
+  "createProduct": "Produkt erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "physical": "Physical",
+        "digital": "Digital",
+        "service": "Dienstleistung",
+        "variable": "Variable",
+        "bundle": "Bundle",
+        "gift_card": "Gift karte"
+      },
+      "status": {
+        "draft": "Entwurf",
+        "active": "Aktiv",
+        "archived": "Archiviert"
+      },
+      "weightUnit": {
+        "kg": "kg",
+        "lb": "lb",
+        "g": "g",
+        "oz": "oz"
+      },
+      "dimensionUnit": {
+        "cm": "cm",
+        "in": "in"
+      },
+      "seo": {
+        "twitterCard": {
+          "summary": "Übersicht",
+          "summary_large_image": "Übersicht large bild"
+        }
+      }
+    },
+    "type": "Typ",
+    "title": "Bezeichnung",
+    "slug": "Slug",
+    "description": "Beschreibung",
+    "shortDescription": "Short beschreibung",
+    "highlights": "Highlights",
+    "careInstructions": "Care instructions",
+    "warranty": "Garantie",
+    "faqs": {
+      "question": "Frage",
+      "answer": "Antwort"
+    },
+    "sku": "SKU",
+    "barcode": "Barcode",
+    "gtin": "GTIN",
+    "upc": "UPC",
+    "ean": "EAN",
+    "isbn": "ISBN",
+    "mpn": "MPN",
+    "hsCode": "HS code",
+    "countryOfOrigin": "Land von origin",
+    "brand": "Brand",
+    "vendor": "Lieferant",
+    "tags": "Tags",
+    "categories": "Categories",
+    "collections": "Collections",
+    "price": "Preis",
+    "compareAtPrice": "Compare-am preis",
+    "costPrice": "Kosten preis",
+    "msrp": "MSRP",
+    "saleStartsAt": "Verkauf starts",
+    "saleEndsAt": "Verkauf ends",
+    "taxable": "Taxable",
+    "taxClass": "Steuer klasse",
+    "minOrderQty": "Min. auftrag menge",
+    "maxOrderQty": "Max. auftrag menge",
+    "stepQty": "Auftrag step menge",
+    "currency": "Währung",
+    "weight": "Weight",
+    "weightUnit": "Weight einheit",
+    "dimensions": {
+      "length": "Length",
+      "width": "Breite",
+      "height": "Höhe"
+    },
+    "dimensionUnit": "Dimension einheit",
+    "volumetricWeight": "Volumetric weight",
+    "shippingClass": "Versand klasse",
+    "isHazmat": "Hazardous material",
+    "requiresShipping": "Requires versand",
+    "trackInventory": "Track inventory",
+    "allowBackorder": "Allow backorder",
+    "lowStockThreshold": "Low stock schwelle",
+    "safetyStock": "Sicherheit stock",
+    "backorderLimit": "Backorder limit",
+    "preorderEnabled": "Preorder enabled",
+    "preorderAvailableAt": "Preorder verfügbar am",
+    "availableForSale": "Verfügbar für verkauf",
+    "mainImage": "Haupt bild",
+    "gallery": "Galerie",
+    "videoUrls": "Video URLs",
+    "documents": "Dokumente",
+    "variantOptions": "Variant options",
+    "hasVariants": "Has variants",
+    "defaultVariant": "Default variant",
+    "bundleComponents": {
+      "product": "Bundle produkt",
+      "quantity": "Menge"
+    },
+    "downloadLimit": "Download limit",
+    "downloadExpiryDays": "Download expiry (tage)",
+    "relatedProducts": "Zugehörig produkte",
+    "upsells": "Upsells",
+    "crossSells": "Cross-sells",
+    "frequentlyBoughtTogether": "Frequently bought together",
+    "featured": "Featured",
+    "badges": "Badges",
+    "ratingAverage": "Bewertung",
+    "ratingCount": "Bewertung anzahl",
+    "reviewCount": "Bewertungen",
+    "status": "Status",
+    "publishedAt": "Veröffentlicht",
+    "attributes": {
+      "name": "Attribute name",
+      "values": "Attribute values"
+    },
+    "specifications": {
+      "label": "Spezifikation label",
+      "value": "Spezifikation wert"
+    },
+    "seo": {
+      "metaTitle": "Meta bezeichnung",
+      "metaDescription": "Meta beschreibung",
+      "metaKeywords": "Meta keywords",
+      "canonicalUrl": "Canonical URL",
+      "openGraphTitle": "Offen Graph bezeichnung",
+      "openGraphDescription": "Offen Graph beschreibung",
+      "openGraphImage": "Offen Graph bild",
+      "twitterCard": "Twitter karte",
+      "structuredDataType": "Structured daten typ",
+      "sitemapInclude": "Include in sitemap",
+      "sitemapPriority": "Sitemap priority",
+      "noIndex": "Keine index"
+    },
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

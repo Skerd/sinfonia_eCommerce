@@ -1,0 +1,97 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
+  "title": "Produkt aufträge",
+  "description": "Track und verwalten customer aufträge.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Storniert",
+        "refunded": "Refunded"
+      },
+      "paymentStatus": {
+        "unpaid": "Unbezahlt",
+        "authorized": "Authorized",
+        "paid": "Bezahlt",
+        "partially_refunded": "Partially refunded",
+        "refunded": "Refunded",
+        "voided": "Voided"
+      },
+      "fulfillmentStatus": {
+        "unfulfilled": "Unfulfilled",
+        "partially_fulfilled": "Partially fulfilled",
+        "fulfilled": "Fulfilled",
+        "returned": "Returned"
+      }
+    },
+    "orderNumber": "Auftrag nummer",
+    "customer": "Kunde",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "items": "Positionen",
+    "subtotal": "Zwischensumme",
+    "discountTotal": "Rabatt",
+    "shippingTotal": "Versand",
+    "taxTotal": "Steuer",
+    "grandTotal": "Total",
+    "currency": "Währung",
+    "shippingAddress": {
+      "firstName": "Versand vor name",
+      "lastName": "Versand nach name",
+      "phone": "Versand telefon",
+      "street": "Versand strasse",
+      "city": "Versand ort",
+      "state": "Versand kanton",
+      "postalCode": "Versand post code",
+      "country": "Versand land"
+    },
+    "billingAddress": {
+      "firstName": "Abrechnung vor name",
+      "lastName": "Abrechnung nach name",
+      "phone": "Abrechnung telefon",
+      "street": "Abrechnung strasse",
+      "city": "Abrechnung ort",
+      "state": "Abrechnung kanton",
+      "postalCode": "Abrechnung post code",
+      "country": "Abrechnung land"
+    },
+    "paymentStatus": "Zahlung",
+    "fulfillmentStatus": "Fulfillment",
+    "status": "Status",
+    "appliedDiscounts": {
+      "discount": "Applied rabatt",
+      "code": "Rabatt code",
+      "amount": "Rabatt betrag"
+    },
+    "taxBreakdown": {
+      "name": "Steuer name",
+      "rate": "Steuer satz",
+      "amount": "Steuer betrag"
+    },
+    "shippingRate": {
+      "name": "Versand satz",
+      "carrier": "Versand carrier",
+      "price": "Versand preis"
+    },
+    "notes": "Notizen",
+    "internalNotes": "Internal notizen",
+    "stripePaymentIntentId": "Stripe zahlung intent",
+    "idempotencyKey": "Idempotency key",
+    "giftCard": {
+      "giftCard": "Gift karte",
+      "code": "Gift karte code",
+      "amount": "Gift karte betrag"
+    },
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

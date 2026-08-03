@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
+  "title": "POS Sitzungen",
+  "description": "Till sitzungen opened und geschlossen von die Point von Verkauf.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "state": {
+        "opening_control": "Eröffnung",
+        "opened": "Opened",
+        "closing_control": "Wird geschlossen",
+        "closed": "Geschlossen"
+      },
+      "cashMoves": {
+        "type": {
+          "type": {
+            "in": "Cash in",
+            "out": "Cash out"
+          }
+        }
+      }
+    },
+    "name": "Name",
+    "config": "POS config",
+    "state": "Kanton",
+    "openedBy": "Opened von",
+    "closedBy": "Geschlossen von",
+    "openedAt": "Opened am",
+    "closedAt": "Geschlossen am",
+    "openingBalance": "Eröffnung saldo",
+    "closingBalance": "Closing saldo",
+    "expectedCash": "Erwartet cash",
+    "cashRegisterBalance": "Cash register",
+    "cashMoves": "Cash moves",
+    "orderCount": "Bestellungen",
+    "totalSales": "Total sales",
+    "totalCash": "Bar",
+    "totalCard": "Karte",
+    "notes": "Notizen",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

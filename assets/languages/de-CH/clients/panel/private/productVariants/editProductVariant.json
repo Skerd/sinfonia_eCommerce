@@ -1,0 +1,65 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
+  "title": "Variant bearbeiten",
+  "errorTitle": "Variant konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese produkt variant. Versuchen erneut.",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "pricingSectionTitle": "Pricing",
+    "physicalSectionTitle": "Physical",
+    "mediaSectionTitle": "Medien",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt auswählen",
+    "statusLabel": "Status",
+    "skuLabel": "SKU",
+    "skuPlaceholder": "Variant SKU",
+    "barcodeLabel": "Barcode",
+    "barcodePlaceholder": "Barcode",
+    "positionLabel": "Position",
+    "trackInventoryLabel": "Track inventory",
+    "priceLabel": "Preis",
+    "compareAtPriceLabel": "Compare-am preis",
+    "costPriceLabel": "Kosten preis",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "weightLabel": "Weight",
+    "dimensionLengthLabel": "Length",
+    "dimensionWidthLabel": "Breite",
+    "dimensionHeightLabel": "Höhe",
+    "mainImageLabel": "Haupt bild",
+    "attributesSectionTitle": "Attribute combination",
+    "attributeAddRow": "Attribute hinzufügen",
+    "attributeRemoveRow": "Entfernen attribute",
+    "attributeRowTitle": "Untitled attribute",
+    "attributeLabel": "Attribute",
+    "attributePlaceholder": "Attribute auswählen",
+    "valueLabel": "Wert",
+    "valuePlaceholder": "Attribute wert",
+    "variantStatus": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving variant",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variant aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren variant",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Variant bearbeiten",
+    "description": "Aktualisieren pricing, attributes, und inventory einstellungen für diese SKU."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

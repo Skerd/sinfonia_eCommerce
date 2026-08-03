@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
+  "title": "POS Zahlung Methods",
+  "description": "Configure cash, karte, und andere till zahlung methods.",
+  "createPosPaymentMethod": "Zahlungsart erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "type": "Typ",
+    "sequence": "Sequence",
+    "cashQuickAmounts": "Cash quick amounts",
+    "terminalEnabled": "Terminal enabled",
+    "terminalProvider": "Terminal provider",
+    "terminalHost": "Terminal host",
+    "terminalPort": "Terminal port",
+    "terminalId": "Terminal ID",
+    "terminalPath": "Terminal path",
+    "isActive": "Aktiv",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx",
+  "title": "Mitglieder verwalten",
+  "description": "Oder entfernen users von diese customer group. hinzufügen",
+  "addMemberLabel": "Mitglied hinzufügen",
+  "userPlaceholder": "A benutzer auswählen",
+  "add": "Hinzufügen",
+  "adding": "Adding...",
+  "membersLabel": "Mitglieder",
+  "noMembers": "Keine mitglieder in diese group yet.",
+  "close": "Schliessen",
+  "addSuccess": "Mitglied added.",
+  "addError": "Fehlgeschlagen bis hinzufügen mitglied.",
+  "removeSuccess": "Mitglied removed.",
+  "removeError": "Fehlgeschlagen bis entfernen mitglied.",
+  "loadError": "Mitglieder. konnten nicht geladen werden",
+  "previousPage": "Zurück",
+  "nextPage": "Weiter"
+}

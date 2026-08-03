@@ -1,0 +1,7 @@
+{
+  "default": "Default",
+  "memberCount": "Mitglied Anzahl",
+  "members": "Mitglieder",
+  "name": "Name",
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx"
+}

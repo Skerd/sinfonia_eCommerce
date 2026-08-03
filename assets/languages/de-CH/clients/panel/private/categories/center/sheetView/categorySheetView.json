@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/center/sheetView/categorySheetView.tsx",
+  "failedTitle": "Kategorie konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese kategorie. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "categorySubtitle": "Kategorie",
+  "name": "Name",
+  "overview": "Übersicht",
+  "lifecycle": "Lebenszyklus",
+  "slug": "Slug",
+  "order": "Auftrag",
+  "parentCategory": "Parent kategorie",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
+}

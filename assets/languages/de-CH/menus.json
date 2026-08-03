@@ -1,0 +1,150 @@
+{
+  "eCommerce": {
+    "title": "E-Commerce",
+    "pos": {
+      "title": "Point von Verkauf"
+    },
+    "pospaymentmethods": {
+      "title": "POS zahlung methods"
+    },
+    "posconfigs": {
+      "title": "POS configs"
+    },
+    "possessions": {
+      "title": "POS sitzungen"
+    },
+    "posorders": {
+      "title": "POS aufträge"
+    },
+    "fiscalconfigs": {
+      "title": "Fiscal / E-Rechnung"
+    },
+    "systemMap": {
+      "title": "Systemkarte"
+    },
+    "productCommerce": {
+      "title": "E-Commerce"
+    },
+    "products": {
+      "title": "Produkte"
+    },
+    "collections": {
+      "title": "Collections"
+    },
+    "productorders": {
+      "title": "Produkt aufträge"
+    },
+    "inventories": {
+      "title": "Inventory"
+    },
+    "inventorymovements": {
+      "title": "Stock movements"
+    },
+    "warehouses": {
+      "title": "Warehouses"
+    },
+    "productattributes": {
+      "title": "Produkt attributes"
+    },
+    "discounts": {
+      "title": "Discounts"
+    },
+    "taxzones": {
+      "title": "Steuer zones"
+    },
+    "shippingzones": {
+      "title": "Versand zones"
+    },
+    "cmsblocks": {
+      "title": "CMS blocks"
+    },
+    "customergroups": {
+      "title": "Customer groups"
+    },
+    "pricingrules": {
+      "title": "Pricing rules"
+    },
+    "analytics": {
+      "title": "Analytics"
+    },
+    "fulfillments": {
+      "title": "Fulfillments"
+    },
+    "returnrequests": {
+      "title": "Return requests"
+    },
+    "productvariants": {
+      "title": "Produkt variants"
+    },
+    "customeraddresses": {
+      "title": "Customer addresses"
+    },
+    "productreviews": {
+      "title": "Produkt bewertungen"
+    }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "eCommerce": {
+        "title": "E-Commerce"
+      },
+      "categories": {
+        "title": "Produkt categories"
+      },
+      "pos": {
+        "title": "POS"
+      },
+      "posconfigs": {
+        "title": "POS configs"
+      },
+      "pospaymentmethods": {
+        "title": "Zahlung methods"
+      },
+      "customergroups": {
+        "title": "Customer groups"
+      },
+      "discounts": {
+        "title": "Discounts"
+      },
+      "pricingrules": {
+        "title": "Pricing rules"
+      },
+      "taxzones": {
+        "title": "Steuer zones"
+      },
+      "shippingzones": {
+        "title": "Versand zones"
+      },
+      "warehouses": {
+        "title": "Warehouses"
+      },
+      "productattributes": {
+        "title": "Produkt attributes"
+      },
+      "productvariants": {
+        "title": "Produkt variants"
+      },
+      "fiscalconfigs": {
+        "title": "Fiscal / E-Rechnung"
+      },
+      "cmsblocks": {
+        "title": "CMS blocks"
+      },
+      "products": {
+        "title": "Produkte"
+      },
+      "collections": {
+        "title": "Collections"
+      },
+      "productorders": {
+        "title": "Produkt aufträge"
+      },
+      "inventories": {
+        "title": "Inventory"
+      },
+      "analytics": {
+        "title": "Analytics"
+      }
+    }
+  }
+}

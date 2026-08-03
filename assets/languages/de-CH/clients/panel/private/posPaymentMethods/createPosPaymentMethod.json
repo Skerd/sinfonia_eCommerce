@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx",
+  "title": "Zahlungsart erstellen",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Zahlung methode name",
+    "typeLabel": "Typ",
+    "sequenceLabel": "Sequence",
+    "sequencePlaceholder": "0",
+    "cashQuickAmountsLabel": "Cash quick amounts",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Bank POS terminal",
+    "terminalEnabledLabel": "Connect bank POS terminal",
+    "terminalForcesCardHint": "Connecting a bank POS terminal sets die typ bis Karte. Disconnecting sets it bis Cash.",
+    "terminalProviderLabel": "Terminal provider",
+    "terminalProtocolLabel": "Protocol",
+    "terminalHostLabel": "Terminal host / IP",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Terminal port",
+    "terminalPortPlaceholder": "8080",
+    "terminalIdLabel": "Terminal ID",
+    "terminalIdPlaceholder": "TID / POIID",
+    "terminalPathLabel": "Terminal path",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Bar",
+      "card": "Karte",
+      "bank": "Bank",
+      "customer_account": "Customer konto",
+      "other": "Andere"
+    },
+    "terminalProvider": {
+      "manual": "Manuell (external terminal)",
+      "local_http": "Local HTTP bridge"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Zahlungsart wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zahlung methode erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen zahlung methode",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Zahlungsart erstellen",
+    "description": "Define a till zahlung methode, optional cash chips, und bank terminal connection."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Zahlungsart erstellen"
+  }
+}

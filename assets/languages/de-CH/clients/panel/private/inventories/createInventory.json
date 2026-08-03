@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/createInventory.tsx",
+  "title": "Inventory erstellen",
+  "form": {
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt auswählen",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Variant (optional) auswählen",
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Warehouse auswählen",
+    "quantityOnHandLabel": "Menge on hand",
+    "reorderPointLabel": "Reorder point",
+    "reorderQuantityLabel": "Reorder menge"
+  },
+  "axios": {
+    "start": {
+      "title": "Inventory wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventory erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen inventory",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Inventory erstellen",
+    "description": "Link a produkt bis a warehouse und set starting stock levels."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Inventory erstellen"
+  }
+}

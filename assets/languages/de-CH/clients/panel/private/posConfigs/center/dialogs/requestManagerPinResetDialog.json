@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx",
+  "title": "Forgot manager PIN",
+  "description": "We will e-Mail a zurücksetzen link bis ihr konto e-Mail. Offen die link bis set a neu PIN.",
+  "sentTitle": "Check ihr e-Mail",
+  "sentDescription": "If ein konto e-Mail ist configured, a zurücksetzen link has been sent. Die link expires in 24 hours.",
+  "cancel": "Abbrechen",
+  "confirm": "Send zurücksetzen e-Mail",
+  "done": "Erledigt",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Sending zurücksetzen e-Mail",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zurücksetzen e-Mail sent",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht send zurücksetzen e-Mail",
+      "time": 3000
+    }
+  }
+}

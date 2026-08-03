@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
+  "title": "Zurücksetzen manager PIN",
+  "description": "Choose a neu manager PIN für diese till.",
+  "verifyingTitle": "Verifying zurücksetzen link",
+  "verifyingDescription": "Bitte wait während we validate ihr zurücksetzen link.",
+  "invalidTitle": "Invalid oder abgelaufen link",
+  "invalidDescription": "Diese zurücksetzen link ist invalid oder has abgelaufen. Antrag a neu one von die POS config menü.",
+  "successTitle": "PIN aktualisiert",
+  "successDescription": "Die manager PIN was zurücksetzen erfolgreich. Sie can sign in und use die till.",
+  "errorTitle": "Konnte nicht zurücksetzen PIN",
+  "errorDescription": "Something went wrong während saving die neu PIN. Versuchen erneut.",
+  "tryAgain": "Erneut versuchen",
+  "submit": "Speichern neu PIN",
+  "form": {
+    "pinLabel": "Neu PIN",
+    "confirmPinLabel": "Confirm PIN",
+    "resetCodeLabel": "Zurücksetzen code",
+    "pinMismatch": "PIN confirmation does nicht match"
+  }
+}

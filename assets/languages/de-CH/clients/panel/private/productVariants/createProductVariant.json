@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/createProductVariant.tsx",
+  "title": "Variant erstellen",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "pricingSectionTitle": "Pricing",
+    "physicalSectionTitle": "Physical",
+    "mediaSectionTitle": "Medien",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt auswählen",
+    "statusLabel": "Status",
+    "skuLabel": "SKU",
+    "skuPlaceholder": "Variant SKU",
+    "barcodeLabel": "Barcode",
+    "barcodePlaceholder": "Barcode",
+    "positionLabel": "Position",
+    "trackInventoryLabel": "Track inventory",
+    "priceLabel": "Preis",
+    "compareAtPriceLabel": "Compare-am preis",
+    "costPriceLabel": "Kosten preis",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "weightLabel": "Weight",
+    "dimensionLengthLabel": "Length",
+    "dimensionWidthLabel": "Breite",
+    "dimensionHeightLabel": "Höhe",
+    "mainImageLabel": "Haupt bild",
+    "attributesSectionTitle": "Attribute combination",
+    "attributeAddRow": "Attribute hinzufügen",
+    "attributeRemoveRow": "Entfernen attribute",
+    "attributeRowTitle": "Untitled attribute",
+    "attributeLabel": "Attribute",
+    "attributePlaceholder": "Attribute auswählen",
+    "valueLabel": "Wert",
+    "valuePlaceholder": "Attribute wert",
+    "variantStatus": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Variant wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variant erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen variant",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Variant erstellen",
+    "description": "A SKU-level variant mit pricing, attributes, und inventory einstellungen. hinzufügen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Variant erstellen"
+  }
+}

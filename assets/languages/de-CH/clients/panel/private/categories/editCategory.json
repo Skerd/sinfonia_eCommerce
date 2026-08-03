@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/editCategory.tsx",
+  "editTitle": "Kategorie bearbeiten",
+  "editDescription": "Aktualisieren kategorie details.",
+  "errorTitle": "Kategorie konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese kategorie. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "nameLabel": "Name",
+    "namePlaceholder": "Kategorie name",
+    "parentCategoryLabel": "Parent kategorie",
+    "parentCategoryPlaceholder": "Optional parent",
+    "orderLabel": "Sortierreihenfolge",
+    "orderPlaceholder": "0",
+    "editCategoryTitle": "Kategorie bearbeiten",
+    "editCategoryDescription": "Aktualisieren kategorie informationen."
+  },
+  "axios": {
+    "start": {
+      "title": "Saving kategorie",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategorie aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren kategorie",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Kategorie bearbeiten",
+    "description": "Aktualisieren kategorie details."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

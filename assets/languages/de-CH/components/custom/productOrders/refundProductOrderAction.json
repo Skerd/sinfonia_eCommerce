@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx",
+  "cancel": "Abbrechen",
+  "refund": {
+    "title": "Rückerstattung auftrag",
+    "description": "Refunds die captured zahlung through die zahlung gateway.",
+    "amountLabel": "Betrag",
+    "amountHint": "Leave empty für a full rückerstattung.",
+    "reasonLabel": "Grund",
+    "confirm": "Rückerstattung",
+    "axios": {
+      "success": "Auftrag refunded",
+      "error": "Konnte nicht rückerstattung auftrag"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
+  "title": "CMS block erstellen",
+  "formHeader": {
+    "title": "CMS block erstellen",
+    "description": "A storefront content block mit terminplan und visibility rules. hinzufügen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Erstellen"
+  },
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "configSectionTitle": "Konfiguration",
+    "visibilitySectionTitle": "Visibility",
+    "titleLabel": "Bezeichnung",
+    "typeLabel": "Typ",
+    "positionLabel": "Position",
+    "abTestVariantLabel": "A/B test variant",
+    "startsAtLabel": "Starts am",
+    "endsAtLabel": "Ends am",
+    "configLabel": "Konfiguration (JSON)",
+    "configPlaceholder": "{\n  \"headline\": \"Welcome\"\n}",
+    "visibilityDevicesLabel": "Geräte",
+    "visibilityRegionsLabel": "Regions",
+    "visibilityRegionsPlaceholder": "Region code hinzufügen",
+    "removeRegion": "Entfernen region",
+    "cmsBlockType": {
+      "hero_banner": "Hero banner",
+      "slider": "Slider",
+      "featured_collection": "Featured collection",
+      "trending": "Trending",
+      "best_sellers": "Best sellers",
+      "flash_sale": "Flash verkauf",
+      "announcement_bar": "Announcement bar",
+      "custom_html": "Custom HTML",
+      "video": "Video",
+      "grid": "Grid",
+      "category_showcase": "Kategorie showcase",
+      "promotional_section": "Promotional section"
+    },
+    "visibilityDevice": {
+      "desktop": "Desktop",
+      "mobile": "Mobile",
+      "tablet": "Tablet"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "CMS block wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "CMS block erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen CMS block",
+      "time": 3000
+    }
+  }
+}

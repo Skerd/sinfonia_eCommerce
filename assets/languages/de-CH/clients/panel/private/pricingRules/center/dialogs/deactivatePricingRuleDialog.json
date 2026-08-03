@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx",
+  "title": "Deaktivieren pricing rule",
+  "description": "Diese pricing rule will keine longer adjust prices until it ist activated erneut.",
+  "cancel": "Abbrechen",
+  "confirm": "Deaktivieren",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating pricing rule…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pricing rule deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht deaktivieren pricing rule",
+      "time": 3000
+    }
+  }
+}

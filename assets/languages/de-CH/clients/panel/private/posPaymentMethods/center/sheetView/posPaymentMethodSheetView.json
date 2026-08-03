@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx",
+  "posPaymentMethodSubtitle": "POS zahlung methode",
+  "failedTitle": "Zahlungsart konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese zahlung methode. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "overview": "Übersicht",
+  "terminal": "Bank POS terminal",
+  "name": "Name",
+  "type": "Typ",
+  "sequence": "Sequence",
+  "isActive": "Aktiv",
+  "yes": "Ja",
+  "no": "Nein",
+  "cashQuickAmounts": "Cash quick amounts",
+  "terminalEnabled": "Bank POS terminal",
+  "terminalProviderLabel": "Terminal provider",
+  "terminalProtocolLabel": "Protocol",
+  "terminalHost": "Terminal host",
+  "terminalPort": "Terminal port",
+  "terminalId": "Terminal ID",
+  "terminalPath": "Terminal path",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von",
+  "paymentType": {
+    "cash": "Bar",
+    "card": "Karte",
+    "bank": "Bank",
+    "customer_account": "Customer konto",
+    "other": "Andere"
+  },
+  "terminalProvider": {
+    "manual": "Manuell",
+    "local_http": "Local HTTP"
+  },
+  "terminalProtocol": {
+    "http": "HTTP",
+    "https": "HTTPS"
+  }
+}

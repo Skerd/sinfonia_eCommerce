@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx",
+  "title": "Fiscal config erstellen",
+  "formHeader": {
+    "title": "Fiscal config erstellen",
+    "description": "Configure Albanian CIS fiscalization und e-rechnung credentials."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Erstellen"
+  },
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "cisCodesSectionTitle": "CIS codes",
+    "endpointsSectionTitle": "Service endpoints",
+    "sellerSectionTitle": "Verkäufer details",
+    "certificateSectionTitle": "Certificate",
+    "nameLabel": "Name",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Software code (SoftCode)",
+    "maintainerCodeLabel": "Maintainer code",
+    "businessUnitCodeLabel": "Business einheit code",
+    "operatorCodeLabel": "Operator code",
+    "tcrCodeLabel": "TCR code (von CIS)",
+    "tcrIntIdLabel": "TCR internal ID",
+    "tcrTypeLabel": "TCR typ",
+    "tcrType": {
+      "REGULAR": "Regular",
+      "VENDING": "Vending"
+    },
+    "environmentLabel": "Environment",
+    "environment": {
+      "test": "Test",
+      "production": "Production"
+    },
+    "fiscalizationUrlLabel": "Fiscalization SOAP URL",
+    "einvoiceUrlLabel": "E-rechnung SOAP URL",
+    "selfcareUrlLabel": "Selfcare / verifizieren URL",
+    "proxyUrlLabel": "HTTPS proxy (optional)",
+    "sellerNameLabel": "Verkäufer name",
+    "sellerAddressLabel": "Verkäufer adresse",
+    "sellerTownLabel": "Verkäufer town",
+    "sellerCountryLabel": "Verkäufer land code (ALB)",
+    "certificateBase64Label": "PKCS#12 certificate (base64)",
+    "certificatePasswordLabel": "Certificate passwort",
+    "isVatRegisteredLabel": "MWST registered",
+    "autoFiscalizePosLabel": "Auto-fiscalize POS payments",
+    "autoEinvoiceLabel": "Auto-erstellen e-rechnung after fiscalization"
+  },
+  "axios": {
+    "start": {
+      "title": "Fiscal config wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fiscal config erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen fiscal config",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
+  "title": "Attribute bearbeiten",
+  "errorTitle": "Attribute konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese attribute. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "nameLabel": "Name",
+    "positionLabel": "Position",
+    "isVisibleOnProductPageLabel": "Visible on produkt seite",
+    "isUsedForVariantsLabel": "Used für variants",
+    "valuesLabel": "Values",
+    "valuesPlaceholder": "A wert und press Eingeben hinzufügen",
+    "removeValue": "Entfernen wert"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving attribute",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attribute aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren attribute",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Attribute bearbeiten",
+    "description": "Aktualisieren die name, values, visibility, und variant einstellungen."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

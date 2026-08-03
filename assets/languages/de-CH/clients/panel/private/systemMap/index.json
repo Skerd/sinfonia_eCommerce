@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
+  "title": "ECommerce System Map",
+  "description": "Interactive map von catalog eCommerce models, kasse flow, und modul capabilities. Pan, zoom, und click nodes für details.",
+  "tabs": {
+    "models": "Modell graph",
+    "flows": "How it works",
+    "capabilities": "Capabilities"
+  }
+}

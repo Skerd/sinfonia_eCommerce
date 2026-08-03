@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
+  "customerGroupSubtitle": "Customer group details",
+  "failedTitle": "Customer group konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese customer group. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "overview": "Übersicht",
+  "name": "Name",
+  "description": "Beschreibung",
+  "memberCount": "Mitglieder",
+  "isDefault": "Default",
+  "company": "Firma",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von",
+  "yes": "Ja",
+  "no": "Nein"
+}

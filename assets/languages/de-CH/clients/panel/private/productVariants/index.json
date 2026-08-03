@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
+  "title": "Produkt variants",
+  "description": "SKU-level variants von produkte. verwalten",
+  "createProductVariant": "Variant erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "product": "Produkt",
+    "sku": "SKU",
+    "barcode": "Barcode",
+    "attributeCombination": {
+      "attribute": "Attribute",
+      "value": "Wert"
+    },
+    "price": "Preis",
+    "compareAtPrice": "Compare-am preis",
+    "costPrice": "Kosten preis",
+    "currency": "Währung",
+    "weight": "Weight",
+    "dimensions": {
+      "length": "Length",
+      "width": "Breite",
+      "height": "Höhe"
+    },
+    "mainImage": "Haupt bild",
+    "position": "Position",
+    "status": "Status",
+    "trackInventory": "Track inventory",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

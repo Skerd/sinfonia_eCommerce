@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx",
+  "overview": "Übersicht",
+  "content": "Bewertung",
+  "related": "Zugehörig",
+  "lifecycle": "Lebenszyklus",
+  "productReviewSubtitle": "Prüfung details",
+  "displayTitle": "Bewertung",
+  "rating": "Bewertung",
+  "title": "Bezeichnung",
+  "comment": "Kommentar",
+  "order": "Auftrag",
+  "product": "Produkt",
+  "reviewer": "Reviewer",
+  "company": "Firma",
+  "createdBy": "Erstellt von",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
+}

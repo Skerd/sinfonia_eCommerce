@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
+  "cancel": "Abbrechen",
+  "confirm": {
+    "title": "Confirm auftrag",
+    "description": "Acknowledge diese auftrag und mark it as confirmed.",
+    "confirm": "Bestätigen",
+    "axios": {
+      "success": "Auftrag confirmed",
+      "error": "Konnte nicht confirm auftrag"
+    }
+  },
+  "markProcessing": {
+    "title": "Mark as processing",
+    "description": "Mark diese auftrag as being prepared für shipment.",
+    "confirm": "Mark processing",
+    "axios": {
+      "success": "Auftrag marked as processing",
+      "error": "Konnte nicht aktualisieren auftrag"
+    }
+  },
+  "cancelOrder": {
+    "title": "Abbrechen auftrag",
+    "description": "Cancels diese auftrag und releases any reserviert stock. Bezahlt aufträge must werden refunded vor.",
+    "confirm": "Abbrechen auftrag",
+    "axios": {
+      "success": "Auftrag annulliert",
+      "error": "Konnte nicht abbrechen auftrag"
+    }
+  }
+}

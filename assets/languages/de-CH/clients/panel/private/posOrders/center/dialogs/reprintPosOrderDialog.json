@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx",
+  "title": "Reprint receipt",
+  "description": "Preview und print die receipt für diese POS auftrag.",
+  "loading": "Laden receipt…",
+  "cancel": "Abbrechen",
+  "confirm": "Drucken",
+  "order": "Auftrag",
+  "ref": "Ref",
+  "date": "Datum",
+  "customer": "Kunde",
+  "walkIn": "Walk-in Customer",
+  "discount": "Rabatt",
+  "total": "Total",
+  "change": "Change",
+  "defaultFooter": "Thank sie für ihr kauf!",
+  "fallbackShop": "POS",
+  "errors": {
+    "loadFailed": "Konnte nicht laden receipt für diese auftrag."
+  },
+  "axios": {
+    "start": {
+      "title": "Laden receipt…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Receipt ready",
+      "time": 2000
+    },
+    "error": {
+      "title": "Konnte nicht laden receipt",
+      "time": 3000
+    }
+  }
+}

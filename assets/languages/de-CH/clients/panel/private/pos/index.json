@@ -1,0 +1,286 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
+  "title": "Point von Verkauf",
+  "backToConfigs": "Zurück zu configs",
+  "back": "Exit",
+  "cashIn": "Cash In",
+  "cashOut": "Cash Out",
+  "closeSession": "Close Sitzung",
+  "closeSessionDescription": "Anzahl die drawer und close diese till sitzung.",
+  "paused": {
+    "banner": "POS paused von admin — selling ist blocked. Sie can discard gehalten carts und close die till.",
+    "companyBanner": "Alle firma POS tills sind paused — diese ist nicht a single-till pause. Selling ist blocked. Sie can discard gehalten carts und close die till.",
+    "badge": "Paused",
+    "companyBadge": "Firma paused",
+    "forceClosedToast": "Diese till sitzung was force-geschlossen von ein admin pause."
+  },
+  "inactive": {
+    "banner": "Diese POS till ist inaktiv und kann nicht werden opened."
+  },
+  "cash": "Bar",
+  "orders": "Bestellungen",
+  "sessionSales": "Sitzung sales",
+  "cart": "Auftrag",
+  "items": "positionen",
+  "searchPlaceholder": "Suchen produkte…",
+  "barcodePlaceholder": "Scan barcode",
+  "catalogEmpty": "Keine produkte gefunden.",
+  "categories": {
+    "all": "Alle"
+  },
+  "cartEmpty": "Tap a produkt bis start die auftrag.",
+  "customerName": "Kunde",
+  "walkIn": "Walk-in Customer",
+  "orderDiscount": "Auftrag rabatt",
+  "lineDiscount": "Position rabatt",
+  "subtotal": "Zwischensumme",
+  "discount": "Rabatt",
+  "total": "Total",
+  "paymentMethods": "Zahlung",
+  "splitPayments": "zahlungen",
+  "split": {
+    "title": "Split bill",
+    "description": "Divide die auftrag equally (alla romana) oder von positionen, like in Italian restaurants.",
+    "equal": "Equal (alla romana)",
+    "equalHint": "Same betrag per gast. Assign cash/card on each share.",
+    "items": "Von positionen",
+    "itemsHint": "Choose what diese gast pays, charge their share, then weiter mit die rest.",
+    "guests": "Guests",
+    "perPerson": "Per person",
+    "apply": "Anwenden equal split",
+    "startItems": "Positionen auswählen",
+    "shareTotal": "Diese share",
+    "payShare": "Pay share",
+    "cancel": "Abbrechen split",
+    "guest": "Gast",
+    "selectItems": "Assign positionen bis diese gast",
+    "shareNote": "Bill split share"
+  },
+  "numpad": {
+    "clear": "C",
+    "quantity": "Menge",
+    "amount": "Betrag"
+  },
+  "noPaymentMethods": "Keine zahlung methods on diese config.",
+  "remaining": "Rest",
+  "change": "Change",
+  "exact": "Exact",
+  "newOrder": "Leeren",
+  "hold": "Hold",
+  "pay": "Pay",
+  "payConfirm": "Confirm pay",
+  "payConfirmHint": "Tap erneut bis confirm — cancels in {n}s",
+  "remove": "Entfernen",
+  "amount": "Betrag",
+  "held": {
+    "title": "Gehalten aufträge",
+    "description": "Parked carts für diese sitzung. Resume bis weiter selling.",
+    "empty": "Keine gehalten aufträge.",
+    "resume": "Resume"
+  },
+  "customerSearch": {
+    "placeholder": "Suchen customer oder walk-in name…",
+    "clear": "Leeren",
+    "searching": "Searching…",
+    "empty": "Keine matching customers"
+  },
+  "variantDialog": {
+    "title": "Choose variant",
+    "description": "A variant bis hinzufügen bis die warenkorb. auswählen",
+    "empty": "Keine variants verfügbar.",
+    "stock": "Stock"
+  },
+  "refundDialog": {
+    "title": "Rückerstattung auftrag",
+    "description": "Choose quantities bis rückerstattung",
+    "empty": "Keine lines on diese auftrag.",
+    "pinLabel": "Manager PIN",
+    "pinRequired": "Manager PIN ist erforderlich",
+    "pinHint": "Sie will auswählen a manager und eingeben their PIN when confirming.",
+    "total": "Rückerstattung total",
+    "submit": "Rückerstattung",
+    "selectAll": "Rückerstattung alle rest",
+    "success": "Auftrag refunded",
+    "failed": "Rückerstattung fehlgeschlagen",
+    "remaining": "Left",
+    "alreadyRefunded": "Refunded",
+    "fullyRefunded": "Fully refunded",
+    "nothingLeft": "Nothing left bis rückerstattung on diese auftrag."
+  },
+  "pinDialog": {
+    "pinLabel": "Manager PIN",
+    "selectManager": "Manager auswählen",
+    "changeManager": "Change"
+  },
+  "sessionOrders": {
+    "title": "Sitzung aufträge",
+    "description": "Bezahlt und refunded aufträge in diese till sitzung.",
+    "empty": "Keine aufträge yet.",
+    "reprint": "Reprint",
+    "refund": "Rückerstattung"
+  },
+  "refund": {
+    "title": "Rückerstattung auftrag",
+    "description": "Rückerstattung in full oder auswählen position quantities.",
+    "full": "Full rückerstattung",
+    "lines": "Von lines",
+    "selectedTotal": "Rückerstattung total",
+    "confirm": "Rückerstattung"
+  },
+  "variants": {
+    "title": "Choose variant",
+    "description": "A variant auswählen",
+    "badge": "variants"
+  },
+  "stock": {
+    "qty": "Stock",
+    "out": "Out"
+  },
+  "pin": {
+    "title": "Manager freigabe",
+    "description": "Die manager PIN bis weiter. eingeben",
+    "selectThenEnter": "Die approving manager, then eingeben their PIN. auswählen",
+    "label": "PIN",
+    "discount": "Manager PIN erforderlich für discounts",
+    "cashOut": "Manager PIN erforderlich für cash out",
+    "refund": "Manager PIN erforderlich für refunds"
+  },
+  "recon": {
+    "opening": "Eröffnung saldo",
+    "card": "Karte",
+    "difference": "Cash difference",
+    "differenceReason": "Difference grund",
+    "differenceReasonPlaceholder": "Erforderlich when counted cash ≠ erwartet",
+    "heldWarning": "{anzahl} gehalten auftrag(s) must werden resumed oder discarded before closing."
+  },
+  "shortcuts": {
+    "hint": "F1 help · F2 pay · F4 hold · F3 gehalten · F6 aufträge · Esc leeren"
+  },
+  "info": {
+    "title": "Till help",
+    "description": "Keyboard shortcuts und how die haupt till tools arbeit.",
+    "shortcutsTitle": "Keyboard shortcuts",
+    "featuresTitle": "Features",
+    "keys": {
+      "f1": "Offen diese help",
+      "f2": "Pay current auftrag (press twice bis confirm)",
+      "f3": "Offen gehalten aufträge",
+      "f4": "Hold / park current warenkorb",
+      "f6": "Sitzung aufträge & reprint",
+      "f8": "Focus barcode field",
+      "f9": "Toggle zahlung panel",
+      "esc": "Leeren warenkorb (when keine dialog ist offen)",
+      "qty": "Increase / decrease selected position menge",
+      "delete": "Entfernen selected warenkorb position"
+    },
+    "features": {
+      "holdTitle": "Gehalten carts",
+      "holdBody": "Park ein unfinished auftrag mit Hold (F4). Resume oder discard it later von Gehalten aufträge (F3). Paying a resumed hold keeps die same auftrag nummer.",
+      "ordersTitle": "Sitzung aufträge",
+      "ordersBody": "Offen Aufträge (F6) bis see paid/refunded tickets von diese sitzung und reprint a receipt.",
+      "reconTitle": "Close reconciliation",
+      "reconBody": "Closing shows erwartet cash, sales von ausschreibung, und die difference vs counted cash. A grund ist erforderlich when they differ. Gehalten drafts must werden cleared vor.",
+      "payTitle": "Safe payments",
+      "payBody": "Pay must werden pressed twice (oder F2 twice) bis confirm und avoid misclicks. Each pay also sends ein idempotency key so a retry will nicht charge twice. Split payments und bank terminal charge sind supported.",
+      "splitTitle": "Bill split",
+      "splitBody": "Use die scissors icon für equal (alla romana) oder von-position splits. Pay one gast’s share, then weiter mit die rest.",
+      "customerTitle": "CRM customer",
+      "customerBody": "Suchen verknüpft firma users von die customer field. Walk-in names still arbeit when keine konto ist selected.",
+      "refundTitle": "Refunds",
+      "refundBody": "Von Sitzung aufträge, rückerstattung a bezahlt ticket in full oder von position menge. Stock restocks für returned lines when inventory ist tracked.",
+      "stockTitle": "Stock & variants",
+      "stockBody": "Tiles anzeigen on-hand menge. Oversell can werden allowed per config. Multi-variant produkte offen a picker; barcodes can resolve a specific variant.",
+      "pinTitle": "Manager PIN",
+      "pinBody": "Configs can require a manager PIN für discounts, cash-out, und refunds. Set die PIN on die POS config."
+    }
+  },
+  "terminal": {
+    "ready": "Bank POS terminal",
+    "connected": "Connected",
+    "localHttpHint": "Pay will send die betrag bis die local bank terminal bridge.",
+    "manualHint": "Confirm die charge on die bank terminal, then vollständig Pay.",
+    "notConfigured": "Karte methode has keine terminal configured — pay einträge die verkauf only.",
+    "charge": "Charge terminal",
+    "charging": "Waiting für terminal…"
+  },
+  "reason": "Grund",
+  "notes": "Notizen",
+  "cancel": "Abbrechen",
+  "confirm": "Bestätigen",
+  "busy": "Working…",
+  "expectedCash": "Erwartet cash",
+  "cashRegister": "Cash register",
+  "closingBalance": "Closing saldo",
+  "picker": {
+    "title": "A register auswählen",
+    "description": "Choose which shop till bis offen.",
+    "empty": "Keine aktiv POS configs. Erstellen one unter Configurations → eCommerce → POS vor.",
+    "open": "Offen till"
+  },
+  "openSession": {
+    "title": "Offen Sitzung",
+    "description": "Offen a neu till sitzung bis start selling.",
+    "for": "Offen sitzung für",
+    "openingBalance": "Eröffnung saldo",
+    "notes": "Notizen",
+    "submit": "Offen Sitzung"
+  },
+  "receipt": {
+    "title": "Zahlung successful",
+    "print": "Print receipt",
+    "order": "Auftrag",
+    "ref": "Ref",
+    "date": "Datum",
+    "defaultFooter": "Thank sie für ihr kauf!",
+    "fiscalQr": "Fiscal QR code",
+    "nslf": "NSLF",
+    "nivf": "NIVF",
+    "fiscalDemo": "Fiscal verifizieren (demo)"
+  },
+  "sessionState": {
+    "opening_control": "Eröffnung",
+    "opened": "Offen",
+    "closing_control": "Wird geschlossen",
+    "closed": "Geschlossen"
+  },
+  "toast": {
+    "sessionOpened": "Sitzung opened",
+    "sessionClosed": "Sitzung geschlossen",
+    "cashIn": "Cash added",
+    "cashOut": "Cash removed",
+    "productAdded": "Produkt added",
+    "paid": "Auftrag bezahlt",
+    "splitApplied": "Bill split into equal shares",
+    "sharePaid": "Share bezahlt — weiter mit rest positionen",
+    "held": "Auftrag gehalten",
+    "resumed": "Gehalten auftrag resumed",
+    "heldDiscarded": "Gehalten auftrag discarded",
+    "refunded": "Auftrag refunded"
+  },
+  "errors": {
+    "catalogFailed": "Konnte nicht laden catalog",
+    "sessionFailed": "Konnte nicht laden sitzung",
+    "configsFailed": "Konnte nicht laden POS configs",
+    "openSessionFailed": "Konnte nicht offen sitzung",
+    "cashMoveFailed": "Cash move fehlgeschlagen",
+    "closeSessionFailed": "Konnte nicht close sitzung",
+    "barcodeNotFound": "Barcode nicht gefunden",
+    "invalidAmount": "A valid betrag eingeben",
+    "payFailed": "Zahlung fehlgeschlagen",
+    "terminalFailed": "Terminal zahlung fehlgeschlagen",
+    "splitFailed": "Konnte nicht split die bill",
+    "holdFailed": "Konnte nicht hold auftrag",
+    "heldLoadFailed": "Konnte nicht laden gehalten aufträge",
+    "heldDeleteFailed": "Konnte nicht discard gehalten auftrag",
+    "ordersLoadFailed": "Konnte nicht laden sitzung aufträge",
+    "reprintFailed": "Konnte nicht reprint receipt",
+    "differenceReasonRequired": "Explain die cash difference before closing",
+    "heldOrdersBlockClose": "Resume oder discard gehalten aufträge before closing",
+    "customerSearchFailed": "Konnte nicht suchen customers",
+    "insufficientStock": "Nicht enough stock für diese menge",
+    "outOfStock": "Produkt ist out von stock",
+    "pinInvalid": "Invalid manager PIN",
+    "noManagersWithPin": "Keine managers mit a PIN sind zugewiesen bis diese till",
+    "refundFailed": "Rückerstattung fehlgeschlagen"
+  }
+}

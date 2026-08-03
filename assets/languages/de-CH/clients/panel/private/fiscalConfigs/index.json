@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
+  "title": "Fiscal configs",
+  "description": "Albanian CIS fiscalization und e-rechnung einstellungen (NIPT, TCR, certificates).",
+  "createFiscalConfig": "Fiscal config erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "environment": {
+        "test": "Test",
+        "production": "Production"
+      },
+      "tcrType": {
+        "REGULAR": "Regular",
+        "VENDING": "Vending"
+      }
+    },
+    "name": "Name",
+    "nipt": "NIPT",
+    "softCode": "Software code",
+    "maintainerCode": "Maintainer code",
+    "businessUnitCode": "Business einheit code",
+    "operatorCode": "Operator code",
+    "tcrCode": "TCR code",
+    "tcrIntId": "TCR internal ID",
+    "tcrType": "TCR typ",
+    "fiscalizationUrl": "Fiscalization URL",
+    "einvoiceUrl": "E-rechnung URL",
+    "selfcareUrl": "Selfcare URL",
+    "proxyUrl": "Proxy URL",
+    "sellerName": "Verkäufer name",
+    "sellerAddress": "Verkäufer adresse",
+    "sellerTown": "Verkäufer town",
+    "sellerCountry": "Verkäufer land",
+    "isVatRegistered": "MWST registered",
+    "autoFiscalizePos": "Auto-fiscalize POS",
+    "autoEinvoice": "Auto e-rechnung",
+    "environment": "Environment",
+    "hasCertificate": "Certificate",
+    "isActive": "Aktiv",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

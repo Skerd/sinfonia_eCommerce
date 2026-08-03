@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx",
+  "taxZoneSubtitle": "Steuer zone details",
+  "failedTitle": "Steuer zone konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese steuer zone. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "overview": "Übersicht",
+  "geography": "Geography",
+  "rates": "Steuer rates",
+  "name": "Name",
+  "isActive": "Aktiv",
+  "priority": "Priority",
+  "company": "Firma",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von",
+  "country": "Land",
+  "states": "States / regions",
+  "postalCodePatterns": "Post code patterns",
+  "state": "Kanton",
+  "rateValue": "Satz (%)",
+  "rateAppliesTo": "Applies bis",
+  "isCompound": "Compound",
+  "compactView": "Kompakt",
+  "cardsView": "Karten",
+  "yes": "Ja",
+  "no": "Nein",
+  "yesNo": {
+    "true": "Ja",
+    "false": "Nein"
+  },
+  "taxRateAppliesTo": {
+    "all": "Alle produkte",
+    "physical": "Physical",
+    "digital": "Digital"
+  }
+}

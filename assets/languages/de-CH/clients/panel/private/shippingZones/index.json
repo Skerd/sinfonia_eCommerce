@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
+  "title": "Versand Zones",
+  "description": "Define versand rates von geography.",
+  "createShippingZone": "Versand zone erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "countries": "Countries",
+    "states": "States",
+    "postalCodePatterns": "Post code patterns",
+    "rates": {
+      "name": "Satz name",
+      "type": "Satz typ",
+      "price": "Satz preis",
+      "carrier": "Carrier",
+      "estimatedDeliveryDays": "Est. delivery tage",
+      "conditions": {
+        "minWeight": "Min weight",
+        "maxWeight": "Max weight",
+        "minOrderAmount": "Min auftrag betrag",
+        "maxOrderAmount": "Max auftrag betrag"
+      }
+    },
+    "isActive": "Aktiv",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

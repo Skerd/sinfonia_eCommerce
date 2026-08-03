@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
+  "title": "Categories",
+  "description": "Configure produkt categories für catalogs across ihr tenant.",
+  "createCategory": "Kategorie erstellen",
+  "fields": {
+    "name": "Name",
+    "slug": "Slug",
+    "order": "Auftrag",
+    "parent": "Parent kategorie",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+}

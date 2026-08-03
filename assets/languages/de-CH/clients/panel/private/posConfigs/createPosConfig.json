@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
+  "title": "POS config erstellen",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Register name",
+    "paymentMethodsLabel": "Zahlung methods",
+    "managersLabel": "Managers",
+    "warehousesLabel": "Warehouses",
+    "warehousePlaceholder": "Warehouse auswählen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "receiptHeaderLabel": "Receipt header",
+    "receiptHeaderPlaceholder": "Printed am die top von die receipt",
+    "receiptFooterLabel": "Receipt footer",
+    "receiptFooterPlaceholder": "Printed am die bottom von die receipt",
+    "tillOptionsSectionTitle": "Till options",
+    "ifaceBarcodeScannerLabel": "Barcode scanner",
+    "ifaceCashControlLabel": "Cash control",
+    "allowDiscountLabel": "Allow rabatt",
+    "allowQuantityChangeLabel": "Allow menge change",
+    "allowOversellLabel": "Allow oversell",
+    "pinForDiscountLabel": "PIN für rabatt",
+    "pinForCashOutLabel": "PIN für cash out",
+    "pinForRefundLabel": "PIN für rückerstattung",
+    "selectWarehouse": "Warehouse hinzufügen",
+    "removeWarehouse": "Entfernen warehouse",
+    "selectCurrency": "Währung auswählen",
+    "selectPaymentMethod": "Zahlungsart auswählen",
+    "removePaymentMethod": "Entfernen zahlung methode",
+    "selectManager": "Manager auswählen",
+    "removeManager": "Entfernen manager"
+  },
+  "axios": {
+    "start": {
+      "title": "POS config wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen POS config",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "POS config erstellen",
+    "description": "Set up a shop till: warehouses, zahlung methods, receipt text, und till rules."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "POS config erstellen"
+  }
+}

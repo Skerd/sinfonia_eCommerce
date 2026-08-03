@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
+  "title": "Analytics",
+  "description": "Track revenue, aufträge, inventory, und warenkorb activity.",
+  "refresh": "Refresh",
+  "errorTitle": "Analytics konnten nicht geladen werden",
+  "errorDescription": "Something went wrong während fetching dashboard daten.",
+  "revenueChartTitle": "Daily revenue",
+  "noChartData": "Keine revenue daten für diese periode.",
+  "chart": {
+    "revenue": "Revenue"
+  },
+  "period": {
+    "7d": "7 tage",
+    "30d": "30 tage",
+    "90d": "90 tage",
+    "1y": "1 jahr"
+  },
+  "kpi": {
+    "totalRevenue": "Total revenue",
+    "totalRevenueDesc": "Bezahlt aufträge in periode",
+    "orderCount": "Bestellungen",
+    "orderCountDesc": "Bezahlt aufträge in periode",
+    "averageOrderValue": "Avg. auftrag wert",
+    "averageOrderValueDesc": "Revenue per bezahlt auftrag",
+    "abandonedCarts": "Abandoned carts",
+    "abandonedCartsDesc": "Carts inaktiv over 1 stunde",
+    "lowStock": "Low stock",
+    "lowStockDesc": "SKUs below reorder point",
+    "outOfStock": "Out von stock",
+    "outOfStockDesc": "SKUs mit keine verfügbar menge",
+    "totalOnHand": "Units on hand",
+    "totalOnHandDesc": "Total inventory menge",
+    "activeProducts": "Produkte",
+    "activeProductsDesc": "Produkte von status"
+  }
+}

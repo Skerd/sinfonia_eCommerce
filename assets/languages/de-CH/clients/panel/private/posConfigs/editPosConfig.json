@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/editPosConfig.tsx",
+  "title": "POS config bearbeiten",
+  "errorTitle": "POS config konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese POS config. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "nameLabel": "Name",
+    "namePlaceholder": "Register name",
+    "paymentMethodsLabel": "Zahlung methods",
+    "managersLabel": "Managers",
+    "warehousesLabel": "Warehouses",
+    "warehousePlaceholder": "Warehouse auswählen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "receiptHeaderLabel": "Receipt header",
+    "receiptHeaderPlaceholder": "Printed am die top von die receipt",
+    "receiptFooterLabel": "Receipt footer",
+    "receiptFooterPlaceholder": "Printed am die bottom von die receipt",
+    "tillOptionsSectionTitle": "Till options",
+    "ifaceBarcodeScannerLabel": "Barcode scanner",
+    "ifaceCashControlLabel": "Cash control",
+    "allowDiscountLabel": "Allow rabatt",
+    "allowQuantityChangeLabel": "Allow menge change",
+    "allowOversellLabel": "Allow oversell",
+    "pinForDiscountLabel": "PIN für rabatt",
+    "pinForCashOutLabel": "PIN für cash out",
+    "pinForRefundLabel": "PIN für rückerstattung",
+    "selectWarehouse": "Warehouse hinzufügen",
+    "removeWarehouse": "Entfernen warehouse",
+    "selectCurrency": "Währung auswählen",
+    "selectPaymentMethod": "Zahlungsart auswählen",
+    "removePaymentMethod": "Entfernen zahlung methode",
+    "selectManager": "Manager auswählen",
+    "removeManager": "Entfernen manager"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving POS config",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren POS config",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "POS config bearbeiten",
+    "description": "Aktualisieren warehouses, zahlung methods, receipt text, und till rules."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

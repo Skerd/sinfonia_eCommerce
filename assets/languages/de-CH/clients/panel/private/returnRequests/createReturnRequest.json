@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
+  "title": "Return antrag erstellen",
+  "form": {
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bestellung auswählen",
+    "typeLabel": "Typ",
+    "statusLabel": "Status",
+    "refundAmountLabel": "Rückerstattung betrag",
+    "refundAmountPlaceholder": "0",
+    "customerNoteLabel": "Customer note",
+    "customerNotePlaceholder": "Optional note von die customer",
+    "adminNoteLabel": "Admin note",
+    "adminNotePlaceholder": "Optional internal note",
+    "itemsSectionTitle": "Positionen",
+    "itemAddRow": "Position hinzufügen",
+    "itemRemoveRow": "Entfernen position",
+    "itemRowTitle": "Position",
+    "orderItemIdLabel": "Auftrag position id",
+    "orderItemIdPlaceholder": "Auftrag position id",
+    "quantityLabel": "Menge",
+    "reasonLabel": "Grund",
+    "reasonPlaceholder": "Why ist diese position being returned?",
+    "returnType": {
+      "return": "Return",
+      "exchange": "Exchange",
+      "refund": "Rückerstattung"
+    },
+    "returnStatus": {
+      "pending": "Ausstehend",
+      "approved": "Genehmigt",
+      "rejected": "Abgelehnt",
+      "received": "Erhalten",
+      "completed": "Abgeschlossen"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Return antrag wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return antrag erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen return antrag",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Return antrag erstellen",
+    "description": "Antrag a return, exchange, oder rückerstattung für ein auftrag."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Return antrag erstellen"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx",
+  "title": "Make default customer group",
+  "description": "Diese will make die customer group default, und die current default one will werden reassigned.",
+  "cancel": "Abbrechen",
+  "confirm": "Make default",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Setting default customer group…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Default customer group aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht set default customer group",
+      "time": 3000
+    }
+  }
+}

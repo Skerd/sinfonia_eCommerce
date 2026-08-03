@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
+  "title": "Customer addresses",
+  "description": "Customer versand und abrechnung addresses. verwalten",
+  "createCustomerAddress": "Adresse erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "customer": "Kunde",
+    "firstName": "Recipient vor name",
+    "lastName": "Recipient nach name",
+    "phone": "Telefon",
+    "street": "Strasse",
+    "city": "Ort",
+    "state": "Kanton",
+    "postalCode": "Postleitzahl",
+    "country": "Land",
+    "latitude": "Breitengrad",
+    "longitude": "Längengrad",
+    "isDefault": "Default",
+    "label": "Label",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

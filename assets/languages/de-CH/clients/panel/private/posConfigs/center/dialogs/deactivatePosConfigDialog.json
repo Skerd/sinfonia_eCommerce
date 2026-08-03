@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
+  "title": "Deaktivieren POS config",
+  "description": "Diese till will keine longer werden verfügbar für eröffnung die POS. Any offen sitzung on diese till will werden force-geschlossen (gehalten carts annulliert, cash set bis erwartet). Terminal charges sind annulliert best-effort.",
+  "cancel": "Abbrechen",
+  "confirm": "Deaktivieren",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating POS config…",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS config deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht deaktivieren POS config",
+      "time": 3000
+    }
+  }
+}

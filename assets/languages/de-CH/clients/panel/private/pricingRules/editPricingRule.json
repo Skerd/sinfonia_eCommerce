@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
+  "title": "Pricing rule bearbeiten",
+  "errorTitle": "Pricing rule konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese pricing rule. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "nameLabel": "Name",
+    "namePlaceholder": "Pricing rule name",
+    "typeLabel": "Typ",
+    "appliesToLabel": "Applies bis",
+    "valueLabel": "Wert",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Priority",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Starts am",
+    "endsAtLabel": "Ends am",
+    "minimumOrderAmountLabel": "Minimum auftrag betrag",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Minimum menge",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "Allgemein",
+    "scheduleSectionTitle": "Terminplan",
+    "limitsSectionTitle": "Limits",
+    "customerGroupsSectionTitle": "Customer groups",
+    "productsLabel": "Produkte",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Categories",
+    "customerGroupsLabel": "Customer groups",
+    "selectProduct": "Produkt auswählen",
+    "selectCollection": "Collection auswählen",
+    "selectCategory": "Kategorie auswählen",
+    "selectCustomerGroup": "Customer group auswählen",
+    "removeTarget": "Entfernen ziel",
+    "removeCustomerGroup": "Entfernen customer group",
+    "pricingRuleType": {
+      "percentage_discount": "Percentage rabatt",
+      "fixed_discount": "Fixed rabatt",
+      "fixed_price": "Fixed preis",
+      "surcharge": "Surcharge"
+    },
+    "pricingRuleAppliesTo": {
+      "all": "Alle",
+      "product": "Produkte",
+      "collection": "Collections",
+      "category": "Categories",
+      "customer_group": "Customer groups"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving pricing rule",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pricing rule aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren pricing rule",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Pricing rule bearbeiten",
+    "description": "Aktualisieren catalog pricing adjustments, targets, limits, und terminplan."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

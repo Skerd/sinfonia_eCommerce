@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/createProductAttribute.tsx",
+  "title": "Attribute erstellen",
+  "form": {
+    "nameLabel": "Name",
+    "positionLabel": "Position",
+    "isVisibleOnProductPageLabel": "Visible on produkt seite",
+    "isUsedForVariantsLabel": "Used für variants",
+    "valuesLabel": "Values",
+    "valuesPlaceholder": "A wert und press Eingeben hinzufügen",
+    "removeValue": "Entfernen wert"
+  },
+  "axios": {
+    "start": {
+      "title": "Attribute wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attribute erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen attribute",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Attribute erstellen",
+    "description": "Define ein attribute such as grösse oder color, mit optional values für variants."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Attribute erstellen"
+  }
+}

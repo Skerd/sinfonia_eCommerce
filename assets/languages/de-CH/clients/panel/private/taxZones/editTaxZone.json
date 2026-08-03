@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
+  "title": "Steuer zone bearbeiten",
+  "errorTitle": "Steuer zone konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese steuer zone. Versuchen erneut.",
+  "form": {
+    "generalSectionTitle": "Allgemein",
+    "geographySectionTitle": "Geography",
+    "nameLabel": "Name",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "priorityLabel": "Priority",
+    "statesLabel": "States / regions",
+    "selectState": "Kanton auswählen",
+    "removeState": "Entfernen kanton",
+    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
+    "removePostalCodePattern": "Entfernen pattern",
+    "ratesSectionTitle": "Steuer rates",
+    "rateAddRow": "Satz hinzufügen",
+    "rateRemoveRow": "Entfernen satz",
+    "rateRowTitle": "Untitled satz",
+    "rateNameLabel": "Satz name",
+    "rateValueLabel": "Satz (%)",
+    "rateAppliesToLabel": "Applies bis",
+    "isCompoundLabel": "Compound satz",
+    "taxRateAppliesTo": {
+      "all": "Alle produkte",
+      "physical": "Physical",
+      "digital": "Digital"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving steuer zone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Steuer zone aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren steuer zone",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Steuer zone bearbeiten",
+    "description": "Aktualisieren destination geography und steuer rates für diese zone."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
+  "title": "Discounts",
+  "description": "Promotional codes und automatic discounts. verwalten",
+  "createDiscount": "Rabatt erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "title": "Bezeichnung",
+    "code": "Code",
+    "type": "Typ",
+    "value": "Wert",
+    "appliesTo": "Applies bis",
+    "targetIds": "Targets",
+    "minimumOrderAmount": "Minimum auftrag betrag",
+    "minimumQuantity": "Minimum menge",
+    "usageLimit": "Usage limit",
+    "usageLimitPerCustomer": "Usage limit per customer",
+    "usageCount": "Usage anzahl",
+    "customerGroups": "Customer groups",
+    "isActive": "Aktiv",
+    "startsAt": "Starts am",
+    "endsAt": "Ends am",
+    "buyXGetY": {
+      "buyQuantity": "Buy menge",
+      "getQuantity": "Get menge",
+      "getProductIds": "Free produkte"
+    },
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

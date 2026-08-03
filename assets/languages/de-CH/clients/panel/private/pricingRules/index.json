@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
+  "title": "Pricing Rules",
+  "description": "Automate preis adjustments von segment oder produkt.",
+  "createPricingRule": "Pricing rule erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "type": "Typ",
+    "value": "Wert",
+    "appliesTo": "Applies bis",
+    "targetIds": "Targets",
+    "customerGroups": "Customer groups",
+    "minimumOrderAmount": "Minimum auftrag betrag",
+    "minimumQuantity": "Minimum menge",
+    "priority": "Priority",
+    "isActive": "Aktiv",
+    "startsAt": "Starts am",
+    "endsAt": "Ends am",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

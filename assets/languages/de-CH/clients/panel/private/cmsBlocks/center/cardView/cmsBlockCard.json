@@ -1,0 +1,22 @@
+{
+  "active": "Aktiv",
+  "blockType": {
+    "announcement_bar": "Announcement Bar",
+    "best_sellers": "Best Sellers",
+    "category_showcase": "Kategorie Showcase",
+    "custom_html": "Custom Html",
+    "featured_collection": "Featured Collection",
+    "flash_sale": "Flash Verkauf",
+    "grid": "Grid",
+    "hero_banner": "Hero Banner",
+    "promotional_section": "Promotional Section",
+    "slider": "Slider",
+    "trending": "Trending",
+    "video": "Video"
+  },
+  "inactive": "Inaktiv",
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
+  "position": "Position",
+  "title": "Bezeichnung",
+  "type": "Typ"
+}

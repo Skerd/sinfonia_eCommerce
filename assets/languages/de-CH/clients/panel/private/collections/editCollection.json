@@ -1,0 +1,90 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
+  "title": "Collection bearbeiten",
+  "errorTitle": "Collection konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese collection. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "generalSectionTitle": "Allgemein",
+    "nameLabel": "Name",
+    "namePlaceholder": "Collection name",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "auto-generated-von-name",
+    "typeLabel": "Collection typ",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Optional beschreibung für diese collection",
+    "mainImageLabel": "Cover bild",
+    "isVisibleLabel": "Visible on storefront",
+    "positionLabel": "Sortieren position",
+    "positionPlaceholder": "0",
+    "publishedAtLabel": "Publizieren am",
+    "mediaSectionTitle": "Medien",
+    "manualSectionTitle": "Manuell produkte",
+    "productsLabel": "Produkte",
+    "selectProduct": "Suchen produkte…",
+    "removeProduct": "Entfernen produkt",
+    "dynamicSectionTitle": "Dynamic rules",
+    "ruleConditionLabel": "Match condition",
+    "rulesSectionTitle": "Rules",
+    "ruleAddRow": "Rule hinzufügen",
+    "ruleRemoveRow": "Entfernen rule",
+    "ruleRowTitle": "Neu rule",
+    "ruleFieldLabel": "Field",
+    "ruleOperatorLabel": "Operator",
+    "ruleValueLabel": "Wert",
+    "ruleValuePlaceholder": "Rule wert",
+    "seoSectionTitle": "SEO",
+    "seoTitleLabel": "SEO bezeichnung",
+    "seoTitlePlaceholder": "Optional SEO bezeichnung",
+    "seoDescriptionLabel": "SEO beschreibung",
+    "seoDescriptionPlaceholder": "Optional SEO beschreibung",
+    "collectionType": {
+      "manual": "Manuell",
+      "dynamic": "Dynamic"
+    },
+    "ruleCondition": {
+      "all": "Alle rules (UND)",
+      "any": "Any rule (ODER)"
+    },
+    "ruleField": {
+      "tag": "Tag",
+      "brand": "Brand",
+      "category": "Kategorie",
+      "price": "Preis",
+      "vendor": "Lieferant",
+      "inventory_level": "Inventory level",
+      "product_type": "Produkt typ"
+    },
+    "ruleOperator": {
+      "equals": "Equals",
+      "not_equals": "Nicht equals",
+      "contains": "Contains",
+      "not_contains": "Does nicht contain",
+      "greater_than": "Greater than",
+      "less_than": "Less than",
+      "starts_with": "Starts mit"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving collection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren collection",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Collection bearbeiten",
+    "description": "Aktualisieren collection details, produkte, oder dynamic rules."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

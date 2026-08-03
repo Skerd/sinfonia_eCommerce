@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
+  "title": "Inventory",
+  "description": "Stock levels across ihr warehouses.",
+  "createInventory": "Inventory erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "product": "Produkt",
+    "warehouse": "Warehouse",
+    "quantityOnHand": "On hand",
+    "quantityReserved": "Reserviert",
+    "quantityAvailable": "Verfügbar",
+    "reorderPoint": "Reorder point",
+    "reorderQuantity": "Reorder menge",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

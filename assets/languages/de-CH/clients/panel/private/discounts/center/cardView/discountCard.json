@@ -1,0 +1,15 @@
+{
+  "active": "Aktiv",
+  "code": "Code",
+  "discountType": {
+    "buy_x_get_y": "Buy X Get Y",
+    "fixed": "Fixed",
+    "free_shipping": "Free Versand",
+    "percentage": "Percentage"
+  },
+  "inactive": "Inaktiv",
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
+  "title": "Bezeichnung",
+  "type": "Typ",
+  "value": "Wert"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/deactivateShippingZoneDialog.tsx",
+  "title": "Deaktivieren versand zone",
+  "description": "Diese versand zone will keine longer werden used für satz berechnung until it ist activated erneut.",
+  "cancel": "Abbrechen",
+  "confirm": "Deaktivieren",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating versand zone…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Versand zone deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht deaktivieren versand zone",
+      "time": 3000
+    }
+  }
+}

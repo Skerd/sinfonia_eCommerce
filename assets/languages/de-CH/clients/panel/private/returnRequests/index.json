@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
+  "title": "Return requests",
+  "description": "Handle returns, exchanges und rückerstattung requests.",
+  "createReturnRequest": "Return antrag erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "order": "Auftrag",
+    "type": "Typ",
+    "status": "Status",
+    "items": {
+      "orderItemId": "Auftrag position id",
+      "quantity": "Menge",
+      "reason": "Grund"
+    },
+    "refundAmount": "Rückerstattung betrag",
+    "customerNote": "Customer note",
+    "adminNote": "Admin note",
+    "resolvedBy": "Resolved von",
+    "resolvedAt": "Resolved am",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

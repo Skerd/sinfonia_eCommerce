@@ -1,0 +1,86 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
+  "title": "Rabatt bearbeiten",
+  "errorTitle": "Rabatt konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese rabatt. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Rabatt bezeichnung",
+    "codeLabel": "Code",
+    "codePlaceholder": "Optional promo code",
+    "typeLabel": "Typ",
+    "appliesToLabel": "Applies bis",
+    "valueLabel": "Wert",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Aktiv",
+    "startsAtLabel": "Starts am",
+    "endsAtLabel": "Ends am",
+    "minimumOrderAmountLabel": "Minimum auftrag betrag",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Minimum menge",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Usage limit",
+    "usageLimitPlaceholder": "Unlimited if empty",
+    "usageLimitPerCustomerLabel": "Usage limit per customer",
+    "usageLimitPerCustomerPlaceholder": "Unlimited if empty",
+    "generalSectionTitle": "Allgemein",
+    "scheduleSectionTitle": "Terminplan",
+    "limitsSectionTitle": "Limits",
+    "targetsSectionTitle": "Targets",
+    "customerGroupsSectionTitle": "Customer groups",
+    "targetIdsLabel": "Targets",
+    "productsLabel": "Produkte",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Categories",
+    "customerGroupsLabel": "Customer groups",
+    "buyXGetYSectionTitle": "Buy X get Y",
+    "buyXGetYAnyOfSetHint": "Buy und get quantities anwenden across die selected produkte as a set (any von). Die cheapest eligible units sind free.",
+    "buyQuantityLabel": "Buy menge",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Get menge",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Eligible produkte",
+    "selectProduct": "Produkt auswählen",
+    "selectCollection": "Collection auswählen",
+    "selectCategory": "Kategorie auswählen",
+    "selectCustomerGroup": "Customer group auswählen",
+    "removeTarget": "Entfernen ziel",
+    "removeCustomerGroup": "Entfernen customer group",
+    "removeProduct": "Entfernen produkt",
+    "discountType": {
+      "percentage": "Percentage",
+      "fixed": "Fixed betrag",
+      "free_shipping": "Free versand",
+      "buy_x_get_y": "Buy X get Y"
+    },
+    "discountAppliesTo": {
+      "order": "Entire auftrag",
+      "product": "Produkte",
+      "collection": "Collections",
+      "category": "Categories"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving rabatt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rabatt aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren rabatt",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Rabatt bearbeiten",
+    "description": "Aktualisieren rabatt rules, limits, targets, und terminplan."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

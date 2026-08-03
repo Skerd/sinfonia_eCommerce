@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Inventory bearbeiten",
+  "errorTitle": "Inventory konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese inventory. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "reorderPointLabel": "Reorder point",
+    "reorderQuantityLabel": "Reorder menge"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving inventory",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventory aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren inventory",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Inventory bearbeiten",
+    "description": "Aktualisieren reorder thresholds für diese stock zeile."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
+  "title": "Fulfillments",
+  "description": "Track shipments und delivery von produkt aufträge.",
+  "createFulfillment": "Fulfillment erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "order": "Auftrag",
+    "status": "Status",
+    "items": {
+      "orderItemId": "Auftrag position id",
+      "quantity": "Menge"
+    },
+    "carrier": "Carrier",
+    "trackingNumber": "Tracking nummer",
+    "trackingUrl": "Tracking URL",
+    "shippedAt": "Shipped am",
+    "estimatedDeliveryAt": "Estimated delivery",
+    "deliveredAt": "Delivered am",
+    "notes": "Notizen",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx",
+  "title": "Deaktivieren zahlung methode",
+  "description": "Diese zahlung methode will werden removed von POS configs und will keine longer werden verfügbar on tills until activated erneut.",
+  "cancel": "Abbrechen",
+  "confirm": "Deaktivieren",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating zahlung methode…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zahlung methode deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht deaktivieren zahlung methode",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx",
+  "title": "Aktivieren CMS block",
+  "description": "Diese block will become visible on die storefront when its terminplan allows.",
+  "cancel": "Abbrechen",
+  "confirm": "Aktivieren",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating CMS block…",
+      "time": 3000
+    },
+    "success": {
+      "title": "CMS block activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktivieren CMS block",
+      "time": 3000
+    }
+  }
+}

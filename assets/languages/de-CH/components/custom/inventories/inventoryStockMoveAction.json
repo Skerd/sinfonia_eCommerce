@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
+  "cancel": "Abbrechen",
+  "restock": {
+    "title": "Restock inventory",
+    "description": "Stock empfangen von a lieferant oder hersteller. Diese movement ist logged mit receipt details. hinzufügen",
+    "quantityLabel": "Menge bis hinzufügen",
+    "manufacturerLabel": "Hersteller / lieferant",
+    "receiptNumberLabel": "Receipt / delivery note #",
+    "occurredAtLabel": "Datum empfangen",
+    "unitCostLabel": "Einheitskosten",
+    "batchLotLabel": "Batch / lot",
+    "expiryDateLabel": "Expiry datum",
+    "receiptsLabel": "Receipt attachments",
+    "noteLabel": "Notiz",
+    "confirm": "Restock",
+    "axios": {
+      "success": "Stock restocked erfolgreich",
+      "error": "Fehlgeschlagen bis restock inventory"
+    }
+  },
+  "deduct": {
+    "title": "Deduct / write-off",
+    "description": "Entfernen stock (damage, loss, oder write-off). Diese movement ist logged mit optional receipt details.",
+    "quantityLabel": "Menge bis entfernen",
+    "manufacturerLabel": "Hersteller / lieferant",
+    "receiptNumberLabel": "Referenz / receipt #",
+    "occurredAtLabel": "Datum von write-off",
+    "unitCostLabel": "Einheitskosten",
+    "batchLotLabel": "Batch / lot",
+    "expiryDateLabel": "Expiry datum",
+    "receiptsLabel": "Attachments",
+    "noteLabel": "Notiz",
+    "confirm": "Deduct",
+    "axios": {
+      "success": "Stock deducted erfolgreich",
+      "error": "Fehlgeschlagen bis deduct inventory"
+    }
+  }
+}

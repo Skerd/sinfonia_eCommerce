@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/editCustomerAddress.tsx",
+  "title": "Adresse bearbeiten",
+  "errorTitle": "Adresse konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese adresse. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "customerLabel": "Kunde",
+    "customerPlaceholder": "Customer auswählen",
+    "firstNameLabel": "Recipient vor name",
+    "firstNamePlaceholder": "Vor name on die paket",
+    "lastNameLabel": "Recipient nach name",
+    "lastNamePlaceholder": "Nach name on die paket",
+    "streetLabel": "Strasse",
+    "streetPlaceholder": "Strasse adresse",
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort auswählen",
+    "stateLabel": "Kanton",
+    "statePlaceholder": "Kanton auswählen",
+    "postalCodeLabel": "Postleitzahl",
+    "postalCodePlaceholder": "Postleitzahl",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "Telefon nummer",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "latitudeLabel": "Breitengrad",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Längengrad",
+    "longitudePlaceholder": "19.8189",
+    "labelLabel": "Label",
+    "labelPlaceholder": "Startseite, arbeit, …"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving adresse",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresse aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren adresse",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Adresse bearbeiten",
+    "description": "Aktualisieren die customer, recipient, standort, und map pin."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}

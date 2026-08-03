@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
+  "title": "Produkt bewertungen",
+  "description": "Moderate käufer bewertungen (erstellt via die storefront after a bezahlt auftrag).",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "order": "Auftrag",
+    "product": "Produkt",
+    "rating": "Bewertung",
+    "title": "Bezeichnung",
+    "comment": "Kommentar",
+    "reviewer": "Reviewer",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

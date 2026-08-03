@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
+  "title": "POS Configs",
+  "description": "Point von verkauf shops und till einstellungen.",
+  "createPosConfig": "POS config erstellen",
+  "bulkMenu": {
+    "triggerAria": "Firma POS controls",
+    "label": "Firma controls",
+    "hint": "Emergency stop für every till",
+    "lockedReasonPrefix": "Firma pause grund",
+    "pauseAll": "Pause alle tills",
+    "pauseAllHint": "Lock die firma und force-close offen sitzungen",
+    "resumeAll": "Resume alle tills",
+    "resumeAllHint": "Leeren die firma lock und every till pause"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "paymentMethods": "Zahlung methods",
+    "managers": "Managers",
+    "managerPins": {
+      "user": "Manager",
+      "pinHash": "PIN hash",
+      "pinReset": {
+        "code": "PIN zurücksetzen code",
+        "date": "PIN zurücksetzen datum",
+        "opened": "PIN zurücksetzen opened"
+      }
+    },
+    "warehouse": "Warehouse",
+    "warehouses": "Warehouses",
+    "currency": "Währung",
+    "receiptHeader": "Receipt header",
+    "receiptFooter": "Receipt footer",
+    "ifaceBarcodeScanner": "Barcode scanner",
+    "ifaceCashControl": "Cash control",
+    "allowDiscount": "Allow rabatt",
+    "allowQuantityChange": "Allow menge change",
+    "allowOversell": "Allow oversell",
+    "pinForDiscount": "PIN für rabatt",
+    "pinForCashOut": "PIN für cash out",
+    "pinForRefund": "PIN für rückerstattung",
+    "isActive": "Aktiv",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

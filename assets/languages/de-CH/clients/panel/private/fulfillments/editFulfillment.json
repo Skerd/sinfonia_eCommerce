@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
+  "title": "Fulfillment bearbeiten",
+  "errorTitle": "Fulfillment konnten nicht geladen werden",
+  "errorDescription": "Konnte nicht laden diese fulfillment. Versuchen erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bestellung auswählen",
+    "statusLabel": "Status",
+    "carrierLabel": "Carrier",
+    "carrierPlaceholder": "Carrier name",
+    "trackingNumberLabel": "Tracking nummer",
+    "trackingNumberPlaceholder": "Tracking nummer",
+    "trackingUrlLabel": "Tracking URL",
+    "trackingUrlPlaceholder": "https://…",
+    "shippedAtLabel": "Shipped am",
+    "estimatedDeliveryAtLabel": "Estimated delivery",
+    "deliveredAtLabel": "Delivered am",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Optional notizen",
+    "itemsSectionTitle": "Positionen",
+    "itemAddRow": "Position hinzufügen",
+    "itemRemoveRow": "Entfernen position",
+    "itemRowTitle": "Position",
+    "orderItemIdLabel": "Auftrag position id",
+    "orderItemIdPlaceholder": "Auftrag position id",
+    "quantityLabel": "Menge",
+    "fulfillmentStatus": {
+      "pending": "Ausstehend",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "failed": "Fehlgeschlagen"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving fulfillment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fulfillment aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren fulfillment",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Fulfillment bearbeiten",
+    "description": "Aktualisieren shipment status, tracking, dates, notizen, und positionen."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  }
+}
