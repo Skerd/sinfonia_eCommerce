@@ -57,7 +57,7 @@ export default function PosCatalogPanel({
                         placeholder={rk("searchPlaceholder")}
                         value={search}
                         onChange={(e) => onSearchChange(e.target.value)}
-                        className="h-11 pl-9 focus-visible:ring-emerald-500"
+                        className="h-11 pl-9 focus-visible:ring-success/50"
                     />
                 </div>
                 {config?.ifaceBarcodeScanner !== false && (
@@ -75,7 +75,7 @@ export default function PosCatalogPanel({
                                     onBarcodeEnter();
                                 }
                             }}
-                            className="h-11 pl-9 focus-visible:ring-emerald-500"
+                            className="h-11 pl-9 focus-visible:ring-success/50"
                         />
                     </div>
                 )}
@@ -90,8 +90,8 @@ export default function PosCatalogPanel({
                             className={cn(
                                 "shrink-0 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
                                 categoryId == null
-                                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
-                                    : "border-border bg-background text-muted-foreground hover:border-emerald-500/40 hover:text-foreground",
+                                    ? "border-success/50 bg-success/10 text-success"
+                                    : "border-border bg-background text-muted-foreground hover:border-success/40 hover:text-foreground",
                             )}
                         >
                             {rk("categories.all")}
@@ -106,8 +106,8 @@ export default function PosCatalogPanel({
                                     className={cn(
                                         "shrink-0 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
                                         selected
-                                            ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
-                                            : "border-border bg-background text-muted-foreground hover:border-emerald-500/40 hover:text-foreground",
+                                            ? "border-success/50 bg-success/10 text-success"
+                                            : "border-border bg-background text-muted-foreground hover:border-success/40 hover:text-foreground",
                                     )}
                                 >
                                     {cat.name}
@@ -149,15 +149,15 @@ export default function PosCatalogPanel({
                                         "group relative flex flex-col overflow-hidden rounded-2xl border text-left",
                                         "border-border/80 bg-card shadow-[0_1px_0_rgba(0,0,0,0.03)]",
                                         "transition-all duration-150",
-                                        "hover:border-emerald-500/45 hover:shadow-md hover:-translate-y-0.5",
+                                        "hover:border-success/45 hover:shadow-md hover:-translate-y-0.5",
                                         "active:translate-y-0 active:scale-[0.985]",
-                                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
-                                        flashing && "border-emerald-500 ring-2 ring-emerald-500/35",
-                                        inCart && "border-emerald-500/40 bg-emerald-500/[0.03]",
+                                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success/50",
+                                        flashing && "border-success/50 ring-2 ring-success/35",
+                                        inCart && "border-success/40 bg-success/[0.03]",
                                         outOfStock && "opacity-50 hover:translate-y-0 hover:shadow-none",
                                     )}
                                 >
-                                    <div className="relative mx-2 mt-2 aspect-square overflow-hidden rounded-xl bg-[#f3f4f6] dark:bg-zinc-800/80">
+                                    <div className="relative mx-2 mt-2 aspect-square overflow-hidden rounded-xl bg-muted">
                                         {product.imageUrl ? (
                                             <>
                                                 <img
@@ -182,7 +182,7 @@ export default function PosCatalogPanel({
                                             </div>
                                         )}
                                         {inCart && (
-                                            <span className="absolute right-1.5 top-1.5 z-[2] flex h-5 min-w-5 items-center justify-center rounded-full bg-emerald-500 px-1 text-[10px] font-bold text-white shadow-sm">
+                                            <span className="absolute right-1.5 top-1.5 z-[2] flex h-5 min-w-5 items-center justify-center rounded-full bg-success px-1 text-[10px] font-bold text-white shadow-sm">
                                                 {cartQty > 1 ? cartQty : <Check className="size-3" strokeWidth={3} />}
                                             </span>
                                         )}
@@ -191,7 +191,7 @@ export default function PosCatalogPanel({
                                                 className={cn(
                                                     "absolute bottom-1.5 left-1.5 z-[2] rounded-md px-1.5 py-0.5 text-[9px] font-semibold tabular-nums",
                                                     product.stockQty <= 0
-                                                        ? "bg-rose-500/90 text-white"
+                                                        ? "bg-destructive/90 text-white"
                                                         : "bg-background/85 text-muted-foreground ring-1 ring-border/60",
                                                 )}
                                             >
@@ -211,7 +211,7 @@ export default function PosCatalogPanel({
                                             {product.title}
                                         </span>
                                         <div className="mt-auto flex items-end justify-between gap-1 pt-1.5">
-                                            <span className="text-[15px] font-bold tabular-nums leading-none text-emerald-600 dark:text-emerald-400">
+                                            <span className="text-[15px] font-bold tabular-nums leading-none text-success">
                                                 {money(Number(product.price) || 0)}
                                             </span>
                                             {product.sku ? (

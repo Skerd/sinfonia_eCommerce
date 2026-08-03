@@ -34,7 +34,7 @@ export default function PosReceipt({
     <DialogContent className="max-w-[22rem] print:hidden">
         <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
-                <Check className="size-5 text-emerald-600" />
+                <Check className="size-5 text-success" />
                 {rk("receipt.title")}
             </DialogTitle>
         </DialogHeader>
@@ -46,14 +46,14 @@ export default function PosReceipt({
                             {receipt.companyName || receipt.shopName || rk("title")}
                         </div>
                         {receipt.header ? (
-                            <div className="whitespace-pre-wrap text-[10px] text-neutral-700">{receipt.header}</div>
+                            <div className="whitespace-pre-wrap text-[10px] text-foreground">{receipt.header}</div>
                         ) : null}
                         {receipt.shopName && receipt.companyName && receipt.shopName !== receipt.companyName ? (
                             <div className="text-[10px] font-semibold">{receipt.shopName}</div>
                         ) : null}
                     </div>
 
-                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                    <div className="my-2 border-t border-dashed border-border" />
 
                     <div className="space-y-0.5 text-[10px]">
                         <div className="flex justify-between gap-2">
@@ -80,7 +80,7 @@ export default function PosReceipt({
                         </div>
                     </div>
 
-                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                    <div className="my-2 border-t border-dashed border-border" />
 
                     <div className="space-y-1">
                         {receipt.lines.map((line, idx) => (
@@ -92,14 +92,14 @@ export default function PosReceipt({
                                     </span>
                                     <span className="shrink-0 tabular-nums">{money(line.priceTotal)}</span>
                                 </div>
-                                <div className="text-[9px] tabular-nums text-neutral-600">
+                                <div className="text-[9px] tabular-nums text-muted-foreground">
                                     {money(line.unitPrice)} × {line.quantity}
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                    <div className="my-2 border-t border-dashed border-border" />
 
                     <div className="space-y-0.5 tabular-nums">
                         {receipt.discountTotal > 0 && (
@@ -131,7 +131,7 @@ export default function PosReceipt({
 
                     {(receipt.qrCodeDataUrl || receipt.qrVerifyUrl) && (
                         <div className="pos-receipt-fiscal mt-2 space-y-1 text-center">
-                            <div className="border-t border-dashed border-neutral-400 pt-2" />
+                            <div className="border-t border-dashed border-border pt-2" />
                             <img
                                 src={
                                     receipt.qrCodeDataUrl ||
@@ -141,27 +141,27 @@ export default function PosReceipt({
                                 className="mx-auto h-[120px] w-[120px] bg-white"
                             />
                             {receipt.nslf ? (
-                                <div className="break-all text-[9px] tabular-nums text-neutral-700">
+                                <div className="break-all text-[9px] tabular-nums text-foreground">
                                     {rk("receipt.nslf")}: {receipt.nslf}
                                 </div>
                             ) : null}
                             {receipt.nivf ? (
-                                <div className="break-all text-[9px] tabular-nums text-neutral-700">
+                                <div className="break-all text-[9px] tabular-nums text-foreground">
                                     {rk("receipt.nivf")}: {receipt.nivf}
                                 </div>
                             ) : (
-                                <div className="text-[9px] text-neutral-500">{rk("receipt.fiscalDemo")}</div>
+                                <div className="text-[9px] text-muted-foreground">{rk("receipt.fiscalDemo")}</div>
                             )}
                         </div>
                     )}
 
-                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                    <div className="my-2 border-t border-dashed border-border" />
 
                     <div className="pos-receipt-footer space-y-1 text-center text-[10px]">
                         {receipt.footer ? (
-                            <div className="whitespace-pre-wrap text-neutral-700">{receipt.footer}</div>
+                            <div className="whitespace-pre-wrap text-foreground">{receipt.footer}</div>
                         ) : (
-                            <div className="text-neutral-600">{rk("receipt.defaultFooter")}</div>
+                            <div className="text-muted-foreground">{rk("receipt.defaultFooter")}</div>
                         )}
                     </div>
                 </div>
@@ -171,7 +171,7 @@ export default function PosReceipt({
             <Button variant="outline" onClick={onNewOrder}>
                 {rk("newOrder")}
             </Button>
-            <Button className="bg-emerald-600 hover:bg-emerald-500" onClick={onPrint}>
+            <Button className="bg-success hover:bg-success" onClick={onPrint}>
                 <Printer className="size-4" />
                 {rk("receipt.print")}
             </Button>

@@ -51,7 +51,7 @@ export default function PosTillHeader({
                         "shrink-0 border-b px-3 py-2 text-sm print:hidden",
                         config?.isCompanyPaused
                             ? "border-destructive/40 bg-destructive/10 text-destructive"
-                            : "border-amber-500/40 bg-amber-500/15 text-amber-900 dark:text-amber-100",
+                            : "border-warning/40 bg-warning/15 text-warning",
                     )}
                 >
                     <div className="font-semibold">
@@ -66,7 +66,7 @@ export default function PosTillHeader({
             )}
             <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2 print:hidden">
             <div className="flex min-w-0 flex-1 items-center gap-3">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-success/15 text-success">
                     <Monitor className="size-4" />
                 </div>
                 <div className="min-w-0">
@@ -79,10 +79,10 @@ export default function PosTillHeader({
                                 isPaused
                                     ? config?.isCompanyPaused
                                       ? "bg-destructive/15 text-destructive"
-                                      : "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                                      : "bg-warning/15 text-warning"
                                     : session.state === "opened"
-                                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
-                                      : "bg-amber-500/15 text-amber-600 dark:text-amber-400",
+                                      ? "bg-success/15 text-success"
+                                      : "bg-warning/15 text-warning",
                             )}
                         >
                             {isPaused

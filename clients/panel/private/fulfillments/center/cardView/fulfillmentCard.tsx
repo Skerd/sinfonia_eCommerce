@@ -95,7 +95,7 @@ function FulfillmentCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -178,7 +178,7 @@ function FulfillmentCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setEntity(row as Fulfillment)}
+                            onSheetRowPatched={(row: Partial<Fulfillment>) => setEntity(row as Fulfillment)}
                         />
                     )}
                     {action === "delete" && (
@@ -210,7 +210,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(patch) => setEntity({...entity, ...patch})}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "markDeliveredFulfillment" && (
@@ -218,7 +218,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(patch) => setEntity({...entity, ...patch})}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "markFailedFulfillment" && (
@@ -226,7 +226,7 @@ function FulfillmentCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(patch) => setEntity({...entity, ...patch})}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
                         />
                     )}
                 </>

@@ -23,7 +23,7 @@ function ResumePosConfig({entity, resolveLanguageKey, onAction}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("resumePosConfig")}>
-            <PlayCircle className="text-emerald-600" size={16} />
+            <PlayCircle className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

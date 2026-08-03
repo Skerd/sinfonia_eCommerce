@@ -20,7 +20,7 @@ function SetDefaultCustomerAddress({entity, resolveLanguageKey, onAction}: SetDe
 
     return (
         <DropdownMenuItem onClick={() => onAction("setDefaultCustomerAddress")}>
-            <Star className="text-amber-500" size={16} />
+            <Star className="text-warning" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

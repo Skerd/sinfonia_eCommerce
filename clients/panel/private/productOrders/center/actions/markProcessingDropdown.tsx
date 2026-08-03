@@ -31,8 +31,8 @@ function MarkProcessingDropdown({order, onAction, resolveLanguageKey}: MarkProce
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Package size={16} className="text-blue-600" />
-            <span className="text-blue-600">{resolveLanguageKey("title")}</span>
+            <Package size={16} className="text-info" />
+            <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );

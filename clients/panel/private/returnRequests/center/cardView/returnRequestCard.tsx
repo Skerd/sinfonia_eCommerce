@@ -93,7 +93,7 @@ function ReturnRequestCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -175,7 +175,7 @@ function ReturnRequestCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onSheetRowPatched={(row) => setEntity(row as ReturnRequest)}
+                            onSheetRowPatched={(row: Partial<ReturnRequest>) => setEntity(row as ReturnRequest)}
                         />
                     )}
                     {action === "delete" && (
@@ -207,7 +207,7 @@ function ReturnRequestCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(patch) => setEntity({...entity, ...patch})}
+                            onSuccess={(patch: Partial<ReturnRequest>) => setEntity({...entity, ...patch})}
                         />
                     )}
                     {action === "rejectReturnRequest" && (
@@ -215,7 +215,7 @@ function ReturnRequestCard({
                             open={true}
                             onClose={() => setAction("")}
                             entity={entity}
-                            onSuccess={(patch) => setEntity({...entity, ...patch})}
+                            onSuccess={(patch: Partial<ReturnRequest>) => setEntity({...entity, ...patch})}
                         />
                     )}
                 </>

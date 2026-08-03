@@ -57,7 +57,7 @@ function AllFulfillments({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                            onSuccess={(patch: Partial<Fulfillment>) => listRef.current?.updateRow?.(entity._id, patch)}
                         />
                     );
                 }
@@ -67,7 +67,7 @@ function AllFulfillments({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                            onSuccess={(patch: Partial<Fulfillment>) => listRef.current?.updateRow?.(entity._id, patch)}
                         />
                     );
                 }
@@ -77,7 +77,7 @@ function AllFulfillments({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                            onSuccess={(patch: Partial<Fulfillment>) => listRef.current?.updateRow?.(entity._id, patch)}
                         />
                     );
                 }

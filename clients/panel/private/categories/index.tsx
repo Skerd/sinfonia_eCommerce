@@ -11,7 +11,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import CategoryCard from "@eCommerceModule/clients/panel/private/categories/center/cardView/categoryCard.tsx";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import type {DeletedData, TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import CardAndTableView from "@coreModule/components/custom/cardAndTableView.tsx";
+import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";
 import CategorySheetView from "@eCommerceModule/clients/panel/private/categories/center/sheetView/categorySheetView.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
@@ -34,10 +34,7 @@ function AllCategories({resolveLanguageKey}: AllCategoriesProps) {
     const [sheetCategory, setSheetCategory] = useState<Category | null>(null);
     const [action, setAction] = useState<string>("");
 
-    const listRef = useRef<{
-        refetch: () => void;
-        updateRow: (id: string | number, patch: Partial<Category>) => void;
-    } | null>(null);
+    const listRef = useRef<EntityListApi<Category> | null>(null);
 
     const handleDelete = (category: Category, response?: DeletedData) => {
         if (response?.deletedAt != null || response?.deletedBy != null) {

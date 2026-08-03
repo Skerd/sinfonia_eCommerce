@@ -20,7 +20,7 @@ function ReprintPosOrder({entity, resolveLanguageKey, onAction}: ReprintPosOrder
 
     return (
         <DropdownMenuItem onClick={() => onAction("reprintPosOrder")}>
-            <Printer className="text-sky-600" size={16} />
+            <Printer className="text-info" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

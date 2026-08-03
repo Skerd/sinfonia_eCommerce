@@ -135,7 +135,7 @@ function RefundProductOrderAction({
                         {loading ? (
                             <LoaderCircle className="size-4 animate-spin" />
                         ) : (
-                            <RotateCcw size={16} className="text-amber-600" />
+                            <RotateCcw size={16} className="text-warning" />
                         )}
                         {resolveLanguageKey("refund.confirm")}
                     </AlertDialogAction>

@@ -49,9 +49,9 @@ export default function PosCartLine({
             className={cn(
                 "flex items-center gap-1.5 rounded-lg border px-2 py-1.5 transition-colors",
                 inShare
-                    ? "border-amber-500/50 bg-amber-500/10"
+                    ? "border-warning/50 bg-warning/10"
                     : selected
-                      ? "border-emerald-500/50 bg-emerald-500/5"
+                      ? "border-success/50 bg-success/5"
                       : "border-transparent bg-background/60 hover:border-border",
             )}
         >
@@ -65,7 +65,7 @@ export default function PosCartLine({
                 </div>
             </div>
             {itemsSplitActive ? (
-                <div className="flex shrink-0 items-center overflow-hidden rounded-md border border-amber-500/40 bg-card">
+                <div className="flex shrink-0 items-center overflow-hidden rounded-md border border-warning/40 bg-card">
                     <button
                         type="button"
                         tabIndex={-1}

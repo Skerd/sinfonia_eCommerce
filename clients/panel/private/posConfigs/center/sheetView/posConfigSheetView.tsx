@@ -103,10 +103,10 @@ function PosConfigSheetView({
                 onActionMenuAction={(a) => setMenuAction(a)}
                 actionMenuChildren={
                     <>
-                        <PausePosConfig entity={config} onAction={(a) => setMenuAction(a)} />
-                        <ResumePosConfig entity={config} onAction={(a) => setMenuAction(a)} />
-                        <ActivatePosConfig entity={config} onAction={(a) => setMenuAction(a)} />
-                        <DeactivatePosConfig entity={config} onAction={(a) => setMenuAction(a)} />
+                        <PausePosConfig entity={config} onAction={(a: string) => setMenuAction(a)} />
+                        <ResumePosConfig entity={config} onAction={(a: string) => setMenuAction(a)} />
+                        <ActivatePosConfig entity={config} onAction={(a: string) => setMenuAction(a)} />
+                        <DeactivatePosConfig entity={config} onAction={(a: string) => setMenuAction(a)} />
                         <PosConfigRowMenuExtras config={config} onAction={(a) => setMenuAction(a)} />
                     </>
                 }
@@ -138,7 +138,7 @@ function PosConfigSheetView({
                     open
                     onClose={() => setMenuAction("")}
                     entity={config}
-                    onSuccess={(patch) => {
+                    onSuccess={(patch: Partial<PosConfig>) => {
                         setSheetData((prev) => ({...prev, ...patch}));
                         onSheetRowPatched?.(patch);
                     }}
@@ -149,7 +149,7 @@ function PosConfigSheetView({
                     open
                     onClose={() => setMenuAction("")}
                     entity={config}
-                    onSuccess={(patch) => {
+                    onSuccess={(patch: Partial<PosConfig>) => {
                         setSheetData((prev) => ({...prev, ...patch}));
                         onSheetRowPatched?.(patch);
                     }}

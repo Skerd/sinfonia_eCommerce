@@ -83,7 +83,7 @@ export default function PosCloseSessionDialog({
                             </span>
                         </div>
                         {(recon?.heldDraftCount ?? 0) > 0 && (
-                            <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-2 py-1.5 text-[11px] text-amber-800 dark:text-amber-300">
+                            <div className="rounded-md border border-warning/40 bg-warning/10 px-2 py-1.5 text-[11px] text-warning">
                                 {rk("recon.heldWarning").replace("{count}", String(recon?.heldDraftCount ?? 0))}
                             </div>
                         )}
@@ -120,7 +120,7 @@ export default function PosCloseSessionDialog({
                         className={cn(
                             "flex justify-between rounded-lg border px-3 py-2 text-sm tabular-nums",
                             Math.abs(diff) >= 0.01
-                                ? "border-amber-500/40 bg-amber-500/10"
+                                ? "border-warning/40 bg-warning/10"
                                 : "border-border bg-muted/30",
                         )}
                     >

@@ -74,7 +74,7 @@ function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
                     shippingZone={shippingZone}
                     onDelete={(row: ShippingZone | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(shippingZone)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(shippingZone._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(shippingZone._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -84,7 +84,7 @@ function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
                     shippingZone={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onSheetRowPatched={(row) => {
+                    onSheetRowPatched={(row: Partial<ShippingZone>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<ShippingZone>);
                     }}
                 />

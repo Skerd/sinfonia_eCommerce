@@ -66,7 +66,7 @@ export default function PosCashMoveDialog({
                         {rk("cancel")}
                     </Button>
                     <Button
-                        className="bg-emerald-600 hover:bg-emerald-500"
+                        className="bg-success hover:bg-success"
                         onClick={onSubmit}
                         disabled={cashMoveBusy}
                     >

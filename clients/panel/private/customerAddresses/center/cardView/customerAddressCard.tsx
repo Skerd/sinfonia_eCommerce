@@ -101,7 +101,7 @@ function CustomerAddressCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -186,13 +186,13 @@ function CustomerAddressCard({
                                         <span
                                             className={cn(
                                                 "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                                entity.isDefault ? "text-amber-600" : "text-muted-foreground",
+                                                entity.isDefault ? "text-warning" : "text-muted-foreground",
                                             )}
                                         >
                                             <span
                                                 className={cn(
                                                     "w-1.5 h-1.5 rounded-full shrink-0",
-                                                    entity.isDefault ? "bg-amber-500" : "bg-muted-foreground/40",
+                                                    entity.isDefault ? "bg-warning" : "bg-muted-foreground/40",
                                                 )}
                                             />
                                             {resolveLanguageKey(entity.isDefault ? "defaultAddress" : "notDefault")}
@@ -215,11 +215,11 @@ function CustomerAddressCard({
                             fetchId={entity._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onDefaultChanged={(addressId) => {
+                            onDefaultChanged={(addressId: string) => {
                                 setEntity((prev) => ({...prev, isDefault: true, _id: addressId}));
                                 onDefaultChanged?.(addressId);
                             }}
-                            onSheetRowPatched={(row) => setEntity(row as CustomerAddress)}
+                            onSheetRowPatched={(row: Partial<CustomerAddress>) => setEntity(row as CustomerAddress)}
                         />
                     )}
                     {action === "delete" && (

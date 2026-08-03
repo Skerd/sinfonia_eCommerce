@@ -81,7 +81,7 @@ export default function PosPaymentSection({
                                 onClick={() => onAddPaymentMethod(m._id)}
                                 className={cn(
                                     "flex h-8 items-center justify-center rounded-lg border text-xs font-semibold transition-colors",
-                                    "border-border bg-card text-foreground hover:border-emerald-500/40 hover:bg-muted",
+                                    "border-border bg-card text-foreground hover:border-success/40 hover:bg-muted",
                                     "disabled:cursor-not-allowed disabled:opacity-40",
                                 )}
                             >
@@ -109,7 +109,7 @@ export default function PosPaymentSection({
                                         className={cn(
                                             "rounded-md border px-2 py-1.5 transition-colors",
                                             active
-                                                ? "border-emerald-500/50 bg-emerald-500/5"
+                                                ? "border-success/50 bg-success/5"
                                                 : "border-border bg-card",
                                         )}
                                     >
@@ -165,7 +165,7 @@ export default function PosPaymentSection({
                                                             e.stopPropagation();
                                                             onBumpPaymentAmount(amt);
                                                         }}
-                                                        className="rounded-md border border-border bg-background px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-foreground/80 hover:border-emerald-500/40 hover:text-emerald-600 dark:hover:text-emerald-400"
+                                                        className="rounded-md border border-border bg-background px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-foreground/80 hover:border-success/40 hover:text-success"
                                                     >
                                                         {formatQuickAmount(amt)}
                                                     </button>
@@ -177,7 +177,7 @@ export default function PosPaymentSection({
                                                             e.stopPropagation();
                                                             onSetExactPayment();
                                                         }}
-                                                        className="rounded-md border border-emerald-500/30 bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-emerald-600 hover:bg-emerald-500/20 dark:text-emerald-400"
+                                                        className="rounded-md border border-success/30 bg-success/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-success hover:bg-success/20"
                                                     >
                                                         {rk("exact")}
                                                     </button>
@@ -212,8 +212,8 @@ export default function PosPaymentSection({
                         className={cn(
                             "font-bold",
                             remaining > 0.001
-                                ? "text-amber-600 dark:text-amber-400"
-                                : "text-emerald-600 dark:text-emerald-400",
+                                ? "text-warning"
+                                : "text-success",
                         )}
                     >
                         {money(remaining)}
@@ -225,7 +225,7 @@ export default function PosPaymentSection({
                         className={cn(
                             "font-bold",
                             change > 0.001
-                                ? "text-emerald-600 dark:text-emerald-400"
+                                ? "text-success"
                                 : "text-muted-foreground",
                         )}
                     >
@@ -240,8 +240,8 @@ export default function PosPaymentSection({
                     !canPay
                         ? "bg-muted text-muted-foreground"
                         : payArmed
-                          ? "bg-amber-500 text-zinc-950 shadow-md shadow-amber-500/20 hover:bg-amber-400"
-                          : "bg-emerald-600 text-white shadow-md shadow-emerald-600/15 hover:bg-emerald-500 dark:bg-emerald-500 dark:text-zinc-950 dark:shadow-emerald-500/15 dark:hover:bg-emerald-400",
+                          ? "bg-warning text-foreground shadow-md shadow-warning/20 hover:bg-warning/20"
+                          : "bg-success text-white shadow-md shadow-success/15 hover:bg-success dark:text-foreground dark:hover:bg-success/20",
                 )}
                 onClick={onRequestPay}
                 disabled={!canPay}

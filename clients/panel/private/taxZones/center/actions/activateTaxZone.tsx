@@ -19,7 +19,7 @@ function ActivateTaxZone({entity, resolveLanguageKey, onAction}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateTaxZone")}>
-            <Power className="text-green-600" size={16} />
+            <Power className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

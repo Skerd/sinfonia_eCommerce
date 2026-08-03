@@ -19,7 +19,7 @@ function ActivatePricingRule({entity, resolveLanguageKey, onAction}: ActivatePri
 
     return (
         <DropdownMenuItem onClick={() => onAction("activatePricingRule")}>
-            <Power className="text-green-600" size={16} />
+            <Power className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

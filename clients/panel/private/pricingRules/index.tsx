@@ -74,7 +74,7 @@ function AllPricingRules({resolveLanguageKey}: WithLanguageType) {
                     pricingRule={pricingRule}
                     onDelete={(row: PricingRule | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(pricingRule)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(pricingRule._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(pricingRule._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -84,7 +84,7 @@ function AllPricingRules({resolveLanguageKey}: WithLanguageType) {
                     pricingRule={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(entity._id, {isActive})}
                     onSheetRowPatched={(row: Record<string, unknown>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<PricingRule>);
                     }}

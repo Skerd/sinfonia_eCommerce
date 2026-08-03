@@ -120,13 +120,13 @@ function ReprintPosOrderDialog({
                                                 rk("fallbackShop")}
                                         </div>
                                         {displayReceipt.header ? (
-                                            <div className="whitespace-pre-wrap text-[10px] text-neutral-700">
+                                            <div className="whitespace-pre-wrap text-[10px] text-foreground">
                                                 {displayReceipt.header}
                                             </div>
                                         ) : null}
                                     </div>
 
-                                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                                    <div className="my-2 border-t border-dashed border-border" />
 
                                     <div className="space-y-0.5 text-[10px]">
                                         <div className="flex justify-between gap-2">
@@ -157,7 +157,7 @@ function ReprintPosOrderDialog({
                                         </div>
                                     </div>
 
-                                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                                    <div className="my-2 border-t border-dashed border-border" />
 
                                     <div className="space-y-1">
                                         {displayReceipt.lines.map((line, idx) => (
@@ -175,7 +175,7 @@ function ReprintPosOrderDialog({
                                         ))}
                                     </div>
 
-                                    <div className="my-2 border-t border-dashed border-neutral-400" />
+                                    <div className="my-2 border-t border-dashed border-border" />
 
                                     <div className="space-y-0.5 tabular-nums">
                                         {(displayReceipt.discountTotal ?? 0) > 0 && (
@@ -202,8 +202,8 @@ function ReprintPosOrderDialog({
                                         )}
                                     </div>
 
-                                    <div className="my-2 border-t border-dashed border-neutral-400" />
-                                    <div className="text-center text-[10px] text-neutral-600">
+                                    <div className="my-2 border-t border-dashed border-border" />
+                                    <div className="text-center text-[10px] text-muted-foreground">
                                         {displayReceipt.footer || rk("defaultFooter")}
                                     </div>
                                 </div>

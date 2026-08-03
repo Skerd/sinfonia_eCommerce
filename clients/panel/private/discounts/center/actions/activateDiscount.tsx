@@ -19,7 +19,7 @@ function ActivateDiscount({entity, resolveLanguageKey, onAction}: ActivateDiscou
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateDiscount")}>
-            <Power className="text-green-600" size={16} />
+            <Power className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

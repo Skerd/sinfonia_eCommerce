@@ -96,7 +96,7 @@ function ReturnRequestSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(patch) => {
+                    onSuccess={(patch: Partial<ReturnRequest>) => {
                         const next = {...sheetData, ...patch};
                         setSheetData(next);
                         onSheetRowPatched?.(next);
@@ -108,7 +108,7 @@ function ReturnRequestSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}
-                    onSuccess={(patch) => {
+                    onSuccess={(patch: Partial<ReturnRequest>) => {
                         const next = {...sheetData, ...patch};
                         setSheetData(next);
                         onSheetRowPatched?.(next);

@@ -31,8 +31,8 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleX size={16} className="text-red-600" />
-            <span className="text-red-600">{resolveLanguageKey("title")}</span>
+            <CircleX size={16} className="text-destructive" />
+            <span className="text-destructive">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );

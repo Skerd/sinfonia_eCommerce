@@ -27,16 +27,16 @@ import RefundProductOrderAction from "@eCommerceModule/components/custom/product
 function statusColor(status: string): string {
     switch (status) {
         case "delivered":
-            return "text-emerald-600 bg-emerald-500";
+            return "text-success bg-success";
         case "shipped":
         case "processing":
         case "confirmed":
-            return "text-sky-600 bg-sky-500";
+            return "text-info bg-info";
         case "cancelled":
         case "refunded":
-            return "text-red-600 bg-red-500";
+            return "text-destructive bg-destructive";
         default:
-            return "text-amber-600 bg-amber-500";
+            return "text-warning bg-warning";
     }
 }
 
@@ -123,7 +123,7 @@ function ProductOrderCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -258,7 +258,7 @@ function ProductOrderCard({
                             actionKey={action as ProductOrderConfirmActionKey}
                             openAlert
                             url={`/api/eCommerce/productOrder/${action}`}
-                            onSuccess={(newStatus) => {
+                            onSuccess={(newStatus: ProductOrder["status"]) => {
                                 applyOrderUpdate({status: newStatus});
                                 setAction("");
                             }}
@@ -284,7 +284,7 @@ function ProductOrderCard({
                             displayName={order.orderNumber}
                             openAlert
                             url="/api/eCommerce/productOrder/refund"
-                            onSuccess={(fullRefund) => {
+                            onSuccess={(fullRefund: boolean) => {
                                 applyOrderUpdate(
                                     fullRefund
                                         ? {paymentStatus: "refunded", status: "refunded"}

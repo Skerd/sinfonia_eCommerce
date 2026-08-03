@@ -95,7 +95,7 @@ function ProductOrderActionConfirmAction({
     if (!write) return <HiddenElement />;
 
     const ActionIcon = actionKey === "confirm" ? CircleCheck : actionKey === "markProcessing" ? Package : CircleX;
-    const iconClass = actionKey === "cancel" ? "text-red-600" : actionKey === "markProcessing" ? "text-blue-600" : "text-green-600";
+    const iconClass = actionKey === "cancel" ? "text-destructive" : actionKey === "markProcessing" ? "text-info" : "text-success";
 
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>

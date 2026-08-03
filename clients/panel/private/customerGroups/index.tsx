@@ -58,8 +58,8 @@ function AllCustomerGroups({resolveLanguageKey}: WithLanguageType) {
                     customerGroup={customerGroup}
                     onDelete={(row: CustomerGroup | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(customerGroup)}
-                    onMembersChanged={(delta) => applyMemberCountDelta(listRef, customerGroup._id, delta)}
-                    onDefaultChanged={(groupId) => applySetDefaultToList(listRef, groupId)}
+                    onMembersChanged={(delta: 1 | -1) => applyMemberCountDelta(listRef, customerGroup._id, delta)}
+                    onDefaultChanged={(groupId: string) => applySetDefaultToList(listRef, groupId)}
                 />
             )}
             renderActionMenuChildren={(entity, bindRowAction) => (
@@ -72,7 +72,7 @@ function AllCustomerGroups({resolveLanguageKey}: WithLanguageType) {
                             open
                             onClose={resetAction}
                             customerGroup={entity}
-                            onSuccess={(delta) => applyMemberCountDelta(listRef, entity._id, delta)}
+                            onSuccess={(delta: 1 | -1) => applyMemberCountDelta(listRef, entity._id, delta)}
                         />
                     );
                 }

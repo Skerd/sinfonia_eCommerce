@@ -53,7 +53,7 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                            onSuccess={(patch: Partial<ReturnRequest>) => listRef.current?.updateRow?.(entity._id, patch)}
                         />
                     );
                 }
@@ -63,7 +63,7 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
                             open={true}
                             onClose={resetAction}
                             entity={entity}
-                            onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                            onSuccess={(patch: Partial<ReturnRequest>) => listRef.current?.updateRow?.(entity._id, patch)}
                         />
                     );
                 }

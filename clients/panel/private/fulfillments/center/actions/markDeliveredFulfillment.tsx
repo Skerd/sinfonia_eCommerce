@@ -20,7 +20,7 @@ function MarkDeliveredFulfillment({entity, resolveLanguageKey, onAction}: MarkDe
 
     return (
         <DropdownMenuItem onClick={() => onAction("markDeliveredFulfillment")}>
-            <PackageCheck className="text-green-600" size={16} />
+            <PackageCheck className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

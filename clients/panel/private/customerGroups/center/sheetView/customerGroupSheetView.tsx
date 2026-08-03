@@ -92,7 +92,7 @@ function CustomerGroupSheetView({
                     open
                     onClose={() => setMemberAction("")}
                     customerGroup={customerGroup}
-                    onSuccess={(delta) => {
+                    onSuccess={(delta: 1 | -1) => {
                         setSheetData((prev) => ({
                             ...prev,
                             memberCount: Math.max(0, (Number(prev.memberCount) || 0) + delta),

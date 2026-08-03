@@ -99,7 +99,7 @@ function ProductOrderSheetView({
                     actionKey={action as ProductOrderConfirmActionKey}
                     openAlert
                     url={`/api/eCommerce/productOrder/${action}`}
-                    onSuccess={(newStatus) => {
+                    onSuccess={(newStatus: ProductOrder["status"]) => {
                         applyOrderUpdate({status: newStatus});
                         setAction("");
                     }}
@@ -125,7 +125,7 @@ function ProductOrderSheetView({
                     displayName={asOrder.orderNumber}
                     openAlert
                     url="/api/eCommerce/productOrder/refund"
-                    onSuccess={(fullRefund) => {
+                    onSuccess={(fullRefund: boolean) => {
                         applyOrderUpdate(
                             fullRefund
                                 ? {paymentStatus: "refunded", status: "refunded"}

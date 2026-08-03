@@ -21,14 +21,14 @@ import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrd
 function stateColor(state: string): string {
     switch (state) {
         case "paid":
-            return "text-emerald-600 bg-emerald-500";
+            return "text-success bg-success";
         case "draft":
-            return "text-amber-600 bg-amber-500";
+            return "text-warning bg-warning";
         case "cancel":
         case "refunded":
-            return "text-red-600 bg-red-500";
+            return "text-destructive bg-destructive";
         default:
-            return "text-sky-600 bg-sky-500";
+            return "text-info bg-info";
     }
 }
 
@@ -114,7 +114,7 @@ function PosOrderCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">

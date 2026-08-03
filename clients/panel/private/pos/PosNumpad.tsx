@@ -299,7 +299,7 @@ export default function PosNumpadField({
                             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
                                 {cancelLabel}
                             </Button>
-                            <Button type="button" className="bg-emerald-600 hover:bg-emerald-500" onClick={commit}>
+                            <Button type="button" className="bg-success hover:bg-success" onClick={commit}>
                                 {okLabel}
                             </Button>
                         </div>

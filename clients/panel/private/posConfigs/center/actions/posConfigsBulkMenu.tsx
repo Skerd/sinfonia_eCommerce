@@ -75,7 +75,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                             className="cursor-pointer items-start gap-2 py-2"
                             onSelect={() => setResumeAllOpen(true)}
                         >
-                            <CirclePlay className="mt-0.5 size-4 shrink-0 text-emerald-600" />
+                            <CirclePlay className="mt-0.5 size-4 shrink-0 text-success" />
                             <div className="min-w-0 space-y-0.5">
                                 <div className="text-sm font-medium leading-none">{rk("bulkMenu.resumeAll")}</div>
                                 <div className="text-xs text-muted-foreground leading-snug">

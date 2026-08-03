@@ -157,14 +157,14 @@ export default function PosCartPanel({
         <aside className="flex min-h-0 w-full shrink-0 flex-col bg-card lg:w-[28rem] xl:w-[32rem]">
             <div className="flex shrink-0 items-center justify-between gap-2 border-b border-border px-4 py-3">
                 <div className="flex items-center gap-2.5">
-                    <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                    <div className="flex size-8 items-center justify-center rounded-lg bg-success/15 text-success">
                         <ShoppingBag className="size-4" />
                     </div>
                     <div>
                         <div className="text-sm font-semibold leading-none">
                             {rk("cart")}
                             {heldOrderId ? (
-                                <span className="ml-2 text-[10px] font-medium uppercase tracking-wide text-amber-600 dark:text-amber-400">
+                                <span className="ml-2 text-[10px] font-medium uppercase tracking-wide text-warning">
                                     {rk("held.resume")}
                                 </span>
                             ) : null}
@@ -238,9 +238,9 @@ export default function PosCartPanel({
             </div>
 
             {itemsSplitActive && (
-                <div className="flex shrink-0 items-center justify-between gap-2 border-b border-amber-500/30 bg-amber-500/10 px-3 py-2 text-[11px]">
+                <div className="flex shrink-0 items-center justify-between gap-2 border-b border-warning/30 bg-warning/10 px-3 py-2 text-[11px]">
                     <div className="min-w-0">
-                        <div className="font-semibold text-amber-800 dark:text-amber-300">{rk("split.selectItems")}</div>
+                        <div className="font-semibold text-warning">{rk("split.selectItems")}</div>
                         <div className="tabular-nums text-muted-foreground">
                             {rk("split.shareTotal")}: {money(shareTotal)}
                         </div>
@@ -298,7 +298,7 @@ export default function PosCartPanel({
                             <span className="tabular-nums">{money(subtotal)}</span>
                         </div>
                         {allowDiscount && (
-                            <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-amber-600 dark:text-amber-400">
+                            <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-warning">
                                 <span className="shrink-0">{rk("orderDiscount")}</span>
                                 <div className="flex items-center gap-1">
                                     <PosNumpadField
@@ -311,7 +311,7 @@ export default function PosCartPanel({
                                         okLabel={rk("confirm")}
                                         cancelLabel={rk("cancel")}
                                         clearLabel={rk("numpad.clear")}
-                                        buttonClassName="flex h-6 w-11 items-center justify-center rounded border border-amber-500/30 bg-background/60 text-[11px] font-semibold text-foreground"
+                                        buttonClassName="flex h-6 w-11 items-center justify-center rounded border border-warning/30 bg-background/60 text-[11px] font-semibold text-foreground"
                                     />
                                     <span className="text-muted-foreground">%</span>
                                     <span className="min-w-[3.5rem] text-right tabular-nums">

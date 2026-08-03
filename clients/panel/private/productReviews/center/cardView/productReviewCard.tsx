@@ -32,7 +32,7 @@ function Stars({value}: {value: number}) {
                     key={i}
                     className={cn(
                         "size-4",
-                        i < value ? "fill-amber-400 text-amber-400" : "fill-muted text-muted",
+                        i < value ? "fill-warning text-warning" : "fill-muted text-muted",
                     )}
                 />
             ))}
@@ -124,7 +124,7 @@ function ProductReviewCard({
                 <div
                     className={cn(
                         "group relative flex h-full w-full cursor-pointer flex-col rounded-2xl bg-card p-5 shadow-sm",
-                        "border border-border/60 transition-all duration-300 hover:shadow-md",
+                        "border border-border/60 transition-[box-shadow,--tw-ring-color] duration-200 hover:shadow-md hover:ring-primary/40",
                     )}
                     onClick={() => setAction("view")}
                 >
@@ -205,7 +205,7 @@ function ProductReviewCard({
                             {(verified || !read?.order) && (
                                 <HiddenElement randomLength={read?.order ? 0 : 10}>
                                     {!!read?.order && verified ? (
-                                        <span className="inline-flex min-w-0 items-center gap-1 text-emerald-600">
+                                        <span className="inline-flex min-w-0 items-center gap-1 text-success">
                                             <CheckCircleIcon className="size-3.5 shrink-0" />
                                             <span className="truncate">{resolveLanguageKey("verifiedPurchase")}</span>
                                         </span>

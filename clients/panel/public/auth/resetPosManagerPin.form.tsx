@@ -73,7 +73,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <ShieldAlert size={30} className="animate-pulse text-emerald-600" />
+                    <ShieldAlert size={30} className="animate-pulse text-success" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("verifyingTitle")}
                     </CardTitle>
@@ -107,7 +107,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <CircleCheckBig size={30} className="text-emerald-600" />
+                    <CircleCheckBig size={30} className="text-success" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("successTitle")}
                     </CardTitle>

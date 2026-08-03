@@ -43,7 +43,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                             actionKey={action as ProductOrderConfirmActionKey}
                             openAlert
                             url={`/api/eCommerce/productOrder/${action}`}
-                            onSuccess={(newStatus) => {
+                            onSuccess={(newStatus: ProductOrder["status"]) => {
                                 listRef.current?.updateRow?.(entity._id, {status: newStatus} as Partial<ProductOrder>);
                                 resetAction();
                             }}
@@ -76,7 +76,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                             displayName={entity.orderNumber}
                             openAlert
                             url="/api/eCommerce/productOrder/refund"
-                            onSuccess={(fullRefund) => {
+                            onSuccess={(fullRefund: boolean) => {
                                 listRef.current?.updateRow?.(
                                     entity._id,
                                     (fullRefund
@@ -96,7 +96,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                     order={order}
                     onDelete={(row: ProductOrder | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(order)}
-                    onOrderUpdated={(updated) => listRef.current?.updateRow?.(order._id, updated as Partial<ProductOrder>)}
+                    onOrderUpdated={(updated: ProductOrder) => listRef.current?.updateRow?.(order._id, updated as Partial<ProductOrder>)}
                 />
             )}
         />

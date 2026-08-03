@@ -74,7 +74,7 @@ function AllTaxZones({resolveLanguageKey}: WithLanguageType) {
                     taxZone={taxZone}
                     onDelete={(row: TaxZone | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(taxZone)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(taxZone._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(taxZone._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -84,7 +84,7 @@ function AllTaxZones({resolveLanguageKey}: WithLanguageType) {
                     taxZone={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onSheetRowPatched={(row) => {
+                    onSheetRowPatched={(row: Partial<TaxZone>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<TaxZone>);
                     }}
                 />

@@ -74,7 +74,7 @@ function AllDiscounts({resolveLanguageKey}: WithLanguageType) {
                     discount={discount}
                     onDelete={(row: Discount | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(discount)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(discount._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(discount._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -84,7 +84,7 @@ function AllDiscounts({resolveLanguageKey}: WithLanguageType) {
                     discount={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(entity._id, {isActive})}
                     onSheetRowPatched={(row: Record<string, unknown>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<Discount>);
                     }}

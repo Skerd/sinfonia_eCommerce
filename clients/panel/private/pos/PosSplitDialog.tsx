@@ -55,7 +55,7 @@ export default function PosSplitDialog({
                             className={cn(
                                 "rounded-xl border px-3 py-3 text-left transition-colors",
                                 splitMode === "equal"
-                                    ? "border-emerald-500 bg-emerald-500/10"
+                                    ? "border-success/50 bg-success/10"
                                     : "border-border bg-card hover:bg-muted",
                             )}
                         >
@@ -68,7 +68,7 @@ export default function PosSplitDialog({
                             className={cn(
                                 "rounded-xl border px-3 py-3 text-left transition-colors",
                                 splitMode === "items"
-                                    ? "border-emerald-500 bg-emerald-500/10"
+                                    ? "border-success/50 bg-success/10"
                                     : "border-border bg-card hover:bg-muted",
                             )}
                         >
@@ -134,7 +134,7 @@ export default function PosSplitDialog({
                         {rk("cancel")}
                     </Button>
                     <Button
-                        className="bg-emerald-600 hover:bg-emerald-500"
+                        className="bg-success hover:bg-success"
                         onClick={() => {
                             if (splitMode === "equal") onApplyEqualSplit();
                             else onStartItemsSplit();

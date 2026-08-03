@@ -98,8 +98,8 @@ function AllWarehouses({resolveLanguageKey}: WithLanguageType) {
                     warehouse={warehouse}
                     onDelete={(row: Warehouse | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(warehouse)}
-                    onDefaultChanged={(warehouseId) => applySetDefaultToList(listRef, warehouseId)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(warehouse._id, {isActive})}
+                    onDefaultChanged={(warehouseId: string) => applySetDefaultToList(listRef, warehouseId)}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(warehouse._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -109,7 +109,7 @@ function AllWarehouses({resolveLanguageKey}: WithLanguageType) {
                     warehouse={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onDefaultChanged={(warehouseId) => applySetDefaultToList(listRef, warehouseId)}
+                    onDefaultChanged={(warehouseId: string) => applySetDefaultToList(listRef, warehouseId)}
                     onSheetRowPatched={(row: Record<string, unknown>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<Warehouse>);
                     }}

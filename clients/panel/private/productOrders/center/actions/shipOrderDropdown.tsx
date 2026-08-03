@@ -31,8 +31,8 @@ function ShipOrderDropdown({order, onAction, resolveLanguageKey}: ShipOrderDropd
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Truck size={16} className="text-indigo-600" />
-            <span className="text-indigo-600">{resolveLanguageKey("title")}</span>
+            <Truck size={16} className="text-info" />
+            <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );

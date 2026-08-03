@@ -28,8 +28,8 @@ function DeductInventoryDropdown({inventory, onAction, resolveLanguageKey}: Dedu
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <PackageMinus size={16} className="text-amber-700" />
-            <span className="text-amber-700">{resolveLanguageKey("title")}</span>
+            <PackageMinus size={16} className="text-warning" />
+            <span className="text-warning">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );

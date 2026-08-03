@@ -88,7 +88,7 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                         cmsBlock={cmsBlock}
                         onDelete={(row: CmsBlock | undefined, response?: DeletedData) => onDelete(row, response)}
                         onRestore={() => onRestore(cmsBlock)}
-                        onActiveChanged={(isActive) => listRef.current?.updateRow?.(cmsBlock._id, {isActive})}
+                        onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(cmsBlock._id, {isActive})}
                     />
                 )}
                 renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

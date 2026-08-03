@@ -120,7 +120,7 @@ export default function PosCustomerSearch({valueLabel, customerId, rk, onLabelCh
                                 onClick={() => handlePick(c)}
                                 className={cn(
                                     "flex w-full flex-col items-start gap-0 px-3 py-1.5 text-left text-xs hover:bg-muted",
-                                    customerId === c._id && "bg-emerald-500/10",
+                                    customerId === c._id && "bg-success/10",
                                 )}
                             >
                                 <span className="font-medium text-foreground">{c.label}</span>

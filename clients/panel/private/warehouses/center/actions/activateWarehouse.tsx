@@ -19,7 +19,7 @@ function ActivateWarehouse({entity, resolveLanguageKey, onAction}: ActivateWareh
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateWarehouse")}>
-            <Power className="text-green-600" size={16} />
+            <Power className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

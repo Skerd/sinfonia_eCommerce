@@ -102,7 +102,7 @@ function InventorySheetView({
                     mode={action}
                     openAlert
                     url={`/api/eCommerce/inventory/${action}`}
-                    onSuccess={(updated) => {
+                    onSuccess={(updated: Inventory | undefined) => {
                         setAction("");
                         setFetchKey((k) => k + 1);
                         onInventoryUpdated?.(updated);

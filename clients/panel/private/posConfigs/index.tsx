@@ -97,7 +97,7 @@ function AllPosConfigs({resolveLanguageKey}: WithLanguageType) {
                                 open
                                 onClose={resetAction}
                                 entity={entity}
-                                onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                                onSuccess={(patch: Partial<PosConfig>) => listRef.current?.updateRow?.(entity._id, patch)}
                             />
                         )}
                         {action === "resumePosConfig" && (
@@ -105,7 +105,7 @@ function AllPosConfigs({resolveLanguageKey}: WithLanguageType) {
                                 open
                                 onClose={resetAction}
                                 entity={entity}
-                                onSuccess={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                                onSuccess={(patch: Partial<PosConfig>) => listRef.current?.updateRow?.(entity._id, patch)}
                             />
                         )}
                         {action === "setManagerPin" && (
@@ -147,9 +147,9 @@ function AllPosConfigs({resolveLanguageKey}: WithLanguageType) {
                     entity={entity}
                     onDelete={(row: PosConfig | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
-                    onPinUpdated={(updated) => listRef.current?.updateRow?.(entity._id, updated)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
-                    onPausedChanged={(patch) => listRef.current?.updateRow?.(entity._id, patch)}
+                    onPinUpdated={(updated: Partial<PosConfig>) => listRef.current?.updateRow?.(entity._id, updated)}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(entity._id, {isActive})}
+                    onPausedChanged={(patch: Partial<PosConfig>) => listRef.current?.updateRow?.(entity._id, patch)}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
@@ -159,8 +159,8 @@ function AllPosConfigs({resolveLanguageKey}: WithLanguageType) {
                     entity={entity}
                     onDelete={onDelete}
                     onRestore={onRestore}
-                    onPinUpdated={(updated) => listRef.current?.updateRow?.(entity._id, updated)}
-                    onSheetRowPatched={(row) => {
+                    onPinUpdated={(updated: Partial<PosConfig>) => listRef.current?.updateRow?.(entity._id, updated)}
+                    onSheetRowPatched={(row: Partial<PosConfig>) => {
                         listRef.current?.updateRow?.(entity._id, row as Partial<PosConfig>);
                     }}
                 />

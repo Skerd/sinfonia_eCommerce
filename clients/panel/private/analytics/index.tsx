@@ -4,8 +4,6 @@ import {
     Bar,
     BarChart,
     CartesianGrid,
-    ResponsiveContainer,
-    Tooltip,
     XAxis,
     YAxis,
 } from "recharts";
@@ -24,6 +22,13 @@ import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Tabs, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
+import {
+    ChartContainer,
+    ChartTooltip,
+    ChartTooltipContent,
+    type ChartConfig,
+} from "@coreModule/components/ui/chart.tsx";
+import {chartTooltipValueFormatter} from "@coreModule/components/custom/chartTooltipFormatter.tsx";
 import {
     IconCoin,
     IconPackage,
@@ -111,6 +116,12 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
     const totalProducts = useMemo(
         () => Object.values(data.products?.byStatus ?? {}).reduce((sum, count) => sum + count, 0),
         [data.products?.byStatus],
+    );
+
+    const chartConfig = useMemo(
+        () => ({revenue: {label: rk("chart.revenue"), color: "var(--chart-1)"}}) satisfies ChartConfig,
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [resolveLanguageKey],
     );
 
     if (loading && !data.revenue) return <Loader />;
@@ -216,28 +227,22 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         {chartData.length === 0 ? (
                             <p className="text-sm text-muted-foreground">{rk("noChartData")}</p>
                         ) : (
-                            <div className="h-64 w-full">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={chartData} margin={{top: 8, right: 8, left: 0, bottom: 0}}>
-                                        <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-                                        <XAxis dataKey="date" tick={{fontSize: 11}} />
-                                        <YAxis tick={{fontSize: 11}} tickFormatter={(v) => formatMoney(Number(v))} />
-                                        <Tooltip
-                                            formatter={(value: number) => [formatMoney(value), rk("chart.revenue")]}
-                                            cursor={{fill: "var(--muted)", fillOpacity: 0.4}}
-                                            contentStyle={{
-                                                backgroundColor: "var(--card)",
-                                                border: "1px solid var(--border)",
-                                                borderRadius: "0.75rem",
-                                                color: "var(--card-foreground)",
-                                            }}
-                                            itemStyle={{color: "var(--card-foreground)"}}
-                                            labelStyle={{color: "var(--card-foreground)"}}
-                                        />
-                                        <Bar dataKey="revenue" name={rk("chart.revenue")} fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
-                                    </BarChart>
-                                </ResponsiveContainer>
-                            </div>
+                            <ChartContainer config={chartConfig} className="aspect-auto h-64 w-full">
+                                <BarChart data={chartData} margin={{top: 8, right: 8, left: 0, bottom: 0}}>
+                                    <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
+                                    <XAxis dataKey="date" tick={{fontSize: 11}} />
+                                    <YAxis tick={{fontSize: 11}} tickFormatter={(v) => formatMoney(Number(v))} />
+                                    <ChartTooltip
+                                        cursor={{fill: "var(--muted)", fillOpacity: 0.4}}
+                                        content={
+                                            <ChartTooltipContent
+                                                formatter={chartTooltipValueFormatter(chartConfig, formatMoney)}
+                                            />
+                                        }
+                                    />
+                                    <Bar dataKey="revenue" fill="var(--color-revenue)" radius={[4, 4, 0, 0]} />
+                                </BarChart>
+                            </ChartContainer>
                         )}
                     </div>
                 </>

@@ -74,7 +74,7 @@ export default function PosOpenSessionDialog({
                         <Button variant="outline" onClick={onCancel}>
                             {rk("cancel")}
                         </Button>
-                        <Button className="bg-emerald-600 hover:bg-emerald-500" onClick={onSubmit} disabled={openingBusy}>
+                        <Button className="bg-success hover:bg-success" onClick={onSubmit} disabled={openingBusy}>
                             {openingBusy ? rk("busy") : rk("openSession.submit")}
                         </Button>
                     </DialogFooter>

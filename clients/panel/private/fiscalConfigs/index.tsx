@@ -74,7 +74,7 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
                     entity={entity}
                     onDelete={(row: FiscalConfig | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(entity)}
-                    onActiveChanged={(isActive) => listRef.current?.updateRow?.(entity._id, {isActive})}
+                    onActiveChanged={(isActive: boolean) => listRef.current?.updateRow?.(entity._id, {isActive})}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

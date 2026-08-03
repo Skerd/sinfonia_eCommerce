@@ -38,7 +38,7 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                                 onClick={() => onPick(v._id, price, v.label, v.stockQty, v.trackInventory)}
                                 className={cn(
                                     "flex w-full items-center justify-between gap-3 rounded-lg border border-border bg-card px-3 py-2 text-left transition-colors",
-                                    "hover:border-emerald-500/40 hover:bg-muted",
+                                    "hover:border-success/40 hover:bg-muted",
                                     disabled && "cursor-not-allowed opacity-50 hover:border-border hover:bg-card",
                                 )}
                             >
@@ -55,7 +55,7 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                                         ) : null}
                                     </div>
                                 </div>
-                                <div className="shrink-0 text-sm font-semibold tabular-nums text-emerald-600 dark:text-emerald-400">
+                                <div className="shrink-0 text-sm font-semibold tabular-nums text-success">
                                     {money(price)}
                                 </div>
                             </button>

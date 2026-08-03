@@ -226,9 +226,9 @@ function ViewInventoryMovementsDialog({
                                     const qty = Number(movement.quantity ?? 0);
                                     const qtyClass =
                                         qty > 0
-                                            ? "text-emerald-600"
+                                            ? "text-success"
                                             : qty < 0
-                                              ? "text-red-600"
+                                              ? "text-destructive"
                                               : "text-muted-foreground";
                                     const reasonLabel = String(
                                         resolveLanguageKey(`reasons.${movement.reason}`) ??

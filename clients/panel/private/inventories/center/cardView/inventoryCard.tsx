@@ -71,8 +71,8 @@ function InventoryCard({
             {!sheetOnly && (
                 <Card
                     className={cn(
-                        "group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer",
-                        isLowStock && "border-amber-400/60",
+                        "group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40",
+                        isLowStock && "border-warning/60",
                     )}
                     onClick={() => setAction("view")}
                 >
@@ -149,7 +149,7 @@ function InventoryCard({
                                 </div>
                                 <HiddenElement randomLength={read?.quantityAvailable ? 0 : 4}>
                                     {!!read?.quantityAvailable ? (
-                                        <div className={cn("font-bold text-sm", isLowStock ? "text-amber-600" : "text-emerald-600")}>
+                                        <div className={cn("font-bold text-sm", isLowStock ? "text-warning" : "text-success")}>
                                             {available}
                                         </div>
                                     ) : null}
@@ -159,7 +159,7 @@ function InventoryCard({
 
                         <HiddenElement randomLength={read?.quantityAvailable && read?.reorderPoint ? 0 : 8}>
                             {!!(read?.quantityAvailable && read?.reorderPoint) && isLowStock ? (
-                                <div className="flex items-center gap-1 text-[11px] font-medium text-amber-600 mt-2">
+                                <div className="flex items-center gap-1 text-[11px] font-medium text-warning mt-2">
                                     <IconAlertTriangle className="w-3.5 h-3.5 shrink-0" />
                                     {resolveLanguageKey("lowStock")}
                                 </div>
@@ -179,7 +179,7 @@ function InventoryCard({
                             inventory={inventory}
                             fetchId={inventory._id}
                             onDelete={onDelete}
-                            onInventoryUpdated={(updated) => {
+                            onInventoryUpdated={(updated: Inventory | undefined) => {
                                 if (updated) setInventory(updated);
                                 onInventoryUpdated?.(updated);
                             }}
@@ -211,7 +211,7 @@ function InventoryCard({
                             mode={action}
                             openAlert
                             url={`/api/eCommerce/inventory/${action}`}
-                            onSuccess={(updated) => {
+                            onSuccess={(updated: Inventory | undefined) => {
                                 if (updated) setInventory(updated);
                                 onInventoryUpdated?.(updated);
                                 setAction("");

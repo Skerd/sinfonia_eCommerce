@@ -15,7 +15,7 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
         <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
             <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border px-5 py-4">
                 <div>
-                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
+                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-success">
                         <Monitor className="size-3.5" />
                         {rk("title")}
                     </div>
@@ -38,11 +38,11 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
                             onClick={() => onSelect(c._id)}
                             className={cn(
                                 "group rounded-2xl border border-border bg-card p-5 text-left",
-                                "transition-all hover:border-emerald-500/50 hover:bg-card hover:shadow-[0_0_0_1px_rgba(16,185,129,0.25)]",
-                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
+                                "transition-all hover:border-success/50 hover:bg-card hover:shadow-[0_0_0_1px_rgba(16,185,129,0.25)]",
+                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-success/50",
                             )}
                         >
-                            <div className="mb-4 flex size-11 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                            <div className="mb-4 flex size-11 items-center justify-center rounded-xl bg-success/15 text-success">
                                 <Monitor className="size-5" />
                             </div>
                             <div className="text-lg font-semibold tracking-tight">{c.name}</div>
@@ -51,7 +51,7 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
                                     {c.warehouses.map((w) => w.name).filter(Boolean).join(", ")}
                                 </div>
                             )}
-                            <div className="mt-4 text-xs font-medium uppercase tracking-wide text-emerald-600/80 dark:text-emerald-400/80 opacity-0 transition-opacity group-hover:opacity-100">
+                            <div className="mt-4 text-xs font-medium uppercase tracking-wide text-success/80 opacity-0 transition-opacity group-hover:opacity-100">
                                 {rk("picker.open")} →
                             </div>
                         </button>

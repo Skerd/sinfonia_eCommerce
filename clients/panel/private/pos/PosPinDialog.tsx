@@ -139,7 +139,7 @@ export default function PosPinDialog({
                                 {t("cancel", "Cancel")}
                             </Button>
                             <Button
-                                className="bg-emerald-600 hover:bg-emerald-500"
+                                className="bg-success hover:bg-success"
                                 disabled={!pin.trim() || !effectiveManagerId || busy}
                                 onClick={submit}
                             >

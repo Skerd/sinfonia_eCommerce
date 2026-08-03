@@ -19,7 +19,7 @@ function ActivateFiscalConfig({entity, resolveLanguageKey, onAction}: ActivateFi
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateFiscalConfig")}>
-            <Power className="text-green-600" size={16} />
+            <Power className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

@@ -20,7 +20,7 @@ function ApproveReturnRequest({entity, resolveLanguageKey, onAction}: ApproveRet
 
     return (
         <DropdownMenuItem onClick={() => onAction("approveReturnRequest")}>
-            <Check className="text-green-600" size={16} />
+            <Check className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

@@ -129,7 +129,7 @@ function ShipProductOrderAction({
                         {loading ? (
                             <LoaderCircle className="size-4 animate-spin" />
                         ) : (
-                            <Truck size={16} className="text-indigo-600" />
+                            <Truck size={16} className="text-info" />
                         )}
                         {resolveLanguageKey("ship.confirm")}
                     </AlertDialogAction>

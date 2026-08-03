@@ -156,7 +156,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                         className={
                             companyPaused
                                 ? "max-w-md text-sm font-semibold text-destructive"
-                                : "max-w-md text-sm font-semibold text-amber-800 dark:text-amber-200"
+                                : "max-w-md text-sm font-semibold text-warning"
                         }
                     >
                         {companyPaused ? rk("paused.companyBanner") : rk("paused.banner")}

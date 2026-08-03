@@ -46,7 +46,7 @@ function InventoryMovementCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className="group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer"
+                    className="group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40"
                     onClick={() => setAction("view")}
                 >
                     <div className="w-full min-w-0 py-3 px-4">
@@ -109,7 +109,7 @@ function InventoryMovementCard({
                                 </div>
                                 <HiddenElement randomLength={read?.quantity ? 0 : 4}>
                                     {!!read?.quantity ? (
-                                        <div className={cn("font-bold text-sm", isPositive ? "text-emerald-600" : "text-amber-700")}>
+                                        <div className={cn("font-bold text-sm", isPositive ? "text-success" : "text-warning")}>
                                             {isPositive ? `+${qty}` : qty}
                                         </div>
                                     ) : null}

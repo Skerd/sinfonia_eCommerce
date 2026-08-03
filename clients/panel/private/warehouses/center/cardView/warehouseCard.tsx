@@ -124,7 +124,7 @@ function WarehouseCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -148,7 +148,7 @@ function WarehouseCard({
                                         )}
                                     </HiddenElement>
                                     {read?.isDefault && warehouse.isDefault && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-700 shrink-0">
+                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
                                             <IconStar className="w-3 h-3" />
                                             {resolveLanguageKey("default")}
                                         </span>
@@ -189,13 +189,13 @@ function WarehouseCard({
                                     <span
                                         className={cn(
                                             "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                            warehouse.isActive ? "text-emerald-600" : "text-muted-foreground",
+                                            warehouse.isActive ? "text-success" : "text-muted-foreground",
                                         )}
                                     >
                                         <span
                                             className={cn(
                                                 "w-1.5 h-1.5 rounded-full shrink-0",
-                                                warehouse.isActive ? "bg-emerald-500" : "bg-muted-foreground/40",
+                                                warehouse.isActive ? "bg-success" : "bg-muted-foreground/40",
                                             )}
                                         />
                                         {resolveLanguageKey(warehouse.isActive ? "active" : "inactive")}
@@ -217,11 +217,11 @@ function WarehouseCard({
                             fetchId={warehouse._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onDefaultChanged={(warehouseId) => {
+                            onDefaultChanged={(warehouseId: string) => {
                                 setWarehouse((prev) => ({...prev, isDefault: true, _id: warehouseId}));
                                 onDefaultChanged?.(warehouseId);
                             }}
-                            onSheetRowPatched={(row) => {
+                            onSheetRowPatched={(row: Partial<Warehouse>) => {
                                 setWarehouse((prev) => ({...prev, ...row}) as Warehouse);
                                 if (typeof row.isActive === "boolean") {
                                     onActiveChanged?.(row.isActive);

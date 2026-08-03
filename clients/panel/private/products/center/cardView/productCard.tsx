@@ -4,8 +4,8 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useMemo, useState} from "react";
-import {Card, CardContent} from "@coreModule/components/uiKit/ui/card";
-import {Badge} from "@coreModule/components/uiKit/ui/badge";
+import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
@@ -98,14 +98,14 @@ function SaleCountdown({
     ];
 
     return (
-        <div className="pointer-events-none w-full rounded-md bg-amber-400/95 px-1.5 py-1.5 shadow-sm backdrop-blur-[2px] dark:bg-amber-700/95">
+        <div className="pointer-events-none w-full rounded-md bg-warning/95 px-1.5 py-1.5 shadow-sm backdrop-blur-[2px]">
             <div className="grid grid-cols-4 gap-0.5 text-center">
                 {cells.map(({value, labelKey}) => (
                     <div key={labelKey} className="min-w-0 px-0.5">
-                        <div className="text-xs font-bold tabular-nums leading-none text-amber-950 dark:text-amber-50">
+                        <div className="text-xs font-bold tabular-nums leading-none text-warning">
                             {String(value).padStart(2, "0")}
                         </div>
-                        <div className="mt-0.5 text-[8px] font-medium uppercase leading-none tracking-wide text-amber-950/70 dark:text-amber-50/70">
+                        <div className="mt-0.5 text-[8px] font-medium uppercase leading-none tracking-wide text-warning/70">
                             {resolveLanguageKey(labelKey)}
                         </div>
                     </div>
@@ -291,7 +291,7 @@ function ProductCard({
                                                         className={cn(
                                                             "size-3",
                                                             i < Math.floor(rating)
-                                                                ? "fill-current text-yellow-400"
+                                                                ? "fill-current text-warning"
                                                                 : "text-muted-foreground/40",
                                                         )}
                                                     />

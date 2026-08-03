@@ -95,7 +95,7 @@ function PricingRuleCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -159,13 +159,13 @@ function PricingRuleCard({
                                     <span
                                         className={cn(
                                             "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
-                                            pricingRule.isActive ? "text-emerald-600" : "text-muted-foreground",
+                                            pricingRule.isActive ? "text-success" : "text-muted-foreground",
                                         )}
                                     >
                                         <span
                                             className={cn(
                                                 "w-1.5 h-1.5 rounded-full shrink-0",
-                                                pricingRule.isActive ? "bg-emerald-500" : "bg-muted-foreground/40",
+                                                pricingRule.isActive ? "bg-success" : "bg-muted-foreground/40",
                                             )}
                                         />
                                         {resolveLanguageKey(pricingRule.isActive ? "active" : "inactive")}
@@ -187,11 +187,11 @@ function PricingRuleCard({
                             fetchId={pricingRule._id}
                             onDelete={onDelete}
                             onRestore={onRestore}
-                            onActiveChanged={(isActive) => {
+                            onActiveChanged={(isActive: boolean) => {
                                 setPricingRule((prev) => ({...prev, isActive}));
                                 onActiveChanged?.(isActive);
                             }}
-                            onSheetRowPatched={(row) => setPricingRule(row as PricingRule)}
+                            onSheetRowPatched={(row: Partial<PricingRule>) => setPricingRule(row as PricingRule)}
                         />
                     )}
                     {action === "delete" && (

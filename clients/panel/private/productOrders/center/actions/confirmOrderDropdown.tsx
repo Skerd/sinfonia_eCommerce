@@ -31,8 +31,8 @@ function ConfirmOrderDropdown({order, onAction, resolveLanguageKey}: ConfirmOrde
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleCheck size={16} className="text-green-600" />
-            <span className="text-green-600">{resolveLanguageKey("title")}</span>
+            <CircleCheck size={16} className="text-success" />
+            <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );

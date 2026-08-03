@@ -96,7 +96,7 @@ function CustomerGroupCard({
         <>
             {!sheetOnly && (
                 <Card
-                    className={cn("group p-0 h-full relative transition-all duration-300 hover:shadow-md hover:cursor-pointer")}
+                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
                     onClick={() => setAction("view")}
                 >
                     <div className="flex w-full items-stretch">
@@ -120,7 +120,7 @@ function CustomerGroupCard({
                                         )}
                                     </HiddenElement>
                                     {read?.isDefault && customerGroup.isDefault && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-700 shrink-0">
+                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
                                             <IconStar className="w-3 h-3" />
                                             {resolveLanguageKey("default")}
                                         </span>
@@ -174,7 +174,7 @@ function CustomerGroupCard({
                             onDelete={onDelete}
                             onRestore={onRestore}
                             onMembersChanged={onMembersChanged}
-                            onDefaultChanged={(groupId) => {
+                            onDefaultChanged={(groupId: string) => {
                                 setCustomerGroup((prev) => ({...prev, isDefault: true, _id: groupId}));
                                 onDefaultChanged?.(groupId);
                             }}
@@ -185,7 +185,7 @@ function CustomerGroupCard({
                             open
                             onClose={() => setAction("")}
                             customerGroup={customerGroup}
-                            onSuccess={(delta) => {
+                            onSuccess={(delta: 1 | -1) => {
                                 setCustomerGroup((prev) => ({
                                     ...prev,
                                     memberCount: Math.max(0, (prev.memberCount ?? 0) + delta),

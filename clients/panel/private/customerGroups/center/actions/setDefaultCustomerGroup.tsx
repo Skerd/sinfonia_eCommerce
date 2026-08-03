@@ -20,7 +20,7 @@ function SetDefaultCustomerGroup({entity, resolveLanguageKey, onAction}: SetDefa
 
     return (
         <DropdownMenuItem onClick={() => onAction("setDefaultCustomerGroup")}>
-            <Star className="text-amber-500" size={16} />
+            <Star className="text-warning" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );
