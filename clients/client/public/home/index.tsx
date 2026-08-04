@@ -29,7 +29,7 @@ function HomePage() {
     }, []);
 
     return (
-        <div className="space-y-12">
+        <div className="flex flex-col gap-y-12">
             <section className="rounded-2xl bg-shop-cream px-8 py-16 text-center">
                 <h1 className="font-shop-display text-4xl font-bold tracking-tight">Discover our catalog</h1>
                 <p className="mx-auto mt-3 max-w-xl text-shop-ink-muted">
@@ -44,7 +44,7 @@ function HomePage() {
             </section>
 
             {blocks.length > 0 && (
-                <section className="space-y-4">
+                <section className="flex flex-col gap-y-4">
                     {blocks.map(block => (
                         <CmsBlockRenderer key={block._id} block={block} />
                     ))}

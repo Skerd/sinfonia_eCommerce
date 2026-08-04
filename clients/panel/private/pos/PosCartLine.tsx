@@ -57,7 +57,7 @@ export default function PosCartLine({
         >
             <div className="min-w-0 flex-1">
                 <div className="truncate text-sm font-medium leading-tight text-foreground">{line.title}</div>
-                <div className="truncate text-[10px] tabular-nums text-muted-foreground">
+                <div className="truncate text-3xs tabular-nums text-muted-foreground">
                     {money(line.unitPrice)}
                     {line.sku ? ` · ${line.sku}` : ""}
                     {!showLineDiscount && line.discountPercent > 0 ? ` · -${line.discountPercent}%` : ""}
@@ -148,9 +148,9 @@ export default function PosCartLine({
                         okLabel={rk("confirm")}
                         cancelLabel={rk("cancel")}
                         clearLabel={rk("numpad.clear")}
-                        buttonClassName="flex h-7 w-9 items-center justify-center text-[11px] font-semibold"
+                        buttonClassName="flex h-7 w-9 items-center justify-center text-2xs font-semibold"
                     />
-                    <span className="pr-0.5 text-[10px] text-muted-foreground">%</span>
+                    <span className="pr-0.5 text-3xs text-muted-foreground">%</span>
                 </div>
             )}
             <div className="w-16 shrink-0 text-right text-sm font-semibold tabular-nums text-foreground">

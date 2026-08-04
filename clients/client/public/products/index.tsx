@@ -82,7 +82,7 @@ function ProductsPage() {
     const totalPages = result ? Math.max(1, Math.ceil(result.total / PAGE_SIZE)) : 1;
 
     return (
-        <div className="space-y-6">
+        <div className="flex flex-col gap-y-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
                     <h1 className="font-shop-display text-3xl font-semibold">Products</h1>

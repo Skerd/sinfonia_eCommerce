@@ -244,7 +244,7 @@ function ManageMembersDialog({
                         <>
                             <ul
                                 className={cn(
-                                    "max-h-[28rem] min-h-[20rem] space-y-2 overflow-y-auto transition-opacity",
+                                    "flex flex-col max-h-[28rem] min-h-[20rem] gap-y-2 overflow-y-auto transition-opacity",
                                     loading && "pointer-events-none opacity-50",
                                 )}
                             >

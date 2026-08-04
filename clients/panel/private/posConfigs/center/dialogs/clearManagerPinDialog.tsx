@@ -82,8 +82,8 @@ function ClearManagerPinDialog({
                     <DialogTitle>{resolveLanguageKey("title")}</DialogTitle>
                     <DialogDescription>{resolveLanguageKey("description")}</DialogDescription>
                 </DialogHeader>
-                <div className="space-y-3 py-1">
-                    <div className="space-y-1.5">
+                <div className="flex flex-col gap-y-3 py-1">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-xs font-medium text-muted-foreground">
                             {resolveLanguageKey("pinLabel")}
                         </label>
@@ -97,7 +97,7 @@ function ClearManagerPinDialog({
                             className="h-10 tracking-[0.35em]"
                         />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-xs font-medium text-muted-foreground">
                             {resolveLanguageKey("confirmPinLabel")}
                         </label>

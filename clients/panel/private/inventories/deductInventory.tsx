@@ -23,7 +23,7 @@ function DeductInventoryPage({resolveLanguageKey}: DeductInventoryPageProps) {
     }
 
     return (
-        <div className="p-6 space-y-4 max-w-xl">
+        <div className="flex flex-col p-6 gap-y-4 max-w-xl">
             <div>
                 <h1 className="text-xl font-semibold">{resolveLanguageKey("title")}</h1>
                 <p className="text-sm text-muted-foreground mt-1">{resolveLanguageKey("description")}</p>

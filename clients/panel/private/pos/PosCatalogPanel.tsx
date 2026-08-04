@@ -182,16 +182,16 @@ export default function PosCatalogPanel({
                                             </div>
                                         )}
                                         {inCart && (
-                                            <span className="absolute right-1.5 top-1.5 z-[2] flex h-5 min-w-5 items-center justify-center rounded-full bg-success px-1 text-[10px] font-bold text-white shadow-sm">
+                                            <span className="absolute right-1.5 top-1.5 z-[2] flex h-5 min-w-5 items-center justify-center rounded-full bg-success px-1 text-3xs font-bold text-success-foreground shadow-sm">
                                                 {cartQty > 1 ? cartQty : <Check className="size-3" strokeWidth={3} />}
                                             </span>
                                         )}
                                         {product.stockQty != null && !product.hasVariants && (
                                             <span
                                                 className={cn(
-                                                    "absolute bottom-1.5 left-1.5 z-[2] rounded-md px-1.5 py-0.5 text-[9px] font-semibold tabular-nums",
+                                                    "absolute bottom-1.5 left-1.5 z-[2] rounded-md px-1.5 py-0.5 text-3xs font-semibold tabular-nums",
                                                     product.stockQty <= 0
-                                                        ? "bg-destructive/90 text-white"
+                                                        ? "bg-destructive/90 text-destructive-foreground"
                                                         : "bg-background/85 text-muted-foreground ring-1 ring-border/60",
                                                 )}
                                             >
@@ -201,21 +201,21 @@ export default function PosCatalogPanel({
                                             </span>
                                         )}
                                         {product.hasVariants && variants.length > 0 && (
-                                            <span className="absolute bottom-1.5 left-1.5 z-[2] rounded-md bg-background/85 px-1.5 py-0.5 text-[9px] font-semibold text-muted-foreground ring-1 ring-border/60">
+                                            <span className="absolute bottom-1.5 left-1.5 z-[2] rounded-md bg-background/85 px-1.5 py-0.5 text-3xs font-semibold text-muted-foreground ring-1 ring-border/60">
                                                 {variants.length} {rk("variants.badge")}
                                             </span>
                                         )}
                                     </div>
                                     <div className="flex min-h-[3.75rem] flex-1 flex-col px-2.5 pb-2.5 pt-2">
-                                        <span className="line-clamp-2 text-[13px] font-semibold leading-snug tracking-tight text-foreground">
+                                        <span className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-foreground">
                                             {product.title}
                                         </span>
                                         <div className="mt-auto flex items-end justify-between gap-1 pt-1.5">
-                                            <span className="text-[15px] font-bold tabular-nums leading-none text-success">
+                                            <span className="text-base font-bold tabular-nums leading-none text-success">
                                                 {money(Number(product.price) || 0)}
                                             </span>
                                             {product.sku ? (
-                                                <span className="max-w-[45%] truncate text-[10px] text-muted-foreground">
+                                                <span className="max-w-[45%] truncate text-3xs text-muted-foreground">
                                                     {product.sku}
                                                 </span>
                                             ) : null}

@@ -109,9 +109,9 @@ export default function PosCustomerSearch({valueLabel, customerId, rk, onLabelCh
             {open && (
                 <div className="absolute z-20 mt-1 max-h-56 w-full overflow-y-auto rounded-md border border-border bg-popover shadow-md">
                     {loading ? (
-                        <div className="px-3 py-2 text-[11px] text-muted-foreground">{rk("customerSearch.searching")}</div>
+                        <div className="px-3 py-2 text-2xs text-muted-foreground">{rk("customerSearch.searching")}</div>
                     ) : failed ? (
-                        <div className="px-3 py-2 text-[11px] text-destructive">{rk("errors.customerSearchFailed")}</div>
+                        <div className="px-3 py-2 text-2xs text-destructive">{rk("errors.customerSearchFailed")}</div>
                     ) : results.length ? (
                         results.map((c) => (
                             <button
@@ -125,12 +125,12 @@ export default function PosCustomerSearch({valueLabel, customerId, rk, onLabelCh
                             >
                                 <span className="font-medium text-foreground">{c.label}</span>
                                 {c.phoneNumber ? (
-                                    <span className="text-[10px] text-muted-foreground">{c.phoneNumber}</span>
+                                    <span className="text-3xs text-muted-foreground">{c.phoneNumber}</span>
                                 ) : null}
                             </button>
                         ))
                     ) : (
-                        <div className="px-3 py-2 text-[11px] text-muted-foreground">{rk("customerSearch.empty")}</div>
+                        <div className="px-3 py-2 text-2xs text-muted-foreground">{rk("customerSearch.empty")}</div>
                     )}
                 </div>
             )}

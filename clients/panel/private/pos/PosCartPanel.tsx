@@ -164,12 +164,12 @@ export default function PosCartPanel({
                         <div className="text-sm font-semibold leading-none">
                             {rk("cart")}
                             {heldOrderId ? (
-                                <span className="ml-2 text-[10px] font-medium uppercase tracking-wide text-warning">
+                                <span className="ml-2 text-3xs font-medium uppercase tracking-wide text-warning">
                                     {rk("held.resume")}
                                 </span>
                             ) : null}
                         </div>
-                        <div className="mt-1 text-[11px] text-muted-foreground">
+                        <div className="mt-1 text-2xs text-muted-foreground">
                             {itemCount} {rk("items")} · {money(total)}
                         </div>
                     </div>
@@ -238,7 +238,7 @@ export default function PosCartPanel({
             </div>
 
             {itemsSplitActive && (
-                <div className="flex shrink-0 items-center justify-between gap-2 border-b border-warning/30 bg-warning/10 px-3 py-2 text-[11px]">
+                <div className="flex shrink-0 items-center justify-between gap-2 border-b border-warning/30 bg-warning/10 px-3 py-2 text-2xs">
                     <div className="min-w-0">
                         <div className="font-semibold text-warning">{rk("split.selectItems")}</div>
                         <div className="tabular-nums text-muted-foreground">
@@ -251,7 +251,7 @@ export default function PosCartPanel({
                 </div>
             )}
 
-            <div ref={cartScrollRef} className="min-h-0 flex-1 space-y-1 overflow-y-auto px-2 py-2">
+            <div ref={cartScrollRef} className="min-h-0 flex-1 gap-y-1 overflow-y-auto px-2 py-2">
                 {!cart.length && (
                     <div className="flex h-full min-h-[8rem] flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-background/50 px-4 text-center text-sm text-muted-foreground">
                         <ShoppingBag className="size-7 opacity-40" />
@@ -281,7 +281,7 @@ export default function PosCartPanel({
             </div>
 
             <div className="shrink-0 border-t border-border bg-background">
-                <div className="max-h-[48vh] space-y-1.5 overflow-y-auto px-2.5 py-2 lg:max-h-none">
+                <div className="flex flex-col max-h-[48vh] gap-y-1.5 overflow-y-auto px-2.5 py-2 lg:max-h-none">
                     {showCustomer && (
                         <PosCustomerSearch
                             valueLabel={customerName}
@@ -293,12 +293,12 @@ export default function PosCartPanel({
                     )}
 
                     <div className="rounded-lg border border-border bg-card px-2.5 py-1.5">
-                        <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                        <div className="flex items-center justify-between text-2xs text-muted-foreground">
                             <span>{rk("subtotal")}</span>
                             <span className="tabular-nums">{money(subtotal)}</span>
                         </div>
                         {allowDiscount && (
-                            <div className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-warning">
+                            <div className="mt-0.5 flex items-center justify-between gap-2 text-2xs text-warning">
                                 <span className="shrink-0">{rk("orderDiscount")}</span>
                                 <div className="flex items-center gap-1">
                                     <PosNumpadField
@@ -311,7 +311,7 @@ export default function PosCartPanel({
                                         okLabel={rk("confirm")}
                                         cancelLabel={rk("cancel")}
                                         clearLabel={rk("numpad.clear")}
-                                        buttonClassName="flex h-6 w-11 items-center justify-center rounded border border-warning/30 bg-background/60 text-[11px] font-semibold text-foreground"
+                                        buttonClassName="flex h-6 w-11 items-center justify-center rounded border border-warning/30 bg-background/60 text-2xs font-semibold text-foreground"
                                     />
                                     <span className="text-muted-foreground">%</span>
                                     <span className="min-w-[3.5rem] text-right tabular-nums">
@@ -321,7 +321,7 @@ export default function PosCartPanel({
                             </div>
                         )}
                         <div className="mt-1 flex items-center justify-between border-t border-border pt-1">
-                            <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                            <span className="text-3xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                                 {rk("total")}
                             </span>
                             <span className="text-xl font-bold leading-none tracking-tight tabular-nums text-foreground">

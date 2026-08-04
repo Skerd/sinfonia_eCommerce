@@ -122,7 +122,7 @@ function ReviewsSection({productId, slug}: {productId: string; slug: string}) {
             </div>
 
             {reviewableOrderId && (
-                <div className="mb-6 max-w-lg space-y-2 rounded-xl border border-shop-border p-4">
+                <div className="flex flex-col mb-6 max-w-lg gap-y-2 rounded-xl border border-shop-border p-4">
                     <p className="text-sm font-medium">Write a review</p>
                     <Stars value={rating} onChange={setRating} />
                     <input
@@ -151,7 +151,7 @@ function ReviewsSection({productId, slug}: {productId: string; slug: string}) {
             {reviews.length === 0 ? (
                 <p className="text-sm text-shop-ink-muted">No reviews yet.</p>
             ) : (
-                <ul className="space-y-4">
+                <ul className="flex flex-col gap-y-4">
                     {reviews.map(review => (
                         <li key={review._id} className="rounded-xl border border-shop-border p-4">
                             <div className="flex items-center justify-between gap-2">

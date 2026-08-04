@@ -19,7 +19,7 @@ function renderBlockContent(block: CmsBlock) {
         case "category_showcase":
         case "promotional_section":
             return (
-                <div className="space-y-1">
+                <div className="flex flex-col gap-y-1">
                     <p className="text-lg font-semibold">{block.title}</p>
                     {typeof config.headline === "string" && <p className="text-muted-foreground">{config.headline}</p>}
                     {typeof config.subheadline === "string" && <p className="text-sm">{config.subheadline}</p>}
@@ -53,7 +53,7 @@ function renderBlockContent(block: CmsBlock) {
             );
         default:
             return (
-                <div className="space-y-1">
+                <div className="flex flex-col gap-y-1">
                     <p className="font-medium">{block.title}</p>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground">{block.type}</p>
                 </div>

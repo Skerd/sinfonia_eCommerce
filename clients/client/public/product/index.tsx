@@ -87,7 +87,7 @@ function ProductPage() {
         return (
             <div className="grid gap-8 md:grid-cols-2">
                 <div className="aspect-square animate-pulse rounded-xl bg-shop-cream" />
-                <div className="space-y-4">
+                <div className="flex flex-col gap-y-4">
                     <div className="h-8 w-2/3 animate-pulse rounded bg-shop-cream" />
                     <div className="h-5 w-1/3 animate-pulse rounded bg-shop-cream" />
                     <div className="h-24 animate-pulse rounded bg-shop-cream" />
@@ -108,9 +108,9 @@ function ProductPage() {
     }
 
     return (
-        <div className="space-y-14">
+        <div className="flex flex-col gap-y-14">
             <div className="grid gap-10 md:grid-cols-2">
-                <div className="space-y-3">
+                <div className="flex flex-col gap-y-3">
                     <div className="aspect-square overflow-hidden rounded-xl bg-shop-cream">
                         {activeImage ? (
                             <img src={resolveShopMediaUrl(activeImage)} alt={product.title} className="h-full w-full object-cover" />
@@ -133,7 +133,7 @@ function ProductPage() {
                     )}
                 </div>
 
-                <div className="space-y-5">
+                <div className="flex flex-col gap-y-5">
                     <div>
                         {product.categories?.length ? (
                             <p className="text-xs uppercase tracking-wide text-shop-ink-faded">

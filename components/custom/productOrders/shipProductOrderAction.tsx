@@ -97,16 +97,16 @@ function ShipProductOrderAction({
                         {resolveLanguageKey("ship.description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="py-4 space-y-3">
-                    <div className="space-y-1.5">
+                <div className="flex flex-col py-4 gap-y-3">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipCarrier">{resolveLanguageKey("ship.carrierLabel")}</Label>
                         <Input id="shipCarrier" value={carrier} onChange={(e) => setCarrier(e.target.value)} disabled={loading} />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipTrackingNumber">{resolveLanguageKey("ship.trackingNumberLabel")}</Label>
                         <Input id="shipTrackingNumber" value={trackingNumber} onChange={(e) => setTrackingNumber(e.target.value)} disabled={loading} />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipTrackingUrl">{resolveLanguageKey("ship.trackingUrlLabel")}</Label>
                         <Input id="shipTrackingUrl" value={trackingUrl} onChange={(e) => setTrackingUrl(e.target.value)} disabled={loading} />
                     </div>

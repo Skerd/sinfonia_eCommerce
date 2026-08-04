@@ -112,15 +112,15 @@ function ReprintPosOrderDialog({
 
                         {displayReceipt && (
                             <div className="mx-auto w-full max-w-[80mm] overflow-hidden rounded-md border border-border bg-white text-black shadow-sm">
-                                <div className="px-3 py-3 font-mono text-[11px] leading-snug">
-                                    <div className="space-y-1 text-center">
-                                        <div className="text-[15px] font-bold uppercase tracking-wide">
+                                <div className="px-3 py-3 font-mono text-2xs leading-snug">
+                                    <div className="flex flex-col gap-y-1 text-center">
+                                        <div className="text-base font-bold uppercase tracking-wide">
                                             {displayReceipt.companyName ||
                                                 displayReceipt.shopName ||
                                                 rk("fallbackShop")}
                                         </div>
                                         {displayReceipt.header ? (
-                                            <div className="whitespace-pre-wrap text-[10px] text-foreground">
+                                            <div className="whitespace-pre-wrap text-3xs text-foreground">
                                                 {displayReceipt.header}
                                             </div>
                                         ) : null}
@@ -128,7 +128,7 @@ function ReprintPosOrderDialog({
 
                                     <div className="my-2 border-t border-dashed border-border" />
 
-                                    <div className="space-y-0.5 text-[10px]">
+                                    <div className="flex flex-col gap-y-0.5 text-3xs">
                                         <div className="flex justify-between gap-2">
                                             <span>{rk("order")}</span>
                                             <span className="tabular-nums">{displayReceipt.orderName}</span>
@@ -159,7 +159,7 @@ function ReprintPosOrderDialog({
 
                                     <div className="my-2 border-t border-dashed border-border" />
 
-                                    <div className="space-y-1">
+                                    <div className="flex flex-col gap-y-1">
                                         {displayReceipt.lines.map((line, idx) => (
                                             <div key={idx} className="flex justify-between gap-2">
                                                 <span className="min-w-0 flex-1 break-words">
@@ -177,19 +177,19 @@ function ReprintPosOrderDialog({
 
                                     <div className="my-2 border-t border-dashed border-border" />
 
-                                    <div className="space-y-0.5 tabular-nums">
+                                    <div className="flex flex-col gap-y-0.5 tabular-nums">
                                         {(displayReceipt.discountTotal ?? 0) > 0 && (
                                             <div className="flex justify-between gap-2">
                                                 <span>{rk("discount")}</span>
                                                 <span>-{money(displayReceipt.discountTotal)}</span>
                                             </div>
                                         )}
-                                        <div className="flex justify-between gap-2 text-[13px] font-bold">
+                                        <div className="flex justify-between gap-2 text-sm font-bold">
                                             <span>{rk("total")}</span>
                                             <span>{money(displayReceipt.amountTotal)}</span>
                                         </div>
                                         {displayReceipt.payments.map((p, idx) => (
-                                            <div key={idx} className="flex justify-between gap-2 text-[10px]">
+                                            <div key={idx} className="flex justify-between gap-2 text-3xs">
                                                 <span className="min-w-0 flex-1 truncate">{p.method}</span>
                                                 <span className="shrink-0">{money(p.amount)}</span>
                                             </div>
@@ -203,7 +203,7 @@ function ReprintPosOrderDialog({
                                     </div>
 
                                     <div className="my-2 border-t border-dashed border-border" />
-                                    <div className="text-center text-[10px] text-muted-foreground">
+                                    <div className="text-center text-3xs text-muted-foreground">
                                         {displayReceipt.footer || rk("defaultFooter")}
                                     </div>
                                 </div>

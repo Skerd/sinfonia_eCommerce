@@ -69,7 +69,7 @@ function GiftCardsPage() {
     }
 
     return (
-        <div className="space-y-6">
+        <div className="flex flex-col gap-y-6">
             <div className="flex items-center justify-between">
                 <h1 className="font-shop-display text-3xl font-semibold">My gift cards</h1>
                 <Link to="/account/orders" className="text-sm font-medium text-shop-accent hover:underline">

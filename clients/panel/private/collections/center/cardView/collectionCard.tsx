@@ -3,8 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
+import {useState} from "react";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -16,6 +15,13 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
+import {EntityMediaHeader} from "@coreModule/components/custom/cards/EntityMediaHeader.tsx";
 
 const LIST_BASE = "/eCommerce/collections";
 
@@ -42,37 +48,14 @@ function CollectionCard({
     hideActions = false,
     sheetOnly = false,
 }: CollectionCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [collection, setCollection] = useState<Collection>(collectionProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(collection, data);
-        } else {
-            setCollection({...collection, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setCollection({
-                ...collection,
-                deletedAt: undefined,
-                deletedBy: undefined,
-            });
-        }
-    };
+    const {action, setAction, entity: collection, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: collectionProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const {read, restore} = useAccess("productCollections");
 
-    useEffect(() => {
-        setCollection(collectionProp);
-    }, [collectionProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -93,12 +76,7 @@ function CollectionCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn(
-                        "group h-full w-full gap-0 overflow-hidden py-0 shadow-none hover:cursor-pointer",
-                    )}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
                         <HiddenElement randomLength={read?.mainImage ? 0 : 12}>
                             {!!read?.mainImage && (
@@ -119,7 +97,7 @@ function CollectionCard({
                         <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
                             <HiddenElement randomLength={read?.type ? 0 : 6}>
                                 {!!read?.type && typeLabel ? (
-                                    <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                    <Badge variant="secondary" className="pointer-events-auto text-3xs px-1.5 py-0">
                                         {typeLabel}
                                     </Badge>
                                 ) : null}
@@ -145,7 +123,7 @@ function CollectionCard({
                         <DeletedInfo deletedAt={collection.deletedAt} deletedBy={collection.deletedBy} />
                     )}
 
-                    <CardContent className="space-y-2.5 px-4 pb-3">
+                    <div className={CARD_BODY_CLASS}>
                         <div>
                             <HiddenElement randomLength={10}>
                                 {read?.name ? (
@@ -174,15 +152,15 @@ function CollectionCard({
                                 {!!read?.isVisible && collection.isVisible != null ? (
                                     <Badge
                                         variant={collection.isVisible ? "outline" : "destructive"}
-                                        className="shrink-0 px-1.5 py-0 text-[10px]"
+                                        className="shrink-0 px-1.5 py-0 text-3xs"
                                     >
                                         {resolveLanguageKey(collection.isVisible ? "visible" : "hidden")}
                                     </Badge>
                                 ) : null}
                             </HiddenElement>
                         </div>
-                    </CardContent>
-                </Card>
+                    </div>
+                </EntityCardShell>
             )}
 
             {!!action && (

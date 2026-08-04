@@ -66,7 +66,7 @@ function DetailCell({label, value}: {label: string; value?: string | number | nu
     if (value === undefined || value === null || value === "") return null;
     return (
         <div className="min-w-0">
-            <dt className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</dt>
+            <dt className="text-3xs uppercase tracking-wide text-muted-foreground">{label}</dt>
             <dd className="truncate text-xs leading-snug text-foreground">{value}</dd>
         </div>
     );
@@ -84,7 +84,7 @@ function ReferenceCell({
     if (!referenceType && !referenceId) return null;
     return (
         <div className="min-w-0">
-            <dt className="text-[10px] uppercase tracking-wide text-muted-foreground">{label}</dt>
+            <dt className="text-3xs uppercase tracking-wide text-muted-foreground">{label}</dt>
             <dd className="flex min-w-0 items-center gap-1 text-xs leading-snug text-foreground">
                 {referenceType ? <span className="truncate">{referenceType}</span> : null}
                 {referenceId ? (
@@ -218,7 +218,7 @@ function ViewInventoryMovementsDialog({
                         <>
                             <ul
                                 className={cn(
-                                    "max-h-[28rem] space-y-2 overflow-y-auto transition-opacity",
+                                    "flex flex-col max-h-[28rem] gap-y-2 overflow-y-auto transition-opacity",
                                     loading && "pointer-events-none opacity-50",
                                 )}
                             >

@@ -59,8 +59,8 @@ export default function PosCloseSessionDialog({
                     <DialogTitle>{rk("closeSession")}</DialogTitle>
                     <DialogDescription>{rk("closeSessionDescription")}</DialogDescription>
                 </DialogHeader>
-                <div className="space-y-3 py-2">
-                    <div className="space-y-1.5 rounded-xl border bg-muted/40 p-3 text-sm tabular-nums">
+                <div className="flex flex-col gap-y-3 py-2">
+                    <div className="flex flex-col gap-y-1.5 rounded-xl border bg-muted/40 p-3 text-sm tabular-nums">
                         <div className="flex justify-between">
                             <span className="text-muted-foreground">{rk("recon.opening")}</span>
                             <span className="font-medium">{money(recon?.openingBalance ?? session.openingBalance ?? 0)}</span>
@@ -73,7 +73,7 @@ export default function PosCloseSessionDialog({
                             <span className="text-muted-foreground">{rk("sessionSales")}</span>
                             <span className="font-semibold">{money(recon?.totalSales ?? session.totalSales ?? 0)}</span>
                         </div>
-                        <div className="flex justify-between text-[11px] text-muted-foreground">
+                        <div className="flex justify-between text-2xs text-muted-foreground">
                             <span>
                                 {rk("orders")}: {recon?.orderCount ?? session.orderCount ?? 0}
                             </span>
@@ -83,14 +83,14 @@ export default function PosCloseSessionDialog({
                             </span>
                         </div>
                         {(recon?.heldDraftCount ?? 0) > 0 && (
-                            <div className="rounded-md border border-warning/40 bg-warning/10 px-2 py-1.5 text-[11px] text-warning">
+                            <div className="rounded-md border border-warning/40 bg-warning/10 px-2 py-1.5 text-2xs text-warning">
                                 {rk("recon.heldWarning").replace("{count}", String(recon?.heldDraftCount ?? 0))}
                             </div>
                         )}
                         {Object.keys(recon?.salesByTender ?? {}).length > 0 && (
-                            <div className="space-y-0.5 border-t pt-1.5">
+                            <div className="flex flex-col gap-y-0.5 border-t pt-1.5">
                                 {Object.entries(recon!.salesByTender).map(([type, amount]) => (
-                                    <div key={type} className="flex justify-between text-[11px]">
+                                    <div key={type} className="flex justify-between text-2xs">
                                         <span className="capitalize text-muted-foreground">{type}</span>
                                         <span>{money(amount)}</span>
                                     </div>
@@ -98,7 +98,7 @@ export default function PosCloseSessionDialog({
                             </div>
                         )}
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-sm font-medium">{rk("closingBalance")}</label>
                         <PosNumpadField
                             value={Number(closingBalance) || 0}
@@ -128,7 +128,7 @@ export default function PosCloseSessionDialog({
                         <span className="font-bold">{money(diff)}</span>
                     </div>
                     {Math.abs(diff) >= 0.01 && (
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <label className="text-sm font-medium">{rk("recon.differenceReason")}</label>
                             <Input
                                 value={differenceReason}
@@ -137,7 +137,7 @@ export default function PosCloseSessionDialog({
                             />
                         </div>
                     )}
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-sm font-medium">{rk("notes")}</label>
                         <Input value={closingNotes} onChange={(e) => onClosingNotesChange(e.target.value)} />
                     </div>

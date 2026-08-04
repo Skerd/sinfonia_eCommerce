@@ -66,10 +66,10 @@ export default function PosPaymentSection({
     onRequestPay,
 }: Props) {
     return (
-        <div className="space-y-1">
+        <div className="flex flex-col gap-y-1">
             {showPayment && (
                 <>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    <div className="text-3xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                         {rk("paymentMethods")}
                     </div>
                     <div className="grid grid-cols-2 gap-1">
@@ -89,14 +89,14 @@ export default function PosPaymentSection({
                             </button>
                         ))}
                         {!paymentMethods.length && (
-                            <span className="col-span-2 text-[11px] text-muted-foreground">
+                            <span className="col-span-2 text-2xs text-muted-foreground">
                                 {rk("noPaymentMethods")}
                             </span>
                         )}
                     </div>
 
                     {payments.length > 0 && (
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-y-1">
                             {payments.map((p) => {
                                 const active =
                                     activePaymentId === p.id || (!activePaymentId && p.id === activePayment?.id);
@@ -114,7 +114,7 @@ export default function PosPaymentSection({
                                         )}
                                     >
                                         <div className="flex items-center gap-1.5">
-                                            <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-foreground">
+                                            <span className="min-w-0 flex-1 truncate text-2xs font-medium text-foreground">
                                                 {p.label ? `${p.label} · ` : ""}
                                                 {p.name}
                                                 {isCard && p.terminalEnabled ? (
@@ -146,7 +146,7 @@ export default function PosPaymentSection({
                                             </button>
                                         </div>
                                         {isCard && p.terminalEnabled && (
-                                            <div className="mt-1 text-[10px] text-muted-foreground">
+                                            <div className="mt-1 text-3xs text-muted-foreground">
                                                 {p.terminalProvider === "local_http"
                                                     ? rk("terminal.localHttpHint")
                                                     : rk("terminal.manualHint")}
@@ -165,7 +165,7 @@ export default function PosPaymentSection({
                                                             e.stopPropagation();
                                                             onBumpPaymentAmount(amt);
                                                         }}
-                                                        className="rounded-md border border-border bg-background px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-foreground/80 hover:border-success/40 hover:text-success"
+                                                        className="rounded-md border border-border bg-background px-1.5 py-0.5 text-3xs font-semibold tabular-nums text-foreground/80 hover:border-success/40 hover:text-success"
                                                     >
                                                         {formatQuickAmount(amt)}
                                                     </button>
@@ -177,7 +177,7 @@ export default function PosPaymentSection({
                                                             e.stopPropagation();
                                                             onSetExactPayment();
                                                         }}
-                                                        className="rounded-md border border-success/30 bg-success/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-success hover:bg-success/20"
+                                                        className="rounded-md border border-success/30 bg-success/10 px-1.5 py-0.5 text-3xs font-semibold tabular-nums text-success hover:bg-success/20"
                                                     >
                                                         {rk("exact")}
                                                     </button>
@@ -193,7 +193,7 @@ export default function PosPaymentSection({
             )}
 
             {!showPayment && (
-                <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                <div className="flex items-center justify-between text-2xs text-muted-foreground">
                     <span>{rk("paymentMethods")}</span>
                     <span className="font-medium text-foreground">
                         {payments.length
@@ -205,7 +205,7 @@ export default function PosPaymentSection({
                 </div>
             )}
 
-            <div className="grid grid-cols-2 gap-1 text-[11px] tabular-nums">
+            <div className="grid grid-cols-2 gap-1 text-2xs tabular-nums">
                 <div className="flex items-center justify-between rounded-md border border-border bg-muted/40 px-2 py-1">
                     <span className="text-muted-foreground">{rk("remaining")}</span>
                     <span
@@ -241,7 +241,7 @@ export default function PosPaymentSection({
                         ? "bg-muted text-muted-foreground"
                         : payArmed
                           ? "bg-warning text-foreground shadow-md shadow-warning/20 hover:bg-warning/20"
-                          : "bg-success text-white shadow-md shadow-success/15 hover:bg-success dark:text-foreground dark:hover:bg-success/20",
+                          : "bg-success text-success-foreground shadow-md shadow-success/15 hover:bg-success dark:text-foreground dark:hover:bg-success/20",
                 )}
                 onClick={onRequestPay}
                 disabled={!canPay}
@@ -259,7 +259,7 @@ export default function PosPaymentSection({
                           ? `${rk("split.payShare")}  ${money(payableTotal)}`
                           : `${rk("pay")}  ${money(payableTotal)}`}
             </Button>
-            <div className="text-center text-[10px] text-muted-foreground">
+            <div className="text-center text-3xs text-muted-foreground">
                 {payArmed
                     ? rk("payConfirmHint").replace("{n}", String(payArmSecondsLeft))
                     : rk("shortcuts.hint")}

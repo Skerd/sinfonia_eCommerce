@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
@@ -15,6 +15,12 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 type ProductReviewCardProps = WithLanguageType & {
     review: ProductReview;
@@ -54,33 +60,14 @@ function ProductReviewCard({
     hideActions = false,
     sheetOnly = false,
 }: ProductReviewCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [review, setReview] = useState<ProductReview>(reviewProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(review, data);
-        } else {
-            setReview({...review, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setReview({...review, deletedAt: undefined, deletedBy: undefined});
-        }
-    };
+    const {action, setAction, entity: review, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: reviewProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const {read, restore} = useAccess("productReviews");
 
-    useEffect(() => {
-        setReview(reviewProp);
-    }, [reviewProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -121,24 +108,19 @@ function ProductReviewCard({
     return (
         <>
             {!sheetOnly && (
-                <div
-                    className={cn(
-                        "group relative flex h-full w-full cursor-pointer flex-col rounded-2xl bg-card p-5 shadow-sm",
-                        "border border-border/60 transition-[box-shadow,--tw-ring-color] duration-200 hover:shadow-md hover:ring-primary/40",
-                    )}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     {(read.deletedBy || read.deletedAt) && (
                         <DeletedInfo deletedAt={review.deletedAt} deletedBy={review.deletedBy} />
                     )}
 
+                    <div className="flex flex-col p-5">
                     <div className="flex items-start justify-between gap-3">
                         <div className="flex min-w-0 items-center gap-2.5">
                             <HiddenElement randomLength={read?.reviewer ? 0 : 4}>
                                 {!!read?.reviewer ? (
                                     <Avatar className="size-9 shrink-0">
                                         {avatarSrc && <AvatarImage src={avatarSrc} alt={reviewerName || undefined} />}
-                                        <AvatarFallback className="text-[10px] font-semibold">
+                                        <AvatarFallback className="text-3xs font-semibold">
                                             {reviewerInitials || "?"}
                                         </AvatarFallback>
                                     </Avatar>
@@ -168,7 +150,7 @@ function ProductReviewCard({
                         )}
                     </div>
 
-                    <div className="mt-4 space-y-1.5">
+                    <div className="flex flex-col mt-4 gap-y-1.5">
                         <HiddenElement randomLength={read?.rating ? 0 : 6}>
                             {!!read?.rating ? <Stars value={rating} /> : null}
                         </HiddenElement>
@@ -233,7 +215,8 @@ function ProductReviewCard({
                             ) : null}
                         </HiddenElement>
                     </div>
-                </div>
+                    </div>
+                </EntityCardShell>
             )}
 
             {!!action && (

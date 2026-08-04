@@ -71,11 +71,11 @@ export default function PosTillHeader({
                 </div>
                 <div className="min-w-0">
                     <div className="truncate text-sm font-semibold tracking-tight">{config?.name ?? rk("title")}</div>
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] text-muted-foreground">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-2xs text-muted-foreground">
                         <span className="truncate">{session.name}</span>
                         <span
                             className={cn(
-                                "inline-flex items-center rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
+                                "inline-flex items-center rounded-full px-1.5 py-0.5 text-3xs font-semibold uppercase tracking-wide",
                                 isPaused
                                     ? config?.isCompanyPaused
                                       ? "bg-destructive/15 text-destructive"

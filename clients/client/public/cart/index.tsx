@@ -126,9 +126,9 @@ function CartPage() {
                 </ul>
             </div>
 
-            <aside className="h-fit space-y-4 rounded-xl border border-shop-border p-5">
+            <aside className="flex flex-col h-fit gap-y-4 rounded-xl border border-shop-border p-5">
                 <h2 className="font-shop-display text-lg font-semibold">Summary</h2>
-                <div className="space-y-1.5 text-sm">
+                <div className="flex flex-col gap-y-1.5 text-sm">
                     <div className="flex justify-between">
                         <span className="text-shop-ink-muted">Subtotal</span>
                         <span>{formatMoney(cart.subtotal)}</span>

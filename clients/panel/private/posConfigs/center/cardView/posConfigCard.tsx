@@ -4,8 +4,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
+import {useState} from "react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
@@ -32,6 +31,12 @@ import ActivatePosConfigDialog from "@eCommerceModule/clients/panel/private/posC
 import DeactivatePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx";
 import PausePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx";
 import ResumePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/posconfigs";
 
@@ -64,31 +69,11 @@ function PosConfigCard({
     hideActions = false,
     sheetOnly = false,
 }: PosConfigCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [entity, setEntity] = useState<PosConfig>(entityProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(entity, data);
-        } else {
-            setEntity({...entity, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setEntity({
-                ...entity,
-                deletedAt: undefined,
-                deletedBy: undefined,
-            });
-        }
-    };
+    const {action, setAction, entity: entity, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: entityProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const applyPinUpdate = (updated: Partial<PosConfig>) => {
         setEntity((prev) => ({...prev, ...updated}));
@@ -98,9 +83,6 @@ function PosConfigCard({
 
     const {read, restore} = useAccess("posConfigs");
 
-    useEffect(() => {
-        setEntity(entityProp);
-    }, [entityProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -118,34 +100,20 @@ function PosConfigCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <div className="flex w-full items-stretch">
                         {(read.deletedBy || read.deletedAt) && (
                             <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
                         )}
-                        <div className="w-full min-w-0 py-3">
-                            <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
-                                <div className="min-w-0 flex-1">
-                                    <HiddenElement randomLength={10}>
-                                        {read?.name && (
-                                            <>
-                                                {entity.name ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{entity.name}</div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
-                                    </HiddenElement>
-                                </div>
-                                {!hideActions && (
-                                    <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                        <ActionMenu
+                        <div className="w-full min-w-0">
+                            <EntityTextCardHeader
+                                title={entity.name ?? <ValueNotSet />}
+                                showTitle={!!read?.name}
+                                badges={undefined}
+                                showBadges={false}
+                                hideActions={hideActions}
+                                actionMenu={
+                                    <ActionMenu
                                             accessModel={"posConfigs"}
                                             deletedData={entity}
                                             onAction={(a: string) => setAction(a)}
@@ -173,11 +141,11 @@ function PosConfigCard({
                                                 onAction={(a: string) => setAction(a)}
                                             />
                                         </ActionMenu>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="space-y-2 text-sm px-4 pt-0">
-                                <div className="flex flex-col space-y-1">
+                                }
+                            />
+                            <div className={CARD_BODY_CLASS}>
+                                <Separator />
+                                <InfoRowGroup>
                                     <InfoRow
                                         label={resolveLanguageKey("warehouses")}
                                         icon={IconBuildingWarehouse}
@@ -190,13 +158,13 @@ function PosConfigCard({
                                         show={!!(read as any)?.paymentMethods}
                                         value={methodCount != null ? String(methodCount) : undefined}
                                     />
-                                </div>
+                                </InfoRowGroup>
                                 <div className="flex items-center justify-between gap-2 pt-1">
                                     <div className="flex flex-wrap items-center gap-2">
                                         {read?.isActive && entity.isActive != null && (
                                             <span
                                                 className={cn(
-                                                    "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                                    "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
                                                     entity.isActive ? "text-success" : "text-muted-foreground",
                                                 )}
                                             >
@@ -210,12 +178,12 @@ function PosConfigCard({
                                             </span>
                                         )}
                                         {read?.pausedAt && entity.isCompanyPaused ? (
-                                            <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-destructive">
+                                            <span className="inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide text-destructive">
                                                 <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-destructive" />
                                                 {resolveLanguageKey("companyPaused")}
                                             </span>
                                         ) : read?.pausedAt && entity.isPaused ? (
-                                            <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-warning">
+                                            <span className="inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide text-warning">
                                                 <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-warning" />
                                                 {resolveLanguageKey("paused")}
                                             </span>
@@ -235,11 +203,11 @@ function PosConfigCard({
                                             </Link>
                                         </Button>
                                     )}
-                                </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                </Card>
+                </EntityCardShell>
             )}
 
             {!!action && (

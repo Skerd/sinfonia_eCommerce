@@ -110,7 +110,7 @@ function StripePaymentStep({onPaid, submitting, setSubmitting}: {onPaid: () => P
     }
 
     return (
-        <div className="space-y-4">
+        <div className="flex flex-col gap-y-4">
             <PaymentElement />
             <button
                 onClick={handlePay}
@@ -299,7 +299,7 @@ function CheckoutPage() {
 
     return (
         <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
-            <div className="space-y-6">
+            <div className="flex flex-col gap-y-6">
                 <h1 className="font-shop-display text-3xl font-semibold">Checkout</h1>
                 <div className="flex gap-4 text-sm">
                     {steps.map(s => (
@@ -310,7 +310,7 @@ function CheckoutPage() {
                 </div>
 
                 {step === "address" && (
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
                         <input
                             type="email"
                             placeholder="Email for order updates"
@@ -330,11 +330,11 @@ function CheckoutPage() {
                 )}
 
                 {step === "shipping" && checkout && (
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
                         {checkout.availableShippingRates.length === 0 ? (
                             <p className="text-shop-ink-muted">No shipping options available for this address.</p>
                         ) : (
-                            <ul className="space-y-2">
+                            <ul className="flex flex-col gap-y-2">
                                 {checkout.availableShippingRates.map((rate, index) => (
                                     <li key={`${rate.name}-${index}`}>
                                         <label className={`flex cursor-pointer items-center justify-between rounded-lg border p-3 text-sm ${rateIndex === index ? "border-shop-accent" : "border-shop-border"}`}>
@@ -375,7 +375,7 @@ function CheckoutPage() {
                 )}
 
                 {step === "payment" && checkout && checkout.grandTotal <= 0 && (checkout.giftCard?.amount ?? 0) > 0 && (
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
                         <p className="text-sm text-green-700">
                             Fully covered by gift card {checkout.giftCard?.code} — no payment needed.
                         </p>
@@ -393,7 +393,7 @@ function CheckoutPage() {
                 )}
 
                 {step === "payment" && checkout && checkout.grandTotal > 0 && (
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
                         <div className="flex flex-wrap gap-2">
                             {([
                                 {id: "stripe", label: "Card (Stripe)", disabled: !config?.stripePublishableKey},
@@ -434,7 +434,7 @@ function CheckoutPage() {
                 )}
             </div>
 
-            <aside className="h-fit space-y-2 rounded-xl border border-shop-border p-5 text-sm">
+            <aside className="flex flex-col h-fit gap-y-2 rounded-xl border border-shop-border p-5 text-sm">
                 <h2 className="font-shop-display text-lg font-semibold">Order summary</h2>
                 {(cart?.items ?? []).map(item => (
                     <div key={item._id} className="flex justify-between gap-2">
@@ -442,7 +442,7 @@ function CheckoutPage() {
                         <span>{formatMoney(item.totalPrice)}</span>
                     </div>
                 ))}
-                <div className="space-y-1 border-t border-shop-border pt-2">
+                <div className="flex flex-col gap-y-1 border-t border-shop-border pt-2">
                     <div className="flex justify-between"><span className="text-shop-ink-muted">Subtotal</span><span>{formatMoney(checkout?.subtotal ?? cart?.subtotal)}</span></div>
                     {(checkout?.discountTotal ?? 0) > 0 && (
                         <div className="flex justify-between text-green-700"><span>Discount</span><span>-{formatMoney(checkout?.discountTotal)}</span></div>

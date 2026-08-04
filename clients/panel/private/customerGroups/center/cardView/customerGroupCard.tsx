@@ -3,8 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
+import {useState} from "react";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -20,6 +19,12 @@ import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.ts
 import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/customergroups";
 
@@ -50,37 +55,14 @@ function CustomerGroupCard({
     onMembersChanged,
     onDefaultChanged,
 }: CustomerGroupCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [customerGroup, setCustomerGroup] = useState<CustomerGroup>(customerGroupProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(customerGroup, data);
-        } else {
-            setCustomerGroup({...customerGroup, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setCustomerGroup({
-                ...customerGroup,
-                deletedAt: undefined,
-                deletedBy: undefined,
-            });
-        }
-    };
+    const {action, setAction, entity: customerGroup, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: customerGroupProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const {read, restore} = useAccess("customerGroups");
 
-    useEffect(() => {
-        setCustomerGroup(customerGroupProp);
-    }, [customerGroupProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -95,40 +77,23 @@ function CustomerGroupCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <div className="flex w-full items-stretch">
                         {(read.deletedBy || read.deletedAt) && (
                             <DeletedInfo deletedAt={customerGroup.deletedAt} deletedBy={customerGroup.deletedBy} />
                         )}
-                        <div className="w-full min-w-0 py-3">
-                            <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
-                                <div className="min-w-0 flex-1 flex items-center gap-2">
-                                    <HiddenElement randomLength={10}>
-                                        {read?.name && (
-                                            <>
-                                                {customerGroup.name ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{customerGroup.name}</div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
-                                    </HiddenElement>
-                                    {read?.isDefault && customerGroup.isDefault && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
+                        <div className="w-full min-w-0">
+                            <EntityTextCardHeader
+                                title={customerGroup.name ?? <ValueNotSet />}
+                                showTitle={!!read?.name}
+                                badges={<span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
                                             <IconStar className="w-3 h-3" />
                                             {resolveLanguageKey("default")}
-                                        </span>
-                                    )}
-                                </div>
-                                {!hideActions && (
-                                    <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                        <ActionMenu
+                                        </span>}
+                                showBadges={true}
+                                hideActions={hideActions}
+                                actionMenu={
+                                    <ActionMenu
                                             accessModel={"customerGroups"}
                                             deletedData={customerGroup}
                                             onAction={(a: string) => setAction(a)}
@@ -140,10 +105,10 @@ function CustomerGroupCard({
                                                 onAction={(a: string) => setAction(a)}
                                             />
                                         </ActionMenu>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="space-y-2 text-sm px-4 pt-0">
+                                }
+                            />
+                            <div className={CARD_BODY_CLASS}>
+                                <Separator />
                                 {read?.description ? (
                                     customerGroup.description ? (
                                         <p className="text-xs text-muted-foreground line-clamp-2">{customerGroup.description}</p>
@@ -151,16 +116,18 @@ function CustomerGroupCard({
                                 ) : (
                                     <HiddenElement showLock randomLength={8} />
                                 )}
-                                <InfoRow
+                                <InfoRowGroup>
+<InfoRow
                                     label={resolveLanguageKey("memberCount")}
                                     icon={IconUsers}
                                     show={!!(read as any)?.memberCount}
                                     value={String(customerGroup.memberCount ?? 0)}
                                 />
+                                </InfoRowGroup>
                             </div>
                         </div>
                     </div>
-                </Card>
+                </EntityCardShell>
             )}
 
             {!!action && (
@@ -175,7 +142,7 @@ function CustomerGroupCard({
                             onRestore={onRestore}
                             onMembersChanged={onMembersChanged}
                             onDefaultChanged={(groupId: string) => {
-                                setCustomerGroup((prev) => ({...prev, isDefault: true, _id: groupId}));
+                                setEntity((prev) => ({...prev, isDefault: true, _id: groupId}));
                                 onDefaultChanged?.(groupId);
                             }}
                         />
@@ -186,7 +153,7 @@ function CustomerGroupCard({
                             onClose={() => setAction("")}
                             customerGroup={customerGroup}
                             onSuccess={(delta: 1 | -1) => {
-                                setCustomerGroup((prev) => ({
+                                setEntity((prev) => ({
                                     ...prev,
                                     memberCount: Math.max(0, (prev.memberCount ?? 0) + delta),
                                 }));
@@ -200,7 +167,7 @@ function CustomerGroupCard({
                             onClose={() => setAction("")}
                             entity={customerGroup}
                             onSuccess={() => {
-                                setCustomerGroup((prev) => ({...prev, isDefault: true}));
+                                setEntity((prev) => ({...prev, isDefault: true}));
                                 onDefaultChanged?.(customerGroup._id);
                             }}
                         />

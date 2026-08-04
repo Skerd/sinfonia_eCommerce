@@ -125,7 +125,7 @@ function OrdersPage() {
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
     return (
-        <div className="space-y-6">
+        <div className="flex flex-col gap-y-6">
             <div className="flex items-center justify-between">
                 <h1 className="font-shop-display text-3xl font-semibold">My orders</h1>
                 <Link to="/account/giftcards" className="text-sm font-medium text-shop-accent hover:underline">
@@ -140,7 +140,7 @@ function OrdersPage() {
                     You have no orders yet.
                 </div>
             ) : (
-                <ul className="space-y-3">
+                <ul className="flex flex-col gap-y-3">
                     {orders.map(order => {
                         const isOpen = expanded === order._id;
                         return (
@@ -163,7 +163,7 @@ function OrdersPage() {
                                 </button>
                                 {isOpen && (
                                     <div className="border-t border-shop-border p-4 text-sm">
-                                        <ul className="space-y-1">
+                                        <ul className="flex flex-col gap-y-1">
                                             {order.items.map((item, index) => (
                                                 <li key={index} className="flex justify-between gap-2">
                                                     <span className="text-shop-ink-muted">
@@ -177,7 +177,7 @@ function OrdersPage() {
                                         {(deliveriesByOrder[order._id]?.length ?? 0) > 0 && (
                                             <div className="mt-3 border-t border-shop-border pt-2">
                                                 <p className="mb-1 font-semibold">Downloads</p>
-                                                <ul className="space-y-1">
+                                                <ul className="flex flex-col gap-y-1">
                                                     {deliveriesByOrder[order._id].map(delivery => (
                                                         <li key={delivery._id}>
                                                             <span className="text-shop-ink-muted">{delivery.product?.title ?? "Digital product"}</span>
@@ -200,7 +200,7 @@ function OrdersPage() {
                                                 </ul>
                                             </div>
                                         )}
-                                        <div className="mt-3 space-y-1 border-t border-shop-border pt-2">
+                                        <div className="flex flex-col mt-3 gap-y-1 border-t border-shop-border pt-2">
                                             <div className="flex justify-between"><span className="text-shop-ink-muted">Subtotal</span><span>{formatMoney(order.subtotal)}</span></div>
                                             {order.discountTotal > 0 && (
                                                 <div className="flex justify-between text-green-700"><span>Discount</span><span>-{formatMoney(order.discountTotal)}</span></div>

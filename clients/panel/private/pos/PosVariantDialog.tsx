@@ -22,7 +22,7 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                     <DialogTitle>{product?.title ?? rk("variantDialog.title")}</DialogTitle>
                     <DialogDescription>{rk("variantDialog.description")}</DialogDescription>
                 </DialogHeader>
-                <div className="max-h-[50vh] space-y-1.5 overflow-y-auto py-1">
+                <div className="flex flex-col max-h-[50vh] gap-y-1.5 overflow-y-auto py-1">
                     {!variants.length && (
                         <div className="py-6 text-center text-sm text-muted-foreground">{rk("variantDialog.empty")}</div>
                     )}
@@ -44,7 +44,7 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                             >
                                 <div className="min-w-0">
                                     <div className="truncate text-sm font-medium text-foreground">{v.label}</div>
-                                    <div className="truncate text-[11px] text-muted-foreground">
+                                    <div className="truncate text-2xs text-muted-foreground">
                                         {v.sku ? `${v.sku} · ` : ""}
                                         {v.stockQty != null ? (
                                             <span className={outOfStock ? "text-destructive" : undefined}>

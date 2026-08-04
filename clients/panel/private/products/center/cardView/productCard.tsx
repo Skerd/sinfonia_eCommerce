@@ -4,7 +4,6 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useMemo, useState} from "react";
-import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -16,6 +15,13 @@ import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
+import {EntityMediaHeader} from "@coreModule/components/custom/cards/EntityMediaHeader.tsx";
 
 const LIST_BASE = "/eCommerce/products";
 
@@ -105,7 +111,7 @@ function SaleCountdown({
                         <div className="text-xs font-bold tabular-nums leading-none text-warning">
                             {String(value).padStart(2, "0")}
                         </div>
-                        <div className="mt-0.5 text-[8px] font-medium uppercase leading-none tracking-wide text-warning/70">
+                        <div className="mt-0.5 text-3xs font-medium uppercase leading-none tracking-wide text-warning/70">
                             {resolveLanguageKey(labelKey)}
                         </div>
                     </div>
@@ -131,37 +137,14 @@ function ProductCard({
     hideActions = false,
     sheetOnly = false,
 }: ProductCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [product, setProduct] = useState<Product>(productProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(product, data);
-        } else {
-            setProduct({...product, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setProduct({
-                ...product,
-                deletedAt: undefined,
-                deletedBy: undefined,
-            });
-        }
-    };
+    const {action, setAction, entity: product, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: productProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const {read, restore} = useAccess("products");
 
-    useEffect(() => {
-        setProduct(productProp);
-    }, [productProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -189,12 +172,7 @@ function ProductCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn(
-                        "group h-full w-full gap-0 overflow-hidden py-0 shadow-none hover:cursor-pointer",
-                    )}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <figure className="relative mb-3 aspect-4/3 w-full overflow-hidden bg-muted">
                         <HiddenElement randomLength={read?.mainImage ? 0 : 12}>
                             {!!read?.mainImage && (
@@ -216,7 +194,7 @@ function ProductCard({
                         <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
                             <HiddenElement randomLength={read?.type ? 0 : 6}>
                                 {!!read?.type && typeLabel ? (
-                                    <Badge variant="secondary" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                    <Badge variant="secondary" className="pointer-events-auto text-3xs px-1.5 py-0">
                                         {typeLabel}
                                     </Badge>
                                 ) : null}
@@ -226,7 +204,7 @@ function ProductCard({
                                     randomLength={read?.compareAtPrice && read?.price ? 0 : 4}
                                 >
                                     {!!(read?.compareAtPrice && read?.price) && onSale && savingsPercent > 0 ? (
-                                        <Badge variant="destructive" className="pointer-events-auto text-[10px] px-1.5 py-0">
+                                        <Badge variant="destructive" className="pointer-events-auto text-3xs px-1.5 py-0">
                                             {resolveLanguageKey("salePercentOff").replace(
                                                 "{{percent}}",
                                                 String(savingsPercent),
@@ -270,7 +248,7 @@ function ProductCard({
                         <DeletedInfo deletedAt={product.deletedAt} deletedBy={product.deletedBy} />
                     )}
 
-                    <CardContent className="space-y-2.5 px-4 pb-3">
+                    <div className={CARD_BODY_CLASS}>
                         <div>
                             <HiddenElement randomLength={10}>
                                 {read?.title ? (
@@ -296,7 +274,7 @@ function ProductCard({
                                                         )}
                                                     />
                                                 ))}
-                                                <span className="text-muted-foreground ml-1.5 text-[10px]">
+                                                <span className="text-muted-foreground ml-1.5 text-3xs">
                                                     ({rating.toFixed(1)})
                                                 </span>
                                             </div>
@@ -341,15 +319,15 @@ function ProductCard({
                                 {!!read?.status && product.status ? (
                                     <Badge
                                         variant={isActive ? "outline" : "destructive"}
-                                        className="shrink-0 px-1.5 py-0 text-[10px]"
+                                        className="shrink-0 px-1.5 py-0 text-3xs"
                                     >
                                         {resolveLanguageKey("productStatus." + product.status)}
                                     </Badge>
                                 ) : null}
                             </HiddenElement>
                         </div>
-                    </CardContent>
-                </Card>
+                    </div>
+                </EntityCardShell>
             )}
 
             {!!action && (

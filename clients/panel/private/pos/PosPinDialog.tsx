@@ -72,11 +72,11 @@ export default function PosPinDialog({
                 </DialogHeader>
 
                 {needsPicker && !showPinStep ? (
-                    <div className="space-y-2 py-1">
+                    <div className="flex flex-col gap-y-2 py-1">
                         <label className="text-xs font-medium text-muted-foreground">
                             {t("pinDialog.selectManager", "Select manager")}
                         </label>
-                        <div className="max-h-[40vh] space-y-1.5 overflow-y-auto">
+                        <div className="flex flex-col max-h-[40vh] gap-y-1.5 overflow-y-auto">
                             {managers.map((m) => (
                                 <button
                                     key={m._id}
@@ -99,7 +99,7 @@ export default function PosPinDialog({
                         </DialogFooter>
                     </div>
                 ) : (
-                    <div className="space-y-2 py-1">
+                    <div className="flex flex-col gap-y-2 py-1">
                         {needsPicker && selected ? (
                             <div className="flex items-center gap-1">
                                 <Button

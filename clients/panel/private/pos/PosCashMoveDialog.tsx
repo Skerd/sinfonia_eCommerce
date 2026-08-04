@@ -40,8 +40,8 @@ export default function PosCashMoveDialog({
                 <DialogHeader>
                     <DialogTitle>{cashMoveOpen === "in" ? rk("cashIn") : rk("cashOut")}</DialogTitle>
                 </DialogHeader>
-                <div className="space-y-3 py-2">
-                    <div className="space-y-1.5">
+                <div className="flex flex-col gap-y-3 py-2">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-sm font-medium">{rk("amount")}</label>
                         <PosNumpadField
                             value={Number(cashMoveAmount) || 0}
@@ -56,7 +56,7 @@ export default function PosCashMoveDialog({
                             buttonClassName="flex h-11 w-full items-center rounded-md border border-input bg-background px-3 text-base font-semibold"
                         />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <label className="text-sm font-medium">{rk("reason")}</label>
                         <Input value={cashMoveReason} onChange={(e) => onCashMoveReasonChange(e.target.value)} />
                     </div>

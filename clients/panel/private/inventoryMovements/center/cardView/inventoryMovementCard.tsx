@@ -4,7 +4,6 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
@@ -12,6 +11,12 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconBuildingWarehouse, IconPackage} from "@tabler/icons-react";
 import InventoryMovementSheetView from "@eCommerceModule/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 type InventoryMovementCardProps = WithLanguageType & {
     movement: InventoryMovement;
@@ -27,13 +32,12 @@ function InventoryMovementCard({
     hideActions = false,
     sheetOnly = false,
 }: InventoryMovementCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [movement, setMovement] = useState<InventoryMovement>(movementProp);
+    const {action, setAction, entity: movement, setEntity} = useEntityCard({
+        entityProp: movementProp,
+    });
+
     const {read} = useAccess("inventoryMovements");
 
-    useEffect(() => {
-        setMovement(movementProp);
-    }, [movementProp]);
 
     if (!read || !Object.keys(read).length) {
         return <HiddenElement />;
@@ -45,10 +49,7 @@ function InventoryMovementCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className="group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40"
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <div className="w-full min-w-0 py-3 px-4">
                         <div className="flex justify-between items-start gap-2">
                             <div className="min-w-0 flex-1">
@@ -104,7 +105,7 @@ function InventoryMovementCard({
 
                         <div className="grid grid-cols-3 gap-2 mt-3 text-center">
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("quantity")}
                                 </div>
                                 <HiddenElement randomLength={read?.quantity ? 0 : 4}>
@@ -116,7 +117,7 @@ function InventoryMovementCard({
                                 </HiddenElement>
                             </div>
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("beforeAfter")}
                                 </div>
                                 <div className="font-bold text-sm tabular-nums inline-flex items-center justify-center gap-0.5 w-full">
@@ -130,7 +131,7 @@ function InventoryMovementCard({
                                 </div>
                             </div>
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("receipt")}
                                 </div>
                                 <HiddenElement randomLength={read?.receiptNumber ? 0 : 6}>
@@ -143,7 +144,7 @@ function InventoryMovementCard({
                             </div>
                         </div>
 
-                        <div className="mt-2 text-[11px] text-muted-foreground truncate flex items-center gap-1">
+                        <div className="mt-2 text-2xs text-muted-foreground truncate flex items-center gap-1">
                             <HiddenElement randomLength={read?.manufacturer ? 0 : 8}>
                                 {!!read?.manufacturer && movement.manufacturer ? (
                                     <span>{movement.manufacturer}</span>
@@ -159,7 +160,7 @@ function InventoryMovementCard({
                             </HiddenElement>
                         </div>
                     </div>
-                </Card>
+                </EntityCardShell>
             )}
 
             {action === "view" && (

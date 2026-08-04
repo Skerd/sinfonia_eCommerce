@@ -4,7 +4,6 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useState} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
@@ -20,6 +19,12 @@ import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inve
 import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 type InventoryCardProps = WithLanguageType & {
     inventory: Inventory;
@@ -38,8 +43,10 @@ function InventoryCard({
     hideActions = false,
     sheetOnly = false,
 }: InventoryCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [inventory, setInventory] = useState<Inventory>(inventoryProp);
+    const {action, setAction, entity: inventory, setEntity} = useEntityCard({
+        entityProp: inventoryProp,
+    });
+
     const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
 
     const onDelete = (data: DeletedData) => {
@@ -52,9 +59,6 @@ function InventoryCard({
 
     const {read} = useAccess("inventories");
 
-    useEffect(() => {
-        setInventory(inventoryProp);
-    }, [inventoryProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -69,13 +73,7 @@ function InventoryCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn(
-                        "group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40",
-                        isLowStock && "border-warning/60",
-                    )}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <div className="flex w-full items-stretch">
                         {(read.deletedBy || read.deletedAt) && (
                             <DeletedInfo deletedAt={inventory.deletedAt} deletedBy={inventory.deletedBy} />
@@ -124,7 +122,7 @@ function InventoryCard({
 
                         <div className="grid grid-cols-3 gap-2 mt-3 text-center">
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("onHand")}
                                 </div>
                                 <HiddenElement randomLength={read?.quantityOnHand ? 0 : 4}>
@@ -134,7 +132,7 @@ function InventoryCard({
                                 </HiddenElement>
                             </div>
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("reserved")}
                                 </div>
                                 <HiddenElement randomLength={read?.quantityReserved ? 0 : 4}>
@@ -144,7 +142,7 @@ function InventoryCard({
                                 </HiddenElement>
                             </div>
                             <div>
-                                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                     {resolveLanguageKey("available")}
                                 </div>
                                 <HiddenElement randomLength={read?.quantityAvailable ? 0 : 4}>
@@ -159,7 +157,7 @@ function InventoryCard({
 
                         <HiddenElement randomLength={read?.quantityAvailable && read?.reorderPoint ? 0 : 8}>
                             {!!(read?.quantityAvailable && read?.reorderPoint) && isLowStock ? (
-                                <div className="flex items-center gap-1 text-[11px] font-medium text-warning mt-2">
+                                <div className="flex items-center gap-1 text-2xs font-medium text-warning mt-2">
                                     <IconAlertTriangle className="w-3.5 h-3.5 shrink-0" />
                                     {resolveLanguageKey("lowStock")}
                                 </div>
@@ -167,7 +165,7 @@ function InventoryCard({
                         </HiddenElement>
                     </div>
                     </div>
-                </Card>
+                </EntityCardShell>
             )}
 
             {!!action && (
@@ -180,7 +178,7 @@ function InventoryCard({
                             fetchId={inventory._id}
                             onDelete={onDelete}
                             onInventoryUpdated={(updated: Inventory | undefined) => {
-                                if (updated) setInventory(updated);
+                                if (updated) setEntity(updated);
                                 onInventoryUpdated?.(updated);
                             }}
                         />
@@ -212,7 +210,7 @@ function InventoryCard({
                             openAlert
                             url={`/api/eCommerce/inventory/${action}`}
                             onSuccess={(updated: Inventory | undefined) => {
-                                if (updated) setInventory(updated);
+                                if (updated) setEntity(updated);
                                 onInventoryUpdated?.(updated);
                                 setAction("");
                             }}

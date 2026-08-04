@@ -51,8 +51,8 @@ export default function PosInfoDialog({open, onOpenChange, rk}: Props) {
                     </DialogTitle>
                     <DialogDescription>{rk("info.description")}</DialogDescription>
                 </DialogHeader>
-                <div className="max-h-[60vh] space-y-4 overflow-y-auto py-1 text-sm">
-                    <section className="space-y-2">
+                <div className="flex flex-col max-h-[60vh] gap-y-4 overflow-y-auto py-1 text-sm">
+                    <section className="flex flex-col gap-y-2">
                         <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                             {rk("info.shortcutsTitle")}
                         </h3>
@@ -62,7 +62,7 @@ export default function PosInfoDialog({open, onOpenChange, rk}: Props) {
                                     key={key}
                                     className="flex items-center justify-between gap-3 border-b border-border px-3 py-2 last:border-b-0"
                                 >
-                                    <kbd className="shrink-0 rounded-md border border-border bg-muted px-2 py-0.5 font-mono text-[11px] font-semibold">
+                                    <kbd className="shrink-0 rounded-md border border-border bg-muted px-2 py-0.5 font-mono text-2xs font-semibold">
                                         {key}
                                     </kbd>
                                     <span className="text-right text-muted-foreground">{rk(labelKey)}</span>
@@ -71,15 +71,15 @@ export default function PosInfoDialog({open, onOpenChange, rk}: Props) {
                         </div>
                     </section>
 
-                    <section className="space-y-2">
+                    <section className="flex flex-col gap-y-2">
                         <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                             {rk("info.featuresTitle")}
                         </h3>
-                        <ul className="space-y-2.5 rounded-xl border border-border bg-muted/30 p-3 text-muted-foreground">
+                        <ul className="flex flex-col gap-y-2.5 rounded-xl border border-border bg-muted/30 p-3 text-muted-foreground">
                             {FEATURES.map(([titleKey, bodyKey]) => (
                                 <li key={titleKey}>
                                     <span className="font-medium text-foreground">{rk(titleKey)}</span>
-                                    <div className="mt-0.5 text-[13px] leading-snug">{rk(bodyKey)}</div>
+                                    <div className="mt-0.5 text-sm leading-snug">{rk(bodyKey)}</div>
                                 </li>
                             ))}
                         </ul>

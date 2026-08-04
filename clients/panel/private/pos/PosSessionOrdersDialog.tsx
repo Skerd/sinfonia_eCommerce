@@ -38,7 +38,7 @@ export default function PosSessionOrdersDialog({
                     <DialogTitle>{rk("sessionOrders.title")}</DialogTitle>
                     <DialogDescription>{rk("sessionOrders.description")}</DialogDescription>
                 </DialogHeader>
-                <div className="max-h-[50vh] space-y-2 overflow-y-auto py-1">
+                <div className="flex flex-col max-h-[50vh] gap-y-2 overflow-y-auto py-1">
                     {ordersBusy ? (
                         <div className="flex justify-center py-8">
                             <Loader />
@@ -53,7 +53,7 @@ export default function PosSessionOrdersDialog({
                             >
                                 <div className="min-w-0 flex-1">
                                     <div className="truncate text-sm font-semibold">{order.name}</div>
-                                    <div className="text-[11px] tabular-nums text-muted-foreground">
+                                    <div className="text-2xs tabular-nums text-muted-foreground">
                                         {order.state} · {money(order.amountTotal ?? 0)}
                                         {Number(order.amountRefunded ?? 0) > 0
                                             ? ` · −${money(order.amountRefunded ?? 0)}`

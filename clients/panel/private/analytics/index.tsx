@@ -1,4 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
+import {formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {compose} from "redux";
 import {
     Bar,
@@ -155,7 +157,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
 
             {!error && (
                 <>
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className={GRID_KPI}>
                         <KpiCard
                             compact
                             title={rk("kpi.totalRevenue")}
@@ -189,7 +191,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         />
                     </div>
 
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className={GRID_KPI}>
                         <KpiCard
                             compact
                             title={rk("kpi.lowStock")}
@@ -216,7 +218,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.activeProducts")}
-                            value={totalProducts.toLocaleString()}
+                            value={formatNumber(totalProducts)}
                             subtitle={rk("kpi.activeProductsDesc")}
                             icon={IconPackage as never}
                         />

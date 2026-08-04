@@ -3,9 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState, type ReactNode} from "react";
-import {Card} from "@coreModule/components/ui/card.tsx";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
+import {type ReactNode} from "react";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
@@ -23,6 +21,12 @@ import SetDefaultWarehouse from "@eCommerceModule/clients/panel/private/warehous
 import ActivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx";
 import DeactivateWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx";
 import SetDefaultWarehouseDialog from "@eCommerceModule/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
+import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
+import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
+import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
+import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/warehouses";
 
@@ -76,37 +80,14 @@ function WarehouseCard({
     onDefaultChanged,
     onActiveChanged,
 }: WarehouseCardProps) {
-    const [action, setAction] = useState<string>("");
-    const [warehouse, setWarehouse] = useState<Warehouse>(warehouseProp);
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (!data.deletedBy && !data.deletedAt) {
-            setHideAfterDeletion(true);
-        } else if (onDeleteProp) {
-            onDeleteProp(warehouse, data);
-        } else {
-            setWarehouse({...warehouse, ...data});
-        }
-    };
-
-    const onRestore = () => {
-        if (onRestoreProp) {
-            onRestoreProp();
-        } else {
-            setWarehouse({
-                ...warehouse,
-                deletedAt: undefined,
-                deletedBy: undefined,
-            });
-        }
-    };
+    const {action, setAction, entity: warehouse, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
+        entityProp: warehouseProp,
+        onDeleteProp,
+        onRestoreProp,
+    });
 
     const {read, restore} = useAccess("warehouses");
 
-    useEffect(() => {
-        setWarehouse(warehouseProp);
-    }, [warehouseProp]);
 
     if (hideAfterDeletion) {
         return <></>;
@@ -123,55 +104,42 @@ function WarehouseCard({
     return (
         <>
             {!sheetOnly && (
-                <Card
-                    className={cn("group p-0 h-full relative transition-[box-shadow,--tw-ring-color] duration-200 hover:cursor-pointer hover:shadow-md hover:ring-primary/40")}
-                    onClick={() => setAction("view")}
-                >
+                <EntityCardShell onClick={() => setAction("view")}>
                     <div className="flex w-full items-stretch">
                         {(read.deletedBy || read.deletedAt) && (
                             <DeletedInfo deletedAt={warehouse.deletedAt} deletedBy={warehouse.deletedBy} />
                         )}
-                        <div className="w-full min-w-0 py-3">
-                            <div className="flex justify-between items-center ps-4 pe-2 pb-2 gap-2">
-                                <div className="min-w-0 flex-1 flex items-center gap-2">
-                                    <HiddenElement randomLength={10}>
-                                        {read?.name && (
-                                            <>
-                                                {warehouse.name ? (
-                                                    <TooltipDisplayer tooltip={resolveLanguageKey("name")}>
-                                                        <div className="font-semibold text-base leading-tight truncate">{warehouse.name}</div>
-                                                    </TooltipDisplayer>
-                                                ) : (
-                                                    <ValueNotSet />
-                                                )}
-                                            </>
-                                        )}
-                                    </HiddenElement>
-                                    {read?.isDefault && warehouse.isDefault && (
-                                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
+                        <div className="w-full min-w-0">
+                            <EntityTextCardHeader
+                                title={warehouse.name ?? <ValueNotSet />}
+                                showTitle={!!read?.name}
+                                badges={
+                                    read?.isDefault && warehouse.isDefault ? (
+                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
                                             <IconStar className="w-3 h-3" />
                                             {resolveLanguageKey("default")}
                                         </span>
-                                    )}
-                                </div>
-                                {!hideActions && (
-                                    <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                        <ActionMenu
-                                            accessModel={"warehouses"}
-                                            deletedData={warehouse}
-                                            onAction={(a: string) => setAction(a)}
-                                            editPath={warehouseEditPath(warehouse)}
-                                            allowMenuForCustomChildren
-                                        >
-                                            <SetDefaultWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
-                                            <ActivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
-                                            <DeactivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
-                                        </ActionMenu>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="space-y-2 text-sm px-4 pt-0">
-                                <div className="flex flex-col space-y-1">
+                                    ) : undefined
+                                }
+                                showBadges={!!(read?.isDefault && warehouse.isDefault)}
+                                hideActions={hideActions}
+                                actionMenu={
+                                    <ActionMenu
+                                        accessModel={"warehouses"}
+                                        deletedData={warehouse}
+                                        onAction={(a: string) => setAction(a)}
+                                        editPath={warehouseEditPath(warehouse)}
+                                        allowMenuForCustomChildren
+                                    >
+                                        <SetDefaultWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
+                                        <ActivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
+                                        <DeactivateWarehouse entity={warehouse} onAction={(a: string) => setAction(a)} />
+                                    </ActionMenu>
+                                }
+                            />
+                            <div className={CARD_BODY_CLASS}>
+                                <Separator />
+                                <InfoRowGroup>
                                     <InfoRow
                                         label={resolveLanguageKey("code")}
                                         icon={IconHash}
@@ -184,11 +152,11 @@ function WarehouseCard({
                                         show={!!read?.address}
                                         value={location}
                                     />
-                                </div>
+                                </InfoRowGroup>
                                 {read?.isActive && warehouse.isActive != null && (
                                     <span
                                         className={cn(
-                                            "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide",
+                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
                                             warehouse.isActive ? "text-success" : "text-muted-foreground",
                                         )}
                                     >
@@ -204,7 +172,7 @@ function WarehouseCard({
                             </div>
                         </div>
                     </div>
-                </Card>
+                </EntityCardShell>
             )}
 
             {!!action && (
@@ -218,11 +186,11 @@ function WarehouseCard({
                             onDelete={onDelete}
                             onRestore={onRestore}
                             onDefaultChanged={(warehouseId: string) => {
-                                setWarehouse((prev) => ({...prev, isDefault: true, _id: warehouseId}));
+                                setEntity((prev) => ({...prev, isDefault: true, _id: warehouseId}));
                                 onDefaultChanged?.(warehouseId);
                             }}
                             onSheetRowPatched={(row: Partial<Warehouse>) => {
-                                setWarehouse((prev) => ({...prev, ...row}) as Warehouse);
+                                setEntity((prev) => ({...prev, ...row}) as Warehouse);
                                 if (typeof row.isActive === "boolean") {
                                     onActiveChanged?.(row.isActive);
                                 }
@@ -235,7 +203,7 @@ function WarehouseCard({
                             onClose={() => setAction("")}
                             entity={warehouse}
                             onSuccess={() => {
-                                setWarehouse((prev) => ({...prev, isDefault: true}));
+                                setEntity((prev) => ({...prev, isDefault: true}));
                                 onDefaultChanged?.(warehouse._id);
                             }}
                         />
@@ -270,7 +238,7 @@ function WarehouseCard({
                             onClose={() => setAction("")}
                             entity={warehouse}
                             onSuccess={() => {
-                                setWarehouse((prev) => ({...prev, isActive: true}));
+                                setEntity((prev) => ({...prev, isActive: true}));
                                 onActiveChanged?.(true);
                             }}
                         />
@@ -281,7 +249,7 @@ function WarehouseCard({
                             onClose={() => setAction("")}
                             entity={warehouse}
                             onSuccess={() => {
-                                setWarehouse((prev) => ({...prev, isActive: false}));
+                                setEntity((prev) => ({...prev, isActive: false}));
                                 onActiveChanged?.(false);
                             }}
                         />

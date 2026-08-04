@@ -61,7 +61,7 @@ function PausePosConfigDialog({
                     <DialogTitle>{resolveLanguageKey("title")}</DialogTitle>
                     <DialogDescription>{resolveLanguageKey("description")}</DialogDescription>
                 </DialogHeader>
-                <div className="space-y-2 px-4">
+                <div className="flex flex-col gap-y-2 px-4">
                     <Label htmlFor="pauseReason">{resolveLanguageKey("reasonLabel")}</Label>
                     <Input
                         id="pauseReason"

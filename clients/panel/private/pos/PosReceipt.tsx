@@ -40,22 +40,22 @@ export default function PosReceipt({
         </DialogHeader>
         {receipt && (
             <div className="mx-auto w-[80mm] max-w-full overflow-hidden rounded-md border border-border bg-white text-black shadow-sm">
-                <div id="pos-receipt" className="pos-receipt-ticket px-3 py-3 font-mono text-[11px] leading-snug">
-                    <div className="pos-receipt-header space-y-1 text-center">
-                        <div className="text-[15px] font-bold uppercase tracking-wide">
+                <div id="pos-receipt" className="pos-receipt-ticket px-3 py-3 font-mono text-2xs leading-snug">
+                    <div className="flex flex-col pos-receipt-header gap-y-1 text-center">
+                        <div className="text-base font-bold uppercase tracking-wide">
                             {receipt.companyName || receipt.shopName || rk("title")}
                         </div>
                         {receipt.header ? (
-                            <div className="whitespace-pre-wrap text-[10px] text-foreground">{receipt.header}</div>
+                            <div className="whitespace-pre-wrap text-3xs text-foreground">{receipt.header}</div>
                         ) : null}
                         {receipt.shopName && receipt.companyName && receipt.shopName !== receipt.companyName ? (
-                            <div className="text-[10px] font-semibold">{receipt.shopName}</div>
+                            <div className="text-3xs font-semibold">{receipt.shopName}</div>
                         ) : null}
                     </div>
 
                     <div className="my-2 border-t border-dashed border-border" />
 
-                    <div className="space-y-0.5 text-[10px]">
+                    <div className="flex flex-col gap-y-0.5 text-3xs">
                         <div className="flex justify-between gap-2">
                             <span>{rk("receipt.order")}</span>
                             <span className="tabular-nums">{receipt.orderName}</span>
@@ -82,7 +82,7 @@ export default function PosReceipt({
 
                     <div className="my-2 border-t border-dashed border-border" />
 
-                    <div className="space-y-1">
+                    <div className="flex flex-col gap-y-1">
                         {receipt.lines.map((line, idx) => (
                             <div key={idx}>
                                 <div className="flex justify-between gap-2">
@@ -92,7 +92,7 @@ export default function PosReceipt({
                                     </span>
                                     <span className="shrink-0 tabular-nums">{money(line.priceTotal)}</span>
                                 </div>
-                                <div className="text-[9px] tabular-nums text-muted-foreground">
+                                <div className="text-3xs tabular-nums text-muted-foreground">
                                     {money(line.unitPrice)} × {line.quantity}
                                 </div>
                             </div>
@@ -101,19 +101,19 @@ export default function PosReceipt({
 
                     <div className="my-2 border-t border-dashed border-border" />
 
-                    <div className="space-y-0.5 tabular-nums">
+                    <div className="flex flex-col gap-y-0.5 tabular-nums">
                         {receipt.discountTotal > 0 && (
                             <div className="flex justify-between gap-2">
                                 <span>{rk("discount")}</span>
                                 <span>-{money(receipt.discountTotal)}</span>
                             </div>
                         )}
-                        <div className="flex justify-between gap-2 text-[13px] font-bold">
+                        <div className="flex justify-between gap-2 text-sm font-bold">
                             <span>{rk("total")}</span>
                             <span>{money(receipt.amountTotal)}</span>
                         </div>
                         {receipt.payments.map((p, idx) => (
-                            <div key={idx} className="flex justify-between gap-2 text-[10px]">
+                            <div key={idx} className="flex justify-between gap-2 text-3xs">
                                 <span className="min-w-0 flex-1 truncate">
                                     {p.method}
                                     {p.terminalAuthCode ? ` · ${p.terminalAuthCode}` : ""}
@@ -130,7 +130,7 @@ export default function PosReceipt({
                     </div>
 
                     {(receipt.qrCodeDataUrl || receipt.qrVerifyUrl) && (
-                        <div className="pos-receipt-fiscal mt-2 space-y-1 text-center">
+                        <div className="flex flex-col pos-receipt-fiscal mt-2 gap-y-1 text-center">
                             <div className="border-t border-dashed border-border pt-2" />
                             <img
                                 src={
@@ -141,23 +141,23 @@ export default function PosReceipt({
                                 className="mx-auto h-[120px] w-[120px] bg-white"
                             />
                             {receipt.nslf ? (
-                                <div className="break-all text-[9px] tabular-nums text-foreground">
+                                <div className="break-all text-3xs tabular-nums text-foreground">
                                     {rk("receipt.nslf")}: {receipt.nslf}
                                 </div>
                             ) : null}
                             {receipt.nivf ? (
-                                <div className="break-all text-[9px] tabular-nums text-foreground">
+                                <div className="break-all text-3xs tabular-nums text-foreground">
                                     {rk("receipt.nivf")}: {receipt.nivf}
                                 </div>
                             ) : (
-                                <div className="text-[9px] text-muted-foreground">{rk("receipt.fiscalDemo")}</div>
+                                <div className="text-3xs text-muted-foreground">{rk("receipt.fiscalDemo")}</div>
                             )}
                         </div>
                     )}
 
                     <div className="my-2 border-t border-dashed border-border" />
 
-                    <div className="pos-receipt-footer space-y-1 text-center text-[10px]">
+                    <div className="flex flex-col pos-receipt-footer gap-y-1 text-center text-3xs">
                         {receipt.footer ? (
                             <div className="whitespace-pre-wrap text-foreground">{receipt.footer}</div>
                         ) : (

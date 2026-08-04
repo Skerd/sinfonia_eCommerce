@@ -129,7 +129,7 @@ export default function PosRefundDialog({
                         </Button>
                     </div>
                 )}
-                <div className="max-h-[42vh] space-y-1.5 overflow-y-auto py-1">
+                <div className="flex flex-col max-h-[42vh] gap-y-1.5 overflow-y-auto py-1">
                     {lines.map((line) => {
                         const lineId = line._id ?? "";
                         const remaining = remainingQty(line);
@@ -145,7 +145,7 @@ export default function PosRefundDialog({
                             >
                                 <div className="min-w-0 flex-1">
                                     <div className="truncate text-sm font-medium text-foreground">{line.productName}</div>
-                                    <div className="text-[11px] tabular-nums text-muted-foreground">
+                                    <div className="text-2xs tabular-nums text-muted-foreground">
                                         {money(line.unitPrice)} × {line.quantity}
                                         {Number(line.quantityRefunded ?? 0) > 0
                                             ? ` · ${rk("refundDialog.alreadyRefunded")}: ${line.quantityRefunded}`
@@ -154,7 +154,7 @@ export default function PosRefundDialog({
                                     </div>
                                 </div>
                                 {fullyRefunded ? (
-                                    <span className="shrink-0 text-[11px] font-medium text-muted-foreground">
+                                    <span className="shrink-0 text-2xs font-medium text-muted-foreground">
                                         {rk("refundDialog.fullyRefunded")}
                                     </span>
                                 ) : (
@@ -192,13 +192,13 @@ export default function PosRefundDialog({
                         </div>
                     )}
                 </div>
-                <div className="space-y-2 border-t border-border pt-2">
-                    <div className="space-y-1">
+                <div className="flex flex-col gap-y-2 border-t border-border pt-2">
+                    <div className="flex flex-col gap-y-1">
                         <label className="text-xs font-medium text-muted-foreground">{rk("reason")}</label>
                         <Input value={reason} onChange={(e) => setReason(e.target.value)} />
                     </div>
                     {requirePin ? (
-                        <p className="text-[11px] text-muted-foreground">{rk("refundDialog.pinHint")}</p>
+                        <p className="text-2xs text-muted-foreground">{rk("refundDialog.pinHint")}</p>
                     ) : null}
                     <div className="flex items-center justify-between text-sm">
                         <span className="text-muted-foreground">{rk("refundDialog.total")}</span>

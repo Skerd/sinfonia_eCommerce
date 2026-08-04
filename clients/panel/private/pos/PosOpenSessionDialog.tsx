@@ -49,8 +49,8 @@ export default function PosOpenSessionDialog({
                             {configName ? `${rk("openSession.for")} ${configName}` : rk("openSession.description")}
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="space-y-3 py-2">
-                        <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-3 py-2">
+                        <div className="flex flex-col gap-y-1.5">
                             <label className="text-sm font-medium">{rk("openSession.openingBalance")}</label>
                             <PosNumpadField
                                 value={Number(openingBalance) || 0}
@@ -65,7 +65,7 @@ export default function PosOpenSessionDialog({
                                 buttonClassName="flex h-11 w-full items-center rounded-md border border-input bg-background px-3 text-base font-semibold"
                             />
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <label className="text-sm font-medium">{rk("openSession.notes")}</label>
                             <Input value={openingNotes} onChange={(e) => onOpeningNotesChange(e.target.value)} />
                         </div>

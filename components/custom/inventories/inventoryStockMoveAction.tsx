@@ -117,8 +117,8 @@ function InventoryStockMoveAction({
                     </AlertDialogTitle>
                     <AlertDialogDescription>{resolveLanguageKey(`${prefix}.description`)}</AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="py-2 space-y-3">
-                    <div className="space-y-1.5">
+                <div className="flex flex-col py-2 gap-y-3">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="stockQty">{resolveLanguageKey(`${prefix}.quantityLabel`)}</Label>
                         <Input
                             id="stockQty"
@@ -132,7 +132,7 @@ function InventoryStockMoveAction({
                         />
                     </div>
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockManufacturer">{resolveLanguageKey(`${prefix}.manufacturerLabel`)}</Label>
                             <Input
                                 id="stockManufacturer"
@@ -141,7 +141,7 @@ function InventoryStockMoveAction({
                                 disabled={loading}
                             />
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockReceiptNumber">{resolveLanguageKey(`${prefix}.receiptNumberLabel`)}</Label>
                             <Input
                                 id="stockReceiptNumber"
@@ -152,7 +152,7 @@ function InventoryStockMoveAction({
                         </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockOccurredAt">{resolveLanguageKey(`${prefix}.occurredAtLabel`)}</Label>
                             <Input
                                 id="stockOccurredAt"
@@ -162,7 +162,7 @@ function InventoryStockMoveAction({
                                 disabled={loading}
                             />
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockUnitCost">{resolveLanguageKey(`${prefix}.unitCostLabel`)}</Label>
                             <Input
                                 id="stockUnitCost"
@@ -176,7 +176,7 @@ function InventoryStockMoveAction({
                         </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockBatchLot">{resolveLanguageKey(`${prefix}.batchLotLabel`)}</Label>
                             <Input
                                 id="stockBatchLot"
@@ -185,7 +185,7 @@ function InventoryStockMoveAction({
                                 disabled={loading}
                             />
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockExpiry">{resolveLanguageKey(`${prefix}.expiryDateLabel`)}</Label>
                             <Input
                                 id="stockExpiry"
@@ -196,7 +196,7 @@ function InventoryStockMoveAction({
                             />
                         </div>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="stockReceipts">{resolveLanguageKey(`${prefix}.receiptsLabel`)}</Label>
                         <Input
                             id="stockReceipts"
@@ -207,7 +207,7 @@ function InventoryStockMoveAction({
                             onChange={(e) => setReceiptFiles(Array.from(e.target.files ?? []))}
                         />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="stockNote">{resolveLanguageKey(`${prefix}.noteLabel`)}</Label>
                         <Textarea
                             id="stockNote"

@@ -149,7 +149,7 @@ function ResetPosManagerPinForm({
             <CardContent>
                 <Form {...form}>
                     <form
-                        className="space-y-4"
+                        className="flex flex-col gap-y-4"
                         onSubmit={form.handleSubmit((data) => onFilterChange(data))}
                     >
                         <FormField

@@ -76,7 +76,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                             onSelect={() => setResumeAllOpen(true)}
                         >
                             <CirclePlay className="mt-0.5 size-4 shrink-0 text-success" />
-                            <div className="min-w-0 space-y-0.5">
+                            <div className="flex flex-col min-w-0 gap-y-0.5">
                                 <div className="text-sm font-medium leading-none">{rk("bulkMenu.resumeAll")}</div>
                                 <div className="text-xs text-muted-foreground leading-snug">
                                     {rk("bulkMenu.resumeAllHint")}
@@ -89,7 +89,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                             onSelect={() => setPauseAllOpen(true)}
                         >
                             <OctagonPause className="mt-0.5 size-4 shrink-0 text-destructive" />
-                            <div className="min-w-0 space-y-0.5">
+                            <div className="flex flex-col min-w-0 gap-y-0.5">
                                 <div className="text-sm font-medium leading-none">{rk("bulkMenu.pauseAll")}</div>
                                 <div className="text-xs text-muted-foreground leading-snug">
                                     {rk("bulkMenu.pauseAllHint")}

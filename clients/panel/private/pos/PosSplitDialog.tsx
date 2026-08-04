@@ -47,7 +47,7 @@ export default function PosSplitDialog({
                     <DialogTitle>{rk("split.title")}</DialogTitle>
                     <DialogDescription>{rk("split.description")}</DialogDescription>
                 </DialogHeader>
-                <div className="space-y-3 py-1">
+                <div className="flex flex-col gap-y-3 py-1">
                     <div className="grid grid-cols-2 gap-2">
                         <button
                             type="button"
@@ -60,7 +60,7 @@ export default function PosSplitDialog({
                             )}
                         >
                             <div className="text-sm font-semibold">{rk("split.equal")}</div>
-                            <div className="mt-1 text-[11px] text-muted-foreground">{rk("split.equalHint")}</div>
+                            <div className="mt-1 text-2xs text-muted-foreground">{rk("split.equalHint")}</div>
                         </button>
                         <button
                             type="button"
@@ -73,12 +73,12 @@ export default function PosSplitDialog({
                             )}
                         >
                             <div className="text-sm font-semibold">{rk("split.items")}</div>
-                            <div className="mt-1 text-[11px] text-muted-foreground">{rk("split.itemsHint")}</div>
+                            <div className="mt-1 text-2xs text-muted-foreground">{rk("split.itemsHint")}</div>
                         </button>
                     </div>
 
                     {splitMode === "equal" && (
-                        <div className="space-y-2 rounded-xl border border-border bg-muted/30 p-3">
+                        <div className="flex flex-col gap-y-2 rounded-xl border border-border bg-muted/30 p-3">
                             <div className="flex items-center justify-between gap-2">
                                 <span className="text-sm font-medium">{rk("split.guests")}</span>
                                 <div className="flex items-center overflow-hidden rounded-md border border-border bg-card">
@@ -124,7 +124,7 @@ export default function PosSplitDialog({
                     )}
 
                     {splitMode === "items" && (
-                        <div className="rounded-xl border border-border bg-muted/30 p-3 text-[12px] text-muted-foreground">
+                        <div className="rounded-xl border border-border bg-muted/30 p-3 text-xs text-muted-foreground">
                             {rk("split.itemsHint")}
                         </div>
                     )}

@@ -98,8 +98,8 @@ function RefundProductOrderAction({
                         {resolveLanguageKey("refund.description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="py-4 space-y-3">
-                    <div className="space-y-1.5">
+                <div className="flex flex-col py-4 gap-y-3">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="refundAmount">{resolveLanguageKey("refund.amountLabel")}</Label>
                         <Input
                             id="refundAmount"
@@ -112,7 +112,7 @@ function RefundProductOrderAction({
                         />
                         <p className="text-xs text-muted-foreground">{resolveLanguageKey("refund.amountHint")}</p>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="refundReason">{resolveLanguageKey("refund.reasonLabel")}</Label>
                         <Input id="refundReason" value={reason} onChange={(e) => setReason(e.target.value)} disabled={loading} />
                     </div>
