@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/restockInventory.tsx",
+  "title": "Rifornire l'inventario",
+  "description": "Registra lo stock in entrata con produttore, ricevuta e dettagli correlati.",
+  "missingInventoryId": "ID inventario mancante. Aprire il rifornimento da una riga dell'inventario."
+}

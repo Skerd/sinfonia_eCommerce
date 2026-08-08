@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx",
+  "title": "Attiva magazzino",
+  "description": "Questo magazzino diventerà disponibile per l'inventario e l'evasione degli ordini.",
+  "cancel": "Annulla",
+  "confirm": "Attiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Attivazione magazzino…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazzino attivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile attivare il magazzino",
+      "time": 3000
+    }
+  }
+}

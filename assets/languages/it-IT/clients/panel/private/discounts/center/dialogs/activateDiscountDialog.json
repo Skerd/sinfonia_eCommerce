@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx",
+  "title": "Attiva lo sconto",
+  "description": "Questo sconto sarà disponibile per i carrelli e il checkout.",
+  "cancel": "Annulla",
+  "confirm": "Attiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Attivazione dello sconto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sconto attivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile attivare lo sconto",
+      "time": 3000
+    }
+  }
+}

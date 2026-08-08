@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/createInventory.tsx",
+  "title": "Crea inventario",
+  "form": {
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Seleziona il prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Seleziona variante (facoltativo)",
+    "warehouseLabel": "Magazzino",
+    "warehousePlaceholder": "Seleziona magazzino",
+    "quantityOnHandLabel": "Quantità a portata di mano",
+    "reorderPointLabel": "Punto di riordino",
+    "reorderQuantityLabel": "Riordina la quantità"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione dell'inventario",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventario creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare l'inventario",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea inventario",
+    "description": "Collega un prodotto a un magazzino e imposta i livelli delle scorte iniziali."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea inventario"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
+  "title": "Modifier la collection",
+  "errorTitle": "Échec du chargement de la collection",
+  "errorDescription": "Impossible de charger cette collection. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "generalSectionTitle": "Général",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la collection",
+    "slugLabel": "Identifiant",
+    "slugPlaceholder": "généré automatiquement à partir du nom",
+    "typeLabel": "Type de collecte",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description facultative pour cette collection",
+    "mainImageLabel": "Image de couverture",
+    "isVisibleLabel": "Visible en vitrine",
+    "positionLabel": "Position de tri",
+    "positionPlaceholder": "0",
+    "publishedAtLabel": "Publier sur",
+    "mediaSectionTitle": "Médias",
+    "manualSectionTitle": "Produits manuels",
+    "productsLabel": "Produits",
+    "selectProduct": "Rechercher des produits…",
+    "removeProduct": "Supprimer le produit",
+    "dynamicSectionTitle": "Règles dynamiques",
+    "ruleConditionLabel": "Condition de correspondance",
+    "rulesSectionTitle": "Règles",
+    "ruleAddRow": "Ajouter une règle",
+    "ruleRemoveRow": "Supprimer la règle",
+    "ruleRowTitle": "Nouvelle règle",
+    "ruleFieldLabel": "Champ",
+    "ruleOperatorLabel": "Opérateur",
+    "ruleValueLabel": "Valeur",
+    "ruleValuePlaceholder": "Valeur de la règle",
+    "seoSectionTitle": "Référencement",
+    "seoTitleLabel": "Titre SEO",
+    "seoTitlePlaceholder": "Titre SEO facultatif",
+    "seoDescriptionLabel": "Descriptif SEO",
+    "seoDescriptionPlaceholder": "Description SEO facultative",
+    "collectionType": {
+      "manual": "Manuel",
+      "dynamic": "Dynamique"
+    },
+    "ruleCondition": {
+      "all": "Toutes les règles (ET)",
+      "any": "N'importe quelle règle (OU)"
+    },
+    "ruleField": {
+      "tag": "Étiqueter",
+      "brand": "Marque",
+      "category": "Catégorie",
+      "price": "Prix",
+      "vendor": "Fournisseur",
+      "inventory_level": "Niveau d'inventaire",
+      "product_type": "Type de produit"
+    },
+    "ruleOperator": {
+      "equals": "Égal à",
+      "not_equals": "Différent de",
+      "contains": "Contient",
+      "not_contains": "Ne contient pas",
+      "greater_than": "Supérieur à",
+      "less_than": "Inférieur à",
+      "starts_with": "Commence par"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de la collection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la collection",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la collection",
+    "description": "Mettez à jour les détails de la collection, les produits ou les règles dynamiques."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

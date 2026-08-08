@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx",
+  "title": "Activer la règle de tarification",
+  "description": "Cette règle de tarification commencera à s’appliquer aux prix catalogue correspondants.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation de la règle de tarification…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Règle de tarification activée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer la règle de tarification",
+      "time": 3000
+    }
+  }
+}

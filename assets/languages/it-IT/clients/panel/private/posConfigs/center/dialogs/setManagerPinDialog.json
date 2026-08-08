@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx",
+  "title": "Imposta il PIN amministratore",
+  "description": "Inserisci due volte il nuovo PIN. Entrambi i campi devono corrispondere.",
+  "pinLabel": "Nuovo PIN",
+  "confirmPinLabel": "Conferma il PIN",
+  "pinMismatch": "La conferma del PIN non corrisponde",
+  "pinTooShort": "Il PIN deve contenere almeno 4 caratteri",
+  "cancel": "Annulla",
+  "confirm": "Salva PIN",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Salvataggio PIN amministratore",
+      "time": 3000
+    },
+    "success": {
+      "title": "PIN amministratore salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile impostare il PIN amministratore",
+      "time": 3000
+    }
+  }
+}

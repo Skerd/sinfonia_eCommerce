@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
+  "title": "Séances PDV",
+  "description": "Sessions de caisse ouvertes et fermées depuis le Point de Vente.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "state": {
+        "opening_control": "Ouverture",
+        "opened": "Ouvert",
+        "closing_control": "Clôture",
+        "closed": "Fermé"
+      },
+      "cashMoves": {
+        "type": {
+          "type": {
+            "in": "Encaisser",
+            "out": "Encaissement"
+          }
+        }
+      }
+    },
+    "name": "Nom",
+    "config": "Configuration du point de vente",
+    "state": "Canton / État",
+    "openedBy": "Ouvert par",
+    "closedBy": "Fermé par",
+    "openedAt": "Ouvert à",
+    "closedAt": "Fermé à",
+    "openingBalance": "Solde d'ouverture",
+    "closingBalance": "Solde de clôture",
+    "expectedCash": "Trésorerie attendue",
+    "cashRegisterBalance": "Caisse enregistreuse",
+    "cashMoves": "Mouvements de trésorerie",
+    "orderCount": "Commandes",
+    "totalSales": "Ventes totales",
+    "totalCash": "Comptant",
+    "totalCard": "Carte",
+    "notes": "Notes",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

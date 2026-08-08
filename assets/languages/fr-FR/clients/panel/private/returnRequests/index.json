@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
+  "title": "Demandes de retour",
+  "description": "Gérer les retours, les échanges et les demandes de remboursement.",
+  "createReturnRequest": "Créer une demande de retour",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "order": "Commande",
+    "type": "Type",
+    "status": "Statut",
+    "items": {
+      "orderItemId": "Identifiant de l'article de la commande",
+      "quantity": "Quantité",
+      "reason": "Motif"
+    },
+    "refundAmount": "Montant du remboursement",
+    "customerNote": "Note client",
+    "adminNote": "Remarque de l'administrateur",
+    "resolvedBy": "Résolu par",
+    "resolvedAt": "Résolu le",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

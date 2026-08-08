@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
+  "title": "Modifier l'entrepôt",
+  "errorTitle": "Échec du chargement de l'entrepôt",
+  "errorDescription": "Impossible de charger cet entrepôt. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de l'entrepôt",
+    "codeLabel": "Code",
+    "codePlaceholder": "Code entrepôt",
+    "addressSectionTitle": "Adresse",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "stateLabel": "État/région",
+    "statePlaceholder": "Sélectionner le canton",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner la ville",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Adresse postale",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude"
+  },
+  "axios": {
+    "start": {
+      "title": "Entrepôt de sauvegarde",
+      "time": 3000
+    },
+    "success": {
+      "title": "Entrepôt mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'entrepôt",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'entrepôt",
+    "description": "Mettez à jour le nom et l'adresse."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

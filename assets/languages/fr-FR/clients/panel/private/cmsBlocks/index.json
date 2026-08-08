@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
+  "title": "Blocs CMS",
+  "description": "Gérez les blocs de contenu de la vitrine et leur ordre d'affichage.",
+  "createCmsBlock": "Créer un bloc CMS",
+  "reorderBlocks": "Réorganiser les blocs",
+  "reorderTitle": "Réorganiser les blocs CMS",
+  "reorderDescription": "Faites glisser les blocs pour modifier leur ordre d'affichage sur la vitrine.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "empty": "Aucun bloc à réorganiser.",
+  "cancel": "Annuler",
+  "save": "Enregistrer la commande",
+  "saving": "Enregistrement...",
+  "saveSuccess": "Ordre de blocage enregistré.",
+  "saveError": "Échec de l'enregistrement de l'ordre de blocage.",
+  "loadError": "Échec du chargement des blocs.",
+  "fields": {
+    "!enums": {
+      "type": {
+        "hero_banner": "Bannière de héros",
+        "slider": "Curseur",
+        "featured_collection": "Collection en vedette",
+        "trending": "Tendance",
+        "best_sellers": "Meilleures ventes",
+        "flash_sale": "Vente flash",
+        "announcement_bar": "Barre d'annonce",
+        "custom_html": "HTML personnalisé",
+        "video": "Vidéo",
+        "grid": "Grille",
+        "category_showcase": "Vitrine de catégorie",
+        "promotional_section": "Section promotionnelle"
+      }
+    },
+    "title": "Modifier le type d’unité",
+    "type": "Type",
+    "position": "Poste",
+    "isActive": "Actif",
+    "config": "Configuration",
+    "startsAt": "Commence à",
+    "endsAt": "Se termine à",
+    "visibility": {
+      "devices": "Appareils",
+      "regions": "Régions"
+    },
+    "abTestVariant": "Variante A/B",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

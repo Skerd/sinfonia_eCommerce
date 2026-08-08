@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
+  "title": "Configurations fiscales",
+  "description": "Fiscalité albanaise CIS et paramètres de facture électronique (NIPT, TCR, certificats).",
+  "createFiscalConfig": "Créer une configuration fiscale",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "environment": {
+        "test": "Tester",
+        "production": "Fabrication"
+      },
+      "tcrType": {
+        "REGULAR": "Régulier",
+        "VENDING": "Vente automatique"
+      }
+    },
+    "name": "Nom",
+    "nipt": "NIPT",
+    "softCode": "Code du logiciel",
+    "maintainerCode": "Code du responsable",
+    "businessUnitCode": "Code de l'unité commerciale",
+    "operatorCode": "Code opérateur",
+    "tcrCode": "Code TCR",
+    "tcrIntId": "ID interne du TCR",
+    "tcrType": "Type de RCT",
+    "fiscalizationUrl": "URL de fiscalisation",
+    "einvoiceUrl": "URL de la facture électronique",
+    "selfcareUrl": "URL d'auto-assistance",
+    "proxyUrl": "URL du proxy",
+    "sellerName": "Nom du vendeur",
+    "sellerAddress": "Adresse du vendeur",
+    "sellerTown": "Ville du vendeur",
+    "sellerCountry": "Pays du vendeur",
+    "isVatRegistered": "TVA enregistrée",
+    "autoFiscalizePos": "Fiscaliser automatiquement les points de vente",
+    "autoEinvoice": "Facture électronique automatique",
+    "environment": "Environnement",
+    "hasCertificate": "Certificat",
+    "isActive": "Actif",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

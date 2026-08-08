@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
+  "title": "Entrepôts",
+  "description": "Gérez les emplacements qui détiennent votre stock.",
+  "createWarehouse": "Créer un entrepôt",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "code": "Code",
+    "address": {
+      "country": "Pays",
+      "state": "Canton / État",
+      "city": "Ville",
+      "street": "Rue",
+      "postalCode": "Code postal",
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    },
+    "isDefault": "Par défaut",
+    "isActive": "Actif",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

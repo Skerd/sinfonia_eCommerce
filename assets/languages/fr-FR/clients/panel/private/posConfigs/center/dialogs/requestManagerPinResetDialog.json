@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx",
+  "title": "Code PIN du responsable oublié",
+  "description": "Nous vous enverrons un lien de réinitialisation par e-mail à l'adresse e-mail de votre compte. Ouvrez le lien pour définir un nouveau code PIN.",
+  "sentTitle": "Vérifiez votre courrier électronique",
+  "sentDescription": "Si une adresse e-mail de compte est configurée, un lien de réinitialisation a été envoyé. Le lien expire dans 24 heures.",
+  "cancel": "Annuler",
+  "confirm": "Envoyer un e-mail de réinitialisation",
+  "done": "Terminé",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Envoi d'un e-mail de réinitialisation",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réinitialiser l'e-mail envoyé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'envoyer l'e-mail de réinitialisation",
+      "time": 3000
+    }
+  }
+}

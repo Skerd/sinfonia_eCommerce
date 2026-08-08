@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
+  "cancel": "Annulla",
+  "confirm": {
+    "title": "Conferma ordine",
+    "description": "Riconosci questo ordine e contrassegnalo come confermato.",
+    "confirm": "Conferma",
+    "axios": {
+      "success": "Ordine confermato",
+      "error": "Impossibile confermare l'ordine"
+    }
+  },
+  "markProcessing": {
+    "title": "Contrassegna come in elaborazione",
+    "description": "Contrassegna questo ordine come in preparazione per la spedizione.",
+    "confirm": "Segna l'elaborazione",
+    "axios": {
+      "success": "Ordine contrassegnato come in elaborazione",
+      "error": "Impossibile aggiornare l'ordine"
+    }
+  },
+  "cancelOrder": {
+    "title": "Annulla l'ordine",
+    "description": "Annulla questo ordine e rilascia eventuali scorte riservate. Gli ordini pagati devono essere prima rimborsati.",
+    "confirm": "Annulla l'ordine",
+    "axios": {
+      "success": "Ordine annullato",
+      "error": "Impossibile annullare l'ordine"
+    }
+  }
+}

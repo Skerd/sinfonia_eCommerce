@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
+  "title": "Configurazioni POS",
+  "description": "Punti vendita e allestimenti di cassa.",
+  "createPosConfig": "Crea configurazione POS",
+  "bulkMenu": {
+    "triggerAria": "Controlli POS aziendali",
+    "label": "Controlli aziendali",
+    "hint": "Arresto di emergenza per ogni cassa",
+    "lockedReasonPrefix": "Motivo della pausa aziendale",
+    "pauseAll": "Metti in pausa tutte le casse",
+    "pauseAllHint": "Blocca l'azienda e chiudi forzatamente le sessioni aperte",
+    "resumeAll": "Riprendi tutte le casse",
+    "resumeAllHint": "Cancella il blocco aziendale e ogni pausa fino a quando"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "paymentMethods": "Metodi di pagamento",
+    "managers": "Manager",
+    "managerPins": {
+      "user": "Direttore",
+      "pinHash": "Hash del PIN",
+      "pinReset": {
+        "code": "Codice di reimpostazione PIN",
+        "date": "Data di reimpostazione del PIN",
+        "opened": "Reimpostazione PIN aperta"
+      }
+    },
+    "warehouse": "Magazzino",
+    "warehouses": "Magazzini",
+    "currency": "Valuta",
+    "receiptHeader": "Intestazione della ricevuta",
+    "receiptFooter": "Piè di pagina della ricevuta",
+    "ifaceBarcodeScanner": "Lettore di codici a barre",
+    "ifaceCashControl": "Controllo della liquidità",
+    "allowDiscount": "Consenti sconto",
+    "allowQuantityChange": "Consenti cambio quantità",
+    "allowOversell": "Consenti vendite eccessive",
+    "pinForDiscount": "PIN per lo sconto",
+    "pinForCashOut": "PIN per incassare",
+    "pinForRefund": "PIN per il rimborso",
+    "isActive": "Attivo",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

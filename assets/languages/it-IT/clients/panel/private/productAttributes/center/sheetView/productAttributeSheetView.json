@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
+  "productAttributeSubtitle": "Dettagli sugli attributi",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "name": "Nome",
+  "position": "Posizione",
+  "isVisibleOnProductPage": "Visibile sulla pagina del prodotto",
+  "isUsedForVariants": "Utilizzato per le varianti",
+  "values": "Valori",
+  "yes": "Sì",
+  "no": "No",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

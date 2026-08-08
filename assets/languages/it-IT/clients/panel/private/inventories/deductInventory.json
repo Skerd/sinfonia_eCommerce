@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/deductInventory.tsx",
+  "title": "Detrarre l'inventario",
+  "description": "Annotare o rimuovere le scorte e conservare un registro completo dei movimenti.",
+  "missingInventoryId": "ID inventario mancante. Detrazione aperta da una riga di inventario."
+}

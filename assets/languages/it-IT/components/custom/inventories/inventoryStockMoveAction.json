@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
+  "cancel": "Annulla",
+  "restock": {
+    "title": "Rifornire l'inventario",
+    "description": "Aggiungi lo stock ricevuto da un fornitore o produttore. Questo movimento viene registrato con i dettagli della ricevuta.",
+    "quantityLabel": "Quantità da aggiungere",
+    "manufacturerLabel": "Produttore/fornitore",
+    "receiptNumberLabel": "Ricevuta/nota di consegna n.",
+    "occurredAtLabel": "Data di ricezione",
+    "unitCostLabel": "Costo unità",
+    "batchLotLabel": "Lotto/lotto",
+    "expiryDateLabel": "Data di scadenza",
+    "receiptsLabel": "Allegati ricevuta",
+    "noteLabel": "Nota",
+    "confirm": "Rifornimento",
+    "axios": {
+      "success": "Stock rifornito con successo",
+      "error": "Impossibile rifornire l'inventario"
+    }
+  },
+  "deduct": {
+    "title": "Detrarre/stornare",
+    "description": "Rimuovere le scorte (danni, perdite o cancellazioni). Questo movimento viene registrato con dettagli di ricevuta opzionali.",
+    "quantityLabel": "Quantità da rimuovere",
+    "manufacturerLabel": "Produttore/fornitore",
+    "receiptNumberLabel": "Riferimento/ricevuta n.",
+    "occurredAtLabel": "Data di cancellazione",
+    "unitCostLabel": "Costo unità",
+    "batchLotLabel": "Lotto/lotto",
+    "expiryDateLabel": "Data di scadenza",
+    "receiptsLabel": "Allegati",
+    "noteLabel": "Nota",
+    "confirm": "Detrarre",
+    "axios": {
+      "success": "Stock detratto con successo",
+      "error": "Impossibile detrarre l'inventario"
+    }
+  }
+}

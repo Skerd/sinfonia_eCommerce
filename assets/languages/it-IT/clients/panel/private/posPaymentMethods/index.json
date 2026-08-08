@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
+  "title": "Metodi di pagamento POS",
+  "description": "Configura contanti, carte e altri metodi di pagamento fino alla cassa.",
+  "createPosPaymentMethod": "Crea metodo di pagamento",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "type": "Tipo",
+    "sequence": "Sequenza",
+    "cashQuickAmounts": "Importi in contanti rapidi",
+    "terminalEnabled": "Terminale abilitato",
+    "terminalProvider": "Fornitore di terminali",
+    "terminalHost": "Ospite terminale",
+    "terminalPort": "Porto terminale",
+    "terminalId": "Identificativo del terminale",
+    "terminalPath": "Percorso terminale",
+    "isActive": "Attivo",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

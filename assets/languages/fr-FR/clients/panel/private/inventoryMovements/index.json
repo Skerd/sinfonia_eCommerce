@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
+  "title": "Mouvements de stocks",
+  "description": "Grand livre complet des réapprovisionnements, des radiations, des ventes et autres variations de stocks.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "reason": "Motif",
+    "quantity": "Quantité",
+    "product": "Produit",
+    "warehouse": "Entrepôt",
+    "occurredAt": "Survenu à",
+    "receiptNumber": "Numéro de reçu",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "createdBy": "Créé par"
+  }
+}

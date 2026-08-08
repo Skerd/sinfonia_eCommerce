@@ -1,0 +1,65 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
+  "title": "Modifica variante",
+  "errorTitle": "Impossibile caricare la variante",
+  "errorDescription": "Impossibile caricare questa variante di prodotto. Riprova.",
+  "form": {
+    "generalSectionTitle": "Generale",
+    "pricingSectionTitle": "Prezzi",
+    "physicalSectionTitle": "Fisico",
+    "mediaSectionTitle": "Media",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Seleziona il prodotto",
+    "statusLabel": "Stato",
+    "skuLabel": "SKU",
+    "skuPlaceholder": "SKU variante",
+    "barcodeLabel": "Codice a barre",
+    "barcodePlaceholder": "Codice a barre",
+    "positionLabel": "Posizione",
+    "trackInventoryLabel": "Tieni traccia dell'inventario",
+    "priceLabel": "Prezzo",
+    "compareAtPriceLabel": "Confronta il prezzo",
+    "costPriceLabel": "Prezzo di costo",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "weightLabel": "Peso",
+    "dimensionLengthLabel": "Lunghezza",
+    "dimensionWidthLabel": "Larghezza",
+    "dimensionHeightLabel": "Altezza",
+    "mainImageLabel": "Immagine principale",
+    "attributesSectionTitle": "Combinazione di attributi",
+    "attributeAddRow": "Aggiungi attributo",
+    "attributeRemoveRow": "Rimuovi attributo",
+    "attributeRowTitle": "Attributo senza titolo",
+    "attributeLabel": "Attributo",
+    "attributePlaceholder": "Seleziona attributo",
+    "valueLabel": "Valore",
+    "valuePlaceholder": "Valore dell'attributo",
+    "variantStatus": {
+      "active": "Attivo",
+      "inactive": "Inattivo"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Variante di salvataggio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variante aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la variante",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica variante",
+    "description": "Aggiorna prezzi, attributi e impostazioni di inventario per questo SKU."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
+  "title": "Commandes de produits",
+  "description": "Suivre et gérer les commandes des clients.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "confirmed": "Confirmé",
+        "processing": "Traitement",
+        "shipped": "Expédié",
+        "delivered": "Livré",
+        "cancelled": "Annulé",
+        "refunded": "Remboursé"
+      },
+      "paymentStatus": {
+        "unpaid": "Impayé",
+        "authorized": "Autorisé",
+        "paid": "Payée",
+        "partially_refunded": "Partiellement remboursé",
+        "refunded": "Remboursé",
+        "voided": "Annulée"
+      },
+      "fulfillmentStatus": {
+        "unfulfilled": "Insatisfait",
+        "partially_fulfilled": "Partiellement réalisé",
+        "fulfilled": "Réalisé",
+        "returned": "Retourné"
+      }
+    },
+    "orderNumber": "Numéro de commande",
+    "customer": "Client",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "items": "Articles",
+    "subtotal": "Sous-total",
+    "discountTotal": "Remise",
+    "shippingTotal": "Livraison",
+    "taxTotal": "Taxe",
+    "grandTotal": "Total",
+    "currency": "Devise",
+    "shippingAddress": {
+      "firstName": "Prénom d'expédition",
+      "lastName": "Nom de famille d'expédition",
+      "phone": "Téléphone d'expédition",
+      "street": "Rue maritime",
+      "city": "Ville d'expédition",
+      "state": "État d'expédition",
+      "postalCode": "Code postal d'expédition",
+      "country": "Pays d'expédition"
+    },
+    "billingAddress": {
+      "firstName": "Prénom de facturation",
+      "lastName": "Nom de famille de facturation",
+      "phone": "Téléphone de facturation",
+      "street": "Rue de facturation",
+      "city": "Ville de facturation",
+      "state": "État de facturation",
+      "postalCode": "Code postal de facturation",
+      "country": "Pays de facturation"
+    },
+    "paymentStatus": "Paiement",
+    "fulfillmentStatus": "Accomplissement",
+    "status": "Statut",
+    "appliedDiscounts": {
+      "discount": "Remise appliquée",
+      "code": "Code de réduction",
+      "amount": "Montant de la remise"
+    },
+    "taxBreakdown": {
+      "name": "Nom de la taxe",
+      "rate": "Taux d'imposition",
+      "amount": "Montant de la taxe"
+    },
+    "shippingRate": {
+      "name": "Tarif d'expédition",
+      "carrier": "Transporteur maritime",
+      "price": "Prix d'expédition"
+    },
+    "notes": "Notes",
+    "internalNotes": "Notes internes",
+    "stripePaymentIntentId": "Intention de paiement Stripe",
+    "idempotencyKey": "Clé d'idempotence",
+    "giftCard": {
+      "giftCard": "Carte cadeau",
+      "code": "Code de la carte cadeau",
+      "amount": "Montant de la carte cadeau"
+    },
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
+  "title": "Richieste di reso",
+  "description": "Gestire resi, cambi e richieste di rimborso.",
+  "createReturnRequest": "Crea richiesta di reso",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "order": "Ordine",
+    "type": "Tipo",
+    "status": "Stato",
+    "items": {
+      "orderItemId": "ID articolo dell'ordine",
+      "quantity": "Quantità",
+      "reason": "Motivo"
+    },
+    "refundAmount": "Importo del rimborso",
+    "customerNote": "Nota del cliente",
+    "adminNote": "Nota dell'amministratore",
+    "resolvedBy": "Risolto da",
+    "resolvedAt": "Risolto il",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

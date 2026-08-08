@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
+  "title": "Inventario",
+  "description": "Livelli delle scorte nei tuoi magazzini.",
+  "createInventory": "Crea inventario",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "product": "Prodotto",
+    "warehouse": "Magazzino",
+    "quantityOnHand": "A portata di mano",
+    "quantityReserved": "Prenotato",
+    "quantityAvailable": "Disponibile",
+    "reorderPoint": "Punto di riordino",
+    "reorderQuantity": "Riordina la quantità",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

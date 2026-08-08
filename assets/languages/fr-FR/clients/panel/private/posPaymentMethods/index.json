@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
+  "title": "Méthodes de paiement aux points de vente",
+  "description": "Configurez les espèces, les cartes et autres méthodes de paiement de caisse.",
+  "createPosPaymentMethod": "Créer un mode de paiement",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "type": "Type",
+    "sequence": "Séquence",
+    "cashQuickAmounts": "Encaisser des montants rapides",
+    "terminalEnabled": "Terminal activé",
+    "terminalProvider": "Fournisseur de terminaux",
+    "terminalHost": "Hôte du terminal",
+    "terminalPort": "Port terminal",
+    "terminalId": "ID du terminal",
+    "terminalPath": "Chemin du terminal",
+    "isActive": "Actif",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

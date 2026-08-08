@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
+  "title": "Approva la richiesta di reso",
+  "description": "Approva questa richiesta di reso in sospeso. Puoi impostare un importo di rimborso e una nota amministrativa.",
+  "refundAmountLabel": "Importo del rimborso",
+  "refundAmountPlaceholder": "0",
+  "notesLabel": "Nota dell'amministratore",
+  "notesPlaceholder": "Nota facoltativa per questa approvazione",
+  "cancel": "Annulla",
+  "confirm": "Approva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Approvazione della richiesta di reso…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Richiesta di reso approvata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile approvare la richiesta di reso",
+      "time": 3000
+    }
+  }
+}

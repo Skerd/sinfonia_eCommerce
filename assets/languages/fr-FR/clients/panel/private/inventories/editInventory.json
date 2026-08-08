@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Modifier l'inventaire",
+  "errorTitle": "Échec du chargement de l'inventaire",
+  "errorDescription": "Impossible de charger cet inventaire. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "reorderPointLabel": "Point de commande",
+    "reorderQuantityLabel": "Quantité à commander"
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de l'inventaire",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventaire mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'inventaire",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'inventaire",
+    "description": "Mettez à jour les seuils de réapprovisionnement pour cette ligne de stock."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

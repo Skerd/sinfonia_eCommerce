@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
+  "title": "Modifica magazzino",
+  "errorTitle": "Impossibile caricare il magazzino",
+  "errorDescription": "Impossibile caricare questo magazzino. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome del magazzino",
+    "codeLabel": "Codice",
+    "codePlaceholder": "Codice magazzino",
+    "addressSectionTitle": "Indirizzo",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Seleziona il paese",
+    "stateLabel": "Stato/regione",
+    "statePlaceholder": "Seleziona il cantone",
+    "cityLabel": "Città",
+    "cityPlaceholder": "Seleziona la città",
+    "streetLabel": "Via",
+    "streetPlaceholder": "Indirizzo stradale",
+    "postalCodeLabel": "CAP",
+    "postalCodePlaceholder": "CAP",
+    "latitudeLabel": "Latitudine",
+    "latitudePlaceholder": "Latitudine",
+    "longitudeLabel": "Longitudine",
+    "longitudePlaceholder": "Longitudine"
+  },
+  "axios": {
+    "start": {
+      "title": "Magazzino in risparmio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazzino aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il magazzino",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica magazzino",
+    "description": "Aggiorna il nome e l'indirizzo."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

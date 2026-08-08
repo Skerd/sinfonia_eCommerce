@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
+  "title": "Analisi",
+  "description": "Tieni traccia delle entrate, degli ordini, dell'inventario e dell'attività del carrello.",
+  "refresh": "Aggiorna",
+  "errorTitle": "Impossibile caricare l'analisi",
+  "errorDescription": "Qualcosa è andato storto durante il recupero dei dati del dashboard.",
+  "revenueChartTitle": "Entrate giornaliere",
+  "noChartData": "Nessun dato sulle entrate per questo periodo.",
+  "chart": {
+    "revenue": "Ricavi"
+  },
+  "period": {
+    "7d": "7 giorni",
+    "30d": "30 giorni",
+    "90d": "90 giorni",
+    "1y": "1 anno"
+  },
+  "kpi": {
+    "totalRevenue": "Entrate totali",
+    "totalRevenueDesc": "Ordini pagati nel periodo",
+    "orderCount": "Ordini",
+    "orderCountDesc": "Ordini pagati nel periodo",
+    "averageOrderValue": "Media valore dell'ordine",
+    "averageOrderValueDesc": "Entrate per ordine pagato",
+    "abandonedCarts": "Carrelli abbandonati",
+    "abandonedCartsDesc": "Carrelli inattivi per oltre 1 ora",
+    "lowStock": "Scorte basse",
+    "lowStockDesc": "SKU sotto il punto di riordino",
+    "outOfStock": "Esaurito",
+    "outOfStockDesc": "SKU senza quantità disponibile",
+    "totalOnHand": "Unità a portata di mano",
+    "totalOnHandDesc": "Quantità totale di inventario",
+    "activeProducts": "Prodotti",
+    "activeProductsDesc": "Prodotti per stato"
+  }
+}

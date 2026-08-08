@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx",
+  "title": "Désactiver la réduction",
+  "description": "Cette réduction ne s'appliquera plus jusqu'à ce qu'elle soit à nouveau activée.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la réduction…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Remise désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la remise",
+      "time": 3000
+    }
+  }
+}

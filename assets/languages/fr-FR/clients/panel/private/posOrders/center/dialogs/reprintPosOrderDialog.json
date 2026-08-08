@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx",
+  "title": "Réimprimer le reçu",
+  "description": "Prévisualisez et imprimez le reçu de cette commande POS.",
+  "loading": "Chargement du reçu…",
+  "cancel": "Annuler",
+  "confirm": "Imprimer",
+  "order": "Commande",
+  "ref": "Réf",
+  "date": "Date",
+  "customer": "Client",
+  "walkIn": "Client sans rendez-vous",
+  "discount": "Remise",
+  "total": "Total",
+  "change": "Changement",
+  "defaultFooter": "Merci pour votre achat!",
+  "fallbackShop": "POS",
+  "errors": {
+    "loadFailed": "Impossible de charger le reçu pour cette commande."
+  },
+  "axios": {
+    "start": {
+      "title": "Chargement du reçu…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reçu prêt",
+      "time": 2000
+    },
+    "error": {
+      "title": "Impossible de charger le reçu",
+      "time": 3000
+    }
+  }
+}

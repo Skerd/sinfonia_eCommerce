@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
+  "title": "Créer une configuration de point de vente",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom du registre",
+    "paymentMethodsLabel": "Modes de paiement",
+    "managersLabel": "Gestionnaires",
+    "warehousesLabel": "Entrepôts",
+    "warehousePlaceholder": "Sélectionnez un entrepôt",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "receiptHeaderLabel": "En-tête du reçu",
+    "receiptHeaderPlaceholder": "Imprimé en haut du reçu",
+    "receiptFooterLabel": "Pied de page du reçu",
+    "receiptFooterPlaceholder": "Imprimé au bas du reçu",
+    "tillOptionsSectionTitle": "Options de caisse",
+    "ifaceBarcodeScannerLabel": "Lecteur de codes à barres",
+    "ifaceCashControlLabel": "Contrôle de trésorerie",
+    "allowDiscountLabel": "Autoriser la réduction",
+    "allowQuantityChangeLabel": "Autoriser le changement de quantité",
+    "allowOversellLabel": "Autoriser la survente",
+    "pinForDiscountLabel": "Code PIN pour réduction",
+    "pinForCashOutLabel": "Code PIN pour le retrait",
+    "pinForRefundLabel": "Code PIN pour le remboursement",
+    "selectWarehouse": "Ajouter un entrepôt",
+    "removeWarehouse": "Supprimer l'entrepôt",
+    "selectCurrency": "Sélectionner une devise",
+    "selectPaymentMethod": "Sélectionnez le mode de paiement",
+    "removePaymentMethod": "Supprimer le mode de paiement",
+    "selectManager": "Sélectionner le gestionnaire",
+    "removeManager": "Supprimer le gestionnaire"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de la configuration du point de vente",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configuration du point de vente créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer la configuration du point de vente",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une configuration de point de vente",
+    "description": "Configurez une caisse de magasin : entrepôts, méthodes de paiement, texte du reçu et règles de caisse."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une configuration de point de vente"
+  }
+}

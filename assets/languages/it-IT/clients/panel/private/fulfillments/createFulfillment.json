@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
+  "title": "Creare soddisfazione",
+  "form": {
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona l'ordine",
+    "statusLabel": "Stato",
+    "carrierLabel": "Portatore",
+    "carrierPlaceholder": "Nome del corriere",
+    "trackingNumberLabel": "Numero di tracciamento",
+    "trackingNumberPlaceholder": "Numero di tracciamento",
+    "trackingUrlLabel": "URL di monitoraggio",
+    "trackingUrlPlaceholder": "https://…",
+    "shippedAtLabel": "Spedito a",
+    "estimatedDeliveryAtLabel": "Consegna stimata",
+    "deliveredAtLabel": "Consegnato a",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note facoltative",
+    "itemsSectionTitle": "Elementi",
+    "itemAddRow": "Aggiungi elemento",
+    "itemRemoveRow": "Rimuovi l'articolo",
+    "itemRowTitle": "Voce",
+    "orderItemIdLabel": "ID articolo dell'ordine",
+    "orderItemIdPlaceholder": "ID riga ordine",
+    "quantityLabel": "Quantità",
+    "fulfillmentStatus": {
+      "pending": "In sospeso",
+      "shipped": "Spedito",
+      "delivered": "Consegnato",
+      "failed": "Non riuscito"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Creare realizzazione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Compimento creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare soddisfazione",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Creare soddisfazione",
+    "description": "Crea una spedizione per un ordine con tracciabilità e articoli."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Creare soddisfazione"
+  }
+}

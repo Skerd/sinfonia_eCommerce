@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx",
+  "title": "Disattiva magazzino",
+  "description": "Questo magazzino non sarà più utilizzato finché non verrà nuovamente attivato.",
+  "cancel": "Annulla",
+  "confirm": "Disattiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Disattivazione magazzino…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazzino disattivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile disattivare il magazzino",
+      "time": 3000
+    }
+  }
+}

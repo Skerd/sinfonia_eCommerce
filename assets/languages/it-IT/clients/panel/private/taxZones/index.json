@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
+  "title": "Zone fiscali",
+  "description": "Configura le aliquote fiscali per paese e regione.",
+  "createTaxZone": "Crea zona fiscale",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "country": "Paese",
+    "states": "Stati / cantoni",
+    "postalCodePatterns": "Modelli di codici postali",
+    "rates": {
+      "name": "Nome della tariffa",
+      "rate": "Vota",
+      "isCompound": "Composto",
+      "appliesTo": "La tariffa si applica a"
+    },
+    "priority": "Priorità",
+    "isActive": "Attivo",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx",
+  "taxZoneSubtitle": "Détails de la zone fiscale",
+  "failedTitle": "Échec du chargement de la zone fiscale",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette zone fiscale. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "overview": "Vue d'ensemble",
+  "geography": "Géographie",
+  "rates": "Taux d'imposition",
+  "name": "Nom",
+  "isActive": "Actif",
+  "priority": "Priorité",
+  "company": "Entreprise",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "country": "Pays",
+  "states": "États / régions",
+  "postalCodePatterns": "Modèles de codes postaux",
+  "state": "Canton / État",
+  "rateValue": "Taux (%)",
+  "rateAppliesTo": "S'applique à",
+  "isCompound": "Composé",
+  "compactView": "Compacte",
+  "cardsView": "Cartes",
+  "yes": "Oui",
+  "no": "Non",
+  "yesNo": {
+    "true": "Oui",
+    "false": "Non"
+  },
+  "taxRateAppliesTo": {
+    "all": "Tous les produits",
+    "physical": "Physique",
+    "digital": "Numérique"
+  }
+}

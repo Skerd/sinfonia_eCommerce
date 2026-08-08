@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
+  "title": "Modifica la regola del prezzo",
+  "errorTitle": "Impossibile caricare la regola per la determinazione del prezzo",
+  "errorDescription": "Impossibile caricare questa regola di prezzo. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome della regola di prezzo",
+    "typeLabel": "Tipo",
+    "appliesToLabel": "Si applica a",
+    "valueLabel": "Valore",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Priorità",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Inizia alle",
+    "endsAtLabel": "Termina alle",
+    "minimumOrderAmountLabel": "Importo minimo dell'ordine",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantità minima",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "Generale",
+    "scheduleSectionTitle": "Calendario",
+    "limitsSectionTitle": "Limiti",
+    "customerGroupsSectionTitle": "Gruppi di clienti",
+    "productsLabel": "Prodotti",
+    "collectionsLabel": "Collezioni",
+    "categoriesLabel": "Categorie",
+    "customerGroupsLabel": "Gruppi di clienti",
+    "selectProduct": "Seleziona il prodotto",
+    "selectCollection": "Seleziona collezione",
+    "selectCategory": "Seleziona categoria",
+    "selectCustomerGroup": "Seleziona il gruppo di clienti",
+    "removeTarget": "Rimuovi bersaglio",
+    "removeCustomerGroup": "Rimuovi gruppo clienti",
+    "pricingRuleType": {
+      "percentage_discount": "Sconto percentuale",
+      "fixed_discount": "Sconto fisso",
+      "fixed_price": "Prezzo fisso",
+      "surcharge": "Supplemento"
+    },
+    "pricingRuleAppliesTo": {
+      "all": "Tutti",
+      "product": "Prodotti",
+      "collection": "Collezioni",
+      "category": "Categorie",
+      "customer_group": "Gruppi di clienti"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio della regola di prezzo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Regola dei prezzi aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la regola del prezzo",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica la regola del prezzo",
+    "description": "Aggiorna gli aggiustamenti dei prezzi del catalogo, gli obiettivi, i limiti e la pianificazione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

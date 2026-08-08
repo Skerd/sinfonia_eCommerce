@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx",
+  "overview": "Vue d'ensemble",
+  "content": "Examen",
+  "related": "Connexes",
+  "lifecycle": "Cycle de vie",
+  "productReviewSubtitle": "Détails de l'examen",
+  "displayTitle": "Examen",
+  "rating": "Note",
+  "title": "Modifier le type d’unité",
+  "comment": "Commentaire",
+  "order": "Commande",
+  "product": "Produit",
+  "reviewer": "Réviseur",
+  "company": "Entreprise",
+  "createdBy": "Créé par",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

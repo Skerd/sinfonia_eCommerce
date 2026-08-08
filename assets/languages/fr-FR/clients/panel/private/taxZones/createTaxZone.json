@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/createTaxZone.tsx",
+  "title": "Créer une zone fiscale",
+  "form": {
+    "generalSectionTitle": "Général",
+    "geographySectionTitle": "Géographie",
+    "nameLabel": "Nom",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "priorityLabel": "Priorité",
+    "statesLabel": "États / régions",
+    "selectState": "Sélectionner le canton",
+    "removeState": "Supprimer l'état",
+    "postalCodePatternsLabel": "Modèles de codes postaux",
+    "postalCodePatternsPlaceholder": "par ex. 1000* ou AL-*",
+    "removePostalCodePattern": "Supprimer le motif",
+    "ratesSectionTitle": "Taux d'imposition",
+    "rateAddRow": "Ajouter un tarif",
+    "rateRemoveRow": "Supprimer le taux",
+    "rateRowTitle": "Tarif sans titre",
+    "rateNameLabel": "Nom du tarif",
+    "rateValueLabel": "Taux (%)",
+    "rateAppliesToLabel": "S'applique à",
+    "isCompoundLabel": "Taux composé",
+    "taxRateAppliesTo": {
+      "all": "Tous les produits",
+      "physical": "Physique",
+      "digital": "Numérique"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une zone fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone fiscale créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer une zone fiscale",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une zone fiscale",
+    "description": "Définissez la géographie de la destination et les taux de taxe appliqués au moment du paiement."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une zone fiscale"
+  }
+}

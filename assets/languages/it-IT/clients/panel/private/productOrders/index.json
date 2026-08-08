@@ -1,0 +1,97 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
+  "title": "Ordini di prodotti",
+  "description": "Traccia e gestisci gli ordini dei clienti.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "confirmed": "Confermato",
+        "processing": "Elaborazione",
+        "shipped": "Spedito",
+        "delivered": "Consegnato",
+        "cancelled": "Annullato",
+        "refunded": "Rimborsato"
+      },
+      "paymentStatus": {
+        "unpaid": "Non pagato",
+        "authorized": "Autorizzato",
+        "paid": "Pagata",
+        "partially_refunded": "Parzialmente rimborsato",
+        "refunded": "Rimborsato",
+        "voided": "Annullata"
+      },
+      "fulfillmentStatus": {
+        "unfulfilled": "Insoddisfatto",
+        "partially_fulfilled": "Parzialmente soddisfatto",
+        "fulfilled": "Soddisfatto",
+        "returned": "Restituito"
+      }
+    },
+    "orderNumber": "Numero dell'ordine",
+    "customer": "Cliente",
+    "email": "E-mail",
+    "phone": "Telefono",
+    "items": "Elementi",
+    "subtotal": "Subtotale",
+    "discountTotal": "Sconto",
+    "shippingTotal": "Spedizione",
+    "taxTotal": "Imposta",
+    "grandTotal": "Totale",
+    "currency": "Valuta",
+    "shippingAddress": {
+      "firstName": "Nome di spedizione",
+      "lastName": "Cognome di spedizione",
+      "phone": "Telefono per la spedizione",
+      "street": "Strada di spedizione",
+      "city": "Città di spedizione",
+      "state": "Stato di spedizione",
+      "postalCode": "Codice postale di spedizione",
+      "country": "Paese di spedizione"
+    },
+    "billingAddress": {
+      "firstName": "Nome di fatturazione",
+      "lastName": "Cognome di fatturazione",
+      "phone": "Telefono per la fatturazione",
+      "street": "Strada della fatturazione",
+      "city": "Città di fatturazione",
+      "state": "Stato di fatturazione",
+      "postalCode": "Codice postale di fatturazione",
+      "country": "Paese di fatturazione"
+    },
+    "paymentStatus": "Pagamento",
+    "fulfillmentStatus": "Compimento",
+    "status": "Stato",
+    "appliedDiscounts": {
+      "discount": "Sconto applicato",
+      "code": "Codice sconto",
+      "amount": "Importo dello sconto"
+    },
+    "taxBreakdown": {
+      "name": "Nome fiscale",
+      "rate": "Aliquota fiscale",
+      "amount": "Importo fiscale"
+    },
+    "shippingRate": {
+      "name": "Tariffa di spedizione",
+      "carrier": "Corriere di spedizione",
+      "price": "Prezzo di spedizione"
+    },
+    "notes": "Note",
+    "internalNotes": "Note interne",
+    "stripePaymentIntentId": "Intento di pagamento stripe",
+    "idempotencyKey": "Chiave di idepotenza",
+    "giftCard": {
+      "giftCard": "Carta regalo",
+      "code": "Codice della carta regalo",
+      "amount": "Importo della carta regalo"
+    },
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

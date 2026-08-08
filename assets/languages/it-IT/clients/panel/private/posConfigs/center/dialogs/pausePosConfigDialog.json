@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
+  "title": "Mettere in pausa questo POS fino a?",
+  "description": "Le sessioni aperte su questa cassa verranno chiuse forzatamente: i carrelli trattenuti verranno annullati e il contante verrà impostato sull'importo previsto per il cassetto. Le spese terminali vengono annullate nel miglior modo possibile. La vendita rimane bloccata finché non riprendi.",
+  "reasonLabel": "Motivo (facoltativo)",
+  "reasonPlaceholder": "ad es. Prezzi errati/sospetta frode",
+  "cancel": "Annulla",
+  "confirm": "Pausa fino a",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Messa in pausa del POS fino a...",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS fino alla pausa",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile mettere in pausa il POS fino al",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
+  "title": "Modifica sconto",
+  "errorTitle": "Impossibile caricare lo sconto",
+  "errorDescription": "Impossibile caricare questo sconto. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "titleLabel": "Modifica tipo di unità",
+    "titlePlaceholder": "Titolo scontato",
+    "codeLabel": "Codice",
+    "codePlaceholder": "Codice promozionale opzionale",
+    "typeLabel": "Tipo",
+    "appliesToLabel": "Si applica a",
+    "valueLabel": "Valore",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Attivo",
+    "startsAtLabel": "Inizia alle",
+    "endsAtLabel": "Termina alle",
+    "minimumOrderAmountLabel": "Importo minimo dell'ordine",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantità minima",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Limite di utilizzo",
+    "usageLimitPlaceholder": "Illimitato se vuoto",
+    "usageLimitPerCustomerLabel": "Limite di utilizzo per cliente",
+    "usageLimitPerCustomerPlaceholder": "Illimitato se vuoto",
+    "generalSectionTitle": "Generale",
+    "scheduleSectionTitle": "Calendario",
+    "limitsSectionTitle": "Limiti",
+    "targetsSectionTitle": "Obiettivi",
+    "customerGroupsSectionTitle": "Gruppi di clienti",
+    "targetIdsLabel": "Obiettivi",
+    "productsLabel": "Prodotti",
+    "collectionsLabel": "Collezioni",
+    "categoriesLabel": "Categorie",
+    "customerGroupsLabel": "Gruppi di clienti",
+    "buyXGetYSectionTitle": "Compra X prendi Y",
+    "buyXGetYAnyOfSetHint": "Le quantità Acquista e ricevi si applicano ai prodotti selezionati come set (uno qualsiasi di). Le unità idonee più economiche sono gratuite.",
+    "buyQuantityLabel": "Acquista quantità",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Ottieni quantità",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Prodotti idonei",
+    "selectProduct": "Seleziona il prodotto",
+    "selectCollection": "Seleziona collezione",
+    "selectCategory": "Seleziona categoria",
+    "selectCustomerGroup": "Seleziona il gruppo di clienti",
+    "removeTarget": "Rimuovi bersaglio",
+    "removeCustomerGroup": "Rimuovi gruppo clienti",
+    "removeProduct": "Rimuovere il prodotto",
+    "discountType": {
+      "percentage": "Percentuale",
+      "fixed": "Importo fisso",
+      "free_shipping": "Spedizione gratuita",
+      "buy_x_get_y": "Compra X prendi Y"
+    },
+    "discountAppliesTo": {
+      "order": "Intero ordine",
+      "product": "Prodotti",
+      "collection": "Collezioni",
+      "category": "Categorie"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sconto di risparmio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sconto aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare lo sconto",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica sconto",
+    "description": "Aggiorna regole di sconto, limiti, obiettivi e pianificazione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

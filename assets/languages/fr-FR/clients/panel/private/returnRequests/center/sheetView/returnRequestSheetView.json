@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx",
+  "overview": "Vue d'ensemble",
+  "notes": "Notes",
+  "related": "Connexes",
+  "items": "Articles",
+  "lifecycle": "Cycle de vie",
+  "returnRequestSubtitle": "Détails de la demande de retour",
+  "failedTitle": "Échec du chargement de la demande de retour",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette demande de retour. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "type": "Type",
+  "status": "Statut",
+  "refundAmount": "Montant du remboursement",
+  "customerNote": "Note client",
+  "adminNote": "Remarque de l'administrateur",
+  "order": "Commande",
+  "resolvedBy": "Résolu par",
+  "resolvedAt": "Résolu le",
+  "createdBy": "Créé par",
+  "company": "Entreprise",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "itemOrderItemId": "Identifiant de l'article de la commande",
+  "itemQuantity": "Quantité",
+  "itemReason": "Motif",
+  "compactView": "Compacte",
+  "cardsView": "Cartes",
+  "returnType": {
+    "return": "Retour",
+    "exchange": "Échange",
+    "refund": "Remboursement"
+  },
+  "returnStatus": {
+    "pending": "En attente",
+    "approved": "Approuvée",
+    "rejected": "Rejeté",
+    "received": "Reçu",
+    "completed": "Terminé"
+  }
+}

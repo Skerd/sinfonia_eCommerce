@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "type": "Tipo",
+  "status": "Stato",
+  "refundAmount": "Importo del rimborso",
+  "returnType": {
+    "return": "Ritorno",
+    "exchange": "Scambio",
+    "refund": "Rimborso"
+  },
+  "returnStatus": {
+    "pending": "In sospeso",
+    "approved": "Approvata",
+    "rejected": "Rifiutato",
+    "received": "Ricevuto",
+    "completed": "Completato"
+  }
+}

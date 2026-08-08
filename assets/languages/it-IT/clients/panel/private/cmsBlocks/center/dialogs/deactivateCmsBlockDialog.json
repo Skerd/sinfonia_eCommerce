@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx",
+  "title": "Disattiva il blocco CMS",
+  "description": "Questo blocco sarà nascosto dallo storefront fino a quando non verrà nuovamente attivato.",
+  "cancel": "Annulla",
+  "confirm": "Disattiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Disattivazione del blocco CMS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Blocco CMS disattivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile disattivare il blocco CMS",
+      "time": 3000
+    }
+  }
+}

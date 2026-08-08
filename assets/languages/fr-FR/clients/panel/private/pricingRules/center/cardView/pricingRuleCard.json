@@ -1,0 +1,15 @@
+{
+  "active": "Actif",
+  "inactive": "Inactif",
+  "name": "Nom",
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
+  "pricingRuleType": {
+    "fixed_discount": "Remise fixe",
+    "fixed_price": "Prix fixe",
+    "percentage_discount": "Pourcentage de remise",
+    "surcharge": "Supplément"
+  },
+  "priority": "Priorité",
+  "type": "Type",
+  "value": "Valeur"
+}

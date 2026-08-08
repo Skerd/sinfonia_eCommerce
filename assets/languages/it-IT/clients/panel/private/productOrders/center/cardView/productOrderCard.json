@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
+  "orderStatus": {
+    "pending": "In sospeso",
+    "confirmed": "Confermato",
+    "processing": "Elaborazione",
+    "shipped": "Spedito",
+    "delivered": "Consegnato",
+    "cancelled": "Annullato",
+    "refunded": "Rimborsato"
+  },
+  "items": "elementi"
+}

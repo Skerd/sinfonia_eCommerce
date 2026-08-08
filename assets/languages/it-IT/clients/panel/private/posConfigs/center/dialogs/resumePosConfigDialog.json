@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
+  "title": "Riprendere questo POS fino alla?",
+  "description": "Cancella la pausa solo fino a questo. Un blocco a livello aziendale (se attivo) non viene rimosso. I cassieri devono aprire una nuova sessione per vendere di nuovo.",
+  "cancel": "Annulla",
+  "confirm": "Riprendi fino al",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Riattivazione del POS fino al...",
+      "time": 3000
+    },
+    "success": {
+      "title": "POS fino alla ripresa",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile riprendere il POS fino al",
+      "time": 3000
+    }
+  }
+}

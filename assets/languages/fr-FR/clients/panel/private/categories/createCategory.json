@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/createCategory.tsx",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la catégorie",
+    "parentCategoryLabel": "Catégorie parente",
+    "parentCategoryPlaceholder": "Catégorie racine facultative",
+    "orderLabel": "Ordre de tri",
+    "orderPlaceholder": "0",
+    "createCategoryTitle": "Créer une catégorie",
+    "createCategoryDescription": "Ajoutez une catégorie pour organiser les produits dans votre catalogue."
+  },
+  "axios": {
+    "start": {
+      "title": "Création de la catégorie",
+      "time": 3000
+    },
+    "success": {
+      "title": "Catégorie créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer la catégorie",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une catégorie",
+    "description": "Ajoutez une catégorie pour organiser les produits dans votre catalogue."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une catégorie"
+  }
+}

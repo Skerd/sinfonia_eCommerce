@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx",
+  "title": "Cancella PIN amministratore",
+  "description": "Immettere due volte il PIN corrente per confermare la cancellazione. PIN richiesto finché le opzioni non verranno disattivate.",
+  "pinLabel": "PIN attuale",
+  "confirmPinLabel": "Conferma il PIN",
+  "pinMismatch": "La conferma del PIN non corrisponde",
+  "cancel": "Annulla",
+  "confirm": "Cancella PIN",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "PIN del gestore della compensazione",
+      "time": 3000
+    },
+    "success": {
+      "title": "PIN amministratore cancellato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile cancellare il PIN amministratore",
+      "time": 3000
+    }
+  }
+}

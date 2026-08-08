@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "salePercentOff": "{{percent}}% di sconto",
+  "timerDays": "Giorni",
+  "timerHours": "Ore",
+  "timerMins": "Min",
+  "timerSecs": "Sez",
+  "productStatus": {
+    "draft": "Bozza",
+    "active": "Attivo",
+    "archived": "Archiviato"
+  },
+  "productType": {
+    "physical": "Fisico",
+    "digital": "Digitale",
+    "service": "Servizio",
+    "variable": "Variabile",
+    "bundle": "Pacchetto",
+    "gift_card": "Carta regalo"
+  }
+}

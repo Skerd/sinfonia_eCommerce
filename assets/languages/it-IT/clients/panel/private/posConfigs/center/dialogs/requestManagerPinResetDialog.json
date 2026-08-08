@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/requestManagerPinResetDialog.tsx",
+  "title": "PIN amministratore dimenticato",
+  "description": "Ti invieremo un'e-mail con un collegamento per la reimpostazione all'e-mail del tuo account. Apri il collegamento per impostare un nuovo PIN.",
+  "sentTitle": "Controlla la tua email",
+  "sentDescription": "Se è configurata un'e-mail per l'account, è stato inviato un collegamento di reimpostazione. Il collegamento scade tra 24 ore.",
+  "cancel": "Annulla",
+  "confirm": "Invia e-mail di reimpostazione",
+  "done": "Fatto",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Invio email di reimpostazione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reimposta l'e-mail inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare l'e-mail di reimpostazione",
+      "time": 3000
+    }
+  }
+}

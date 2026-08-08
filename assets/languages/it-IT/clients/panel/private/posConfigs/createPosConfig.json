@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
+  "title": "Crea configurazione POS",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Registra il nome",
+    "paymentMethodsLabel": "Metodi di pagamento",
+    "managersLabel": "Manager",
+    "warehousesLabel": "Magazzini",
+    "warehousePlaceholder": "Seleziona magazzino",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "receiptHeaderLabel": "Intestazione della ricevuta",
+    "receiptHeaderPlaceholder": "Stampato nella parte superiore della ricevuta",
+    "receiptFooterLabel": "Piè di pagina della ricevuta",
+    "receiptFooterPlaceholder": "Stampato in fondo allo scontrino",
+    "tillOptionsSectionTitle": "Fino alle opzioni",
+    "ifaceBarcodeScannerLabel": "Lettore di codici a barre",
+    "ifaceCashControlLabel": "Controllo della liquidità",
+    "allowDiscountLabel": "Consenti sconto",
+    "allowQuantityChangeLabel": "Consenti cambio quantità",
+    "allowOversellLabel": "Consenti vendite eccessive",
+    "pinForDiscountLabel": "PIN per lo sconto",
+    "pinForCashOutLabel": "PIN per incassare",
+    "pinForRefundLabel": "PIN per il rimborso",
+    "selectWarehouse": "Aggiungi magazzino",
+    "removeWarehouse": "Rimuovere il magazzino",
+    "selectCurrency": "Seleziona valuta",
+    "selectPaymentMethod": "Seleziona il metodo di pagamento",
+    "removePaymentMethod": "Rimuovi il metodo di pagamento",
+    "selectManager": "Seleziona gestore",
+    "removeManager": "Rimuovi gestore"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione della configurazione POS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configurazione POS creata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la configurazione POS",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea configurazione POS",
+    "description": "Configura una cassa del negozio: magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea configurazione POS"
+  }
+}

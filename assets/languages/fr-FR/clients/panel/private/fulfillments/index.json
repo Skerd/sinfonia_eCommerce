@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
+  "title": "Réalisations",
+  "description": "Suivre les expéditions et la livraison des commandes de produits.",
+  "createFulfillment": "Créer un épanouissement",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "order": "Commande",
+    "status": "Statut",
+    "items": {
+      "orderItemId": "Identifiant de l'article de la commande",
+      "quantity": "Quantité"
+    },
+    "carrier": "Transporteur",
+    "trackingNumber": "Numéro de suivi",
+    "trackingUrl": "URL de suivi",
+    "shippedAt": "Expédié à",
+    "estimatedDeliveryAt": "Livraison estimée",
+    "deliveredAt": "Livré à",
+    "notes": "Notes",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

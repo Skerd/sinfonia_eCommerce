@@ -1,0 +1,83 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/createDiscount.tsx",
+  "title": "Créer une remise",
+  "form": {
+    "titleLabel": "Modifier le type d’unité",
+    "titlePlaceholder": "Titre de la remise",
+    "codeLabel": "Code",
+    "codePlaceholder": "Code promo optionnel",
+    "typeLabel": "Type",
+    "appliesToLabel": "S'applique à",
+    "valueLabel": "Valeur",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Actif",
+    "startsAtLabel": "Commence à",
+    "endsAtLabel": "Se termine à",
+    "minimumOrderAmountLabel": "Montant minimum de commande",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantité minimale",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Limite d'utilisation",
+    "usageLimitPlaceholder": "Illimité si vide",
+    "usageLimitPerCustomerLabel": "Limite d'utilisation par client",
+    "usageLimitPerCustomerPlaceholder": "Illimité si vide",
+    "generalSectionTitle": "Général",
+    "scheduleSectionTitle": "Calendrier",
+    "limitsSectionTitle": "Limites",
+    "targetsSectionTitle": "Cibles",
+    "customerGroupsSectionTitle": "Groupes de clients",
+    "targetIdsLabel": "Cibles",
+    "productsLabel": "Produits",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Catégories",
+    "customerGroupsLabel": "Groupes de clients",
+    "buyXGetYSectionTitle": "Achetez X, obtenez Y",
+    "buyXGetYAnyOfSetHint": "Achetez et obtenez des quantités applicables sur les produits sélectionnés sous forme d'ensemble (n'importe lequel). Les unités éligibles les moins chères sont gratuites.",
+    "buyQuantityLabel": "Acheter la quantité",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Obtenir la quantité",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Produits éligibles",
+    "selectProduct": "Sélectionner un produit",
+    "selectCollection": "Sélectionner une collection",
+    "selectCategory": "Sélectionner une catégorie",
+    "selectCustomerGroup": "Sélectionnez un groupe de clients",
+    "removeTarget": "Supprimer la cible",
+    "removeCustomerGroup": "Supprimer le groupe de clients",
+    "removeProduct": "Supprimer le produit",
+    "discountType": {
+      "percentage": "Pourcentage",
+      "fixed": "Montant fixe",
+      "free_shipping": "Livraison gratuite",
+      "buy_x_get_y": "Achetez X, obtenez Y"
+    },
+    "discountAppliesTo": {
+      "order": "Commande entière",
+      "product": "Produits",
+      "collection": "Collections",
+      "category": "Catégories"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une remise",
+      "time": 3000
+    },
+    "success": {
+      "title": "Remise créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer une remise",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une remise",
+    "description": "Configurez un code promotionnel ou une remise automatique avec des règles et des limites."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une remise"
+  }
+}

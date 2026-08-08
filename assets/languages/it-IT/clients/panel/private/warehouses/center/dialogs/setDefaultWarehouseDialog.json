@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx",
+  "title": "Crea magazzino predefinito",
+  "description": "Ciò renderà questo magazzino quello predefinito e quello predefinito attuale verrà riassegnato.",
+  "cancel": "Annulla",
+  "confirm": "Rendi predefinito",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Impostazione del magazzino predefinito…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazzino predefinito aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile impostare il magazzino predefinito",
+      "time": 3000
+    }
+  }
+}

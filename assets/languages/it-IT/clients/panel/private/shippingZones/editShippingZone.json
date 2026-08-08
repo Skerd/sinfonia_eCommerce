@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
+  "title": "Modifica zona di spedizione",
+  "errorTitle": "Impossibile caricare la zona di spedizione",
+  "errorDescription": "Impossibile caricare questa zona di spedizione. Riprova.",
+  "form": {
+    "generalSectionTitle": "Generale",
+    "geographySectionTitle": "Geografia",
+    "nameLabel": "Nome",
+    "countriesLabel": "Paesi",
+    "statesLabel": "Stati/regioni",
+    "selectCountry": "Seleziona il paese",
+    "selectState": "Seleziona il cantone",
+    "removeCountry": "Rimuovi paese",
+    "removeState": "Rimuovi stato",
+    "postalCodePatternsLabel": "Modelli di codici postali",
+    "postalCodePatternsPlaceholder": "ad es. 1000* o AL-*",
+    "removePostalCodePattern": "Rimuovi motivo",
+    "ratesSectionTitle": "Tariffe di spedizione",
+    "rateAddRow": "Aggiungi tasso",
+    "rateRemoveRow": "Rimuovi tariffa",
+    "rateRowTitle": "Tariffa senza titolo",
+    "rateNameLabel": "Nome della tariffa",
+    "rateTypeLabel": "Tipo di tariffa",
+    "ratePriceLabel": "Prezzo",
+    "carrierLabel": "Portatore",
+    "estimatedDeliveryDaysLabel": "Giorni di consegna stimati",
+    "rateConditionsSectionTitle": "Condizioni",
+    "minWeightLabel": "Peso minimo",
+    "maxWeightLabel": "Peso massimo",
+    "minOrderAmountLabel": "Importo minimo dell'ordine",
+    "maxOrderAmountLabel": "Importo massimo dell'ordine",
+    "shippingRateType": {
+      "flat": "Piatto",
+      "weight": "Basato sul peso",
+      "price": "Importo dell'ordine",
+      "quantity": "Quantità",
+      "free": "Libero"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio della zona di spedizione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zona di spedizione aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la zona di spedizione",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica zona di spedizione",
+    "description": "Aggiorna l'area geografica di destinazione e le tariffe di spedizione per questa zona."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

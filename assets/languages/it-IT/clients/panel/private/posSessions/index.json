@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
+  "title": "Sessioni POS",
+  "description": "Fino all'apertura e chiusura delle sessioni dal Punto Vendita.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "!enums": {
+      "state": {
+        "opening_control": "Apertura",
+        "opened": "Aperto",
+        "closing_control": "Chiusura",
+        "closed": "Chiuso"
+      },
+      "cashMoves": {
+        "type": {
+          "type": {
+            "in": "Incassare",
+            "out": "Incassare"
+          }
+        }
+      }
+    },
+    "name": "Nome",
+    "config": "Configurazione POS",
+    "state": "Cantone / Stato",
+    "openedBy": "Aperto da",
+    "closedBy": "Chiuso da",
+    "openedAt": "Inaugurato alle",
+    "closedAt": "Chiuso alle",
+    "openingBalance": "Saldo di apertura",
+    "closingBalance": "Saldo di chiusura",
+    "expectedCash": "Contanti attesi",
+    "cashRegisterBalance": "Registratore di cassa",
+    "cashMoves": "Movimenti di contanti",
+    "orderCount": "Ordini",
+    "totalSales": "Vendite totali",
+    "totalCash": "Contanti",
+    "totalCard": "Carta",
+    "notes": "Note",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

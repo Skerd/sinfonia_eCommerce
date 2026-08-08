@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
+  "title": "Mettere in pausa tutte le casse POS?",
+  "description": "Applica un blocco a livello aziendale e timbra ogni cassa. Le sessioni aperte vengono chiuse forzatamente (sospensioni annullate, contante impostato su previsto). Anche le nuove casse create mentre erano bloccate non possono essere vendute finché non Riprendi tutto. I vuoti terminali sono la soluzione migliore.",
+  "reasonLabel": "Motivo (facoltativo)",
+  "reasonPlaceholder": "ad es. Interruzione fiscale/di rete",
+  "cancel": "Annulla",
+  "confirm": "Metti tutto in pausa",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Messa in pausa di tutte le casse POS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tutte le casse POS sospese",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile mettere in pausa tutte le casse POS",
+      "time": 3000
+    }
+  }
+}

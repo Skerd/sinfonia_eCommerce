@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
+  "title": "Créer une adresse",
+  "form": {
+    "customerLabel": "Client",
+    "customerPlaceholder": "Sélectionner un client",
+    "firstNameLabel": "Prénom du destinataire",
+    "firstNamePlaceholder": "Prénom sur le colis",
+    "lastNameLabel": "Nom du destinataire",
+    "lastNamePlaceholder": "Nom de famille sur le colis",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Adresse postale",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner la ville",
+    "stateLabel": "Canton / État",
+    "statePlaceholder": "Sélectionner le canton",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "Numéro de téléphone",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "19.8189",
+    "labelLabel": "Étiquette",
+    "labelPlaceholder": "Maison, travail,…"
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une adresse",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresse créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer l'adresse",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une adresse",
+    "description": "Associez une adresse à un client, définissez le destinataire, l'emplacement et le repère de la carte."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une adresse"
+  }
+}

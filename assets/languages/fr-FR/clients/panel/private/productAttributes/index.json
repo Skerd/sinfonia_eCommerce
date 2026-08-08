@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
+  "title": "Attributs du produit",
+  "description": "Définissez les options du produit telles que la taille, la couleur et le matériau.",
+  "createProductAttribute": "Créer un attribut",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "position": "Poste",
+    "isVisibleOnProductPage": "Visible sur la page produit",
+    "isUsedForVariants": "Utilisé pour les variantes",
+    "values": "Valeurs",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

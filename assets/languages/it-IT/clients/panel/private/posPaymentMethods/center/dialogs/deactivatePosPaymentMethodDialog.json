@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx",
+  "title": "Disattiva il metodo di pagamento",
+  "description": "Questo metodo di pagamento verrà rimosso dalle configurazioni POS e non sarà più disponibile sulle casse fino alla nuova attivazione.",
+  "cancel": "Annulla",
+  "confirm": "Disattiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Disattivazione del metodo di pagamento…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metodo di pagamento disattivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile disattivare il metodo di pagamento",
+      "time": 3000
+    }
+  }
+}

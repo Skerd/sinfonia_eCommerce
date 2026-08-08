@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/center/cardView/categoryCard.tsx",
+  "name": "Nome",
+  "slug": "Lumaca",
+  "parentCategory": "Categoria genitore",
+  "order": "Ordine"
+}

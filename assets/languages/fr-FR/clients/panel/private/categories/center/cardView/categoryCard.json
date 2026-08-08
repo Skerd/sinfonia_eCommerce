@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/center/cardView/categoryCard.tsx",
+  "name": "Nom",
+  "slug": "Identifiant",
+  "parentCategory": "Catégorie parente",
+  "order": "Commande"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx",
+  "name": "Nom",
+  "type": "Type",
+  "sequence": "Séquence",
+  "active": "Actif",
+  "inactive": "Inactif",
+  "paymentType": {
+    "cash": "Comptant",
+    "card": "Carte",
+    "bank": "Banque",
+    "customer_account": "Compte client",
+    "other": "Autre"
+  }
+}

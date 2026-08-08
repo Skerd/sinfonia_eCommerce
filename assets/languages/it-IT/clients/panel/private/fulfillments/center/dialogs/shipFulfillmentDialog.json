@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
+  "title": "Contrassegnare l'adempimento come spedito",
+  "description": "Imposta i dettagli di tracciamento e contrassegna questo adempimento in sospeso come spedito.",
+  "carrierLabel": "Portatore",
+  "carrierPlaceholder": "Nome del corriere",
+  "trackingNumberLabel": "Numero di tracciamento",
+  "trackingNumberPlaceholder": "Numero di tracciamento",
+  "trackingUrlLabel": "URL di monitoraggio",
+  "trackingUrlPlaceholder": "https://…",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note facoltative",
+  "cancel": "Annulla",
+  "confirm": "Contrassegna come spedito",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Contrassegnare come spedito…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adempimento contrassegnato come spedito",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile contrassegnare come spedito",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx",
+  "name": "Nome",
+  "type": "Tipo",
+  "sequence": "Sequenza",
+  "active": "Attivo",
+  "inactive": "Inattivo",
+  "paymentType": {
+    "cash": "Contanti",
+    "card": "Carta",
+    "bank": "Banca",
+    "customer_account": "Conto cliente",
+    "other": "Altro"
+  }
+}

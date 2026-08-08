@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx",
+  "title": "Désactiver la zone fiscale",
+  "description": "Cette zone fiscale ne sera plus utilisée pour le calcul de la taxe jusqu'à ce qu'elle soit à nouveau activée.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la zone fiscale…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone fiscale désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la zone fiscale",
+      "time": 3000
+    }
+  }
+}

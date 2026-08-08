@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
+  "cancel": "Annuler",
+  "confirm": {
+    "title": "Confirmer la commande",
+    "description": "Accusez réception de cette commande et marquez-la comme confirmée.",
+    "confirm": "Confirmer",
+    "axios": {
+      "success": "Commande confirmée",
+      "error": "Impossible de confirmer la commande"
+    }
+  },
+  "markProcessing": {
+    "title": "Marquer comme traitement",
+    "description": "Marquez cette commande comme étant en préparation pour l'expédition.",
+    "confirm": "Traitement des marques",
+    "axios": {
+      "success": "Commande marquée comme en cours de traitement",
+      "error": "Impossible de mettre à jour la commande"
+    }
+  },
+  "cancelOrder": {
+    "title": "Annuler la commande",
+    "description": "Annule cette commande et libère tout stock réservé. Les commandes payées doivent d’abord être remboursées.",
+    "confirm": "Annuler la commande",
+    "axios": {
+      "success": "Commande annulée",
+      "error": "Impossible d'annuler la commande"
+    }
+  }
+}

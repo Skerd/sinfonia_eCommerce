@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx",
+  "title": "Créer un entrepôt par défaut",
+  "description": "Cela fera de cet entrepôt l'entrepôt par défaut et celui par défaut actuel sera réaffecté.",
+  "cancel": "Annuler",
+  "confirm": "Par défaut",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Définition de l'entrepôt par défaut…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Entrepôt par défaut mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de définir l'entrepôt par défaut",
+      "time": 3000
+    }
+  }
+}

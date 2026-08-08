@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
+  "title": "Approuver la demande de retour",
+  "description": "Approuvez cette demande de retour en attente. Vous pouvez définir un montant de remboursement et une note administrative.",
+  "refundAmountLabel": "Montant du remboursement",
+  "refundAmountPlaceholder": "0",
+  "notesLabel": "Remarque de l'administrateur",
+  "notesPlaceholder": "Note facultative pour cette approbation",
+  "cancel": "Annuler",
+  "confirm": "Approuver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Approbation de la demande de retour…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de retour approuvée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'approuver la demande de retour",
+      "time": 3000
+    }
+  }
+}

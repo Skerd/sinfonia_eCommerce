@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
+  "title": "Modifier l'attribut",
+  "errorTitle": "Échec du chargement de l'attribut",
+  "errorDescription": "Impossible de charger cet attribut. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "nameLabel": "Nom",
+    "positionLabel": "Poste",
+    "isVisibleOnProductPageLabel": "Visible sur la page produit",
+    "isUsedForVariantsLabel": "Utilisé pour les variantes",
+    "valuesLabel": "Valeurs",
+    "valuesPlaceholder": "Ajoutez une valeur et appuyez sur Entrée",
+    "removeValue": "Supprimer la valeur"
+  },
+  "axios": {
+    "start": {
+      "title": "Attribut d'enregistrement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attribut mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'attribut",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'attribut",
+    "description": "Mettez à jour les paramètres de nom, de valeurs, de visibilité et de variante."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

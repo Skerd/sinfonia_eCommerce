@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/cardView/posConfigCard.tsx",
+  "name": "Nom",
+  "warehouses": "Entrepôts",
+  "paymentMethods": "Modes de paiement",
+  "active": "Actif",
+  "inactive": "Inactif",
+  "paused": "En pause",
+  "companyPaused": "L'entreprise a fait une pause",
+  "openPos": "Point de vente ouvert"
+}

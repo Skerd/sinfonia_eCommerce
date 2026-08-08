@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx",
+  "title": "Ristampa ricevuta",
+  "description": "Visualizza l'anteprima e stampa la ricevuta per questo ordine POS.",
+  "loading": "Caricamento ricevuta...",
+  "cancel": "Annulla",
+  "confirm": "Stampa",
+  "order": "Ordine",
+  "ref": "Rif",
+  "date": "Data",
+  "customer": "Cliente",
+  "walkIn": "Cliente che entra",
+  "discount": "Sconto",
+  "total": "Totale",
+  "change": "Cambiare",
+  "defaultFooter": "Grazie per il tuo acquisto!",
+  "fallbackShop": "POS",
+  "errors": {
+    "loadFailed": "Impossibile caricare la ricevuta per questo ordine."
+  },
+  "axios": {
+    "start": {
+      "title": "Caricamento ricevuta...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ricevuta pronta",
+      "time": 2000
+    },
+    "error": {
+      "title": "Impossibile caricare la ricevuta",
+      "time": 3000
+    }
+  }
+}

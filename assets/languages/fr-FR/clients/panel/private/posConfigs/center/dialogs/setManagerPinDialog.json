@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/setManagerPinDialog.tsx",
+  "title": "Définir le code PIN du gestionnaire",
+  "description": "Saisissez le nouveau code PIN deux fois. Les deux champs doivent correspondre.",
+  "pinLabel": "Nouveau code PIN",
+  "confirmPinLabel": "Confirmer le code PIN",
+  "pinMismatch": "La confirmation du code PIN ne correspond pas",
+  "pinTooShort": "Le code PIN doit comporter au moins 4 caractères",
+  "cancel": "Annuler",
+  "confirm": "Enregistrer le code PIN",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Enregistrement du code PIN du gestionnaire",
+      "time": 3000
+    },
+    "success": {
+      "title": "Code PIN du responsable enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de définir le code PIN du gestionnaire",
+      "time": 3000
+    }
+  }
+}

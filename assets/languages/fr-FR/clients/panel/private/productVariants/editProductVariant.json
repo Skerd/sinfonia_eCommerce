@@ -1,0 +1,65 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
+  "title": "Modifier la variante",
+  "errorTitle": "Échec du chargement de la variante",
+  "errorDescription": "Impossible de charger cette variante de produit. Essayer à nouveau.",
+  "form": {
+    "generalSectionTitle": "Général",
+    "pricingSectionTitle": "Tarification",
+    "physicalSectionTitle": "Physique",
+    "mediaSectionTitle": "Médias",
+    "productLabel": "Produit",
+    "productPlaceholder": "Sélectionner un produit",
+    "statusLabel": "Statut",
+    "skuLabel": "SKU",
+    "skuPlaceholder": "Variante SKU",
+    "barcodeLabel": "Code à barres",
+    "barcodePlaceholder": "Code à barres",
+    "positionLabel": "Poste",
+    "trackInventoryLabel": "Suivre l'inventaire",
+    "priceLabel": "Prix",
+    "compareAtPriceLabel": "Comparer au prix",
+    "costPriceLabel": "Prix de revient",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "weightLabel": "Poids",
+    "dimensionLengthLabel": "Longueur",
+    "dimensionWidthLabel": "Largeur",
+    "dimensionHeightLabel": "Hauteur",
+    "mainImageLabel": "Image principale",
+    "attributesSectionTitle": "Combinaison d'attributs",
+    "attributeAddRow": "Ajouter un attribut",
+    "attributeRemoveRow": "Supprimer l'attribut",
+    "attributeRowTitle": "Attribut sans titre",
+    "attributeLabel": "Attribut",
+    "attributePlaceholder": "Sélectionner un attribut",
+    "valueLabel": "Valeur",
+    "valuePlaceholder": "Valeur d'attribut",
+    "variantStatus": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Variante d'enregistrement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variante mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la variante",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la variante",
+    "description": "Mettez à jour les paramètres de tarification, d'attributs et d'inventaire pour ce SKU."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

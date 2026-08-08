@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
+  "title": "Sconti",
+  "description": "Gestisci codici promozionali e sconti automatici.",
+  "createDiscount": "Crea sconto",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "title": "Modifica tipo di unità",
+    "code": "Codice",
+    "type": "Tipo",
+    "value": "Valore",
+    "appliesTo": "Si applica a",
+    "targetIds": "Obiettivi",
+    "minimumOrderAmount": "Importo minimo dell'ordine",
+    "minimumQuantity": "Quantità minima",
+    "usageLimit": "Limite di utilizzo",
+    "usageLimitPerCustomer": "Limite di utilizzo per cliente",
+    "usageCount": "Conteggio dell'utilizzo",
+    "customerGroups": "Gruppi di clienti",
+    "isActive": "Attivo",
+    "startsAt": "Inizia alle",
+    "endsAt": "Termina alle",
+    "buyXGetY": {
+      "buyQuantity": "Acquista quantità",
+      "getQuantity": "Ottieni quantità",
+      "getProductIds": "Prodotti gratuiti"
+    },
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

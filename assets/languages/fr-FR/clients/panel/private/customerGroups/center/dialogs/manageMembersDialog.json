@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx",
+  "title": "Gérer les membres",
+  "description": "Ajoutez ou supprimez des utilisateurs de ce groupe de clients.",
+  "addMemberLabel": "Ajouter un membre",
+  "userPlaceholder": "Sélectionnez un utilisateur",
+  "add": "Ajouter",
+  "adding": "Ajout...",
+  "membersLabel": "Membres",
+  "noMembers": "Aucun membre dans ce groupe pour l'instant.",
+  "close": "Fermer",
+  "addSuccess": "Membre ajouté.",
+  "addError": "Échec de l'ajout du membre.",
+  "removeSuccess": "Membre supprimé.",
+  "removeError": "Échec de la suppression du membre.",
+  "loadError": "Échec du chargement des membres.",
+  "previousPage": "Précédent",
+  "nextPage": "Suivant"
+}

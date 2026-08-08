@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx",
+  "name": "Nome",
+  "nipt": "NIPT",
+  "tcrCode": "TCR",
+  "certificate": "Certificato",
+  "certificateYes": "Caricato",
+  "certificateNo": "Mancante",
+  "active": "Attivo",
+  "inactive": "Inattivo"
+}

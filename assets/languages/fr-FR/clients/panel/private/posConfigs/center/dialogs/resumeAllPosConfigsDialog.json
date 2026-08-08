@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
+  "title": "Reprendre toutes les caisses POS ?",
+  "description": "Efface le verrou à l’échelle de l’entreprise et chaque pause de caisse. Les caissiers doivent ouvrir une nouvelle session pour revendre.",
+  "cancel": "Annuler",
+  "confirm": "Reprendre tout",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Reprise de toutes les caisses POS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Toutes les caisses ont repris",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de reprendre toutes les caisses POS",
+      "time": 3000
+    }
+  }
+}

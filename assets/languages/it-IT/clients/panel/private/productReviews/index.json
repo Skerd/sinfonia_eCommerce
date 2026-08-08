@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
+  "title": "Recensioni di prodotti",
+  "description": "Recensioni degli acquirenti moderate (create tramite la vetrina dopo un ordine pagato).",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "order": "Ordine",
+    "product": "Prodotto",
+    "rating": "Valutazione",
+    "title": "Modifica tipo di unità",
+    "comment": "Commento",
+    "reviewer": "Revisore",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

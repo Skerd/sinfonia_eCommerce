@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
+  "inventorySubtitle": "Registre d'inventaire",
+  "overview": "Vue d'ensemble",
+  "related": "Connexes",
+  "product": "Produit",
+  "variant": "Variante",
+  "warehouse": "Entrepôt",
+  "quantityOnHand": "À portée de main",
+  "quantityReserved": "Réservé",
+  "quantityAvailable": "Disponible",
+  "reorderPoint": "Point de commande",
+  "reorderQuantity": "Quantité à commander",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

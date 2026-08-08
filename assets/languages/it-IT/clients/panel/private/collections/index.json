@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
+  "title": "Collezioni",
+  "description": "Raggruppa i prodotti in collezioni curate.",
+  "createCollection": "Crea raccolta",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "manual": "Manuale",
+        "dynamic": "Dinamico"
+      },
+      "ruleCondition": {
+        "all": "Tutte le regole (AND)",
+        "any": "Qualsiasi regola (OR)"
+      },
+      "rules": {
+        "field": {
+          "tag": "Etichetta",
+          "brand": "Marchio",
+          "category": "Categoria",
+          "price": "Prezzo",
+          "vendor": "Fornitore",
+          "inventory_level": "Livello di inventario",
+          "product_type": "Tipo di prodotto"
+        },
+        "operator": {
+          "equals": "Uguale a",
+          "not_equals": "Diverso da",
+          "contains": "Contiene",
+          "not_contains": "Non contiene",
+          "greater_than": "Maggiore di",
+          "less_than": "Minore di",
+          "starts_with": "Inizia con"
+        }
+      }
+    },
+    "type": "Tipo",
+    "name": "Nome",
+    "slug": "Lumaca",
+    "description": "Descrizione",
+    "mainImage": "Immagine di copertina",
+    "isVisible": "Visibile",
+    "position": "Posizione",
+    "products": "Prodotti",
+    "ruleCondition": "Condizione di corrispondenza",
+    "rules": {
+      "field": "Campo regola",
+      "operator": "Operatore di regole",
+      "value": "Valore della regola"
+    },
+    "seoTitle": "Titolo SEO",
+    "seoDescription": "Descrizione SEO",
+    "publishedAt": "Pubblica su",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

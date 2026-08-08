@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx",
+  "title": "Désactiver l'entrepôt",
+  "description": "Cet entrepôt ne sera plus utilisé jusqu'à ce qu'il soit à nouveau activé.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de l'entrepôt…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Entrepôt désactivé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver l'entrepôt",
+      "time": 3000
+    }
+  }
+}

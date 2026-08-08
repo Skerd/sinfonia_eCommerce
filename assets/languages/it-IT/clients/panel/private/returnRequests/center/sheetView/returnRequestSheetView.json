@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx",
+  "overview": "Panoramica",
+  "notes": "Note",
+  "related": "Relativo",
+  "items": "Elementi",
+  "lifecycle": "Ciclo di vita",
+  "returnRequestSubtitle": "Dettagli della richiesta di reso",
+  "failedTitle": "Impossibile caricare la richiesta di reso",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa richiesta di reso. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "type": "Tipo",
+  "status": "Stato",
+  "refundAmount": "Importo del rimborso",
+  "customerNote": "Nota del cliente",
+  "adminNote": "Nota dell'amministratore",
+  "order": "Ordine",
+  "resolvedBy": "Risolto da",
+  "resolvedAt": "Risolto il",
+  "createdBy": "Creato da",
+  "company": "Azienda",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "itemOrderItemId": "ID articolo dell'ordine",
+  "itemQuantity": "Quantità",
+  "itemReason": "Motivo",
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "returnType": {
+    "return": "Ritorno",
+    "exchange": "Scambio",
+    "refund": "Rimborso"
+  },
+  "returnStatus": {
+    "pending": "In sospeso",
+    "approved": "Approvata",
+    "rejected": "Rifiutato",
+    "received": "Ricevuto",
+    "completed": "Completato"
+  }
+}

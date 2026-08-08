@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
+  "title": "Modifier la zone fiscale",
+  "errorTitle": "Échec du chargement de la zone fiscale",
+  "errorDescription": "Impossible de charger cette zone fiscale. Essayer à nouveau.",
+  "form": {
+    "generalSectionTitle": "Général",
+    "geographySectionTitle": "Géographie",
+    "nameLabel": "Nom",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "priorityLabel": "Priorité",
+    "statesLabel": "États / régions",
+    "selectState": "Sélectionner le canton",
+    "removeState": "Supprimer l'état",
+    "postalCodePatternsLabel": "Modèles de codes postaux",
+    "postalCodePatternsPlaceholder": "par ex. 1000* ou AL-*",
+    "removePostalCodePattern": "Supprimer le motif",
+    "ratesSectionTitle": "Taux d'imposition",
+    "rateAddRow": "Ajouter un tarif",
+    "rateRemoveRow": "Supprimer le taux",
+    "rateRowTitle": "Tarif sans titre",
+    "rateNameLabel": "Nom du tarif",
+    "rateValueLabel": "Taux (%)",
+    "rateAppliesToLabel": "S'applique à",
+    "isCompoundLabel": "Taux composé",
+    "taxRateAppliesTo": {
+      "all": "Tous les produits",
+      "physical": "Physique",
+      "digital": "Numérique"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Zone d'épargne fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone fiscale mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la zone fiscale",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la zone fiscale",
+    "description": "Mettez à jour la géographie de la destination et les taux de taxe pour cette zone."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

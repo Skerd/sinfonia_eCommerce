@@ -1,0 +1,150 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
+  "title": "Produits",
+  "description": "Gérez les produits de votre catalogue.",
+  "createProduct": "Créer un produit",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "physical": "Physique",
+        "digital": "Numérique",
+        "service": "Service",
+        "variable": "Variable",
+        "bundle": "Fagot",
+        "gift_card": "Carte cadeau"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "active": "Actif",
+        "archived": "Archivé"
+      },
+      "weightUnit": {
+        "kg": "kilos",
+        "lb": "livre",
+        "g": "g",
+        "oz": "once"
+      },
+      "dimensionUnit": {
+        "cm": "cm",
+        "in": "dans"
+      },
+      "seo": {
+        "twitterCard": {
+          "summary": "Résumé",
+          "summary_large_image": "Grande image récapitulative"
+        }
+      }
+    },
+    "type": "Type",
+    "title": "Modifier le type d’unité",
+    "slug": "Identifiant",
+    "description": "Description",
+    "shortDescription": "Brève description",
+    "highlights": "Points forts",
+    "careInstructions": "Instructions d'entretien",
+    "warranty": "Garantie",
+    "faqs": {
+      "question": "Question",
+      "answer": "Réponse"
+    },
+    "sku": "SKU",
+    "barcode": "Code à barres",
+    "gtin": "GTIN",
+    "upc": "CUP",
+    "ean": "EAN",
+    "isbn": "ISBN",
+    "mpn": "Numéro de pièce fabricant",
+    "hsCode": "Code HS",
+    "countryOfOrigin": "Pays d'origine",
+    "brand": "Marque",
+    "vendor": "Fournisseur",
+    "tags": "Balises",
+    "categories": "Catégories",
+    "collections": "Collections",
+    "price": "Prix",
+    "compareAtPrice": "Comparer au prix",
+    "costPrice": "Prix de revient",
+    "msrp": "PDSF",
+    "saleStartsAt": "Début des ventes",
+    "saleEndsAt": "La vente se termine",
+    "taxable": "Imposable",
+    "taxClass": "Classe fiscale",
+    "minOrderQty": "Min. quantité commandée",
+    "maxOrderQty": "Max. quantité commandée",
+    "stepQty": "Quantité par étape de commande",
+    "currency": "Devise",
+    "weight": "Poids",
+    "weightUnit": "Unité de poids",
+    "dimensions": {
+      "length": "Longueur",
+      "width": "Largeur",
+      "height": "Hauteur"
+    },
+    "dimensionUnit": "Unité de dimension",
+    "volumetricWeight": "Poids volumétrique",
+    "shippingClass": "Classe d'expédition",
+    "isHazmat": "Matière dangereuse",
+    "requiresShipping": "Nécessite l'expédition",
+    "trackInventory": "Suivre l'inventaire",
+    "allowBackorder": "Autoriser les commandes en souffrance",
+    "lowStockThreshold": "Seuil de stock bas",
+    "safetyStock": "Stock de sécurité",
+    "backorderLimit": "Limite de commande en souffrance",
+    "preorderEnabled": "Précommande activée",
+    "preorderAvailableAt": "Précommande disponible sur",
+    "availableForSale": "Disponible à la vente",
+    "mainImage": "Image principale",
+    "gallery": "Galerie",
+    "videoUrls": "URL des vidéos",
+    "documents": "Documents",
+    "variantOptions": "Options de variantes",
+    "hasVariants": "A des variantes",
+    "defaultVariant": "Variante par défaut",
+    "bundleComponents": {
+      "product": "Produit groupé",
+      "quantity": "Quantité"
+    },
+    "downloadLimit": "Limite de téléchargement",
+    "downloadExpiryDays": "Expiration du téléchargement (jours)",
+    "relatedProducts": "Produits associés",
+    "upsells": "Ventes incitatives",
+    "crossSells": "Ventes croisées",
+    "frequentlyBoughtTogether": "Fréquemment achetés ensemble",
+    "featured": "Mis en avant",
+    "badges": "Insignes",
+    "ratingAverage": "Note",
+    "ratingCount": "Nombre de notes",
+    "reviewCount": "Avis",
+    "status": "Statut",
+    "publishedAt": "Publié",
+    "attributes": {
+      "name": "Nom de l'attribut",
+      "values": "Valeurs d'attribut"
+    },
+    "specifications": {
+      "label": "Étiquette de spécification",
+      "value": "Valeur de spécification"
+    },
+    "seo": {
+      "metaTitle": "Méta-titre",
+      "metaDescription": "Méta description",
+      "metaKeywords": "Méta-mots-clés",
+      "canonicalUrl": "URL canonique",
+      "openGraphTitle": "Titre du graphique ouvert",
+      "openGraphDescription": "Description du graphique ouvert",
+      "openGraphImage": "Ouvrir l'image du graphique",
+      "twitterCard": "Carte Twitter",
+      "structuredDataType": "Type de données structurées",
+      "sitemapInclude": "Inclure dans le plan du site",
+      "sitemapPriority": "Priorité du plan du site",
+      "noIndex": "Pas d'index"
+    },
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
+  "title": "Blocchi CMS",
+  "description": "Gestisci i blocchi di contenuti della vetrina e il loro ordine di visualizzazione.",
+  "createCmsBlock": "Crea un blocco CMS",
+  "reorderBlocks": "Riordina i blocchi",
+  "reorderTitle": "Riordina i blocchi CMS",
+  "reorderDescription": "Trascina i blocchi per modificare l'ordine di visualizzazione nella vetrina.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "empty": "Nessun blocco da riordinare.",
+  "cancel": "Annulla",
+  "save": "Salva ordine",
+  "saving": "Salvataggio...",
+  "saveSuccess": "Ordine di blocco salvato.",
+  "saveError": "Impossibile salvare l'ordine di blocco.",
+  "loadError": "Impossibile caricare i blocchi.",
+  "fields": {
+    "!enums": {
+      "type": {
+        "hero_banner": "Stendardo dell'eroe",
+        "slider": "Dispositivo di scorrimento",
+        "featured_collection": "Collezione in primo piano",
+        "trending": "Tendenza",
+        "best_sellers": "I più venduti",
+        "flash_sale": "Vendita lampo",
+        "announcement_bar": "Barra degli annunci",
+        "custom_html": "HTML personalizzato",
+        "video": "Video",
+        "grid": "Griglia",
+        "category_showcase": "Vetrina di categoria",
+        "promotional_section": "Sezione promozionale"
+      }
+    },
+    "title": "Modifica tipo di unità",
+    "type": "Tipo",
+    "position": "Posizione",
+    "isActive": "Attivo",
+    "config": "Configurazione",
+    "startsAt": "Inizia alle",
+    "endsAt": "Termina alle",
+    "visibility": {
+      "devices": "Dispositivi",
+      "regions": "Regioni"
+    },
+    "abTestVariant": "Variante A/B",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

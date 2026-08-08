@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx",
+  "title": "Désactiver la configuration fiscale",
+  "description": "Cette configuration fiscale ne sera pas utilisée pour la fiscalisation jusqu'à ce qu'elle soit à nouveau activée.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la configuration fiscale…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configuration fiscale désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la configuration fiscale",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/center/sheetView/categorySheetView.tsx",
+  "failedTitle": "Impossibile caricare la categoria",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa categoria. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "categorySubtitle": "Categoria",
+  "name": "Nome",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "slug": "Lumaca",
+  "order": "Ordine",
+  "parentCategory": "Categoria genitore",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

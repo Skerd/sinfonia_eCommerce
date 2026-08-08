@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx",
+  "title": "Créer un mode de paiement",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom du mode de paiement",
+    "typeLabel": "Type",
+    "sequenceLabel": "Séquence",
+    "sequencePlaceholder": "0",
+    "cashQuickAmountsLabel": "Encaisser des montants rapides",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Terminal de paiement bancaire",
+    "terminalEnabledLabel": "Connecter le terminal POS bancaire",
+    "terminalForcesCardHint": "La connexion d’un terminal POS bancaire définit le type sur Carte. La déconnexion le définit sur Cash.",
+    "terminalProviderLabel": "Fournisseur de terminaux",
+    "terminalProtocolLabel": "Protocole",
+    "terminalHostLabel": "Hôte du terminal / IP",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Port terminal",
+    "terminalPortPlaceholder": "8080",
+    "terminalIdLabel": "ID du terminal",
+    "terminalIdPlaceholder": "TID/POIID",
+    "terminalPathLabel": "Chemin du terminal",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Comptant",
+      "card": "Carte",
+      "bank": "Banque",
+      "customer_account": "Compte client",
+      "other": "Autre"
+    },
+    "terminalProvider": {
+      "manual": "Manuel (terminal externe)",
+      "local_http": "Pont HTTP local"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'un mode de paiement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mode de paiement créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer un mode de paiement",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un mode de paiement",
+    "description": "Définissez un mode de paiement de caisse, des jetons de trésorerie en option et une connexion au terminal bancaire."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un mode de paiement"
+  }
+}

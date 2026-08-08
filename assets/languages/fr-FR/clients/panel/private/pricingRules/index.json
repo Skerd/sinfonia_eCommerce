@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
+  "title": "Règles de tarification",
+  "description": "Automatisez les ajustements de prix par segment ou produit.",
+  "createPricingRule": "Créer une règle de tarification",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "type": "Type",
+    "value": "Valeur",
+    "appliesTo": "S'applique à",
+    "targetIds": "Cibles",
+    "customerGroups": "Groupes de clients",
+    "minimumOrderAmount": "Montant minimum de commande",
+    "minimumQuantity": "Quantité minimale",
+    "priority": "Priorité",
+    "isActive": "Actif",
+    "startsAt": "Commence à",
+    "endsAt": "Se termine à",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

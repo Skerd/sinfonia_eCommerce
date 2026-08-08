@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
+  "title": "Imposta come indirizzo predefinito",
+  "description": "Questo indirizzo diventerà quello predefinito per il cliente. Qualsiasi altra impostazione predefinita verrà cancellata.",
+  "cancel": "Annulla",
+  "confirm": "Imposta come predefinito",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Impostazione dell'indirizzo predefinito...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Indirizzo predefinito aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile impostare l'indirizzo predefinito",
+      "time": 3000
+    }
+  }
+}

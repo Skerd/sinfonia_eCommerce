@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx",
+  "title": "Désactiver la règle de tarification",
+  "description": "Cette règle de tarification n’ajustera plus les prix jusqu’à ce qu’elle soit à nouveau activée.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la règle de tarification…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Règle de tarification désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la règle de tarification",
+      "time": 3000
+    }
+  }
+}

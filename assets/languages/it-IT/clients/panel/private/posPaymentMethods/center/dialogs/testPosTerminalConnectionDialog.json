@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx",
+  "title": "Testare il collegamento del terminale",
+  "description": "Sonda il bridge del terminale POS della banca senza addebitare alcun pagamento.",
+  "cancel": "Annulla",
+  "confirm": "Testare la connessione",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Test della connessione del terminale…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Il test di connessione del terminale è riuscito.",
+      "time": 3000
+    },
+    "error": {
+      "title": "Il test di connessione del terminale non è riuscito",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/deductInventory.tsx",
+  "title": "Déduire l'inventaire",
+  "description": "Annulez ou supprimez le stock et conservez un journal de mouvement complet.",
+  "missingInventoryId": "Identifiant d'inventaire manquant. Ouvrir une déduction d'une ligne d'inventaire."
+}

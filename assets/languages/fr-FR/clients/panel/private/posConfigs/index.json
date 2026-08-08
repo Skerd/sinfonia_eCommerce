@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
+  "title": "Configurations de point de vente",
+  "description": "Points de vente et caisses.",
+  "createPosConfig": "Créer une configuration de point de vente",
+  "bulkMenu": {
+    "triggerAria": "Contrôles des points de vente de l'entreprise",
+    "label": "Contrôles de l'entreprise",
+    "hint": "Arrêt d'urgence pour chaque caisse",
+    "lockedReasonPrefix": "Raison de la pause de l'entreprise",
+    "pauseAll": "Suspendre toutes les caisses",
+    "pauseAllHint": "Verrouiller l'entreprise et forcer la fermeture des sessions ouvertes",
+    "resumeAll": "Reprendre toutes les caisses",
+    "resumeAllHint": "Effacez le verrou de l'entreprise et chaque pause de caisse"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "paymentMethods": "Modes de paiement",
+    "managers": "Gestionnaires",
+    "managerPins": {
+      "user": "Gestionnaire",
+      "pinHash": "Hachage du code PIN",
+      "pinReset": {
+        "code": "Code de réinitialisation du code PIN",
+        "date": "Date de réinitialisation du code PIN",
+        "opened": "Réinitialisation du code PIN ouverte"
+      }
+    },
+    "warehouse": "Entrepôt",
+    "warehouses": "Entrepôts",
+    "currency": "Devise",
+    "receiptHeader": "En-tête du reçu",
+    "receiptFooter": "Pied de page du reçu",
+    "ifaceBarcodeScanner": "Lecteur de codes à barres",
+    "ifaceCashControl": "Contrôle de trésorerie",
+    "allowDiscount": "Autoriser la réduction",
+    "allowQuantityChange": "Autoriser le changement de quantité",
+    "allowOversell": "Autoriser la survente",
+    "pinForDiscount": "Code PIN pour réduction",
+    "pinForCashOut": "Code PIN pour le retrait",
+    "pinForRefund": "Code PIN pour le remboursement",
+    "isActive": "Actif",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
+  "title": "Créer un épanouissement",
+  "form": {
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "statusLabel": "Statut",
+    "carrierLabel": "Transporteur",
+    "carrierPlaceholder": "Nom du transporteur",
+    "trackingNumberLabel": "Numéro de suivi",
+    "trackingNumberPlaceholder": "Numéro de suivi",
+    "trackingUrlLabel": "URL de suivi",
+    "trackingUrlPlaceholder": "https://…",
+    "shippedAtLabel": "Expédié à",
+    "estimatedDeliveryAtLabel": "Livraison estimée",
+    "deliveredAtLabel": "Livré à",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes facultatives",
+    "itemsSectionTitle": "Articles",
+    "itemAddRow": "Ajouter un article",
+    "itemRemoveRow": "Supprimer l'élément",
+    "itemRowTitle": "Poste",
+    "orderItemIdLabel": "Identifiant de l'article de la commande",
+    "orderItemIdPlaceholder": "Identifiant de la ligne de commande",
+    "quantityLabel": "Quantité",
+    "fulfillmentStatus": {
+      "pending": "En attente",
+      "shipped": "Expédié",
+      "delivered": "Livré",
+      "failed": "Échoué"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Créer l'épanouissement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réalisation créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer l'épanouissement",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un épanouissement",
+    "description": "Créez un envoi pour une commande avec suivi et articles."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un épanouissement"
+  }
+}

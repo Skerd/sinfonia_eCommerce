@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx",
+  "title": "Activer la remise",
+  "description": "Cette réduction sera disponible pour les paniers et le paiement.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation de la réduction…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Remise activée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer la réduction",
+      "time": 3000
+    }
+  }
+}

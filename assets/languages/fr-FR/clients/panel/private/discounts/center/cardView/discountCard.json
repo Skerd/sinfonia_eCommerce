@@ -1,0 +1,15 @@
+{
+  "active": "Actif",
+  "code": "Code",
+  "discountType": {
+    "buy_x_get_y": "Achetez X, obtenez Y",
+    "fixed": "Corrigé",
+    "free_shipping": "Livraison gratuite",
+    "percentage": "Pourcentage"
+  },
+  "inactive": "Inactif",
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
+  "title": "Modifier le type d’unité",
+  "type": "Type",
+  "value": "Valeur"
+}

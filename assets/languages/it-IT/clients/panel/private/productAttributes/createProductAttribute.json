@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/createProductAttribute.tsx",
+  "title": "Crea attributo",
+  "form": {
+    "nameLabel": "Nome",
+    "positionLabel": "Posizione",
+    "isVisibleOnProductPageLabel": "Visibile sulla pagina del prodotto",
+    "isUsedForVariantsLabel": "Utilizzato per le varianti",
+    "valuesLabel": "Valori",
+    "valuesPlaceholder": "Aggiungi un valore e premi Invio",
+    "removeValue": "Rimuovi valore"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione dell'attributo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attributo creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare l'attributo",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea attributo",
+    "description": "Definisci un attributo come dimensione o colore, con valori facoltativi per le varianti."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea attributo"
+  }
+}

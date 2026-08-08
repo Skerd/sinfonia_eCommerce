@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
+  "title": "Zone di spedizione",
+  "description": "Definisci le tariffe di spedizione in base all'area geografica.",
+  "createShippingZone": "Crea zona di spedizione",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "countries": "Paesi",
+    "states": "Stati / cantoni",
+    "postalCodePatterns": "Modelli di codici postali",
+    "rates": {
+      "name": "Nome della tariffa",
+      "type": "Tipo di tariffa",
+      "price": "Valuta il prezzo",
+      "carrier": "Portatore",
+      "estimatedDeliveryDays": "Stima giorni di consegna",
+      "conditions": {
+        "minWeight": "Peso minimo",
+        "maxWeight": "Peso massimo",
+        "minOrderAmount": "Importo minimo dell'ordine",
+        "maxOrderAmount": "Importo massimo dell'ordine"
+      }
+    },
+    "isActive": "Attivo",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

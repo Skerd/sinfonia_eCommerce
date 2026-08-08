@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
+  "title": "Réinitialiser le code PIN du gestionnaire",
+  "description": "Choisissez un nouveau code PIN gestionnaire pour cette caisse.",
+  "verifyingTitle": "Vérification du lien de réinitialisation",
+  "verifyingDescription": "Veuillez patienter pendant que nous validons votre lien de réinitialisation.",
+  "invalidTitle": "Lien invalide ou expiré",
+  "invalidDescription": "Ce lien de réinitialisation n'est pas valide ou a expiré. Demandez-en un nouveau dans le menu de configuration du point de vente.",
+  "successTitle": "Code PIN mis à jour",
+  "successDescription": "Le code PIN du gestionnaire a été réinitialisé avec succès. Vous pouvez vous connecter et utiliser la caisse.",
+  "errorTitle": "Impossible de réinitialiser le code PIN",
+  "errorDescription": "Une erreur s'est produite lors de l'enregistrement du nouveau code PIN. Essayer à nouveau.",
+  "tryAgain": "Réessayer",
+  "submit": "Enregistrer le nouveau code PIN",
+  "form": {
+    "pinLabel": "Nouveau code PIN",
+    "confirmPinLabel": "Confirmer le code PIN",
+    "resetCodeLabel": "Réinitialiser le code",
+    "pinMismatch": "La confirmation du code PIN ne correspond pas"
+  }
+}

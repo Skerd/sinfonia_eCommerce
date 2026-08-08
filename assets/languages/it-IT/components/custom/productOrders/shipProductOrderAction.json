@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx",
+  "cancel": "Annulla",
+  "ship": {
+    "title": "Spedisci l'ordine",
+    "description": "Crea un evasione con i dettagli di tracciabilità e contrassegna l'ordine come spedito.",
+    "carrierLabel": "Portatore",
+    "trackingNumberLabel": "Numero di tracciamento",
+    "trackingUrlLabel": "URL di monitoraggio",
+    "confirm": "Nave",
+    "axios": {
+      "success": "Ordine spedito",
+      "error": "Impossibile spedire l'ordine"
+    }
+  }
+}

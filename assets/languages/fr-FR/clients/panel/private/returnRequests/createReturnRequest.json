@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
+  "title": "Créer une demande de retour",
+  "form": {
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "typeLabel": "Type",
+    "statusLabel": "Statut",
+    "refundAmountLabel": "Montant du remboursement",
+    "refundAmountPlaceholder": "0",
+    "customerNoteLabel": "Note client",
+    "customerNotePlaceholder": "Note facultative du client",
+    "adminNoteLabel": "Remarque de l'administrateur",
+    "adminNotePlaceholder": "Note interne facultative",
+    "itemsSectionTitle": "Articles",
+    "itemAddRow": "Ajouter un article",
+    "itemRemoveRow": "Supprimer l'élément",
+    "itemRowTitle": "Poste",
+    "orderItemIdLabel": "Identifiant de l'article de la commande",
+    "orderItemIdPlaceholder": "Identifiant de la ligne de commande",
+    "quantityLabel": "Quantité",
+    "reasonLabel": "Motif",
+    "reasonPlaceholder": "Pourquoi cet article est-il retourné ?",
+    "returnType": {
+      "return": "Retour",
+      "exchange": "Échange",
+      "refund": "Remboursement"
+    },
+    "returnStatus": {
+      "pending": "En attente",
+      "approved": "Approuvée",
+      "rejected": "Rejeté",
+      "received": "Reçu",
+      "completed": "Terminé"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une demande de retour",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de retour créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer une demande de retour",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une demande de retour",
+    "description": "Demandez un retour, un échange ou un remboursement pour une commande."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une demande de retour"
+  }
+}

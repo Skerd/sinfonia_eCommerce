@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
+  "title": "Riprendere tutte le casse POS?",
+  "description": "Cancella il blocco a livello aziendale e ogni pausa fino alla cassa. I cassieri devono aprire una nuova sessione per vendere di nuovo.",
+  "cancel": "Annulla",
+  "confirm": "Riprendi tutto",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Riavvio di tutte le casse POS...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sono riprese tutte le casse POS",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile ripristinare tutte le casse POS",
+      "time": 3000
+    }
+  }
+}

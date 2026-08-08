@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/categories/editCategory.tsx",
+  "editTitle": "Modifier la catégorie",
+  "editDescription": "Mettre à jour les détails de la catégorie.",
+  "errorTitle": "Échec du chargement de la catégorie",
+  "errorDescription": "Impossible de charger cette catégorie. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la catégorie",
+    "parentCategoryLabel": "Catégorie parente",
+    "parentCategoryPlaceholder": "Parent facultatif",
+    "orderLabel": "Ordre de tri",
+    "orderPlaceholder": "0",
+    "editCategoryTitle": "Modifier la catégorie",
+    "editCategoryDescription": "Mettre à jour les informations sur la catégorie."
+  },
+  "axios": {
+    "start": {
+      "title": "Catégorie d'enregistrement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Catégorie mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la catégorie",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la catégorie",
+    "description": "Mettre à jour les détails de la catégorie."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

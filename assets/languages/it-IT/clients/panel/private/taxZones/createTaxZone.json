@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/createTaxZone.tsx",
+  "title": "Crea zona fiscale",
+  "form": {
+    "generalSectionTitle": "Generale",
+    "geographySectionTitle": "Geografia",
+    "nameLabel": "Nome",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Seleziona il paese",
+    "priorityLabel": "Priorità",
+    "statesLabel": "Stati/regioni",
+    "selectState": "Seleziona il cantone",
+    "removeState": "Rimuovi stato",
+    "postalCodePatternsLabel": "Modelli di codici postali",
+    "postalCodePatternsPlaceholder": "ad es. 1000* o AL-*",
+    "removePostalCodePattern": "Rimuovi motivo",
+    "ratesSectionTitle": "Aliquote fiscali",
+    "rateAddRow": "Aggiungi tasso",
+    "rateRemoveRow": "Rimuovi tariffa",
+    "rateRowTitle": "Tariffa senza titolo",
+    "rateNameLabel": "Nome della tariffa",
+    "rateValueLabel": "Tasso (%)",
+    "rateAppliesToLabel": "Si applica a",
+    "isCompoundLabel": "Tasso composto",
+    "taxRateAppliesTo": {
+      "all": "Tutti i prodotti",
+      "physical": "Fisico",
+      "digital": "Digitale"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione zona fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Creata la zona fiscale",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la zona fiscale",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea zona fiscale",
+    "description": "Definisci la geografia di destinazione e le aliquote fiscali applicate al momento del pagamento."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea zona fiscale"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx",
+  "title": "Modifier le mode de paiement",
+  "errorTitle": "Échec du chargement du mode de paiement",
+  "errorDescription": "Impossible de charger ce mode de paiement. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom du mode de paiement",
+    "typeLabel": "Type",
+    "sequenceLabel": "Séquence",
+    "sequencePlaceholder": "0",
+    "cashQuickAmountsLabel": "Encaisser des montants rapides",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Terminal de paiement bancaire",
+    "terminalEnabledLabel": "Connecter le terminal POS bancaire",
+    "terminalForcesCardHint": "La connexion d’un terminal POS bancaire définit le type sur Carte. La déconnexion le définit sur Cash.",
+    "terminalProviderLabel": "Fournisseur de terminaux",
+    "terminalProtocolLabel": "Protocole",
+    "terminalHostLabel": "Hôte du terminal / IP",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Port terminal",
+    "terminalPortPlaceholder": "8080",
+    "terminalIdLabel": "ID du terminal",
+    "terminalIdPlaceholder": "TID/POIID",
+    "terminalPathLabel": "Chemin du terminal",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Comptant",
+      "card": "Carte",
+      "bank": "Banque",
+      "customer_account": "Compte client",
+      "other": "Autre"
+    },
+    "terminalProvider": {
+      "manual": "Manuel (terminal externe)",
+      "local_http": "Pont HTTP local"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrer le mode de paiement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mode de paiement mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour le mode de paiement",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier le mode de paiement",
+    "description": "Mettez à jour le type de paiement, les jetons en espèces et la connexion au terminal bancaire."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

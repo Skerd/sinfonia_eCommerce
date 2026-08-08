@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/editCmsBlock.tsx",
+  "title": "Modifier le bloc CMS",
+  "formHeader": {
+    "title": "Modifier le bloc CMS",
+    "description": "Mettez à jour le contenu, le calendrier et la visibilité de la vitrine."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  },
+  "form": {
+    "generalSectionTitle": "Général",
+    "configSectionTitle": "Configuration",
+    "visibilitySectionTitle": "Visibilité",
+    "titleLabel": "Modifier le type d’unité",
+    "typeLabel": "Type",
+    "positionLabel": "Poste",
+    "abTestVariantLabel": "Variante de test A/B",
+    "startsAtLabel": "Commence à",
+    "endsAtLabel": "Se termine à",
+    "configLabel": "Configuration (JSON)",
+    "configPlaceholder": "{\n  \"headline\": \"Bienvenue\"\n}",
+    "visibilityDevicesLabel": "Appareils",
+    "visibilityRegionsLabel": "Régions",
+    "visibilityRegionsPlaceholder": "Ajouter le code de région",
+    "removeRegion": "Supprimer la région",
+    "cmsBlockType": {
+      "hero_banner": "Bannière de héros",
+      "slider": "Curseur",
+      "featured_collection": "Collection en vedette",
+      "trending": "Tendance",
+      "best_sellers": "Meilleures ventes",
+      "flash_sale": "Vente flash",
+      "announcement_bar": "Barre d'annonce",
+      "custom_html": "HTML personnalisé",
+      "video": "Vidéo",
+      "grid": "Grille",
+      "category_showcase": "Vitrine de catégorie",
+      "promotional_section": "Section promotionnelle"
+    },
+    "visibilityDevice": {
+      "desktop": "Bureau",
+      "mobile": "Mobile",
+      "tablet": "Tablette"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde du bloc CMS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bloc CMS mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour le bloc CMS",
+      "time": 3000
+    }
+  }
+}

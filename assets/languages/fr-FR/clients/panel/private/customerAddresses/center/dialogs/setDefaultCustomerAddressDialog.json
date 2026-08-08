@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
+  "title": "Définir comme adresse par défaut",
+  "description": "Cette adresse deviendra l'adresse par défaut pour le client. Tout autre défaut sera effacé.",
+  "cancel": "Annuler",
+  "confirm": "Définir par défaut",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Définition de l'adresse par défaut…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresse par défaut mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de définir l'adresse par défaut",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/cardView/inventoryCard.tsx",
+  "onHand": "A portata di mano",
+  "reserved": "Prenotato",
+  "available": "Disponibile",
+  "lowStock": "Scorte basse"
+}

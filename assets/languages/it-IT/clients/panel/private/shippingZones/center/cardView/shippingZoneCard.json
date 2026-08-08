@@ -1,0 +1,8 @@
+{
+  "active": "Attivo",
+  "countries": "Paesi",
+  "inactive": "Inattivo",
+  "name": "Nome",
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/cardView/shippingZoneCard.tsx",
+  "rates": "Tariffe"
+}

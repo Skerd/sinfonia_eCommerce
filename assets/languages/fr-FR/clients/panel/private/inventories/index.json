@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
+  "title": "Inventaire",
+  "description": "Niveaux de stock dans vos entrepôts.",
+  "createInventory": "Créer un inventaire",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "product": "Produit",
+    "warehouse": "Entrepôt",
+    "quantityOnHand": "À portée de main",
+    "quantityReserved": "Réservé",
+    "quantityAvailable": "Disponible",
+    "reorderPoint": "Point de commande",
+    "reorderQuantity": "Quantité à commander",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/activateShippingZoneDialog.tsx",
+  "title": "Activer la zone d'expédition",
+  "description": "Cette zone d'expédition sera utilisée lors du calcul des tarifs d'expédition.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation de la zone d'expédition…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone de livraison activée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer la zone d'expédition",
+      "time": 3000
+    }
+  }
+}

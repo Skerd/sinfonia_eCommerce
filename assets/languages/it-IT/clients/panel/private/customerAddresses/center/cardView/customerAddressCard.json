@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "firstName": "Nome",
+  "street": "Via",
+  "city": "Città",
+  "phone": "Telefono",
+  "defaultAddress": "Predefinito",
+  "notDefault": "Non predefinito"
+}

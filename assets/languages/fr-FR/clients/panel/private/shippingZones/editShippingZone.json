@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
+  "title": "Modifier la zone d'expédition",
+  "errorTitle": "Échec du chargement de la zone d'expédition",
+  "errorDescription": "Impossible de charger cette zone d'expédition. Essayer à nouveau.",
+  "form": {
+    "generalSectionTitle": "Général",
+    "geographySectionTitle": "Géographie",
+    "nameLabel": "Nom",
+    "countriesLabel": "Pays",
+    "statesLabel": "États / régions",
+    "selectCountry": "Sélectionner le pays",
+    "selectState": "Sélectionner le canton",
+    "removeCountry": "Supprimer le pays",
+    "removeState": "Supprimer l'état",
+    "postalCodePatternsLabel": "Modèles de codes postaux",
+    "postalCodePatternsPlaceholder": "par ex. 1000* ou AL-*",
+    "removePostalCodePattern": "Supprimer le motif",
+    "ratesSectionTitle": "Tarifs d'expédition",
+    "rateAddRow": "Ajouter un tarif",
+    "rateRemoveRow": "Supprimer le taux",
+    "rateRowTitle": "Tarif sans titre",
+    "rateNameLabel": "Nom du tarif",
+    "rateTypeLabel": "Type de tarif",
+    "ratePriceLabel": "Prix",
+    "carrierLabel": "Transporteur",
+    "estimatedDeliveryDaysLabel": "Jours de livraison estimés",
+    "rateConditionsSectionTitle": "Conditions",
+    "minWeightLabel": "Poids minimum",
+    "maxWeightLabel": "Poids maximum",
+    "minOrderAmountLabel": "Montant minimum de la commande",
+    "maxOrderAmountLabel": "Montant maximum de la commande",
+    "shippingRateType": {
+      "flat": "Plat",
+      "weight": "Basé sur le poids",
+      "price": "Montant de la commande",
+      "quantity": "Quantité",
+      "free": "Libre"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de la zone d'expédition",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone d'expédition mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la zone d'expédition",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la zone d'expédition",
+    "description": "Mettez à jour la géographie de destination et les tarifs d’expédition pour cette zone."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

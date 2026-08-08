@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/restockInventory.tsx",
+  "title": "Réapprovisionner l'inventaire",
+  "description": "Enregistrez le stock entrant avec le fabricant, le reçu et les détails associés.",
+  "missingInventoryId": "Identifiant d'inventaire manquant. Ouvrir le réapprovisionnement à partir d'une ligne d'inventaire."
+}

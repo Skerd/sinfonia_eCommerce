@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx",
+  "title": "Gruppi di clienti",
+  "description": "Segmenta i clienti per prezzi e promozioni.",
+  "createCustomerGroup": "Crea gruppo clienti",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "description": "Descrizione",
+    "memberCount": "Membri",
+    "isDefault": "Predefinito",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
+  "cancel": "Annuler",
+  "restock": {
+    "title": "Réapprovisionner l'inventaire",
+    "description": "Ajoutez le stock reçu d'un fournisseur ou d'un fabricant. Ce mouvement est enregistré avec les détails de la réception.",
+    "quantityLabel": "Quantité à ajouter",
+    "manufacturerLabel": "Fabricant / fournisseur",
+    "receiptNumberLabel": "Numéro de réception/bon de livraison",
+    "occurredAtLabel": "Date de réception",
+    "unitCostLabel": "Coût d'unité",
+    "batchLotLabel": "Lot/lot",
+    "expiryDateLabel": "Date d'expiration",
+    "receiptsLabel": "Pièces jointes au reçu",
+    "noteLabel": "Remarque",
+    "confirm": "Réapprovisionner",
+    "axios": {
+      "success": "Stock réapprovisionné avec succès",
+      "error": "Échec du réapprovisionnement de l'inventaire"
+    }
+  },
+  "deduct": {
+    "title": "Déduire / radier",
+    "description": "Supprimer le stock (dommage, perte ou radiation). Ce mouvement est enregistré avec les détails facultatifs du reçu.",
+    "quantityLabel": "Quantité à retirer",
+    "manufacturerLabel": "Fabricant / fournisseur",
+    "receiptNumberLabel": "Référence / numéro de reçu",
+    "occurredAtLabel": "Date de radiation",
+    "unitCostLabel": "Coût d'unité",
+    "batchLotLabel": "Lot/lot",
+    "expiryDateLabel": "Date d'expiration",
+    "receiptsLabel": "Pièces jointes",
+    "noteLabel": "Remarque",
+    "confirm": "Déduire",
+    "axios": {
+      "success": "Stock déduit avec succès",
+      "error": "Échec de la déduction de l'inventaire"
+    }
+  }
+}

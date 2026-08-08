@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx",
+  "title": "Effacer le code PIN du gestionnaire",
+  "description": "Entrez le code PIN actuel deux fois pour confirmer sa suppression. Code PIN requis jusqu'à ce que les options soient désactivées.",
+  "pinLabel": "Code PIN actuel",
+  "confirmPinLabel": "Confirmer le code PIN",
+  "pinMismatch": "La confirmation du code PIN ne correspond pas",
+  "cancel": "Annuler",
+  "confirm": "Effacer le code PIN",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Code PIN du gestionnaire de compensation",
+      "time": 3000
+    },
+    "success": {
+      "title": "Code PIN du responsable effacé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'effacer le code PIN du responsable",
+      "time": 3000
+    }
+  }
+}

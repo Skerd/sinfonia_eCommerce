@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx",
+  "title": "Disattiva lo sconto",
+  "description": "Questo sconto non sarà più applicato finché non verrà nuovamente attivato.",
+  "cancel": "Annulla",
+  "confirm": "Disattiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Disattivazione dello sconto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sconto disattivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile disattivare lo sconto",
+      "time": 3000
+    }
+  }
+}

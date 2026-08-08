@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
+  "title": "Crea richiesta di reso",
+  "form": {
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona l'ordine",
+    "typeLabel": "Tipo",
+    "statusLabel": "Stato",
+    "refundAmountLabel": "Importo del rimborso",
+    "refundAmountPlaceholder": "0",
+    "customerNoteLabel": "Nota del cliente",
+    "customerNotePlaceholder": "Nota facoltativa del cliente",
+    "adminNoteLabel": "Nota dell'amministratore",
+    "adminNotePlaceholder": "Nota interna facoltativa",
+    "itemsSectionTitle": "Elementi",
+    "itemAddRow": "Aggiungi elemento",
+    "itemRemoveRow": "Rimuovi l'articolo",
+    "itemRowTitle": "Voce",
+    "orderItemIdLabel": "ID articolo dell'ordine",
+    "orderItemIdPlaceholder": "ID riga ordine",
+    "quantityLabel": "Quantità",
+    "reasonLabel": "Motivo",
+    "reasonPlaceholder": "Perché questo articolo viene restituito?",
+    "returnType": {
+      "return": "Ritorno",
+      "exchange": "Scambio",
+      "refund": "Rimborso"
+    },
+    "returnStatus": {
+      "pending": "In sospeso",
+      "approved": "Approvata",
+      "rejected": "Rifiutato",
+      "received": "Ricevuto",
+      "completed": "Completato"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione richiesta di reso",
+      "time": 3000
+    },
+    "success": {
+      "title": "Richiesta di reso creata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare una richiesta di reso",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea richiesta di reso",
+    "description": "Richiedi un reso, un cambio o un rimborso per un ordine."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea richiesta di reso"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "active": "Attivo",
+  "blockType": {
+    "announcement_bar": "Barra degli annunci",
+    "best_sellers": "I più venduti",
+    "category_showcase": "Vetrina di categoria",
+    "custom_html": "HTML personalizzato",
+    "featured_collection": "Collezione in primo piano",
+    "flash_sale": "Vendita lampo",
+    "grid": "Griglia",
+    "hero_banner": "Stendardo dell'eroe",
+    "promotional_section": "Sezione promozionale",
+    "slider": "Dispositivo di scorrimento",
+    "trending": "Tendenza",
+    "video": "Video"
+  },
+  "inactive": "Inattivo",
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
+  "position": "Posizione",
+  "title": "Modifica tipo di unità",
+  "type": "Tipo"
+}

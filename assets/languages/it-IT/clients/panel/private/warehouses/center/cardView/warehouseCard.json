@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
+  "name": "Nome",
+  "code": "Codice",
+  "location": "Posizione",
+  "default": "Predefinito",
+  "active": "Attivo",
+  "inactive": "Inattivo"
+}

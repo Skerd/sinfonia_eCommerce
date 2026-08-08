@@ -1,0 +1,66 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx",
+  "title": "Modifica configurazione fiscale",
+  "formHeader": {
+    "title": "Modifica configurazione fiscale",
+    "description": "Aggiorna la fiscalità CIS albanese e le impostazioni della fattura elettronica."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  },
+  "form": {
+    "generalSectionTitle": "Generale",
+    "cisCodesSectionTitle": "Codici CIS",
+    "endpointsSectionTitle": "Endpoint del servizio",
+    "sellerSectionTitle": "Dettagli del venditore",
+    "certificateSectionTitle": "Certificato",
+    "certificateManageSectionTitle": "Gestisci certificato",
+    "nameLabel": "Nome",
+    "niptLabel": "NIPT/NUIS",
+    "softCodeLabel": "Codice software (SoftCode)",
+    "maintainerCodeLabel": "Codice manutentore",
+    "businessUnitCodeLabel": "Codice unità aziendale",
+    "operatorCodeLabel": "Codice operatore",
+    "tcrCodeLabel": "Codice TCR (dalla CSI)",
+    "tcrIntIdLabel": "ID interno del TCR",
+    "tcrTypeLabel": "Tipo TCR",
+    "tcrType": {
+      "REGULAR": "Regolare",
+      "VENDING": "Distributori automatici"
+    },
+    "environmentLabel": "Ambiente",
+    "environment": {
+      "test": "Prova",
+      "production": "Produzione"
+    },
+    "fiscalizationUrlLabel": "URL SOAP di fiscalizzazione",
+    "einvoiceUrlLabel": "URL SOAP della fattura elettronica",
+    "selfcareUrlLabel": "Cura personale/verifica URL",
+    "proxyUrlLabel": "Proxy HTTPS (facoltativo)",
+    "sellerNameLabel": "Nome del venditore",
+    "sellerAddressLabel": "Indirizzo del venditore",
+    "sellerTownLabel": "Città del venditore",
+    "sellerCountryLabel": "Codice paese del venditore (ALB)",
+    "certificateBase64Label": "Certificato PKCS#12 (base64): lasciare vuoto per mantenerlo",
+    "certificatePasswordLabel": "Password del certificato",
+    "isVatRegisteredLabel": "partita IVA registrata",
+    "autoFiscalizePosLabel": "Fiscalizza automaticamente i pagamenti POS",
+    "autoEinvoiceLabel": "Crea automaticamente la fattura elettronica dopo la fiscalizzazione",
+    "clearCertificateLabel": "Cancella certificato memorizzato"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio configurazione fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configurazione fiscale aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la configurazione fiscale",
+      "time": 3000
+    }
+  }
+}

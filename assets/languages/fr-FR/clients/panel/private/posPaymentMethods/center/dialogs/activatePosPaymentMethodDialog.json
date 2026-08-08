@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
+  "title": "Activer le mode de paiement",
+  "description": "Ce moyen de paiement sera disponible sur les caisses qui l'utilisent.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation du mode de paiement…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mode de paiement activé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer le mode de paiement",
+      "time": 3000
+    }
+  }
+}

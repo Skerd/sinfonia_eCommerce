@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/createWarehouse.tsx",
+  "title": "Crea magazzino",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome del magazzino",
+    "codeLabel": "Codice",
+    "codePlaceholder": "Codice magazzino",
+    "addressSectionTitle": "Indirizzo",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Seleziona il paese",
+    "stateLabel": "Stato/regione",
+    "statePlaceholder": "Seleziona il cantone",
+    "cityLabel": "Città",
+    "cityPlaceholder": "Seleziona la città",
+    "streetLabel": "Via",
+    "streetPlaceholder": "Indirizzo stradale",
+    "postalCodeLabel": "CAP",
+    "postalCodePlaceholder": "CAP",
+    "latitudeLabel": "Latitudine",
+    "latitudePlaceholder": "Latitudine",
+    "longitudeLabel": "Longitudine",
+    "longitudePlaceholder": "Longitudine"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione magazzino",
+      "time": 3000
+    },
+    "success": {
+      "title": "Magazzino creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il magazzino",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea magazzino",
+    "description": "Aggiungi una posizione di magazzino con indirizzo e segnaposto sulla mappa."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea magazzino"
+  }
+}

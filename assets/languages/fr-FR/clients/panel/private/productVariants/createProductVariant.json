@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productVariants/createProductVariant.tsx",
+  "title": "Créer une variante",
+  "form": {
+    "generalSectionTitle": "Général",
+    "pricingSectionTitle": "Tarification",
+    "physicalSectionTitle": "Physique",
+    "mediaSectionTitle": "Médias",
+    "productLabel": "Produit",
+    "productPlaceholder": "Sélectionner un produit",
+    "statusLabel": "Statut",
+    "skuLabel": "SKU",
+    "skuPlaceholder": "Variante SKU",
+    "barcodeLabel": "Code à barres",
+    "barcodePlaceholder": "Code à barres",
+    "positionLabel": "Poste",
+    "trackInventoryLabel": "Suivre l'inventaire",
+    "priceLabel": "Prix",
+    "compareAtPriceLabel": "Comparer au prix",
+    "costPriceLabel": "Prix de revient",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "weightLabel": "Poids",
+    "dimensionLengthLabel": "Longueur",
+    "dimensionWidthLabel": "Largeur",
+    "dimensionHeightLabel": "Hauteur",
+    "mainImageLabel": "Image principale",
+    "attributesSectionTitle": "Combinaison d'attributs",
+    "attributeAddRow": "Ajouter un attribut",
+    "attributeRemoveRow": "Supprimer l'attribut",
+    "attributeRowTitle": "Attribut sans titre",
+    "attributeLabel": "Attribut",
+    "attributePlaceholder": "Sélectionner un attribut",
+    "valueLabel": "Valeur",
+    "valuePlaceholder": "Valeur d'attribut",
+    "variantStatus": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une variante",
+      "time": 3000
+    },
+    "success": {
+      "title": "Variante créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer une variante",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une variante",
+    "description": "Ajoutez une variante au niveau du SKU avec des paramètres de prix, d'attributs et d'inventaire."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une variante"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
+  "title": "Modifier la règle de tarification",
+  "errorTitle": "Échec du chargement de la règle de tarification",
+  "errorDescription": "Impossible de charger cette règle de tarification. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la règle de tarification",
+    "typeLabel": "Type",
+    "appliesToLabel": "S'applique à",
+    "valueLabel": "Valeur",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Priorité",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Commence à",
+    "endsAtLabel": "Se termine à",
+    "minimumOrderAmountLabel": "Montant minimum de commande",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantité minimale",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "Général",
+    "scheduleSectionTitle": "Calendrier",
+    "limitsSectionTitle": "Limites",
+    "customerGroupsSectionTitle": "Groupes de clients",
+    "productsLabel": "Produits",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Catégories",
+    "customerGroupsLabel": "Groupes de clients",
+    "selectProduct": "Sélectionner un produit",
+    "selectCollection": "Sélectionner une collection",
+    "selectCategory": "Sélectionner une catégorie",
+    "selectCustomerGroup": "Sélectionnez un groupe de clients",
+    "removeTarget": "Supprimer la cible",
+    "removeCustomerGroup": "Supprimer le groupe de clients",
+    "pricingRuleType": {
+      "percentage_discount": "Pourcentage de remise",
+      "fixed_discount": "Remise fixe",
+      "fixed_price": "Prix fixe",
+      "surcharge": "Supplément"
+    },
+    "pricingRuleAppliesTo": {
+      "all": "Tous",
+      "product": "Produits",
+      "collection": "Collections",
+      "category": "Catégories",
+      "customer_group": "Groupes de clients"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Règle de tarification sauvegardée",
+      "time": 3000
+    },
+    "success": {
+      "title": "Règle de tarification mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la règle de tarification",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la règle de tarification",
+    "description": "Mettez à jour les ajustements de prix, les objectifs, les limites et le calendrier du catalogue."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

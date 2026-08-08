@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
+  "customerGroupSubtitle": "Détails du groupe de clients",
+  "failedTitle": "Échec du chargement du groupe de clients",
+  "failedDescription": "Une erreur s'est produite lors du chargement de ce groupe de clients. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "overview": "Vue d'ensemble",
+  "name": "Nom",
+  "description": "Description",
+  "memberCount": "Membres",
+  "isDefault": "Par défaut",
+  "company": "Entreprise",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "yes": "Oui",
+  "no": "Non"
+}

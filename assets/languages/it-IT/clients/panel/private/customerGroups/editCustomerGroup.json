@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/editCustomerGroup.tsx",
+  "title": "Modifica gruppo clienti",
+  "errorTitle": "Impossibile caricare il gruppo clienti",
+  "errorDescription": "Impossibile caricare questo gruppo di clienti. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome del gruppo",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione facoltativa"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del gruppo di clienti",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gruppo clienti aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il gruppo clienti",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica gruppo clienti",
+    "description": "Aggiorna il nome e la descrizione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

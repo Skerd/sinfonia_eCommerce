@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/createCustomerGroup.tsx",
+  "title": "Crea gruppo clienti",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome del gruppo",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione facoltativa"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione gruppo clienti",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gruppo di clienti creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il gruppo clienti",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea gruppo clienti",
+    "description": "Definire un gruppo di clienti per le regole di prezzo e l'appartenenza."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea gruppo clienti"
+  }
+}

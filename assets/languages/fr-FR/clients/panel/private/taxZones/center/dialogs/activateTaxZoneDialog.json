@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx",
+  "title": "Activer la zone fiscale",
+  "description": "Cette zone fiscale sera utilisée lors du calcul de la taxe à la caisse.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation de la zone fiscale…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zone fiscale activée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer la zone fiscale",
+      "time": 3000
+    }
+  }
+}

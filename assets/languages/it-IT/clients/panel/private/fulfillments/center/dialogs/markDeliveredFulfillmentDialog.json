@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
+  "title": "Contrassegnare l'adempimento come consegnato",
+  "description": "Conferma che l'adempimento spedito è stato consegnato.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note facoltative",
+  "cancel": "Annulla",
+  "confirm": "Contrassegna come consegnato",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Contrassegnando come consegnato…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adempimento contrassegnato come consegnato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile contrassegnare come consegnato",
+      "time": 3000
+    }
+  }
+}

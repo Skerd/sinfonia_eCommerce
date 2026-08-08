@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx",
+  "title": "Désactiver le mode de paiement",
+  "description": "Ce mode de paiement sera supprimé des configurations POS et ne sera plus disponible sur les caisses jusqu'à sa réactivation.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation du mode de paiement…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mode de paiement désactivé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver le mode de paiement",
+      "time": 3000
+    }
+  }
+}

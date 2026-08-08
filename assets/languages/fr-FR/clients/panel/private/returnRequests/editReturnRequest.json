@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/editReturnRequest.tsx",
+  "title": "Modifier la demande de retour",
+  "errorTitle": "Échec du chargement de la demande de retour",
+  "errorDescription": "Impossible de charger cette demande de retour. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "typeLabel": "Type",
+    "statusLabel": "Statut",
+    "refundAmountLabel": "Montant du remboursement",
+    "refundAmountPlaceholder": "0",
+    "customerNoteLabel": "Note client",
+    "customerNotePlaceholder": "Note facultative du client",
+    "adminNoteLabel": "Remarque de l'administrateur",
+    "adminNotePlaceholder": "Note interne facultative",
+    "itemsSectionTitle": "Articles",
+    "itemAddRow": "Ajouter un article",
+    "itemRemoveRow": "Supprimer l'élément",
+    "itemRowTitle": "Poste",
+    "orderItemIdLabel": "Identifiant de l'article de la commande",
+    "orderItemIdPlaceholder": "Identifiant de la ligne de commande",
+    "quantityLabel": "Quantité",
+    "reasonLabel": "Motif",
+    "reasonPlaceholder": "Pourquoi cet article est-il retourné ?",
+    "returnType": {
+      "return": "Retour",
+      "exchange": "Échange",
+      "refund": "Remboursement"
+    },
+    "returnStatus": {
+      "pending": "En attente",
+      "approved": "Approuvée",
+      "rejected": "Rejeté",
+      "received": "Reçu",
+      "completed": "Terminé"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de la demande de retour",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de retour mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la demande de retour",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la demande de retour",
+    "description": "Mettez à jour le type de retour, le statut, les notes, le montant du remboursement et les articles."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

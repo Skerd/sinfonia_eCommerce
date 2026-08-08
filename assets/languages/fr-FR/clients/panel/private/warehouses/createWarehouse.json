@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/createWarehouse.tsx",
+  "title": "Créer un entrepôt",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de l'entrepôt",
+    "codeLabel": "Code",
+    "codePlaceholder": "Code entrepôt",
+    "addressSectionTitle": "Adresse",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "stateLabel": "État/région",
+    "statePlaceholder": "Sélectionner le canton",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner la ville",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Adresse postale",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude"
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'un entrepôt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Entrepôt créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer un entrepôt",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un entrepôt",
+    "description": "Ajoutez un emplacement de stock avec une adresse et un code PIN sur la carte."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un entrepôt"
+  }
+}

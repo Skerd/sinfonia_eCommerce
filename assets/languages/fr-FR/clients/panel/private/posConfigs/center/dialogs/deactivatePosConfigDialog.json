@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
+  "title": "Désactiver la configuration du point de vente",
+  "description": "Cette caisse ne sera plus disponible pour l'ouverture du POS. Toute séance ouverte sur cette caisse sera fermée de force (chariots retenus annulés, caisse mise à disposition). Les frais terminaux sont annulés au mieux.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la configuration du point de vente…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configuration du point de vente désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la configuration du point de vente",
+      "time": 3000
+    }
+  }
+}

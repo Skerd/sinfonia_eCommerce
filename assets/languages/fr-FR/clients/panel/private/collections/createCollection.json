@@ -1,0 +1,87 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
+  "title": "Créer une collection",
+  "form": {
+    "generalSectionTitle": "Général",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la collection",
+    "slugLabel": "Identifiant",
+    "slugPlaceholder": "généré automatiquement à partir du nom",
+    "typeLabel": "Type de collecte",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description facultative pour cette collection",
+    "mainImageLabel": "Image de couverture",
+    "isVisibleLabel": "Visible en vitrine",
+    "positionLabel": "Position de tri",
+    "positionPlaceholder": "0",
+    "publishedAtLabel": "Publier sur",
+    "mediaSectionTitle": "Médias",
+    "manualSectionTitle": "Produits manuels",
+    "productsLabel": "Produits",
+    "selectProduct": "Rechercher des produits…",
+    "removeProduct": "Supprimer le produit",
+    "dynamicSectionTitle": "Règles dynamiques",
+    "ruleConditionLabel": "Condition de correspondance",
+    "rulesSectionTitle": "Règles",
+    "ruleAddRow": "Ajouter une règle",
+    "ruleRemoveRow": "Supprimer la règle",
+    "ruleRowTitle": "Nouvelle règle",
+    "ruleFieldLabel": "Champ",
+    "ruleOperatorLabel": "Opérateur",
+    "ruleValueLabel": "Valeur",
+    "ruleValuePlaceholder": "Valeur de la règle",
+    "seoSectionTitle": "Référencement",
+    "seoTitleLabel": "Titre SEO",
+    "seoTitlePlaceholder": "Titre SEO facultatif",
+    "seoDescriptionLabel": "Descriptif SEO",
+    "seoDescriptionPlaceholder": "Description SEO facultative",
+    "collectionType": {
+      "manual": "Manuel",
+      "dynamic": "Dynamique"
+    },
+    "ruleCondition": {
+      "all": "Toutes les règles (ET)",
+      "any": "N'importe quelle règle (OU)"
+    },
+    "ruleField": {
+      "tag": "Étiqueter",
+      "brand": "Marque",
+      "category": "Catégorie",
+      "price": "Prix",
+      "vendor": "Fournisseur",
+      "inventory_level": "Niveau d'inventaire",
+      "product_type": "Type de produit"
+    },
+    "ruleOperator": {
+      "equals": "Égal à",
+      "not_equals": "Différent de",
+      "contains": "Contient",
+      "not_contains": "Ne contient pas",
+      "greater_than": "Supérieur à",
+      "less_than": "Inférieur à",
+      "starts_with": "Commence par"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une collection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer la collection",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une collection",
+    "description": "Regroupez les produits manuellement ou avec des règles de correspondance dynamiques."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une collection"
+  }
+}

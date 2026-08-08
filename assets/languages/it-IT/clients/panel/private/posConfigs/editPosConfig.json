@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/editPosConfig.tsx",
+  "title": "Modifica configurazione POS",
+  "errorTitle": "Impossibile caricare la configurazione POS",
+  "errorDescription": "Impossibile caricare questa configurazione POS. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Registra il nome",
+    "paymentMethodsLabel": "Metodi di pagamento",
+    "managersLabel": "Manager",
+    "warehousesLabel": "Magazzini",
+    "warehousePlaceholder": "Seleziona magazzino",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "receiptHeaderLabel": "Intestazione della ricevuta",
+    "receiptHeaderPlaceholder": "Stampato nella parte superiore della ricevuta",
+    "receiptFooterLabel": "Piè di pagina della ricevuta",
+    "receiptFooterPlaceholder": "Stampato in fondo allo scontrino",
+    "tillOptionsSectionTitle": "Fino alle opzioni",
+    "ifaceBarcodeScannerLabel": "Lettore di codici a barre",
+    "ifaceCashControlLabel": "Controllo della liquidità",
+    "allowDiscountLabel": "Consenti sconto",
+    "allowQuantityChangeLabel": "Consenti cambio quantità",
+    "allowOversellLabel": "Consenti vendite eccessive",
+    "pinForDiscountLabel": "PIN per lo sconto",
+    "pinForCashOutLabel": "PIN per incassare",
+    "pinForRefundLabel": "PIN per il rimborso",
+    "selectWarehouse": "Aggiungi magazzino",
+    "removeWarehouse": "Rimuovere il magazzino",
+    "selectCurrency": "Seleziona valuta",
+    "selectPaymentMethod": "Seleziona il metodo di pagamento",
+    "removePaymentMethod": "Rimuovi il metodo di pagamento",
+    "selectManager": "Seleziona gestore",
+    "removeManager": "Rimuovi gestore"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio configurazione POS",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configurazione POS aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la configurazione POS",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica configurazione POS",
+    "description": "Aggiorna magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

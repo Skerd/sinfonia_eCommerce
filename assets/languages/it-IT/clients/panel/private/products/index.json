@@ -1,0 +1,150 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
+  "title": "Prodotti",
+  "description": "Gestisci i prodotti nel tuo catalogo.",
+  "createProduct": "Crea prodotto",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "physical": "Fisico",
+        "digital": "Digitale",
+        "service": "Servizio",
+        "variable": "Variabile",
+        "bundle": "Pacchetto",
+        "gift_card": "Carta regalo"
+      },
+      "status": {
+        "draft": "Bozza",
+        "active": "Attivo",
+        "archived": "Archiviato"
+      },
+      "weightUnit": {
+        "kg": "kg",
+        "lb": "libbra",
+        "g": "g",
+        "oz": "oz"
+      },
+      "dimensionUnit": {
+        "cm": "cm",
+        "in": "dentro"
+      },
+      "seo": {
+        "twitterCard": {
+          "summary": "Riepilogo",
+          "summary_large_image": "Riepilogo immagine grande"
+        }
+      }
+    },
+    "type": "Tipo",
+    "title": "Modifica tipo di unità",
+    "slug": "Lumaca",
+    "description": "Descrizione",
+    "shortDescription": "Breve descrizione",
+    "highlights": "Punti salienti",
+    "careInstructions": "Istruzioni per la cura",
+    "warranty": "Garanzia",
+    "faqs": {
+      "question": "Domanda",
+      "answer": "Rispondi"
+    },
+    "sku": "SKU",
+    "barcode": "Codice a barre",
+    "gtin": "GTIN",
+    "upc": "UPC",
+    "ean": "EAN",
+    "isbn": "ISBN",
+    "mpn": "MPN",
+    "hsCode": "Codice SA",
+    "countryOfOrigin": "Paese d'origine",
+    "brand": "Marchio",
+    "vendor": "Fornitore",
+    "tags": "Tag",
+    "categories": "Categorie",
+    "collections": "Collezioni",
+    "price": "Prezzo",
+    "compareAtPrice": "Confronta il prezzo",
+    "costPrice": "Prezzo di costo",
+    "msrp": "Prezzo consigliato",
+    "saleStartsAt": "Iniziano i saldi",
+    "saleEndsAt": "La vendita termina",
+    "taxable": "Imponibile",
+    "taxClass": "Classe fiscale",
+    "minOrderQty": "minimo quantità dell'ordine",
+    "maxOrderQty": "Massimo. quantità dell'ordine",
+    "stepQty": "Quantità del passaggio dell'ordine",
+    "currency": "Valuta",
+    "weight": "Peso",
+    "weightUnit": "Unità di peso",
+    "dimensions": {
+      "length": "Lunghezza",
+      "width": "Larghezza",
+      "height": "Altezza"
+    },
+    "dimensionUnit": "Unità di dimensione",
+    "volumetricWeight": "Peso volumetrico",
+    "shippingClass": "Classe di spedizione",
+    "isHazmat": "Materiale pericoloso",
+    "requiresShipping": "Richiede la spedizione",
+    "trackInventory": "Tieni traccia dell'inventario",
+    "allowBackorder": "Consenti ordine arretrato",
+    "lowStockThreshold": "Soglia di stock bassa",
+    "safetyStock": "Scorta di sicurezza",
+    "backorderLimit": "Limite degli ordini arretrati",
+    "preorderEnabled": "Preordine abilitato",
+    "preorderAvailableAt": "Preordine disponibile su",
+    "availableForSale": "Disponibile alla vendita",
+    "mainImage": "Immagine principale",
+    "gallery": "Galleria",
+    "videoUrls": "URL dei video",
+    "documents": "Documenti",
+    "variantOptions": "Opzioni di variante",
+    "hasVariants": "Ha varianti",
+    "defaultVariant": "Variante predefinita",
+    "bundleComponents": {
+      "product": "Prodotto in bundle",
+      "quantity": "Quantità"
+    },
+    "downloadLimit": "Limite di download",
+    "downloadExpiryDays": "Scadenza download (giorni)",
+    "relatedProducts": "Prodotti correlati",
+    "upsells": "Upsell",
+    "crossSells": "Vendite incrociate",
+    "frequentlyBoughtTogether": "Acquistati spesso insieme",
+    "featured": "In evidenza",
+    "badges": "Distintivi",
+    "ratingAverage": "Valutazione",
+    "ratingCount": "Conteggio della valutazione",
+    "reviewCount": "Recensioni",
+    "status": "Stato",
+    "publishedAt": "Pubblicato",
+    "attributes": {
+      "name": "Nome dell'attributo",
+      "values": "Valori degli attributi"
+    },
+    "specifications": {
+      "label": "Etichetta delle specifiche",
+      "value": "Valore di specifica"
+    },
+    "seo": {
+      "metaTitle": "Meta titolo",
+      "metaDescription": "Meta descrizione",
+      "metaKeywords": "Meta parole chiave",
+      "canonicalUrl": "URL canonico",
+      "openGraphTitle": "Apri il titolo del grafico",
+      "openGraphDescription": "Apri la descrizione del grafico",
+      "openGraphImage": "Apri l'immagine del grafico",
+      "twitterCard": "Scheda Twitter",
+      "structuredDataType": "Tipo di dati strutturati",
+      "sitemapInclude": "Includi nella mappa del sito",
+      "sitemapPriority": "Priorità della mappa del sito",
+      "noIndex": "Nessun indice"
+    },
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
+  "title": "Rifiuta la richiesta di reso",
+  "description": "Rifiuta questa richiesta di reso in sospeso. Facoltativamente, spiega perché.",
+  "reasonLabel": "Motivo del rifiuto",
+  "reasonPlaceholder": "Motivo facoltativo del rifiuto",
+  "cancel": "Annulla",
+  "confirm": "Rifiuta",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Rifiuto della richiesta di reso…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Richiesta di reso respinta",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile rifiutare la richiesta di reso",
+      "time": 3000
+    }
+  }
+}

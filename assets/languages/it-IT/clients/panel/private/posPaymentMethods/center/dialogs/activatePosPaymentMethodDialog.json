@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
+  "title": "Attiva il metodo di pagamento",
+  "description": "Questo metodo di pagamento sarà disponibile sulle casse che lo utilizzano.",
+  "cancel": "Annulla",
+  "confirm": "Attiva",
+  "busy": "Lavorando…",
+  "axios": {
+    "start": {
+      "title": "Attivazione del metodo di pagamento…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metodo di pagamento attivato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile attivare il metodo di pagamento",
+      "time": 3000
+    }
+  }
+}

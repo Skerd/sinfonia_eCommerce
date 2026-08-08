@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/editCustomerAddress.tsx",
+  "title": "Modifica indirizzo",
+  "errorTitle": "Impossibile caricare l'indirizzo",
+  "errorDescription": "Impossibile caricare questo indirizzo. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "customerLabel": "Cliente",
+    "customerPlaceholder": "Seleziona cliente",
+    "firstNameLabel": "Nome del destinatario",
+    "firstNamePlaceholder": "Nome sulla confezione",
+    "lastNameLabel": "Cognome del destinatario",
+    "lastNamePlaceholder": "Cognome sulla confezione",
+    "streetLabel": "Via",
+    "streetPlaceholder": "Indirizzo stradale",
+    "cityLabel": "Città",
+    "cityPlaceholder": "Seleziona la città",
+    "stateLabel": "Cantone / Stato",
+    "statePlaceholder": "Seleziona il cantone",
+    "postalCodeLabel": "CAP",
+    "postalCodePlaceholder": "CAP",
+    "phoneLabel": "Telefono",
+    "phonePlaceholder": "Numero di telefono",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Seleziona il paese",
+    "latitudeLabel": "Latitudine",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Longitudine",
+    "longitudePlaceholder": "19.8189",
+    "labelLabel": "Etichetta",
+    "labelPlaceholder": "Casa, lavoro,…"
+  },
+  "axios": {
+    "start": {
+      "title": "Indirizzo di salvataggio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Indirizzo aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare l'indirizzo",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica indirizzo",
+    "description": "Aggiorna il cliente, il destinatario, la posizione e il segnaposto sulla mappa."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

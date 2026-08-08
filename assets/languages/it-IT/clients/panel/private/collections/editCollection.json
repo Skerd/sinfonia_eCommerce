@@ -1,0 +1,90 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
+  "title": "Modifica raccolta",
+  "errorTitle": "Impossibile caricare la raccolta",
+  "errorDescription": "Impossibile caricare questa raccolta. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "generalSectionTitle": "Generale",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome della raccolta",
+    "slugLabel": "Lumaca",
+    "slugPlaceholder": "nome-generato-automaticamente",
+    "typeLabel": "Tipo di raccolta",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione facoltativa per questa raccolta",
+    "mainImageLabel": "Immagine di copertina",
+    "isVisibleLabel": "Visibile in vetrina",
+    "positionLabel": "Ordina posizione",
+    "positionPlaceholder": "0",
+    "publishedAtLabel": "Pubblica su",
+    "mediaSectionTitle": "Media",
+    "manualSectionTitle": "Prodotti manuali",
+    "productsLabel": "Prodotti",
+    "selectProduct": "Cerca prodotti...",
+    "removeProduct": "Rimuovere il prodotto",
+    "dynamicSectionTitle": "Regole dinamiche",
+    "ruleConditionLabel": "Condizione di corrispondenza",
+    "rulesSectionTitle": "Regole",
+    "ruleAddRow": "Aggiungi regola",
+    "ruleRemoveRow": "Rimuovi regola",
+    "ruleRowTitle": "Nuova regola",
+    "ruleFieldLabel": "Campo",
+    "ruleOperatorLabel": "Operatore",
+    "ruleValueLabel": "Valore",
+    "ruleValuePlaceholder": "Valore della regola",
+    "seoSectionTitle": "SEO",
+    "seoTitleLabel": "Titolo SEO",
+    "seoTitlePlaceholder": "Titolo SEO facoltativo",
+    "seoDescriptionLabel": "Descrizione SEO",
+    "seoDescriptionPlaceholder": "Descrizione SEO opzionale",
+    "collectionType": {
+      "manual": "Manuale",
+      "dynamic": "Dinamico"
+    },
+    "ruleCondition": {
+      "all": "Tutte le regole (AND)",
+      "any": "Qualsiasi regola (OR)"
+    },
+    "ruleField": {
+      "tag": "Etichetta",
+      "brand": "Marchio",
+      "category": "Categoria",
+      "price": "Prezzo",
+      "vendor": "Fornitore",
+      "inventory_level": "Livello di inventario",
+      "product_type": "Tipo di prodotto"
+    },
+    "ruleOperator": {
+      "equals": "Uguale a",
+      "not_equals": "Diverso da",
+      "contains": "Contiene",
+      "not_contains": "Non contiene",
+      "greater_than": "Maggiore di",
+      "less_than": "Minore di",
+      "starts_with": "Inizia con"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio della raccolta",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collezione aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la raccolta",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica raccolta",
+    "description": "Aggiorna i dettagli della collezione, i prodotti o le regole dinamiche."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

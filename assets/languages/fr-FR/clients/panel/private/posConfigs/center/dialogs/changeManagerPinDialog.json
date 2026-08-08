@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/changeManagerPinDialog.tsx",
+  "title": "Modifier le code PIN du responsable",
+  "description": "Saisissez le code PIN actuel, puis le nouveau code PIN deux fois.",
+  "currentPinLabel": "Code PIN actuel",
+  "pinLabel": "Nouveau code PIN",
+  "confirmPinLabel": "Confirmer le nouveau code PIN",
+  "pinMismatch": "La confirmation du code PIN ne correspond pas",
+  "pinTooShort": "Le code PIN doit comporter au moins 4 caractères",
+  "cancel": "Annuler",
+  "confirm": "Enregistrer le code PIN",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Changer le code PIN du responsable",
+      "time": 3000
+    },
+    "success": {
+      "title": "Le code PIN du gestionnaire a été modifié",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de modifier le code PIN du responsable",
+      "time": 3000
+    }
+  }
+}

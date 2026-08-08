@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx",
+  "title": "Activer le bloc CMS",
+  "description": "Ce bloc deviendra visible en vitrine lorsque son planning le permettra.",
+  "cancel": "Annuler",
+  "confirm": "Activer",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Activation du bloc CMS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Blocage CMS activé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'activer le blocage CMS",
+      "time": 3000
+    }
+  }
+}

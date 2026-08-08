@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
+  "title": "Adresses des clients",
+  "description": "Gérer les adresses de livraison et de facturation des clients.",
+  "createCustomerAddress": "Créer une adresse",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "customer": "Client",
+    "firstName": "Prénom du destinataire",
+    "lastName": "Nom du destinataire",
+    "phone": "Téléphone",
+    "street": "Rue",
+    "city": "Ville",
+    "state": "Canton / État",
+    "postalCode": "Code postal",
+    "country": "Pays",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "isDefault": "Par défaut",
+    "label": "Étiquette",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

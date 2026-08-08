@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
+  "title": "Modifier l'exécution",
+  "errorTitle": "Échec du chargement du traitement",
+  "errorDescription": "Impossible de charger cette réalisation. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "statusLabel": "Statut",
+    "carrierLabel": "Transporteur",
+    "carrierPlaceholder": "Nom du transporteur",
+    "trackingNumberLabel": "Numéro de suivi",
+    "trackingNumberPlaceholder": "Numéro de suivi",
+    "trackingUrlLabel": "URL de suivi",
+    "trackingUrlPlaceholder": "https://…",
+    "shippedAtLabel": "Expédié à",
+    "estimatedDeliveryAtLabel": "Livraison estimée",
+    "deliveredAtLabel": "Livré à",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes facultatives",
+    "itemsSectionTitle": "Articles",
+    "itemAddRow": "Ajouter un article",
+    "itemRemoveRow": "Supprimer l'élément",
+    "itemRowTitle": "Poste",
+    "orderItemIdLabel": "Identifiant de l'article de la commande",
+    "orderItemIdPlaceholder": "Identifiant de la ligne de commande",
+    "quantityLabel": "Quantité",
+    "fulfillmentStatus": {
+      "pending": "En attente",
+      "shipped": "Expédié",
+      "delivered": "Livré",
+      "failed": "Échoué"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de l'accomplissement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Exécution mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour le traitement",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'exécution",
+    "description": "Mettez à jour le statut de l'expédition, le suivi, les dates, les notes et les articles."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

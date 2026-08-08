@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
+  "title": "Adempimenti",
+  "description": "Tieni traccia delle spedizioni e della consegna degli ordini di prodotti.",
+  "createFulfillment": "Creare soddisfazione",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "order": "Ordine",
+    "status": "Stato",
+    "items": {
+      "orderItemId": "ID articolo dell'ordine",
+      "quantity": "Quantità"
+    },
+    "carrier": "Portatore",
+    "trackingNumber": "Numero di tracciamento",
+    "trackingUrl": "URL di monitoraggio",
+    "shippedAt": "Spedito a",
+    "estimatedDeliveryAt": "Consegna stimata",
+    "deliveredAt": "Consegnato a",
+    "notes": "Note",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

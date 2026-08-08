@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx",
+  "cancel": "Annuler",
+  "refund": {
+    "title": "Commande de remboursement",
+    "description": "Rembourse le paiement capturé via la passerelle de paiement.",
+    "amountLabel": "Montant",
+    "amountHint": "Laissez vide pour un remboursement complet.",
+    "reasonLabel": "Motif",
+    "confirm": "Remboursement",
+    "axios": {
+      "success": "Commande remboursée",
+      "error": "Impossible de rembourser la commande"
+    }
+  }
+}

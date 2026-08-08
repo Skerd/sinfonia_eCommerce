@@ -1,0 +1,66 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx",
+  "title": "Modifica metodo di pagamento",
+  "errorTitle": "Impossibile caricare il metodo di pagamento",
+  "errorDescription": "Impossibile caricare questo metodo di pagamento. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome del metodo di pagamento",
+    "typeLabel": "Tipo",
+    "sequenceLabel": "Sequenza",
+    "sequencePlaceholder": "0",
+    "cashQuickAmountsLabel": "Importi in contanti rapidi",
+    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "terminalSectionTitle": "Terminale POS bancario",
+    "terminalEnabledLabel": "Collegare il terminale POS della banca",
+    "terminalForcesCardHint": "Il collegamento di un terminale POS bancario imposta il tipo su Carta. La disconnessione lo imposta su Contanti.",
+    "terminalProviderLabel": "Fornitore di terminali",
+    "terminalProtocolLabel": "Protocollo",
+    "terminalHostLabel": "Host/IP del terminale",
+    "terminalHostPlaceholder": "192.168.1.50",
+    "terminalPortLabel": "Porto terminale",
+    "terminalPortPlaceholder": "8080",
+    "terminalIdLabel": "Identificativo del terminale",
+    "terminalIdPlaceholder": "TID/POIID",
+    "terminalPathLabel": "Percorso terminale",
+    "terminalPathPlaceholder": "/payment",
+    "paymentType": {
+      "cash": "Contanti",
+      "card": "Carta",
+      "bank": "Banca",
+      "customer_account": "Conto cliente",
+      "other": "Altro"
+    },
+    "terminalProvider": {
+      "manual": "Manuale (terminale esterno)",
+      "local_http": "Ponte HTTP locale"
+    },
+    "terminalProtocol": {
+      "http": "HTTP",
+      "https": "HTTPS"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del metodo di pagamento",
+      "time": 3000
+    },
+    "success": {
+      "title": "Metodo di pagamento aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il metodo di pagamento",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica metodo di pagamento",
+    "description": "Aggiorna fino al tipo di pagamento, gettoni contante e connessione al terminale bancario."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
+  "title": "Collections",
+  "description": "Regroupez les produits dans des collections organisées.",
+  "createCollection": "Créer une collection",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "type": {
+        "manual": "Manuel",
+        "dynamic": "Dynamique"
+      },
+      "ruleCondition": {
+        "all": "Toutes les règles (ET)",
+        "any": "N'importe quelle règle (OU)"
+      },
+      "rules": {
+        "field": {
+          "tag": "Étiqueter",
+          "brand": "Marque",
+          "category": "Catégorie",
+          "price": "Prix",
+          "vendor": "Fournisseur",
+          "inventory_level": "Niveau d'inventaire",
+          "product_type": "Type de produit"
+        },
+        "operator": {
+          "equals": "Égal à",
+          "not_equals": "Différent de",
+          "contains": "Contient",
+          "not_contains": "Ne contient pas",
+          "greater_than": "Supérieur à",
+          "less_than": "Inférieur à",
+          "starts_with": "Commence par"
+        }
+      }
+    },
+    "type": "Type",
+    "name": "Nom",
+    "slug": "Identifiant",
+    "description": "Description",
+    "mainImage": "Image de couverture",
+    "isVisible": "Visible",
+    "position": "Poste",
+    "products": "Produits",
+    "ruleCondition": "Condition de correspondance",
+    "rules": {
+      "field": "Champ de règle",
+      "operator": "Opérateur de règle",
+      "value": "Valeur de la règle"
+    },
+    "seoTitle": "Titre SEO",
+    "seoDescription": "Descriptif SEO",
+    "publishedAt": "Publier sur",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

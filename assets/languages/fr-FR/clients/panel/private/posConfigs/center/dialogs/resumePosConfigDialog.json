@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
+  "title": "Reprendre ce point de vente jusqu'à ?",
+  "description": "Efface la pause sur ce jusqu'à seulement. Un verrou à l’échelle de l’entreprise (s’il est actif) n’est pas effacé. Les caissiers doivent ouvrir une nouvelle session pour revendre.",
+  "cancel": "Annuler",
+  "confirm": "Reprendre jusqu'à",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Reprise des points de vente jusqu'à…",
+      "time": 3000
+    },
+    "success": {
+      "title": "PLV jusqu'à la reprise",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de reprendre le PDV avant",
+      "time": 3000
+    }
+  }
+}

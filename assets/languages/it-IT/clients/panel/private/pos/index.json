@@ -1,0 +1,286 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
+  "title": "Punto di vendita",
+  "backToConfigs": "Torniamo alle configurazioni",
+  "back": "Esci",
+  "cashIn": "Incassare",
+  "cashOut": "Incassare",
+  "closeSession": "Chiudi sessione",
+  "closeSessionDescription": "Conta il cassetto e chiudi la sessione fino alla cassa.",
+  "paused": {
+    "banner": "POS messo in pausa dall'amministratore: la vendita è bloccata. Puoi scartare i carrelli trattenuti e chiudere la cassa.",
+    "companyBanner": "Tutte le casse POS aziendali vengono messe in pausa: non si tratta di una pausa a cassa singola. La vendita è bloccata. Puoi scartare i carrelli trattenuti e chiudere la cassa.",
+    "badge": "In pausa",
+    "companyBadge": "La compagnia fece una pausa",
+    "forceClosedToast": "Questa sessione fino alla cassa è stata chiusa forzatamente da una pausa dell'amministratore."
+  },
+  "inactive": {
+    "banner": "Questa cassa POS è inattiva e non può essere aperta."
+  },
+  "cash": "Contanti",
+  "orders": "Ordini",
+  "sessionSales": "Vendite di sessione",
+  "cart": "Ordine",
+  "items": "elementi",
+  "searchPlaceholder": "Cerca prodotti...",
+  "barcodePlaceholder": "Scansiona il codice a barre",
+  "catalogEmpty": "Nessun prodotto trovato.",
+  "categories": {
+    "all": "Tutti"
+  },
+  "cartEmpty": "Tocca un prodotto per avviare l'ordine.",
+  "customerName": "Cliente",
+  "walkIn": "Cliente che entra",
+  "orderDiscount": "Sconto sull'ordine",
+  "lineDiscount": "Sconto di linea",
+  "subtotal": "Subtotale",
+  "discount": "Sconto",
+  "total": "Totale",
+  "paymentMethods": "Pagamento",
+  "splitPayments": "pagamenti",
+  "split": {
+    "title": "Conto diviso",
+    "description": "Dividi l'ordine equamente (alla romana) o per articoli, come nei ristoranti italiani.",
+    "equal": "Uguali (alla romana)",
+    "equalHint": "Stesso importo per ospite. Assegna contanti/carta su ciascuna azione.",
+    "items": "Per articoli",
+    "itemsHint": "Scegli ciò che paga questo ospite, addebita la sua quota, quindi continua con il resto.",
+    "guests": "Ospiti",
+    "perPerson": "A persona",
+    "apply": "Applicare la divisione uguale",
+    "startItems": "Seleziona elementi",
+    "shareTotal": "Questa condivisione",
+    "payShare": "Pagare la quota",
+    "cancel": "Annulla la divisione",
+    "guest": "Ospite",
+    "selectItems": "Assegna elementi a questo ospite",
+    "shareNote": "Quota divisa in fattura"
+  },
+  "numpad": {
+    "clear": "C",
+    "quantity": "Quantità",
+    "amount": "Importo"
+  },
+  "noPaymentMethods": "Nessun metodo di pagamento su questa configurazione.",
+  "remaining": "Rimanente",
+  "change": "Cambiare",
+  "exact": "Esatto",
+  "newOrder": "Cancella",
+  "hold": "Tieni",
+  "pay": "Paga",
+  "payConfirm": "Conferma il pagamento",
+  "payConfirmHint": "Tocca di nuovo per confermare: annulla tra {n}s",
+  "remove": "Rimuovi",
+  "amount": "Importo",
+  "held": {
+    "title": "Ordini tenuti",
+    "description": "Carrelli parcheggiati per questa sessione. Riprendi per continuare a vendere.",
+    "empty": "Nessun ordine sospeso.",
+    "resume": "Riprendi"
+  },
+  "customerSearch": {
+    "placeholder": "Cerca il nome del cliente o del walk-in...",
+    "clear": "Cancella",
+    "searching": "Ricerca…",
+    "empty": "Nessun cliente corrispondente"
+  },
+  "variantDialog": {
+    "title": "Scegli la variante",
+    "description": "Seleziona una variante da aggiungere al carrello.",
+    "empty": "Nessuna variante disponibile.",
+    "stock": "Magazzino"
+  },
+  "refundDialog": {
+    "title": "Ordine di rimborso",
+    "description": "Scegli le quantità da rimborsare",
+    "empty": "Nessuna riga su questo ordine.",
+    "pinLabel": "PIN del gestore",
+    "pinRequired": "È richiesto il PIN amministratore",
+    "pinHint": "Selezionarai un manager e inserirai il suo PIN al momento della conferma.",
+    "total": "Totale del rimborso",
+    "submit": "Rimborso",
+    "selectAll": "Rimborsare tutto il resto",
+    "success": "Ordine rimborsato",
+    "failed": "Rimborso non riuscito",
+    "remaining": "A sinistra",
+    "alreadyRefunded": "Rimborsato",
+    "fullyRefunded": "Completamente rimborsato",
+    "nothingLeft": "Non è rimasto nulla da rimborsare su questo ordine."
+  },
+  "pinDialog": {
+    "pinLabel": "PIN del gestore",
+    "selectManager": "Seleziona gestore",
+    "changeManager": "Cambiare"
+  },
+  "sessionOrders": {
+    "title": "Ordini di sessione",
+    "description": "Ordini pagati e rimborsati in questa sessione di cassa.",
+    "empty": "Nessun ordine ancora",
+    "reprint": "Ristampa",
+    "refund": "Rimborso"
+  },
+  "refund": {
+    "title": "Ordine di rimborso",
+    "description": "Rimborso completo o quantità di riga selezionate.",
+    "full": "Rimborso completo",
+    "lines": "Per linee",
+    "selectedTotal": "Totale del rimborso",
+    "confirm": "Rimborso"
+  },
+  "variants": {
+    "title": "Scegli la variante",
+    "description": "seleziona una variante",
+    "badge": "varianti"
+  },
+  "stock": {
+    "qty": "Magazzino",
+    "out": "Fuori"
+  },
+  "pin": {
+    "title": "Approvazione del gestore",
+    "description": "Inserisci il PIN del gestore per continuare.",
+    "selectThenEnter": "Seleziona il responsabile dell'approvazione, quindi inserisci il PIN.",
+    "label": "PIN",
+    "discount": "PIN amministratore richiesto per gli sconti",
+    "cashOut": "PIN manager richiesto per l'incasso",
+    "refund": "PIN amministratore richiesto per i rimborsi"
+  },
+  "recon": {
+    "opening": "Saldo di apertura",
+    "card": "Carta",
+    "difference": "Differenza di cassa",
+    "differenceReason": "Motivo della differenza",
+    "differenceReasonPlaceholder": "Obbligatorio se conteggiato in contanti ≠ previsto",
+    "heldWarning": "{count} gli ordini trattenuti devono essere ripresi o eliminati prima della chiusura."
+  },
+  "shortcuts": {
+    "hint": "F1 aiuto · F2 paga · F4 tieni premuto · F3 trattenuto · F6 ordini · Esc cancella"
+  },
+  "info": {
+    "title": "Fino all'aiuto",
+    "description": "Scorciatoie da tastiera e funzionamento dei principali strumenti di cassa.",
+    "shortcutsTitle": "Scorciatoie da tastiera",
+    "featuresTitle": "Caratteristiche",
+    "keys": {
+      "f1": "Apri questo aiuto",
+      "f2": "Paga l'ordine corrente (premi due volte per confermare)",
+      "f3": "Ordini trattenuti aperti",
+      "f4": "Blocca/parcheggia il carrello corrente",
+      "f6": "Ordini e ristampe delle sessioni",
+      "f8": "Mettere a fuoco il campo del codice a barre",
+      "f9": "Attiva/disattiva il pannello di pagamento",
+      "esc": "Cancella carrello (quando non è aperta alcuna finestra di dialogo)",
+      "qty": "Aumenta/diminuisce la quantità della linea selezionata",
+      "delete": "Rimuovi la riga del carrello selezionata"
+    },
+    "features": {
+      "holdTitle": "Teneva i carri",
+      "holdBody": "Parcheggia un ordine incompleto con Hold (F4). Riprendilo o scartalo in seguito dagli ordini trattenuti (F3). Il pagamento di una trattenuta ripresa mantiene lo stesso numero d'ordine.",
+      "ordersTitle": "Ordini di sessione",
+      "ordersBody": "Apri Ordini (F6) per vedere i biglietti pagati/rimborsati da questa sessione e ristampare una ricevuta.",
+      "reconTitle": "Riconciliazione ravvicinata",
+      "reconBody": "La chiusura mostra la liquidità prevista, le vendite tramite gara e la differenza rispetto alla liquidità conteggiata. Quando differiscono è necessaria una motivazione. Le bozze trattenute devono essere prima cancellate.",
+      "payTitle": "Pagamenti sicuri",
+      "payBody": "Il pagamento deve essere premuto due volte (o due volte F2) per confermare ed evitare clic errati. Ogni pagamento invia anche una chiave di idempotenza in modo che un nuovo tentativo non venga addebitato due volte. Sono supportati i pagamenti suddivisi e le commissioni sui terminali bancari.",
+      "splitTitle": "Bill si è diviso",
+      "splitBody": "Utilizza l'icona delle forbici per le suddivisioni uguali (alla romana) o per articolo. Paga la quota di un ospite, quindi continua con il resto.",
+      "customerTitle": "Cliente CRM",
+      "customerBody": "Cerca gli utenti dell'azienda collegata dal campo cliente. I nomi walk-in funzionano ancora quando non è selezionato alcun account.",
+      "refundTitle": "Rimborsi",
+      "refundBody": "Dagli ordini di sessione, rimborsa un biglietto pagato per intero o per quantità di riga. Rifornimenti delle scorte per le linee restituite quando viene monitorato l'inventario.",
+      "stockTitle": "Stock e varianti",
+      "stockBody": "Le tessere mostrano la quantità disponibile. La vendita eccessiva può essere consentita per configurazione. I prodotti con più varianti aprono un selettore; i codici a barre possono risolvere una variante specifica.",
+      "pinTitle": "PIN del gestore",
+      "pinBody": "Le configurazioni possono richiedere un PIN amministratore per sconti, incassi e rimborsi. Imposta il PIN nella configurazione POS."
+    }
+  },
+  "terminal": {
+    "ready": "Terminale POS bancario",
+    "connected": "Collegato",
+    "localHttpHint": "Pay invierà l'importo al bridge terminale della banca locale.",
+    "manualHint": "Conferma l'addebito sul terminale della banca, quindi completa Paga.",
+    "notConfigured": "Il metodo della carta non ha terminale configurato: il pagamento registra solo la vendita.",
+    "charge": "Terminale di ricarica",
+    "charging": "In attesa del terminale..."
+  },
+  "reason": "Motivo",
+  "notes": "Note",
+  "cancel": "Annulla",
+  "confirm": "Conferma",
+  "busy": "Lavorando…",
+  "expectedCash": "Contanti attesi",
+  "cashRegister": "Registratore di cassa",
+  "closingBalance": "Saldo di chiusura",
+  "picker": {
+    "title": "Seleziona un registro",
+    "description": "Scegli quale negozio fino ad aprire.",
+    "empty": "Nessuna configurazione POS attiva. Creane prima uno in Configurazioni → eCommerce → POS.",
+    "open": "Aperto fino a"
+  },
+  "openSession": {
+    "title": "Sessione aperta",
+    "description": "Apri una nuova sessione di cassa per iniziare a vendere.",
+    "for": "Sessione aperta per",
+    "openingBalance": "Saldo di apertura",
+    "notes": "Note",
+    "submit": "Sessione aperta"
+  },
+  "receipt": {
+    "title": "Pagamento riuscito",
+    "print": "Stampa ricevuta",
+    "order": "Ordine",
+    "ref": "Rif",
+    "date": "Data",
+    "defaultFooter": "Grazie per il tuo acquisto!",
+    "fiscalQr": "Codice QR fiscale",
+    "nslf": "NSLF",
+    "nivf": "NIVF",
+    "fiscalDemo": "Verifica fiscale (demo)"
+  },
+  "sessionState": {
+    "opening_control": "Apertura",
+    "opened": "Aperto",
+    "closing_control": "Chiusura",
+    "closed": "Chiuso"
+  },
+  "toast": {
+    "sessionOpened": "Sessione aperta",
+    "sessionClosed": "Sessione chiusa",
+    "cashIn": "Aggiunto denaro contante",
+    "cashOut": "Contanti rimossi",
+    "productAdded": "Prodotto aggiunto",
+    "paid": "Ordine pagato",
+    "splitApplied": "Bill diviso in parti uguali",
+    "sharePaid": "Quota pagata: continua con gli articoli rimanenti",
+    "held": "Ordine mantenuto",
+    "resumed": "L'ordine trattenuto è stato ripreso",
+    "heldDiscarded": "Ordine trattenuto annullato",
+    "refunded": "Ordine rimborsato"
+  },
+  "errors": {
+    "catalogFailed": "Impossibile caricare il catalogo",
+    "sessionFailed": "Impossibile caricare la sessione",
+    "configsFailed": "Impossibile caricare le configurazioni POS",
+    "openSessionFailed": "Impossibile aprire la sessione",
+    "cashMoveFailed": "Il trasferimento di contanti non è riuscito",
+    "closeSessionFailed": "Impossibile chiudere la sessione",
+    "barcodeNotFound": "Codice a barre non trovato",
+    "invalidAmount": "Inserisci un importo valido",
+    "payFailed": "Pagamento non riuscito",
+    "terminalFailed": "Pagamento tramite terminale non riuscito",
+    "splitFailed": "Impossibile dividere il conto",
+    "holdFailed": "Impossibile mantenere l'ordine",
+    "heldLoadFailed": "Impossibile caricare gli ordini trattenuti",
+    "heldDeleteFailed": "Impossibile eliminare l'ordine sospeso",
+    "ordersLoadFailed": "Impossibile caricare gli ordini di sessione",
+    "reprintFailed": "Impossibile ristampare la ricevuta",
+    "differenceReasonRequired": "Spiegare la differenza in contanti prima di chiudere",
+    "heldOrdersBlockClose": "Riprendi o elimina gli ordini trattenuti prima della chiusura",
+    "customerSearchFailed": "Impossibile cercare i clienti",
+    "insufficientStock": "Scorte insufficienti per questa quantità",
+    "outOfStock": "Il prodotto è esaurito",
+    "pinInvalid": "PIN amministratore non valido",
+    "noManagersWithPin": "A questa cassa non è assegnato alcun manager con PIN",
+    "refundFailed": "Rimborso non riuscito"
+  }
+}

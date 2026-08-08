@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx",
+  "title": "Créer une configuration fiscale",
+  "formHeader": {
+    "title": "Créer une configuration fiscale",
+    "description": "Configurez la fiscalisation albanaise CIS et les informations d'identification de facturation électronique."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer"
+  },
+  "form": {
+    "generalSectionTitle": "Général",
+    "cisCodesSectionTitle": "Codes CEI",
+    "endpointsSectionTitle": "Points de terminaison du service",
+    "sellerSectionTitle": "Détails du vendeur",
+    "certificateSectionTitle": "Certificat",
+    "nameLabel": "Nom",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Code logiciel (SoftCode)",
+    "maintainerCodeLabel": "Code du responsable",
+    "businessUnitCodeLabel": "Code de l'unité commerciale",
+    "operatorCodeLabel": "Code opérateur",
+    "tcrCodeLabel": "Code TCR (depuis CIS)",
+    "tcrIntIdLabel": "ID interne du TCR",
+    "tcrTypeLabel": "Type de RCT",
+    "tcrType": {
+      "REGULAR": "Régulier",
+      "VENDING": "Vente automatique"
+    },
+    "environmentLabel": "Environnement",
+    "environment": {
+      "test": "Tester",
+      "production": "Fabrication"
+    },
+    "fiscalizationUrlLabel": "URL SOAP de fiscalisation",
+    "einvoiceUrlLabel": "URL SOAP de la facture électronique",
+    "selfcareUrlLabel": "Selfcare / vérifier l'URL",
+    "proxyUrlLabel": "Proxy HTTPS (facultatif)",
+    "sellerNameLabel": "Nom du vendeur",
+    "sellerAddressLabel": "Adresse du vendeur",
+    "sellerTownLabel": "Ville du vendeur",
+    "sellerCountryLabel": "Code pays du vendeur (ALB)",
+    "certificateBase64Label": "Certificat PKCS#12 (base64)",
+    "certificatePasswordLabel": "Mot de passe du certificat",
+    "isVatRegisteredLabel": "TVA enregistrée",
+    "autoFiscalizePosLabel": "Fiscaliser automatiquement les paiements aux points de vente",
+    "autoEinvoiceLabel": "Créer automatiquement une facture électronique après la fiscalisation"
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une configuration fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configuration fiscale créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer la configuration fiscale",
+      "time": 3000
+    }
+  }
+}

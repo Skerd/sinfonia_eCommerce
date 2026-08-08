@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
+  "title": "Remises",
+  "description": "Gérez les codes promotionnels et les remises automatiques.",
+  "createDiscount": "Créer une remise",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "title": "Modifier le type d’unité",
+    "code": "Code",
+    "type": "Type",
+    "value": "Valeur",
+    "appliesTo": "S'applique à",
+    "targetIds": "Cibles",
+    "minimumOrderAmount": "Montant minimum de commande",
+    "minimumQuantity": "Quantité minimale",
+    "usageLimit": "Limite d'utilisation",
+    "usageLimitPerCustomer": "Limite d'utilisation par client",
+    "usageCount": "Nombre d'utilisations",
+    "customerGroups": "Groupes de clients",
+    "isActive": "Actif",
+    "startsAt": "Commence à",
+    "endsAt": "Se termine à",
+    "buyXGetY": {
+      "buyQuantity": "Acheter la quantité",
+      "getQuantity": "Obtenir la quantité",
+      "getProductIds": "Produits gratuits"
+    },
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

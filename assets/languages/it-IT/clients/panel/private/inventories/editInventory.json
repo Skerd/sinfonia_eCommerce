@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
+  "title": "Modifica inventario",
+  "errorTitle": "Impossibile caricare l'inventario",
+  "errorDescription": "Impossibile caricare questo inventario. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "reorderPointLabel": "Punto di riordino",
+    "reorderQuantityLabel": "Riordina la quantità"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio dell'inventario",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventario aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare l'inventario",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica inventario",
+    "description": "Aggiorna le soglie di riordino per questa riga di stock."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

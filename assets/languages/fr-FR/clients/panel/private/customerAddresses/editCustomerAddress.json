@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/editCustomerAddress.tsx",
+  "title": "Modifier l'adresse",
+  "errorTitle": "Échec du chargement de l'adresse",
+  "errorDescription": "Impossible de charger cette adresse. Essayer à nouveau.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "customerLabel": "Client",
+    "customerPlaceholder": "Sélectionner un client",
+    "firstNameLabel": "Prénom du destinataire",
+    "firstNamePlaceholder": "Prénom sur le colis",
+    "lastNameLabel": "Nom du destinataire",
+    "lastNamePlaceholder": "Nom de famille sur le colis",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Adresse postale",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner la ville",
+    "stateLabel": "Canton / État",
+    "statePlaceholder": "Sélectionner le canton",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "Numéro de téléphone",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "41.3275",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "19.8189",
+    "labelLabel": "Étiquette",
+    "labelPlaceholder": "Maison, travail,…"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrer l'adresse",
+      "time": 3000
+    },
+    "success": {
+      "title": "Adresse mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'adresse",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'adresse",
+    "description": "Mettez à jour le client, le destinataire, l’emplacement et l’épingle de la carte."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

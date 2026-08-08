@@ -1,0 +1,66 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx",
+  "title": "Modifier la configuration fiscale",
+  "formHeader": {
+    "title": "Modifier la configuration fiscale",
+    "description": "Mettez à jour les paramètres de fiscalisation et de facturation électronique de la CEI albanaise."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  },
+  "form": {
+    "generalSectionTitle": "Général",
+    "cisCodesSectionTitle": "Codes CEI",
+    "endpointsSectionTitle": "Points de terminaison du service",
+    "sellerSectionTitle": "Détails du vendeur",
+    "certificateSectionTitle": "Certificat",
+    "certificateManageSectionTitle": "Gérer le certificat",
+    "nameLabel": "Nom",
+    "niptLabel": "NIPT / NUIS",
+    "softCodeLabel": "Code logiciel (SoftCode)",
+    "maintainerCodeLabel": "Code du responsable",
+    "businessUnitCodeLabel": "Code de l'unité commerciale",
+    "operatorCodeLabel": "Code opérateur",
+    "tcrCodeLabel": "Code TCR (depuis CIS)",
+    "tcrIntIdLabel": "ID interne du TCR",
+    "tcrTypeLabel": "Type de RCT",
+    "tcrType": {
+      "REGULAR": "Régulier",
+      "VENDING": "Vente automatique"
+    },
+    "environmentLabel": "Environnement",
+    "environment": {
+      "test": "Tester",
+      "production": "Fabrication"
+    },
+    "fiscalizationUrlLabel": "URL SOAP de fiscalisation",
+    "einvoiceUrlLabel": "URL SOAP de la facture électronique",
+    "selfcareUrlLabel": "Selfcare / vérifier l'URL",
+    "proxyUrlLabel": "Proxy HTTPS (facultatif)",
+    "sellerNameLabel": "Nom du vendeur",
+    "sellerAddressLabel": "Adresse du vendeur",
+    "sellerTownLabel": "Ville du vendeur",
+    "sellerCountryLabel": "Code pays du vendeur (ALB)",
+    "certificateBase64Label": "Certificat PKCS#12 (base64) — laisser vide pour conserver",
+    "certificatePasswordLabel": "Mot de passe du certificat",
+    "isVatRegisteredLabel": "TVA enregistrée",
+    "autoFiscalizePosLabel": "Fiscaliser automatiquement les paiements aux points de vente",
+    "autoEinvoiceLabel": "Créer automatiquement une facture électronique après la fiscalisation",
+    "clearCertificateLabel": "Effacer le certificat stocké"
+  },
+  "axios": {
+    "start": {
+      "title": "Sauvegarde de la configuration fiscale",
+      "time": 3000
+    },
+    "success": {
+      "title": "Configuration fiscale mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la configuration fiscale",
+      "time": 3000
+    }
+  }
+}

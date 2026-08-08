@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
+  "title": "Zones fiscales",
+  "description": "Configurez les taux de taxe par pays et par région.",
+  "createTaxZone": "Créer une zone fiscale",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "country": "Pays",
+    "states": "États / cantons",
+    "postalCodePatterns": "Modèles de codes postaux",
+    "rates": {
+      "name": "Nom du tarif",
+      "rate": "Tarif",
+      "isCompound": "Composé",
+      "appliesTo": "Le tarif s'applique à"
+    },
+    "priority": "Priorité",
+    "isActive": "Actif",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

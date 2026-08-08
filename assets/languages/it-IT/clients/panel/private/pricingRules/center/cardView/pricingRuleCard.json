@@ -1,0 +1,15 @@
+{
+  "active": "Attivo",
+  "inactive": "Inattivo",
+  "name": "Nome",
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
+  "pricingRuleType": {
+    "fixed_discount": "Sconto fisso",
+    "fixed_price": "Prezzo fisso",
+    "percentage_discount": "Sconto percentuale",
+    "surcharge": "Supplemento"
+  },
+  "priority": "Priorità",
+  "type": "Tipo",
+  "value": "Valore"
+}

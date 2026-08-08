@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx",
+  "posPaymentMethodSubtitle": "Mode de paiement au point de vente",
+  "failedTitle": "Échec du chargement du mode de paiement",
+  "failedDescription": "Une erreur s'est produite lors du chargement de ce mode de paiement. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "overview": "Vue d'ensemble",
+  "terminal": "Terminal de paiement bancaire",
+  "name": "Nom",
+  "type": "Type",
+  "sequence": "Séquence",
+  "isActive": "Actif",
+  "yes": "Oui",
+  "no": "Non",
+  "cashQuickAmounts": "Encaisser des montants rapides",
+  "terminalEnabled": "Terminal de paiement bancaire",
+  "terminalProviderLabel": "Fournisseur de terminaux",
+  "terminalProtocolLabel": "Protocole",
+  "terminalHost": "Hôte du terminal",
+  "terminalPort": "Port terminal",
+  "terminalId": "ID du terminal",
+  "terminalPath": "Chemin du terminal",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "paymentType": {
+    "cash": "Comptant",
+    "card": "Carte",
+    "bank": "Banque",
+    "customer_account": "Compte client",
+    "other": "Autre"
+  },
+  "terminalProvider": {
+    "manual": "Manuel",
+    "local_http": "HTTP local"
+  },
+  "terminalProtocol": {
+    "http": "HTTP",
+    "https": "HTTPS"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx",
+  "taxZoneSubtitle": "Dettagli della zona fiscale",
+  "failedTitle": "Impossibile caricare la zona fiscale",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa zona fiscale. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "overview": "Panoramica",
+  "geography": "Geografia",
+  "rates": "Aliquote fiscali",
+  "name": "Nome",
+  "isActive": "Attivo",
+  "priority": "Priorità",
+  "company": "Azienda",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "country": "Paese",
+  "states": "Stati/regioni",
+  "postalCodePatterns": "Modelli di codici postali",
+  "state": "Cantone / Stato",
+  "rateValue": "Tasso (%)",
+  "rateAppliesTo": "Si applica a",
+  "isCompound": "Composto",
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "yes": "Sì",
+  "no": "No",
+  "yesNo": {
+    "true": "Sì",
+    "false": "No"
+  },
+  "taxRateAppliesTo": {
+    "all": "Tutti i prodotti",
+    "physical": "Fisico",
+    "digital": "Digitale"
+  }
+}

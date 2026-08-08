@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
+  "title": "Rejeter la demande de retour",
+  "description": "Rejetez cette demande de retour en attente. Éventuellement, expliquez pourquoi.",
+  "reasonLabel": "Motif du refus",
+  "reasonPlaceholder": "Motif de refus facultatif",
+  "cancel": "Annuler",
+  "confirm": "Refuser",
+  "busy": "Travailler…",
+  "axios": {
+    "start": {
+      "title": "Refus de la demande de retour…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de retour rejetée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de rejeter la demande de retour",
+      "time": 3000
+    }
+  }
+}

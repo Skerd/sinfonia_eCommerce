@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
+  "title": "Magazzini",
+  "description": "Gestisci le sedi che detengono le tue scorte.",
+  "createWarehouse": "Crea magazzino",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "code": "Codice",
+    "address": {
+      "country": "Paese",
+      "state": "Cantone / Stato",
+      "city": "Città",
+      "street": "Via",
+      "postalCode": "CAP",
+      "latitude": "Latitudine",
+      "longitude": "Longitudine"
+    },
+    "isDefault": "Predefinito",
+    "isActive": "Attivo",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/cardView/collectionCard.tsx",
+  "collectionType": {
+    "manual": "Manuale",
+    "dynamic": "Dinamico"
+  },
+  "products": "prodotti",
+  "visible": "Visibile",
+  "hidden": "Nascosto"
+}

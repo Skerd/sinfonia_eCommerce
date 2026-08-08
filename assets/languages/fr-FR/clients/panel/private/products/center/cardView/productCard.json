@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "salePercentOff": "{{percent}} % de réduction",
+  "timerDays": "Jours",
+  "timerHours": "Heures",
+  "timerMins": "Minutes",
+  "timerSecs": "Seconde",
+  "productStatus": {
+    "draft": "Brouillon",
+    "active": "Actif",
+    "archived": "Archivé"
+  },
+  "productType": {
+    "physical": "Physique",
+    "digital": "Numérique",
+    "service": "Service",
+    "variable": "Variable",
+    "bundle": "Fagot",
+    "gift_card": "Carte cadeau"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
+  "title": "Point de vente",
+  "backToConfigs": "Retour aux configurations",
+  "back": "Quitter",
+  "cashIn": "Encaisser",
+  "cashOut": "Encaissement",
+  "closeSession": "Fermer la session",
+  "closeSessionDescription": "Comptez le tiroir et fermez cette session jusqu'à.",
+  "paused": {
+    "banner": "PDV suspendu par l'administrateur – la vente est bloquée. Vous pouvez jeter les chariots retenus et fermer la caisse.",
+    "companyBanner": "Toutes les caisses de l'entreprise sont mises en pause ; il ne s'agit pas d'une pause unique. La vente est bloquée. Vous pouvez jeter les chariots retenus et fermer la caisse.",
+    "badge": "En pause",
+    "companyBadge": "L'entreprise a fait une pause",
+    "forceClosedToast": "Cette session de caisse a été fermée de force par une pause administrative."
+  },
+  "inactive": {
+    "banner": "Cette caisse POS est inactive et ne peut pas être ouverte."
+  },
+  "cash": "Comptant",
+  "orders": "Commandes",
+  "sessionSales": "Ventes de séances",
+  "cart": "Commande",
+  "items": "articles",
+  "searchPlaceholder": "Rechercher des produits…",
+  "barcodePlaceholder": "Scanner le code-barres",
+  "catalogEmpty": "Aucun produit trouvé.",
+  "categories": {
+    "all": "Tous"
+  },
+  "cartEmpty": "Appuyez sur un produit pour lancer la commande.",
+  "customerName": "Client",
+  "walkIn": "Client sans rendez-vous",
+  "orderDiscount": "Remise sur la commande",
+  "lineDiscount": "Remise de ligne",
+  "subtotal": "Sous-total",
+  "discount": "Remise",
+  "total": "Total",
+  "paymentMethods": "Paiement",
+  "splitPayments": "paiements",
+  "split": {
+    "title": "Facture fractionnée",
+    "description": "Divisez la commande également (alla romana) ou par articles, comme dans les restaurants italiens.",
+    "equal": "Égal (alla romana)",
+    "equalHint": "Même montant par invité. Attribuez de l'argent liquide/une carte à chaque partage.",
+    "items": "Par articles",
+    "itemsHint": "Choisissez ce que paie cet invité, facturez sa part, puis continuez avec le reste.",
+    "guests": "Invités",
+    "perPerson": "Par personne",
+    "apply": "Appliquer une répartition égale",
+    "startItems": "Sélectionner des éléments",
+    "shareTotal": "Ce partage",
+    "payShare": "Partage payant",
+    "cancel": "Annuler le partage",
+    "guest": "Invité",
+    "selectItems": "Attribuer des éléments à cet invité",
+    "shareNote": "Part de partage de facture"
+  },
+  "numpad": {
+    "clear": "C",
+    "quantity": "Quantité",
+    "amount": "Montant"
+  },
+  "noPaymentMethods": "Aucun mode de paiement sur cette configuration.",
+  "remaining": "Restant",
+  "change": "Changement",
+  "exact": "Exact",
+  "newOrder": "Effacer",
+  "hold": "Tenir",
+  "pay": "Payer",
+  "payConfirm": "Confirmer le paiement",
+  "payConfirmHint": "Appuyez à nouveau pour confirmer - annule dans {n}s",
+  "remove": "Retirer",
+  "amount": "Montant",
+  "held": {
+    "title": "Commandes retenues",
+    "description": "Chariots garés pour cette session. Reprendre pour continuer à vendre.",
+    "empty": "Aucune commande retenue.",
+    "resume": "CV"
+  },
+  "customerSearch": {
+    "placeholder": "Rechercher un client ou un nom de visite…",
+    "clear": "Effacer",
+    "searching": "Recherche…",
+    "empty": "Aucun client correspondant"
+  },
+  "variantDialog": {
+    "title": "Choisir une variante",
+    "description": "Sélectionnez une variante à ajouter au panier.",
+    "empty": "Aucune variante disponible.",
+    "stock": "Actions"
+  },
+  "refundDialog": {
+    "title": "Commande de remboursement",
+    "description": "Choisissez les quantités à rembourser",
+    "empty": "Aucune ligne sur cette commande.",
+    "pinLabel": "Code PIN du gestionnaire",
+    "pinRequired": "Le code PIN du gestionnaire est requis",
+    "pinHint": "Vous sélectionnerez un responsable et saisirez son code PIN lors de la confirmation.",
+    "total": "Total du remboursement",
+    "submit": "Remboursement",
+    "selectAll": "Rembourser tout le reste",
+    "success": "Commande remboursée",
+    "failed": "Le remboursement a échoué",
+    "remaining": "Gauche",
+    "alreadyRefunded": "Remboursé",
+    "fullyRefunded": "Entièrement remboursé",
+    "nothingLeft": "Il ne reste plus rien à rembourser sur cette commande."
+  },
+  "pinDialog": {
+    "pinLabel": "Code PIN du gestionnaire",
+    "selectManager": "Sélectionner le gestionnaire",
+    "changeManager": "Changement"
+  },
+  "sessionOrders": {
+    "title": "Ordres de séances",
+    "description": "Commandes payées et remboursées lors de cette session de caisse.",
+    "empty": "Aucune commande pour l'instant.",
+    "reprint": "Réimpression",
+    "refund": "Remboursement"
+  },
+  "refund": {
+    "title": "Commande de remboursement",
+    "description": "Remboursement intégral ou certaines quantités de lignes.",
+    "full": "Remboursement intégral",
+    "lines": "Par lignes",
+    "selectedTotal": "Total du remboursement",
+    "confirm": "Remboursement"
+  },
+  "variants": {
+    "title": "Choisir une variante",
+    "description": "sélectionner une variante",
+    "badge": "variantes"
+  },
+  "stock": {
+    "qty": "Actions",
+    "out": "Sortie"
+  },
+  "pin": {
+    "title": "Approbation du gestionnaire",
+    "description": "Saisissez le code PIN du gestionnaire pour continuer.",
+    "selectThenEnter": "Sélectionnez le responsable approbateur, puis saisissez son code PIN.",
+    "label": "NIP",
+    "discount": "Code PIN du responsable requis pour les réductions",
+    "cashOut": "Code PIN du gestionnaire requis pour le retrait",
+    "refund": "Code PIN du responsable requis pour les remboursements"
+  },
+  "recon": {
+    "opening": "Solde d'ouverture",
+    "card": "Carte",
+    "difference": "Différence de trésorerie",
+    "differenceReason": "Raison de la différence",
+    "differenceReasonPlaceholder": "Obligatoire lorsque comptant en espèces ≠ attendu",
+    "heldWarning": "{count} les commandes en attente doivent être reprises ou rejetées avant la clôture."
+  },
+  "shortcuts": {
+    "hint": "Aide F1 · F2 payer · F4 en attente · F3 en attente · F6 commandes · Esc effacer"
+  },
+  "info": {
+    "title": "Jusqu'à ce que j'aide",
+    "description": "Raccourcis clavier et fonctionnement des principaux outils de caisse.",
+    "shortcutsTitle": "Raccourcis clavier",
+    "featuresTitle": "Caractéristiques",
+    "keys": {
+      "f1": "Ouvrir cette aide",
+      "f2": "Payer la commande en cours (appuyer deux fois pour confirmer)",
+      "f3": "Ordres en attente ouverts",
+      "f4": "Maintenir/garer le chariot actuel",
+      "f6": "Ordres de séances et réimpression",
+      "f8": "Champ de code-barres de focus",
+      "f9": "Basculer le panneau de paiement",
+      "esc": "Effacer le panier (quand aucune boîte de dialogue n'est ouverte)",
+      "qty": "Augmenter/diminuer la quantité de ligne sélectionnée",
+      "delete": "Supprimer la ligne de panier sélectionnée"
+    },
+    "features": {
+      "holdTitle": "Chariots retenus",
+      "holdBody": "Garez une commande inachevée avec Hold (F4). Reprenez-le ou supprimez-le plus tard à partir des ordres retenus (F3). Le paiement d'une reprise de retenue conserve le même numéro de commande.",
+      "ordersTitle": "Ordres de séances",
+      "ordersBody": "Ouvrez les commandes (F6) pour voir les billets payés/remboursés pour cette session et réimprimer un reçu.",
+      "reconTitle": "Fermer le rapprochement",
+      "reconBody": "La clôture montre les liquidités attendues, les ventes par appel d'offres et la différence par rapport aux liquidités comptabilisées. Une raison est requise lorsqu’ils diffèrent. Les traites retenues doivent d’abord être effacées.",
+      "payTitle": "Paiements sécurisés",
+      "payBody": "Payer doit être appuyé deux fois (ou deux fois sur F2) pour confirmer et éviter les erreurs de clic. Chaque paie envoie également une clé d'idempotence afin qu'une nouvelle tentative ne soit pas facturée deux fois. Les paiements fractionnés et les frais de terminal bancaire sont pris en charge.",
+      "splitTitle": "Facture partagée",
+      "splitBody": "Utilisez l’icône des ciseaux pour les répartitions égales (alla romana) ou par article. Payez la part d’un invité, puis continuez avec le reste.",
+      "customerTitle": "Client CRM",
+      "customerBody": "Recherchez les utilisateurs de l’entreprise liés à partir du champ client. Les noms sans rendez-vous fonctionnent toujours lorsqu’aucun compte n’est sélectionné.",
+      "refundTitle": "Remboursements",
+      "refundBody": "Depuis les commandes de sessions, remboursez un billet payé en totalité ou par quantité de ligne. Le stock se réapprovisionne pour les lignes retournées lorsque l'inventaire est suivi.",
+      "stockTitle": "Stocks et variantes",
+      "stockBody": "Les tuiles indiquent la quantité disponible. La survente peut être autorisée par configuration. Les produits à variantes multiples ouvrent un sélecteur ; les codes-barres peuvent résoudre une variante spécifique.",
+      "pinTitle": "Code PIN du gestionnaire",
+      "pinBody": "Les configurations peuvent nécessiter un code PIN de gestionnaire pour les remises, les retraits et les remboursements. Définissez le code PIN sur la configuration du point de vente."
+    }
+  },
+  "terminal": {
+    "ready": "Terminal de paiement bancaire",
+    "connected": "Connecté",
+    "localHttpHint": "Pay enverra le montant au pont terminal de la banque locale.",
+    "manualHint": "Confirmez le montant sur le terminal bancaire, puis terminez Payer.",
+    "notConfigured": "La méthode par carte n’a pas de terminal configuré – le paiement enregistre uniquement la vente.",
+    "charge": "Borne de recharge",
+    "charging": "En attente du terminal…"
+  },
+  "reason": "Motif",
+  "notes": "Notes",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
+  "busy": "Travailler…",
+  "expectedCash": "Trésorerie attendue",
+  "cashRegister": "Caisse enregistreuse",
+  "closingBalance": "Solde de clôture",
+  "picker": {
+    "title": "Sélectionnez un registre",
+    "description": "Choisissez quel magasin ouvrir.",
+    "empty": "Aucune configuration de point de vente active. Créez-en un sous Configurations → eCommerce → POS d'abord.",
+    "open": "Ouvert jusqu'à"
+  },
+  "openSession": {
+    "title": "Séance ouverte",
+    "description": "Ouvrez une nouvelle session de caisse pour commencer à vendre.",
+    "for": "Séance ouverte pour",
+    "openingBalance": "Solde d'ouverture",
+    "notes": "Notes",
+    "submit": "Séance ouverte"
+  },
+  "receipt": {
+    "title": "Paiement réussi",
+    "print": "Imprimer le reçu",
+    "order": "Commande",
+    "ref": "Réf",
+    "date": "Date",
+    "defaultFooter": "Merci pour votre achat!",
+    "fiscalQr": "Code QR fiscal",
+    "nslf": "NSLF",
+    "nivf": "FIVV",
+    "fiscalDemo": "Vérification fiscale (démo)"
+  },
+  "sessionState": {
+    "opening_control": "Ouverture",
+    "opened": "Ouvert",
+    "closing_control": "Clôture",
+    "closed": "Fermé"
+  },
+  "toast": {
+    "sessionOpened": "Séance ouverte",
+    "sessionClosed": "Séance close",
+    "cashIn": "Argent ajouté",
+    "cashOut": "Espèces retirées",
+    "productAdded": "Produit ajouté",
+    "paid": "Commande payée",
+    "splitApplied": "Facture divisée en parts égales",
+    "sharePaid": "Part payée – continuer avec les éléments restants",
+    "held": "Commande retenue",
+    "resumed": "Ordre retenu repris",
+    "heldDiscarded": "Commande retenue rejetée",
+    "refunded": "Commande remboursée"
+  },
+  "errors": {
+    "catalogFailed": "Impossible de charger le catalogue",
+    "sessionFailed": "Impossible de charger la session",
+    "configsFailed": "Impossible de charger les configurations POS",
+    "openSessionFailed": "Impossible d'ouvrir la session",
+    "cashMoveFailed": "Échec du transfert de fonds",
+    "closeSessionFailed": "Impossible de fermer la session",
+    "barcodeNotFound": "Code barre introuvable",
+    "invalidAmount": "Entrez un montant valide",
+    "payFailed": "Échec du paiement",
+    "terminalFailed": "Échec du paiement final",
+    "splitFailed": "Impossible de partager la facture",
+    "holdFailed": "Impossible de conserver la commande",
+    "heldLoadFailed": "Impossible de charger les commandes en attente",
+    "heldDeleteFailed": "Impossible d'annuler la commande en attente",
+    "ordersLoadFailed": "Impossible de charger les commandes de session",
+    "reprintFailed": "Impossible de réimprimer le reçu",
+    "differenceReasonRequired": "Expliquez la différence de trésorerie avant la clôture",
+    "heldOrdersBlockClose": "Reprendre ou supprimer les ordres en attente avant la clôture",
+    "customerSearchFailed": "Impossible de rechercher des clients",
+    "insufficientStock": "Pas assez de stock pour cette quantité",
+    "outOfStock": "Le produit est en rupture de stock",
+    "pinInvalid": "Code PIN du gestionnaire invalide",
+    "noManagersWithPin": "Aucun manager avec un code PIN n'y est affecté jusqu'à",
+    "refundFailed": "Le remboursement a échoué"
+  }
+}

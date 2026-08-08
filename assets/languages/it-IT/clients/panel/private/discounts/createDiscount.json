@@ -1,0 +1,83 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/discounts/createDiscount.tsx",
+  "title": "Crea sconto",
+  "form": {
+    "titleLabel": "Modifica tipo di unità",
+    "titlePlaceholder": "Titolo scontato",
+    "codeLabel": "Codice",
+    "codePlaceholder": "Codice promozionale opzionale",
+    "typeLabel": "Tipo",
+    "appliesToLabel": "Si applica a",
+    "valueLabel": "Valore",
+    "valuePlaceholder": "0",
+    "isActiveLabel": "Attivo",
+    "startsAtLabel": "Inizia alle",
+    "endsAtLabel": "Termina alle",
+    "minimumOrderAmountLabel": "Importo minimo dell'ordine",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantità minima",
+    "minimumQuantityPlaceholder": "0",
+    "usageLimitLabel": "Limite di utilizzo",
+    "usageLimitPlaceholder": "Illimitato se vuoto",
+    "usageLimitPerCustomerLabel": "Limite di utilizzo per cliente",
+    "usageLimitPerCustomerPlaceholder": "Illimitato se vuoto",
+    "generalSectionTitle": "Generale",
+    "scheduleSectionTitle": "Calendario",
+    "limitsSectionTitle": "Limiti",
+    "targetsSectionTitle": "Obiettivi",
+    "customerGroupsSectionTitle": "Gruppi di clienti",
+    "targetIdsLabel": "Obiettivi",
+    "productsLabel": "Prodotti",
+    "collectionsLabel": "Collezioni",
+    "categoriesLabel": "Categorie",
+    "customerGroupsLabel": "Gruppi di clienti",
+    "buyXGetYSectionTitle": "Compra X prendi Y",
+    "buyXGetYAnyOfSetHint": "Le quantità Acquista e ricevi si applicano ai prodotti selezionati come set (uno qualsiasi di). Le unità idonee più economiche sono gratuite.",
+    "buyQuantityLabel": "Acquista quantità",
+    "buyQuantityPlaceholder": "1",
+    "getQuantityLabel": "Ottieni quantità",
+    "getQuantityPlaceholder": "1",
+    "getProductIdsLabel": "Prodotti idonei",
+    "selectProduct": "Seleziona il prodotto",
+    "selectCollection": "Seleziona collezione",
+    "selectCategory": "Seleziona categoria",
+    "selectCustomerGroup": "Seleziona il gruppo di clienti",
+    "removeTarget": "Rimuovi bersaglio",
+    "removeCustomerGroup": "Rimuovi gruppo clienti",
+    "removeProduct": "Rimuovere il prodotto",
+    "discountType": {
+      "percentage": "Percentuale",
+      "fixed": "Importo fisso",
+      "free_shipping": "Spedizione gratuita",
+      "buy_x_get_y": "Compra X prendi Y"
+    },
+    "discountAppliesTo": {
+      "order": "Intero ordine",
+      "product": "Prodotti",
+      "collection": "Collezioni",
+      "category": "Categorie"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione di sconti",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sconto creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare lo sconto",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea sconto",
+    "description": "Imposta un codice promozionale o uno sconto automatico con regole e limiti."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea sconto"
+  }
+}

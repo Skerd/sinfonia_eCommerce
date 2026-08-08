@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
+  "title": "Modifica attributo",
+  "errorTitle": "Impossibile caricare l'attributo",
+  "errorDescription": "Impossibile caricare questo attributo. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "nameLabel": "Nome",
+    "positionLabel": "Posizione",
+    "isVisibleOnProductPageLabel": "Visibile sulla pagina del prodotto",
+    "isUsedForVariantsLabel": "Utilizzato per le varianti",
+    "valuesLabel": "Valori",
+    "valuesPlaceholder": "Aggiungi un valore e premi Invio",
+    "removeValue": "Rimuovi valore"
+  },
+  "axios": {
+    "start": {
+      "title": "Attributo di salvataggio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Attributo aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare l'attributo",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica attributo",
+    "description": "Aggiorna il nome, i valori, la visibilità e le impostazioni della variante."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

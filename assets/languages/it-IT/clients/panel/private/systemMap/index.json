@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
+  "title": "Mappa del sistema di e-commerce",
+  "description": "Mappa interattiva dei modelli di eCommerce del catalogo, del flusso di pagamento e delle funzionalità dei moduli. Panoramica, zoom e clic sui nodi per i dettagli.",
+  "tabs": {
+    "models": "Grafico del modello",
+    "flows": "Come funziona",
+    "capabilities": "Capacità"
+  }
+}

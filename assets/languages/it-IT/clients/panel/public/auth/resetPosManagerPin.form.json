@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
+  "title": "Reimposta il PIN amministratore",
+  "description": "Scegli un nuovo PIN amministratore per questa cassa.",
+  "verifyingTitle": "Verifica del collegamento di ripristino",
+  "verifyingDescription": "Ti preghiamo di attendere mentre convalidiamo il tuo link di reimpostazione.",
+  "invalidTitle": "Collegamento non valido o scaduto",
+  "invalidDescription": "Questo collegamento di reimpostazione non è valido o è scaduto. Richiedine uno nuovo dal menu di configurazione POS.",
+  "successTitle": "PIN aggiornato",
+  "successDescription": "Il PIN del gestore è stato reimpostato correttamente. Puoi accedere e utilizzare la cassa.",
+  "errorTitle": "Impossibile reimpostare il PIN",
+  "errorDescription": "Qualcosa è andato storto durante il salvataggio del nuovo PIN. Riprova.",
+  "tryAgain": "Riprova",
+  "submit": "Salva il nuovo PIN",
+  "form": {
+    "pinLabel": "Nuovo PIN",
+    "confirmPinLabel": "Conferma il PIN",
+    "resetCodeLabel": "Reimposta il codice",
+    "pinMismatch": "La conferma del PIN non corrisponde"
+  }
+}

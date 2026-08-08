@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
+  "title": "Analyses",
+  "description": "Suivez les revenus, les commandes, l’inventaire et l’activité du panier.",
+  "refresh": "Actualiser",
+  "errorTitle": "Échec du chargement des analyses",
+  "errorDescription": "Une erreur s'est produite lors de la récupération des données du tableau de bord.",
+  "revenueChartTitle": "Revenu quotidien",
+  "noChartData": "Aucune donnée sur les revenus pour cette période.",
+  "chart": {
+    "revenue": "Chiffre d’affaires"
+  },
+  "period": {
+    "7d": "7 jours",
+    "30d": "30 jours",
+    "90d": "90 jours",
+    "1y": "1 an"
+  },
+  "kpi": {
+    "totalRevenue": "Revenu total",
+    "totalRevenueDesc": "Commandes payées dans la période",
+    "orderCount": "Commandes",
+    "orderCountDesc": "Commandes payées dans la période",
+    "averageOrderValue": "Moy. valeur de la commande",
+    "averageOrderValueDesc": "Revenu par commande payée",
+    "abandonedCarts": "Chariots abandonnés",
+    "abandonedCartsDesc": "Paniers inactifs depuis plus d'une heure",
+    "lowStock": "Stock faible",
+    "lowStockDesc": "SKU en dessous du point de commande",
+    "outOfStock": "Rupture de stock",
+    "outOfStockDesc": "SKU sans quantité disponible",
+    "totalOnHand": "Unités disponibles",
+    "totalOnHandDesc": "Quantité totale d'inventaire",
+    "activeProducts": "Produits",
+    "activeProductsDesc": "Produits par statut"
+  }
+}

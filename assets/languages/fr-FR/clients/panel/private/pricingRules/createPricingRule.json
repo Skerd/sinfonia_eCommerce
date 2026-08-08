@@ -1,0 +1,69 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/pricingRules/createPricingRule.tsx",
+  "title": "Créer une règle de tarification",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nom de la règle de tarification",
+    "typeLabel": "Type",
+    "appliesToLabel": "S'applique à",
+    "valueLabel": "Valeur",
+    "valuePlaceholder": "0",
+    "priorityLabel": "Priorité",
+    "priorityPlaceholder": "0",
+    "startsAtLabel": "Commence à",
+    "endsAtLabel": "Se termine à",
+    "minimumOrderAmountLabel": "Montant minimum de commande",
+    "minimumOrderAmountPlaceholder": "0",
+    "minimumQuantityLabel": "Quantité minimale",
+    "minimumQuantityPlaceholder": "0",
+    "generalSectionTitle": "Général",
+    "scheduleSectionTitle": "Calendrier",
+    "limitsSectionTitle": "Limites",
+    "customerGroupsSectionTitle": "Groupes de clients",
+    "productsLabel": "Produits",
+    "collectionsLabel": "Collections",
+    "categoriesLabel": "Catégories",
+    "customerGroupsLabel": "Groupes de clients",
+    "selectProduct": "Sélectionner un produit",
+    "selectCollection": "Sélectionner une collection",
+    "selectCategory": "Sélectionner une catégorie",
+    "selectCustomerGroup": "Sélectionnez un groupe de clients",
+    "removeTarget": "Supprimer la cible",
+    "removeCustomerGroup": "Supprimer le groupe de clients",
+    "pricingRuleType": {
+      "percentage_discount": "Pourcentage de remise",
+      "fixed_discount": "Remise fixe",
+      "fixed_price": "Prix fixe",
+      "surcharge": "Supplément"
+    },
+    "pricingRuleAppliesTo": {
+      "all": "Tous",
+      "product": "Produits",
+      "collection": "Collections",
+      "category": "Catégories",
+      "customer_group": "Groupes de clients"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'une règle de tarification",
+      "time": 3000
+    },
+    "success": {
+      "title": "Règle de tarification créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer une règle de tarification",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une règle de tarification",
+    "description": "Définissez les ajustements de prix du catalogue par produit, catégorie, collection ou groupe de clients."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer une règle de tarification"
+  }
+}

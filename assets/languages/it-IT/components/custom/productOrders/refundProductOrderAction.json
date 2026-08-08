@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx",
+  "cancel": "Annulla",
+  "refund": {
+    "title": "Ordine di rimborso",
+    "description": "Rimborsa il pagamento acquisito tramite il gateway di pagamento.",
+    "amountLabel": "Importo",
+    "amountHint": "Lascia vuoto per un rimborso completo.",
+    "reasonLabel": "Motivo",
+    "confirm": "Rimborso",
+    "axios": {
+      "success": "Ordine rimborsato",
+      "error": "Impossibile rimborsare l'ordine"
+    }
+  }
+}

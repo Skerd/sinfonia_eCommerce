@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
+  "title": "Indirizzi dei clienti",
+  "description": "Gestisci gli indirizzi di spedizione e fatturazione dei clienti.",
+  "createCustomerAddress": "Crea indirizzo",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "customer": "Cliente",
+    "firstName": "Nome del destinatario",
+    "lastName": "Cognome del destinatario",
+    "phone": "Telefono",
+    "street": "Via",
+    "city": "Città",
+    "state": "Cantone / Stato",
+    "postalCode": "CAP",
+    "country": "Paese",
+    "latitude": "Latitudine",
+    "longitude": "Longitudine",
+    "isDefault": "Predefinito",
+    "label": "Etichetta",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}
