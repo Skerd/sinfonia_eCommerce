@@ -1,31 +1,19 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useState} from "react";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {TaxZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.dto.ts";
-import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconHash, IconMapPin, IconReceiptTax} from "@tabler/icons-react";
+import {IconHash, IconMapPin, IconPower, IconReceiptTax} from "@tabler/icons-react";
 import TaxZoneSheetView from "@eCommerceModule/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import ActivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/activateTaxZone.tsx";
 import DeactivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/deactivateTaxZone.tsx";
 import ActivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx";
 import DeactivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/taxzones";
 
@@ -38,150 +26,61 @@ function taxZoneEditPath(taxZone: TaxZone) {
 
 type TaxZoneCardProps = WithLanguageType & {
     taxZone: TaxZone;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: TaxZone, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
     sheetOnly?: boolean;
     onActiveChanged?: (isActive: boolean) => void;
+    innerRef?: RefObject<WithAxiosLifecycleRef<TaxZone> | null>;
 };
 
 function TaxZoneCard({
-    taxZone: taxZoneProp,
+    taxZone,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
     sheetOnly = false,
     onActiveChanged,
+    innerRef,
 }: TaxZoneCardProps) {
-    const {action, setAction, entity: taxZone, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: taxZoneProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const {read, restore} = useAccess("taxZones");
-
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!restore && taxZone.deletedAt != null) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="flex w-full items-stretch">
-                        {(read.deletedBy || read.deletedAt) && (
-                            <DeletedInfo deletedAt={taxZone.deletedAt} deletedBy={taxZone.deletedBy} />
-                        )}
-                        <div className="w-full min-w-0">
-                            <EntityTextCardHeader
-                                title={taxZone.name ?? <ValueNotSet />}
-                                showTitle={!!read?.name}
-                                badges={undefined}
-                                showBadges={false}
-                                hideActions={hideActions}
-                                actionMenu={
-                                    <ActionMenu
-                                            accessModel={"taxZones"}
-                                            deletedData={taxZone}
-                                            onAction={(a: string) => setAction(a)}
-                                            editPath={taxZoneEditPath(taxZone)}
-                                            allowMenuForCustomChildren
-                                        >
-                                            <ActivateTaxZone entity={taxZone} onAction={(a: string) => setAction(a)} />
-                                            <DeactivateTaxZone entity={taxZone} onAction={(a: string) => setAction(a)} />
-                                        </ActionMenu>
-                                }
-                            />
-                            <div className={CARD_BODY_CLASS}>
-                                <Separator />
-                                <InfoRowGroup>
-                                    <InfoRow
-                                        label={resolveLanguageKey("country")}
-                                        icon={IconMapPin}
-                                        show={!!read?.country}
-                                        value={
-                                            taxZone.country ?
-                                            <HiddenElement randomLength={6}>
-                                                {
-                                                    read?.country?.keys?.name ?
-                                                    <p>{taxZone.country.name}</p>
-                                                    :
-                                                    null
-                                                }
-                                            </HiddenElement>
-                                            :
-                                            undefined
-                                        }
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("rates")}
-                                        icon={IconReceiptTax}
-                                        show={!!(read as any)?.rates}
-                                        value={String(taxZone.rates?.length ?? 0)}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("priority")}
-                                        icon={IconHash}
-                                        show={!!read?.priority}
-                                        value={taxZone.priority != null ? String(taxZone.priority) : undefined}
-                                    />
-                                </InfoRowGroup>
-                                {read?.isActive && taxZone.isActive != null && (
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                            taxZone.isActive ? "text-success" : "text-muted-foreground",
-                                        )}
-                                    >
-                                        <span
-                                            className={cn(
-                                                "w-1.5 h-1.5 rounded-full shrink-0",
-                                                taxZone.isActive ? "bg-success" : "bg-muted-foreground/40",
-                                            )}
-                                        />
-                                        {resolveLanguageKey(taxZone.isActive ? "active" : "inactive")}
-                                    </span>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {!!action && (
+        <EntityCard
+            resource="taxZones"
+            entity={taxZone}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/taxZone/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={taxZoneEditPath}
+            Sheet={TaxZoneSheetView}
+            sheetEntityProp="taxZone"
+            deleteUrl="/api/eCommerce/taxZone"
+            restoreUrl="/api/eCommerce/taxZone/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="name"
+            innerRef={innerRef}
+            sheetProps={({entity, setEntity}) => ({
+                fetchId,
+                onSheetRowPatched: (row: Partial<TaxZone>) => {
+                    setEntity({...entity, ...row});
+                    if (typeof row.isActive === "boolean") onActiveChanged?.(row.isActive);
+                },
+            })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
                 <>
-                    {action === "view" && (
-                        <TaxZoneSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            taxZone={taxZone}
-                            fetchId={taxZone._id}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                            onSheetRowPatched={(row: Partial<TaxZone>) => {
-                                setEntity((prev) => ({...prev, ...row}) as TaxZone);
-                                if (typeof row.isActive === "boolean") {
-                                    onActiveChanged?.(row.isActive);
-                                }
-                            }}
-                        />
-                    )}
                     {action === "activateTaxZone" && (
                         <ActivateTaxZoneDialog
                             open
                             onClose={() => setAction("")}
-                            entity={taxZone}
+                            entity={entity}
                             onSuccess={() => {
-                                setEntity((prev) => ({...prev, isActive: true}));
+                                setEntity({...entity, isActive: true});
                                 onActiveChanged?.(true);
                             }}
                         />
@@ -190,40 +89,62 @@ function TaxZoneCard({
                         <DeactivateTaxZoneDialog
                             open
                             onClose={() => setAction("")}
-                            entity={taxZone}
+                            entity={entity}
                             onSuccess={() => {
-                                setEntity((prev) => ({...prev, isActive: false}));
+                                setEntity({...entity, isActive: false});
                                 onActiveChanged?.(false);
                             }}
                         />
                     )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel={"taxZones"}
-                            deleteId={taxZone._id}
-                            openAlert={action === "delete"}
-                            name={read?.name && taxZone.name}
-                            confirmName={read?.name && taxZone.name}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/taxZone"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel={"taxZones"}
-                            deleteId={taxZone._id}
-                            openAlert={action === "restore"}
-                            name={read?.name && taxZone.name}
-                            confirmName={read?.name && taxZone.name}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/taxZone/restore"
-                        />
-                    )}
                 </>
             )}
-        </>
+        >
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header titlePath="name" title={entity.name}>
+                        <ActivateTaxZone entity={entity} onAction={setAction} />
+                        <DeactivateTaxZone entity={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
+                            icon={IconMapPin}
+                            label={resolveLanguageKey("country")}
+                            tooltip={resolveLanguageKey("country")}
+                            path="country"
+                            value={
+                                entity.country ? (
+                                    <DisplayValue path="country.name" value={entity.country.name} />
+                                ) : null
+                            }
+                        />
+                        <DisplayRow
+                            icon={IconReceiptTax}
+                            label={resolveLanguageKey("rates")}
+                            tooltip={resolveLanguageKey("rates")}
+                            path="rates"
+                            type="number"
+                            value={entity.rates?.length}
+                        />
+                        <DisplayRow
+                            icon={IconHash}
+                            label={resolveLanguageKey("priority")}
+                            tooltip={resolveLanguageKey("priority")}
+                            path="priority"
+                            type="number"
+                            value={entity.priority}
+                        />
+                        <DisplayRow
+                            icon={IconPower}
+                            label={resolveLanguageKey("active")}
+                            tooltip={resolveLanguageKey("active")}
+                            path="isActive"
+                            type="boolean"
+                            value={entity.isActive}
+                        />
+                    </EntityCard.Body>
+                </>
+            )}
+        </EntityCard>
     );
 }
 

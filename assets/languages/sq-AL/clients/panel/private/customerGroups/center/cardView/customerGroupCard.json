@@ -1,5 +1,6 @@
 {
   "default": "Default",
+  "description": "Përshkrimi",
   "memberCount": "Numri i anëtarëve",
   "members": "Anëtarët",
   "name": "Emri",

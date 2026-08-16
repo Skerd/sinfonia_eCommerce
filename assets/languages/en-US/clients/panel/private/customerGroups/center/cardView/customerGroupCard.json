@@ -1,5 +1,6 @@
 {
   "default": "Default",
+  "description": "Description",
   "memberCount": "Member Count",
   "members": "Members",
   "name": "Name",

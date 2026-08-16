@@ -1,5 +1,6 @@
 {
   "default": "Predefinito",
+  "description": "Descrizione",
   "memberCount": "Conteggio dei membri",
   "members": "Membri",
   "name": "Nome",

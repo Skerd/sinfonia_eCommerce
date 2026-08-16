@@ -1,31 +1,18 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useState} from "react";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
-import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconHash, IconPercentage, IconTag} from "@tabler/icons-react";
+import {IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
 import DiscountSheetView from "@eCommerceModule/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
 import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
 import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
 import DeactivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/discounts";
 
@@ -38,179 +25,124 @@ function discountEditPath(discount: Discount) {
 
 type DiscountCardProps = WithLanguageType & {
     discount: Discount;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: Discount, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
     sheetOnly?: boolean;
     onActiveChanged?: (isActive: boolean) => void;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Discount> | null>;
 };
 
 function DiscountCard({
-    discount: discountProp,
+    discount,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
     sheetOnly = false,
     onActiveChanged,
+    innerRef,
 }: DiscountCardProps) {
-    const {action, setAction, entity: discount, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: discountProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const {read, restore} = useAccess("discounts");
-
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!restore && discount.deletedAt != null) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="flex w-full items-stretch">
-                        {(read.deletedBy || read.deletedAt) && (
-                            <DeletedInfo deletedAt={discount.deletedAt} deletedBy={discount.deletedBy} />
-                        )}
-                        <div className="w-full min-w-0">
-                            <EntityTextCardHeader
-                                title={discount.title ?? <ValueNotSet />}
-                                showTitle={!!read?.title}
-                                badges={undefined}
-                                showBadges={false}
-                                hideActions={hideActions}
-                                actionMenu={
-                                    <ActionMenu
-                                            accessModel={"discounts"}
-                                            deletedData={discount}
-                                            onAction={(a: string) => setAction(a)}
-                                            editPath={discountEditPath(discount)}
-                                            allowMenuForCustomChildren
-                                        >
-                                            <ActivateDiscount entity={discount} onAction={(a: string) => setAction(a)} />
-                                            <DeactivateDiscount entity={discount} onAction={(a: string) => setAction(a)} />
-                                        </ActionMenu>
-                                }
-                            />
-                            <div className={CARD_BODY_CLASS}>
-                                <Separator />
-                                <InfoRowGroup>
-                                    <InfoRow
-                                        label={resolveLanguageKey("code")}
-                                        icon={IconTag}
-                                        show={!!read?.code}
-                                        value={discount.code}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("type")}
-                                        icon={IconPercentage}
-                                        show={!!(read as any)?.type}
-                                        value={discount.type ? resolveLanguageKey("discountType." + discount.type) : undefined}
-                                    />
-                                    <InfoRow
-                                        label={resolveLanguageKey("value")}
-                                        icon={IconHash}
-                                        show={!!read?.value}
-                                        value={discount.value != null ? String(discount.value) : undefined}
-                                    />
-                                </InfoRowGroup>
-                                {read?.isActive && discount.isActive != null && (
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                            discount.isActive ? "text-success" : "text-muted-foreground",
-                                        )}
-                                    >
-                                        <span
-                                            className={cn(
-                                                "w-1.5 h-1.5 rounded-full shrink-0",
-                                                discount.isActive ? "bg-success" : "bg-muted-foreground/40",
-                                            )}
-                                        />
-                                        {resolveLanguageKey(discount.isActive ? "active" : "inactive")}
-                                    </span>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {!!action && (
+        <EntityCard
+            resource="discounts"
+            entity={discount}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/discount/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={discountEditPath}
+            Sheet={DiscountSheetView}
+            sheetEntityProp="discount"
+            deleteUrl="/api/eCommerce/discount"
+            restoreUrl="/api/eCommerce/discount/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={({entity, setEntity}) => ({
+                fetchId,
+                onActiveChanged: (isActive: boolean) => {
+                    setEntity({...entity, isActive});
+                    onActiveChanged?.(isActive);
+                },
+                onSheetRowPatched: (row: Partial<Discount>) => {
+                    setEntity({...entity, ...row});
+                    if (typeof row.isActive === "boolean") onActiveChanged?.(row.isActive);
+                },
+            })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
                 <>
-                    {action === "view" && (
-                        <DiscountSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            discount={discount}
-                            fetchId={discount._id}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                            onActiveChanged={(isActive: boolean) => {
-                                setEntity((prev) => ({...prev, isActive}));
-                                onActiveChanged?.(isActive);
-                            }}
-                            onSheetRowPatched={(row: Partial<Discount>) => setEntity(row as Discount)}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel={"discounts"}
-                            deleteId={discount._id}
-                            openAlert={action === "delete"}
-                            name={read?.title && discount.title}
-                            confirmName={read?.title && discount.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/discount"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel={"discounts"}
-                            deleteId={discount._id}
-                            openAlert={action === "restore"}
-                            name={read?.title && discount.title}
-                            confirmName={read?.title && discount.title}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/discount/restore"
-                        />
-                    )}
                     {action === "activateDiscount" && (
                         <ActivateDiscountDialog
-                            open={true}
+                            open
                             onClose={() => setAction("")}
-                            entity={discount}
+                            entity={entity}
                             onSuccess={() => {
-                                setEntity((prev) => ({...prev, isActive: true}));
+                                setEntity({...entity, isActive: true});
                                 onActiveChanged?.(true);
                             }}
                         />
                     )}
                     {action === "deactivateDiscount" && (
                         <DeactivateDiscountDialog
-                            open={true}
+                            open
                             onClose={() => setAction("")}
-                            entity={discount}
+                            entity={entity}
                             onSuccess={() => {
-                                setEntity((prev) => ({...prev, isActive: false}));
+                                setEntity({...entity, isActive: false});
                                 onActiveChanged?.(false);
                             }}
                         />
                     )}
                 </>
             )}
-        </>
+        >
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header titlePath="title" title={entity.title}>
+                        <ActivateDiscount entity={entity} onAction={setAction} />
+                        <DeactivateDiscount entity={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("code")}
+                            tooltip={resolveLanguageKey("code")}
+                            path="code"
+                            value={entity.code}
+                        />
+                        <DisplayRow
+                            icon={IconPercentage}
+                            label={resolveLanguageKey("type")}
+                            tooltip={resolveLanguageKey("type")}
+                            path="type"
+                            value={entity.type ? resolveLanguageKey("discountType." + entity.type) : null}
+                        />
+                        <DisplayRow
+                            icon={IconHash}
+                            label={resolveLanguageKey("value")}
+                            tooltip={resolveLanguageKey("value")}
+                            path="value"
+                            type="number"
+                            value={entity.value}
+                        />
+                        <DisplayRow
+                            icon={IconPower}
+                            label={resolveLanguageKey("active")}
+                            tooltip={resolveLanguageKey("active")}
+                            path="isActive"
+                            type="boolean"
+                            value={entity.isActive}
+                        />
+                    </EntityCard.Body>
+                </>
+            )}
+        </EntityCard>
     );
 }
 
