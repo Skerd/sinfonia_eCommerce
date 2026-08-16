@@ -1,33 +1,20 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useState} from "react";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
-import DeletedInfo from "@coreModule/components/custom/deletedInfo";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {IconTag, IconTruck} from "@tabler/icons-react";
 import FulfillmentSheetView from "@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import ShipFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx";
 import MarkDeliveredFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markDeliveredFulfillment.tsx";
 import MarkFailedFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markFailedFulfillment.tsx";
 import ShipFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx";
 import MarkDeliveredFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx";
 import MarkFailedFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 const LIST_BASE = "/eCommerce/fulfillments";
 
@@ -40,168 +27,106 @@ function fulfillmentEditPath(entity: Fulfillment) {
 
 type FulfillmentCardProps = WithLanguageType & {
     entity: Fulfillment;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: Fulfillment, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
     sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Fulfillment> | null>;
 };
 
 function FulfillmentCard({
-    entity: entityProp,
+    entity,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
     sheetOnly = false,
+    innerRef,
 }: FulfillmentCardProps) {
-    const {action, setAction, entity: entity, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: entityProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const {read, restore} = useAccess("fulfillments");
-
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!restore && entity.deletedAt != null) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="flex w-full items-stretch">
-                        {(read.deletedBy || read.deletedAt) && (
-                            <DeletedInfo deletedAt={entity.deletedAt} deletedBy={entity.deletedBy} />
-                        )}
-                        <div className="w-full min-w-0">
-                            <EntityTextCardHeader
-                                title={null}
-                                showTitle={true}
-                                badges={undefined}
-                                showBadges={false}
-                                hideActions={hideActions}
-                                actionMenu={
-                                    <ActionMenu
-                                            accessModel={"fulfillments"}
-                                            deletedData={entity}
-                                            onAction={(a: string) => setAction(a)}
-                                            editPath={fulfillmentEditPath(entity)}
-                                            allowMenuForCustomChildren
-                                        >
-                                            <ShipFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
-                                            <MarkDeliveredFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
-                                            <MarkFailedFulfillment entity={entity} onAction={(a: string) => setAction(a)} />
-                                        </ActionMenu>
-                                }
-                            />
-                            <div className={CARD_BODY_CLASS}>
-                                <Separator />
-                                <div className="flex flex-col gap-y-1">
-                                    <InfoRowGroup>
-<InfoRow
-                                        label={resolveLanguageKey("status")}
-                                        icon={IconTag}
-                                        show
-                                        value={
-                                            <HiddenElement randomLength={read?.status ? 0 : 6}>
-                                                {!!read?.status && entity.status
-                                                    ? resolveLanguageKey("fulfillmentStatus." + entity.status)
-                                                    : null}
-                                            </HiddenElement>
-                                        }
-                                    />
-                                </InfoRowGroup>
-                                    <InfoRow
-                                        label={resolveLanguageKey("carrier")}
-                                        icon={IconTruck}
-                                        show
-                                        value={
-                                            <HiddenElement randomLength={read?.carrier ? 0 : 8}>
-                                                {!!read?.carrier && entity.carrier != null
-                                                    ? String(entity.carrier)
-                                                    : null}
-                                            </HiddenElement>
-                                        }
-                                    />
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {!!action && (
+        <EntityCard
+            resource="fulfillments"
+            entity={entity}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/fulfillment/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={fulfillmentEditPath}
+            Sheet={FulfillmentSheetView}
+            sheetEntityProp="entity"
+            deleteUrl="/api/eCommerce/fulfillment"
+            restoreUrl="/api/eCommerce/fulfillment/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="trackingNumber"
+            innerRef={innerRef}
+            sheetProps={({entity: row, setEntity}) => ({
+                fetchId,
+                onSheetRowPatched: (patched: Partial<Fulfillment>) => {
+                    setEntity({...row, ...patched});
+                },
+            })}
+            extraDialogs={({action, setAction, entity: row, setEntity}) => (
                 <>
-                    {action === "view" && (
-                        <FulfillmentSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            entity={entity}
-                            fetchId={entity._id}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                            onSheetRowPatched={(row: Partial<Fulfillment>) => setEntity(row as Fulfillment)}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel={"fulfillments"}
-                            deleteId={entity._id}
-                            openAlert={action === "delete"}
-                            name={read?.trackingNumber && String(entity.trackingNumber ?? "")}
-                            confirmName={read?.trackingNumber && String(entity.trackingNumber ?? "")}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/fulfillment"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel={"fulfillments"}
-                            deleteId={entity._id}
-                            openAlert={action === "restore"}
-                            name={read?.trackingNumber && String(entity.trackingNumber ?? "")}
-                            confirmName={read?.trackingNumber && String(entity.trackingNumber ?? "")}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/fulfillment/restore"
-                        />
-                    )}
                     {action === "shipFulfillment" && (
                         <ShipFulfillmentDialog
-                            open={true}
+                            open
                             onClose={() => setAction("")}
-                            entity={entity}
-                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
+                            entity={row}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...row, ...patch})}
                         />
                     )}
                     {action === "markDeliveredFulfillment" && (
                         <MarkDeliveredFulfillmentDialog
-                            open={true}
+                            open
                             onClose={() => setAction("")}
-                            entity={entity}
-                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
+                            entity={row}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...row, ...patch})}
                         />
                     )}
                     {action === "markFailedFulfillment" && (
                         <MarkFailedFulfillmentDialog
-                            open={true}
+                            open
                             onClose={() => setAction("")}
-                            entity={entity}
-                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...entity, ...patch})}
+                            entity={row}
+                            onSuccess={(patch: Partial<Fulfillment>) => setEntity({...row, ...patch})}
                         />
                     )}
                 </>
             )}
-        </>
+        >
+            {({entity: row, setAction}) => (
+                <>
+                    <EntityCard.Header titlePath="trackingNumber" title={row.trackingNumber}>
+                        <ShipFulfillment entity={row} onAction={setAction} />
+                        <MarkDeliveredFulfillment entity={row} onAction={setAction} />
+                        <MarkFailedFulfillment entity={row} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="fulfillmentStatus"
+                            value={row.status}
+                        />
+                        <DisplayRow
+                            icon={IconTruck}
+                            label={resolveLanguageKey("carrier")}
+                            tooltip={resolveLanguageKey("carrier")}
+                            path="carrier"
+                            value={row.carrier}
+                        />
+                    </EntityCard.Body>
+                </>
+            )}
+        </EntityCard>
     );
 }
 

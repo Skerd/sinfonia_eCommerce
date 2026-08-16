@@ -1,177 +1,126 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconBuildingWarehouse, IconPackage} from "@tabler/icons-react";
 import InventoryMovementSheetView from "@eCommerceModule/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 type InventoryMovementCardProps = WithLanguageType & {
     movement: InventoryMovement;
+    fetchId?: string;
     onDelete?: (deleted?: InventoryMovement, response?: DeletedData) => void;
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<InventoryMovement> | null>;
 };
 
 function InventoryMovementCard({
-    movement: movementProp,
+    movement,
     resolveLanguageKey,
+    fetchId,
+    onDelete,
+    onRestore,
     hideActions = false,
     sheetOnly = false,
+    innerRef,
 }: InventoryMovementCardProps) {
-    const {action, setAction, entity: movement, setEntity} = useEntityCard({
-        entityProp: movementProp,
-    });
-
-    const {read} = useAccess("inventoryMovements");
-
-
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const qty = movement.quantity ?? 0;
-    const isPositive = qty > 0;
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="w-full min-w-0 py-3 px-4">
-                        <div className="flex justify-between items-start gap-2">
-                            <div className="min-w-0 flex-1">
-                                <HiddenElement randomLength={10}>
-                                    {!!read?.reason ? (
-                                        <div className="font-semibold text-sm leading-tight capitalize">
-                                            {resolveLanguageKey(`reasons.${movement.reason}`, true) || movement.reason || (
-                                                <ValueNotSet />
-                                            )}
-                                        </div>
-                                    ) : null}
-                                </HiddenElement>
-                                {(!!movement.product || !read?.product) && (
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
-                                        <IconPackage className="w-3.5 h-3.5 shrink-0" />
-                                        <HiddenElement randomLength={read?.product?.keys?.title ? 0 : 8}>
-                                            {!!read?.product?.keys?.title && movement.product?.title ? (
-                                                <span className="truncate">{movement.product.title}</span>
-                                            ) : null}
-                                        </HiddenElement>
-                                    </div>
-                                )}
-                                {(!!movement.warehouse || !read?.warehouse) && (
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
-                                        <IconBuildingWarehouse className="w-3.5 h-3.5 shrink-0" />
-                                        <HiddenElement randomLength={read?.warehouse ? 0 : 8}>
-                                            {!!read?.warehouse ? (
-                                                <span className="truncate">
-                                                    {read?.warehouse?.keys?.name ? movement.warehouse?.name ?? "" : ""}
-                                                    {read?.warehouse?.keys?.code && movement.warehouse?.code
-                                                        ? ` (${movement.warehouse.code})`
-                                                        : ""}
-                                                </span>
-                                            ) : null}
-                                        </HiddenElement>
-                                    </div>
-                                )}
+        <EntityCard
+            resource="inventoryMovements"
+            entity={movement}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/inventoryMovement/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            hideEdit
+            hideDelete
+            hideRestore
+            sheetOnly={sheetOnly}
+            editPath={() => ""}
+            Sheet={InventoryMovementSheetView}
+            sheetEntityProp="movement"
+            deleteUrl=""
+            restoreUrl=""
+            failedTitle=""
+            failedDescription=""
+            titlePath="reason"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+        >
+            {({entity: row}) => {
+                const qty = row.quantity ?? 0;
+                const isPositive = qty > 0;
+                return (
+                    <>
+                        <EntityCard.Header
+                            titlePath="reason"
+                            title={
+                                <DisplayValue
+                                    path="reason"
+                                    type="enum"
+                                    languageKeyCategory="reasons"
+                                    value={row.reason}
+                                />
+                            }
+                        />
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <IconPackage className="h-3.5 w-3.5 shrink-0" />
+                                <DisplayValue path="product.title" value={row.product?.title} />
                             </div>
-                            {!hideActions && (
-                                <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                    <ActionMenu
-                                        accessModel={"inventoryMovements"}
-                                        deletedData={movement as any}
-                                        onAction={(a: string) => setAction(a)}
-                                        editPath=""
-                                        hideEdit
-                                        hideDelete
-                                        allowMenuForCustomChildren
-                                    />
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="grid grid-cols-3 gap-2 mt-3 text-center">
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("quantity")}
-                                </div>
-                                <HiddenElement randomLength={read?.quantity ? 0 : 4}>
-                                    {!!read?.quantity ? (
-                                        <div className={cn("font-bold text-sm", isPositive ? "text-success" : "text-warning")}>
-                                            {isPositive ? `+${qty}` : qty}
-                                        </div>
-                                    ) : null}
-                                </HiddenElement>
-                            </div>
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("beforeAfter")}
-                                </div>
-                                <div className="font-bold text-sm tabular-nums inline-flex items-center justify-center gap-0.5 w-full">
-                                    <HiddenElement randomLength={read?.quantityBefore ? 0 : 4}>
-                                        {!!read?.quantityBefore ? (movement.quantityBefore ?? 0) : null}
-                                    </HiddenElement>
-                                    <span aria-hidden>→</span>
-                                    <HiddenElement randomLength={read?.quantityAfter ? 0 : 4}>
-                                        {!!read?.quantityAfter ? (movement.quantityAfter ?? 0) : null}
-                                    </HiddenElement>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("receipt")}
-                                </div>
-                                <HiddenElement randomLength={read?.receiptNumber ? 0 : 6}>
-                                    {!!read?.receiptNumber ? (
-                                        <div className="font-bold text-sm truncate">
-                                            {movement.receiptNumber || "—"}
-                                        </div>
-                                    ) : null}
-                                </HiddenElement>
-                            </div>
-                        </div>
-
-                        <div className="mt-2 text-2xs text-muted-foreground truncate flex items-center gap-1">
-                            <HiddenElement randomLength={read?.manufacturer ? 0 : 8}>
-                                {!!read?.manufacturer && movement.manufacturer ? (
-                                    <span>{movement.manufacturer}</span>
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <IconBuildingWarehouse className="h-3.5 w-3.5 shrink-0" />
+                                <DisplayValue path="warehouse.name" value={row.warehouse?.name} />
+                                {row.warehouse?.code ? (
+                                    <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
                                 ) : null}
-                            </HiddenElement>
-                            {!!read?.manufacturer && movement.manufacturer && !!read?.occurredAt && movement.occurredAt ? (
-                                <span aria-hidden>·</span>
-                            ) : null}
-                            <HiddenElement randomLength={read?.occurredAt ? 0 : 10}>
-                                {!!read?.occurredAt && movement.occurredAt ? (
-                                    <span>{new Date(movement.occurredAt).toLocaleString()}</span>
-                                ) : null}
-                            </HiddenElement>
+                            </div>
+                            <div className="mt-1 grid grid-cols-3 gap-2 text-center">
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("quantity")}
+                                    </div>
+                                    <div className={cn("text-sm font-bold", isPositive ? "text-success" : "text-warning")}>
+                                        <DisplayValue path="quantity" value={isPositive ? `+${qty}` : qty} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("beforeAfter")}
+                                    </div>
+                                    <div className="inline-flex w-full items-center justify-center gap-0.5 text-sm font-bold tabular-nums">
+                                        <DisplayValue path="quantityBefore" type="number" value={row.quantityBefore ?? 0} />
+                                        <span aria-hidden>→</span>
+                                        <DisplayValue path="quantityAfter" type="number" value={row.quantityAfter ?? 0} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("receipt")}
+                                    </div>
+                                    <div className="truncate text-sm font-bold">
+                                        <DisplayValue path="receiptNumber" value={row.receiptNumber || "—"} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-1 truncate text-2xs text-muted-foreground">
+                                <DisplayValue path="manufacturer" value={row.manufacturer} />
+                                {row.manufacturer && row.occurredAt ? <span aria-hidden>·</span> : null}
+                                <DisplayValue path="occurredAt" type="dateTime" value={row.occurredAt} />
+                            </div>
                         </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {action === "view" && (
-                <InventoryMovementSheetView
-                    open
-                    onOpenChange={() => setAction("")}
-                    movement={movement}
-                    fetchId={movement._id}
-                />
-            )}
-        </>
+                    </>
+                );
+            }}
+        </EntityCard>
     );
 }
 

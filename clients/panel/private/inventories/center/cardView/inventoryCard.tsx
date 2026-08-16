@@ -1,17 +1,10 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useEffect, useState} from "react";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
-import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import {IconAlertTriangle, IconBuildingWarehouse} from "@tabler/icons-react";
 import InventorySheetView from "@eCommerceModule/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {inventoryEditPath} from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
@@ -19,198 +12,79 @@ import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inve
 import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/hocs/withAccess.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 type InventoryCardProps = WithLanguageType & {
     inventory: Inventory;
+    fetchId?: string;
     onDelete?: (deleted?: Inventory, response?: DeletedData) => void;
     onRestore?: () => void;
     onInventoryUpdated?: (updated?: Inventory) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Inventory> | null>;
 };
 
 function InventoryCard({
-    inventory: inventoryProp,
+    inventory,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
+    fetchId,
+    onDelete,
+    onRestore,
     onInventoryUpdated,
     hideActions = false,
     sheetOnly = false,
+    innerRef,
 }: InventoryCardProps) {
-    const {action, setAction, entity: inventory, setEntity} = useEntityCard({
-        entityProp: inventoryProp,
-    });
-
-    const [hideAfterDeletion, setHideAfterDeletion] = useState(false);
-
-    const onDelete = (data: DeletedData) => {
-        if (onDeleteProp) {
-            onDeleteProp(inventory, data);
-        } else {
-            setHideAfterDeletion(true);
-        }
-    };
-
-    const {read} = useAccess("inventories");
-
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const available = inventory.quantityAvailable ?? 0;
-    const isLowStock = inventory.reorderPoint != null && available <= inventory.reorderPoint;
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="flex w-full items-stretch">
-                        {(read.deletedBy || read.deletedAt) && (
-                            <DeletedInfo deletedAt={inventory.deletedAt} deletedBy={inventory.deletedBy} />
-                        )}
-                        <div className="w-full min-w-0 py-3 px-4">
-                        <div className="flex justify-between items-start gap-2">
-                            <div className="min-w-0 flex-1">
-                                <HiddenElement randomLength={read?.product?.keys?.title ? 0 : 10}>
-                                    {!!read?.product?.keys?.title ? (
-                                        <div className="font-semibold text-sm leading-tight line-clamp-2">
-                                            {inventory.product?.title || <ValueNotSet />}
-                                        </div>
-                                    ) : null}
-                                </HiddenElement>
-                                {(!!inventory.warehouse || !read?.warehouse) && (
-                                    <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
-                                        <IconBuildingWarehouse className="w-3.5 h-3.5 shrink-0" />
-                                        <HiddenElement randomLength={read?.warehouse ? 0 : 8}>
-                                            {!!read?.warehouse ? (
-                                                <span className="truncate">
-                                                    {read?.warehouse?.keys?.name ? inventory.warehouse?.name ?? "" : ""}
-                                                    {read?.warehouse?.keys?.code && inventory.warehouse?.code
-                                                        ? ` (${inventory.warehouse.code})`
-                                                        : ""}
-                                                </span>
-                                            ) : null}
-                                        </HiddenElement>
-                                    </div>
-                                )}
-                            </div>
-                            {!hideActions && (
-                                <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                    <ActionMenu
-                                        accessModel={"inventories"}
-                                        deletedData={inventory}
-                                        onAction={(a: string) => setAction(a)}
-                                        editPath={inventoryEditPath(inventory)}
-                                    >
-                                        <ViewInventoryMovementsMenuItem inventory={inventory} onAction={setAction} />
-                                        <RestockInventoryDropdown inventory={inventory} onAction={setAction} />
-                                        <DeductInventoryDropdown inventory={inventory} onAction={setAction} />
-                                    </ActionMenu>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="grid grid-cols-3 gap-2 mt-3 text-center">
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("onHand")}
-                                </div>
-                                <HiddenElement randomLength={read?.quantityOnHand ? 0 : 4}>
-                                    {!!read?.quantityOnHand ? (
-                                        <div className="font-bold text-sm">{inventory.quantityOnHand ?? 0}</div>
-                                    ) : null}
-                                </HiddenElement>
-                            </div>
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("reserved")}
-                                </div>
-                                <HiddenElement randomLength={read?.quantityReserved ? 0 : 4}>
-                                    {!!read?.quantityReserved ? (
-                                        <div className="font-bold text-sm">{inventory.quantityReserved ?? 0}</div>
-                                    ) : null}
-                                </HiddenElement>
-                            </div>
-                            <div>
-                                <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                    {resolveLanguageKey("available")}
-                                </div>
-                                <HiddenElement randomLength={read?.quantityAvailable ? 0 : 4}>
-                                    {!!read?.quantityAvailable ? (
-                                        <div className={cn("font-bold text-sm", isLowStock ? "text-warning" : "text-success")}>
-                                            {available}
-                                        </div>
-                                    ) : null}
-                                </HiddenElement>
-                            </div>
-                        </div>
-
-                        <HiddenElement randomLength={read?.quantityAvailable && read?.reorderPoint ? 0 : 8}>
-                            {!!(read?.quantityAvailable && read?.reorderPoint) && isLowStock ? (
-                                <div className="flex items-center gap-1 text-2xs font-medium text-warning mt-2">
-                                    <IconAlertTriangle className="w-3.5 h-3.5 shrink-0" />
-                                    {resolveLanguageKey("lowStock")}
-                                </div>
-                            ) : null}
-                        </HiddenElement>
-                    </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {!!action && (
+        <EntityCard
+            resource="inventories"
+            entity={inventory}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/inventory/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            hideRestore
+            sheetOnly={sheetOnly}
+            editPath={inventoryEditPath}
+            Sheet={InventorySheetView}
+            sheetEntityProp="inventory"
+            deleteUrl="/api/eCommerce/inventory"
+            restoreUrl=""
+            failedTitle=""
+            failedDescription=""
+            titlePath="product.title"
+            innerRef={innerRef}
+            sheetProps={({entity: row, setEntity}) => ({
+                fetchId,
+                onInventoryUpdated: (updated?: Inventory) => {
+                    if (updated) setEntity({...row, ...updated});
+                    onInventoryUpdated?.(updated);
+                },
+            })}
+            extraDialogs={({action, setAction, entity: row, setEntity}) => (
                 <>
-                    {action === "view" && (
-                        <InventorySheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            inventory={inventory}
-                            fetchId={inventory._id}
-                            onDelete={onDelete}
-                            onInventoryUpdated={(updated: Inventory | undefined) => {
-                                if (updated) setEntity(updated);
-                                onInventoryUpdated?.(updated);
-                            }}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel={"inventories"}
-                            deleteId={inventory._id}
-                            openAlert={action === "delete"}
-                            name={read?.product?.keys?.title && inventory.product?.title}
-                            confirmName={read?.product?.keys?.title && inventory.product?.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/inventory"
-                        />
-                    )}
                     {action === "viewInventoryMovements" && (
                         <ViewInventoryMovementsDialog
                             open
                             onClose={() => setAction("")}
-                            inventory={inventory}
+                            inventory={row}
                         />
                     )}
                     {(action === "restock" || action === "deduct") && (
                         <InventoryStockMoveAction
-                            inventoryId={inventory._id}
-                            displayName={inventory.product?.title}
+                            inventoryId={row._id}
+                            displayName={row.product?.title}
                             mode={action}
                             openAlert
                             url={`/api/eCommerce/inventory/${action}`}
                             onSuccess={(updated: Inventory | undefined) => {
-                                if (updated) setEntity(updated);
+                                if (updated) setEntity({...row, ...updated});
                                 onInventoryUpdated?.(updated);
                                 setAction("");
                             }}
@@ -219,7 +93,68 @@ function InventoryCard({
                     )}
                 </>
             )}
-        </>
+        >
+            {({entity: row, read, setAction}) => {
+                const available = row.quantityAvailable ?? 0;
+                const isLowStock = row.reorderPoint != null && available <= row.reorderPoint;
+                const canReadAvailable = accessFieldPathExists(read, "quantityOnHand");
+                return (
+                    <>
+                        <EntityCard.Header titlePath="product.title" title={row.product?.title}>
+                            <ViewInventoryMovementsMenuItem inventory={row} onAction={setAction} />
+                            <RestockInventoryDropdown inventory={row} onAction={setAction} />
+                            <DeductInventoryDropdown inventory={row} onAction={setAction} />
+                        </EntityCard.Header>
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <IconBuildingWarehouse className="h-3.5 w-3.5 shrink-0" />
+                                <DisplayValue path="warehouse.name" value={row.warehouse?.name} />
+                                {row.warehouse?.code ? (
+                                    <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
+                                ) : null}
+                            </div>
+                            <div className="mt-1 grid grid-cols-3 gap-2 text-center">
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("onHand")}
+                                    </div>
+                                    <div className="text-sm font-bold">
+                                        <DisplayValue path="quantityOnHand" type="number" value={row.quantityOnHand ?? 0} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("reserved")}
+                                    </div>
+                                    <div className="text-sm font-bold">
+                                        <DisplayValue path="quantityReserved" type="number" value={row.quantityReserved ?? 0} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
+                                        {resolveLanguageKey("available")}
+                                    </div>
+                                    <div className={cn("text-sm font-bold", isLowStock ? "text-warning" : "text-success")}>
+                                        <DisplayValue
+                                            path="quantityAvailable"
+                                            type="number"
+                                            value={available}
+                                            show={canReadAvailable}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            {isLowStock ? (
+                                <div className="mt-1 flex items-center gap-1 text-2xs font-medium text-warning">
+                                    <IconAlertTriangle className="h-3.5 w-3.5 shrink-0" />
+                                    {resolveLanguageKey("lowStock")}
+                                </div>
+                            ) : null}
+                        </div>
+                    </>
+                );
+            }}
+        </EntityCard>
     );
 }
 

@@ -120,7 +120,9 @@ function PosPaymentMethodCard({
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
                             path="type"
-                            value={row.type ? resolveLanguageKey("paymentType." + row.type) : null}
+                            type="enum"
+                            languageKeyCategory="paymentType"
+                            value={row.type}
                         />
                         <DisplayRow
                             icon={IconHash}

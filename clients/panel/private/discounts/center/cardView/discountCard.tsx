@@ -121,7 +121,9 @@ function DiscountCard({
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
                             path="type"
-                            value={entity.type ? resolveLanguageKey("discountType." + entity.type) : null}
+                            type="enum"
+                            languageKeyCategory="discountType"
+                            value={entity.type}
                         />
                         <DisplayRow
                             icon={IconHash}

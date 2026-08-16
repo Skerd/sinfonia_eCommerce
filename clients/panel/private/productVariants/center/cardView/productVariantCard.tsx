@@ -84,7 +84,9 @@ function ProductVariantCard({
                             label={resolveLanguageKey("status")}
                             tooltip={resolveLanguageKey("status")}
                             path="status"
-                            value={row.status ? resolveLanguageKey("variantStatus." + row.status) : null}
+                            type="enum"
+                            languageKeyCategory="variantStatus"
+                            value={row.status}
                         />
                     </EntityCard.Body>
                 </>

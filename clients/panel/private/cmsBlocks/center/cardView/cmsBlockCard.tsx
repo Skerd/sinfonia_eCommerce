@@ -110,7 +110,9 @@ function CmsBlockCard({
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
                             path="type"
-                            value={entity.type ? resolveLanguageKey("blockType." + entity.type) : null}
+                            type="enum"
+                            languageKeyCategory="blockType"
+                            value={entity.type}
                         />
                         <DisplayRow
                             icon={IconHash}

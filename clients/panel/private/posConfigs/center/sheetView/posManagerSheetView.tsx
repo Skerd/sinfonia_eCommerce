@@ -8,7 +8,7 @@ import {
     SheetHeader,
     SheetTitle,
 } from "@coreModule/components/ui/sheet.tsx";
-import SmallInfoCard from "@coreModule/components/custom/smallInfoCard.tsx";
+import DisplayCard from "@coreModule/components/custom/displayValue/displayCard.tsx";
 import {IconLock, IconUser} from "@tabler/icons-react";
 import {FLOATING_SHEET_CONTENT_CLASS} from "@coreModule/components/viewEngine/sheetFloatingChrome.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
@@ -46,16 +46,17 @@ function PosManagerSheetView({
                     <SheetDescription>{resolveLanguageKey("posManagerSubtitle")}</SheetDescription>
                 </SheetHeader>
                 <div className="grid grid-cols-1 gap-2 px-4 pb-4 sm:grid-cols-2">
-                    <SmallInfoCard
+                    <DisplayCard
                         title={resolveLanguageKey("name")}
                         tooltip={resolveLanguageKey("name")}
                         Icon={IconUser}
                         value={title}
                     />
-                    <SmallInfoCard
+                    <DisplayCard
                         title={resolveLanguageKey("hasPin")}
                         tooltip={resolveLanguageKey("hasPin")}
                         Icon={IconLock}
+                        type="boolean"
                         value={!!manager?.hasPin}
                     />
                 </div>

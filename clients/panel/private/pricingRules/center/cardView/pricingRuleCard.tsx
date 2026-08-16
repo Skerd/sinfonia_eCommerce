@@ -114,7 +114,9 @@ function PricingRuleCard({
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
                             path="type"
-                            value={entity.type ? resolveLanguageKey("pricingRuleType." + entity.type) : null}
+                            type="enum"
+                            languageKeyCategory="pricingRuleType"
+                            value={entity.type}
                         />
                         <DisplayRow
                             icon={IconPercentage}

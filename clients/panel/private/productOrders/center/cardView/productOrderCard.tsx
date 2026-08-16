@@ -1,19 +1,11 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import {useState} from "react";
-import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import {IconPackage, IconUser} from "@tabler/icons-react";
 import ProductOrderSheetView from "@eCommerceModule/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import ConfirmOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx";
 import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markProcessingDropdown.tsx";
 import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
@@ -22,12 +14,10 @@ import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productO
 import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@coreModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@coreModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
 function statusColor(status: string): string {
     switch (status) {
@@ -45,242 +35,154 @@ function statusColor(status: string): string {
     }
 }
 
-function formatMoney(
-    order: ProductOrder,
-    currencyRead?: {keys?: {symbol?: unknown; abbreviation?: unknown}},
-): string {
-    const c = order.currency;
-    const symbol = currencyRead?.keys?.symbol ? c?.symbol?.trim() : undefined;
-    const abbreviation = currencyRead?.keys?.abbreviation ? c?.abbreviation?.trim() : undefined;
-    const prefix = symbol || abbreviation;
-    const n = (order.grandTotal ?? 0).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
-    return prefix ? `${prefix} ${n}` : n;
-}
-
 type ProductOrderCardProps = WithLanguageType & {
     order: ProductOrder;
+    fetchId?: string;
     onDelete?: (deleted?: ProductOrder, response?: DeletedData) => void;
     onRestore?: () => void;
     onOrderUpdated?: (order: ProductOrder) => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<ProductOrder> | null>;
 };
 
 function ProductOrderCard({
-    order: orderProp,
+    order,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
+    fetchId,
+    onDelete,
+    onRestore,
     onOrderUpdated,
     hideActions = false,
     sheetOnly = false,
+    innerRef,
 }: ProductOrderCardProps) {
-    const {action, setAction, entity: order, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: orderProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const {read, restore} = useAccess("productOrders");
-
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!restore && order.deletedAt != null) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const colors = statusColor(order.status);
-    const itemCount = order.items?.length;
-
-    const applyOrderUpdate = (patch: Partial<ProductOrder>) => {
-        setEntity((prev) => {
-            const updated = {...prev, ...patch};
-            onOrderUpdated?.(updated);
-            return updated;
-        });
-    };
-
     return (
-        <>
-            {!sheetOnly && (
-                <EntityCardShell onClick={() => setAction("view")}>
-                    <div className="flex w-full items-stretch">
-                        {(read.deletedBy || read.deletedAt) && (
-                            <DeletedInfo deletedAt={order.deletedAt} deletedBy={order.deletedBy} />
+        <EntityCard
+            resource="productOrders"
+            entity={order}
+            fetchId={fetchId}
+            singleUrl="/api/eCommerce/productOrder/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            hideEdit
+            sheetOnly={sheetOnly}
+            editPath={() => ""}
+            Sheet={ProductOrderSheetView}
+            sheetEntityProp="order"
+            deleteUrl="/api/eCommerce/productOrder"
+            restoreUrl="/api/eCommerce/productOrder/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="orderNumber"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity: row, setEntity}) => {
+                const applyPatch = (patch: Partial<ProductOrder>) => {
+                    const updated = {...row, ...patch};
+                    setEntity(updated);
+                    onOrderUpdated?.(updated);
+                };
+                return (
+                    <>
+                        {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
+                            <ProductOrderActionConfirmAction
+                                orderId={row._id}
+                                displayName={row.orderNumber}
+                                actionKey={action as ProductOrderConfirmActionKey}
+                                openAlert
+                                url={`/api/eCommerce/productOrder/${action}`}
+                                onSuccess={(newStatus: ProductOrder["status"]) => {
+                                    applyPatch({status: newStatus});
+                                    setAction("");
+                                }}
+                                onCancel={() => setAction("")}
+                            />
                         )}
-                        <div className="w-full min-w-0 py-3 px-4">
-                            <div className="flex justify-between items-start gap-2">
-                                <div className="min-w-0 flex-1">
-                                    <HiddenElement randomLength={10}>
-                                        {read?.orderNumber ? (
-                                            <div className="font-semibold text-base leading-tight truncate">
-                                                {order.orderNumber || <ValueNotSet />}
-                                            </div>
-                                        ) : null}
-                                    </HiddenElement>
-                                    {(!!order.customer || !read?.customer) && (
-                                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-0.5">
-                                            <IconUser className="w-3.5 h-3.5 shrink-0" />
-                                            <HiddenElement randomLength={read?.customer ? 0 : 8}>
-                                                {!!read?.customer ? (
-                                                    <span className="truncate">
-                                                        {read?.customer?.keys?.name ? order.customer?.name ?? "" : ""}
-                                                        {read?.customer?.keys?.name && read?.customer?.keys?.surname ? " " : ""}
-                                                        {read?.customer?.keys?.surname ? order.customer?.surname ?? "" : ""}
-                                                    </span>
-                                                ) : null}
-                                            </HiddenElement>
-                                        </div>
+                        {action === "ship" && (
+                            <ShipProductOrderAction
+                                orderId={row._id}
+                                displayName={row.orderNumber}
+                                openAlert
+                                url="/api/eCommerce/productOrder/ship"
+                                onSuccess={() => {
+                                    applyPatch({status: "shipped", fulfillmentStatus: "fulfilled"});
+                                    setAction("");
+                                }}
+                                onCancel={() => setAction("")}
+                            />
+                        )}
+                        {action === "refund" && (
+                            <RefundProductOrderAction
+                                orderId={row._id}
+                                displayName={row.orderNumber}
+                                openAlert
+                                url="/api/eCommerce/productOrder/refund"
+                                onSuccess={(fullRefund: boolean) => {
+                                    applyPatch(
+                                        fullRefund
+                                            ? {paymentStatus: "refunded", status: "refunded"}
+                                            : {paymentStatus: "partially_refunded"},
+                                    );
+                                    setAction("");
+                                }}
+                                onCancel={() => setAction("")}
+                            />
+                        )}
+                    </>
+                );
+            }}
+        >
+            {({entity: row, setAction}) => {
+                const colors = statusColor(row.status);
+                return (
+                    <>
+                        <EntityCard.Header titlePath="orderNumber" title={row.orderNumber}>
+                            <ConfirmOrderDropdown order={row} onAction={setAction} />
+                            <MarkProcessingDropdown order={row} onAction={setAction} />
+                            <ShipOrderDropdown order={row} onAction={setAction} />
+                            <CancelOrderDropdown order={row} onAction={setAction} />
+                            <RefundOrderDropdown order={row} onAction={setAction} />
+                        </EntityCard.Header>
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <IconUser className="h-3.5 w-3.5 shrink-0" />
+                                <DisplayValue path="customer" type="user" value={row.customer} />
+                            </div>
+                            <div className="flex items-center justify-between gap-2">
+                                <span
+                                    className={cn(
+                                        "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
+                                        colors.split(" ")[0],
                                     )}
-                                </div>
-                                {!hideActions && (
-                                    <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
-                                        <ActionMenu
-                                            accessModel={"productOrders"}
-                                            deletedData={order}
-                                            onAction={(a: string) => setAction(a)}
-                                            editPath=""
-                                            hideEdit
-                                            allowMenuForCustomChildren
-                                        >
-                                            <ConfirmOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
-                                            <MarkProcessingDropdown order={order} onAction={(a: string) => setAction(a)} />
-                                            <ShipOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
-                                            <CancelOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
-                                            <RefundOrderDropdown order={order} onAction={(a: string) => setAction(a)} />
-                                        </ActionMenu>
-                                    </div>
-                                )}
+                                >
+                                    <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors.split(" ")[1])} />
+                                    <DisplayValue
+                                        path="status"
+                                        type="enum"
+                                        languageKeyCategory="orderStatus"
+                                        value={row.status}
+                                    />
+                                </span>
+                                <span className="ml-auto text-base font-bold leading-none text-foreground">
+                                    <DisplayValue
+                                        path="grandTotal"
+                                        type="currency"
+                                        value={{amount: row.grandTotal, currency: row.currency}}
+                                    />
+                                </span>
                             </div>
-
-                            <div className="flex items-center justify-between gap-2 mt-3">
-                                <HiddenElement randomLength={read?.status ? 0 : 6}>
-                                    {!!read?.status && order.status ? (
-                                        <span
-                                            className={cn(
-                                                "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                                colors.split(" ")[0],
-                                            )}
-                                        >
-                                            <span className={cn("w-1.5 h-1.5 rounded-full shrink-0", colors.split(" ")[1])} />
-                                            {resolveLanguageKey("orderStatus." + order.status)}
-                                        </span>
-                                    ) : null}
-                                </HiddenElement>
-                                <HiddenElement randomLength={read?.grandTotal ? 0 : 8}>
-                                    {!!read?.grandTotal ? (
-                                        <span className="font-bold text-base text-foreground leading-none ml-auto">
-                                            {formatMoney(order, read?.currency)}
-                                        </span>
-                                    ) : null}
-                                </HiddenElement>
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <IconPackage className="h-3.5 w-3.5 shrink-0" />
+                                <DisplayValue path="items" type="number" value={row.items?.length} />
+                                <span>{resolveLanguageKey("items")}</span>
                             </div>
-
-                            {(itemCount != null || !read?.items) && (
-                                <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
-                                    <IconPackage className="w-3.5 h-3.5 shrink-0" />
-                                    <HiddenElement randomLength={read?.items ? 0 : 6}>
-                                        {!!read?.items && itemCount != null ? (
-                                            <span>
-                                                {itemCount} {resolveLanguageKey("items")}
-                                            </span>
-                                        ) : null}
-                                    </HiddenElement>
-                                </div>
-                            )}
                         </div>
-                    </div>
-                </EntityCardShell>
-            )}
-
-            {!!action && (
-                <>
-                    {action === "view" && (
-                        <ProductOrderSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            order={order}
-                            fetchId={order._id}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel={"productOrders"}
-                            deleteId={order._id}
-                            openAlert={action === "delete"}
-                            name={read?.orderNumber && order.orderNumber}
-                            confirmName={read?.orderNumber && order.orderNumber}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/productOrder"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel={"productOrders"}
-                            deleteId={order._id}
-                            openAlert={action === "restore"}
-                            name={read?.orderNumber && order.orderNumber}
-                            confirmName={read?.orderNumber && order.orderNumber}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/eCommerce/productOrder/restore"
-                        />
-                    )}
-                    {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
-                        <ProductOrderActionConfirmAction
-                            orderId={order._id}
-                            displayName={order.orderNumber}
-                            actionKey={action as ProductOrderConfirmActionKey}
-                            openAlert
-                            url={`/api/eCommerce/productOrder/${action}`}
-                            onSuccess={(newStatus: ProductOrder["status"]) => {
-                                applyOrderUpdate({status: newStatus});
-                                setAction("");
-                            }}
-                            onCancel={() => setAction("")}
-                        />
-                    )}
-                    {action === "ship" && (
-                        <ShipProductOrderAction
-                            orderId={order._id}
-                            displayName={order.orderNumber}
-                            openAlert
-                            url="/api/eCommerce/productOrder/ship"
-                            onSuccess={() => {
-                                applyOrderUpdate({status: "shipped", fulfillmentStatus: "fulfilled"});
-                                setAction("");
-                            }}
-                            onCancel={() => setAction("")}
-                        />
-                    )}
-                    {action === "refund" && (
-                        <RefundProductOrderAction
-                            orderId={order._id}
-                            displayName={order.orderNumber}
-                            openAlert
-                            url="/api/eCommerce/productOrder/refund"
-                            onSuccess={(fullRefund: boolean) => {
-                                applyOrderUpdate(
-                                    fullRefund
-                                        ? {paymentStatus: "refunded", status: "refunded"}
-                                        : {paymentStatus: "partially_refunded"},
-                                );
-                                setAction("");
-                            }}
-                            onCancel={() => setAction("")}
-                        />
-                    )}
-                </>
-            )}
-        </>
+                    </>
+                );
+            }}
+        </EntityCard>
     );
 }
 
