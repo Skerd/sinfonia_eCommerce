@@ -128,5 +128,5 @@ function ProductAttributeCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productAttributes"),
 )(ProductAttributeCard);

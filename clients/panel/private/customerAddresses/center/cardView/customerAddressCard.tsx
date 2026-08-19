@@ -137,5 +137,5 @@ function CustomerAddressCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerAddresses"),
 )(CustomerAddressCard);

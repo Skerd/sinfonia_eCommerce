@@ -27,5 +27,5 @@ function DeactivateWarehouse({entity, resolveLanguageKey, onAction}: DeactivateW
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(DeactivateWarehouse);

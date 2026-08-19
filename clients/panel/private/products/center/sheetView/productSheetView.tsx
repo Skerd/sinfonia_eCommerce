@@ -74,5 +74,5 @@ function ProductSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "products"),
 )(ProductSheetView);

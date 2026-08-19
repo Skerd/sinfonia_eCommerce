@@ -116,5 +116,5 @@ function InventorySheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(InventorySheetView);

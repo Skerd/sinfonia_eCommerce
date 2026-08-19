@@ -37,5 +37,5 @@ function DeductInventoryDropdown({inventory, onAction, resolveLanguageKey}: Dedu
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(DeductInventoryDropdown);

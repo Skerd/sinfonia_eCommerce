@@ -94,5 +94,5 @@ function PosOrderSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posOrders"),
 )(PosOrderSheetView);

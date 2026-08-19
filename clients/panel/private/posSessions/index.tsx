@@ -31,5 +31,5 @@ function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posSessions/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posSessions"),
 )(AllPosSessions);

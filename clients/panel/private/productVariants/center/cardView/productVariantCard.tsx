@@ -97,5 +97,5 @@ function ProductVariantCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productVariants/center/cardView/productVariantCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productVariants"),
 )(ProductVariantCard);

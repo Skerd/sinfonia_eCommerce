@@ -40,5 +40,5 @@ function MarkProcessingDropdown({order, onAction, resolveLanguageKey}: MarkProce
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/actions/markProcessingDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(MarkProcessingDropdown);

@@ -28,5 +28,5 @@ function ReprintPosOrder({entity, resolveLanguageKey, onAction}: ReprintPosOrder
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posOrders"),
 )(ReprintPosOrder);

@@ -131,5 +131,5 @@ function PosPaymentMethodSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(PosPaymentMethodSheetView);

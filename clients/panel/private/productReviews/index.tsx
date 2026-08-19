@@ -32,5 +32,5 @@ function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productReviews/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productReviews"),
 )(AllProductReviews);

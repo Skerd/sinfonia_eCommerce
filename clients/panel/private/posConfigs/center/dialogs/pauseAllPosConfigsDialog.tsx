@@ -95,5 +95,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/pauseAll", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(PauseAllPosConfigsDialog);

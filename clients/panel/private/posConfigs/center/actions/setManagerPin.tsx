@@ -19,5 +19,5 @@ function SetManagerPinMenuItem({onAction, resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posConfigs/center/actions/setManagerPin.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(SetManagerPinMenuItem);

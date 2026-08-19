@@ -27,5 +27,5 @@ function ActivatePricingRule({entity, resolveLanguageKey, onAction}: ActivatePri
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/pricingRules/center/actions/activatePricingRule.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "pricingRules"),
 )(ActivatePricingRule);

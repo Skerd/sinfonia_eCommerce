@@ -74,5 +74,5 @@ function ProductVariantSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productVariants"),
 )(ProductVariantSheetView);

@@ -30,5 +30,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/customerGroups/center/actions/setDefaultCustomerGroup.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(SetDefaultCustomerGroup);

@@ -28,5 +28,5 @@ function ApproveReturnRequest({entity, resolveLanguageKey, onAction}: ApproveRet
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(ApproveReturnRequest);

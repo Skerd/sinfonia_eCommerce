@@ -27,5 +27,5 @@ function DeactivatePosPaymentMethod({entity, resolveLanguageKey, onAction}: Deac
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/actions/deactivatePosPaymentMethod.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(DeactivatePosPaymentMethod);

@@ -27,5 +27,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "inventoryMovements"),
 )(ViewInventoryMovementsMenuItem);

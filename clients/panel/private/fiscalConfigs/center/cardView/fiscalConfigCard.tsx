@@ -144,5 +144,5 @@ function FiscalConfigCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fiscalConfigs"),
 )(FiscalConfigCard);

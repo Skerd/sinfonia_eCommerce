@@ -77,5 +77,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/activate", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(ActivatePosConfigDialog);

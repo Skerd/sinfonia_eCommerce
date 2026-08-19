@@ -130,5 +130,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/companyLockStatus", method: "POST", data: {}},
         false,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(PosConfigsBulkMenu);

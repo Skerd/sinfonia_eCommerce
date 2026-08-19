@@ -65,5 +65,5 @@ function PosSessionSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posSessions"),
 )(PosSessionSheetView);

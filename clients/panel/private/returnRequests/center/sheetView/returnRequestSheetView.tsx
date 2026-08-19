@@ -121,5 +121,5 @@ function ReturnRequestSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(ReturnRequestSheetView);

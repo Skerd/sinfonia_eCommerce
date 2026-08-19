@@ -40,5 +40,5 @@ function ShipOrderDropdown({order, onAction, resolveLanguageKey}: ShipOrderDropd
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(ShipOrderDropdown);

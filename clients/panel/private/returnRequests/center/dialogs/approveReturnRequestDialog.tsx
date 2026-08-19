@@ -126,5 +126,5 @@ export default compose(
         {url: "/api/eCommerce/returnRequest/approve", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(ApproveReturnRequestDialog);

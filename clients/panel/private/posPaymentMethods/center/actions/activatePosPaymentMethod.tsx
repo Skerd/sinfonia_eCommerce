@@ -27,5 +27,5 @@ function ActivatePosPaymentMethod({entity, resolveLanguageKey, onAction}: Activa
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/actions/activatePosPaymentMethod.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(ActivatePosPaymentMethod);

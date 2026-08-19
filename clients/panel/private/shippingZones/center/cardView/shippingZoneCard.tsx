@@ -138,5 +138,5 @@ function ShippingZoneCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/shippingZones/center/cardView/shippingZoneCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "shippingZones"),
 )(ShippingZoneCard);

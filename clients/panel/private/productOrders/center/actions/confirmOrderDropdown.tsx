@@ -40,5 +40,5 @@ function ConfirmOrderDropdown({order, onAction, resolveLanguageKey}: ConfirmOrde
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(ConfirmOrderDropdown);

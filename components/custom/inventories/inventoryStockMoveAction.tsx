@@ -258,7 +258,7 @@ const InventoryStockMoveActionWithAxios = compose(
         },
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(InventoryStockMoveAction) as ComponentType<InventoryStockMoveActionPublicProps>;
 
 type ShellProps = WithLanguageType & Omit<InventoryStockMoveActionPublicProps, "resolveLanguageKey">;
@@ -280,5 +280,5 @@ function InventoryStockMoveActionShell({resolveLanguageKey, mode, ...rest}: Shel
 
 export default compose(
     withLanguage("src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(InventoryStockMoveActionShell);

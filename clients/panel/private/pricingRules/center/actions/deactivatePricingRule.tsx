@@ -27,5 +27,5 @@ function DeactivatePricingRule({entity, resolveLanguageKey, onAction}: Deactivat
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/pricingRules/center/actions/deactivatePricingRule.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "pricingRules"),
 )(DeactivatePricingRule);

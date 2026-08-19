@@ -126,5 +126,5 @@ function InventoryMovementCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventoryMovements"),
 )(InventoryMovementCard);

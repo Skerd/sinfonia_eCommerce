@@ -149,5 +149,5 @@ function PosPaymentMethodCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(PosPaymentMethodCard);

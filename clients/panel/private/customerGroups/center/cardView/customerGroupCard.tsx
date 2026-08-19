@@ -149,5 +149,5 @@ function CustomerGroupCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(CustomerGroupCard);

@@ -115,5 +115,5 @@ function FiscalConfigSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fiscalConfigs"),
 )(FiscalConfigSheetView);

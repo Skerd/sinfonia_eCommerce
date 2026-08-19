@@ -74,5 +74,5 @@ function CollectionSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productCollections"),
 )(CollectionSheetView);

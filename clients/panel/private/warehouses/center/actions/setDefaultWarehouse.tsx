@@ -30,5 +30,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/warehouses/center/actions/setDefaultWarehouse.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(SetDefaultWarehouse);

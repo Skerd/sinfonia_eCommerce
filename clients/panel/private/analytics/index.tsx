@@ -255,5 +255,5 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/analytics/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["products", "productOrders"]),
 )(ECommerceAnalytics);

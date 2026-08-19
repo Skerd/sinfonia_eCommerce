@@ -27,5 +27,5 @@ function DeactivateFiscalConfig({entity, resolveLanguageKey, onAction}: Deactiva
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/actions/deactivateFiscalConfig.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fiscalConfigs"),
 )(DeactivateFiscalConfig);

@@ -109,5 +109,5 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(AllInventories);

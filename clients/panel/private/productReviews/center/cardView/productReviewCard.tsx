@@ -155,5 +155,5 @@ function ProductReviewCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productReviews/center/cardView/productReviewCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productReviews"),
 )(ProductReviewCard);

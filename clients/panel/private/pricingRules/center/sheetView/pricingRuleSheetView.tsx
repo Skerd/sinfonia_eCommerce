@@ -123,5 +123,5 @@ function PricingRuleSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "pricingRules"),
 )(PricingRuleSheetView);

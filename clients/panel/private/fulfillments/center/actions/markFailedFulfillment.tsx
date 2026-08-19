@@ -28,5 +28,5 @@ function MarkFailedFulfillment({entity, resolveLanguageKey, onAction}: MarkFaile
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fulfillments/center/actions/markFailedFulfillment.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(MarkFailedFulfillment);

@@ -107,5 +107,5 @@ export default compose(
         {url: "/api/eCommerce/fulfillment/markDelivered", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(MarkDeliveredFulfillmentDialog);

@@ -95,5 +95,5 @@ function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "shippingZones"),
 )(AllShippingZones);

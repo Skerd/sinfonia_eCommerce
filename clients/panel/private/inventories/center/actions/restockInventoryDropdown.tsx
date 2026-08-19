@@ -37,5 +37,5 @@ function RestockInventoryDropdown({inventory, onAction, resolveLanguageKey}: Res
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(RestockInventoryDropdown);

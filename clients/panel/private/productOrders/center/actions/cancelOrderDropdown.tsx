@@ -40,5 +40,5 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(CancelOrderDropdown);

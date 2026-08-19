@@ -108,5 +108,5 @@ export default compose(
         {url: "/api/eCommerce/returnRequest/reject", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(RejectReturnRequestDialog);

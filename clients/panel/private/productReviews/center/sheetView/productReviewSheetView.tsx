@@ -77,5 +77,5 @@ function ProductReviewSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productReviews"),
 )(ProductReviewSheetView);

@@ -27,5 +27,5 @@ function DeactivateDiscount({entity, resolveLanguageKey, onAction}: DeactivateDi
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "discounts"),
 )(DeactivateDiscount);

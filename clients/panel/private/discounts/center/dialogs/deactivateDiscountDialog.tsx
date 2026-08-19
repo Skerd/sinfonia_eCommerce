@@ -77,5 +77,5 @@ export default compose(
         {url: "/api/eCommerce/discount/deactivate", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "discounts"),
 )(DeactivateDiscountDialog);

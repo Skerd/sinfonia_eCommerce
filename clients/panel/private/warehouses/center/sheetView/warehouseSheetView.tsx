@@ -135,5 +135,5 @@ function WarehouseSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(WarehouseSheetView);

@@ -27,5 +27,5 @@ function ActivateFiscalConfig({entity, resolveLanguageKey, onAction}: ActivateFi
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/actions/activateFiscalConfig.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fiscalConfigs"),
 )(ActivateFiscalConfig);

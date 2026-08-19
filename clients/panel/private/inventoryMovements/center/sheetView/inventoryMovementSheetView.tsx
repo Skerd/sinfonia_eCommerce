@@ -64,5 +64,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "inventoryMovements"),
 )(InventoryMovementSheetView);

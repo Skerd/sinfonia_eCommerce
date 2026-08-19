@@ -78,5 +78,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/deactivate", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(DeactivatePosConfigDialog);

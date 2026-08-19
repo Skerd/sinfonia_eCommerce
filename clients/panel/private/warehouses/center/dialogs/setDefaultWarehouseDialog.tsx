@@ -77,5 +77,5 @@ export default compose(
         {url: "/api/eCommerce/warehouse/setDefault", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(SetDefaultWarehouseDialog);

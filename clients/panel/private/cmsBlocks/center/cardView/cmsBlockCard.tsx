@@ -139,5 +139,5 @@ function CmsBlockCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "cmsBlocks"),
 )(CmsBlockCard);

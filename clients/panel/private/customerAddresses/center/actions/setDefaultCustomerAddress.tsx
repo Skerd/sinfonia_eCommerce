@@ -30,5 +30,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "customerAddresses"),
 )(SetDefaultCustomerAddress);

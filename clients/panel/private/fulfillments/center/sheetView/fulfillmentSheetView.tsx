@@ -136,5 +136,5 @@ function FulfillmentSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(FulfillmentSheetView);

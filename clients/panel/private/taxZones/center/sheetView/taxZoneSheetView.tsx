@@ -119,5 +119,5 @@ function TaxZoneSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "taxZones"),
 )(TaxZoneSheetView);

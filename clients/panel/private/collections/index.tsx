@@ -40,5 +40,5 @@ function AllCollections({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/collections/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productCollections"),
 )(AllCollections);

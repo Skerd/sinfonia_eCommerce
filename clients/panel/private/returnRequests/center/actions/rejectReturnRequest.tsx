@@ -28,5 +28,5 @@ function RejectReturnRequest({entity, resolveLanguageKey, onAction}: RejectRetur
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(RejectReturnRequest);

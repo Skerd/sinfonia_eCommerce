@@ -129,5 +129,5 @@ function ReturnRequestCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(ReturnRequestCard);

@@ -252,5 +252,5 @@ function PosConfigCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posConfigs/center/cardView/posConfigCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(PosConfigCard);

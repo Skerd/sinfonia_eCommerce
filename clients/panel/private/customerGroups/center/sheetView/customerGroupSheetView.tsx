@@ -118,5 +118,5 @@ function CustomerGroupSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(CustomerGroupSheetView);

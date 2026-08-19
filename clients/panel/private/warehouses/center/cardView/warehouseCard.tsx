@@ -179,5 +179,5 @@ function WarehouseCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(WarehouseCard);

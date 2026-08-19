@@ -154,7 +154,7 @@ const RefundProductOrderActionWithAxios = compose(
         },
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(RefundProductOrderAction) as ComponentType<RefundProductOrderActionPublicProps>;
 
 type RefundProductOrderActionShellProps = WithLanguageType & Omit<RefundProductOrderActionPublicProps, "resolveLanguageKey">;
@@ -175,5 +175,5 @@ function RefundProductOrderActionShell({resolveLanguageKey, ...rest}: RefundProd
 
 export default compose(
     withLanguage("src/modules/eCommerce/components/custom/productOrders/refundProductOrderAction.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(RefundProductOrderActionShell);

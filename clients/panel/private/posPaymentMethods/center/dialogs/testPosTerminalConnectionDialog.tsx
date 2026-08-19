@@ -79,5 +79,5 @@ export default compose(
         {url: "/api/eCommerce/posPaymentMethod/testConnection", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(TestPosTerminalConnectionDialog);

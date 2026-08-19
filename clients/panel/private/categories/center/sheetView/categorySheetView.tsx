@@ -74,5 +74,5 @@ function CategorySheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/categories/center/sheetView/categorySheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productcategories"),
 )(CategorySheetView);

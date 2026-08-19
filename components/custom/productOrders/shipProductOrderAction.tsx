@@ -148,7 +148,7 @@ const ShipProductOrderActionWithAxios = compose(
         },
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(ShipProductOrderAction) as ComponentType<ShipProductOrderActionPublicProps>;
 
 type ShipProductOrderActionShellProps = WithLanguageType & Omit<ShipProductOrderActionPublicProps, "resolveLanguageKey">;
@@ -169,5 +169,5 @@ function ShipProductOrderActionShell({resolveLanguageKey, ...rest}: ShipProductO
 
 export default compose(
     withLanguage("src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(ShipProductOrderActionShell);

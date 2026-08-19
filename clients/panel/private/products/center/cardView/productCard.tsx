@@ -271,5 +271,5 @@ function ProductCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "products"),
 )(ProductCard);

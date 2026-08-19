@@ -119,5 +119,5 @@ function ShippingZoneSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/shippingZones/center/sheetView/shippingZoneSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "shippingZones"),
 )(ShippingZoneSheetView);

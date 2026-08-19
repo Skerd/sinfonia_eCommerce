@@ -27,5 +27,5 @@ function ActivateCmsBlock({entity, resolveLanguageKey, onAction}: ActivateCmsBlo
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/cmsBlocks/center/actions/activateCmsBlock.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "cmsBlocks"),
 )(ActivateCmsBlock);

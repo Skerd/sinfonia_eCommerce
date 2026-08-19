@@ -106,5 +106,5 @@ function CustomerAddressSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerAddresses"),
 )(CustomerAddressSheetView);

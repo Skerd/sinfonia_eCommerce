@@ -40,5 +40,5 @@ function RefundOrderDropdown({order, onAction, resolveLanguageKey}: RefundOrderD
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(RefundOrderDropdown);

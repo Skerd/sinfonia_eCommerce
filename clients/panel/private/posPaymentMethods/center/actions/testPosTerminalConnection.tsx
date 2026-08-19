@@ -24,5 +24,5 @@ function TestPosTerminalConnection({entity, onAction, resolveLanguageKey}: TestP
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/actions/testPosTerminalConnection.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posPaymentMethods"),
 )(TestPosTerminalConnection);

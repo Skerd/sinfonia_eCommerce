@@ -27,5 +27,5 @@ function DeactivateCmsBlock({entity, resolveLanguageKey, onAction}: DeactivateCm
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/cmsBlocks/center/actions/deactivateCmsBlock.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "cmsBlocks"),
 )(DeactivateCmsBlock);

@@ -32,5 +32,5 @@ function AllInventoryMovements({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventoryMovements"),
 )(AllInventoryMovements);

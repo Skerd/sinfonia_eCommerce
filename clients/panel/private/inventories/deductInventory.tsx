@@ -43,5 +43,5 @@ function DeductInventoryPage({resolveLanguageKey}: DeductInventoryPageProps) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/deductInventory.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(DeductInventoryPage);

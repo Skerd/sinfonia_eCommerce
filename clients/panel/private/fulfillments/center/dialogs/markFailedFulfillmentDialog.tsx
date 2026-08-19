@@ -107,5 +107,5 @@ export default compose(
         {url: "/api/eCommerce/fulfillment/markFailed", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(MarkFailedFulfillmentDialog);

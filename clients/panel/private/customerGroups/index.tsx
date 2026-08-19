@@ -94,5 +94,5 @@ function AllCustomerGroups({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(AllCustomerGroups);

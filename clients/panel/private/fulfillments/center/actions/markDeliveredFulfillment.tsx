@@ -28,5 +28,5 @@ function MarkDeliveredFulfillment({entity, resolveLanguageKey, onAction}: MarkDe
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fulfillments/center/actions/markDeliveredFulfillment.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(MarkDeliveredFulfillment);

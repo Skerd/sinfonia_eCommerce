@@ -135,5 +135,5 @@ function CmsBlockSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "cmsBlocks"),
 )(CmsBlockSheetView);

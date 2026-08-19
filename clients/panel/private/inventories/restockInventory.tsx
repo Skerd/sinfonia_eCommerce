@@ -43,5 +43,5 @@ function RestockInventoryPage({resolveLanguageKey}: RestockInventoryPageProps) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/restockInventory.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(RestockInventoryPage);

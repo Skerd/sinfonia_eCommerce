@@ -19,5 +19,5 @@ function ClearManagerPinMenuItem({onAction, resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posConfigs/center/actions/clearManagerPin.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(ClearManagerPinMenuItem);

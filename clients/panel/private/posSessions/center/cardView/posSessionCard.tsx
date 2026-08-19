@@ -92,5 +92,5 @@ function PosSessionCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posSessions"),
 )(PosSessionCard);

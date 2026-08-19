@@ -387,5 +387,5 @@ export default compose(
         {url: "/api/eCommerce/pos/reprint", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posOrders"),
 )(ReprintPosOrderDialog);

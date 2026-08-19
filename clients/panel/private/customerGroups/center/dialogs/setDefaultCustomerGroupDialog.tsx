@@ -77,5 +77,5 @@ export default compose(
         {url: "/api/eCommerce/customerGroup/setDefault", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(SetDefaultCustomerGroupDialog);

@@ -367,5 +367,5 @@ export default compose(
     withLanguage(
         "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
     ),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(ViewInventoryMovementsDialog);

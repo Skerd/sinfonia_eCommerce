@@ -144,5 +144,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/setManagerPin", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(SetManagerPinDialog);

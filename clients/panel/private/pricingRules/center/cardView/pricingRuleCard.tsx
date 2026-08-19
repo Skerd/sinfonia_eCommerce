@@ -151,5 +151,5 @@ function PricingRuleCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "pricingRules"),
 )(PricingRuleCard);

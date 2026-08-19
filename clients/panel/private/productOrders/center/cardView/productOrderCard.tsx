@@ -188,5 +188,5 @@ function ProductOrderCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productOrders"),
 )(ProductOrderCard);

@@ -299,5 +299,5 @@ function ManageMembersDialog({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(ManageMembersDialog);

@@ -150,5 +150,5 @@ function TaxZoneCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/taxZones/center/cardView/taxZoneCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "taxZones"),
 )(TaxZoneCard);

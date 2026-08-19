@@ -399,5 +399,5 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/pos/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["posConfigs", "posSessions", "posOrders"]),
 )(PosTill);

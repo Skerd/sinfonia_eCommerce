@@ -78,5 +78,5 @@ export default compose(
         {url: "/api/eCommerce/shippingZone/deactivate", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "shippingZones"),
 )(DeactivateShippingZoneDialog);

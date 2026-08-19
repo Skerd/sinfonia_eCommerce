@@ -95,5 +95,5 @@ function CategoryCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/categories/center/cardView/categoryCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productcategories"),
 )(CategoryCard);

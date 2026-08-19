@@ -19,5 +19,5 @@ function ManageMembersMenuItem({onAction, resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerGroups/center/actions/manageMembers.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerGroups"),
 )(ManageMembersMenuItem);

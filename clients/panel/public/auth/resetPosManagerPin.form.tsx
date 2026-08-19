@@ -210,5 +210,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/resetManagerPin", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(ResetPosManagerPinForm);

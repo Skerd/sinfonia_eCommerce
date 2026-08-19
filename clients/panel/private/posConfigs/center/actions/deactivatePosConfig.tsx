@@ -27,5 +27,5 @@ function DeactivatePosConfig({entity, resolveLanguageKey, onAction}: Props) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posConfigs/center/actions/deactivatePosConfig.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(DeactivatePosConfig);

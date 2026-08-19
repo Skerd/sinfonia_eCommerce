@@ -27,5 +27,5 @@ function ActivateShippingZone({entity, resolveLanguageKey, onAction}: Props) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/shippingZones/center/actions/activateShippingZone.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "shippingZones"),
 )(ActivateShippingZone);

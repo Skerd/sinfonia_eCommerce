@@ -123,5 +123,5 @@ function CollectionCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/collections/center/cardView/collectionCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productCollections"),
 )(CollectionCard);

@@ -95,5 +95,5 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fiscalConfigs"),
 )(AllFiscalConfigs);

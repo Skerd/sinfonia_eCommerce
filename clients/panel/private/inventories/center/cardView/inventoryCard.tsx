@@ -160,5 +160,5 @@ function InventoryCard({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/inventories/center/cardView/inventoryCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inventories"),
 )(InventoryCard);

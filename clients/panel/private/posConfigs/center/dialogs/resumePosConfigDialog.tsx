@@ -74,5 +74,5 @@ export default compose(
         {url: "/api/eCommerce/posConfig/resume", method: "POST", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(ResumePosConfigDialog);

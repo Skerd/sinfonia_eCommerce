@@ -96,5 +96,5 @@ function AllCustomerAddresses({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "customerAddresses"),
 )(AllCustomerAddresses);

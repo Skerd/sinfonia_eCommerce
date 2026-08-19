@@ -67,5 +67,5 @@ function PosManagerSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posConfigs/center/sheetView/posManagerSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "posConfigs"),
 )(PosManagerSheetView);

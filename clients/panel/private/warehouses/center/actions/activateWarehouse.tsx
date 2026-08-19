@@ -27,5 +27,5 @@ function ActivateWarehouse({entity, resolveLanguageKey, onAction}: ActivateWareh
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warehouses"),
 )(ActivateWarehouse);

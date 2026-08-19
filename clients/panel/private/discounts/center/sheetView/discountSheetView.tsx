@@ -123,5 +123,5 @@ function DiscountSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "discounts"),
 )(DiscountSheetView);

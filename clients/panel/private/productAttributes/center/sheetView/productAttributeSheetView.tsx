@@ -74,5 +74,5 @@ function ProductAttributeSheetView({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "productAttributes"),
 )(ProductAttributeSheetView);

@@ -27,5 +27,5 @@ function ActivateDiscount({entity, resolveLanguageKey, onAction}: ActivateDiscou
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/discounts/center/actions/activateDiscount.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "discounts"),
 )(ActivateDiscount);

@@ -96,5 +96,5 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "returnRequests"),
 )(AllReturnRequests);

@@ -28,5 +28,5 @@ function ShipFulfillment({entity, resolveLanguageKey, onAction}: ShipFulfillment
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "fulfillments"),
 )(ShipFulfillment);
