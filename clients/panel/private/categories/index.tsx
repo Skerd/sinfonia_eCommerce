@@ -5,7 +5,7 @@ import Header from "@coreModule/components/custom/header.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Plus} from "lucide-react";
 import {Button, ButtonTitle} from "@coreModule/components/ui/button.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {useNavigate} from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import CategoryCard from "@eCommerceModule/clients/panel/private/categories/center/cardView/categoryCard.tsx";

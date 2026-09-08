@@ -8,7 +8,7 @@ import {useNavigate} from "react-router-dom";
 import type {EditCategoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/editCategory.form.type.ts";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import type {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";

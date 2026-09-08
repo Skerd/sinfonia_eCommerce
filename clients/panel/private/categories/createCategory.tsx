@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 import type {CreateCategoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/createCategory.form.type.ts";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {createCategoryFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/createCategory.form.validator.ts";

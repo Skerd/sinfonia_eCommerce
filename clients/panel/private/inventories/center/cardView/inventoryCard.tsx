@@ -13,7 +13,7 @@ import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/priva
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import {accessFieldPathExists} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";

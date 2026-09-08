@@ -10,7 +10,6 @@ import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
 import {generateUUID} from "@coreModule/helpers/general";
 import ShopLayout from "@eCommerceModule/clients/client/public/shared/shopLayout.tsx";
-import {sinfoniaRouterBasename} from "@coreModule/helpers/sinfoniaRouterBasename";
 
 const HomePage = lazy(() => import("@eCommerceModule/clients/client/public/home/index.tsx"));
 const ProductsPage = lazy(() => import("@eCommerceModule/clients/client/public/products/index.tsx"));
@@ -41,8 +40,8 @@ function ShopApp() {
 
     return (
         <Provider store={store}>
-            <LanguageProvider storageKey="vite-ui-language">
-                <BrowserRouter basename={sinfoniaRouterBasename()}>
+            <LanguageProvider>
+                <BrowserRouter>
                     <Suspense fallback={<Loader />}>
                         <Routes>
                             <Route element={<ShopLayout />}>
