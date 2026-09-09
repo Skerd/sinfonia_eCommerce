@@ -48,7 +48,6 @@ function CreateCategory({
             config={viewConfig}
             resolveLanguageKey={resolveLanguageKey}
             // Zod 4 schema vs @hookform/resolvers typed for Zod 3
-            //@ts-expect-error
             formSchema={formSchema}
             defaultValues={{}}
             loading={loading}
