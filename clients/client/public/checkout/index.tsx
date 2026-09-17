@@ -3,8 +3,9 @@ import {Link, useNavigate} from "react-router-dom";
 import {toast} from "sonner";
 import {loadStripe, type Stripe as StripeJs} from "@stripe/stripe-js";
 import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {generateUUID} from "@coreModule/helpers/general";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@baseModule/helpers/general/errors.ts";
+import {generateUUID} from "@baseModule/helpers/general/uuid.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 
@@ -152,8 +153,8 @@ function CheckoutPage() {
                     idempotencyKey: getOrCreateIdempotencyKey(),
                 });
                 if (!cancelled) setCheckout(res.data.data);
-            } catch (err: any) {
-                if (!cancelled) toast.error(err?.response?.data?.message ?? "Could not start checkout");
+            } catch (err) {
+                if (!cancelled) handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not start checkout"});
             }
         })();
         return () => {
@@ -191,8 +192,8 @@ function CheckoutPage() {
             setCheckout(res.data.data);
             setRateIndex(0);
             setStep("shipping");
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not save address");
+        } catch (err) {
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not save address"});
         } finally {
             setSubmitting(false);
         }
@@ -208,8 +209,8 @@ function CheckoutPage() {
             });
             setCheckout(res.data.data);
             setStep("payment");
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not select shipping rate");
+        } catch (err) {
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not select shipping rate"});
         } finally {
             setSubmitting(false);
         }
@@ -225,8 +226,8 @@ function CheckoutPage() {
                 paymentMethod: method,
             });
             setCheckout(res.data.data);
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Payment method not available");
+        } catch (err) {
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Payment method not available"});
         } finally {
             setSubmitting(false);
         }
@@ -244,8 +245,8 @@ function CheckoutPage() {
             setStep("done");
             clearIdempotencyKey();
             await refreshCart();
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not confirm order");
+        } catch (err) {
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not confirm order"});
         } finally {
             setSubmitting(false);
         }

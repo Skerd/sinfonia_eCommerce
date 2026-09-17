@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import {IconStar, IconUsers} from "@tabler/icons-react";
 import CustomerGroupSheetView from "@eCommerceModule/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx";
@@ -11,7 +11,7 @@ import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/privat
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/customergroups";

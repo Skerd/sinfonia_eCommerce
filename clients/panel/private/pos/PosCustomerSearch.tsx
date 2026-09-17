@@ -1,7 +1,8 @@
 import {useEffect, useRef, useState} from "react";
 import {UserRound, X} from "lucide-react";
 import {Input} from "@coreModule/components/ui/input.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {useOutsideClick} from "@baseModule/helpers/hooks/useOutsideClick.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosCustomerHit} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 
@@ -25,13 +26,7 @@ export default function PosCustomerSearch({valueLabel, customerId, rk, onLabelCh
     // text (e.g. right after picking a result) doesn't immediately re-trigger a query.
     const lastSelectedLabelRef = useRef(valueLabel);
 
-    useEffect(() => {
-        function onOutsideClick(e: MouseEvent) {
-            if (containerRef.current && !containerRef.current.contains(e.target as Node)) setOpen(false);
-        }
-        document.addEventListener("mousedown", onOutsideClick);
-        return () => document.removeEventListener("mousedown", onOutsideClick);
-    }, []);
+    useOutsideClick(containerRef, () => setOpen(false), {enabled: open});
 
     useEffect(() => {
         const query = valueLabel.trim();

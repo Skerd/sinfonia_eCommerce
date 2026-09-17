@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from "react";
 import {Minus, Plus} from "lucide-react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {

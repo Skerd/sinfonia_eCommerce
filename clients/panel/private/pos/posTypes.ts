@@ -1,5 +1,6 @@
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
+import {formatCurrency} from "@baseModule/helpers/general/numbers.ts";
 
 export type CatalogVariant = {
     _id: string;
@@ -128,11 +129,7 @@ export function parseCashQuickAmounts(raw?: string | null): number[] {
 
 export function formatMoney(value: number, currencyCode = "EUR"): string {
     try {
-        return value.toLocaleString(undefined, {
-            style: "currency",
-            currency: currencyCode,
-            minimumFractionDigits: 2,
-        });
+        return formatCurrency(value, currencyCode, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     } catch {
         return `${value.toFixed(2)} ${currencyCode}`;
     }

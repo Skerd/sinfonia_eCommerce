@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@baseModule/components/entityPage/createGenericEditPage.tsx";
 import {editFulfillmentFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/editFulfillment.form.validator.ts";
 import type {EditFulfillmentFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";

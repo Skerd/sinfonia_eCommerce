@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {compose} from "redux";
-import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {type WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
 import {ModelGraph} from "@coreModule/components/custom/systemMap/ModelGraph.tsx";
 import {FlowDiagram} from "@coreModule/components/custom/systemMap/FlowDiagram.tsx";

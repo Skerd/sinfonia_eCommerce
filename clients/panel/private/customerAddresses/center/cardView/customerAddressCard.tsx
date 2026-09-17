@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import {IconMapPin, IconPhone, IconStar} from "@tabler/icons-react";
 import CustomerAddressSheetView from "@eCommerceModule/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx";
@@ -9,7 +9,7 @@ import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/cu
 import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/eCommerce/customeraddresses";

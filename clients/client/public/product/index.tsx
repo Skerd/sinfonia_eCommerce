@@ -2,7 +2,8 @@ import {useEffect, useMemo, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import {toast} from "sonner";
 import {Star} from "lucide-react";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@baseModule/helpers/general/errors.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
@@ -72,8 +73,8 @@ function ProductPage() {
         try {
             await addItem(product._id, selectedVariant?._id, quantity);
             toast.success(`Added "${product.title}" to cart`);
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not add to cart");
+        } catch (err) {
+            handleError(err, {context: "Product", showToast: true, fallbackMessage: "Could not add to cart"});
         } finally {
             setAdding(false);
         }

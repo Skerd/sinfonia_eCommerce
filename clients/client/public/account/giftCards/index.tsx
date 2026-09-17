@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {toast} from "sonner";
 import {Copy, Gift} from "lucide-react";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {getToken} from "@baseModule/helpers/context/localStorage/authenticationStorage.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 
 type MyGiftCard = {

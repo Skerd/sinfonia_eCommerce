@@ -1,8 +1,10 @@
 import {useCallback, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosPinManagerOption} from "@eCommerceModule/clients/panel/private/pos/PosPinDialog.tsx";
+import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import {getName} from "@baseModule/helpers/general/names.ts";
 
 export type PosManagerAuth = {
     pin: string;
@@ -16,7 +18,7 @@ export type PosManagerAuth = {
 export function usePosManagerPin(
     configId: string | undefined,
     managers: PosConfigManager[] | undefined,
-    resolveLanguageKey: (key: string) => unknown,
+    resolveLanguageKey: ResolveLanguageKey,
 ) {
     const [pinOpen, setPinOpen] = useState(false);
     const [pinBusy, setPinBusy] = useState(false);
@@ -29,7 +31,7 @@ export function usePosManagerPin(
         return (managers ?? [])
             .filter((m) => m.hasPin && m._id)
             .map((m) => {
-                const full = [m.name, m.surname].filter(Boolean).join(" ").trim();
+                const full = getName(m);
                 return {
                     _id: m._id,
                     label: full || m.username || m._id,

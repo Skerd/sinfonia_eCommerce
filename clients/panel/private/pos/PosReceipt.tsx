@@ -8,6 +8,7 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {DATE_FORMATS, formatDate} from "@baseModule/helpers/general/dateTime.ts";
 
 type Props = {
     open: boolean;
@@ -70,8 +71,8 @@ export default function PosReceipt({
                             <span>{rk("receipt.date")}</span>
                             <span className="tabular-nums">
                                 {receipt.paidAt
-                                    ? new Date(receipt.paidAt).toLocaleString()
-                                    : new Date().toLocaleString()}
+                                    ? formatDate(receipt.paidAt, {format: DATE_FORMATS.dateTime})
+                                    : formatDate(new Date(), {format: DATE_FORMATS.dateTime})}
                             </span>
                         </div>
                         <div className="flex justify-between gap-2">
@@ -205,8 +206,8 @@ export default function PosReceipt({
                     <span>{rk("receipt.date")}</span>
                     <span>
                         {receipt.paidAt
-                            ? new Date(receipt.paidAt).toLocaleString()
-                            : new Date().toLocaleString()}
+                            ? formatDate(receipt.paidAt, {format: DATE_FORMATS.dateTime})
+                            : formatDate(new Date(), {format: DATE_FORMATS.dateTime})}
                     </span>
                 </div>
                 <div>

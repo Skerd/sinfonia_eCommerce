@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@baseModule/components/entityPage/createGenericCreatePage.tsx";
 import {createPosConfigFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/createPosConfig.form.validator.ts";
 import type {CreatePosConfigFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.schema-def.ts";
 

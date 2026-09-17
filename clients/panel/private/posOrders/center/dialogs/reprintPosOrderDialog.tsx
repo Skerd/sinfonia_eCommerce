@@ -1,9 +1,9 @@
 import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {LoaderCircle, Printer} from "lucide-react";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,
@@ -16,6 +16,7 @@ import {
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import {formatMoney} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {DATE_FORMATS, formatDate} from "@baseModule/helpers/general/dateTime.ts";
 
 type PostPayload = {_id: string};
 type ReprintResponse = {order: PosOrder; receipt: ReceiptPayload};
@@ -145,8 +146,8 @@ function ReprintPosOrderDialog({
                                             <span>{rk("date")}</span>
                                             <span className="tabular-nums">
                                                 {displayReceipt.paidAt
-                                                    ? new Date(displayReceipt.paidAt).toLocaleString()
-                                                    : new Date().toLocaleString()}
+                                                    ? formatDate(displayReceipt.paidAt, {format: DATE_FORMATS.dateTime})
+                                                    : formatDate(new Date(), {format: DATE_FORMATS.dateTime})}
                                             </span>
                                         </div>
                                         <div className="flex justify-between gap-2">
@@ -258,8 +259,8 @@ function ReprintPosOrderDialog({
                                 <span>{rk("date")}</span>
                                 <span>
                                     {displayReceipt.paidAt
-                                        ? new Date(displayReceipt.paidAt).toLocaleString()
-                                        : new Date().toLocaleString()}
+                                        ? formatDate(displayReceipt.paidAt, {format: DATE_FORMATS.dateTime})
+                                        : formatDate(new Date(), {format: DATE_FORMATS.dateTime})}
                                 </span>
                             </div>
                             <div>

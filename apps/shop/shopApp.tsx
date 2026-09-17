@@ -1,14 +1,13 @@
 import {Toaster} from "sonner";
 import {Provider} from "react-redux";
-import {store} from "@coreModule/helpers/redux/store/generalStore.ts";
-import {LanguageProvider} from "@coreModule/helpers/context/providers/language-provider.tsx";
+import {store} from "@baseModule/helpers/redux/store/generalStore.ts";
+import {LanguageProvider} from "@baseModule/helpers/context/providers/language-provider.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ErrorBoundary from "@coreModule/components/custom/errorBoundary.tsx";
 import {lazy, Suspense} from "react";
 import Loader from "@coreModule/components/custom/loader.tsx";
-import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
-import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
-import {generateUUID} from "@coreModule/helpers/general";
+import {useIsMobile} from "@baseModule/helpers/hooks/useMobile.tsx";
+import {ensureDeviceId} from "@baseModule/helpers/context/localStorage/authenticationStorage.ts";
 import ShopLayout from "@eCommerceModule/clients/client/public/shared/shopLayout.tsx";
 
 const HomePage = lazy(() => import("@eCommerceModule/clients/client/public/home/index.tsx"));
@@ -33,10 +32,7 @@ function ToasterContainer() {
 }
 
 function ShopApp() {
-    const deviceId = getLocalStorageValue("deviceId");
-    if (!deviceId) {
-        setLocalStorageValue("deviceId", generateUUID());
-    }
+    ensureDeviceId();
 
     return (
         <Provider store={store}>

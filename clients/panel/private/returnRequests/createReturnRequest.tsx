@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@baseModule/components/entityPage/createGenericCreatePage.tsx";
 import {createReturnRequestFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/createReturnRequest.form.validator.ts";
 import type {CreateReturnRequestFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.schema-def.ts";
 

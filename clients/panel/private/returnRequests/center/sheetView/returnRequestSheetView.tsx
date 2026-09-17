@@ -1,12 +1,12 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
-import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import {useViewConfig} from "@baseModule/helpers/hooks/useViewConfig.ts";
+import SheetViewRenderer from "@baseModule/components/viewEngine/SheetViewRenderer.tsx";
 import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx";
 import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
 import ApproveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx";

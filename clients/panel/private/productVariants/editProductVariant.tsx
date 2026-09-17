@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@baseModule/components/entityPage/createGenericEditPage.tsx";
 import {editProductVariantFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/productVariant/editProductVariant.form.validator.ts";
 import type {EditProductVariantFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productVariant/productVariant.schema-def.ts";
 import type {ProductVariant} from "armonia/src/modules/eCommerce/api/eCommerce/private/productVariant/productVariant.dto.ts";

@@ -1,6 +1,8 @@
 import {useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {isAbortError} from "@baseModule/helpers/general/errors.ts";
+import {generateUUID} from "@baseModule/helpers/general/uuid.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 import {
     type CartLine,
@@ -12,6 +14,7 @@ import {
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
+import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
 
 type ResolveManagerPin = (
     needed: boolean,
@@ -43,7 +46,7 @@ type Args = {
     showCustomer: boolean;
     heldOrderId: string | null;
     currencyCode: string;
-    resolveLanguageKey: (key: string) => unknown;
+    resolveLanguageKey: ResolveLanguageKey;
     resolveManagerPin: ResolveManagerPin;
     clearOrder: () => void;
     showReceipt: (receipt: ReceiptPayload) => void;
@@ -250,7 +253,7 @@ export function usePosPayments({
         const method = paymentMethods.find((m) => m._id === methodId);
         if (!method) return null;
         return {
-            id: `${method._id}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+            id: generateUUID(),
             paymentMethodId: method._id,
             name: method.name,
             type: method.type,
@@ -412,10 +415,7 @@ export function usePosPayments({
 
         setPaying(true);
         if (!payRequestIdRef.current) {
-            payRequestIdRef.current =
-                typeof crypto !== "undefined" && crypto.randomUUID
-                    ? crypto.randomUUID()
-                    : `pos-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+            payRequestIdRef.current = generateUUID();
         }
         const abort = new AbortController();
         terminalAbortRef.current = abort;
@@ -507,8 +507,8 @@ export function usePosPayments({
                 clearOrder();
                 toast.success(rk("toast.paid"));
             }
-        } catch (err: any) {
-            if (err?.code === "ERR_CANCELED" || err?.name === "CanceledError" || abort.signal.aborted) {
+        } catch (err) {
+            if (isAbortError(err, abort.signal)) {
                 toast.message(rk("paused.banner"));
             } else {
                 toast.error(usesTerminal ? rk("errors.terminalFailed") : rk("errors.payFailed"));

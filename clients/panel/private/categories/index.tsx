@@ -1,11 +1,11 @@
 import {compose} from "redux";
 import {useRef, useState} from "react";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {Plus} from "lucide-react";
 import {Button, ButtonTitle} from "@coreModule/components/ui/button.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
 import {useNavigate} from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import CategoryCard from "@eCommerceModule/clients/panel/private/categories/center/cardView/categoryCard.tsx";

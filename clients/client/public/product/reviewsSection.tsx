@@ -1,8 +1,9 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {toast} from "sonner";
 import {Star} from "lucide-react";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@baseModule/helpers/general/errors.ts";
+import {getToken} from "@baseModule/helpers/context/localStorage/authenticationStorage.ts";
 import type {
     ShopProductReview,
     ShopProductReviewsResponse,
@@ -103,8 +104,8 @@ function ReviewsSection({productId, slug}: {productId: string; slug: string}) {
             setTitle("");
             setComment("");
             await load();
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not submit review");
+        } catch (err) {
+            handleError(err, {context: "Reviews", showToast: true, fallbackMessage: "Could not submit review"});
         } finally {
             setSubmitting(false);
         }

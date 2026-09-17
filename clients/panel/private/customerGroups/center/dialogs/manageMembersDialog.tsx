@@ -1,11 +1,12 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import type {CustomerGroupMember} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroupMember/customerGroupMember.dto.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {handleError, isAbortError} from "@baseModule/helpers/general/errors.ts";
 import {ApiSelect} from "@coreModule/components/custom/apiSelect";
 import CustomAvatar from "@coreModule/components/custom/customAvatar.tsx";
 import {
@@ -19,9 +20,10 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
-import {SheetListPaginationFooter} from "@coreModule/components/viewEngine/sheetListPagination.tsx";
+import {SheetListPaginationFooter} from "@baseModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {IconTrash} from "@tabler/icons-react";
+import {getName} from "@baseModule/helpers/general/names.ts";
 
 const PAGE_SIZE = 5;
 
@@ -35,7 +37,7 @@ type Props = WithLanguageType & {
 
 function memberDisplayName(member: CustomerGroupMember): string {
     const user = member.user;
-    const full = [user?.name, user?.surname].filter(Boolean).join(" ");
+    const full = getName(user);
     return full || user?._id || "";
 }
 
@@ -85,11 +87,12 @@ function ManageMembersDialog({
             setTotal(res.data.total ?? 0);
             hasLoadedOnce.current = true;
         } catch (error) {
-            const isCanceled =
-                signal?.aborted ||
-                (error as {code?: string})?.code === "ERR_CANCELED";
-            if (isCanceled) return;
-            toast.error(String(resolveLanguageKeyRef.current("loadError") ?? "loadError"));
+            if (isAbortError(error, signal)) return;
+            handleError(error, {
+                context: "ManageMembersDialog",
+                showToast: true,
+                message: String(resolveLanguageKeyRef.current("loadError") ?? "loadError"),
+            });
             if (!hasLoadedOnce.current) {
                 setMembers([]);
                 setTotal(0);

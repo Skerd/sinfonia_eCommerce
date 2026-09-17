@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useState} from "react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 
 type UseCmsBlocksResult = {
     blocks: CmsBlock[];

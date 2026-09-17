@@ -1,15 +1,15 @@
 import {compose} from "redux";
 import {CirclePlus} from "lucide-react";
-import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
 import type {CreateCategoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/createCategory.form.type.ts";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
-import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
-import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
+import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
+import {useViewConfig} from "@baseModule/helpers/hooks/useViewConfig.ts";
+import FormViewRenderer from "@baseModule/components/viewEngine/FormViewRenderer.tsx";
 import {createCategoryFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/createCategory.form.validator.ts";
 
 const LIST_PATH = "/tenancy/systemSettings/categories";

@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import {IconCash, IconPackage, IconUser} from "@tabler/icons-react";
@@ -10,8 +10,9 @@ import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/ce
 import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import {getName} from "@baseModule/helpers/general/names.ts";
 
 function stateColor(state: string): string {
     switch (state) {
@@ -83,7 +84,7 @@ function PosOrderCard({
             {({entity: row, setAction}) => {
                 const colors = stateColor(row.state);
                 const customerDisplay = row.customerName
-                    || [row.customer?.name, row.customer?.surname].filter(Boolean).join(" ");
+                    || getName(row.customer);
                 return (
                     <>
                         <EntityCard.Header titlePath="name" title={row.name}>

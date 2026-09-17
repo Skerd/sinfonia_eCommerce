@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 import type {SessionBundle} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
@@ -9,6 +9,7 @@ import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import {subscribePosKillSwitch} from "@eCommerceModule/clients/panel/private/pos/posKillSwitchEvents.ts";
+import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
 
 export type PosReconciliation = {
     expectedCash: number;
@@ -28,7 +29,7 @@ type ResolveManagerPin = (
 ) => Promise<PosManagerAuth | null | undefined>;
 
 type Args = {
-    resolveLanguageKey: (key: string) => unknown;
+    resolveLanguageKey: ResolveLanguageKey;
     resolveManagerPin: ResolveManagerPin;
     resetManagerPin: () => void;
     onSessionClosed?: () => void;

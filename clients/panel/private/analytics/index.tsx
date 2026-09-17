@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {formatNumber} from "@coreModule/helpers/general";
+import {formatCurrency, formatNumber} from "@baseModule/helpers/general/numbers.ts";
 import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {compose} from "redux";
 import {
@@ -15,9 +15,9 @@ import type {AnalyticsOrdersResponse} from "armonia/src/modules/eCommerce/api/eC
 import type {AnalyticsInventoryResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.inventory.response.type.ts";
 import type {AnalyticsProductsResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.products.response.type.ts";
 import type {AnalyticsCartsResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.carts.response.type.ts";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import Header from "@coreModule/components/custom/header.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
@@ -59,7 +59,7 @@ const EMPTY_DATA: AnalyticsData = {
 };
 
 function formatMoney(value: number): string {
-    return value.toLocaleString(undefined, {style: "currency", currency: "EUR", maximumFractionDigits: 0});
+    return formatCurrency(value);
 }
 
 function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
@@ -169,7 +169,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.orderCount")}
-                            value={(data.revenue?.orderCount ?? totalOrders).toLocaleString()}
+                            value={formatNumber(data.revenue?.orderCount ?? totalOrders)}
                             subtitle={rk("kpi.orderCountDesc")}
                             icon={IconShoppingCart as never}
                         />
@@ -184,7 +184,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.abandonedCarts")}
-                            value={(data.carts?.abandonedCarts ?? 0).toLocaleString()}
+                            value={formatNumber(data.carts?.abandonedCarts ?? 0)}
                             subtitle={rk("kpi.abandonedCartsDesc")}
                             icon={IconUsers as never}
                             variant="warning"
@@ -195,7 +195,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.lowStock")}
-                            value={(data.inventory?.lowStockCount ?? 0).toLocaleString()}
+                            value={formatNumber(data.inventory?.lowStockCount ?? 0)}
                             subtitle={rk("kpi.lowStockDesc")}
                             icon={IconAlertTriangle as never}
                             variant="warning"
@@ -203,7 +203,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.outOfStock")}
-                            value={(data.inventory?.outOfStockCount ?? 0).toLocaleString()}
+                            value={formatNumber(data.inventory?.outOfStockCount ?? 0)}
                             subtitle={rk("kpi.outOfStockDesc")}
                             icon={IconPackage as never}
                             variant="danger"
@@ -211,7 +211,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.totalOnHand")}
-                            value={(data.inventory?.totalOnHand ?? 0).toLocaleString()}
+                            value={formatNumber(data.inventory?.totalOnHand ?? 0)}
                             subtitle={rk("kpi.totalOnHandDesc")}
                             icon={IconPackage as never}
                         />

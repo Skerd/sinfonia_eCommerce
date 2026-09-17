@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {
     Sheet,
     SheetContent,
@@ -10,8 +10,9 @@ import {
 } from "@coreModule/components/ui/sheet.tsx";
 import DisplayCard from "@coreModule/components/custom/displayValue/displayCard.tsx";
 import {IconLock, IconUser} from "@tabler/icons-react";
-import {FLOATING_SHEET_CONTENT_CLASS} from "@coreModule/components/viewEngine/sheetFloatingChrome.ts";
+import {FLOATING_SHEET_CONTENT_CLASS} from "@baseModule/components/viewEngine/sheet/widgets/sheetFloatingChrome.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
+import {getName} from "@baseModule/helpers/general/names.ts";
 
 export type PosManagerSheetViewOwnProps = {
     open: boolean;
@@ -22,7 +23,7 @@ export type PosManagerSheetViewOwnProps = {
 
 function managerDisplayName(manager: PosConfigManager | undefined, fallback: string): string {
     if (!manager) return fallback;
-    const full = [manager.name, manager.surname].filter(Boolean).join(" ").trim();
+    const full = getName(manager);
     return full || manager.username || fallback;
 }
 

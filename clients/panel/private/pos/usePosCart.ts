@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 import type {
     CartLine,
@@ -11,6 +11,7 @@ import {lineTotal} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts"
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
+import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
 
 type ResolveManagerPin = (
     needed: boolean,
@@ -20,7 +21,7 @@ type ResolveManagerPin = (
 type Args = {
     session: PosSession | null;
     config: PosConfig | null;
-    resolveLanguageKey: (key: string) => unknown;
+    resolveLanguageKey: ResolveLanguageKey;
     resolveManagerPin: ResolveManagerPin;
     isDiscountUnlocked: () => boolean;
     markDiscountUnlocked: () => void;

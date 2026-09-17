@@ -9,6 +9,7 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {formatNumber} from "@baseModule/helpers/general/numbers.ts";
 
 export type PosNumpadFieldProps = {
     value: number;
@@ -97,7 +98,7 @@ export default function PosNumpadField({
 
     const display =
         allowDecimal
-            ? toNumber(value).toLocaleString(undefined, {
+            ? formatNumber(toNumber(value), {
                   minimumFractionDigits: 0,
                   maximumFractionDigits: decimals,
               })

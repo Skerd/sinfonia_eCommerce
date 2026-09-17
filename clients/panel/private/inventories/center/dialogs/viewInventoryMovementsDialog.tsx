@@ -1,11 +1,11 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {compose} from "redux";
-import {toast} from "sonner";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import {handleError, isAbortError} from "@baseModule/helpers/general/errors.ts";
 import {
     Dialog,
     DialogContent,
@@ -17,11 +17,13 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
-import {SheetListPaginationFooter} from "@coreModule/components/viewEngine/sheetListPagination.tsx";
+import {SheetListPaginationFooter} from "@baseModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {buildFilterGroup, buildFilterRule} from "@coreModule/helpers/filter/filterUrl.ts";
+import {buildFilterGroup, buildFilterRule} from "@baseModule/helpers/filter/filterUrl.ts";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {IconInfoCircle} from "@tabler/icons-react";
+import {DATE_FORMATS, formatDate} from "@baseModule/helpers/general/dateTime.ts";
+import {getName} from "@baseModule/helpers/general/names.ts";
 
 const PAGE_SIZE = 10;
 
@@ -32,21 +34,7 @@ type Props = WithLanguageType & {
 };
 
 function formatWhen(value?: string | Date): string {
-    if (!value) return "";
-    const d = new Date(value);
-    return Number.isNaN(d.getTime()) ? String(value) : d.toLocaleString();
-}
-
-function formatDate(value?: string | Date): string {
-    if (!value) return "";
-    const d = new Date(value);
-    return Number.isNaN(d.getTime()) ? String(value) : d.toLocaleDateString();
-}
-
-function performerName(movement: InventoryMovement): string {
-    const p = movement.performedBy;
-    if (!p) return "";
-    return [p.name, p.surname].filter(Boolean).join(" ");
+    return formatDate(value, {format: DATE_FORMATS.dateTime});
 }
 
 function variantLabel(movement: InventoryMovement): string {
@@ -149,10 +137,12 @@ function ViewInventoryMovementsDialog({
                 setTotal(res.data.total ?? 0);
                 hasLoadedOnce.current = true;
             } catch (error) {
-                const isCanceled =
-                    signal?.aborted || (error as {code?: string})?.code === "ERR_CANCELED";
-                if (isCanceled) return;
-                toast.error(String(resolveLanguageKeyRef.current("loadError") ?? "loadError"));
+                if (isAbortError(error, signal)) return;
+                handleError(error, {
+                    context: "ViewInventoryMovementsDialog",
+                    showToast: true,
+                    message: String(resolveLanguageKeyRef.current("loadError") ?? "loadError"),
+                });
                 if (!hasLoadedOnce.current) {
                     setMovements([]);
                     setTotal(0);
@@ -237,7 +227,7 @@ function ViewInventoryMovementsDialog({
                                     const when = formatWhen(
                                         movement.occurredAt ?? movement.createdAt,
                                     );
-                                    const by = performerName(movement);
+                                    const by = getName(movement.performedBy);
                                     const receiptCount = movement.receipts?.length ?? 0;
                                     const subtitle = [when, by].filter(Boolean).join(" · ");
 
@@ -314,7 +304,7 @@ function ViewInventoryMovementsDialog({
                                                 />
                                                 <DetailCell
                                                     label={rk("expiryDate")}
-                                                    value={formatDate(movement.expiryDate)}
+                                                    value={formatDate(movement.expiryDate, {format: DATE_FORMATS.date})}
                                                 />
                                                 <DetailCell
                                                     label={rk("receipts")}

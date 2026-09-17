@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {toast} from "sonner";
+import {handleError} from "@baseModule/helpers/general/errors.ts";
 import {Minus, Plus, Trash2} from "lucide-react";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
@@ -26,8 +27,8 @@ function CartPage() {
             } else {
                 toast.error(result.message ?? "Gift card not redeemable");
             }
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not apply gift card");
+        } catch (err) {
+            handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply gift card"});
         } finally {
             setApplyingGiftCard(false);
         }
@@ -44,8 +45,8 @@ function CartPage() {
             } else {
                 toast.error(result.message ?? "Invalid discount code");
             }
-        } catch (err: any) {
-            toast.error(err?.response?.data?.message ?? "Could not apply discount");
+        } catch (err) {
+            handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply discount"});
         } finally {
             setApplying(false);
         }
@@ -97,7 +98,7 @@ function CartPage() {
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <button
-                                        onClick={() => updateItem(item._id, item.quantity - 1).catch(() => toast.error("Could not update quantity"))}
+                                        onClick={() => updateItem(item._id, item.quantity - 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
                                         className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream"
                                         aria-label="Decrease quantity"
                                     >
@@ -105,7 +106,7 @@ function CartPage() {
                                     </button>
                                     <span className="w-8 text-center text-sm">{item.quantity}</span>
                                     <button
-                                        onClick={() => updateItem(item._id, item.quantity + 1).catch(err => toast.error(err?.response?.data?.message ?? "Could not update quantity"))}
+                                        onClick={() => updateItem(item._id, item.quantity + 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
                                         className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream"
                                         aria-label="Increase quantity"
                                     >
@@ -114,7 +115,7 @@ function CartPage() {
                                 </div>
                                 <p className="w-20 text-right text-sm font-semibold">{formatMoney(item.totalPrice)}</p>
                                 <button
-                                    onClick={() => removeItem(item._id).catch(() => toast.error("Could not remove item"))}
+                                    onClick={() => removeItem(item._id).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove item"}))}
                                     className="text-shop-ink-faded transition-colors hover:text-red-500"
                                     aria-label="Remove item"
                                 >
@@ -144,7 +145,7 @@ function CartPage() {
                             <span>
                                 Gift card ({cart.appliedGiftCard?.code})
                                 <button
-                                    onClick={() => removeGiftCard().catch(() => toast.error("Could not remove gift card"))}
+                                    onClick={() => removeGiftCard().catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove gift card"}))}
                                     className="ml-2 text-xs text-shop-ink-faded underline"
                                 >
                                     remove

@@ -1,9 +1,9 @@
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
 import {compose} from "redux";
-import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {IconHistory} from "@tabler/icons-react";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 
 type Props = WithLanguageType & {

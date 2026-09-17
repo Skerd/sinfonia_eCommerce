@@ -1,5 +1,5 @@
 import {createContext, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
 import type {ShopConfigResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 
 type ShopConfig = ShopConfigResponse["data"];
