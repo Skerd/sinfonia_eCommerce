@@ -1,14 +1,14 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";
 import {IconPhoto} from "@tabler/icons-react";
 import CollectionSheetView from "@eCommerceModule/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/eCommerce/collections";

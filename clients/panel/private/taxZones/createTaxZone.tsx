@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@baseModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createTaxZoneFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/createTaxZone.form.validator.ts";
 import type {CreateTaxZoneFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.schema-def.ts";
 

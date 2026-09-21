@@ -65,7 +65,7 @@ import PosTill from "@eCommerceModule/clients/panel/private/pos/index.tsx";
 import AllFiscalConfigs from "@eCommerceModule/clients/panel/private/fiscalConfigs/index.tsx";
 import CreateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx";
 import EditFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx";
-import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/clients/panel/moduleContributions/routeConfigContribution.types.ts";
+import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/helpers/types/routeConfigContribution.types.ts";
 
 function safeDecode(value: string | null): string | undefined {
     if (value == null || value === "") return undefined;

@@ -1,10 +1,10 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@baseModule/components/entityPage/createGenericEditPage.tsx";
-import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/formObjectIdChips.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
+import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/inputs/objectIdChipsInput.tsx";
 import {editPosConfigFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/editPosConfig.form.validator.ts";
 import type {EditPosConfigFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.schema-def.ts";
 import type {PosConfig, PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
-import {getName} from "@baseModule/helpers/general/names.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 const posConfigChipLabelState = {
     loadedId: null as string | null,

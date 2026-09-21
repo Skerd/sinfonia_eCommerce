@@ -1,7 +1,7 @@
-import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {compose} from "redux";
-import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
 import {LoaderCircle, PackageMinus, PackagePlus} from "lucide-react";
 import {
@@ -18,7 +18,7 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 
 function bindAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey, prefix: "restock" | "deduct"): ResolveLanguageKeyImpl {

@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import {CheckCircleIcon, StarIcon} from "lucide-react";
@@ -8,11 +8,11 @@ import {formatDistanceToNow} from "date-fns";
 import {Avatar, AvatarFallback, AvatarImage} from "@coreModule/components/ui/avatar.tsx";
 import ProductReviewSheetView from "@eCommerceModule/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-import {getName} from "@baseModule/helpers/general/names.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 function Stars({value}: {value: number}) {
     return (

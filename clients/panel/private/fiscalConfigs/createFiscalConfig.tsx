@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@baseModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createFiscalConfigFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/createFiscalConfig.form.validator.ts";
 import type {CreateFiscalConfigFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/fiscalConfig.schema-def.ts";
 

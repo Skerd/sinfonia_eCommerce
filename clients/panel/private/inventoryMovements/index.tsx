@@ -1,7 +1,7 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@baseModule/components/entityPage/entityListPage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import InventoryMovementCard from "./center/cardView/inventoryMovementCard.tsx";

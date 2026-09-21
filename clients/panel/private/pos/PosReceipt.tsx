@@ -8,7 +8,7 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
-import {DATE_FORMATS, formatDate} from "@baseModule/helpers/general/dateTime.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 
 type Props = {
     open: boolean;

@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@baseModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createShippingZoneFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/createShippingZone.form.validator.ts";
 import type {CreateShippingZoneFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/shippingZone.schema-def.ts";
 

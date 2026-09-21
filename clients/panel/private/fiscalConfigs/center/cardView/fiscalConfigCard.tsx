@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {FiscalConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/fiscalConfig.dto.ts";
 import {IconBuildingStore, IconCertificate, IconPower, IconReceipt} from "@tabler/icons-react";
 import FiscalConfigSheetView from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx";
@@ -9,9 +9,9 @@ import ActivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalC
 import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/actions/deactivateFiscalConfig.tsx";
 import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
 import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/fiscalconfigs";
@@ -105,21 +105,21 @@ function FiscalConfigCard({
                         <DeactivateFiscalConfig entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconReceipt}
                             label={resolveLanguageKey("nipt")}
                             tooltip={resolveLanguageKey("nipt")}
                             path="nipt"
                             value={row.nipt}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconBuildingStore}
                             label={resolveLanguageKey("tcrCode")}
                             tooltip={resolveLanguageKey("tcrCode")}
                             path="tcrCode"
                             value={row.tcrCode}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCertificate}
                             label={resolveLanguageKey("certificate")}
                             tooltip={resolveLanguageKey("certificate")}
@@ -127,7 +127,7 @@ function FiscalConfigCard({
                             type="boolean"
                             value={row.hasCertificate}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}
                             tooltip={resolveLanguageKey("active")}

@@ -1,6 +1,6 @@
 import {createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {getToken} from "@baseModule/helpers/context/localStorage/authenticationStorage.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 
 export type ShopCartItem = {
     _id: string;

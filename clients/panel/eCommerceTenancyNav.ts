@@ -1,7 +1,7 @@
 import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
 import {IconCategory2} from "@tabler/icons-react";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import type {NavSubCollapsible} from "@baseModule/helpers/types/sidebarNav.types.ts";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
 
 /** Nested under Tenancy → Configurations (owned by eCommerce). */
 export function buildECommerceTenancySettingsSubCollapsible(

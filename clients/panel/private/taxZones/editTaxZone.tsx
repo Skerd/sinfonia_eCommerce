@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@baseModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editTaxZoneFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/editTaxZone.form.validator.ts";
 import type {EditTaxZoneFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.schema-def.ts";
 import type {TaxZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.dto.ts";

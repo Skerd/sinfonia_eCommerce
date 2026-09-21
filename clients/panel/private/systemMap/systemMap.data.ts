@@ -1,4 +1,4 @@
-import type {SystemMapDataset} from "@coreModule/components/custom/systemMap/systemMap.types.ts";
+import type {SystemMapDataset} from "@coreModule/components/customUnchecked/systemMap/systemMap.types.ts";
 
 /**
  * Hand-curated System Map for the eCommerce (catalog) module only.

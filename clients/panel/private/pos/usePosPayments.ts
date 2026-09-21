@@ -1,8 +1,8 @@
 import {useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction} from "react";
 import {toast} from "sonner";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {isAbortError} from "@baseModule/helpers/general/errors.ts";
-import {generateUUID} from "@baseModule/helpers/general/uuid.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {isAbortError} from "@coreModule/helpers/general/errors.ts";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 import {
     type CartLine,
@@ -14,7 +14,7 @@ import {
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 type ResolveManagerPin = (
     needed: boolean,

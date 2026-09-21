@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 import {IconCurrencyDollar, IconTag} from "@tabler/icons-react";
 import ReturnRequestSheetView from "@eCommerceModule/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx";
@@ -9,9 +9,9 @@ import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnR
 import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
 import ApproveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx";
 import RejectReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/eCommerce/returnrequests";
@@ -103,7 +103,7 @@ function ReturnRequestCard({
                         <RejectReturnRequest entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("status")}
                             tooltip={resolveLanguageKey("status")}
@@ -112,7 +112,7 @@ function ReturnRequestCard({
                             languageKeyCategory="returnStatus"
                             value={row.status}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("refundAmount")}
                             tooltip={resolveLanguageKey("refundAmount")}

@@ -1,10 +1,10 @@
 import {useCallback, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosPinManagerOption} from "@eCommerceModule/clients/panel/private/pos/PosPinDialog.tsx";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import {getName} from "@baseModule/helpers/general/names.ts";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 export type PosManagerAuth = {
     pin: string;

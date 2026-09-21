@@ -1,4 +1,4 @@
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {

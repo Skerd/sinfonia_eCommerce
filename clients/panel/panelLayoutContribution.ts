@@ -1,4 +1,4 @@
-import type {PanelLayoutContribution} from "@coreModule/clients/panel/moduleContributions/panelLayoutContribution.types.ts";
+import type {PanelLayoutContribution} from "@coreModule/helpers/types/panelLayoutContribution.types.ts";
 
 const eCommercePanelLayoutContribution: PanelLayoutContribution = {
     id: "eCommerce",

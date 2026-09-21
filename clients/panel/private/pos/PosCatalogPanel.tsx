@@ -1,6 +1,6 @@
 import type {RefObject} from "react";
 import {Check, ScanBarcode, Search, ShoppingBag} from "lucide-react";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {

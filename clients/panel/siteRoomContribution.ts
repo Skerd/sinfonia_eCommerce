@@ -1,4 +1,4 @@
-import type {SiteRoomContribution} from "@coreModule/clients/panel/moduleContributions/siteRoomContribution.types.ts";
+import type {SiteRoomContribution} from "@coreModule/helpers/types/siteRoomContribution.types.ts";
 
 const eCommerceSiteRoomContribution: SiteRoomContribution = {
     id: "eCommerce",

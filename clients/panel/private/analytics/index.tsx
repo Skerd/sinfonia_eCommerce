@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {formatCurrency, formatNumber} from "@baseModule/helpers/general/numbers.ts";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {compose} from "redux";
 import {
     Bar,
@@ -15,12 +15,12 @@ import type {AnalyticsOrdersResponse} from "armonia/src/modules/eCommerce/api/eC
 import type {AnalyticsInventoryResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.inventory.response.type.ts";
 import type {AnalyticsProductsResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.products.response.type.ts";
 import type {AnalyticsCartsResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.carts.response.type.ts";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import Header from "@coreModule/components/custom/header.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Tabs, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
@@ -30,7 +30,6 @@ import {
     ChartTooltipContent,
     type ChartConfig,
 } from "@coreModule/components/ui/chart.tsx";
-import {chartTooltipValueFormatter} from "@coreModule/components/custom/chartTooltipFormatter.tsx";
 import {
     IconCoin,
     IconPackage,
@@ -163,7 +162,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.totalRevenue")}
                             value={formatMoney(data.revenue?.totalRevenue ?? 0)}
                             subtitle={rk("kpi.totalRevenueDesc")}
-                            icon={IconCoin as never}
+                            icon={IconCoin}
                             variant="primary"
                         />
                         <KpiCard
@@ -171,14 +170,14 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.orderCount")}
                             value={formatNumber(data.revenue?.orderCount ?? totalOrders)}
                             subtitle={rk("kpi.orderCountDesc")}
-                            icon={IconShoppingCart as never}
+                            icon={IconShoppingCart}
                         />
                         <KpiCard
                             compact
                             title={rk("kpi.averageOrderValue")}
                             value={formatMoney(data.revenue?.averageOrderValue ?? 0)}
                             subtitle={rk("kpi.averageOrderValueDesc")}
-                            icon={IconTrendingUp as never}
+                            icon={IconTrendingUp}
                             variant="success"
                         />
                         <KpiCard
@@ -186,7 +185,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.abandonedCarts")}
                             value={formatNumber(data.carts?.abandonedCarts ?? 0)}
                             subtitle={rk("kpi.abandonedCartsDesc")}
-                            icon={IconUsers as never}
+                            icon={IconUsers}
                             variant="warning"
                         />
                     </div>
@@ -197,7 +196,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.lowStock")}
                             value={formatNumber(data.inventory?.lowStockCount ?? 0)}
                             subtitle={rk("kpi.lowStockDesc")}
-                            icon={IconAlertTriangle as never}
+                            icon={IconAlertTriangle}
                             variant="warning"
                         />
                         <KpiCard
@@ -205,7 +204,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.outOfStock")}
                             value={formatNumber(data.inventory?.outOfStockCount ?? 0)}
                             subtitle={rk("kpi.outOfStockDesc")}
-                            icon={IconPackage as never}
+                            icon={IconPackage}
                             variant="danger"
                         />
                         <KpiCard
@@ -213,14 +212,14 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             title={rk("kpi.totalOnHand")}
                             value={formatNumber(data.inventory?.totalOnHand ?? 0)}
                             subtitle={rk("kpi.totalOnHandDesc")}
-                            icon={IconPackage as never}
+                            icon={IconPackage}
                         />
                         <KpiCard
                             compact
                             title={rk("kpi.activeProducts")}
                             value={formatNumber(totalProducts)}
                             subtitle={rk("kpi.activeProductsDesc")}
-                            icon={IconPackage as never}
+                            icon={IconPackage}
                         />
                     </div>
 
@@ -237,9 +236,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                                     <ChartTooltip
                                         cursor={{fill: "var(--muted)", fillOpacity: 0.4}}
                                         content={
-                                            <ChartTooltipContent
-                                                formatter={chartTooltipValueFormatter(chartConfig, formatMoney)}
-                                            />
+                                            <ChartTooltipContent valueFormatter={formatMoney} />
                                         }
                                     />
                                     <Bar dataKey="revenue" fill="var(--color-revenue)" radius={[4, 4, 0, 0]} />

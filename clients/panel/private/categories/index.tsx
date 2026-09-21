@@ -1,21 +1,21 @@
 import {compose} from "redux";
 import {useRef, useState} from "react";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Plus} from "lucide-react";
 import {Button, ButtonTitle} from "@coreModule/components/ui/button.tsx";
-import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useNavigate} from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import CategoryCard from "@eCommerceModule/clients/panel/private/categories/center/cardView/categoryCard.tsx";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import type {DeletedData, TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";
+import CardAndTableView, {type EntityListApi} from "@coreModule/components/entityPage/list/cardAndTableView.tsx";
 import CategorySheetView from "@eCommerceModule/clients/panel/private/categories/center/sheetView/categorySheetView.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
+import ActionMenu from "@coreModule/components/viewEngine/widgets/actions/menu/actionMenu.tsx";
+import DeleteAction from "@coreModule/components/viewEngine/widgets/actions/deleteAction.tsx";
+import RestoreAction from "@coreModule/components/viewEngine/widgets/actions/restoreAction.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/categories";
 

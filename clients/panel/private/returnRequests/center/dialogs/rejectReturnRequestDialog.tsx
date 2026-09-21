@@ -1,8 +1,8 @@
 import {useImperativeHandle, useState} from "react";
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";

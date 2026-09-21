@@ -1,13 +1,13 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import {IconCategory2, IconHash, IconTag} from "@tabler/icons-react";
 import CategorySheetView from "@eCommerceModule/clients/panel/private/categories/center/sheetView/categorySheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/categories";
@@ -64,21 +64,21 @@ function CategoryCard({
                 <>
                     <EntityCard.Header titlePath="name" title={entity.name} />
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("slug")}
                             tooltip={resolveLanguageKey("slug")}
                             path="slug"
                             value={entity.slug}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCategory2}
                             label={resolveLanguageKey("parentCategory")}
                             tooltip={resolveLanguageKey("parentCategory")}
                             path="parent.name"
                             value={entity.parent?.name}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("order")}
                             tooltip={resolveLanguageKey("order")}

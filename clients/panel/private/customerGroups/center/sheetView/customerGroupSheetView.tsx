@@ -1,12 +1,12 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import {useViewConfig} from "@baseModule/helpers/hooks/useViewConfig.ts";
-import SheetViewRenderer from "@baseModule/components/viewEngine/SheetViewRenderer.tsx";
+import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
+import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";

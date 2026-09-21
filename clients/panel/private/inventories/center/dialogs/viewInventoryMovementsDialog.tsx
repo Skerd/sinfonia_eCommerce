@@ -1,11 +1,11 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {handleError, isAbortError} from "@baseModule/helpers/general/errors.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError, isAbortError} from "@coreModule/helpers/general/errors.ts";
 import {
     Dialog,
     DialogContent,
@@ -16,14 +16,14 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {SheetListPaginationFooter} from "@baseModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {SheetListPaginationFooter} from "@coreModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {buildFilterGroup, buildFilterRule} from "@baseModule/helpers/filter/filterUrl.ts";
+import {buildFilterGroup, buildFilterRule} from "@coreModule/helpers/filter/filterUrl.ts";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {IconInfoCircle} from "@tabler/icons-react";
-import {DATE_FORMATS, formatDate} from "@baseModule/helpers/general/dateTime.ts";
-import {getName} from "@baseModule/helpers/general/names.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 const PAGE_SIZE = 10;
 

@@ -1,13 +1,13 @@
 import {Toaster} from "sonner";
 import {Provider} from "react-redux";
-import {store} from "@baseModule/helpers/redux/store/generalStore.ts";
-import {LanguageProvider} from "@baseModule/helpers/context/providers/language-provider.tsx";
+import {store} from "@coreModule/helpers/redux/store/generalStore.ts";
+import {LanguageProvider} from "@coreModule/helpers/context/providers/language-provider.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ErrorBoundary from "@coreModule/components/custom/errorBoundary.tsx";
+import ErrorBoundary from "@coreModule/components/custom/errors/errorBoundary.tsx";
 import {lazy, Suspense} from "react";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {useIsMobile} from "@baseModule/helpers/hooks/useMobile.tsx";
-import {ensureDeviceId} from "@baseModule/helpers/context/localStorage/authenticationStorage.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
+import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 import ShopLayout from "@eCommerceModule/clients/client/public/shared/shopLayout.tsx";
 
 const HomePage = lazy(() => import("@eCommerceModule/clients/client/public/home/index.tsx"));

@@ -17,7 +17,7 @@ import {
 } from "@dnd-kit/sortable";
 import {CSS} from "@dnd-kit/utilities";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {
     Dialog,
     DialogContent,
@@ -27,11 +27,11 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {IconGripVertical} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {toast} from "sonner";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 type ReorderCmsBlocksModalProps = {
     open: boolean;

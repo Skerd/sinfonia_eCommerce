@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import ShopProductCard from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
 import type {
     ShopProductsResponse,

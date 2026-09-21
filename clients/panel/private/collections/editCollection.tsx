@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@baseModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editCollectionFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/editCollection.form.validator.ts";
 import type {EditCollectionFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.schema-def.ts";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";

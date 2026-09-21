@@ -1,6 +1,6 @@
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import {formatCurrency} from "@baseModule/helpers/general/numbers.ts";
+import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 
 export type CatalogVariant = {
     _id: string;

@@ -1,4 +1,4 @@
-import type {AuthPanelContribution} from "@coreModule/clients/panel/moduleContributions/authPanelContribution.types.ts";
+import type {AuthPanelContribution} from "@coreModule/helpers/types/authPanelContribution.types.ts";
 import ResetPosManagerPinForm from "@eCommerceModule/clients/panel/public/auth/resetPosManagerPin.form.tsx";
 
 const eCommerceAuthPanelContribution: AuthPanelContribution = {

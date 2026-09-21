@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 import {IconTag, IconTruck} from "@tabler/icons-react";
 import FulfillmentSheetView from "@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx";
@@ -11,9 +11,9 @@ import MarkFailedFulfillment from "@eCommerceModule/clients/panel/private/fulfil
 import ShipFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx";
 import MarkDeliveredFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx";
 import MarkFailedFulfillmentDialog from "@eCommerceModule/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/eCommerce/fulfillments";
@@ -107,7 +107,7 @@ function FulfillmentCard({
                         <MarkFailedFulfillment entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("status")}
                             tooltip={resolveLanguageKey("status")}
@@ -116,7 +116,7 @@ function FulfillmentCard({
                             languageKeyCategory="fulfillmentStatus"
                             value={row.status}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTruck}
                             label={resolveLanguageKey("carrier")}
                             tooltip={resolveLanguageKey("carrier")}

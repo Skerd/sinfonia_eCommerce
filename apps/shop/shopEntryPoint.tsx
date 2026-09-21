@@ -1,7 +1,7 @@
 import "./index.css";
 import ShopApp from "./shopApp.tsx";
 import {createRoot} from "react-dom/client";
-import {env} from "@baseModule/helpers/environment/env.ts";
+import {env} from "@coreModule/helpers/environment/env.ts";
 
 void env;
 

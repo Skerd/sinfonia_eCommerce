@@ -3,9 +3,9 @@ import {Link, useNavigate} from "react-router-dom";
 import {toast} from "sonner";
 import {loadStripe, type Stripe as StripeJs} from "@stripe/stripe-js";
 import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {handleError} from "@baseModule/helpers/general/errors.ts";
-import {generateUUID} from "@baseModule/helpers/general/uuid.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 

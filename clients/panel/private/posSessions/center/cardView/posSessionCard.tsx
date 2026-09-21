@@ -1,13 +1,13 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import {IconActivity, IconCash, IconShoppingCart} from "@tabler/icons-react";
 import PosSessionSheetView from "@eCommerceModule/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 type PosSessionCardProps = WithLanguageType & {
@@ -58,7 +58,7 @@ function PosSessionCard({
                 <>
                     <EntityCard.Header titlePath="name" title={row.name} />
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconActivity}
                             label={resolveLanguageKey("state")}
                             tooltip={resolveLanguageKey("state")}
@@ -67,7 +67,7 @@ function PosSessionCard({
                             languageKeyCategory="sessionState"
                             value={row.state}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconShoppingCart}
                             label={resolveLanguageKey("orderCount")}
                             tooltip={resolveLanguageKey("orderCount")}
@@ -75,7 +75,7 @@ function PosSessionCard({
                             type="number"
                             value={row.orderCount}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCash}
                             label={resolveLanguageKey("totalSales")}
                             tooltip={resolveLanguageKey("totalSales")}

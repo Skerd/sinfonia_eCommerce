@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 import {IconHash, IconLayout, IconPower} from "@tabler/icons-react";
 import CmsBlockSheetView from "@eCommerceModule/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx";
@@ -9,9 +9,9 @@ import ActivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/c
 import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/deactivateCmsBlock.tsx";
 import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
 import DeactivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/cmsblocks";
@@ -105,7 +105,7 @@ function CmsBlockCard({
                         <DeactivateCmsBlock entity={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLayout}
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
@@ -114,7 +114,7 @@ function CmsBlockCard({
                             languageKeyCategory="blockType"
                             value={entity.type}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("position")}
                             tooltip={resolveLanguageKey("position")}
@@ -122,7 +122,7 @@ function CmsBlockCard({
                             type="number"
                             value={entity.position}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}
                             tooltip={resolveLanguageKey("active")}

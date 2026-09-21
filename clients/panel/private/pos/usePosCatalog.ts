@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useRef, useState, type RefObject} from "react";
 import {toast} from "sonner";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {
     CatalogCategory,
     CatalogProduct,
@@ -8,7 +8,7 @@ import type {
 } from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 type Args = {
     configId: string | undefined;

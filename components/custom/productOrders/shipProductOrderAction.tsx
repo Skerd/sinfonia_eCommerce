@@ -1,7 +1,7 @@
-import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {compose} from "redux";
-import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
 import {LoaderCircle, Truck} from "lucide-react";
 import {
@@ -17,7 +17,7 @@ import {
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@baseModule/helpers/hooks/useAccess.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ShipProductOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/shipProductOrder.form.validator.ts";
 

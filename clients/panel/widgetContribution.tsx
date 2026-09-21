@@ -1,5 +1,5 @@
 import {lazy} from "react";
-import type {WidgetContribution} from "@coreModule/clients/panel/moduleContributions/widgetContribution.types.ts";
+import type {WidgetContribution} from "@coreModule/helpers/types/widgetContribution.types.ts";
 
 const CategorySheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/categories/center/sheetView/categorySheetView.tsx"),

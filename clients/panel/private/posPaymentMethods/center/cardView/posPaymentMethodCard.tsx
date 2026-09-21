@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.dto.ts";
 import {IconCreditCard, IconHash, IconPower} from "@tabler/icons-react";
 import PosPaymentMethodSheetView from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx";
@@ -11,9 +11,9 @@ import TestPosTerminalConnection from "@eCommerceModule/clients/panel/private/po
 import ActivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx";
 import DeactivatePosPaymentMethodDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/deactivatePosPaymentMethodDialog.tsx";
 import TestPosTerminalConnectionDialog from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/pospaymentmethods";
@@ -115,7 +115,7 @@ function PosPaymentMethodCard({
                         <DeactivatePosPaymentMethod entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCreditCard}
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
@@ -124,7 +124,7 @@ function PosPaymentMethodCard({
                             languageKeyCategory="paymentType"
                             value={row.type}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("sequence")}
                             tooltip={resolveLanguageKey("sequence")}
@@ -132,7 +132,7 @@ function PosPaymentMethodCard({
                             type="number"
                             value={row.sequence}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}
                             tooltip={resolveLanguageKey("active")}

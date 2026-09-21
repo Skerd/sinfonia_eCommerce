@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PricingRule} from "armonia/src/modules/eCommerce/api/eCommerce/private/pricingRule/pricingRule.dto.ts";
 import {IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
 import PricingRuleSheetView from "@eCommerceModule/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx";
@@ -9,9 +9,9 @@ import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingR
 import DeactivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/deactivatePricingRule.tsx";
 import ActivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx";
 import DeactivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/pricingrules";
@@ -109,7 +109,7 @@ function PricingRuleCard({
                         <DeactivatePricingRule entity={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
@@ -118,7 +118,7 @@ function PricingRuleCard({
                             languageKeyCategory="pricingRuleType"
                             value={entity.type}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPercentage}
                             label={resolveLanguageKey("value")}
                             tooltip={resolveLanguageKey("value")}
@@ -126,7 +126,7 @@ function PricingRuleCard({
                             type="number"
                             value={entity.value}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("priority")}
                             tooltip={resolveLanguageKey("priority")}
@@ -134,7 +134,7 @@ function PricingRuleCard({
                             type="number"
                             value={entity.priority}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}
                             tooltip={resolveLanguageKey("active")}

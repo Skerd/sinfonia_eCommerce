@@ -1,7 +1,7 @@
 import {ShoppingBag, Boxes, Warehouse, LayoutGrid, BarChart3, PackageCheck, Undo2, MapPin, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight} from "lucide-react";
-import type {SidebarContribution} from "@coreModule/clients/panel/moduleContributions/sidebarContribution.types.ts";
-import type {NavGroup, NavItem} from "@baseModule/helpers/types/sidebarNav.types.ts";
-import type {ResolveLanguageKey} from "@baseModule/helpers/hocs/withLanguage.tsx";
+import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
+import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 const eCommerceSidebarContribution: SidebarContribution = {
     id: "eCommerce",

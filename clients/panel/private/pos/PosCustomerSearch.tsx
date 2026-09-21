@@ -1,8 +1,8 @@
 import {useEffect, useRef, useState} from "react";
 import {UserRound, X} from "lucide-react";
 import {Input} from "@coreModule/components/ui/input.tsx";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {useOutsideClick} from "@baseModule/helpers/hooks/useOutsideClick.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosCustomerHit} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 

@@ -1,8 +1,8 @@
 import {useCallback, useMemo, useRef} from "react";
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {usePosKeyboard} from "@eCommerceModule/clients/panel/private/pos/usePosKeyboard.ts";
 import PosConfigPicker from "@eCommerceModule/clients/panel/private/pos/PosConfigPicker.tsx";
 import PosOpenSessionDialog from "@eCommerceModule/clients/panel/private/pos/PosOpenSessionDialog.tsx";

@@ -1,6 +1,6 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
 import {IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
 import DiscountSheetView from "@eCommerceModule/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx";
@@ -9,9 +9,9 @@ import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/c
 import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
 import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
 import DeactivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
-import type {WithAxiosLifecycleRef} from "@baseModule/helpers/hocs/withAxios.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/discounts";
@@ -109,14 +109,14 @@ function DiscountCard({
                         <DeactivateDiscount entity={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("code")}
                             tooltip={resolveLanguageKey("code")}
                             path="code"
                             value={entity.code}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPercentage}
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
@@ -125,7 +125,7 @@ function DiscountCard({
                             languageKeyCategory="discountType"
                             value={entity.type}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("value")}
                             tooltip={resolveLanguageKey("value")}
@@ -133,7 +133,7 @@ function DiscountCard({
                             type="number"
                             value={entity.value}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}
                             tooltip={resolveLanguageKey("active")}

@@ -1,5 +1,5 @@
 import {Printer, Undo2} from "lucide-react";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,

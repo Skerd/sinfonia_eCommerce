@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {useCmsBlocks} from "@eCommerceModule/components/cms/useCmsBlocks.ts";
 import CmsBlockRenderer from "@eCommerceModule/components/cms/CmsBlockRenderer.tsx";
 import ShopProductCard from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";

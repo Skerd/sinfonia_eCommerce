@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {toast} from "sonner";
-import {handleError} from "@baseModule/helpers/general/errors.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {Minus, Plus, Trash2} from "lucide-react";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";

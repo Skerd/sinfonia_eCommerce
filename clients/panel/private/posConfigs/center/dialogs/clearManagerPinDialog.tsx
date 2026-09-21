@@ -1,9 +1,9 @@
 import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withAxios, {WithAxiosType} from "@baseModule/helpers/hocs/withAxios.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {

@@ -1,14 +1,14 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import withLanguage, {WithLanguageType} from "@baseModule/helpers/hocs/withLanguage.tsx";
-import withDebug from "@baseModule/helpers/hocs/withDebug.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import type {CustomerGroupMember} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroupMember/customerGroupMember.dto.ts";
-import apiClient from "@baseModule/helpers/apiClient/apiClient.ts";
-import {handleError, isAbortError} from "@baseModule/helpers/general/errors.ts";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
-import CustomAvatar from "@coreModule/components/custom/customAvatar.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError, isAbortError} from "@coreModule/helpers/general/errors.ts";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
+import UserAvatar from "@coreModule/components/custom/avatar/userAvatar.tsx";
 import {
     Dialog,
     DialogContent,
@@ -19,11 +19,11 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {SheetListPaginationFooter} from "@baseModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {SheetListPaginationFooter} from "@coreModule/components/viewEngine/sheet/widgets/sheetListPagination.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {IconTrash} from "@tabler/icons-react";
-import {getName} from "@baseModule/helpers/general/names.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 const PAGE_SIZE = 5;
 
@@ -259,7 +259,7 @@ function ManageMembersDialog({
                                             className="flex items-center justify-between gap-3 rounded-md border px-3 py-2"
                                         >
                                             <div className="flex min-w-0 items-center gap-3">
-                                                <CustomAvatar
+                                                <UserAvatar
                                                     user={member.user}
                                                     avatarClassName="size-8 shrink-0"
                                                 />
