@@ -2,6 +2,9 @@ import {ShoppingBag, Boxes, Warehouse, LayoutGrid, BarChart3, PackageCheck, Undo
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {registerECommerceRefSelects} from "armonia/src/modules/eCommerce/database/filter/refSelect.ts";
+
+registerECommerceRefSelects();
 
 const eCommerceSidebarContribution: SidebarContribution = {
     id: "eCommerce",
