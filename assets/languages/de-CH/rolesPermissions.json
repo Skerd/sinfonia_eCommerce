@@ -12,6 +12,7 @@
     "Fulfillments": "Fulfillments",
     "Inventories": "Inventories",
     "Inventorymovements": "Inventory movements",
+    "Odoocataloglinks": "Odoo-Katalogverknüpfungen",
     "Poscompanyposlocks": "POS firma locks",
     "Posconfigs": "POS configs",
     "Posorders": "POS aufträge",
@@ -341,6 +342,18 @@
       "variant": "Variant",
       "warehouse": "Warehouse",
       "company": "Firma"
+    },
+    "Odoocataloglinks": {
+      "createdAt": "Erstellt am",
+      "createdBy": "Erstellt von",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von",
+      "localId": "Lokaler Datensatz",
+      "localModel": "Lokales Modell",
+      "odooId": "Odoo-ID",
+      "odooModel": "Odoo-Modell",
+      "odoocataloglinks": "Odoo-Katalogverknüpfungen",
+      "updatedAt": "Aktualisiert am"
     },
     "Poscompanyposlocks": {
       "company": "Firma",

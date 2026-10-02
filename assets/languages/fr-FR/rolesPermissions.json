@@ -12,6 +12,7 @@
     "Fulfillments": "Réalisations",
     "Inventories": "Inventaires",
     "Inventorymovements": "Mouvements de stocks",
+    "Odoocataloglinks": "Liens de catalogue Odoo",
     "Poscompanyposlocks": "Serrures d'entreprise POS",
     "Posconfigs": "Configurations de point de vente",
     "Posorders": "Commandes au point de vente",
@@ -341,6 +342,18 @@
       "variant": "Variante",
       "warehouse": "Entrepôt",
       "company": "Entreprise"
+    },
+    "Odoocataloglinks": {
+      "createdAt": "Créé le",
+      "createdBy": "Créé par",
+      "deletedAt": "Supprimé le",
+      "deletedBy": "Supprimé par",
+      "localId": "Enregistrement local",
+      "localModel": "Modèle local",
+      "odooId": "ID Odoo",
+      "odooModel": "Modèle Odoo",
+      "odoocataloglinks": "Liens de catalogue Odoo",
+      "updatedAt": "Mis à jour le"
     },
     "Poscompanyposlocks": {
       "company": "Entreprise",

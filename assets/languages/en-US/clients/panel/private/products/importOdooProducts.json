@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/importOdooProducts.tsx",
+  "title": "Import products from Odoo",
+  "description": "Pull the POS catalog into this company's ecommerce products. Re-running updates the same records.",
+  "durationWarning": "A large catalog can take several minutes. Keep this page open until the import finishes.",
+  "stockOverwriteWarning": "Re-running replaces warehouse on-hand quantity with Odoo's quantity. Sales recorded here since the last import are overwritten.",
+  "submit": "Import",
+  "backToProducts": "Back to products",
+  "form": {
+    "urlLabel": "Odoo URL",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Database",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "User login",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "API key",
+    "apiKeyPlaceholder": "Odoo API key",
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Select a warehouse",
+    "posOnlyLabel": "POS products only",
+    "posOnlyDescription": "Import products marked available in POS.",
+    "dryRunLabel": "Dry run",
+    "dryRunDescription": "Authenticate and count records without writing."
+  },
+  "result": {
+    "title": "Import finished",
+    "dryRunTitle": "Dry run finished",
+    "templates": "Templates",
+    "categories": "Categories",
+    "attributes": "Attributes",
+    "products": "Products",
+    "variants": "Variants",
+    "inventory": "Inventory",
+    "created": "Created",
+    "updated": "Updated",
+    "skipped": "Skipped"
+  },
+  "axios": {
+    "start": {
+      "title": "Importing from Odoo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Odoo import finished",
+      "time": 4000
+    },
+    "error": {
+      "title": "Odoo import failed",
+      "time": 4000
+    }
+  }
+}

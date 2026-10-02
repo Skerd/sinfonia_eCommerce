@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/importOdooProducts.tsx",
+  "title": "Produkte aus Odoo importieren",
+  "description": "Den POS-Katalog in die Ecommerce-Produkte dieser Firma übernehmen. Ein erneuter Lauf aktualisiert dieselben Datensätze.",
+  "durationWarning": "Ein großer Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
+  "stockOverwriteWarning": "Ein erneuter Lauf ersetzt die Lagerbestandmenge durch die Menge aus Odoo. Verkäufe seit dem letzten Import werden überschrieben.",
+  "submit": "Importieren",
+  "backToProducts": "Zurück zu Produkten",
+  "form": {
+    "urlLabel": "Odoo-URL",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Datenbank",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Benutzerlogin",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "API-Schlüssel",
+    "apiKeyPlaceholder": "Odoo-API-Schlüssel",
+    "warehouseLabel": "Lager",
+    "warehousePlaceholder": "Lager wählen",
+    "posOnlyLabel": "Nur POS-Produkte",
+    "posOnlyDescription": "Produkte importieren, die im POS verfügbar sind.",
+    "dryRunLabel": "Probelauf",
+    "dryRunDescription": "Anmelden und zählen, ohne zu schreiben."
+  },
+  "result": {
+    "title": "Import abgeschlossen",
+    "dryRunTitle": "Probelauf abgeschlossen",
+    "templates": "Vorlagen",
+    "categories": "Kategorien",
+    "attributes": "Attribute",
+    "products": "Produkte",
+    "variants": "Varianten",
+    "inventory": "Bestand",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "skipped": "Übersprungen"
+  },
+  "axios": {
+    "start": {
+      "title": "Import aus Odoo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Odoo-Import abgeschlossen",
+      "time": 4000
+    },
+    "error": {
+      "title": "Odoo-Import fehlgeschlagen",
+      "time": 4000
+    }
+  }
+}

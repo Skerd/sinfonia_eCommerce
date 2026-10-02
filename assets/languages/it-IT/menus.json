@@ -28,6 +28,9 @@
     "products": {
       "title": "Prodotti"
     },
+    "productImport": {
+      "title": "Importa da Odoo"
+    },
     "collections": {
       "title": "Collezioni"
     },

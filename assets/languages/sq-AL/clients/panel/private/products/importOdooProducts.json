@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/importOdooProducts.tsx",
+  "title": "Importo produktet nga Odoo",
+  "description": "Sjell katalogun e POS në produktet e tregtisë së kësaj kompanie. Një rinisje përditëson të njëjtat rekorde.",
+  "durationWarning": "Një katalog i madh mund të zgjasë disa minuta. Mbajeni këtë faqe hapur derisa të përfundojë importi.",
+  "stockOverwriteWarning": "Rinisja zëvendëson sasinë në magazinë me sasinë e Odoo. Shitjet e regjistruara këtu pas importit të fundit mbishkruhen.",
+  "submit": "Importo",
+  "backToProducts": "Kthehu te produktet",
+  "form": {
+    "urlLabel": "URL e Odoo",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Baza e të dhënave",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Përdoruesi",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "Çelësi API",
+    "apiKeyPlaceholder": "Çelësi API i Odoo",
+    "warehouseLabel": "Magazina",
+    "warehousePlaceholder": "Zgjidh një magazinë",
+    "posOnlyLabel": "Vetëm produktet POS",
+    "posOnlyDescription": "Importo produktet e shënuara si të disponueshme në POS.",
+    "dryRunLabel": "Provë pa shkrim",
+    "dryRunDescription": "Autentifiko dhe numëro rekordet pa shkruar."
+  },
+  "result": {
+    "title": "Importi përfundoi",
+    "dryRunTitle": "Prova pa shkrim përfundoi",
+    "templates": "Modele",
+    "categories": "Kategori",
+    "attributes": "Atribute",
+    "products": "Produkte",
+    "variants": "Variante",
+    "inventory": "Inventar",
+    "created": "Krijuar",
+    "updated": "Përditësuar",
+    "skipped": "Anashkaluar"
+  },
+  "axios": {
+    "start": {
+      "title": "Po importohet nga Odoo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Importi nga Odoo përfundoi",
+      "time": 4000
+    },
+    "error": {
+      "title": "Importi nga Odoo dështoi",
+      "time": 4000
+    }
+  }
+}

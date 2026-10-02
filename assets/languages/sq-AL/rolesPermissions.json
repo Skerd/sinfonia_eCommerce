@@ -12,6 +12,7 @@
     "Fulfillments": "Fulfillments",
     "Inventories": "Inventories",
     "Inventorymovements": "Inventory Movements",
+    "Odoocataloglinks": "Lidhjet e katalogut Odoo",
     "Poscompanyposlocks": "POS Company Locks",
     "Posconfigs": "POS Configs",
     "Posorders": "POS Orders",
@@ -341,6 +342,18 @@
       "variant": "Variant",
       "warehouse": "Warehouse",
       "company": "Company"
+    },
+    "Odoocataloglinks": {
+      "createdAt": "Krijuar në",
+      "createdBy": "Krijuar nga",
+      "deletedAt": "Fshirë në",
+      "deletedBy": "Fshirë nga",
+      "localId": "Regjistrimi lokal",
+      "localModel": "Modeli lokal",
+      "odooId": "ID e Odoo",
+      "odooModel": "Modeli Odoo",
+      "odoocataloglinks": "Lidhjet e katalogut Odoo",
+      "updatedAt": "Përditësuar në"
     },
     "Poscompanyposlocks": {
       "company": "Company",

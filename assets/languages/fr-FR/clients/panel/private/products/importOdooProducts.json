@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/importOdooProducts.tsx",
+  "title": "Importer des produits depuis Odoo",
+  "description": "Importer le catalogue POS dans les produits e-commerce de cette société. Une nouvelle exécution met à jour les mêmes enregistrements.",
+  "durationWarning": "Un grand catalogue peut prendre plusieurs minutes. Laissez cette page ouverte jusqu'à la fin de l'import.",
+  "stockOverwriteWarning": "Une nouvelle exécution remplace la quantité en stock par celle d'Odoo. Les ventes enregistrées ici depuis le dernier import sont écrasées.",
+  "submit": "Importer",
+  "backToProducts": "Retour aux produits",
+  "form": {
+    "urlLabel": "URL Odoo",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Base de données",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Identifiant",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "Clé API",
+    "apiKeyPlaceholder": "Clé API Odoo",
+    "warehouseLabel": "Entrepôt",
+    "warehousePlaceholder": "Sélectionner un entrepôt",
+    "posOnlyLabel": "Produits POS uniquement",
+    "posOnlyDescription": "Importer les produits disponibles en point de vente.",
+    "dryRunLabel": "Simulation",
+    "dryRunDescription": "S'authentifier et compter sans écrire."
+  },
+  "result": {
+    "title": "Import terminé",
+    "dryRunTitle": "Simulation terminée",
+    "templates": "Modèles",
+    "categories": "Catégories",
+    "attributes": "Attributs",
+    "products": "Produits",
+    "variants": "Variantes",
+    "inventory": "Stock",
+    "created": "Créés",
+    "updated": "Mis à jour",
+    "skipped": "Ignorés"
+  },
+  "axios": {
+    "start": {
+      "title": "Import depuis Odoo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Import Odoo terminé",
+      "time": 4000
+    },
+    "error": {
+      "title": "Import Odoo échoué",
+      "time": 4000
+    }
+  }
+}

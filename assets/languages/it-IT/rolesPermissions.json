@@ -12,6 +12,7 @@
     "Fulfillments": "Adempimenti",
     "Inventories": "Inventari",
     "Inventorymovements": "Movimenti di inventario",
+    "Odoocataloglinks": "Collegamenti catalogo Odoo",
     "Poscompanyposlocks": "Serrature aziendali POS",
     "Posconfigs": "Configurazioni POS",
     "Posorders": "Ordini POS",
@@ -341,6 +342,18 @@
       "variant": "Variante",
       "warehouse": "Magazzino",
       "company": "Azienda"
+    },
+    "Odoocataloglinks": {
+      "createdAt": "Creato il",
+      "createdBy": "Creato da",
+      "deletedAt": "Eliminato il",
+      "deletedBy": "Eliminato da",
+      "localId": "Record locale",
+      "localModel": "Modello locale",
+      "odooId": "ID Odoo",
+      "odooModel": "Modello Odoo",
+      "odoocataloglinks": "Collegamenti catalogo Odoo",
+      "updatedAt": "Aggiornato il"
     },
     "Poscompanyposlocks": {
       "company": "Azienda",
