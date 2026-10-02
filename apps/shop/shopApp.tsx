@@ -9,6 +9,7 @@ import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 import ShopLayout from "@eCommerceModule/clients/client/public/shared/shopLayout.tsx";
+import {TooltipProvider} from "@coreModule/components/animate-ui/components/animate/tooltip.tsx";
 
 const HomePage = lazy(() => import("@eCommerceModule/clients/client/public/home/index.tsx"));
 const ProductsPage = lazy(() => import("@eCommerceModule/clients/client/public/products/index.tsx"));
@@ -37,21 +38,23 @@ function ShopApp() {
     return (
         <Provider store={store}>
             <LanguageProvider>
-                <BrowserRouter>
-                    <Suspense fallback={<Loader />}>
-                        <Routes>
-                            <Route element={<ShopLayout />}>
-                                <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
-                                <Route path="products" element={<ErrorBoundary><ProductsPage /></ErrorBoundary>} />
-                                <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
-                                <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
-                                <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
-                                <Route path="account/orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
-                                <Route path="account/giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
-                            </Route>
-                        </Routes>
-                    </Suspense>
-                </BrowserRouter>
+                <TooltipProvider>
+                    <BrowserRouter>
+                        <Suspense fallback={<Loader />}>
+                            <Routes>
+                                <Route element={<ShopLayout />}>
+                                    <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
+                                    <Route path="products" element={<ErrorBoundary><ProductsPage /></ErrorBoundary>} />
+                                    <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
+                                    <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
+                                    <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
+                                    <Route path="account/orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
+                                    <Route path="account/giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
+                                </Route>
+                            </Routes>
+                        </Suspense>
+                    </BrowserRouter>
+                </TooltipProvider>
             </LanguageProvider>
             <ToasterContainer />
         </Provider>
