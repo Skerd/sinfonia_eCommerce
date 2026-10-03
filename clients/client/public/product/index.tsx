@@ -38,7 +38,7 @@ function ProductPage() {
                 if (cancelled) return;
                 setProduct(res.data.data);
                 setSelectedVariantId(res.data.data.variants[0]?._id ?? "");
-                setQuantity(res.data.data.minOrderQty && res.data.data.minOrderQty > 1 ? res.data.data.minOrderQty : 1);
+                setQuantity(Math.max(1, res.data.data.minOrderQty ?? 1));
                 setActiveImage(res.data.data.mainImage);
             } catch {
                 if (!cancelled) setProduct(null);
@@ -57,6 +57,17 @@ function ProductPage() {
     );
 
     const price = selectedVariant?.price ?? product?.price;
+    const inStock = product ? (product.variants.length ? selectedVariant?.inStock !== false : product.inStock !== false) : false;
+    const minQty = Math.max(1, product?.minOrderQty ?? 1);
+    const stepQty = Math.max(1, product?.stepQty ?? 1);
+
+    /** Snaps a typed quantity onto the product's min / step / max rules. */
+    function normalizeQuantity(raw: number): number {
+        let next = Math.max(minQty, Math.floor(raw) || minQty);
+        next = minQty + Math.ceil((next - minQty) / stepQty) * stepQty;
+        if (product?.maxOrderQty) next = Math.min(next, product.maxOrderQty);
+        return next;
+    }
     const compareAt = selectedVariant?.compareAtPrice ?? product?.compareAtPrice;
     const galleryImages = useMemo(() => {
         const images = [product?.mainImage, ...(product?.gallery ?? [])].filter((v): v is string => Boolean(v));
@@ -71,7 +82,9 @@ function ProductPage() {
         }
         setAdding(true);
         try {
-            await addItem(product._id, selectedVariant?._id, quantity);
+            const normalized = normalizeQuantity(quantity);
+            setQuantity(normalized);
+            await addItem(product._id, selectedVariant?._id, normalized);
             toast.success(`Added "${product.title}" to cart`);
         } catch (err) {
             handleError(err, {context: "Product", showToast: true, fallbackMessage: "Could not add to cart"});
@@ -159,8 +172,9 @@ function ProductPage() {
 
                     {product.variants.length > 0 && (
                         <div>
-                            <p className="mb-1 text-sm font-medium">Variant</p>
+                            <label htmlFor="shop-variant" className="mb-1 block text-sm font-medium">Variant</label>
                             <select
+                                id="shop-variant"
                                 value={selectedVariantId}
                                 onChange={event => setSelectedVariantId(event.target.value)}
                                 className="h-10 w-full max-w-xs rounded-md border border-shop-border bg-white px-2 text-sm outline-none focus:border-shop-accent"
@@ -168,6 +182,7 @@ function ProductPage() {
                                 {product.variants.map(variant => (
                                     <option key={variant._id} value={variant._id}>
                                         {variant.options?.map(o => `${o.name}: ${o.value}`).join(", ") || variant.sku || variant._id}
+                                        {variant.inStock === false ? " — out of stock" : ""}
                                     </option>
                                 ))}
                             </select>
@@ -176,23 +191,25 @@ function ProductPage() {
 
                     <div className="flex items-end gap-3">
                         <div>
-                            <p className="mb-1 text-sm font-medium">Quantity</p>
+                            <label htmlFor="shop-quantity" className="mb-1 block text-sm font-medium">Quantity</label>
                             <input
+                                id="shop-quantity"
                                 type="number"
-                                min={product.minOrderQty ?? 1}
+                                min={minQty}
                                 max={product.maxOrderQty || undefined}
-                                step={product.stepQty || 1}
+                                step={stepQty}
                                 value={quantity}
-                                onChange={event => setQuantity(Math.max(1, Number(event.target.value) || 1))}
+                                onChange={event => setQuantity(Number(event.target.value) || minQty)}
+                                onBlur={() => setQuantity(normalizeQuantity(quantity))}
                                 className="h-10 w-24 rounded-md border border-shop-border px-2 text-sm outline-none focus:border-shop-accent"
                             />
                         </div>
                         <button
                             onClick={handleAddToCart}
-                            disabled={adding}
+                            disabled={adding || !inStock}
                             className="h-10 rounded-full bg-shop-accent px-6 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                         >
-                            {adding ? "Adding…" : "Add to cart"}
+                            {!inStock ? "Out of stock" : adding ? "Adding…" : "Add to cart"}
                         </button>
                     </div>
                     {signInRequired && (

@@ -17,7 +17,7 @@ function MarkProcessingDropdown({order, onAction, resolveLanguageKey}: MarkProce
     const shortcut = "2";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write && order.status === "confirmed";
+    const canRun = !!write?.status && order.status === "confirmed";
 
     const triggerAction = () => {
         if (!canRun) return;

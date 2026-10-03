@@ -27,5 +27,14 @@
       "success": "Ordine annullato",
       "error": "Impossibile annullare l'ordine"
     }
+  },
+  "markPaid": {
+    "title": "Segna come pagato",
+    "description": "Registra il pagamento in contrassegno o tramite bonifico come ricevuto. Lo stock riservato diventa una vendita e le gift card o i download dell'ordine vengono emessi.",
+    "confirm": "Segna pagato",
+    "axios": {
+      "success": "Pagamento registrato",
+      "error": "Impossibile registrare il pagamento"
+    }
   }
 }

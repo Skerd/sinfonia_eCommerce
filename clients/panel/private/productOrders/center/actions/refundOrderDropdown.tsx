@@ -17,7 +17,7 @@ function RefundOrderDropdown({order, onAction, resolveLanguageKey}: RefundOrderD
     const shortcut = "5";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write && ["paid", "partially_refunded"].includes(order.paymentStatus);
+    const canRun = !!write?.paymentStatus && ["paid", "partially_refunded"].includes(order.paymentStatus);
 
     const triggerAction = () => {
         if (!canRun) return;

@@ -17,7 +17,7 @@ function ShipOrderDropdown({order, onAction, resolveLanguageKey}: ShipOrderDropd
     const shortcut = "3";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write && ["confirmed", "processing"].includes(order.status);
+    const canRun = !!write?.status && ["confirmed", "processing"].includes(order.status);
 
     const triggerAction = () => {
         if (!canRun) return;

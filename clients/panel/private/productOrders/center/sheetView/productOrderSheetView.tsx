@@ -12,6 +12,7 @@ import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/produ
 import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
 import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
+import MarkPaidDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markPaidDropdown.tsx";
 import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
@@ -85,6 +86,7 @@ function ProductOrderSheetView({
                 actionMenuChildren={
                     <>
                         <ConfirmOrderDropdown order={asOrder} onAction={setAction} />
+                        <MarkPaidDropdown order={asOrder} onAction={setAction} />
                         <MarkProcessingDropdown order={asOrder} onAction={setAction} />
                         <ShipOrderDropdown order={asOrder} onAction={setAction} />
                         <CancelOrderDropdown order={asOrder} onAction={setAction} />
@@ -92,15 +94,16 @@ function ProductOrderSheetView({
                     </>
                 }
             />
-            {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
+            {(action === "confirm" || action === "markProcessing" || action === "cancel" || action === "markPaid") && (
                 <ProductOrderActionConfirmAction
                     orderId={String(asOrder._id)}
                     displayName={asOrder.orderNumber}
                     actionKey={action as ProductOrderConfirmActionKey}
+                    orderStatus={asOrder.status}
                     openAlert
                     url={`/api/eCommerce/productOrder/${action}`}
-                    onSuccess={(newStatus: ProductOrder["status"]) => {
-                        applyOrderUpdate({status: newStatus});
+                    onSuccess={(patch: Partial<ProductOrder>) => {
+                        applyOrderUpdate(patch);
                         setAction("");
                     }}
                     onCancel={() => setAction("")}

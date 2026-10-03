@@ -66,7 +66,7 @@ function RefundProductOrderAction({
     }));
 
     useEffect(() => {
-        if (!write) return;
+        if (!write?.paymentStatus) return;
         setOpen(!!openAlert);
     }, [openAlert, write]);
 
@@ -81,7 +81,7 @@ function RefundProductOrderAction({
         if (!open) onCancel();
     }, [open, onCancel]);
 
-    if (!write) return <HiddenElement />;
+    if (!write?.paymentStatus) return <HiddenElement />;
 
     const amountNum = amount ? Number(amount) : undefined;
     const canSubmit = amount === "" || (Number.isFinite(amountNum) && (amountNum as number) > 0);

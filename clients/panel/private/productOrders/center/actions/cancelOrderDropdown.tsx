@@ -17,7 +17,7 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
     const shortcut = "4";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write && !["shipped", "delivered", "cancelled", "refunded"].includes(order.status) && !["paid", "partially_refunded"].includes(order.paymentStatus);
+    const canRun = !!write?.status && !["shipped", "delivered", "cancelled", "refunded"].includes(order.status) && !["paid", "partially_refunded"].includes(order.paymentStatus);
 
     const triggerAction = () => {
         if (!canRun) return;

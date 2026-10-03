@@ -27,5 +27,14 @@
       "success": "Porosia u anulua",
       "error": "Porosia nuk u anulua dot"
     }
+  },
+  "markPaid": {
+    "title": "Shëno si të paguar",
+    "description": "Regjistro pagesën me para në dorëzim ose me transfertë bankare si të marrë. Stoku i rezervuar kthehet në shitje dhe kartat dhuratë ose shkarkimet e porosisë lëshohen.",
+    "confirm": "Shëno të paguar",
+    "axios": {
+      "success": "Pagesa u regjistrua",
+      "error": "Pagesa nuk mund të regjistrohej"
+    }
   }
 }

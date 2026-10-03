@@ -9,5 +9,13 @@
     "cancelled": "Anuluar",
     "refunded": "Rimbursuar"
   },
-  "items": "artikuj"
+  "items": "artikuj",
+  "paymentStatus": {
+    "unpaid": "E papaguar",
+    "authorized": "E autorizuar",
+    "paid": "E paguar",
+    "partially_refunded": "E rimbursuar pjesërisht",
+    "refunded": "E rimbursuar",
+    "voided": "E anuluar"
+  }
 }

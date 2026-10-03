@@ -27,5 +27,14 @@
       "success": "Auftrag annulliert",
       "error": "Konnte nicht abbrechen auftrag"
     }
+  },
+  "markPaid": {
+    "title": "Als bezahlt markieren",
+    "description": "Die Zahlung per Nachnahme oder Banküberweisung als eingegangen erfassen. Reservierter Bestand wird zum Verkauf, und Geschenkkarten oder Downloads der Bestellung werden ausgestellt.",
+    "confirm": "Als bezahlt markieren",
+    "axios": {
+      "success": "Zahlung erfasst",
+      "error": "Zahlung konnte nicht erfasst werden"
+    }
   }
 }

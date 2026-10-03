@@ -11,6 +11,7 @@ import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/produ
 import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
 import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
+import MarkPaidDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markPaidDropdown.tsx";
 import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
@@ -29,6 +30,19 @@ function statusColor(status: string): string {
             return "text-info bg-info";
         case "cancelled":
         case "refunded":
+            return "text-destructive bg-destructive";
+        default:
+            return "text-warning bg-warning";
+    }
+}
+
+function paymentStatusColor(paymentStatus: string): string {
+    switch (paymentStatus) {
+        case "paid":
+        case "authorized":
+            return "text-success bg-success";
+        case "refunded":
+        case "voided":
             return "text-destructive bg-destructive";
         default:
             return "text-warning bg-warning";
@@ -86,15 +100,16 @@ function ProductOrderCard({
                 };
                 return (
                     <>
-                        {(action === "confirm" || action === "markProcessing" || action === "cancel") && (
+                        {(action === "confirm" || action === "markProcessing" || action === "cancel" || action === "markPaid") && (
                             <ProductOrderActionConfirmAction
                                 orderId={row._id}
                                 displayName={row.orderNumber}
                                 actionKey={action as ProductOrderConfirmActionKey}
+                                orderStatus={row.status}
                                 openAlert
                                 url={`/api/eCommerce/productOrder/${action}`}
-                                onSuccess={(newStatus: ProductOrder["status"]) => {
-                                    applyPatch({status: newStatus});
+                                onSuccess={(patch: Partial<ProductOrder>) => {
+                                    applyPatch(patch);
                                     setAction("");
                                 }}
                                 onCancel={() => setAction("")}
@@ -136,10 +151,12 @@ function ProductOrderCard({
         >
             {({entity: row, setAction}) => {
                 const colors = statusColor(row.status);
+                const paymentColors = paymentStatusColor(row.paymentStatus);
                 return (
                     <>
                         <EntityCard.Header titlePath="orderNumber" title={row.orderNumber}>
                             <ConfirmOrderDropdown order={row} onAction={setAction} />
+                            <MarkPaidDropdown order={row} onAction={setAction} />
                             <MarkProcessingDropdown order={row} onAction={setAction} />
                             <ShipOrderDropdown order={row} onAction={setAction} />
                             <CancelOrderDropdown order={row} onAction={setAction} />
@@ -151,20 +168,36 @@ function ProductOrderCard({
                                 <DisplayValue path="customer" type="user" value={row.customer} />
                             </div>
                             <div className="flex items-center justify-between gap-2">
-                                <span
-                                    className={cn(
-                                        "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                        colors.split(" ")[0],
-                                    )}
-                                >
-                                    <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors.split(" ")[1])} />
-                                    <DisplayValue
-                                        path="status"
-                                        type="enum"
-                                        languageKeyCategory="orderStatus"
-                                        value={row.status}
-                                    />
-                                </span>
+                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                                    <span
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
+                                            colors.split(" ")[0],
+                                        )}
+                                    >
+                                        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors.split(" ")[1])} />
+                                        <DisplayValue
+                                            path="status"
+                                            type="enum"
+                                            languageKeyCategory="orderStatus"
+                                            value={row.status}
+                                        />
+                                    </span>
+                                    <span
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
+                                            paymentColors.split(" ")[0],
+                                        )}
+                                    >
+                                        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", paymentColors.split(" ")[1])} />
+                                        <DisplayValue
+                                            path="paymentStatus"
+                                            type="enum"
+                                            languageKeyCategory="paymentStatus"
+                                            value={row.paymentStatus}
+                                        />
+                                    </span>
+                                </div>
                                 <span className="ml-auto text-base font-bold leading-none text-foreground">
                                     <DisplayValue
                                         path="grandTotal"

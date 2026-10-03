@@ -9,5 +9,13 @@
     "cancelled": "Annullato",
     "refunded": "Rimborsato"
   },
-  "items": "elementi"
+  "items": "elementi",
+  "paymentStatus": {
+    "unpaid": "Non pagato",
+    "authorized": "Autorizzato",
+    "paid": "Pagato",
+    "partially_refunded": "Rimborsato parzialmente",
+    "refunded": "Rimborsato",
+    "voided": "Annullato"
+  }
 }

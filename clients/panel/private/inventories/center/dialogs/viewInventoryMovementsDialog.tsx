@@ -42,7 +42,7 @@ function variantLabel(movement: InventoryMovement): string {
     if (!v) return "";
     const attrs = v.attributeCombination
         ?.map((a) => {
-            const name = a.attribute?.name;
+            const name = typeof a.attribute === "object" ? a.attribute?.name : undefined;
             return name ? `${name}: ${a.value}` : a.value;
         })
         .filter(Boolean)

@@ -67,7 +67,7 @@ function ShipProductOrderAction({
     }));
 
     useEffect(() => {
-        if (!write) return;
+        if (!write?.status) return;
         setOpen(!!openAlert);
     }, [openAlert, write]);
 
@@ -83,7 +83,7 @@ function ShipProductOrderAction({
         if (!open) onCancel();
     }, [open, onCancel]);
 
-    if (!write) return <HiddenElement />;
+    if (!write?.status) return <HiddenElement />;
 
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>

@@ -27,5 +27,14 @@
       "success": "Order cancelled",
       "error": "Could not cancel order"
     }
+  },
+  "markPaid": {
+    "title": "Mark as paid",
+    "description": "Record the cash-on-delivery or bank-transfer payment as received. Reserved stock becomes a sale and any gift cards or downloads in the order are issued.",
+    "confirm": "Mark paid",
+    "axios": {
+      "success": "Payment recorded",
+      "error": "Could not record payment"
+    }
   }
 }

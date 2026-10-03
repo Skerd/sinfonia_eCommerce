@@ -9,5 +9,13 @@
     "cancelled": "Cancelled",
     "refunded": "Refunded"
   },
-  "items": "items"
+  "items": "items",
+  "paymentStatus": {
+    "unpaid": "Unpaid",
+    "authorized": "Authorized",
+    "paid": "Paid",
+    "partially_refunded": "Partially refunded",
+    "refunded": "Refunded",
+    "voided": "Voided"
+  }
 }

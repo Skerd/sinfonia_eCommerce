@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CircleCheck, CircleX, LoaderCircle, Package} from "lucide-react";
+import {Banknote, CircleCheck, CircleX, LoaderCircle, Package} from "lucide-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -21,13 +21,16 @@ import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/pri
 
 type ProductOrderStatus = ProductOrder["status"];
 
-const STATUS_BY_ACTION: Record<"confirm" | "markProcessing" | "cancel", ProductOrderStatus> = {
-    confirm: "confirmed",
-    markProcessing: "processing",
-    cancel: "cancelled",
+/** Row fields each action changes on success, given the order's current status. */
+const PATCH_BY_ACTION: Record<"confirm" | "markProcessing" | "cancel" | "markPaid", (status?: ProductOrderStatus) => Partial<ProductOrder>> = {
+    confirm: () => ({status: "confirmed"}),
+    markProcessing: () => ({status: "processing"}),
+    cancel: () => ({status: "cancelled"}),
+    // Marking an unconfirmed order paid also confirms it (mirrors the backend)
+    markPaid: (status) => ({paymentStatus: "paid", ...(status === "pending" ? {status: "confirmed" as const} : {})}),
 };
 
-export type ProductOrderConfirmActionKey = keyof typeof STATUS_BY_ACTION;
+export type ProductOrderConfirmActionKey = keyof typeof PATCH_BY_ACTION;
 
 function bindActionAxiosLanguageKey(
     actionKey: ProductOrderConfirmActionKey,
@@ -50,10 +53,12 @@ type ProductOrderActionConfirmActionPublicProps = {
     orderId: string;
     displayName?: string;
     actionKey: ProductOrderConfirmActionKey;
+    /** Current order status — needed to predict the status change of markPaid. */
+    orderStatus?: ProductOrderStatus;
     openAlert?: boolean;
     url?: string;
     resolveLanguageKey: ResolveLanguageKey;
-    onSuccess?: (newStatus: ProductOrderStatus) => void;
+    onSuccess?: (patch: Partial<ProductOrder>) => void;
     onCancel?: () => void;
 };
 
@@ -63,6 +68,7 @@ function ProductOrderActionConfirmAction({
     orderId,
     displayName,
     actionKey,
+    orderStatus,
     openAlert,
     resolveLanguageKey,
     innerRef,
@@ -72,29 +78,31 @@ function ProductOrderActionConfirmAction({
     loading,
 }: ProductOrderActionConfirmActionProps) {
     const {write} = useAccess("productOrders");
+    const canWrite = actionKey === "markPaid" ? !!write?.paymentStatus : !!write?.status;
     const [open, setOpen] = useState<boolean>(!!openAlert);
-
-    const newStatus = STATUS_BY_ACTION[actionKey];
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
             setOpen(false);
-            onSuccess(newStatus);
+            onSuccess(PATCH_BY_ACTION[actionKey](orderStatus));
         },
     }));
 
     useEffect(() => {
-        if (!write) return;
+        if (!canWrite) return;
         setOpen(!!openAlert);
-    }, [openAlert, write]);
+    }, [openAlert, canWrite]);
 
     useEffect(() => {
         if (!open) onCancel();
     }, [open, onCancel]);
 
-    if (!write) return <HiddenElement />;
+    if (!canWrite) return <HiddenElement />;
 
-    const ActionIcon = actionKey === "confirm" ? CircleCheck : actionKey === "markProcessing" ? Package : CircleX;
+    const ActionIcon = actionKey === "confirm" ? CircleCheck
+        : actionKey === "markProcessing" ? Package
+        : actionKey === "markPaid" ? Banknote
+        : CircleX;
     const iconClass = actionKey === "cancel" ? "text-destructive" : actionKey === "markProcessing" ? "text-info" : "text-success";
 
     return (

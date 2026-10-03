@@ -27,5 +27,14 @@
       "success": "Commande annulée",
       "error": "Impossible d'annuler la commande"
     }
+  },
+  "markPaid": {
+    "title": "Marquer comme payé",
+    "description": "Enregistrer le paiement à la livraison ou par virement comme reçu. Le stock réservé devient une vente et les cartes-cadeaux ou téléchargements de la commande sont émis.",
+    "confirm": "Marquer payé",
+    "axios": {
+      "success": "Paiement enregistré",
+      "error": "Impossible d'enregistrer le paiement"
+    }
   }
 }

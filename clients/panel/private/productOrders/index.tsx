@@ -10,6 +10,7 @@ import MarkProcessingDropdown from "./center/actions/markProcessingDropdown.tsx"
 import ShipOrderDropdown from "./center/actions/shipOrderDropdown.tsx";
 import CancelOrderDropdown from "./center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "./center/actions/refundOrderDropdown.tsx";
+import MarkPaidDropdown from "./center/actions/markPaidDropdown.tsx";
 import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
@@ -28,6 +29,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
             renderActionMenuChildren={(order, bindRowAction) => (
                 <>
                     <ConfirmOrderDropdown order={order} onAction={bindRowAction} />
+                    <MarkPaidDropdown order={order} onAction={bindRowAction} />
                     <MarkProcessingDropdown order={order} onAction={bindRowAction} />
                     <ShipOrderDropdown order={order} onAction={bindRowAction} />
                     <CancelOrderDropdown order={order} onAction={bindRowAction} />
@@ -35,16 +37,17 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                if (action === "confirm" || action === "markProcessing" || action === "cancel") {
+                if (action === "confirm" || action === "markProcessing" || action === "cancel" || action === "markPaid") {
                     return (
                         <ProductOrderActionConfirmAction
                             orderId={entity._id}
                             displayName={entity.orderNumber}
                             actionKey={action as ProductOrderConfirmActionKey}
+                            orderStatus={entity.status}
                             openAlert
                             url={`/api/eCommerce/productOrder/${action}`}
-                            onSuccess={(newStatus: ProductOrder["status"]) => {
-                                listRef.current?.updateRow?.(entity._id, {status: newStatus} as Partial<ProductOrder>);
+                            onSuccess={(patch: Partial<ProductOrder>) => {
+                                listRef.current?.updateRow?.(entity._id, patch);
                                 resetAction();
                             }}
                             onCancel={resetAction}

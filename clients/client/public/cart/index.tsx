@@ -6,10 +6,11 @@ import {Minus, Plus, Trash2} from "lucide-react";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {shopReasonMessage} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
 
 function CartPage() {
     const navigate = useNavigate();
-    const {cart, loading, signInRequired, updateItem, removeItem, applyDiscount, applyGiftCard, removeGiftCard} = useShopCart();
+    const {cart, loading, signInRequired, pendingItemIds, updateItem, removeItem, applyDiscount, removeDiscount, applyGiftCard, removeGiftCard} = useShopCart();
     const {formatMoney} = useShopConfig();
     const [couponInput, setCouponInput] = useState("");
     const [applying, setApplying] = useState(false);
@@ -25,7 +26,7 @@ function CartPage() {
                 toast.success("Gift card applied");
                 setGiftCardInput("");
             } else {
-                toast.error(result.message ?? "Gift card not redeemable");
+                toast.error(shopReasonMessage(result.message, "That gift card can't be used."));
             }
         } catch (err) {
             handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply gift card"});
@@ -43,7 +44,7 @@ function CartPage() {
                 toast.success("Discount applied");
                 setCouponInput("");
             } else {
-                toast.error(result.message ?? "Invalid discount code");
+                toast.error(shopReasonMessage(result.message, "That discount code can't be used."));
             }
         } catch (err) {
             handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply discount"});
@@ -86,29 +87,33 @@ function CartPage() {
                 <ul className="divide-y divide-shop-border rounded-xl border border-shop-border">
                     {cart.items.map(item => {
                         const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                        const pending = pendingItemIds.has(item._id);
+                        const title = item.snapshot?.title ?? item.product.title ?? "";
                         return (
                             <li key={item._id} className="flex items-center gap-4 p-4">
                                 <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md bg-shop-cream">
                                     {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <p className="truncate text-sm font-medium">{item.snapshot?.title ?? item.product.title}</p>
+                                    <p className="truncate text-sm font-medium">{title}</p>
                                     {item.snapshot?.sku && <p className="text-xs text-shop-ink-faded">SKU: {item.snapshot.sku}</p>}
                                     <p className="mt-0.5 text-xs text-shop-ink-muted">{formatMoney(item.unitPrice)} each</p>
                                 </div>
-                                <div className="flex items-center gap-1">
+                                <div className="flex items-center gap-1" aria-busy={pending}>
                                     <button
                                         onClick={() => updateItem(item._id, item.quantity - 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
-                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream"
-                                        aria-label="Decrease quantity"
+                                        disabled={pending}
+                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream disabled:opacity-50"
+                                        aria-label={item.quantity <= 1 ? `Remove ${title}` : `Decrease quantity of ${title}`}
                                     >
                                         <Minus className="h-3.5 w-3.5" />
                                     </button>
-                                    <span className="w-8 text-center text-sm">{item.quantity}</span>
+                                    <span className="w-8 text-center text-sm" aria-live="polite">{item.quantity}</span>
                                     <button
                                         onClick={() => updateItem(item._id, item.quantity + 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
-                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream"
-                                        aria-label="Increase quantity"
+                                        disabled={pending}
+                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream disabled:opacity-50"
+                                        aria-label={`Increase quantity of ${title}`}
                                     >
                                         <Plus className="h-3.5 w-3.5" />
                                     </button>
@@ -116,8 +121,9 @@ function CartPage() {
                                 <p className="w-20 text-right text-sm font-semibold">{formatMoney(item.totalPrice)}</p>
                                 <button
                                     onClick={() => removeItem(item._id).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove item"}))}
-                                    className="text-shop-ink-faded transition-colors hover:text-red-500"
-                                    aria-label="Remove item"
+                                    disabled={pending}
+                                    className="text-shop-ink-faded transition-colors hover:text-red-500 disabled:opacity-50"
+                                    aria-label={`Remove ${title}`}
                                 >
                                     <Trash2 className="h-4 w-4" />
                                 </button>
@@ -134,9 +140,17 @@ function CartPage() {
                         <span className="text-shop-ink-muted">Subtotal</span>
                         <span>{formatMoney(cart.subtotal)}</span>
                     </div>
-                    {cart.discountTotal > 0 && (
-                        <div className="flex justify-between text-green-700">
-                            <span>Discount{cart.appliedDiscounts[0]?.code ? ` (${cart.appliedDiscounts[0].code})` : ""}</span>
+                    {cart.appliedDiscounts.length > 0 && (
+                        <div className="flex items-center justify-between text-green-700">
+                            <span>
+                                Discount{cart.appliedDiscounts[0]?.code ? ` (${cart.appliedDiscounts[0].code})` : ""}
+                                <button
+                                    onClick={() => removeDiscount().catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove discount"}))}
+                                    className="ml-2 text-xs text-shop-ink-faded underline"
+                                >
+                                    remove
+                                </button>
+                            </span>
                             <span>-{formatMoney(cart.discountTotal)}</span>
                         </div>
                     )}
@@ -165,7 +179,9 @@ function CartPage() {
                     <input
                         value={couponInput}
                         onChange={event => setCouponInput(event.target.value)}
+                        onKeyDown={event => { if (event.key === "Enter") void handleApplyCoupon(); }}
                         placeholder="Discount code"
+                        aria-label="Discount code"
                         className="h-9 min-w-0 flex-1 rounded-md border border-shop-border px-3 text-sm outline-none focus:border-shop-accent"
                     />
                     <button
@@ -182,7 +198,9 @@ function CartPage() {
                         <input
                             value={giftCardInput}
                             onChange={event => setGiftCardInput(event.target.value)}
+                            onKeyDown={event => { if (event.key === "Enter") void handleApplyGiftCard(); }}
                             placeholder="Gift card code"
+                            aria-label="Gift card code"
                             className="h-9 min-w-0 flex-1 rounded-md border border-shop-border px-3 text-sm outline-none focus:border-shop-accent"
                         />
                         <button

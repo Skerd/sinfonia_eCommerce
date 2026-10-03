@@ -17,7 +17,7 @@ function ConfirmOrderDropdown({order, onAction, resolveLanguageKey}: ConfirmOrde
     const shortcut = "1";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write && order.status === "pending";
+    const canRun = !!write?.status && order.status === "pending";
 
     const triggerAction = () => {
         if (!canRun) return;

@@ -9,5 +9,13 @@
     "cancelled": "Storniert",
     "refunded": "Refunded"
   },
-  "items": "positionen"
+  "items": "positionen",
+  "paymentStatus": {
+    "unpaid": "Unbezahlt",
+    "authorized": "Autorisiert",
+    "paid": "Bezahlt",
+    "partially_refunded": "Teilweise erstattet",
+    "refunded": "Erstattet",
+    "voided": "Storniert"
+  }
 }
