@@ -1,4 +1,4 @@
-import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, Monitor, Percent, Receipt, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
+import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
 import {IconCategory2} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
@@ -88,20 +88,11 @@ export function buildECommerceTenancySettingsSubCollapsible(
             },
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.fiscalconfigs.title"),
+                url: "/tenancy/systemSettings/fiscalconfigs",
                 icon: FileBadge,
                 permissions: ["fiscalConfigs"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
-                items: [
-                    {
-                        title: resolveLanguageKey("menus.tenancy.systemSettings.albanianFiscalization.title"),
-                        url: "/tenancy/systemSettings/fiscalconfigs",
-                        icon: Receipt,
-                        permissions: ["fiscalConfigs"],
-                        usersPermissions: [],
-                        atLeastOnePermission: true,
-                    },
-                ],
             },
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.cmsblocks.title"),

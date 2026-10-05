@@ -238,7 +238,17 @@
     "fiscalQr": "Fiscal QR code",
     "nslf": "NSLF",
     "nivf": "NIVF",
-    "fiscalDemo": "Fiscal verifizieren (demo)"
+    "fiscalDemo": "Fiscal verifizieren (demo)",
+    "totalWithoutVat": "Total ohne MwSt",
+    "vatRate": "MwSt - {rate}",
+    "totalVat": "Total MwSt",
+    "issueDate": "Ausstellungsdatum",
+    "fiscalNumber": "Fiscalisierungsnummer",
+    "tcrCode": "TCR-Kassen-Code",
+    "invoiceType": "Rechnungstyp",
+    "operatorCode": "Operator-Code",
+    "businessUnitCode": "Geschäftseinheitscode",
+    "notFiscalized": "NICHT FISKALISIERT"
   },
   "sessionState": {
     "opening_control": "Eröffnung",

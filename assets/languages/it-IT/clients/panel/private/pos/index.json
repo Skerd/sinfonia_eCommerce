@@ -238,7 +238,17 @@
     "fiscalQr": "Codice QR fiscale",
     "nslf": "NSLF",
     "nivf": "NIVF",
-    "fiscalDemo": "Verifica fiscale (demo)"
+    "fiscalDemo": "Verifica fiscale (demo)",
+    "totalWithoutVat": "Totale senza IVA",
+    "vatRate": "IVA - {rate}",
+    "totalVat": "Totale IVA",
+    "issueDate": "Data di emissione",
+    "fiscalNumber": "Numero di fiscalizzazione",
+    "tcrCode": "Codice cassa TCR",
+    "invoiceType": "Tipo fattura",
+    "operatorCode": "Codice operatore",
+    "businessUnitCode": "Codice unità operativa",
+    "notFiscalized": "NON FISCALIZZATO"
   },
   "sessionState": {
     "opening_control": "Apertura",

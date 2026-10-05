@@ -64,6 +64,11 @@ export type PaymentLine = {
     cashQuickAmounts?: string;
 };
 
+export type ReceiptVatRow = {
+    rate: number;
+    amount: number;
+};
+
 export type ReceiptPayload = {
     companyName?: string;
     header?: string;
@@ -82,6 +87,9 @@ export type ReceiptPayload = {
     amountTotal: number;
     amountPaid: number;
     amountReturn: number;
+    amountTax?: number;
+    amountWithoutVat?: number;
+    vatRows?: ReceiptVatRow[];
     payments: {
         method: string;
         type?: string;
@@ -96,6 +104,15 @@ export type ReceiptPayload = {
     nslf?: string;
     nivf?: string;
     qrCodeDataUrl?: string;
+    fiscalIssueDateTime?: string;
+    fiscalInvNum?: string;
+    fiscalTcrCode?: string;
+    fiscalOperatorCode?: string;
+    fiscalBusinessUnitCode?: string;
+    fiscalTypeOfInv?: string;
+    fiscalError?: string;
+    fiscalized?: boolean;
+    fiscalAttempted?: boolean;
 };
 
 export type SessionBundle = {

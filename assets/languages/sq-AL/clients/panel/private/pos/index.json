@@ -238,7 +238,17 @@
     "fiscalQr": "Kodi QR fiskal",
     "nslf": "NSLF",
     "nivf": "NIVF",
-    "fiscalDemo": "Verifikim fiskal (demo)"
+    "fiscalDemo": "Verifikim fiskal (demo)",
+    "totalWithoutVat": "TOTALI PA TVSH",
+    "vatRate": "PA TVSH - {rate}",
+    "totalVat": "Total TVSH",
+    "issueDate": "Data e Lëshimit",
+    "fiscalNumber": "Numër Fiskalizimi",
+    "tcrCode": "Kodi i Arkës TCR",
+    "invoiceType": "Lloji i Faturës",
+    "operatorCode": "Kodi i Operatorit",
+    "businessUnitCode": "Kodi i Vendit të Ushtrimit të Veprimtarisë së Biznesit",
+    "notFiscalized": "NUK ËSHTË FISKALIZUAR"
   },
   "sessionState": {
     "opening_control": "Hapje",

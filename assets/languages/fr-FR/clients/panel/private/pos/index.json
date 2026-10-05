@@ -237,8 +237,18 @@
     "defaultFooter": "Merci pour votre achat!",
     "fiscalQr": "Code QR fiscal",
     "nslf": "NSLF",
-    "nivf": "FIVV",
-    "fiscalDemo": "Vérification fiscale (démo)"
+    "nivf": "NIVF",
+    "fiscalDemo": "Vérification fiscale (démo)",
+    "totalWithoutVat": "Total hors TVA",
+    "vatRate": "TVA - {rate}",
+    "totalVat": "Total TVA",
+    "issueDate": "Date d'émission",
+    "fiscalNumber": "Numéro de fiscalisation",
+    "tcrCode": "Code caisse TCR",
+    "invoiceType": "Type de facture",
+    "operatorCode": "Code opérateur",
+    "businessUnitCode": "Code de l'unité d'activité",
+    "notFiscalized": "NON FISCALISÉ"
   },
   "sessionState": {
     "opening_control": "Ouverture",

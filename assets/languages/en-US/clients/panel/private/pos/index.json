@@ -238,7 +238,17 @@
     "fiscalQr": "Fiscal QR code",
     "nslf": "NSLF",
     "nivf": "NIVF",
-    "fiscalDemo": "Fiscal verify (demo)"
+    "fiscalDemo": "Fiscal verify (demo)",
+    "totalWithoutVat": "Total without VAT",
+    "vatRate": "VAT - {rate}",
+    "totalVat": "Total VAT",
+    "issueDate": "Issue date",
+    "fiscalNumber": "Fiscalization number",
+    "tcrCode": "TCR cash register code",
+    "invoiceType": "Invoice type",
+    "operatorCode": "Operator code",
+    "businessUnitCode": "Business unit code",
+    "notFiscalized": "NOT FISCALIZED"
   },
   "sessionState": {
     "opening_control": "Opening",
