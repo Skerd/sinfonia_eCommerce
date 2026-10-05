@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "About CMS Blocks",
     "title": "About CMS Blocks",
-    "overview": "CMS blocks are the sections of the storefront, such as a hero, a slider, or an announcement. The shop loads active blocks whose dates include now, ordered by position from lowest to highest. Type and title are required.",
+    "overview": "CMS blocks are the sections of the storefront, such as a hero, a slider, or an announcement. The shop loads active blocks whose dates include now, ordered by position from lowest to highest. Type and title are required. Choosing a type shows the fields that type needs.",
     "sections": [
       {
         "title": "How the storefront picks them",
@@ -58,7 +58,6 @@
       "devices": "Devices",
       "regions": "Regions"
     },
-    "abTestVariant": "A/B variant",
     "company": "Company",
     "createdBy": "Created by",
     "createdAt": "Created at",

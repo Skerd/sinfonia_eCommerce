@@ -32,20 +32,6 @@ function cmsBlockEditPath(cmsBlock: CmsBlock) {
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 
-function withConfigText(data: Record<string, unknown>): Record<string, unknown> {
-    if (typeof data.configText === "string") return data;
-    const config = data.config;
-    return {
-        ...data,
-        configText:
-            config != null && typeof config === "object"
-                ? JSON.stringify(config, null, 2)
-                : typeof config === "string"
-                  ? config
-                  : "",
-    };
-}
-
 function CmsBlockSheetView({
     open,
     onOpenChange,
@@ -58,7 +44,7 @@ function CmsBlockSheetView({
     onSheetRowPatched,
 }: CmsBlockSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(
-        withConfigText((cmsBlockProp as Record<string, unknown>) || {_id: fetchId}),
+        (cmsBlockProp as Record<string, unknown>) || {_id: fetchId},
     );
     const [action, setAction] = useState("");
     const access = useAccess("cmsBlocks");
@@ -70,7 +56,7 @@ function CmsBlockSheetView({
 
     useEffect(() => {
         if (!cmsBlockProp) return;
-        setSheetData(withConfigText(cmsBlockProp as Record<string, unknown>));
+        setSheetData(cmsBlockProp as Record<string, unknown>);
     }, [cmsBlockProp]);
 
     const entityId = cmsBlockProp?._id ?? fetchId;
@@ -87,7 +73,7 @@ function CmsBlockSheetView({
                 url="/api/eCommerce/cmsBlock/single"
                 fetchId={fetchId}
                 onDataFetched={(data) => {
-                    setSheetData(withConfigText(data));
+                    setSheetData(data);
                 }}
                 data={sheetData}
                 open={open}
