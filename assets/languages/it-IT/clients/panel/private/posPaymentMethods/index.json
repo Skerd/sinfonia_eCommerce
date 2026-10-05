@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
   "title": "Metodi di pagamento POS",
   "description": "Configura contanti, carte e altri metodi di pagamento fino alla cassa.",
+  "help": {
+    "ariaLabel": "Informazioni su Metodi di pagamento POS",
+    "title": "Informazioni su Metodi di pagamento POS",
+    "overview": "Un metodo di pagamento è contanti o carta. Una configurazione POS sceglie quali metodi offre la sua cassa. Nome e tipo sono obbligatori. La sequenza è l'ordine dei pulsanti in cassa.",
+    "sections": [
+      {
+        "title": "Come la cassa incassa",
+        "body": "Contanti e carta sono metodi distinti. Una cassa deve tenere almeno un metodo.",
+        "items": [
+          "I contanti possono elencare importi rapidi separati da virgole, per esempio 0.5, 1, 5, 10, 20. Una lista vuota usa le scorciatoie predefinite.",
+          "La carta accende il percorso terminale. Manuale significa che il cassiere conferma l'addebito. HTTP locale parla con un ponte terminale usando protocollo, host, porta, id terminale e percorso.",
+          "Disattivare nasconde il metodo ai nuovi pagamenti. L'eliminazione è logica e il metodo può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "createPosPaymentMethod": "Crea metodo di pagamento",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

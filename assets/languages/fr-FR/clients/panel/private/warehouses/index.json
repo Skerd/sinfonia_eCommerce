@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
   "title": "Entrepôts",
   "description": "Gérez les emplacements qui détiennent votre stock.",
+  "help": {
+    "ariaLabel": "À propos des entrepôts",
+    "title": "À propos des entrepôts",
+    "overview": "Un entrepôt est un lieu qui détient le stock. Le stock est tenu par produit ou variante dans un entrepôt : disponible, et réservé pour les checkouts ouverts. Nom et code sont obligatoires.",
+    "sections": [
+      {
+        "title": "D'où le checkout prend le stock",
+        "body": "Une ligne n'est réservée que si une fiche de stock existe pour ce produit ou cette variante. Sans fiche, elle est considérée comme non suivie.",
+        "items": [
+          "L'entrepôt actif par défaut est utilisé lorsqu'il a assez de stock disponible. Sinon le premier entrepôt qui couvre la quantité est utilisé.",
+          "Un seul entrepôt est celui par défaut. Définir par défaut retire le précédent.",
+          "Désactiver empêche de choisir l'entrepôt. S'il est le seul entrepôt d'une caisse, la désactivation est bloquée jusqu'à ce que la caisse ait un autre entrepôt.",
+          "La suppression est logique et l'entrepôt peut être restauré."
+        ]
+      }
+    ]
+  },
   "createWarehouse": "Créer un entrepôt",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

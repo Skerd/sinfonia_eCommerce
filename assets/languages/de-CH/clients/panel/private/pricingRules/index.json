@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
   "title": "Pricing Rules",
   "description": "Automate preis adjustments von segment oder produkt.",
+  "help": {
+    "ariaLabel": "Über Preisregeln",
+    "title": "Über Preisregeln",
+    "overview": "Preisregeln ändern den Stückpreis, bevor ein Rabattcode gilt. Jede Warenkorbzeile erhält höchstens eine Regel. Name, Typ, Wert und Geltungsbereich sind erforderlich.",
+    "sections": [
+      {
+        "title": "Welche Regel gewinnt",
+        "body": "Aktive Regeln stehen nach Priorität, die höchste zuerst, dann die neueste. Die erste passende Regel der Zeile gilt. Spätere Regeln dieser Zeile werden übersprungen.",
+        "items": [
+          "Eine Regel ohne Kundengruppen gilt für jeden Warenkorb. Eine Regel mit Gruppen gilt nur, wenn der angemeldete Kunde in einer davon ist. Gäste treffen nur Regeln ohne Gruppen.",
+          "Gilt für alle oder für Kundengruppe trifft jede Zeile. Produkt, Kategorie und Kollektion treffen nur die gewählten Ziele. Kategorie nutzt die erste Kategorie des Produkts.",
+          "Der Mindestbestellwert nutzt die Zwischensumme vor jeder Regel. Die Mindestmenge nutzt die Stückzahl. Ausserhalb von Start und Ende wird die Regel ignoriert."
+        ]
+      },
+      {
+        "title": "Was die Typen tun",
+        "body": "Die Anpassung gilt auf den Katalog Stückpreis. Das Ergebnis liegt nie unter null.",
+        "items": [
+          "Prozent Rabatt senkt den Stückpreis um diesen Prozentsatz.",
+          "Fest Rabatt zieht den Wert vom Stückpreis ab.",
+          "Festpreis ersetzt den Stückpreis durch den Wert.",
+          "Zuschlag addiert den Wert zum Stückpreis."
+        ]
+      }
+    ]
+  },
   "createPricingRule": "Pricing rule erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

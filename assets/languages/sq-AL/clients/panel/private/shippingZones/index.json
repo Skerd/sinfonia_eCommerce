@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
   "title": "Zonat e transportit",
   "description": "Përcaktoni tarifat e transportit sipas gjeografisë.",
+  "help": {
+    "ariaLabel": "Rreth Zonat e transportit",
+    "title": "Rreth Zonat e transportit",
+    "overview": "Pagesa ofron çdo tarifë të zonave aktive që përputhen me destinacionin. Blerësi zgjedh një. Një zonë kërkon një emër dhe të paktën një tarifë. Një zonë pa vende nuk përputhet.",
+    "sections": [
+      {
+        "title": "Si përputhet një destinacion",
+        "body": "Vendi duhet të jetë një nga vendet e zonës. Shteti dhe kodi postar e ngushtojnë më tej.",
+        "items": [
+          "Nëse listoni shtete, shteti i destinacionit duhet të jetë njëri prej tyre. Lista bosh përputhet me gjithë vendin.",
+          "Modelet e kodit postar janë opsionale. Një listë bosh përputhet me çdo kod. * është një shenjë e lirë, për shembull 10*.",
+          "Pa vend destinacioni nuk ofrohen tarifa."
+        ]
+      },
+      {
+        "title": "Si çmohet një tarifë",
+        "body": "Çdo tarifë që përputhet shfaqet me emër, çmim, transportues dhe ditë të parashikuara. Transportuesi dhe ditët nuk e ndryshojnë çmimin.",
+        "items": [
+          "E sheshtë ngarkon çmimin e saj. Falas është 0 dhe fshihet kur shuma e porosisë është jashtë minimumit ose maksimumit.",
+          "Pesha përdor peshën e shportës dhe fshihet jashtë dritares së peshës. Çmimi përdor nëntotalin e mallit dhe dritaren e shumës.",
+          "Sasia krahason numrin e artikujve me fushat e shumës minimale dhe maksimale, jo me totalin në para.",
+          "Një zbritje transporti falas e heq koston në pagesë. Nuk i heq tarifat nga kjo listë."
+        ]
+      }
+    ]
+  },
   "createShippingZone": "Krijo zonë transporti",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

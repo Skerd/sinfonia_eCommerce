@@ -13,6 +13,8 @@
     "warehousePlaceholder": "Seleziona magazzino",
     "currencyLabel": "Valuta",
     "currencyPlaceholder": "Seleziona valuta",
+    "fiscalConfigLabel": "Configurazione fiscale",
+    "fiscalConfigPlaceholder": "Seleziona configurazione fiscale",
     "receiptHeaderLabel": "Intestazione della ricevuta",
     "receiptHeaderPlaceholder": "Stampato nella parte superiore della ricevuta",
     "receiptFooterLabel": "Piè di pagina della ricevuta",
@@ -50,7 +52,7 @@
   },
   "formHeader": {
     "title": "Modifica configurazione POS",
-    "description": "Aggiorna magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
+    "description": "Aggiorna la configurazione fiscale, i magazzini, i metodi di pagamento, il testo della ricevuta e le regole di cassa."
   },
   "formButtons": {
     "cancel": "Annulla",

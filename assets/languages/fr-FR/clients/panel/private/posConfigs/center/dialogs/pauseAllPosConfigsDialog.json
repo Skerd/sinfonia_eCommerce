@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
   "title": "Suspendre toutes les caisses POS ?",
-  "description": "Applique un verrou à l'échelle de l'entreprise et tamponne chaque caisse. Les sessions ouvertes sont fermées de force (prises annulées, trésorerie réglée comme prévu). Les nouvelles caisses créées alors qu'elles sont verrouillées ne peuvent pas non plus être vendues avant de tout reprendre. Les vides terminaux font de leur mieux.",
+  "description": "Applique un verrou à l'échelle de l'entreprise. Les sessions ouvertes sont fermées de force (prises annulées, trésorerie réglée comme prévu). Les nouvelles caisses créées pendant le verrouillage ne peuvent pas vendre avant de tout reprendre. Les caisses mises en pause individuellement restent en pause. Les annulations terminales sont best-effort.",
   "reasonLabel": "Motif (facultatif)",
   "reasonPlaceholder": "par ex. Panne fiscale/réseau",
   "cancel": "Annuler",

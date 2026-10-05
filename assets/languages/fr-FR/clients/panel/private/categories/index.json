@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Catégories",
   "description": "Configurez les catégories de produits pour les catalogues dans votre locataire.",
+  "help": {
+    "ariaLabel": "À propos des catégories",
+    "title": "À propos des catégories",
+    "overview": "Les catégories regroupent les produits du catalogue. Un produit peut appartenir à plusieurs catégories. Le nom est obligatoire ; la catégorie parente et l'ordre d'affichage sont facultatifs.",
+    "sections": [
+      {
+        "title": "Comment le catalogue les utilise",
+        "body": "Le slug est généré à partir du nom et reste unique dans la société. Renommer la catégorie reconstruit le slug. La parente imbrique la catégorie, et l'ordre la classe parmi ses voisines.",
+        "items": [
+          "Une règle de prix visant une catégorie ne correspond qu'à la première catégorie du produit.",
+          "Une remise visant une catégorie correspond si l'une des catégories du produit est sélectionnée.",
+          "La suppression est logique et la catégorie peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createCategory": "Créer une catégorie",
   "fields": {
     "name": "Nom",

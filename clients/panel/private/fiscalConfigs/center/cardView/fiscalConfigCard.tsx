@@ -10,9 +10,10 @@ import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fisca
 import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
 import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import type {ReactNode, RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/fiscalconfigs";
 
@@ -100,7 +101,23 @@ function FiscalConfigCard({
         >
             {({entity: row, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={row.name}
+                        badgesBesideTitle
+                        badges={
+                            row.isActive ? undefined : (
+                                <DisplayValue path="isActive" value={resolveLanguageKey("inactive")}>
+                                    {(formatted: ReactNode) => (
+                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0">
+                                            <IconPower className="w-3 h-3" />
+                                            {formatted}
+                                        </span>
+                                    )}
+                                </DisplayValue>
+                            )
+                        }
+                    >
                         <ActivateFiscalConfig entity={row} onAction={setAction} />
                         <DeactivateFiscalConfig entity={row} onAction={setAction} />
                     </EntityCard.Header>
@@ -123,18 +140,20 @@ function FiscalConfigCard({
                             icon={IconCertificate}
                             label={resolveLanguageKey("certificate")}
                             tooltip={resolveLanguageKey("certificate")}
-                            path="hasCertificate"
+                            path="certificate"
                             type="boolean"
-                            value={row.hasCertificate}
+                            value={(row.certificate?.length ?? 0) > 0}
                         />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={row.isActive}
-                        />
+                        {row.isActive ? (
+                            <EntityCardRow
+                                icon={IconPower}
+                                label={resolveLanguageKey("active")}
+                                tooltip={resolveLanguageKey("active")}
+                                path="isActive"
+                                type="boolean"
+                                value={row.isActive}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
   "title": "Shipping Zones",
   "description": "Define shipping rates by geography.",
+  "help": {
+    "ariaLabel": "About Shipping Zones",
+    "title": "About Shipping Zones",
+    "overview": "Checkout offers every rate from active zones that match the destination. The shopper picks one. A zone needs a name and at least one rate. A zone with no countries does not match.",
+    "sections": [
+      {
+        "title": "How a destination matches",
+        "body": "Country must be one of the zone countries. State and postal code narrow it further.",
+        "items": [
+          "If you list states, the destination state must be one of them. Leave states empty to match the whole country.",
+          "Postal patterns are optional. An empty list matches every postal code. Use * as a wildcard, for example 10*.",
+          "Without a destination country, no rates are offered."
+        ]
+      },
+      {
+        "title": "How a rate is priced",
+        "body": "Each matching rate is listed with its name, price, carrier, and estimated days. Carrier and days do not change the price.",
+        "items": [
+          "Flat charges its price. Free charges 0, and is hidden when the order amount is outside its minimum or maximum.",
+          "Weight uses the cart weight and is hidden outside its weight window. Price uses the merchandise subtotal and its order-amount window.",
+          "Quantity compares the item count with the minimum and maximum order-amount fields, not the money total.",
+          "A free-shipping discount waives the shipping charge at checkout. It does not remove the rates from this list."
+        ]
+      }
+    ]
+  },
   "createShippingZone": "Create shipping zone",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

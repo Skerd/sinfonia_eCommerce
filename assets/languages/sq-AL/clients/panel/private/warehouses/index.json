@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
   "title": "Magazinat",
   "description": "Menaxho vendndodhjet që mbajnë stokun tënd.",
+  "help": {
+    "ariaLabel": "Rreth Magazinat",
+    "title": "Rreth Magazinat",
+    "overview": "Një magazinë është një vend që mban stokun. Inventari ruhet për produkt ose variant në një magazinë: në dorë, dhe i rezervuar për pagesat e hapura. Emri dhe kodi janë të detyrueshëm.",
+    "sections": [
+      {
+        "title": "Ku e merr pagesa stokun",
+        "body": "Një rresht rezervohet vetëm kur ekziston një inventar për atë produkt ose variant. Pa rresht trajtohet si i pandjekur.",
+        "items": [
+          "Magazina aktive e paracaktuar përdoret kur ka mjaft stok të lirë. Përndryshe përdoret magazina e parë që e mbulon sasinë.",
+          "Vetëm një magazinë është e paracaktuar. Cakto të paracaktuar heq të mëparshmen.",
+          "Çaktivizimi e ndalon zgjedhjen e magazinës. Nëse është magazina e vetme e një arke, çaktivizimi bllokohet derisa arka të ketë një magazinë tjetër.",
+          "Fshirja është e butë dhe magazina mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createWarehouse": "Krijo magazinë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

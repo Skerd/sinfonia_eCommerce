@@ -2,6 +2,7 @@ import {compose} from "redux";
 import {useRef, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Plus} from "lucide-react";
 import {Button, ButtonTitle} from "@coreModule/components/ui/button.tsx";
@@ -70,7 +71,11 @@ function AllCategories({resolveLanguageKey}: AllCategoriesProps) {
 
     return (
         <div className="flex-full gap-4">
-            <Header title={resolveLanguageKey("title")} description={resolveLanguageKey("description")}>
+            <Header
+                title={resolveLanguageKey("title")}
+                description={resolveLanguageKey("description")}
+                help={readPageHelp(resolveLanguageKey)}
+            >
                 <div className="flex gap-2">
                     <HiddenElement hideAll={true}>
                         {create && (

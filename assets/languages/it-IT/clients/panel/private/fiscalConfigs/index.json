@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Configurazioni fiscali",
   "description": "Fiscalizzazione CIS albanese e impostazioni della fattura elettronica (NIPT, TCR, certificati).",
+  "help": {
+    "ariaLabel": "Informazioni su Configurazioni fiscali",
+    "title": "Informazioni su Configurazioni fiscali",
+    "overview": "Una configurazione fiscale è l'identità CIS albanese che firma uno scontrino: NIPT, unità commerciale, operatore, codice software, TCR, endpoint e certificato di firma. Una configurazione POS punta a una configurazione fiscale. Senza selezione, quella cassa non fiscalizza.",
+    "sections": [
+      {
+        "title": "Quando una vendita viene fiscalizzata",
+        "body": "Dopo il pagamento, la fiscalizzazione parte se questa configurazione è attiva e c'è un certificato. Dopo una fattura fiscale riuscita viene sempre creata la fattura elettronica. Il pagamento resta valido se il CIS restituisce un errore.",
+        "items": [
+          "Il NIPT ricade sulla partita IVA della società se il campo è vuoto. Il codice TCR deve essere già registrato prima di firmare una fattura.",
+          "La fattura fiscale è segnata come fattura elettronica e il documento UBL viene registrato presso il CIS.",
+          "Test e produzione scelgono l'ambiente CIS a cui appartengono gli URL e il certificato.",
+          "Il certificato è un file PKCS#12. Una password vuota in modifica conserva quella salvata."
+        ]
+      }
+    ]
+  },
   "createFiscalConfig": "Crea configurazione fiscale",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
@@ -33,10 +50,8 @@
     "sellerTown": "Città del venditore",
     "sellerCountry": "Paese del venditore",
     "isVatRegistered": "partita IVA registrata",
-    "autoFiscalizePos": "Fiscalizza automaticamente il POS",
-    "autoEinvoice": "Fattura elettronica automatica",
     "environment": "Ambiente",
-    "hasCertificate": "Certificato",
+    "certificate": "Certificato",
     "isActive": "Attivo",
     "company": "Azienda",
     "createdBy": "Creato da",

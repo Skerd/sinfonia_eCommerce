@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
   "title": "Discounts",
   "description": "Manage promotional codes and automatic discounts.",
+  "help": {
+    "ariaLabel": "About Discounts",
+    "title": "About Discounts",
+    "overview": "A discount is a code the shopper enters. The cart holds one discount at a time. It is checked again whenever the cart is re-priced, and dropped if it no longer qualifies. The code is stored in uppercase. Title, type, value, what it applies to, and a start date are required.",
+    "sections": [
+      {
+        "title": "When the amount is calculated",
+        "body": "The cart sets the unit price first: catalog price, then one pricing rule. The discount is taken off that price. Gift-card lines are never discounted and do not count toward minimums.",
+        "items": [
+          "Percentage takes that percent off the lines in scope. Fixed takes a flat amount, never more than those lines.",
+          "Free shipping does not reduce the merchandise total. Checkout waives the shipping charge while this discount is applied.",
+          "Buy X get Y groups the eligible units as buy quantity plus get quantity, then subtracts the cheapest units in each complete group.",
+          "Applies to order covers every merchandise line. Product, category, or collection covers only the targets you select. Category matches any category on the product."
+        ]
+      },
+      {
+        "title": "What blocks the code",
+        "body": "The discount must be active and inside its start and end. An empty end date means it does not expire.",
+        "items": [
+          "Usage limit stops the code after that many uses. Usage limit per customer counts non-cancelled orders for that customer.",
+          "Minimum order amount and minimum quantity use merchandise only, after pricing rules.",
+          "Customer groups saved on the discount are not checked when the code is applied."
+        ]
+      }
+    ]
+  },
   "createDiscount": "Create discount",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

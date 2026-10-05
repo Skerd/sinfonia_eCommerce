@@ -130,6 +130,9 @@
       "fiscalconfigs": {
         "title": "Fiscale/Fattura elettronica"
       },
+      "albanianFiscalization": {
+        "title": "Fiscalizzazione albanese"
+      },
       "cmsblocks": {
         "title": "Blocchi CMS"
       },

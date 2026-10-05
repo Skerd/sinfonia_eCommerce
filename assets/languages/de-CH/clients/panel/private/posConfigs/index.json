@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "POS Configs",
   "description": "Point von verkauf shops und till einstellungen.",
+  "help": {
+    "ariaLabel": "Über POS-Konfigurationen",
+    "title": "Über POS-Konfigurationen",
+    "overview": "Eine POS Konfiguration ist eine Kasse. Sie braucht einen Namen, mindestens eine Zahlungsmethode und mindestens ein Lager. Ein Kassierer öffnet eine Sitzung an dieser Kasse und verkauft zu ihrer Preisliste.",
+    "sections": [
+      {
+        "title": "Was der Kassierer tun kann",
+        "body": "Der Kassenpreis ist der Variantenpreis, oder der Produktpreis ohne Variante. Die Kasse nimmt keinen vom Kassierer getippten Preis an.",
+        "items": [
+          "Zahlungsmethoden sind die Schaltflächen der Kasse. Lager sind die Bestandsorte, aus denen diese Kasse verkauft.",
+          "Eine optionale Fiskalkonfiguration verbindet diese Kasse mit der albanischen Fiskalisierung. Belegkopf und Belegfuss stehen auf dem Beleg.",
+          "Rabatt, Mengenänderung und Überverkauf erlauben steuern den Kassierer. PIN für Rabatt, Barauszahlung und Rückerstattung verlangt vorher eine Manager PIN.",
+          "Kassenkontrolle führt die Lade. Die Barcode Scanner Markierung schaltet das Scannen für diese Kasse ein."
+        ]
+      },
+      {
+        "title": "Pause und Fortsetzen",
+        "body": "Eine inaktive Kasse, eine pausierte Kasse oder eine Firmensperre lehnt neue Zahlungen ab.",
+        "items": [
+          "Alle Kassen pausieren sperrt die Firma und schliesst offene Sitzungen zwangsweise.",
+          "Alle Kassen fortsetzen hebt nur die Firmensperre auf. Eine einzeln pausierte Kasse bleibt pausiert."
+        ]
+      }
+    ]
+  },
   "createPosConfig": "POS config erstellen",
   "bulkMenu": {
     "triggerAria": "Firma POS controls",
@@ -11,7 +36,7 @@
     "pauseAll": "Pause alle tills",
     "pauseAllHint": "Lock die firma und force-close offen sitzungen",
     "resumeAll": "Resume alle tills",
-    "resumeAllHint": "Leeren die firma lock und every till pause"
+    "resumeAllHint": "Hebt nur die Firmen-Sperre auf. Einzeln pausierte Kassen bleiben pausiert"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
   "title": "Méthodes de paiement aux points de vente",
   "description": "Configurez les espèces, les cartes et autres méthodes de paiement de caisse.",
+  "help": {
+    "ariaLabel": "À propos des méthodes de paiement aux points de vente",
+    "title": "À propos des méthodes de paiement aux points de vente",
+    "overview": "Une méthode de paiement est espèces ou carte. Une configuration de point de vente choisit les méthodes que sa caisse propose. Nom et type sont obligatoires. La séquence est l'ordre des boutons en caisse.",
+    "sections": [
+      {
+        "title": "Comment la caisse encaisse",
+        "body": "Espèces et carte sont des méthodes distinctes. Une caisse doit garder au moins une méthode.",
+        "items": [
+          "Les espèces peuvent lister des montants rapides séparés par des virgules, par exemple 0.5, 1, 5, 10, 20. Une liste vide utilise les pastilles intégrées.",
+          "La carte active le chemin terminal. Manuel signifie que le caissier confirme le débit. HTTP local parle à un pont de terminal avec protocole, hôte, port, identifiant de terminal et chemin.",
+          "Désactiver masque la méthode pour les nouveaux paiements. La suppression est logique et la méthode peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createPosPaymentMethod": "Créer un mode de paiement",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

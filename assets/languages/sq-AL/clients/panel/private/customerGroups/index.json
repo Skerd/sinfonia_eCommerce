@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx",
   "title": "Grupet e klientëve",
   "description": "Segmentoni klientët për çmime dhe promocione.",
+  "help": {
+    "ariaLabel": "Rreth Grupet e klientëve",
+    "title": "Rreth Grupet e klientëve",
+    "overview": "Grupet i ndajnë klientët, për shembull pakicë dhe shumicë. Një klient mund të jetë në më shumë se një grup. Rregullat e çmimeve lexojnë ato anëtarësime. Emri është i detyrueshëm.",
+    "sections": [
+      {
+        "title": "Si e sheh rregulli klientin",
+        "body": "Anëtarësia është një regjistrim më vete për çdo klient në grup. Numri i anëtarëve ndjek ato regjistrime. Shporta e mysafirit nuk ka grupe.",
+        "items": [
+          "Një rregull çmimi pa grupe vlen për çdo shportë. Një rregull me grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre.",
+          "Cakto të paracaktuar shënon një grup dhe heq të mëparshmin. Nuk shton klientë vetë.",
+          "Fshirja është e butë dhe grupi mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createCustomerGroup": "Krijo grup klientësh",
   "searchPlaceholder": "Kërkoni ose shtoni filtra...",
   "fields": {

@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
   "title": "Zbritjet",
   "description": "Menaxhoni kodet promocionale dhe zbritjet automatike.",
+  "help": {
+    "ariaLabel": "Rreth Zbritjet",
+    "title": "Rreth Zbritjet",
+    "overview": "Një zbritje është një kod që blerësi e shkruan. Shporta mban një zbritje në të njëjtën kohë. Kontrollohet sa herë riçmohet shporta dhe hiqet nëse nuk kualifikohet më. Kodi ruhet me shkronja të mëdha. Titulli, lloji, vlera, ku zbatohet dhe data e fillimit janë të detyrueshme.",
+    "sections": [
+      {
+        "title": "Kur llogaritet shuma",
+        "body": "Shporta vendos së pari çmimin për njësi: çmimi i katalogut, pastaj një rregull çmimi. Zbritja hiqet nga ai çmim. Kartat dhuratë nuk zbriten dhe nuk numërohen te minimumet.",
+        "items": [
+          "Përqindja heq atë përqindje nga rreshtat në fushëveprim. Fikse heq një shumë, kurrë më shumë se ata rreshta.",
+          "Transporti falas nuk e ul totalin e mallit. Pagesa e heq koston e transportit sa kohë kjo zbritje është e aplikuar.",
+          "Bli X merr Y i grupon njësitë e përshtatshme si sasi blerjeje plus sasi dhurate dhe heq njësitë më të lira të çdo grupi të plotë.",
+          "Zbatohet te porosia mbulon çdo rresht malli. Produkti, kategoria ose koleksioni mbulon vetëm objektivat e zgjedhur. Kategoria përputhet me çdo kategori të produktit."
+        ]
+      },
+      {
+        "title": "Çfarë e bllokon kodin",
+        "body": "Zbritja duhet të jetë aktive dhe brenda fillimit dhe mbarimit. Një mbarim bosh do të thotë se nuk skadon.",
+        "items": [
+          "Kufiri i përdorimit e ndal kodin pas aq përdorimesh. Kufiri për klient numëron porositë e paanulura të atij klienti.",
+          "Shuma minimale dhe sasia minimale përdorin vetëm mallin, pas rregullave të çmimit.",
+          "Grupet e klientëve të ruajtura te zbritja nuk kontrollohen kur aplikohet kodi."
+        ]
+      }
+    ]
+  },
   "createDiscount": "Krijo zbritje",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

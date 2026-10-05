@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
   "title": "Zones d'expédition",
   "description": "Définissez les tarifs d’expédition par zone géographique.",
+  "help": {
+    "ariaLabel": "À propos des zones d'expédition",
+    "title": "À propos des zones d'expédition",
+    "overview": "Le checkout propose chaque tarif des zones actives qui correspondent à la destination. L'acheteur en choisit un. Une zone exige un nom et au moins un tarif. Une zone sans pays ne correspond pas.",
+    "sections": [
+      {
+        "title": "Comment une destination correspond",
+        "body": "Le pays doit faire partie des pays de la zone. L'état et le code postal la restreignent encore.",
+        "items": [
+          "Si vous listez des états, l'état de destination doit en faire partie. Une liste vide correspond à tout le pays.",
+          "Les motifs de code postal sont facultatifs. Une liste vide correspond à chaque code. * est un joker, par exemple 10*.",
+          "Sans pays de destination, aucun tarif n'est proposé."
+        ]
+      },
+      {
+        "title": "Comment un tarif est calculé",
+        "body": "Chaque tarif correspondant s'affiche avec son nom, son prix, son transporteur et les jours estimés. Le transporteur et les jours ne changent pas le prix.",
+        "items": [
+          "Le forfait facture son prix. Gratuit est à 0 et se cache lorsque le montant de commande est hors minimum ou maximum.",
+          "Le poids utilise le poids du panier et se cache hors de sa fenêtre de poids. Le prix utilise le sous-total des marchandises et sa fenêtre de montant.",
+          "La quantité compare le nombre d'articles aux champs de montant minimum et maximum, pas au total en argent.",
+          "Une remise livraison offerte annule les frais au checkout. Elle ne retire pas les tarifs de cette liste."
+        ]
+      }
+    ]
+  },
   "createShippingZone": "Créer une zone d'expédition",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

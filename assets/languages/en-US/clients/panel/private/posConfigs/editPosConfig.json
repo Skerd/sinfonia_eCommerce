@@ -13,6 +13,8 @@
     "warehousePlaceholder": "Select warehouse",
     "currencyLabel": "Currency",
     "currencyPlaceholder": "Select currency",
+    "fiscalConfigLabel": "Fiscal config",
+    "fiscalConfigPlaceholder": "Select fiscal config",
     "receiptHeaderLabel": "Receipt header",
     "receiptHeaderPlaceholder": "Printed at the top of the receipt",
     "receiptFooterLabel": "Receipt footer",
@@ -50,7 +52,7 @@
   },
   "formHeader": {
     "title": "Edit POS config",
-    "description": "Update warehouses, payment methods, receipt text, and till rules."
+    "description": "Update the fiscal config, warehouses, payment methods, receipt text, and till rules."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
   "title": "Varianti del prodotto",
   "description": "Gestisci le varianti dei prodotti a livello di SKU.",
+  "help": {
+    "ariaLabel": "Informazioni su Varianti del prodotto",
+    "title": "Informazioni su Varianti del prodotto",
+    "overview": "Una variante è uno SKU vendibile di un prodotto. Carrello e cassa addebitano il prezzo della variante quando è selezionata. Si vende solo una variante attiva. Il prodotto è obbligatorio.",
+    "sections": [
+      {
+        "title": "Prezzo, identità e scorte",
+        "body": "Ogni variante ha SKU, codice a barre, prezzo, prezzo di confronto, costo, peso e la combinazione di attributi. Senza prezzo di variante si usa il prezzo del prodotto.",
+        "items": [
+          "Attivate il tracciamento scorte quando quello SKU va conteggiato. Il checkout prenota allora la variante in un magazzino che la detiene.",
+          "Una riga senza giacenza è trattata come non tracciata e non viene prenotata.",
+          "Una variante inattiva esce dal carrello al ricalcolo successivo."
+        ]
+      }
+    ]
+  },
   "createProductVariant": "Crea variante",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
@@ -23,7 +39,7 @@
       "height": "Altezza"
     },
     "mainImage": "Immagine principale",
-    "position": "Posizione",
+    "order": "Ordine",
     "status": "Stato",
     "trackInventory": "Tieni traccia dell'inventario",
     "createdBy": "Creato da",

@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
   "title": "Blocs CMS",
   "description": "Gérez les blocs de contenu de la vitrine et leur ordre d'affichage.",
+  "help": {
+    "ariaLabel": "À propos des blocs CMS",
+    "title": "À propos des blocs CMS",
+    "overview": "Les blocs CMS sont les sections de la vitrine, comme une bannière, un carrousel ou une annonce. La boutique charge les blocs actifs dont les dates incluent maintenant, ordonnés par position de la plus basse à la plus haute. Type et titre sont obligatoires.",
+    "sections": [
+      {
+        "title": "Comment la vitrine les choisit",
+        "body": "La position est l'ordre d'affichage. Réordonner sur cette page écrit ces positions. Un bloc hors de son début ou de sa fin reste enregistré mais n'est pas envoyé à la boutique.",
+        "items": [
+          "Le type choisit la mise en page : bannière, carrousel, collection en vedette, tendances, meilleures ventes, vente flash, annonce, HTML personnalisé, vidéo, grille, vitrine de catégories ou section promotionnelle.",
+          "La visibilité peut limiter ordinateur, mobile et tablette, et lister des régions. Un nouveau bloc vaut pour les trois appareils.",
+          "La suppression est logique et le bloc peut être restauré."
+        ]
+      }
+    ]
+  },
   "createCmsBlock": "Créer un bloc CMS",
   "reorderBlocks": "Réorganiser les blocs",
   "reorderTitle": "Réorganiser les blocs CMS",

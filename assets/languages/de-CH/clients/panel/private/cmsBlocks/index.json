@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
   "title": "CMS Blocks",
   "description": "Storefront content blocks und their display auftrag. verwalten",
+  "help": {
+    "ariaLabel": "Über CMS-Blöcke",
+    "title": "Über CMS-Blöcke",
+    "overview": "CMS Blöcke sind die Bereiche des Shops, etwa ein Hero, ein Slider oder ein Hinweis. Der Shop lädt aktive Blöcke, deren Datum jetzt einschliesst, nach Position von niedrig nach hoch. Typ und Titel sind erforderlich.",
+    "sections": [
+      {
+        "title": "Wie der Shop sie auswählt",
+        "body": "Die Position ist die Anzeigereihenfolge. Neu sortieren auf dieser Seite schreibt diese Positionen. Ein Block ausserhalb von Start oder Ende bleibt gespeichert, geht aber nicht an den Shop.",
+        "items": [
+          "Der Typ wählt das Layout: Hero, Slider, hervorgehobene Kollektion, Trends, Bestseller, Blitzangebot, Hinweis, eigenes HTML, Video, Raster, Kategorie Schaufenster oder Werbebereich.",
+          "Die Sichtbarkeit kann Desktop, Mobil und Tablet begrenzen und Regionen listen. Ein neuer Block gilt für alle drei Geräte.",
+          "Das Löschen ist ein Soft-Delete und der Block kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createCmsBlock": "CMS block erstellen",
   "reorderBlocks": "Reorder blocks",
   "reorderTitle": "Reorder CMS blocks",

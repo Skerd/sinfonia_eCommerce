@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Categories",
   "description": "Configure produkt categories für catalogs across ihr tenant.",
+  "help": {
+    "ariaLabel": "Über Kategorien",
+    "title": "Über Kategorien",
+    "overview": "Kategorien gruppieren Produkte im Katalog. Ein Produkt kann in mehreren Kategorien liegen. Der Name ist erforderlich; übergeordnete Kategorie und Reihenfolge sind optional.",
+    "sections": [
+      {
+        "title": "So nutzt der Katalog sie",
+        "body": "Der Slug wird aus dem Namen erzeugt und bleibt innerhalb der Firma eindeutig. Eine Umbenennung baut den Slug neu. Die übergeordnete Kategorie verschachtelt den Eintrag, die Reihenfolge sortiert ihn unter den Geschwistern.",
+        "items": [
+          "Eine Preisregel auf eine Kategorie trifft nur die erste Kategorie des Produkts.",
+          "Ein Rabatt auf eine Kategorie trifft, sobald eine der Produktkategorien ausgewählt ist.",
+          "Das Löschen ist ein Soft-Delete und die Kategorie kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createCategory": "Kategorie erstellen",
   "fields": {
     "name": "Name",

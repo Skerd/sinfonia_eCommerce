@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
-import {IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
+import {IconCashBanknote, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
 import DiscountSheetView from "@eCommerceModule/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
@@ -125,14 +125,26 @@ function DiscountCard({
                             languageKeyCategory="discountType"
                             value={entity.type}
                         />
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("value")}
-                            tooltip={resolveLanguageKey("value")}
-                            path="value"
-                            type="number"
-                            value={entity.value}
-                        />
+                        {entity.type === "percentage" || entity.type === "fixed" ? (
+                            <EntityCardRow
+                                icon={entity.type === "percentage" ? IconPercentage : IconCashBanknote}
+                                label={resolveLanguageKey("value")}
+                                tooltip={resolveLanguageKey("value")}
+                                path="value"
+                                type="number"
+                                value={entity.value}
+                            >
+                                {(formatted) =>
+                                    entity.type === "percentage" ? (
+                                        <>
+                                            {formatted}%
+                                        </>
+                                    ) : (
+                                        formatted
+                                    )
+                                }
+                            </EntityCardRow>
+                        ) : null}
                         <EntityCardRow
                             icon={IconPower}
                             label={resolveLanguageKey("active")}

@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
   "title": "Versand Zones",
   "description": "Define versand rates von geography.",
+  "help": {
+    "ariaLabel": "Über Versandzonen",
+    "title": "Über Versandzonen",
+    "overview": "Der Checkout bietet jeden Tarif aktiver Zonen, die zum Ziel passen. Der Käufer wählt einen. Eine Zone braucht einen Namen und mindestens einen Tarif. Eine Zone ohne Länder passt nicht.",
+    "sections": [
+      {
+        "title": "Wie ein Ziel passt",
+        "body": "Das Land muss zu den Ländern der Zone gehören. Kanton und Postleitzahl grenzen weiter ein.",
+        "items": [
+          "Wenn Sie Kantone listen, muss der Zielkanton dabei sein. Leer bedeutet das ganze Land.",
+          "Postleitzahl Muster sind optional. Eine leere Liste trifft jede Postleitzahl. * ist ein Platzhalter, zum Beispiel 10*.",
+          "Ohne Zielland werden keine Tarife angeboten."
+        ]
+      },
+      {
+        "title": "Wie ein Tarif berechnet wird",
+        "body": "Jeder passende Tarif erscheint mit Name, Preis, Transporteur und geschätzten Tagen. Transporteur und Tage ändern den Preis nicht.",
+        "items": [
+          "Pauschal berechnet seinen Preis. Gratis ist 0 und wird versteckt, wenn der Bestellwert ausserhalb von Minimum oder Maximum liegt.",
+          "Gewicht nutzt das Warenkorbgewicht und wird ausserhalb des Gewichtsfensters versteckt. Preis nutzt die Warensumme und das Bestellwertfenster.",
+          "Menge vergleicht die Stückzahl mit den Feldern für Mindest- und Höchstbestellwert, nicht mit dem Geldbetrag.",
+          "Ein Gratisversand Rabatt erlässt die Versandkosten im Checkout. Er entfernt die Tarife nicht aus dieser Liste."
+        ]
+      }
+    ]
+  },
   "createShippingZone": "Versand zone erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

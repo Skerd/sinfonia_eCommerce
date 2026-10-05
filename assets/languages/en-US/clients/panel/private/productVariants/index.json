@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
   "title": "Product variants",
   "description": "Manage SKU-level variants of products.",
+  "help": {
+    "ariaLabel": "About Product variants",
+    "title": "About Product variants",
+    "overview": "A variant is one sellable SKU of a product. The cart and the till charge the variant price when a variant is selected. Only an active variant can be sold. The product is required.",
+    "sections": [
+      {
+        "title": "Price, identity, and stock",
+        "body": "Each variant stores its own SKU, barcode, price, compare-at price, cost, weight, and the attribute combination that identifies it. If the variant has no price, the product price is used.",
+        "items": [
+          "Turn on track inventory when this SKU should be counted. Checkout then reserves that variant from a warehouse that holds it.",
+          "A line with no inventory row is treated as untracked and is not reserved.",
+          "An inactive variant is removed from the cart the next time the cart is priced."
+        ]
+      }
+    ]
+  },
   "createProductVariant": "Create variant",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
@@ -23,7 +39,7 @@
       "height": "Height"
     },
     "mainImage": "Main image",
-    "position": "Position",
+    "order": "Order",
     "status": "Status",
     "trackInventory": "Track inventory",
     "createdBy": "Created by",

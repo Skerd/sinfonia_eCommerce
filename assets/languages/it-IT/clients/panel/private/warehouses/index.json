@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
   "title": "Magazzini",
   "description": "Gestisci le sedi che detengono le tue scorte.",
+  "help": {
+    "ariaLabel": "Informazioni su Magazzini",
+    "title": "Informazioni su Magazzini",
+    "overview": "Un magazzino è un luogo che detiene le scorte. La giacenza è per prodotto o variante in un magazzino: disponibile e prenotata per i checkout aperti. Nome e codice sono obbligatori.",
+    "sections": [
+      {
+        "title": "Da dove il checkout prende le scorte",
+        "body": "Una riga si prenota solo se esiste una giacenza per quel prodotto o variante. Senza giacenza è trattata come non tracciata.",
+        "items": [
+          "Il magazzino attivo predefinito si usa quando ha abbastanza disponibile. Altrimenti si usa il primo magazzino che copre la quantità.",
+          "Un solo magazzino è quello predefinito. Imposta predefinito toglie il precedente.",
+          "Disattivare impedisce di scegliere il magazzino. Se è l'unico magazzino di una cassa, la disattivazione è bloccata finché la cassa non ha un altro magazzino.",
+          "L'eliminazione è logica e il magazzino può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "createWarehouse": "Crea magazzino",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

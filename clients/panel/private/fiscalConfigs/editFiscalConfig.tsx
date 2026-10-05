@@ -12,9 +12,8 @@ export default createGenericEditPage<FiscalConfig, EditFiscalConfigFormType>({
     schema: editFiscalConfigFormSchema,
     mapEntityData: data => ({
         ...data,
-        certificateBase64: "",
+        certificate: data.certificate?.map(media => media._id) ?? [],
         certificatePassword: "",
-        clearCertificate: false,
     }),
     submitIcon: <Save />,
 });

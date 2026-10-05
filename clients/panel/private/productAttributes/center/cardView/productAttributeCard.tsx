@@ -116,6 +116,7 @@ function ProductAttributeCard({
                                 label={resolveLanguageKey("values")}
                                 tooltip={resolveLanguageKey("values")}
                                 path="values"
+                                className="basis-full"
                                 value={values.length > 0 ? valuesPreview(values) : null}
                             />
                         </EntityCard.Body>

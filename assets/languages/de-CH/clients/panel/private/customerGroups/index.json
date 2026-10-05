@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx",
   "title": "Customer Groups",
   "description": "Segment customers für pricing und promotions.",
+  "help": {
+    "ariaLabel": "Über Kundengruppen",
+    "title": "Über Kundengruppen",
+    "overview": "Gruppen teilen Kunden, zum Beispiel Einzelhandel und Grosshandel. Ein Kunde kann in mehreren Gruppen sein. Preisregeln lesen diese Mitgliedschaften. Der Name ist erforderlich.",
+    "sections": [
+      {
+        "title": "Wie eine Regel den Kunden sieht",
+        "body": "Die Mitgliedschaft ist ein eigener Datensatz je Kunde und Gruppe. Die Mitgliederzahl folgt diesen Datensätzen. Ein Gastwarenkorb hat keine Gruppen.",
+        "items": [
+          "Eine Preisregel ohne Gruppen gilt für jeden Warenkorb. Eine Regel mit Gruppen gilt nur, wenn der angemeldete Kunde in einer davon ist.",
+          "Als Standard setzen markiert eine Gruppe und löscht den bisherigen Standard. Kunden werden dadurch nicht hinzugefügt.",
+          "Das Löschen ist ein Soft-Delete und die Gruppe kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createCustomerGroup": "Customer group erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

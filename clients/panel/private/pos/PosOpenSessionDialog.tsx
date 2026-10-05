@@ -17,6 +17,7 @@ type Props = {
     openingBalance: string;
     openingNotes: string;
     openingBusy: boolean;
+    fiscalizationInactive?: boolean;
     rk: (key: string) => string;
     onOpeningBalanceChange: (value: string) => void;
     onOpeningNotesChange: (value: string) => void;
@@ -30,6 +31,7 @@ export default function PosOpenSessionDialog({
     openingBalance,
     openingNotes,
     openingBusy,
+    fiscalizationInactive = false,
     rk,
     onOpeningBalanceChange,
     onOpeningNotesChange,
@@ -49,6 +51,11 @@ export default function PosOpenSessionDialog({
                             {configName ? `${rk("openSession.for")} ${configName}` : rk("openSession.description")}
                         </DialogDescription>
                     </DialogHeader>
+                    {fiscalizationInactive ? (
+                        <div className="rounded-md border border-warning/40 bg-warning/10 px-3 py-2 text-sm text-warning">
+                            {rk("fiscalization.inactive")}
+                        </div>
+                    ) : null}
                     <div className="flex flex-col gap-y-3 py-2">
                         <div className="flex flex-col gap-y-1.5">
                             <label className="text-sm font-medium">{rk("openSession.openingBalance")}</label>

@@ -25,5 +25,14 @@
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "form": {
+    "streetLabel": "Street",
+    "postalCodeLabel": "Postal code",
+    "cityLabel": "City",
+    "stateLabel": "State / region",
+    "countryLabel": "Country",
+    "latitudeLabel": "Latitude",
+    "longitudeLabel": "Longitude"
+  }
 }

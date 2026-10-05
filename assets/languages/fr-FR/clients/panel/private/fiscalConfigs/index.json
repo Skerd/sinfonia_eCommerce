@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Configurations fiscales",
   "description": "Fiscalité albanaise CIS et paramètres de facture électronique (NIPT, TCR, certificats).",
+  "help": {
+    "ariaLabel": "À propos des configurations fiscales",
+    "title": "À propos des configurations fiscales",
+    "overview": "Une configuration fiscale est l'identité CIS albanaise qui signe un ticket de caisse : NIPT, unité commerciale, opérateur, code logiciel, TCR, points d'accès et certificat de signature. Une configuration de point de vente pointe vers une configuration fiscale. Sans sélection, cette caisse ne fiscalise pas.",
+    "sections": [
+      {
+        "title": "Quand une vente est fiscalisée",
+        "body": "Après le paiement, la fiscalisation part lorsque cette configuration est active et qu'un certificat est joint. Une facture fiscale réussie est toujours suivie d'une facture électronique. Le paiement reste valide si le CIS renvoie une erreur.",
+        "items": [
+          "Le NIPT retombe sur la TVA de la société lorsque le champ est vide. Le code TCR doit déjà être enregistré avant qu'une facture puisse être signée.",
+          "La facture fiscale est marquée comme facture électronique et le document UBL est enregistré auprès du CIS.",
+          "Test et production choisissent l'environnement CIS auquel appartiennent les URL et le certificat.",
+          "Le certificat est un fichier PKCS#12. Un mot de passe vide à l'édition conserve le mot de passe enregistré."
+        ]
+      }
+    ]
+  },
   "createFiscalConfig": "Créer une configuration fiscale",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
@@ -33,10 +50,8 @@
     "sellerTown": "Ville du vendeur",
     "sellerCountry": "Pays du vendeur",
     "isVatRegistered": "TVA enregistrée",
-    "autoFiscalizePos": "Fiscaliser automatiquement les points de vente",
-    "autoEinvoice": "Facture électronique automatique",
     "environment": "Environnement",
-    "hasCertificate": "Certificat",
+    "certificate": "Certificat",
     "isActive": "Actif",
     "company": "Entreprise",
     "createdBy": "Créé par",

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
   "title": "Të rifillohen të gjitha arkat POS?",
-  "description": "Pastron kyçin e kompanisë dhe çdo pauzë arke. Arkatari duhet të hapë një seancë të re për të shitur.",
+  "description": "Pastron vetëm kyçin e kompanisë. Arkat e pauzuara individualisht mbeten në pauzë. Arkatari i arkave të shkyçura duhet të hapë një seancë të re për të shitur."
   "cancel": "Anulo",
   "confirm": "Rifillo të gjitha",
   "busy": "Duke punuar…",

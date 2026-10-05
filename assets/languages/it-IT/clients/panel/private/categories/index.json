@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Categorie",
   "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
+  "help": {
+    "ariaLabel": "Informazioni su Categorie",
+    "title": "Informazioni su Categorie",
+    "overview": "Le categorie raggruppano i prodotti nel catalogo. Un prodotto può stare in più categorie. Il nome è obbligatorio; categoria padre e ordine sono facoltativi.",
+    "sections": [
+      {
+        "title": "Come le usa il catalogo",
+        "body": "Lo slug nasce dal nome e resta univoco nella società. Rinominare la categoria lo ricostruisce. Il padre annida la categoria e l'ordine la dispone tra le sorelle.",
+        "items": [
+          "Una regola di prezzo su una categoria corrisponde solo alla prima categoria del prodotto.",
+          "Uno sconto su una categoria corrisponde se una qualunque categoria del prodotto è selezionata.",
+          "L'eliminazione è logica e la categoria può essere ripristinata."
+        ]
+      }
+    ]
+  },
   "createCategory": "Crea categoria",
   "fields": {
     "name": "Nome",

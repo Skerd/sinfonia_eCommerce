@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Fiscal configs",
   "description": "Albanian CIS fiscalization and e-invoice settings (NIPT, TCR, certificates).",
+  "help": {
+    "ariaLabel": "About Fiscal configs",
+    "title": "About Fiscal configs",
+    "overview": "A fiscal config is the Albanian CIS identity used to sign a till receipt: NIPT, business unit, operator, software code, TCR, endpoints, and the signing certificate. A POS config points at one fiscal config. With none selected, that till does not fiscalize.",
+    "sections": [
+      {
+        "title": "When a sale is fiscalized",
+        "body": "After the till is paid, fiscalization runs when this config is active and a certificate is attached. A successful fiscal invoice is always followed by an e-invoice. The payment still completes if CIS returns a fault.",
+        "items": [
+          "NIPT falls back to the company VAT when this field is empty. The TCR code must already be registered before an invoice can be signed.",
+          "The fiscal invoice is marked as an e-invoice and the UBL document is registered with CIS.",
+          "Test and production choose which CIS environment the URLs and certificate belong to.",
+          "The certificate is a PKCS#12 file. Leaving the password blank on edit keeps the stored password."
+        ]
+      }
+    ]
+  },
   "createFiscalConfig": "Create fiscal config",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
@@ -33,10 +50,8 @@
     "sellerTown": "Seller town",
     "sellerCountry": "Seller country",
     "isVatRegistered": "VAT registered",
-    "autoFiscalizePos": "Auto-fiscalize POS",
-    "autoEinvoice": "Auto e-invoice",
     "environment": "Environment",
-    "hasCertificate": "Certificate",
+    "certificate": "Certificate",
     "isActive": "Active",
     "company": "Company",
     "createdBy": "Created by",

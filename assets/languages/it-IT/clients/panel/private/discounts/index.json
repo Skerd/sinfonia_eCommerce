@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
   "title": "Sconti",
   "description": "Gestisci codici promozionali e sconti automatici.",
+  "help": {
+    "ariaLabel": "Informazioni su Sconti",
+    "title": "Informazioni su Sconti",
+    "overview": "Uno sconto è un codice che l'acquirente inserisce. Il carrello ne tiene uno alla volta. Viene ricontrollato a ogni ricalcolo e tolto se non è più valido. Il codice è salvato in maiuscolo. Titolo, tipo, valore, ambito e data di inizio sono obbligatori.",
+    "sections": [
+      {
+        "title": "Quando si calcola l'importo",
+        "body": "Il carrello fissa prima il prezzo unitario: prezzo di catalogo, poi una regola di prezzo. Lo sconto si applica su quel prezzo. Le gift card non si scontano e non contano nei minimi.",
+        "items": [
+          "La percentuale toglie quella percentuale dalle righe interessate. Il fisso toglie un importo, mai più di quelle righe.",
+          "La spedizione gratuita non abbassa il totale merce. Il checkout azzera la spedizione finché questo sconto è applicato.",
+          "Compra X ottieni Y raggruppa le unità idonee come quantità da comprare più quantità in omaggio, poi toglie le unità più economiche di ogni gruppo completo.",
+          "Si applica all'ordine copre ogni riga di merce. Prodotto, categoria o collezione copre solo gli obiettivi scelti. La categoria corrisponde a qualunque categoria del prodotto."
+        ]
+      },
+      {
+        "title": "Cosa blocca il codice",
+        "body": "Lo sconto deve essere attivo e tra inizio e fine. Una fine vuota significa che non scade.",
+        "items": [
+          "Il limite di utilizzo ferma il codice dopo quel numero di usi. Il limite per cliente conta gli ordini non annullati di quel cliente.",
+          "Importo minimo e quantità minima usano solo la merce, dopo le regole di prezzo.",
+          "I gruppi di clienti salvati sullo sconto non sono controllati quando si applica il codice."
+        ]
+      }
+    ]
+  },
   "createDiscount": "Crea sconto",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

@@ -127,6 +127,11 @@ export function parseCashQuickAmounts(raw?: string | null): number[] {
     return parsed.length ? parsed : DEFAULT_CASH_QUICK_AMOUNTS;
 }
 
+/** True when this till's fiscal config is active, so sales can be fiscalized. */
+export function posFiscalizationActive(config: PosConfig | null | undefined): boolean {
+    return config?.fiscalConfig?.isActive === true;
+}
+
 export function formatMoney(value: number, currencyCode = "EUR"): string {
     try {
         return formatCurrency(value, currencyCode, {minimumFractionDigits: 2, maximumFractionDigits: 2});

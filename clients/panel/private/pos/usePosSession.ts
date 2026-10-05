@@ -7,7 +7,7 @@ import type {SessionBundle} from "@eCommerceModule/clients/panel/private/pos/pos
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import type {ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {posFiscalizationActive, type ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import {subscribePosKillSwitch} from "@eCommerceModule/clients/panel/private/pos/posKillSwitchEvents.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
@@ -138,6 +138,9 @@ export function usePosSession({
                     setConfig(bundle.config);
                     if (bundle.config.isPaused) setTillLocked(true);
                     setOpenSessionOpen(false);
+                    if (!posFiscalizationActive(bundle.config)) {
+                        toast.warning(rk("fiscalization.inactive"));
+                    }
                 } else {
                     setSession(null);
                     try {
@@ -291,6 +294,9 @@ export function usePosSession({
             setOpenSessionOpen(false);
             resetManagerPinRef.current();
             toast.success(rk("toast.sessionOpened"));
+            if (!posFiscalizationActive(res.data.data.config)) {
+                toast.warning(rk("fiscalization.inactive"));
+            }
         } catch {
             toast.error(rk("errors.openSessionFailed"));
         } finally {

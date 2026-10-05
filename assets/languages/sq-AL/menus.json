@@ -130,6 +130,9 @@
       "fiscalconfigs": {
         "title": "Fiskale / E-faturë"
       },
+      "albanianFiscalization": {
+        "title": "Fiskalizimi shqiptar"
+      },
       "cmsblocks": {
         "title": "Blloqet CMS"
       },

@@ -14,6 +14,9 @@
     "companyBadge": "Firma paused",
     "forceClosedToast": "Diese till sitzung was force-geschlossen von ein admin pause."
   },
+  "fiscalization": {
+    "inactive": "Für diese Kasse ist keine Fiskalisierung aktiv. Verkäufe werden nicht fiskalisiert."
+  },
   "inactive": {
     "banner": "Diese POS till ist inaktiv und kann nicht werden opened."
   },

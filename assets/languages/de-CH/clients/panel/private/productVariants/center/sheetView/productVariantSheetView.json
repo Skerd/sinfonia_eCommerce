@@ -13,7 +13,7 @@
   "sku": "SKU",
   "barcode": "Barcode",
   "status": "Status",
-  "position": "Position",
+  "order": "Auftrag",
   "trackInventory": "Track inventory",
   "company": "Firma",
   "lifecycle": "Lebenszyklus",

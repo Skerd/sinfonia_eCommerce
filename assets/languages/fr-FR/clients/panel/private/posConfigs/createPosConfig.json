@@ -10,6 +10,8 @@
     "warehousePlaceholder": "Sélectionnez un entrepôt",
     "currencyLabel": "Devise",
     "currencyPlaceholder": "Sélectionner une devise",
+    "fiscalConfigLabel": "Configuration fiscale",
+    "fiscalConfigPlaceholder": "Sélectionner une configuration fiscale",
     "receiptHeaderLabel": "En-tête du reçu",
     "receiptHeaderPlaceholder": "Imprimé en haut du reçu",
     "receiptFooterLabel": "Pied de page du reçu",
@@ -47,7 +49,7 @@
   },
   "formHeader": {
     "title": "Créer une configuration de point de vente",
-    "description": "Configurez une caisse de magasin : entrepôts, méthodes de paiement, texte du reçu et règles de caisse."
+    "description": "Configurez une caisse de magasin : configuration fiscale, entrepôts, méthodes de paiement, texte du reçu et règles de caisse."
   },
   "formButtons": {
     "cancel": "Annuler",

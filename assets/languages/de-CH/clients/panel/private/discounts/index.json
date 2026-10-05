@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
   "title": "Discounts",
   "description": "Promotional codes und automatic discounts. verwalten",
+  "help": {
+    "ariaLabel": "Über Rabatte",
+    "title": "Über Rabatte",
+    "overview": "Ein Rabatt ist ein Code, den der Käufer eingibt. Der Warenkorb hält einen Rabatt gleichzeitig. Bei jeder Neubewertung wird er erneut geprüft und entfernt, wenn er nicht mehr gilt. Der Code wird in Grossbuchstaben gespeichert. Titel, Typ, Wert, Geltungsbereich und Startdatum sind erforderlich.",
+    "sections": [
+      {
+        "title": "Wann der Betrag berechnet wird",
+        "body": "Zuerst steht der Stückpreis: Katalogpreis, dann eine Preisregel. Der Rabatt geht von diesem Preis ab. Geschenkkarten werden nie rabattiert und zählen nicht zu den Mindestwerten.",
+        "items": [
+          "Prozent zieht diesen Prozentsatz von den betroffenen Zeilen ab. Festbetrag zieht einen Betrag ab, nie mehr als diese Zeilen.",
+          "Gratisversand senkt die Warensumme nicht. Der Checkout erlässt die Versandkosten, solange dieser Rabatt gilt.",
+          "Kauf X erhalte Y gruppiert die berechtigten Stück als Kaufmenge plus Gratis Menge und zieht die günstigsten Stück jeder vollständigen Gruppe ab.",
+          "Gilt für Bestellung trifft jede Waren Zeile. Produkt, Kategorie oder Kollektion trifft nur die gewählten Ziele. Kategorie trifft jede Kategorie des Produkts."
+        ]
+      },
+      {
+        "title": "Was den Code sperrt",
+        "body": "Der Rabatt muss aktiv und zwischen Start und Ende liegen. Ein leeres Enddatum bedeutet, dass er nicht abläuft.",
+        "items": [
+          "Das Nutzungslimit stoppt den Code nach so vielen Einsätzen. Das Limit pro Kunde zählt nicht stornierte Bestellungen dieses Kunden.",
+          "Mindestbestellwert und Mindestmenge gelten nur für Waren, nach den Preisregeln.",
+          "Kundengruppen am Rabatt werden beim Einlösen des Codes nicht geprüft."
+        ]
+      }
+    ]
+  },
   "createDiscount": "Rabatt erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

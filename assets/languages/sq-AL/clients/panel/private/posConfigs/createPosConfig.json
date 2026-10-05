@@ -10,6 +10,8 @@
     "warehousePlaceholder": "Zgjidh magazinën",
     "currencyLabel": "Monedha",
     "currencyPlaceholder": "Zgjidh monedhën",
+    "fiscalConfigLabel": "Konfigurimi fiskal",
+    "fiscalConfigPlaceholder": "Zgjidh konfigurimin fiskal",
     "receiptHeaderLabel": "Koka e faturës",
     "receiptHeaderPlaceholder": "Printohet në krye të faturës",
     "receiptFooterLabel": "Fundi i faturës",
@@ -47,7 +49,7 @@
   },
   "formHeader": {
     "title": "Krijo konfigurim POS",
-    "description": "Konfiguroni një arke: magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
+    "description": "Konfiguroni një arke: konfigurimin fiskal, magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
   },
   "formButtons": {
     "cancel": "Anulo",

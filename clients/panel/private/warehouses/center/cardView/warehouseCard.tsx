@@ -123,6 +123,7 @@ function WarehouseCard({
                     <EntityCard.Header
                         titlePath="name"
                         title={entity.name}
+                        badgesBesideTitle
                         badges={
                             entity.isDefault ? (
                                 <DisplayValue path="isDefault" value={resolveLanguageKey("default")}>

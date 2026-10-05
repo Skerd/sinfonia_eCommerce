@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
   "title": "Variantet e produkteve",
   "description": "Menaxhoni variantet e produkteve në nivel SKU.",
+  "help": {
+    "ariaLabel": "Rreth Variantet e produkteve",
+    "title": "Rreth Variantet e produkteve",
+    "overview": "Një variant është një SKU i shitshëm i një produkti. Shporta dhe arka llogarisin çmimin e variantit kur ai është zgjedhur. Shitet vetëm një variant aktiv. Produkti është i detyrueshëm.",
+    "sections": [
+      {
+        "title": "Çmimi, identiteti dhe stoku",
+        "body": "Çdo variant ruan SKU, barkod, çmim, çmim krahasues, kosto, peshë dhe kombinimin e atributeve. Pa çmim varianti përdoret çmimi i produktit.",
+        "items": [
+          "Aktivizoni ndjekjen e inventarit kur ai SKU duhet të numërohet. Pagesa e rezervon variantin në një magazinë që e mban.",
+          "Një rresht pa inventar trajtohet si i pandjekur dhe nuk rezervohet.",
+          "Një variant joaktiv hiqet nga shporta në çmimin tjetër."
+        ]
+      }
+    ]
+  },
   "createProductVariant": "Krijo variant",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
@@ -23,7 +39,7 @@
       "height": "Lartësia"
     },
     "mainImage": "Imazhi kryesor",
-    "position": "Pozicioni",
+    "order": "Rendi",
     "status": "Statusi",
     "trackInventory": "Ndjek inventarin",
     "createdBy": "Krijuar nga",

@@ -12,6 +12,7 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
+import {posFiscalizationActive} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 
 type Props = {
@@ -45,6 +46,11 @@ export default function PosTillHeader({
 }: Props) {
     return (
         <>
+            {!posFiscalizationActive(config) && (
+                <div className="shrink-0 border-b border-warning/40 bg-warning/15 px-3 py-2 text-sm text-warning print:hidden">
+                    <div className="font-semibold">{rk("fiscalization.inactive")}</div>
+                </div>
+            )}
             {isPaused && (
                 <div
                     className={cn(

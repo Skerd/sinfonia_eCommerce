@@ -14,6 +14,9 @@
     "companyBadge": "Kompania në pauzë",
     "forceClosedToast": "Kjo seancë arke u mbyll me forcë nga pauza e adminit."
   },
+  "fiscalization": {
+    "inactive": "Asnjë fiskalizim nuk është aktiv për këtë POS. Shitjet në këtë arkë nuk do të fiskalizohen."
+  },
   "inactive": {
     "banner": "Kjo arkë POS është joaktive dhe nuk mund të hapet."
   },

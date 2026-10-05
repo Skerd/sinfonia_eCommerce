@@ -68,6 +68,9 @@ const PosPaymentMethodCardLazy = lazy(
 const PosManagerSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/posConfigs/center/sheetView/posManagerSheetView.tsx"),
 );
+const PosManagerCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/posConfigs/center/cardView/posManagerCard.tsx"),
+);
 const DiscountSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx"),
 );
@@ -91,6 +94,12 @@ const PosSessionSheetViewLazy = lazy(
 );
 const PosConfigSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx"),
+);
+const FiscalConfigSheetViewLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx"),
+);
+const FiscalConfigCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx"),
 );
 const ProductReviewSheetViewLazy = lazy(
     () =>
@@ -141,6 +150,7 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#PosPaymentMethodSheetView": PosPaymentMethodSheetViewLazy,
         "#PosPaymentMethodCard": PosPaymentMethodCardLazy,
         "#PosManagerSheetView": PosManagerSheetViewLazy,
+        "#PosManagerCard": PosManagerCardLazy,
         "#DiscountSheetView": DiscountSheetViewLazy,
         "#DiscountCard": DiscountCardLazy,
         "#ProductOrderSheetView": ProductOrderSheetViewLazy,
@@ -149,6 +159,8 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#PosOrderCard": PosOrderCardLazy,
         "#PosSessionSheetView": PosSessionSheetViewLazy,
         "#PosConfigSheetView": PosConfigSheetViewLazy,
+        "#FiscalConfigSheetView": FiscalConfigSheetViewLazy,
+        "#FiscalConfigCard": FiscalConfigCardLazy,
         "#ProductReviewSheetView": ProductReviewSheetViewLazy,
         "#ProductReviewCard": ProductReviewCardLazy,
         "#InventorySheetView": InventorySheetViewLazy,
@@ -158,6 +170,7 @@ const eCommerceWidgetContribution: WidgetContribution = {
     },
     referencesDefaultItemProps: {
         "#PosPaymentMethodCard": "entity",
+        "#PosManagerCard": "manager",
         "#ProductCard": "product",
         "#ProductAttributeCard": "productAttribute",
         "#ProductVariantCard": "entity",
@@ -165,6 +178,7 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#CategoryCard": "category",
         "#CustomerGroupCard": "customerGroup",
         "#WarehouseCard": "warehouse",
+        "#FiscalConfigCard": "entity",
         "#DiscountCard": "discount",
         "#ProductOrderCard": "order",
         "#PosOrderCard": "entity",
@@ -205,6 +219,10 @@ const eCommerceWidgetContribution: WidgetContribution = {
         },
         "#PosConfigSheetView": {
             url: "/api/eCommerce/posConfig/single",
+            labelFields: ["name"],
+        },
+        "#FiscalConfigSheetView": {
+            url: "/api/eCommerce/fiscalConfig/single",
             labelFields: ["name"],
         },
         "#ProductReviewSheetView": {

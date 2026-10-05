@@ -6,7 +6,9 @@
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
+    "namePlaceholder": "Farbe, Grösse, Material",
     "positionLabel": "Position",
+    "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "Visible on produkt seite",
     "isUsedForVariantsLabel": "Used für variants",
     "valuesLabel": "Values",

@@ -6,7 +6,9 @@
   "form": {
     "_idLabel": "Record ID",
     "nameLabel": "Name",
+    "namePlaceholder": "Color, size, material",
     "positionLabel": "Position",
+    "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "Visible on product page",
     "isUsedForVariantsLabel": "Used for variants",
     "valuesLabel": "Values",

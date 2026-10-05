@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
   "title": "POS Payment Methods",
   "description": "Configure cash, card, and other till payment methods.",
+  "help": {
+    "ariaLabel": "About POS Payment Methods",
+    "title": "About POS Payment Methods",
+    "overview": "A payment method is cash or card. A POS config chooses which methods its till offers. Name and type are required. Sequence is the order the buttons appear on the till.",
+    "sections": [
+      {
+        "title": "How the till takes payment",
+        "body": "Cash and card are separate methods. A till must keep at least one method assigned.",
+        "items": [
+          "Cash can list quick amounts as comma-separated values, for example 0.5, 1, 5, 10, 20. An empty list uses the built-in chips.",
+          "Card turns the terminal path on. Manual means the cashier confirms the charge. Local HTTP talks to a terminal bridge using protocol, host, port, terminal id, and path.",
+          "Deactivating a method hides it from new payments. Deleting a method is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createPosPaymentMethod": "Create payment method",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

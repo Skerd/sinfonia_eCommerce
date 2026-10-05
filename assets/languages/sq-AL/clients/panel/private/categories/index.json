@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Kategoritë",
   "description": "Konfiguroni kategoritë e produkteve për katalogët në qiramarrjen tuaj.",
+  "help": {
+    "ariaLabel": "Rreth Kategoritë",
+    "title": "Rreth Kategoritë",
+    "overview": "Kategoritë grupojnë produktet në katalog. Një produkt mund të qëndrojë në më shumë se një kategori. Emri është i detyrueshëm; prindi dhe renditja janë opsionale.",
+    "sections": [
+      {
+        "title": "Si i përdor katalogu",
+        "body": "Slug-u ndërtohet nga emri dhe mbetet unik brenda kompanisë. Ndryshimi i emrit e rindërton slug-un. Prindi e fut kategorinë brenda një tjetre, renditja e rendit mes motrave.",
+        "items": [
+          "Një rregull çmimi mbi një kategori përputhet vetëm me kategorinë e parë të produktit.",
+          "Një zbritje mbi një kategori përputhet nëse ndonjë nga kategoritë e produktit është zgjedhur.",
+          "Fshirja është e butë dhe kategoria mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createCategory": "Krijo kategori",
   "fields": {
     "name": "Emri",

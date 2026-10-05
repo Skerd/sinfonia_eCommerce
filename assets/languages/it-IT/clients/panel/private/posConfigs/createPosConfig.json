@@ -10,6 +10,8 @@
     "warehousePlaceholder": "Seleziona magazzino",
     "currencyLabel": "Valuta",
     "currencyPlaceholder": "Seleziona valuta",
+    "fiscalConfigLabel": "Configurazione fiscale",
+    "fiscalConfigPlaceholder": "Seleziona configurazione fiscale",
     "receiptHeaderLabel": "Intestazione della ricevuta",
     "receiptHeaderPlaceholder": "Stampato nella parte superiore della ricevuta",
     "receiptFooterLabel": "Piè di pagina della ricevuta",
@@ -47,7 +49,7 @@
   },
   "formHeader": {
     "title": "Crea configurazione POS",
-    "description": "Configura una cassa del negozio: magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
+    "description": "Configura una cassa del negozio: configurazione fiscale, magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
   },
   "formButtons": {
     "cancel": "Annulla",

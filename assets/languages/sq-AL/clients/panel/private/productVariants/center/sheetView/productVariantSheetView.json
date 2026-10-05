@@ -13,7 +13,7 @@
   "sku": "SKU",
   "barcode": "Barkodi",
   "status": "Statusi",
-  "position": "Pozicioni",
+  "order": "Rendi",
   "trackInventory": "Gjurmo inventarin",
   "company": "Kompania",
   "lifecycle": "Cikli i jetës",

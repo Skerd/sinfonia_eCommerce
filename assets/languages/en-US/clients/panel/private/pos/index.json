@@ -17,6 +17,9 @@
   "inactive": {
     "banner": "This POS till is inactive and cannot be opened."
   },
+  "fiscalization": {
+    "inactive": "No fiscalization is active for this POS. Sales on this till will not be fiscalized."
+  },
   "cash": "Cash",
   "orders": "Orders",
   "sessionSales": "Session sales",

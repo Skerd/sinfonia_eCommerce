@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx",
   "title": "Customer Groups",
   "description": "Segment customers for pricing and promotions.",
+  "help": {
+    "ariaLabel": "About Customer Groups",
+    "title": "About Customer Groups",
+    "overview": "Groups segment customers, for example retail and wholesale. A customer can belong to more than one group. Pricing rules read those memberships. The name is required.",
+    "sections": [
+      {
+        "title": "How a rule sees the customer",
+        "body": "Membership is a separate record for each customer in a group. The member count on the group is kept in step with those records. A guest cart has no groups.",
+        "items": [
+          "A pricing rule with no groups applies to every cart. A rule that lists groups applies only when the signed-in customer is in one of them.",
+          "Set default marks one group as the company default and clears the previous default. It does not add customers by itself.",
+          "Deleting a group is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createCustomerGroup": "Create customer group",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

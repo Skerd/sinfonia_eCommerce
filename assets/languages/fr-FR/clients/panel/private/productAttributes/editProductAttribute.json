@@ -6,7 +6,9 @@
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
+    "namePlaceholder": "Couleur, taille, matière",
     "positionLabel": "Poste",
+    "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "Visible sur la page produit",
     "isUsedForVariantsLabel": "Utilisé pour les variantes",
     "valuesLabel": "Valeurs",

@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
   "title": "Produkt variants",
   "description": "SKU-level variants von produkte. verwalten",
+  "help": {
+    "ariaLabel": "Über Produktvarianten",
+    "title": "Über Produktvarianten",
+    "overview": "Eine Variante ist eine verkaufbare SKU eines Produkts. Warenkorb und Kasse berechnen den Variantenpreis, sobald eine Variante gewählt ist. Nur eine aktive Variante ist verkaufbar. Das Produkt ist erforderlich.",
+    "sections": [
+      {
+        "title": "Preis, Identität und Bestand",
+        "body": "Jede Variante speichert eigene SKU, Barcode, Preis, Vergleichspreis, Einstand, Gewicht und die Attributkombination. Fehlt der Variantenpreis, gilt der Produktpreis.",
+        "items": [
+          "Aktivieren Sie die Bestandsführung, wenn diese SKU gezählt werden soll. Der Checkout reserviert die Variante dann in einem Lager, das sie führt.",
+          "Eine Zeile ohne Bestandsdatensatz gilt als nicht geführt und wird nicht reserviert.",
+          "Eine inaktive Variante fällt beim nächsten Neubewerten aus dem Warenkorb."
+        ]
+      }
+    ]
+  },
   "createProductVariant": "Variant erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
@@ -23,7 +39,7 @@
       "height": "Höhe"
     },
     "mainImage": "Haupt bild",
-    "position": "Position",
+    "order": "Auftrag",
     "status": "Status",
     "trackInventory": "Track inventory",
     "createdBy": "Erstellt von",

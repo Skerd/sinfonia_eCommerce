@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
   "title": "Zone fiscali",
   "description": "Configura le aliquote fiscali per paese e regione.",
+  "help": {
+    "ariaLabel": "Informazioni su Zone fiscali",
+    "title": "Informazioni su Zone fiscali",
+    "overview": "Il checkout calcola l'imposta dall'indirizzo di spedizione. Ogni zona attiva di quel paese che corrisponde anche a stato e codice postale aggiunge le sue aliquote. Nome, paese e almeno un'aliquota sono obbligatori.",
+    "sections": [
+      {
+        "title": "Come corrisponde un indirizzo",
+        "body": "Le zone si leggono dalla priorità più alta alla più bassa, e ogni corrispondenza si applica. La priorità non sceglie un solo vincitore.",
+        "items": [
+          "Se elencate stati, lo stato dell'indirizzo deve essere uno di essi. Una lista vuota corrisponde a tutto il paese.",
+          "I modelli di codice postale sono facoltativi. Una lista vuota corrisponde a ogni codice. * è un jolly, per esempio 10*.",
+          "Senza paese sull'indirizzo non c'è imposta."
+        ]
+      },
+      {
+        "title": "Come si sommano le aliquote",
+        "body": "Ogni aliquota è una percentuale di una base progressiva che parte dal subtotale imponibile.",
+        "items": [
+          "Un'aliquota può valere per tutti i prodotti, solo fisici o solo digitali.",
+          "Un'aliquota composta si aggiunge alla base, quindi la successiva si calcola sul subtotale più l'imposta già aggiunta.",
+          "Un'aliquota non composta non alza la base."
+        ]
+      }
+    ]
+  },
   "createTaxZone": "Crea zona fiscale",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

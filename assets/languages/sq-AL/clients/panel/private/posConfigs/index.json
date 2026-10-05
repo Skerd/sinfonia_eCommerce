@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "Konfigurimet POS",
   "description": "Dyqanet dhe cilësimet e arkës.",
+  "help": {
+    "ariaLabel": "Rreth Konfigurimet POS",
+    "title": "Rreth Konfigurimet POS",
+    "overview": "Një konfigurim POS është një arkë. Kërkon një emër, të paktën një metodë pagese dhe të paktën një magazinë. Arkëtari hap një sesion në atë arkë dhe shet sipas listës së saj të çmimeve.",
+    "sections": [
+      {
+        "title": "Çfarë mund të bëjë arkëtari",
+        "body": "Çmimi i arkës është çmimi i variantit, ose çmimi i produktit pa variant. Arka nuk pranon një çmim të shtypur nga arkëtari.",
+        "items": [
+          "Metodat e pagesës janë butonat e arkës. Magazinat janë vendet e stokut nga të cilat ajo arkë shet.",
+          "Një konfigurim fiskal opsional e lidh këtë arkë me fiskalizimin shqiptar. Kreu dhe fundi i kuponit shtypen në kupon.",
+          "Lejo zbritjen, ndryshimin e sasisë dhe shitjen mbi stok e kontrollojnë arkëtarin. PIN për zbritje, dalje parash dhe rimbursim kërkon një PIN menaxheri para veprimit.",
+          "Kontrolli i arkës ndjek sirtarin. Shënimi i skanerit të barkodit e ndez skanimin për këtë arkë."
+        ]
+      },
+      {
+        "title": "Ndalo dhe rifillo",
+        "body": "Një arkë joaktive, një arkë e ndalur ose një bllokim kompanie refuzon pagesat e reja.",
+        "items": [
+          "Ndalo të gjitha arkat e bllokon kompaninë dhe i mbyll me forcë sesionet e hapura.",
+          "Rifillo të gjitha arkat heq vetëm bllokimin e kompanisë. Një arkë e ndalur veçmas mbetet e ndalur."
+        ]
+      }
+    ]
+  },
   "createPosConfig": "Krijo konfigurim POS",
   "bulkMenu": {
     "triggerAria": "Kontrollet e kompanisë për POS",
@@ -11,7 +36,7 @@
     "pauseAll": "Pauzo të gjitha arkat",
     "pauseAllHint": "Kyç kompaninë dhe mbyll me forcë seancat e hapura",
     "resumeAll": "Rifillo të gjitha arkat",
-    "resumeAllHint": "Pastro kyçin e kompanisë dhe çdo pauzë arke"
+    "resumeAllHint": "Pastron vetëm kyçin e kompanisë. Arkat e pauzuara individualisht mbeten në pauzë"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

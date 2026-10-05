@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PricingRule} from "armonia/src/modules/eCommerce/api/eCommerce/private/pricingRule/pricingRule.dto.ts";
-import {IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
+import {IconCashBanknote, IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
 import PricingRuleSheetView from "@eCommerceModule/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/activatePricingRule.tsx";
@@ -119,13 +119,23 @@ function PricingRuleCard({
                             value={entity.type}
                         />
                         <EntityCardRow
-                            icon={IconPercentage}
+                            icon={entity.type === "percentage_discount" ? IconPercentage : IconCashBanknote}
                             label={resolveLanguageKey("value")}
                             tooltip={resolveLanguageKey("value")}
                             path="value"
                             type="number"
                             value={entity.value}
-                        />
+                        >
+                            {(formatted) =>
+                                entity.type === "percentage_discount" ? (
+                                    <>
+                                        {formatted}%
+                                    </>
+                                ) : (
+                                    formatted
+                                )
+                            }
+                        </EntityCardRow>
                         <EntityCardRow
                             icon={IconHash}
                             label={resolveLanguageKey("priority")}

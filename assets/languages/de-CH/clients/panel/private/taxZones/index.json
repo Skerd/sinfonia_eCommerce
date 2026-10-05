@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
   "title": "Steuer Zones",
   "description": "Configure steuer rates von land und region.",
+  "help": {
+    "ariaLabel": "Über Steuerzonen",
+    "title": "Über Steuerzonen",
+    "overview": "Der Checkout berechnet die Steuer aus der Lieferadresse. Jede aktive Zone dieses Landes, die auch Kanton und Postleitzahl trifft, addiert ihre Sätze. Name, Land und mindestens ein Satz sind erforderlich.",
+    "sections": [
+      {
+        "title": "Wie eine Adresse passt",
+        "body": "Zonen werden von der höchsten Priorität zur niedrigsten gelesen, und jede passende Zone gilt. Die Priorität wählt nicht einen einzigen Gewinner.",
+        "items": [
+          "Wenn Sie Kantone listen, muss der Kanton der Adresse dabei sein. Leer bedeutet das ganze Land.",
+          "Postleitzahl Muster sind optional. Eine leere Liste trifft jede Postleitzahl. * ist ein Platzhalter, zum Beispiel 10*.",
+          "Fehlt das Land der Adresse, gibt es keine Steuer."
+        ]
+      },
+      {
+        "title": "Wie Sätze sich stapeln",
+        "body": "Jeder Satz ist ein Prozentsatz einer laufenden Basis, die als steuerbare Zwischensumme beginnt.",
+        "items": [
+          "Ein Satz kann für alle Produkte, nur physische oder nur digitale Produkte gelten.",
+          "Ein zusammengesetzter Satz wird auf die Basis addiert, sodass der nächste Satz auf Zwischensumme plus bereits addierte Steuer rechnet.",
+          "Ein Satz ohne Zusammensetzung hebt die Basis nicht an."
+        ]
+      }
+    ]
+  },
   "createTaxZone": "Steuer zone erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

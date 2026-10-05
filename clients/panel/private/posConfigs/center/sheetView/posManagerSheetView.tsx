@@ -9,10 +9,15 @@ import {
     SheetTitle,
 } from "@coreModule/components/ui/sheet.tsx";
 import DisplayCard from "@coreModule/components/viewEngine/widgets/display/displayCard.tsx";
-import {IconLock, IconUser} from "@tabler/icons-react";
+import {IconAt, IconLock, IconUser} from "@tabler/icons-react";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {FLOATING_SHEET_CONTENT_CLASS} from "@coreModule/components/viewEngine/sheet/widgets/sheetFloatingChrome.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
+
+/** Match {@link SheetViewRenderer} default panel width (not the Sheet primitive `sm:max-w-sm`). */
+const POS_MANAGER_SHEET_SIZE_CLASS =
+    "max-w-[98vw] min-w-[98vw] lg:max-w-[58vw] lg:min-w-[58vw] overflow-y-auto";
 
 export type PosManagerSheetViewOwnProps = {
     open: boolean;
@@ -41,7 +46,10 @@ function PosManagerSheetView({
 
     return (
         <Sheet open={open} onOpenChange={onOpenChange}>
-            <SheetContent className={FLOATING_SHEET_CONTENT_CLASS} side="right">
+            <SheetContent
+                className={cn(FLOATING_SHEET_CONTENT_CLASS, POS_MANAGER_SHEET_SIZE_CLASS)}
+                side="right"
+            >
                 <SheetHeader>
                     <SheetTitle>{title}</SheetTitle>
                     <SheetDescription>{resolveLanguageKey("posManagerSubtitle")}</SheetDescription>
@@ -52,6 +60,12 @@ function PosManagerSheetView({
                         tooltip={resolveLanguageKey("name")}
                         Icon={IconUser}
                         value={title}
+                    />
+                    <DisplayCard
+                        title={resolveLanguageKey("username")}
+                        tooltip={resolveLanguageKey("username")}
+                        Icon={IconAt}
+                        value={manager?.username}
                     />
                     <DisplayCard
                         title={resolveLanguageKey("hasPin")}

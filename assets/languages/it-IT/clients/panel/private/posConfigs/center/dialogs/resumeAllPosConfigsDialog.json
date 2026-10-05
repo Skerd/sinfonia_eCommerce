@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
   "title": "Riprendere tutte le casse POS?",
-  "description": "Cancella il blocco a livello aziendale e ogni pausa fino alla cassa. I cassieri devono aprire una nuova sessione per vendere di nuovo.",
+  "description": "Cancella solo il blocco a livello aziendale. Le casse in pausa singolarmente restano in pausa. I cassieri delle casse sbloccate devono aprire una nuova sessione per vendere di nuovo.",
   "cancel": "Annulla",
   "confirm": "Riprendi tutto",
   "busy": "Lavorando…",

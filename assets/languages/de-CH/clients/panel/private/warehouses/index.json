@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
   "title": "Warehouses",
   "description": "Die locations that hold ihr stock. verwalten",
+  "help": {
+    "ariaLabel": "Über Lager",
+    "title": "Über Lager",
+    "overview": "Ein Lager ist ein Ort, der Bestand hält. Der Bestand liegt je Produkt oder Variante in einem Lager: vorhanden und reserviert für offene Checkouts. Name und Code sind erforderlich.",
+    "sections": [
+      {
+        "title": "Wo der Checkout Bestand nimmt",
+        "body": "Eine Zeile wird nur reserviert, wenn ein Bestandsdatensatz für dieses Produkt oder diese Variante existiert. Ohne Datensatz gilt sie als nicht geführt.",
+        "items": [
+          "Das aktive Standardlager wird genutzt, wenn es genug verfügbaren Bestand hat. Sonst das erste Lager, das die Menge deckt.",
+          "Nur ein Lager ist Standard. Als Standard setzen löscht den bisherigen Standard.",
+          "Deaktivieren verhindert, dass das Lager gewählt wird. Ist es das einzige Lager einer Kasse, ist das Deaktivieren gesperrt, bis die Kasse ein anderes Lager hat.",
+          "Das Löschen ist ein Soft-Delete und das Lager kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createWarehouse": "Warehouse erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

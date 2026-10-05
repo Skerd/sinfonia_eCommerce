@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Fiscal configs",
   "description": "Albanian CIS fiscalization und e-rechnung einstellungen (NIPT, TCR, certificates).",
+  "help": {
+    "ariaLabel": "Über Fiskalkonfigurationen",
+    "title": "Über Fiskalkonfigurationen",
+    "overview": "Eine Fiskalkonfiguration ist die albanische CIS Identität, mit der ein Kassenbeleg signiert wird: NIPT, Geschäftseinheit, Operator, Softwarecode, TCR, Endpunkte und das Signaturzertifikat. Eine POS Konfiguration zeigt auf eine Fiskalkonfiguration. Ohne Auswahl fiskalisiert diese Kasse nicht.",
+    "sections": [
+      {
+        "title": "Wann ein Verkauf fiskalisiert wird",
+        "body": "Nach der Zahlung läuft die Fiskalisierung, wenn diese Konfiguration aktiv ist und ein Zertifikat hängt. Nach einer erfolgreichen Fiskalrechnung folgt immer eine E-Rechnung. Die Zahlung bleibt gültig, wenn CIS einen Fehler meldet.",
+        "items": [
+          "NIPT fällt auf die MwSt Nummer der Firma zurück, wenn das Feld leer ist. Der TCR Code muss registriert sein, bevor eine Rechnung signiert werden kann.",
+          "Die Fiskalrechnung wird als E-Rechnung markiert und das UBL Dokument bei CIS registriert.",
+          "Test und Produktion wählen, zu welcher CIS Umgebung die URLs und das Zertifikat gehören.",
+          "Das Zertifikat ist eine PKCS#12 Datei. Ein leeres Passwort beim Bearbeiten behält das gespeicherte Passwort."
+        ]
+      }
+    ]
+  },
   "createFiscalConfig": "Fiscal config erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
@@ -33,10 +50,8 @@
     "sellerTown": "Verkäufer town",
     "sellerCountry": "Verkäufer land",
     "isVatRegistered": "MWST registered",
-    "autoFiscalizePos": "Auto-fiscalize POS",
-    "autoEinvoice": "Auto e-rechnung",
     "environment": "Environment",
-    "hasCertificate": "Certificate",
+    "certificate": "Certificate",
     "isActive": "Aktiv",
     "company": "Firma",
     "createdBy": "Erstellt von",

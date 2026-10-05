@@ -2,6 +2,23 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Konfigurime fiskale",
   "description": "Cilësimet e fiskalizimit CIS dhe e-faturës (NIPT, TCR, certifikata).",
+  "help": {
+    "ariaLabel": "Rreth Konfigurime fiskale",
+    "title": "Rreth Konfigurime fiskale",
+    "overview": "Një konfigurim fiskal është identiteti CIS shqiptar që nënshkruan kuponin e arkës: NIPT, njësi biznesi, operator, kod softueri, TCR, pikat e lidhjes dhe certifikata e nënshkrimit. Një konfigurim POS tregon te një konfigurim fiskal. Pa zgjedhje, ajo arkë nuk fiskalizon.",
+    "sections": [
+      {
+        "title": "Kur fiskalizohet një shitje",
+        "body": "Pas pagesës, fiskalizimi niset kur ky konfigurim është aktiv dhe është bashkëngjitur një certifikatë. Pas një fature fiskale të suksesshme krijohet gjithmonë një e-faturë. Pagesa mbetet e vlefshme nëse CIS kthen një gabim.",
+        "items": [
+          "NIPT bie te TVSH e kompanisë kur fusha është bosh. Kodi TCR duhet të jetë i regjistruar para se një faturë të nënshkruhet.",
+          "Fatura fiskale shënohet si e-faturë dhe dokumenti UBL regjistrohet te CIS.",
+          "Testi dhe prodhimi zgjedhin mjedisin CIS ku i përkasin URL-të dhe certifikata.",
+          "Certifikata është një skedar PKCS#12. Një fjalëkalim bosh në ndryshim e ruan fjalëkalimin e ruajtur."
+        ]
+      }
+    ]
+  },
   "createFiscalConfig": "Krijo konfigurim fiskal",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
@@ -33,10 +50,8 @@
     "sellerTown": "Qyteti i shitësit",
     "sellerCountry": "Shteti i shitësit",
     "isVatRegistered": "I regjistruar në TVSH",
-    "autoFiscalizePos": "Fiskalizim auto POS",
-    "autoEinvoice": "E-faturë auto",
     "environment": "Mjedisi",
-    "hasCertificate": "Certifikata",
+    "certificate": "Certifikata",
     "isActive": "Aktive",
     "company": "Kompania",
     "createdBy": "Krijuar nga",

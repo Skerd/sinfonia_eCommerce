@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
   "title": "Metodat e Pagesës POS",
   "description": "Konfiguroni metodat e pagesës në arkë: cash, kartë dhe të tjera.",
+  "help": {
+    "ariaLabel": "Rreth Metodat e Pagesës POS",
+    "title": "Rreth Metodat e Pagesës POS",
+    "overview": "Një metodë pagese është cash ose kartë. Një konfigurim POS zgjedh cilat metoda ofron arka e tij. Emri dhe lloji janë të detyrueshëm. Radha është renditja e butonave në arkë.",
+    "sections": [
+      {
+        "title": "Si arkëton arka",
+        "body": "Cash dhe karta janë metoda të ndara. Një arkë duhet të mbajë të paktën një metodë.",
+        "items": [
+          "Cash mund të listojë shuma të shpejta të ndara me presje, për shembull 0.5, 1, 5, 10, 20. Një listë bosh përdor çipat e gatshëm.",
+          "Karta e ndez rrugën e terminalit. Manuale do të thotë se arkëtari e konfirmon ngarkesën. HTTP lokal flet me një urë terminali duke përdorur protokollin, hostin, portin, id e terminalit dhe shtegun.",
+          "Çaktivizimi e fsheh metodën nga pagesat e reja. Fshirja është e butë dhe metoda mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createPosPaymentMethod": "Krijo metodë pagese",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

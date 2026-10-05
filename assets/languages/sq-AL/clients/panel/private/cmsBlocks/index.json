@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
   "title": "Blloqet CMS",
   "description": "Menaxhoni blloqet e përmbajtjes së dyqanit dhe renditjen e tyre.",
+  "help": {
+    "ariaLabel": "Rreth Blloqet CMS",
+    "title": "Rreth Blloqet CMS",
+    "overview": "Blloqet CMS janë seksionet e dyqanit, si një baner, një rrëshqitës ose një njoftim. Dyqani ngarkon blloqet aktive datat e të cilave përfshijnë tani, të renditura sipas pozicionit nga më i ulëti te më i larti. Lloji dhe titulli janë të detyrueshëm.",
+    "sections": [
+      {
+        "title": "Si i zgjedh dyqani",
+        "body": "Pozicioni është renditja e shfaqjes. Rirenditja në këtë faqe i shkruan ato pozicione. Një bllok jashtë fillimit ose mbarimit mbetet i ruajtur, por nuk i dërgohet dyqanit.",
+        "items": [
+          "Lloji zgjedh paraqitjen: baner, rrëshqitës, koleksion i veçuar, në trend, më të shiturit, shitje e shpejtë, njoftim, HTML e personalizuar, video, rrjetë, vitrinë kategorish ose seksion promocional.",
+          "Dukshmëria mund të kufizojë desktopin, celularin dhe tabletin dhe të listojë rajone. Një bllok i ri vlen për të tre pajisjet.",
+          "Fshirja është e butë dhe blloku mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createCmsBlock": "Krijo bllok CMS",
   "reorderBlocks": "Rirendit blloqet",
   "reorderTitle": "Rirendit blloqet CMS",

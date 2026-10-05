@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
   "title": "Produkt Attributes",
   "description": "Define produkt options such as grösse, color, und material.",
+  "help": {
+    "ariaLabel": "Über Produktattribute",
+    "title": "Über Produktattribute",
+    "overview": "Attribute sind gemeinsame Optionslisten, etwa Grösse oder Farbe. Eine Variante wählt später je einen Wert der Attribute, die diese SKU kennzeichnen. Der Name ist erforderlich.",
+    "sections": [
+      {
+        "title": "Wie Optionen zu einer SKU werden",
+        "body": "Werte sind die Auswahl, zum Beispiel S, M und L. Sie können bis zu 50 Werte speichern. Die Position steuert die Reihenfolge der Attribute.",
+        "items": [
+          "Sichtbar auf der Produktseite zeigt die Liste im Shop. Der Preis ändert sich dadurch nicht.",
+          "Für Varianten verwendet markiert das Attribut als eines, das ein Produkt in SKUs teilt. Die Variante speichert Attribut und gewählten Wert.",
+          "Der Warenkorb berechnet den Variantenpreis, oder den Produktpreis, wenn keine Variante gewählt ist."
+        ]
+      }
+    ]
+  },
   "createProductAttribute": "Attribute erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

@@ -3,7 +3,9 @@
   "title": "Krijo atribut",
   "form": {
     "nameLabel": "Emri",
+    "namePlaceholder": "Ngjyrë, madhësi, material",
     "positionLabel": "Pozicioni",
+    "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "I dukshëm në faqen e produktit",
     "isUsedForVariantsLabel": "Përdoret për variantet",
     "valuesLabel": "Vlerat",

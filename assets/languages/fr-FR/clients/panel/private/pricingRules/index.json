@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
   "title": "Règles de tarification",
   "description": "Automatisez les ajustements de prix par segment ou produit.",
+  "help": {
+    "ariaLabel": "À propos des règles de tarification",
+    "title": "À propos des règles de tarification",
+    "overview": "Les règles de tarification changent le prix unitaire avant un code de remise. Chaque ligne du panier reçoit au plus une règle. Nom, type, valeur et périmètre sont obligatoires.",
+    "sections": [
+      {
+        "title": "Quelle règle l'emporte",
+        "body": "Les règles actives sont ordonnées par priorité, la plus haute d'abord, puis la plus récente. La première règle qui correspond à la ligne s'applique. Les suivantes de cette ligne sont ignorées.",
+        "items": [
+          "Une règle sans groupe de clients s'applique à chaque panier. Une règle qui liste des groupes ne s'applique que si le client connecté en fait partie. Les invités ne correspondent qu'aux règles sans groupe.",
+          "S'applique à tout, ou au groupe de clients, touche chaque ligne. Produit, catégorie et collection ne touchent que les cibles choisies. La catégorie utilise la première catégorie du produit.",
+          "Le montant minimum utilise le sous-total avant toute règle. La quantité minimum utilise le nombre d'unités. Hors de la période, la règle est ignorée."
+        ]
+      },
+      {
+        "title": "Ce que font les types",
+        "body": "L'ajustement porte sur le prix unitaire du catalogue. Le résultat n'est jamais négatif.",
+        "items": [
+          "La remise en pourcentage baisse le prix unitaire de ce pourcentage.",
+          "La remise fixe retire la valeur du prix unitaire.",
+          "Le prix fixe remplace le prix unitaire par la valeur.",
+          "Le supplément ajoute la valeur au prix unitaire."
+        ]
+      }
+    ]
+  },
   "createPricingRule": "Créer une règle de tarification",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

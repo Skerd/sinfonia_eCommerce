@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/index.tsx",
   "title": "Remises",
   "description": "Gérez les codes promotionnels et les remises automatiques.",
+  "help": {
+    "ariaLabel": "À propos des remises",
+    "title": "À propos des remises",
+    "overview": "Une remise est un code saisi par l'acheteur. Le panier n'en garde qu'une à la fois. Elle est revérifiée à chaque calcul et retirée si elle ne s'applique plus. Le code est enregistré en majuscules. Titre, type, valeur, périmètre et date de début sont obligatoires.",
+    "sections": [
+      {
+        "title": "Quand le montant est calculé",
+        "body": "Le panier fixe d'abord le prix unitaire : prix catalogue, puis une règle de prix. La remise s'applique ensuite. Les cartes cadeaux ne sont jamais remisées et ne comptent pas dans les minimums.",
+        "items": [
+          "Le pourcentage retire ce pourcentage des lignes concernées. Le montant fixe retire une somme, jamais plus que ces lignes.",
+          "La livraison offerte ne baisse pas le total des marchandises. Le checkout annule les frais de port tant que cette remise est appliquée.",
+          "Achetez X obtenez Y groupe les unités éligibles en quantité achetée plus quantité offerte, puis retire les unités les moins chères de chaque groupe complet.",
+          "S'applique à la commande couvre chaque ligne de marchandise. Produit, catégorie ou collection ne couvre que les cibles choisies. La catégorie correspond à n'importe quelle catégorie du produit."
+        ]
+      },
+      {
+        "title": "Ce qui bloque le code",
+        "body": "La remise doit être active et entre le début et la fin. Une fin vide signifie qu'elle n'expire pas.",
+        "items": [
+          "La limite d'utilisation arrête le code après ce nombre d'emplois. La limite par client compte les commandes non annulées de ce client.",
+          "Le montant minimum et la quantité minimum portent sur les marchandises, après les règles de prix.",
+          "Les groupes de clients enregistrés sur la remise ne sont pas vérifiés à l'application du code."
+        ]
+      }
+    ]
+  },
   "createDiscount": "Créer une remise",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

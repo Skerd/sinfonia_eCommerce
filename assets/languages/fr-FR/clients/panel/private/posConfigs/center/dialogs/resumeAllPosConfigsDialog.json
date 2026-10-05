@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
   "title": "Reprendre toutes les caisses POS ?",
-  "description": "Efface le verrou à l’échelle de l’entreprise et chaque pause de caisse. Les caissiers doivent ouvrir une nouvelle session pour revendre.",
+  "description": "Efface uniquement le verrou à l’échelle de l’entreprise. Les caisses mises en pause individuellement restent en pause. Les caissiers des caisses déverrouillées doivent ouvrir une nouvelle session pour revendre.",
   "cancel": "Annuler",
   "confirm": "Reprendre tout",
   "busy": "Travailler…",

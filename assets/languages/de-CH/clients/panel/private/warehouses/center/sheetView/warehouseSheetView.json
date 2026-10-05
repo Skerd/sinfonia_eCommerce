@@ -25,5 +25,14 @@
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
   "yes": "Ja",
-  "no": "Nein"
+  "no": "Nein",
+  "form": {
+    "streetLabel": "Strasse",
+    "postalCodeLabel": "Postleitzahl",
+    "cityLabel": "Ort",
+    "stateLabel": "Kanton / Region",
+    "countryLabel": "Land",
+    "latitudeLabel": "Breitengrad",
+    "longitudeLabel": "Längengrad"
+  }
 }

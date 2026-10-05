@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
   "title": "CMS Blocks",
   "description": "Manage storefront content blocks and their display order.",
+  "help": {
+    "ariaLabel": "About CMS Blocks",
+    "title": "About CMS Blocks",
+    "overview": "CMS blocks are the sections of the storefront, such as a hero, a slider, or an announcement. The shop loads active blocks whose dates include now, ordered by position from lowest to highest. Type and title are required.",
+    "sections": [
+      {
+        "title": "How the storefront picks them",
+        "body": "Position is the display order. Reorder on this page writes those positions. A block outside its start or end stays saved but is not sent to the shop.",
+        "items": [
+          "Type chooses the layout: hero, slider, featured collection, trending, best sellers, flash sale, announcement, custom HTML, video, grid, category showcase, or promotional section.",
+          "Visibility can limit desktop, mobile, and tablet, and can list regions. A new block defaults to all three devices.",
+          "Deleting a block is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createCmsBlock": "Create CMS block",
   "reorderBlocks": "Reorder blocks",
   "reorderTitle": "Reorder CMS blocks",

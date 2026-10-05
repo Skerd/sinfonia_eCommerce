@@ -5,7 +5,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
-import type {EditCategoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/editCategory.form.type.ts";
+import type {EditCategoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.schema-def.ts";
 import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private/category/category.dto.ts";
 import type {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";

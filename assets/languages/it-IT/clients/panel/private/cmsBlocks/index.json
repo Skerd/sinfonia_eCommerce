@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
   "title": "Blocchi CMS",
   "description": "Gestisci i blocchi di contenuti della vetrina e il loro ordine di visualizzazione.",
+  "help": {
+    "ariaLabel": "Informazioni su Blocchi CMS",
+    "title": "Informazioni su Blocchi CMS",
+    "overview": "I blocchi CMS sono le sezioni della vetrina, come un hero, uno slider o un annuncio. Il negozio carica i blocchi attivi le cui date includono adesso, ordinati per posizione dalla più bassa alla più alta. Tipo e titolo sono obbligatori.",
+    "sections": [
+      {
+        "title": "Come la vetrina li sceglie",
+        "body": "La posizione è l'ordine di visualizzazione. Riordina in questa pagina scrive quelle posizioni. Un blocco fuori da inizio o fine resta salvato ma non viene inviato al negozio.",
+        "items": [
+          "Il tipo sceglie il layout: hero, slider, collezione in evidenza, tendenze, più venduti, vendita lampo, annuncio, HTML personalizzato, video, griglia, vetrina categorie o sezione promozionale.",
+          "La visibilità può limitare desktop, mobile e tablet e elencare regioni. Un blocco nuovo vale per tutti e tre i dispositivi.",
+          "L'eliminazione è logica e il blocco può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "createCmsBlock": "Crea un blocco CMS",
   "reorderBlocks": "Riordina i blocchi",
   "reorderTitle": "Riordina i blocchi CMS",

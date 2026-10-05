@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
   "title": "Zone di spedizione",
   "description": "Definisci le tariffe di spedizione in base all'area geografica.",
+  "help": {
+    "ariaLabel": "Informazioni su Zone di spedizione",
+    "title": "Informazioni su Zone di spedizione",
+    "overview": "Il checkout propone ogni tariffa delle zone attive che corrispondono alla destinazione. L'acquirente ne sceglie una. Una zona richiede un nome e almeno una tariffa. Una zona senza paesi non corrisponde.",
+    "sections": [
+      {
+        "title": "Come corrisponde una destinazione",
+        "body": "Il paese deve essere tra i paesi della zona. Stato e codice postale la restringono ancora.",
+        "items": [
+          "Se elencate stati, lo stato di destinazione deve essere uno di essi. Una lista vuota corrisponde a tutto il paese.",
+          "I modelli di codice postale sono facoltativi. Una lista vuota corrisponde a ogni codice. * è un jolly, per esempio 10*.",
+          "Senza paese di destinazione non si propongono tariffe."
+        ]
+      },
+      {
+        "title": "Come si calcola una tariffa",
+        "body": "Ogni tariffa corrispondente compare con nome, prezzo, corriere e giorni stimati. Corriere e giorni non cambiano il prezzo.",
+        "items": [
+          "La forfettaria addebita il suo prezzo. Gratuita è 0 e si nasconde quando l'importo ordine è fuori dal minimo o dal massimo.",
+          "Il peso usa il peso del carrello e si nasconde fuori dalla finestra di peso. Il prezzo usa il subtotale merce e la finestra di importo.",
+          "La quantità confronta il numero di articoli con i campi di importo minimo e massimo, non con il totale in denaro.",
+          "Uno sconto di spedizione gratuita azzera la spedizione al checkout. Non toglie le tariffe da questo elenco."
+        ]
+      }
+    ]
+  },
   "createShippingZone": "Crea zona di spedizione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

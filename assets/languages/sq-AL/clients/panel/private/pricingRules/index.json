@@ -2,6 +2,32 @@
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
   "title": "Rregullat e çmimeve",
   "description": "Automatizoni ndryshimet e çmimeve sipas segmentit ose produktit.",
+  "help": {
+    "ariaLabel": "Rreth Rregullat e çmimeve",
+    "title": "Rreth Rregullat e çmimeve",
+    "overview": "Rregullat e çmimeve e ndryshojnë çmimin për njësi para se të aplikohet një kod zbritjeje. Çdo rresht i shportës merr më së shumti një rregull. Emri, lloji, vlera dhe ku zbatohet janë të detyrueshme.",
+    "sections": [
+      {
+        "title": "Cili rregull fiton",
+        "body": "Rregullat aktive renditen sipas prioritetit, më i larti i pari, pastaj më i riu. Rregulli i parë që përputhet me rreshtin aplikohet. Rregullat e mëvonshme të atij rreshti kapërcehen.",
+        "items": [
+          "Një rregull pa grupe klientësh vlen për çdo shportë. Një rregull me grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre. Mysafirët përputhen vetëm me rregulla pa grupe.",
+          "Zbatohet te të gjitha, ose te grupi i klientëve, prek çdo rresht. Produkti, kategoria dhe koleksioni prekin vetëm objektivat e zgjedhur. Kategoria përdor kategorinë e parë të produktit.",
+          "Shuma minimale përdor nëntotalin para çdo rregulli. Sasia minimale përdor numrin e njësive. Jashtë periudhës rregulli shpërfillet."
+        ]
+      },
+      {
+        "title": "Çfarë bëjnë llojet",
+        "body": "Ndryshimi zbatohet mbi çmimin e katalogut për njësi. Rezultati nuk bie nën zero.",
+        "items": [
+          "Zbritja në përqindje e ul çmimin për njësi me atë përqindje.",
+          "Zbritja fikse e zbret vlerën nga çmimi për njësi.",
+          "Çmimi fiks e zëvendëson çmimin për njësi me vlerën.",
+          "Shtesa e shton vlerën te çmimi për njësi."
+        ]
+      }
+    ]
+  },
   "createPricingRule": "Krijo rregull çmimi",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

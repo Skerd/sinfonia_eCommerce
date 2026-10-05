@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
   "title": "Zonat tatimore",
   "description": "Konfiguroni normat tatimore sipas vendit dhe rajonit.",
+  "help": {
+    "ariaLabel": "Rreth Zonat tatimore",
+    "title": "Rreth Zonat tatimore",
+    "overview": "Pagesa e llogarit tatimin nga adresa e transportit. Çdo zonë aktive e atij vendi që përputhet edhe me shtetin dhe kodin postar i shton normat e saj. Emri, vendi dhe të paktën një normë janë të detyrueshme.",
+    "sections": [
+      {
+        "title": "Si përputhet një adresë",
+        "body": "Zonat lexohen nga prioriteti më i lartë te më i ulëti, dhe çdo përputhje zbatohet. Prioriteti nuk zgjedh një fitues të vetëm.",
+        "items": [
+          "Nëse listoni shtete, shteti i adresës duhet të jetë njëri prej tyre. Lista bosh përputhet me gjithë vendin.",
+          "Modelet e kodit postar janë opsionale. Një listë bosh përputhet me çdo kod. * është një shenjë e lirë, për shembull 10*.",
+          "Pa vend në adresë nuk ka tatim."
+        ]
+      },
+      {
+        "title": "Si grumbullohen normat",
+        "body": "Çdo normë është një përqindje e një baze që fillon si nëntotali i tatueshëm.",
+        "items": [
+          "Një normë mund të zbatohet te të gjitha produktet, vetëm fizike, ose vetëm dixhitale.",
+          "Një normë e përbërë i shtohet bazës, kështu norma tjetër llogaritet mbi nëntotalin plus tatimin tashmë të shtuar.",
+          "Një normë jo e përbërë nuk e ngre bazën."
+        ]
+      }
+    ]
+  },
   "createTaxZone": "Krijo zonë tatimore",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

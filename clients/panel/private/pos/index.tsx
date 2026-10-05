@@ -15,7 +15,7 @@ import {usePosSession} from "@eCommerceModule/clients/panel/private/pos/usePosSe
 import {usePosCatalog} from "@eCommerceModule/clients/panel/private/pos/usePosCatalog.ts";
 import {usePosCart} from "@eCommerceModule/clients/panel/private/pos/usePosCart.ts";
 import {usePosPayments} from "@eCommerceModule/clients/panel/private/pos/usePosPayments.ts";
-import {formatMoney} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {formatMoney, posFiscalizationActive} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 
 function PosTill({resolveLanguageKey}: WithLanguageType) {
@@ -179,6 +179,7 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                 openingBalance={sessionApi.openingBalance}
                 openingNotes={sessionApi.openingNotes}
                 openingBusy={sessionApi.openingBusy}
+                fiscalizationInactive={!posFiscalizationActive(sessionApi.config)}
                 rk={rk}
                 onOpeningBalanceChange={sessionApi.setOpeningBalance}
                 onOpeningNotesChange={sessionApi.setOpeningNotes}

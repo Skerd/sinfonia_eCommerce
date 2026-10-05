@@ -14,6 +14,9 @@
     "companyBadge": "L'entreprise a fait une pause",
     "forceClosedToast": "Cette session de caisse a été fermée de force par une pause administrative."
   },
+  "fiscalization": {
+    "inactive": "Aucune fiscalisation n'est active pour ce point de vente. Les ventes de cette caisse ne seront pas fiscalisées."
+  },
   "inactive": {
     "banner": "Cette caisse POS est inactive et ne peut pas être ouverte."
   },

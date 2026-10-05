@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
   "title": "Zones fiscales",
   "description": "Configurez les taux de taxe par pays et par région.",
+  "help": {
+    "ariaLabel": "À propos des zones fiscales",
+    "title": "À propos des zones fiscales",
+    "overview": "Le checkout calcule la taxe à partir de l'adresse de livraison. Chaque zone active de ce pays qui correspond aussi à l'état et au code postal ajoute ses taux. Nom, pays et au moins un taux sont obligatoires.",
+    "sections": [
+      {
+        "title": "Comment une adresse correspond",
+        "body": "Les zones sont lues de la priorité la plus haute à la plus basse, et chaque correspondance s'applique. La priorité ne choisit pas un seul gagnant.",
+        "items": [
+          "Si vous listez des états, l'état de l'adresse doit en faire partie. Une liste vide correspond à tout le pays.",
+          "Les motifs de code postal sont facultatifs. Une liste vide correspond à chaque code. * est un joker, par exemple 10*.",
+          "Sans pays sur l'adresse, il n'y a pas de taxe."
+        ]
+      },
+      {
+        "title": "Comment les taux s'empilent",
+        "body": "Chaque taux est un pourcentage d'une base courante qui commence au sous-total taxable.",
+        "items": [
+          "Un taux peut viser tous les produits, seulement les produits physiques, ou seulement les produits numériques.",
+          "Un taux composé s'ajoute à la base, donc le taux suivant se calcule sur le sous-total plus la taxe déjà ajoutée.",
+          "Un taux non composé n'augmente pas la base."
+        ]
+      }
+    ]
+  },
   "createTaxZone": "Créer une zone fiscale",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

@@ -13,6 +13,8 @@
     "warehousePlaceholder": "Warehouse auswählen",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
+    "fiscalConfigLabel": "Fiskalkonfiguration",
+    "fiscalConfigPlaceholder": "Fiskalkonfiguration auswählen",
     "receiptHeaderLabel": "Receipt header",
     "receiptHeaderPlaceholder": "Printed am die top von die receipt",
     "receiptFooterLabel": "Receipt footer",
@@ -50,7 +52,7 @@
   },
   "formHeader": {
     "title": "POS config bearbeiten",
-    "description": "Aktualisieren warehouses, zahlung methods, receipt text, und till rules."
+    "description": "Aktualisieren Fiskalkonfiguration, warehouses, zahlung methods, receipt text, und till rules."
   },
   "formButtons": {
     "cancel": "Abbrechen",

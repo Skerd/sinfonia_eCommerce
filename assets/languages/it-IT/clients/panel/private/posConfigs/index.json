@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "Configurazioni POS",
   "description": "Punti vendita e allestimenti di cassa.",
+  "help": {
+    "ariaLabel": "Informazioni su Configurazioni POS",
+    "title": "Informazioni su Configurazioni POS",
+    "overview": "Una configurazione POS è una cassa. Richiede un nome, almeno un metodo di pagamento e almeno un magazzino. Un cassiere apre una sessione su quella cassa e vende secondo il suo listino.",
+    "sections": [
+      {
+        "title": "Cosa può fare il cassiere",
+        "body": "Il prezzo di cassa è il prezzo della variante, o il prezzo del prodotto senza variante. La cassa non accetta un prezzo digitato dal cassiere.",
+        "items": [
+          "I metodi di pagamento sono i pulsanti della cassa. I magazzini sono i luoghi di scorta da cui quella cassa vende.",
+          "Una configurazione fiscale facoltativa collega questa cassa alla fiscalizzazione albanese. Intestazione e piè di ricevuta sono stampati sullo scontrino.",
+          "Consenti sconto, cambio quantità e vendita oltre giacenza regolano il cassiere. Il PIN per sconto, uscita cassa e rimborso chiede un PIN responsabile prima dell'azione.",
+          "Il controllo cassa segue il cassetto. Il flag del lettore barcode accende la scansione per questa cassa."
+        ]
+      },
+      {
+        "title": "Pausa e ripresa",
+        "body": "Una cassa inattiva, una cassa in pausa o un blocco azienda rifiuta i nuovi pagamenti.",
+        "items": [
+          "Metti in pausa tutte le casse blocca l'azienda e chiude forzatamente le sessioni aperte.",
+          "Riprendi tutte le casse toglie solo il blocco azienda. Una cassa messa in pausa da sola resta in pausa."
+        ]
+      }
+    ]
+  },
   "createPosConfig": "Crea configurazione POS",
   "bulkMenu": {
     "triggerAria": "Controlli POS aziendali",
@@ -11,7 +36,7 @@
     "pauseAll": "Metti in pausa tutte le casse",
     "pauseAllHint": "Blocca l'azienda e chiudi forzatamente le sessioni aperte",
     "resumeAll": "Riprendi tutte le casse",
-    "resumeAllHint": "Cancella il blocco aziendale e ogni pausa fino a quando"
+    "resumeAllHint": "Cancella solo il blocco aziendale. Le casse in pausa singolarmente restano in pausa"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

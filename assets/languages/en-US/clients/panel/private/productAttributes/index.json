@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
   "title": "Product Attributes",
   "description": "Define product options such as size, color, and material.",
+  "help": {
+    "ariaLabel": "About Product Attributes",
+    "title": "About Product Attributes",
+    "overview": "Attributes are shared option lists, such as Size or Color. A variant later picks one value from each attribute that identifies that SKU. The name is required.",
+    "sections": [
+      {
+        "title": "How options become a SKU",
+        "body": "Values are the choices shoppers see, for example S, M, and L. You can store up to 50 values. Position controls the order of the attributes.",
+        "items": [
+          "Visible on the product page shows the list on the storefront. It does not change the price.",
+          "Used for variants marks the attribute as one that should split a product into SKUs. The variant itself stores the attribute and the chosen value.",
+          "The price the cart charges is the variant price, or the product price when no variant is selected."
+        ]
+      }
+    ]
+  },
   "createProductAttribute": "Create attribute",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

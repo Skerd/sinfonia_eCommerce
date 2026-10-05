@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "Configurations de point de vente",
   "description": "Points de vente et caisses.",
+  "help": {
+    "ariaLabel": "À propos des configurations de point de vente",
+    "title": "À propos des configurations de point de vente",
+    "overview": "Une configuration de point de vente est une caisse. Elle exige un nom, au moins un moyen de paiement et au moins un entrepôt. Un caissier ouvre une session sur cette caisse et vend selon sa liste de prix.",
+    "sections": [
+      {
+        "title": "Ce que le caissier peut faire",
+        "body": "Le prix de caisse est le prix de la variante, ou le prix du produit sans variante. La caisse n'accepte pas un prix saisi par le caissier.",
+        "items": [
+          "Les moyens de paiement sont les boutons de la caisse. Les entrepôts sont les lieux de stock depuis lesquels cette caisse vend.",
+          "Une configuration fiscale facultative relie cette caisse à la fiscalisation albanaise. L'en-tête et le pied du ticket sont imprimés sur le reçu.",
+          "Autoriser remise, changement de quantité et survente règle le caissier. Le PIN pour remise, sortie d'espèces et remboursement demande un PIN manager avant l'action.",
+          "Le contrôle de caisse suit le tiroir. L'indicateur de lecteur de codes-barres active la lecture pour cette caisse."
+        ]
+      },
+      {
+        "title": "Pause et reprise",
+        "body": "Une caisse inactive, une caisse en pause ou un verrou société refuse les nouveaux paiements.",
+        "items": [
+          "Mettre toutes les caisses en pause verrouille la société et force la clôture des sessions ouvertes.",
+          "Reprendre toutes les caisses lève seulement le verrou société. Une caisse mise en pause seule reste en pause."
+        ]
+      }
+    ]
+  },
   "createPosConfig": "Créer une configuration de point de vente",
   "bulkMenu": {
     "triggerAria": "Contrôles des points de vente de l'entreprise",
@@ -11,7 +36,7 @@
     "pauseAll": "Suspendre toutes les caisses",
     "pauseAllHint": "Verrouiller l'entreprise et forcer la fermeture des sessions ouvertes",
     "resumeAll": "Reprendre toutes les caisses",
-    "resumeAllHint": "Effacez le verrou de l'entreprise et chaque pause de caisse"
+    "resumeAllHint": "Efface uniquement le verrou de l'entreprise. Les caisses mises en pause individuellement restent en pause"
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

@@ -10,6 +10,8 @@
     "warehousePlaceholder": "Warehouse auswählen",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
+    "fiscalConfigLabel": "Fiskalkonfiguration",
+    "fiscalConfigPlaceholder": "Fiskalkonfiguration auswählen",
     "receiptHeaderLabel": "Receipt header",
     "receiptHeaderPlaceholder": "Printed am die top von die receipt",
     "receiptFooterLabel": "Receipt footer",
@@ -47,7 +49,7 @@
   },
   "formHeader": {
     "title": "POS config erstellen",
-    "description": "Set up a shop till: warehouses, zahlung methods, receipt text, und till rules."
+    "description": "Set up a shop till: Fiskalkonfiguration, warehouses, zahlung methods, receipt text, und till rules."
   },
   "formButtons": {
     "cancel": "Abbrechen",

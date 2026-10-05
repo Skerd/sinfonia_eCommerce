@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
   "title": "Atributet e produktit",
   "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
+  "help": {
+    "ariaLabel": "Rreth Atributet e produktit",
+    "title": "Rreth Atributet e produktit",
+    "overview": "Atributet janë lista opsionesh të përbashkëta, si madhësia ose ngjyra. Një variant zgjedh më vonë një vlerë nga çdo atribut që e identifikon atë SKU. Emri është i detyrueshëm.",
+    "sections": [
+      {
+        "title": "Si bëhen opsionet një SKU",
+        "body": "Vlerat janë zgjedhjet, për shembull S, M dhe L. Mund të ruani deri në 50 vlera. Pozicioni rendit atributet.",
+        "items": [
+          "I dukshëm në faqen e produktit e shfaq listën në dyqan. Nuk e ndryshon çmimin.",
+          "Përdoret për variante e shënon atributin si një që e ndan produktin në SKU. Varianti ruan atributin dhe vlerën e zgjedhur.",
+          "Shporta llogarit çmimin e variantit, ose çmimin e produktit kur nuk ka variant."
+        ]
+      }
+    ]
+  },
   "createProductAttribute": "Krijo atribut",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

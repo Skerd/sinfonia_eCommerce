@@ -13,6 +13,8 @@
     "warehousePlaceholder": "Sélectionnez un entrepôt",
     "currencyLabel": "Devise",
     "currencyPlaceholder": "Sélectionner une devise",
+    "fiscalConfigLabel": "Configuration fiscale",
+    "fiscalConfigPlaceholder": "Sélectionner une configuration fiscale",
     "receiptHeaderLabel": "En-tête du reçu",
     "receiptHeaderPlaceholder": "Imprimé en haut du reçu",
     "receiptFooterLabel": "Pied de page du reçu",
@@ -50,7 +52,7 @@
   },
   "formHeader": {
     "title": "Modifier la configuration du point de vente",
-    "description": "Mettez à jour les entrepôts, les méthodes de paiement, le texte du reçu et les règles de caisse."
+    "description": "Mettez à jour la configuration fiscale, les entrepôts, les méthodes de paiement, le texte du reçu et les règles de caisse."
   },
   "formButtons": {
     "cancel": "Annuler",

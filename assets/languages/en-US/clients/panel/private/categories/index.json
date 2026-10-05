@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Categories",
   "description": "Configure product categories for catalogs across your tenant.",
+  "help": {
+    "ariaLabel": "About Categories",
+    "title": "About Categories",
+    "overview": "Categories group products in the catalog. A product can sit in more than one category. The name is required; a parent and a display order are optional.",
+    "sections": [
+      {
+        "title": "How the catalog uses them",
+        "body": "The slug is built from the name and kept unique inside the company. Renaming the category rebuilds the slug. Parent nests the category under another one, and order sorts it among its siblings.",
+        "items": [
+          "A pricing rule aimed at a category matches only the product's first category.",
+          "A discount aimed at a category matches if any of the product's categories is selected.",
+          "Deleting a category is a soft delete and it can be restored. Products that pointed at it keep their other categories."
+        ]
+      }
+    ]
+  },
   "createCategory": "Create category",
   "fields": {
     "name": "Name",

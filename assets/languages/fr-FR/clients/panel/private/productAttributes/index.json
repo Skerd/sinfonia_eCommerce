@@ -2,6 +2,22 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
   "title": "Attributs du produit",
   "description": "Définissez les options du produit telles que la taille, la couleur et le matériau.",
+  "help": {
+    "ariaLabel": "À propos des attributs du produit",
+    "title": "À propos des attributs du produit",
+    "overview": "Les attributs sont des listes d'options partagées, comme la taille ou la couleur. Une variante choisit ensuite une valeur de chaque attribut qui identifie ce SKU. Le nom est obligatoire.",
+    "sections": [
+      {
+        "title": "Comment les options deviennent un SKU",
+        "body": "Les valeurs sont les choix, par exemple S, M et L. Vous pouvez en enregistrer jusqu'à 50. La position ordonne les attributs.",
+        "items": [
+          "Visible sur la page produit affiche la liste en vitrine. Cela ne change pas le prix.",
+          "Utilisé pour les variantes indique que l'attribut doit découper un produit en SKU. La variante mémorise l'attribut et la valeur choisie.",
+          "Le panier facture le prix de la variante, ou le prix du produit si aucune variante n'est choisie."
+        ]
+      }
+    ]
+  },
   "createProductAttribute": "Créer un attribut",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

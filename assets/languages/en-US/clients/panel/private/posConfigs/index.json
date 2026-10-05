@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "POS Configs",
   "description": "Point of sale shops and till settings.",
+  "help": {
+    "ariaLabel": "About POS Configs",
+    "title": "About POS Configs",
+    "overview": "A POS config is one till. It needs a name, at least one payment method, and at least one warehouse. A cashier opens a session on that till and sells against its price list.",
+    "sections": [
+      {
+        "title": "What the cashier can do",
+        "body": "The till price is the variant price, or the product price when the line has no variant. The till does not accept a price typed by the cashier.",
+        "items": [
+          "Payment methods are the buttons on the till. Warehouses are the stock locations that till can sell from.",
+          "An optional fiscal config links this till to Albanian fiscalization. Receipt header and footer are printed on the receipt.",
+          "Allow discount, quantity change, and oversell control the cashier. PIN for discount, cash out, and refund asks for a manager PIN before that action.",
+          "Cash control tracks the drawer. The barcode scanner flag turns scanning on for this till."
+        ]
+      },
+      {
+        "title": "Pause and resume",
+        "body": "An inactive till, a paused till, or a company lock refuses new payments.",
+        "items": [
+          "Pause all tills locks the company and force-closes open sessions.",
+          "Resume all tills clears only the company lock. A till you paused on its own stays paused."
+        ]
+      }
+    ]
+  },
   "createPosConfig": "Create POS config",
   "bulkMenu": {
     "triggerAria": "Company POS controls",
@@ -11,7 +36,7 @@
     "pauseAll": "Pause all tills",
     "pauseAllHint": "Lock the company and force-close open sessions",
     "resumeAll": "Resume all tills",
-    "resumeAllHint": "Clear the company lock and every till pause"
+    "resumeAllHint": "Clear the company lock only. Individually paused tills stay paused"
   },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
