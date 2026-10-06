@@ -80,7 +80,7 @@
       "title": "Varianti del prodotto"
     },
     "customeraddresses": {
-      "title": "Indirizzi dei clienti"
+      "title": "Indirizzi"
     },
     "productreviews": {
       "title": "Recensioni di prodotti"
@@ -105,6 +105,9 @@
       },
       "customergroups": {
         "title": "Gruppi di clienti"
+      },
+      "customeraddresses": {
+        "title": "Indirizzi dei clienti"
       },
       "discounts": {
         "title": "Sconti"

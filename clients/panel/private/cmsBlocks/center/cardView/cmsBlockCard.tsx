@@ -10,9 +10,10 @@ import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks
 import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
 import DeactivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import type {ReactNode, RefObject} from "react";
 
 const LIST_BASE = "/tenancy/systemSettings/cmsblocks";
 
@@ -100,7 +101,23 @@ function CmsBlockCard({
         >
             {({entity, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="title" title={entity.title}>
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={entity.title}
+                        badgesBesideTitle
+                        badges={
+                            entity.isActive ? undefined : (
+                                <DisplayValue path="isActive" value={resolveLanguageKey("inactive")}>
+                                    {(formatted: ReactNode) => (
+                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0">
+                                            <IconPower className="w-3 h-3" />
+                                            {formatted}
+                                        </span>
+                                    )}
+                                </DisplayValue>
+                            )
+                        }
+                    >
                         <ActivateCmsBlock entity={entity} onAction={setAction} />
                         <DeactivateCmsBlock entity={entity} onAction={setAction} />
                     </EntityCard.Header>
@@ -122,14 +139,16 @@ function CmsBlockCard({
                             type="number"
                             value={entity.position}
                         />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
+                        {entity.isActive ? (
+                            <EntityCardRow
+                                icon={IconPower}
+                                label={resolveLanguageKey("active")}
+                                tooltip={resolveLanguageKey("active")}
+                                path="isActive"
+                                type="boolean"
+                                value={entity.isActive}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

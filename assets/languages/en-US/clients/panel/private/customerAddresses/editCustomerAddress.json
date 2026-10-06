@@ -4,6 +4,8 @@
   "errorTitle": "Failed to load address",
   "errorDescription": "Could not load this address. Try again.",
   "form": {
+    "recipientSectionTitle": "Recipient",
+    "addressSectionTitle": "Address",
     "_idLabel": "Record ID",
     "customerLabel": "Customer",
     "customerPlaceholder": "Select customer",

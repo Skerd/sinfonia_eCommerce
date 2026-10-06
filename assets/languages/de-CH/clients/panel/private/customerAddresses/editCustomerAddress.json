@@ -4,6 +4,8 @@
   "errorTitle": "Adresse konnten nicht geladen werden",
   "errorDescription": "Konnte nicht laden diese adresse. Versuchen erneut.",
   "form": {
+    "recipientSectionTitle": "Empfänger",
+    "addressSectionTitle": "Adresse",
     "_idLabel": "Protokoll ID",
     "customerLabel": "Kunde",
     "customerPlaceholder": "Customer auswählen",

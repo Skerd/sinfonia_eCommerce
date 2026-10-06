@@ -80,7 +80,7 @@
       "title": "Product variants"
     },
     "customeraddresses": {
-      "title": "Customer addresses"
+      "title": "Addresses"
     },
     "productreviews": {
       "title": "Product reviews"
@@ -105,6 +105,9 @@
       },
       "customergroups": {
         "title": "Customer groups"
+      },
+      "customeraddresses": {
+        "title": "Customer addresses"
       },
       "discounts": {
         "title": "Discounts"

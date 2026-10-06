@@ -4,6 +4,8 @@
   "errorTitle": "Ngarkimi i adresës dështoi",
   "errorDescription": "Adresa nuk u ngarkua. Provoni përsëri.",
   "form": {
+    "recipientSectionTitle": "Marrësi",
+    "addressSectionTitle": "Adresa",
     "_idLabel": "ID e regjistrimit",
     "customerLabel": "Klienti",
     "customerPlaceholder": "Zgjidh klientin",

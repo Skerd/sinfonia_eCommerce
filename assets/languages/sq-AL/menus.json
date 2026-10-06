@@ -80,7 +80,7 @@
       "title": "Variantet e produkteve"
     },
     "customeraddresses": {
-      "title": "Adresat e klientëve"
+      "title": "Adresat"
     },
     "productreviews": {
       "title": "Vlerësimet e produkteve"
@@ -105,6 +105,9 @@
       },
       "customergroups": {
         "title": "Grupet e klientëve"
+      },
+      "customeraddresses": {
+        "title": "Adresat e klientëve"
       },
       "discounts": {
         "title": "Zbritjet"

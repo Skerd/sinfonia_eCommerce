@@ -4,6 +4,8 @@
   "errorTitle": "Impossibile caricare l'indirizzo",
   "errorDescription": "Impossibile caricare questo indirizzo. Riprova.",
   "form": {
+    "recipientSectionTitle": "Destinatario",
+    "addressSectionTitle": "Indirizzo",
     "_idLabel": "ID record",
     "customerLabel": "Cliente",
     "customerPlaceholder": "Seleziona cliente",

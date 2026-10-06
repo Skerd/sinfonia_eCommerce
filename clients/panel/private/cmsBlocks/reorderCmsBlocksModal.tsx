@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {
     DndContext,
     KeyboardSensor,
@@ -17,6 +17,7 @@ import {
 } from "@dnd-kit/sortable";
 import {CSS} from "@dnd-kit/utilities";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
+import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {
     Dialog,
@@ -40,7 +41,9 @@ type ReorderCmsBlocksModalProps = {
     onSuccess?: () => void;
 };
 
-function SortableBlockRow({block}: {block: CmsBlock}) {
+const LIST_PAGE_SIZE = 200;
+
+function SortableBlockRow({block, index}: {block: CmsBlock; index: number}) {
     const {attributes, listeners, setNodeRef, transform, transition, isDragging} = useSortable({id: block._id});
 
     return (
@@ -64,7 +67,7 @@ function SortableBlockRow({block}: {block: CmsBlock}) {
                 <p className="truncate text-sm font-medium">{block.title}</p>
                 <p className="truncate text-xs text-muted-foreground">{block.type}</p>
             </div>
-            <span className="text-xs text-muted-foreground">#{block.position}</span>
+            <span className="text-xs text-muted-foreground">#{index}</span>
         </div>
     );
 }
@@ -76,6 +79,8 @@ export default function ReorderCmsBlocksModal({
     onSuccess,
 }: ReorderCmsBlocksModalProps) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
+    const resolveLanguageKeyRef = useRef(resolveLanguageKey);
+    resolveLanguageKeyRef.current = resolveLanguageKey;
     const [blocks, setBlocks] = useState<CmsBlock[]>([]);
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
@@ -85,27 +90,42 @@ export default function ReorderCmsBlocksModal({
         useSensor(KeyboardSensor, {coordinateGetter: sortableKeyboardCoordinates}),
     );
 
-    const loadBlocks = useCallback(async () => {
-        setLoading(true);
-        try {
-            const res = await apiClient.post<{data: CmsBlock[]}>("/api/eCommerce/cmsBlock", {
-                page: 1,
-                limit: 200,
-                sortBy: "position",
-                sortOrder: "asc",
-            });
-            setBlocks(res.data.data ?? []);
-        } catch {
-            toast.error(rk("loadError"));
-            setBlocks([]);
-        } finally {
-            setLoading(false);
-        }
-    }, [rk]);
-
     useEffect(() => {
-        if (open) void loadBlocks();
-    }, [open, loadBlocks]);
+        if (!open) return;
+        let cancelled = false;
+        setLoading(true);
+        void (async () => {
+            try {
+                const loaded: CmsBlock[] = [];
+                let offset = 0;
+                let total = 0;
+                do {
+                    const res = await apiClient.post<TableResponse<CmsBlock>>("/api/eCommerce/cmsBlock", {
+                        offset,
+                        limit: LIST_PAGE_SIZE,
+                        sortBy: "position",
+                        sortOrder: "asc",
+                    });
+                    const page = res.data.data;
+                    total = res.data.total;
+                    loaded.push(...page);
+                    offset += page.length;
+                    if (page.length === 0) break;
+                } while (offset < total);
+                if (!cancelled) setBlocks(loaded);
+            } catch {
+                if (!cancelled) {
+                    toast.error(String(resolveLanguageKeyRef.current("loadError") ?? "Failed to load blocks."));
+                    setBlocks([]);
+                }
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [open]);
 
     const handleDragEnd = (event: DragEndEvent) => {
         const {active, over} = event;
@@ -150,8 +170,8 @@ export default function ReorderCmsBlocksModal({
                     <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                         <SortableContext items={blocks.map((b) => b._id)} strategy={verticalListSortingStrategy}>
                             <div className="flex max-h-80 flex-col gap-2 overflow-y-auto py-1">
-                                {blocks.map((block) => (
-                                    <SortableBlockRow key={block._id} block={block} />
+                                {blocks.map((block, index) => (
+                                    <SortableBlockRow key={block._id} block={block} index={index} />
                                 ))}
                             </div>
                         </SortableContext>

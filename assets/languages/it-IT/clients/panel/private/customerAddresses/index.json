@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
-  "title": "Indirizzi dei clienti",
-  "description": "Gestisci gli indirizzi di spedizione e fatturazione dei clienti.",
+  "title": "Indirizzi degli utenti",
+  "description": "Gestisci gli indirizzi di spedizione e fatturazione degli utenti.",
+  "catalogTitle": "Indirizzi dei clienti",
+  "catalogDescription": "Tutti gli indirizzi di spedizione e fatturazione dell'azienda.",
   "createCustomerAddress": "Crea indirizzo",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

@@ -10,12 +10,13 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx";
 import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx";
 
-const LIST_BASE = "/eCommerce/customeraddresses";
+const FORM_BASE = "/tenancy/systemSettings/customeraddresses";
 
 export type CustomerAddressSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
     entity?: CustomerAddress;
+    lockCustomer?: boolean;
     hideActions?: boolean;
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
@@ -24,17 +25,19 @@ export type CustomerAddressSheetViewOwnProps = {
     onDefaultChanged?: (addressId: string) => void;
 };
 
-function customerAddressEditPath(entity: CustomerAddress) {
+function customerAddressEditPath(entity: CustomerAddress, lockCustomer: boolean) {
     const params = new URLSearchParams();
     params.set("customerAddressId", entity._id);
     if (entity.firstName) params.set("customerAddressTitle", encodeURIComponent(String(entity.firstName)));
-    return `${LIST_BASE}/edit?${params.toString()}`;
+    if (lockCustomer) params.set("lockCustomer", "1");
+    return `${FORM_BASE}/edit?${params.toString()}`;
 }
 
 function CustomerAddressSheetView({
     open,
     onOpenChange,
     entity: entityProp,
+    lockCustomer = false,
     resolveLanguageKey,
     hideActions = false,
     onDelete = () => {},
@@ -81,7 +84,7 @@ function CustomerAddressSheetView({
                 hideActions={hideActions}
                 onDelete={onDelete}
                 onRestore={onRestore}
-                editPath={customerAddressEditPath(asEntity)}
+                editPath={customerAddressEditPath(asEntity, lockCustomer)}
                 onSheetRowPatched={onSheetRowPatched}
                 actionMenuAllowCustomChildren
                 actionMenuChildren={

@@ -2,6 +2,8 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
   "title": "Adresse erstellen",
   "form": {
+    "recipientSectionTitle": "Empfänger",
+    "addressSectionTitle": "Adresse",
     "customerLabel": "Kunde",
     "customerPlaceholder": "Customer auswählen",
     "firstNameLabel": "Recipient vor name",

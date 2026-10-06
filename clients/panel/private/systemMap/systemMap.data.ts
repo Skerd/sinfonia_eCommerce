@@ -139,7 +139,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Saved buyer shipping/billing addresses.",
             keyFields: ["user", "line1", "city", "country", "isDefault"],
             apiPath: "/api/eCommerce/customerAddress",
-            panelRoute: "/eCommerce/customeraddresses",
+            panelRoute: "/account/addresses",
             position: {x: 560, y: 40},
         },
         {

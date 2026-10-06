@@ -19,5 +19,8 @@ export default createGenericEditPage<CustomerAddress, EditCustomerAddressFormTyp
         latitude: data.latitude ?? 41.3275,
         longitude: data.longitude ?? 19.8189,
     }),
+    buildFormExtras: (_entityId, params) => ({
+        lockCustomer: params.get("lockCustomer") === "1",
+    }),
     submitIcon: <Save />,
 });

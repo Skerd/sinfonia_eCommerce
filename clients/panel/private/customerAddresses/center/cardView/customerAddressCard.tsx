@@ -10,15 +10,17 @@ import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/priv
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import type {ReactNode, RefObject} from "react";
 
-const LIST_BASE = "/eCommerce/customeraddresses";
+const FORM_BASE = "/tenancy/systemSettings/customeraddresses";
 
-function customerAddressEditPath(entity: CustomerAddress) {
+function customerAddressEditPath(entity: CustomerAddress, lockCustomer: boolean) {
     const params = new URLSearchParams();
     params.set("customerAddressId", entity._id);
     if (entity.firstName) params.set("customerAddressTitle", encodeURIComponent(String(entity.firstName)));
-    return `${LIST_BASE}/edit?${params.toString()}`;
+    if (lockCustomer) params.set("lockCustomer", "1");
+    return `${FORM_BASE}/edit?${params.toString()}`;
 }
 
 function addressTitle(entity: CustomerAddress) {
@@ -27,6 +29,7 @@ function addressTitle(entity: CustomerAddress) {
 
 type CustomerAddressCardProps = WithLanguageType & {
     entity: CustomerAddress;
+    lockCustomer?: boolean;
     fetchId?: string;
     hideActions?: boolean;
     onDelete?: (deleted?: CustomerAddress, response?: DeletedData) => void;
@@ -38,6 +41,7 @@ type CustomerAddressCardProps = WithLanguageType & {
 
 function CustomerAddressCard({
     entity,
+    lockCustomer = false,
     resolveLanguageKey,
     fetchId,
     hideActions = false,
@@ -57,7 +61,7 @@ function CustomerAddressCard({
             onRestore={onRestore}
             hideActions={hideActions}
             sheetOnly={sheetOnly}
-            editPath={customerAddressEditPath}
+            editPath={(row) => customerAddressEditPath(row, lockCustomer)}
             Sheet={CustomerAddressSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/customerAddress"
@@ -68,6 +72,7 @@ function CustomerAddressCard({
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,
+                lockCustomer,
                 onDefaultChanged: (addressId: string) => {
                     setEntity({...row, isDefault: true});
                     onDefaultChanged?.(addressId);
@@ -94,7 +99,23 @@ function CustomerAddressCard({
         >
             {({entity: row, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="firstName" title={addressTitle(row)}>
+                    <EntityCard.Header
+                        titlePath="firstName"
+                        title={addressTitle(row)}
+                        badgesBesideTitle
+                        badges={
+                            row.isDefault ? (
+                                <DisplayValue path="isDefault" value={resolveLanguageKey("defaultAddress")}>
+                                    {(formatted: ReactNode) => (
+                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
+                                            <IconStar className="w-3 h-3" />
+                                            {formatted}
+                                        </span>
+                                    )}
+                                </DisplayValue>
+                            ) : undefined
+                        }
+                    >
                         <SetDefaultCustomerAddress entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
@@ -119,14 +140,6 @@ function CustomerAddressCard({
                             path="phone"
                             type="phoneNumber"
                             value={row.phone}
-                        />
-                        <EntityCardRow
-                            icon={IconStar}
-                            label={resolveLanguageKey("defaultAddress")}
-                            tooltip={resolveLanguageKey("defaultAddress")}
-                            path="isDefault"
-                            type="boolean"
-                            value={row.isDefault}
                         />
                     </EntityCard.Body>
                 </>

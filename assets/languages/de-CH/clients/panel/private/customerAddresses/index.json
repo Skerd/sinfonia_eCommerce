@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
-  "title": "Customer addresses",
-  "description": "Customer versand und abrechnung addresses. verwalten",
+  "title": "Benutzeradressen",
+  "description": "Versand- und Rechnungsadressen der Benutzer verwalten.",
+  "catalogTitle": "Kundenadressen",
+  "catalogDescription": "Alle Versand- und Rechnungsadressen des Unternehmens.",
   "createCustomerAddress": "Adresse erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

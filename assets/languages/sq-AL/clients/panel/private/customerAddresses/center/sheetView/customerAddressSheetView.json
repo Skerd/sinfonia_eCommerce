@@ -28,5 +28,14 @@
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
   "yes": "Po",
-  "no": "Jo"
+  "no": "Jo",
+  "form": {
+    "streetLabel": "Rruga",
+    "postalCodeLabel": "Kodi postar",
+    "cityLabel": "Qyteti",
+    "stateLabel": "Rajoni",
+    "countryLabel": "Shteti",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "longitudeLabel": "Gjatësia gjeografike"
+  }
 }

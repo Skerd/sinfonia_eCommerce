@@ -4,6 +4,8 @@
   "errorTitle": "Échec du chargement de l'adresse",
   "errorDescription": "Impossible de charger cette adresse. Essayer à nouveau.",
   "form": {
+    "recipientSectionTitle": "Destinataire",
+    "addressSectionTitle": "Adresse",
     "_idLabel": "Identifiant",
     "customerLabel": "Client",
     "customerPlaceholder": "Sélectionner un client",

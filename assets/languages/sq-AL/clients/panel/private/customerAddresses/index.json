@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
-  "title": "Adresat e klientëve",
-  "description": "Menaxhoni adresat e dërgesës dhe faturimit.",
+  "title": "Adresat e përdoruesve",
+  "description": "Menaxhoni adresat e dërgesës dhe të faturimit të përdoruesve.",
+  "catalogTitle": "Adresat e klientëve",
+  "catalogDescription": "Të gjitha adresat e dërgesës dhe të faturimit të kompanisë.",
   "createCustomerAddress": "Krijo adresë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

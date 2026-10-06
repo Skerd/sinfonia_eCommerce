@@ -28,5 +28,14 @@
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "form": {
+    "streetLabel": "Via",
+    "postalCodeLabel": "CAP",
+    "cityLabel": "Città",
+    "stateLabel": "Cantone / Stato",
+    "countryLabel": "Paese",
+    "latitudeLabel": "Latitudine",
+    "longitudeLabel": "Longitudine"
+  }
 }

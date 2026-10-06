@@ -2,6 +2,8 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/createCustomerAddress.tsx",
   "title": "Krijo adresë",
   "form": {
+    "recipientSectionTitle": "Marrësi",
+    "addressSectionTitle": "Adresa",
     "customerLabel": "Klienti",
     "customerPlaceholder": "Zgjidh klientin",
     "firstNameLabel": "Emri i marrësit",

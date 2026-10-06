@@ -1,4 +1,4 @@
-import {ShoppingBag, Boxes, Warehouse, LayoutGrid, BarChart3, PackageCheck, Undo2, MapPin, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight} from "lucide-react";
+import {ShoppingBag, Boxes, Warehouse, LayoutGrid, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight} from "lucide-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -21,7 +21,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
             {title: resolveLanguageKey("menus.eCommerce.productreviews.title"), url: "/eCommerce/productreviews", icon: Star, permissions: ["returnRequests"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.returnrequests.title"), url: "/eCommerce/returnrequests", icon: Undo2, permissions: ["fulfillments"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.fulfillments.title"), url: "/eCommerce/fulfillments", icon: PackageCheck, permissions: ["customerAddresses"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerce.customeraddresses.title"), url: "/eCommerce/customeraddresses", icon: MapPin, permissions: ["inventories"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.inventories.title"), url: "/eCommerce/inventories", icon: Warehouse, permissions: ["inventoryMovements"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.inventorymovements.title"), url: "/eCommerce/inventorymovements", icon: ArrowLeftRight, permissions: [], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.analytics.title"), url: "/eCommerce/analytics", icon: BarChart3, permissions: [], usersPermissions: [], atLeastOnePermission: true},

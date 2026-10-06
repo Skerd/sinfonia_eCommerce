@@ -9,13 +9,14 @@ export default createGenericCreatePage<CreateCustomerAddressFormType>({
     accessModel: "customerAddresses",
     apiUrl: "/api/eCommerce/customerAddress",
     schema: createCustomerAddressFormSchema,
-    defaultValues: {
+    defaultValues: (params) => ({
+        customer: params.get("specificUserId") ?? "",
         firstName: "",
         lastName: "",
         street: "",
         latitude: 41.3275,
         longitude: 19.8189,
-    } as unknown as CreateCustomerAddressFormType,
-    successPath: "/eCommerce/customeraddresses",
+    }),
+    buildFormExtras: (params) => ({lockCustomer: !!params.get("specificUserId")}),
     submitIcon: <IconPlus />,
 });

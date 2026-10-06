@@ -49,8 +49,8 @@ import EditReturnRequest from "@eCommerceModule/clients/panel/private/returnRequ
 import AllProductVariants from "@eCommerceModule/clients/panel/private/productVariants/index.tsx";
 import CreateProductVariant from "@eCommerceModule/clients/panel/private/productVariants/createProductVariant.tsx";
 import EditProductVariant from "@eCommerceModule/clients/panel/private/productVariants/editProductVariant.tsx";
-import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
 import AllProductReviews from "@eCommerceModule/clients/panel/private/productReviews/index.tsx";
+import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
 import CreateCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/createCustomerAddress.tsx";
 import EditCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/editCustomerAddress.tsx";
 import AllPosPaymentMethods from "@eCommerceModule/clients/panel/private/posPaymentMethods/index.tsx";
@@ -114,6 +114,12 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateCustomerGroup />;
                 if (action === "edit" && customerGroupId) return <EditCustomerGroup entityId={customerGroupId} />;
                 return <AllCustomerGroups />;
+            }
+            if (resource === "customeraddresses") {
+                const customerAddressId = searchParams.get("customerAddressId") || undefined;
+                if (action === "create") return <CreateCustomerAddress />;
+                if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
+                return <AllCustomerAddresses companyWide />;
             }
             if (resource === "discounts") {
                 const discountId = searchParams.get("discountId") || undefined;
@@ -239,12 +245,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "productreviews") {
             return <AllProductReviews />;
-        }
-        if (resource === "customeraddresses") {
-            const customerAddressId = searchParams.get("customerAddressId") || undefined;
-            if (action === "create") return <CreateCustomerAddress />;
-            if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
-            return <AllCustomerAddresses />;
         }
         return undefined;
     },

@@ -7,6 +7,7 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         categories: "categories_configurations",
         productattributes: "productAttributes_configurations",
         customergroups: "customerGroups_configurations",
+        customeraddresses: "customerAddresses_configurations",
         discounts: "discounts_configurations",
         pricingrules: "pricingRules_configurations",
         warehouses: "warehouses_configurations",
@@ -17,6 +18,9 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         pospaymentmethods: "posPaymentMethods_configurations",
         fiscalconfigs: "fiscalConfigs_configurations",
         cmsblocks: "cmsBlocks_configurations",
+    },
+    pathRoomOverrides: {
+        "account/addresses": "customeraddresses",
     },
 };
 
