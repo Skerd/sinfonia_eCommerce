@@ -4,7 +4,10 @@
     "manual": "Manuel",
     "dynamic": "Dynamique"
   },
-  "products": "produits",
+  "type": "Type",
+  "slug": "Slug",
+  "products": "Produits",
+  "position": "Position",
   "visible": "Visible",
   "hidden": "Caché"
 }

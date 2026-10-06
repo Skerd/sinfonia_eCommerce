@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx",
+  "title": "Désactiver la collection",
+  "description": "Cette collection sera masquée de la vitrine jusqu'à ce qu'elle soit à nouveau activée.",
+  "cancel": "Annuler",
+  "confirm": "Désactiver",
+  "busy": "En cours…",
+  "axios": {
+    "start": {
+      "title": "Désactivation de la collection…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection désactivée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de désactiver la collection",
+      "time": 3000
+    }
+  }
+}

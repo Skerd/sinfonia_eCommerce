@@ -14,6 +14,7 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         shippingzones: "shippingZones_configurations",
         taxzones: "taxZones_configurations",
         productvariants: "productVariants_configurations",
+        collections: "productCollections_configurations",
         posconfigs: "posConfigs_configurations",
         pospaymentmethods: "posPaymentMethods_configurations",
         fiscalconfigs: "fiscalConfigs_configurations",

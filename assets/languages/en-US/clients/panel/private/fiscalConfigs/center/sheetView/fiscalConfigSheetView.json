@@ -29,6 +29,7 @@
   "sellerCountry": "Seller country",
   "environment": "Environment",
   "certificate": "Certificate",
+  "certificatePassword": "Certificate password",
   "isActive": "Active",
   "isVatRegistered": "VAT registered",
   "company": "Company",

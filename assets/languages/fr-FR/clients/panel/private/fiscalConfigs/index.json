@@ -52,6 +52,7 @@
     "isVatRegistered": "TVA enregistrée",
     "environment": "Environnement",
     "certificate": "Certificat",
+    "certificatePassword": "Mot de passe du certificat",
     "isActive": "Actif",
     "company": "Entreprise",
     "createdBy": "Créé par",

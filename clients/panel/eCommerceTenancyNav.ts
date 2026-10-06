@@ -1,4 +1,4 @@
-import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, MapPin, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
+import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, Library, MapPin, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
 import {IconCategory2} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
@@ -35,6 +35,14 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 url: "/tenancy/systemSettings/productvariants",
                 icon: Layers,
                 permissions: ["productVariants"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.tenancy.systemSettings.collections.title"),
+                url: "/tenancy/systemSettings/collections",
+                icon: Library,
+                permissions: ["productCollections"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },

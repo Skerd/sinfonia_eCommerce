@@ -52,6 +52,7 @@
     "isVatRegistered": "partita IVA registrata",
     "environment": "Ambiente",
     "certificate": "Certificato",
+    "certificatePassword": "Password del certificato",
     "isActive": "Attivo",
     "company": "Azienda",
     "createdBy": "Creato da",

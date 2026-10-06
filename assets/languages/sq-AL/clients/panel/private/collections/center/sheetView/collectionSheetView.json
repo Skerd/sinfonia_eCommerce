@@ -9,6 +9,7 @@
   "media": "Media",
   "products": "Produktet",
   "rules": "Rregullat",
+  "ruleConditionLabel": "Kushti i përputhjes",
   "seo": "SEO",
   "lifecycle": "Cikli i jetës",
   "compactView": "Kompakte",
@@ -26,7 +27,6 @@
     "all": "Të gjitha rregullat (AND)",
     "any": "Çdo rregull (OR)"
   },
-  "publishedAt": "Publiko më",
   "company": "Kompania",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",

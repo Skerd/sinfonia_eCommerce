@@ -29,6 +29,7 @@
   "sellerCountry": "Paese del venditore",
   "environment": "Ambiente",
   "certificate": "Certificato",
+  "certificatePassword": "Password del certificato",
   "isActive": "Attivo",
   "isVatRegistered": "partita IVA registrata",
   "company": "Azienda",

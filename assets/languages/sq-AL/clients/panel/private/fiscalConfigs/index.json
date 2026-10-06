@@ -52,6 +52,7 @@
     "isVatRegistered": "I regjistruar në TVSH",
     "environment": "Mjedisi",
     "certificate": "Certifikata",
+    "certificatePassword": "Fjalëkalimi i certifikatës",
     "isActive": "Aktive",
     "company": "Kompania",
     "createdBy": "Krijuar nga",

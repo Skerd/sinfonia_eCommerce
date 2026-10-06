@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx",
+  "title": "Disattiva la collezione",
+  "description": "Questa collezione sarà nascosta dalla vetrina finché non verrà nuovamente attivata.",
+  "cancel": "Annulla",
+  "confirm": "Disattiva",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Disattivazione della collezione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collezione disattivata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile disattivare la collezione",
+      "time": 3000
+    }
+  }
+}

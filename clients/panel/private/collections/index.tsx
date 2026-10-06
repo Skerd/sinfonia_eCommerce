@@ -11,7 +11,7 @@ export function collectionEditPath(col: {_id: string; name?: string}) {
     const params = new URLSearchParams();
     params.set("collectionId", col._id);
     if (col.name) params.set("collectionName", encodeURIComponent(col.name));
-    return `/eCommerce/collections/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/collections/edit?${params.toString()}`;
 }
 
 function AllCollections({resolveLanguageKey}: WithLanguageType) {
@@ -21,7 +21,7 @@ function AllCollections({resolveLanguageKey}: WithLanguageType) {
             collectionName="productCollections"
             accessModel="productCollections"
             tableConfigKey="productCollections"
-            createPath="/eCommerce/collections/create"
+            createPath="/tenancy/systemSettings/collections/create"
             createIcon={<IconPlus />}
             createLanguageKey="createCollection"
             buildEditPath={collectionEditPath}

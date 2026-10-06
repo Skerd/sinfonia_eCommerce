@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx",
+  "title": "Activate collection",
+  "description": "This collection will become visible on the storefront.",
+  "cancel": "Cancel",
+  "confirm": "Activate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Activating collection…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection activated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not activate collection",
+      "time": 3000
+    }
+  }
+}

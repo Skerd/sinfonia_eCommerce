@@ -166,6 +166,15 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 }
                 return <AllProductVariants />;
             }
+            if (resource === "collections") {
+                const collectionId = searchParams.get("collectionId") || undefined;
+                const collectionName = safeDecode(searchParams.get("collectionName")) || undefined;
+                if (action === "create") return <CreateCollection />;
+                if (action === "edit" && collectionId) {
+                    return <EditCollection entityId={collectionId} entityName={collectionName} />;
+                }
+                return <AllCollections />;
+            }
             if (resource === "fiscalconfigs") {
                 const fiscalConfigId = searchParams.get("fiscalConfigId") || undefined;
                 if (action === "create") return <CreateFiscalConfig />;
@@ -191,8 +200,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         const productTitle = safeDecode(searchParams.get("productTitle")) || undefined;
         const inventoryId = searchParams.get("inventoryId") || undefined;
         const inventoryTitle = safeDecode(searchParams.get("inventoryTitle")) || undefined;
-        const collectionId = searchParams.get("collectionId") || undefined;
-        const collectionTitle = safeDecode(searchParams.get("collectionTitle")) || undefined;
         if (resource === "systemmap") {
             return <SystemMap />;
         }
@@ -219,11 +226,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "inventorymovements") {
             return <AllInventoryMovements />;
-        }
-        if (resource === "collections") {
-            if (action === "create") return <CreateCollection />;
-            if (action === "edit" && collectionId) return <EditCollection entityId={collectionId} entityName={collectionTitle} />;
-            return <AllCollections />;
         }
         if (resource === "productorders") {
             return <AllProductOrders />;

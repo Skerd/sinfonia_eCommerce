@@ -52,6 +52,7 @@
     "isVatRegistered": "VAT registered",
     "environment": "Environment",
     "certificate": "Certificate",
+    "certificatePassword": "Certificate password",
     "isActive": "Active",
     "company": "Company",
     "createdBy": "Created by",

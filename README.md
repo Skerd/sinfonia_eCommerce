@@ -45,7 +45,7 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `productVariants` | `/eCommerce/productvariants` | SKU-level variants |
 | `productAttributes` | `/tenancy/systemSettings/productattributes` | Configurable attributes |
 | `categories` | `/eCommerce/categories` | Categories (also under tenancy systemSettings) |
-| `collections` | `/eCommerce/collections` | Merchandising collections |
+| `collections` | `/tenancy/systemSettings/collections` | Merchandising collections |
 | `productOrders` | `/eCommerce/productorders` | Orders (confirm / process / ship / cancel / refund actions) |
 | `fulfillments` | `/eCommerce/fulfillments` | Shipments and tracking |
 | `returnRequests` | `/eCommerce/returnrequests` | Returns, exchanges, refunds |

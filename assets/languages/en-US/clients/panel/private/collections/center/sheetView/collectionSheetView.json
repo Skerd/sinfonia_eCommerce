@@ -9,6 +9,7 @@
   "media": "Media",
   "products": "Products",
   "rules": "Rules",
+  "ruleConditionLabel": "Match condition",
   "seo": "SEO",
   "lifecycle": "Lifecycle",
   "compactView": "Compact",
@@ -26,7 +27,6 @@
     "all": "All rules (AND)",
     "any": "Any rule (OR)"
   },
-  "publishedAt": "Publish at",
   "company": "Company",
   "createdAt": "Created at",
   "updatedAt": "Updated at",

@@ -7,8 +7,12 @@ import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/priva
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import ActivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/activateCollection.tsx";
+import DeactivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/deactivateCollection.tsx";
+import ActivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx";
+import DeactivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx";
 
-const LIST_BASE = "/eCommerce/collections";
+const LIST_BASE = "/tenancy/systemSettings/collections";
 
 export type CollectionSheetViewOwnProps = {
     open: boolean;
@@ -18,6 +22,7 @@ export type CollectionSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function collectionEditPath(collection: Collection) {
@@ -36,10 +41,16 @@ function CollectionSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    onSheetRowPatched,
 }: CollectionSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(collectionProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("productCollections");
     const viewConfig = useViewConfig("productCollections", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!collectionProp) return;
@@ -51,24 +62,58 @@ function CollectionSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const asEntity = sheetData as Collection;
+
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/collection/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => {
-                setSheetData(data);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={collectionEditPath(sheetData as Collection)}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/collection/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => {
+                    setSheetData(data);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={collectionEditPath(asEntity)}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={
+                    <>
+                        <ActivateCollection entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <DeactivateCollection entity={asEntity} onAction={(a: string) => setAction(a)} />
+                    </>
+                }
+            />
+            {action === "activateCollection" && (
+                <ActivateCollectionDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isVisible: true}));
+                        onSheetRowPatched?.({isVisible: true});
+                    }}
+                />
+            )}
+            {action === "deactivateCollection" && (
+                <DeactivateCollectionDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={() => {
+                        setSheetData((prev) => ({...prev, isVisible: false}));
+                        onSheetRowPatched?.({isVisible: false});
+                    }}
+                />
+            )}
+        </>
     );
 }
 

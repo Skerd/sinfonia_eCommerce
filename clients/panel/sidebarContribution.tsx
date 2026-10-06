@@ -1,4 +1,4 @@
-import {ShoppingBag, Boxes, Warehouse, LayoutGrid, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight} from "lucide-react";
+import {ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight} from "lucide-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -13,7 +13,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
         const productCommerceItems: NavItem[] = [
             {title: resolveLanguageKey("menus.eCommerce.systemMap.title"), url: "/eCommerce/systemmap", icon: Network, permissions: ["productReviews"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.products.title"), url: "/eCommerce/products", icon: Boxes, permissions: ["products"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerce.collections.title"), url: "/eCommerce/collections", icon: LayoutGrid, permissions: ["productCollections"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.productorders.title"), url: "/eCommerce/productorders", icon: ShoppingBag, permissions: ["productOrders"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.pos.title"), url: "/eCommerce/pos", icon: Monitor, permissions: [], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerce.posorders.title"), url: "/eCommerce/posorders", icon: Receipt, permissions: ["posOrders"], usersPermissions: [], atLeastOnePermission: true},

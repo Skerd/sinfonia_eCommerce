@@ -1,17 +1,22 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";
-import {IconPhoto} from "@tabler/icons-react";
+import {IconEye, IconEyeOff, IconHash, IconLayersIntersect, IconPackage, IconTag} from "@tabler/icons-react";
 import CollectionSheetView from "@eCommerceModule/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
+import ActivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/activateCollection.tsx";
+import DeactivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/deactivateCollection.tsx";
+import ActivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx";
+import DeactivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import type {ReactNode, RefObject} from "react";
 
-const LIST_BASE = "/eCommerce/collections";
+const LIST_BASE = "/tenancy/systemSettings/collections";
 
 function collectionEditPath(collection: Collection) {
     const params = new URLSearchParams();
@@ -27,6 +32,7 @@ type CollectionCardProps = WithLanguageType & {
     onRestore?: () => void;
     hideActions?: boolean;
     sheetOnly?: boolean;
+    onVisibleChanged?: (isVisible: boolean) => void;
     innerRef?: RefObject<WithAxiosLifecycleRef<Collection> | null>;
 };
 
@@ -38,6 +44,7 @@ function CollectionCard({
     onRestore,
     hideActions = false,
     sheetOnly = false,
+    onVisibleChanged,
     innerRef,
 }: CollectionCardProps) {
     return (
@@ -59,62 +66,117 @@ function CollectionCard({
             failedDescription=""
             titlePath="name"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
-        >
-            {({entity: row}) => (
+            sheetProps={({entity, setEntity}) => ({
+                fetchId,
+                onSheetRowPatched: (row: Partial<Collection>) => {
+                    setEntity({...entity, ...row});
+                    if (typeof row.isVisible === "boolean") onVisibleChanged?.(row.isVisible);
+                },
+            })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
                 <>
-                    <figure className="relative mb-1 aspect-4/3 w-full overflow-hidden bg-muted">
-                        {row.mainImage ? (
-                            <img
-                                src={`/api/auxiliary/media/${row.mainImage._id}`}
-                                alt={row.name ?? ""}
-                                className="absolute inset-0 size-full object-cover"
+                    {action === "activateCollection" && (
+                        <ActivateCollectionDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                setEntity({...entity, isVisible: true});
+                                onVisibleChanged?.(true);
+                            }}
+                        />
+                    )}
+                    {action === "deactivateCollection" && (
+                        <DeactivateCollectionDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                setEntity({...entity, isVisible: false});
+                                onVisibleChanged?.(false);
+                            }}
+                        />
+                    )}
+                </>
+            )}
+        >
+            {({entity, read, setAction}) => (
+                <>
+                    <AccessGatedGalleryCarousel
+                        read={read}
+                        mainImage={entity.mainImage}
+                        imageGallery={[]}
+                        showThumbnails={false}
+                        allowFullScreen={false}
+                        coverAfterFirst
+                    />
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        badgesBesideTitle
+                        badges={
+                            entity.isVisible ? undefined : (
+                                <DisplayValue path="isVisible" value={resolveLanguageKey("hidden")}>
+                                    {(formatted: ReactNode) => (
+                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0">
+                                            <IconEyeOff className="w-3 h-3" />
+                                            {formatted}
+                                        </span>
+                                    )}
+                                </DisplayValue>
+                            )
+                        }
+                    >
+                        <ActivateCollection entity={entity} onAction={setAction} />
+                        <DeactivateCollection entity={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconLayersIntersect}
+                            label={resolveLanguageKey("type")}
+                            tooltip={resolveLanguageKey("type")}
+                            path="type"
+                            type="enum"
+                            languageKeyCategory="collectionType"
+                            value={entity.type}
+                        />
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("slug")}
+                            tooltip={resolveLanguageKey("slug")}
+                            path="slug"
+                            value={entity.slug}
+                        />
+                        <EntityCardRow
+                            icon={IconPackage}
+                            label={resolveLanguageKey("products")}
+                            tooltip={resolveLanguageKey("products")}
+                            show
+                            path="productCount"
+                            type="number"
+                            value={entity.productCount ?? 0}
+                        />
+                        {entity.position != null ? (
+                            <EntityCardRow
+                                icon={IconHash}
+                                label={resolveLanguageKey("position")}
+                                tooltip={resolveLanguageKey("position")}
+                                path="position"
+                                type="number"
+                                value={entity.position}
                             />
-                        ) : (
-                            <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                <IconPhoto className="size-10 text-muted-foreground/15" />
-                            </div>
-                        )}
-                        <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
-                            <DisplayValue path="type" type="enum" languageKeyCategory="collectionType" value={row.type}>
-                                {(label) =>
-                                    label ? (
-                                        <Badge variant="secondary" className="pointer-events-auto px-1.5 py-0 text-3xs">
-                                            {label}
-                                        </Badge>
-                                    ) : null
-                                }
-                            </DisplayValue>
-                        </div>
-                    </figure>
-                    <EntityCard.Header titlePath="name" title={row.name} />
-                    <div className="flex flex-col gap-2">
-                        {row.description ? (
-                            <DisplayValue path="description" value={row.description}>
-                                {(text) => (
-                                    <p className="line-clamp-2 text-xs text-muted-foreground">{text}</p>
-                                )}
-                            </DisplayValue>
                         ) : null}
-                        <div className="flex items-center justify-between gap-2">
-                            <span className="truncate text-xs text-muted-foreground">
-                                <DisplayValue path="productCount" type="number" value={row.productCount ?? 0} />{" "}
-                                {resolveLanguageKey("products")}
-                            </span>
-                            <DisplayValue path="isVisible" type="boolean" value={row.isVisible}>
-                                {() =>
-                                    row.isVisible != null ? (
-                                        <Badge
-                                            variant={row.isVisible ? "outline" : "destructive"}
-                                            className="shrink-0 px-1.5 py-0 text-3xs"
-                                        >
-                                            {resolveLanguageKey(row.isVisible ? "visible" : "hidden")}
-                                        </Badge>
-                                    ) : null
-                                }
-                            </DisplayValue>
-                        </div>
-                    </div>
+                        {entity.isVisible ? (
+                            <EntityCardRow
+                                icon={IconEye}
+                                label={resolveLanguageKey("visible")}
+                                tooltip={resolveLanguageKey("visible")}
+                                path="isVisible"
+                                type="boolean"
+                                value={entity.isVisible}
+                            />
+                        ) : null}
+                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

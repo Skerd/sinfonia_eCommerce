@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx",
+  "title": "Deactivate collection",
+  "description": "This collection will be hidden from the storefront until it is activated again.",
+  "cancel": "Cancel",
+  "confirm": "Deactivate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Deactivating collection…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collection deactivated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not deactivate collection",
+      "time": 3000
+    }
+  }
+}

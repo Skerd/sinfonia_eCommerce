@@ -12,33 +12,9 @@ export default createGenericCreatePage<CreateCollectionFormType>({
     defaultValues: {
         name: "",
         type: "manual",
-        isVisible: true,
-        ruleCondition: "all",
         position: 0,
         products: [],
-        rules: [],
     },
-    buildFormExtras: () => ({enableLocalFileMultipart: true}),
-    successPath: "/eCommerce/collections",
-    mapSubmitPayload: (data) => {
-        const postBody: Record<string, unknown> = {
-            name: data.name,
-            slug: data.slug,
-            type: data.type,
-            description: data.description,
-            isVisible: data.isVisible,
-            position: data.position,
-            products: data.products,
-            ruleCondition: data.ruleCondition,
-            rules: data.rules,
-            seoTitle: data.seoTitle,
-            seoDescription: data.seoDescription,
-            publishedAt: data.publishedAt,
-        };
-        const formData = new FormData();
-        if (data.mainImage instanceof File) formData.append("mainImage", data.mainImage);
-        formData.append("data", JSON.stringify(postBody));
-        return formData;
-    },
+    successPath: "/tenancy/systemSettings/collections",
     submitIcon: <IconPlus />,
 });

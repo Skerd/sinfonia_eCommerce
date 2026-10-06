@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx",
+  "title": "Kollektion aktivieren",
+  "description": "Diese Kollektion wird im Schaufenster sichtbar.",
+  "cancel": "Abbrechen",
+  "confirm": "Aktivieren",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Kollektion wird aktiviert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kollektion aktiviert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kollektion konnte nicht aktiviert werden",
+      "time": 3000
+    }
+  }
+}

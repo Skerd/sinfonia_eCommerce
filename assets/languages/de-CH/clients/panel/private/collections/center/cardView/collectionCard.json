@@ -2,9 +2,12 @@
   "path": "src/modules/eCommerce/clients/panel/private/collections/center/cardView/collectionCard.tsx",
   "collectionType": {
     "manual": "Manuell",
-    "dynamic": "Dynamic"
+    "dynamic": "Dynamisch"
   },
-  "products": "produkte",
-  "visible": "Visible",
-  "hidden": "Hidden"
+  "type": "Typ",
+  "slug": "Slug",
+  "products": "Produkte",
+  "position": "Position",
+  "visible": "Sichtbar",
+  "hidden": "Versteckt"
 }

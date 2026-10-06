@@ -4,7 +4,10 @@
     "manual": "Manual",
     "dynamic": "Dinamik"
   },
-  "products": "produkte",
+  "type": "Lloji",
+  "slug": "Slug",
+  "products": "Produktet",
+  "position": "Pozicioni",
   "visible": "I dukshëm",
   "hidden": "I fshehur"
 }

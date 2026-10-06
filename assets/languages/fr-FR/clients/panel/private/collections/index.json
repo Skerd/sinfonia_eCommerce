@@ -43,6 +43,7 @@
     "isVisible": "Visible",
     "position": "Poste",
     "products": "Produits",
+    "productCount": "Produits",
     "ruleCondition": "Condition de correspondance",
     "rules": {
       "field": "Champ de règle",
@@ -51,7 +52,6 @@
     },
     "seoTitle": "Titre SEO",
     "seoDescription": "Descriptif SEO",
-    "publishedAt": "Publier sur",
     "createdBy": "Créé par",
     "company": "Entreprise",
     "createdAt": "Créé le",

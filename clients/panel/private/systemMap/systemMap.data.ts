@@ -51,7 +51,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             description: "Manual or rule-driven merchandising collection.",
             keyFields: ["title", "type", "rules", "products"],
             apiPath: "/api/eCommerce/collection",
-            panelRoute: "/eCommerce/collections",
+            panelRoute: "/tenancy/systemSettings/collections",
             position: {x: 280, y: 180},
         },
         {

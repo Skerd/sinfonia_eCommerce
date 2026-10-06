@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx",
+  "title": "Kollektion deaktivieren",
+  "description": "Diese Kollektion wird im Schaufenster ausgeblendet, bis sie erneut aktiviert wird.",
+  "cancel": "Abbrechen",
+  "confirm": "Deaktivieren",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Kollektion wird deaktiviert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kollektion deaktiviert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kollektion konnte nicht deaktiviert werden",
+      "time": 3000
+    }
+  }
+}

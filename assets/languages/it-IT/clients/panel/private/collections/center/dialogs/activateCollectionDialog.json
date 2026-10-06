@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx",
+  "title": "Attiva la collezione",
+  "description": "Questa collezione sarà visibile in vetrina.",
+  "cancel": "Annulla",
+  "confirm": "Attiva",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Attivazione della collezione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Collezione attivata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile attivare la collezione",
+      "time": 3000
+    }
+  }
+}

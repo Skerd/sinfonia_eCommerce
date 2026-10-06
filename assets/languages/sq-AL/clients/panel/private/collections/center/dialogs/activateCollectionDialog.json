@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx",
+  "title": "Aktivizo koleksionin",
+  "description": "Ky koleksion do të jetë i dukshëm në vitrinë.",
+  "cancel": "Anulo",
+  "confirm": "Aktivizo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar koleksionin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Koleksioni u aktivizua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u aktivizua dot koleksioni",
+      "time": 3000
+    }
+  }
+}

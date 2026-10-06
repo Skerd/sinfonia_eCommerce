@@ -9,6 +9,7 @@
   "media": "Médias",
   "products": "Produits",
   "rules": "Règles",
+  "ruleConditionLabel": "Condition de correspondance",
   "seo": "Référencement",
   "lifecycle": "Cycle de vie",
   "compactView": "Compacte",
@@ -26,7 +27,6 @@
     "all": "Toutes les règles (ET)",
     "any": "N'importe quelle règle (OU)"
   },
-  "publishedAt": "Publier sur",
   "company": "Entreprise",
   "createdAt": "Créé le",
   "updatedAt": "Mis à jour le",

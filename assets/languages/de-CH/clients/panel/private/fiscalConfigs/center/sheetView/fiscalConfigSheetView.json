@@ -29,6 +29,7 @@
   "sellerCountry": "Verkäufer land",
   "environment": "Environment",
   "certificate": "Certificate",
+  "certificatePassword": "Certificate Passwort",
   "isActive": "Aktiv",
   "isVatRegistered": "MWST registered",
   "company": "Firma",

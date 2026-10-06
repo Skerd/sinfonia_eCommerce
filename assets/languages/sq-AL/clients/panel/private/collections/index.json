@@ -43,6 +43,7 @@
     "isVisible": "I dukshëm",
     "position": "Pozicioni",
     "products": "Produktet",
+    "productCount": "Produktet",
     "ruleCondition": "Kushti i përputhjes",
     "rules": {
       "field": "Fusha e rregullit",
@@ -51,7 +52,6 @@
     },
     "seoTitle": "Titulli SEO",
     "seoDescription": "Përshkrimi SEO",
-    "publishedAt": "Publiko më",
     "createdBy": "Krijuar nga",
     "company": "Kompania",
     "createdAt": "Krijuar më",

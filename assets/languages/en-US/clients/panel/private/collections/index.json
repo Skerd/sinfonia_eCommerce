@@ -43,6 +43,7 @@
     "isVisible": "Visible",
     "position": "Position",
     "products": "Products",
+    "productCount": "Products",
     "ruleCondition": "Match condition",
     "rules": {
       "field": "Rule field",
@@ -51,7 +52,6 @@
     },
     "seoTitle": "SEO title",
     "seoDescription": "SEO description",
-    "publishedAt": "Publish at",
     "createdBy": "Created by",
     "company": "Company",
     "createdAt": "Created at",
