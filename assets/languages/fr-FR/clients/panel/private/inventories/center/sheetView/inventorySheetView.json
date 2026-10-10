@@ -16,5 +16,10 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "movements": "Mouvements",
+  "movement": "Mouvement",
+  "compactView": "Compacte",
+  "cardsView": "Cartes",
+  "toggleReferenceListView": "Basculer la disposition de la liste"
 }

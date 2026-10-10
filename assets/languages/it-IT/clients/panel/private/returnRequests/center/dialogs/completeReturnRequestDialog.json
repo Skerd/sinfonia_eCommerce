@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx",
+  "title": "Completa richiesta di reso",
+  "description": "Questo reso ricevuto sarà completato. I rimborsi restano sull’ordine.",
+  "cancel": "Annulla",
+  "confirm": "Completa",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Completamento della richiesta di reso…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Richiesta di reso completata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile completare la richiesta di reso",
+      "time": 3000
+    }
+  }
+}

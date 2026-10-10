@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
+  "title": "Rücksendung als erhalten markieren",
+  "description": "Diese genehmigte Rücksendung wird als erhalten markiert.",
+  "cancel": "Abbrechen",
+  "confirm": "Als erhalten markieren",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Rücksendung wird als erhalten markiert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rücksendung als erhalten markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rücksendung konnte nicht als erhalten markiert werden",
+      "time": 3000
+    }
+  }
+}

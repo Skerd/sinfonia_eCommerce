@@ -10,6 +10,8 @@
     "slugLabel": "Slug",
     "typeLabel": "Typ",
     "statusLabel": "Status",
+    "publishedAtLabel": "Veröffentlichen am",
+    "publishedAtPlaceholder": "Optional. Entwürfe mit diesem Datum werden automatisch aktiv.",
     "brandLabel": "Brand",
     "vendorLabel": "Lieferant",
     "featuredLabel": "Featured",

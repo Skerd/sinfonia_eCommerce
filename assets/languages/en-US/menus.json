@@ -25,6 +25,21 @@
     "productCommerce": {
       "title": "eCommerce"
     },
+    "catalog": {
+      "title": "Catalog"
+    },
+    "orders": {
+      "title": "Orders"
+    },
+    "posGroup": {
+      "title": "Point of sale"
+    },
+    "stock": {
+      "title": "Stock"
+    },
+    "insight": {
+      "title": "Insight"
+    },
     "products": {
       "title": "Products"
     },

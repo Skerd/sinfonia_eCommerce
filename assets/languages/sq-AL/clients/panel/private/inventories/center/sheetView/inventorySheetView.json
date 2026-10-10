@@ -16,5 +16,10 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "movements": "Lëvizjet",
+  "movement": "Lëvizje",
+  "compactView": "Kompakte",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndrysho paraqitjen e listës"
 }

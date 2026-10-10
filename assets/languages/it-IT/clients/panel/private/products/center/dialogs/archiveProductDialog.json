@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx",
+  "title": "Archivia prodotto",
+  "description": "Questo prodotto uscirà dal negozio finché non torna in bozza.",
+  "cancel": "Annulla",
+  "confirm": "Archivia",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Archiviazione del prodotto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prodotto archiviato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile archiviare il prodotto",
+      "time": 3000
+    }
+  }
+}

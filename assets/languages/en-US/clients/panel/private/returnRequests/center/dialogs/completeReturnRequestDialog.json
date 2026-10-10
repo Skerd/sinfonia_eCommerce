@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx",
+  "title": "Complete return request",
+  "description": "This received return will be marked completed. Refunds stay on the order.",
+  "cancel": "Cancel",
+  "confirm": "Complete",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Completing return request…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return request completed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not complete return request",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/publishProductDialog.tsx",
+  "title": "Publish product",
+  "description": "This product will become active on the storefront.",
+  "cancel": "Cancel",
+  "confirm": "Publish",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Publishing product…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Product published",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not publish product",
+      "time": 3000
+    }
+  }
+}

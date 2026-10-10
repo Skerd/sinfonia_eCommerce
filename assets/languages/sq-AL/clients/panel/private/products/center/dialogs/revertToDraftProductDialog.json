@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx",
+  "title": "Kthe në draft",
+  "description": "Ky produkt i arkivuar do të kthehet në draft që të ndryshohet dhe të publikohet përsëri.",
+  "cancel": "Anulo",
+  "confirm": "Kthe",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Po kthehet produkti…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkti u kthye në draft",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkti nuk u kthye",
+      "time": 3000
+    }
+  }
+}

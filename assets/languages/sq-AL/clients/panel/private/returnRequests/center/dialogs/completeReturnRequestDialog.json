@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx",
+  "title": "Përfundo kërkesën e kthimit",
+  "description": "Ky kthim i pranuar do të përfundojë. Rimbursimet mbeten te porosia.",
+  "cancel": "Anulo",
+  "confirm": "Përfundo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Po përfundohet kërkesa e kthimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa e kthimit u përfundua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa e kthimit nuk u përfundua",
+      "time": 3000
+    }
+  }
+}

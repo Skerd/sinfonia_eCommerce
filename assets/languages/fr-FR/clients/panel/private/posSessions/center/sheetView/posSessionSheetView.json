@@ -45,5 +45,7 @@
   "posCashMoveType": {
     "in": "Encaisser",
     "out": "Encaissement"
-  }
+  },
+  "posOrders": "Commandes POS",
+  "posOrder": "Commande POS"
 }

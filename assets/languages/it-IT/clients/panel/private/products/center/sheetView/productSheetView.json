@@ -147,5 +147,11 @@
   "twitterCard": {
     "summary": "Riepilogo",
     "summary_large_image": "Riepilogo immagine grande"
-  }
+  },
+  "productVariants": "Varianti",
+  "productVariant": "Variante",
+  "inventories": "Scorte",
+  "inventoryRow": "Scorte",
+  "reviews": "Recensioni",
+  "productReview": "Recensione"
 }

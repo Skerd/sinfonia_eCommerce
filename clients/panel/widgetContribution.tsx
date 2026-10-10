@@ -128,6 +128,21 @@ const InventoryMovementCardLazy = lazy(
             "@eCommerceModule/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx"
         ),
 );
+const FulfillmentSheetViewLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx"),
+);
+const FulfillmentCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/fulfillments/center/cardView/fulfillmentCard.tsx"),
+);
+const ReturnRequestSheetViewLazy = lazy(
+    () =>
+        import(
+            "@eCommerceModule/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx"
+        ),
+);
+const ReturnRequestCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx"),
+);
 
 const eCommerceWidgetContribution: WidgetContribution = {
     id: "eCommerce",
@@ -167,6 +182,10 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#InventoryCard": InventoryCardLazy,
         "#InventoryMovementSheetView": InventoryMovementSheetViewLazy,
         "#InventoryMovementCard": InventoryMovementCardLazy,
+        "#FulfillmentSheetView": FulfillmentSheetViewLazy,
+        "#FulfillmentCard": FulfillmentCardLazy,
+        "#ReturnRequestSheetView": ReturnRequestSheetViewLazy,
+        "#ReturnRequestCard": ReturnRequestCardLazy,
     },
     referencesDefaultItemProps: {
         "#PosPaymentMethodCard": "entity",
@@ -185,6 +204,8 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#ProductReviewCard": "review",
         "#InventoryCard": "inventory",
         "#InventoryMovementCard": "movement",
+        "#FulfillmentCard": "entity",
+        "#ReturnRequestCard": "entity",
     },
     auditSinglePostHints: {
         "#WarehouseSheetView": {url: "/api/eCommerce/warehouse/single", labelFields: ["name", "code"]},
@@ -236,6 +257,14 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#InventoryMovementSheetView": {
             url: "/api/eCommerce/inventoryMovement/single",
             labelFields: ["reason", "quantity", "receiptNumber"],
+        },
+        "#FulfillmentSheetView": {
+            url: "/api/eCommerce/fulfillment/single",
+            labelFields: ["status", "trackingNumber", "carrier"],
+        },
+        "#ReturnRequestSheetView": {
+            url: "/api/eCommerce/returnRequest/single",
+            labelFields: ["type", "status"],
         },
     },
 };

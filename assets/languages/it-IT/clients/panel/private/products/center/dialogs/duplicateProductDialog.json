@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/duplicateProductDialog.tsx",
+  "title": "Duplica prodotto",
+  "description": "Verrà creata una copia in bozza di questo prodotto.",
+  "cancel": "Annulla",
+  "confirm": "Duplica",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Duplicazione del prodotto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prodotto duplicato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile duplicare il prodotto",
+      "time": 3000
+    }
+  }
+}

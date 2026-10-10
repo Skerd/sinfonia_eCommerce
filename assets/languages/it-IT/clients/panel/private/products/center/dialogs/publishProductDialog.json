@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/publishProductDialog.tsx",
+  "title": "Pubblica prodotto",
+  "description": "Questo prodotto sarà attivo nel negozio.",
+  "cancel": "Annulla",
+  "confirm": "Pubblica",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Pubblicazione del prodotto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prodotto pubblicato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile pubblicare il prodotto",
+      "time": 3000
+    }
+  }
+}

@@ -7,6 +7,8 @@
     "slugLabel": "Lumaca",
     "typeLabel": "Tipo",
     "statusLabel": "Stato",
+    "publishedAtLabel": "Pubblica il",
+    "publishedAtPlaceholder": "Facoltativo. Le bozze con questa data diventano attive automaticamente.",
     "brandLabel": "Marchio",
     "vendorLabel": "Fornitore",
     "featuredLabel": "In evidenza",

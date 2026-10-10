@@ -14,8 +14,6 @@ import EditWarehouse from "@eCommerceModule/clients/panel/private/warehouses/edi
 import AllInventories from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import CreateInventory from "@eCommerceModule/clients/panel/private/inventories/createInventory.tsx";
 import EditInventory from "@eCommerceModule/clients/panel/private/inventories/editInventory.tsx";
-import RestockInventory from "@eCommerceModule/clients/panel/private/inventories/restockInventory.tsx";
-import DeductInventory from "@eCommerceModule/clients/panel/private/inventories/deductInventory.tsx";
 import AllInventoryMovements from "@eCommerceModule/clients/panel/private/inventoryMovements/index.tsx";
 import AllCollections from "@eCommerceModule/clients/panel/private/collections/index.tsx";
 import CreateCollection from "@eCommerceModule/clients/panel/private/collections/createCollection.tsx";
@@ -220,8 +218,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         if (resource === "inventories") {
             if (action === "create") return <CreateInventory />;
             if (action === "edit" && inventoryId) return <EditInventory entityId={inventoryId} entityName={inventoryTitle} />;
-            if (action === "restock") return <RestockInventory />;
-            if (action === "deduct") return <DeductInventory />;
             return <AllInventories />;
         }
         if (resource === "inventorymovements") {

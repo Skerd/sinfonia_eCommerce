@@ -130,5 +130,9 @@
     "partially_fulfilled": "Parzialmente soddisfatto",
     "fulfilled": "Soddisfatto",
     "returned": "Restituito"
-  }
+  },
+  "fulfillments": "Spedizioni",
+  "fulfillment": "Spedizione",
+  "returnRequests": "Resi",
+  "returnRequest": "Reso"
 }

@@ -25,6 +25,21 @@
     "productCommerce": {
       "title": "e-commerce"
     },
+    "catalog": {
+      "title": "Catalogo"
+    },
+    "orders": {
+      "title": "Ordini"
+    },
+    "posGroup": {
+      "title": "Punto di vendita"
+    },
+    "stock": {
+      "title": "Magazzino"
+    },
+    "insight": {
+      "title": "Panoramica"
+    },
     "products": {
       "title": "Prodotti"
     },

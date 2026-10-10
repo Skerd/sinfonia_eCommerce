@@ -9,9 +9,7 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {inventoryEditPath} from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
-import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
-import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
@@ -69,13 +67,6 @@ function InventoryCard({
             })}
             extraDialogs={({action, setAction, entity: row, setEntity}) => (
                 <>
-                    {action === "viewInventoryMovements" && (
-                        <ViewInventoryMovementsDialog
-                            open
-                            onClose={() => setAction("")}
-                            inventory={row}
-                        />
-                    )}
                     {(action === "restock" || action === "deduct") && (
                         <InventoryStockMoveAction
                             inventoryId={row._id}
@@ -101,7 +92,6 @@ function InventoryCard({
                 return (
                     <>
                         <EntityCard.Header titlePath="product.title" title={row.product?.title}>
-                            <ViewInventoryMovementsMenuItem inventory={row} onAction={setAction} />
                             <RestockInventoryDropdown inventory={row} onAction={setAction} />
                             <DeductInventoryDropdown inventory={row} onAction={setAction} />
                         </EntityCard.Header>

@@ -147,5 +147,11 @@
   "twitterCard": {
     "summary": "Résumé",
     "summary_large_image": "Grande image récapitulative"
-  }
+  },
+  "productVariants": "Variantes",
+  "productVariant": "Variante",
+  "inventories": "Stocks",
+  "inventoryRow": "Stock",
+  "reviews": "Avis",
+  "productReview": "Avis"
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx",
+  "title": "Revenir au brouillon",
+  "description": "Ce produit archivé redeviendra un brouillon pour pouvoir être modifié et publié.",
+  "cancel": "Annuler",
+  "confirm": "Revenir",
+  "busy": "En cours…",
+  "axios": {
+    "start": {
+      "title": "Retour au brouillon…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produit revenu au brouillon",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de revenir au brouillon",
+      "time": 3000
+    }
+  }
+}

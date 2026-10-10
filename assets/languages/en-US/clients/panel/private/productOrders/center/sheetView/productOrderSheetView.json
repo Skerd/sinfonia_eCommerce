@@ -130,5 +130,9 @@
     "partially_fulfilled": "Partially fulfilled",
     "fulfilled": "Fulfilled",
     "returned": "Returned"
-  }
+  },
+  "fulfillments": "Fulfillments",
+  "fulfillment": "Fulfillment",
+  "returnRequests": "Return requests",
+  "returnRequest": "Return request"
 }

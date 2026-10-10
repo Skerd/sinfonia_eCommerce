@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx",
+  "title": "Arkivo produktin",
+  "description": "Ky produkt do të largohet nga dyqani derisa të kthehet në draft.",
+  "cancel": "Anulo",
+  "confirm": "Arkivo",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Po arkivohet produkti…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkti u arkivua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkti nuk u arkivua",
+      "time": 3000
+    }
+  }
+}

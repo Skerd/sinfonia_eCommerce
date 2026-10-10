@@ -10,6 +10,8 @@
     "slugLabel": "Identifiant",
     "typeLabel": "Type",
     "statusLabel": "Statut",
+    "publishedAtLabel": "Publier le",
+    "publishedAtPlaceholder": "Facultatif. Les brouillons avec cette date deviennent actifs automatiquement.",
     "brandLabel": "Marque",
     "vendorLabel": "Fournisseur",
     "featuredLabel": "Mis en avant",

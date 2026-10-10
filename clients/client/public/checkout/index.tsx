@@ -124,7 +124,7 @@ function AddressFields({value, onChange, countries}: {value: CheckoutAddress; on
                     ))}
                 </select>
             </Field>
-            <Field label="State / region">
+            <Field label="State">
                 <input autoComplete="address-level1" value={value.state} onChange={e => set("state", e.target.value)} className={inputClass} />
             </Field>
             <Field label="Postal code">

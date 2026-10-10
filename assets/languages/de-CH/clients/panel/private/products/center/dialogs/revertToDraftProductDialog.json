@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx",
+  "title": "Zum Entwurf zurücksetzen",
+  "description": "Dieses archivierte Produkt wird zum Entwurf, damit es erneut bearbeitet und veröffentlicht werden kann.",
+  "cancel": "Abbrechen",
+  "confirm": "Zurücksetzen",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Produkt wird zurückgesetzt…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkt zum Entwurf zurückgesetzt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkt konnte nicht zurückgesetzt werden",
+      "time": 3000
+    }
+  }
+}

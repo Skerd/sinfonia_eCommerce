@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/duplicateProductDialog.tsx",
+  "title": "Duplicate product",
+  "description": "A draft copy of this product will be created.",
+  "cancel": "Cancel",
+  "confirm": "Duplicate",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Duplicating product…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Product duplicated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not duplicate product",
+      "time": 3000
+    }
+  }
+}

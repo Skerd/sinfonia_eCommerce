@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx",
+  "title": "Riporta in bozza",
+  "description": "Questo prodotto archiviato tornerà in bozza per poterlo modificare e pubblicare.",
+  "cancel": "Annulla",
+  "confirm": "Riporta",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Ripristino in bozza…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prodotto riportato in bozza",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile riportare in bozza",
+      "time": 3000
+    }
+  }
+}

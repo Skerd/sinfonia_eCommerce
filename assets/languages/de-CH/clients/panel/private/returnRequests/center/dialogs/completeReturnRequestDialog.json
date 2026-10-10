@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx",
+  "title": "Rücksendeanfrage abschliessen",
+  "description": "Diese erhaltene Rücksendung wird abgeschlossen. Rückerstattungen bleiben auf der Bestellung.",
+  "cancel": "Abbrechen",
+  "confirm": "Abschliessen",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Rücksendeanfrage wird abgeschlossen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rücksendeanfrage abgeschlossen",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rücksendeanfrage konnte nicht abgeschlossen werden",
+      "time": 3000
+    }
+  }
+}

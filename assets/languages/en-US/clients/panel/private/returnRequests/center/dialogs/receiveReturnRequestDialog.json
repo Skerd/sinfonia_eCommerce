@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
+  "title": "Mark return received",
+  "description": "This approved return will be marked as received.",
+  "cancel": "Cancel",
+  "confirm": "Mark received",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Marking return received…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Return marked received",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark return received",
+      "time": 3000
+    }
+  }
+}

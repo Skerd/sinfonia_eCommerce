@@ -147,5 +147,11 @@
   "twitterCard": {
     "summary": "Përmbledhje",
     "summary_large_image": "Përmbledhje me imazh të madh"
-  }
+  },
+  "productVariants": "Variantet",
+  "productVariant": "Varianti",
+  "inventories": "Inventarët",
+  "inventoryRow": "Inventari",
+  "reviews": "Vlerësimet",
+  "productReview": "Vlerësim"
 }

@@ -9,9 +9,7 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
-import ViewInventoryMovementsMenuItem from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovements.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
-import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 
 export type InventorySheetViewOwnProps = {
     open: boolean;
@@ -82,19 +80,11 @@ function InventorySheetView({
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <>
-                        <ViewInventoryMovementsMenuItem inventory={asInventory} onAction={setAction} />
                         <RestockInventoryDropdown inventory={asInventory} onAction={setAction} />
                         <DeductInventoryDropdown inventory={asInventory} onAction={setAction} />
                     </>
                 }
             />
-            {action === "viewInventoryMovements" && (
-                <ViewInventoryMovementsDialog
-                    open
-                    onClose={() => setAction("")}
-                    inventory={asInventory}
-                />
-            )}
             {(action === "restock" || action === "deduct") && (
                 <InventoryStockMoveAction
                     inventoryId={String(asInventory._id)}

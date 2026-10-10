@@ -45,5 +45,7 @@
   "posCashMoveType": {
     "in": "Hyrje cash",
     "out": "Dalje cash"
-  }
+  },
+  "posOrders": "Porositë POS",
+  "posOrder": "Porosia POS"
 }

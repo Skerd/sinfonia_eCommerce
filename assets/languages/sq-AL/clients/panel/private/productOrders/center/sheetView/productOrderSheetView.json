@@ -130,5 +130,9 @@
     "partially_fulfilled": "Pjesërisht e përmbushur",
     "fulfilled": "E përmbushur",
     "returned": "E kthyer"
-  }
+  },
+  "fulfillments": "Dërgesat",
+  "fulfillment": "Dërgesa",
+  "returnRequests": "Kthimet",
+  "returnRequest": "Kthim"
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
+  "title": "Segna reso come ricevuto",
+  "description": "Questo reso approvato sarà contrassegnato come ricevuto.",
+  "cancel": "Annulla",
+  "confirm": "Segna come ricevuto",
+  "busy": "In corso…",
+  "axios": {
+    "start": {
+      "title": "Segnatura del reso come ricevuto…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reso segnato come ricevuto",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnare il reso come ricevuto",
+      "time": 3000
+    }
+  }
+}

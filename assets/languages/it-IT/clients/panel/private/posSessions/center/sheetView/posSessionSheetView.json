@@ -45,5 +45,7 @@
   "posCashMoveType": {
     "in": "Incassare",
     "out": "Incassare"
-  }
+  },
+  "posOrders": "Ordini POS",
+  "posOrder": "Ordine POS"
 }

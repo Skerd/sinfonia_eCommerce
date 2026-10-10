@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx",
+  "title": "Produkt archivieren",
+  "description": "Dieses Produkt verschwindet aus dem Schaufenster, bis es zum Entwurf zurückgesetzt wird.",
+  "cancel": "Abbrechen",
+  "confirm": "Archivieren",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Produkt wird archiviert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkt archiviert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkt konnte nicht archiviert werden",
+      "time": 3000
+    }
+  }
+}

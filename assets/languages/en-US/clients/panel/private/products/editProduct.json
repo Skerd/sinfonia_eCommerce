@@ -10,6 +10,8 @@
     "slugLabel": "Slug",
     "typeLabel": "Type",
     "statusLabel": "Status",
+    "publishedAtLabel": "Publish at",
+    "publishedAtPlaceholder": "Optional. Drafts with this date become active automatically.",
     "brandLabel": "Brand",
     "vendorLabel": "Vendor",
     "featuredLabel": "Featured",

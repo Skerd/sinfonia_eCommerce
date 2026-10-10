@@ -25,6 +25,21 @@
     "productCommerce": {
       "title": "Tregtia"
     },
+    "catalog": {
+      "title": "Katalogu"
+    },
+    "orders": {
+      "title": "Porositë"
+    },
+    "posGroup": {
+      "title": "Pika e shitjes"
+    },
+    "stock": {
+      "title": "Stoku"
+    },
+    "insight": {
+      "title": "Pasqyra"
+    },
     "products": {
       "title": "Produktet"
     },

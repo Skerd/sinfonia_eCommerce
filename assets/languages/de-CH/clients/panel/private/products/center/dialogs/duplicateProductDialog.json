@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/duplicateProductDialog.tsx",
+  "title": "Produkt duplizieren",
+  "description": "Es wird eine Entwurfskopie dieses Produkts erstellt.",
+  "cancel": "Abbrechen",
+  "confirm": "Duplizieren",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Produkt wird dupliziert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkt dupliziert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkt konnte nicht dupliziert werden",
+      "time": 3000
+    }
+  }
+}

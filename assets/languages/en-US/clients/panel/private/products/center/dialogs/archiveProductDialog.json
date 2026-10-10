@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx",
+  "title": "Archive product",
+  "description": "This product will leave the storefront until it is reverted to draft.",
+  "cancel": "Cancel",
+  "confirm": "Archive",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Archiving product…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Product archived",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not archive product",
+      "time": 3000
+    }
+  }
+}

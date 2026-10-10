@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
+  "title": "Marquer le retour comme reçu",
+  "description": "Ce retour approuvé sera marqué comme reçu.",
+  "cancel": "Annuler",
+  "confirm": "Marquer reçu",
+  "busy": "En cours…",
+  "axios": {
+    "start": {
+      "title": "Marquage du retour comme reçu…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Retour marqué comme reçu",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de marquer le retour comme reçu",
+      "time": 3000
+    }
+  }
+}

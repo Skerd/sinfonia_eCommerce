@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/publishProductDialog.tsx",
+  "title": "Produkt veröffentlichen",
+  "description": "Dieses Produkt wird im Schaufenster aktiv.",
+  "cancel": "Abbrechen",
+  "confirm": "Veröffentlichen",
+  "busy": "Wird ausgeführt…",
+  "axios": {
+    "start": {
+      "title": "Produkt wird veröffentlicht…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkt veröffentlicht",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkt konnte nicht veröffentlicht werden",
+      "time": 3000
+    }
+  }
+}

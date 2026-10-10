@@ -25,6 +25,21 @@
     "productCommerce": {
       "title": "Commerce électronique"
     },
+    "catalog": {
+      "title": "Catalogue"
+    },
+    "orders": {
+      "title": "Commandes"
+    },
+    "posGroup": {
+      "title": "Point de vente"
+    },
+    "stock": {
+      "title": "Stock"
+    },
+    "insight": {
+      "title": "Aperçu"
+    },
     "products": {
       "title": "Produits"
     },

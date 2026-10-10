@@ -12,7 +12,7 @@
   "isActive": "Active",
   "company": "Company",
   "country": "Country",
-  "state": "State / region",
+  "state": "State",
   "city": "City",
   "street": "Street",
   "postalCode": "Postal code",
@@ -30,7 +30,7 @@
     "streetLabel": "Street",
     "postalCodeLabel": "Postal code",
     "cityLabel": "City",
-    "stateLabel": "State / region",
+    "stateLabel": "State",
     "countryLabel": "Country",
     "latitudeLabel": "Latitude",
     "longitudeLabel": "Longitude"

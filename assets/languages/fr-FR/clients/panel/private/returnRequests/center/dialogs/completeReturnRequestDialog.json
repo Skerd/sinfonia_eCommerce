@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx",
+  "title": "Terminer la demande de retour",
+  "description": "Ce retour reçu sera clôturé. Les remboursements restent sur la commande.",
+  "cancel": "Annuler",
+  "confirm": "Terminer",
+  "busy": "En cours…",
+  "axios": {
+    "start": {
+      "title": "Clôture de la demande de retour…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de retour clôturée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de clôturer la demande de retour",
+      "time": 3000
+    }
+  }
+}

@@ -40,7 +40,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             keyFields: ["type", "title", "slug", "pricing", "sku", "status", "vendor"],
             apiPath: "/api/eCommerce/product",
             panelRoute: "/eCommerce/products",
-            actions: ["create", "update", "publish", "unpublish"],
+            actions: ["create", "update", "publish", "archive"],
             position: {x: 40, y: 180},
         },
         {
@@ -68,7 +68,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
         {
             id: "ProductReview",
             label: "ProductReview",
-            cluster: "payments",
+            cluster: "catalog",
             module: "eCommerce",
             description: "Buyer rating and review on a catalog product.",
             keyFields: ["product", "user", "rating", "body"],

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx",
+  "title": "Revert to draft",
+  "description": "This archived product will return to draft so it can be edited and published again.",
+  "cancel": "Cancel",
+  "confirm": "Revert",
+  "busy": "Working…",
+  "axios": {
+    "start": {
+      "title": "Reverting product…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Product reverted to draft",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not revert product",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/duplicateProductDialog.tsx",
+  "title": "Dupliquer le produit",
+  "description": "Une copie brouillon de ce produit sera créée.",
+  "cancel": "Annuler",
+  "confirm": "Dupliquer",
+  "busy": "En cours…",
+  "axios": {
+    "start": {
+      "title": "Duplication du produit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produit dupliqué",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de dupliquer le produit",
+      "time": 3000
+    }
+  }
+}

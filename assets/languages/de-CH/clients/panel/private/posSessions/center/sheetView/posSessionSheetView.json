@@ -45,5 +45,7 @@
   "posCashMoveType": {
     "in": "Cash in",
     "out": "Cash out"
-  }
+  },
+  "posOrders": "POS-Bestellungen",
+  "posOrder": "POS-Bestellung"
 }

@@ -12,7 +12,7 @@
   "isActive": "Aktiv",
   "company": "Firma",
   "country": "Land",
-  "state": "Kanton / region",
+  "state": "Kanton",
   "city": "Ort",
   "street": "Strasse",
   "postalCode": "Postleitzahl",
@@ -30,7 +30,7 @@
     "streetLabel": "Strasse",
     "postalCodeLabel": "Postleitzahl",
     "cityLabel": "Ort",
-    "stateLabel": "Kanton / Region",
+    "stateLabel": "Kanton",
     "countryLabel": "Land",
     "latitudeLabel": "Breitengrad",
     "longitudeLabel": "Längengrad"

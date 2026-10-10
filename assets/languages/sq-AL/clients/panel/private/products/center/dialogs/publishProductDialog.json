@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/publishProductDialog.tsx",
+  "title": "Publiko produktin",
+  "description": "Ky produkt do të bëhet aktiv në dyqan.",
+  "cancel": "Anulo",
+  "confirm": "Publiko",
+  "busy": "Duke punuar…",
+  "axios": {
+    "start": {
+      "title": "Po publikohet produkti…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Produkti u publikua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Produkti nuk u publikua",
+      "time": 3000
+    }
+  }
+}

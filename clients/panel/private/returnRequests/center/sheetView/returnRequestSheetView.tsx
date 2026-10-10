@@ -9,8 +9,12 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx";
 import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
+import ReceiveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/receiveReturnRequest.tsx";
+import CompleteReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/completeReturnRequest.tsx";
 import ApproveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx";
 import RejectReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx";
+import ReceiveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx";
+import CompleteReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx";
 
 const LIST_BASE = "/eCommerce/returnrequests";
 
@@ -88,6 +92,8 @@ function ReturnRequestSheetView({
                     <>
                         <ApproveReturnRequest entity={asEntity} onAction={(a: string) => setAction(a)} />
                         <RejectReturnRequest entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <ReceiveReturnRequest entity={asEntity} onAction={(a: string) => setAction(a)} />
+                        <CompleteReturnRequest entity={asEntity} onAction={(a: string) => setAction(a)} />
                     </>
                 }
             />
@@ -105,6 +111,30 @@ function ReturnRequestSheetView({
             )}
             {action === "rejectReturnRequest" && (
                 <RejectReturnRequestDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(patch: Partial<ReturnRequest>) => {
+                        const next = {...sheetData, ...patch};
+                        setSheetData(next);
+                        onSheetRowPatched?.(next);
+                    }}
+                />
+            )}
+            {action === "receiveReturnRequest" && (
+                <ReceiveReturnRequestDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asEntity}
+                    onSuccess={(patch: Partial<ReturnRequest>) => {
+                        const next = {...sheetData, ...patch};
+                        setSheetData(next);
+                        onSheetRowPatched?.(next);
+                    }}
+                />
+            )}
+            {action === "completeReturnRequest" && (
+                <CompleteReturnRequestDialog
                     open={true}
                     onClose={() => setAction("")}
                     entity={asEntity}

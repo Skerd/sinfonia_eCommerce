@@ -7,6 +7,8 @@
     "slugLabel": "Slug",
     "typeLabel": "Lloji",
     "statusLabel": "Statusi",
+    "publishedAtLabel": "Publiko më",
+    "publishedAtPlaceholder": "Opsionale. Draftet me këtë datë bëhen aktive automatikisht.",
     "brandLabel": "Marka",
     "vendorLabel": "Furnitori",
     "featuredLabel": "I veçuar",
