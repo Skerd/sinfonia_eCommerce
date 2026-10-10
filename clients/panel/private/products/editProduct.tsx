@@ -23,9 +23,7 @@ export default createGenericEditPage<Product, EditProductFormType>({
         mainImage: data.mainImage?._id,
         gallery: (data.gallery ?? []).map((m) => m._id),
         documents: (data.documents ?? []).map((m) => m._id),
-        seo: data.seo
-            ? {...data.seo, openGraphImage: data.seo.openGraphImage?._id}
-            : data.seo,
+        seo: data.seo? {...data.seo, openGraphImage: data.seo.openGraphImage?._id} : data.seo,
     }),
     buildFormExtras: (_id, _params, entity) => {
         const currency = entity?.currency;

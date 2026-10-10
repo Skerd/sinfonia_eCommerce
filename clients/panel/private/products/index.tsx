@@ -6,6 +6,15 @@ import {IconPlus} from "@tabler/icons-react";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductCard from "./center/cardView/productCard.tsx";
+import ProductSheetView from "./center/sheetView/productSheetView.tsx";
+import PublishProduct from "./center/actions/publishProduct.tsx";
+import ArchiveProduct from "./center/actions/archiveProduct.tsx";
+import RevertToDraftProduct from "./center/actions/revertToDraftProduct.tsx";
+import DuplicateProduct from "./center/actions/duplicateProduct.tsx";
+import PublishProductDialog from "./center/dialogs/publishProductDialog.tsx";
+import ArchiveProductDialog from "./center/dialogs/archiveProductDialog.tsx";
+import RevertToDraftProductDialog from "./center/dialogs/revertToDraftProductDialog.tsx";
+import DuplicateProductDialog from "./center/dialogs/duplicateProductDialog.tsx";
 
 export function productEditPath(product: {_id: string; title?: string}) {
     const params = new URLSearchParams();
@@ -26,12 +35,72 @@ function AllProducts({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createProduct"
             buildEditPath={productEditPath}
             resolveLanguageKey={resolveLanguageKey}
+            rowActionMenu={{allowMenuForCustomChildren: true}}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx"
-            renderCard={(product, onDelete, onRestore) => (
+            renderActionMenuChildren={(product, bindRowAction) => (
+                <>
+                    <PublishProduct entity={product} onAction={bindRowAction} />
+                    <ArchiveProduct entity={product} onAction={bindRowAction} />
+                    <RevertToDraftProduct entity={product} onAction={bindRowAction} />
+                    <DuplicateProduct entity={product} onAction={bindRowAction} />
+                </>
+            )}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => (
+                <>
+                    {action === "publishProduct" && (
+                        <PublishProductDialog
+                            open
+                            onClose={resetAction}
+                            entity={entity}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {status: "active"})}
+                        />
+                    )}
+                    {action === "archiveProduct" && (
+                        <ArchiveProductDialog
+                            open
+                            onClose={resetAction}
+                            entity={entity}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {status: "archived"})}
+                        />
+                    )}
+                    {action === "revertToDraftProduct" && (
+                        <RevertToDraftProductDialog
+                            open
+                            onClose={resetAction}
+                            entity={entity}
+                            onSuccess={() => listRef.current?.updateRow?.(entity._id, {status: "draft"})}
+                        />
+                    )}
+                    {action === "duplicateProduct" && (
+                        <DuplicateProductDialog
+                            open
+                            onClose={resetAction}
+                            entity={entity}
+                            onSuccess={() => listRef.current?.refetch()}
+                        />
+                    )}
+                </>
+            )}
+            renderCard={(product, onDelete, onRestore, listRef) => (
                 <ProductCard
                     product={product}
                     onDelete={(row: Product | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(product)}
+                    onRowPatched={(patch: Partial<Product>) => listRef.current?.updateRow?.(product._id, patch)}
+                    onDuplicated={() => listRef.current?.refetch()}
+                />
+            )}
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                <ProductSheetView
+                    open={open}
+                    onOpenChange={(opened: boolean) => {
+                        if (!opened) onOpenChange();
+                    }}
+                    product={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                    onSheetRowPatched={(row: Product) => listRef.current?.updateRow?.(entity._id, row)}
+                    onDuplicated={() => listRef.current?.refetch()}
                 />
             )}
         />

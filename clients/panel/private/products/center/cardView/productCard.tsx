@@ -5,11 +5,21 @@ import {useEffect, useMemo, useState} from "react";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
-import {IconPhoto, IconStar} from "@tabler/icons-react";
+import {IconStar} from "@tabler/icons-react";
 import ProductSheetView from "@eCommerceModule/clients/panel/private/products/center/sheetView/productSheetView.tsx";
+import PublishProduct from "@eCommerceModule/clients/panel/private/products/center/actions/publishProduct.tsx";
+import ArchiveProduct from "@eCommerceModule/clients/panel/private/products/center/actions/archiveProduct.tsx";
+import RevertToDraftProduct from "@eCommerceModule/clients/panel/private/products/center/actions/revertToDraftProduct.tsx";
+import DuplicateProduct from "@eCommerceModule/clients/panel/private/products/center/actions/duplicateProduct.tsx";
+import PublishProductDialog from "@eCommerceModule/clients/panel/private/products/center/dialogs/publishProductDialog.tsx";
+import ArchiveProductDialog from "@eCommerceModule/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx";
+import RevertToDraftProductDialog from "@eCommerceModule/clients/panel/private/products/center/dialogs/revertToDraftProductDialog.tsx";
+import DuplicateProductDialog from "@eCommerceModule/clients/panel/private/products/center/dialogs/duplicateProductDialog.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -103,6 +113,8 @@ type ProductCardProps = WithLanguageType & {
     hideActions?: boolean;
     sheetOnly?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<Product> | null>;
+    onRowPatched?: (patch: Partial<Product>) => void;
+    onDuplicated?: () => void;
 };
 
 function ProductCard({
@@ -114,6 +126,8 @@ function ProductCard({
     hideActions = false,
     sheetOnly = false,
     innerRef,
+    onRowPatched,
+    onDuplicated,
 }: ProductCardProps) {
     return (
         <EntityCard
@@ -134,66 +148,130 @@ function ProductCard({
             failedDescription=""
             titlePath="title"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
+            sheetProps={({setEntity}) => ({
+                fetchId,
+                onDuplicated,
+                onSheetRowPatched: (row: Product) => {
+                    setEntity(row);
+                    onRowPatched?.(row);
+                },
+            })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
+                <>
+                    {action === "publishProduct" && (
+                        <PublishProductDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                const next = {...entity, status: "active" as const};
+                                setEntity(next);
+                                onRowPatched?.(next);
+                            }}
+                        />
+                    )}
+                    {action === "archiveProduct" && (
+                        <ArchiveProductDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                const next = {...entity, status: "archived" as const};
+                                setEntity(next);
+                                onRowPatched?.(next);
+                            }}
+                        />
+                    )}
+                    {action === "revertToDraftProduct" && (
+                        <RevertToDraftProductDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => {
+                                const next = {...entity, status: "draft" as const};
+                                setEntity(next);
+                                onRowPatched?.(next);
+                            }}
+                        />
+                    )}
+                    {action === "duplicateProduct" && (
+                        <DuplicateProductDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={entity}
+                            onSuccess={() => onDuplicated?.()}
+                        />
+                    )}
+                </>
+            )}
         >
-            {({entity: row}) => {
+            {({entity: row, read, setAction}) => {
                 const description = row.shortDescription || row.description;
                 const rating = row.ratingAverage;
                 const {price, compareAtPrice, saleEndsAt} = row;
                 const onSale = price != null && compareAtPrice != null && compareAtPrice > price;
                 const savingsPercent = onSale ? Math.round(((compareAtPrice - price) / compareAtPrice) * 100) : 0;
                 const showTimer = !!saleEndsAt && isWithinSaleWindow(row) && getTimeLeft(new Date(saleEndsAt)) != null;
+                const showGallery =
+                    read == null ||
+                    accessFieldPathExists(read, "mainImage") ||
+                    accessFieldPathExists(read, "gallery");
                 return (
                     <>
-                        <figure className="relative mb-1 aspect-4/3 w-full overflow-hidden bg-muted">
-                            {row.mainImage ? (
-                                <img
-                                    src={`/api/auxiliary/media/${row.mainImage._id}`}
-                                    alt={row.title ?? ""}
-                                    className="absolute inset-0 size-full object-cover"
+                        {showGallery ? (
+                            <div className="relative -mx-(--density-pad) -mt-(--density-pad) w-[calc(100%+2*var(--density-pad))]">
+                                <AccessGatedGalleryCarousel
+                                    read={read}
+                                    mainImage={row.mainImage}
+                                    imageGallery={row.gallery || []}
+                                    imageGalleryPath="gallery"
+                                    showThumbnails={false}
+                                    allowFullScreen={false}
+                                    coverAfterFirst
                                 />
-                            ) : (
-                                <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted via-muted/70 to-muted/40">
-                                    <IconPhoto className="size-10 text-muted-foreground/15" />
-                                </div>
-                            )}
-                            <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
-                                <DisplayValue path="type" type="enum" languageKeyCategory="productType" value={row.type}>
-                                    {(label) =>
-                                        label ? (
-                                            <Badge variant="secondary" className="pointer-events-auto px-1.5 py-0 text-3xs">
-                                                {label}
-                                            </Badge>
-                                        ) : null
-                                    }
-                                </DisplayValue>
-                                {onSale && savingsPercent > 0 ? (
-                                    <DisplayValue path="compareAtPrice" value={compareAtPrice} show={!!row.compareAtPrice}>
-                                        {() => (
-                                            <Badge variant="destructive" className="pointer-events-auto px-1.5 py-0 text-3xs">
-                                                {resolveLanguageKey("salePercentOff").replace(
-                                                    "{{percent}}",
-                                                    String(savingsPercent),
-                                                )}
-                                            </Badge>
-                                        )}
+                                <div className="pointer-events-none absolute top-2 left-2 z-20 flex flex-row flex-wrap items-center gap-1">
+                                    <DisplayValue path="type" type="enum" languageKeyCategory="productType" value={row.type}>
+                                        {(label) =>
+                                            label ? (
+                                                <Badge variant="secondary" className="pointer-events-auto px-1.5 py-0 text-3xs">
+                                                    {label}
+                                                </Badge>
+                                            ) : null
+                                        }
                                     </DisplayValue>
+                                    {onSale && savingsPercent > 0 ? (
+                                        <DisplayValue path="compareAtPrice" value={compareAtPrice} show={!!row.compareAtPrice}>
+                                            {() => (
+                                                <Badge variant="destructive" className="pointer-events-auto px-1.5 py-0 text-3xs">
+                                                    {resolveLanguageKey("salePercentOff").replace(
+                                                        "{{percent}}",
+                                                        String(savingsPercent),
+                                                    )}
+                                                </Badge>
+                                            )}
+                                        </DisplayValue>
+                                    ) : null}
+                                </div>
+                                {showTimer && saleEndsAt ? (
+                                    <div className="absolute inset-x-2 bottom-2 z-20">
+                                        <DisplayValue path="saleEndsAt" value={saleEndsAt}>
+                                            {() => (
+                                                <SaleCountdown
+                                                    endsAt={saleEndsAt}
+                                                    resolveLanguageKey={resolveLanguageKey}
+                                                />
+                                            )}
+                                        </DisplayValue>
+                                    </div>
                                 ) : null}
                             </div>
-                            {showTimer && saleEndsAt ? (
-                                <div className="absolute inset-x-2 bottom-2 z-20">
-                                    <DisplayValue path="saleEndsAt" value={saleEndsAt}>
-                                        {() => (
-                                            <SaleCountdown
-                                                endsAt={saleEndsAt}
-                                                resolveLanguageKey={resolveLanguageKey}
-                                            />
-                                        )}
-                                    </DisplayValue>
-                                </div>
-                            ) : null}
-                        </figure>
-                        <EntityCard.Header titlePath="title" title={row.title} />
+                        ) : null}
+                        <EntityCard.Header titlePath="title" title={row.title}>
+                            <PublishProduct entity={row} onAction={setAction} />
+                            <ArchiveProduct entity={row} onAction={setAction} />
+                            <RevertToDraftProduct entity={row} onAction={setAction} />
+                            <DuplicateProduct entity={row} onAction={setAction} />
+                        </EntityCard.Header>
                         <div className="flex flex-col gap-2">
                             {rating != null ? (
                                 <DisplayValue path="ratingAverage" value={rating}>

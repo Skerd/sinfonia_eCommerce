@@ -4,7 +4,6 @@
   "form": {
     "generalSectionTitle": "Général",
     "titleLabel": "Modifier le type d’unité",
-    "slugLabel": "Identifiant",
     "typeLabel": "Type",
     "statusLabel": "Statut",
     "publishedAtLabel": "Publier le",
@@ -184,7 +183,6 @@
     "downloadLimitLabel": "Limite de téléchargement (par achat)",
     "downloadExpiryDaysLabel": "Validité du lien de téléchargement (jours)",
     "titlePlaceholder": "Titre du produit",
-    "slugPlaceholder": "Laisser vide pour générer à partir du titre",
     "typePlaceholder": "Sélectionner le type",
     "statusPlaceholder": "Sélectionner le statut",
     "brandPlaceholder": "Nom de la marque",

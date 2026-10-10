@@ -4,7 +4,6 @@
   "form": {
     "generalSectionTitle": "General",
     "titleLabel": "Title",
-    "slugLabel": "Slug",
     "typeLabel": "Type",
     "statusLabel": "Status",
     "publishedAtLabel": "Publish at",
@@ -184,7 +183,6 @@
     "downloadLimitLabel": "Download limit (per purchase)",
     "downloadExpiryDaysLabel": "Download link validity (days)",
     "titlePlaceholder": "Product title",
-    "slugPlaceholder": "Leave blank to generate from title",
     "typePlaceholder": "Select type",
     "statusPlaceholder": "Select status",
     "brandPlaceholder": "Brand name",

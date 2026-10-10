@@ -26,7 +26,8 @@ export type ProductSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
-    onSheetRowPatched?: (row: Record<string, unknown>) => void;
+    onSheetRowPatched?: (row: Product) => void;
+    onDuplicated?: () => void;
 };
 
 function productEditPath(product: {_id: string; title?: string}) {
@@ -46,6 +47,7 @@ function ProductSheetView({
     onRestore = () => {},
     fetchId,
     onSheetRowPatched,
+    onDuplicated,
 }: ProductSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Product | undefined>(productProp);
     const [action, setAction] = useState("");
@@ -141,6 +143,7 @@ function ProductSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={sheetData}
+                    onSuccess={() => onDuplicated?.()}
                 />
             )}
         </>

@@ -4,7 +4,6 @@
   "form": {
     "generalSectionTitle": "Allgemein",
     "titleLabel": "Bezeichnung",
-    "slugLabel": "Slug",
     "typeLabel": "Typ",
     "statusLabel": "Status",
     "publishedAtLabel": "Veröffentlichen am",
@@ -184,7 +183,6 @@
     "downloadLimitLabel": "Download limit (per kauf)",
     "downloadExpiryDaysLabel": "Download link validity (tage)",
     "titlePlaceholder": "Produkt bezeichnung",
-    "slugPlaceholder": "Leave blank bis generate von bezeichnung",
     "typePlaceholder": "Typ auswählen",
     "statusPlaceholder": "Status auswählen",
     "brandPlaceholder": "Brand name",

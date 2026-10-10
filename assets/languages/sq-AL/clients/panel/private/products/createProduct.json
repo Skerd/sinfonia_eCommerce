@@ -4,7 +4,6 @@
   "form": {
     "generalSectionTitle": "Të përgjithshme",
     "titleLabel": "Titulli",
-    "slugLabel": "Slug",
     "typeLabel": "Lloji",
     "statusLabel": "Statusi",
     "publishedAtLabel": "Publiko më",
@@ -184,7 +183,6 @@
     "downloadLimitLabel": "Limiti i shkarkimeve (për blerje)",
     "downloadExpiryDaysLabel": "Vlefshmëria e shkarkimit (ditë)",
     "titlePlaceholder": "Titulli i produktit",
-    "slugPlaceholder": "Lëre bosh për ta gjeneruar nga titulli",
     "typePlaceholder": "Zgjidh llojin",
     "statusPlaceholder": "Zgjidh statusin",
     "brandPlaceholder": "Emri i markës",
