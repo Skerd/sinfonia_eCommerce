@@ -60,12 +60,7 @@ function ProductSheetView({
 
     useEffect(() => {
         if (!productProp) return;
-        setSheetData((prev) => ({
-            ...productProp,
-            variants: productProp.variants ?? prev?.variants,
-            inventories: productProp.inventories ?? prev?.inventories,
-            reviews: productProp.reviews ?? prev?.reviews,
-        }));
+        setSheetData(productProp);
     }, [productProp]);
 
     const entityId = productProp?._id ?? fetchId ?? sheetData?._id;
