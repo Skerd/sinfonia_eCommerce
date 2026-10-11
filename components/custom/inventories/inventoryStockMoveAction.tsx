@@ -18,7 +18,9 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
+import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {INVENTORY_MOVEMENT_RECEIPT_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.schema-def.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 
 function bindAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey, prefix: "restock" | "deduct"): ResolveLanguageKeyImpl {
@@ -52,7 +54,7 @@ function InventoryStockMoveAction({
     openAlert,
     resolveLanguageKey,
     innerRef,
-    onFilterChange,
+    onFormDataChange,
     onSuccess = () => {},
     onCancel = () => {},
     loading,
@@ -70,7 +72,8 @@ function InventoryStockMoveAction({
     const [receiptFiles, setReceiptFiles] = useState<File[]>([]);
 
     const prefix = mode;
-    const ConfirmIcon = mode === "restock" ? PackagePlus : PackageMinus;
+    const isRestock = mode === "restock";
+    const ConfirmIcon = isRestock ? PackagePlus : PackageMinus;
 
     useImperativeHandle(innerRef, () => ({
         success: (response?: Inventory) => {
@@ -107,7 +110,11 @@ function InventoryStockMoveAction({
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>
             <AlertDialogContent
-                className="max-w-2xl sm:max-w-2xl data-[size=default]:max-w-2xl data-[size=default]:sm:max-w-2xl max-h-[90vh] overflow-y-auto p-6"
+                className={
+                    isRestock
+                        ? "max-w-2xl sm:max-w-2xl data-[size=default]:max-w-2xl data-[size=default]:sm:max-w-2xl max-h-[90vh] overflow-y-auto p-6"
+                        : "max-w-md sm:max-w-md data-[size=default]:max-w-md data-[size=default]:sm:max-w-md max-h-[90vh] overflow-y-auto p-6"
+                }
                 onClick={(e) => e.stopPropagation()}
             >
                 <AlertDialogHeader>
@@ -131,51 +138,76 @@ function InventoryStockMoveAction({
                             required
                         />
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="flex flex-col gap-y-1.5">
-                            <Label htmlFor="stockManufacturer">{resolveLanguageKey(`${prefix}.manufacturerLabel`)}</Label>
-                            <Input
-                                id="stockManufacturer"
-                                value={manufacturer}
-                                onChange={(e) => setManufacturer(e.target.value)}
-                                disabled={loading}
-                            />
-                        </div>
-                        <div className="flex flex-col gap-y-1.5">
-                            <Label htmlFor="stockReceiptNumber">{resolveLanguageKey(`${prefix}.receiptNumberLabel`)}</Label>
-                            <Input
-                                id="stockReceiptNumber"
-                                value={receiptNumber}
-                                onChange={(e) => setReceiptNumber(e.target.value)}
-                                disabled={loading}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="flex flex-col gap-y-1.5">
-                            <Label htmlFor="stockOccurredAt">{resolveLanguageKey(`${prefix}.occurredAtLabel`)}</Label>
-                            <Input
-                                id="stockOccurredAt"
-                                type="datetime-local"
-                                value={occurredAt}
-                                onChange={(e) => setOccurredAt(e.target.value)}
-                                disabled={loading}
-                            />
-                        </div>
-                        <div className="flex flex-col gap-y-1.5">
-                            <Label htmlFor="stockUnitCost">{resolveLanguageKey(`${prefix}.unitCostLabel`)}</Label>
-                            <Input
-                                id="stockUnitCost"
-                                type="number"
-                                min={0}
-                                step="0.01"
-                                value={unitCost}
-                                onChange={(e) => setUnitCost(e.target.value)}
-                                disabled={loading}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    {isRestock && (
+                        <>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockManufacturer">{resolveLanguageKey(`${prefix}.manufacturerLabel`)}</Label>
+                                    <Input
+                                        id="stockManufacturer"
+                                        value={manufacturer}
+                                        onChange={(e) => setManufacturer(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockReceiptNumber">{resolveLanguageKey(`${prefix}.receiptNumberLabel`)}</Label>
+                                    <Input
+                                        id="stockReceiptNumber"
+                                        value={receiptNumber}
+                                        onChange={(e) => setReceiptNumber(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockOccurredAt">{resolveLanguageKey(`${prefix}.occurredAtLabel`)}</Label>
+                                    <Input
+                                        id="stockOccurredAt"
+                                        type="datetime-local"
+                                        value={occurredAt}
+                                        onChange={(e) => setOccurredAt(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockUnitCost">{resolveLanguageKey(`${prefix}.unitCostLabel`)}</Label>
+                                    <Input
+                                        id="stockUnitCost"
+                                        type="number"
+                                        min={0}
+                                        step="0.01"
+                                        value={unitCost}
+                                        onChange={(e) => setUnitCost(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockBatchLot">{resolveLanguageKey(`${prefix}.batchLotLabel`)}</Label>
+                                    <Input
+                                        id="stockBatchLot"
+                                        value={batchLot}
+                                        onChange={(e) => setBatchLot(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-y-1.5">
+                                    <Label htmlFor="stockExpiry">{resolveLanguageKey(`${prefix}.expiryDateLabel`)}</Label>
+                                    <Input
+                                        id="stockExpiry"
+                                        type="date"
+                                        value={expiryDate}
+                                        onChange={(e) => setExpiryDate(e.target.value)}
+                                        disabled={loading}
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                    {!isRestock && (
                         <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockBatchLot">{resolveLanguageKey(`${prefix}.batchLotLabel`)}</Label>
                             <Input
@@ -185,26 +217,18 @@ function InventoryStockMoveAction({
                                 disabled={loading}
                             />
                         </div>
-                        <div className="flex flex-col gap-y-1.5">
-                            <Label htmlFor="stockExpiry">{resolveLanguageKey(`${prefix}.expiryDateLabel`)}</Label>
-                            <Input
-                                id="stockExpiry"
-                                type="date"
-                                value={expiryDate}
-                                onChange={(e) => setExpiryDate(e.target.value)}
-                                disabled={loading}
-                            />
-                        </div>
-                    </div>
+                    )}
                     <div className="flex flex-col gap-y-1.5">
-                        <Label htmlFor="stockReceipts">{resolveLanguageKey(`${prefix}.receiptsLabel`)}</Label>
-                        <Input
-                            id="stockReceipts"
-                            type="file"
-                            multiple
-                            accept="image/*,.pdf"
+                        <Label>{resolveLanguageKey(`${prefix}.receiptsLabel`)}</Label>
+                        <MultiLocalFilePicker
+                            files={receiptFiles}
+                            onFilesChange={setReceiptFiles}
+                            resolveLanguageKey={resolveLanguageKey}
                             disabled={loading}
-                            onChange={(e) => setReceiptFiles(Array.from(e.target.files ?? []))}
+                            maxFiles={INVENTORY_MOVEMENT_RECEIPT_MAX}
+                            accept="image/*,.pdf"
+                            addFileKey="addFile"
+                            filesSelectedKey="filesSelected"
                         />
                     </div>
                     <div className="flex flex-col gap-y-1.5">
@@ -225,19 +249,32 @@ function InventoryStockMoveAction({
                         onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            const occurredIso = occurredAt ? new Date(occurredAt).toISOString() : undefined;
-                            onFilterChange({
-                                _id: inventoryId,
-                                quantity: Number(quantity),
-                                manufacturer: manufacturer || undefined,
-                                receiptNumber: receiptNumber || undefined,
-                                occurredAt: occurredIso,
-                                unitCost: unitCost !== "" ? Number(unitCost) : undefined,
-                                batchLot: batchLot || undefined,
-                                expiryDate: expiryDate || undefined,
-                                note: note || undefined,
-                                receipts: receiptFiles.length ? receiptFiles : undefined,
-                            });
+                            const payload = isRestock
+                                ? {
+                                    _id: inventoryId,
+                                    quantity: Number(quantity),
+                                    manufacturer: manufacturer || undefined,
+                                    receiptNumber: receiptNumber || undefined,
+                                    occurredAt: occurredAt ? new Date(occurredAt).toISOString() : undefined,
+                                    unitCost: unitCost !== "" ? Number(unitCost) : undefined,
+                                    batchLot: batchLot || undefined,
+                                    expiryDate: expiryDate || undefined,
+                                    note: note || undefined,
+                                }
+                                : {
+                                    _id: inventoryId,
+                                    quantity: Number(quantity),
+                                    batchLot: batchLot || undefined,
+                                    note: note || undefined,
+                                };
+                            if (receiptFiles.length === 0) {
+                                onFormDataChange(payload);
+                                return;
+                            }
+                            const formData = new FormData();
+                            formData.append("data", JSON.stringify(payload));
+                            receiptFiles.forEach((file) => formData.append("receipts", file));
+                            onFormDataChange(formData);
                         }}
                     >
                         {loading ? <LoaderCircle className="size-4 animate-spin" /> : <ConfirmIcon size={16} />}

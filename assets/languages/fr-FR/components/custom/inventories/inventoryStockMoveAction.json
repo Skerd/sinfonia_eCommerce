@@ -1,6 +1,8 @@
 {
   "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
   "cancel": "Annuler",
+  "addFile": "Ajouter des fichiers",
+  "filesSelected": "sélectionnés",
   "restock": {
     "title": "Réapprovisionner l'inventaire",
     "description": "Ajoutez le stock reçu d'un fournisseur ou d'un fabricant. Ce mouvement est enregistré avec les détails de la réception.",
@@ -15,26 +17,23 @@
     "noteLabel": "Remarque",
     "confirm": "Réapprovisionner",
     "axios": {
-      "success": "Stock réapprovisionné avec succès",
-      "error": "Échec du réapprovisionnement de l'inventaire"
+      "start": {"title": "Réapprovisionnement en cours", "time": 3000},
+      "success": {"title": "Stock réapprovisionné avec succès", "time": 3000},
+      "error": {"title": "Échec du réapprovisionnement de l'inventaire", "time": 3000}
     }
   },
   "deduct": {
     "title": "Déduire / radier",
-    "description": "Supprimer le stock (dommage, perte ou radiation). Ce mouvement est enregistré avec les détails facultatifs du reçu.",
+    "description": "Retirer le stock (dommage, perte ou radiation). Le coût et la date d'expiration proviennent du dernier mouvement d'entrée.",
     "quantityLabel": "Quantité à retirer",
-    "manufacturerLabel": "Fabricant / fournisseur",
-    "receiptNumberLabel": "Référence / numéro de reçu",
-    "occurredAtLabel": "Date de radiation",
-    "unitCostLabel": "Coût d'unité",
     "batchLotLabel": "Lot/lot",
-    "expiryDateLabel": "Date d'expiration",
     "receiptsLabel": "Pièces jointes",
     "noteLabel": "Remarque",
     "confirm": "Déduire",
     "axios": {
-      "success": "Stock déduit avec succès",
-      "error": "Échec de la déduction de l'inventaire"
+      "start": {"title": "Déduction du stock", "time": 3000},
+      "success": {"title": "Stock déduit avec succès", "time": 3000},
+      "error": {"title": "Échec de la déduction de l'inventaire", "time": 3000}
     }
   }
 }

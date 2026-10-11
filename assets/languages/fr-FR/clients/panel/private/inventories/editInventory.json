@@ -5,8 +5,18 @@
   "errorDescription": "Impossible de charger cet inventaire. Essayer à nouveau.",
   "form": {
     "_idLabel": "Identifiant",
+    "assignmentSectionTitle": "Affectation",
+    "stockSectionTitle": "Niveaux de stock",
+    "productLabel": "Produit",
+    "productPlaceholder": "Sélectionner un produit",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Sélectionnez une variante (facultatif)",
+    "warehouseLabel": "Entrepôt",
+    "warehousePlaceholder": "Sélectionnez un entrepôt",
     "reorderPointLabel": "Point de commande",
-    "reorderQuantityLabel": "Quantité à commander"
+    "reorderPointPlaceholder": "Alerte sous cette quantité",
+    "reorderQuantityLabel": "Quantité à commander",
+    "reorderQuantityPlaceholder": "Quantité à recommander"
   },
   "axios": {
     "start": {

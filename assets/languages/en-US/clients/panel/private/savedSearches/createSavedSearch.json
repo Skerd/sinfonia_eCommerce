@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/createSavedSearch.tsx",
+  "title": "Create saved search",
+  "form": {
+    "customerLabel": "Customer",
+    "customerPlaceholder": "Select customer",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name this search",
+    "filtersSectionTitle": "Filters",
+    "collectionIdLabel": "Collection",
+    "collectionIdPlaceholder": "Search for a collection",
+    "priceMinLabel": "Min price",
+    "priceMinPlaceholder": "Minimum price",
+    "priceMaxLabel": "Max price",
+    "priceMaxPlaceholder": "Maximum price",
+    "sortLabel": "Sort",
+    "sortPlaceholder": "Sort products",
+    "sort": {
+      "newest": "Newest",
+      "priceAsc": "Price: low to high",
+      "priceDesc": "Price: high to low",
+      "featured": "Featured"
+    },
+    "categoryIdsLabel": "Categories",
+    "selectCategory": "Select a category",
+    "removeCategory": "Remove category"
+  },
+  "axios": {
+    "start": {"title": "Creating saved search", "time": 3000},
+    "success": {"title": "Saved search created", "time": 3000},
+    "error": {"title": "Could not create saved search", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Create saved search",
+    "description": "Name a catalog search and the filters that should run with it. Choose which customer it belongs to."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create saved search"
+  }
+}

@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
   "inventorySubtitle": "Regjistrim inventari",
+  "failedTitle": "Ngarkimi i inventarit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij inventari. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovar marrjen e të dhënave.",
   "overview": "Përmbledhje",
   "related": "Të lidhura",
   "product": "Produkti",
@@ -11,6 +14,7 @@
   "quantityAvailable": "E disponueshme",
   "reorderPoint": "Pika e riporositjes",
   "reorderQuantity": "Sasia e riporositjes",
+  "lowStockAlertSent": "Sinjalizimi i stokut të ulët u dërgua",
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",
@@ -21,5 +25,16 @@
   "movement": "Lëvizje",
   "compactView": "Kompakte",
   "cardsView": "Karta",
-  "toggleReferenceListView": "Ndrysho paraqitjen e listës"
+  "toggleReferenceListView": "Ndrysho paraqitjen e listës",
+  "reasons": {
+    "restock": "Rifornizim",
+    "sale": "Shitje",
+    "return": "Kthim",
+    "adjustment": "Rregullim",
+    "damage": "Dëmtim",
+    "transfer_in": "Transferim hyrës",
+    "transfer_out": "Transferim dalës",
+    "initial": "Fillestar",
+    "write_off": "Çregjistrim"
+  }
 }

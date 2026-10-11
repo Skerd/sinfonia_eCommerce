@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
   "posSessionSubtitle": "Détails de la séance",
+  "failedTitle": "Échec du chargement de la session PDV",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette session PDV. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
   "overview": "Vue d'ensemble",
   "balances": "Soldes",
   "totals": "Totaux",

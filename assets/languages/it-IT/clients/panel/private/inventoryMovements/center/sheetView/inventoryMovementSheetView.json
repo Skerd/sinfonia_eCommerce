@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx",
   "inventoryMovementSubtitle": "Movimento delle azioni",
+  "failedTitle": "Impossibile caricare il movimento di magazzino",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo movimento. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "overview": "Panoramica",
   "note": "Nota",
   "receipts": "Ricevute",
@@ -20,6 +23,7 @@
   "product": "Prodotto",
   "variant": "Variante",
   "warehouse": "Magazzino",
+  "reference": "Riferimento",
   "lifecycle": "Ciclo di vita",
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
@@ -33,5 +37,11 @@
     "transfer_out": "Trasferimento fuori",
     "initial": "Iniziale",
     "write_off": "Cancellazione"
+  },
+  "referenceTypes": {
+    "Inventory": "Inventario",
+    "ProductOrder": "Ordine prodotto",
+    "PosOrder": "Ordine POS",
+    "Checkout": "Checkout"
   }
 }

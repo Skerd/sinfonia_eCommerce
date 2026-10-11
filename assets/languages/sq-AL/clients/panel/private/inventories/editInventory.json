@@ -5,8 +5,18 @@
   "errorDescription": "Nuk u ngarkua dot ky inventar. Provo përsëri.",
   "form": {
     "_idLabel": "ID e regjistrimit",
+    "assignmentSectionTitle": "Caktimi",
+    "stockSectionTitle": "Nivelet e stokut",
+    "productLabel": "Produkti",
+    "productPlaceholder": "Zgjidh produktin",
+    "variantLabel": "Varianti",
+    "variantPlaceholder": "Zgjidh variantin (opsionale)",
+    "warehouseLabel": "Magazina",
+    "warehousePlaceholder": "Zgjidh magazinën",
     "reorderPointLabel": "Pika e riporositjes",
-    "reorderQuantityLabel": "Sasia e riporositjes"
+    "reorderPointPlaceholder": "Sinjal nën këtë sasi",
+    "reorderQuantityLabel": "Sasia e riporositjes",
+    "reorderQuantityPlaceholder": "Sasia për riporositje"
   },
   "axios": {
     "start": {

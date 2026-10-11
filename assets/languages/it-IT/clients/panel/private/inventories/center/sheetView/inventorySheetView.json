@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
   "inventorySubtitle": "Registro dell'inventario",
+  "failedTitle": "Impossibile caricare l'inventario",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo inventario. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "overview": "Panoramica",
   "related": "Relativo",
   "product": "Prodotto",
@@ -11,6 +14,7 @@
   "quantityAvailable": "Disponibile",
   "reorderPoint": "Punto di riordino",
   "reorderQuantity": "Riordina la quantità",
+  "lowStockAlertSent": "Avviso scorte basse inviato",
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",
   "updatedAt": "Aggiornato il",
@@ -21,5 +25,16 @@
   "movement": "Movimento",
   "compactView": "Compatta",
   "cardsView": "Schede",
-  "toggleReferenceListView": "Cambia layout elenco"
+  "toggleReferenceListView": "Cambia layout elenco",
+  "reasons": {
+    "restock": "Rifornimento",
+    "sale": "Vendita",
+    "return": "Ritorno",
+    "adjustment": "Regolazione",
+    "damage": "Danno",
+    "transfer_in": "Trasferimento",
+    "transfer_out": "Trasferimento fuori",
+    "initial": "Iniziale",
+    "write_off": "Cancellazione"
+  }
 }

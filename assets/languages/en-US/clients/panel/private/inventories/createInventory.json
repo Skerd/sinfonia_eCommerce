@@ -8,9 +8,14 @@
     "variantPlaceholder": "Select variant (optional)",
     "warehouseLabel": "Warehouse",
     "warehousePlaceholder": "Select warehouse",
+    "assignmentSectionTitle": "Assignment",
+    "stockSectionTitle": "Stock levels",
     "quantityOnHandLabel": "Quantity on hand",
+    "quantityOnHandPlaceholder": "Starting quantity",
     "reorderPointLabel": "Reorder point",
-    "reorderQuantityLabel": "Reorder quantity"
+    "reorderPointPlaceholder": "Alert below this quantity",
+    "reorderQuantityLabel": "Reorder quantity",
+    "reorderQuantityPlaceholder": "Quantity to reorder"
   },
   "axios": {
     "start": {

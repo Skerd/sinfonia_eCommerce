@@ -8,9 +8,14 @@
     "variantPlaceholder": "Sélectionnez une variante (facultatif)",
     "warehouseLabel": "Entrepôt",
     "warehousePlaceholder": "Sélectionnez un entrepôt",
+    "assignmentSectionTitle": "Affectation",
+    "stockSectionTitle": "Niveaux de stock",
     "quantityOnHandLabel": "Quantité disponible",
+    "quantityOnHandPlaceholder": "Quantité de départ",
     "reorderPointLabel": "Point de commande",
-    "reorderQuantityLabel": "Quantité à commander"
+    "reorderPointPlaceholder": "Alerte sous cette quantité",
+    "reorderQuantityLabel": "Quantité à commander",
+    "reorderQuantityPlaceholder": "Quantité à recommander"
   },
   "axios": {
     "start": {

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/editProductReview.tsx",
+  "title": "Produktbewertung bearbeiten",
+  "errorTitle": "Bewertung konnte nicht geladen werden",
+  "errorDescription": "Diese Bewertung konnte nicht geladen werden. Bitte erneut versuchen.",
+  "form": {
+    "_idLabel": "Datensatz-ID",
+    "ratingLabel": "Bewertung",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titel",
+    "titlePlaceholder": "Optionale Überschrift",
+    "commentLabel": "Kommentar",
+    "commentPlaceholder": "Was sollen Käufer wissen?"
+  },
+  "axios": {
+    "start": {
+      "title": "Bewertung wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bewertung aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Bewertung konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Produktbewertung bearbeiten",
+    "description": "Bewertung, Titel und Kommentar ändern."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Änderungen speichern"
+  }
+}

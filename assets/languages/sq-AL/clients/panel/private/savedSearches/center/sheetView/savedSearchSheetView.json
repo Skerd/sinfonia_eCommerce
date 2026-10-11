@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx",
+  "overview": "Përmbledhje",
+  "filters": "Filtrat",
+  "lifecycle": "Cikli i jetës",
+  "savedSearchSubtitle": "Kërkim i ruajtur",
+  "failedTitle": "Kërkimi nuk u ngarkua",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij kërkimi. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovuar ngarkimin e të dhënave.",
+  "name": "Emri",
+  "customer": "Klienti",
+  "categoryIds": "Kategoritë",
+  "category": "Kategoria",
+  "collectionId": "Koleksioni",
+  "priceMin": "Çmimi min.",
+  "priceMax": "Çmimi maks.",
+  "sort": "Renditja",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
+}

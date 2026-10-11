@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/createSavedSearch.tsx",
+  "title": "Krijo kërkim të ruajtur",
+  "form": {
+    "customerLabel": "Klienti",
+    "customerPlaceholder": "Zgjidh klientin",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emërto këtë kërkim",
+    "filtersSectionTitle": "Filtrat",
+    "collectionIdLabel": "Koleksioni",
+    "collectionIdPlaceholder": "Kërko një koleksion",
+    "priceMinLabel": "Çmimi min.",
+    "priceMinPlaceholder": "Çmimi minimal",
+    "priceMaxLabel": "Çmimi maks.",
+    "priceMaxPlaceholder": "Çmimi maksimal",
+    "sortLabel": "Renditja",
+    "sortPlaceholder": "Rendit produktet",
+    "sort": {
+      "newest": "Më të rejat",
+      "priceAsc": "Çmimi: nga i ulëti",
+      "priceDesc": "Çmimi: nga i larti",
+      "featured": "Të veçuara"
+    },
+    "categoryIdsLabel": "Kategoritë",
+    "selectCategory": "Zgjidh një kategori",
+    "removeCategory": "Hiq kategorinë"
+  },
+  "axios": {
+    "start": {"title": "Po krijohet kërkimi", "time": 3000},
+    "success": {"title": "Kërkimi u ruajt", "time": 3000},
+    "error": {"title": "Kërkimi nuk u krijua", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Krijo kërkim të ruajtur",
+    "description": "Emërto një kërkim katalogu dhe filtrat që duhet të ekzekutohen me të. Zgjidh klientin të cilit i përket."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo kërkimin"
+  }
+}

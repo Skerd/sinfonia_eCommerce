@@ -462,7 +462,7 @@ export function usePosPayments({
 
             const res = await apiClient.post<{
                 data: {order: PosOrder; receipt: ReceiptPayload; session: PosSession};
-            }>("/api/eCommerce/pos/pay", {
+            }>("/api/eCommerce/posOrder/pay", {
                 sessionId: session._id,
                 customerId: customerId || undefined,
                 customerName: showCustomer && customerName.trim() ? customerName.trim() : undefined,

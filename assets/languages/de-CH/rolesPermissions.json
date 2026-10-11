@@ -860,20 +860,17 @@
     "Savedsearches": {
       "createdAt": "Erstellt am",
       "createdBy": "Erstellt von",
-      "filters": "Filter",
       "name": "Name",
       "savedsearches": "Gespeichert searches",
       "updatedAt": "Aktualisiert am",
-      "user": "Benutzer",
+      "customer": "Kunde",
       "deletedAt": "Gelöscht am",
       "deletedBy": "Gelöscht von",
-      "filters_categoryId": "Filters kategorie ID",
-      "filters_geoLat": "Filters geo lat",
-      "filters_geoLng": "Filters geo lng",
-      "filters_geoMaxKm": "Filters geo max km",
-      "filters_location": "Filters standort",
-      "filters_tags": "Filters tags",
-      "filters_title": "Filters bezeichnung"
+      "categoryIds": "Kategorien",
+      "collectionId": "Kollektion",
+      "priceMin": "Min. Preis",
+      "priceMax": "Max. Preis",
+      "sort": "Sortierung"
     },
     "Shippingzones": {
       "countries": "Countries",

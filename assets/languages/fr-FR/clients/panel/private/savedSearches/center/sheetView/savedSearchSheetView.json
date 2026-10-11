@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx",
+  "overview": "Aperçu",
+  "filters": "Filtres",
+  "lifecycle": "Cycle de vie",
+  "savedSearchSubtitle": "Recherche enregistrée",
+  "failedTitle": "Impossible de charger la recherche",
+  "failedDescription": "Un problème est survenu lors du chargement de cette recherche. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour relancer le chargement.",
+  "name": "Nom",
+  "customer": "Client",
+  "categoryIds": "Catégories",
+  "category": "Catégorie",
+  "collectionId": "Collection",
+  "priceMin": "Prix min.",
+  "priceMax": "Prix max.",
+  "sort": "Tri",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

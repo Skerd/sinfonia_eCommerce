@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/cardView/savedSearchCard.tsx",
+  "customer": "Customer",
+  "categoryIds": "Categories",
+  "collectionId": "Collection",
+  "priceMin": "Min price",
+  "priceMax": "Max price",
+  "sort": "Sort",
+  "newest": "Newest",
+  "priceAsc": "Price: low to high",
+  "priceDesc": "Price: high to low",
+  "featured": "Featured"
+}

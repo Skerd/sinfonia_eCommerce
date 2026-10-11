@@ -58,6 +58,8 @@ function PosOrderCard({
             onRestore={onRestore}
             hideActions={hideActions}
             hideEdit
+            hideDelete
+            hideRestore
             sheetOnly={sheetOnly}
             editPath={() => ""}
             Sheet={PosOrderSheetView}

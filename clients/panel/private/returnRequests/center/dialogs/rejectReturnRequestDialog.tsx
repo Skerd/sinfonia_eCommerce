@@ -16,6 +16,7 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
+import {RETURN_REQUEST_NOTE_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.schema-def.ts";
 
 type PostPayload = {
     _id: string;
@@ -70,6 +71,7 @@ function RejectReturnRequestDialog({
                             id="reject-reason"
                             rows={4}
                             value={reason}
+                            maxLength={RETURN_REQUEST_NOTE_MAX}
                             onChange={(e) => setReason(e.target.value)}
                             placeholder={resolveLanguageKey("reasonPlaceholder")}
                             disabled={loading}

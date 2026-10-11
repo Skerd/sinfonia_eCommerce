@@ -101,6 +101,12 @@ const FiscalConfigSheetViewLazy = lazy(
 const FiscalConfigCardLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx"),
 );
+const SavedSearchSheetViewLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx"),
+);
+const SavedSearchCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/savedSearches/center/cardView/savedSearchCard.tsx"),
+);
 const ProductReviewSheetViewLazy = lazy(
     () =>
         import(
@@ -178,6 +184,8 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#FiscalConfigCard": FiscalConfigCardLazy,
         "#ProductReviewSheetView": ProductReviewSheetViewLazy,
         "#ProductReviewCard": ProductReviewCardLazy,
+        "#SavedSearchSheetView": SavedSearchSheetViewLazy,
+        "#SavedSearchCard": SavedSearchCardLazy,
         "#InventorySheetView": InventorySheetViewLazy,
         "#InventoryCard": InventoryCardLazy,
         "#InventoryMovementSheetView": InventoryMovementSheetViewLazy,
@@ -202,6 +210,7 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#ProductOrderCard": "order",
         "#PosOrderCard": "entity",
         "#ProductReviewCard": "review",
+        "#SavedSearchCard": "entity",
         "#InventoryCard": "inventory",
         "#InventoryMovementCard": "movement",
         "#FulfillmentCard": "entity",
@@ -249,6 +258,10 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#ProductReviewSheetView": {
             url: "/api/eCommerce/productReview/single",
             labelFields: ["title", "product.title", "rating"],
+        },
+        "#SavedSearchSheetView": {
+            url: "/api/eCommerce/savedSearch/single",
+            labelFields: ["name"],
         },
         "#InventorySheetView": {
             url: "/api/eCommerce/inventory/single",

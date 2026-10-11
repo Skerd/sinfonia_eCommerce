@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
   "productAttributeSubtitle": "Attribute details",
+  "failedTitle": "Failed to load product attribute",
+  "failedDescription": "Something went wrong while loading this product attribute. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "overview": "Overview",
   "lifecycle": "Lifecycle",
   "name": "Name",

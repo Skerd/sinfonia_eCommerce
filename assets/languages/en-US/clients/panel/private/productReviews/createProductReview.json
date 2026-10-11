@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/createProductReview.tsx",
+  "title": "Create product review",
+  "form": {
+    "orderLabel": "Order",
+    "orderPlaceholder": "Select a paid order",
+    "productLabel": "Product",
+    "productPlaceholder": "Select a product from the order",
+    "ratingLabel": "Rating",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Optional headline",
+    "commentLabel": "Comment",
+    "commentPlaceholder": "What should shoppers know?"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating review",
+      "time": 3000
+    },
+    "success": {
+      "title": "Review created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create review",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create product review",
+    "description": "Add a review for a product on a paid order."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create review"
+  }
+}

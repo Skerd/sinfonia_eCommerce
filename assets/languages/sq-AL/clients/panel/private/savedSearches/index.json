@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
+  "title": "Kërkimet e ruajtura",
+  "description": "Kërkimet e katalogut të ruajtura nga një klient, me filtrat që ishin aktivë.",
+  "createSavedSearch": "Krijo kërkim të ruajtur",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "customer": "Klienti",
+    "categoryIds": "Kategoritë",
+    "collectionId": "Koleksioni",
+    "priceMin": "Çmimi min.",
+    "priceMax": "Çmimi maks.",
+    "sort": "Renditja",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

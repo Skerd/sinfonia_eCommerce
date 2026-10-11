@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx",
   "inventoryMovementSubtitle": "Stock movement",
+  "failedTitle": "Failed to load inventory movement",
+  "failedDescription": "Something went wrong while loading this inventory movement. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "overview": "Overview",
   "note": "Note",
   "receipts": "Receipts",
@@ -20,6 +23,7 @@
   "product": "Product",
   "variant": "Variant",
   "warehouse": "Warehouse",
+  "reference": "Reference",
   "lifecycle": "Lifecycle",
   "updatedAt": "Updated at",
   "createdBy": "Created by",
@@ -33,5 +37,11 @@
     "transfer_out": "Transfer out",
     "initial": "Initial",
     "write_off": "Write-off"
+  },
+  "referenceTypes": {
+    "Inventory": "Inventory",
+    "ProductOrder": "Product order",
+    "PosOrder": "POS order",
+    "Checkout": "Checkout"
   }
 }

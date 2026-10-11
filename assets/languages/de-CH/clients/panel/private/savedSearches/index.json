@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
+  "title": "Gespeicherte Suchen",
+  "description": "Katalogsuchen, die ein Kunde gespeichert hat, mit den aktiven Filtern.",
+  "createSavedSearch": "Suche speichern",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "customer": "Kunde",
+    "categoryIds": "Kategorien",
+    "collectionId": "Kollektion",
+    "priceMin": "Min. Preis",
+    "priceMax": "Max. Preis",
+    "sort": "Sortierung",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

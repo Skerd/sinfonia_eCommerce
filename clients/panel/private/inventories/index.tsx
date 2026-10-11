@@ -11,10 +11,10 @@ import RestockInventoryDropdown from "./center/actions/restockInventoryDropdown.
 import DeductInventoryDropdown from "./center/actions/deductInventoryDropdown.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 
-export function inventoryEditPath(inventory: {_id: string; product?: {title?: string}}) {
+export function inventoryEditPath(inventory: {_id: string; product: {title: string}}) {
     const params = new URLSearchParams();
     params.set("inventoryId", inventory._id);
-    if (inventory.product?.title) params.set("inventoryTitle", encodeURIComponent(inventory.product.title));
+    params.set("inventoryTitle", encodeURIComponent(inventory.product.title));
     return `/eCommerce/inventories/edit?${params.toString()}`;
 }
 
@@ -55,7 +55,7 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
                     return (
                         <InventoryStockMoveAction
                             inventoryId={entity._id}
-                            displayName={entity.product?.title}
+                            displayName={entity.product.title}
                             mode={action}
                             openAlert
                             url={`/api/eCommerce/inventory/${action}`}

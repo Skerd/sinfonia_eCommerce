@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/editSavedSearch.tsx",
+  "title": "Edit saved search",
+  "errorTitle": "Failed to load saved search",
+  "errorDescription": "Could not load this saved search. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "customerLabel": "Customer",
+    "customerPlaceholder": "Select customer",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name this search",
+    "filtersSectionTitle": "Filters",
+    "collectionIdLabel": "Collection",
+    "collectionIdPlaceholder": "Search for a collection",
+    "priceMinLabel": "Min price",
+    "priceMinPlaceholder": "Minimum price",
+    "priceMaxLabel": "Max price",
+    "priceMaxPlaceholder": "Maximum price",
+    "sortLabel": "Sort",
+    "sortPlaceholder": "Sort products",
+    "sort": {
+      "newest": "Newest",
+      "priceAsc": "Price: low to high",
+      "priceDesc": "Price: high to low",
+      "featured": "Featured"
+    },
+    "categoryIdsLabel": "Categories",
+    "selectCategory": "Select a category",
+    "removeCategory": "Remove category"
+  },
+  "axios": {
+    "start": {"title": "Saving saved search", "time": 3000},
+    "success": {"title": "Saved search updated", "time": 3000},
+    "error": {"title": "Could not update saved search", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Edit saved search",
+    "description": "Update the name, the customer it belongs to, and the filters that run with this search."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

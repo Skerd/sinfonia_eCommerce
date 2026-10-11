@@ -1,6 +1,8 @@
 {
   "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
   "cancel": "Annulla",
+  "addFile": "Aggiungi file",
+  "filesSelected": "selezionati",
   "restock": {
     "title": "Rifornire l'inventario",
     "description": "Aggiungi lo stock ricevuto da un fornitore o produttore. Questo movimento viene registrato con i dettagli della ricevuta.",
@@ -15,26 +17,23 @@
     "noteLabel": "Nota",
     "confirm": "Rifornimento",
     "axios": {
-      "success": "Stock rifornito con successo",
-      "error": "Impossibile rifornire l'inventario"
+      "start": {"title": "Rifornimento in corso", "time": 3000},
+      "success": {"title": "Stock rifornito con successo", "time": 3000},
+      "error": {"title": "Impossibile rifornire l'inventario", "time": 3000}
     }
   },
   "deduct": {
     "title": "Detrarre/stornare",
-    "description": "Rimuovere le scorte (danni, perdite o cancellazioni). Questo movimento viene registrato con dettagli di ricevuta opzionali.",
+    "description": "Rimuovere le scorte (danni, perdite o cancellazioni). Costo e scadenza sono presi dall'ultimo movimento in ingresso.",
     "quantityLabel": "Quantità da rimuovere",
-    "manufacturerLabel": "Produttore/fornitore",
-    "receiptNumberLabel": "Riferimento/ricevuta n.",
-    "occurredAtLabel": "Data di cancellazione",
-    "unitCostLabel": "Costo unità",
     "batchLotLabel": "Lotto/lotto",
-    "expiryDateLabel": "Data di scadenza",
     "receiptsLabel": "Allegati",
     "noteLabel": "Nota",
     "confirm": "Detrarre",
     "axios": {
-      "success": "Stock detratto con successo",
-      "error": "Impossibile detrarre l'inventario"
+      "start": {"title": "Detrazione in corso", "time": 3000},
+      "success": {"title": "Stock detratto con successo", "time": 3000},
+      "error": {"title": "Impossibile detrarre l'inventario", "time": 3000}
     }
   }
 }

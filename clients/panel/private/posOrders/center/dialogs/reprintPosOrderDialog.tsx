@@ -166,7 +166,7 @@ function ReprintPosOrderDialog({
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx"),
     withAxios<ReprintAxiosBody, PostPayload>(
-        {url: "/api/eCommerce/pos/reprint", method: "POST", data: {}},
+        {url: "/api/eCommerce/posOrder/reprint", method: "POST", data: {}},
         true,
     ),
     withDebug(true, true, "posOrders"),

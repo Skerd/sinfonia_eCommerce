@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx",
+  "overview": "Overview",
+  "filters": "Filters",
+  "lifecycle": "Lifecycle",
+  "savedSearchSubtitle": "Saved search",
+  "failedTitle": "Failed to load saved search",
+  "failedDescription": "Something went wrong while loading this saved search. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "name": "Name",
+  "customer": "Customer",
+  "categoryIds": "Categories",
+  "category": "Category",
+  "collectionId": "Collection",
+  "priceMin": "Min price",
+  "priceMax": "Max price",
+  "sort": "Sort",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
+}

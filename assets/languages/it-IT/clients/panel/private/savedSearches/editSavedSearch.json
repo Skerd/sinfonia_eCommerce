@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/editSavedSearch.tsx",
+  "title": "Modifica ricerca salvata",
+  "errorTitle": "Impossibile caricare la ricerca salvata",
+  "errorDescription": "Non è stato possibile caricare questa ricerca salvata. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "customerLabel": "Cliente",
+    "customerPlaceholder": "Seleziona cliente",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Dai un nome a questa ricerca",
+    "filtersSectionTitle": "Filtri",
+    "collectionIdLabel": "Collezione",
+    "collectionIdPlaceholder": "Cerca una collezione",
+    "priceMinLabel": "Prezzo min.",
+    "priceMinPlaceholder": "Prezzo minimo",
+    "priceMaxLabel": "Prezzo max.",
+    "priceMaxPlaceholder": "Prezzo massimo",
+    "sortLabel": "Ordinamento",
+    "sortPlaceholder": "Ordina i prodotti",
+    "sort": {
+      "newest": "Più recenti",
+      "priceAsc": "Prezzo: crescente",
+      "priceDesc": "Prezzo: decrescente",
+      "featured": "In evidenza"
+    },
+    "categoryIdsLabel": "Categorie",
+    "selectCategory": "Seleziona una categoria",
+    "removeCategory": "Rimuovi categoria"
+  },
+  "axios": {
+    "start": {"title": "Salvataggio della ricerca", "time": 3000},
+    "success": {"title": "Ricerca salvata aggiornata", "time": 3000},
+    "error": {"title": "Impossibile aggiornare la ricerca salvata", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Modifica ricerca salvata",
+    "description": "Aggiorna il nome, il cliente a cui appartiene e i filtri che vengono eseguiti con questa ricerca."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

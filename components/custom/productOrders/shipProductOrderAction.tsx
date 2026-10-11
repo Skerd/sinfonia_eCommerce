@@ -20,6 +20,11 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ShipProductOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/shipProductOrder.form.validator.ts";
+import {
+    FULFILLMENT_CARRIER_MAX,
+    FULFILLMENT_TRACKING_NUMBER_MAX,
+    FULFILLMENT_TRACKING_URL_MAX,
+} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
 
 function bindShipAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -100,15 +105,15 @@ function ShipProductOrderAction({
                 <div className="flex flex-col py-4 gap-y-3">
                     <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipCarrier">{resolveLanguageKey("ship.carrierLabel")}</Label>
-                        <Input id="shipCarrier" value={carrier} onChange={(e) => setCarrier(e.target.value)} disabled={loading} />
+                        <Input id="shipCarrier" value={carrier} maxLength={FULFILLMENT_CARRIER_MAX} onChange={(e) => setCarrier(e.target.value)} disabled={loading} />
                     </div>
                     <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipTrackingNumber">{resolveLanguageKey("ship.trackingNumberLabel")}</Label>
-                        <Input id="shipTrackingNumber" value={trackingNumber} onChange={(e) => setTrackingNumber(e.target.value)} disabled={loading} />
+                        <Input id="shipTrackingNumber" value={trackingNumber} maxLength={FULFILLMENT_TRACKING_NUMBER_MAX} onChange={(e) => setTrackingNumber(e.target.value)} disabled={loading} />
                     </div>
                     <div className="flex flex-col gap-y-1.5">
                         <Label htmlFor="shipTrackingUrl">{resolveLanguageKey("ship.trackingUrlLabel")}</Label>
-                        <Input id="shipTrackingUrl" value={trackingUrl} onChange={(e) => setTrackingUrl(e.target.value)} disabled={loading} />
+                        <Input id="shipTrackingUrl" value={trackingUrl} maxLength={FULFILLMENT_TRACKING_URL_MAX} onChange={(e) => setTrackingUrl(e.target.value)} disabled={loading} />
                     </div>
                 </div>
                 <AlertDialogFooter>

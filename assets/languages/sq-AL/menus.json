@@ -99,6 +99,9 @@
     },
     "productreviews": {
       "title": "Vlerësimet e produkteve"
+    },
+    "savedsearches": {
+      "title": "Kërkimet e ruajtura"
     }
   },
   "tenancy": {

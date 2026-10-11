@@ -94,8 +94,8 @@ function ReviewsSection({productId, slug}: {productId: string; slug: string}) {
         setSubmitting(true);
         try {
             await apiClient.put("/api/eCommerce/productReview", {
-                orderId: reviewableOrderId,
-                productId,
+                order: reviewableOrderId,
+                product: productId,
                 rating,
                 title: title || undefined,
                 comment: comment || undefined,

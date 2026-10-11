@@ -15,7 +15,7 @@ function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
             tableConfigKey="posSessions"
             hideCreate
             buildEditPath={() => ""}
-            rowActionMenu={{hideEdit: true}}
+            rowActionMenu={{hideEdit: true, hideDelete: true, hideRestore: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx"
             renderCard={(entity, onDelete, onRestore) => (

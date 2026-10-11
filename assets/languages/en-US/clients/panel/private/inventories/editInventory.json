@@ -5,8 +5,18 @@
   "errorDescription": "Could not load this inventory. Try again.",
   "form": {
     "_idLabel": "Record ID",
+    "assignmentSectionTitle": "Assignment",
+    "stockSectionTitle": "Stock levels",
+    "productLabel": "Product",
+    "productPlaceholder": "Select product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Select variant (optional)",
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Select warehouse",
     "reorderPointLabel": "Reorder point",
-    "reorderQuantityLabel": "Reorder quantity"
+    "reorderPointPlaceholder": "Alert below this quantity",
+    "reorderQuantityLabel": "Reorder quantity",
+    "reorderQuantityPlaceholder": "Quantity to reorder"
   },
   "axios": {
     "start": {

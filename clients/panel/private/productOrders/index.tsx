@@ -11,7 +11,7 @@ import ShipOrderDropdown from "./center/actions/shipOrderDropdown.tsx";
 import CancelOrderDropdown from "./center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "./center/actions/refundOrderDropdown.tsx";
 import MarkPaidDropdown from "./center/actions/markPaidDropdown.tsx";
-import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ProductOrderActionConfirmAction from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
@@ -42,7 +42,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                         <ProductOrderActionConfirmAction
                             orderId={entity._id}
                             displayName={entity.orderNumber}
-                            actionKey={action as ProductOrderConfirmActionKey}
+                            actionKey={action}
                             orderStatus={entity.status}
                             openAlert
                             url={`/api/eCommerce/productOrder/${action}`}
@@ -65,7 +65,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                                 listRef.current?.updateRow?.(entity._id, {
                                     status: "shipped",
                                     fulfillmentStatus: "fulfilled",
-                                } as Partial<ProductOrder>);
+                                });
                                 resetAction();
                             }}
                             onCancel={resetAction}
@@ -82,9 +82,9 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                             onSuccess={(fullRefund: boolean) => {
                                 listRef.current?.updateRow?.(
                                     entity._id,
-                                    (fullRefund
+                                    fullRefund
                                         ? {paymentStatus: "refunded", status: "refunded"}
-                                        : {paymentStatus: "partially_refunded"}) as Partial<ProductOrder>,
+                                        : {paymentStatus: "partially_refunded"},
                                 );
                                 resetAction();
                             }}
@@ -99,7 +99,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                     order={order}
                     onDelete={(row: ProductOrder | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(order)}
-                    onOrderUpdated={(updated: ProductOrder) => listRef.current?.updateRow?.(order._id, updated as Partial<ProductOrder>)}
+                    onOrderUpdated={(updated: ProductOrder) => listRef.current?.updateRow?.(order._id, updated)}
                 />
             )}
         />

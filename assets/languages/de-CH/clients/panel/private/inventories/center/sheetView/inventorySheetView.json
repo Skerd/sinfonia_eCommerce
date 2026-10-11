@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
   "inventorySubtitle": "Inventory protokoll",
+  "failedTitle": "Inventory konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese inventory. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
   "overview": "Übersicht",
   "related": "Zugehörig",
   "product": "Produkt",
@@ -11,6 +14,7 @@
   "quantityAvailable": "Verfügbar",
   "reorderPoint": "Reorder point",
   "reorderQuantity": "Reorder menge",
+  "lowStockAlertSent": "Niedrigbestand-Alarm gesendet",
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",
@@ -21,5 +25,16 @@
   "movement": "Bewegung",
   "compactView": "Kompakt",
   "cardsView": "Karten",
-  "toggleReferenceListView": "Listenlayout umschalten"
+  "toggleReferenceListView": "Listenlayout umschalten",
+  "reasons": {
+    "restock": "Restock",
+    "sale": "Verkauf",
+    "return": "Return",
+    "adjustment": "Anpassung",
+    "damage": "Damage",
+    "transfer_in": "Transfer in",
+    "transfer_out": "Transfer out",
+    "initial": "Initial",
+    "write_off": "Write-off"
+  }
 }

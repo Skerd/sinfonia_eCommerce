@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/editProductReview.tsx",
+  "title": "Modifier l'avis",
+  "errorTitle": "Impossible de charger l'avis",
+  "errorDescription": "Cet avis n'a pas pu être chargé. Réessayez.",
+  "form": {
+    "_idLabel": "Identifiant",
+    "ratingLabel": "Note",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre facultatif",
+    "commentLabel": "Commentaire",
+    "commentPlaceholder": "Que doivent savoir les acheteurs ?"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement de l'avis",
+      "time": 3000
+    },
+    "success": {
+      "title": "Avis mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'avis",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'avis",
+    "description": "Modifier la note, le titre et le commentaire."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

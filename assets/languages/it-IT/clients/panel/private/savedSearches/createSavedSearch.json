@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/createSavedSearch.tsx",
+  "title": "Crea ricerca salvata",
+  "form": {
+    "customerLabel": "Cliente",
+    "customerPlaceholder": "Seleziona cliente",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Dai un nome a questa ricerca",
+    "filtersSectionTitle": "Filtri",
+    "collectionIdLabel": "Collezione",
+    "collectionIdPlaceholder": "Cerca una collezione",
+    "priceMinLabel": "Prezzo min.",
+    "priceMinPlaceholder": "Prezzo minimo",
+    "priceMaxLabel": "Prezzo max.",
+    "priceMaxPlaceholder": "Prezzo massimo",
+    "sortLabel": "Ordinamento",
+    "sortPlaceholder": "Ordina i prodotti",
+    "sort": {
+      "newest": "Più recenti",
+      "priceAsc": "Prezzo: crescente",
+      "priceDesc": "Prezzo: decrescente",
+      "featured": "In evidenza"
+    },
+    "categoryIdsLabel": "Categorie",
+    "selectCategory": "Seleziona una categoria",
+    "removeCategory": "Rimuovi categoria"
+  },
+  "axios": {
+    "start": {"title": "Creazione della ricerca salvata", "time": 3000},
+    "success": {"title": "Ricerca salvata creata", "time": 3000},
+    "error": {"title": "Impossibile creare la ricerca salvata", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Crea ricerca salvata",
+    "description": "Dai un nome alla ricerca e ai filtri che devono eseguirsi con essa. Scegli il cliente a cui appartiene."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea ricerca salvata"
+  }
+}

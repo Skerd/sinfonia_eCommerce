@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/createProductReview.tsx",
+  "title": "Créer un avis",
+  "form": {
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Choisir une commande payée",
+    "productLabel": "Produit",
+    "productPlaceholder": "Choisir un produit de la commande",
+    "ratingLabel": "Note",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre facultatif",
+    "commentLabel": "Commentaire",
+    "commentPlaceholder": "Que doivent savoir les acheteurs ?"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de l'avis",
+      "time": 3000
+    },
+    "success": {
+      "title": "Avis créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer l'avis",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un avis",
+    "description": "Ajouter un avis pour un produit d'une commande payée."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer l'avis"
+  }
+}

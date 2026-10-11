@@ -240,7 +240,7 @@ export function usePosCart({
         if (!session || !cart.length) return;
         setHoldBusy(true);
         try {
-            const res = await apiClient.post<{data: PosOrder}>("/api/eCommerce/pos/hold", {
+            const res = await apiClient.post<{data: PosOrder}>("/api/eCommerce/posOrder/hold", {
                 sessionId: session._id,
                 _id: heldOrderId || undefined,
                 customerId: customerId || undefined,
@@ -314,7 +314,7 @@ export function usePosCart({
 
     const discardHeld = async (id: string) => {
         try {
-            await apiClient.post("/api/eCommerce/pos/held/delete", {_id: id});
+            await apiClient.post("/api/eCommerce/posOrder/deleteHeld", {_id: id});
             setHeldOrders((prev) => prev.filter((o) => o._id !== id));
             if (heldOrderId === id) setHeldOrderId(null);
             toast.success(rk("toast.heldDiscarded"));

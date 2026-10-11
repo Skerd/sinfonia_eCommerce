@@ -1,7 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Vlerësimet e produkteve",
-  "description": "Modero vlerësimet e blerësve (krijohen nga dyqani pas porosisë së paguar).",
+  "description": "Krijo dhe ndrysho vlerësimet e porosive të paguara, pastaj moderoji.",
+  "createProductReview": "Krijo vlerësim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "order": "Porosia",

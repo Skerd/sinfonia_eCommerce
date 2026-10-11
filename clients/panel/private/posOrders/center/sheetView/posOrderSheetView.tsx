@@ -76,6 +76,8 @@ function PosOrderSheetView({
                 onDelete={onDelete}
                 onRestore={onRestore}
                 hideEdit
+                hideDelete
+                hideRestore
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <ReprintPosOrder entity={asOrder} onAction={(a: string) => setAction(a)} />

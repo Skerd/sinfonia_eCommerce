@@ -84,7 +84,7 @@ export default function PosRefundDialog({
         }
         setBusy(true);
         try {
-            await apiClient.post("/api/eCommerce/pos/refund", {
+            await apiClient.post("/api/eCommerce/posOrder/refund", {
                 _id: order._id,
                 reason: reason.trim() || undefined,
                 managerPin,

@@ -8,9 +8,14 @@
     "variantPlaceholder": "Seleziona variante (facoltativo)",
     "warehouseLabel": "Magazzino",
     "warehousePlaceholder": "Seleziona magazzino",
+    "assignmentSectionTitle": "Assegnazione",
+    "stockSectionTitle": "Livelli di scorta",
     "quantityOnHandLabel": "Quantità a portata di mano",
+    "quantityOnHandPlaceholder": "Quantità iniziale",
     "reorderPointLabel": "Punto di riordino",
-    "reorderQuantityLabel": "Riordina la quantità"
+    "reorderPointPlaceholder": "Avviso sotto questa quantità",
+    "reorderQuantityLabel": "Riordina la quantità",
+    "reorderQuantityPlaceholder": "Quantità da riordinare"
   },
   "axios": {
     "start": {

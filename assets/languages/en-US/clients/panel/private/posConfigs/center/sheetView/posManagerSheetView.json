@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/sheetView/posManagerSheetView.tsx",
   "posManagerSubtitle": "POS manager",
+  "failedTitle": "Failed to load POS manager",
+  "failedDescription": "Something went wrong while loading this POS manager. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
   "name": "Name",
   "username": "Username",
   "hasPin": "Manager PIN set"

@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/createProductReview.tsx",
+  "title": "Krijo vlerësim",
+  "form": {
+    "orderLabel": "Porosia",
+    "orderPlaceholder": "Zgjidh një porosi të paguar",
+    "productLabel": "Produkti",
+    "productPlaceholder": "Zgjidh një produkt të porosisë",
+    "ratingLabel": "Vlerësimi",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titull opsional",
+    "commentLabel": "Komenti",
+    "commentPlaceholder": "Çfarë duhet të dinë blerësit?"
+  },
+  "axios": {
+    "start": {
+      "title": "Po krijohet vlerësimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Vlerësimi u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Vlerësimi nuk u krijua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo vlerësim",
+    "description": "Shto një vlerësim për një produkt të një porosie të paguar."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo vlerësim"
+  }
+}

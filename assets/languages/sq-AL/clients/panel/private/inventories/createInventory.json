@@ -8,9 +8,14 @@
     "variantPlaceholder": "Zgjidh variantin (opsionale)",
     "warehouseLabel": "Magazina",
     "warehousePlaceholder": "Zgjidh magazinën",
+    "assignmentSectionTitle": "Caktimi",
+    "stockSectionTitle": "Nivelet e stokut",
     "quantityOnHandLabel": "Sasia në dispozicion",
+    "quantityOnHandPlaceholder": "Sasia fillestare",
     "reorderPointLabel": "Pika e riporositjes",
-    "reorderQuantityLabel": "Sasia e riporositjes"
+    "reorderPointPlaceholder": "Sinjal nën këtë sasi",
+    "reorderQuantityLabel": "Sasia e riporositjes",
+    "reorderQuantityPlaceholder": "Sasia për riporositje"
   },
   "axios": {
     "start": {

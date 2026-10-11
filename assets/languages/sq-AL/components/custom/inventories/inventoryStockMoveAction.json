@@ -1,6 +1,8 @@
 {
   "path": "src/modules/eCommerce/components/custom/inventories/inventoryStockMoveAction.tsx",
   "cancel": "Anulo",
+  "addFile": "Shto skedarë",
+  "filesSelected": "të zgjedhur",
   "restock": {
     "title": "Rifornizo inventarin",
     "description": "Shto stok të marrë nga furnitori ose prodhuesi. Lëvizja regjistrohet me detajet e faturës.",
@@ -15,26 +17,23 @@
     "noteLabel": "Shënim",
     "confirm": "Rifornizo",
     "axios": {
-      "success": "Stoku u rifornizua me sukses",
-      "error": "Rifornizimi i inventarit dështoi"
+      "start": {"title": "Stoku po rifornizohet", "time": 3000},
+      "success": {"title": "Stoku u rifornizua me sukses", "time": 3000},
+      "error": {"title": "Rifornizimi i inventarit dështoi", "time": 3000}
     }
   },
   "deduct": {
     "title": "Zbrit / çregjistro",
-    "description": "Hiq stok (dëmtim, humbje ose çregjistrim). Lëvizja regjistrohet me detaje opsionale.",
+    "description": "Hiq stok për dëmtim, humbje ose çregjistrim. Kostoja dhe skadenca merren nga lëvizja e fundit hyrëse.",
     "quantityLabel": "Sasia për t'u hequr",
-    "manufacturerLabel": "Prodhuesi / furnitori",
-    "receiptNumberLabel": "Nr. i referencës / faturës",
-    "occurredAtLabel": "Data e çregjistrimit",
-    "unitCostLabel": "Kosto për njësi",
     "batchLotLabel": "Partia / loti",
-    "expiryDateLabel": "Data e skadencës",
     "receiptsLabel": "Bashkëngjitjet",
     "noteLabel": "Shënim",
     "confirm": "Zbrit",
     "axios": {
-      "success": "Stoku u zbrit me sukses",
-      "error": "Zbritja e inventarit dështoi"
+      "start": {"title": "Stoku po zbret", "time": 3000},
+      "success": {"title": "Stoku u zbrit me sukses", "time": 3000},
+      "error": {"title": "Zbritja e inventarit dështoi", "time": 3000}
     }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/editProductReview.tsx",
+  "title": "Ndrysho vlerësimin",
+  "errorTitle": "Vlerësimi nuk u ngarkua",
+  "errorDescription": "Ky vlerësim nuk u ngarkua. Provo përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "ratingLabel": "Vlerësimi",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titull opsional",
+    "commentLabel": "Komenti",
+    "commentPlaceholder": "Çfarë duhet të dinë blerësit?"
+  },
+  "axios": {
+    "start": {
+      "title": "Po ruhet vlerësimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Vlerësimi u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Vlerësimi nuk u përditësua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho vlerësimin",
+    "description": "Përditëso vlerësimin, titullin dhe komentin."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
   "posSessionSubtitle": "Dettagli della sessione",
+  "failedTitle": "Impossibile caricare la sessione POS",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa sessione POS. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "overview": "Panoramica",
   "balances": "Saldi",
   "totals": "Totali",

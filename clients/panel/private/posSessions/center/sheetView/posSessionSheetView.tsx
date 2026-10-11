@@ -57,6 +57,8 @@ function PosSessionSheetView({
             access={access}
             hideActions={hideActions}
             hideEdit
+            hideDelete
+            hideRestore
             onDelete={onDelete}
             onRestore={onRestore}
         />

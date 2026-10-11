@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/editProductReview.tsx",
+  "title": "Modifica recensione",
+  "errorTitle": "Impossibile caricare la recensione",
+  "errorDescription": "Non è stato possibile caricare questa recensione. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "ratingLabel": "Valutazione",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo facoltativo",
+    "commentLabel": "Commento",
+    "commentPlaceholder": "Cosa devono sapere gli acquirenti?"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio della recensione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Recensione aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la recensione",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica recensione",
+    "description": "Aggiorna valutazione, titolo e commento."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

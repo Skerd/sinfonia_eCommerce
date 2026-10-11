@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/editSavedSearch.tsx",
+  "title": "Ndrysho kërkimin e ruajtur",
+  "errorTitle": "Kërkimi nuk u ngarkua",
+  "errorDescription": "Ky kërkim i ruajtur nuk u ngarkua. Provo përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "customerLabel": "Klienti",
+    "customerPlaceholder": "Zgjidh klientin",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emërto këtë kërkim",
+    "filtersSectionTitle": "Filtrat",
+    "collectionIdLabel": "Koleksioni",
+    "collectionIdPlaceholder": "Kërko një koleksion",
+    "priceMinLabel": "Çmimi min.",
+    "priceMinPlaceholder": "Çmimi minimal",
+    "priceMaxLabel": "Çmimi maks.",
+    "priceMaxPlaceholder": "Çmimi maksimal",
+    "sortLabel": "Renditja",
+    "sortPlaceholder": "Rendit produktet",
+    "sort": {
+      "newest": "Më të rejat",
+      "priceAsc": "Çmimi: nga i ulëti",
+      "priceDesc": "Çmimi: nga i larti",
+      "featured": "Të veçuara"
+    },
+    "categoryIdsLabel": "Kategoritë",
+    "selectCategory": "Zgjidh një kategori",
+    "removeCategory": "Hiq kategorinë"
+  },
+  "axios": {
+    "start": {"title": "Po ruhet kërkimi", "time": 3000},
+    "success": {"title": "Kërkimi u përditësua", "time": 3000},
+    "error": {"title": "Kërkimi nuk u përditësua", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Ndrysho kërkimin e ruajtur",
+    "description": "Përditëso emrin, klientin të cilit i përket dhe filtrat që ekzekutohen me këtë kërkim."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

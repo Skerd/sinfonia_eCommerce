@@ -5,8 +5,18 @@
   "errorDescription": "Impossibile caricare questo inventario. Riprova.",
   "form": {
     "_idLabel": "ID record",
+    "assignmentSectionTitle": "Assegnazione",
+    "stockSectionTitle": "Livelli di scorta",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Seleziona il prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Seleziona variante (facoltativo)",
+    "warehouseLabel": "Magazzino",
+    "warehousePlaceholder": "Seleziona magazzino",
     "reorderPointLabel": "Punto di riordino",
-    "reorderQuantityLabel": "Riordina la quantità"
+    "reorderPointPlaceholder": "Avviso sotto questa quantità",
+    "reorderQuantityLabel": "Riordina la quantità",
+    "reorderQuantityPlaceholder": "Quantità da riordinare"
   },
   "axios": {
     "start": {

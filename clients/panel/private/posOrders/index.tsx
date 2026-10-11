@@ -17,7 +17,7 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
             tableConfigKey="posOrders"
             hideCreate
             buildEditPath={() => ""}
-            rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
+            rowActionMenu={{hideEdit: true, hideDelete: true, hideRestore: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx"
             renderActionMenuChildren={(entity, bindRowAction) => (

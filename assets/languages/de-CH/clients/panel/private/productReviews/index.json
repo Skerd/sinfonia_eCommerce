@@ -1,7 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Produkt bewertungen",
-  "description": "Moderate käufer bewertungen (erstellt via die storefront after a bezahlt auftrag).",
+  "description": "Bewertungen für bezahlte Aufträge erstellen, bearbeiten und moderieren.",
+  "createProductReview": "Bewertung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "order": "Auftrag",

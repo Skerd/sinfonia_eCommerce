@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/editSavedSearch.tsx",
+  "title": "Gespeicherte Suche bearbeiten",
+  "errorTitle": "Suche konnte nicht geladen werden",
+  "errorDescription": "Diese gespeicherte Suche konnte nicht geladen werden. Versuchen Sie es erneut.",
+  "form": {
+    "_idLabel": "Datensatz-ID",
+    "customerLabel": "Kunde",
+    "customerPlaceholder": "Customer auswählen",
+    "nameLabel": "Name",
+    "namePlaceholder": "Diese Suche benennen",
+    "filtersSectionTitle": "Filter",
+    "collectionIdLabel": "Kollektion",
+    "collectionIdPlaceholder": "Kollektion suchen",
+    "priceMinLabel": "Min. Preis",
+    "priceMinPlaceholder": "Mindestpreis",
+    "priceMaxLabel": "Max. Preis",
+    "priceMaxPlaceholder": "Höchstpreis",
+    "sortLabel": "Sortierung",
+    "sortPlaceholder": "Produkte sortieren",
+    "sort": {
+      "newest": "Neueste",
+      "priceAsc": "Preis: aufsteigend",
+      "priceDesc": "Preis: absteigend",
+      "featured": "Hervorgehoben"
+    },
+    "categoryIdsLabel": "Kategorien",
+    "selectCategory": "Kategorie wählen",
+    "removeCategory": "Kategorie entfernen"
+  },
+  "axios": {
+    "start": {"title": "Suche wird gespeichert", "time": 3000},
+    "success": {"title": "Suche aktualisiert", "time": 3000},
+    "error": {"title": "Suche konnte nicht aktualisiert werden", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Gespeicherte Suche bearbeiten",
+    "description": "Aktualisieren Sie den Namen, den Kunden und die Filter dieser Suche."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Änderungen speichern"
+  }
+}

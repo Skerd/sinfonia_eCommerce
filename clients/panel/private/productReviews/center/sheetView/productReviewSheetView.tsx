@@ -8,6 +8,13 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 
+function productReviewEditPath(review: {_id: string; title?: string}) {
+    const params = new URLSearchParams();
+    params.set("productReviewId", review._id);
+    if (review.title) params.set("productReviewTitle", encodeURIComponent(review.title));
+    return `/eCommerce/productreviews/edit?${params.toString()}`;
+}
+
 export type ProductReviewSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
@@ -17,16 +24,6 @@ export type ProductReviewSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
 };
-
-/** Client-only header label — not part of the API DTO. */
-function withSheetTitle(review: ProductReview): ProductReview & {displayTitle: string} {
-    const displayTitle =
-        review.title?.trim() ||
-        review.product?.title ||
-        (review.rating != null ? `${review.rating}★` : undefined) ||
-        review._id;
-    return {...review, displayTitle};
-}
 
 function ProductReviewSheetView({
     open,
@@ -39,14 +36,14 @@ function ProductReviewSheetView({
     fetchId,
 }: ProductReviewSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(
-        entityProp ? withSheetTitle(entityProp) : {_id: fetchId},
+        entityProp ?? {_id: fetchId},
     );
     const access = useAccess("productReviews");
     const viewConfig = useViewConfig("productReviews", "sheet");
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData(withSheetTitle(entityProp));
+        setSheetData(entityProp);
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;
@@ -60,7 +57,7 @@ function ProductReviewSheetView({
             url="/api/eCommerce/productReview/single"
             fetchId={fetchId ?? entityProp?._id}
             onDataFetched={(data) => {
-                setSheetData(withSheetTitle(data as ProductReview));
+                setSheetData(data as ProductReview);
             }}
             data={sheetData}
             open={open}
@@ -68,7 +65,10 @@ function ProductReviewSheetView({
             resolveLanguageKey={resolveLanguageKey}
             access={access}
             hideActions={hideActions}
-            hideEdit
+            editPath={productReviewEditPath({
+                _id: entityId,
+                title: typeof sheetData.title === "string" ? sheetData.title : undefined,
+            })}
             onDelete={onDelete}
             onRestore={onRestore}
         />

@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/createSavedSearch.tsx",
+  "title": "Gespeicherte Suche erstellen",
+  "form": {
+    "customerLabel": "Kunde",
+    "customerPlaceholder": "Customer auswählen",
+    "nameLabel": "Name",
+    "namePlaceholder": "Diese Suche benennen",
+    "filtersSectionTitle": "Filter",
+    "collectionIdLabel": "Kollektion",
+    "collectionIdPlaceholder": "Kollektion suchen",
+    "priceMinLabel": "Min. Preis",
+    "priceMinPlaceholder": "Mindestpreis",
+    "priceMaxLabel": "Max. Preis",
+    "priceMaxPlaceholder": "Höchstpreis",
+    "sortLabel": "Sortierung",
+    "sortPlaceholder": "Produkte sortieren",
+    "sort": {
+      "newest": "Neueste",
+      "priceAsc": "Preis: aufsteigend",
+      "priceDesc": "Preis: absteigend",
+      "featured": "Hervorgehoben"
+    },
+    "categoryIdsLabel": "Kategorien",
+    "selectCategory": "Kategorie wählen",
+    "removeCategory": "Kategorie entfernen"
+  },
+  "axios": {
+    "start": {"title": "Suche wird erstellt", "time": 3000},
+    "success": {"title": "Suche gespeichert", "time": 3000},
+    "error": {"title": "Suche konnte nicht erstellt werden", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Gespeicherte Suche erstellen",
+    "description": "Benennen Sie eine Katalogsuche und die Filter, die damit laufen. Wählen Sie den Kunden, dem sie gehört."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Suche speichern"
+  }
+}

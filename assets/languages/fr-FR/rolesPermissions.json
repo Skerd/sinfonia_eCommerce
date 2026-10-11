@@ -860,20 +860,17 @@
     "Savedsearches": {
       "createdAt": "Créé le",
       "createdBy": "Créé par",
-      "filters": "Filtres",
       "name": "Nom",
       "savedsearches": "Recherches enregistrées",
       "updatedAt": "Mis à jour le",
-      "user": "Utilisateur",
+      "customer": "Client",
       "deletedAt": "Supprimé le",
       "deletedBy": "Supprimé par",
-      "filters_categoryId": "ID de catégorie de filtres",
-      "filters_geoLat": "Filtres géo latitude",
-      "filters_geoLng": "Filtres géo gnl",
-      "filters_geoMaxKm": "Filtres géo km max",
-      "filters_location": "Emplacement des filtres",
-      "filters_tags": "Balises de filtres",
-      "filters_title": "Titre des filtres"
+      "categoryIds": "Catégories",
+      "collectionId": "Collection",
+      "priceMin": "Prix min.",
+      "priceMax": "Prix max.",
+      "sort": "Tri"
     },
     "Shippingzones": {
       "countries": "Pays",

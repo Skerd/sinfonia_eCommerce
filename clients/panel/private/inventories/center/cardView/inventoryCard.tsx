@@ -70,7 +70,7 @@ function InventoryCard({
                     {(action === "restock" || action === "deduct") && (
                         <InventoryStockMoveAction
                             inventoryId={row._id}
-                            displayName={row.product?.title}
+                            displayName={row.product.title}
                             mode={action}
                             openAlert
                             url={`/api/eCommerce/inventory/${action}`}
@@ -86,22 +86,20 @@ function InventoryCard({
             )}
         >
             {({entity: row, read, setAction}) => {
-                const available = row.quantityAvailable ?? 0;
+                const available = row.quantityAvailable;
                 const isLowStock = row.reorderPoint != null && available <= row.reorderPoint;
                 const canReadAvailable = accessFieldPathExists(read, "quantityOnHand");
                 return (
                     <>
-                        <EntityCard.Header titlePath="product.title" title={row.product?.title}>
+                        <EntityCard.Header titlePath="product.title" title={row.product.title}>
                             <RestockInventoryDropdown inventory={row} onAction={setAction} />
                             <DeductInventoryDropdown inventory={row} onAction={setAction} />
                         </EntityCard.Header>
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-1 text-xs text-muted-foreground">
                                 <IconBuildingWarehouse className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue path="warehouse.name" value={row.warehouse?.name} />
-                                {row.warehouse?.code ? (
-                                    <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
-                                ) : null}
+                                <DisplayValue path="warehouse.name" value={row.warehouse.name} />
+                                <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
                             </div>
                             <div className="mt-1 grid grid-cols-3 gap-2 text-center">
                                 <div>
@@ -109,7 +107,7 @@ function InventoryCard({
                                         {resolveLanguageKey("onHand")}
                                     </div>
                                     <div className="text-sm font-bold">
-                                        <DisplayValue path="quantityOnHand" type="number" value={row.quantityOnHand ?? 0} />
+                                        <DisplayValue path="quantityOnHand" type="number" value={row.quantityOnHand} />
                                     </div>
                                 </div>
                                 <div>
@@ -117,7 +115,7 @@ function InventoryCard({
                                         {resolveLanguageKey("reserved")}
                                     </div>
                                     <div className="text-sm font-bold">
-                                        <DisplayValue path="quantityReserved" type="number" value={row.quantityReserved ?? 0} />
+                                        <DisplayValue path="quantityReserved" type="number" value={row.quantityReserved} />
                                     </div>
                                 </div>
                                 <div>

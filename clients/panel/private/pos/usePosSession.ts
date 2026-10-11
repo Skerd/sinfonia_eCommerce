@@ -283,7 +283,7 @@ export function usePosSession({
         if (!configId) return;
         setOpeningBusy(true);
         try {
-            const res = await apiClient.post<{data: SessionBundle}>("/api/eCommerce/pos/openSession", {
+            const res = await apiClient.post<{data: SessionBundle}>("/api/eCommerce/posSession/open", {
                 configId,
                 openingBalance: Number(openingBalance) || 0,
                 notes: openingNotes || undefined,
@@ -321,7 +321,7 @@ export function usePosSession({
         }
         setCashMoveBusy(true);
         try {
-            const res = await apiClient.post<{data: PosSession}>("/api/eCommerce/pos/cashMove", {
+            const res = await apiClient.post<{data: PosSession}>("/api/eCommerce/posSession/cashMove", {
                 _id: session._id,
                 type: cashMoveOpen,
                 amount,
@@ -344,7 +344,7 @@ export function usePosSession({
     const loadReconciliation = async (counted?: number) => {
         if (!session) return;
         try {
-            const res = await apiClient.post<{data: PosReconciliation}>("/api/eCommerce/pos/reconciliation", {
+            const res = await apiClient.post<{data: PosReconciliation}>("/api/eCommerce/posSession/reconciliation", {
                 sessionId: session._id,
                 countedCash: counted,
             });
@@ -373,7 +373,7 @@ export function usePosSession({
         }
         setCloseBusy(true);
         try {
-            await apiClient.post("/api/eCommerce/pos/closeSession", {
+            await apiClient.post("/api/eCommerce/posSession/close", {
                 _id: session._id,
                 closingBalance: balance,
                 notes: closingNotes || undefined,
@@ -418,7 +418,7 @@ export function usePosSession({
 
     const reprintOrder = async (id: string) => {
         try {
-            const res = await apiClient.post<{data: {receipt: ReceiptPayload}}>("/api/eCommerce/pos/reprint", {_id: id});
+            const res = await apiClient.post<{data: {receipt: ReceiptPayload}}>("/api/eCommerce/posOrder/reprint", {_id: id});
             setReceipt(res.data.data.receipt);
             setReceiptOpen(true);
             setOrdersOpen(false);

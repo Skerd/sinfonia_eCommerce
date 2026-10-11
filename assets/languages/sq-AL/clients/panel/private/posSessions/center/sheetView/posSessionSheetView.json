@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
   "posSessionSubtitle": "Detajet e seancës",
+  "failedTitle": "Ngarkimi i sesionit POS dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij sesioni POS. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovar marrjen e të dhënave.",
   "overview": "Përmbledhje",
   "balances": "Bilancet",
   "totals": "Totalet",

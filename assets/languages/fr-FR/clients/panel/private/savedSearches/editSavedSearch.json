@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/editSavedSearch.tsx",
+  "title": "Modifier la recherche enregistrée",
+  "errorTitle": "Impossible de charger la recherche",
+  "errorDescription": "Cette recherche n'a pas pu être chargée. Réessayez.",
+  "form": {
+    "_idLabel": "ID de l'enregistrement",
+    "customerLabel": "Client",
+    "customerPlaceholder": "Sélectionner un client",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Nommer cette recherche",
+    "filtersSectionTitle": "Filtres",
+    "collectionIdLabel": "Collection",
+    "collectionIdPlaceholder": "Rechercher une collection",
+    "priceMinLabel": "Prix min.",
+    "priceMinPlaceholder": "Prix minimum",
+    "priceMaxLabel": "Prix max.",
+    "priceMaxPlaceholder": "Prix maximum",
+    "sortLabel": "Tri",
+    "sortPlaceholder": "Trier les produits",
+    "sort": {
+      "newest": "Plus récents",
+      "priceAsc": "Prix : croissant",
+      "priceDesc": "Prix : décroissant",
+      "featured": "En vedette"
+    },
+    "categoryIdsLabel": "Catégories",
+    "selectCategory": "Sélectionner une catégorie",
+    "removeCategory": "Retirer la catégorie"
+  },
+  "axios": {
+    "start": {"title": "Enregistrement de la recherche", "time": 3000},
+    "success": {"title": "Recherche mise à jour", "time": 3000},
+    "error": {"title": "Impossible de mettre à jour la recherche", "time": 3000}
+  },
+  "formHeader": {
+    "title": "Modifier la recherche enregistrée",
+    "description": "Mettez à jour le nom, le client auquel elle appartient et les filtres exécutés avec cette recherche."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

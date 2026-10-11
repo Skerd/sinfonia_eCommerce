@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/editProductReview.tsx",
+  "title": "Edit product review",
+  "errorTitle": "Failed to load review",
+  "errorDescription": "Could not load this review. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "ratingLabel": "Rating",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Optional headline",
+    "commentLabel": "Comment",
+    "commentPlaceholder": "What should shoppers know?"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving review",
+      "time": 3000
+    },
+    "success": {
+      "title": "Review updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update review",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit product review",
+    "description": "Update the rating, title, and comment."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

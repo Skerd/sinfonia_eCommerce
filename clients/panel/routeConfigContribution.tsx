@@ -47,7 +47,12 @@ import EditReturnRequest from "@eCommerceModule/clients/panel/private/returnRequ
 import AllProductVariants from "@eCommerceModule/clients/panel/private/productVariants/index.tsx";
 import CreateProductVariant from "@eCommerceModule/clients/panel/private/productVariants/createProductVariant.tsx";
 import EditProductVariant from "@eCommerceModule/clients/panel/private/productVariants/editProductVariant.tsx";
+import AllSavedSearches from "@eCommerceModule/clients/panel/private/savedSearches/index.tsx";
+import CreateSavedSearch from "@eCommerceModule/clients/panel/private/savedSearches/createSavedSearch.tsx";
+import EditSavedSearch from "@eCommerceModule/clients/panel/private/savedSearches/editSavedSearch.tsx";
 import AllProductReviews from "@eCommerceModule/clients/panel/private/productReviews/index.tsx";
+import CreateProductReview from "@eCommerceModule/clients/panel/private/productReviews/createProductReview.tsx";
+import EditProductReview from "@eCommerceModule/clients/panel/private/productReviews/editProductReview.tsx";
 import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
 import CreateCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/createCustomerAddress.tsx";
 import EditCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/editCustomerAddress.tsx";
@@ -242,7 +247,22 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             return <AllReturnRequests />;
         }
         if (resource === "productreviews") {
+            const productReviewId = searchParams.get("productReviewId") || undefined;
+            const productReviewTitle = safeDecode(searchParams.get("productReviewTitle")) || undefined;
+            if (action === "create") return <CreateProductReview />;
+            if (action === "edit" && productReviewId) {
+                return <EditProductReview entityId={productReviewId} entityName={productReviewTitle} />;
+            }
             return <AllProductReviews />;
+        }
+        if (resource === "savedsearches") {
+            const savedSearchId = searchParams.get("savedSearchId") || undefined;
+            const savedSearchName = safeDecode(searchParams.get("savedSearchName")) || undefined;
+            if (action === "create") return <CreateSavedSearch />;
+            if (action === "edit" && savedSearchId) {
+                return <EditSavedSearch entityId={savedSearchId} entityName={savedSearchName} />;
+            }
+            return <AllSavedSearches />;
         }
         return undefined;
     },

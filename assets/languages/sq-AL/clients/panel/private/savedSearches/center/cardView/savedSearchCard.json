@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/cardView/savedSearchCard.tsx",
+  "customer": "Klienti",
+  "categoryIds": "Kategoritë",
+  "collectionId": "Koleksioni",
+  "priceMin": "Çmimi min.",
+  "priceMax": "Çmimi maks.",
+  "sort": "Renditja",
+  "newest": "Më të rejat",
+  "priceAsc": "Çmimi: nga i ulëti",
+  "priceDesc": "Çmimi: nga i larti",
+  "featured": "Të veçuara"
+}

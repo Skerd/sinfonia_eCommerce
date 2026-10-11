@@ -1,10 +1,18 @@
 import {compose} from "redux";
+import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductReviewCard from "./center/cardView/productReviewCard.tsx";
+
+export function productReviewEditPath(review: {_id: string; title?: string}) {
+    const params = new URLSearchParams();
+    params.set("productReviewId", review._id);
+    if (review.title) params.set("productReviewTitle", encodeURIComponent(review.title));
+    return `/eCommerce/productreviews/edit?${params.toString()}`;
+}
 
 function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
     return (
@@ -13,9 +21,10 @@ function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
             collectionName="productReviews"
             accessModel="productReviews"
             tableConfigKey="productReviews"
-            hideCreate
-            buildEditPath={() => ""}
-            rowActionMenu={{hideEdit: true}}
+            createPath="/eCommerce/productreviews/create"
+            createIcon={<IconPlus />}
+            createLanguageKey="createProductReview"
+            buildEditPath={productReviewEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"

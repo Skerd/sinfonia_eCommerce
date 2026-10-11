@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
+  "title": "Ricerche salvate",
+  "description": "Ricerche del catalogo salvate da un cliente, con i filtri attivi.",
+  "createSavedSearch": "Crea ricerca salvata",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "customer": "Cliente",
+    "categoryIds": "Categorie",
+    "collectionId": "Collezione",
+    "priceMin": "Prezzo min.",
+    "priceMax": "Prezzo max.",
+    "sort": "Ordinamento",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

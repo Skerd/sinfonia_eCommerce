@@ -16,6 +16,7 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
+import {FULFILLMENT_NOTES_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
 
 type PostPayload = {
     _id: string;
@@ -69,6 +70,7 @@ function MarkFailedFulfillmentDialog({
                             id="failed-notes"
                             rows={4}
                             value={notes}
+                            maxLength={FULFILLMENT_NOTES_MAX}
                             onChange={(e) => setNotes(e.target.value)}
                             placeholder={resolveLanguageKey("notesPlaceholder")}
                             disabled={loading}

@@ -14,6 +14,13 @@ import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx
 import type {RefObject} from "react";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
+function productReviewEditPath(review: ProductReview) {
+    const params = new URLSearchParams();
+    params.set("productReviewId", review._id);
+    if (review.title) params.set("productReviewTitle", encodeURIComponent(review.title));
+    return `/eCommerce/productreviews/edit?${params.toString()}`;
+}
+
 function Stars({value}: {value: number}) {
     return (
         <div className="flex items-center gap-0.5" aria-label={`${value} / 5`}>
@@ -65,9 +72,8 @@ function ProductReviewCard({
             onDelete={onDelete}
             onRestore={onRestore}
             hideActions={hideActions}
-            hideEdit
             sheetOnly={sheetOnly}
-            editPath={() => ""}
+            editPath={productReviewEditPath}
             Sheet={ProductReviewSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/productReview"

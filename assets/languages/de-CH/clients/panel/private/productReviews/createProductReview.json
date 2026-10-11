@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/createProductReview.tsx",
+  "title": "Produktbewertung erstellen",
+  "form": {
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bezahlten Auftrag wählen",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt aus dem Auftrag wählen",
+    "ratingLabel": "Bewertung",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titel",
+    "titlePlaceholder": "Optionale Überschrift",
+    "commentLabel": "Kommentar",
+    "commentPlaceholder": "Was sollen Käufer wissen?"
+  },
+  "axios": {
+    "start": {
+      "title": "Bewertung wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bewertung erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Bewertung konnte nicht erstellt werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Produktbewertung erstellen",
+    "description": "Bewertung für ein Produkt auf einem bezahlten Auftrag hinzufügen."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Bewertung erstellen"
+  }
+}

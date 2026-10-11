@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx",
   "productAttributeSubtitle": "Détails des attributs",
+  "failedTitle": "Échec du chargement de l'attribut produit",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cet attribut produit. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
   "overview": "Vue d'ensemble",
   "lifecycle": "Cycle de vie",
   "name": "Nom",

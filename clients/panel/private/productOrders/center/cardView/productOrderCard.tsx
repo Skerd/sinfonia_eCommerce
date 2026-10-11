@@ -12,7 +12,7 @@ import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrd
 import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
 import MarkPaidDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markPaidDropdown.tsx";
-import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ProductOrderActionConfirmAction from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
@@ -104,7 +104,7 @@ function ProductOrderCard({
                             <ProductOrderActionConfirmAction
                                 orderId={row._id}
                                 displayName={row.orderNumber}
-                                actionKey={action as ProductOrderConfirmActionKey}
+                                actionKey={action}
                                 orderStatus={row.status}
                                 openAlert
                                 url={`/api/eCommerce/productOrder/${action}`}

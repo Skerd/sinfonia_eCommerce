@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx",
   "posSessionSubtitle": "Sitzung details",
+  "failedTitle": "POS session konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese POS session. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
   "overview": "Übersicht",
   "balances": "Balances",
   "totals": "Totals",

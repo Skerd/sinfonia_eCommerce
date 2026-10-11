@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/productReviews/createProductReview.tsx",
+  "title": "Crea recensione",
+  "form": {
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona un ordine pagato",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Seleziona un prodotto dell'ordine",
+    "ratingLabel": "Valutazione",
+    "ratingPlaceholder": "1–5",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo facoltativo",
+    "commentLabel": "Commento",
+    "commentPlaceholder": "Cosa devono sapere gli acquirenti?"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione della recensione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Recensione creata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la recensione",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea recensione",
+    "description": "Aggiungi una recensione per un prodotto di un ordine pagato."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea recensione"
+  }
+}

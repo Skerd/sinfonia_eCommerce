@@ -99,6 +99,9 @@
     },
     "productreviews": {
       "title": "Product reviews"
+    },
+    "savedsearches": {
+      "title": "Saved searches"
     }
   },
   "tenancy": {

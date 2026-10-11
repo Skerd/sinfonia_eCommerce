@@ -11,8 +11,10 @@ export default createGenericEditPage<Inventory, EditInventoryFormType>({
     apiUrl: "/api/eCommerce/inventory",
     schema: editInventoryFormSchema,
     mapEntityData: (data) => ({
-        reorderPoint: data.reorderPoint,
-        reorderQuantity: data.reorderQuantity,
+        ...data,
+        product: data.product?._id,
+        variant: data.variant?._id,
+        warehouse: data.warehouse?._id,
     }),
     submitIcon: <Save />,
 });

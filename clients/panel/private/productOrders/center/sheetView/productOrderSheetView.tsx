@@ -13,7 +13,7 @@ import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrd
 import CancelOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/cancelOrderDropdown.tsx";
 import RefundOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/refundOrderDropdown.tsx";
 import MarkPaidDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markPaidDropdown.tsx";
-import ProductOrderActionConfirmAction, {type ProductOrderConfirmActionKey} from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
+import ProductOrderActionConfirmAction from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
@@ -48,7 +48,7 @@ function ProductOrderSheetView({
             ...orderProp,
             // Keep /single enrichments (list rows don't include related payment txs).
             paymentTransactions:
-                (orderProp as ProductOrder).paymentTransactions ??
+                orderProp.paymentTransactions ??
                 (prev as ProductOrder).paymentTransactions,
         }));
     }, [orderProp]);
@@ -98,7 +98,7 @@ function ProductOrderSheetView({
                 <ProductOrderActionConfirmAction
                     orderId={String(asOrder._id)}
                     displayName={asOrder.orderNumber}
-                    actionKey={action as ProductOrderConfirmActionKey}
+                    actionKey={action}
                     orderStatus={asOrder.status}
                     openAlert
                     url={`/api/eCommerce/productOrder/${action}`}

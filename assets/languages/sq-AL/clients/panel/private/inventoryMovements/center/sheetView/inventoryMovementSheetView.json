@@ -1,6 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx",
   "inventoryMovementSubtitle": "Lëvizje stoku",
+  "failedTitle": "Ngarkimi i lëvizjes së inventarit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj lëvizjeje. Kliko për të riprovuar.",
+  "failedTooltipDescription": "Kliko për të riprovar marrjen e të dhënave.",
   "overview": "Përmbledhje",
   "note": "Shënim",
   "receipts": "Faturat",
@@ -20,6 +23,7 @@
   "product": "Produkti",
   "variant": "Varianti",
   "warehouse": "Magazina",
+  "reference": "Referenca",
   "lifecycle": "Cikli i jetës",
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
@@ -33,5 +37,11 @@
     "transfer_out": "Transferim dalës",
     "initial": "Fillestar",
     "write_off": "Çregjistrim"
+  },
+  "referenceTypes": {
+    "Inventory": "Inventari",
+    "ProductOrder": "Porosia e produktit",
+    "PosOrder": "Porosia POS",
+    "Checkout": "Checkout"
   }
 }

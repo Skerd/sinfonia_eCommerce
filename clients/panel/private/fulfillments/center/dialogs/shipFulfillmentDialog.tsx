@@ -17,6 +17,12 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
+import {
+    FULFILLMENT_CARRIER_MAX,
+    FULFILLMENT_NOTES_MAX,
+    FULFILLMENT_TRACKING_NUMBER_MAX,
+    FULFILLMENT_TRACKING_URL_MAX,
+} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
 
 type PostPayload = {
     _id: string;
@@ -79,6 +85,7 @@ function ShipFulfillmentDialog({
                         <Input
                             id="ship-carrier"
                             value={carrier}
+                            maxLength={FULFILLMENT_CARRIER_MAX}
                             onChange={(e) => setCarrier(e.target.value)}
                             placeholder={resolveLanguageKey("carrierPlaceholder")}
                             disabled={loading}
@@ -89,6 +96,7 @@ function ShipFulfillmentDialog({
                         <Input
                             id="ship-tracking-number"
                             value={trackingNumber}
+                            maxLength={FULFILLMENT_TRACKING_NUMBER_MAX}
                             onChange={(e) => setTrackingNumber(e.target.value)}
                             placeholder={resolveLanguageKey("trackingNumberPlaceholder")}
                             disabled={loading}
@@ -99,6 +107,7 @@ function ShipFulfillmentDialog({
                         <Input
                             id="ship-tracking-url"
                             value={trackingUrl}
+                            maxLength={FULFILLMENT_TRACKING_URL_MAX}
                             onChange={(e) => setTrackingUrl(e.target.value)}
                             placeholder={resolveLanguageKey("trackingUrlPlaceholder")}
                             disabled={loading}
@@ -110,6 +119,7 @@ function ShipFulfillmentDialog({
                             id="ship-notes"
                             rows={4}
                             value={notes}
+                            maxLength={FULFILLMENT_NOTES_MAX}
                             onChange={(e) => setNotes(e.target.value)}
                             placeholder={resolveLanguageKey("notesPlaceholder")}
                             disabled={loading}
