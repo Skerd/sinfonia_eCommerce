@@ -92,10 +92,10 @@ function SaleCountdown({
             <div className="grid grid-cols-4 gap-0.5 text-center">
                 {cells.map(({value, labelKey}) => (
                     <div key={labelKey} className="min-w-0 px-0.5">
-                        <div className="text-xs font-bold tabular-nums leading-none text-warning">
+                        <div className="text-xs font-bold tabular-nums leading-none text-warning-foreground">
                             {String(value).padStart(2, "0")}
                         </div>
-                        <div className="mt-0.5 text-3xs font-medium uppercase leading-none tracking-wide text-warning/70">
+                        <div className="mt-0.5 text-3xs font-medium uppercase leading-none tracking-wide text-warning-foreground/70">
                             {resolveLanguageKey(labelKey)}
                         </div>
                     </div>
