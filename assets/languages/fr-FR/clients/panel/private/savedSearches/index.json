@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
-  "title": "Recherches enregistrées",
-  "description": "Recherches du catalogue enregistrées par un client, avec les filtres actifs.",
+  "title": "Vos recherches enregistrées",
+  "description": "Recherches catalogue que vous avez enregistrées, avec les filtres actifs.",
+  "catalogTitle": "Recherches enregistrées",
+  "catalogDescription": "Toutes les recherches catalogue enregistrées par un client.",
   "createSavedSearch": "Créer une recherche",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

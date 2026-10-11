@@ -1,4 +1,4 @@
-import {MapPin} from "lucide-react";
+import {Bookmark, MapPin} from "lucide-react";
 import type {AccountNavContribution} from "@coreModule/helpers/types/accountNavContribution.types.ts";
 
 const eCommerceAccountNavContribution: AccountNavContribution = {
@@ -10,6 +10,14 @@ const eCommerceAccountNavContribution: AccountNavContribution = {
                 title: resolveLanguageKey("menus.eCommerce.customeraddresses.title"),
                 url: "/account/addresses",
                 icon: MapPin,
+                permissions: [],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.eCommerce.savedsearches.title"),
+                url: "/account/savedsearches",
+                icon: Bookmark,
                 permissions: [],
                 usersPermissions: [],
                 atLeastOnePermission: true,

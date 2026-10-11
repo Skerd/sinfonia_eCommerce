@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
-  "title": "Gespeicherte Suchen",
-  "description": "Katalogsuchen, die ein Kunde gespeichert hat, mit den aktiven Filtern.",
+  "title": "Ihre gespeicherten Suchen",
+  "description": "Katalogsuchen, die Sie mit den aktiven Filtern gespeichert haben.",
+  "catalogTitle": "Gespeicherte Suchen",
+  "catalogDescription": "Alle Katalogsuchen, die von Kunden gespeichert wurden.",
   "createSavedSearch": "Suche speichern",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

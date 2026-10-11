@@ -17,11 +17,12 @@ export default createGenericEditPage<SavedSearch, EditSavedSearchFormType>({
         categoryIds: (data.categoryIds ?? []).map((category) => category._id),
         collectionId: data.collectionId?._id,
     }),
-    buildFormExtras: (_id, _params, entity) => {
+    buildFormExtras: (_id, params, entity) => {
         const customer = entity?.customer;
         const customerLabel = getName(customer);
         const collection = entity?.collectionId;
         return {
+            lockCustomer: params.get("lockCustomer") === "1",
             categoryIds: entity?.categoryIds?.map((category) => ({value: category._id, label: category.name})) ?? [],
             customerDefaultOptions: customer?._id
                 ? [{value: customer._id, label: customerLabel || customer._id}]

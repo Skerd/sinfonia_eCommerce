@@ -8,10 +8,11 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 
-function savedSearchEditPath(search: {_id: string; name?: string}) {
+function savedSearchEditPath(search: {_id: string; name?: string}, lockCustomer: boolean) {
     const params = new URLSearchParams();
     params.set("savedSearchId", search._id);
     if (search.name) params.set("savedSearchName", encodeURIComponent(search.name));
+    if (lockCustomer) params.set("lockCustomer", "1");
     return `/eCommerce/savedsearches/edit?${params.toString()}`;
 }
 
@@ -20,6 +21,7 @@ export type SavedSearchSheetViewOwnProps = {
     onOpenChange: (open: boolean) => void;
     entity?: SavedSearch;
     hideActions?: boolean;
+    lockCustomer?: boolean;
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     fetchId?: string;
@@ -31,6 +33,7 @@ function SavedSearchSheetView({
     entity: entityProp,
     resolveLanguageKey,
     hideActions = false,
+    lockCustomer = false,
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
@@ -65,10 +68,13 @@ function SavedSearchSheetView({
             resolveLanguageKey={resolveLanguageKey}
             access={access}
             hideActions={hideActions}
-            editPath={savedSearchEditPath({
-                _id: entityId,
-                name: typeof sheetData.name === "string" ? sheetData.name : undefined,
-            })}
+            editPath={savedSearchEditPath(
+                {
+                    _id: entityId,
+                    name: typeof sheetData.name === "string" ? sheetData.name : undefined,
+                },
+                lockCustomer,
+            )}
             onDelete={onDelete}
             onRestore={onRestore}
         />

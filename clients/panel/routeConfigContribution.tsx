@@ -262,7 +262,7 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             if (action === "edit" && savedSearchId) {
                 return <EditSavedSearch entityId={savedSearchId} entityName={savedSearchName} />;
             }
-            return <AllSavedSearches />;
+            return <AllSavedSearches companyWide />;
         }
         return undefined;
     },

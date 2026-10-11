@@ -22,6 +22,7 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
     },
     pathRoomOverrides: {
         "account/addresses": "customeraddresses",
+        "account/savedsearches": "savedsearches",
     },
 };
 

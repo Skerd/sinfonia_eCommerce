@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
-  "title": "Kërkimet e ruajtura",
-  "description": "Kërkimet e katalogut të ruajtura nga një klient, me filtrat që ishin aktivë.",
+  "title": "Kërkimet tuaja të ruajtura",
+  "description": "Kërkimet e katalogut që keni ruajtur, me filtrat aktivë.",
+  "catalogTitle": "Kërkimet e ruajtura",
+  "catalogDescription": "Çdo kërkim katalogu i ruajtur nga një klient.",
   "createSavedSearch": "Krijo kërkim të ruajtur",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

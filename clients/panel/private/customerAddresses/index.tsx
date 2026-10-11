@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
@@ -50,9 +51,12 @@ type AllCustomerAddressesProps = WithLanguageType & {
 function AllCustomerAddresses({resolveLanguageKey, specificUserId, companyWide}: AllCustomerAddressesProps) {
     const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const ownerId = specificUserId || currentUserId;
-    if (!companyWide && !ownerId) return null;
-
     const lockCustomer = !companyWide;
+    const extraParams = useMemo(
+        () => (companyWide || !ownerId ? undefined : {customerId: ownerId}),
+        [companyWide, ownerId],
+    );
+    if (!companyWide && !ownerId) return null;
 
     return (
         <EntityListPage<CustomerAddress>
@@ -61,7 +65,7 @@ function AllCustomerAddresses({resolveLanguageKey, specificUserId, companyWide}:
             accessModel="customerAddresses"
             tableConfigKey="customerAddresses"
             selfAccess={!specificUserId}
-            extraFilters={companyWide ? undefined : {customer: ownerId}}
+            extraParams={extraParams}
             headerTitle={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
             headerDescription={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
             rowActionMenu={{allowMenuForCustomChildren: true}}

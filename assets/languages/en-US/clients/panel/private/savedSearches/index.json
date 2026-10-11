@@ -1,7 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
-  "title": "Saved searches",
-  "description": "Catalog searches saved by a customer, with the filters that were active.",
+  "title": "Your saved searches",
+  "description": "Catalog searches you have saved, with the filters that were active.",
+  "catalogTitle": "Saved searches",
+  "catalogDescription": "Every catalog search saved by a customer.",
   "createSavedSearch": "Create saved search",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

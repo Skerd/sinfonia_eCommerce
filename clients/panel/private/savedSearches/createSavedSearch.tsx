@@ -9,11 +9,11 @@ export default createGenericCreatePage<CreateSavedSearchFormType>({
     accessModel: "savedsearches",
     apiUrl: "/api/eCommerce/savedSearch",
     schema: createSavedSearchFormSchema,
-    defaultValues: {
-        customer: "",
+    defaultValues: (params) => ({
+        customer: params.get("specificUserId") ?? "",
         name: "",
         categoryIds: [],
-    },
-    successPath: "/eCommerce/savedsearches",
+    }),
+    buildFormExtras: (params) => ({lockCustomer: !!params.get("specificUserId")}),
     submitIcon: <IconPlus />,
 });

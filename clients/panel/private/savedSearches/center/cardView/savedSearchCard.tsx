@@ -11,16 +11,18 @@ import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx
 import type {RefObject} from "react";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
-function savedSearchEditPath(search: SavedSearch) {
+function savedSearchEditPath(search: SavedSearch, lockCustomer: boolean) {
     const params = new URLSearchParams();
     params.set("savedSearchId", search._id);
     if (search.name) params.set("savedSearchName", encodeURIComponent(search.name));
+    if (lockCustomer) params.set("lockCustomer", "1");
     return `/eCommerce/savedsearches/edit?${params.toString()}`;
 }
 
 type SavedSearchCardProps = WithLanguageType & {
     entity: SavedSearch;
     fetchId?: string;
+    lockCustomer?: boolean;
     onDelete?: (deleted?: SavedSearch, response?: DeletedData) => void;
     onRestore?: () => void;
     hideActions?: boolean;
@@ -32,6 +34,7 @@ function SavedSearchCard({
     entity,
     resolveLanguageKey,
     fetchId,
+    lockCustomer = false,
     onDelete,
     onRestore,
     hideActions = false,
@@ -48,7 +51,7 @@ function SavedSearchCard({
             onRestore={onRestore}
             hideActions={hideActions}
             sheetOnly={sheetOnly}
-            editPath={savedSearchEditPath}
+            editPath={(row) => savedSearchEditPath(row, lockCustomer)}
             Sheet={SavedSearchSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/savedSearch"
@@ -57,7 +60,7 @@ function SavedSearchCard({
             failedDescription=""
             titlePath="name"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
+            sheetProps={() => ({fetchId, lockCustomer})}
         >
             {({entity: row}) => {
                 const customerName = getName(row.customer);
