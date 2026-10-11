@@ -11,6 +11,7 @@ export default createGenericCreatePage<CreateCustomerAddressFormType>({
     schema: createCustomerAddressFormSchema,
     defaultValues: (params) => ({
         customer: params.get("specificUserId") ?? "",
+        type: "shipping",
         firstName: "",
         lastName: "",
         street: "",

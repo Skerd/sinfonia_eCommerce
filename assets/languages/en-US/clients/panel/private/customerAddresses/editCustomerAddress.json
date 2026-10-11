@@ -9,6 +9,11 @@
     "_idLabel": "Record ID",
     "customerLabel": "Customer",
     "customerPlaceholder": "Select customer",
+    "typeLabel": "Type",
+    "addressType": {
+      "billing": "Billing",
+      "shipping": "Shipping"
+    },
     "firstNameLabel": "Recipient first name",
     "firstNamePlaceholder": "First name on the package",
     "lastNameLabel": "Recipient last name",
@@ -21,6 +26,8 @@
     "statePlaceholder": "Select state",
     "postalCodeLabel": "Postal code",
     "postalCodePlaceholder": "Postal code",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@example.com",
     "phoneLabel": "Phone",
     "phonePlaceholder": "Phone number",
     "countryLabel": "Country",

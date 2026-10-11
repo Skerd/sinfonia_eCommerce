@@ -7,9 +7,17 @@
   "createCustomerAddress": "Create address",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "type": {
+        "billing": "Billing",
+        "shipping": "Shipping"
+      }
+    },
     "customer": "Customer",
+    "type": "Type",
     "firstName": "Recipient first name",
     "lastName": "Recipient last name",
+    "email": "Email",
     "phone": "Phone",
     "street": "Street",
     "city": "City",

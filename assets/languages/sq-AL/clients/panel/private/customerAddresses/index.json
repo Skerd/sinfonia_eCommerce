@@ -7,9 +7,17 @@
   "createCustomerAddress": "Krijo adresë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "type": {
+        "billing": "Faturim",
+        "shipping": "Dërgesë"
+      }
+    },
     "customer": "Klienti",
+    "type": "Lloji",
     "firstName": "Emri i marrësit",
     "lastName": "Mbiemri i marrësit",
+    "email": "Email",
     "phone": "Telefoni",
     "street": "Rruga",
     "city": "Qyteti",

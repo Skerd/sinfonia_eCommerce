@@ -7,12 +7,18 @@
   "failedTitle": "Adresse konnten nicht geladen werden",
   "failedDescription": "Something went wrong während laden diese adresse. Click bis retry.",
   "failedTooltipDescription": "Click bis retry fetching daten.",
+  "type": "Typ",
+  "addressType": {
+    "billing": "Rechnung",
+    "shipping": "Versand"
+  },
   "firstName": "Recipient vor name",
   "lastName": "Recipient nach name",
   "street": "Strasse",
   "city": "Ort",
   "state": "Kanton",
   "postalCode": "Postleitzahl",
+  "email": "E-Mail",
   "phone": "Telefon",
   "label": "Label",
   "isDefault": "Default",

@@ -1,6 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "type": "Tipo",
+  "addressType": {
+    "billing": "Fatturazione",
+    "shipping": "Spedizione"
+  },
   "firstName": "Nome",
+  "email": "Email",
   "street": "Via",
   "city": "Città",
   "phone": "Telefono",

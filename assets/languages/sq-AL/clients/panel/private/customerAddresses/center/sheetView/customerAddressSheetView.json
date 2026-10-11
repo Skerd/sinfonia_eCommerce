@@ -7,12 +7,18 @@
   "failedTitle": "Ngarkimi i adresës dështoi",
   "failedDescription": "Diçka shkoi keq gjatë ngarkimit. Kliko për të riprovuar.",
   "failedTooltipDescription": "Kliko për të riprovuar ngarkimin.",
+  "type": "Lloji",
+  "addressType": {
+    "billing": "Faturim",
+    "shipping": "Dërgesë"
+  },
   "firstName": "Emri i marrësit",
   "lastName": "Mbiemri i marrësit",
   "street": "Rruga",
   "city": "Qyteti",
   "state": "Rajoni",
   "postalCode": "Kodi postar",
+  "email": "Email",
   "phone": "Telefoni",
   "label": "Etiketa",
   "isDefault": "Parazgjedhur",

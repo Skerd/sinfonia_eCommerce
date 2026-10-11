@@ -7,12 +7,18 @@
   "failedTitle": "Failed to load address",
   "failedDescription": "Something went wrong while loading this address. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
+  "type": "Type",
+  "addressType": {
+    "billing": "Billing",
+    "shipping": "Shipping"
+  },
   "firstName": "Recipient first name",
   "lastName": "Recipient last name",
   "street": "Street",
   "city": "City",
   "state": "State",
   "postalCode": "Postal code",
+  "email": "Email",
   "phone": "Phone",
   "label": "Label",
   "isDefault": "Default",

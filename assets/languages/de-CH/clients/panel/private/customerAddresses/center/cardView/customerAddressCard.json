@@ -1,6 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "type": "Typ",
+  "addressType": {
+    "billing": "Rechnung",
+    "shipping": "Versand"
+  },
   "firstName": "Vorname",
+  "email": "E-Mail",
   "street": "Strasse",
   "city": "Ort",
   "phone": "Telefon",

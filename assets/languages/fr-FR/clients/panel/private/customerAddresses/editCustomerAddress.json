@@ -9,6 +9,11 @@
     "_idLabel": "Identifiant",
     "customerLabel": "Client",
     "customerPlaceholder": "Sélectionner un client",
+    "typeLabel": "Type",
+    "addressType": {
+      "billing": "Facturation",
+      "shipping": "Livraison"
+    },
     "firstNameLabel": "Prénom du destinataire",
     "firstNamePlaceholder": "Prénom sur le colis",
     "lastNameLabel": "Nom du destinataire",
@@ -21,6 +26,8 @@
     "statePlaceholder": "Sélectionner le canton",
     "postalCodeLabel": "Code postal",
     "postalCodePlaceholder": "Code postal",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "nom@exemple.com",
     "phoneLabel": "Téléphone",
     "phonePlaceholder": "Numéro de téléphone",
     "countryLabel": "Pays",

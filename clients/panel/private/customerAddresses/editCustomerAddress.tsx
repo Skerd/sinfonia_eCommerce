@@ -12,6 +12,7 @@ export default createGenericEditPage<CustomerAddress, EditCustomerAddressFormTyp
     schema: editCustomerAddressFormSchema,
     mapEntityData: (data: any) => ({
         ...data,
+        type: data.type ?? "shipping",
         customer: data.customer?._id ?? data.customer,
         country: data.country?._id ?? data.country,
         state: data.state?._id ?? data.state,

@@ -7,12 +7,18 @@
   "failedTitle": "Impossibile caricare l'indirizzo",
   "failedDescription": "Qualcosa è andato storto durante il caricamento di questo indirizzo. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "type": "Tipo",
+  "addressType": {
+    "billing": "Fatturazione",
+    "shipping": "Spedizione"
+  },
   "firstName": "Nome del destinatario",
   "lastName": "Cognome del destinatario",
   "street": "Via",
   "city": "Città",
   "state": "Cantone / Stato",
   "postalCode": "CAP",
+  "email": "Email",
   "phone": "Telefono",
   "label": "Etichetta",
   "isDefault": "Predefinito",

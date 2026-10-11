@@ -6,6 +6,11 @@
     "addressSectionTitle": "Adresse",
     "customerLabel": "Kunde",
     "customerPlaceholder": "Customer auswählen",
+    "typeLabel": "Typ",
+    "addressType": {
+      "billing": "Rechnung",
+      "shipping": "Versand"
+    },
     "firstNameLabel": "Recipient vor name",
     "firstNamePlaceholder": "Vor name on die paket",
     "lastNameLabel": "Recipient nach name",
@@ -18,6 +23,8 @@
     "statePlaceholder": "Kanton auswählen",
     "postalCodeLabel": "Postleitzahl",
     "postalCodePlaceholder": "Postleitzahl",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "name@example.com",
     "phoneLabel": "Telefon",
     "phonePlaceholder": "Telefon nummer",
     "countryLabel": "Land",

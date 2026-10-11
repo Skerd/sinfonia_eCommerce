@@ -6,6 +6,11 @@
     "addressSectionTitle": "Adresa",
     "customerLabel": "Klienti",
     "customerPlaceholder": "Zgjidh klientin",
+    "typeLabel": "Lloji",
+    "addressType": {
+      "billing": "Faturim",
+      "shipping": "Dërgesë"
+    },
     "firstNameLabel": "Emri i marrësit",
     "firstNamePlaceholder": "Emri në paketë",
     "lastNameLabel": "Mbiemri i marrësit",
@@ -18,6 +23,8 @@
     "statePlaceholder": "Zgjidh rajonin",
     "postalCodeLabel": "Kodi postar",
     "postalCodePlaceholder": "Kodi postar",
+    "emailLabel": "Email",
+    "emailPlaceholder": "emri@shembull.com",
     "phoneLabel": "Telefoni",
     "phonePlaceholder": "Numri i telefonit",
     "countryLabel": "Shteti",

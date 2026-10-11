@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
-import {IconMapPin, IconPhone, IconStar} from "@tabler/icons-react";
+import {IconMail, IconMapPin, IconPhone, IconStar, IconTruck} from "@tabler/icons-react";
 import CustomerAddressSheetView from "@eCommerceModule/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx";
@@ -120,6 +120,15 @@ function CustomerAddressCard({
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow
+                            icon={IconTruck}
+                            label={resolveLanguageKey("type")}
+                            tooltip={resolveLanguageKey("type")}
+                            path="type"
+                            type="enum"
+                            languageKeyCategory="addressType"
+                            value={row.type}
+                        />
+                        <EntityCardRow
                             icon={IconMapPin}
                             label={resolveLanguageKey("street")}
                             tooltip={resolveLanguageKey("street")}
@@ -132,6 +141,14 @@ function CustomerAddressCard({
                             tooltip={resolveLanguageKey("city")}
                             path="city.name"
                             value={row.city?.name}
+                        />
+                        <EntityCardRow
+                            icon={IconMail}
+                            label={resolveLanguageKey("email")}
+                            tooltip={resolveLanguageKey("email")}
+                            path="email"
+                            type="email"
+                            value={row.email}
                         />
                         <EntityCardRow
                             icon={IconPhone}

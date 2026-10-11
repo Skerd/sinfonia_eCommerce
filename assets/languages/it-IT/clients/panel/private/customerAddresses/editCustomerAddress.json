@@ -9,6 +9,11 @@
     "_idLabel": "ID record",
     "customerLabel": "Cliente",
     "customerPlaceholder": "Seleziona cliente",
+    "typeLabel": "Tipo",
+    "addressType": {
+      "billing": "Fatturazione",
+      "shipping": "Spedizione"
+    },
     "firstNameLabel": "Nome del destinatario",
     "firstNamePlaceholder": "Nome sulla confezione",
     "lastNameLabel": "Cognome del destinatario",
@@ -21,6 +26,8 @@
     "statePlaceholder": "Seleziona il cantone",
     "postalCodeLabel": "CAP",
     "postalCodePlaceholder": "CAP",
+    "emailLabel": "Email",
+    "emailPlaceholder": "nome@esempio.com",
     "phoneLabel": "Telefono",
     "phonePlaceholder": "Numero di telefono",
     "countryLabel": "Paese",

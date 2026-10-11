@@ -32,7 +32,7 @@ function applySetDefaultToList(
     const ownerId = defaultAddress.customer?._id;
     listRef?.current?.mapRows?.((row) => {
         if (row._id === defaultAddress._id) return {isDefault: true};
-        if (!row.isDefault) return;
+        if (!row.isDefault || row.type !== defaultAddress.type) return;
         if (ownerId) {
             if (row.customer?._id === ownerId) return {isDefault: false};
             return;

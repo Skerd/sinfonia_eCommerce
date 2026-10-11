@@ -7,9 +7,17 @@
   "createCustomerAddress": "Crea indirizzo",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
+    "!enums": {
+      "type": {
+        "billing": "Fatturazione",
+        "shipping": "Spedizione"
+      }
+    },
     "customer": "Cliente",
+    "type": "Tipo",
     "firstName": "Nome del destinatario",
     "lastName": "Cognome del destinatario",
+    "email": "Email",
     "phone": "Telefono",
     "street": "Via",
     "city": "Città",
