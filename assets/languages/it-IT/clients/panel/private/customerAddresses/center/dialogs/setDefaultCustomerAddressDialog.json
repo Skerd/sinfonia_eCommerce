@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
   "title": "Imposta come indirizzo predefinito",
-  "description": "Questo indirizzo diventerà quello predefinito per il cliente. Qualsiasi altra impostazione predefinita verrà cancellata.",
+  "description": "Questo indirizzo diventerà quello predefinito per il suo tipo (spedizione o fatturazione). Il precedente predefinito dello stesso tipo verrà cancellato; l'altro tipo resta invariato.",
   "cancel": "Annulla",
   "confirm": "Imposta come predefinito",
   "busy": "Lavorando…",

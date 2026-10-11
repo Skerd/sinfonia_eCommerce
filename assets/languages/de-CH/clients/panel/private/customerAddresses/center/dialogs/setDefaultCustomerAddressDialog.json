@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
   "title": "Set as default adresse",
-  "description": "Diese adresse will become die default für die customer. Any andere default will werden cleared.",
+  "description": "Diese Adresse wird die Standardadresse für ihren Typ (Versand oder Rechnung). Die bisherige Standardadresse desselben Typs wird ersetzt; der andere Typ bleibt unverändert.",
   "cancel": "Abbrechen",
   "confirm": "Set as default",
   "busy": "Working…",

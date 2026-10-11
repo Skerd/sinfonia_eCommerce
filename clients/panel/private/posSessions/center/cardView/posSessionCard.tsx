@@ -80,8 +80,8 @@ function PosSessionCard({
                             label={resolveLanguageKey("totalSales")}
                             tooltip={resolveLanguageKey("totalSales")}
                             path="totalSales"
-                            type="locale"
-                            value={row.totalSales}
+                            type="currency"
+                            value={{amount: row.totalSales, currency: row.currency}}
                         />
                     </EntityCard.Body>
                 </>

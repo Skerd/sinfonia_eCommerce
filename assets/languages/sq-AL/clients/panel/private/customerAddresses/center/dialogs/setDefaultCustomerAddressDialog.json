@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
   "title": "Vendos si adresë e parazgjedhur",
-  "description": "Kjo adresë do të bëhet e parazgjedhur për klientin. Çdo parazgjedhje tjetër do të hiqet.",
+  "description": "Kjo adresë do të bëhet e parazgjedhur për tipin e saj (dërgesë ose faturim). Parazgjedhja e mëparshme e të njëjtit tip do të hiqet; tipi tjetër mbetet i pandryshuar.",
   "cancel": "Anulo",
   "confirm": "Vendos si parazgjedhur",
   "busy": "Duke punuar…",
