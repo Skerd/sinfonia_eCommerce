@@ -9,6 +9,8 @@ import InventoryCard from "./center/cardView/inventoryCard.tsx";
 import InventorySheetView from "./center/sheetView/inventorySheetView.tsx";
 import RestockInventoryDropdown from "./center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "./center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsDropdown from "./center/actions/viewInventoryMovementsDropdown.tsx";
+import ViewInventoryMovementsDialog from "./center/dialogs/viewInventoryMovementsDialog.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 
 export function inventoryEditPath(inventory: {_id: string; product: {title: string}}) {
@@ -48,6 +50,7 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
                 <>
                     <RestockInventoryDropdown inventory={inventory} onAction={bindRowAction} />
                     <DeductInventoryDropdown inventory={inventory} onAction={bindRowAction} />
+                    <ViewInventoryMovementsDropdown inventory={inventory} onAction={bindRowAction} />
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
@@ -64,6 +67,15 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
                                 resetAction();
                             }}
                             onCancel={resetAction}
+                        />
+                    );
+                }
+                if (action === "viewMovements") {
+                    return (
+                        <ViewInventoryMovementsDialog
+                            open
+                            inventory={entity}
+                            onClose={resetAction}
                         />
                     );
                 }

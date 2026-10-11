@@ -9,6 +9,8 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {inventoryEditPath} from "@eCommerceModule/clients/panel/private/inventories/index.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovementsDropdown.tsx";
+import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
@@ -82,6 +84,13 @@ function InventoryCard({
                             onCancel={() => setAction("")}
                         />
                     )}
+                    {action === "viewMovements" ? (
+                        <ViewInventoryMovementsDialog
+                            open
+                            inventory={row}
+                            onClose={() => setAction("")}
+                        />
+                    ) : null}
                 </>
             )}
         >
@@ -94,6 +103,7 @@ function InventoryCard({
                         <EntityCard.Header titlePath="product.title" title={row.product.title}>
                             <RestockInventoryDropdown inventory={row} onAction={setAction} />
                             <DeductInventoryDropdown inventory={row} onAction={setAction} />
+                            <ViewInventoryMovementsDropdown inventory={row} onAction={setAction} />
                         </EntityCard.Header>
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-1 text-xs text-muted-foreground">

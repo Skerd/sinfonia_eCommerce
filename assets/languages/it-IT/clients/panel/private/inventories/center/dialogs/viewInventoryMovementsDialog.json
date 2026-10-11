@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
+  "title": "Movimenti di magazzino",
+  "description": "Cronologia scorte per questa riga di inventario",
+  "empty": "Nessun movimento ancora.",
+  "close": "Chiudi",
+  "failTitle": "Impossibile caricare i movimenti",
+  "failDescription": "Si è verificato un errore durante il caricamento. Clicca per riprovare.",
+  "axios": {
+    "error": {
+      "title": "Impossibile caricare i movimenti",
+      "time": 3000
+    }
+  },
+  "reasons": {
+    "restock": "Rifornimento",
+    "sale": "Vendita",
+    "return": "Reso",
+    "adjustment": "Rettifica",
+    "damage": "Danno",
+    "transfer_in": "Trasferimento in",
+    "transfer_out": "Trasferimento out",
+    "initial": "Iniziale",
+    "write_off": "Svalutazione"
+  }
+}

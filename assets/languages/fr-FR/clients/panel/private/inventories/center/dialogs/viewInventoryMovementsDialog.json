@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
+  "title": "Mouvements de stock",
+  "description": "Historique de stock pour cette ligne d'inventaire",
+  "empty": "Aucun mouvement pour le moment.",
+  "close": "Fermer",
+  "failTitle": "Échec du chargement des mouvements",
+  "failDescription": "Une erreur s'est produite lors du chargement. Cliquez pour réessayer.",
+  "axios": {
+    "error": {
+      "title": "Impossible de charger les mouvements",
+      "time": 3000
+    }
+  },
+  "reasons": {
+    "restock": "Réapprovisionnement",
+    "sale": "Vente",
+    "return": "Retour",
+    "adjustment": "Ajustement",
+    "damage": "Dommage",
+    "transfer_in": "Transfert entrant",
+    "transfer_out": "Transfert sortant",
+    "initial": "Initial",
+    "write_off": "Radiation"
+  }
+}

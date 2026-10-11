@@ -20,21 +20,5 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga",
-  "movements": "Lëvizjet",
-  "movement": "Lëvizje",
-  "compactView": "Kompakte",
-  "cardsView": "Karta",
-  "toggleReferenceListView": "Ndrysho paraqitjen e listës",
-  "reasons": {
-    "restock": "Rifornizim",
-    "sale": "Shitje",
-    "return": "Kthim",
-    "adjustment": "Rregullim",
-    "damage": "Dëmtim",
-    "transfer_in": "Transferim hyrës",
-    "transfer_out": "Transferim dalës",
-    "initial": "Fillestar",
-    "write_off": "Çregjistrim"
-  }
+  "deletedBy": "Fshirë nga"
 }

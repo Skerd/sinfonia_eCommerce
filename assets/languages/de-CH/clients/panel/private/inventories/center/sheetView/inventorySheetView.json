@@ -20,21 +20,5 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von",
-  "movements": "Bewegungen",
-  "movement": "Bewegung",
-  "compactView": "Kompakt",
-  "cardsView": "Karten",
-  "toggleReferenceListView": "Listenlayout umschalten",
-  "reasons": {
-    "restock": "Restock",
-    "sale": "Verkauf",
-    "return": "Return",
-    "adjustment": "Anpassung",
-    "damage": "Damage",
-    "transfer_in": "Transfer in",
-    "transfer_out": "Transfer out",
-    "initial": "Initial",
-    "write_off": "Write-off"
-  }
+  "deletedBy": "Gelöscht von"
 }

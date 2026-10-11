@@ -9,6 +9,8 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
+import ViewInventoryMovementsDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovementsDropdown.tsx";
+import ViewInventoryMovementsDialog from "@eCommerceModule/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx";
 import InventoryStockMoveAction from "@eCommerceModule/components/custom/inventories/inventoryStockMoveAction.tsx";
 
 export type InventorySheetViewOwnProps = {
@@ -82,6 +84,7 @@ function InventorySheetView({
                     <>
                         <RestockInventoryDropdown inventory={asInventory} onAction={setAction} />
                         <DeductInventoryDropdown inventory={asInventory} onAction={setAction} />
+                        <ViewInventoryMovementsDropdown inventory={asInventory} onAction={setAction} />
                     </>
                 }
             />
@@ -100,6 +103,13 @@ function InventorySheetView({
                     onCancel={() => setAction("")}
                 />
             )}
+            {action === "viewMovements" ? (
+                <ViewInventoryMovementsDialog
+                    open
+                    inventory={asInventory}
+                    onClose={() => setAction("")}
+                />
+            ) : null}
         </>
     );
 }

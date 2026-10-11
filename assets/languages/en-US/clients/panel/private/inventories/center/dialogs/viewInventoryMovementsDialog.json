@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
+  "title": "Inventory movements",
+  "description": "Stock history for this inventory row",
+  "empty": "No movements yet.",
+  "close": "Close",
+  "failTitle": "Failed to load movements",
+  "failDescription": "Something went wrong while loading movements. Click to retry.",
+  "axios": {
+    "error": {
+      "title": "Could not load movements",
+      "time": 3000
+    }
+  },
+  "reasons": {
+    "restock": "Restock",
+    "sale": "Sale",
+    "return": "Return",
+    "adjustment": "Adjustment",
+    "damage": "Damage",
+    "transfer_in": "Transfer in",
+    "transfer_out": "Transfer out",
+    "initial": "Initial",
+    "write_off": "Write-off"
+  }
+}

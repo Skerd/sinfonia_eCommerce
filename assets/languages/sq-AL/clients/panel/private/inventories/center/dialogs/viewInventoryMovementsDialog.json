@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
+  "title": "Lëvizjet e inventarit",
+  "description": "Historiku i stokut për këtë rresht inventari",
+  "empty": "Nuk ka lëvizje ende.",
+  "close": "Mbyll",
+  "failTitle": "Dështoi ngarkimi i lëvizjeve",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të riprovuar.",
+  "axios": {
+    "error": {
+      "title": "Nuk u ngarkuan lëvizjet",
+      "time": 3000
+    }
+  },
+  "reasons": {
+    "restock": "Rimbushje",
+    "sale": "Shitje",
+    "return": "Kthim",
+    "adjustment": "Rregullim",
+    "damage": "Dëmtim",
+    "transfer_in": "Transferim hyrës",
+    "transfer_out": "Transferim dalës",
+    "initial": "Fillestar",
+    "write_off": "Çregjistrim"
+  }
+}

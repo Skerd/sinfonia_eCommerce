@@ -20,21 +20,5 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by",
-  "movements": "Movements",
-  "movement": "Movement",
-  "compactView": "Compact",
-  "cardsView": "Cards",
-  "toggleReferenceListView": "Toggle list layout",
-  "reasons": {
-    "restock": "Restock",
-    "sale": "Sale",
-    "return": "Return",
-    "adjustment": "Adjustment",
-    "damage": "Damage",
-    "transfer_in": "Transfer in",
-    "transfer_out": "Transfer out",
-    "initial": "Initial",
-    "write_off": "Write-off"
-  }
+  "deletedBy": "Deleted by"
 }

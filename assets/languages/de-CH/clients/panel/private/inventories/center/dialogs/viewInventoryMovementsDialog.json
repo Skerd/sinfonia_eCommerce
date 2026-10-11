@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
+  "title": "Lagerbewegungen",
+  "description": "Bestandshistorie für diese Lagerzeile",
+  "empty": "Noch keine Bewegungen.",
+  "close": "Schliessen",
+  "failTitle": "Bewegungen konnten nicht geladen werden",
+  "failDescription": "Beim Laden der Bewegungen ist ein Fehler aufgetreten. Zum erneuten Versuch klicken.",
+  "axios": {
+    "error": {
+      "title": "Bewegungen konnten nicht geladen werden",
+      "time": 3000
+    }
+  },
+  "reasons": {
+    "restock": "Auffüllen",
+    "sale": "Verkauf",
+    "return": "Rückgabe",
+    "adjustment": "Korrektur",
+    "damage": "Beschädigung",
+    "transfer_in": "Transfer ein",
+    "transfer_out": "Transfer aus",
+    "initial": "Initial",
+    "write_off": "Abschreibung"
+  }
+}
