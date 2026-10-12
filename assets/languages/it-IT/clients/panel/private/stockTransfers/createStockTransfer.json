@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/createStockTransfer.tsx",
+  "title": "Crea trasferimento",
+  "form": {
+    "fromWarehouseLabel": "Da magazzino",
+    "fromWarehousePlaceholder": "Scegli il magazzino di origine",
+    "toWarehouseLabel": "A magazzino",
+    "toWarehousePlaceholder": "Scegli il magazzino di destinazione",
+    "noteLabel": "Nota",
+    "notePlaceholder": "Nota facoltativa",
+    "linesSectionTitle": "Righe",
+    "lineAddRow": "Aggiungi riga",
+    "lineRemoveRow": "Rimuovi riga",
+    "lineRowTitle": "Riga",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Scegli un prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facoltativa",
+    "quantityLabel": "Quantità"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione del trasferimento",
+      "time": 3000
+    },
+    "success": {
+      "title": "Trasferimento creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il trasferimento",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea trasferimento",
+    "description": "Scegli i due magazzini e gli articoli. La merce si sposta quando completi il trasferimento."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea trasferimento"
+  }
+}

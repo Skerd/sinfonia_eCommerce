@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/createStockCount.tsx",
+  "title": "Crea inventario",
+  "form": {
+    "warehouseLabel": "Magazzino",
+    "warehousePlaceholder": "Scegli un magazzino",
+    "noteLabel": "Nota",
+    "notePlaceholder": "Nota facoltativa",
+    "linesSectionTitle": "Articoli",
+    "lineAddRow": "Aggiungi articolo",
+    "lineRemoveRow": "Rimuovi articolo",
+    "lineRowTitle": "Articolo",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Scegli un prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facoltativa",
+    "countedQuantityLabel": "Contata",
+    "countedQuantityPlaceholder": "Lascia vuoto se non contato"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione dell'inventario",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventario creato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare l'inventario",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea inventario",
+    "description": "Scegli un magazzino: ogni riga di giacenza diventa una riga da contare."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea inventario"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
+  "title": "Inventari",
+  "description": "Contare un magazzino e correggerne le giacenze.",
+  "createStockCount": "Crea inventario",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "warehouse": "Magazzino",
+    "status": "Stato",
+    "lines": {
+      "product": "Prodotto",
+      "variant": "Variante",
+      "expectedQuantity": "Prevista",
+      "countedQuantity": "Contata"
+    },
+    "note": "Nota",
+    "appliedAt": "Applicato il",
+    "appliedBy": "Applicato da",
+    "createdBy": "Creato da",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

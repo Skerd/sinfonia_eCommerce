@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
+  "title": "Numërimet e stokut",
+  "description": "Numëro një magazinë dhe korrigjo stokun.",
+  "createStockCount": "Krijo numërim",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "warehouse": "Magazina",
+    "status": "Statusi",
+    "lines": {
+      "product": "Produkti",
+      "variant": "Varianti",
+      "expectedQuantity": "E pritshme",
+      "countedQuantity": "E numëruar"
+    },
+    "note": "Shënim",
+    "appliedAt": "Aplikuar më",
+    "appliedBy": "Aplikuar nga",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionItems.tsx",
+  "stockTransfers": {
+    "complete": "Complete transfer",
+    "cancel": "Cancel transfer"
+  },
+  "stockCounts": {
+    "apply": "Apply count",
+    "cancel": "Cancel count"
+  }
+}

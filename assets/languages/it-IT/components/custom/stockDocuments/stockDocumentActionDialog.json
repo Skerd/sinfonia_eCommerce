@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionDialog.tsx",
+  "stockTransfers": {
+    "complete": {
+      "title": "Completa trasferimento",
+      "description": "Gli articoli lasciano il magazzino di origine e arrivano a destinazione. La merce riservata agli ordini non si sposta mai; se una riga è scoperta, non si sposta nulla."
+    },
+    "cancel": {
+      "title": "Annulla trasferimento",
+      "description": "Il trasferimento viene chiuso senza spostare merce."
+    }
+  },
+  "stockCounts": {
+    "apply": {
+      "title": "Applica inventario",
+      "description": "La giacenza di ogni riga contata viene impostata sulla quantità contata, con una rettifica per ogni differenza."
+    },
+    "cancel": {
+      "title": "Annulla inventario",
+      "description": "L'inventario viene chiuso senza modificare le giacenze."
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fatto",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile eseguire l'azione",
+      "time": 3000
+    }
+  }
+}

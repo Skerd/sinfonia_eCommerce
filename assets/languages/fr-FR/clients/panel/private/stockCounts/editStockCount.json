@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/editStockCount.tsx",
+  "title": "Modifier l'inventaire",
+  "errorTitle": "Échec du chargement",
+  "errorDescription": "Impossible de charger cet inventaire. Réessayez.",
+  "form": {
+    "_idLabel": "ID de l'enregistrement",
+    "warehouseLabel": "Entrepôt",
+    "warehousePlaceholder": "Choisir un entrepôt",
+    "noteLabel": "Note",
+    "notePlaceholder": "Note facultative",
+    "linesSectionTitle": "Articles",
+    "lineAddRow": "Ajouter un article",
+    "lineRemoveRow": "Retirer l'article",
+    "lineRowTitle": "Article",
+    "productLabel": "Produit",
+    "productPlaceholder": "Choisir un produit",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facultative",
+    "countedQuantityLabel": "Compté",
+    "countedQuantityPlaceholder": "Laisser vide si non compté"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement de l'inventaire",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventaire mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'inventaire",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'inventaire",
+    "description": "Saisissez ce que vous avez compté. Les lignes vides restent inchangées."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

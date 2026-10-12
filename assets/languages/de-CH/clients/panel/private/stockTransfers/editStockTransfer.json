@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/editStockTransfer.tsx",
+  "title": "Umlagerung bearbeiten",
+  "errorTitle": "Laden fehlgeschlagen",
+  "errorDescription": "Diese Umlagerung konnte nicht geladen werden. Erneut versuchen.",
+  "form": {
+    "_idLabel": "Datensatz-ID",
+    "fromWarehouseLabel": "Von Lager",
+    "fromWarehousePlaceholder": "Quelllager wählen",
+    "toWarehouseLabel": "Nach Lager",
+    "toWarehousePlaceholder": "Ziellager wählen",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Optionale Notiz",
+    "linesSectionTitle": "Positionen",
+    "lineAddRow": "Position hinzufügen",
+    "lineRemoveRow": "Position entfernen",
+    "lineRowTitle": "Position",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt wählen",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Optionale Variante",
+    "quantityLabel": "Menge"
+  },
+  "axios": {
+    "start": {
+      "title": "Umlagerung wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Umlagerung aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Umlagerung konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Umlagerung bearbeiten",
+    "description": "Lager, Artikel oder Notiz ändern, solange die Umlagerung ein Entwurf ist."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Änderungen speichern"
+  }
+}

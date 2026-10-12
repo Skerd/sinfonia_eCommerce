@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx",
+  "overview": "Përmbledhje",
+  "lines": "Artikujt",
+  "lifecycle": "Cikli i jetës",
+  "stockCountSubtitle": "Numërim stoku",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ringarkuar të dhënat.",
+  "warehouse": "Magazina",
+  "status": "Statusi",
+  "appliedAt": "Aplikuar më",
+  "appliedBy": "Aplikuar nga",
+  "note": "Shënim",
+  "lineProduct": "Produkti",
+  "lineVariant": "Varianti",
+  "lineExpectedQuantity": "E pritshme",
+  "lineCountedQuantity": "E numëruar",
+  "createdBy": "Krijuar nga",
+  "company": "Kompania",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga",
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "stockCountStatus": {
+    "draft": "Draft",
+    "applied": "Aplikuar",
+    "cancelled": "Anuluar"
+  }
+}

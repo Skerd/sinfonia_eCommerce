@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/sheetView/stockTransferSheetView.tsx",
+  "overview": "Aperçu",
+  "lines": "Lignes",
+  "lifecycle": "Cycle de vie",
+  "stockTransferSubtitle": "Transfert de stock",
+  "failedTitle": "Échec du chargement",
+  "failedDescription": "Une erreur est survenue lors du chargement. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "fromWarehouse": "Entrepôt de départ",
+  "toWarehouse": "Entrepôt d'arrivée",
+  "status": "Statut",
+  "doneAt": "Terminé le",
+  "doneBy": "Terminé par",
+  "note": "Note",
+  "lineProduct": "Produit",
+  "lineVariant": "Variante",
+  "lineQuantity": "Quantité",
+  "createdBy": "Créé par",
+  "company": "Entreprise",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "compactView": "Compact",
+  "cardsView": "Cartes",
+  "stockTransferStatus": {
+    "draft": "Brouillon",
+    "done": "Terminé",
+    "cancelled": "Annulé"
+  }
+}

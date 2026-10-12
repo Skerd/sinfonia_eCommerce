@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/editStockCount.tsx",
+  "title": "Edit count",
+  "errorTitle": "Failed to load",
+  "errorDescription": "Could not load this count. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Select a warehouse",
+    "noteLabel": "Note",
+    "notePlaceholder": "Optional note",
+    "linesSectionTitle": "Items",
+    "lineAddRow": "Add item",
+    "lineRemoveRow": "Remove item",
+    "lineRowTitle": "Item",
+    "productLabel": "Product",
+    "productPlaceholder": "Select a product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Optional variant",
+    "countedQuantityLabel": "Counted",
+    "countedQuantityPlaceholder": "Leave empty if not counted"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving count",
+      "time": 3000
+    },
+    "success": {
+      "title": "Count updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update count",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit count",
+    "description": "Enter what you counted. Lines left empty stay as they are."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

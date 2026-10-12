@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx",
+  "overview": "Aperçu",
+  "lines": "Articles",
+  "lifecycle": "Cycle de vie",
+  "stockCountSubtitle": "Inventaire",
+  "failedTitle": "Échec du chargement",
+  "failedDescription": "Une erreur est survenue lors du chargement. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "warehouse": "Entrepôt",
+  "status": "Statut",
+  "appliedAt": "Appliqué le",
+  "appliedBy": "Appliqué par",
+  "note": "Note",
+  "lineProduct": "Produit",
+  "lineVariant": "Variante",
+  "lineExpectedQuantity": "Attendu",
+  "lineCountedQuantity": "Compté",
+  "createdBy": "Créé par",
+  "company": "Entreprise",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "compactView": "Compact",
+  "cardsView": "Cartes",
+  "stockCountStatus": {
+    "draft": "Brouillon",
+    "applied": "Appliqué",
+    "cancelled": "Annulé"
+  }
+}

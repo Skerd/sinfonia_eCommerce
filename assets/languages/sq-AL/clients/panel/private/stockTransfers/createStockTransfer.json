@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/createStockTransfer.tsx",
+  "title": "Krijo transferim",
+  "form": {
+    "fromWarehouseLabel": "Nga magazina",
+    "fromWarehousePlaceholder": "Zgjidh magazinën burim",
+    "toWarehouseLabel": "Te magazina",
+    "toWarehousePlaceholder": "Zgjidh magazinën destinacion",
+    "noteLabel": "Shënim",
+    "notePlaceholder": "Shënim opsional",
+    "linesSectionTitle": "Rreshtat",
+    "lineAddRow": "Shto rresht",
+    "lineRemoveRow": "Hiq rreshtin",
+    "lineRowTitle": "Rresht",
+    "productLabel": "Produkti",
+    "productPlaceholder": "Zgjidh një produkt",
+    "variantLabel": "Varianti",
+    "variantPlaceholder": "Variant opsional",
+    "quantityLabel": "Sasia"
+  },
+  "axios": {
+    "start": {
+      "title": "Po krijohet transferimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Transferimi u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Transferimi nuk u krijua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo transferim",
+    "description": "Zgjidh dy magazinat dhe artikujt. Stoku lëviz kur e përfundon transferimin."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo transferim"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
+  "title": "Transferimet e stokut",
+  "description": "Lëviz stokun mes magazinave.",
+  "createStockTransfer": "Krijo transferim",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "fromWarehouse": "Nga magazina",
+    "toWarehouse": "Te magazina",
+    "status": "Statusi",
+    "lines": {
+      "product": "Produkti",
+      "variant": "Varianti",
+      "quantity": "Sasia"
+    },
+    "note": "Shënim",
+    "doneAt": "Përfunduar më",
+    "doneBy": "Përfunduar nga",
+    "createdBy": "Krijuar nga",
+    "company": "Kompania",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

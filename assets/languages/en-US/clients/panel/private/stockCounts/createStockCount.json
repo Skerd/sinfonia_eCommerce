@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/createStockCount.tsx",
+  "title": "Create count",
+  "form": {
+    "warehouseLabel": "Warehouse",
+    "warehousePlaceholder": "Select a warehouse",
+    "noteLabel": "Note",
+    "notePlaceholder": "Optional note",
+    "linesSectionTitle": "Items",
+    "lineAddRow": "Add item",
+    "lineRemoveRow": "Remove item",
+    "lineRowTitle": "Item",
+    "productLabel": "Product",
+    "productPlaceholder": "Select a product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Optional variant",
+    "countedQuantityLabel": "Counted",
+    "countedQuantityPlaceholder": "Leave empty if not counted"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating count",
+      "time": 3000
+    },
+    "success": {
+      "title": "Count created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create count",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create count",
+    "description": "Pick a warehouse: every stock row there becomes a line to count."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create count"
+  }
+}

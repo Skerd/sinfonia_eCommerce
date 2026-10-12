@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionItems.tsx",
+  "stockTransfers": {
+    "complete": "Umlagerung abschliessen",
+    "cancel": "Umlagerung stornieren"
+  },
+  "stockCounts": {
+    "apply": "Inventur buchen",
+    "cancel": "Inventur stornieren"
+  }
+}

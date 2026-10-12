@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionDialog.tsx",
+  "stockTransfers": {
+    "complete": {
+      "title": "Terminer le transfert",
+      "description": "Les articles quittent l'entrepôt de départ et arrivent dans l'entrepôt d'arrivée. Le stock réservé aux commandes ne bouge jamais ; si une ligne manque de stock, rien ne bouge."
+    },
+    "cancel": {
+      "title": "Annuler le transfert",
+      "description": "Le transfert est clôturé sans mouvement de stock."
+    }
+  },
+  "stockCounts": {
+    "apply": {
+      "title": "Appliquer l'inventaire",
+      "description": "Le stock est fixé à la quantité comptée pour chaque ligne comptée, avec un ajustement par écart."
+    },
+    "cancel": {
+      "title": "Annuler l'inventaire",
+      "description": "L'inventaire est clôturé sans modifier le stock."
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Terminé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'effectuer l'action",
+      "time": 3000
+    }
+  }
+}

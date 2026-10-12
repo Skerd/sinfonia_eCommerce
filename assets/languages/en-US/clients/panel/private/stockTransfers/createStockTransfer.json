@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/createStockTransfer.tsx",
+  "title": "Create transfer",
+  "form": {
+    "fromWarehouseLabel": "From warehouse",
+    "fromWarehousePlaceholder": "Select the source warehouse",
+    "toWarehouseLabel": "To warehouse",
+    "toWarehousePlaceholder": "Select the destination warehouse",
+    "noteLabel": "Note",
+    "notePlaceholder": "Optional note",
+    "linesSectionTitle": "Lines",
+    "lineAddRow": "Add line",
+    "lineRemoveRow": "Remove line",
+    "lineRowTitle": "Line",
+    "productLabel": "Product",
+    "productPlaceholder": "Select a product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Optional variant",
+    "quantityLabel": "Quantity"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating transfer",
+      "time": 3000
+    },
+    "success": {
+      "title": "Transfer created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create transfer",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create transfer",
+    "description": "Pick the two warehouses and the items to move. Stock moves when you complete the transfer."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create transfer"
+  }
+}

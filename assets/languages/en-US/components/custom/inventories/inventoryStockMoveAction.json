@@ -26,6 +26,8 @@
     "title": "Deduct / write-off",
     "description": "Remove stock due to damage, loss, or write-off. Cost and expiry are taken from the last inbound movement.",
     "quantityLabel": "Quantity to remove",
+    "reasonLabel": "Reason",
+    "reasons": {"write_off": "Write-off", "damage": "Damage", "adjustment": "Adjustment"},
     "batchLotLabel": "Batch / lot",
     "receiptsLabel": "Attachments",
     "noteLabel": "Note",

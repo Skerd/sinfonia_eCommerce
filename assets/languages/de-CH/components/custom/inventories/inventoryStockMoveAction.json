@@ -26,6 +26,8 @@
     "title": "Deduct / write-off",
     "description": "Stock entfernen (Beschädigung, Verlust oder Abschreibung). Kosten und Ablaufdatum stammen aus der letzten Wareneingangsbewegung.",
     "quantityLabel": "Menge bis entfernen",
+    "reasonLabel": "Grund",
+    "reasons": {"write_off": "Abschreibung", "damage": "Beschädigung", "adjustment": "Korrektur"},
     "batchLotLabel": "Batch / lot",
     "receiptsLabel": "Attachments",
     "noteLabel": "Notiz",

@@ -20,8 +20,8 @@
     "itemAddRow": "Ajouter un article",
     "itemRemoveRow": "Supprimer l'élément",
     "itemRowTitle": "Poste",
-    "orderItemIdLabel": "Identifiant de l'article de la commande",
-    "orderItemIdPlaceholder": "Identifiant de la ligne de commande",
+    "orderItemIdLabel": "Ligne de commande",
+    "orderItemIdPlaceholder": "Choisir une ligne de commande",
     "quantityLabel": "Quantité",
     "fulfillmentStatus": {
       "pending": "En attente",

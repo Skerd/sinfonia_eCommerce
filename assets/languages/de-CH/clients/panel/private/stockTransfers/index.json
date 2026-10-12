@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
+  "title": "Umlagerungen",
+  "description": "Bestand zwischen Lagern verschieben.",
+  "createStockTransfer": "Umlagerung erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "fromWarehouse": "Von Lager",
+    "toWarehouse": "Nach Lager",
+    "status": "Status",
+    "lines": {
+      "product": "Produkt",
+      "variant": "Variante",
+      "quantity": "Menge"
+    },
+    "note": "Notiz",
+    "doneAt": "Abgeschlossen am",
+    "doneBy": "Abgeschlossen von",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

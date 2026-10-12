@@ -15,6 +15,12 @@ import AllInventories from "@eCommerceModule/clients/panel/private/inventories/i
 import CreateInventory from "@eCommerceModule/clients/panel/private/inventories/createInventory.tsx";
 import EditInventory from "@eCommerceModule/clients/panel/private/inventories/editInventory.tsx";
 import AllInventoryMovements from "@eCommerceModule/clients/panel/private/inventoryMovements/index.tsx";
+import AllStockTransfers from "@eCommerceModule/clients/panel/private/stockTransfers/index.tsx";
+import CreateStockTransfer from "@eCommerceModule/clients/panel/private/stockTransfers/createStockTransfer.tsx";
+import EditStockTransfer from "@eCommerceModule/clients/panel/private/stockTransfers/editStockTransfer.tsx";
+import AllStockCounts from "@eCommerceModule/clients/panel/private/stockCounts/index.tsx";
+import CreateStockCount from "@eCommerceModule/clients/panel/private/stockCounts/createStockCount.tsx";
+import EditStockCount from "@eCommerceModule/clients/panel/private/stockCounts/editStockCount.tsx";
 import AllCollections from "@eCommerceModule/clients/panel/private/collections/index.tsx";
 import CreateCollection from "@eCommerceModule/clients/panel/private/collections/createCollection.tsx";
 import EditCollection from "@eCommerceModule/clients/panel/private/collections/editCollection.tsx";
@@ -227,6 +233,18 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "inventorymovements") {
             return <AllInventoryMovements />;
+        }
+        if (resource === "stocktransfers") {
+            const stockTransferId = searchParams.get("stockTransferId") || undefined;
+            if (action === "create") return <CreateStockTransfer />;
+            if (action === "edit" && stockTransferId) return <EditStockTransfer entityId={stockTransferId} />;
+            return <AllStockTransfers />;
+        }
+        if (resource === "stockcounts") {
+            const stockCountId = searchParams.get("stockCountId") || undefined;
+            if (action === "create") return <CreateStockCount />;
+            if (action === "edit" && stockCountId) return <EditStockCount entityId={stockCountId} />;
+            return <AllStockCounts />;
         }
         if (resource === "productorders") {
             return <AllProductOrders />;

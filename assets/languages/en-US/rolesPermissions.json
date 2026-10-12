@@ -30,7 +30,9 @@
     "Savedsearches": "Saved searches",
     "Shippingzones": "Shipping zones",
     "Taxzones": "Tax zones",
-    "Warehouses": "Warehouses"
+    "Warehouses": "Warehouses",
+    "Stocktransfers": "Stock transfers",
+    "Stockcounts": "Stock counts"
   },
   "permissions": {
     "Carts": {
@@ -945,6 +947,44 @@
       "name": "Name",
       "updatedAt": "Updated at",
       "warehouses": "Warehouses"
+    },
+    "Stocktransfers": {
+      "stocktransfers": "Stock transfers",
+      "fromWarehouse": "From warehouse",
+      "toWarehouse": "To warehouse",
+      "lines": "Lines",
+      "lines_product": "Lines · Product",
+      "lines_variant": "Lines · Variant",
+      "lines_quantity": "Lines · Quantity",
+      "status": "Status",
+      "note": "Note",
+      "doneBy": "Completed by",
+      "doneAt": "Completed at",
+      "createdBy": "Created by",
+      "company": "Company",
+      "createdAt": "Created at",
+      "updatedAt": "Updated at",
+      "deletedAt": "Deleted at",
+      "deletedBy": "Deleted by"
+    },
+    "Stockcounts": {
+      "stockcounts": "Stock counts",
+      "warehouse": "Warehouse",
+      "lines": "Lines",
+      "lines_product": "Lines · Product",
+      "lines_variant": "Lines · Variant",
+      "lines_expectedQuantity": "Lines · Expected",
+      "lines_countedQuantity": "Lines · Counted",
+      "status": "Status",
+      "note": "Note",
+      "appliedBy": "Applied by",
+      "appliedAt": "Applied at",
+      "createdBy": "Created by",
+      "company": "Company",
+      "createdAt": "Created at",
+      "updatedAt": "Updated at",
+      "deletedAt": "Deleted at",
+      "deletedBy": "Deleted by"
     }
   }
 }

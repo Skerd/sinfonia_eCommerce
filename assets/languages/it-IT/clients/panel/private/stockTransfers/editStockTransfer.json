@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/editStockTransfer.tsx",
+  "title": "Modifica trasferimento",
+  "errorTitle": "Caricamento non riuscito",
+  "errorDescription": "Impossibile caricare questo trasferimento. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "fromWarehouseLabel": "Da magazzino",
+    "fromWarehousePlaceholder": "Scegli il magazzino di origine",
+    "toWarehouseLabel": "A magazzino",
+    "toWarehousePlaceholder": "Scegli il magazzino di destinazione",
+    "noteLabel": "Nota",
+    "notePlaceholder": "Nota facoltativa",
+    "linesSectionTitle": "Righe",
+    "lineAddRow": "Aggiungi riga",
+    "lineRemoveRow": "Rimuovi riga",
+    "lineRowTitle": "Riga",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Scegli un prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facoltativa",
+    "quantityLabel": "Quantità"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del trasferimento",
+      "time": 3000
+    },
+    "success": {
+      "title": "Trasferimento aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il trasferimento",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica trasferimento",
+    "description": "Modifica magazzini, articoli o nota finché il trasferimento è una bozza."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

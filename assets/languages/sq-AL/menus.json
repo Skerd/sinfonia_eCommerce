@@ -58,6 +58,12 @@
     "inventorymovements": {
       "title": "Lëvizjet e stokut"
     },
+    "stocktransfers": {
+      "title": "Transferimet e stokut"
+    },
+    "stockcounts": {
+      "title": "Numërimet e stokut"
+    },
     "warehouses": {
       "title": "Magazinat"
     },

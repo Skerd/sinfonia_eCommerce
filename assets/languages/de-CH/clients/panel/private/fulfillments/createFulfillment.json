@@ -20,8 +20,8 @@
     "itemAddRow": "Position hinzufügen",
     "itemRemoveRow": "Entfernen position",
     "itemRowTitle": "Position",
-    "orderItemIdLabel": "Auftrag position id",
-    "orderItemIdPlaceholder": "Auftrag position id",
+    "orderItemIdLabel": "Bestellposition",
+    "orderItemIdPlaceholder": "Bestellposition wählen",
     "quantityLabel": "Menge",
     "fulfillmentStatus": {
       "pending": "Ausstehend",

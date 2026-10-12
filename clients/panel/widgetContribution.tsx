@@ -134,6 +134,18 @@ const InventoryMovementCardLazy = lazy(
             "@eCommerceModule/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx"
         ),
 );
+const StockTransferSheetViewLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/stockTransfers/center/sheetView/stockTransferSheetView.tsx"),
+);
+const StockTransferCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/stockTransfers/center/cardView/stockTransferCard.tsx"),
+);
+const StockCountSheetViewLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx"),
+);
+const StockCountCardLazy = lazy(
+    () => import("@eCommerceModule/clients/panel/private/stockCounts/center/cardView/stockCountCard.tsx"),
+);
 const FulfillmentSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx"),
 );
@@ -190,6 +202,10 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#InventoryCard": InventoryCardLazy,
         "#InventoryMovementSheetView": InventoryMovementSheetViewLazy,
         "#InventoryMovementCard": InventoryMovementCardLazy,
+        "#StockTransferSheetView": StockTransferSheetViewLazy,
+        "#StockTransferCard": StockTransferCardLazy,
+        "#StockCountSheetView": StockCountSheetViewLazy,
+        "#StockCountCard": StockCountCardLazy,
         "#FulfillmentSheetView": FulfillmentSheetViewLazy,
         "#FulfillmentCard": FulfillmentCardLazy,
         "#ReturnRequestSheetView": ReturnRequestSheetViewLazy,
@@ -213,6 +229,8 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#SavedSearchCard": "entity",
         "#InventoryCard": "inventory",
         "#InventoryMovementCard": "movement",
+        "#StockTransferCard": "entity",
+        "#StockCountCard": "entity",
         "#FulfillmentCard": "entity",
         "#ReturnRequestCard": "entity",
     },
@@ -270,6 +288,14 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#InventoryMovementSheetView": {
             url: "/api/eCommerce/inventoryMovement/single",
             labelFields: ["reason", "quantity", "receiptNumber"],
+        },
+        "#StockTransferSheetView": {
+            url: "/api/eCommerce/stockTransfer/single",
+            labelFields: ["fromWarehouse.name", "toWarehouse.name", "status"],
+        },
+        "#StockCountSheetView": {
+            url: "/api/eCommerce/stockCount/single",
+            labelFields: ["warehouse.name", "status"],
         },
         "#FulfillmentSheetView": {
             url: "/api/eCommerce/fulfillment/single",

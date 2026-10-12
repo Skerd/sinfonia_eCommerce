@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionDialog.tsx",
+  "stockTransfers": {
+    "complete": {
+      "title": "Complete transfer",
+      "description": "The items leave the source warehouse and arrive in the destination. Stock held for orders never moves; if a line is short, nothing moves."
+    },
+    "cancel": {
+      "title": "Cancel transfer",
+      "description": "The transfer is closed without moving any stock."
+    }
+  },
+  "stockCounts": {
+    "apply": {
+      "title": "Apply count",
+      "description": "On-hand is set to what was counted for every counted line, with a stock adjustment for each difference."
+    },
+    "cancel": {
+      "title": "Cancel count",
+      "description": "The count is closed without changing any stock."
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Done",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not complete the action",
+      "time": 3000
+    }
+  }
+}

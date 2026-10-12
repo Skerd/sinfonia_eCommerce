@@ -26,6 +26,8 @@
     "title": "Detrarre/stornare",
     "description": "Rimuovere le scorte (danni, perdite o cancellazioni). Costo e scadenza sono presi dall'ultimo movimento in ingresso.",
     "quantityLabel": "Quantità da rimuovere",
+    "reasonLabel": "Motivo",
+    "reasons": {"write_off": "Svalutazione", "damage": "Danno", "adjustment": "Rettifica"},
     "batchLotLabel": "Lotto/lotto",
     "receiptsLabel": "Allegati",
     "noteLabel": "Nota",

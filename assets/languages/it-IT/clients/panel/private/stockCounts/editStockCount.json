@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/editStockCount.tsx",
+  "title": "Modifica inventario",
+  "errorTitle": "Caricamento non riuscito",
+  "errorDescription": "Impossibile caricare questo inventario. Riprova.",
+  "form": {
+    "_idLabel": "ID record",
+    "warehouseLabel": "Magazzino",
+    "warehousePlaceholder": "Scegli un magazzino",
+    "noteLabel": "Nota",
+    "notePlaceholder": "Nota facoltativa",
+    "linesSectionTitle": "Articoli",
+    "lineAddRow": "Aggiungi articolo",
+    "lineRemoveRow": "Rimuovi articolo",
+    "lineRowTitle": "Articolo",
+    "productLabel": "Prodotto",
+    "productPlaceholder": "Scegli un prodotto",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facoltativa",
+    "countedQuantityLabel": "Contata",
+    "countedQuantityPlaceholder": "Lascia vuoto se non contato"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio dell'inventario",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventario aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare l'inventario",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica inventario",
+    "description": "Inserisci ciò che hai contato. Le righe vuote restano invariate."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

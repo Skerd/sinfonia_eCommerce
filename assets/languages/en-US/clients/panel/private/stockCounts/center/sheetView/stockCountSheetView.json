@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx",
+  "overview": "Overview",
+  "lines": "Items",
+  "lifecycle": "Lifecycle",
+  "stockCountSubtitle": "Stock count",
+  "failedTitle": "Failed to load",
+  "failedDescription": "Something went wrong while loading. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "warehouse": "Warehouse",
+  "status": "Status",
+  "appliedAt": "Applied at",
+  "appliedBy": "Applied by",
+  "note": "Note",
+  "lineProduct": "Product",
+  "lineVariant": "Variant",
+  "lineExpectedQuantity": "Expected",
+  "lineCountedQuantity": "Counted",
+  "createdBy": "Created by",
+  "company": "Company",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "stockCountStatus": {
+    "draft": "Draft",
+    "applied": "Applied",
+    "cancelled": "Cancelled"
+  }
+}

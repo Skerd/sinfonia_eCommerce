@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/createStockCount.tsx",
+  "title": "Créer un inventaire",
+  "form": {
+    "warehouseLabel": "Entrepôt",
+    "warehousePlaceholder": "Choisir un entrepôt",
+    "noteLabel": "Note",
+    "notePlaceholder": "Note facultative",
+    "linesSectionTitle": "Articles",
+    "lineAddRow": "Ajouter un article",
+    "lineRemoveRow": "Retirer l'article",
+    "lineRowTitle": "Article",
+    "productLabel": "Produit",
+    "productPlaceholder": "Choisir un produit",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facultative",
+    "countedQuantityLabel": "Compté",
+    "countedQuantityPlaceholder": "Laisser vide si non compté"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de l'inventaire",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventaire créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer l'inventaire",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un inventaire",
+    "description": "Choisissez un entrepôt : chaque ligne de stock devient une ligne à compter."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un inventaire"
+  }
+}

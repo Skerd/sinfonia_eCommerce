@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionItems.tsx",
+  "stockTransfers": {
+    "complete": "Përfundo transferimin",
+    "cancel": "Anulo transferimin"
+  },
+  "stockCounts": {
+    "apply": "Apliko numërimin",
+    "cancel": "Anulo numërimin"
+  }
+}

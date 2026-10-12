@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
+  "title": "Inventuren",
+  "description": "Ein Lager zählen und den Bestand korrigieren.",
+  "createStockCount": "Inventur erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "warehouse": "Lager",
+    "status": "Status",
+    "lines": {
+      "product": "Produkt",
+      "variant": "Variante",
+      "expectedQuantity": "Erwartet",
+      "countedQuantity": "Gezählt"
+    },
+    "note": "Notiz",
+    "appliedAt": "Gebucht am",
+    "appliedBy": "Gebucht von",
+    "createdBy": "Erstellt von",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

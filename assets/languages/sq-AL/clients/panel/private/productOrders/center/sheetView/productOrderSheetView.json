@@ -66,6 +66,7 @@
   "itemVariant": "Varianti",
   "itemSnapshotTitle": "Titulli i snapshot",
   "itemSnapshotSku": "SKU e snapshot",
+  "itemSnapshotVariantLabel": "Opsionet",
   "itemQuantity": "Sasia",
   "itemUnitPrice": "Çmimi njësi",
   "itemTotalPrice": "Totali i rreshtit",
@@ -98,7 +99,11 @@
     "stock_shortfall": "Mungesë stoku",
     "gift_card_shortfall": "Kartë dhurate e pamjaftueshme",
     "gift_cards_disabled": "Kartat e dhuratës u çaktivizuan",
-    "restock_skipped": "Rimbushja u anashkalua"
+    "restock_skipped": "Rimbushja u anashkalua",
+    "order_partially_shipped": "U dërgua pjesërisht",
+    "shipment_delivered": "Dërgesa u dorëzua",
+    "shipment_failed": "Dërgesa dështoi",
+    "return_restock_skipped": "Rimbushja e kthimit u anashkalua"
   },
   "paymentTransactionType": {
     "charge": "Ngarkesë",

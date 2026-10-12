@@ -1,4 +1,4 @@
-import {ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight, Bookmark} from "lucide-react";
+import {ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight, Bookmark, Truck, ClipboardList} from "lucide-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -36,7 +36,7 @@ const eCommerceSidebarContribution: SidebarContribution = {
                 icon: Monitor,
                 ...emptyGuard,
                 items: [
-                    {title: resolveLanguageKey("menus.eCommerce.pos.title"), url: "/eCommerce/pos", icon: Monitor, permissions: [], usersPermissions: [], atLeastOnePermission: true},
+                    {title: resolveLanguageKey("menus.eCommerce.pos.title"), url: "/eCommerce/pos", icon: Monitor, permissions: ["posOrders"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.posorders.title"), url: "/eCommerce/posorders", icon: Receipt, permissions: ["posOrders"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.possessions.title"), url: "/eCommerce/possessions", icon: Clock, permissions: ["posSessions"], usersPermissions: [], atLeastOnePermission: true},
                 ],
@@ -48,6 +48,8 @@ const eCommerceSidebarContribution: SidebarContribution = {
                 items: [
                     {title: resolveLanguageKey("menus.eCommerce.inventories.title"), url: "/eCommerce/inventories", icon: Warehouse, permissions: ["inventories"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.inventorymovements.title"), url: "/eCommerce/inventorymovements", icon: ArrowLeftRight, permissions: ["inventoryMovements"], usersPermissions: [], atLeastOnePermission: true},
+                    {title: resolveLanguageKey("menus.eCommerce.stocktransfers.title"), url: "/eCommerce/stocktransfers", icon: Truck, permissions: ["stockTransfers"], usersPermissions: [], atLeastOnePermission: true},
+                    {title: resolveLanguageKey("menus.eCommerce.stockcounts.title"), url: "/eCommerce/stockcounts", icon: ClipboardList, permissions: ["stockCounts"], usersPermissions: [], atLeastOnePermission: true},
                 ],
             },
             {

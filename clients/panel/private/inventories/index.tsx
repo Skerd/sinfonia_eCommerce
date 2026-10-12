@@ -1,7 +1,9 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,6 +23,15 @@ export function inventoryEditPath(inventory: {_id: string; product: {title: stri
 }
 
 function AllInventories({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "warehouse",
+            label: resolveLanguageKey("fields.warehouse"),
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/eCommerce/warehouse/select",
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<Inventory>
             apiUrl="/api/eCommerce/inventory"
@@ -32,6 +43,7 @@ function AllInventories({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createInventory"
             buildEditPath={inventoryEditPath}
             rowActionMenu={{allowMenuForCustomChildren: true}}
+            quickFilters={quickFilters}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx"
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

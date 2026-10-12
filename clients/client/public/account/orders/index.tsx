@@ -8,7 +8,7 @@ type MyOrderItem = {
     quantity: number;
     unitPrice: number;
     totalPrice: number;
-    snapshot?: {title?: string; sku?: string};
+    snapshot?: {title?: string; sku?: string; variantLabel?: string};
 };
 
 type MyOrder = {
@@ -168,6 +168,7 @@ function OrdersPage() {
                                                 <li key={index} className="flex justify-between gap-2">
                                                     <span className="text-shop-ink-muted">
                                                         {item.quantity}× {item.snapshot?.title ?? "Item"}
+                                                        {item.snapshot?.variantLabel ? ` · ${item.snapshot.variantLabel}` : ""}
                                                         {item.snapshot?.sku ? ` (${item.snapshot.sku})` : ""}
                                                     </span>
                                                     <span>{formatMoney(item.totalPrice)}</span>

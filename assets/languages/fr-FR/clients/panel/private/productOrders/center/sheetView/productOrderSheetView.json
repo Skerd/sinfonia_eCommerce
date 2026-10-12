@@ -66,6 +66,7 @@
   "itemVariant": "Variante",
   "itemSnapshotTitle": "Titre de l'instantané",
   "itemSnapshotSku": "SKU d'instantané",
+  "itemSnapshotVariantLabel": "Options",
   "itemQuantity": "Quantité",
   "itemUnitPrice": "Prix unitaire",
   "itemTotalPrice": "Total de la ligne",
@@ -98,7 +99,11 @@
     "stock_shortfall": "Rupture de stock",
     "gift_card_shortfall": "Carte cadeau insuffisante",
     "gift_cards_disabled": "Cartes cadeaux désactivées",
-    "restock_skipped": "Réapprovisionnement ignoré"
+    "restock_skipped": "Réapprovisionnement ignoré",
+    "order_partially_shipped": "Partiellement expédié",
+    "shipment_delivered": "Envoi livré",
+    "shipment_failed": "Envoi échoué",
+    "return_restock_skipped": "Réapprovisionnement du retour ignoré"
   },
   "paymentTransactionType": {
     "charge": "Frais",

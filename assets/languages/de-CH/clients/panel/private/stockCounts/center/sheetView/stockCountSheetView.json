@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx",
+  "overview": "Übersicht",
+  "lines": "Artikel",
+  "lifecycle": "Lebenszyklus",
+  "stockCountSubtitle": "Inventur",
+  "failedTitle": "Laden fehlgeschlagen",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "warehouse": "Lager",
+  "status": "Status",
+  "appliedAt": "Gebucht am",
+  "appliedBy": "Gebucht von",
+  "note": "Notiz",
+  "lineProduct": "Produkt",
+  "lineVariant": "Variante",
+  "lineExpectedQuantity": "Erwartet",
+  "lineCountedQuantity": "Gezählt",
+  "createdBy": "Erstellt von",
+  "company": "Firma",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von",
+  "compactView": "Kompakt",
+  "cardsView": "Karten",
+  "stockCountStatus": {
+    "draft": "Entwurf",
+    "applied": "Gebucht",
+    "cancelled": "Storniert"
+  }
+}

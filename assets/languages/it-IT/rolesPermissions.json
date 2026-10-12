@@ -30,7 +30,9 @@
     "Savedsearches": "Ricerche salvate",
     "Shippingzones": "Zone di spedizione",
     "Taxzones": "Zone fiscali",
-    "Warehouses": "Magazzini"
+    "Warehouses": "Magazzini",
+    "Stocktransfers": "Trasferimenti di magazzino",
+    "Stockcounts": "Inventari"
   },
   "permissions": {
     "Carts": {
@@ -945,6 +947,44 @@
       "name": "Nome",
       "updatedAt": "Aggiornato il",
       "warehouses": "Magazzini"
+    },
+    "Stocktransfers": {
+      "stocktransfers": "Trasferimenti di magazzino",
+      "fromWarehouse": "Da magazzino",
+      "toWarehouse": "A magazzino",
+      "lines": "Righe",
+      "lines_product": "Righe · Prodotto",
+      "lines_variant": "Righe · Variante",
+      "lines_quantity": "Righe · Quantità",
+      "status": "Stato",
+      "note": "Nota",
+      "doneBy": "Completato da",
+      "doneAt": "Completato il",
+      "createdBy": "Creato da",
+      "company": "Azienda",
+      "createdAt": "Creato il",
+      "updatedAt": "Aggiornato il",
+      "deletedAt": "Eliminato il",
+      "deletedBy": "Eliminato da"
+    },
+    "Stockcounts": {
+      "stockcounts": "Inventari",
+      "warehouse": "Magazzino",
+      "lines": "Righe",
+      "lines_product": "Righe · Prodotto",
+      "lines_variant": "Righe · Variante",
+      "lines_expectedQuantity": "Righe · Prevista",
+      "lines_countedQuantity": "Righe · Contata",
+      "status": "Stato",
+      "note": "Nota",
+      "appliedBy": "Applicato da",
+      "appliedAt": "Applicato il",
+      "createdBy": "Creato da",
+      "company": "Azienda",
+      "createdAt": "Creato il",
+      "updatedAt": "Aggiornato il",
+      "deletedAt": "Eliminato il",
+      "deletedBy": "Eliminato da"
     }
   }
 }

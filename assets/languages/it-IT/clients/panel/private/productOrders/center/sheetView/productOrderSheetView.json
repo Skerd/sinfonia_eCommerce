@@ -66,6 +66,7 @@
   "itemVariant": "Variante",
   "itemSnapshotTitle": "Titolo dell'istantanea",
   "itemSnapshotSku": "SKU dell'istantanea",
+  "itemSnapshotVariantLabel": "Opzioni",
   "itemQuantity": "Quantità",
   "itemUnitPrice": "Prezzo unitario",
   "itemTotalPrice": "Totale riga",
@@ -98,7 +99,11 @@
     "stock_shortfall": "Scorta insufficiente",
     "gift_card_shortfall": "Buono regalo insufficiente",
     "gift_cards_disabled": "Buoni regalo disabilitati",
-    "restock_skipped": "Rifornimento saltato"
+    "restock_skipped": "Rifornimento saltato",
+    "order_partially_shipped": "Spedito parzialmente",
+    "shipment_delivered": "Spedizione consegnata",
+    "shipment_failed": "Spedizione non riuscita",
+    "return_restock_skipped": "Rifornimento del reso saltato"
   },
   "paymentTransactionType": {
     "charge": "Carica",

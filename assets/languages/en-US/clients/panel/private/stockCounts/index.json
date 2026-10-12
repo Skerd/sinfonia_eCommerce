@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
+  "title": "Stock counts",
+  "description": "Count a warehouse and correct its stock.",
+  "createStockCount": "Create count",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "warehouse": "Warehouse",
+    "status": "Status",
+    "lines": {
+      "product": "Product",
+      "variant": "Variant",
+      "expectedQuantity": "Expected",
+      "countedQuantity": "Counted"
+    },
+    "note": "Note",
+    "appliedAt": "Applied at",
+    "appliedBy": "Applied by",
+    "createdBy": "Created by",
+    "company": "Company",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
+  }
+}

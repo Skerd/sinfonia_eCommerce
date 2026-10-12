@@ -23,8 +23,8 @@
     "itemAddRow": "Add item",
     "itemRemoveRow": "Remove item",
     "itemRowTitle": "Item",
-    "orderItemIdLabel": "Order item id",
-    "orderItemIdPlaceholder": "Order line id",
+    "orderItemIdLabel": "Order line",
+    "orderItemIdPlaceholder": "Select an order line",
     "quantityLabel": "Quantity",
     "fulfillmentStatus": {
       "pending": "Pending",

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionDialog.tsx",
+  "stockTransfers": {
+    "complete": {
+      "title": "Umlagerung abschliessen",
+      "description": "Die Artikel verlassen das Quelllager und gehen ins Ziellager. Für Bestellungen reservierter Bestand wird nie verschoben; fehlt bei einer Position etwas, wird nichts verschoben."
+    },
+    "cancel": {
+      "title": "Umlagerung stornieren",
+      "description": "Die Umlagerung wird ohne Bestandsbewegung geschlossen."
+    }
+  },
+  "stockCounts": {
+    "apply": {
+      "title": "Inventur buchen",
+      "description": "Der Bestand wird für jede gezählte Position auf die gezählte Menge gesetzt, mit einer Bestandskorrektur pro Differenz."
+    },
+    "cancel": {
+      "title": "Inventur stornieren",
+      "description": "Die Inventur wird ohne Bestandsänderung geschlossen."
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Erledigt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Die Aktion konnte nicht ausgeführt werden",
+      "time": 3000
+    }
+  }
+}

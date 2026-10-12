@@ -30,7 +30,9 @@
     "Savedsearches": "Saved Searches",
     "Shippingzones": "Shipping Zones",
     "Taxzones": "Tax Zones",
-    "Warehouses": "Warehouses"
+    "Warehouses": "Warehouses",
+    "Stocktransfers": "Transferimet e stokut",
+    "Stockcounts": "Numërimet e stokut"
   },
   "permissions": {
     "Carts": {
@@ -945,6 +947,44 @@
       "name": "Name",
       "updatedAt": "Updated At",
       "warehouses": "Warehouses"
+    },
+    "Stocktransfers": {
+      "stocktransfers": "Transferimet e stokut",
+      "fromWarehouse": "Nga magazina",
+      "toWarehouse": "Te magazina",
+      "lines": "Rreshtat",
+      "lines_product": "Rreshtat · Produkti",
+      "lines_variant": "Rreshtat · Varianti",
+      "lines_quantity": "Rreshtat · Sasia",
+      "status": "Statusi",
+      "note": "Shënim",
+      "doneBy": "Përfunduar nga",
+      "doneAt": "Përfunduar më",
+      "createdBy": "Krijuar nga",
+      "company": "Kompania",
+      "createdAt": "Krijuar më",
+      "updatedAt": "Përditësuar më",
+      "deletedAt": "Fshirë më",
+      "deletedBy": "Fshirë nga"
+    },
+    "Stockcounts": {
+      "stockcounts": "Numërimet e stokut",
+      "warehouse": "Magazina",
+      "lines": "Rreshtat",
+      "lines_product": "Rreshtat · Produkti",
+      "lines_variant": "Rreshtat · Varianti",
+      "lines_expectedQuantity": "Rreshtat · E pritshme",
+      "lines_countedQuantity": "Rreshtat · E numëruar",
+      "status": "Statusi",
+      "note": "Shënim",
+      "appliedBy": "Aplikuar nga",
+      "appliedAt": "Aplikuar më",
+      "createdBy": "Krijuar nga",
+      "company": "Kompania",
+      "createdAt": "Krijuar më",
+      "updatedAt": "Përditësuar më",
+      "deletedAt": "Fshirë më",
+      "deletedBy": "Fshirë nga"
     }
   }
 }

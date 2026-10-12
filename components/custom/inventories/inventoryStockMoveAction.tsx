@@ -17,11 +17,13 @@ import {
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@coreModule/components/ui/select.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {INVENTORY_MOVEMENT_RECEIPT_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.schema-def.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
+import {inventoryDeductReasons, type DeductInventoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/deductInventory.form.validator.ts";
 
 function bindAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey, prefix: "restock" | "deduct"): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -69,6 +71,7 @@ function InventoryStockMoveAction({
     const [batchLot, setBatchLot] = useState("");
     const [expiryDate, setExpiryDate] = useState("");
     const [note, setNote] = useState("");
+    const [deductReason, setDeductReason] = useState<NonNullable<DeductInventoryFormType["reason"]>>("write_off");
     const [receiptFiles, setReceiptFiles] = useState<File[]>([]);
 
     const prefix = mode;
@@ -97,6 +100,7 @@ function InventoryStockMoveAction({
             setBatchLot("");
             setExpiryDate("");
             setNote("");
+            setDeductReason("write_off");
             setReceiptFiles([]);
         }
     }, [open]);
@@ -209,6 +213,27 @@ function InventoryStockMoveAction({
                     )}
                     {!isRestock && (
                         <div className="flex flex-col gap-y-1.5">
+                            <Label>{resolveLanguageKey(`${prefix}.reasonLabel`)}</Label>
+                            <Select
+                                value={deductReason}
+                                onValueChange={(value) => setDeductReason(value as typeof deductReason)}
+                                disabled={loading}
+                            >
+                                <SelectTrigger>
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {inventoryDeductReasons.map((reason) => (
+                                        <SelectItem key={reason} value={reason}>
+                                            {resolveLanguageKey(`${prefix}.reasons.${reason}`)}
+                                        </SelectItem>
+                                    ))}
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    )}
+                    {!isRestock && (
+                        <div className="flex flex-col gap-y-1.5">
                             <Label htmlFor="stockBatchLot">{resolveLanguageKey(`${prefix}.batchLotLabel`)}</Label>
                             <Input
                                 id="stockBatchLot"
@@ -264,6 +289,7 @@ function InventoryStockMoveAction({
                                 : {
                                     _id: inventoryId,
                                     quantity: Number(quantity),
+                                    reason: deductReason,
                                     batchLot: batchLot || undefined,
                                     note: note || undefined,
                                 };

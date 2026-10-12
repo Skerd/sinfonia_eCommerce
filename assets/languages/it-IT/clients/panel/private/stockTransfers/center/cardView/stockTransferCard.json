@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/cardView/stockTransferCard.tsx",
+  "status": "Stato",
+  "toWarehouse": "A magazzino",
+  "stockTransferStatus": {
+    "draft": "Bozza",
+    "done": "Completato",
+    "cancelled": "Annullato"
+  }
+}

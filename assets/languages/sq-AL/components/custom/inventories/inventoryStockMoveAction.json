@@ -26,6 +26,8 @@
     "title": "Zbrit / çregjistro",
     "description": "Hiq stok për dëmtim, humbje ose çregjistrim. Kostoja dhe skadenca merren nga lëvizja e fundit hyrëse.",
     "quantityLabel": "Sasia për t'u hequr",
+    "reasonLabel": "Arsyeja",
+    "reasons": {"write_off": "Fshirje", "damage": "Dëmtim", "adjustment": "Rregullim"},
     "batchLotLabel": "Partia / loti",
     "receiptsLabel": "Bashkëngjitjet",
     "noteLabel": "Shënim",

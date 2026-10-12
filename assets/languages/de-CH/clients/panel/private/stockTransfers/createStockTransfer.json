@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/createStockTransfer.tsx",
+  "title": "Umlagerung erstellen",
+  "form": {
+    "fromWarehouseLabel": "Von Lager",
+    "fromWarehousePlaceholder": "Quelllager wählen",
+    "toWarehouseLabel": "Nach Lager",
+    "toWarehousePlaceholder": "Ziellager wählen",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Optionale Notiz",
+    "linesSectionTitle": "Positionen",
+    "lineAddRow": "Position hinzufügen",
+    "lineRemoveRow": "Position entfernen",
+    "lineRowTitle": "Position",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt wählen",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Optionale Variante",
+    "quantityLabel": "Menge"
+  },
+  "axios": {
+    "start": {
+      "title": "Umlagerung wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Umlagerung erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Umlagerung konnte nicht erstellt werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Umlagerung erstellen",
+    "description": "Wählen Sie die beiden Lager und die Artikel. Der Bestand wird beim Abschliessen verschoben."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Umlagerung erstellen"
+  }
+}

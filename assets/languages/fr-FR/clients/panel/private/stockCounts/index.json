@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
+  "title": "Inventaires",
+  "description": "Compter un entrepôt et corriger son stock.",
+  "createStockCount": "Créer un inventaire",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "warehouse": "Entrepôt",
+    "status": "Statut",
+    "lines": {
+      "product": "Produit",
+      "variant": "Variante",
+      "expectedQuantity": "Attendu",
+      "countedQuantity": "Compté"
+    },
+    "note": "Note",
+    "appliedAt": "Appliqué le",
+    "appliedBy": "Appliqué par",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

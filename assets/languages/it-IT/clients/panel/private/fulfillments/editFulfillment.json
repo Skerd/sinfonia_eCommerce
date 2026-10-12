@@ -23,8 +23,8 @@
     "itemAddRow": "Aggiungi elemento",
     "itemRemoveRow": "Rimuovi l'articolo",
     "itemRowTitle": "Voce",
-    "orderItemIdLabel": "ID articolo dell'ordine",
-    "orderItemIdPlaceholder": "ID riga ordine",
+    "orderItemIdLabel": "Riga d'ordine",
+    "orderItemIdPlaceholder": "Seleziona una riga d'ordine",
     "quantityLabel": "Quantità",
     "fulfillmentStatus": {
       "pending": "In sospeso",

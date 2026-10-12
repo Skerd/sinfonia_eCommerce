@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
+  "title": "Transferts de stock",
+  "description": "Déplacer du stock entre entrepôts.",
+  "createStockTransfer": "Créer un transfert",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "fromWarehouse": "Entrepôt de départ",
+    "toWarehouse": "Entrepôt d'arrivée",
+    "status": "Statut",
+    "lines": {
+      "product": "Produit",
+      "variant": "Variante",
+      "quantity": "Quantité"
+    },
+    "note": "Note",
+    "doneAt": "Terminé le",
+    "doneBy": "Terminé par",
+    "createdBy": "Créé par",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

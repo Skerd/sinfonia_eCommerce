@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/editStockCount.tsx",
+  "title": "Ndrysho numërimin",
+  "errorTitle": "Ngarkimi dështoi",
+  "errorDescription": "Ky numërim nuk u ngarkua. Provo përsëri.",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "warehouseLabel": "Magazina",
+    "warehousePlaceholder": "Zgjidh një magazinë",
+    "noteLabel": "Shënim",
+    "notePlaceholder": "Shënim opsional",
+    "linesSectionTitle": "Artikujt",
+    "lineAddRow": "Shto artikull",
+    "lineRemoveRow": "Hiq artikullin",
+    "lineRowTitle": "Artikull",
+    "productLabel": "Produkti",
+    "productPlaceholder": "Zgjidh një produkt",
+    "variantLabel": "Varianti",
+    "variantPlaceholder": "Variant opsional",
+    "countedQuantityLabel": "E numëruar",
+    "countedQuantityPlaceholder": "Lëre bosh nëse nuk u numërua"
+  },
+  "axios": {
+    "start": {
+      "title": "Po ruhet numërimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Numërimi u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Numërimi nuk u përditësua",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho numërimin",
+    "description": "Shkruaj sa numërove. Rreshtat bosh mbeten siç janë."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

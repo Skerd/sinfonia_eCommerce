@@ -30,7 +30,9 @@
     "Savedsearches": "Gespeichert searches",
     "Shippingzones": "Versand zones",
     "Taxzones": "Steuer zones",
-    "Warehouses": "Warehouses"
+    "Warehouses": "Warehouses",
+    "Stocktransfers": "Umlagerungen",
+    "Stockcounts": "Inventuren"
   },
   "permissions": {
     "Carts": {
@@ -945,6 +947,44 @@
       "name": "Name",
       "updatedAt": "Aktualisiert am",
       "warehouses": "Warehouses"
+    },
+    "Stocktransfers": {
+      "stocktransfers": "Umlagerungen",
+      "fromWarehouse": "Von Lager",
+      "toWarehouse": "Nach Lager",
+      "lines": "Positionen",
+      "lines_product": "Positionen · Produkt",
+      "lines_variant": "Positionen · Variante",
+      "lines_quantity": "Positionen · Menge",
+      "status": "Status",
+      "note": "Notiz",
+      "doneBy": "Abgeschlossen von",
+      "doneAt": "Abgeschlossen am",
+      "createdBy": "Erstellt von",
+      "company": "Firma",
+      "createdAt": "Erstellt am",
+      "updatedAt": "Aktualisiert am",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von"
+    },
+    "Stockcounts": {
+      "stockcounts": "Inventuren",
+      "warehouse": "Lager",
+      "lines": "Positionen",
+      "lines_product": "Positionen · Produkt",
+      "lines_variant": "Positionen · Variante",
+      "lines_expectedQuantity": "Positionen · Erwartet",
+      "lines_countedQuantity": "Positionen · Gezählt",
+      "status": "Status",
+      "note": "Notiz",
+      "appliedBy": "Gebucht von",
+      "appliedAt": "Gebucht am",
+      "createdBy": "Erstellt von",
+      "company": "Firma",
+      "createdAt": "Erstellt am",
+      "updatedAt": "Aktualisiert am",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von"
     }
   }
 }

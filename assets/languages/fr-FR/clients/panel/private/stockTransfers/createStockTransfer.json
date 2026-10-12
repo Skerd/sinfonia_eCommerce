@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/createStockTransfer.tsx",
+  "title": "Créer un transfert",
+  "form": {
+    "fromWarehouseLabel": "Entrepôt de départ",
+    "fromWarehousePlaceholder": "Choisir l'entrepôt de départ",
+    "toWarehouseLabel": "Entrepôt d'arrivée",
+    "toWarehousePlaceholder": "Choisir l'entrepôt d'arrivée",
+    "noteLabel": "Note",
+    "notePlaceholder": "Note facultative",
+    "linesSectionTitle": "Lignes",
+    "lineAddRow": "Ajouter une ligne",
+    "lineRemoveRow": "Retirer la ligne",
+    "lineRowTitle": "Ligne",
+    "productLabel": "Produit",
+    "productPlaceholder": "Choisir un produit",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante facultative",
+    "quantityLabel": "Quantité"
+  },
+  "axios": {
+    "start": {
+      "title": "Création du transfert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Transfert créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer le transfert",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un transfert",
+    "description": "Choisissez les deux entrepôts et les articles. Le stock bouge quand vous terminez le transfert."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un transfert"
+  }
+}

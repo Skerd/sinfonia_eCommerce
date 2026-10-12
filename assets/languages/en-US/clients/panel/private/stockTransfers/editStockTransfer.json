@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/editStockTransfer.tsx",
+  "title": "Edit transfer",
+  "errorTitle": "Failed to load",
+  "errorDescription": "Could not load this transfer. Try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "fromWarehouseLabel": "From warehouse",
+    "fromWarehousePlaceholder": "Select the source warehouse",
+    "toWarehouseLabel": "To warehouse",
+    "toWarehousePlaceholder": "Select the destination warehouse",
+    "noteLabel": "Note",
+    "notePlaceholder": "Optional note",
+    "linesSectionTitle": "Lines",
+    "lineAddRow": "Add line",
+    "lineRemoveRow": "Remove line",
+    "lineRowTitle": "Line",
+    "productLabel": "Product",
+    "productPlaceholder": "Select a product",
+    "variantLabel": "Variant",
+    "variantPlaceholder": "Optional variant",
+    "quantityLabel": "Quantity"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving transfer",
+      "time": 3000
+    },
+    "success": {
+      "title": "Transfer updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update transfer",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit transfer",
+    "description": "Change the warehouses, items or note while the transfer is a draft."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

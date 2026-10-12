@@ -26,6 +26,8 @@
     "title": "Déduire / radier",
     "description": "Retirer le stock (dommage, perte ou radiation). Le coût et la date d'expiration proviennent du dernier mouvement d'entrée.",
     "quantityLabel": "Quantité à retirer",
+    "reasonLabel": "Motif",
+    "reasons": {"write_off": "Mise au rebut", "damage": "Dommage", "adjustment": "Ajustement"},
     "batchLotLabel": "Lot/lot",
     "receiptsLabel": "Pièces jointes",
     "noteLabel": "Remarque",

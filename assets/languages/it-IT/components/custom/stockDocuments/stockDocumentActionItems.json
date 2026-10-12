@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionItems.tsx",
+  "stockTransfers": {
+    "complete": "Completa trasferimento",
+    "cancel": "Annulla trasferimento"
+  },
+  "stockCounts": {
+    "apply": "Applica inventario",
+    "cancel": "Annulla inventario"
+  }
+}

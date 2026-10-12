@@ -66,6 +66,7 @@
   "itemVariant": "Variant",
   "itemSnapshotTitle": "Snapshot bezeichnung",
   "itemSnapshotSku": "Snapshot SKU",
+  "itemSnapshotVariantLabel": "Optionen",
   "itemQuantity": "Menge",
   "itemUnitPrice": "Einheit preis",
   "itemTotalPrice": "Position total",
@@ -98,7 +99,11 @@
     "stock_shortfall": "Lagerengpass",
     "gift_card_shortfall": "Geschenkkarten-Engpass",
     "gift_cards_disabled": "Geschenkkarten deaktiviert",
-    "restock_skipped": "Nachbestückung übersprungen"
+    "restock_skipped": "Nachbestückung übersprungen",
+    "order_partially_shipped": "Teilweise versendet",
+    "shipment_delivered": "Sendung zugestellt",
+    "shipment_failed": "Sendung fehlgeschlagen",
+    "return_restock_skipped": "Rückgabe-Nachbestückung übersprungen"
   },
   "paymentTransactionType": {
     "charge": "Charge",

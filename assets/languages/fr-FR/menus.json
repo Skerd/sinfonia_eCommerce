@@ -58,6 +58,12 @@
     "inventorymovements": {
       "title": "Mouvements de stocks"
     },
+    "stocktransfers": {
+      "title": "Transferts de stock"
+    },
+    "stockcounts": {
+      "title": "Inventaires"
+    },
     "warehouses": {
       "title": "Entrepôts"
     },

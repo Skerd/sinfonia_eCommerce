@@ -20,8 +20,8 @@
     "itemAddRow": "Shto artikull",
     "itemRemoveRow": "Hiq artikullin",
     "itemRowTitle": "Artikulli",
-    "orderItemIdLabel": "ID e artikullit të porosisë",
-    "orderItemIdPlaceholder": "ID e rreshtit të porosisë",
+    "orderItemIdLabel": "Rreshti i porosisë",
+    "orderItemIdPlaceholder": "Zgjidh një rresht të porosisë",
     "quantityLabel": "Sasia",
     "fulfillmentStatus": {
       "pending": "Në pritje",

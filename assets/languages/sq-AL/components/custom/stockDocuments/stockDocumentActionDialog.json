@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/components/custom/stockDocuments/stockDocumentActionDialog.tsx",
+  "stockTransfers": {
+    "complete": {
+      "title": "Përfundo transferimin",
+      "description": "Artikujt dalin nga magazina burim dhe hyjnë në destinacion. Stoku i rezervuar për porositë nuk lëviz kurrë; nëse një rresht nuk mjafton, nuk lëviz asgjë."
+    },
+    "cancel": {
+      "title": "Anulo transferimin",
+      "description": "Transferimi mbyllet pa lëvizur stok."
+    }
+  },
+  "stockCounts": {
+    "apply": {
+      "title": "Apliko numërimin",
+      "description": "Stoku i çdo rreshti të numëruar vendoset sa sasia e numëruar, me një rregullim për çdo diferencë."
+    },
+    "cancel": {
+      "title": "Anulo numërimin",
+      "description": "Numërimi mbyllet pa ndryshuar stokun."
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Po ruhet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "U krye",
+      "time": 3000
+    },
+    "error": {
+      "title": "Veprimi nuk u krye",
+      "time": 3000
+    }
+  }
+}

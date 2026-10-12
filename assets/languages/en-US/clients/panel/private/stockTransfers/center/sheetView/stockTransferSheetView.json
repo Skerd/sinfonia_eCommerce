@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/sheetView/stockTransferSheetView.tsx",
+  "overview": "Overview",
+  "lines": "Lines",
+  "lifecycle": "Lifecycle",
+  "stockTransferSubtitle": "Stock transfer",
+  "failedTitle": "Failed to load",
+  "failedDescription": "Something went wrong while loading. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "fromWarehouse": "From warehouse",
+  "toWarehouse": "To warehouse",
+  "status": "Status",
+  "doneAt": "Completed at",
+  "doneBy": "Completed by",
+  "note": "Note",
+  "lineProduct": "Product",
+  "lineVariant": "Variant",
+  "lineQuantity": "Quantity",
+  "createdBy": "Created by",
+  "company": "Company",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "stockTransferStatus": {
+    "draft": "Draft",
+    "done": "Done",
+    "cancelled": "Cancelled"
+  }
+}

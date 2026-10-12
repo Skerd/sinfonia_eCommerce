@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/editStockCount.tsx",
+  "title": "Inventur bearbeiten",
+  "errorTitle": "Laden fehlgeschlagen",
+  "errorDescription": "Diese Inventur konnte nicht geladen werden. Erneut versuchen.",
+  "form": {
+    "_idLabel": "Datensatz-ID",
+    "warehouseLabel": "Lager",
+    "warehousePlaceholder": "Lager wählen",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Optionale Notiz",
+    "linesSectionTitle": "Artikel",
+    "lineAddRow": "Artikel hinzufügen",
+    "lineRemoveRow": "Artikel entfernen",
+    "lineRowTitle": "Artikel",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt wählen",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Optionale Variante",
+    "countedQuantityLabel": "Gezählt",
+    "countedQuantityPlaceholder": "Leer lassen, wenn nicht gezählt"
+  },
+  "axios": {
+    "start": {
+      "title": "Inventur wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventur aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inventur konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Inventur bearbeiten",
+    "description": "Geben Sie die gezählten Mengen ein. Leere Positionen bleiben unverändert."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Änderungen speichern"
+  }
+}

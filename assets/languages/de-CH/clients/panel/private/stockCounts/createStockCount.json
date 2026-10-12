@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/createStockCount.tsx",
+  "title": "Inventur erstellen",
+  "form": {
+    "warehouseLabel": "Lager",
+    "warehousePlaceholder": "Lager wählen",
+    "noteLabel": "Notiz",
+    "notePlaceholder": "Optionale Notiz",
+    "linesSectionTitle": "Artikel",
+    "lineAddRow": "Artikel hinzufügen",
+    "lineRemoveRow": "Artikel entfernen",
+    "lineRowTitle": "Artikel",
+    "productLabel": "Produkt",
+    "productPlaceholder": "Produkt wählen",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Optionale Variante",
+    "countedQuantityLabel": "Gezählt",
+    "countedQuantityPlaceholder": "Leer lassen, wenn nicht gezählt"
+  },
+  "axios": {
+    "start": {
+      "title": "Inventur wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inventur erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inventur konnte nicht erstellt werden",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Inventur erstellen",
+    "description": "Wählen Sie ein Lager: Jede Bestandszeile dort wird zu einer Zählposition."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Inventur erstellen"
+  }
+}

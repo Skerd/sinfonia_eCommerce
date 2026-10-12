@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/cardView/stockCountCard.tsx",
+  "status": "Status",
+  "lines": "Lines",
+  "stockCountStatus": {
+    "draft": "Draft",
+    "applied": "Applied",
+    "cancelled": "Cancelled"
+  }
+}

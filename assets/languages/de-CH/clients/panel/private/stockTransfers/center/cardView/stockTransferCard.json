@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/cardView/stockTransferCard.tsx",
+  "status": "Status",
+  "toWarehouse": "Nach Lager",
+  "stockTransferStatus": {
+    "draft": "Entwurf",
+    "done": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
+}

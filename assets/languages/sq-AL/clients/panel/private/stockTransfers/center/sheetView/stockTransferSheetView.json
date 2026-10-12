@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/sheetView/stockTransferSheetView.tsx",
+  "overview": "Përmbledhje",
+  "lines": "Rreshtat",
+  "lifecycle": "Cikli i jetës",
+  "stockTransferSubtitle": "Transferim stoku",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ringarkuar të dhënat.",
+  "fromWarehouse": "Nga magazina",
+  "toWarehouse": "Te magazina",
+  "status": "Statusi",
+  "doneAt": "Përfunduar më",
+  "doneBy": "Përfunduar nga",
+  "note": "Shënim",
+  "lineProduct": "Produkti",
+  "lineVariant": "Varianti",
+  "lineQuantity": "Sasia",
+  "createdBy": "Krijuar nga",
+  "company": "Kompania",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga",
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "stockTransferStatus": {
+    "draft": "Draft",
+    "done": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
+}
