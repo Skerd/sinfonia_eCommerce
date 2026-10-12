@@ -8,7 +8,7 @@ import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import {posFiscalizationActive, type ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
-import {subscribePosKillSwitch} from "@eCommerceModule/clients/panel/private/pos/posKillSwitchEvents.ts";
+import {bindPosKillSwitchSocket, subscribePosKillSwitch} from "@eCommerceModule/clients/panel/private/pos/posKillSwitchEvents.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 export type PosReconciliation = {
@@ -234,7 +234,8 @@ export function usePosSession({
     }, [applyPausedConfig, rk, setSearchParams]);
 
     useEffect(() => {
-        return subscribePosKillSwitch((_kind, payload) => {
+        const unbindSocket = bindPosKillSwitchSocket();
+        const unsubscribe = subscribePosKillSwitch((_kind, payload) => {
             const id = configIdRef.current;
             const hitsConfig =
                 payload.companyWide ||
@@ -262,6 +263,10 @@ export function usePosSession({
             // After force-close, session is gone — refresh to converge.
             void refreshCurrentSession();
         });
+        return () => {
+            unbindSocket();
+            unsubscribe();
+        };
     }, [refreshCurrentSession, rk]);
 
     useEffect(() => {
