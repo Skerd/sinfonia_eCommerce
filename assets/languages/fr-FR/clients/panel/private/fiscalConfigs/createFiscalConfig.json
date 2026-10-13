@@ -56,7 +56,7 @@
     "sellerAddressLabel": "Adresse du vendeur",
     "sellerAddressPlaceholder": "Rue et bâtiment",
     "sellerTownLabel": "Ville du vendeur",
-    "sellerTownPlaceholder": "Tirana",
+    "sellerTownPlaceholder": "Metro City",
     "sellerCountryLabel": "Code pays du vendeur (ALB)",
     "sellerCountryPlaceholder": "ALB",
     "certificateLabel": "Certificat PKCS#12 (.p12)",

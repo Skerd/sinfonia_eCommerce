@@ -63,7 +63,10 @@
   "barcodePlaceholder": "Scanner le code-barres",
   "catalogEmpty": "Aucun produit trouvé.",
   "categories": {
-    "all": "Tous"
+    "all": "Tous",
+    "search": "Rechercher des catégories",
+    "searchPlaceholder": "Rechercher des catégories",
+    "none": "Aucune catégorie"
   },
   "cartEmpty": "Appuyez sur un produit pour lancer la commande.",
   "customerName": "Client",
@@ -306,6 +309,7 @@
   },
   "errors": {
     "catalogFailed": "Impossible de charger le catalogue",
+    "categoriesFailed": "Impossible de charger les catégories",
     "sessionFailed": "Impossible de charger la session",
     "configsFailed": "Impossible de charger les configurations POS",
     "openSessionFailed": "Impossible d'ouvrir la session",

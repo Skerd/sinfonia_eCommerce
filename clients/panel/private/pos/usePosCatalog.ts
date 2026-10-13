@@ -1,6 +1,7 @@
 import {useCallback, useEffect, useRef, useState, type RefObject} from "react";
 import {toast} from "sonner";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useInfiniteScroll} from "@coreModule/helpers/hooks/useInfiniteScroll.ts";
 import type {
     CatalogCategory,
     CatalogProduct,
@@ -9,6 +10,8 @@ import type {
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+
+const CATEGORY_PAGE_SIZE = 40;
 
 type Args = {
     configId: string | undefined;
@@ -31,32 +34,84 @@ export function usePosCatalog({
 
     const [catalog, setCatalog] = useState<CatalogProduct[]>([]);
     const [catalogLoading, setCatalogLoading] = useState(false);
-    const [categories, setCategories] = useState<CatalogCategory[]>([]);
     const [categoryId, setCategoryId] = useState<string | null>(null);
+    const [categoryQuery, setCategoryQuery] = useState("");
+    const [debouncedCategoryQuery, setDebouncedCategoryQuery] = useState("");
+    const [categoryPage, setCategoryPage] = useState<{data: CatalogCategory[]; total: number} | null>(null);
+    const [categoriesLoading, setCategoriesLoading] = useState(false);
+    const categoryNameRef = useRef("");
+    const categoryRequestRef = useRef(0);
+    categoryNameRef.current = debouncedCategoryQuery;
     const [search, setSearch] = useState("");
     const [barcode, setBarcode] = useState("");
     const [variantProduct, setVariantProduct] = useState<CatalogProduct | null>(null);
     const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const loadCategories = useCallback(async () => {
-        try {
-            const res = await apiClient.post<{data?: {_id?: string; value?: string; label?: string; name?: string}[]}>(
-                "/api/eCommerce/category/select",
-                {page: 1, limit: 200},
-            );
-            const rows = res.data.data ?? [];
-            setCategories(
-                rows
-                    .map((r) => ({
-                        _id: String(r.value ?? r._id ?? ""),
-                        name: String(r.label ?? r.name ?? ""),
-                    }))
-                    .filter((c) => c._id && c.name),
-            );
-        } catch {
-            setCategories([]);
+    const onCategoryFilterChange = useCallback(
+        (filter: {offset: number; limit: number}) => {
+            const requestId = ++categoryRequestRef.current;
+            const name = categoryNameRef.current.trim();
+            const page = Math.floor(filter.offset / filter.limit) + 1;
+            setCategoriesLoading(true);
+            void apiClient
+                .post<{data?: {value?: string; label?: string; _id?: string; name?: string}[]; total?: number}>(
+                    "/api/eCommerce/category/select",
+                    {page, limit: filter.limit, ...(name ? {name} : {})},
+                )
+                .then((res) => {
+                    if (requestId !== categoryRequestRef.current) return;
+                    const rows = (res.data.data ?? [])
+                        .map((row) => ({
+                            _id: String(row.value ?? row._id ?? ""),
+                            name: String(row.label ?? row.name ?? ""),
+                        }))
+                        .filter((row) => row._id && row.name);
+                    setCategoryPage({data: rows, total: res.data.total ?? rows.length});
+                })
+                .catch(() => {
+                    if (requestId !== categoryRequestRef.current) return;
+                    toast.error(String(resolveLanguageKey("errors.categoriesFailed") ?? "errors.categoriesFailed"));
+                    if (filter.offset === 0) setCategoryPage({data: [], total: 0});
+                })
+                .finally(() => {
+                    if (requestId === categoryRequestRef.current) setCategoriesLoading(false);
+                });
+        },
+        [resolveLanguageKey],
+    );
+
+    const {
+        accumulatedItems: categories,
+        hasMoreData: categoriesHasMore,
+        canLoadMore: categoriesCanLoadMore,
+        loadMore: loadMoreCategories,
+        handleReset: resetCategories,
+    } = useInfiniteScroll({
+        data: categoryPage,
+        loading: categoriesLoading,
+        onFilterChange: onCategoryFilterChange,
+        limit: CATEGORY_PAGE_SIZE,
+        enabled: !!session?._id,
+        getId: (category) => category._id,
+    });
+
+    useEffect(() => {
+        const timer = window.setTimeout(() => setDebouncedCategoryQuery(categoryQuery.trim()), 250);
+        return () => window.clearTimeout(timer);
+    }, [categoryQuery]);
+
+    const categoryLoadKeyRef = useRef<string | null>(null);
+    useEffect(() => {
+        if (!session?._id) return;
+        const key = `${session._id}|${debouncedCategoryQuery}`;
+        if (categoryLoadKeyRef.current === null) {
+            categoryLoadKeyRef.current = key;
+            return;
         }
-    }, []);
+        if (categoryLoadKeyRef.current === key) return;
+        categoryLoadKeyRef.current = key;
+        resetCategories();
+    }, [session?._id, debouncedCategoryQuery, resetCategories]);
 
     const loadCatalog = useCallback(
         async (opts?: {search?: string; barcode?: string; categoryId?: string | null}) => {
@@ -86,9 +141,8 @@ export function usePosCatalog({
 
     useEffect(() => {
         if (!session?._id) return;
-        void loadCategories();
         void loadCatalog({});
-    }, [session?._id, loadCategories, loadCatalog]);
+    }, [session?._id, loadCatalog]);
 
     useEffect(() => {
         if (!session) return;
@@ -165,6 +219,12 @@ export function usePosCatalog({
         catalog,
         catalogLoading,
         categories,
+        categoriesLoading,
+        categoriesHasMore,
+        categoriesCanLoadMore,
+        loadMoreCategories,
+        categoryQuery,
+        setCategoryQuery,
         categoryId,
         setCategoryId,
         search,

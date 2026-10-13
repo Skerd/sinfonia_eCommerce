@@ -63,7 +63,10 @@
   "barcodePlaceholder": "Skano barkodin",
   "catalogEmpty": "Nuk u gjetën produkte.",
   "categories": {
-    "all": "Të gjitha"
+    "all": "Të gjitha",
+    "search": "Kërko kategoritë",
+    "searchPlaceholder": "Kërko kategoritë",
+    "none": "Asnjë kategori"
   },
   "cartEmpty": "Prekni një produkt për të filluar porosinë.",
   "customerName": "Klienti",
@@ -306,6 +309,7 @@
   },
   "errors": {
     "catalogFailed": "Katalogu nuk u ngarkua",
+    "categoriesFailed": "Kategoritë nuk u ngarkuan",
     "sessionFailed": "Seanca nuk u ngarkua",
     "configsFailed": "Konfigurimet POS nuk u ngarkuan",
     "openSessionFailed": "Seanca nuk u hap",

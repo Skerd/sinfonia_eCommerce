@@ -1,6 +1,7 @@
-import type {RefObject} from "react";
+import {useEffect, useRef, useState, type RefObject} from "react";
 import {Check, ScanBarcode, Search, ShoppingBag} from "lucide-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import LoadMoreSentinel from "@coreModule/components/custom/loader/loadMoreSentinel.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {
@@ -14,6 +15,10 @@ type Props = {
     barcode: string;
     barcodeRef: RefObject<HTMLInputElement | null>;
     categories: CatalogCategory[];
+    categoriesLoading: boolean;
+    categoriesHasMore: boolean;
+    categoriesCanLoadMore: boolean;
+    categoryQuery: string;
     categoryId: string | null;
     catalog: CatalogProduct[];
     catalogLoading: boolean;
@@ -25,6 +30,8 @@ type Props = {
     onSearchChange: (value: string) => void;
     onBarcodeChange: (value: string) => void;
     onBarcodeEnter: () => void;
+    onCategoryQueryChange: (value: string) => void;
+    onLoadMoreCategories: () => void;
     onCategoryChange: (id: string | null) => void;
     onPickProduct: (product: CatalogProduct) => void;
 };
@@ -34,6 +41,10 @@ export default function PosCatalogPanel({
     barcode,
     barcodeRef,
     categories,
+    categoriesLoading,
+    categoriesHasMore,
+    categoriesCanLoadMore,
+    categoryQuery,
     categoryId,
     catalog,
     catalogLoading,
@@ -45,9 +56,25 @@ export default function PosCatalogPanel({
     onSearchChange,
     onBarcodeChange,
     onBarcodeEnter,
+    onCategoryQueryChange,
+    onLoadMoreCategories,
     onCategoryChange,
     onPickProduct,
 }: Props) {
+    const [categorySearchOpen, setCategorySearchOpen] = useState(false);
+    const categorySearchRef = useRef<HTMLInputElement>(null);
+    const categoryScrollRef = useRef<HTMLDivElement>(null);
+    const categoryQueryNormalized = categoryQuery.trim();
+
+    useEffect(() => {
+        if (categorySearchOpen) categorySearchRef.current?.focus();
+    }, [categorySearchOpen]);
+
+    const closeCategorySearch = () => {
+        onCategoryQueryChange("");
+        setCategorySearchOpen(false);
+    };
+
     return (
         <section className="flex min-h-0 min-w-0 flex-1 flex-col border-b border-border lg:border-b-0 lg:border-r">
             <div className="flex shrink-0 gap-2 border-b border-border bg-muted/40 p-3">
@@ -81,9 +108,8 @@ export default function PosCatalogPanel({
                 )}
             </div>
 
-            {categories.length > 0 && (
-                <div className="shrink-0 border-b border-border bg-card/60 px-3 py-2">
-                    <div className="flex gap-1.5 overflow-x-auto pb-0.5 [scrollbar-width:thin]">
+            <div className="flex shrink-0 items-center gap-2 border-b border-border bg-card/60 px-3 py-2">
+                    <div ref={categoryScrollRef} className="hide-scrollbar flex min-w-0 flex-1 gap-1.5 overflow-x-auto overflow-y-hidden">
                         <button
                             type="button"
                             onClick={() => onCategoryChange(null)}
@@ -114,9 +140,66 @@ export default function PosCatalogPanel({
                                 </button>
                             );
                         })}
+                        {categoryQueryNormalized && !categoriesLoading && categories.length === 0 && (
+                            <span className="shrink-0 self-center px-1 text-xs text-muted-foreground">
+                                {rk("categories.none")}
+                            </span>
+                        )}
+                        {categoriesHasMore && (
+                            <div className="w-px shrink-0 self-stretch">
+                                <LoadMoreSentinel
+                                    canLoadMore={categoriesCanLoadMore}
+                                    onLoadMore={onLoadMoreCategories}
+                                    scrollRoot={categoryScrollRef}
+                                    rootMargin="0px 120px"
+                                />
+                            </div>
+                        )}
+                        {categoriesLoading && <Loader inline className="size-4 shrink-0 self-center text-muted-foreground" />}
+                    </div>
+                    <div className="flex shrink-0 items-center">
+                        <div
+                            className={cn(
+                                "overflow-hidden transition-[width,opacity,margin] duration-200 ease-out",
+                                categorySearchOpen ? "mr-1.5 w-40 opacity-100" : "pointer-events-none mr-0 w-0 opacity-0",
+                            )}
+                        >
+                            <Input
+                                ref={categorySearchRef}
+                                value={categoryQuery}
+                                placeholder={rk("categories.searchPlaceholder")}
+                                aria-label={rk("categories.search")}
+                                aria-hidden={!categorySearchOpen}
+                                tabIndex={categorySearchOpen ? 0 : -1}
+                                onChange={(e) => onCategoryQueryChange(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Escape") {
+                                        e.preventDefault();
+                                        closeCategorySearch();
+                                    }
+                                }}
+                                className="h-8 w-full text-xs focus-visible:ring-success/50"
+                            />
+                        </div>
+                        <button
+                            type="button"
+                            aria-label={rk("categories.search")}
+                            aria-expanded={categorySearchOpen}
+                            onClick={() => {
+                                if (categorySearchOpen) closeCategorySearch();
+                                else setCategorySearchOpen(true);
+                            }}
+                            className={cn(
+                                "flex size-8 items-center justify-center rounded-lg border transition-colors",
+                                categorySearchOpen
+                                    ? "border-success/50 bg-success/10 text-success"
+                                    : "border-border bg-background text-muted-foreground hover:border-success/40 hover:text-foreground",
+                            )}
+                        >
+                            <Search className="size-4" />
+                        </button>
                     </div>
                 </div>
-            )}
 
             <div className="min-h-0 flex-1 overflow-y-auto p-3">
                 {catalogLoading ? (

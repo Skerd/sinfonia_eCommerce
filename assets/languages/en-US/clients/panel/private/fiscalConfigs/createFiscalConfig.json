@@ -56,7 +56,7 @@
     "sellerAddressLabel": "Seller address",
     "sellerAddressPlaceholder": "Street and building",
     "sellerTownLabel": "Seller town",
-    "sellerTownPlaceholder": "Tirana",
+    "sellerTownPlaceholder": "Metro City",
     "sellerCountryLabel": "Seller country code (ALB)",
     "sellerCountryPlaceholder": "ALB",
     "certificateLabel": "PKCS#12 certificate (.p12)",

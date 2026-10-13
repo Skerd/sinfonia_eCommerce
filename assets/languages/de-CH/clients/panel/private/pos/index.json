@@ -63,7 +63,10 @@
   "barcodePlaceholder": "Scan barcode",
   "catalogEmpty": "Keine produkte gefunden.",
   "categories": {
-    "all": "Alle"
+    "all": "Alle",
+    "search": "Kategorien suchen",
+    "searchPlaceholder": "Kategorien suchen",
+    "none": "Keine Kategorien"
   },
   "cartEmpty": "Tap a produkt bis start die auftrag.",
   "customerName": "Kunde",
@@ -306,6 +309,7 @@
   },
   "errors": {
     "catalogFailed": "Konnte nicht laden catalog",
+    "categoriesFailed": "Kategorien konnten nicht geladen werden",
     "sessionFailed": "Konnte nicht laden sitzung",
     "configsFailed": "Konnte nicht laden POS configs",
     "openSessionFailed": "Konnte nicht offen sitzung",

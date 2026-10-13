@@ -220,6 +220,10 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                     barcode={catalogApi.barcode}
                     barcodeRef={barcodeRef}
                     categories={catalogApi.categories}
+                    categoriesLoading={catalogApi.categoriesLoading}
+                    categoriesHasMore={catalogApi.categoriesHasMore}
+                    categoriesCanLoadMore={catalogApi.categoriesCanLoadMore}
+                    categoryQuery={catalogApi.categoryQuery}
                     categoryId={catalogApi.categoryId}
                     catalog={catalogApi.catalog}
                     catalogLoading={catalogApi.catalogLoading}
@@ -231,6 +235,8 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                     onSearchChange={catalogApi.setSearch}
                     onBarcodeChange={catalogApi.setBarcode}
                     onBarcodeEnter={() => void catalogApi.handleBarcodeEnter()}
+                    onCategoryQueryChange={catalogApi.setCategoryQuery}
+                    onLoadMoreCategories={catalogApi.loadMoreCategories}
                     onCategoryChange={catalogApi.setCategoryId}
                     onPickProduct={catalogApi.pickProduct}
                 />
