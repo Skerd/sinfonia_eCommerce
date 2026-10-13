@@ -12,6 +12,7 @@ import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/priva
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 const CATEGORY_PAGE_SIZE = 40;
+const PRODUCT_PAGE_SIZE = 60;
 
 type Args = {
     configId: string | undefined;
@@ -32,7 +33,7 @@ export function usePosCatalog({
 }: Args) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
 
-    const [catalog, setCatalog] = useState<CatalogProduct[]>([]);
+    const [catalogPage, setCatalogPage] = useState<{data: CatalogProduct[]; total: number} | null>(null);
     const [catalogLoading, setCatalogLoading] = useState(false);
     const [categoryId, setCategoryId] = useState<string | null>(null);
     const [categoryQuery, setCategoryQuery] = useState("");
@@ -43,9 +44,15 @@ export function usePosCatalog({
     const categoryRequestRef = useRef(0);
     categoryNameRef.current = debouncedCategoryQuery;
     const [search, setSearch] = useState("");
+    const [debouncedSearch, setDebouncedSearch] = useState("");
     const [barcode, setBarcode] = useState("");
     const [variantProduct, setVariantProduct] = useState<CatalogProduct | null>(null);
-    const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const catalogSearchRef = useRef("");
+    const catalogCategoryRef = useRef<string | null>(null);
+    const catalogRequestRef = useRef(0);
+    catalogSearchRef.current = debouncedSearch;
+    catalogCategoryRef.current = categoryId;
 
     const onCategoryFilterChange = useCallback(
         (filter: {offset: number; limit: number}) => {
@@ -100,6 +107,11 @@ export function usePosCatalog({
         return () => window.clearTimeout(timer);
     }, [categoryQuery]);
 
+    useEffect(() => {
+        const timer = window.setTimeout(() => setDebouncedSearch(search.trim()), 250);
+        return () => window.clearTimeout(timer);
+    }, [search]);
+
     const categoryLoadKeyRef = useRef<string | null>(null);
     useEffect(() => {
         if (!session?._id) return;
@@ -113,50 +125,70 @@ export function usePosCatalog({
         resetCategories();
     }, [session?._id, debouncedCategoryQuery, resetCategories]);
 
-    const loadCatalog = useCallback(
-        async (opts?: {search?: string; barcode?: string; categoryId?: string | null}) => {
+    const onCatalogFilterChange = useCallback(
+        (filter: {offset: number; limit: number}) => {
+            const requestId = ++catalogRequestRef.current;
+            const page = Math.floor(filter.offset / filter.limit) + 1;
+            const searchValue = catalogSearchRef.current.trim();
+            const category = catalogCategoryRef.current;
             setCatalogLoading(true);
-            try {
-                const res = await apiClient.post<{data: CatalogProduct[]; page: number; limit: number; total: number}>(
+            void apiClient
+                .post<{data: CatalogProduct[]; page: number; limit: number; total: number}>(
                     "/api/eCommerce/pos/catalog",
                     {
-                        search: opts?.search || undefined,
-                        barcode: opts?.barcode || undefined,
-                        categoryId: opts?.categoryId || undefined,
+                        search: searchValue || undefined,
+                        categoryId: category || undefined,
                         configId: configId || undefined,
-                        page: 1,
-                        limit: 60,
+                        page,
+                        limit: filter.limit,
                     },
-                );
-                setCatalog(res.data.data ?? []);
-            } catch {
-                toast.error(String(resolveLanguageKey("errors.catalogFailed") ?? "errors.catalogFailed"));
-                setCatalog([]);
-            } finally {
-                setCatalogLoading(false);
-            }
+                )
+                .then((res) => {
+                    if (requestId !== catalogRequestRef.current) return;
+                    setCatalogPage({
+                        data: res.data.data ?? [],
+                        total: res.data.total ?? 0,
+                    });
+                })
+                .catch(() => {
+                    if (requestId !== catalogRequestRef.current) return;
+                    toast.error(String(resolveLanguageKey("errors.catalogFailed") ?? "errors.catalogFailed"));
+                    if (filter.offset === 0) setCatalogPage({data: [], total: 0});
+                })
+                .finally(() => {
+                    if (requestId === catalogRequestRef.current) setCatalogLoading(false);
+                });
         },
         [resolveLanguageKey, configId],
     );
 
+    const {
+        accumulatedItems: catalog,
+        hasMoreData: catalogHasMore,
+        canLoadMore: catalogCanLoadMore,
+        loadMore: loadMoreCatalog,
+        handleReset: resetCatalog,
+    } = useInfiniteScroll({
+        data: catalogPage,
+        loading: catalogLoading,
+        onFilterChange: onCatalogFilterChange,
+        limit: PRODUCT_PAGE_SIZE,
+        enabled: !!session?._id,
+        getId: (product) => product._id,
+    });
+
+    const catalogLoadKeyRef = useRef<string | null>(null);
     useEffect(() => {
         if (!session?._id) return;
-        void loadCatalog({});
-    }, [session?._id, loadCatalog]);
-
-    useEffect(() => {
-        if (!session) return;
-        if (searchTimer.current) clearTimeout(searchTimer.current);
-        searchTimer.current = setTimeout(() => {
-            void loadCatalog({
-                search: search.trim() || undefined,
-                categoryId,
-            });
-        }, 250);
-        return () => {
-            if (searchTimer.current) clearTimeout(searchTimer.current);
-        };
-    }, [search, categoryId, session?._id, loadCatalog]);
+        const key = `${session._id}|${debouncedSearch}|${categoryId ?? ""}|${configId ?? ""}`;
+        if (catalogLoadKeyRef.current === null) {
+            catalogLoadKeyRef.current = key;
+            return;
+        }
+        if (catalogLoadKeyRef.current === key) return;
+        catalogLoadKeyRef.current = key;
+        resetCatalog();
+    }, [session?._id, debouncedSearch, categoryId, configId, resetCatalog]);
 
     useEffect(() => {
         if (!session) return;
@@ -218,6 +250,9 @@ export function usePosCatalog({
     return {
         catalog,
         catalogLoading,
+        catalogHasMore,
+        catalogCanLoadMore,
+        loadMoreCatalog,
         categories,
         categoriesLoading,
         categoriesHasMore,

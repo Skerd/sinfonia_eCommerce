@@ -22,6 +22,8 @@ type Props = {
     categoryId: string | null;
     catalog: CatalogProduct[];
     catalogLoading: boolean;
+    catalogHasMore: boolean;
+    catalogCanLoadMore: boolean;
     cart: CartLine[];
     flashKey: string | null;
     config: {allowOversell?: boolean; ifaceBarcodeScanner?: boolean} | null;
@@ -32,8 +34,10 @@ type Props = {
     onBarcodeEnter: () => void;
     onCategoryQueryChange: (value: string) => void;
     onLoadMoreCategories: () => void;
+    onLoadMoreCatalog: () => void;
     onCategoryChange: (id: string | null) => void;
     onPickProduct: (product: CatalogProduct) => void;
+    onDeductProduct: (product: CatalogProduct) => void;
 };
 
 export default function PosCatalogPanel({
@@ -48,6 +52,8 @@ export default function PosCatalogPanel({
     categoryId,
     catalog,
     catalogLoading,
+    catalogHasMore,
+    catalogCanLoadMore,
     cart,
     flashKey,
     config,
@@ -58,13 +64,17 @@ export default function PosCatalogPanel({
     onBarcodeEnter,
     onCategoryQueryChange,
     onLoadMoreCategories,
+    onLoadMoreCatalog,
     onCategoryChange,
     onPickProduct,
+    onDeductProduct,
 }: Props) {
     const [categorySearchOpen, setCategorySearchOpen] = useState(false);
     const categorySearchRef = useRef<HTMLInputElement>(null);
     const categoryScrollRef = useRef<HTMLDivElement>(null);
+    const catalogScrollRef = useRef<HTMLDivElement>(null);
     const categoryQueryNormalized = categoryQuery.trim();
+    const catalogInitialLoading = catalogLoading && catalog.length === 0;
 
     useEffect(() => {
         if (categorySearchOpen) categorySearchRef.current?.focus();
@@ -201,8 +211,8 @@ export default function PosCatalogPanel({
                     </div>
                 </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto p-3">
-                {catalogLoading ? (
+            <div ref={catalogScrollRef} className="min-h-0 flex-1 overflow-y-auto p-3">
+                {catalogInitialLoading ? (
                     <div className="flex justify-center py-16">
                         <Loader />
                     </div>
@@ -226,8 +236,16 @@ export default function PosCatalogPanel({
                                 <button
                                     key={product._id}
                                     type="button"
-                                    disabled={outOfStock}
-                                    onClick={() => onPickProduct(product)}
+                                    disabled={outOfStock && !inCart}
+                                    onClick={() => {
+                                        if (outOfStock) return;
+                                        onPickProduct(product);
+                                    }}
+                                    onContextMenu={(e) => {
+                                        e.preventDefault();
+                                        if (!inCart) return;
+                                        onDeductProduct(product);
+                                    }}
                                     className={cn(
                                         "group relative flex flex-col overflow-hidden rounded-2xl border text-left",
                                         "border-border/80 bg-card shadow-[0_1px_0_rgba(0,0,0,0.03)]",
@@ -311,6 +329,21 @@ export default function PosCatalogPanel({
                             <div className="col-span-full flex flex-col items-center justify-center gap-2 py-16 text-center text-sm text-muted-foreground">
                                 <ShoppingBag className="size-8 opacity-40" />
                                 {rk("catalogEmpty")}
+                            </div>
+                        )}
+                        {catalogHasMore && (
+                            <div className="col-span-full">
+                                <LoadMoreSentinel
+                                    canLoadMore={catalogCanLoadMore}
+                                    onLoadMore={onLoadMoreCatalog}
+                                    scrollRoot={catalogScrollRef}
+                                    rootMargin="240px 0px"
+                                />
+                            </div>
+                        )}
+                        {catalogLoading && catalog.length > 0 && (
+                            <div className="col-span-full flex justify-center py-4">
+                                <Loader inline className="size-5 text-muted-foreground" />
                             </div>
                         )}
                     </div>

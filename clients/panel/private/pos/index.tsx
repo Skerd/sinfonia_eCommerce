@@ -227,6 +227,8 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                     categoryId={catalogApi.categoryId}
                     catalog={catalogApi.catalog}
                     catalogLoading={catalogApi.catalogLoading}
+                    catalogHasMore={catalogApi.catalogHasMore}
+                    catalogCanLoadMore={catalogApi.catalogCanLoadMore}
                     cart={cartApi.cart}
                     flashKey={cartApi.flashKey}
                     config={sessionApi.config}
@@ -237,8 +239,10 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                     onBarcodeEnter={() => void catalogApi.handleBarcodeEnter()}
                     onCategoryQueryChange={catalogApi.setCategoryQuery}
                     onLoadMoreCategories={catalogApi.loadMoreCategories}
+                    onLoadMoreCatalog={catalogApi.loadMoreCatalog}
                     onCategoryChange={catalogApi.setCategoryId}
                     onPickProduct={catalogApi.pickProduct}
+                    onDeductProduct={(product) => cartApi.deductCartProduct(product._id)}
                 />
 
                 <PosCartPanel

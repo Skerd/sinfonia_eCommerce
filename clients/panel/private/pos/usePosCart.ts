@@ -198,6 +198,30 @@ export function usePosCart({
         });
     };
 
+    /** Left-click add inverse: remove one unit for this product (selected variant line if any). */
+    const deductCartProduct = useCallback(
+        (productId: string) => {
+            setCart((prev) => {
+                const matches = prev.filter((l) => l.productId === productId);
+                if (!matches.length) return prev;
+                const target =
+                    (selectedLineKey && matches.find((l) => l.key === selectedLineKey)) ||
+                    matches[matches.length - 1];
+                setFlashKey(target.key);
+                setSelectedLineKey(target.key);
+                return prev
+                    .map((l) =>
+                        l.key === target.key
+                            ? {...l, quantity: Math.max(0, l.quantity - 1)}
+                            : l,
+                    )
+                    .filter((l) => l.quantity > 0);
+            });
+            focusBarcode();
+        },
+        [focusBarcode, selectedLineKey],
+    );
+
     const setLineQty = (key: string, quantity: number) => {
         const q = Math.max(0, quantity);
         setSelectedLineKey(key);
@@ -350,6 +374,7 @@ export function usePosCart({
         orderDiscountAmount,
         total,
         addCartLine,
+        deductCartProduct,
         setLineDiscount,
         setOrderDiscount,
         toggleLineDiscount,
