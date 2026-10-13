@@ -18,6 +18,8 @@ import type {AnalyticsCartsResponse} from "armonia/src/modules/eCommerce/api/eCo
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -63,6 +65,15 @@ function formatMoney(value: number): string {
 }
 
 function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
+    const reads = [
+        useAccess("productOrders").read,
+        useAccess("products").read,
+        useAccess("inventories").read,
+        useAccess("carts").read,
+    ];
+    const read = reads.some((granted) => granted === false) ? false
+        : reads.some((granted) => granted === null) ? null
+        : true;
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
     const [period, setPeriod] = useState<AnalyticsPeriod>("30d");
     const [data, setData] = useState<AnalyticsData>(EMPTY_DATA);
@@ -97,8 +108,9 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
     }, [period]);
 
     useEffect(() => {
+        if (!read) return;
         void fetchAnalytics();
-    }, [fetchAnalytics]);
+    }, [fetchAnalytics, read]);
 
     const chartData = useMemo(
         () =>
@@ -126,6 +138,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
         [resolveLanguageKey],
     );
 
+    if (read === false) return <Forbidden />;
     if (loading && !data.revenue) return <Loader />;
 
     return (

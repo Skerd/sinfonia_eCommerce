@@ -57,7 +57,7 @@ const eCommerceSidebarContribution: SidebarContribution = {
                 icon: BarChart3,
                 ...emptyGuard,
                 items: [
-                    {title: resolveLanguageKey("menus.eCommerce.analytics.title"), url: "/eCommerce/analytics", icon: BarChart3, permissions: [], usersPermissions: [], atLeastOnePermission: true},
+                    {title: resolveLanguageKey("menus.eCommerce.analytics.title"), url: "/eCommerce/analytics", icon: BarChart3, permissions: ["productOrders", "products", "inventories", "carts"], usersPermissions: [], atLeastOnePermission: false},
                     {title: resolveLanguageKey("menus.eCommerce.productreviews.title"), url: "/eCommerce/productreviews", icon: Star, permissions: ["productReviews"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.savedsearches.title"), url: "/eCommerce/savedsearches", icon: Bookmark, permissions: ["savedsearches"], usersPermissions: [], atLeastOnePermission: true},
                 ],
