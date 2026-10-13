@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
   "title": "Porositë POS",
   "description": "Porositë e përfunduara në arka të Pikës së Shitjes.",
+  "help": {
+    "ariaLabel": "Rreth porosive POS",
+    "title": "Rreth porosive POS",
+    "overview": "Një porosi POS është një shitje e regjistruar në arkë. Kjo faqe është regjistri i atyre shitjeve. Rreshtat nuk krijohen, nuk ndryshohen dhe nuk fshihen këtu.",
+    "sections": [
+      {
+        "title": "Çfarë është një rresht",
+        "body": "Shitja shkruhet kur arka merr pagesën. Lista është si e gjeni pastaj.",
+        "items": [
+          "Gjendjet janë draft, e paguar, e anuluar dhe e rimbursuar.",
+          "Rreshti mban sesionin, arkën, arkëtarin dhe klientin kur është lidhur një.",
+          "Ribotimi, nga menuja e rreshtit, e dërgon faturën përsëri."
+        ]
+      },
+      {
+        "title": "Rimbursimet",
+        "body": "Një rimbursim nuk është një ndryshim i shitjes origjinale. Është një porosi tjetër.",
+        "items": [
+          "Një shitje e paguar rimbursohet nga arka, e plotë ose sipas sasisë së rreshtit.",
+          "Porosia e rimbursimit mbetet e lidhur me shitjen që kthen.",
+          "Çdo rresht shitjeje kujton sa është rimbursuar tashmë, që një rimbursim i dytë të mos mbulojë të njëjtat njësi."
+        ]
+      },
+      {
+        "title": "Ku bëhet puna",
+        "body": "Paratë lëvizin në arkë. Kjo faqe shërben për ta gjetur shitjen.",
+        "items": [
+          "Hapni pikën e shitjes për të shitur, për të mbajtur një shportë ose për të rimbursuar.",
+          "Hapni sesionet POS për të parë sirtarin të cilit i përkiste shitja.",
+          "Porositë e katalogut janë një listë tjetër. Një shitje në arkë nuk del aty."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {

@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Product reviews",
   "description": "Create and edit reviews for paid orders, and moderate them.",
+  "help": {
+    "ariaLabel": "About Product reviews",
+    "title": "About Product reviews",
+    "overview": "A product review belongs to one line of a paid order. The rating feeds that product's average, rating count, and review count. Marketplace reviews are a separate list and do not change these numbers.",
+    "sections": [
+      {
+        "title": "What you can create",
+        "body": "The review is tied to a real purchase. It is not a free-standing comment.",
+        "items": [
+          "It points at one paid order and one product on that order.",
+          "The reviewer is the order's customer. You do not pick a different person, and you cannot change it later.",
+          "Order and product are fixed once the review exists."
+        ]
+      },
+      {
+        "title": "What you can still edit",
+        "body": "The text and the score can change. The link to the purchase cannot.",
+        "items": [
+          "Rating, title, and comment can be edited.",
+          "The product's rating average, rating count, and review count follow the reviews that are still live.",
+          "Deleting a review is a soft delete and it can be restored."
+        ]
+      },
+      {
+        "title": "Where it shows up",
+        "body": "The review is moderated here. The product page is where the number is sold.",
+        "items": [
+          "Open the product to see the aggregate the shop uses.",
+          "Open the order to see the purchase the review is about.",
+          "A till sale does not land in this list. These reviews are catalog orders."
+        ]
+      }
+    ]
+  },
   "createProductReview": "Create review",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

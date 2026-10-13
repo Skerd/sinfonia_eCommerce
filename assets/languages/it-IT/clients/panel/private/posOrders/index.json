@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
   "title": "Ordini POS",
   "description": "Ordini completati presso il punto vendita fino al.",
+  "help": {
+    "ariaLabel": "Informazioni sugli ordini POS",
+    "title": "Informazioni sugli ordini POS",
+    "overview": "Un ordine POS è una vendita battuta in cassa. Questa pagina ne è il registro. Le righe non si creano, non si modificano e non si eliminano qui.",
+    "sections": [
+      {
+        "title": "Cos'è una riga",
+        "body": "La vendita si scrive quando la cassa incassa. L'elenco serve a ritrovarla.",
+        "items": [
+          "Gli stati sono bozza, pagato, annullato e rimborsato.",
+          "La riga tiene sessione, cassa, cassiere e il cliente se ne era stato associato uno.",
+          "Ristampa, dal menu di riga, invia di nuovo lo scontrino."
+        ]
+      },
+      {
+        "title": "Rimborsi",
+        "body": "Un rimborso non è una modifica della vendita originale. È un altro ordine.",
+        "items": [
+          "Una vendita pagata si rimborsa dalla cassa, per intero o per quantità di riga.",
+          "L'ordine di rimborso resta collegato alla vendita che storna.",
+          "Ogni riga di vendita ricorda quanto è già stato rimborsato, così un secondo rimborso non copre le stesse unità."
+        ]
+      },
+      {
+        "title": "Dove si fa il lavoro",
+        "body": "Il denaro si muove in cassa. Questa pagina serve a cercare la vendita.",
+        "items": [
+          "Apri il punto vendita per vendere, sospendere un carrello o rimborsare.",
+          "Apri le sessioni POS per vedere il cassetto di quella vendita.",
+          "Gli ordini di catalogo sono un altro elenco. Una vendita in cassa non compare lì."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {

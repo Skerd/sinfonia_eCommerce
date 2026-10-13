@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Trasferimenti di magazzino",
   "description": "Spostare la merce tra magazzini.",
+  "help": {
+    "ariaLabel": "Informazioni sui trasferimenti di stock",
+    "title": "Informazioni sui trasferimenti di stock",
+    "overview": "Un trasferimento sposta lo stock libero da un magazzino a un altro. Resta una bozza finché non viene completato o annullato. Completare è il momento in cui le quantità si muovono davvero.",
+    "sections": [
+      {
+        "title": "La bozza",
+        "body": "Finché è una bozza, nulla ha lasciato il magazzino di origine.",
+        "items": [
+          "Magazzino di origine e di destinazione sono entrambi obbligatori e sono magazzini diversi.",
+          "Ogni riga è un prodotto, una variante facoltativa e una quantità.",
+          "Una bozza si può ancora modificare. Solo una bozza può essere completata o annullata."
+        ]
+      },
+      {
+        "title": "Cosa fa completa",
+        "body": "Completa è tutto o niente. Una riga corta rifiuta l'intero trasferimento.",
+        "items": [
+          "Ogni riga lascia l'origine e arriva a destinazione.",
+          "Si muove solo lo stock libero. Le unità già riservate per ordini aperti restano.",
+          "Se la destinazione non ha mai avuto l'articolo, la riga di inventario viene creata.",
+          "Il libro riceve un trasferimento in uscita sull'origine e uno in entrata sulla destinazione."
+        ]
+      },
+      {
+        "title": "Dopo",
+        "body": "Un trasferimento completato è storia. Una bozza annullata non ha mai mosso stock.",
+        "items": [
+          "Annulla parte solo da bozza. Un trasferimento completato non si annulla da qui.",
+          "Le nuove quantità stanno in Inventario. I due movimenti stanno sotto Movimenti di inventario.",
+          "L'eliminazione è logica e il trasferimento può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "createStockTransfer": "Crea trasferimento",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

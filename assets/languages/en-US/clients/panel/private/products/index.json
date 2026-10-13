@@ -2,6 +2,45 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
   "title": "Products",
   "description": "Manage the products in your catalog.",
+  "help": {
+    "ariaLabel": "About Products",
+    "title": "About Products",
+    "overview": "A product is one sellable catalog item for this company. The shop sells it only while the status is active. Draft is the working copy. Archived is off sale and can come back as a draft.",
+    "sections": [
+      {
+        "title": "What the type changes",
+        "body": "The type decides how the item is sold and how stock moves. It is set on the product and stays the frame for pricing, shipping, and inventory.",
+        "items": [
+          "Physical ships and can track inventory, weight, and dimensions.",
+          "Digital is delivered as a download. A full refund of the order expires those downloads.",
+          "A service is sold without a shipment.",
+          "Variable is sold through its variants. A variant with no price of its own uses the product price.",
+          "A bundle is a set of other products. When stock moves, the bundle is opened one level. Each component must be a live product of this company, and it cannot itself be a bundle.",
+          "A gift card is sold as store credit."
+        ]
+      },
+      {
+        "title": "Status and the row actions",
+        "body": "Publish, archive, and revert to draft change status. Each one is refused when the product is not in the state that action expects.",
+        "items": [
+          "Publish is only from draft. A product without variants must already have a price. The first publish records the publish date.",
+          "Archive is from draft or active and takes the product off sale.",
+          "Revert to draft is only from archived. It clears the publish date so the product is not put straight back on sale.",
+          "Duplicate copies the details into a new draft. The title is the original plus \" (Copy)\". Ratings, review counts, and variants are not copied.",
+          "Deleting a product is a soft delete and it can be restored."
+        ]
+      },
+      {
+        "title": "How it connects to the rest of the menu",
+        "body": "The product is the catalog record. Stock, orders, and reviews hang off it.",
+        "items": [
+          "Categories and collections group it in the shop. A product can sit in more than one category.",
+          "Inventory, under Stock, holds the quantity per warehouse. A product with no inventory row is treated as untracked at checkout.",
+          "A review on a paid order line updates this product's rating average, rating count, and review count."
+        ]
+      }
+    ]
+  },
   "createProduct": "Create product",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

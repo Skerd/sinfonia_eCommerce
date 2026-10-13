@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
   "title": "Adempimenti",
   "description": "Tieni traccia delle spedizioni e della consegna degli ordini di prodotti.",
+  "help": {
+    "ariaLabel": "Informazioni sulle evasioni",
+    "title": "Informazioni sulle evasioni",
+    "overview": "Un'evasione è una spedizione di un ordine prodotto. Spedire un ordine ne crea una. Puoi anche crearla qui. Lo stato è in attesa, spedita, consegnata o non riuscita, e alimenta l'ordine.",
+    "sections": [
+      {
+        "title": "Come si muove una spedizione",
+        "body": "Spedisci, consegna e segna come non riuscita sono legali solo dallo stato indicato.",
+        "items": [
+          "Si spedisce solo da in attesa, e solo se l'ordine stesso non è ancora in attesa, annullato o rimborsato.",
+          "Spedire consuma lo stock riservato per quelle righe e può portare l'ordine a spedito.",
+          "Si consegna solo da spedita. Consegnare l'ultima spedizione aperta può portare l'ordine a consegnato.",
+          "Si segna come non riuscita da in attesa o spedita. Una spedizione già partita viene annullata. Se l'ordine è annullato o rimborsato, lo stock ancora trattenuto viene liberato."
+        ]
+      },
+      {
+        "title": "Cosa ci registri",
+        "body": "Corriere e tracking stanno sulla spedizione, non nell'intestazione dell'ordine.",
+        "items": [
+          "Corriere, numero di tracking e link sono ciò che il cliente riceve alla spedizione.",
+          "Spedito il, consegna prevista e consegnato il segnano la cronologia.",
+          "Le righe sono quantità degli articoli dell'ordine. Una spedizione successiva può coprire ciò che una precedente ha lasciato."
+        ]
+      },
+      {
+        "title": "Come sta rispetto all'ordine",
+        "body": "Lo stato di evasione dell'ordine deriva dalle sue spedizioni. Una spedizione parziale lo lascia evaso in parte.",
+        "items": [
+          "Apri l'ordine dalla riga per pagamento, annullo o rimborso. Restano sull'ordine.",
+          "Un reso ricevuto rimette la merce nel magazzino da cui è partita la riga.",
+          "L'eliminazione è logica e l'evasione può essere ripristinata."
+        ]
+      }
+    ]
+  },
   "createFulfillment": "Creare soddisfazione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
   "title": "Inventari",
   "description": "Nivelet e stokut nëpër magazina.",
+  "help": {
+    "ariaLabel": "Rreth inventarit",
+    "title": "Rreth inventarit",
+    "overview": "Një rresht inventari është stoku i një produkti, ose i një varianti, në një magazinë. E disponueshmja është sasia në dorë minus sasia e rezervuar për blerjet e hapura. Ky është numri që dyqani mund të shesë ende.",
+    "sections": [
+      {
+        "title": "Në dorë, e rezervuar, e disponueshme",
+        "body": "Tri sasitë nuk janë tri stoke. E rezervuara është një mbajtje brenda sasisë në dorë.",
+        "items": [
+          "Në dorë është ajo që ka magazina.",
+          "E rezervuar është ajo që blerjet e hapura e kanë marrë dhe ende nuk e kanë dërguar ose liruar.",
+          "E disponueshme është në dorë minus e rezervuar. Mund të shkojë negative nëse një numërim gjen më pak se sa mbajnë porositë."
+        ]
+      },
+      {
+        "title": "Kur blerja e përdor rreshtin",
+        "body": "Një produkt gjurmohet vetëm aty ku ekziston një rresht. Pa rresht, rreshti i porosisë nuk merret nga stoku.",
+        "items": [
+          "Një rresht blerjeje rezervohet vetëm kur ekziston një rresht për atë produkt ose variant.",
+          "Përdoret magazina aktive e paracaktuar kur mund të mbulojë sasinë. Përndryshe e para që mund ta mbulojë.",
+          "Dërgimi e konsumon rezervimin. Anulimi ose rimbursimi i plotë para kësaj e liron."
+        ]
+      },
+      {
+        "title": "Çfarë tjetër i ndryshon numrat",
+        "body": "Mund të ndryshoni një rresht këtu. Faqet e tjera të stokut shkruajnë të njëjtat numra dhe lënë një lëvizje.",
+        "items": [
+          "Një transferim lëviz stokun e lirë mes magazinave. Njësitë tashmë të rezervuara nuk lëvizin kurrë.",
+          "Një numërim e vendos sasinë në dorë te ajo e numëruar dhe shkruan një rregullim.",
+          "Shitjet, kthimet, rimbushjet, dëmtimet dhe fshirjet nga librat dalin te Lëvizjet e inventarit, me sasinë para dhe pas.",
+          "Fshirja është e butë dhe rreshti mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createInventory": "Krijo inventar",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
   "title": "Kërkimet tuaja të ruajtura",
   "description": "Kërkimet e katalogut që keni ruajtur, me filtrat aktivë.",
+  "help": {
+    "ariaLabel": "Rreth kërkimeve të ruajtura",
+    "title": "Rreth kërkimeve të ruajtura",
+    "overview": "Një kërkim i ruajtur ruan një filtër katalogu që një klient mund ta ekzekutojë përsëri. Nuk është produkt dhe nuk është porosi. Kujton si donte të ngushtohej katalogu.",
+    "sections": [
+      {
+        "title": "Çfarë ruhet",
+        "body": "Emri është etiketa. Pjesa tjetër është filtri.",
+        "items": [
+          "Emri është i detyrueshëm.",
+          "Kategoritë mund të jenë disa. Koleksioni është një.",
+          "Çmimi minimal, çmimi maksimal dhe renditja janë opsionale. Të zbrazëtat thjesht nuk zbatohen."
+        ]
+      },
+      {
+        "title": "Kërkimet e kujt tregon kjo faqe",
+        "body": "Të njëjtat regjistrime listohen në dy mënyra.",
+        "items": [
+          "E hapur nga menuja e eCommerce, kjo faqe liston çdo kërkim të ruajtur të kompanisë, dhe një i ri pyet cilit klient i përket.",
+          "E hapur si lista e vet e një klienti, tregon vetëm të tijat, dhe një kërkim i ri arkivohet nën atë klient.",
+          "Fshirja është e butë dhe kërkimi mund të rikthehet."
+        ]
+      },
+      {
+        "title": "Çfarë nuk bën",
+        "body": "Ruajtja e një kërkimi nuk e ndryshon katalogun.",
+        "items": [
+          "Nuk fsheh produkte, nuk ndryshon një çmim dhe nuk krijon një koleksion.",
+          "Kategoritë, koleksionet dhe çmimet ndryshohen në ato faqe. Ky rresht vetëm tregon te ato.",
+          "Ekzekutimi përsëri e zbaton të njëjtin filtër mbi katalogun siç është tani, jo siç ishte kur u ruajt kërkimi."
+        ]
+      }
+    ]
+  },
   "catalogTitle": "Kërkimet e ruajtura",
   "catalogDescription": "Çdo kërkim katalogu i ruajtur nga një klient.",
   "createSavedSearch": "Krijo kërkim të ruajtur",

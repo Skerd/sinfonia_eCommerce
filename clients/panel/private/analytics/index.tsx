@@ -19,6 +19,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
@@ -129,7 +130,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
 
     return (
         <div className="flex flex-col gap-4 p-4 md:p-6">
-            <Header title={rk("title")} description={rk("description")}>
+            <Header title={rk("title")} description={rk("description")} help={readPageHelp(resolveLanguageKey)}>
                 <div className="flex items-center gap-2">
                     <Tabs value={period} onValueChange={(v) => setPeriod(v as AnalyticsPeriod)}>
                         <TabsList>

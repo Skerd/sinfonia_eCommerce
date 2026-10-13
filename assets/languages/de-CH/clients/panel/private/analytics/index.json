@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analytics",
   "description": "Track revenue, aufträge, inventory, und warenkorb activity.",
+  "help": {
+    "ariaLabel": "Über Analysen",
+    "title": "Über Analysen",
+    "overview": "Analysen fassen bezahlten Umsatz, Bestellungen, Lager und Warenkörbe dieser Firma zusammen. Es ist eine Lesart dieser Daten. Auf dieser Seite entsteht keine Bestellung, kein Produkt und keine Bestandsänderung.",
+    "sections": [
+      {
+        "title": "Was der Zeitraum ändert",
+        "body": "Der Zeitraum ist 7 Tage, 30 Tage, 90 Tage oder 1 Jahr. Er gilt nicht für jede Karte.",
+        "items": [
+          "Umsatz, Bestellzahlen und Produktzahlen folgen dem Zeitraum.",
+          "Das Diagramm ist bezahlter Umsatz pro Tag in diesem Zeitraum.",
+          "Lager und verlassene Warenkörbe sind der aktuelle Stand. Der Zeitraum rechnet sie nicht neu."
+        ]
+      },
+      {
+        "title": "Die Geld- und Bestellkarten",
+        "body": "Diese zählen bezahlte Bestellungen, nicht jede aufgegebene Bestellung.",
+        "items": [
+          "Gesamtumsatz sind bezahlte Bestellungen im Zeitraum.",
+          "Bestellungen ist die Anzahl dieser bezahlten Bestellungen.",
+          "Durchschnittlicher Bestellwert ist dieser Umsatz geteilt durch diese Anzahl."
+        ]
+      },
+      {
+        "title": "Die Bestands- und Warenkorbkarten",
+        "body": "Diese sind aktuell, sie können also vom gewählten Zeitraum abweichen. Das ist erwartet.",
+        "items": [
+          "Verlassene Warenkörbe sind länger als eine Stunde inaktiv.",
+          "Niedriger Bestand ist eine SKU unter ihrem Meldebestand. Nicht vorrätig ist eine SKU ohne verfügbare Menge.",
+          "Einheiten auf Lager ist die gesamte Bestandsmenge. Produkte ist der Katalog nach Status.",
+          "Öffnen Sie Lagerbestand, Produktbestellungen oder Produkte, wenn eine Karte das ist, worauf Sie handeln müssen."
+        ]
+      }
+    ]
+  },
   "refresh": "Refresh",
   "errorTitle": "Analytics konnten nicht geladen werden",
   "errorDescription": "Something went wrong während fetching dashboard daten.",

@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
   "title": "Inventaire",
   "description": "Niveaux de stock dans vos entrepôts.",
+  "help": {
+    "ariaLabel": "À propos de l'inventaire",
+    "title": "À propos de l'inventaire",
+    "overview": "Une ligne d'inventaire est le stock d'un produit, ou d'une variante, dans un entrepôt. Le disponible est le stock en main moins la quantité réservée pour les paiements ouverts. C'est le nombre que la boutique peut encore vendre.",
+    "sections": [
+      {
+        "title": "En main, réservé, disponible",
+        "body": "Les trois quantités ne sont pas trois stocks. Réservé est une retenue à l'intérieur du stock en main.",
+        "items": [
+          "En main est ce que l'entrepôt a.",
+          "Réservé est ce que les paiements ouverts ont déjà pris et pas encore expédié ou libéré.",
+          "Disponible est en main moins réservé. Il peut devenir négatif si un comptage trouve moins que ce que les commandes retiennent."
+        ]
+      },
+      {
+        "title": "Quand le paiement utilise la ligne",
+        "body": "Un produit n'est suivi que là où une ligne existe. Pas de ligne : l'article n'est pas pris sur le stock.",
+        "items": [
+          "Une ligne de paiement n'est réservée que s'il existe une ligne pour ce produit ou cette variante.",
+          "L'entrepôt actif par défaut est utilisé s'il peut couvrir la quantité. Sinon le premier qui le peut.",
+          "Expédier consomme la réservation. Annuler ou rembourser en totalité avant cela la libère."
+        ]
+      },
+      {
+        "title": "Ce qui change encore les chiffres",
+        "body": "Vous pouvez modifier une ligne ici. Les autres pages de stock écrivent les mêmes chiffres et laissent un mouvement.",
+        "items": [
+          "Un transfert déplace le stock libre entre entrepôts. Les unités déjà réservées ne bougent jamais.",
+          "Un comptage fixe le stock en main sur ce qui a été compté et écrit un ajustement.",
+          "Ventes, retours, réapprovisionnements, dommages et mises au rebut sont sous Mouvements d'inventaire, avec la quantité avant et après.",
+          "La suppression est logique et la ligne peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createInventory": "Créer un inventaire",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

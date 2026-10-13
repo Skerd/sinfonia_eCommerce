@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Lëvizjet e inventarit",
   "description": "Regjistri i plotë i rifornizimeve, çregjistrimeve, shitjeve dhe ndryshimeve të tjera.",
+  "help": {
+    "ariaLabel": "Rreth lëvizjeve të inventarit",
+    "title": "Rreth lëvizjeve të inventarit",
+    "overview": "Ky është regjistri i stokut. Çdo ndryshim i sasisë në dorë shkruan një rresht, dhe rreshti ruhet. Faqja është vetëm për lexim: këtu nuk shkruhet asgjë me dorë.",
+    "sections": [
+      {
+        "title": "Çfarë regjistron një rresht",
+        "body": "Rreshti është ndryshimi, jo stoku aktual. Stoku aktual qëndron te rreshti i inventarit.",
+        "items": [
+          "Mban produktin, variantin kur ka, magazinën dhe rreshtin e inventarit të cilit i përket.",
+          "Sasia është ndryshimi. Para dhe pas janë sasia në dorë rreth atij ndryshimi.",
+          "Arsyeja thotë pse. Shënimi, numri i faturës, seria, skadenca dhe kostoja për njësi janë aty kur veprimi i kishte."
+        ]
+      },
+      {
+        "title": "Arsyet",
+        "body": "Arsyen e vendos veprimi. Në këtë faqe nuk e zgjidhni.",
+        "items": [
+          "Rimbushja dhe fillestari janë hyrje. Shitja është dalje me një porosi ose një shitje në arkë.",
+          "Kthimi është mall i kthyer kur një kërkesë kthimi pranohet.",
+          "Transferimi brenda dhe transferimi jashtë janë dy anët e një transferimi të përfunduar.",
+          "Rregullimi është një numërim. Dëmtimi dhe fshirja nga librat nxjerrin mall pa një shitje."
+        ]
+      },
+      {
+        "title": "Pse nuk mund ta ndryshoni",
+        "body": "Regjistri është historia. Ndryshimi i një rreshti do t'i bënte para dhe pas të rreme.",
+        "items": [
+          "Rreshtat nuk mund të krijohen, ndryshohen ose fshihen nga kjo faqe.",
+          "Për të ndryshuar stokun, përdorni Inventarin, një transferim, një numërim, një dërgesë ose një kthim.",
+          "Hapni rreshtin për të parë produktin, magazinën dhe referencën ku tregon lëvizja."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "reason": "Arsyeja",

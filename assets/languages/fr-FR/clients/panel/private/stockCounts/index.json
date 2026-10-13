@@ -2,6 +2,42 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Inventaires",
   "description": "Compter un entrepôt et corriger son stock.",
+  "help": {
+    "ariaLabel": "À propos des comptages de stock",
+    "title": "À propos des comptages de stock",
+    "overview": "Un comptage enregistre ce qui est réellement en rayon dans un entrepôt, puis corrige le stock en main. Il reste un brouillon jusqu'à ce qu'il soit appliqué ou annulé. Appliquer est le moment où les chiffres changent.",
+    "sections": [
+      {
+        "title": "Le brouillon",
+        "body": "Compter ne change pas le stock. Appliquer le change.",
+        "items": [
+          "Le comptage concerne un entrepôt.",
+          "Chaque ligne est un produit, une variante facultative, ce qui était attendu et ce qui a été compté.",
+          "Une quantité comptée vide signifie que la ligne n'a pas été comptée. Appliquer la laisse.",
+          "Seul un brouillon peut être appliqué ou annulé."
+        ]
+      },
+      {
+        "title": "Ce que fait appliquer",
+        "body": "L'écart est pris sur le stock en main maintenant, pas sur l'instantané du début du comptage.",
+        "items": [
+          "Appliquer fixe le stock en main à la quantité comptée pour chaque ligne qui a un comptage.",
+          "Les ventes parties pendant le comptage ne sont pas annulées, parce que l'écart utilise le stock au moment d'appliquer.",
+          "Chaque changement écrit un mouvement d'ajustement.",
+          "Un comptage inférieur à ce qui est retenu pour des commandes est accepté. Le disponible peut devenir négatif. Le rayon est ce qu'il est."
+        ]
+      },
+      {
+        "title": "Une fois appliqué",
+        "body": "Le comptage reste la trace de ce qui a été compté. Le stock vit sur la ligne d'inventaire.",
+        "items": [
+          "Annuler ne part que d'un brouillon. Un comptage appliqué ne se retourne pas depuis cette page.",
+          "Regardez l'inventaire pour le nouveau stock en main, et les mouvements pour les ajustements.",
+          "La suppression est logique et le comptage peut être restauré."
+        ]
+      }
+    ]
+  },
   "createStockCount": "Créer un inventaire",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

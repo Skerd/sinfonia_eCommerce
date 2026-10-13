@@ -1,6 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Point von Verkauf",
+  "help": {
+    "ariaLabel": "Über Kasse",
+    "title": "Über Kasse",
+    "overview": "Die Kasse verkauft an einem Ladenterminal. Diese Seite ist die Kasse, keine Liste. Sie wählen eine Kasse, öffnen eine Sitzung mit dem Bargeld, das schon in der Schublade liegt, und verkaufen. Sobald die Sitzung offen ist, hat die Kasse eine eigene Kurzanleitung.",
+    "sections": [
+      {
+        "title": "Öffnen",
+        "body": "Eine Kasse kommt aus den POS-Konfigurationen. Dieser Bildschirm öffnet nur eine, die schon eingerichtet ist.",
+        "items": [
+          "Wählen Sie die Kasse und öffnen Sie eine Sitzung mit dem Anfangsbestand.",
+          "Einzahlung und Auszahlung halten spätere Schubladenbewegungen fest. Schliessen zählt die Schublade und beendet die Sitzung.",
+          "Diese Sitzungen stehen unter POS-Sitzungen. Sie legen sie nicht aus dieser Liste an."
+        ]
+      },
+      {
+        "title": "Verkaufen",
+        "body": "Der Katalog an der Kasse sind die Produkte dieser Firma. Eine Position nimmt Bestand aus dem Lager der Kasse.",
+        "items": [
+          "Suchen oder scannen Sie einen Barcode. Varianten werden gewählt, bevor die Position hinzukommt.",
+          "Sie können einen Warenkorb parken und wieder aufnehmen, einen Kunden zuordnen, eine Position oder die Bestellung rabattieren, die Zahlung teilen und einen bezahlten Verkauf erstatten.",
+          "Eine Erstattung hier wird eine eigene POS-Bestellung, verknüpft mit dem Verkauf, und erscheint unter POS-Bestellungen."
+        ]
+      },
+      {
+        "title": "Wann die Kasse nicht verkauft",
+        "body": "Pause und inaktiv sind Sperren, keine Fehler im Warenkorb.",
+        "items": [
+          "Eine pausierte Kasse kann nicht verkaufen. Gehaltene Warenkörbe können Sie trotzdem verwerfen und die Sitzung schliessen. Eine Pause für die ganze Firma sperrt jede Kasse, nicht nur diese.",
+          "Eine inaktive Kasse kann nicht geöffnet werden.",
+          "Ist für die Kasse keine Fiskalisierung aktiv, werden Verkäufe auf ihr nicht fiskalisiert."
+        ]
+      }
+    ]
+  },
   "backToConfigs": "Zurück zu configs",
   "back": "Exit",
   "cashIn": "Cash In",

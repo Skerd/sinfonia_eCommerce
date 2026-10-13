@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "Mappa del sistema di e-commerce",
   "description": "Mappa interattiva dei modelli di eCommerce del catalogo, del flusso di pagamento e delle funzionalità dei moduli. Panoramica, zoom e clic sui nodi per i dettagli.",
+  "help": {
+    "ariaLabel": "Informazioni sulla mappa di sistema eCommerce",
+    "title": "Informazioni sulla mappa di sistema eCommerce",
+    "overview": "La mappa di sistema è un'immagine del modulo eCommerce di catalogo: i modelli, il flusso di checkout e cosa sa fare il modulo. Non cambia i dati. Il marketplace ha una mappa propria.",
+    "sections": [
+      {
+        "title": "Grafo dei modelli",
+        "body": "È la scheda predefinita. È il modello dati, disposto per vedere cosa punta a cosa.",
+        "items": [
+          "Sposta e zooma, oppure usa i comandi di zoom e adatta.",
+          "Fai clic su un nodo per i campi, il percorso API e dove vive quella schermata nel pannello.",
+          "Filtra per catalogo, ordini, pagamenti, escrow e condiviso quando la mappa intera è troppo."
+        ]
+      },
+      {
+        "title": "Come funziona",
+        "body": "Questa scheda è la storia del checkout, dal catalogo all'ordine, non l'elenco dei modelli.",
+        "items": [
+          "Seguila per l'ordine dei passi: prodotto, carrello, pagamento, stock, spedizione.",
+          "È lo stesso modulo su cui lavorano le altre voci del menu eCommerce. Non è un secondo checkout."
+        ]
+      },
+      {
+        "title": "Funzionalità",
+        "body": "Questa scheda raggruppa ciò che il modulo copre, per vedere la superficie senza aprire ogni menu.",
+        "items": [
+          "Usala per capire a quale area appartiene un lavoro, poi apri quella pagina dal menu eCommerce.",
+          "Le impostazioni di catalogo come categorie, magazzini e sconti stanno sotto Configurazioni, non in questo gruppo di menu. La mappa le mostra lo stesso, perché il catalogo le usa."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Grafico del modello",
     "flows": "Come funziona",

@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
   "title": "POS aufträge",
   "description": "Aufträge abgeschlossen am die Point von Verkauf till.",
+  "help": {
+    "ariaLabel": "Über POS-Bestellungen",
+    "title": "Über POS-Bestellungen",
+    "overview": "Eine POS-Bestellung ist ein Verkauf an der Kasse. Diese Seite ist die Aufzeichnung dieser Verkäufe. Zeilen werden hier nicht erstellt, bearbeitet oder gelöscht.",
+    "sections": [
+      {
+        "title": "Was eine Zeile ist",
+        "body": "Der Verkauf wird geschrieben, wenn die Kasse die Zahlung annimmt. Die Liste ist, wie Sie ihn danach finden.",
+        "items": [
+          "Status sind Entwurf, bezahlt, storniert und erstattet.",
+          "Die Zeile hält Sitzung, Kasse, Kassierer und den Kunden, wenn einer zugeordnet war.",
+          "Nachdrucken im Zeilenmenü sendet den Beleg erneut."
+        ]
+      },
+      {
+        "title": "Erstattungen",
+        "body": "Eine Erstattung ist keine Bearbeitung des ursprünglichen Verkaufs. Sie ist eine weitere Bestellung.",
+        "items": [
+          "Ein bezahlter Verkauf wird an der Kasse erstattet, ganz oder nach Positionsmenge.",
+          "Die Erstattungsbestellung bleibt mit dem Verkauf verknüpft, den sie umkehrt.",
+          "Jede Verkaufsposition merkt sich, wie viel bereits erstattet wurde, damit eine zweite Erstattung dieselben Einheiten nicht noch einmal deckt."
+        ]
+      },
+      {
+        "title": "Wo die Arbeit geschieht",
+        "body": "Geld bewegt sich an der Kasse. Diese Seite dient dazu, den Verkauf nachzuschlagen.",
+        "items": [
+          "Öffnen Sie die Kasse, um zu verkaufen, einen Warenkorb zu parken oder zu erstatten.",
+          "Öffnen Sie POS-Sitzungen, um die Schublade zu sehen, zu der der Verkauf gehörte.",
+          "Produktbestellungen des Katalogs sind eine andere Liste. Ein Kassenverkauf erscheint dort nicht."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {

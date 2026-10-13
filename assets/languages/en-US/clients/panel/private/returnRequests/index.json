@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
   "title": "Return requests",
   "description": "Handle returns, exchanges and refund requests.",
+  "help": {
+    "ariaLabel": "About Return requests",
+    "title": "About Return requests",
+    "overview": "A return request asks to send goods back, exchange them, or refund a product order. The type is return, exchange, or refund. The status walks pending, approved, rejected, received, completed.",
+    "sections": [
+      {
+        "title": "The path",
+        "body": "Approve and reject are the decision. Receive and complete are what happens after a yes. Each step is refused if the request is not in the previous state.",
+        "items": [
+          "Approve and reject are only for a pending request. Both record who resolved it and when, and the customer is told.",
+          "On approve you can set a refund amount, and it cannot be more than the value of the lines on the request.",
+          "Reject closes the request and does not move stock.",
+          "Receive is only for an approved request. Complete is only after it has been received."
+        ]
+      },
+      {
+        "title": "What receive and complete do to stock and money",
+        "body": "A refund-only request has nothing to put back on the shelf. A return or an exchange does.",
+        "items": [
+          "On receive, a return or an exchange puts the quantities back on hand in the warehouse each line shipped from, and writes a return movement. A bundle comes back as its components.",
+          "A line that never took stock, or whose inventory row is gone, is noted on the order instead of restocked.",
+          "Complete pays the agreed amount through the order's refund, for a return or a refund. An exchange does not pay anything back."
+        ]
+      },
+      {
+        "title": "What the request is attached to",
+        "body": "The request always points at one order and at specific lines of that order.",
+        "items": [
+          "Each line is an order item, a quantity, and a reason.",
+          "The customer note and the admin note stay on the request. The money movement, if any, is the order's refund.",
+          "Deleting a request is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createReturnRequest": "Create return request",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

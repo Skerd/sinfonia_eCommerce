@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
   "title": "Fulfillments",
   "description": "Track shipments and delivery of product orders.",
+  "help": {
+    "ariaLabel": "About Fulfillments",
+    "title": "About Fulfillments",
+    "overview": "A fulfillment is one shipment of a product order. Shipping an order creates one. You can also create one here. Its status is pending, shipped, delivered, or failed, and that status feeds the order.",
+    "sections": [
+      {
+        "title": "How a shipment moves",
+        "body": "Ship, deliver, and fail are only legal from the status named here. The order itself has to be ready too.",
+        "items": [
+          "Ship is only from pending, and only when the order is not still pending, cancelled, or refunded.",
+          "Shipping consumes the stock reserved for those lines and can move the order to shipped.",
+          "Deliver is only from shipped. Delivering the last open shipment can move the order to delivered.",
+          "Fail is from pending or shipped. Failing a shipment that already left reverses that shipment. If the order is cancelled or refunded, stock still held is released."
+        ]
+      },
+      {
+        "title": "What you record on it",
+        "body": "The shipment is the place for the carrier and the tracking, not the order header.",
+        "items": [
+          "Carrier, tracking number, and tracking link are the details the customer is told when it ships.",
+          "Shipped at, estimated delivery, and delivered at mark the timeline.",
+          "The lines are quantities of the order's items. A later shipment can cover what an earlier one left."
+        ]
+      },
+      {
+        "title": "How it sits with the order",
+        "body": "The order's fulfillment status is derived from its shipments, so a partial ship leaves the order partly fulfilled.",
+        "items": [
+          "Open the order from the row when you need payment, cancel, or refund. Those stay on the order.",
+          "A return that is received puts goods back in the warehouse the line shipped from.",
+          "Deleting a fulfillment is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createFulfillment": "Create fulfillment",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

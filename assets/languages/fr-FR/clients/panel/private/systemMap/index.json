@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "Carte du système de commerce électronique",
   "description": "Carte interactive des modèles de commerce électronique de catalogue, du flux de paiement et des capacités des modules. Effectuez un panoramique, un zoom et cliquez sur les nœuds pour plus de détails.",
+  "help": {
+    "ariaLabel": "À propos de la carte système eCommerce",
+    "title": "À propos de la carte système eCommerce",
+    "overview": "La carte système est une image du module eCommerce catalogue : ses modèles, le parcours de paiement et ce que le module sait faire. Elle ne change pas les données. La marketplace a sa propre carte.",
+    "sections": [
+      {
+        "title": "Graphe des modèles",
+        "body": "C'est l'onglet par défaut. C'est le modèle de données, disposé pour voir ce qui pointe vers quoi.",
+        "items": [
+          "Déplacez et zoomez, ou utilisez les contrôles de zoom et d'ajustement.",
+          "Cliquez un nœud pour ses champs, le chemin d'API et l'endroit où cet écran vit dans le panneau.",
+          "Filtrez par catalogue, commandes, paiements, séquestre et partagé quand la carte entière est trop dense."
+        ]
+      },
+      {
+        "title": "Comment ça marche",
+        "body": "Cet onglet est l'histoire du paiement, du catalogue à la commande, plutôt que la liste des modèles.",
+        "items": [
+          "Suivez-le pour l'ordre des étapes : produit, panier, paiement, stock, expédition.",
+          "C'est le même module que les autres entrées du menu eCommerce. Ce n'est pas un second paiement."
+        ]
+      },
+      {
+        "title": "Capacités",
+        "body": "Cet onglet regroupe ce que le module couvre, pour voir la surface sans ouvrir chaque menu.",
+        "items": [
+          "Utilisez-le pour voir à quelle zone un travail appartient, puis ouvrez cette page depuis le menu eCommerce.",
+          "Les réglages catalogue comme les catégories, les entrepôts et les remises sont sous Configurations, pas dans ce groupe de menu. La carte les montre quand même, parce que le catalogue s'en sert."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Graphique du modèle",
     "flows": "Comment ça marche",

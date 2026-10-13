@@ -1,6 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Punto di vendita",
+  "help": {
+    "ariaLabel": "Informazioni sul punto vendita",
+    "title": "Informazioni sul punto vendita",
+    "overview": "Il punto vendita vende da una cassa. Questa pagina è la cassa, non un elenco. Scegli un registratore, apri una sessione con il contante già nel cassetto, poi vendi. A sessione aperta, la cassa ha la sua guida ai tasti.",
+    "sections": [
+      {
+        "title": "Apertura",
+        "body": "Una cassa arriva dalle configurazioni POS. Questa schermata ne apre solo una già impostata.",
+        "items": [
+          "Scegli la cassa, poi apri una sessione con il fondo cassa.",
+          "Entrata e uscita registrano i movimenti successivi del cassetto. Chiudi conta il cassetto e termina la sessione.",
+          "Quelle sessioni sono elencate sotto Sessioni POS. Non le crei da quell'elenco."
+        ]
+      },
+      {
+        "title": "Vendita",
+        "body": "Il catalogo in cassa sono i prodotti di questa società. Una riga prende lo stock dal magazzino della cassa.",
+        "items": [
+          "Cerca o scansiona un codice a barre. Le varianti si scelgono prima di aggiungere la riga.",
+          "Puoi mettere in sospeso un carrello e riprenderlo, associare un cliente, scontare una riga o l'ordine, dividere il pagamento e rimborsare una vendita pagata.",
+          "Un rimborso fatto qui diventa un ordine POS a sé, collegato alla vendita, e compare sotto Ordini POS."
+        ]
+      },
+      {
+        "title": "Quando la cassa non vende",
+        "body": "Pausa e inattiva sono blocchi, non errori del carrello.",
+        "items": [
+          "Una cassa in pausa non può vendere. Puoi comunque scartare i carrelli in sospeso e chiudere la sessione. Una pausa di tutta la società blocca ogni cassa, non solo questa.",
+          "Una cassa inattiva non può essere aperta.",
+          "Se per la cassa non c'è fiscalizzazione attiva, le vendite su di essa non vengono fiscalizzate."
+        ]
+      }
+    ]
+  },
   "backToConfigs": "Torniamo alle configurazioni",
   "back": "Esci",
   "cashIn": "Incassare",

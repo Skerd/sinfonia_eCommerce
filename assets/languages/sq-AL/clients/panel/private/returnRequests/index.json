@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
   "title": "Kërkesat për kthim",
   "description": "Menaxhoni kthimet, këmbimet dhe rimbursimet.",
+  "help": {
+    "ariaLabel": "Rreth kërkesave të kthimit",
+    "title": "Rreth kërkesave të kthimit",
+    "overview": "Një kërkesë kthimi kërkon të kthehen mallrat, të ndërrohen ose të rimbursohet një porosi. Lloji është kthim, ndërrim ose rimbursim. Statusi ecën në pritje, e miratuar, e refuzuar, e pranuar, e përfunduar.",
+    "sections": [
+      {
+        "title": "Rruga",
+        "body": "Miratimi dhe refuzimi janë vendimi. Pranimi dhe përfundimi janë ajo që ndodh pas një po. Çdo hap refuzohet nëse kërkesa nuk është në gjendjen e mëparshme.",
+        "items": [
+          "Miratimi dhe refuzimi vlejnë vetëm për një kërkesë në pritje. Të dyja regjistrojnë kush e zgjidhi dhe kur, dhe klienti njoftohet.",
+          "Në miratim mund të vendosni një shumë rimbursimi, që nuk mund të kalojë vlerën e rreshtave të kërkesës.",
+          "Refuzimi e mbyll kërkesën dhe nuk lëviz stok.",
+          "Pranimi vlen vetëm për një kërkesë të miratuar. Përfundimi vetëm pasi është pranuar."
+        ]
+      },
+      {
+        "title": "Çfarë bëjnë pranimi dhe përfundimi me stokun dhe paratë",
+        "body": "Një kërkesë vetëm për rimbursim s'ka çfarë të kthejë në raft. Një kthim ose një ndërrim ka.",
+        "items": [
+          "Në pranim, një kthim ose një ndërrim i kthen sasitë në gjendje në magazinën nga ku u dërgua çdo rresht dhe shkruan një lëvizje kthimi. Një paketë kthehet si përbërësit e saj.",
+          "Një rresht që s'ka marrë kurrë stok, ose rreshti i inventarit të të cilit mungon, shënohet te porosia në vend që të rikthehet në stok.",
+          "Përfundimi paguan shumën e rënë dakord përmes rimbursimit të porosisë, për një kthim ose një rimbursim. Një ndërrim nuk kthen para."
+        ]
+      },
+      {
+        "title": "Me çfarë lidhet kërkesa",
+        "body": "Kërkesa tregon gjithmonë te një porosi dhe te rreshta të caktuar të asaj porosie.",
+        "items": [
+          "Çdo rresht është një artikull porosie, një sasi dhe një arsye.",
+          "Shënimi i klientit dhe shënimi i administratorit qëndrojnë te kërkesa. Lëvizja e parave, nëse ka, është rimbursimi i porosisë.",
+          "Fshirja është e butë dhe kërkesa mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createReturnRequest": "Krijo kërkesë kthimi",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

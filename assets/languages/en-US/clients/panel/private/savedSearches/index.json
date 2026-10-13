@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
   "title": "Your saved searches",
   "description": "Catalog searches you have saved, with the filters that were active.",
+  "help": {
+    "ariaLabel": "About Saved searches",
+    "title": "About Saved searches",
+    "overview": "A saved search stores a catalog filter a customer can run again. It is not a product and not an order. It remembers how they wanted the catalog narrowed.",
+    "sections": [
+      {
+        "title": "What is stored",
+        "body": "The name is the label. The rest is the filter.",
+        "items": [
+          "Name is required.",
+          "Categories can be several. Collection is one.",
+          "Minimum price, maximum price, and sort are optional. Empty ones are simply not applied."
+        ]
+      },
+      {
+        "title": "Whose searches this page shows",
+        "body": "The same records are listed two ways.",
+        "items": [
+          "Opened from the eCommerce menu, this page lists every saved search in the company, and a new one asks which customer it belongs to.",
+          "Opened as a customer's own list, it shows only theirs, and a new search is filed under that customer.",
+          "Deleting a saved search is a soft delete and it can be restored."
+        ]
+      },
+      {
+        "title": "What it does not do",
+        "body": "Saving a search does not change the catalog.",
+        "items": [
+          "It does not hide products, change a price, or create a collection.",
+          "Categories, collections, and prices are edited on those pages. This row only points at them.",
+          "Running it again applies the same filter to the catalog as it is now, not as it was when the search was saved."
+        ]
+      }
+    ]
+  },
   "catalogTitle": "Saved searches",
   "catalogDescription": "Every catalog search saved by a customer.",
   "createSavedSearch": "Create saved search",

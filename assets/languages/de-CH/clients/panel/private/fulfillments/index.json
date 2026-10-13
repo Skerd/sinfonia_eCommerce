@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
   "title": "Fulfillments",
   "description": "Track shipments und delivery von produkt aufträge.",
+  "help": {
+    "ariaLabel": "Über Fulfillments",
+    "title": "Über Fulfillments",
+    "overview": "Ein Fulfillment ist eine Sendung einer Produktbestellung. Das Versenden einer Bestellung legt eines an. Sie können auch hier eines anlegen. Der Status ist ausstehend, versendet, geliefert oder fehlgeschlagen, und er speist die Bestellung.",
+    "sections": [
+      {
+        "title": "Wie eine Sendung sich bewegt",
+        "body": "Versenden, Liefern und Fehlschlagen sind nur aus dem hier genannten Status zulässig.",
+        "items": [
+          "Versenden geht nur aus ausstehend, und nur wenn die Bestellung selbst nicht noch ausstehend, storniert oder erstattet ist.",
+          "Versenden verbraucht den für diese Positionen reservierten Bestand und kann die Bestellung auf versendet setzen.",
+          "Liefern geht nur aus versendet. Die Lieferung der letzten offenen Sendung kann die Bestellung auf geliefert setzen.",
+          "Fehlschlagen geht aus ausstehend oder versendet. Eine bereits abgegangene Sendung als fehlgeschlagen zu markieren macht diese Sendung rückgängig. Ist die Bestellung storniert oder erstattet, wird noch gehaltener Bestand freigegeben."
+        ]
+      },
+      {
+        "title": "Was Sie darauf festhalten",
+        "body": "Spediteur und Tracking gehören auf die Sendung, nicht in den Kopf der Bestellung.",
+        "items": [
+          "Spediteur, Sendungsnummer und Tracking-Link sind die Angaben, die der Kunde beim Versand erhält.",
+          "Versendet am, voraussichtliche Lieferung und geliefert am markieren die Zeitachse.",
+          "Die Positionen sind Mengen der Bestellartikel. Eine spätere Sendung kann abdecken, was eine frühere offen gelassen hat."
+        ]
+      },
+      {
+        "title": "Wie es zur Bestellung steht",
+        "body": "Der Fulfillment-Status der Bestellung wird aus ihren Sendungen abgeleitet. Ein Teilsversand lässt sie teilweise erfüllt.",
+        "items": [
+          "Öffnen Sie die Bestellung aus der Zeile, wenn Sie Zahlung, Storno oder Erstattung brauchen. Das bleibt an der Bestellung.",
+          "Eine empfangene Rückgabe legt die Ware in das Lager zurück, aus dem die Position versendet wurde.",
+          "Das Löschen ist ein Soft-Delete und das Fulfillment kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createFulfillment": "Fulfillment erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

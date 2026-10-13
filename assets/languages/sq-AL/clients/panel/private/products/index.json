@@ -2,6 +2,45 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
   "title": "Produktet",
   "description": "Menaxho produktet në katalogun tënd.",
+  "help": {
+    "ariaLabel": "Rreth produkteve",
+    "title": "Rreth produkteve",
+    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani e shet vetëm sa kohë statusi është aktiv. Drafti është kopja e punës. I arkivuari është jashtë shitjes dhe mund të kthehet draft.",
+    "sections": [
+      {
+        "title": "Çfarë ndryshon lloji",
+        "body": "Lloji vendos si shitet artikulli dhe si lëviz stoku.",
+        "items": [
+          "Fizik dërgohet dhe mund të gjurmojë stokun, peshën dhe përmasat.",
+          "Dixhital dorëzohet si shkarkim. Një rimbursim i plotë i porosisë i skadon ato shkarkime.",
+          "Një shërbim shitet pa dërgesë.",
+          "I ndryshueshëm shitet përmes varianteve. Një variant pa çmim të vetin përdor çmimin e produktit.",
+          "Një paketë është një grup produktesh të tjera. Kur stoku lëviz, paketa hapet një nivel. Çdo përbërës duhet të jetë një produkt i gjallë i kësaj kompanie dhe nuk mund të jetë vetë paketë.",
+          "Një kartë dhurate shitet si kredi dyqani."
+        ]
+      },
+      {
+        "title": "Statusi dhe veprimet e rreshtit",
+        "body": "Publikimi, arkivimi dhe kthimi në draft e ndryshojnë statusin. Secili refuzohet kur produkti nuk është në gjendjen e pritur.",
+        "items": [
+          "Publikimi niset vetëm nga drafti. Një produkt pa variante duhet të ketë tashmë një çmim. Publikimi i parë regjistron datën.",
+          "Arkivimi niset nga drafti ose aktivi dhe e heq produktin nga shitja.",
+          "Kthimi në draft niset vetëm nga i arkivuari dhe pastron datën e publikimit, që të mos kthehet menjëherë në shitje.",
+          "Dublikimi i kopjon të dhënat në një draft të ri. Titulli është origjinali plus \" (Copy)\". Vlerësimet, numri i komenteve dhe variantet nuk kopjohen.",
+          "Fshirja është e butë dhe produkti mund të rikthehet."
+        ]
+      },
+      {
+        "title": "Si lidhet me pjesën tjetër të menusë",
+        "body": "Produkti është regjistri i katalogut. Stoku, porositë dhe vlerësimet varen prej tij.",
+        "items": [
+          "Kategoritë dhe koleksionet e grupojnë në dyqan. Një produkt mund të qëndrojë në më shumë se një kategori.",
+          "Inventari, te Stoku, mban sasinë për magazinë. Një produkt pa rresht inventari trajtohet si i pagjurmuar në blerje.",
+          "Një vlerësim mbi një rresht porosie të paguar përditëson mesataren, numrin e notave dhe numrin e vlerësimeve të këtij produkti."
+        ]
+      }
+    ]
+  },
   "createProduct": "Krijo produkt",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

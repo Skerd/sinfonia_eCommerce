@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/index.tsx",
   "title": "Ihre gespeicherten Suchen",
   "description": "Katalogsuchen, die Sie mit den aktiven Filtern gespeichert haben.",
+  "help": {
+    "ariaLabel": "Über Gespeicherte Suchen",
+    "title": "Über Gespeicherte Suchen",
+    "overview": "Eine gespeicherte Suche merkt sich einen Katalogfilter, den ein Kunde erneut ausführen kann. Sie ist kein Produkt und keine Bestellung. Sie merkt sich, wie der Katalog eingegrenzt werden sollte.",
+    "sections": [
+      {
+        "title": "Was gespeichert wird",
+        "body": "Der Name ist die Bezeichnung. Der Rest ist der Filter.",
+        "items": [
+          "Der Name ist erforderlich.",
+          "Kategorien können mehrere sein. Die Kollektion ist eine.",
+          "Mindestpreis, Höchstpreis und Sortierung sind optional. Leere werden einfach nicht angewendet."
+        ]
+      },
+      {
+        "title": "Wessen Suchen diese Seite zeigt",
+        "body": "Dieselben Daten werden auf zwei Arten gelistet.",
+        "items": [
+          "Aus dem eCommerce-Menü listet diese Seite jede gespeicherte Suche der Firma, und eine neue fragt, welchem Kunden sie gehört.",
+          "Als eigene Liste eines Kunden zeigt sie nur seine, und eine neue Suche wird unter diesem Kunden abgelegt.",
+          "Das Löschen ist ein Soft-Delete und die Suche kann wiederhergestellt werden."
+        ]
+      },
+      {
+        "title": "Was sie nicht tut",
+        "body": "Eine Suche zu speichern ändert den Katalog nicht.",
+        "items": [
+          "Sie blendet keine Produkte aus, ändert keinen Preis und legt keine Kollektion an.",
+          "Kategorien, Kollektionen und Preise werden auf jenen Seiten bearbeitet. Diese Zeile zeigt nur darauf.",
+          "Erneutes Ausführen wendet denselben Filter auf den Katalog an, wie er jetzt ist, nicht wie er beim Speichern war."
+        ]
+      }
+    ]
+  },
   "catalogTitle": "Gespeicherte Suchen",
   "catalogDescription": "Alle Katalogsuchen, die von Kunden gespeichert wurden.",
   "createSavedSearch": "Suche speichern",

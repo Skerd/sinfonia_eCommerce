@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
   "title": "Commandes de produits",
   "description": "Suivre et gérer les commandes des clients.",
+  "help": {
+    "ariaLabel": "À propos des commandes produits",
+    "title": "À propos des commandes produits",
+    "overview": "Une commande produit est un paiement client. Le paiement écrit la commande. Cette page n'en crée pas. Trois statuts évoluent séparément : la commande, le paiement et l'expédition.",
+    "sections": [
+      {
+        "title": "Les trois statuts",
+        "body": "Lisez-les ensemble. Une commande peut être payée et encore non expédiée, ou expédiée et seulement en partie remboursée.",
+        "items": [
+          "Le statut de commande suit en attente, confirmée, en traitement, expédiée, livrée, annulée, remboursée.",
+          "Le statut de paiement suit impayé, autorisé, payé, partiellement remboursé, remboursé, annulé.",
+          "Le statut d'expédition suit non expédiée, partiellement expédiée, expédiée, retournée."
+        ]
+      },
+      {
+        "title": "Ce que font les actions",
+        "body": "Confirmer, marquer en traitement, expédier, marquer payée, annuler et rembourser sont séparés. Chacun est refusé hors de son état.",
+        "items": [
+          "Confirmer ne part que de en attente. Il accuse réception, étape habituelle pour un paiement à la livraison ou un virement, et prévient le client.",
+          "Marquer en traitement ne part que de confirmée.",
+          "Expédier part de confirmée ou en traitement. Il crée une expédition pour les quantités encore ouvertes, sort ces unités du stock et fixe le statut à partir des envois. Vous pouvez noter un transporteur, un numéro de suivi et un lien.",
+          "Marquer payée enregistre un paiement hors ligne, seulement tant que le paiement est impayé et que la commande n'est ni annulée ni remboursée. Une commande en attente est confirmée en même temps. Les cartes cadeaux et téléchargements achetés sont émis. Le stock reste retenu jusqu'à l'expédition.",
+          "Annuler est bloqué dès que la commande est expédiée, livrée, annulée ou remboursée. Une commande payée ou partiellement remboursée doit d'abord être remboursée. Annuler libère le stock encore retenu et restitue le crédit magasin d'une carte cadeau.",
+          "Rembourser concerne une commande payée ou partiellement remboursée. Un remboursement total restitue aussi ce crédit, désactive les cartes cadeaux émises, fait expirer les téléchargements et libère le stock encore retenu."
+        ]
+      },
+      {
+        "title": "Où est le reste du travail",
+        "body": "Cette liste est la commande. L'envoi et le retour ont leurs pages.",
+        "items": [
+          "Chaque envoi est une ligne sous Expéditions, avec son statut en attente, expédiée, livrée ou en échec.",
+          "Un retour, un échange ou un remboursement est une ligne sous Demandes de retour. La clôturer peut rembourser cette commande.",
+          "La suppression est logique et la commande peut être restaurée."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {

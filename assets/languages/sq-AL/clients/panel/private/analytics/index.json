@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analitika",
   "description": "Ndiqni të ardhurat, porositë, inventarin dhe aktivitetin e shportave.",
+  "help": {
+    "ariaLabel": "Rreth analizave",
+    "title": "Rreth analizave",
+    "overview": "Analizat përmbledhin të ardhurat e paguara, porositë, inventarin dhe shportat e kësaj kompanie. Është një lexim i atyre të dhënave. Në këtë faqe nuk krijohet porosi, produkt ose ndryshim stoku.",
+    "sections": [
+      {
+        "title": "Çfarë ndryshon periudha",
+        "body": "Periudha është 7 ditë, 30 ditë, 90 ditë ose 1 vit. Nuk vlen për çdo kartë.",
+        "items": [
+          "Të ardhurat, numri i porosive dhe numri i produkteve ndjekin periudhën.",
+          "Grafiku është të ardhura të paguara për ditë brenda asaj periudhe.",
+          "Inventari dhe shportat e braktisura janë pamja aktuale. Periudha nuk i rillogarit."
+        ]
+      },
+      {
+        "title": "Kartat e parave dhe të porosive",
+        "body": "Këto numërojnë porositë e paguara, jo çdo porosi të vendosur.",
+        "items": [
+          "Të ardhurat totale janë porositë e paguara në periudhë.",
+          "Porositë është numri i atyre porosive të paguara.",
+          "Vlera mesatare e porosisë është ajo e ardhur e pjesëtuar me atë numër."
+        ]
+      },
+      {
+        "title": "Kartat e stokut dhe të shportave",
+        "body": "Këto janë aktuale, prandaj mund të mos përputhen me periudhën e zgjedhur. Kjo pritet.",
+        "items": [
+          "Shportat e braktisura janë joaktive për më shumë se një orë.",
+          "Stok i ulët është një SKU nën pikën e riporosisë. Pa stok është një SKU pa sasi të disponueshme.",
+          "Njësitë në dorë janë sasia totale e inventarit. Produktet është katalogu i numëruar sipas statusit.",
+          "Hapni Inventarin, Porositë e produkteve ose Produktet kur një kartë është ajo mbi të cilën duhet të veproni."
+        ]
+      }
+    ]
+  },
   "refresh": "Rifresko",
   "errorTitle": "Failed to load analytics",
   "errorDescription": "Something went wrong while fetching dashboard data.",

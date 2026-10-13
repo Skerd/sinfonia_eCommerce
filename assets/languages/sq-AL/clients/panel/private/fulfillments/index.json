@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
   "title": "Përmbushjet",
   "description": "Ndiqni dërgesat dhe dorëzimin e porosive.",
+  "help": {
+    "ariaLabel": "Rreth përmbushjeve",
+    "title": "Rreth përmbushjeve",
+    "overview": "Një përmbushje është një dërgesë e një porosie produkti. Dërgimi i një porosie krijon një të tillë. Mund ta krijoni edhe këtu. Statusi është në pritje, e dërguar, e dorëzuar ose e dështuar, dhe ushqen porosinë.",
+    "sections": [
+      {
+        "title": "Si lëviz një dërgesë",
+        "body": "Dërgimi, dorëzimi dhe dështimi janë të ligjshme vetëm nga statusi i përmendur.",
+        "items": [
+          "Dërgohet vetëm nga në pritje, dhe vetëm kur vetë porosia nuk është ende në pritje, e anuluar ose e rimbursuar.",
+          "Dërgimi konsumon stokun e rezervuar për ato rreshta dhe mund ta kalojë porosinë në të dërguar.",
+          "Dorëzohet vetëm nga e dërguar. Dorëzimi i dërgesës së fundit të hapur mund ta kalojë porosinë në të dorëzuar.",
+          "Dështimi niset nga në pritje ose e dërguar. Një dërgesë që ka nisur kthehet mbrapsht. Nëse porosia është anuluar ose rimbursuar, stoku ende i mbajtur lirohet."
+        ]
+      },
+      {
+        "title": "Çfarë regjistroni mbi të",
+        "body": "Transportuesi dhe gjurmimi qëndrojnë te dërgesa, jo te kreu i porosisë.",
+        "items": [
+          "Transportuesi, numri i gjurmimit dhe lidhja janë ato që merr klienti kur dërgohet.",
+          "Dërguar më, dorëzimi i parashikuar dhe dorëzuar më shënojnë kohështrirjen.",
+          "Rreshtat janë sasi të artikujve të porosisë. Një dërgesë e mëvonshme mund të mbulojë atë që një e mëparshme la hapur."
+        ]
+      },
+      {
+        "title": "Si qëndron me porosinë",
+        "body": "Statusi i përmbushjes së porosisë rrjedh nga dërgesat e saj. Një dërgim i pjesshëm e lë pjesërisht të përmbushur.",
+        "items": [
+          "Hapni porosinë nga rreshti kur ju duhet pagesa, anulimi ose rimbursimi. Ato mbeten te porosia.",
+          "Një kthim i pranuar e kthen mallin në magazinën nga ku u dërgua rreshti.",
+          "Fshirja është e butë dhe përmbushja mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createFulfillment": "Krijo përmbushje",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

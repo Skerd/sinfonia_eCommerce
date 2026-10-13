@@ -2,6 +2,42 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Inventuren",
   "description": "Ein Lager zählen und den Bestand korrigieren.",
+  "help": {
+    "ariaLabel": "Über Inventuren",
+    "title": "Über Inventuren",
+    "overview": "Eine Inventur hält fest, was in einem Lager tatsächlich im Regal liegt, und korrigiert danach den Bestand. Sie bleibt ein Entwurf, bis sie angewendet oder abgebrochen wird. Anwenden ist der Moment, in dem die Zahlen sich ändern.",
+    "sections": [
+      {
+        "title": "Der Entwurf",
+        "body": "Zählen ändert den Bestand nicht. Anwenden tut es.",
+        "items": [
+          "Die Inventur gilt für ein Lager.",
+          "Jede Position ist ein Produkt, eine optionale Variante, was erwartet wurde und was gezählt wurde.",
+          "Eine leere Zählmenge heisst, die Position wurde nicht gezählt. Anwenden lässt sie in Ruhe.",
+          "Nur ein Entwurf kann angewendet oder abgebrochen werden."
+        ]
+      },
+      {
+        "title": "Was Anwenden tut",
+        "body": "Die Differenz gilt gegen den Bestand jetzt, nicht gegen den Stand beim Start der Zählung.",
+        "items": [
+          "Anwenden setzt den Bestand auf die gezählte Menge für jede Position mit einer Zählung.",
+          "Verkäufe, die während der Zählung versendet wurden, werden nicht rückgängig gemacht, weil die Differenz den Bestand zum Zeitpunkt des Anwendens nutzt.",
+          "Jede Änderung schreibt eine Anpassungsbewegung.",
+          "Eine Zählung unter der für Bestellungen gehaltenen Menge wird akzeptiert. Die Verfügbarkeit kann negativ werden. Das Regal ist, wie es ist."
+        ]
+      },
+      {
+        "title": "Nachdem sie angewendet wurde",
+        "body": "Die Inventur bleibt der Beleg dessen, was gezählt wurde. Der Bestand lebt auf der Lagerzeile.",
+        "items": [
+          "Abbrechen geht nur aus einem Entwurf. Eine angewendete Inventur wird auf dieser Seite nicht zurückgedreht.",
+          "Schauen Sie im Lagerbestand nach dem neuen Bestand und unter Lagerbewegungen nach den Anpassungen.",
+          "Das Löschen ist ein Soft-Delete und die Inventur kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createStockCount": "Inventur erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "ECommerce System Map",
   "description": "Interactive map von catalog eCommerce models, kasse flow, und modul capabilities. Pan, zoom, und click nodes für details.",
+  "help": {
+    "ariaLabel": "Über die eCommerce-Systemkarte",
+    "title": "Über die eCommerce-Systemkarte",
+    "overview": "Die Systemkarte ist ein Bild des Katalog-eCommerce-Moduls: seiner Modelle, des Checkout-Ablaufs und dessen, was das Modul kann. Sie ändert keine Daten. Der Marketplace hat eine eigene Karte.",
+    "sections": [
+      {
+        "title": "Modellgraph",
+        "body": "Das ist der Standardreiter. Es ist das Datenmodell, so ausgelegt, dass Sie sehen, was worauf zeigt.",
+        "items": [
+          "Verschieben und zoomen Sie, oder nutzen Sie Zoom und Einpassen.",
+          "Klicken Sie einen Knoten für seine Felder, den API-Pfad und wo dieser Bildschirm im Panel liegt.",
+          "Filtern Sie nach Katalog, Bestellung, Zahlungen, Treuhand und Gemeinsam, wenn die ganze Karte zu viel ist."
+        ]
+      },
+      {
+        "title": "So funktioniert es",
+        "body": "Dieser Reiter ist die Checkout-Geschichte, vom Katalog bis zur Bestellung, nicht die Liste der Modelle.",
+        "items": [
+          "Folgen Sie ihm, wenn Sie die Reihenfolge wollen: Produkt, Warenkorb, Zahlung, Bestand, Sendung.",
+          "Es ist dasselbe Modul, das die anderen eCommerce-Menüpunkte bedienen. Es ist kein zweiter Checkout."
+        ]
+      },
+      {
+        "title": "Funktionen",
+        "body": "Dieser Reiter gruppiert, was das Modul abdeckt, damit Sie die Fläche sehen, ohne jedes Menü zu öffnen.",
+        "items": [
+          "Nutzen Sie ihn, um zu sehen, in welchen Bereich eine Aufgabe gehört, und öffnen Sie dann diese Seite aus dem eCommerce-Menü.",
+          "Katalogeinstellungen wie Kategorien, Lager und Rabatte liegen unter Konfigurationen, nicht in dieser Menügruppe. Die Karte zeigt sie trotzdem, weil der Katalog sie nutzt."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Modell graph",
     "flows": "How it works",

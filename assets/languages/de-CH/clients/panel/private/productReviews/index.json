@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Produkt bewertungen",
   "description": "Bewertungen für bezahlte Aufträge erstellen, bearbeiten und moderieren.",
+  "help": {
+    "ariaLabel": "Über Produktbewertungen",
+    "title": "Über Produktbewertungen",
+    "overview": "Eine Produktbewertung gehört zu einer Position einer bezahlten Bestellung. Die Note fliesst in Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen des Produkts. Marketplace-Bewertungen sind eine eigene Liste und ändern diese Zahlen nicht.",
+    "sections": [
+      {
+        "title": "Was Sie anlegen können",
+        "body": "Die Bewertung hängt an einem echten Kauf. Sie ist kein freistehender Kommentar.",
+        "items": [
+          "Sie zeigt auf eine bezahlte Bestellung und ein Produkt auf dieser Bestellung.",
+          "Der Bewerter ist der Kunde der Bestellung. Sie wählen keine andere Person und können ihn später nicht ändern.",
+          "Bestellung und Produkt bleiben fest, sobald die Bewertung existiert."
+        ]
+      },
+      {
+        "title": "Was Sie noch bearbeiten können",
+        "body": "Text und Note können sich ändern. Die Verbindung zum Kauf nicht.",
+        "items": [
+          "Note, Titel und Kommentar können bearbeitet werden.",
+          "Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen des Produkts folgen den Bewertungen, die noch leben.",
+          "Das Löschen ist ein Soft-Delete und die Bewertung kann wiederhergestellt werden."
+        ]
+      },
+      {
+        "title": "Wo sie erscheint",
+        "body": "Moderiert wird hier. Die Zahl, mit der verkauft wird, steht am Produkt.",
+        "items": [
+          "Öffnen Sie das Produkt, um die Summe zu sehen, die der Shop nutzt.",
+          "Öffnen Sie die Bestellung, um den Kauf zu sehen, um den es geht.",
+          "Ein Kassenverkauf landet nicht in dieser Liste. Diese Bewertungen sind Katalogbestellungen."
+        ]
+      }
+    ]
+  },
   "createProductReview": "Bewertung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

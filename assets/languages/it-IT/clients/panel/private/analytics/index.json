@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analisi",
   "description": "Tieni traccia delle entrate, degli ordini, dell'inventario e dell'attività del carrello.",
+  "help": {
+    "ariaLabel": "Informazioni sulle analisi",
+    "title": "Informazioni sulle analisi",
+    "overview": "Le analisi riassumono ricavi pagati, ordini, inventario e carrelli di questa società. È una lettura di quei dati. Su questa pagina non nasce un ordine, un prodotto o un movimento di stock.",
+    "sections": [
+      {
+        "title": "Cosa cambia il periodo",
+        "body": "Il periodo è 7 giorni, 30 giorni, 90 giorni o 1 anno. Non vale per ogni scheda.",
+        "items": [
+          "Ricavi, numero di ordini e numero di prodotti seguono il periodo.",
+          "Il grafico è il ricavo pagato per giorno in quel periodo.",
+          "Inventario e carrelli abbandonati sono la situazione attuale. Il periodo non li ricalcola."
+        ]
+      },
+      {
+        "title": "Le schede di denaro e ordini",
+        "body": "Contano gli ordini pagati, non ogni ordine inserito.",
+        "items": [
+          "Ricavo totale sono gli ordini pagati nel periodo.",
+          "Ordini è il numero di quegli ordini pagati.",
+          "Valore medio dell'ordine è quel ricavo diviso per quel numero."
+        ]
+      },
+      {
+        "title": "Le schede di stock e carrelli",
+        "body": "Sono attuali, quindi possono non coincidere con il periodo scelto. È previsto.",
+        "items": [
+          "I carrelli abbandonati sono inattivi da più di un'ora.",
+          "Scorte basse: una SKU sotto il punto di riordino. Esaurito: una SKU senza quantità disponibile.",
+          "Unità a giacenza è la quantità totale di inventario. Prodotti è il catalogo contato per stato.",
+          "Apri Inventario, Ordini prodotto o Prodotti quando una scheda è ciò su cui devi agire."
+        ]
+      }
+    ]
+  },
   "refresh": "Aggiorna",
   "errorTitle": "Impossibile caricare l'analisi",
   "errorDescription": "Qualcosa è andato storto durante il recupero dei dati del dashboard.",

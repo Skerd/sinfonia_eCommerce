@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
   "title": "POS orders",
   "description": "Orders completed at the Point of Sale till.",
+  "help": {
+    "ariaLabel": "About POS orders",
+    "title": "About POS orders",
+    "overview": "A POS order is a sale rung up on a till. This page is the record of those sales. Rows are not created, edited, or deleted here.",
+    "sections": [
+      {
+        "title": "What a row is",
+        "body": "The sale is written when the till takes payment. The list is how you find it afterwards.",
+        "items": [
+          "States are draft, paid, cancelled, and refunded.",
+          "The row keeps the session, the till, the cashier, and the customer when one was attached.",
+          "Reprint, from the row menu, sends the receipt again."
+        ]
+      },
+      {
+        "title": "Refunds",
+        "body": "A refund is not an edit of the original sale. It is another order.",
+        "items": [
+          "A paid sale is refunded from the till, in full or by line quantity.",
+          "The refund order stays linked to the sale it reverses.",
+          "Each sale line remembers how much of it has already been refunded, so a second refund cannot cover the same units twice."
+        ]
+      },
+      {
+        "title": "Where to do the work",
+        "body": "Money moves on the till. This page is for looking the sale up.",
+        "items": [
+          "Open Point of Sale to sell, hold a cart, or refund.",
+          "Open POS sessions to see the drawer that sale belonged to.",
+          "Catalog product orders are a different list. A till sale does not appear there."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "!enums": {

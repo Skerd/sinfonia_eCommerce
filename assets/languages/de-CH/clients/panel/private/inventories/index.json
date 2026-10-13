@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
   "title": "Inventory",
   "description": "Stock levels across ihr warehouses.",
+  "help": {
+    "ariaLabel": "Über Lagerbestand",
+    "title": "Über Lagerbestand",
+    "overview": "Eine Lagerzeile ist der Bestand eines Produkts oder einer Variante in einem Lager. Verfügbar ist der Bestand auf Lager abzüglich der Menge, die offene Checkouts reserviert haben. Das ist die Menge, die der Shop noch verkaufen kann.",
+    "sections": [
+      {
+        "title": "Auf Lager, reserviert, verfügbar",
+        "body": "Die drei Mengen sind nicht drei Bestände. Reserviert ist eine Sperre innerhalb von auf Lager.",
+        "items": [
+          "Auf Lager ist, was das Lager hat.",
+          "Reserviert ist, was offene Checkouts schon beansprucht und noch nicht versendet oder freigegeben haben.",
+          "Verfügbar ist auf Lager minus reserviert. Es kann negativ werden, wenn eine Inventur weniger findet, als Bestellungen halten."
+        ]
+      },
+      {
+        "title": "Wann der Checkout die Zeile nutzt",
+        "body": "Ein Produkt wird nur dort geführt, wo eine Zeile existiert. Keine Zeile heisst, die Position wird nicht aus dem Bestand genommen.",
+        "items": [
+          "Eine Checkout-Position wird nur reserviert, wenn eine Zeile für dieses Produkt oder diese Variante existiert.",
+          "Das aktive Standardlager wird verwendet, wenn es die Menge decken kann. Sonst das erste Lager, das sie decken kann.",
+          "Versenden verbraucht die Reservierung. Stornieren oder volle Erstattung davor gibt sie frei."
+        ]
+      },
+      {
+        "title": "Was die Zahlen sonst ändert",
+        "body": "Sie können eine Zeile hier bearbeiten. Die anderen Bestandsseiten schreiben dieselben Zahlen und hinterlassen eine Bewegung.",
+        "items": [
+          "Ein Lagertransfer bewegt freien Bestand zwischen Lagern. Bereits reservierte Einheiten bewegen sich nie.",
+          "Eine Inventur setzt den Bestand auf das Gezählte und schreibt eine Anpassung.",
+          "Verkäufe, Rückgaben, Wareneingänge, Schaden und Abschreibungen stehen unter Lagerbewegungen, mit der Menge davor und danach.",
+          "Das Löschen ist ein Soft-Delete und die Zeile kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createInventory": "Inventory erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

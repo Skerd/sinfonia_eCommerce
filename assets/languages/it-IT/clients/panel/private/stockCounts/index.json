@@ -2,6 +2,42 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Inventari",
   "description": "Contare un magazzino e correggerne le giacenze.",
+  "help": {
+    "ariaLabel": "Informazioni sui conteggi di stock",
+    "title": "Informazioni sui conteggi di stock",
+    "overview": "Un conteggio registra cosa c'è davvero a scaffale in un magazzino e poi corregge la giacenza. Resta una bozza finché non viene applicato o annullato. Applicare è il momento in cui i numeri cambiano.",
+    "sections": [
+      {
+        "title": "La bozza",
+        "body": "Contare non cambia lo stock. Applicare sì.",
+        "items": [
+          "Il conteggio è per un magazzino.",
+          "Ogni riga è un prodotto, una variante facoltativa, quanto era atteso e quanto è stato contato.",
+          "Una quantità contata vuota significa che la riga non è stata contata. Applica la lascia stare.",
+          "Solo una bozza può essere applicata o annullata."
+        ]
+      },
+      {
+        "title": "Cosa fa applica",
+        "body": "La differenza è sulla giacenza di adesso, non sull'istantanea di quando il conteggio è iniziato.",
+        "items": [
+          "Applica imposta la giacenza sulla quantità contata per ogni riga che ha un conteggio.",
+          "Le vendite spedite mentre contavi non vengono annullate, perché la differenza usa lo stock al momento di applicare.",
+          "Ogni variazione scrive un movimento di rettifica.",
+          "Un conteggio sotto quanto è trattenuto per gli ordini viene accettato. La disponibilità può andare in negativo. Lo scaffale è quello che è."
+        ]
+      },
+      {
+        "title": "Dopo l'applicazione",
+        "body": "Il conteggio resta la traccia di ciò che è stato contato. Lo stock vive sulla riga di inventario.",
+        "items": [
+          "Annulla parte solo da bozza. Un conteggio applicato non si storna da questa pagina.",
+          "Guarda Inventario per la nuova giacenza e Movimenti di inventario per le rettifiche.",
+          "L'eliminazione è logica e il conteggio può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "createStockCount": "Crea inventario",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

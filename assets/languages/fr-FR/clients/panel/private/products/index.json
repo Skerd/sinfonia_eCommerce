@@ -2,6 +2,45 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
   "title": "Produits",
   "description": "Gérez les produits de votre catalogue.",
+  "help": {
+    "ariaLabel": "À propos des produits",
+    "title": "À propos des produits",
+    "overview": "Un produit est un article vendable du catalogue de cette société. La boutique ne le vend que tant que le statut est actif. Le brouillon est la copie de travail. Archivé est hors vente et peut revenir en brouillon.",
+    "sections": [
+      {
+        "title": "Ce que le type change",
+        "body": "Le type décide comment l'article est vendu et comment le stock bouge.",
+        "items": [
+          "Physique s'expédie et peut suivre le stock, le poids et les dimensions.",
+          "Numérique est livré en téléchargement. Un remboursement total de la commande fait expirer ces téléchargements.",
+          "Un service est vendu sans expédition.",
+          "Variable est vendu par ses variantes. Une variante sans prix propre utilise le prix du produit.",
+          "Un lot est un ensemble d'autres produits. Quand le stock bouge, le lot est ouvert d'un niveau. Chaque composant doit être un produit vivant de cette société, et il ne peut pas lui-même être un lot.",
+          "Une carte cadeau est vendue comme crédit magasin."
+        ]
+      },
+      {
+        "title": "Statut et actions de ligne",
+        "body": "Publier, archiver et revenir au brouillon changent le statut. Chacune est refusée si le produit n'est pas dans l'état attendu.",
+        "items": [
+          "Publier ne part que d'un brouillon. Un produit sans variantes doit déjà avoir un prix. La première publication enregistre la date.",
+          "Archiver part d'un brouillon ou d'un produit actif et le retire de la vente.",
+          "Revenir au brouillon ne part que d'un produit archivé et efface la date de publication pour qu'il ne soit pas remis en vente aussitôt.",
+          "Dupliquer copie les informations dans un nouveau brouillon. Le titre est l'original plus \" (Copy)\". Notes, nombre d'avis et variantes ne sont pas copiés.",
+          "La suppression est logique et le produit peut être restauré."
+        ]
+      },
+      {
+        "title": "Comment il se relie au reste du menu",
+        "body": "Le produit est la fiche catalogue. Le stock, les commandes et les avis s'y rattachent.",
+        "items": [
+          "Catégories et collections le regroupent dans la boutique. Un produit peut appartenir à plusieurs catégories.",
+          "L'inventaire, sous Stock, tient la quantité par entrepôt. Un produit sans ligne d'inventaire est traité comme non suivi au paiement.",
+          "Un avis sur une ligne de commande payée met à jour la moyenne, le nombre de notes et le nombre d'avis de ce produit."
+        ]
+      }
+    ]
+  },
   "createProduct": "Créer un produit",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

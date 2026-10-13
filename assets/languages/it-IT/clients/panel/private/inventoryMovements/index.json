@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Movimenti di inventario",
   "description": "Registro completo dei rifornimenti, delle cancellazioni, delle vendite e di altre variazioni delle scorte.",
+  "help": {
+    "ariaLabel": "Informazioni sui movimenti di inventario",
+    "title": "Informazioni sui movimenti di inventario",
+    "overview": "Questo è il libro di magazzino. Ogni variazione della giacenza scrive una riga, e la riga resta. La pagina è in sola lettura: qui non si inserisce nulla a mano.",
+    "sections": [
+      {
+        "title": "Cosa registra una riga",
+        "body": "La riga è la variazione, non lo stock attuale. Lo stock attuale resta sulla riga di inventario.",
+        "items": [
+          "Tiene prodotto, variante se c'è, magazzino e la riga di inventario a cui appartiene.",
+          "La quantità è la variazione. Prima e dopo sono la giacenza intorno a quella variazione.",
+          "Il motivo dice perché. Nota, numero ricevuta, lotto, scadenza e costo unitario ci sono quando l'azione li aveva."
+        ]
+      },
+      {
+        "title": "I motivi",
+        "body": "Il motivo lo imposta l'azione. Su questa pagina non lo scegli.",
+        "items": [
+          "Carico e iniziale sono entrate. Vendita è un'uscita su un ordine o una vendita in cassa.",
+          "Reso è merce rimessa quando una richiesta di reso viene ricevuta.",
+          "Trasferimento in entrata e in uscita sono i due lati di un trasferimento completato.",
+          "Rettifica è un conteggio. Danno e svalutazione tolgono merce senza una vendita."
+        ]
+      },
+      {
+        "title": "Perché non puoi modificarla",
+        "body": "Il libro è la storia. Cambiare una riga farebbe mentire il prima e il dopo.",
+        "items": [
+          "Le righe non si possono creare, modificare o eliminare da questa pagina.",
+          "Per cambiare lo stock usa Inventario, un trasferimento, un conteggio, una spedizione o un reso.",
+          "Apri la riga per vedere prodotto, magazzino e riferimento a cui punta il movimento."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "reason": "Motivo",

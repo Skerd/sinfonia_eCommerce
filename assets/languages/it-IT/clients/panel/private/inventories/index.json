@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
   "title": "Inventario",
   "description": "Livelli delle scorte nei tuoi magazzini.",
+  "help": {
+    "ariaLabel": "Informazioni sull'inventario",
+    "title": "Informazioni sull'inventario",
+    "overview": "Una riga di inventario è lo stock di un prodotto, o di una variante, in un magazzino. Il disponibile è la giacenza meno la quantità riservata per i checkout aperti. È il numero che il negozio può ancora vendere.",
+    "sections": [
+      {
+        "title": "Giacenza, riservato, disponibile",
+        "body": "Le tre quantità non sono tre stock. Riservato è un blocco dentro la giacenza.",
+        "items": [
+          "Giacenza è ciò che il magazzino ha.",
+          "Riservato è ciò che i checkout aperti hanno già preso e non ancora spedito o liberato.",
+          "Disponibile è giacenza meno riservato. Può andare in negativo se un conteggio trova meno di quanto gli ordini trattengono."
+        ]
+      },
+      {
+        "title": "Quando il checkout usa la riga",
+        "body": "Un prodotto è tracciato solo dove esiste una riga. Nessuna riga significa che la riga d'ordine non viene presa dallo stock.",
+        "items": [
+          "Una riga di checkout viene riservata solo se esiste una riga per quel prodotto o variante.",
+          "Si usa il magazzino attivo predefinito se può coprire la quantità. Altrimenti il primo che può coprirla.",
+          "Spedire consuma la prenotazione. Annullare o rimborsare per intero prima la libera."
+        ]
+      },
+      {
+        "title": "Cos'altro cambia i numeri",
+        "body": "Puoi modificare una riga qui. Le altre pagine di stock scrivono gli stessi numeri e lasciano un movimento.",
+        "items": [
+          "Un trasferimento sposta lo stock libero tra magazzini. Le unità già riservate non si muovono mai.",
+          "Un conteggio imposta la giacenza su quanto contato e scrive una rettifica.",
+          "Vendite, resi, carichi, danni e svalutazioni stanno sotto Movimenti di inventario, con la quantità prima e dopo.",
+          "L'eliminazione è logica e la riga può essere ripristinata."
+        ]
+      }
+    ]
+  },
   "createInventory": "Crea inventario",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

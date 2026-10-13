@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Transferimet e stokut",
   "description": "Lëviz stokun mes magazinave.",
+  "help": {
+    "ariaLabel": "Rreth transferimeve të stokut",
+    "title": "Rreth transferimeve të stokut",
+    "overview": "Një transferim stoku lëviz stokun e lirë nga një magazinë në një tjetër. Mbetet draft derisa të përfundohet ose të anulohet. Përfundimi është çasti kur sasitë lëvizin vërtet.",
+    "sections": [
+      {
+        "title": "Drafti",
+        "body": "Sa kohë është draft, asgjë nuk ka lënë magazinën burim.",
+        "items": [
+          "Nga magazina dhe te magazina janë të dyja të detyrueshme dhe janë magazina të ndryshme.",
+          "Çdo rresht është një produkt, një variant opsional dhe një sasi.",
+          "Një draft mund ta ndryshoni ende. Vetëm një draft mund të përfundohet ose të anulohet."
+        ]
+      },
+      {
+        "title": "Çfarë bën përfundimi",
+        "body": "Përfundimi është krejt ose asgjë. Një rresht i shkurtër e refuzon gjithë transferimin.",
+        "items": [
+          "Çdo rresht largohet nga burimi dhe arrin te destinacioni.",
+          "Lëviz vetëm stoku i lirë. Njësitë tashmë të rezervuara për porosi të hapura qëndrojnë.",
+          "Nëse destinacioni s'e ka pasur kurrë artikullin, rreshti i inventarit krijohet.",
+          "Regjistri merr një transferim jashtë te burimi dhe një transferim brenda te destinacioni."
+        ]
+      },
+      {
+        "title": "Pastaj",
+        "body": "Një transferim i përfunduar është histori. Një draft i anuluar s'ka lëvizur kurrë stok.",
+        "items": [
+          "Anulimi niset vetëm nga drafti. Një transferim i përfunduar nuk zhbëhet nga këtu.",
+          "Sasitë e reja janë te Inventari. Dy lëvizjet janë te Lëvizjet e inventarit.",
+          "Fshirja është e butë dhe transferimi mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createStockTransfer": "Krijo transferim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

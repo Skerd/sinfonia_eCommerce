@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Mouvements de stocks",
   "description": "Grand livre complet des réapprovisionnements, des radiations, des ventes et autres variations de stocks.",
+  "help": {
+    "ariaLabel": "À propos des mouvements d'inventaire",
+    "title": "À propos des mouvements d'inventaire",
+    "overview": "C'est le journal de stock. Chaque changement de quantité en main écrit une ligne, et la ligne reste. La page est en lecture seule : rien ne s'y saisit à la main.",
+    "sections": [
+      {
+        "title": "Ce qu'une ligne enregistre",
+        "body": "La ligne est le changement, pas le stock actuel. Le stock actuel reste sur la ligne d'inventaire.",
+        "items": [
+          "Elle garde le produit, la variante s'il y en a une, l'entrepôt et la ligne d'inventaire.",
+          "La quantité est le changement. Avant et après sont le stock en main autour de ce changement.",
+          "Le motif dit pourquoi. Note, numéro de reçu, lot, péremption et coût unitaire sont là quand l'action les avait."
+        ]
+      },
+      {
+        "title": "Les motifs",
+        "body": "Le motif est posé par l'action. Vous ne le choisissez pas sur cette page.",
+        "items": [
+          "Réapprovisionnement et initial sont des entrées. Vente est une sortie sur une commande ou une vente en caisse.",
+          "Retour est la marchandise remise quand une demande de retour est reçue.",
+          "Transfert entrant et transfert sortant sont les deux côtés d'un transfert terminé.",
+          "Ajustement est un comptage. Dommage et mise au rebut sortent de la marchandise sans vente."
+        ]
+      },
+      {
+        "title": "Pourquoi vous ne pouvez pas la modifier",
+        "body": "Le journal est l'historique. Modifier une ligne ferait mentir l'avant et l'après.",
+        "items": [
+          "Les lignes ne peuvent pas être créées, modifiées ou supprimées depuis cette page.",
+          "Pour changer le stock, utilisez l'inventaire, un transfert, un comptage, une expédition ou un retour.",
+          "Ouvrez la ligne pour voir le produit, l'entrepôt et la référence que le mouvement vise."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "reason": "Motif",

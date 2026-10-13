@@ -1,6 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Pika e Shitjes",
+  "help": {
+    "ariaLabel": "Rreth pikës së shitjes",
+    "title": "Rreth pikës së shitjes",
+    "overview": "Pika e shitjes shet nga një arkë dyqani. Kjo faqe është arka, jo një listë. Zgjidhni një arkë, hapni një sesion me paratë që janë tashmë në sirtar, pastaj shisni. Pasi sesioni është i hapur, arka ka udhëzuesin e vet të shkurtoreve.",
+    "sections": [
+      {
+        "title": "Hapja",
+        "body": "Një arkë vjen nga konfigurimet POS. Ky ekran hap vetëm një që është tashmë e ngritur.",
+        "items": [
+          "Zgjidhni arkën, pastaj hapni një sesion me gjendjen e hapjes.",
+          "Hyrja dhe dalja e parasë regjistrojnë lëvizjet e mëvonshme të sirtarit. Mbyllja numëron sirtarin dhe e mbyll sesionin.",
+          "Ato sesione listohen te Sesionet POS. Nuk i krijoni nga ajo listë."
+        ]
+      },
+      {
+        "title": "Shitja",
+        "body": "Katalogu në arkë janë produktet e kësaj kompanie. Një rresht merr stok nga magazina e arkës.",
+        "items": [
+          "Kërkoni ose skanoni një barkod. Variantet zgjidhen para se të shtohet rreshti.",
+          "Mund të mbani një shportë dhe ta rifilloni, të lidhni një klient, të zbritni një rresht ose porosinë, të ndani pagesën dhe të rimbursoni një shitje të paguar.",
+          "Një rimbursim këtu bëhet një porosi POS më vete, e lidhur me shitjen, dhe del te Porositë POS."
+        ]
+      },
+      {
+        "title": "Kur arka nuk shet",
+        "body": "Ndalimi dhe joaktivja janë bllokime, jo gabime të shportës.",
+        "items": [
+          "Një arkë e ndalur nuk mund të shesë. Mund të hidhni shportat e mbajtura dhe të mbyllni sesionin. Një ndalim i gjithë kompanisë bllokon çdo arkë, jo vetëm këtë.",
+          "Një arkë joaktive nuk mund të hapet.",
+          "Nëse për arkën nuk ka fiskalizim aktiv, shitjet mbi të nuk fiskalizohen."
+        ]
+      }
+    ]
+  },
   "backToConfigs": "Kthehu te konfigurimet",
   "back": "Dil",
   "cashIn": "Cash Hyrje",

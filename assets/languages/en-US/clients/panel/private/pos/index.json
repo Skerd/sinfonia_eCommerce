@@ -1,6 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Point of Sale",
+  "help": {
+    "ariaLabel": "About Point of Sale",
+    "title": "About Point of Sale",
+    "overview": "Point of Sale sells from a shop till. This page is the till, not a list. You pick a register, open a session with the cash already in the drawer, then sell. Once the session is open, the till has its own shortcut guide.",
+    "sections": [
+      {
+        "title": "Opening",
+        "body": "A till comes from POS configs. This screen only opens one that is already set up.",
+        "items": [
+          "Choose the register, then open a session with the opening cash balance.",
+          "Cash in and cash out record later drawer moves. Close counts the drawer and ends the session.",
+          "Those sessions are listed under POS sessions. You do not create them from that list."
+        ]
+      },
+      {
+        "title": "Selling",
+        "body": "The catalog on the till is this company's products. A line takes stock from the till's warehouse.",
+        "items": [
+          "Search or scan a barcode to add a product. Variants are chosen before the line is added.",
+          "You can hold a cart and resume it, attach a customer, discount a line or the order, split the payment, and refund a paid sale.",
+          "A refund done here becomes its own POS order, linked back to the sale, and that order shows under POS orders."
+        ]
+      },
+      {
+        "title": "When the till will not sell",
+        "body": "Pause and inactive are blocks, not errors in the cart.",
+        "items": [
+          "A paused till cannot sell. You can still discard held carts and close the session. A company-wide pause blocks every till, not just this one.",
+          "An inactive till cannot be opened.",
+          "If no fiscalization is active for the till, sales on it are not fiscalized."
+        ]
+      }
+    ]
+  },
   "backToConfigs": "Back to configs",
   "back": "Exit",
   "cashIn": "Cash In",

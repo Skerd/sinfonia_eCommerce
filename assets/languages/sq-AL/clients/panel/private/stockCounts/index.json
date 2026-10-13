@@ -2,6 +2,42 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Numërimet e stokut",
   "description": "Numëro një magazinë dhe korrigjo stokun.",
+  "help": {
+    "ariaLabel": "Rreth numërimeve të stokut",
+    "title": "Rreth numërimeve të stokut",
+    "overview": "Një numërim regjistron çfarë është vërtet në raft në një magazinë, pastaj e korrigjon sasinë në dorë. Mbetet draft derisa të zbatohet ose të anulohet. Zbatimi është çasti kur numrat ndryshojnë.",
+    "sections": [
+      {
+        "title": "Drafti",
+        "body": "Numërimi nuk e ndryshon stokun. Zbatimi po.",
+        "items": [
+          "Numërimi është për një magazinë.",
+          "Çdo rresht është një produkt, një variant opsional, çfarë pritej dhe çfarë u numërua.",
+          "Një sasi e numëruar bosh do të thotë se ai rresht nuk është numëruar. Zbatimi e lë.",
+          "Vetëm një draft mund të zbatohet ose të anulohet."
+        ]
+      },
+      {
+        "title": "Çfarë bën zbatimi",
+        "body": "Diferenca merret kundrejt sasisë në dorë tani, jo kundrejt fotografisë së fillimit të numërimit.",
+        "items": [
+          "Zbatimi e vendos sasinë në dorë te sasia e numëruar për çdo rresht që ka numërim.",
+          "Shitjet e dërguara gjatë numërimit nuk zhbëhen, sepse diferenca përdor stokun në çastin e zbatimit.",
+          "Çdo ndryshim shkruan një lëvizje rregullimi.",
+          "Një numërim nën atë që mbahet për porosi pranohet. Disponueshmëria mund të shkojë negative. Rafti është siç është."
+        ]
+      },
+      {
+        "title": "Pasi zbatohet",
+        "body": "Numërimi mbetet regjistrimi i asaj që u numërua. Stoku jeton te rreshti i inventarit.",
+        "items": [
+          "Anulimi niset vetëm nga drafti. Një numërim i zbatuar nuk kthehet mbrapsht nga kjo faqe.",
+          "Shikoni Inventarin për sasinë e re në dorë dhe Lëvizjet e inventarit për rregullimet.",
+          "Fshirja është e butë dhe numërimi mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "createStockCount": "Krijo numërim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

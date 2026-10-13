@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Inventory movements",
   "description": "Full ledger of restocks, write-offs, sales, and other stock changes.",
+  "help": {
+    "ariaLabel": "About Inventory movements",
+    "title": "About Inventory movements",
+    "overview": "This is the stock ledger. Every change in on-hand quantity writes a row, and the row is kept. The page is read-only: nothing here is typed in by hand.",
+    "sections": [
+      {
+        "title": "What a row records",
+        "body": "The row is the change, not the current stock. Current stock stays on the inventory row.",
+        "items": [
+          "It keeps the product, the variant when there is one, the warehouse, and the inventory row it belongs to.",
+          "Quantity is the change. Quantity before and quantity after are on hand around that change.",
+          "The reason says why. Note, receipt number, batch, expiry, and unit cost are there when the action that wrote the row had them."
+        ]
+      },
+      {
+        "title": "The reasons",
+        "body": "The reason is set by the action. You do not pick it on this page.",
+        "items": [
+          "Restock and initial are goods coming in. Sale is goods leaving on an order or a till sale.",
+          "Return is goods put back when a return request is received.",
+          "Transfer in and transfer out are the two sides of a completed stock transfer.",
+          "Adjustment is a stock count. Damage and write-off take goods out without a sale."
+        ]
+      },
+      {
+        "title": "Why you cannot edit it",
+        "body": "The ledger is the history. Changing a row would make the before and after lie.",
+        "items": [
+          "Rows cannot be created, edited, or deleted from this page.",
+          "To change stock, use Inventory, a transfer, a count, an order shipment, or a return.",
+          "Open the row to see which product, warehouse, and reference the movement points at."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "reason": "Reason",

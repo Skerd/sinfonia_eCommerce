@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
   "title": "Richieste di reso",
   "description": "Gestire resi, cambi e richieste di rimborso.",
+  "help": {
+    "ariaLabel": "Informazioni sulle richieste di reso",
+    "title": "Informazioni sulle richieste di reso",
+    "overview": "Una richiesta di reso chiede di rimandare indietro la merce, di cambiarla o di rimborsare un ordine. Il tipo è reso, cambio o rimborso. Lo stato segue in attesa, approvata, rifiutata, ricevuta, completata.",
+    "sections": [
+      {
+        "title": "Il percorso",
+        "body": "Approva e rifiuta sono la decisione. Ricevi e completa sono ciò che segue un sì. Ogni passo è rifiutato se la richiesta non è nello stato precedente.",
+        "items": [
+          "Approva e rifiuta valgono solo per una richiesta in attesa. Entrambe registrano chi l'ha risolta e quando, e il cliente viene avvisato.",
+          "In approvazione puoi impostare un importo di rimborso, che non può superare il valore delle righe della richiesta.",
+          "Rifiuta chiude la richiesta e non muove stock.",
+          "Ricevi vale solo per una richiesta approvata. Completa solo dopo che è stata ricevuta."
+        ]
+      },
+      {
+        "title": "Cosa fanno ricezione e completamento a stock e denaro",
+        "body": "Un solo rimborso non ha nulla da rimettere a scaffale. Un reso o un cambio sì.",
+        "items": [
+          "Alla ricezione, un reso o un cambio rimette le quantità disponibili nel magazzino da cui è partita ogni riga e scrive un movimento di reso. Un bundle torna come i suoi componenti.",
+          "Una riga che non ha mai preso stock, o la cui riga di inventario non c'è più, viene annotata sull'ordine invece di essere rimessa a stock.",
+          "Completa paga l'importo concordato tramite il rimborso dell'ordine, per un reso o un rimborso. Un cambio non restituisce nulla."
+        ]
+      },
+      {
+        "title": "A cosa è attaccata la richiesta",
+        "body": "La richiesta punta sempre a un ordine e a righe precise di quell'ordine.",
+        "items": [
+          "Ogni riga è un articolo dell'ordine, una quantità e un motivo.",
+          "Nota del cliente e nota interna restano sulla richiesta. Il movimento di denaro, se c'è, è il rimborso dell'ordine.",
+          "L'eliminazione è logica e la richiesta può essere ripristinata."
+        ]
+      }
+    ]
+  },
   "createReturnRequest": "Crea richiesta di reso",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

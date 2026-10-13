@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
   "title": "Inventory",
   "description": "Stock levels across your warehouses.",
+  "help": {
+    "ariaLabel": "About Inventory",
+    "title": "About Inventory",
+    "overview": "An inventory row is the stock of one product, or one variant, in one warehouse. Available is on hand minus the quantity reserved for open checkouts. This is the number the shop can still sell.",
+    "sections": [
+      {
+        "title": "On hand, reserved, available",
+        "body": "The three quantities are not three stocks. Reserved is a hold inside on hand.",
+        "items": [
+          "On hand is what the warehouse has.",
+          "Reserved is what open checkouts have already claimed and not yet shipped or released.",
+          "Available is on hand minus reserved. It can go negative after a stock count that finds less than what orders are holding."
+        ]
+      },
+      {
+        "title": "When checkout uses the row",
+        "body": "A product is tracked only where a row exists. No row means the line is not taken from stock.",
+        "items": [
+          "A checkout line is reserved only when a row exists for that product or variant.",
+          "The default active warehouse is used when it can cover the quantity. Otherwise the first warehouse that can cover it is used.",
+          "Shipping the order consumes the reservation. Cancelling or fully refunding before that releases it."
+        ]
+      },
+      {
+        "title": "What else changes the numbers",
+        "body": "You can edit a row here. The other stock pages write the same numbers and leave a movement.",
+        "items": [
+          "A stock transfer moves free stock between warehouses. Units already reserved never move.",
+          "A stock count sets on hand to what was counted and writes an adjustment.",
+          "Sales, returns, restocks, damage, and write-offs show up under Stock movements, with the quantity before and after.",
+          "Deleting a row is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createInventory": "Create inventory",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

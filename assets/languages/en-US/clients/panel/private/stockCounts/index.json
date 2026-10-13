@@ -2,6 +2,42 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Stock counts",
   "description": "Count a warehouse and correct its stock.",
+  "help": {
+    "ariaLabel": "About Stock counts",
+    "title": "About Stock counts",
+    "overview": "A stock count records what is actually on the shelf in one warehouse, then corrects on hand to match. It stays a draft until it is applied or cancelled. Applying it is the moment the numbers change.",
+    "sections": [
+      {
+        "title": "The draft",
+        "body": "Counting does not change stock. Applying does.",
+        "items": [
+          "The count is for one warehouse.",
+          "Each line is a product, an optional variant, what was expected, and what was counted.",
+          "A blank counted quantity means that line was not counted. Apply leaves it alone.",
+          "Only a draft can be applied or cancelled."
+        ]
+      },
+      {
+        "title": "What apply does",
+        "body": "The difference is against on hand now, not against the snapshot from when the count was started.",
+        "items": [
+          "Apply sets on hand to the counted quantity for every line that has a count.",
+          "Sales that shipped while you were counting are not undone, because the difference uses stock as it is at apply time.",
+          "Each change writes an adjustment movement.",
+          "A count below what is reserved for orders is accepted. Available can go negative. The shelf is what it is."
+        ]
+      },
+      {
+        "title": "After it is applied",
+        "body": "The count stays as the record of what was counted. The stock lives on the inventory row.",
+        "items": [
+          "Cancel is only from draft. An applied count is not reversed from this page.",
+          "Look at Inventory for the new on hand, and at Stock movements for the adjustments.",
+          "Deleting a count is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createStockCount": "Create count",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

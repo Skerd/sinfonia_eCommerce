@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
   "title": "Réalisations",
   "description": "Suivre les expéditions et la livraison des commandes de produits.",
+  "help": {
+    "ariaLabel": "À propos des expéditions",
+    "title": "À propos des expéditions",
+    "overview": "Une expédition est un envoi d'une commande produit. Expédier une commande en crée une. Vous pouvez aussi en créer une ici. Son statut est en attente, expédiée, livrée ou en échec, et il alimente la commande.",
+    "sections": [
+      {
+        "title": "Comment un envoi avance",
+        "body": "Expédier, livrer et marquer en échec ne sont légaux que depuis le statut indiqué.",
+        "items": [
+          "On n'expédie qu'une expédition en attente, et seulement si la commande n'est pas elle-même en attente, annulée ou remboursée.",
+          "Expédier consomme le stock réservé pour ces lignes et peut passer la commande à expédiée.",
+          "On ne livre qu'une expédition déjà expédiée. Livrer le dernier envoi ouvert peut passer la commande à livrée.",
+          "On ne marque en échec qu'une expédition en attente ou déjà expédiée. Un envoi déjà parti est annulé. Si la commande est annulée ou remboursée, le stock encore retenu est libéré."
+        ]
+      },
+      {
+        "title": "Ce que vous y notez",
+        "body": "Le transporteur et le suivi sont sur l'envoi, pas dans l'en-tête de la commande.",
+        "items": [
+          "Transporteur, numéro de suivi et lien sont ce que le client reçoit à l'expédition.",
+          "Expédié le, livraison estimée et livré le marquent la chronologie.",
+          "Les lignes sont des quantités des articles de la commande. Un envoi plus tard peut couvrir ce qu'un précédent a laissé."
+        ]
+      },
+      {
+        "title": "Comment il se rapporte à la commande",
+        "body": "Le statut d'expédition de la commande est déduit de ses envois. Un envoi partiel la laisse partiellement expédiée.",
+        "items": [
+          "Ouvrez la commande depuis la ligne pour le paiement, l'annulation ou le remboursement. Cela reste sur la commande.",
+          "Un retour reçu remet les articles dans l'entrepôt d'où la ligne est partie.",
+          "La suppression est logique et l'expédition peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createFulfillment": "Créer un épanouissement",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

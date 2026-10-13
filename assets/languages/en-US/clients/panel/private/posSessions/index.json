@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "POS Sessions",
   "description": "Till sessions opened and closed from the Point of Sale.",
+  "help": {
+    "ariaLabel": "About POS sessions",
+    "title": "About POS sessions",
+    "overview": "A session is one opening of a till, from the opening cash count to the closing count. Sessions are opened and closed on the till. This page only lists them.",
+    "sections": [
+      {
+        "title": "The states",
+        "body": "The state is where the drawer is in that opening, not whether the till is allowed to sell.",
+        "items": [
+          "Opening is the count before selling starts.",
+          "Opened is the selling window. Cash in and cash out happen here.",
+          "Closing is the count at the end. Closed is a finished session."
+        ]
+      },
+      {
+        "title": "What gets recorded",
+        "body": "The session is the cash drawer for that opening, plus the sales that were rung on it.",
+        "items": [
+          "Opening balance is what was in the drawer when it opened.",
+          "Cash in and cash out are drawer moves with a reason. They are not sales.",
+          "Close records the counted cash. Reconcile compares that count with what the session expected from the opening balance, the cash moves, and the cash sales."
+        ]
+      },
+      {
+        "title": "Who can do it",
+        "body": "The buttons live on the till. The permission lives on the session.",
+        "items": [
+          "Opening, closing, and reconciling need permission to write the session state.",
+          "Cash in and cash out need permission to write cash moves.",
+          "The sales from the session are listed under POS orders, filtered by this session."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "!enums": {

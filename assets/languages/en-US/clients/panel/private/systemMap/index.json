@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "eCommerce System Map",
   "description": "Interactive map of catalog eCommerce models, checkout flow, and module capabilities. Pan, zoom, and click nodes for details.",
+  "help": {
+    "ariaLabel": "About the eCommerce system map",
+    "title": "About the eCommerce system map",
+    "overview": "The system map is a picture of the catalog eCommerce module: its models, the checkout flow, and what the module can do. It does not change data. The marketplace has its own map.",
+    "sections": [
+      {
+        "title": "Model graph",
+        "body": "This is the default tab. It is the data model, laid out so you can see what points at what.",
+        "items": [
+          "Pan and zoom, or use the zoom and fit controls.",
+          "Click a node for its fields, the API path, and where that screen lives in the panel.",
+          "Filter the graph by the catalog, ordering, payments, escrow, and shared groups when the full map is too much."
+        ]
+      },
+      {
+        "title": "How it works",
+        "body": "This tab is the checkout story, from the catalog to the order, rather than the list of models.",
+        "items": [
+          "Follow it when you want the order of steps: product, cart, payment, stock, shipment.",
+          "It is the same module the other eCommerce menu entries operate. It is not a second checkout."
+        ]
+      },
+      {
+        "title": "Capabilities",
+        "body": "This tab groups what the module covers, so you can see the surface area without opening every menu.",
+        "items": [
+          "Use it to find which area a job belongs to, then open that page from the eCommerce menu.",
+          "Catalog settings such as categories, warehouses, and discounts live under Configurations, not in this menu group. The map still shows them, because the catalog uses them."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Model graph",
     "flows": "How it works",

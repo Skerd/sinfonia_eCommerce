@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
   "title": "Demandes de retour",
   "description": "Gérer les retours, les échanges et les demandes de remboursement.",
+  "help": {
+    "ariaLabel": "À propos des demandes de retour",
+    "title": "À propos des demandes de retour",
+    "overview": "Une demande de retour sert à renvoyer des articles, à les échanger ou à rembourser une commande. Le type est retour, échange ou remboursement. Le statut suit en attente, approuvée, refusée, reçue, close.",
+    "sections": [
+      {
+        "title": "Le parcours",
+        "body": "Approuver et refuser sont la décision. Recevoir et clôturer sont ce qui suit un oui. Chaque étape est refusée si la demande n'est pas dans l'état précédent.",
+        "items": [
+          "Approuver et refuser ne concernent qu'une demande en attente. Les deux notent qui l'a tranchée et quand, et le client est prévenu.",
+          "À l'approbation vous pouvez fixer un montant de remboursement, qui ne peut pas dépasser la valeur des lignes de la demande.",
+          "Refuser ferme la demande et ne déplace pas de stock.",
+          "Recevoir ne concerne qu'une demande approuvée. Clôturer seulement après réception."
+        ]
+      },
+      {
+        "title": "Ce que la réception et la clôture font au stock et à l'argent",
+        "body": "Un remboursement seul n'a rien à remettre en rayon. Un retour ou un échange si.",
+        "items": [
+          "À la réception, un retour ou un échange remet les quantités en stock dans l'entrepôt d'où chaque ligne est partie, et écrit un mouvement de retour. Un lot revient sous forme de ses composants.",
+          "Une ligne qui n'a jamais pris de stock, ou dont la ligne d'inventaire a disparu, est notée sur la commande au lieu d'être réintégrée.",
+          "Clôturer verse le montant convenu via le remboursement de la commande, pour un retour ou un remboursement. Un échange ne reverse rien."
+        ]
+      },
+      {
+        "title": "À quoi la demande est attachée",
+        "body": "La demande pointe toujours vers une commande et vers des lignes précises de cette commande.",
+        "items": [
+          "Chaque ligne est un article de commande, une quantité et un motif.",
+          "La note client et la note interne restent sur la demande. Le mouvement d'argent, s'il y en a un, est le remboursement de la commande.",
+          "La suppression est logique et la demande peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createReturnRequest": "Créer une demande de retour",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

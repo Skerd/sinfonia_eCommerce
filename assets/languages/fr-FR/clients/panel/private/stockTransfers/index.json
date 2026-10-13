@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Transferts de stock",
   "description": "Déplacer du stock entre entrepôts.",
+  "help": {
+    "ariaLabel": "À propos des transferts de stock",
+    "title": "À propos des transferts de stock",
+    "overview": "Un transfert déplace le stock libre d'un entrepôt vers un autre. Il reste un brouillon jusqu'à ce qu'il soit terminé ou annulé. Terminer est le moment où les quantités bougent vraiment.",
+    "sections": [
+      {
+        "title": "Le brouillon",
+        "body": "Tant qu'il est brouillon, rien n'a quitté l'entrepôt source.",
+        "items": [
+          "Entrepôt source et entrepôt de destination sont tous deux requis et sont des entrepôts différents.",
+          "Chaque ligne est un produit, une variante facultative et une quantité.",
+          "Vous pouvez encore modifier un brouillon. Seul un brouillon peut être terminé ou annulé."
+        ]
+      },
+      {
+        "title": "Ce que fait terminer",
+        "body": "Terminer est tout ou rien. Une ligne trop courte refuse tout le transfert.",
+        "items": [
+          "Chaque ligne quitte la source et arrive à destination.",
+          "Seul le stock libre bouge. Les unités déjà réservées pour des commandes ouvertes restent.",
+          "Si la destination n'a jamais stocké l'article, la ligne d'inventaire est créée.",
+          "Le journal reçoit un transfert sortant à la source et un transfert entrant à destination."
+        ]
+      },
+      {
+        "title": "Ensuite",
+        "body": "Un transfert terminé est de l'historique. Un brouillon annulé n'a jamais bougé de stock.",
+        "items": [
+          "Annuler ne part que d'un brouillon. Un transfert terminé ne s'annule pas d'ici.",
+          "Les nouvelles quantités sont dans l'inventaire. Les deux mouvements sont sous Mouvements d'inventaire.",
+          "La suppression est logique et le transfert peut être restauré."
+        ]
+      }
+    ]
+  },
   "createStockTransfer": "Créer un transfert",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

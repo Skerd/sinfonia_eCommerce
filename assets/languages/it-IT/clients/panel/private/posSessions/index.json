@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "Sessioni POS",
   "description": "Fino all'apertura e chiusura delle sessioni dal Punto Vendita.",
+  "help": {
+    "ariaLabel": "Informazioni sulle sessioni POS",
+    "title": "Informazioni sulle sessioni POS",
+    "overview": "Una sessione è un'apertura di cassa, dal conteggio iniziale a quello di chiusura. Le sessioni si aprono e si chiudono in cassa. Questa pagina le elenca soltanto.",
+    "sections": [
+      {
+        "title": "Gli stati",
+        "body": "Lo stato dice dov'è il cassetto in quell'apertura, non se la cassa può vendere.",
+        "items": [
+          "Apertura è il conteggio prima di vendere.",
+          "Aperta è la finestra di vendita. Entrate e uscite avvengono qui.",
+          "Chiusura è il conteggio finale. Chiusa è una sessione finita."
+        ]
+      },
+      {
+        "title": "Cosa viene registrato",
+        "body": "La sessione è il cassetto di quell'apertura, più le vendite battute su di essa.",
+        "items": [
+          "Il fondo cassa è ciò che c'era nel cassetto all'apertura.",
+          "Entrata e uscita sono movimenti del cassetto con un motivo. Non sono vendite.",
+          "Chiudi registra il contante contato. Riconcilia confronta quel conteggio con ciò che la sessione si aspettava da fondo, movimenti e vendite in contanti."
+        ]
+      },
+      {
+        "title": "Chi può farlo",
+        "body": "I pulsanti stanno in cassa. Il permesso sta sulla sessione.",
+        "items": [
+          "Aprire, chiudere e riconciliare richiedono il permesso di scrivere lo stato della sessione.",
+          "Entrate e uscite richiedono il permesso di scrivere i movimenti di cassa.",
+          "Le vendite della sessione sono sotto Ordini POS, filtrate per questa sessione."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {

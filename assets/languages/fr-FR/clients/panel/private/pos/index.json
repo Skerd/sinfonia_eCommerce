@@ -1,6 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Point de vente",
+  "help": {
+    "ariaLabel": "À propos du point de vente",
+    "title": "À propos du point de vente",
+    "overview": "Le point de vente vend depuis une caisse. Cette page est la caisse, pas une liste. Vous choisissez une caisse, ouvrez une session avec l'argent déjà dans le tiroir, puis vous vendez. Une fois la session ouverte, la caisse a son guide de raccourcis.",
+    "sections": [
+      {
+        "title": "Ouverture",
+        "body": "Une caisse vient des configurations PDV. Cet écran n'ouvre que celles déjà réglées.",
+        "items": [
+          "Choisissez la caisse, puis ouvrez une session avec le fond de caisse.",
+          "Entrée et sortie d'espèces notent les mouvements suivants du tiroir. Fermer compte le tiroir et termine la session.",
+          "Ces sessions sont listées sous Sessions PDV. Vous ne les créez pas depuis cette liste."
+        ]
+      },
+      {
+        "title": "Vente",
+        "body": "Le catalogue en caisse est celui des produits de cette société. Une ligne prend le stock dans l'entrepôt de la caisse.",
+        "items": [
+          "Cherchez ou scannez un code-barres. Les variantes se choisissent avant d'ajouter la ligne.",
+          "Vous pouvez mettre un panier en attente et le reprendre, attacher un client, remettre une ligne ou la commande, partager le paiement et rembourser une vente payée.",
+          "Un remboursement fait ici devient une commande PDV à part, liée à la vente, et apparaît sous Commandes PDV."
+        ]
+      },
+      {
+        "title": "Quand la caisse ne vend pas",
+        "body": "Pause et inactive sont des blocages, pas des erreurs du panier.",
+        "items": [
+          "Une caisse en pause ne peut pas vendre. Vous pouvez quand même abandonner les paniers en attente et fermer la session. Une pause de toute la société bloque chaque caisse, pas seulement celle-ci.",
+          "Une caisse inactive ne peut pas être ouverte.",
+          "Si aucune fiscalisation n'est active pour la caisse, les ventes qui y passent ne sont pas fiscalisées."
+        ]
+      }
+    ]
+  },
   "backToConfigs": "Retour aux configurations",
   "back": "Quitter",
   "cashIn": "Encaisser",

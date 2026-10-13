@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "Seancat POS",
   "description": "Seancat e arkës të hapura dhe mbyllura nga Pika e Shitjes.",
+  "help": {
+    "ariaLabel": "Rreth sesioneve POS",
+    "title": "Rreth sesioneve POS",
+    "overview": "Një sesion është një hapje arke, nga numërimi i hapjes te numërimi i mbylljes. Sesionet hapen dhe mbyllen në arkë. Kjo faqe vetëm i liston.",
+    "sections": [
+      {
+        "title": "Gjendjet",
+        "body": "Gjendja thotë ku është sirtari në atë hapje, jo nëse arka lejohet të shesë.",
+        "items": [
+          "Hapja është numërimi para se të fillojë shitja.",
+          "E hapur është dritarja e shitjes. Hyrja dhe dalja ndodhin këtu.",
+          "Mbyllja është numërimi në fund. E mbyllur është një sesion i përfunduar."
+        ]
+      },
+      {
+        "title": "Çfarë regjistrohet",
+        "body": "Sesioni është sirtari i asaj hapjeje, plus shitjet e regjistruara mbi të.",
+        "items": [
+          "Gjendja e hapjes është ajo që ishte në sirtar kur u hap.",
+          "Hyrja dhe dalja janë lëvizje sirtari me një arsye. Nuk janë shitje.",
+          "Mbyllja regjistron paratë e numëruara. Barazimi e krahason atë numërim me atë që sesioni priste nga gjendja e hapjes, lëvizjet dhe shitjet me para në dorë."
+        ]
+      },
+      {
+        "title": "Kush mund ta bëjë",
+        "body": "Butonat janë në arkë. Leja është te sesioni.",
+        "items": [
+          "Hapja, mbyllja dhe barazimi kërkojnë leje për të shkruar gjendjen e sesionit.",
+          "Hyrja dhe dalja kërkojnë leje për të shkruar lëvizjet e arkës.",
+          "Shitjet e sesionit listohen te Porositë POS, të filtruara sipas këtij sesioni."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {

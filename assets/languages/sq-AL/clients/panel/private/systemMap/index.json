@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "Harta e sistemit eCommerce",
   "description": "Hartë interaktive e modeleve të katalogut eCommerce, rrjedhës së pagesës dhe aftësive të modulit. Lëvizni, zmadhoni dhe klikoni nyjet për detaje.",
+  "help": {
+    "ariaLabel": "Rreth hartës së sistemit eCommerce",
+    "title": "Rreth hartës së sistemit eCommerce",
+    "overview": "Harta e sistemit është një pamje e modulit eCommerce të katalogut: modelet, rrjedha e blerjes dhe çfarë mund të bëjë moduli. Nuk ndryshon të dhëna. Marketplace ka hartën e vet.",
+    "sections": [
+      {
+        "title": "Grafi i modeleve",
+        "body": "Kjo është skeda e paracaktuar. Është modeli i të dhënave, i shtrirë që të shihni çfarë tregon te çfarë.",
+        "items": [
+          "Lëvizni dhe zmadhoni, ose përdorni komandat e zmadhimit dhe përshtatjes.",
+          "Klikoni një nyje për fushat, shtegun e API-së dhe ku jeton ai ekran në panel.",
+          "Filtroni sipas katalogut, porosive, pagesave, escrow dhe të përbashkëtave kur harta e plotë është tepër."
+        ]
+      },
+      {
+        "title": "Si funksionon",
+        "body": "Kjo skedë është historia e blerjes, nga katalogu te porosia, jo lista e modeleve.",
+        "items": [
+          "Ndiqeni për radhën e hapave: produkt, shportë, pagesë, stok, dërgesë.",
+          "Është i njëjti modul mbi të cilin punojnë hyrjet e tjera të menusë eCommerce. Nuk është një blerje e dytë."
+        ]
+      },
+      {
+        "title": "Aftësitë",
+        "body": "Kjo skedë grupon çfarë mbulon moduli, që të shihni sipërfaqen pa hapur çdo menu.",
+        "items": [
+          "Përdoreni për të parë cilit sektor i përket një punë, pastaj hapni atë faqe nga menuja e eCommerce.",
+          "Cilësimet e katalogut si kategoritë, magazinat dhe zbritjet janë te Konfigurimet, jo në këtë grup menuje. Harta i tregon prapë, sepse katalogu i përdor."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Grafiku i modeleve",
     "flows": "Si funksionon",

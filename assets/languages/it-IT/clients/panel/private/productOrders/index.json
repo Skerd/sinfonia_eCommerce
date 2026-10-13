@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
   "title": "Ordini di prodotti",
   "description": "Traccia e gestisci gli ordini dei clienti.",
+  "help": {
+    "ariaLabel": "Informazioni sugli ordini prodotto",
+    "title": "Informazioni sugli ordini prodotto",
+    "overview": "Un ordine prodotto è un checkout del cliente. Il checkout scrive l'ordine. Questa pagina non ne crea uno. Tre stati si muovono da soli: l'ordine, il pagamento e l'evasione.",
+    "sections": [
+      {
+        "title": "I tre stati",
+        "body": "Leggili insieme. Un ordine può essere pagato e ancora non evaso, oppure spedito e rimborsato solo in parte.",
+        "items": [
+          "Lo stato ordine segue in attesa, confermato, in lavorazione, spedito, consegnato, annullato, rimborsato.",
+          "Lo stato pagamento segue non pagato, autorizzato, pagato, rimborsato in parte, rimborsato, annullato.",
+          "Lo stato evasione segue non evaso, evaso in parte, evaso, reso."
+        ]
+      },
+      {
+        "title": "Cosa fanno le azioni",
+        "body": "Conferma, segna in lavorazione, spedisci, segna pagato, annulla e rimborsa sono separate. Ognuna è rifiutata fuori dal suo stato.",
+        "items": [
+          "Conferma parte solo da in attesa. Riconosce l'ordine, il passo abituale per il contrassegno o un bonifico, e avvisa il cliente.",
+          "Segna in lavorazione parte solo da confermato.",
+          "Spedisci parte da confermato o in lavorazione. Crea un'evasione per le quantità ancora aperte, toglie quelle unità dallo stock e imposta lo stato dell'ordine dalle spedizioni. Puoi registrare corriere, numero di tracking e link.",
+          "Segna pagato registra un pagamento offline, solo finché il pagamento è non pagato e l'ordine non è annullato o rimborsato. Un ordine in attesa viene confermato insieme. Gift card e download acquistati vengono emessi. Lo stock resta trattenuto fino alla spedizione.",
+          "Annulla è bloccato quando l'ordine è spedito, consegnato, annullato o rimborsato. Un ordine pagato o rimborsato in parte va rimborsato prima. Annulla libera lo stock ancora trattenuto e restituisce il credito negozio di una gift card.",
+          "Rimborsa vale per un ordine pagato o rimborsato in parte. Un rimborso completo restituisce anche quel credito, disattiva le gift card emesse, fa scadere i download e libera lo stock ancora trattenuto."
+        ]
+      },
+      {
+        "title": "Dove sta il resto del lavoro",
+        "body": "Questo elenco è l'ordine. Spedizione e reso hanno pagine proprie.",
+        "items": [
+          "Ogni spedizione è una riga sotto Evasioni, con stato in attesa, spedita, consegnata o non riuscita.",
+          "Un reso, un cambio o un rimborso è una riga sotto Richieste di reso. Completarla può rimborsare questo ordine.",
+          "L'eliminazione è logica e l'ordine può essere ripristinato."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {

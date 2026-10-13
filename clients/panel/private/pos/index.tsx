@@ -15,6 +15,7 @@ import {usePosSession} from "@eCommerceModule/clients/panel/private/pos/usePosSe
 import {usePosCatalog} from "@eCommerceModule/clients/panel/private/pos/usePosCatalog.ts";
 import {usePosCart} from "@eCommerceModule/clients/panel/private/pos/usePosCart.ts";
 import {usePosPayments} from "@eCommerceModule/clients/panel/private/pos/usePosPayments.ts";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {formatMoney, posFiscalizationActive} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 
@@ -125,7 +126,14 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
     }
 
     if (!sessionApi.configId) {
-        return <PosConfigPicker configs={sessionApi.configs} rk={rk} onSelect={sessionApi.selectConfig} />;
+        return (
+            <PosConfigPicker
+                configs={sessionApi.configs}
+                rk={rk}
+                help={readPageHelp(resolveLanguageKey)}
+                onSelect={sessionApi.selectConfig}
+            />
+        );
     }
 
     if (!sessionApi.session) {

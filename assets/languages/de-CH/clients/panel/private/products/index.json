@@ -2,6 +2,45 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
   "title": "Produkte",
   "description": "Die produkte in ihr catalog. verwalten",
+  "help": {
+    "ariaLabel": "Über Produkte",
+    "title": "Über Produkte",
+    "overview": "Ein Produkt ist ein verkaufbarer Katalogartikel dieser Firma. Der Shop verkauft es nur, solange der Status aktiv ist. Entwurf ist die Arbeitskopie. Archiviert ist ausser Verkauf und kann als Entwurf zurückkommen.",
+    "sections": [
+      {
+        "title": "Was der Typ ändert",
+        "body": "Der Typ entscheidet, wie der Artikel verkauft wird und wie Bestand sich bewegt.",
+        "items": [
+          "Physisch wird versendet und kann Bestand, Gewicht und Masse führen.",
+          "Digital wird als Download geliefert. Eine volle Erstattung der Bestellung lässt diese Downloads ablaufen.",
+          "Eine Dienstleistung wird ohne Sendung verkauft.",
+          "Variabel wird über seine Varianten verkauft. Eine Variante ohne eigenen Preis nutzt den Produktpreis.",
+          "Ein Bundle ist eine Gruppe anderer Produkte. Wenn Bestand sich bewegt, wird das Bundle eine Ebene tief geöffnet. Jede Komponente muss ein lebendes Produkt dieser Firma sein und darf selbst kein Bundle sein.",
+          "Eine Geschenkkarte wird als Ladenguthaben verkauft."
+        ]
+      },
+      {
+        "title": "Status und die Zeilenaktionen",
+        "body": "Veröffentlichen, Archivieren und Zurück zum Entwurf ändern den Status. Jede Aktion wird abgelehnt, wenn das Produkt nicht im erwarteten Zustand ist.",
+        "items": [
+          "Veröffentlichen geht nur aus einem Entwurf. Ein Produkt ohne Varianten braucht bereits einen Preis. Die erste Veröffentlichung schreibt das Veröffentlichungsdatum.",
+          "Archivieren geht aus Entwurf oder aktiv und nimmt das Produkt aus dem Verkauf.",
+          "Zurück zum Entwurf geht nur aus archiviert und löscht das Veröffentlichungsdatum, damit das Produkt nicht sofort wieder in den Verkauf geht.",
+          "Duplizieren kopiert die Angaben in einen neuen Entwurf. Der Titel ist das Original plus \" (Copy)\". Bewertungen, Anzahl Rezensionen und Varianten werden nicht kopiert.",
+          "Das Löschen ist ein Soft-Delete und das Produkt kann wiederhergestellt werden."
+        ]
+      },
+      {
+        "title": "Wie es am Rest des Menüs hängt",
+        "body": "Das Produkt ist der Katalogdatensatz. Bestand, Bestellungen und Bewertungen hängen daran.",
+        "items": [
+          "Kategorien und Kollektionen gruppieren es im Shop. Ein Produkt kann in mehreren Kategorien liegen.",
+          "Der Lagerbestand unter Bestand hält die Menge pro Lager. Ein Produkt ohne Lagerzeile gilt im Checkout als nicht bestandsgeführt.",
+          "Eine Bewertung auf einer bezahlten Bestellposition aktualisiert Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen dieses Produkts."
+        ]
+      }
+    ]
+  },
   "createProduct": "Produkt erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

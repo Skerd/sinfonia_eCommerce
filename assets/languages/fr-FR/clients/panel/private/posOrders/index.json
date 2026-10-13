@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/index.tsx",
   "title": "Commandes au point de vente",
   "description": "Commandes finalisées au point de vente.",
+  "help": {
+    "ariaLabel": "À propos des commandes PDV",
+    "title": "À propos des commandes PDV",
+    "overview": "Une commande PDV est une vente passée en caisse. Cette page en est l'enregistrement. Les lignes ne se créent, ne se modifient et ne se suppriment pas ici.",
+    "sections": [
+      {
+        "title": "Ce qu'est une ligne",
+        "body": "La vente est écrite quand la caisse encaisse. La liste sert à la retrouver.",
+        "items": [
+          "Les états sont brouillon, payée, annulée et remboursée.",
+          "La ligne garde la session, la caisse, le caissier et le client s'il y en avait un.",
+          "Réimprimer, dans le menu de la ligne, renvoie le reçu."
+        ]
+      },
+      {
+        "title": "Remboursements",
+        "body": "Un remboursement n'est pas une modification de la vente d'origine. C'est une autre commande.",
+        "items": [
+          "Une vente payée se rembourse depuis la caisse, en totalité ou par quantité de ligne.",
+          "La commande de remboursement reste liée à la vente qu'elle inverse.",
+          "Chaque ligne de vente retient ce qui a déjà été remboursé, pour qu'un second remboursement ne couvre pas les mêmes unités."
+        ]
+      },
+      {
+        "title": "Où se fait le travail",
+        "body": "L'argent bouge en caisse. Cette page sert à retrouver la vente.",
+        "items": [
+          "Ouvrez le point de vente pour vendre, mettre un panier en attente ou rembourser.",
+          "Ouvrez les sessions PDV pour voir le tiroir de cette vente.",
+          "Les commandes catalogue sont une autre liste. Une vente en caisse n'y apparaît pas."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {

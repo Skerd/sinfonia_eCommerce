@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Umlagerungen",
   "description": "Bestand zwischen Lagern verschieben.",
+  "help": {
+    "ariaLabel": "Über Lagertransfers",
+    "title": "Über Lagertransfers",
+    "overview": "Ein Lagertransfer bewegt freien Bestand von einem Lager in ein anderes. Er bleibt ein Entwurf, bis er abgeschlossen oder abgebrochen wird. Abschliessen ist der Moment, in dem die Mengen wirklich gehen.",
+    "sections": [
+      {
+        "title": "Der Entwurf",
+        "body": "Solange er ein Entwurf ist, hat nichts das Quelllager verlassen.",
+        "items": [
+          "Von-Lager und Nach-Lager sind beide erforderlich und sind verschiedene Lager.",
+          "Jede Position ist ein Produkt, eine optionale Variante und eine Menge.",
+          "Einen Entwurf können Sie noch ändern. Nur ein Entwurf kann abgeschlossen oder abgebrochen werden."
+        ]
+      },
+      {
+        "title": "Was Abschliessen tut",
+        "body": "Abschliessen ist alles oder nichts. Eine zu kurze Position lehnt den ganzen Transfer ab.",
+        "items": [
+          "Jede Position verlässt die Quelle und kommt am Ziel an.",
+          "Nur freier Bestand bewegt sich. Einheiten, die schon für offene Bestellungen reserviert sind, bleiben.",
+          "Hat das Ziel den Artikel noch nie geführt, wird die Lagerzeile angelegt.",
+          "Das Journal bekommt einen Transfer raus an der Quelle und einen Transfer rein am Ziel."
+        ]
+      },
+      {
+        "title": "Danach",
+        "body": "Ein abgeschlossener Transfer ist Geschichte. Ein abgebrochener Entwurf hat nie Bestand bewegt.",
+        "items": [
+          "Abbrechen geht nur aus einem Entwurf, ein abgeschlossener Transfer wird hier nicht rückgängig gemacht.",
+          "Die neuen Mengen stehen im Lagerbestand. Die beiden Bewegungen stehen unter Lagerbewegungen.",
+          "Das Löschen ist ein Soft-Delete und der Transfer kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createStockTransfer": "Umlagerung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

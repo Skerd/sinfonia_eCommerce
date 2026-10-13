@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Stock transfers",
   "description": "Move stock between warehouses.",
+  "help": {
+    "ariaLabel": "About Stock transfers",
+    "title": "About Stock transfers",
+    "overview": "A stock transfer moves free stock from one warehouse to another. It stays a draft until it is completed or cancelled. Completing it is the moment the quantities actually move.",
+    "sections": [
+      {
+        "title": "The draft",
+        "body": "While it is a draft, nothing has left the source warehouse.",
+        "items": [
+          "From warehouse and to warehouse are both required, and they are different warehouses.",
+          "Each line is a product, an optional variant, and a quantity.",
+          "You can still change a draft. Only a draft can be completed or cancelled."
+        ]
+      },
+      {
+        "title": "What complete does",
+        "body": "Complete is all or nothing. One short line refuses the whole transfer.",
+        "items": [
+          "Every line leaves the source and arrives at the destination.",
+          "Only free stock moves. Units already reserved for open orders stay where they are.",
+          "If the destination has never stocked that item, the inventory row is created.",
+          "The ledger gets a transfer out on the source and a transfer in on the destination."
+        ]
+      },
+      {
+        "title": "After it is done",
+        "body": "A completed transfer is history. A cancelled draft never moved stock.",
+        "items": [
+          "Cancel is only from draft, so a completed transfer is not undone from here.",
+          "The new on-hand numbers are on Inventory. The two movements are under Stock movements.",
+          "Deleting a transfer is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "createStockTransfer": "Create transfer",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

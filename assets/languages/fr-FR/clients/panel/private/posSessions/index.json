@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "Séances PDV",
   "description": "Sessions de caisse ouvertes et fermées depuis le Point de Vente.",
+  "help": {
+    "ariaLabel": "À propos des sessions PDV",
+    "title": "À propos des sessions PDV",
+    "overview": "Une session est une ouverture de caisse, du comptage d'ouverture au comptage de clôture. Les sessions s'ouvrent et se ferment sur la caisse. Cette page ne fait que les lister.",
+    "sections": [
+      {
+        "title": "Les états",
+        "body": "L'état dit où en est le tiroir dans cette ouverture, pas si la caisse a le droit de vendre.",
+        "items": [
+          "L'ouverture est le comptage avant la vente.",
+          "Ouverte est la fenêtre de vente. Les entrées et sorties d'espèces s'y font.",
+          "La clôture est le comptage de fin. Fermée est une session terminée."
+        ]
+      },
+      {
+        "title": "Ce qui est enregistré",
+        "body": "La session est le tiroir de cette ouverture, plus les ventes qui y ont été passées.",
+        "items": [
+          "Le fond de caisse est ce qu'il y avait dans le tiroir à l'ouverture.",
+          "Entrée et sortie d'espèces sont des mouvements du tiroir avec un motif. Ce ne sont pas des ventes.",
+          "Fermer enregistre l'argent compté. Rapprocher compare ce comptage à ce que la session attendait du fond, des mouvements et des ventes en espèces."
+        ]
+      },
+      {
+        "title": "Qui peut le faire",
+        "body": "Les boutons sont sur la caisse. Le droit est sur la session.",
+        "items": [
+          "Ouvrir, fermer et rapprocher exigent le droit d'écrire l'état de la session.",
+          "Les entrées et sorties d'espèces exigent le droit d'écrire les mouvements de caisse.",
+          "Les ventes de la session sont sous Commandes PDV, filtrées par cette session."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {

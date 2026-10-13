@@ -2,15 +2,17 @@ import {Link} from "react-router-dom";
 import {ArrowLeft, Monitor} from "lucide-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {PageHelp, type PageHelpContent} from "@coreModule/components/custom/pageHelp.tsx";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 
 type Props = {
     configs: PosConfig[];
     rk: (key: string) => string;
+    help?: PageHelpContent;
     onSelect: (id: string) => void;
 };
 
-export default function PosConfigPicker({configs, rk, onSelect}: Props) {
+export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
     return (
         <div className="flex h-full min-h-0 flex-col bg-background text-foreground">
             <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border px-5 py-4">
@@ -19,7 +21,10 @@ export default function PosConfigPicker({configs, rk, onSelect}: Props) {
                         <Monitor className="size-3.5" />
                         {rk("title")}
                     </div>
-                    <h1 className="mt-1 text-2xl font-semibold tracking-tight">{rk("picker.title")}</h1>
+                    <div className="mt-1 flex min-w-0 items-center gap-1.5">
+                        <h1 className="text-2xl font-semibold tracking-tight">{rk("picker.title")}</h1>
+                        {help ? <PageHelp help={help} /> : null}
+                    </div>
                     <p className="mt-1 text-sm text-muted-foreground">{rk("picker.description")}</p>
                 </div>
                 <Button variant="outline" className="border-border bg-card text-foreground hover:bg-muted" asChild>

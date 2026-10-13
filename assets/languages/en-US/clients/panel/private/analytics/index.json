@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analytics",
   "description": "Track revenue, orders, inventory, and cart activity.",
+  "help": {
+    "ariaLabel": "About Analytics",
+    "title": "About Analytics",
+    "overview": "Analytics summarizes paid revenue, orders, inventory, and carts for this company. It is a read of those records. Nothing on this page creates an order, a product, or a stock change.",
+    "sections": [
+      {
+        "title": "What the period changes",
+        "body": "The period is 7 days, 30 days, 90 days, or 1 year. It does not apply to every card.",
+        "items": [
+          "Revenue, order counts, and product counts follow the period.",
+          "The daily revenue chart is paid revenue per day inside that period.",
+          "Inventory and abandoned carts are the current picture. Changing the period does not recompute them."
+        ]
+      },
+      {
+        "title": "The money and order cards",
+        "body": "These count paid orders, not every order that was placed.",
+        "items": [
+          "Total revenue is paid orders in the period.",
+          "Orders is the number of those paid orders.",
+          "Average order value is that revenue divided by that count."
+        ]
+      },
+      {
+        "title": "The stock and cart cards",
+        "body": "These are current, so they can disagree with the period you have selected. That is expected.",
+        "items": [
+          "Abandoned carts are carts inactive for more than an hour.",
+          "Low stock is a SKU under its reorder point. Out of stock is a SKU with nothing available.",
+          "Units on hand is the total inventory quantity. Products is the catalog counted by status.",
+          "Open Inventory, Product orders, or Products when a card is the thing you need to act on."
+        ]
+      }
+    ]
+  },
   "refresh": "Refresh",
   "errorTitle": "Failed to load analytics",
   "errorDescription": "Something went wrong while fetching dashboard data.",

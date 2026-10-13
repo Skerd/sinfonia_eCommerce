@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
   "title": "Porositë e produkteve",
   "description": "Gjurmo dhe menaxho porositë e klientëve.",
+  "help": {
+    "ariaLabel": "Rreth porosive të produkteve",
+    "title": "Rreth porosive të produkteve",
+    "overview": "Një porosi produkti është një blerje e klientit. Blerja e shkruan porosinë. Kjo faqe nuk krijon një të tillë. Tre statuse lëvizin veçmas: porosia, pagesa dhe përmbushja.",
+    "sections": [
+      {
+        "title": "Tre statuset",
+        "body": "Lexojini bashkë. Një porosi mund të jetë e paguar dhe ende e papërmbushur, ose e dërguar dhe vetëm pjesërisht e rimbursuar.",
+        "items": [
+          "Statusi i porosisë ecën në pritje, e konfirmuar, në përpunim, e dërguar, e dorëzuar, e anuluar, e rimbursuar.",
+          "Statusi i pagesës ecën e papaguar, e autorizuar, e paguar, pjesërisht e rimbursuar, e rimbursuar, e anuluar.",
+          "Statusi i përmbushjes ecën e papërmbushur, pjesërisht e përmbushur, e përmbushur, e kthyer."
+        ]
+      },
+      {
+        "title": "Çfarë bëjnë veprimet",
+        "body": "Konfirmo, shëno në përpunim, dërgo, shëno të paguar, anulo dhe rimburso janë të ndara. Secili refuzohet jashtë gjendjes së vet.",
+        "items": [
+          "Konfirmimi niset vetëm nga në pritje. E njeh porosinë, hapi i zakonshëm për pagesë në dorëzim ose transfertë bankare, dhe e njofton klientin.",
+          "Shënimi në përpunim niset vetëm nga e konfirmuar.",
+          "Dërgimi niset nga e konfirmuar ose në përpunim. Krijon një përmbushje për sasitë ende të hapura, i nxjerr ato njësi nga stoku dhe e vendos statusin e porosisë nga dërgesat. Mund të regjistroni transportuesin, numrin e gjurmimit dhe lidhjen.",
+          "Shënimi si e paguar regjistron një pagesë jashtë linje, vetëm sa kohë pagesa është e papaguar dhe porosia nuk është anuluar ose rimbursuar. Një porosi në pritje konfirmohet njëkohësisht. Kartat e dhuratave dhe shkarkimet e blera lëshohen. Stoku mbetet i mbajtur derisa të dërgohet.",
+          "Anulimi bllokohet pasi porosia është dërguar, dorëzuar, anuluar ose rimbursuar. Një porosi e paguar ose pjesërisht e rimbursuar duhet rimbursuar më parë. Anulimi liron stokun ende të mbajtur dhe kthen kredinë e dyqanit të zbatuar me një kartë dhurate.",
+          "Rimbursimi vlen për një porosi të paguar ose pjesërisht të rimbursuar. Një rimbursim i plotë e kthen edhe atë kredi, çaktivizon kartat e dhuratave të lëshuara, i skadon shkarkimet dhe liron stokun ende të mbajtur."
+        ]
+      },
+      {
+        "title": "Ku është pjesa tjetër e punës",
+        "body": "Kjo listë është porosia. Dërgesa dhe kthimi kanë faqet e tyre.",
+        "items": [
+          "Çdo dërgesë është një rresht te Përmbushjet, me status në pritje, e dërguar, e dorëzuar ose e dështuar.",
+          "Një kthim, një ndërrim ose një rimbursim është një rresht te Kërkesat e kthimit. Përfundimi i tij mund ta rimbursojë këtë porosi.",
+          "Fshirja është e butë dhe porosia mund të rikthehet."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {

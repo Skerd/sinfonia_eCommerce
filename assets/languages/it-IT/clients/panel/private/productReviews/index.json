@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Recensioni di prodotti",
   "description": "Crea e modifica le recensioni degli ordini pagati, poi moderale.",
+  "help": {
+    "ariaLabel": "Informazioni sulle recensioni prodotto",
+    "title": "Informazioni sulle recensioni prodotto",
+    "overview": "Una recensione prodotto appartiene a una riga di un ordine pagato. Il voto alimenta media, numero di voti e numero di recensioni del prodotto. Le recensioni del marketplace sono un elenco a parte e non cambiano questi numeri.",
+    "sections": [
+      {
+        "title": "Cosa puoi creare",
+        "body": "La recensione è legata a un acquisto reale. Non è un commento libero.",
+        "items": [
+          "Punta a un ordine pagato e a un prodotto di quell'ordine.",
+          "L'autore è il cliente dell'ordine. Non scegli un'altra persona e non puoi cambiarlo dopo.",
+          "Ordine e prodotto restano fissi una volta creata la recensione."
+        ]
+      },
+      {
+        "title": "Cosa puoi ancora modificare",
+        "body": "Testo e voto possono cambiare. Il legame con l'acquisto no.",
+        "items": [
+          "Voto, titolo e commento si possono modificare.",
+          "Media, numero di voti e numero di recensioni del prodotto seguono le recensioni ancora attive.",
+          "L'eliminazione è logica e la recensione può essere ripristinata."
+        ]
+      },
+      {
+        "title": "Dove compare",
+        "body": "La moderazione è qui. Il numero con cui si vende sta sul prodotto.",
+        "items": [
+          "Apri il prodotto per vedere l'aggregato che usa il negozio.",
+          "Apri l'ordine per vedere l'acquisto di cui parla la recensione.",
+          "Una vendita in cassa non finisce in questo elenco. Queste recensioni sono ordini di catalogo."
+        ]
+      }
+    ]
+  },
   "createProductReview": "Crea recensione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

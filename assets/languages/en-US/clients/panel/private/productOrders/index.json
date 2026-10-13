@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
   "title": "Product orders",
   "description": "Track and manage customer orders.",
+  "help": {
+    "ariaLabel": "About Product orders",
+    "title": "About Product orders",
+    "overview": "A product order is one customer checkout. Checkout writes the order. This page does not create one. Three statuses move on their own: the order, the payment, and the fulfillment.",
+    "sections": [
+      {
+        "title": "The three statuses",
+        "body": "Read them together. An order can be paid and still unfulfilled, or shipped and only partly refunded.",
+        "items": [
+          "Order status runs pending, confirmed, processing, shipped, delivered, cancelled, refunded.",
+          "Payment status runs unpaid, authorized, paid, partially refunded, refunded, voided.",
+          "Fulfillment status runs unfulfilled, partially fulfilled, fulfilled, returned."
+        ]
+      },
+      {
+        "title": "What the row actions do",
+        "body": "Confirm, mark processing, ship, mark paid, cancel, and refund are separate. Each one is refused outside its state.",
+        "items": [
+          "Confirm is only from pending. It acknowledges the order, which is the usual step for cash on delivery or a bank transfer, and tells the customer.",
+          "Mark processing is only from confirmed. It means the order is being prepared.",
+          "Ship is from confirmed or processing. It creates a fulfillment for the quantities still unfulfilled, takes those units out of stock, and sets the order status from its shipments. You can record a carrier, a tracking number, and a tracking link.",
+          "Mark paid records an offline payment (cash on delivery or bank transfer) and only while payment is unpaid and the order is not cancelled or refunded. A pending order is confirmed at the same time. Gift cards and downloads bought with the order are issued. Stock stays held until it ships.",
+          "Cancel is blocked once the order is shipped, delivered, cancelled, or refunded. A paid or partially refunded order must be refunded before it can be cancelled. Cancel releases stock still held and returns store credit applied with a gift card.",
+          "Refund is for a paid or partially refunded order. A full refund also returns that store credit, disables gift cards the order issued, expires its downloads, and releases stock still held."
+        ]
+      },
+      {
+        "title": "Where the rest of the work is",
+        "body": "This list is the order. The shipment and the return are their own pages.",
+        "items": [
+          "Each shipment is a row under Fulfillments, with its own pending, shipped, delivered, or failed status.",
+          "A return, exchange, or refund request is a row under Return requests. Completing one can refund this order.",
+          "Deleting an order is a soft delete and it can be restored."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "!enums": {

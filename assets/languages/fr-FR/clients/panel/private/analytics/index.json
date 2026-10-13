@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analyses",
   "description": "Suivez les revenus, les commandes, l’inventaire et l’activité du panier.",
+  "help": {
+    "ariaLabel": "À propos des analyses",
+    "title": "À propos des analyses",
+    "overview": "Les analyses résument le chiffre d'affaires payé, les commandes, l'inventaire et les paniers de cette société. C'est une lecture de ces données. Rien sur cette page ne crée de commande, de produit ou de mouvement de stock.",
+    "sections": [
+      {
+        "title": "Ce que la période change",
+        "body": "La période est 7 jours, 30 jours, 90 jours ou 1 an. Elle ne s'applique pas à chaque carte.",
+        "items": [
+          "Le chiffre d'affaires, le nombre de commandes et le nombre de produits suivent la période.",
+          "Le graphique est le chiffre d'affaires payé par jour dans cette période.",
+          "L'inventaire et les paniers abandonnés sont l'image actuelle. La période ne les recalcule pas."
+        ]
+      },
+      {
+        "title": "Les cartes d'argent et de commandes",
+        "body": "Elles comptent les commandes payées, pas chaque commande passée.",
+        "items": [
+          "Le chiffre d'affaires total est les commandes payées de la période.",
+          "Commandes est le nombre de ces commandes payées.",
+          "Le panier moyen est ce chiffre d'affaires divisé par ce nombre."
+        ]
+      },
+      {
+        "title": "Les cartes de stock et de paniers",
+        "body": "Elles sont actuelles, elles peuvent donc différer de la période choisie. C'est attendu.",
+        "items": [
+          "Les paniers abandonnés sont inactifs depuis plus d'une heure.",
+          "Stock faible : une SKU sous son seuil. Rupture : une SKU sans quantité disponible.",
+          "Unités en main est la quantité totale d'inventaire. Produits est le catalogue compté par statut.",
+          "Ouvrez l'inventaire, les commandes ou les produits quand une carte est ce sur quoi vous devez agir."
+        ]
+      }
+    ]
+  },
   "refresh": "Actualiser",
   "errorTitle": "Échec du chargement des analyses",
   "errorDescription": "Une erreur s'est produite lors de la récupération des données du tableau de bord.",

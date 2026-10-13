@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
   "title": "Produkt aufträge",
   "description": "Track und verwalten customer aufträge.",
+  "help": {
+    "ariaLabel": "Über Produktbestellungen",
+    "title": "Über Produktbestellungen",
+    "overview": "Eine Produktbestellung ist ein Kunden-Checkout. Der Checkout schreibt die Bestellung. Diese Seite legt keine an. Drei Status laufen getrennt: die Bestellung, die Zahlung und das Fulfillment.",
+    "sections": [
+      {
+        "title": "Die drei Status",
+        "body": "Lesen Sie sie zusammen. Eine Bestellung kann bezahlt und trotzdem nicht erfüllt sein, oder versendet und nur teilweise erstattet.",
+        "items": [
+          "Der Bestellstatus läuft ausstehend, bestätigt, in Bearbeitung, versendet, geliefert, storniert, erstattet.",
+          "Der Zahlungsstatus läuft unbezahlt, autorisiert, bezahlt, teilweise erstattet, erstattet, storniert.",
+          "Der Fulfillment-Status läuft unerfüllt, teilweise erfüllt, erfüllt, zurückgegeben."
+        ]
+      },
+      {
+        "title": "Was die Zeilenaktionen tun",
+        "body": "Bestätigen, In Bearbeitung, Versenden, Als bezahlt markieren, Stornieren und Erstatten sind getrennt. Jede wird ausserhalb ihres Zustands abgelehnt.",
+        "items": [
+          "Bestätigen geht nur aus ausstehend. Es bestätigt die Bestellung, der übliche Schritt bei Nachnahme oder Banküberweisung, und informiert den Kunden.",
+          "In Bearbeitung geht nur aus bestätigt.",
+          "Versenden geht aus bestätigt oder in Bearbeitung. Es legt ein Fulfillment für die noch offenen Mengen an, nimmt diese Einheiten aus dem Bestand und setzt den Bestellstatus aus den Sendungen. Sie können Spediteur, Sendungsnummer und Tracking-Link erfassen.",
+          "Als bezahlt markieren erfasst eine Offline-Zahlung und nur, solange die Zahlung unbezahlt ist und die Bestellung nicht storniert oder erstattet ist. Eine ausstehende Bestellung wird dabei bestätigt. Geschenkkarten und Downloads der Bestellung werden ausgestellt. Bestand bleibt gehalten, bis er versendet wird.",
+          "Stornieren ist blockiert, sobald die Bestellung versendet, geliefert, storniert oder erstattet ist. Eine bezahlte oder teilweise erstattete Bestellung muss zuerst erstattet werden. Stornieren gibt noch gehaltenen Bestand frei und schreibt Guthaben zurück, das mit einer Geschenkkarte verrechnet wurde.",
+          "Erstatten gilt für eine bezahlte oder teilweise erstattete Bestellung. Eine volle Erstattung schreibt dieses Guthaben ebenfalls zurück, deaktiviert Geschenkkarten dieser Bestellung, lässt ihre Downloads ablaufen und gibt noch gehaltenen Bestand frei."
+        ]
+      },
+      {
+        "title": "Wo der Rest der Arbeit liegt",
+        "body": "Diese Liste ist die Bestellung. Sendung und Rückgabe sind eigene Seiten.",
+        "items": [
+          "Jede Sendung ist eine Zeile unter Fulfillments, mit eigenem Status ausstehend, versendet, geliefert oder fehlgeschlagen.",
+          "Eine Rückgabe, ein Tausch oder eine Erstattung ist eine Zeile unter Rückgabeanfragen. Abschliessen kann diese Bestellung erstatten.",
+          "Das Löschen ist ein Soft-Delete und die Bestellung kann wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {

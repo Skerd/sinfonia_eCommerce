@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Avis sur les produits",
   "description": "Créer et modifier les avis des commandes payées, puis les modérer.",
+  "help": {
+    "ariaLabel": "À propos des avis produits",
+    "title": "À propos des avis produits",
+    "overview": "Un avis produit appartient à une ligne d'une commande payée. La note alimente la moyenne, le nombre de notes et le nombre d'avis du produit. Les avis marketplace sont une liste à part et ne changent pas ces chiffres.",
+    "sections": [
+      {
+        "title": "Ce que vous pouvez créer",
+        "body": "L'avis est lié à un achat réel. Ce n'est pas un commentaire libre.",
+        "items": [
+          "Il pointe vers une commande payée et un produit de cette commande.",
+          "L'auteur est le client de la commande. Vous ne choisissez pas une autre personne et vous ne pouvez pas le changer ensuite.",
+          "Commande et produit sont fixes une fois l'avis créé."
+        ]
+      },
+      {
+        "title": "Ce que vous pouvez encore modifier",
+        "body": "Le texte et la note peuvent changer. Le lien à l'achat non.",
+        "items": [
+          "La note, le titre et le commentaire peuvent être modifiés.",
+          "La moyenne, le nombre de notes et le nombre d'avis du produit suivent les avis encore en vie.",
+          "La suppression est logique et l'avis peut être restauré."
+        ]
+      },
+      {
+        "title": "Où il apparaît",
+        "body": "La modération est ici. Le chiffre vendu est sur le produit.",
+        "items": [
+          "Ouvrez le produit pour voir l'agrégat que la boutique utilise.",
+          "Ouvrez la commande pour voir l'achat dont parle l'avis.",
+          "Une vente en caisse n'arrive pas dans cette liste. Ces avis sont des commandes catalogue."
+        ]
+      }
+    ]
+  },
   "createProductReview": "Créer un avis",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

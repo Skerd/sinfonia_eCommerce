@@ -2,6 +2,45 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/index.tsx",
   "title": "Prodotti",
   "description": "Gestisci i prodotti nel tuo catalogo.",
+  "help": {
+    "ariaLabel": "Informazioni sui prodotti",
+    "title": "Informazioni sui prodotti",
+    "overview": "Un prodotto è un articolo vendibile del catalogo di questa società. Il negozio lo vende solo mentre lo stato è attivo. La bozza è la copia di lavoro. Archiviato è fuori vendita e può tornare bozza.",
+    "sections": [
+      {
+        "title": "Cosa cambia il tipo",
+        "body": "Il tipo decide come l'articolo si vende e come si muove lo stock.",
+        "items": [
+          "Fisico si spedisce e può tracciare stock, peso e dimensioni.",
+          "Digitale si consegna come download. Un rimborso completo dell'ordine fa scadere quei download.",
+          "Un servizio si vende senza spedizione.",
+          "Variabile si vende tramite le varianti. Una variante senza un prezzo proprio usa il prezzo del prodotto.",
+          "Un bundle è un insieme di altri prodotti. Quando lo stock si muove, il bundle si apre di un livello. Ogni componente deve essere un prodotto vivo di questa società e non può essere a sua volta un bundle.",
+          "Una gift card si vende come credito negozio."
+        ]
+      },
+      {
+        "title": "Stato e azioni di riga",
+        "body": "Pubblica, archivia e torna a bozza cambiano lo stato. Ognuna viene rifiutata se il prodotto non è nello stato atteso.",
+        "items": [
+          "Pubblica parte solo da bozza. Un prodotto senza varianti deve già avere un prezzo. La prima pubblicazione registra la data.",
+          "Archivia parte da bozza o attivo e toglie il prodotto dalla vendita.",
+          "Torna a bozza parte solo da archiviato e cancella la data di pubblicazione, così non torna subito in vendita.",
+          "Duplica copia i dati in una nuova bozza. Il titolo è l'originale più \" (Copy)\". Voti, numero di recensioni e varianti non vengono copiati.",
+          "L'eliminazione è logica e il prodotto può essere ripristinato."
+        ]
+      },
+      {
+        "title": "Come si collega al resto del menu",
+        "body": "Il prodotto è la scheda di catalogo. Stock, ordini e recensioni vi si agganciano.",
+        "items": [
+          "Categorie e collezioni lo raggruppano nel negozio. Un prodotto può stare in più categorie.",
+          "L'inventario, sotto Stock, tiene la quantità per magazzino. Un prodotto senza riga di inventario è trattato come non tracciato al checkout.",
+          "Una recensione su una riga di ordine pagato aggiorna media, numero di voti e numero di recensioni di questo prodotto."
+        ]
+      }
+    ]
+  },
   "createProduct": "Crea prodotto",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

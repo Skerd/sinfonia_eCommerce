@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "POS Sitzungen",
   "description": "Till sitzungen opened und geschlossen von die Point von Verkauf.",
+  "help": {
+    "ariaLabel": "Über POS-Sitzungen",
+    "title": "Über POS-Sitzungen",
+    "overview": "Eine Sitzung ist eine Öffnung einer Kasse, vom Anfangsbestand bis zur Schlusszählung. Sitzungen werden an der Kasse geöffnet und geschlossen. Diese Seite listet sie nur.",
+    "sections": [
+      {
+        "title": "Die Status",
+        "body": "Der Status sagt, wo die Schublade in dieser Öffnung steht, nicht ob die Kasse verkaufen darf.",
+        "items": [
+          "Öffnung ist die Zählung, bevor der Verkauf beginnt.",
+          "Geöffnet ist das Verkaufsfenster. Ein- und Auszahlung passieren hier.",
+          "Schliessung ist die Zählung am Ende. Geschlossen ist eine beendete Sitzung."
+        ]
+      },
+      {
+        "title": "Was festgehalten wird",
+        "body": "Die Sitzung ist die Kassenschublade dieser Öffnung, plus die Verkäufe, die darauf gebongt wurden.",
+        "items": [
+          "Der Anfangsbestand ist, was beim Öffnen in der Schublade lag.",
+          "Einzahlung und Auszahlung sind Schubladenbewegungen mit einem Grund. Sie sind keine Verkäufe.",
+          "Schliessen hält das gezählte Bargeld fest. Abstimmen vergleicht diese Zählung mit dem, was die Sitzung aus Anfangsbestand, Kassenbewegungen und Barverkäufen erwartet hat."
+        ]
+      },
+      {
+        "title": "Wer es darf",
+        "body": "Die Schaltflächen sind an der Kasse. Die Berechtigung liegt auf der Sitzung.",
+        "items": [
+          "Öffnen, Schliessen und Abstimmen brauchen die Schreibberechtigung für den Sitzungsstatus.",
+          "Ein- und Auszahlung brauchen die Schreibberechtigung für Kassenbewegungen.",
+          "Die Verkäufe der Sitzung stehen unter POS-Bestellungen, gefiltert nach dieser Sitzung."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {

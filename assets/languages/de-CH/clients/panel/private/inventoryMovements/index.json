@@ -2,6 +2,41 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Inventory movements",
   "description": "Full hauptbuch von restocks, write-offs, sales, und andere stock änderungen.",
+  "help": {
+    "ariaLabel": "Über Lagerbewegungen",
+    "title": "Über Lagerbewegungen",
+    "overview": "Das ist das Lagerjournal. Jede Änderung der Menge auf Lager schreibt eine Zeile, und die Zeile bleibt. Die Seite ist nur lesbar: hier wird nichts von Hand erfasst.",
+    "sections": [
+      {
+        "title": "Was eine Zeile festhält",
+        "body": "Die Zeile ist die Änderung, nicht der aktuelle Bestand. Der aktuelle Bestand bleibt auf der Lagerzeile.",
+        "items": [
+          "Sie hält Produkt, die Variante falls vorhanden, das Lager und die Lagerzeile, zu der sie gehört.",
+          "Menge ist die Änderung. Menge davor und danach sind der Bestand um diese Änderung.",
+          "Der Grund sagt warum. Notiz, Belegnummer, Charge, Ablauf und Stückkosten stehen da, wenn die Aktion sie hatte."
+        ]
+      },
+      {
+        "title": "Die Gründe",
+        "body": "Den Grund setzt die Aktion. Auf dieser Seite wählen Sie ihn nicht.",
+        "items": [
+          "Wareneingang und Anfangsbestand sind Ware, die hereinkommt. Verkauf ist Ware, die mit einer Bestellung oder einem Kassenverkauf geht.",
+          "Rückgabe ist Ware, die zurückgelegt wird, wenn eine Rückgabeanfrage empfangen wird.",
+          "Transfer rein und Transfer raus sind die beiden Seiten eines abgeschlossenen Lagertransfers.",
+          "Anpassung ist eine Inventur. Schaden und Abschreibung nehmen Ware ohne Verkauf heraus."
+        ]
+      },
+      {
+        "title": "Warum Sie sie nicht bearbeiten können",
+        "body": "Das Journal ist die Geschichte. Eine Zeile zu ändern würde Vorher und Nachher verfälschen.",
+        "items": [
+          "Zeilen können auf dieser Seite nicht erstellt, bearbeitet oder gelöscht werden.",
+          "Um Bestand zu ändern, nutzen Sie Lagerbestand, einen Transfer, eine Inventur, einen Versand oder eine Rückgabe.",
+          "Öffnen Sie die Zeile, um zu sehen, auf welches Produkt, welches Lager und welchen Bezug die Bewegung zeigt."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "reason": "Grund",
