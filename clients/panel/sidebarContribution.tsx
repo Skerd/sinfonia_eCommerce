@@ -1,4 +1,4 @@
-import {ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Network, Monitor, Receipt, Clock, ArrowLeftRight, Bookmark, Truck, ClipboardList} from "lucide-react";
+import {ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Monitor, Receipt, Clock, ArrowLeftRight, Bookmark, Truck, ClipboardList} from "lucide-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -60,7 +60,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
                     {title: resolveLanguageKey("menus.eCommerce.analytics.title"), url: "/eCommerce/analytics", icon: BarChart3, permissions: [], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.productreviews.title"), url: "/eCommerce/productreviews", icon: Star, permissions: ["productReviews"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.savedsearches.title"), url: "/eCommerce/savedsearches", icon: Bookmark, permissions: ["savedsearches"], usersPermissions: [], atLeastOnePermission: true},
-                    {title: resolveLanguageKey("menus.eCommerce.systemMap.title"), url: "/eCommerce/systemmap", icon: Network, permissions: ["products"], usersPermissions: [], atLeastOnePermission: true},
                 ],
             },
         ];
