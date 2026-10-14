@@ -20,6 +20,7 @@ import DeactivatePosConfigDialog from "@eCommerceModule/clients/panel/private/po
 import PausePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx";
 import ResumePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -181,13 +182,19 @@ function PosConfigCard({
                 );
             }}
         >
-            {({entity: row, setAction}) => {
-                const canOpenPos = row.isActive !== false && !row.isPaused && !row.deletedAt;
-                const pausedLabel = row.isCompanyPaused
+            {({entity: row, read, setAction}) => {
+                const canReadActive = accessFieldPathExists(read, "isActive");
+                const canReadPaused = accessFieldPathExists(read, "isPaused") || accessFieldPathExists(read, "pausedAt");
+                const canReadCompanyPaused = accessFieldPathExists(read, "isCompanyPaused");
+                const canOpenPos = canReadActive && row.isActive !== false && !(canReadPaused && row.isPaused) && !(accessFieldPathExists(read, "deletedAt") && row.deletedAt);
+                const companyPaused = canReadCompanyPaused && row.isCompanyPaused;
+                const selfPaused = canReadPaused && row.isPaused && !companyPaused;
+                const pausedLabel = companyPaused
                     ? resolveLanguageKey("companyPaused")
-                    : row.isPaused
+                    : selfPaused
                       ? resolveLanguageKey("paused")
                       : null;
+                const pausedPath = companyPaused ? "isCompanyPaused" : "pausedAt";
                 return (
                     <>
                         <EntityCard.Header
@@ -196,7 +203,7 @@ function PosConfigCard({
                             badgesBesideTitle
                             badges={
                                 pausedLabel ? (
-                                    <DisplayValue path="pausedAt" value={pausedLabel}>
+                                    <DisplayValue path={pausedPath} value={pausedLabel}>
                                         {(formatted: ReactNode) => (
                                             <span
                                                 className={

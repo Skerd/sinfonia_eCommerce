@@ -4,6 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {StockTransfer} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockTransfer/stockTransfer.dto.ts";
 import {IconBuildingWarehouse, IconTag} from "@tabler/icons-react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import StockDocumentActionItems from "@eCommerceModule/components/custom/stockDocuments/stockDocumentActionItems.tsx";
@@ -38,7 +39,7 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
             restoreUrl="/api/eCommerce/stockTransfer/restore"
             failedTitle=""
             failedDescription=""
-            titlePath="fromWarehouse.name"
+            titlePath={["fromWarehouse.name", "toWarehouse.name"]}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,
                 onSheetRowPatched: (patched: Partial<StockTransfer>) => setEntity({...row, ...patched}),
@@ -53,9 +54,13 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
                 />
             ) : null}
         >
-            {({entity: row, setAction}) => (
+            {({entity: row, read, setAction}) => {
+                const fromName = accessFieldPathExists(read, "fromWarehouse.name") ? row.fromWarehouse?.name ?? "" : "";
+                const toName = accessFieldPathExists(read, "toWarehouse.name") ? row.toWarehouse?.name ?? "" : "";
+                const title = [fromName, toName].filter((part) => part.length > 0).join(" → ");
+                return (
                 <>
-                    <EntityCard.Header titlePath="fromWarehouse.name" title={`${row.fromWarehouse?.name ?? ""} → ${row.toWarehouse?.name ?? ""}`}>
+                    <EntityCard.Header titlePath={["fromWarehouse.name", "toWarehouse.name"]} title={title}>
                         <StockDocumentActionItems resource="stockTransfers" entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
@@ -72,12 +77,13 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
                             icon={IconBuildingWarehouse}
                             label={resolveLanguageKey("toWarehouse")}
                             tooltip={resolveLanguageKey("toWarehouse")}
-                            path="toWarehouse"
+                            path="toWarehouse.name"
                             value={row.toWarehouse?.name}
                         />
                     </EntityCard.Body>
                 </>
-            )}
+                );
+            }}
         </EntityCard>
     );
 }

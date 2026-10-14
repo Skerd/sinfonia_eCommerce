@@ -6,6 +6,7 @@ import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerc
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconBuildingWarehouse, IconPackage} from "@tabler/icons-react";
 import InventoryMovementSheetView from "@eCommerceModule/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -55,8 +56,9 @@ function InventoryMovementCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity: row}) => {
-                const qty = row.quantity ?? 0;
+            {({entity: row, read}) => {
+                const canReadQty = accessFieldPathExists(read, "quantity");
+                const qty = canReadQty ? row.quantity ?? 0 : 0;
                 const isPositive = qty > 0;
                 return (
                     <>
@@ -88,7 +90,7 @@ function InventoryMovementCard({
                                     <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                         {resolveLanguageKey("quantity")}
                                     </div>
-                                    <div className={cn("text-sm font-bold", isPositive ? "text-success" : "text-warning")}>
+                                    <div className={cn("text-sm font-bold", canReadQty && (isPositive ? "text-success" : "text-warning"))}>
                                         <DisplayValue path="quantity" value={isPositive ? `+${qty}` : qty} />
                                     </div>
                                 </div>

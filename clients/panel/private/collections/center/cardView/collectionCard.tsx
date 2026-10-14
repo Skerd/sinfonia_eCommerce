@@ -10,6 +10,7 @@ import DeactivateCollection from "@eCommerceModule/clients/panel/private/collect
 import ActivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx";
 import DeactivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/deactivateCollectionDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
@@ -115,7 +116,7 @@ function CollectionCard({
                         title={entity.name}
                         badgesBesideTitle
                         badges={
-                            entity.isVisible ? undefined : (
+                            accessFieldPathExists(read, "isVisible") && entity.isVisible === false ? (
                                 <DisplayValue path="isVisible" value={resolveLanguageKey("hidden")}>
                                     {(formatted: ReactNode) => (
                                         <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0">
@@ -124,7 +125,7 @@ function CollectionCard({
                                         </span>
                                     )}
                                 </DisplayValue>
-                            )
+                            ) : undefined
                         }
                     >
                         <ActivateCollection entity={entity} onAction={setAction} />

@@ -15,6 +15,7 @@ import MarkPaidDropdown from "@eCommerceModule/clients/panel/private/productOrde
 import ProductOrderActionConfirmAction from "@eCommerceModule/components/custom/productOrders/productOrderActionConfirmAction.tsx";
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -149,9 +150,12 @@ function ProductOrderCard({
                 );
             }}
         >
-            {({entity: row, setAction}) => {
-                const colors = statusColor(row.status);
-                const paymentColors = paymentStatusColor(row.paymentStatus);
+            {({entity: row, read, setAction}) => {
+                const canStatus = accessFieldPathExists(read, "status");
+                const canPayment = accessFieldPathExists(read, "paymentStatus");
+                const colors = canStatus ? statusColor(row.status) : "";
+                const paymentColors = canPayment ? paymentStatusColor(row.paymentStatus) : "";
+                const currency = accessFieldPathExists(read, "currency") ? row.currency : undefined;
                 return (
                     <>
                         <EntityCard.Header titlePath="orderNumber" title={row.orderNumber}>
@@ -202,7 +206,7 @@ function ProductOrderCard({
                                     <DisplayValue
                                         path="grandTotal"
                                         type="currency"
-                                        value={{amount: row.grandTotal, currency: row.currency}}
+                                        value={{amount: row.grandTotal, currency}}
                                     />
                                 </span>
                             </div>

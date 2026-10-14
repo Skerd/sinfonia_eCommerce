@@ -9,6 +9,7 @@ import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingR
 import DeactivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/deactivatePricingRule.tsx";
 import ActivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx";
 import DeactivatePricingRuleDialog from "@eCommerceModule/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -102,7 +103,9 @@ function PricingRuleCard({
                 </>
             )}
         >
-            {({entity, setAction}) => (
+            {({entity, read, setAction}) => {
+                const percentage = accessFieldPathExists(read, "type") && entity.type === "percentage_discount";
+                return (
                 <>
                     <EntityCard.Header titlePath="name" title={entity.name}>
                         <ActivatePricingRule entity={entity} onAction={setAction} />
@@ -119,7 +122,7 @@ function PricingRuleCard({
                             value={entity.type}
                         />
                         <EntityCardRow
-                            icon={entity.type === "percentage_discount" ? IconPercentage : IconCashBanknote}
+                            icon={percentage ? IconPercentage : IconCashBanknote}
                             label={resolveLanguageKey("value")}
                             tooltip={resolveLanguageKey("value")}
                             path="value"
@@ -127,7 +130,7 @@ function PricingRuleCard({
                             value={entity.value}
                         >
                             {(formatted) =>
-                                entity.type === "percentage_discount" ? (
+                                percentage ? (
                                     <>
                                         {formatted}%
                                     </>
@@ -154,7 +157,8 @@ function PricingRuleCard({
                         />
                     </EntityCard.Body>
                 </>
-            )}
+                );
+            }}
         </EntityCard>
     );
 }

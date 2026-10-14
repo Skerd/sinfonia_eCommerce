@@ -206,10 +206,20 @@ function ProductCard({
             )}
         >
             {({entity: row, read, setAction}) => {
-                const description = row.shortDescription || row.description;
-                const rating = row.ratingAverage;
+                const canReadShort = accessFieldPathExists(read, "shortDescription");
+                const canReadDescription = accessFieldPathExists(read, "description");
+                const description = canReadShort && row.shortDescription
+                    ? row.shortDescription
+                    : canReadDescription
+                        ? row.description
+                        : "";
+                const descriptionPath = canReadShort && row.shortDescription ? "shortDescription" : "description";
+                const rating = accessFieldPathExists(read, "ratingAverage") ? row.ratingAverage : undefined;
+                const canReadPrice = accessFieldPathExists(read, "price");
+                const canReadCompare = accessFieldPathExists(read, "compareAtPrice");
+                const currency = accessFieldPathExists(read, "currency") ? row.currency : undefined;
                 const {price, compareAtPrice, saleEndsAt} = row;
-                const onSale = price != null && compareAtPrice != null && compareAtPrice > price;
+                const onSale = canReadPrice && canReadCompare && price != null && compareAtPrice != null && compareAtPrice > price;
                 const savingsPercent = onSale ? Math.round(((compareAtPrice - price) / compareAtPrice) * 100) : 0;
                 const showTimer = !!saleEndsAt && isWithinSaleWindow(row) && getTimeLeft(new Date(saleEndsAt)) != null;
                 const showGallery =
@@ -296,7 +306,7 @@ function ProductCard({
                                 </DisplayValue>
                             ) : null}
                             {description ? (
-                                <DisplayValue path="shortDescription" value={description}>
+                                <DisplayValue path={descriptionPath} value={description}>
                                     {(text) => (
                                         <p className="line-clamp-2 text-xs text-muted-foreground">{text}</p>
                                     )}
@@ -308,7 +318,7 @@ function ProductCard({
                                         <DisplayValue
                                             path="price"
                                             type="currency"
-                                            value={{amount: row.price, currency: row.currency}}
+                                            value={{amount: canReadPrice ? row.price : undefined, currency}}
                                         />
                                     </span>
                                     {onSale ? (
@@ -316,7 +326,7 @@ function ProductCard({
                                             <DisplayValue
                                                 path="compareAtPrice"
                                                 type="currency"
-                                                value={{amount: row.compareAtPrice, currency: row.currency}}
+                                                value={{amount: canReadCompare ? row.compareAtPrice : undefined, currency}}
                                             />
                                         </span>
                                     ) : null}

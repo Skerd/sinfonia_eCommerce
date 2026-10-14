@@ -10,6 +10,7 @@ import DeactivateFiscalConfig from "@eCommerceModule/clients/panel/private/fisca
 import ActivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx";
 import DeactivateFiscalConfigDialog from "@eCommerceModule/clients/panel/private/fiscalConfigs/center/dialogs/deactivateFiscalConfigDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -99,14 +100,14 @@ function FiscalConfigCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => (
+            {({entity: row, read, setAction}) => (
                 <>
                     <EntityCard.Header
                         titlePath="name"
                         title={row.name}
                         badgesBesideTitle
                         badges={
-                            row.isActive ? undefined : (
+                            accessFieldPathExists(read, "isActive") && row.isActive === false ? (
                                 <DisplayValue path="isActive" value={resolveLanguageKey("inactive")}>
                                     {(formatted: ReactNode) => (
                                         <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0">
@@ -115,7 +116,7 @@ function FiscalConfigCard({
                                         </span>
                                     )}
                                 </DisplayValue>
-                            )
+                            ) : undefined
                         }
                     >
                         <ActivateFiscalConfig entity={row} onAction={setAction} />

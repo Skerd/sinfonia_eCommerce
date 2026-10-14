@@ -9,6 +9,7 @@ import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/c
 import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
 import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
 import DeactivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -102,7 +103,10 @@ function DiscountCard({
                 </>
             )}
         >
-            {({entity, setAction}) => (
+            {({entity, read, setAction}) => {
+                const canReadType = accessFieldPathExists(read, "type");
+                const percentage = canReadType && entity.type === "percentage";
+                return (
                 <>
                     <EntityCard.Header titlePath="title" title={entity.title}>
                         <ActivateDiscount entity={entity} onAction={setAction} />
@@ -125,9 +129,9 @@ function DiscountCard({
                             languageKeyCategory="discountType"
                             value={entity.type}
                         />
-                        {entity.type === "percentage" || entity.type === "fixed" ? (
+                        {accessFieldPathExists(read, "value") && (!canReadType || entity.type === "percentage" || entity.type === "fixed") ? (
                             <EntityCardRow
-                                icon={entity.type === "percentage" ? IconPercentage : IconCashBanknote}
+                                icon={percentage ? IconPercentage : IconCashBanknote}
                                 label={resolveLanguageKey("value")}
                                 tooltip={resolveLanguageKey("value")}
                                 path="value"
@@ -135,7 +139,7 @@ function DiscountCard({
                                 value={entity.value}
                             >
                                 {(formatted) =>
-                                    entity.type === "percentage" ? (
+                                    percentage ? (
                                         <>
                                             {formatted}%
                                         </>
@@ -155,7 +159,8 @@ function DiscountCard({
                         />
                     </EntityCard.Body>
                 </>
-            )}
+                );
+            }}
         </EntityCard>
     );
 }

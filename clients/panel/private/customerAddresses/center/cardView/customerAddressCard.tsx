@@ -10,6 +10,7 @@ import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/priv
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -23,8 +24,10 @@ function customerAddressEditPath(entity: CustomerAddress, lockCustomer: boolean)
     return `${FORM_BASE}/edit?${params.toString()}`;
 }
 
-function addressTitle(entity: CustomerAddress) {
-    return [entity.firstName, entity.lastName].filter(Boolean).join(" ");
+function addressTitle(entity: CustomerAddress, read: unknown) {
+    const firstName = accessFieldPathExists(read, "firstName") ? entity.firstName : "";
+    const lastName = accessFieldPathExists(read, "lastName") ? entity.lastName : "";
+    return [firstName, lastName].filter(Boolean).join(" ");
 }
 
 type CustomerAddressCardProps = WithLanguageType & {
@@ -68,7 +71,7 @@ function CustomerAddressCard({
             restoreUrl="/api/eCommerce/customerAddress/restore"
             failedTitle=""
             failedDescription=""
-            titlePath="firstName"
+            titlePath={["firstName", "lastName"]}
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,
@@ -97,14 +100,14 @@ function CustomerAddressCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => (
+            {({entity: row, read, setAction}) => (
                 <>
                     <EntityCard.Header
-                        titlePath="firstName"
-                        title={addressTitle(row)}
+                        titlePath={["firstName", "lastName"]}
+                        title={addressTitle(row, read)}
                         badgesBesideTitle
                         badges={
-                            row.isDefault ? (
+                            accessFieldPathExists(read, "isDefault") && row.isDefault ? (
                                 <DisplayValue path="isDefault" value={resolveLanguageKey("defaultAddress")}>
                                     {(formatted: ReactNode) => (
                                         <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">

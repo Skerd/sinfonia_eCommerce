@@ -9,6 +9,7 @@ import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/c
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -104,14 +105,14 @@ function CustomerGroupCard({
                 </>
             )}
         >
-            {({entity, setAction}) => (
+            {({entity, read, setAction}) => (
                 <>
                     <EntityCard.Header
                         titlePath="name"
                         title={entity.name}
                         badgesBesideTitle
                         badges={
-                            entity.isDefault ? (
+                            accessFieldPathExists(read, "isDefault") && entity.isDefault ? (
                                 <DisplayValue path="isDefault" value={resolveLanguageKey("default")}>
                                     {(formatted: ReactNode) => (
                                         <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">

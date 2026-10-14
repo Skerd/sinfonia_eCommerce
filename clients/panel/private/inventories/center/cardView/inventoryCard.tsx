@@ -96,8 +96,9 @@ function InventoryCard({
         >
             {({entity: row, read, setAction}) => {
                 const available = row.quantityAvailable;
-                const isLowStock = row.reorderPoint != null && available <= row.reorderPoint;
-                const canReadAvailable = accessFieldPathExists(read, "quantityOnHand");
+                const canReadAvailable = accessFieldPathExists(read, "quantityOnHand") || accessFieldPathExists(read, "quantityAvailable");
+                const canReadReorder = accessFieldPathExists(read, "reorderPoint");
+                const isLowStock = canReadAvailable && canReadReorder && row.reorderPoint != null && available <= row.reorderPoint;
                 return (
                     <>
                         <EntityCard.Header titlePath="product.title" title={row.product.title}>

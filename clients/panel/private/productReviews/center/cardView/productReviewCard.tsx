@@ -12,6 +12,7 @@ import DisplayValue from "@coreModule/components/viewEngine/widgets/display/disp
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
 function productReviewEditPath(review: ProductReview) {
@@ -37,10 +38,20 @@ function Stars({value}: {value: number}) {
     );
 }
 
-function reviewCardTitle(review: ProductReview): string {
-    const title = review.title?.trim();
+function childReadable(read: unknown, parent: string, field: string): boolean {
+    if (read === true) return true;
+    if (accessFieldPathExists(read, `${parent}.${field}`)) return true;
+    if (!accessFieldPathExists(read, parent) || !read || typeof read !== "object") return false;
+    const node = (read as Record<string, unknown>)[parent];
+    return !node || typeof node !== "object" || !("keys" in node);
+}
+
+function reviewCardTitle(review: ProductReview, read: unknown): string {
+    const title = accessFieldPathExists(read, "title") ? review.title?.trim() : "";
     if (title) return title;
-    return review.product?.title || `${review.rating}/5`;
+    if (accessFieldPathExists(read, "product.title") && review.product?.title) return review.product.title;
+    if (accessFieldPathExists(read, "rating") && typeof review.rating === "number") return `${review.rating}/5`;
+    return "";
 }
 
 type ProductReviewCardProps = WithLanguageType & {
@@ -80,18 +91,21 @@ function ProductReviewCard({
             restoreUrl="/api/eCommerce/productReview/restore"
             failedTitle=""
             failedDescription=""
-            titlePath="title"
+            titlePath={["title", "product.title", "rating"]}
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity: row}) => {
+            {({entity: row, read}) => {
                 const rating = typeof row.rating === "number" ? row.rating : 0;
-                const reviewerName = getName(row.reviewer);
-                const reviewerInitials = [row.reviewer?.name?.[0], row.reviewer?.surname?.[0]]
-                    .filter(Boolean)
-                    .join("")
-                    .toUpperCase();
-                const avatarSrc = row.reviewer?.photo
+                const reviewerName = getName({
+                    name: childReadable(read, "reviewer", "name") ? row.reviewer?.name : "",
+                    surname: childReadable(read, "reviewer", "surname") ? row.reviewer?.surname : "",
+                });
+                const reviewerInitials = [
+                    childReadable(read, "reviewer", "name") ? row.reviewer?.name?.[0] : "",
+                    childReadable(read, "reviewer", "surname") ? row.reviewer?.surname?.[0] : "",
+                ].filter(Boolean).join("").toUpperCase();
+                const avatarSrc = childReadable(read, "reviewer", "photo") && row.reviewer?.photo
                     ? `/api/auxiliary/media/${row.reviewer.photo}`
                     : undefined;
                 const verified = Boolean(row.order?._id);
@@ -101,16 +115,16 @@ function ProductReviewCard({
                 return (
                     <>
                         <EntityCard.Header
-                            titlePath="title"
-                            title={reviewCardTitle(row)}
-                            icon={
+                            titlePath={["title", "product.title", "rating"]}
+                            title={reviewCardTitle(row, read)}
+                            icon={reviewerName || avatarSrc ? (
                                 <Avatar className="size-9 shrink-0">
                                     {avatarSrc && <AvatarImage src={avatarSrc} alt={reviewerName || undefined} />}
                                     <AvatarFallback className="text-3xs font-semibold">
                                         {reviewerInitials || "?"}
                                     </AvatarFallback>
                                 </Avatar>
-                            }
+                            ) : undefined}
                             subtitle={
                                 reviewerName
                                     ? resolveLanguageKey("byAuthor").replace("{name}", reviewerName)

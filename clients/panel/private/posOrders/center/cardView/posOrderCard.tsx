@@ -8,6 +8,7 @@ import PosOrderSheetView from "@eCommerceModule/clients/panel/private/posOrders/
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -83,8 +84,9 @@ function PosOrderCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => {
-                const colors = stateColor(row.state);
+            {({entity: row, read, setAction}) => {
+                const canState = accessFieldPathExists(read, "state");
+                const colors = canState ? stateColor(row.state) : "";
                 const customerDisplay = row.customerName
                     || getName(row.customer);
                 return (
