@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopOrderStatus.tsx",
+  "status": {
+    "pending": "Në pritje",
+    "confirmed": "Konfirmuar",
+    "processing": "Në përpunim",
+    "shipped": "Dërguar",
+    "delivered": "Dorëzuar",
+    "cancelled": "Anuluar",
+    "refunded": "Rimbursuar"
+  },
+  "paymentStatus": {
+    "unpaid": "E papaguar",
+    "authorized": "E autorizuar",
+    "paid": "E paguar",
+    "partially_refunded": "Rimbursuar pjesërisht",
+    "refunded": "Rimbursuar",
+    "voided": "E anuluar"
+  },
+  "fulfillmentStatus": {
+    "unfulfilled": "E padërguar",
+    "partially_fulfilled": "Dërguar pjesërisht",
+    "fulfilled": "Dërguar",
+    "returned": "Kthyer"
+  }
+}

@@ -1,104 +1,36 @@
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
+import {compose} from "redux";
+import {ChevronLeft, ChevronRight} from "lucide-react";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
+import {SHOP_BUTTON_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 
-type MyOrderItem = {
-    quantity: number;
-    unitPrice: number;
-    totalPrice: number;
-    snapshot?: {title?: string; sku?: string; variantLabel?: string};
-};
-
-type MyOrder = {
-    _id: string;
-    orderNumber: string;
-    status: string;
-    paymentStatus: string;
-    fulfillmentStatus: string;
-    grandTotal: number;
-    subtotal: number;
-    shippingTotal: number;
-    taxTotal: number;
-    discountTotal: number;
-    items: MyOrderItem[];
-    createdAt?: string;
-};
-
-type MyDigitalDelivery = {
-    _id: string;
-    order?: string;
-    product?: {title?: string};
-    token: string;
-    files: {_id: string; fileName?: string}[];
-    remainingDownloads: number;
-    expiresAt?: string;
-};
-
-const STATUS_STYLES: Record<string, string> = {
-    pending: "bg-amber-100 text-amber-800",
-    confirmed: "bg-blue-100 text-blue-800",
-    processing: "bg-blue-100 text-blue-800",
-    shipped: "bg-indigo-100 text-indigo-800",
-    delivered: "bg-green-100 text-green-800",
-    cancelled: "bg-red-100 text-red-700",
-    refunded: "bg-gray-200 text-gray-700",
-};
-
-function StatusBadge({value}: {value: string}) {
-    return (
-        <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize ${STATUS_STYLES[value] ?? "bg-gray-100 text-gray-700"}`}>
-            {value.replaceAll("_", " ")}
-        </span>
-    );
-}
+const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/orders/index.tsx";
 
 const PAGE_SIZE = 10;
 
-function OrdersPage() {
+function OrdersPage({resolveLanguageKey}: WithLanguageType) {
     const {formatMoney} = useShopConfig();
-    const signedIn = Boolean(getToken());
+    const [searchParams, setSearchParams] = useSearchParams();
+    const page = Math.max(1, Number(searchParams.get("page")) || 1);
 
-    const [orders, setOrders] = useState<MyOrder[]>([]);
+    const [orders, setOrders] = useState<BuyerProductOrder[]>([]);
     const [total, setTotal] = useState(0);
-    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
-    const [expanded, setExpanded] = useState<string | null>(null);
-    const [deliveriesByOrder, setDeliveriesByOrder] = useState<Record<string, MyDigitalDelivery[]>>({});
 
     useEffect(() => {
-        if (!signedIn) return;
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: MyDigitalDelivery[]}>("/api/eCommerce/digitalDelivery/my", {});
-                if (cancelled) return;
-                const grouped: Record<string, MyDigitalDelivery[]> = {};
-                for (const delivery of res.data.data ?? []) {
-                    if (!delivery.order) continue;
-                    (grouped[delivery.order] ??= []).push(delivery);
-                }
-                setDeliveriesByOrder(grouped);
-            } catch {
-                if (!cancelled) setDeliveriesByOrder({});
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
-    }, [signedIn]);
-
-    useEffect(() => {
-        if (!signedIn) {
-            setLoading(false);
-            return;
-        }
         let cancelled = false;
         setLoading(true);
         (async () => {
             try {
-                const res = await apiClient.post<{data: MyOrder[]; total: number}>("/api/eCommerce/productOrder/my", {page, limit: PAGE_SIZE});
+                const res = await apiClient.post<{data: BuyerProductOrder[]; total: number}>("/api/eCommerce/productOrder/my", {page, limit: PAGE_SIZE});
                 if (cancelled) return;
                 setOrders(res.data.data ?? []);
                 setTotal(res.data.total ?? 0);
@@ -111,107 +43,60 @@ function OrdersPage() {
         return () => {
             cancelled = true;
         };
-    }, [signedIn, page]);
-
-    if (!signedIn) {
-        return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">My orders</h1>
-                <p className="mt-2 text-shop-ink-muted">Sign in from the main app to see your orders.</p>
-            </div>
-        );
-    }
+    }, [page]);
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    const goToPage = (next: number) => setSearchParams(next > 1 ? {page: String(next)} : {});
 
     return (
-        <div className="flex flex-col gap-y-6">
-            <div className="flex items-center justify-between">
-                <h1 className="font-shop-display text-3xl font-semibold">My orders</h1>
-                <Link to="/account/giftcards" className="text-sm font-medium text-shop-accent hover:underline">
-                    My gift cards →
-                </Link>
-            </div>
+        <div className="flex flex-col gap-6">
+            <h1 className="font-shop-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
 
             {loading ? (
-                <div className="h-48 animate-pulse rounded-xl bg-shop-cream" />
+                <div className="flex flex-col gap-3" aria-busy="true" aria-label={resolveLanguageKey("loading")}>
+                    {Array.from({length: 3}, (_, i) => <div key={i} className="h-24 animate-pulse rounded-2xl bg-shop-cream" />)}
+                </div>
             ) : orders.length === 0 ? (
-                <div className="rounded-xl border border-dashed border-shop-border py-16 text-center text-shop-ink-muted">
-                    You have no orders yet.
+                <div className="flex flex-col items-center gap-4 rounded-3xl bg-shop-cream px-6 py-16 text-center">
+                    <p className="font-shop-display text-xl font-semibold">{resolveLanguageKey("emptyTitle")}</p>
+                    <p className="text-shop-ink-muted">{resolveLanguageKey("emptyMessage")}</p>
+                    <Link to="/products" className={SHOP_BUTTON_CLASS}>{resolveLanguageKey("browse")}</Link>
                 </div>
             ) : (
-                <ul className="flex flex-col gap-y-3">
+                <ul className="flex flex-col gap-3">
                     {orders.map(order => {
-                        const isOpen = expanded === order._id;
+                        const items = order.items ?? [];
+                        const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
                         return (
-                            <li key={order._id} className="rounded-xl border border-shop-border">
-                                <button
-                                    onClick={() => setExpanded(isOpen ? null : order._id)}
-                                    className="flex w-full flex-wrap items-center justify-between gap-3 p-4 text-left"
+                            <li key={order._id}>
+                                <Link
+                                    to={`/account/orders/${order._id}`}
+                                    className="group flex items-center gap-4 rounded-2xl border border-shop-border p-4 transition-colors hover:border-shop-ink sm:p-5"
                                 >
-                                    <span>
-                                        <span className="block text-sm font-semibold">{order.orderNumber}</span>
-                                        {order.createdAt && (
-                                            <span className="text-xs text-shop-ink-faded">{new Date(order.createdAt).toLocaleDateString()}</span>
-                                        )}
-                                    </span>
-                                    <span className="flex items-center gap-2">
-                                        <StatusBadge value={order.status} />
-                                        <StatusBadge value={order.paymentStatus} />
-                                        <span className="text-sm font-semibold">{formatMoney(order.grandTotal)}</span>
-                                    </span>
-                                </button>
-                                {isOpen && (
-                                    <div className="border-t border-shop-border p-4 text-sm">
-                                        <ul className="flex flex-col gap-y-1">
-                                            {order.items.map((item, index) => (
-                                                <li key={index} className="flex justify-between gap-2">
-                                                    <span className="text-shop-ink-muted">
-                                                        {item.quantity}× {item.snapshot?.title ?? "Item"}
-                                                        {item.snapshot?.variantLabel ? ` · ${item.snapshot.variantLabel}` : ""}
-                                                        {item.snapshot?.sku ? ` (${item.snapshot.sku})` : ""}
-                                                    </span>
-                                                    <span>{formatMoney(item.totalPrice)}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                        {(deliveriesByOrder[order._id]?.length ?? 0) > 0 && (
-                                            <div className="mt-3 border-t border-shop-border pt-2">
-                                                <p className="mb-1 font-semibold">Downloads</p>
-                                                <ul className="flex flex-col gap-y-1">
-                                                    {deliveriesByOrder[order._id].map(delivery => (
-                                                        <li key={delivery._id}>
-                                                            <span className="text-shop-ink-muted">{delivery.product?.title ?? "Digital product"}</span>
-                                                            <span className="text-xs text-shop-ink-faded"> · {delivery.remainingDownloads} downloads left</span>
-                                                            <span className="ml-2 inline-flex flex-wrap gap-2">
-                                                                {delivery.files.map(file => (
-                                                                    <a
-                                                                        key={file._id}
-                                                                        href={`/api/eCommerce/digitalDownload/${delivery.token}/${file._id}`}
-                                                                        target="_blank"
-                                                                        rel="noreferrer"
-                                                                        className="text-shop-accent underline"
-                                                                    >
-                                                                        {file.fileName ?? "Download"}
-                                                                    </a>
-                                                                ))}
-                                                            </span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-                                        <div className="flex flex-col mt-3 gap-y-1 border-t border-shop-border pt-2">
-                                            <div className="flex justify-between"><span className="text-shop-ink-muted">Subtotal</span><span>{formatMoney(order.subtotal)}</span></div>
-                                            {order.discountTotal > 0 && (
-                                                <div className="flex justify-between text-green-700"><span>Discount</span><span>-{formatMoney(order.discountTotal)}</span></div>
-                                            )}
-                                            <div className="flex justify-between"><span className="text-shop-ink-muted">Shipping</span><span>{formatMoney(order.shippingTotal)}</span></div>
-                                            <div className="flex justify-between"><span className="text-shop-ink-muted">Tax</span><span>{formatMoney(order.taxTotal)}</span></div>
-                                            <div className="flex justify-between font-semibold"><span>Total</span><span>{formatMoney(order.grandTotal)}</span></div>
-                                        </div>
+                                    <div className="hidden shrink-0 -space-x-3 sm:flex" aria-hidden>
+                                        {items.slice(0, 3).map((item, index) => {
+                                            const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                                            return (
+                                                <div key={index} className="h-14 w-12 overflow-hidden rounded-lg bg-shop-cream ring-2 ring-white">
+                                                    {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                )}
+                                    <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                                            <span className="font-semibold">{resolveLanguageKey("orderNumber").replace("{number}", order.orderNumber)}</span>
+                                            <ShopOrderStatus kind="status" value={order.status} />
+                                        </div>
+                                        <span className="text-sm text-shop-ink-muted">
+                                            {formatDate(order.createdAt, {format: DATE_FORMATS.date})}
+                                            {" · "}
+                                            {resolveLanguageKey(itemCount === 1 ? "itemCountOne" : "itemCount").replace("{count}", String(itemCount))}
+                                        </span>
+                                    </div>
+                                    <span className="font-shop-display font-semibold tabular-nums">{formatMoney(order.grandTotal)}</span>
+                                    <ChevronRight className="h-4 w-4 shrink-0 text-shop-ink-faded transition-transform group-hover:translate-x-0.5" aria-hidden />
+                                </Link>
                             </li>
                         );
                     })}
@@ -219,26 +104,35 @@ function OrdersPage() {
             )}
 
             {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-3">
+                <nav className="flex items-center justify-center gap-3" aria-label={resolveLanguageKey("pagination")}>
                     <button
+                        type="button"
                         disabled={page <= 1}
-                        onClick={() => setPage(p => p - 1)}
-                        className="rounded-md border border-shop-border px-3 py-1.5 text-sm disabled:opacity-40"
+                        onClick={() => goToPage(page - 1)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-shop-cream disabled:opacity-30"
+                        aria-label={resolveLanguageKey("previousPage")}
                     >
-                        Previous
+                        <ChevronLeft className="h-4 w-4" />
                     </button>
-                    <span className="text-sm text-shop-ink-muted">Page {page} of {totalPages}</span>
+                    <span className="text-sm text-shop-ink-muted">
+                        {resolveLanguageKey("pageOf").replace("{page}", String(page)).replace("{total}", String(totalPages))}
+                    </span>
                     <button
+                        type="button"
                         disabled={page >= totalPages}
-                        onClick={() => setPage(p => p + 1)}
-                        className="rounded-md border border-shop-border px-3 py-1.5 text-sm disabled:opacity-40"
+                        onClick={() => goToPage(page + 1)}
+                        className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-shop-cream disabled:opacity-30"
+                        aria-label={resolveLanguageKey("nextPage")}
                     >
-                        Next
+                        <ChevronRight className="h-4 w-4" />
                     </button>
-                </div>
+                </nav>
             )}
         </div>
     );
 }
 
-export default OrdersPage;
+export default compose(
+    withLanguage(LANGUAGE_PATH),
+    withDebug(true, true),
+)(OrdersPage);

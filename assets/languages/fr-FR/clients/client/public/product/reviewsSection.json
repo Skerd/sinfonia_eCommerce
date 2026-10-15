@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx",
+  "thanks": "Merci pour votre avis !",
+  "submitError": "Impossible d'envoyer votre avis",
+  "title": "Avis",
+  "count": "{count} avis",
+  "countOne": "1 avis",
+  "empty": "Pas encore d'avis.",
+  "writeTitle": "Donnez votre avis sur votre achat",
+  "ratingLabel": "Votre note",
+  "starsOption": "{count} étoiles sur 5",
+  "titleLabel": "Titre (facultatif)",
+  "commentLabel": "Votre avis (facultatif)",
+  "submitting": "Envoi…",
+  "submit": "Publier l'avis",
+  "starsValue": "Noté {count} sur 5"
+}

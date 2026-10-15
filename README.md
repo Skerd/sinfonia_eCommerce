@@ -30,8 +30,13 @@ eCommerce/
 The buyer-facing storefront is a separate Vite client: run with `VITE_SINFONIA_APP=shop`
 (discovered from `src/modules/eCommerce/apps/shop/`). Pages are hand-built
 React (no ViewConfig) hitting the public maestro routes `shopProducts`, `shopProduct`,
-`shopTaxonomy`, `shopConfig`, `cmsBlock/public`, plus the authenticated cart/checkout
-routers. Cart and checkout require a signed-in user (JWT in localStorage — shared origin
+`shopTaxonomy`, `shopConfig`, `shopCountries`, `shopStates`, `shopCities`, `cmsBlock/public`,
+plus the authenticated cart/checkout routers and the buyer order routes `productOrder/{my,mySingle}`
+(which return the buyer DTO, without staff fields). Copy is translated with `withLanguage`
+(dictionaries under `assets/languages/<locale>/clients/client/public/`); controls are styled with the
+`SHOP_*` constants in `shared/shopAuthChrome.tsx` and the `--color-shop-*` tokens in `apps/shop/index.css`,
+because the shop does not load the panel theme. A placed order is confirmed on its own page,
+`/account/orders/:orderId?placed=1`. Cart and checkout require a signed-in user (JWT in localStorage — shared origin
 with the core app); Stripe checkout renders a Payment Element from the checkout DTO's
 `stripeClientSecret` when `shopConfig` returns a publishable key.
 

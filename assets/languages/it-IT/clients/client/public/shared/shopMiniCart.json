@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopMiniCart.tsx",
+  "title": "Il tuo carrello ({count})",
+  "close": "Chiudi il carrello",
+  "description": "Articoli nel carrello",
+  "empty": "Il carrello è vuoto.",
+  "browse": "Sfoglia i prodotti",
+  "subtotal": "Subtotale",
+  "taxNote": "Spedizione e tasse calcolate al checkout.",
+  "viewCart": "Vedi carrello",
+  "checkout": "Checkout"
+}

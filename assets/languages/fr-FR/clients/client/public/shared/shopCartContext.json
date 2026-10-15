@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartContext.tsx",
+  "removedItems": "Plus disponible et retiré de votre panier : {items}",
+  "discountRemoved": "Votre code de réduction a été retiré : {reason}",
+  "giftCardRemoved": "Votre carte cadeau a été retirée car son solde est épuisé."
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx",
+  "sku": "SKU {sku}",
+  "each": "{price} cad.",
+  "remove": "Rimuovi",
+  "removeLabel": "Rimuovi {item} dal carrello",
+  "updateError": "Impossibile aggiornare la quantità",
+  "removeError": "Impossibile rimuovere l'articolo"
+}

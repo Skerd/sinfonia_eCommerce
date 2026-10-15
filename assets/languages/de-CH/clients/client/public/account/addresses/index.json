@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
+  "title": "Adressen",
+  "subtitle": "Speichern Sie Liefer- und Rechnungsadressen für die Kasse.",
+  "add": "Adresse hinzufügen",
+  "empty": "Noch keine gespeicherten Adressen.",
+  "default": "Standard",
+  "edit": "Bearbeiten",
+  "delete": "Löschen",
+  "editTitle": "Adresse bearbeiten",
+  "createTitle": "Neue Adresse",
+  "save": "Adresse speichern",
+  "saving": "Speichern…",
+  "cancel": "Abbrechen",
+  "saved": "Adresse gespeichert",
+  "saveError": "Adresse konnte nicht gespeichert werden",
+  "deleted": "Adresse gelöscht",
+  "deleteError": "Adresse konnte nicht gelöscht werden",
+  "loadError": "Adressen konnten nicht geladen werden",
+  "type": {
+    "shipping": "Lieferung",
+    "billing": "Rechnung"
+  },
+  "form": {
+    "typeLabel": "Typ",
+    "firstNameLabel": "Vorname",
+    "lastNameLabel": "Nachname",
+    "streetLabel": "Strasse",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land wählen",
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort wählen",
+    "postalCodeLabel": "PLZ",
+    "phoneLabel": "Telefon",
+    "labelLabel": "Bezeichnung",
+    "isDefaultLabel": "Als Standard für diesen Typ verwenden"
+  },
+  "confirmDelete": "Diese Adresse löschen?",
+  "keep": "Behalten"
+}

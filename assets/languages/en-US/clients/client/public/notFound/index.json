@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/notFound/index.tsx",
+  "title": "Page not found",
+  "message": "The page you are looking for doesn't exist or has moved.",
+  "browseProducts": "Browse products",
+  "goHome": "Go to home"
+}

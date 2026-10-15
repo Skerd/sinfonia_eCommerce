@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartContext.tsx",
+  "removedItems": "Nicht mehr erhältlich und aus Ihrem Warenkorb entfernt: {items}",
+  "discountRemoved": "Ihr Rabattcode wurde entfernt: {reason}",
+  "giftCardRemoved": "Ihre Geschenkkarte wurde entfernt, da sie kein Guthaben mehr hat."
+}

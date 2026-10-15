@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 import type {ShopConfigResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 
 type ShopConfig = ShopConfigResponse["data"];
@@ -38,13 +39,16 @@ export function ShopConfigProvider({children}: {children: ReactNode}) {
     }, []);
 
     const value = useMemo<ShopConfigContextValue>(() => {
-        const symbol = config?.currency?.symbol ?? "$";
+        const code = config?.currency?.abbreviation;
+        const symbol = config?.currency?.symbol ?? "";
         const decimals = config?.currency?.decimalPlaces ?? 2;
         return {
             config,
             loading,
+            // Locale-aware via the ISO code ("1.234,50 €" / "€1,234.50"); the bare symbol only when there is no code
             formatMoney: (amount) => {
                 if (amount == null || Number.isNaN(amount)) return "";
+                if (code) return formatCurrency(amount, code, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
                 return `${symbol}${amount.toFixed(decimals)}`;
             },
         };

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx",
+  "thanks": "Thanks for your review!",
+  "submitError": "Could not submit your review",
+  "title": "Reviews",
+  "count": "{count} reviews",
+  "countOne": "1 review",
+  "empty": "No reviews yet.",
+  "writeTitle": "Review your purchase",
+  "ratingLabel": "Your rating",
+  "starsOption": "{count} out of 5 stars",
+  "titleLabel": "Title (optional)",
+  "commentLabel": "Your review (optional)",
+  "submitting": "Submitting…",
+  "submit": "Submit review",
+  "starsValue": "Rated {count} out of 5"
+}

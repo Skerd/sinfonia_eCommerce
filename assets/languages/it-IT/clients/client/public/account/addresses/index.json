@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
+  "title": "Indirizzi",
+  "subtitle": "Salva indirizzi di spedizione e fatturazione per la cassa.",
+  "add": "Aggiungi indirizzo",
+  "empty": "Nessun indirizzo salvato.",
+  "default": "Predefinito",
+  "edit": "Modifica",
+  "delete": "Elimina",
+  "editTitle": "Modifica indirizzo",
+  "createTitle": "Nuovo indirizzo",
+  "save": "Salva indirizzo",
+  "saving": "Salvataggio…",
+  "cancel": "Annulla",
+  "saved": "Indirizzo salvato",
+  "saveError": "Impossibile salvare l'indirizzo",
+  "deleted": "Indirizzo eliminato",
+  "deleteError": "Impossibile eliminare l'indirizzo",
+  "loadError": "Impossibile caricare gli indirizzi",
+  "type": {
+    "shipping": "Spedizione",
+    "billing": "Fatturazione"
+  },
+  "form": {
+    "typeLabel": "Tipo",
+    "firstNameLabel": "Nome",
+    "lastNameLabel": "Cognome",
+    "streetLabel": "Via",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Seleziona un paese",
+    "cityLabel": "Città",
+    "cityPlaceholder": "Seleziona una città",
+    "postalCodeLabel": "CAP",
+    "phoneLabel": "Telefono",
+    "labelLabel": "Etichetta",
+    "isDefaultLabel": "Usa come predefinito per questo tipo"
+  },
+  "confirmDelete": "Eliminare questo indirizzo?",
+  "keep": "Mantieni"
+}

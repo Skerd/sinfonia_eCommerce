@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/login/index.tsx",
+  "title": "Accedi",
+  "subtitle": "Inserisci email e password per accedere al tuo account.",
+  "mfaTitle": "Autenticazione a due fattori",
+  "mfaSubtitle": "Inserisci il codice dall'app di autenticazione.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "mfaCodeLabel": "Codice di autenticazione",
+    "mfaCodePlaceholder": "Codice a 6 cifre"
+  },
+  "submit": "Accedi",
+  "verify": "Verifica",
+  "submitting": "Attendere…",
+  "formError": "Accesso non riuscito. Controlla i dati e riprova.",
+  "orContinueWith": "Oppure continua con",
+  "forgotPassword": "Password dimenticata?",
+  "noAccount": "Non hai un account?",
+  "signUpLink": "Registrati",
+  "backToLogin": "Torna all'accesso",
+  "axios": {
+    "start": {
+      "title": "Accesso in corso…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Accesso effettuato",
+      "time": 2000
+    },
+    "error": {
+      "title": "Accesso non riuscito",
+      "time": 3000
+    }
+  }
+}

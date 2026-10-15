@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx",
+  "title": "Créer un compte",
+  "subtitle": "Créez un compte pour acheter, suivre vos commandes et enregistrer vos adresses.",
+  "form": {
+    "nameLabel": "Prénom",
+    "namePlaceholder": "Prénom",
+    "surnameLabel": "Nom",
+    "surnamePlaceholder": "Nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmer le mot de passe"
+  },
+  "submit": "Créer le compte",
+  "submitting": "Veuillez patienter…",
+  "formError": "Impossible de créer le compte. Veuillez réessayer.",
+  "successMessage": "Votre compte est prêt. Consultez votre e-mail pour le lien d'activation, puis connectez-vous.",
+  "goToLogin": "Aller à la connexion",
+  "orContinueWith": "Ou continuez avec",
+  "haveAccount": "Vous avez déjà un compte ?",
+  "loginLink": "Connexion",
+  "axios": {
+    "start": {
+      "title": "Création du compte…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Compte créé — consultez votre e-mail",
+      "time": 2000
+    },
+    "error": {
+      "title": "Échec de l'inscription",
+      "time": 3000
+    }
+  }
+}

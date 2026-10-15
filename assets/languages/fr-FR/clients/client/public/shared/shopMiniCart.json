@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopMiniCart.tsx",
+  "title": "Votre panier ({count})",
+  "close": "Fermer le panier",
+  "description": "Articles de votre panier",
+  "empty": "Votre panier est vide.",
+  "browse": "Voir les produits",
+  "subtotal": "Sous-total",
+  "taxNote": "Livraison et taxes calculées lors du paiement.",
+  "viewCart": "Voir le panier",
+  "checkout": "Paiement"
+}

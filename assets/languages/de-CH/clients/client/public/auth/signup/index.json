@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx",
+  "title": "Registrieren",
+  "subtitle": "Erstellen Sie ein Konto, um einzukaufen, Bestellungen zu verfolgen und Adressen zu speichern.",
+  "form": {
+    "nameLabel": "Vorname",
+    "namePlaceholder": "Vorname",
+    "surnameLabel": "Nachname",
+    "surnamePlaceholder": "Nachname",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Passwort bestätigen"
+  },
+  "submit": "Konto erstellen",
+  "submitting": "Bitte warten…",
+  "formError": "Konto konnte nicht erstellt werden. Bitte versuchen Sie es erneut.",
+  "successMessage": "Ihr Konto ist bereit. Prüfen Sie Ihre E-Mail für den Aktivierungslink und melden Sie sich an.",
+  "goToLogin": "Zur Anmeldung",
+  "orContinueWith": "Oder weiter mit",
+  "haveAccount": "Bereits ein Konto?",
+  "loginLink": "Anmelden",
+  "axios": {
+    "start": {
+      "title": "Konto wird erstellt…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konto erstellt — E-Mail prüfen",
+      "time": 2000
+    },
+    "error": {
+      "title": "Registrierung fehlgeschlagen",
+      "time": 3000
+    }
+  }
+}

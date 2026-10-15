@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/components/cms/CmsBlockRenderer.tsx",
+  "previousSlide": "Previous slide",
+  "nextSlide": "Next slide",
+  "slide": "Slide {number} of {total}"
+}

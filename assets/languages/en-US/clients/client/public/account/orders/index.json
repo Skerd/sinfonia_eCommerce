@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/orders/index.tsx",
+  "title": "Orders",
+  "loading": "Loading orders",
+  "emptyTitle": "No orders yet",
+  "emptyMessage": "When you place an order, you can follow it here.",
+  "browse": "Browse products",
+  "orderNumber": "Order {number}",
+  "itemCount": "{count} items",
+  "itemCountOne": "1 item",
+  "pagination": "Pagination",
+  "previousPage": "Previous page",
+  "nextPage": "Next page",
+  "pageOf": "Page {page} of {total}"
+}

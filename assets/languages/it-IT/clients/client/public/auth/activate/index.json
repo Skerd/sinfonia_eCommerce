@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/activate/index.tsx",
+  "title": "Attiva account",
+  "loadingSubtitle": "Conferma del link di attivazione…",
+  "successSubtitle": "Il tuo account è attivo.",
+  "errorSubtitle": "Questo link di attivazione non è valido o è scaduto.",
+  "loadingMessage": "Attendere…",
+  "successMessage": "Ora puoi accedere al tuo account.",
+  "errorMessage": "Richiedi una nuova email di attivazione o contatta il negozio.",
+  "goToLogin": "Vai all'accesso",
+  "axios": {
+    "start": {
+      "title": "Attivazione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account attivato",
+      "time": 2000
+    },
+    "error": {
+      "title": "Attivazione non riuscita",
+      "time": 3000
+    }
+  }
+}

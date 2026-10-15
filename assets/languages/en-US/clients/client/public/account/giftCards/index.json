@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
+  "copied": "Code copied",
+  "copyError": "Could not copy the code",
+  "title": "Gift cards",
+  "loading": "Loading gift cards",
+  "empty": "No gift cards yet — buy one in the shop and it appears here after payment.",
+  "status": {
+    "active": "Active",
+    "depleted": "Used up",
+    "disabled": "Disabled"
+  },
+  "ofInitial": "of {amount}",
+  "copyLabel": "Copy code {code}",
+  "expires": "Expires {date}"
+}

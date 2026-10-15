@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx",
+  "title": "Regjistrohu",
+  "subtitle": "Krijoni një llogari për të blerë, ndjekur porositë dhe ruajtur adresat.",
+  "form": {
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri",
+    "surnameLabel": "Mbiemri",
+    "surnamePlaceholder": "Mbiemri",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Fjalëkalimi",
+    "passwordPlaceholder": "Fjalëkalimi",
+    "confirmPasswordLabel": "Konfirmo fjalëkalimin",
+    "confirmPasswordPlaceholder": "Konfirmo fjalëkalimin"
+  },
+  "submit": "Krijo llogarinë",
+  "submitting": "Ju lutem prisni…",
+  "formError": "Llogaria nuk u krijua. Provoni sërish.",
+  "successMessage": "Llogaria është gati. Kontrolloni email-in për lidhjen e aktivizimit, pastaj hyni.",
+  "goToLogin": "Shko te hyrja",
+  "orContinueWith": "Ose vazhdoni me",
+  "haveAccount": "Keni tashmë një llogari?",
+  "loginLink": "Hyr",
+  "axios": {
+    "start": {
+      "title": "Duke krijuar llogarinë…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Llogaria u krijua — kontrolloni email-in",
+      "time": 2000
+    },
+    "error": {
+      "title": "Regjistrimi dështoi",
+      "time": 3000
+    }
+  }
+}

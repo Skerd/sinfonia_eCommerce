@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopQuantityStepper.tsx",
+  "groupLabel": "Quantity for {item}",
+  "decrease": "Decrease quantity of {item}",
+  "increase": "Increase quantity of {item}",
+  "remove": "Remove {item}"
+}

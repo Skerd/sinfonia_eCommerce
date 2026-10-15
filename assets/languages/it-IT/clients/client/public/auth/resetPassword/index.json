@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Reimposta password",
+  "subtitle": "Scegli una nuova password per il tuo account.",
+  "verifyingSubtitle": "Verifica del link…",
+  "verifyErrorSubtitle": "Questo link non è valido o è scaduto.",
+  "successSubtitle": "La password è stata aggiornata.",
+  "verifyingMessage": "Attendere…",
+  "verifyErrorMessage": "Richiedi un nuovo link di reimpostazione.",
+  "requestAgain": "Password dimenticata",
+  "form": {
+    "passwordLabel": "Nuova password",
+    "passwordPlaceholder": "Nuova password",
+    "confirmPasswordLabel": "Conferma password",
+    "confirmPasswordPlaceholder": "Conferma password",
+    "resetPasswordCodeLabel": "Codice di reset"
+  },
+  "submit": "Salva password",
+  "submitting": "Attendere…",
+  "formError": "Impossibile aggiornare la password. Riprova.",
+  "successMessage": "Ora puoi accedere con la nuova password.",
+  "goToLogin": "Vai all'accesso",
+  "axios": {
+    "start": {
+      "title": "Salvataggio password…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Password aggiornata",
+      "time": 2000
+    },
+    "error": {
+      "title": "Aggiornamento non riuscito",
+      "time": 3000
+    }
+  }
+}

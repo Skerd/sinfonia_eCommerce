@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx",
+  "thanks": "Danke für Ihre Bewertung!",
+  "submitError": "Ihre Bewertung konnte nicht gesendet werden",
+  "title": "Bewertungen",
+  "count": "{count} Bewertungen",
+  "countOne": "1 Bewertung",
+  "empty": "Noch keine Bewertungen.",
+  "writeTitle": "Bewerten Sie Ihren Kauf",
+  "ratingLabel": "Ihre Bewertung",
+  "starsOption": "{count} von 5 Sternen",
+  "titleLabel": "Titel (optional)",
+  "commentLabel": "Ihre Bewertung (optional)",
+  "submitting": "Wird gesendet…",
+  "submit": "Bewertung senden",
+  "starsValue": "Bewertet mit {count} von 5"
+}

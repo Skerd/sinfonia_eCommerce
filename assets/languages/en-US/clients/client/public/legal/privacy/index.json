@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx",
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: October 15, 2026",
+  "intro": "{companyName} processes personal data when you browse this shop, create an account, place an order, or contact us. VAT {vat}. Contact: {email}. Address: {address}. Phone: {phone}.",
+  "section1Title": "Who we are",
+  "section1Body": "{companyName} is the controller of personal data collected through this shop. For privacy questions, write to {email}.",
+  "section2Title": "Information we collect",
+  "section2Body": "We collect account details (name, email, phone), shipping and billing addresses, order history, and technical data such as device type and pages visited.",
+  "section3Title": "How we use your information",
+  "section3Body": "We use this information to fulfil orders, manage your account, process payments, prevent fraud, and meet legal obligations.",
+  "section4Title": "Sharing",
+  "section4Body": "We do not sell personal data. We share it with payment, shipping, and hosting providers only as needed to operate the shop, and when required by law.",
+  "section5Title": "Your rights",
+  "section5Body": "You may request access, correction, or deletion of your personal data, and you may object to certain processing. Contact {email} to exercise these rights."
+}

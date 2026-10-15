@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/terms/index.tsx",
+  "title": "Kushtet e shitjes",
+  "lastUpdated": "Përditësuar më: 15 tetor 2026",
+  "intro": "Këto kushte rregullojnë blerjet nga {companyName}. NIPT {vat}. Kontakt: {email}. Adresa: {address}. Telefoni: {phone}.",
+  "section1Title": "Shitësi",
+  "section1Body": "{companyName} shet produktet e shfaqura në këtë dyqan. Identiteti ligjor: NIPT {vat}, {address}.",
+  "section2Title": "Porositë dhe pagesa",
+  "section2Body": "Një porosi është një ofertë blerjeje. E pranojmë kur pagesa konfirmohet ose kur konfirmojmë pagesë në dorëzim ose transfertë. Çmimet janë në monedhën e dyqanit.",
+  "section3Title": "Dorëzimi",
+  "section3Body": "Mallrat fizike dërgohen në adresën që jepni në pagesë. Produktet dixhitale dërgohen në llogarinë tuaj. Kohët e dorëzimit janë vlerësime.",
+  "section4Title": "Kthimet",
+  "section4Body": "Kërkesat për kthim i trajton stafi. Kontaktoni {email} me numrin e porosisë nëse duhet të ktheni një artikull.",
+  "section5Title": "Kontakt",
+  "section5Body": "Pyetje për këto kushte: {email} ose {phone}."
+}

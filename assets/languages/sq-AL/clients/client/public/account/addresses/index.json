@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
+  "title": "Adresat",
+  "subtitle": "Ruani adresa dërgese dhe faturimi për pagesën.",
+  "add": "Shto adresë",
+  "empty": "Nuk ka adresa të ruajtura.",
+  "default": "Parazgjedhur",
+  "edit": "Ndrysho",
+  "delete": "Fshi",
+  "editTitle": "Ndrysho adresën",
+  "createTitle": "Adresë e re",
+  "save": "Ruaj adresën",
+  "saving": "Duke ruajtur…",
+  "cancel": "Anulo",
+  "saved": "Adresa u ruajt",
+  "saveError": "Adresa nuk u ruajt",
+  "deleted": "Adresa u fshi",
+  "deleteError": "Adresa nuk u fshi",
+  "loadError": "Adresat nuk u ngarkuan",
+  "type": {
+    "shipping": "Dërgesë",
+    "billing": "Faturim"
+  },
+  "form": {
+    "typeLabel": "Lloji",
+    "firstNameLabel": "Emri",
+    "lastNameLabel": "Mbiemri",
+    "streetLabel": "Rruga",
+    "countryLabel": "Shteti",
+    "countryPlaceholder": "Zgjidhni një shtet",
+    "cityLabel": "Qyteti",
+    "cityPlaceholder": "Zgjidhni një qytet",
+    "postalCodeLabel": "Kodi postar",
+    "phoneLabel": "Telefoni",
+    "labelLabel": "Etiketa",
+    "isDefaultLabel": "Përdor si parazgjedhje për këtë lloj"
+  },
+  "confirmDelete": "Ta fshij këtë adresë?",
+  "keep": "Mbaje"
+}

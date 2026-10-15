@@ -1,10 +1,15 @@
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {compose} from "redux";
 import {toast} from "sonner";
 import {Copy, Gift} from "lucide-react";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+
+const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx";
 
 type MyGiftCard = {
     _id: string;
@@ -16,24 +21,13 @@ type MyGiftCard = {
     createdAt?: string;
 };
 
-const STATUS_STYLES: Record<string, string> = {
-    active: "bg-green-100 text-green-800",
-    depleted: "bg-gray-200 text-gray-700",
-    disabled: "bg-red-100 text-red-700",
-};
-
-function GiftCardsPage() {
+function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
     const {formatMoney} = useShopConfig();
-    const signedIn = Boolean(getToken());
 
     const [cards, setCards] = useState<MyGiftCard[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (!signedIn) {
-            setLoading(false);
-            return;
-        }
         let cancelled = false;
         (async () => {
             try {
@@ -48,72 +42,76 @@ function GiftCardsPage() {
         return () => {
             cancelled = true;
         };
-    }, [signedIn]);
+    }, []);
 
     async function copyCode(code: string) {
         try {
             await navigator.clipboard.writeText(code);
-            toast.success("Code copied");
+            toast.success(resolveLanguageKey("copied"));
         } catch {
-            toast.error("Could not copy code");
+            toast.error(resolveLanguageKey("copyError"));
         }
     }
 
-    if (!signedIn) {
-        return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">My gift cards</h1>
-                <p className="mt-2 text-shop-ink-muted">Sign in from the main app to see your gift cards.</p>
-            </div>
-        );
-    }
-
     return (
-        <div className="flex flex-col gap-y-6">
-            <div className="flex items-center justify-between">
-                <h1 className="font-shop-display text-3xl font-semibold">My gift cards</h1>
-                <Link to="/account/orders" className="text-sm font-medium text-shop-accent hover:underline">
-                    My orders →
-                </Link>
-            </div>
+        <div className="flex flex-col gap-6">
+            <h1 className="font-shop-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
 
             {loading ? (
-                <div className="h-40 animate-pulse rounded-xl bg-shop-cream" />
+                <div className="h-40 animate-pulse rounded-2xl bg-shop-cream" aria-busy="true" aria-label={resolveLanguageKey("loading")} />
             ) : cards.length === 0 ? (
-                <div className="rounded-xl border border-dashed border-shop-border py-16 text-center text-shop-ink-muted">
-                    <Gift className="mx-auto mb-2 h-8 w-8 text-shop-ink-faded" />
-                    No gift cards yet — buy one from the shop and it appears here after payment.
+                <div className="flex flex-col items-center gap-3 rounded-3xl bg-shop-cream px-6 py-16 text-center">
+                    <Gift className="h-8 w-8 text-shop-ink-faded" aria-hidden />
+                    <p className="max-w-sm text-shop-ink-muted">{resolveLanguageKey("empty")}</p>
                 </div>
             ) : (
-                <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {cards.map(card => (
-                        <li key={card._id} className="rounded-xl border border-shop-border p-4">
-                            <div className="flex items-center justify-between gap-2">
-                                <span className="font-mono text-sm font-semibold">{card.code}</span>
-                                <button
-                                    onClick={() => copyCode(card.code)}
-                                    className="text-shop-ink-faded transition-colors hover:text-shop-accent"
-                                    aria-label="Copy code"
-                                >
-                                    <Copy className="h-4 w-4" />
-                                </button>
-                            </div>
-                            <p className="mt-2 text-2xl font-semibold">{formatMoney(card.balance)}</p>
-                            <p className="text-xs text-shop-ink-faded">of {formatMoney(card.initialBalance)}</p>
-                            <div className="mt-2 flex items-center justify-between text-xs">
-                                <span className={`rounded-full px-2 py-0.5 font-semibold capitalize ${STATUS_STYLES[card.status] ?? ""}`}>
-                                    {card.status}
-                                </span>
-                                {card.expiresAt && (
-                                    <span className="text-shop-ink-faded">expires {new Date(card.expiresAt).toLocaleDateString()}</span>
+                <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                    {cards.map(card => {
+                        const active = card.status === "active";
+                        return (
+                            <li
+                                key={card._id}
+                                className={cn(
+                                    "flex min-h-52 flex-col justify-between gap-4 rounded-2xl p-5",
+                                    active ? "bg-shop-ink text-white" : "border border-shop-border bg-shop-cream text-shop-ink-muted",
                                 )}
-                            </div>
-                        </li>
-                    ))}
+                            >
+                                <div className="flex items-center justify-between gap-2">
+                                    <span className="text-xs font-semibold uppercase tracking-wider opacity-70">
+                                        {resolveLanguageKey(`status.${card.status}`)}
+                                    </span>
+                                    <Gift className="h-5 w-5 opacity-70" aria-hidden />
+                                </div>
+                                <div>
+                                    <p className="font-shop-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance)}</p>
+                                    <p className="text-sm opacity-70">
+                                        {resolveLanguageKey("ofInitial").replace("{amount}", formatMoney(card.initialBalance))}
+                                    </p>
+                                </div>
+                                <div className="flex items-center justify-between gap-2">
+                                    <span className="font-mono text-sm tracking-wider">{card.code}</span>
+                                    <button
+                                        type="button"
+                                        onClick={() => copyCode(card.code)}
+                                        className="flex h-9 w-9 items-center justify-center rounded-full opacity-80 transition-opacity hover:opacity-100"
+                                        aria-label={resolveLanguageKey("copyLabel").replace("{code}", card.code)}
+                                    >
+                                        <Copy className="h-4 w-4" />
+                                    </button>
+                                </div>
+                                {card.expiresAt && (
+                                    <p className="text-xs opacity-70">{resolveLanguageKey("expires").replace("{date}", formatDate(card.expiresAt, {format: DATE_FORMATS.date}))}</p>
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
             )}
         </div>
     );
 }
 
-export default GiftCardsPage;
+export default compose(
+    withLanguage(LANGUAGE_PATH),
+    withDebug(true, true),
+)(GiftCardsPage);

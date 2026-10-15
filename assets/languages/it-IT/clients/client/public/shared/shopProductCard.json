@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx",
+  "wasPrice": "Prima",
+  "noImage": "Nessuna immagine",
+  "discount": "−{percent}%",
+  "rating": "Valutato {average} su 5 ({count} recensioni)"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx",
+  "title": "Politique de confidentialité",
+  "lastUpdated": "Dernière mise à jour : 15 octobre 2026",
+  "intro": "{companyName} traite des données personnelles lorsque vous parcourez cette boutique, créez un compte, passez commande ou nous contactez. TVA {vat}. Contact : {email}. Adresse : {address}. Téléphone : {phone}.",
+  "section1Title": "Qui nous sommes",
+  "section1Body": "{companyName} est le responsable du traitement des données collectées via cette boutique. Pour toute question, écrivez à {email}.",
+  "section2Title": "Données collectées",
+  "section2Body": "Nous collectons les informations de compte (nom, e-mail, téléphone), les adresses de livraison et de facturation, l'historique des commandes et des données techniques telles que le type d'appareil et les pages visitées.",
+  "section3Title": "Utilisation",
+  "section3Body": "Nous utilisons ces informations pour exécuter les commandes, gérer votre compte, traiter les paiements, prévenir la fraude et respecter nos obligations légales.",
+  "section4Title": "Partage",
+  "section4Body": "Nous ne vendons pas les données personnelles. Nous les partageons avec des prestataires de paiement, d'expédition et d'hébergement uniquement si nécessaire, et lorsque la loi l'exige.",
+  "section5Title": "Vos droits",
+  "section5Body": "Vous pouvez demander l'accès, la correction ou la suppression de vos données, et vous opposer à certains traitements. Contactez {email} pour exercer ces droits."
+}

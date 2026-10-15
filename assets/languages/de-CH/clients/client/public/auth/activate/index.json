@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/activate/index.tsx",
+  "title": "Konto aktivieren",
+  "loadingSubtitle": "Aktivierungslink wird bestätigt…",
+  "successSubtitle": "Ihr Konto ist aktiv.",
+  "errorSubtitle": "Dieser Aktivierungslink ist ungültig oder abgelaufen.",
+  "loadingMessage": "Bitte warten…",
+  "successMessage": "Sie können sich jetzt anmelden.",
+  "errorMessage": "Fordern Sie eine neue Aktivierungs-E-Mail an oder kontaktieren Sie den Shop.",
+  "goToLogin": "Zur Anmeldung",
+  "axios": {
+    "start": {
+      "title": "Aktivierung…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konto aktiviert",
+      "time": 2000
+    },
+    "error": {
+      "title": "Aktivierung fehlgeschlagen",
+      "time": 3000
+    }
+  }
+}

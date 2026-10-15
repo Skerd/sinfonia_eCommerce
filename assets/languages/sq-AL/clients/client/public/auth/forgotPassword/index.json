@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Fjalëkalim i harruar",
+  "subtitle": "Vendosni email-in dhe do t'ju dërgojmë një lidhje rivendosjeje.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Dërgo lidhjen",
+  "submitting": "Ju lutem prisni…",
+  "formError": "Lidhja nuk u dërgua. Provoni sërish.",
+  "successMessage": "Nëse ekziston një llogari për atë email, lidhja është në rrugë.",
+  "goToLogin": "Kthehu te hyrja",
+  "axios": {
+    "start": {
+      "title": "Duke dërguar lidhjen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kontrolloni email-in",
+      "time": 2000
+    },
+    "error": {
+      "title": "Kërkesa dështoi",
+      "time": 3000
+    }
+  }
+}

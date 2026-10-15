@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx",
+  "cartTitle": "Shporta juaj",
+  "checkoutTitle": "Pagesa",
+  "message": "Hyni ose krijoni një llogari për të vazhduar.",
+  "inlineMessage": "Hyni për ta shtuar këtë produkt në shportë.",
+  "logIn": "Hyr",
+  "signUp": "Regjistrohu"
+}

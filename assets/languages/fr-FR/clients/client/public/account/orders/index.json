@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/orders/index.tsx",
+  "title": "Commandes",
+  "loading": "Chargement des commandes",
+  "emptyTitle": "Aucune commande",
+  "emptyMessage": "Vos commandes apparaîtront ici pour en suivre l'avancement.",
+  "browse": "Voir les produits",
+  "orderNumber": "Commande {number}",
+  "itemCount": "{count} articles",
+  "itemCountOne": "1 article",
+  "pagination": "Pagination",
+  "previousPage": "Page précédente",
+  "nextPage": "Page suivante",
+  "pageOf": "Page {page} sur {total}"
+}

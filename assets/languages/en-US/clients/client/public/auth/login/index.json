@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/login/index.tsx",
+  "title": "Log in",
+  "subtitle": "Enter your email and password to access your account.",
+  "mfaTitle": "Two-factor authentication",
+  "mfaSubtitle": "Enter the code from your authenticator app.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "mfaCodeLabel": "Authentication code",
+    "mfaCodePlaceholder": "6-digit code"
+  },
+  "submit": "Log in",
+  "verify": "Verify",
+  "submitting": "Please wait…",
+  "formError": "Could not log in. Check your details and try again.",
+  "orContinueWith": "Or continue with",
+  "forgotPassword": "Forgot password?",
+  "noAccount": "Don't have an account?",
+  "signUpLink": "Sign up",
+  "backToLogin": "Back to log in",
+  "axios": {
+    "start": {
+      "title": "Signing in…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Signed in",
+      "time": 2000
+    },
+    "error": {
+      "title": "Sign in failed",
+      "time": 3000
+    }
+  }
+}

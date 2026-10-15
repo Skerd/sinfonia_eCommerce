@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Passwort vergessen",
+  "subtitle": "Geben Sie Ihre E-Mail ein. Wir senden einen Reset-Link.",
+  "form": {
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail"
+  },
+  "submit": "Link senden",
+  "submitting": "Bitte warten…",
+  "formError": "Link konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+  "successMessage": "Falls ein Konto zu dieser E-Mail existiert, ist ein Link unterwegs.",
+  "goToLogin": "Zurück zur Anmeldung",
+  "axios": {
+    "start": {
+      "title": "Link wird gesendet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-Mail prüfen",
+      "time": 2000
+    },
+    "error": {
+      "title": "Anfrage fehlgeschlagen",
+      "time": 3000
+    }
+  }
+}

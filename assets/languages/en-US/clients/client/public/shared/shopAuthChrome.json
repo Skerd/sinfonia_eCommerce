@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx",
+  "cartTitle": "Your cart",
+  "checkoutTitle": "Checkout",
+  "message": "Log in or create an account to continue.",
+  "inlineMessage": "Log in to add this product to your cart.",
+  "logIn": "Log in",
+  "signUp": "Sign up"
+}

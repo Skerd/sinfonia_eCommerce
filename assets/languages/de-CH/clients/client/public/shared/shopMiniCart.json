@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopMiniCart.tsx",
+  "title": "Ihr Warenkorb ({count})",
+  "close": "Warenkorb schliessen",
+  "description": "Artikel in Ihrem Warenkorb",
+  "empty": "Ihr Warenkorb ist leer.",
+  "browse": "Produkte ansehen",
+  "subtotal": "Zwischensumme",
+  "taxNote": "Versand und Steuern werden an der Kasse berechnet.",
+  "viewCart": "Warenkorb",
+  "checkout": "Zur Kasse"
+}

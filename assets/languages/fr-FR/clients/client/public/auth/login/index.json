@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/login/index.tsx",
+  "title": "Connexion",
+  "subtitle": "Saisissez votre e-mail et votre mot de passe pour accéder à votre compte.",
+  "mfaTitle": "Authentification à deux facteurs",
+  "mfaSubtitle": "Saisissez le code de votre application d'authentification.",
+  "form": {
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "mfaCodeLabel": "Code d'authentification",
+    "mfaCodePlaceholder": "Code à 6 chiffres"
+  },
+  "submit": "Connexion",
+  "verify": "Vérifier",
+  "submitting": "Veuillez patienter…",
+  "formError": "Connexion impossible. Vérifiez vos informations et réessayez.",
+  "orContinueWith": "Ou continuez avec",
+  "forgotPassword": "Mot de passe oublié ?",
+  "noAccount": "Pas encore de compte ?",
+  "signUpLink": "Créer un compte",
+  "backToLogin": "Retour à la connexion",
+  "axios": {
+    "start": {
+      "title": "Connexion…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Connecté",
+      "time": 2000
+    },
+    "error": {
+      "title": "Échec de la connexion",
+      "time": 3000
+    }
+  }
+}

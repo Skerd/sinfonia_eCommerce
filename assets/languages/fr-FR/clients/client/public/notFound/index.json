@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/notFound/index.tsx",
+  "title": "Page introuvable",
+  "message": "La page que vous recherchez n'existe pas ou a été déplacée.",
+  "browseProducts": "Voir les produits",
+  "goHome": "Retour à l'accueil"
+}

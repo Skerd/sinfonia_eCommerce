@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx",
+  "sku": "Art.-Nr. {sku}",
+  "each": "{price} pro Stück",
+  "remove": "Entfernen",
+  "removeLabel": "{item} aus dem Warenkorb entfernen",
+  "updateError": "Die Menge konnte nicht geändert werden",
+  "removeError": "Der Artikel konnte nicht entfernt werden"
+}

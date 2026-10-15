@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx",
+  "cartTitle": "Il tuo carrello",
+  "checkoutTitle": "Cassa",
+  "message": "Accedi o crea un account per continuare.",
+  "inlineMessage": "Accedi per aggiungere questo prodotto al carrello.",
+  "logIn": "Accedi",
+  "signUp": "Registrati"
+}

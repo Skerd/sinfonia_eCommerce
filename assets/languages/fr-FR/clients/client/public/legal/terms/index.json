@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/terms/index.tsx",
+  "title": "Conditions de vente",
+  "lastUpdated": "Dernière mise à jour : 15 octobre 2026",
+  "intro": "Ces conditions régissent les achats auprès de {companyName}. TVA {vat}. Contact : {email}. Adresse : {address}. Téléphone : {phone}.",
+  "section1Title": "Le vendeur",
+  "section1Body": "{companyName} vend les produits présentés dans cette boutique. Identité légale : TVA {vat}, {address}.",
+  "section2Title": "Commandes et paiement",
+  "section2Body": "Une commande est une offre d'achat. Nous l'acceptons lorsque le paiement est confirmé ou lorsque nous confirmons un paiement à la livraison ou un virement. Les prix sont indiqués dans la devise de la boutique.",
+  "section3Title": "Livraison",
+  "section3Body": "Les biens physiques sont expédiés à l'adresse indiquée au paiement. Les produits numériques sont livrés sur votre compte. Les délais sont indicatifs.",
+  "section4Title": "Retours",
+  "section4Body": "Les demandes de retour sont traitées par l'équipe. Contactez {email} avec votre numéro de commande si vous devez renvoyer un article.",
+  "section5Title": "Contact",
+  "section5Body": "Questions sur ces conditions : {email} ou {phone}."
+}

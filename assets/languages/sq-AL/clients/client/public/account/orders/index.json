@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/orders/index.tsx",
+  "title": "Porositë",
+  "loading": "Po ngarkohen porositë",
+  "emptyTitle": "Ende pa porosi",
+  "emptyMessage": "Kur të bëni një porosi, mund ta ndiqni këtu.",
+  "browse": "Shfleto produktet",
+  "orderNumber": "Porosia {number}",
+  "itemCount": "{count} artikuj",
+  "itemCountOne": "1 artikull",
+  "pagination": "Faqosja",
+  "previousPage": "Faqja e mëparshme",
+  "nextPage": "Faqja tjetër",
+  "pageOf": "Faqja {page} nga {total}"
+}

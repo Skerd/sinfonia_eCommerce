@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Rivendos fjalëkalimin",
+  "subtitle": "Zgjidhni një fjalëkalim të ri për llogarinë tuaj.",
+  "verifyingSubtitle": "Duke kontrolluar lidhjen…",
+  "verifyErrorSubtitle": "Kjo lidhje është e pavlefshme ose ka skaduar.",
+  "successSubtitle": "Fjalëkalimi u përditësua.",
+  "verifyingMessage": "Ju lutem prisni…",
+  "verifyErrorMessage": "Kërkoni një lidhje të re rivendosjeje.",
+  "requestAgain": "Fjalëkalim i harruar",
+  "form": {
+    "passwordLabel": "Fjalëkalimi i ri",
+    "passwordPlaceholder": "Fjalëkalimi i ri",
+    "confirmPasswordLabel": "Konfirmo fjalëkalimin",
+    "confirmPasswordPlaceholder": "Konfirmo fjalëkalimin",
+    "resetPasswordCodeLabel": "Kodi i rivendosjes"
+  },
+  "submit": "Ruaj fjalëkalimin",
+  "submitting": "Ju lutem prisni…",
+  "formError": "Fjalëkalimi nuk u përditësua. Provoni sërish.",
+  "successMessage": "Tani mund të hyni me fjalëkalimin e ri.",
+  "goToLogin": "Shko te hyrja",
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur fjalëkalimin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fjalëkalimi u përditësua",
+      "time": 2000
+    },
+    "error": {
+      "title": "Përditësimi dështoi",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
+  "title": "Addresses",
+  "subtitle": "Save shipping and billing addresses for checkout.",
+  "add": "Add address",
+  "empty": "No saved addresses yet.",
+  "default": "Default",
+  "edit": "Edit",
+  "delete": "Delete",
+  "editTitle": "Edit address",
+  "createTitle": "New address",
+  "save": "Save address",
+  "saving": "Saving…",
+  "cancel": "Cancel",
+  "saved": "Address saved",
+  "saveError": "Could not save the address",
+  "deleted": "Address deleted",
+  "deleteError": "Could not delete the address",
+  "loadError": "Could not load addresses",
+  "type": {
+    "shipping": "Shipping",
+    "billing": "Billing"
+  },
+  "form": {
+    "typeLabel": "Type",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "streetLabel": "Street",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select a country",
+    "cityLabel": "City",
+    "cityPlaceholder": "Select a city",
+    "postalCodeLabel": "Postal code",
+    "phoneLabel": "Phone",
+    "labelLabel": "Label",
+    "isDefaultLabel": "Use as default for this type"
+  },
+  "confirmDelete": "Delete this address?",
+  "keep": "Keep"
+}

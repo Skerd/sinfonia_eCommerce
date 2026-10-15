@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Réinitialiser le mot de passe",
+  "subtitle": "Choisissez un nouveau mot de passe pour votre compte.",
+  "verifyingSubtitle": "Vérification du lien…",
+  "verifyErrorSubtitle": "Ce lien est invalide ou expiré.",
+  "successSubtitle": "Votre mot de passe a été mis à jour.",
+  "verifyingMessage": "Veuillez patienter…",
+  "verifyErrorMessage": "Demandez un nouveau lien de réinitialisation.",
+  "requestAgain": "Mot de passe oublié",
+  "form": {
+    "passwordLabel": "Nouveau mot de passe",
+    "passwordPlaceholder": "Nouveau mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmer le mot de passe",
+    "resetPasswordCodeLabel": "Code de réinitialisation"
+  },
+  "submit": "Enregistrer",
+  "submitting": "Veuillez patienter…",
+  "formError": "Impossible de mettre à jour le mot de passe. Veuillez réessayer.",
+  "successMessage": "Vous pouvez maintenant vous connecter avec le nouveau mot de passe.",
+  "goToLogin": "Aller à la connexion",
+  "axios": {
+    "start": {
+      "title": "Enregistrement…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mot de passe mis à jour",
+      "time": 2000
+    },
+    "error": {
+      "title": "Échec de la mise à jour",
+      "time": 3000
+    }
+  }
+}

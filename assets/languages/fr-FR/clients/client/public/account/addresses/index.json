@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
+  "title": "Adresses",
+  "subtitle": "Enregistrez des adresses de livraison et de facturation pour le paiement.",
+  "add": "Ajouter une adresse",
+  "empty": "Aucune adresse enregistrée.",
+  "default": "Par défaut",
+  "edit": "Modifier",
+  "delete": "Supprimer",
+  "editTitle": "Modifier l'adresse",
+  "createTitle": "Nouvelle adresse",
+  "save": "Enregistrer l'adresse",
+  "saving": "Enregistrement…",
+  "cancel": "Annuler",
+  "saved": "Adresse enregistrée",
+  "saveError": "Impossible d'enregistrer l'adresse",
+  "deleted": "Adresse supprimée",
+  "deleteError": "Impossible de supprimer l'adresse",
+  "loadError": "Impossible de charger les adresses",
+  "type": {
+    "shipping": "Livraison",
+    "billing": "Facturation"
+  },
+  "form": {
+    "typeLabel": "Type",
+    "firstNameLabel": "Prénom",
+    "lastNameLabel": "Nom",
+    "streetLabel": "Rue",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner un pays",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner une ville",
+    "postalCodeLabel": "Code postal",
+    "phoneLabel": "Téléphone",
+    "labelLabel": "Libellé",
+    "isDefaultLabel": "Utiliser par défaut pour ce type"
+  },
+  "confirmDelete": "Supprimer cette adresse ?",
+  "keep": "Conserver"
+}

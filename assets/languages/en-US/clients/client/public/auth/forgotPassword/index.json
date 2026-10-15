@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Forgot password",
+  "subtitle": "Enter your email and we will send a reset link.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Send reset link",
+  "submitting": "Please wait…",
+  "formError": "Could not send the reset link. Please try again.",
+  "successMessage": "If an account exists for that email, a reset link is on its way.",
+  "goToLogin": "Back to log in",
+  "axios": {
+    "start": {
+      "title": "Sending reset link…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Check your email",
+      "time": 2000
+    },
+    "error": {
+      "title": "Request failed",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/accountLayout.tsx",
+  "navLabel": "Account",
+  "navProfile": "Profilo",
+  "navSecurity": "Sicurezza",
+  "navOrders": "Ordini",
+  "navGiftCards": "Carte regalo",
+  "navAddresses": "Indirizzi"
+}

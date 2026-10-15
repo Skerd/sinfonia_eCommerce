@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx",
+  "wasPrice": "Më parë",
+  "noImage": "Pa imazh",
+  "discount": "−{percent}%",
+  "rating": "Vlerësuar {average} nga 5 ({count} vlerësime)"
+}

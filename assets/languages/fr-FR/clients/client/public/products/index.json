@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/products/index.tsx",
+  "title": "Tous les produits",
+  "count": "{count} produits",
+  "countOne": "1 produit",
+  "searchPlaceholder": "Rechercher des produits",
+  "searchLabel": "Rechercher des produits",
+  "collectionLabel": "Collection",
+  "allCollections": "Toutes les collections",
+  "sortLabel": "Trier par",
+  "sort": {
+    "newest": "Nouveautés",
+    "featured": "En vedette",
+    "priceAsc": "Prix croissant",
+    "priceDesc": "Prix décroissant"
+  },
+  "categoriesLabel": "Catégories",
+  "subcategoriesLabel": "Sous-catégories",
+  "allCategories": "Tout",
+  "activeFilters": "Filtré par",
+  "removeFilter": "Retirer le filtre : {filter}",
+  "clearAll": "Tout effacer",
+  "loading": "Chargement des produits",
+  "pagination": "Pagination",
+  "previousPage": "Page précédente",
+  "nextPage": "Page suivante",
+  "pageNumber": "Page {page}",
+  "emptyTitle": "Rien pour l'instant",
+  "emptyFiltered": "Aucun produit ne correspond à ces filtres. Essayez une autre recherche ou effacez les filtres.",
+  "emptyCatalog": "Le catalogue est vide pour l'instant, revenez bientôt."
+}

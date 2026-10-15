@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx",
+  "cartTitle": "Votre panier",
+  "checkoutTitle": "Paiement",
+  "message": "Connectez-vous ou créez un compte pour continuer.",
+  "inlineMessage": "Connectez-vous pour ajouter ce produit au panier.",
+  "logIn": "Connexion",
+  "signUp": "Créer un compte"
+}

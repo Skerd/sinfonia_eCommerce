@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/notFound/index.tsx",
+  "title": "Seite nicht gefunden",
+  "message": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+  "browseProducts": "Produkte ansehen",
+  "goHome": "Zur Startseite"
+}

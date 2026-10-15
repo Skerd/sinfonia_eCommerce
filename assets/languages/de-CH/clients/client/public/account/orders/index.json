@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/orders/index.tsx",
+  "title": "Bestellungen",
+  "loading": "Bestellungen werden geladen",
+  "emptyTitle": "Noch keine Bestellungen",
+  "emptyMessage": "Wenn Sie bestellen, können Sie die Bestellung hier verfolgen.",
+  "browse": "Produkte ansehen",
+  "orderNumber": "Bestellung {number}",
+  "itemCount": "{count} Artikel",
+  "itemCountOne": "1 Artikel",
+  "pagination": "Seitennavigation",
+  "previousPage": "Vorherige Seite",
+  "nextPage": "Nächste Seite",
+  "pageOf": "Seite {page} von {total}"
+}

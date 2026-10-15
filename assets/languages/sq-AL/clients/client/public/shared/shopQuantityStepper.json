@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopQuantityStepper.tsx",
+  "groupLabel": "Sasia për {item}",
+  "decrease": "Ul sasinë e {item}",
+  "increase": "Rrit sasinë e {item}",
+  "remove": "Hiq {item}"
+}

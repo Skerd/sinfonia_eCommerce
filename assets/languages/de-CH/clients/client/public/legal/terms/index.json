@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/terms/index.tsx",
+  "title": "Verkaufsbedingungen",
+  "lastUpdated": "Zuletzt aktualisiert: 15. Oktober 2026",
+  "intro": "Diese Bedingungen gelten für Käufe bei {companyName}. MwSt. {vat}. Kontakt: {email}. Adresse: {address}. Telefon: {phone}.",
+  "section1Title": "Verkäuferin",
+  "section1Body": "{companyName} verkauft die in diesem Shop gezeigten Produkte. Rechtliche Identität: MwSt. {vat}, {address}.",
+  "section2Title": "Bestellung und Zahlung",
+  "section2Body": "Eine Bestellung ist ein Kaufangebot. Wir nehmen sie an, wenn die Zahlung bestätigt ist oder wir eine Nachnahme- oder Überweisungsbestellung bestätigen. Preise gelten in der Shop-Währung.",
+  "section3Title": "Lieferung",
+  "section3Body": "Physische Waren gehen an die an der Kasse angegebene Adresse. Digitale Produkte werden in Ihr Konto geliefert. Lieferzeiten sind Schätzungen.",
+  "section4Title": "Rückgaben",
+  "section4Body": "Rückgaben werden vom Shop-Personal bearbeitet. Kontaktieren Sie {email} mit Ihrer Bestellnummer.",
+  "section5Title": "Kontakt",
+  "section5Body": "Fragen zu diesen Bedingungen: {email} oder {phone}."
+}

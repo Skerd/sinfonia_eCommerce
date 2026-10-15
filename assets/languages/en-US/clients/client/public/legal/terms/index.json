@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/terms/index.tsx",
+  "title": "Terms of Sale",
+  "lastUpdated": "Last updated: October 15, 2026",
+  "intro": "These terms govern purchases from {companyName}. VAT {vat}. Contact: {email}. Address: {address}. Phone: {phone}.",
+  "section1Title": "The seller",
+  "section1Body": "{companyName} sells the products shown in this shop. Legal identity: VAT {vat}, {address}.",
+  "section2Title": "Orders and payment",
+  "section2Body": "An order is an offer to buy. We accept it when payment is confirmed or when we confirm a cash-on-delivery or bank-transfer order. Prices are shown in the shop currency.",
+  "section3Title": "Delivery",
+  "section3Body": "Physical goods ship to the address you provide at checkout. Digital products are delivered to your account. Delivery times are estimates.",
+  "section4Title": "Returns",
+  "section4Body": "Return requests are handled by shop staff. Contact {email} with your order number if you need to return an item.",
+  "section5Title": "Contact",
+  "section5Body": "Questions about these terms: {email} or {phone}."
+}

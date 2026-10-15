@@ -1,227 +1,210 @@
-import {useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {useState, type FormEvent} from "react";
+import {Link} from "react-router-dom";
+import {compose} from "redux";
 import {toast} from "sonner";
+import {ArrowRight, ChevronDown} from "lucide-react";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
-import {Minus, Plus, Trash2} from "lucide-react";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
-import {shopReasonMessage} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
+import {useShopReasonMessage} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
+import ShopCartLine from "@eCommerceModule/clients/client/public/shared/shopCartLine.tsx";
+import {
+    ShopSignInPrompt,
+    SHOP_BUTTON_CLASS,
+    SHOP_BUTTON_SECONDARY_CLASS,
+    SHOP_FIELD_INPUT_CLASS,
+    SHOP_LINK_CLASS,
+    SHOP_SUBMIT_CLASS,
+} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 
-function CartPage() {
-    const navigate = useNavigate();
-    const {cart, loading, signInRequired, pendingItemIds, updateItem, removeItem, applyDiscount, removeDiscount, applyGiftCard, removeGiftCard} = useShopCart();
-    const {formatMoney} = useShopConfig();
-    const [couponInput, setCouponInput] = useState("");
+const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/cart/index.tsx";
+
+type CodeFormProps = {
+    label: string;
+    applyLabel: string;
+    onApply: (code: string) => Promise<void>;
+};
+
+/** One code field (discount or gift card) that submits on Enter or the button. */
+function CodeForm({label, applyLabel, onApply}: CodeFormProps) {
+    const [code, setCode] = useState("");
     const [applying, setApplying] = useState(false);
-    const [giftCardInput, setGiftCardInput] = useState("");
-    const [applyingGiftCard, setApplyingGiftCard] = useState(false);
 
-    async function handleApplyGiftCard() {
-        if (!giftCardInput.trim()) return;
-        setApplyingGiftCard(true);
-        try {
-            const result = await applyGiftCard(giftCardInput.trim());
-            if (result.valid) {
-                toast.success("Gift card applied");
-                setGiftCardInput("");
-            } else {
-                toast.error(shopReasonMessage(result.message, "That gift card can't be used."));
-            }
-        } catch (err) {
-            handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply gift card"});
-        } finally {
-            setApplyingGiftCard(false);
-        }
-    }
-
-    async function handleApplyCoupon() {
-        if (!couponInput.trim()) return;
+    async function submit(event: FormEvent) {
+        event.preventDefault();
+        const value = code.trim();
+        if (!value) return;
         setApplying(true);
         try {
-            const result = await applyDiscount(couponInput.trim());
-            if (result.valid) {
-                toast.success("Discount applied");
-                setCouponInput("");
-            } else {
-                toast.error(shopReasonMessage(result.message, "That discount code can't be used."));
-            }
-        } catch (err) {
-            handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not apply discount"});
+            await onApply(value);
+            setCode("");
         } finally {
             setApplying(false);
         }
     }
 
-    if (signInRequired) {
-        return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">Your cart</h1>
-                <p className="mt-2 text-shop-ink-muted">Sign in from the main app to start shopping.</p>
-            </div>
-        );
+    return (
+        <form onSubmit={submit} className="flex gap-2">
+            <input
+                value={code}
+                onChange={event => setCode(event.target.value)}
+                placeholder={label}
+                aria-label={label}
+                autoCapitalize="characters"
+                className={cn(SHOP_FIELD_INPUT_CLASS, "min-w-0 flex-1")}
+            />
+            <button type="submit" disabled={applying || !code.trim()} className={cn(SHOP_BUTTON_SECONDARY_CLASS, "px-4")}>
+                {applyLabel}
+            </button>
+        </form>
+    );
+}
+
+function CartPage({resolveLanguageKey}: WithLanguageType) {
+    const {cart, loading, signInRequired, itemCount, applyDiscount, removeDiscount, applyGiftCard, removeGiftCard} = useShopCart();
+    const {formatMoney} = useShopConfig();
+    const {reasonMessage} = useShopReasonMessage();
+
+    const failed = (fallbackKey: string) => (err: unknown) =>
+        handleError(err, {context: "Cart", showToast: true, fallbackMessage: resolveLanguageKey(fallbackKey)});
+
+    async function handleApplyDiscount(code: string) {
+        try {
+            const result = await applyDiscount(code);
+            if (result.valid) toast.success(resolveLanguageKey("discountApplied"));
+            else toast.error(reasonMessage(result.message, "discount"));
+        } catch (err) {
+            failed("discountError")(err);
+        }
     }
 
-    if (loading) {
-        return <div className="h-48 animate-pulse rounded-xl bg-shop-cream" />;
+    async function handleApplyGiftCard(code: string) {
+        try {
+            const result = await applyGiftCard(code);
+            if (result.valid) toast.success(resolveLanguageKey("giftCardApplied"));
+            else toast.error(reasonMessage(result.message, "giftCard"));
+        } catch (err) {
+            failed("giftCardError")(err);
+        }
+    }
+
+    if (signInRequired) {
+        return <ShopSignInPrompt titleKey="cartTitle" next="/cart" />;
+    }
+
+    if (loading && !cart) {
+        return (
+            <div className="grid gap-10 lg:grid-cols-[1fr_380px]" aria-busy="true" aria-label={resolveLanguageKey("loading")}>
+                <div className="h-72 animate-pulse rounded-2xl bg-shop-cream" />
+                <div className="h-72 animate-pulse rounded-2xl bg-shop-cream" />
+            </div>
+        );
     }
 
     if (!cart || cart.items.length === 0) {
         return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">Your cart is empty</h1>
-                <Link to="/products" className="mt-3 inline-block rounded-full bg-shop-accent px-6 py-2 text-sm font-semibold text-white">
-                    Browse products
-                </Link>
+            <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-20 text-center">
+                <h1 className="font-shop-display text-3xl font-semibold tracking-tight">{resolveLanguageKey("emptyTitle")}</h1>
+                <p className="text-shop-ink-muted">{resolveLanguageKey("emptyMessage")}</p>
+                <Link to="/products" className={cn(SHOP_BUTTON_CLASS, "mt-2")}>{resolveLanguageKey("browse")}</Link>
             </div>
         );
     }
 
+    const discountCode = cart.appliedDiscounts?.[0]?.code;
     const giftCardAmount = cart.appliedGiftCard?.amount ?? 0;
-    const grandEstimate = Math.max(0, cart.subtotal - (cart.discountTotal ?? 0) - giftCardAmount);
+    const estimate = Math.max(0, cart.subtotal - (cart.discountTotal ?? 0) - giftCardAmount);
 
     return (
-        <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-            <div>
-                <h1 className="font-shop-display mb-6 text-3xl font-semibold">Your cart</h1>
-                <ul className="divide-y divide-shop-border rounded-xl border border-shop-border">
-                    {cart.items.map(item => {
-                        const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
-                        const pending = pendingItemIds.has(item._id);
-                        const title = item.snapshot?.title ?? item.product.title ?? "";
-                        return (
-                            <li key={item._id} className="flex items-center gap-4 p-4">
-                                <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md bg-shop-cream">
-                                    {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                    <p className="truncate text-sm font-medium">{title}</p>
-                                    {item.snapshot?.sku && <p className="text-xs text-shop-ink-faded">SKU: {item.snapshot.sku}</p>}
-                                    <p className="mt-0.5 text-xs text-shop-ink-muted">{formatMoney(item.unitPrice)} each</p>
-                                </div>
-                                <div className="flex items-center gap-1" aria-busy={pending}>
-                                    <button
-                                        onClick={() => updateItem(item._id, item.quantity - 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
-                                        disabled={pending}
-                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream disabled:opacity-50"
-                                        aria-label={item.quantity <= 1 ? `Remove ${title}` : `Decrease quantity of ${title}`}
-                                    >
-                                        <Minus className="h-3.5 w-3.5" />
-                                    </button>
-                                    <span className="w-8 text-center text-sm" aria-live="polite">{item.quantity}</span>
-                                    <button
-                                        onClick={() => updateItem(item._id, item.quantity + 1).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not update quantity"}))}
-                                        disabled={pending}
-                                        className="flex h-7 w-7 items-center justify-center rounded-md border border-shop-border hover:bg-shop-cream disabled:opacity-50"
-                                        aria-label={`Increase quantity of ${title}`}
-                                    >
-                                        <Plus className="h-3.5 w-3.5" />
-                                    </button>
-                                </div>
-                                <p className="w-20 text-right text-sm font-semibold">{formatMoney(item.totalPrice)}</p>
-                                <button
-                                    onClick={() => removeItem(item._id).catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove item"}))}
-                                    disabled={pending}
-                                    className="text-shop-ink-faded transition-colors hover:text-red-500 disabled:opacity-50"
-                                    aria-label={`Remove ${title}`}
-                                >
-                                    <Trash2 className="h-4 w-4" />
-                                </button>
-                            </li>
-                        );
-                    })}
-                </ul>
+        <div className="flex flex-col gap-8">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+                <h1 className="font-shop-display text-4xl font-bold tracking-tight sm:text-5xl">{resolveLanguageKey("title")}</h1>
+                <p className="text-shop-ink-muted">
+                    {resolveLanguageKey(itemCount === 1 ? "itemCountOne" : "itemCount").replace("{count}", String(itemCount))}
+                </p>
             </div>
 
-            <aside className="flex flex-col h-fit gap-y-4 rounded-xl border border-shop-border p-5">
-                <h2 className="font-shop-display text-lg font-semibold">Summary</h2>
-                <div className="flex flex-col gap-y-1.5 text-sm">
-                    <div className="flex justify-between">
-                        <span className="text-shop-ink-muted">Subtotal</span>
-                        <span>{formatMoney(cart.subtotal)}</span>
-                    </div>
-                    {cart.appliedDiscounts.length > 0 && (
-                        <div className="flex items-center justify-between text-green-700">
-                            <span>
-                                Discount{cart.appliedDiscounts[0]?.code ? ` (${cart.appliedDiscounts[0].code})` : ""}
-                                <button
-                                    onClick={() => removeDiscount().catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove discount"}))}
-                                    className="ml-2 text-xs text-shop-ink-faded underline"
-                                >
-                                    remove
-                                </button>
-                            </span>
-                            <span>-{formatMoney(cart.discountTotal)}</span>
-                        </div>
-                    )}
-                    {giftCardAmount > 0 && (
-                        <div className="flex items-center justify-between text-green-700">
-                            <span>
-                                Gift card ({cart.appliedGiftCard?.code})
-                                <button
-                                    onClick={() => removeGiftCard().catch(err => handleError(err, {context: "Cart", showToast: true, fallbackMessage: "Could not remove gift card"}))}
-                                    className="ml-2 text-xs text-shop-ink-faded underline"
-                                >
-                                    remove
-                                </button>
-                            </span>
-                            <span>-{formatMoney(giftCardAmount)}</span>
-                        </div>
-                    )}
-                    <div className="flex justify-between border-t border-shop-border pt-1.5 font-semibold">
-                        <span>Estimated total</span>
-                        <span>{formatMoney(grandEstimate)}</span>
-                    </div>
-                    <p className="text-xs text-shop-ink-faded">Shipping and tax calculated at checkout.</p>
+            <div className="grid items-start gap-10 lg:grid-cols-[1fr_380px]">
+                <div className="flex flex-col">
+                    <ul className="divide-y divide-shop-border border-y border-shop-border">
+                        {cart.items.map(item => (
+                            <ShopCartLine key={item._id} item={item} />
+                        ))}
+                    </ul>
+                    <Link to="/products" className={cn(SHOP_LINK_CLASS, "mt-6 self-start text-sm")}>{resolveLanguageKey("continueShopping")}</Link>
                 </div>
 
-                <div className="flex gap-2">
-                    <input
-                        value={couponInput}
-                        onChange={event => setCouponInput(event.target.value)}
-                        onKeyDown={event => { if (event.key === "Enter") void handleApplyCoupon(); }}
-                        placeholder="Discount code"
-                        aria-label="Discount code"
-                        className="h-9 min-w-0 flex-1 rounded-md border border-shop-border px-3 text-sm outline-none focus:border-shop-accent"
-                    />
-                    <button
-                        onClick={handleApplyCoupon}
-                        disabled={applying || !couponInput.trim()}
-                        className="h-9 rounded-md border border-shop-border px-3 text-sm font-medium hover:bg-shop-cream disabled:opacity-50"
-                    >
-                        Apply
-                    </button>
-                </div>
+                <aside className="flex flex-col gap-5 rounded-2xl bg-shop-cream p-6 lg:sticky lg:top-28" aria-labelledby="shop-cart-summary">
+                    <h2 id="shop-cart-summary" className="font-shop-display text-xl font-semibold">{resolveLanguageKey("summary")}</h2>
+                    <dl className="flex flex-col gap-3 text-[15px]">
+                        <div className="flex justify-between gap-4">
+                            <dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt>
+                            <dd className="tabular-nums">{formatMoney(cart.subtotal)}</dd>
+                        </div>
+                        {(cart.discountTotal ?? 0) > 0 && (
+                            <div className="flex justify-between gap-4 text-shop-success">
+                                <dt>
+                                    {discountCode ? resolveLanguageKey("discountWithCode").replace("{code}", discountCode) : resolveLanguageKey("discount")}
+                                    <button
+                                        type="button"
+                                        onClick={() => void removeDiscount().catch(failed("removeDiscountError"))}
+                                        className="ml-2 text-xs text-shop-ink-muted underline underline-offset-2 hover:text-shop-ink"
+                                    >
+                                        {resolveLanguageKey("remove")}
+                                    </button>
+                                </dt>
+                                <dd className="tabular-nums">−{formatMoney(cart.discountTotal)}</dd>
+                            </div>
+                        )}
+                        {giftCardAmount > 0 && (
+                            <div className="flex justify-between gap-4 text-shop-success">
+                                <dt>
+                                    {resolveLanguageKey("giftCardWithCode").replace("{code}", cart.appliedGiftCard?.code ?? "")}
+                                    <button
+                                        type="button"
+                                        onClick={() => void removeGiftCard().catch(failed("removeGiftCardError"))}
+                                        className="ml-2 text-xs text-shop-ink-muted underline underline-offset-2 hover:text-shop-ink"
+                                    >
+                                        {resolveLanguageKey("remove")}
+                                    </button>
+                                </dt>
+                                <dd className="tabular-nums">−{formatMoney(giftCardAmount)}</dd>
+                            </div>
+                        )}
+                        <div className="flex items-baseline justify-between gap-4 border-t border-shop-border pt-3">
+                            <dt className="font-semibold">{resolveLanguageKey("estimatedTotal")}</dt>
+                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(estimate)}</dd>
+                        </div>
+                    </dl>
+                    <p className="-mt-2 text-xs text-shop-ink-muted">{resolveLanguageKey("shippingNote")}</p>
 
-                {!cart.appliedGiftCard && (
-                    <div className="flex gap-2">
-                        <input
-                            value={giftCardInput}
-                            onChange={event => setGiftCardInput(event.target.value)}
-                            onKeyDown={event => { if (event.key === "Enter") void handleApplyGiftCard(); }}
-                            placeholder="Gift card code"
-                            aria-label="Gift card code"
-                            className="h-9 min-w-0 flex-1 rounded-md border border-shop-border px-3 text-sm outline-none focus:border-shop-accent"
-                        />
-                        <button
-                            onClick={handleApplyGiftCard}
-                            disabled={applyingGiftCard || !giftCardInput.trim()}
-                            className="h-9 rounded-md border border-shop-border px-3 text-sm font-medium hover:bg-shop-cream disabled:opacity-50"
-                        >
-                            Apply
-                        </button>
-                    </div>
-                )}
+                    <details className="group rounded-xl border border-shop-border bg-white">
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium [&::-webkit-details-marker]:hidden">
+                            {resolveLanguageKey("codesToggle")}
+                            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
+                        </summary>
+                        <div className="flex flex-col gap-3 px-4 pb-4">
+                            <CodeForm label={resolveLanguageKey("discountCode")} applyLabel={resolveLanguageKey("apply")} onApply={handleApplyDiscount} />
+                            {!cart.appliedGiftCard && (
+                                <CodeForm label={resolveLanguageKey("giftCardCode")} applyLabel={resolveLanguageKey("apply")} onApply={handleApplyGiftCard} />
+                            )}
+                        </div>
+                    </details>
 
-                <button
-                    onClick={() => navigate("/checkout")}
-                    className="w-full rounded-full bg-shop-accent py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                >
-                    Proceed to checkout
-                </button>
-            </aside>
+                    <Link to="/checkout" className={SHOP_SUBMIT_CLASS}>
+                        {resolveLanguageKey("checkout")}
+                        <ArrowRight className="h-4 w-4" aria-hidden />
+                    </Link>
+                </aside>
+            </div>
         </div>
     );
 }
 
-export default CartPage;
+export default compose(
+    withLanguage(LANGUAGE_PATH),
+    withDebug(true, true),
+)(CartPage);

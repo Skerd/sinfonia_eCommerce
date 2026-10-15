@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopErrorMessages.ts",
+  "reasons": {
+    "discount_not_found": "Questo codice sconto non esiste.",
+    "discount_inactive": "Questo codice sconto non è più attivo.",
+    "discount_not_started": "Questo codice sconto non è ancora attivo.",
+    "discount_expired": "Questo codice sconto è scaduto.",
+    "discount_usage_limit_reached": "Questo codice sconto è esaurito.",
+    "discount_customer_limit_reached": "Hai già usato questo codice sconto.",
+    "discount_not_applicable_to_cart": "Questo codice non si applica agli articoli nel carrello.",
+    "minimum_order_amount_not_met": "Il carrello non raggiunge l'importo minimo per questo codice.",
+    "minimum_quantity_not_met": "Il carrello non contiene abbastanza articoli per questo codice.",
+    "buy_x_get_y_misconfigured": "Questo codice non può essere usato al momento.",
+    "gift_card_not_redeemable": "Questa gift card non è valida o non ha più saldo."
+  },
+  "fallbacks": {
+    "discount": "Questo codice sconto non può essere usato.",
+    "discountRemoved": "non si applica più a questo carrello",
+    "giftCard": "Questa gift card non può essere usata."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/terms/index.tsx",
+  "title": "Condizioni di vendita",
+  "lastUpdated": "Ultimo aggiornamento: 15 ottobre 2026",
+  "intro": "Queste condizioni regolano gli acquisti da {companyName}. P. IVA {vat}. Contatto: {email}. Indirizzo: {address}. Telefono: {phone}.",
+  "section1Title": "Il venditore",
+  "section1Body": "{companyName} vende i prodotti mostrati in questo negozio. Identità legale: P. IVA {vat}, {address}.",
+  "section2Title": "Ordini e pagamento",
+  "section2Body": "Un ordine è un'offerta di acquisto. Lo accettiamo quando il pagamento è confermato o quando confermiamo un ordine in contrassegno o bonifico. I prezzi sono nella valuta del negozio.",
+  "section3Title": "Consegna",
+  "section3Body": "I beni fisici sono spediti all'indirizzo indicato in cassa. I prodotti digitali sono consegnati al tuo account. I tempi di consegna sono indicativi.",
+  "section4Title": "Resi",
+  "section4Body": "Le richieste di reso sono gestite dallo staff. Contatta {email} con il numero d'ordine se devi restituire un articolo.",
+  "section5Title": "Contatti",
+  "section5Body": "Domande su queste condizioni: {email} o {phone}."
+}

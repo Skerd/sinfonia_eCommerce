@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopErrorMessages.ts",
+  "reasons": {
+    "discount_not_found": "That discount code doesn't exist.",
+    "discount_inactive": "That discount code is no longer active.",
+    "discount_not_started": "That discount code isn't active yet.",
+    "discount_expired": "That discount code has expired.",
+    "discount_usage_limit_reached": "That discount code has been fully used.",
+    "discount_customer_limit_reached": "You've already used that discount code.",
+    "discount_not_applicable_to_cart": "That discount code doesn't apply to the items in your cart.",
+    "minimum_order_amount_not_met": "Your cart doesn't reach the minimum amount for that code.",
+    "minimum_quantity_not_met": "Your cart doesn't have enough items for that code.",
+    "buy_x_get_y_misconfigured": "That discount code can't be used right now.",
+    "gift_card_not_redeemable": "That gift card is not valid or has no balance left."
+  },
+  "fallbacks": {
+    "discount": "That discount code can't be used.",
+    "discountRemoved": "it no longer applies to this cart",
+    "giftCard": "That gift card can't be used."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopOrderStatus.tsx",
+  "status": {
+    "pending": "En attente",
+    "confirmed": "Confirmée",
+    "processing": "En préparation",
+    "shipped": "Expédiée",
+    "delivered": "Livrée",
+    "cancelled": "Annulée",
+    "refunded": "Remboursée"
+  },
+  "paymentStatus": {
+    "unpaid": "Non payée",
+    "authorized": "Autorisée",
+    "paid": "Payée",
+    "partially_refunded": "Partiellement remboursée",
+    "refunded": "Remboursée",
+    "voided": "Annulée"
+  },
+  "fulfillmentStatus": {
+    "unfulfilled": "Non expédiée",
+    "partially_fulfilled": "Partiellement expédiée",
+    "fulfilled": "Expédiée",
+    "returned": "Retournée"
+  }
+}

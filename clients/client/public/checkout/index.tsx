@@ -1,8 +1,13 @@
-import {useCallback, useEffect, useMemo, useRef, useState, type ReactNode} from "react";
+import {useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode} from "react";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {compose} from "redux";
 import {toast} from "sonner";
+import {Check, ChevronDown, Lock} from "lucide-react";
 import {loadStripe, type Stripe as StripeJs} from "@stripe/stripe-js";
 import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
@@ -12,51 +17,39 @@ import {
     useShopCart,
 } from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {useShopAuth} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
 import {shopErrorCode} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
+import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {
+    ShopFieldError,
+    ShopSignInPrompt,
+    SHOP_BUTTON_SECONDARY_CLASS,
+    SHOP_FIELD_ERROR_CLASS,
+    SHOP_FIELD_INPUT_CLASS,
+    SHOP_FIELD_LABEL_CLASS,
+    SHOP_SUBMIT_CLASS,
+} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
+import type {Checkout, CheckoutAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkout.dto.ts";
+import {checkoutAddressZod} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutAddress.form.validator.ts";
+import {confirmCheckoutFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/confirmCheckout.form.validator.ts";
+import type {CheckoutPaymentMethodType} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutPayment.form.validator.ts";
+import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 
-type CheckoutAddress = {
-    firstName: string;
-    lastName: string;
-    phone?: string;
-    street: string;
-    city: string;
-    state?: string;
-    postalCode?: string;
-    /** Country ObjectId — required for shipping-rate and tax zone matching. */
-    country?: string;
-};
+const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/checkout/index.tsx";
 
 type ShopCountry = {_id: string; name: string; code: string};
+type ShopState = {_id: string; name: string};
+type Step = "address" | "shipping" | "payment";
+type AddressErrors = Partial<Record<keyof CheckoutAddress | "email", string>>;
 
-type CheckoutDTO = {
-    _id: string;
-    status: string;
-    items: {product: string; quantity: number; totalPrice: number; snapshot?: {title?: string}}[];
-    shippingAddress?: CheckoutAddress;
-    availableShippingRates: {name: string; carrier?: string; price: number; estimatedDeliveryDays?: number}[];
-    selectedShippingRate?: {name: string; price: number};
-    subtotal: number;
-    discountTotal: number;
-    shippingTotal: number;
-    taxTotal: number;
-    grandTotal: number;
-    giftCard?: {code: string; amount: number};
-    paymentMethod?: string;
-    stripeClientSecret?: string;
-};
-
-type OrderDTO = {
-    _id: string;
-    orderNumber: string;
-    grandTotal: number;
-    paymentStatus: string;
-};
-
-type Step = "address" | "shipping" | "payment" | "done";
-type PaymentChoice = "stripe" | "cod" | "bank_transfer";
+const STEPS: Step[] = ["address", "shipping", "payment"];
 
 /** Errors after which the stored checkout can't be resumed — start a fresh one. */
 const RESTART_CODES = new Set(["checkout_cart_changed", "checkout_expired", "idempotency_key_conflict", "checkout_not_found"]);
+
+/** The email typed at checkout, kept across a payment redirect (3-D Secure) that reloads the page. */
+const CHECKOUT_EMAIL_STORAGE_KEY = "shop-checkout-email";
 
 function getOrCreateIdempotencyKey(): string {
     let key: string | null = null;
@@ -72,8 +65,25 @@ function getOrCreateIdempotencyKey(): string {
     return key;
 }
 
+function readStoredEmail(): string {
+    try {
+        return sessionStorage.getItem(CHECKOUT_EMAIL_STORAGE_KEY) ?? "";
+    } catch {
+        return "";
+    }
+}
+
+function storeEmail(email: string): void {
+    try {
+        if (email) sessionStorage.setItem(CHECKOUT_EMAIL_STORAGE_KEY, email);
+        else sessionStorage.removeItem(CHECKOUT_EMAIL_STORAGE_KEY);
+    } catch {
+        // storage unavailable — the order falls back to the account email
+    }
+}
+
 /** The step a resumed checkout belongs on. */
-function stepFor(checkout: CheckoutDTO): Step {
+function stepFor(checkout: Checkout): Step {
     if (checkout.paymentMethod || (checkout.selectedShippingRate && checkout.status === "pending")) return "payment";
     if (checkout.availableShippingRates?.length && checkout.shippingAddress) return "shipping";
     return "address";
@@ -81,68 +91,44 @@ function stepFor(checkout: CheckoutDTO): Step {
 
 const EMPTY_ADDRESS: CheckoutAddress = {firstName: "", lastName: "", phone: "", street: "", city: "", state: "", postalCode: "", country: ""};
 
-const inputClass = "h-9 w-full rounded-md border border-shop-border px-3 text-sm outline-none focus:border-shop-accent";
+function isEmptyAddress(address: CheckoutAddress): boolean {
+    return !address.firstName && !address.lastName && !address.street && !address.city;
+}
 
-function Field({label, className = "", children}: {label: string; className?: string; children: ReactNode}) {
+function savedToCheckoutAddress(address: CustomerAddress): CheckoutAddress {
+    return {
+        firstName: address.firstName,
+        lastName: address.lastName,
+        phone: address.phone ?? "",
+        street: address.street,
+        city: address.city?.name ?? "",
+        state: address.state?.name ?? "",
+        postalCode: address.postalCode ?? "",
+        country: address.country?._id ?? "",
+    };
+}
+
+function Field({label, error, className, children}: {label: string; error?: string; className?: string; children: ReactNode}) {
     return (
-        <label className={`flex flex-col gap-1 text-xs font-medium text-shop-ink-muted ${className}`}>
+        <label className={cn(SHOP_FIELD_LABEL_CLASS, className)}>
             {label}
             {children}
+            <ShopFieldError message={error} />
         </label>
     );
 }
 
-function AddressFields({value, onChange, countries}: {value: CheckoutAddress; onChange: (next: CheckoutAddress) => void; countries: ShopCountry[]}) {
-    function set<K extends keyof CheckoutAddress>(key: K, fieldValue: string) {
-        onChange({...value, [key]: fieldValue});
-    }
-    return (
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <Field label="First name *">
-                <input required autoComplete="given-name" value={value.firstName} onChange={e => set("firstName", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="Last name *">
-                <input required autoComplete="family-name" value={value.lastName} onChange={e => set("lastName", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="Street *" className="sm:col-span-2">
-                <input required autoComplete="street-address" value={value.street} onChange={e => set("street", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="City *">
-                <input required autoComplete="address-level2" value={value.city} onChange={e => set("city", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="Country *">
-                <select
-                    required
-                    autoComplete="country"
-                    value={value.country ?? ""}
-                    onChange={e => set("country", e.target.value)}
-                    className={`${inputClass} bg-white ${value.country ? "" : "text-shop-ink-faded"}`}
-                >
-                    <option value="">Select a country</option>
-                    {countries.map(country => (
-                        <option key={country._id} value={country._id}>{country.name}</option>
-                    ))}
-                </select>
-            </Field>
-            <Field label="State">
-                <input autoComplete="address-level1" value={value.state} onChange={e => set("state", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="Postal code">
-                <input autoComplete="postal-code" value={value.postalCode} onChange={e => set("postalCode", e.target.value)} className={inputClass} />
-            </Field>
-            <Field label="Phone">
-                <input type="tel" autoComplete="tel" value={value.phone} onChange={e => set("phone", e.target.value)} className={inputClass} />
-            </Field>
-        </div>
-    );
-}
-
-function StripePaymentStep({clientSecret, onPaid, submitting, setSubmitting}: {
+type StripePaymentStepProps = {
     clientSecret: string;
+    payLabel: string;
+    processingLabel: string;
+    paymentFailedLabel: string;
     onPaid: () => Promise<void>;
     submitting: boolean;
     setSubmitting: (v: boolean) => void;
-}) {
+};
+
+function StripePaymentStep({clientSecret, payLabel, processingLabel, paymentFailedLabel, onPaid, submitting, setSubmitting}: StripePaymentStepProps) {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -165,7 +151,7 @@ function StripePaymentStep({clientSecret, onPaid, submitting, setSubmitting}: {
                 redirect: "if_required",
             });
             if (result.error) {
-                toast.error(result.error.message ?? "Payment failed");
+                toast.error(result.error.message ?? paymentFailedLabel);
                 return;
             }
             await onPaid();
@@ -175,63 +161,75 @@ function StripePaymentStep({clientSecret, onPaid, submitting, setSubmitting}: {
     }
 
     return (
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-5">
             <PaymentElement />
-            <button
-                onClick={handlePay}
-                disabled={!stripe || submitting}
-                className="w-full rounded-full bg-shop-accent py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
-            >
-                {submitting ? "Processing…" : "Pay now"}
+            <button type="button" onClick={handlePay} disabled={!stripe || submitting} className={SHOP_SUBMIT_CLASS}>
+                <Lock className="h-4 w-4" aria-hidden />
+                {submitting ? processingLabel : payLabel}
             </button>
         </div>
     );
 }
 
-function CheckoutPage() {
+function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-    const {cart, signInRequired, refresh: refreshCart} = useShopCart();
+    const {cart, loading: cartLoading, signInRequired, refresh: refreshCart} = useShopCart();
     const {config, formatMoney} = useShopConfig();
+    const {user} = useShopAuth();
 
-    const [checkout, setCheckout] = useState<CheckoutDTO | null>(null);
+    const [checkout, setCheckout] = useState<Checkout | null>(null);
     const [step, setStep] = useState<Step>("address");
     const [countries, setCountries] = useState<ShopCountry[]>([]);
+    const [states, setStates] = useState<ShopState[]>([]);
+    const [savedAddresses, setSavedAddresses] = useState<CustomerAddress[]>([]);
+    const [selectedSavedId, setSelectedSavedId] = useState("");
     const [shippingAddress, setShippingAddress] = useState<CheckoutAddress>(EMPTY_ADDRESS);
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(readStoredEmail);
+    const [errors, setErrors] = useState<AddressErrors>({});
     const [rateIndex, setRateIndex] = useState(0);
     const [submitting, setSubmitting] = useState(false);
-    const [order, setOrder] = useState<OrderDTO | null>(null);
     const returnHandled = useRef(false);
+    // Read by the saved-address load, which can finish before or after the checkout's own address arrives
+    const addressRef = useRef(shippingAddress);
+    useEffect(() => {
+        addressRef.current = shippingAddress;
+    }, [shippingAddress]);
 
     const stripePromise = useMemo<Promise<StripeJs | null> | null>(
         () => (config?.stripePublishableKey ? loadStripe(config.stripePublishableKey) : null),
         [config?.stripePublishableKey],
     );
 
+    // The account email is the default contact address
+    useEffect(() => {
+        if (user.username?.includes("@")) setEmail(current => current || user.username);
+    }, [user.username]);
+
     const confirmOrder = useCallback(async (checkoutId: string) => {
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: OrderDTO}>("/api/eCommerce/checkout/confirm", {
+            const res = await apiClient.post<{data: BuyerProductOrder}>("/api/eCommerce/checkout/confirm", {
                 checkoutId,
-                email: email || undefined,
+                email: email || readStoredEmail() || undefined,
                 phone: shippingAddress.phone || undefined,
             });
-            setOrder(res.data.data);
-            setStep("done");
             clearCheckoutIdempotencyKey();
+            storeEmail("");
             await refreshCart();
+            // The confirmation lives on the order's own page, so a refresh or Back keeps it
+            navigate(`/account/orders/${res.data.data._id}?placed=1`, {replace: true});
         } catch (err) {
-            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not place your order"});
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("placeOrderError")});
         } finally {
             setSubmitting(false);
         }
-    }, [email, shippingAddress.phone, refreshCart]);
+    }, [email, shippingAddress.phone, refreshCart, navigate, resolveLanguageKey]);
 
     /** Starts or resumes the checkout for the current cart; restarts once if the stored one is stale. */
-    const initCheckout = useCallback(async (allowRestart = true): Promise<CheckoutDTO | null> => {
+    const initCheckout = useCallback(async (allowRestart = true): Promise<Checkout | null> => {
         try {
-            const res = await apiClient.post<{data: CheckoutDTO}>("/api/eCommerce/checkout/init", {
+            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/init", {
                 idempotencyKey: getOrCreateIdempotencyKey(),
             });
             const next = res.data.data;
@@ -244,10 +242,10 @@ function CheckoutPage() {
                 clearCheckoutIdempotencyKey();
                 return initCheckout(false);
             }
-            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not start checkout"});
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("startError")});
             return null;
         }
-    }, []);
+    }, [resolveLanguageKey]);
 
     useEffect(() => {
         if (signInRequired) return;
@@ -258,7 +256,7 @@ function CheckoutPage() {
                 returnHandled.current = true;
                 const failed = searchParams.get("redirect_status") === "failed";
                 setSearchParams({}, {replace: true});
-                if (failed) toast.error("The payment was not completed. Please try again.");
+                if (failed) toast.error(resolveLanguageKey("paymentNotCompleted"));
                 else await confirmOrder(started._id);
             }
         })();
@@ -280,15 +278,94 @@ function CheckoutPage() {
         };
     }, []);
 
-    async function submitAddress() {
-        if (!checkout) return;
-        if (!shippingAddress.firstName || !shippingAddress.lastName || !shippingAddress.street || !shippingAddress.city || !shippingAddress.country) {
-            toast.error("Please fill in the required address fields");
+    // Shipping and tax zones can be limited to states, so offer the country's states by name
+    useEffect(() => {
+        const countryId = shippingAddress.country;
+        if (!countryId) {
+            setStates([]);
             return;
         }
+        let cancelled = false;
+        (async () => {
+            try {
+                const res = await apiClient.post<{data: ShopState[]}>("/api/eCommerce/shopStates", {countryId});
+                if (!cancelled) setStates(res.data.data ?? []);
+            } catch {
+                if (!cancelled) setStates([]);
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [shippingAddress.country]);
+
+    useEffect(() => {
+        if (signInRequired) return;
+        let cancelled = false;
+        (async () => {
+            try {
+                const res = await apiClient.post<{data: CustomerAddress[]}>("/api/eCommerce/customerAddress/my", {});
+                if (cancelled) return;
+                const addresses = res.data.data ?? [];
+                setSavedAddresses(addresses);
+                // Start from the default shipping address unless the checkout already has one
+                const preferred = addresses.find(address => address.isDefault && address.type === "shipping")
+                    ?? addresses.find(address => address.isDefault);
+                if (preferred && isEmptyAddress(addressRef.current)) {
+                    setSelectedSavedId(preferred._id);
+                    setShippingAddress(savedToCheckoutAddress(preferred));
+                }
+            } catch {
+                if (!cancelled) setSavedAddresses([]);
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [signInRequired]);
+
+    function updateAddress(next: CheckoutAddress, changed: keyof CheckoutAddress) {
+        setSelectedSavedId("");
+        setShippingAddress(next);
+        setErrors(current => ({...current, [changed]: undefined}));
+    }
+
+    async function submitAddress(event: FormEvent) {
+        event.preventDefault();
+        if (!checkout) return;
+
+        const labels = {
+            firstNameLabel: resolveLanguageKey("firstName"),
+            lastNameLabel: resolveLanguageKey("lastName"),
+            streetLabel: resolveLanguageKey("street"),
+            cityLabel: resolveLanguageKey("city"),
+            countryLabel: resolveLanguageKey("country"),
+            emailLabel: resolveLanguageKey("email"),
+        };
+        const nextErrors: AddressErrors = {};
+        const parsedAddress = checkoutAddressZod(languageCode, labels).safeParse({...shippingAddress, country: shippingAddress.country || undefined});
+        if (!parsedAddress.success) {
+            for (const issue of parsedAddress.error.issues) {
+                const key = issue.path[0];
+                if (typeof key === "string") nextErrors[key as keyof CheckoutAddress] = issue.message;
+            }
+        }
+        // Shipping and tax zones match on the country, so the storefront requires it
+        if (!shippingAddress.country) nextErrors.country = resolveLanguageKey("countryRequired");
+        const parsedEmail = confirmCheckoutFormSchema(languageCode, labels).shape.email.safeParse(email.trim() || undefined);
+        if (!parsedEmail.success) nextErrors.email = parsedEmail.error.issues[0]?.message;
+
+        setErrors(nextErrors);
+        if (Object.values(nextErrors).some(Boolean)) {
+            const firstField = Object.keys(nextErrors)[0];
+            document.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+            return;
+        }
+
+        storeEmail(email.trim());
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: CheckoutDTO}>("/api/eCommerce/checkout/address", {
+            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/address", {
                 checkoutId: checkout._id,
                 shippingAddress,
             });
@@ -296,142 +373,335 @@ function CheckoutPage() {
             setRateIndex(0);
             setStep("shipping");
         } catch (err) {
-            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not save the address"});
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("addressError")});
         } finally {
             setSubmitting(false);
         }
     }
 
-    async function submitShipping() {
+    async function submitShipping(event: FormEvent) {
+        event.preventDefault();
         if (!checkout) return;
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: CheckoutDTO}>("/api/eCommerce/checkout/shipping", {
+            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/shipping", {
                 checkoutId: checkout._id,
                 rateIndex,
             });
             setCheckout(res.data.data);
             setStep("payment");
         } catch (err) {
-            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "Could not select the shipping option"});
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("shippingError")});
         } finally {
             setSubmitting(false);
         }
     }
 
-    async function selectPaymentMethod(method: PaymentChoice) {
-        if (!checkout) return;
+    async function selectPaymentMethod(method: CheckoutPaymentMethodType) {
+        if (!checkout || checkout.paymentMethod === method) return;
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: CheckoutDTO}>("/api/eCommerce/checkout/payment", {
+            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/payment", {
                 checkoutId: checkout._id,
                 paymentMethod: method,
             });
             setCheckout(res.data.data);
         } catch (err) {
-            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: "That payment method isn't available"});
+            handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("paymentMethodError")});
         } finally {
             setSubmitting(false);
         }
     }
 
     if (signInRequired) {
-        return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">Checkout</h1>
-                <p className="mt-2 text-shop-ink-muted">Sign in from the main app to check out.</p>
-            </div>
-        );
+        return <ShopSignInPrompt titleKey="checkoutTitle" next="/checkout" />;
     }
 
-    if (step === "done" && order) {
-        const paid = order.paymentStatus === "paid";
-        return (
-            <div className="mx-auto max-w-md py-16 text-center">
-                <h1 className="font-shop-display text-3xl font-semibold">Thank you!</h1>
-                <p className="mt-3 text-shop-ink-muted">
-                    Your order <span className="font-semibold text-shop-ink">{order.orderNumber}</span> has been placed.
-                </p>
-                <p className="mt-1 text-sm text-shop-ink-muted">
-                    Total {formatMoney(order.grandTotal)} · {paid ? "Paid" : "Payment due on delivery or by bank transfer"}
-                </p>
-                <div className="mt-6 flex justify-center gap-3">
-                    <button onClick={() => navigate("/account/orders")} className="rounded-full bg-shop-accent px-5 py-2 text-sm font-semibold text-white">
-                        View my orders
-                    </button>
-                    <Link to="/products" className="rounded-full border border-shop-border px-5 py-2 text-sm font-medium">
-                        Continue shopping
-                    </Link>
-                </div>
-            </div>
-        );
+    if (!checkout && cartLoading) {
+        return <div className="h-72 animate-pulse rounded-2xl bg-shop-cream" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
     }
 
     if (!checkout && (!cart || cart.items.length === 0)) {
         return (
-            <div className="py-16 text-center">
-                <h1 className="font-shop-display text-2xl font-semibold">Nothing to check out</h1>
-                <Link to="/products" className="mt-3 inline-block text-sm text-shop-accent hover:underline">Browse products</Link>
+            <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-20 text-center">
+                <h1 className="font-shop-display text-3xl font-semibold tracking-tight">{resolveLanguageKey("emptyTitle")}</h1>
+                <Link to="/products" className={SHOP_BUTTON_SECONDARY_CLASS}>{resolveLanguageKey("browse")}</Link>
             </div>
         );
     }
 
-    const steps: {id: Step; label: string}[] = [
-        {id: "address", label: "1. Address"},
-        {id: "shipping", label: "2. Shipping"},
-        {id: "payment", label: "3. Payment"},
+    const stepIndex = STEPS.indexOf(step);
+    const fullyCovered = checkout != null && checkout.grandTotal <= 0 && (checkout.giftCard?.amount ?? 0) > 0;
+    const paymentMethods: {id: CheckoutPaymentMethodType; available: boolean}[] = [
+        {id: "stripe", available: Boolean(config?.stripePublishableKey)},
+        {id: "cod", available: true},
+        {id: "bank_transfer", available: true},
     ];
-    const summaryLines = checkout?.items ?? [];
 
-    return (
-        <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
-            <div className="flex min-w-0 flex-col gap-y-6">
-                <h1 className="font-shop-display text-3xl font-semibold">Checkout</h1>
-                <ol className="flex flex-wrap gap-4 text-sm" aria-label="Checkout steps">
-                    {steps.map(s => (
-                        <li
-                            key={s.id}
-                            aria-current={s.id === step ? "step" : undefined}
-                            className={s.id === step ? "font-semibold text-shop-accent" : "text-shop-ink-faded"}
-                        >
-                            {s.label}
+    const summary = (
+        <div className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-4">
+                {(checkout?.items ?? []).map((item, index) => {
+                    const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                    return (
+                        <li key={`${item.product}-${index}`} className="flex items-center gap-3 text-sm">
+                            <div className="relative h-16 w-14 shrink-0">
+                                <div className="h-full w-full overflow-hidden rounded-lg bg-white">
+                                    {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
+                                </div>
+                                <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-shop-ink px-1 text-[11px] font-semibold text-white">
+                                    {item.quantity}
+                                </span>
+                            </div>
+                            <span className="min-w-0 flex-1 line-clamp-2">{item.snapshot?.title}</span>
+                            <span className="tabular-nums">{formatMoney(item.totalPrice)}</span>
                         </li>
-                    ))}
-                </ol>
-
-                {step === "address" && (
-                    <div className="flex flex-col gap-y-4">
-                        <Field label="Email for order updates">
-                            <input
-                                type="email"
-                                autoComplete="email"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                className={inputClass}
-                            />
-                        </Field>
-                        <AddressFields value={shippingAddress} onChange={setShippingAddress} countries={countries} />
-                        <button
-                            onClick={submitAddress}
-                            disabled={submitting || !checkout}
-                            className="rounded-full bg-shop-accent px-6 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
-                        >
-                            Continue to shipping
-                        </button>
+                    );
+                })}
+            </ul>
+            <dl className="flex flex-col gap-2.5 border-t border-shop-border pt-4 text-[15px]">
+                <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(checkout?.subtotal ?? cart?.subtotal)}</dd></div>
+                {(checkout?.discountTotal ?? 0) > 0 && (
+                    <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(checkout?.discountTotal)}</dd></div>
+                )}
+                <div className="flex justify-between">
+                    <dt className="text-shop-ink-muted">{resolveLanguageKey("shipping")}</dt>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                </div>
+                <div className="flex justify-between">
+                    <dt className="text-shop-ink-muted">{resolveLanguageKey("tax")}</dt>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                </div>
+                {(checkout?.giftCard?.amount ?? 0) > 0 && (
+                    <div className="flex justify-between text-shop-success">
+                        <dt>{resolveLanguageKey("giftCard").replace("{code}", checkout?.giftCard?.code ?? "")}</dt>
+                        <dd className="tabular-nums">−{formatMoney(checkout?.giftCard?.amount)}</dd>
                     </div>
                 )}
+                <div className="flex items-baseline justify-between border-t border-shop-border pt-3">
+                    <dt className="font-semibold">{resolveLanguageKey("total")}</dt>
+                    <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal)}</dd>
+                </div>
+            </dl>
+        </div>
+    );
 
-                {step === "shipping" && checkout && (
-                    <div className="flex flex-col gap-y-4">
-                        {checkout.availableShippingRates.length === 0 ? (
-                            <p className="text-shop-ink-muted">No shipping options are available for this address. Please check the country and postal code.</p>
-                        ) : (
-                            <fieldset className="flex flex-col gap-y-2">
-                                <legend className="sr-only">Shipping option</legend>
-                                {checkout.availableShippingRates.map((rate, index) => (
+    return (
+        <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
+                <h1 className="font-shop-display text-4xl font-bold tracking-tight sm:text-5xl">{resolveLanguageKey("title")}</h1>
+                <ol className="flex items-center gap-2 text-sm sm:gap-4" aria-label={resolveLanguageKey("stepsLabel")}>
+                    {STEPS.map((id, index) => {
+                        const done = index < stepIndex;
+                        const current = index === stepIndex;
+                        const label = (
+                            <>
+                                <span className={cn(
+                                    "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold",
+                                    done ? "bg-shop-ink text-white" : current ? "bg-shop-accent text-white" : "border border-shop-border text-shop-ink-faded",
+                                )}>
+                                    {done ? <Check className="h-3.5 w-3.5" aria-hidden /> : index + 1}
+                                </span>
+                                <span className={cn("hidden sm:inline", current ? "font-semibold" : done ? "" : "text-shop-ink-faded")}>
+                                    {resolveLanguageKey(`steps.${id}`)}
+                                </span>
+                            </>
+                        );
+                        return (
+                            <li key={id} className="flex items-center gap-2 sm:gap-4" aria-current={current ? "step" : undefined}>
+                                {done && !submitting ? (
+                                    <button
+                                        type="button"
+                                        onClick={() => setStep(id)}
+                                        className="flex items-center gap-2 rounded-full underline-offset-4 hover:underline"
+                                        aria-label={resolveLanguageKey("backTo").replace("{step}", resolveLanguageKey(`steps.${id}`))}
+                                    >
+                                        {label}
+                                    </button>
+                                ) : (
+                                    <span className="flex items-center gap-2">{label}</span>
+                                )}
+                                {index < STEPS.length - 1 && <span className="h-px w-6 bg-shop-border sm:w-12" aria-hidden />}
+                            </li>
+                        );
+                    })}
+                </ol>
+            </div>
+
+            <details className="group rounded-2xl bg-shop-cream lg:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-center gap-2 text-sm font-medium">
+                        {resolveLanguageKey("showSummary")}
+                        <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
+                    </span>
+                    <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal)}</span>
+                </summary>
+                <div className="px-5 pb-5">{summary}</div>
+            </details>
+
+            <div className="grid items-start gap-10 lg:grid-cols-[1fr_400px] lg:gap-14">
+                <div className="flex min-w-0 flex-col gap-6">
+                    {step === "address" && (
+                        <form onSubmit={submitAddress} noValidate className="flex flex-col gap-6">
+                            <section className="flex flex-col gap-4">
+                                <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("contactTitle")}</h2>
+                                <Field label={resolveLanguageKey("email")} error={errors.email}>
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        autoComplete="email"
+                                        value={email}
+                                        onChange={e => {
+                                            setEmail(e.target.value);
+                                            setErrors(current => ({...current, email: undefined}));
+                                        }}
+                                        aria-invalid={Boolean(errors.email)}
+                                        className={cn(SHOP_FIELD_INPUT_CLASS, errors.email && SHOP_FIELD_ERROR_CLASS)}
+                                    />
+                                </Field>
+                            </section>
+
+                            <section className="flex flex-col gap-4">
+                                <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("shippingAddressTitle")}</h2>
+                                {savedAddresses.length > 0 ? (
+                                    <Field label={resolveLanguageKey("savedAddress")}>
+                                        <select
+                                            value={selectedSavedId}
+                                            onChange={(e) => {
+                                                const id = e.target.value;
+                                                setSelectedSavedId(id);
+                                                const saved = savedAddresses.find((address) => address._id === id);
+                                                setShippingAddress(saved ? savedToCheckoutAddress(saved) : EMPTY_ADDRESS);
+                                                setErrors({});
+                                            }}
+                                            className={SHOP_FIELD_INPUT_CLASS}
+                                        >
+                                            <option value="">{resolveLanguageKey("newAddress")}</option>
+                                            {savedAddresses.map((address) => (
+                                                <option key={address._id} value={address._id}>
+                                                    {address.label || `${address.firstName} ${address.lastName}`}
+                                                    {address.city?.name ? ` — ${address.city.name}` : ""}
+                                                    {address.isDefault ? ` (${resolveLanguageKey("defaultAddress")})` : ""}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </Field>
+                                ) : null}
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    {([
+                                        ["firstName", "given-name"],
+                                        ["lastName", "family-name"],
+                                    ] as const).map(([key, autoComplete]) => (
+                                        <Field key={key} label={resolveLanguageKey(key)} error={errors[key]}>
+                                            <input
+                                                name={key}
+                                                autoComplete={autoComplete}
+                                                value={shippingAddress[key]}
+                                                onChange={e => updateAddress({...shippingAddress, [key]: e.target.value}, key)}
+                                                aria-invalid={Boolean(errors[key])}
+                                                className={cn(SHOP_FIELD_INPUT_CLASS, errors[key] && SHOP_FIELD_ERROR_CLASS)}
+                                            />
+                                        </Field>
+                                    ))}
+                                    <Field label={resolveLanguageKey("street")} error={errors.street} className="sm:col-span-2">
+                                        <input
+                                            name="street"
+                                            autoComplete="street-address"
+                                            value={shippingAddress.street}
+                                            onChange={e => updateAddress({...shippingAddress, street: e.target.value}, "street")}
+                                            aria-invalid={Boolean(errors.street)}
+                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.street && SHOP_FIELD_ERROR_CLASS)}
+                                        />
+                                    </Field>
+                                    <Field label={resolveLanguageKey("city")} error={errors.city}>
+                                        <input
+                                            name="city"
+                                            autoComplete="address-level2"
+                                            value={shippingAddress.city}
+                                            onChange={e => updateAddress({...shippingAddress, city: e.target.value}, "city")}
+                                            aria-invalid={Boolean(errors.city)}
+                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.city && SHOP_FIELD_ERROR_CLASS)}
+                                        />
+                                    </Field>
+                                    <Field label={resolveLanguageKey("postalCode")}>
+                                        <input
+                                            name="postalCode"
+                                            autoComplete="postal-code"
+                                            value={shippingAddress.postalCode ?? ""}
+                                            onChange={e => updateAddress({...shippingAddress, postalCode: e.target.value}, "postalCode")}
+                                            className={SHOP_FIELD_INPUT_CLASS}
+                                        />
+                                    </Field>
+                                    <Field label={resolveLanguageKey("country")} error={errors.country}>
+                                        <select
+                                            name="country"
+                                            autoComplete="country"
+                                            value={shippingAddress.country ?? ""}
+                                            onChange={e => updateAddress({...shippingAddress, country: e.target.value, state: ""}, "country")}
+                                            aria-invalid={Boolean(errors.country)}
+                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.country && SHOP_FIELD_ERROR_CLASS, !shippingAddress.country && "text-shop-ink-faded")}
+                                        >
+                                            <option value="">{resolveLanguageKey("selectCountry")}</option>
+                                            {countries.map(country => (
+                                                <option key={country._id} value={country._id}>{country.name}</option>
+                                            ))}
+                                        </select>
+                                    </Field>
+                                    <Field label={resolveLanguageKey("state")}>
+                                        {states.length > 0 ? (
+                                            <select
+                                                name="state"
+                                                autoComplete="address-level1"
+                                                value={shippingAddress.state ?? ""}
+                                                onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
+                                                className={cn(SHOP_FIELD_INPUT_CLASS, !shippingAddress.state && "text-shop-ink-faded")}
+                                            >
+                                                <option value="">{resolveLanguageKey("selectState")}</option>
+                                                {states.map(state => (
+                                                    <option key={state._id} value={state.name}>{state.name}</option>
+                                                ))}
+                                            </select>
+                                        ) : (
+                                            <input
+                                                name="state"
+                                                autoComplete="address-level1"
+                                                value={shippingAddress.state ?? ""}
+                                                onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
+                                                className={SHOP_FIELD_INPUT_CLASS}
+                                            />
+                                        )}
+                                    </Field>
+                                    <Field label={resolveLanguageKey("phone")} className="sm:col-span-2">
+                                        <input
+                                            name="phone"
+                                            type="tel"
+                                            autoComplete="tel"
+                                            value={shippingAddress.phone ?? ""}
+                                            onChange={e => updateAddress({...shippingAddress, phone: e.target.value}, "phone")}
+                                            className={SHOP_FIELD_INPUT_CLASS}
+                                        />
+                                    </Field>
+                                </div>
+                            </section>
+                            <button type="submit" disabled={submitting || !checkout} className={SHOP_SUBMIT_CLASS}>
+                                {submitting ? resolveLanguageKey("saving") : resolveLanguageKey("continueToShipping")}
+                            </button>
+                        </form>
+                    )}
+
+                    {step === "shipping" && checkout && (
+                        <form onSubmit={submitShipping} className="flex flex-col gap-6">
+                            <fieldset className="flex flex-col gap-3">
+                                <legend className="mb-4 font-shop-display text-xl font-semibold">{resolveLanguageKey("shippingMethodTitle")}</legend>
+                                {checkout.availableShippingRates.length === 0 ? (
+                                    <p className="rounded-xl bg-shop-cream p-4 text-shop-ink-muted">{resolveLanguageKey("noShippingRates")}</p>
+                                ) : checkout.availableShippingRates.map((rate, index) => (
                                     <label
                                         key={`${rate.name}-${index}`}
-                                        className={`flex cursor-pointer items-center justify-between rounded-lg border p-3 text-sm ${rateIndex === index ? "border-shop-accent" : "border-shop-border"}`}
+                                        className={cn(
+                                            "flex cursor-pointer items-center justify-between gap-4 rounded-xl border p-4 transition-colors",
+                                            rateIndex === index ? "border-shop-ink bg-shop-cream/60" : "border-shop-border hover:border-shop-ink/40",
+                                        )}
                                     >
                                         <span className="flex items-center gap-3">
                                             <input
@@ -439,141 +709,104 @@ function CheckoutPage() {
                                                 name="shippingRate"
                                                 checked={rateIndex === index}
                                                 onChange={() => setRateIndex(index)}
+                                                className="h-4 w-4 accent-shop-ink"
                                             />
-                                            <span>
-                                                <span className="font-medium">{rate.name || "Shipping"}</span>
-                                                {rate.carrier && <span className="text-shop-ink-faded"> · {rate.carrier}</span>}
+                                            <span className="flex flex-col">
+                                                <span className="font-medium">
+                                                    {rate.name || resolveLanguageKey("shipping")}
+                                                    {rate.carrier && <span className="font-normal text-shop-ink-muted"> · {rate.carrier}</span>}
+                                                </span>
                                                 {rate.estimatedDeliveryDays != null && (
-                                                    <span className="block text-xs text-shop-ink-faded">~{rate.estimatedDeliveryDays} days</span>
+                                                    <span className="text-sm text-shop-ink-muted">
+                                                        {rate.estimatedDeliveryDays === 1
+                                                            ? resolveLanguageKey("deliveryDayOne")
+                                                            : resolveLanguageKey("deliveryDays").replace("{days}", String(rate.estimatedDeliveryDays))}
+                                                    </span>
                                                 )}
                                             </span>
                                         </span>
-                                        <span className="font-semibold">{rate.price === 0 ? "Free" : formatMoney(rate.price)}</span>
+                                        <span className="font-semibold tabular-nums">{rate.price === 0 ? resolveLanguageKey("free") : formatMoney(rate.price)}</span>
                                     </label>
                                 ))}
                             </fieldset>
-                        )}
-                        <div className="flex gap-3">
-                            <button onClick={() => setStep("address")} disabled={submitting} className="rounded-full border border-shop-border px-5 py-2 text-sm">
-                                Back
+                            <button type="submit" disabled={submitting || checkout.availableShippingRates.length === 0} className={SHOP_SUBMIT_CLASS}>
+                                {submitting ? resolveLanguageKey("saving") : resolveLanguageKey("continueToPayment")}
                             </button>
-                            <button
-                                onClick={submitShipping}
-                                disabled={submitting || checkout.availableShippingRates.length === 0}
-                                className="rounded-full bg-shop-accent px-6 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
-                            >
-                                Continue to payment
+                        </form>
+                    )}
+
+                    {step === "payment" && checkout && fullyCovered && (
+                        <div className="flex flex-col gap-5">
+                            <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</h2>
+                            <p className="rounded-xl bg-shop-cream p-4 text-shop-success">
+                                {resolveLanguageKey("coveredByGiftCard").replace("{code}", checkout.giftCard?.code ?? "")}
+                            </p>
+                            <button type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className={SHOP_SUBMIT_CLASS}>
+                                {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrder")}
                             </button>
                         </div>
-                    </div>
-                )}
+                    )}
 
-                {step === "payment" && checkout && checkout.grandTotal <= 0 && (checkout.giftCard?.amount ?? 0) > 0 && (
-                    <div className="flex flex-col gap-y-4">
-                        <p className="text-sm text-green-700">
-                            Fully covered by gift card {checkout.giftCard?.code} — no payment needed.
-                        </p>
-                        <button
-                            onClick={() => confirmOrder(checkout._id)}
-                            disabled={submitting}
-                            className="w-full rounded-full bg-shop-accent py-2.5 text-sm font-semibold text-white disabled:opacity-50"
-                        >
-                            {submitting ? "Placing order…" : "Place order"}
-                        </button>
-                        <button onClick={() => setStep("shipping")} disabled={submitting} className="rounded-full border border-shop-border px-5 py-2 text-sm">
-                            Back
-                        </button>
-                    </div>
-                )}
+                    {step === "payment" && checkout && !fullyCovered && (
+                        <div className="flex flex-col gap-6">
+                            <fieldset className="flex flex-col gap-3" disabled={submitting}>
+                                <legend className="mb-4 font-shop-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</legend>
+                                {paymentMethods.filter(method => method.available).map(method => (
+                                    <label
+                                        key={method.id}
+                                        className={cn(
+                                            "flex cursor-pointer items-center gap-3 rounded-xl border p-4 transition-colors",
+                                            checkout.paymentMethod === method.id ? "border-shop-ink bg-shop-cream/60" : "border-shop-border hover:border-shop-ink/40",
+                                        )}
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="paymentMethod"
+                                            checked={checkout.paymentMethod === method.id}
+                                            onChange={() => selectPaymentMethod(method.id)}
+                                            className="h-4 w-4 accent-shop-ink"
+                                        />
+                                        <span className="flex flex-col">
+                                            <span className="font-medium">{resolveLanguageKey(`methods.${method.id}.label`)}</span>
+                                            <span className="text-sm text-shop-ink-muted">{resolveLanguageKey(`methods.${method.id}.hint`)}</span>
+                                        </span>
+                                    </label>
+                                ))}
+                            </fieldset>
 
-                {step === "payment" && checkout && checkout.grandTotal > 0 && (
-                    <div className="flex flex-col gap-y-4">
-                        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Payment method">
-                            {([
-                                {id: "stripe", label: "Card (Stripe)", disabled: !config?.stripePublishableKey},
-                                {id: "cod", label: "Cash on delivery", disabled: false},
-                                {id: "bank_transfer", label: "Bank transfer", disabled: false},
-                            ] as const).map(method => (
-                                <button
-                                    key={method.id}
-                                    role="radio"
-                                    aria-checked={checkout.paymentMethod === method.id}
-                                    disabled={method.disabled || submitting}
-                                    onClick={() => selectPaymentMethod(method.id)}
-                                    className={`rounded-full border px-4 py-1.5 text-sm ${checkout.paymentMethod === method.id ? "border-shop-accent bg-shop-accent/5 font-semibold" : "border-shop-border"} disabled:opacity-40`}
-                                >
-                                    {method.label}
+                            {checkout.paymentMethod === "stripe" && checkout.stripeClientSecret && stripePromise && (
+                                <Elements stripe={stripePromise} options={{clientSecret: checkout.stripeClientSecret}}>
+                                    <StripePaymentStep
+                                        clientSecret={checkout.stripeClientSecret}
+                                        payLabel={resolveLanguageKey("payNow").replace("{amount}", formatMoney(checkout.grandTotal))}
+                                        processingLabel={resolveLanguageKey("processing")}
+                                        paymentFailedLabel={resolveLanguageKey("paymentFailed")}
+                                        onPaid={() => confirmOrder(checkout._id)}
+                                        submitting={submitting}
+                                        setSubmitting={setSubmitting}
+                                    />
+                                </Elements>
+                            )}
+
+                            {(checkout.paymentMethod === "cod" || checkout.paymentMethod === "bank_transfer") && (
+                                <button type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className={SHOP_SUBMIT_CLASS}>
+                                    {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrderAmount").replace("{amount}", formatMoney(checkout.grandTotal))}
                                 </button>
-                            ))}
-                        </div>
-
-                        {checkout.paymentMethod === "stripe" && checkout.stripeClientSecret && stripePromise && (
-                            <Elements stripe={stripePromise} options={{clientSecret: checkout.stripeClientSecret}}>
-                                <StripePaymentStep
-                                    clientSecret={checkout.stripeClientSecret}
-                                    onPaid={() => confirmOrder(checkout._id)}
-                                    submitting={submitting}
-                                    setSubmitting={setSubmitting}
-                                />
-                            </Elements>
-                        )}
-
-                        {(checkout.paymentMethod === "cod" || checkout.paymentMethod === "bank_transfer") && (
-                            <button
-                                onClick={() => confirmOrder(checkout._id)}
-                                disabled={submitting}
-                                className="w-full rounded-full bg-shop-accent py-2.5 text-sm font-semibold text-white disabled:opacity-50"
-                            >
-                                {submitting ? "Placing order…" : "Place order"}
-                            </button>
-                        )}
-
-                        <button onClick={() => setStep("shipping")} disabled={submitting} className="rounded-full border border-shop-border px-5 py-2 text-sm">
-                            Back
-                        </button>
-                    </div>
-                )}
-            </div>
-
-            <aside className="flex h-fit flex-col gap-y-2 rounded-xl border border-shop-border p-5 text-sm" aria-label="Order summary">
-                <h2 className="font-shop-display text-lg font-semibold">Order summary</h2>
-                {summaryLines.map((item, index) => (
-                    <div key={`${item.product}-${index}`} className="flex justify-between gap-2">
-                        <span className="truncate text-shop-ink-muted">{item.quantity}× {item.snapshot?.title}</span>
-                        <span>{formatMoney(item.totalPrice)}</span>
-                    </div>
-                ))}
-                <div className="flex flex-col gap-y-1 border-t border-shop-border pt-2">
-                    <div className="flex justify-between"><span className="text-shop-ink-muted">Subtotal</span><span>{formatMoney(checkout?.subtotal ?? cart?.subtotal)}</span></div>
-                    {(checkout?.discountTotal ?? 0) > 0 && (
-                        <div className="flex justify-between text-green-700"><span>Discount</span><span>-{formatMoney(checkout?.discountTotal)}</span></div>
-                    )}
-                    {step !== "address" && (
-                        <>
-                            <div className="flex justify-between">
-                                <span className="text-shop-ink-muted">Shipping</span>
-                                <span>{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal) : "—"}</span>
-                            </div>
-                            <div className="flex justify-between">
-                                <span className="text-shop-ink-muted">Tax</span>
-                                <span>{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal) : "—"}</span>
-                            </div>
-                        </>
-                    )}
-                    {(checkout?.giftCard?.amount ?? 0) > 0 && (
-                        <div className="flex justify-between text-green-700">
-                            <span>Gift card ({checkout?.giftCard?.code})</span>
-                            <span>-{formatMoney(checkout?.giftCard?.amount)}</span>
+                            )}
                         </div>
                     )}
-                    <div className="flex justify-between border-t border-shop-border pt-1 font-semibold">
-                        <span>Total</span>
-                        <span>{formatMoney(checkout?.grandTotal ?? cart?.subtotal)}</span>
-                    </div>
                 </div>
-            </aside>
+
+                <aside className="hidden rounded-2xl bg-shop-cream p-6 lg:sticky lg:top-28 lg:block" aria-labelledby="shop-checkout-summary">
+                    <h2 id="shop-checkout-summary" className="mb-5 font-shop-display text-xl font-semibold">{resolveLanguageKey("summaryTitle")}</h2>
+                    {summary}
+                </aside>
+            </div>
         </div>
     );
 }
 
-export default CheckoutPage;
+export default compose(
+    withLanguage(LANGUAGE_PATH),
+    withDebug(true, true),
+)(CheckoutPage);

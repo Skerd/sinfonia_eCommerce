@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/activate/index.tsx",
+  "title": "Activate account",
+  "loadingSubtitle": "Confirming your activation link…",
+  "successSubtitle": "Your account is active.",
+  "errorSubtitle": "This activation link is invalid or expired.",
+  "loadingMessage": "Please wait…",
+  "successMessage": "You can now log in to your shop account.",
+  "errorMessage": "Request a new activation email or contact the shop.",
+  "goToLogin": "Go to log in",
+  "axios": {
+    "start": {
+      "title": "Activating…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account activated",
+      "time": 2000
+    },
+    "error": {
+      "title": "Activation failed",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx",
+  "title": "Sign up",
+  "subtitle": "Create an account to shop, track orders, and save addresses.",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "surnameLabel": "Surname",
+    "surnamePlaceholder": "Surname",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password"
+  },
+  "submit": "Create account",
+  "submitting": "Please wait…",
+  "formError": "Could not create your account. Please try again.",
+  "successMessage": "Your account is ready. Check your email for the activation link, then log in.",
+  "goToLogin": "Go to log in",
+  "orContinueWith": "Or continue with",
+  "haveAccount": "Already have an account?",
+  "loginLink": "Log in",
+  "axios": {
+    "start": {
+      "title": "Creating account…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account created — check your email",
+      "time": 2000
+    },
+    "error": {
+      "title": "Sign up failed",
+      "time": 3000
+    }
+  }
+}

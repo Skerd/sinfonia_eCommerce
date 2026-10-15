@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Password dimenticata",
+  "subtitle": "Inserisci l'email e ti invieremo un link di reimpostazione.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Invia link",
+  "submitting": "Attendere…",
+  "formError": "Impossibile inviare il link. Riprova.",
+  "successMessage": "Se esiste un account per quella email, il link è in arrivo.",
+  "goToLogin": "Torna all'accesso",
+  "axios": {
+    "start": {
+      "title": "Invio del link…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Controlla l'email",
+      "time": 2000
+    },
+    "error": {
+      "title": "Richiesta non riuscita",
+      "time": 3000
+    }
+  }
+}

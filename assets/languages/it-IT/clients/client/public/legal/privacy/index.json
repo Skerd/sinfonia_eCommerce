@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx",
+  "title": "Informativa sulla privacy",
+  "lastUpdated": "Ultimo aggiornamento: 15 ottobre 2026",
+  "intro": "{companyName} tratta i dati personali quando navighi in questo negozio, crei un account, effettui un ordine o ci contatti. P. IVA {vat}. Contatto: {email}. Indirizzo: {address}. Telefono: {phone}.",
+  "section1Title": "Titolare",
+  "section1Body": "{companyName} è il titolare dei dati raccolti tramite questo negozio. Per domande sulla privacy scrivi a {email}.",
+  "section2Title": "Dati raccolti",
+  "section2Body": "Raccogliamo dati dell'account (nome, email, telefono), indirizzi di spedizione e fatturazione, storico ordini e dati tecnici come tipo di dispositivo e pagine visitate.",
+  "section3Title": "Finalità",
+  "section3Body": "Usiamo questi dati per evadere gli ordini, gestire l'account, processare i pagamenti, prevenire frodi e adempiere agli obblighi di legge.",
+  "section4Title": "Condivisione",
+  "section4Body": "Non vendiamo i dati personali. Li condividiamo con fornitori di pagamento, spedizione e hosting solo se necessario, e quando richiesto dalla legge.",
+  "section5Title": "I tuoi diritti",
+  "section5Body": "Puoi chiedere accesso, rettifica o cancellazione dei tuoi dati e opporti a certi trattamenti. Scrivi a {email} per esercitare questi diritti."
+}

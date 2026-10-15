@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
+  "copied": "Codice copiato",
+  "copyError": "Impossibile copiare il codice",
+  "title": "Gift card",
+  "loading": "Caricamento gift card",
+  "empty": "Ancora nessuna gift card: acquistane una e comparirà qui dopo il pagamento.",
+  "status": {
+    "active": "Attiva",
+    "depleted": "Esaurita",
+    "disabled": "Disattivata"
+  },
+  "ofInitial": "su {amount}",
+  "copyLabel": "Copia il codice {code}",
+  "expires": "Scade il {date}"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
+  "copied": "Kodi u kopjua",
+  "copyError": "Kodi nuk u kopjua",
+  "title": "Kartat dhuratë",
+  "loading": "Po ngarkohen kartat dhuratë",
+  "empty": "Ende pa karta dhuratë — blini një në dyqan dhe do të shfaqet këtu pas pagesës.",
+  "status": {
+    "active": "Aktive",
+    "depleted": "E përdorur",
+    "disabled": "E çaktivizuar"
+  },
+  "ofInitial": "nga {amount}",
+  "copyLabel": "Kopjo kodin {code}",
+  "expires": "Skadon më {date}"
+}

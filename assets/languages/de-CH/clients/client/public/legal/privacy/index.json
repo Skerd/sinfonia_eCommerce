@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx",
+  "title": "Datenschutzerklärung",
+  "lastUpdated": "Zuletzt aktualisiert: 15. Oktober 2026",
+  "intro": "{companyName} verarbeitet Personendaten, wenn Sie diesen Shop nutzen, ein Konto erstellen, eine Bestellung aufgeben oder uns kontaktieren. MwSt. {vat}. Kontakt: {email}. Adresse: {address}. Telefon: {phone}.",
+  "section1Title": "Verantwortliche Stelle",
+  "section1Body": "{companyName} ist Verantwortliche für die über diesen Shop erhobenen Daten. Datenschutzanfragen an {email}.",
+  "section2Title": "Welche Daten wir erheben",
+  "section2Body": "Wir erheben Kontodaten (Name, E-Mail, Telefon), Liefer- und Rechnungsadressen, Bestellhistorie sowie technische Daten wie Gerätetyp und besuchte Seiten.",
+  "section3Title": "Zweck",
+  "section3Body": "Wir nutzen diese Daten zur Bestellabwicklung, Kontoverwaltung, Zahlungsabwicklung, Betrugsprävention und zur Erfüllung gesetzlicher Pflichten.",
+  "section4Title": "Weitergabe",
+  "section4Body": "Wir verkaufen keine Personendaten. Wir geben sie an Zahlungs-, Versand- und Hosting-Anbieter nur soweit nötig weiter, sowie wenn das Gesetz es verlangt.",
+  "section5Title": "Ihre Rechte",
+  "section5Body": "Sie können Auskunft, Berichtigung oder Löschung verlangen und bestimmten Verarbeitungen widersprechen. Kontaktieren Sie {email}."
+}

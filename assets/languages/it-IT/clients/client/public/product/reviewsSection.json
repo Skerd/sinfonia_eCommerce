@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx",
+  "thanks": "Grazie per la recensione!",
+  "submitError": "Impossibile inviare la recensione",
+  "title": "Recensioni",
+  "count": "{count} recensioni",
+  "countOne": "1 recensione",
+  "empty": "Ancora nessuna recensione.",
+  "writeTitle": "Recensisci il tuo acquisto",
+  "ratingLabel": "Il tuo voto",
+  "starsOption": "{count} stelle su 5",
+  "titleLabel": "Titolo (facoltativo)",
+  "commentLabel": "La tua recensione (facoltativa)",
+  "submitting": "Invio…",
+  "submit": "Invia recensione",
+  "starsValue": "Valutato {count} su 5"
+}

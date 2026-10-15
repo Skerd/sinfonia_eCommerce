@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
+  "copied": "Code kopiert",
+  "copyError": "Code konnte nicht kopiert werden",
+  "title": "Geschenkkarten",
+  "loading": "Geschenkkarten werden geladen",
+  "empty": "Noch keine Geschenkkarten – kaufen Sie eine im Shop, sie erscheint hier nach der Zahlung.",
+  "status": {
+    "active": "Aktiv",
+    "depleted": "Aufgebraucht",
+    "disabled": "Deaktiviert"
+  },
+  "ofInitial": "von {amount}",
+  "copyLabel": "Code {code} kopieren",
+  "expires": "Gültig bis {date}"
+}

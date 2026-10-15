@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/login/shopThirdPartyLogin.form.tsx",
+  "axios": {
+    "start": {
+      "title": "Connexion…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Connecté",
+      "time": 2000
+    },
+    "error": {
+      "title": "Échec de la connexion",
+      "time": 3000
+    }
+  }
+}

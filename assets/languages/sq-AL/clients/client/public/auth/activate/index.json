@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/activate/index.tsx",
+  "title": "Aktivizo llogarinë",
+  "loadingSubtitle": "Duke konfirmuar lidhjen e aktivizimit…",
+  "successSubtitle": "Llogaria juaj është aktive.",
+  "errorSubtitle": "Kjo lidhje aktivizimi është e pavlefshme ose ka skaduar.",
+  "loadingMessage": "Ju lutem prisni…",
+  "successMessage": "Tani mund të hyni në llogarinë tuaj.",
+  "errorMessage": "Kërkoni një email të ri aktivizimi ose kontaktoni dyqanin.",
+  "goToLogin": "Shko te hyrja",
+  "axios": {
+    "start": {
+      "title": "Duke aktivizuar…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Llogaria u aktivizua",
+      "time": 2000
+    },
+    "error": {
+      "title": "Aktivizimi dështoi",
+      "time": 3000
+    }
+  }
+}

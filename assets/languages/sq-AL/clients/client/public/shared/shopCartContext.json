@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartContext.tsx",
+  "removedItems": "Nuk ofrohet më dhe u hoq nga shporta: {items}",
+  "discountRemoved": "Kodi i zbritjes u hoq: {reason}",
+  "giftCardRemoved": "Karta dhuratë u hoq sepse nuk ka më gjendje."
+}

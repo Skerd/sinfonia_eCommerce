@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopErrorMessages.ts",
+  "reasons": {
+    "discount_not_found": "Ce code de réduction n'existe pas.",
+    "discount_inactive": "Ce code de réduction n'est plus actif.",
+    "discount_not_started": "Ce code de réduction n'est pas encore actif.",
+    "discount_expired": "Ce code de réduction a expiré.",
+    "discount_usage_limit_reached": "Ce code de réduction a été entièrement utilisé.",
+    "discount_customer_limit_reached": "Vous avez déjà utilisé ce code de réduction.",
+    "discount_not_applicable_to_cart": "Ce code ne s'applique pas aux articles de votre panier.",
+    "minimum_order_amount_not_met": "Votre panier n'atteint pas le montant minimum pour ce code.",
+    "minimum_quantity_not_met": "Votre panier ne contient pas assez d'articles pour ce code.",
+    "buy_x_get_y_misconfigured": "Ce code ne peut pas être utilisé pour le moment.",
+    "gift_card_not_redeemable": "Cette carte cadeau n'est pas valide ou n'a plus de solde."
+  },
+  "fallbacks": {
+    "discount": "Ce code de réduction ne peut pas être utilisé.",
+    "discountRemoved": "il ne s'applique plus à ce panier",
+    "giftCard": "Cette carte cadeau ne peut pas être utilisée."
+  }
+}

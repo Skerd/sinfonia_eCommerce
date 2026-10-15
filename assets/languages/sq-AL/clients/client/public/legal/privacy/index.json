@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx",
+  "title": "Politika e privatësisë",
+  "lastUpdated": "Përditësuar më: 15 tetor 2026",
+  "intro": "{companyName} përpunon të dhëna personale kur shfletoni këtë dyqan, krijoni llogari, bëni porosi ose na kontaktoni. NIPT {vat}. Kontakt: {email}. Adresa: {address}. Telefoni: {phone}.",
+  "section1Title": "Kush jemi",
+  "section1Body": "{companyName} është kontrolluesi i të dhënave të mbledhura përmes këtij dyqani. Për pyetje mbi privatësinë shkruani te {email}.",
+  "section2Title": "Të dhënat që mbledhim",
+  "section2Body": "Mbledhim të dhëna llogarie (emër, email, telefon), adresa dërgese dhe faturimi, historik porositë dhe të dhëna teknike si lloji i pajisjes dhe faqet e vizituara.",
+  "section3Title": "Si i përdorim",
+  "section3Body": "I përdorim këto të dhëna për të përmbushur porositë, menaxhuar llogarinë, përpunuar pagesat, parandaluar mashtrimin dhe përmbushur detyrimet ligjore.",
+  "section4Title": "Ndarja",
+  "section4Body": "Nuk i shesim të dhënat personale. I ndajmë me ofrues pagesash, dërgesash dhe hosting vetëm sa është e nevojshme, dhe kur e kërkon ligji.",
+  "section5Title": "Të drejtat tuaja",
+  "section5Body": "Mund të kërkoni qasje, korrigjim ose fshirje të të dhënave tuaja, dhe të kundërshtoni disa përpunime. Kontaktoni {email}."
+}

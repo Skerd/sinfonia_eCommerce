@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx",
+  "thanks": "Faleminderit për vlerësimin!",
+  "submitError": "Vlerësimi nuk u dërgua",
+  "title": "Vlerësimet",
+  "count": "{count} vlerësime",
+  "countOne": "1 vlerësim",
+  "empty": "Ende pa vlerësime.",
+  "writeTitle": "Vlerësoni blerjen tuaj",
+  "ratingLabel": "Vlerësimi juaj",
+  "starsOption": "{count} nga 5 yje",
+  "titleLabel": "Titulli (opsional)",
+  "commentLabel": "Mendimi juaj (opsional)",
+  "submitting": "Po dërgohet…",
+  "submit": "Dërgo vlerësimin",
+  "starsValue": "Vlerësuar {count} nga 5"
+}

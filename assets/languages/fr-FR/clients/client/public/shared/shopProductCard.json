@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx",
+  "wasPrice": "Avant",
+  "noImage": "Pas d'image",
+  "discount": "−{percent} %",
+  "rating": "Noté {average} sur 5 ({count} avis)"
+}

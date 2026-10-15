@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopErrorMessages.ts",
+  "reasons": {
+    "discount_not_found": "Ky kod zbritjeje nuk ekziston.",
+    "discount_inactive": "Ky kod zbritjeje nuk është më aktiv.",
+    "discount_not_started": "Ky kod zbritjeje nuk është ende aktiv.",
+    "discount_expired": "Ky kod zbritjeje ka skaduar.",
+    "discount_usage_limit_reached": "Ky kod zbritjeje është përdorur plotësisht.",
+    "discount_customer_limit_reached": "E keni përdorur tashmë këtë kod zbritjeje.",
+    "discount_not_applicable_to_cart": "Ky kod nuk vlen për artikujt në shportë.",
+    "minimum_order_amount_not_met": "Shporta nuk arrin shumën minimale për këtë kod.",
+    "minimum_quantity_not_met": "Shporta nuk ka mjaftueshëm artikuj për këtë kod.",
+    "buy_x_get_y_misconfigured": "Ky kod nuk mund të përdoret tani.",
+    "gift_card_not_redeemable": "Kjo kartë dhuratë nuk është e vlefshme ose nuk ka më gjendje."
+  },
+  "fallbacks": {
+    "discount": "Ky kod zbritjeje nuk mund të përdoret.",
+    "discountRemoved": "nuk vlen më për këtë shportë",
+    "giftCard": "Kjo kartë dhuratë nuk mund të përdoret."
+  }
+}

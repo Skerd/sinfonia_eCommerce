@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/products/index.tsx",
+  "title": "All products",
+  "count": "{count} products",
+  "countOne": "1 product",
+  "searchPlaceholder": "Search products",
+  "searchLabel": "Search products",
+  "collectionLabel": "Collection",
+  "allCollections": "All collections",
+  "sortLabel": "Sort by",
+  "sort": {
+    "newest": "Newest",
+    "featured": "Featured",
+    "priceAsc": "Price: low to high",
+    "priceDesc": "Price: high to low"
+  },
+  "categoriesLabel": "Categories",
+  "subcategoriesLabel": "Subcategories",
+  "allCategories": "All",
+  "activeFilters": "Filtered by",
+  "removeFilter": "Remove filter: {filter}",
+  "clearAll": "Clear all",
+  "loading": "Loading products",
+  "pagination": "Pagination",
+  "previousPage": "Previous page",
+  "nextPage": "Next page",
+  "pageNumber": "Page {page}",
+  "emptyTitle": "Nothing here yet",
+  "emptyFiltered": "No products match these filters. Try another search or clear the filters.",
+  "emptyCatalog": "The catalog is empty for now — check back soon."
+}

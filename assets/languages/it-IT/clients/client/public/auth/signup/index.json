@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx",
+  "title": "Registrati",
+  "subtitle": "Crea un account per acquistare, seguire gli ordini e salvare gli indirizzi.",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome",
+    "surnameLabel": "Cognome",
+    "surnamePlaceholder": "Cognome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordLabel": "Conferma password",
+    "confirmPasswordPlaceholder": "Conferma password"
+  },
+  "submit": "Crea account",
+  "submitting": "Attendere…",
+  "formError": "Impossibile creare l'account. Riprova.",
+  "successMessage": "Account creato. Controlla l'email per il link di attivazione, poi accedi.",
+  "goToLogin": "Vai all'accesso",
+  "orContinueWith": "Oppure continua con",
+  "haveAccount": "Hai già un account?",
+  "loginLink": "Accedi",
+  "axios": {
+    "start": {
+      "title": "Creazione account…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account creato — controlla l'email",
+      "time": 2000
+    },
+    "error": {
+      "title": "Registrazione non riuscita",
+      "time": 3000
+    }
+  }
+}

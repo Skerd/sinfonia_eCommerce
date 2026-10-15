@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/components/cms/CmsBlockRenderer.tsx",
+  "previousSlide": "Sllajdi i mëparshëm",
+  "nextSlide": "Sllajdi tjetër",
+  "slide": "Sllajdi {number} nga {total}"
+}

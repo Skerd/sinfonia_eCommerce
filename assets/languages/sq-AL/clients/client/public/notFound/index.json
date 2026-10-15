@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/notFound/index.tsx",
+  "title": "Faqja nuk u gjet",
+  "message": "Faqja që kërkoni nuk ekziston ose është zhvendosur.",
+  "browseProducts": "Shfleto produktet",
+  "goHome": "Shko në kreu"
+}

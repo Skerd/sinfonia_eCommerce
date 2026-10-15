@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx",
+  "sku": "Réf. {sku}",
+  "each": "{price} l'unité",
+  "remove": "Retirer",
+  "removeLabel": "Retirer {item} du panier",
+  "updateError": "Impossible de modifier la quantité",
+  "removeError": "Impossible de retirer l'article"
+}

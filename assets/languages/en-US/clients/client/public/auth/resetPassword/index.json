@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Reset password",
+  "subtitle": "Choose a new password for your account.",
+  "verifyingSubtitle": "Checking your reset link…",
+  "verifyErrorSubtitle": "This reset link is invalid or expired.",
+  "successSubtitle": "Your password has been updated.",
+  "verifyingMessage": "Please wait…",
+  "verifyErrorMessage": "Request a new password reset link.",
+  "requestAgain": "Forgot password",
+  "form": {
+    "passwordLabel": "New password",
+    "passwordPlaceholder": "New password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "resetPasswordCodeLabel": "Reset code"
+  },
+  "submit": "Save password",
+  "submitting": "Please wait…",
+  "formError": "Could not update your password. Please try again.",
+  "successMessage": "You can now log in with your new password.",
+  "goToLogin": "Go to log in",
+  "axios": {
+    "start": {
+      "title": "Saving password…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Password updated",
+      "time": 2000
+    },
+    "error": {
+      "title": "Update failed",
+      "time": 3000
+    }
+  }
+}

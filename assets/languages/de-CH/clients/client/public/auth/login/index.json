@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/login/index.tsx",
+  "title": "Anmelden",
+  "subtitle": "Geben Sie E-Mail und Passwort ein, um auf Ihr Konto zuzugreifen.",
+  "mfaTitle": "Zwei-Faktor-Authentifizierung",
+  "mfaSubtitle": "Geben Sie den Code aus Ihrer Authenticator-App ein.",
+  "form": {
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort",
+    "mfaCodeLabel": "Authentifizierungscode",
+    "mfaCodePlaceholder": "6-stelliger Code"
+  },
+  "submit": "Anmelden",
+  "verify": "Prüfen",
+  "submitting": "Bitte warten…",
+  "formError": "Anmeldung fehlgeschlagen. Prüfen Sie Ihre Angaben und versuchen Sie es erneut.",
+  "orContinueWith": "Oder weiter mit",
+  "forgotPassword": "Passwort vergessen?",
+  "noAccount": "Noch kein Konto?",
+  "signUpLink": "Registrieren",
+  "backToLogin": "Zurück zur Anmeldung",
+  "axios": {
+    "start": {
+      "title": "Anmeldung…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Angemeldet",
+      "time": 2000
+    },
+    "error": {
+      "title": "Anmeldung fehlgeschlagen",
+      "time": 3000
+    }
+  }
+}

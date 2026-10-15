@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/products/index.tsx",
+  "title": "Të gjitha produktet",
+  "count": "{count} produkte",
+  "countOne": "1 produkt",
+  "searchPlaceholder": "Kërko produkte",
+  "searchLabel": "Kërko produkte",
+  "collectionLabel": "Koleksioni",
+  "allCollections": "Të gjitha koleksionet",
+  "sortLabel": "Rendit sipas",
+  "sort": {
+    "newest": "Më të rejat",
+    "featured": "Të veçuara",
+    "priceAsc": "Çmimi: nga më i ulëti",
+    "priceDesc": "Çmimi: nga më i larti"
+  },
+  "categoriesLabel": "Kategoritë",
+  "subcategoriesLabel": "Nënkategoritë",
+  "allCategories": "Të gjitha",
+  "activeFilters": "Filtruar sipas",
+  "removeFilter": "Hiq filtrin: {filter}",
+  "clearAll": "Pastro të gjitha",
+  "loading": "Po ngarkohen produktet",
+  "pagination": "Faqosja",
+  "previousPage": "Faqja e mëparshme",
+  "nextPage": "Faqja tjetër",
+  "pageNumber": "Faqja {page}",
+  "emptyTitle": "Ende asgjë këtu",
+  "emptyFiltered": "Asnjë produkt nuk përputhet me këta filtra. Provoni një kërkim tjetër ose pastroni filtrat.",
+  "emptyCatalog": "Katalogu është bosh për momentin — kthehuni së shpejti."
+}

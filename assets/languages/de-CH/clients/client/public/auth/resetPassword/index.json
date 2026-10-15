@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Passwort zurücksetzen",
+  "subtitle": "Wählen Sie ein neues Passwort für Ihr Konto.",
+  "verifyingSubtitle": "Reset-Link wird geprüft…",
+  "verifyErrorSubtitle": "Dieser Link ist ungültig oder abgelaufen.",
+  "successSubtitle": "Ihr Passwort wurde aktualisiert.",
+  "verifyingMessage": "Bitte warten…",
+  "verifyErrorMessage": "Fordern Sie einen neuen Reset-Link an.",
+  "requestAgain": "Passwort vergessen",
+  "form": {
+    "passwordLabel": "Neues Passwort",
+    "passwordPlaceholder": "Neues Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Passwort bestätigen",
+    "resetPasswordCodeLabel": "Reset-Code"
+  },
+  "submit": "Passwort speichern",
+  "submitting": "Bitte warten…",
+  "formError": "Passwort konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
+  "successMessage": "Sie können sich jetzt mit dem neuen Passwort anmelden.",
+  "goToLogin": "Zur Anmeldung",
+  "axios": {
+    "start": {
+      "title": "Passwort wird gespeichert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Passwort aktualisiert",
+      "time": 2000
+    },
+    "error": {
+      "title": "Aktualisierung fehlgeschlagen",
+      "time": 3000
+    }
+  }
+}

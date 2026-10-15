@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopErrorMessages.ts",
+  "reasons": {
+    "discount_not_found": "Diesen Rabattcode gibt es nicht.",
+    "discount_inactive": "Dieser Rabattcode ist nicht mehr aktiv.",
+    "discount_not_started": "Dieser Rabattcode ist noch nicht aktiv.",
+    "discount_expired": "Dieser Rabattcode ist abgelaufen.",
+    "discount_usage_limit_reached": "Dieser Rabattcode ist bereits ausgeschöpft.",
+    "discount_customer_limit_reached": "Sie haben diesen Rabattcode bereits verwendet.",
+    "discount_not_applicable_to_cart": "Dieser Rabattcode gilt nicht für die Artikel in Ihrem Warenkorb.",
+    "minimum_order_amount_not_met": "Ihr Warenkorb erreicht den Mindestbetrag für diesen Code nicht.",
+    "minimum_quantity_not_met": "Ihr Warenkorb enthält nicht genug Artikel für diesen Code.",
+    "buy_x_get_y_misconfigured": "Dieser Rabattcode kann gerade nicht verwendet werden.",
+    "gift_card_not_redeemable": "Diese Geschenkkarte ist ungültig oder hat kein Guthaben mehr."
+  },
+  "fallbacks": {
+    "discount": "Dieser Rabattcode kann nicht verwendet werden.",
+    "discountRemoved": "er gilt nicht mehr für diesen Warenkorb",
+    "giftCard": "Diese Geschenkkarte kann nicht verwendet werden."
+  }
+}

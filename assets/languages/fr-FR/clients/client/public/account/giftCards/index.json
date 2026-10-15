@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
+  "copied": "Code copié",
+  "copyError": "Impossible de copier le code",
+  "title": "Cartes cadeaux",
+  "loading": "Chargement des cartes cadeaux",
+  "empty": "Aucune carte cadeau. Achetez-en une : elle apparaîtra ici après paiement.",
+  "status": {
+    "active": "Active",
+    "depleted": "Épuisée",
+    "disabled": "Désactivée"
+  },
+  "ofInitial": "sur {amount}",
+  "copyLabel": "Copier le code {code}",
+  "expires": "Expire le {date}"
+}

@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopCartContext.tsx",
+  "removedItems": "No longer available and removed from your cart: {items}",
+  "discountRemoved": "Your discount code was removed: {reason}",
+  "giftCardRemoved": "Your gift card was removed because it has no balance left."
+}
