@@ -1,7 +1,9 @@
+import {Suspense} from "react";
 import {NavLink, Outlet} from "react-router-dom";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/accountLayout.tsx";
@@ -17,13 +19,17 @@ const NAV = [
 function AccountLayoutInner({resolveLanguageKey}: WithLanguageType) {
     return (
         <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav aria-label={resolveLanguageKey("navLabel")} className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-                <ul className="flex gap-2 lg:sticky lg:top-28 lg:flex-col lg:gap-1">
+            <nav
+                aria-label={resolveLanguageKey("navLabel")}
+                className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0 lg:sticky lg:top-28 lg:self-start lg:[overflow-anchor:none]"
+            >
+                <ul className="flex gap-2 lg:flex-col lg:gap-1">
                     {NAV.map((item) => (
                         <li key={item.to} className="shrink-0">
                             <NavLink
                                 to={item.to}
                                 end={item.end}
+                                onMouseDown={(event) => event.preventDefault()}
                                 className={({isActive}) =>
                                     cn(
                                         "flex h-10 items-center rounded-full px-4 text-[15px] font-medium transition-colors lg:rounded-xl",
@@ -38,7 +44,9 @@ function AccountLayoutInner({resolveLanguageKey}: WithLanguageType) {
                 </ul>
             </nav>
             <div className="min-w-0">
-                <Outlet />
+                <Suspense fallback={<Loader />}>
+                    <Outlet />
+                </Suspense>
             </div>
         </div>
     );
