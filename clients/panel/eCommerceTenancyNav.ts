@@ -1,4 +1,4 @@
-import {CreditCard, DollarSign, FileBadge, Globe, Layers, LayoutGrid, Library, MapPin, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
+import {Cable, CreditCard, DollarSign, Download, FileBadge, Globe, Layers, LayoutGrid, Library, MapPin, Monitor, Percent, Settings2, ShoppingBag, Tag, Truck, Users, Warehouse} from "lucide-react";
 import {IconCategory2} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
@@ -117,6 +117,31 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 permissions: ["cmsBlocks"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.tenancy.systemSettings.externalImports.title"),
+                icon: Download,
+                permissions: ["odooconnections"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+                items: [
+                    {
+                        title: resolveLanguageKey("menus.tenancy.systemSettings.odooconnection.title"),
+                        url: "/tenancy/systemSettings/odooconnection",
+                        icon: Cable,
+                        permissions: ["odooconnections"],
+                        usersPermissions: [],
+                        atLeastOnePermission: true,
+                    },
+                    {
+                        title: resolveLanguageKey("menus.tenancy.systemSettings.odooimport.title"),
+                        url: "/tenancy/systemSettings/odooimport",
+                        icon: Download,
+                        permissions: ["odooconnections"],
+                        usersPermissions: [],
+                        atLeastOnePermission: true,
+                    },
+                ],
             },
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.pos.title"),

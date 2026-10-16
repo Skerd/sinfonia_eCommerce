@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooImport/index.tsx",
+  "title": "Aus Odoo importieren",
+  "description": "Katalog, Bestand, Lagerbewegungen und Benutzer aus der gespeicherten Odoo-Verbindung übernehmen. Ein erneuter Lauf aktualisiert dieselben Datensätze.",
+  "help": {
+    "ariaLabel": "Zum Odoo-Import",
+    "title": "Zum Odoo-Import",
+    "overview": "Der Import liest Odoo per JSON-RPC mit der in den Mandanteneinstellungen gespeicherten Verbindung.",
+    "sections": [
+      {
+        "title": "Was geschrieben wird",
+        "body": "Jeder gewählte Datensatz wird anhand der Odoo-ID aktualisiert.",
+        "items": [
+          "Kategorien, Produkte, Varianten, Lager, Bestand, Bewegungen, interne Transfers und Benutzer.",
+          "Ein Testlauf authentifiziert und zählt Datensätze, ohne zu schreiben.",
+          "Importierte Benutzer sind eingeladen und können sich erst anmelden, wenn ein Administrator die Einladung erneut sendet."
+        ]
+      }
+    ]
+  },
+  "durationWarning": "Ein großer Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
+  "stockOverwriteWarning": "Ein erneuter Lauf ersetzt die Lagerbestände durch die Mengen aus Odoo. Verkäufe seit dem letzten Import werden überschrieben.",
+  "missingConnectionTitle": "Keine Odoo-Verbindung",
+  "missingConnection": "Speichern Sie den Odoo-Server für diese Firma, bevor Sie importieren.",
+  "openConnection": "Odoo-Verbindung öffnen",
+  "connectionTitle": "Server",
+  "datasets": {
+    "categories": "Kategorien",
+    "products": "Produkte und Varianten",
+    "warehouses": "Lager",
+    "inventory": "Bestand",
+    "stockChanges": "Lagerbewegungen",
+    "actions": "Interne Transfers",
+    "users": "Benutzer"
+  },
+  "dryRunLabel": "Testlauf",
+  "dryRunDescription": "Authentifizieren und Datensätze zählen, ohne zu schreiben.",
+  "submit": "Importieren",
+  "loadError": "Die Odoo-Verbindung konnte nicht geladen werden",
+  "result": {
+    "title": "Import abgeschlossen",
+    "dryRunTitle": "Testlauf abgeschlossen",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "skipped": "Übersprungen"
+  },
+  "axios": {
+    "success": {
+      "title": "Odoo-Import abgeschlossen",
+      "dryRun": "Odoo-Testlauf abgeschlossen"
+    },
+    "error": {
+      "title": "Odoo-Import fehlgeschlagen"
+    }
+  }
+}

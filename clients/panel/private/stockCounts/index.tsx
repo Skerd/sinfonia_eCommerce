@@ -1,7 +1,9 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {StockCount} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockCount/stockCount.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -12,6 +14,24 @@ import StockCountSheetView, {stockCountEditPath} from "./center/sheetView/stockC
 import {isStockDocumentAction} from "@eCommerceModule/components/custom/stockDocuments/stockDocumentActions.ts";
 
 function AllStockCounts({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["draft", "applied", "cancelled"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+        {
+            field: "warehouse",
+            label: String(resolveLanguageKey("fields.warehouse")),
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/eCommerce/warehouse/select",
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<StockCount>
             apiUrl="/api/eCommerce/stockCount"
@@ -24,6 +44,7 @@ function AllStockCounts({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createStockCount"
             buildEditPath={stockCountEditPath}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/stockCounts/center/sheetView/stockCountSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderActionMenuChildren={(entity, bindRowAction) => (

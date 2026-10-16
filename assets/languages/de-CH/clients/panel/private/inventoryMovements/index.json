@@ -39,14 +39,42 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
-    "reason": "Grund",
-    "quantity": "Menge",
+    "!enums": {
+      "reason": {
+        "restock": "Restock",
+        "sale": "Verkauf",
+        "return": "Return",
+        "adjustment": "Anpassung",
+        "damage": "Damage",
+        "transfer_in": "Transfer in",
+        "transfer_out": "Transfer out",
+        "initial": "Initial",
+        "write_off": "Write-off"
+      }
+    },
+    "inventory": "Inventar",
     "product": "Produkt",
+    "variant": "Variante",
     "warehouse": "Warehouse",
-    "occurredAt": "Aufgetreten am",
+    "quantity": "Menge",
+    "reason": "Grund",
+    "note": "Notiz",
+    "quantityBefore": "Before",
+    "quantityAfter": "After",
+    "manufacturer": "Hersteller",
     "receiptNumber": "Receipt #",
+    "receipts": "Receipts",
+    "occurredAt": "Aufgetreten am",
+    "unitCost": "Einheitskosten",
+    "batchLot": "Batch / lot",
+    "expiryDate": "Expiry",
+    "performedBy": "Performed von",
+    "referenceType": "Referenz",
+    "referenceId": "Referenz-ID",
+    "createdBy": "Erstellt von",
     "createdAt": "Erstellt am",
     "updatedAt": "Aktualisiert am",
-    "createdBy": "Erstellt von"
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
   }
 }

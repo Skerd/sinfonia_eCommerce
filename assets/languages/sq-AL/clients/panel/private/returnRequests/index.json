@@ -40,6 +40,20 @@
   "createReturnRequest": "Krijo kërkesë kthimi",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "type": {
+        "return": "Kthim",
+        "exchange": "Këmbim",
+        "refund": "Rimbursim"
+      },
+      "status": {
+        "pending": "Në pritje",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "received": "Pranuar",
+        "completed": "Përfunduar"
+      }
+    },
     "order": "Porosia",
     "type": "Lloji",
     "status": "Statusi",

@@ -39,14 +39,42 @@
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "reason": "Arsyeja",
-    "quantity": "Sasia",
+    "!enums": {
+      "reason": {
+        "restock": "Rifornizim",
+        "sale": "Shitje",
+        "return": "Kthim",
+        "adjustment": "Rregullim",
+        "damage": "Dëmtim",
+        "transfer_in": "Transferim hyrës",
+        "transfer_out": "Transferim dalës",
+        "initial": "Fillestar",
+        "write_off": "Çregjistrim"
+      }
+    },
+    "inventory": "Inventari",
     "product": "Produkti",
+    "variant": "Varianti",
     "warehouse": "Magazina",
-    "occurredAt": "Ndodhur më",
+    "quantity": "Sasia",
+    "reason": "Arsyeja",
+    "note": "Shënim",
+    "quantityBefore": "Para",
+    "quantityAfter": "Pas",
+    "manufacturer": "Prodhuesi",
     "receiptNumber": "Nr. fature",
+    "receipts": "Faturat",
+    "occurredAt": "Ndodhur më",
+    "unitCost": "Kosto për njësi",
+    "batchLot": "Partia / loti",
+    "expiryDate": "Skadenca",
+    "performedBy": "Kryer nga",
+    "referenceType": "Referenca",
+    "referenceId": "ID e referencës",
+    "createdBy": "Krijuar nga",
     "createdAt": "Krijuar më",
     "updatedAt": "Përditësuar më",
-    "createdBy": "Krijuar nga"
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
   }
 }

@@ -40,6 +40,14 @@
   "createFulfillment": "Créer un épanouissement",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "shipped": "Expédié",
+        "delivered": "Livré",
+        "failed": "Échoué"
+      }
+    },
     "order": "Commande",
     "status": "Statut",
     "items": {

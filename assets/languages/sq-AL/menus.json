@@ -163,6 +163,15 @@
       "cmsblocks": {
         "title": "Blloqet CMS"
       },
+      "externalImports": {
+        "title": "Importet e jashtme"
+      },
+      "odooconnection": {
+        "title": "Odoo"
+      },
+      "odooimport": {
+        "title": "Importo nga Odoo"
+      },
       "products": {
         "title": "Produktet"
       },

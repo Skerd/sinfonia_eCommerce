@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooConnection/index.tsx",
+  "title": "Connexion Odoo",
+  "description": "Enregistrez le serveur Odoo depuis lequel cette société importe. La clé API ou le mot de passe du compte est stocké chiffré et n'est plus jamais affiché.",
+  "help": {
+    "ariaLabel": "À propos de la connexion Odoo",
+    "title": "À propos de la connexion Odoo",
+    "overview": "Un serveur Odoo par société. L'import utilise cette connexion en JSON-RPC depuis le serveur API.",
+    "sections": [
+      {
+        "title": "Ce qu'il faut saisir",
+        "body": "Utilisez la même URL, base et identifiant que dans Odoo, plus une clé API ou le mot de passe de cet utilisateur.",
+        "items": [
+          "L'URL est l'origine Odoo, par exemple https://your-company.odoo.com.",
+          "JSON-RPC authenticate accepte une clé API ou le mot de passe du compte pour cet identifiant. Préférez une clé API lorsque Odoo en fournit une.",
+          "Laissez le secret vide lors d'un nouvel enregistrement pour conserver la valeur déjà stockée."
+        ]
+      }
+    ]
+  },
+  "form": {
+    "urlLabel": "URL Odoo",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Base de données",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Identifiant",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "Clé API ou mot de passe",
+    "apiKeyPlaceholder": "Clé API Odoo ou mot de passe du compte",
+    "apiKeyHint": "JSON-RPC Odoo accepte une clé API ou le mot de passe du compte pour cet identifiant.",
+    "apiKeySetPlaceholder": "Laisser vide pour conserver le secret enregistré",
+    "apiKeySetHint": "Un secret est déjà enregistré. Saisissez une nouvelle clé API ou un mot de passe uniquement pour le remplacer."
+  },
+  "save": "Enregistrer",
+  "saved": "Connexion Odoo enregistrée",
+  "test": "Tester",
+  "testOk": "Odoo a accepté l'identifiant",
+  "testError": "Le test de connexion Odoo a échoué",
+  "saveError": "Impossible d'enregistrer la connexion Odoo",
+  "loadError": "Impossible de charger la connexion Odoo"
+}

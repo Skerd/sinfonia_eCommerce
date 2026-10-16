@@ -5,7 +5,8 @@ import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {SavedSearch} from "armonia/src/modules/eCommerce/api/eCommerce/private/savedSearch/savedSearch.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SavedSearchCard from "./center/cardView/savedSearchCard.tsx";
@@ -38,6 +39,25 @@ function AllSavedSearches({resolveLanguageKey, specificUserId, companyWide}: All
         () => (companyWide || !ownerId ? undefined : {customerId: ownerId}),
         [companyWide, ownerId],
     );
+    const quickFilters = useMemo<QuickFilterDef[]>(() => {
+        const filters: QuickFilterDef[] = [
+            {
+                field: "collectionId",
+                label: String(resolveLanguageKey("fields.collectionId")),
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/eCommerce/collection/select",
+            },
+        ];
+        if (companyWide) {
+            filters.unshift({
+                field: "customer",
+                label: String(resolveLanguageKey("fields.customer")),
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/company/users/select",
+            });
+        }
+        return filters;
+    }, [resolveLanguageKey, companyWide]);
     if (!companyWide && !ownerId) return null;
 
     return (
@@ -59,6 +79,7 @@ function AllSavedSearches({resolveLanguageKey, specificUserId, companyWide}: All
             createLanguageKey="createSavedSearch"
             buildEditPath={(entity) => savedSearchEditPath(entity, lockCustomer)}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderCard={(search, onDelete, onRestore) => (

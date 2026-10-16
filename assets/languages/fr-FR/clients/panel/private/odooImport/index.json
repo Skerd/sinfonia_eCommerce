@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooImport/index.tsx",
+  "title": "Importer depuis Odoo",
+  "description": "Importer le catalogue, le stock, les mouvements et les utilisateurs depuis la connexion Odoo enregistrée. Un nouvel import met à jour les mêmes enregistrements.",
+  "help": {
+    "ariaLabel": "À propos de l'import Odoo",
+    "title": "À propos de l'import Odoo",
+    "overview": "L'import lit Odoo en JSON-RPC avec la connexion enregistrée dans les paramètres de la société.",
+    "sections": [
+      {
+        "title": "Ce qui est écrit",
+        "body": "Chaque jeu de données choisi est mis à jour par identifiant Odoo.",
+        "items": [
+          "Catégories, produits, variantes, entrepôts, stock, mouvements, transferts internes et utilisateurs.",
+          "Un essai authentifie et compte les enregistrements sans écrire.",
+          "Les utilisateurs importés sont invités et ne peuvent pas se connecter tant qu'un administrateur n'a pas renvoyé l'invitation."
+        ]
+      }
+    ]
+  },
+  "durationWarning": "Un grand catalogue peut prendre plusieurs minutes. Laissez cette page ouverte jusqu'à la fin de l'import.",
+  "stockOverwriteWarning": "Un nouvel import remplace les quantités en stock par celles d'Odoo. Les ventes enregistrées ici depuis le dernier import sont écrasées.",
+  "missingConnectionTitle": "Aucune connexion Odoo",
+  "missingConnection": "Enregistrez le serveur Odoo de cette société avant d'importer.",
+  "openConnection": "Ouvrir la connexion Odoo",
+  "connectionTitle": "Serveur",
+  "datasets": {
+    "categories": "Catégories",
+    "products": "Produits et variantes",
+    "warehouses": "Entrepôts",
+    "inventory": "Stock disponible",
+    "stockChanges": "Mouvements de stock",
+    "actions": "Transferts internes",
+    "users": "Utilisateurs"
+  },
+  "dryRunLabel": "Essai",
+  "dryRunDescription": "Authentifier et compter les enregistrements sans écrire.",
+  "submit": "Importer",
+  "loadError": "Impossible de charger la connexion Odoo",
+  "result": {
+    "title": "Import terminé",
+    "dryRunTitle": "Essai terminé",
+    "created": "Créés",
+    "updated": "Mis à jour",
+    "skipped": "Ignorés"
+  },
+  "axios": {
+    "success": {
+      "title": "Import Odoo terminé",
+      "dryRun": "Essai Odoo terminé"
+    },
+    "error": {
+      "title": "L'import Odoo a échoué"
+    }
+  }
+}

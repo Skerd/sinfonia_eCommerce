@@ -39,14 +39,42 @@
   },
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "reason": "Reason",
-    "quantity": "Quantity",
+    "!enums": {
+      "reason": {
+        "restock": "Restock",
+        "sale": "Sale",
+        "return": "Return",
+        "adjustment": "Adjustment",
+        "damage": "Damage",
+        "transfer_in": "Transfer in",
+        "transfer_out": "Transfer out",
+        "initial": "Initial",
+        "write_off": "Write-off"
+      }
+    },
+    "inventory": "Inventory",
     "product": "Product",
+    "variant": "Variant",
     "warehouse": "Warehouse",
-    "occurredAt": "Occurred at",
+    "quantity": "Quantity",
+    "reason": "Reason",
+    "note": "Note",
+    "quantityBefore": "Before",
+    "quantityAfter": "After",
+    "manufacturer": "Manufacturer",
     "receiptNumber": "Receipt #",
+    "receipts": "Receipts",
+    "occurredAt": "Occurred at",
+    "unitCost": "Unit cost",
+    "batchLot": "Batch / lot",
+    "expiryDate": "Expiry",
+    "performedBy": "Performed by",
+    "referenceType": "Reference",
+    "referenceId": "Reference id",
+    "createdBy": "Created by",
     "createdAt": "Created at",
     "updatedAt": "Updated at",
-    "createdBy": "Created by"
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
   }
 }

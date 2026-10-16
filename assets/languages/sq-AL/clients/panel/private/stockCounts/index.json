@@ -41,6 +41,13 @@
   "createStockCount": "Krijo numërim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "applied": "Aplikuar",
+        "cancelled": "Anuluar"
+      }
+    },
     "warehouse": "Magazina",
     "status": "Statusi",
     "lines": {

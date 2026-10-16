@@ -1,7 +1,9 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -22,6 +24,24 @@ export function fulfillmentEditPath(entity: {_id: string; trackingNumber?: strin
 }
 
 function AllFulfillments({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["pending", "shipped", "delivered", "failed"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+        {
+            field: "order",
+            label: String(resolveLanguageKey("fields.order")),
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/eCommerce/productOrder/select",
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<Fulfillment>
             apiUrl="/api/eCommerce/fulfillment"
@@ -34,6 +54,7 @@ function AllFulfillments({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createFulfillment"
             buildEditPath={fulfillmentEditPath}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderActionMenuChildren={(_entity, bindRowAction) => (

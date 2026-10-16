@@ -40,6 +40,14 @@
   "createFulfillment": "Krijo përmbushje",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "shipped": "Dërguar",
+        "delivered": "Dorëzuar",
+        "failed": "Dështoi"
+      }
+    },
     "order": "Porosia",
     "status": "Statusi",
     "items": {

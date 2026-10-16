@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooImport/index.tsx",
+  "title": "Import from Odoo",
+  "description": "Pull catalog, stock, stock operations, and users from the saved Odoo connection. Re-running updates the same records.",
+  "help": {
+    "ariaLabel": "About Odoo import",
+    "title": "About Odoo import",
+    "overview": "The import reads Odoo over JSON-RPC using the connection saved in tenancy settings.",
+    "sections": [
+      {
+        "title": "What is written",
+        "body": "Each selected dataset is upserted by Odoo id.",
+        "items": [
+          "Categories, products, variants, warehouses, on-hand stock, stock movements, internal transfers, and users.",
+          "A dry run authenticates and counts records without writing.",
+          "Imported users are invited and cannot sign in until an administrator resends the invitation."
+        ]
+      }
+    ]
+  },
+  "durationWarning": "A large catalog can take several minutes. Keep this page open until the import finishes.",
+  "stockOverwriteWarning": "Re-running replaces warehouse on-hand quantity with Odoo's quantity. Sales recorded here since the last import are overwritten.",
+  "missingConnectionTitle": "No Odoo connection",
+  "missingConnection": "Save the Odoo server for this company before importing.",
+  "openConnection": "Open Odoo connection",
+  "connectionTitle": "Server",
+  "datasets": {
+    "categories": "Categories",
+    "products": "Products and variants",
+    "warehouses": "Warehouses",
+    "inventory": "On-hand inventory",
+    "stockChanges": "Stock movements",
+    "actions": "Internal transfers",
+    "users": "Users"
+  },
+  "dryRunLabel": "Dry run",
+  "dryRunDescription": "Authenticate and count records without writing.",
+  "submit": "Import",
+  "loadError": "Could not load the Odoo connection",
+  "result": {
+    "title": "Import finished",
+    "dryRunTitle": "Dry run finished",
+    "created": "Created",
+    "updated": "Updated",
+    "skipped": "Skipped"
+  },
+  "axios": {
+    "success": {
+      "title": "Odoo import finished",
+      "dryRun": "Odoo dry run finished"
+    },
+    "error": {
+      "title": "Odoo import failed"
+    }
+  }
+}

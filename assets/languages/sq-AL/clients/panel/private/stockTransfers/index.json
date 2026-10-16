@@ -40,6 +40,13 @@
   "createStockTransfer": "Krijo transferim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "done": "Përfunduar",
+        "cancelled": "Anuluar"
+      }
+    },
     "fromWarehouse": "Nga magazina",
     "toWarehouse": "Te magazina",
     "status": "Statusi",

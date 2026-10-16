@@ -13,6 +13,8 @@
     "Inventories": "Inventories",
     "Inventorymovements": "Inventory Movements",
     "Odoocataloglinks": "Lidhjet e katalogut Odoo",
+    "Odooconnections": "Lidhjet Odoo",
+    "Odoolinks": "Lidhjet e Odoo",
     "Poscompanyposlocks": "POS Company Locks",
     "Posconfigs": "POS Configs",
     "Posorders": "POS Orders",
@@ -372,6 +374,30 @@
       "odooId": "ID e Odoo",
       "odooModel": "Modeli Odoo",
       "odoocataloglinks": "Lidhjet e katalogut Odoo",
+      "updatedAt": "Përditësuar në"
+    },
+    "Odooconnections": {
+      "apiKeyEncrypted": "Çelësi API ose fjalëkalimi",
+      "createdAt": "Krijuar në",
+      "createdBy": "Krijuar nga",
+      "database": "Baza e të dhënave",
+      "deletedAt": "Fshirë në",
+      "deletedBy": "Fshirë nga",
+      "odooconnections": "Lidhjet Odoo",
+      "updatedAt": "Përditësuar në",
+      "url": "URL",
+      "username": "Hyrja e përdoruesit"
+    },
+    "Odoolinks": {
+      "createdAt": "Krijuar në",
+      "createdBy": "Krijuar nga",
+      "deletedAt": "Fshirë në",
+      "deletedBy": "Fshirë nga",
+      "localId": "Regjistrimi lokal",
+      "localModel": "Modeli lokal",
+      "odooId": "ID e Odoo",
+      "odooModel": "Modeli Odoo",
+      "odoolinks": "Lidhjet e Odoo",
       "updatedAt": "Përditësuar në"
     },
     "Poscompanyposlocks": {

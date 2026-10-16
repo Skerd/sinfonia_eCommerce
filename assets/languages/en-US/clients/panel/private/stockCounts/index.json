@@ -41,6 +41,13 @@
   "createStockCount": "Create count",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "applied": "Applied",
+        "cancelled": "Cancelled"
+      }
+    },
     "warehouse": "Warehouse",
     "status": "Status",
     "lines": {

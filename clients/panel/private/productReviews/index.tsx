@@ -1,8 +1,10 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductReviewCard from "./center/cardView/productReviewCard.tsx";
@@ -15,6 +17,15 @@ export function productReviewEditPath(review: {_id: string; title?: string}) {
 }
 
 function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "product",
+            label: String(resolveLanguageKey("fields.product")),
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/eCommerce/product/select",
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<ProductReview>
             apiUrl="/api/eCommerce/productReview"
@@ -26,6 +37,7 @@ function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createProductReview"
             buildEditPath={productReviewEditPath}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderCard={(review, onDelete, onRestore) => (

@@ -163,6 +163,15 @@
       "cmsblocks": {
         "title": "Blocchi CMS"
       },
+      "externalImports": {
+        "title": "Importazioni esterne"
+      },
+      "odooconnection": {
+        "title": "Odoo"
+      },
+      "odooimport": {
+        "title": "Importa da Odoo"
+      },
       "products": {
         "title": "Prodotti"
       },

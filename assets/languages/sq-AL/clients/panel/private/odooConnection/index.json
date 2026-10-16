@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooConnection/index.tsx",
+  "title": "Lidhja Odoo",
+  "description": "Ruaj serverin Odoo nga i cili kjo kompani importon. Çelësi API ose fjalëkalimi i llogarisë ruhet i kriptuar dhe nuk shfaqet më.",
+  "help": {
+    "ariaLabel": "Rreth lidhjes Odoo",
+    "title": "Rreth lidhjes Odoo",
+    "overview": "Një server Odoo për kompani. Importi e përdor këtë lidhje me JSON-RPC nga serveri API.",
+    "sections": [
+      {
+        "title": "Çfarë të vendosësh",
+        "body": "Përdor të njëjtën URL, bazë dhe hyrje që funksionojnë në Odoo, plus një çelës API ose fjalëkalimin e atij përdoruesi.",
+        "items": [
+          "URL-ja është origjina e Odoo, p.sh. https://your-company.odoo.com.",
+          "JSON-RPC authenticate pranon një çelës API ose fjalëkalimin e llogarisë për atë hyrje. Prefero një çelës API kur Odoo e ofron.",
+          "Lëre sekretet bosh kur ruan përsëri për të mbajtur vlerën e ruajtur."
+        ]
+      }
+    ]
+  },
+  "form": {
+    "urlLabel": "URL e Odoo",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Baza e të dhënave",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Hyrja e përdoruesit",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "Çelësi API ose fjalëkalimi",
+    "apiKeyPlaceholder": "Çelësi API i Odoo ose fjalëkalimi i llogarisë",
+    "apiKeyHint": "JSON-RPC e Odoo pranon një çelës API ose fjalëkalimin e llogarisë për këtë hyrje.",
+    "apiKeySetPlaceholder": "Lëre bosh për të mbajtur sekretet e ruajtura",
+    "apiKeySetHint": "Një sekret është tashmë i ruajtur. Vendos një çelës API ose fjalëkalim të ri vetëm për ta zëvendësuar."
+  },
+  "save": "Ruaj",
+  "saved": "Lidhja Odoo u ruajt",
+  "test": "Provo",
+  "testOk": "Odoo pranoi hyrjen",
+  "testError": "Prova e lidhjes Odoo dështoi",
+  "saveError": "Lidhja Odoo nuk u ruajt",
+  "loadError": "Lidhja Odoo nuk u ngarkua"
+}

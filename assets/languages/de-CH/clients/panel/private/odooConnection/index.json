@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooConnection/index.tsx",
+  "title": "Odoo-Verbindung",
+  "description": "Speichern Sie den Odoo-Server, aus dem diese Firma importiert. API-Schlüssel oder Kontopasswort werden verschlüsselt gespeichert und nie wieder angezeigt.",
+  "help": {
+    "ariaLabel": "Zur Odoo-Verbindung",
+    "title": "Zur Odoo-Verbindung",
+    "overview": "Ein Odoo-Server pro Firma. Der Import nutzt diese Verbindung per JSON-RPC vom API-Server.",
+    "sections": [
+      {
+        "title": "Was einzugeben ist",
+        "body": "Verwenden Sie dieselbe URL, Datenbank und Anmeldung wie in Odoo, plus einen API-Schlüssel oder das Passwort dieses Benutzers.",
+        "items": [
+          "Die URL ist der Odoo-Ursprung, zum Beispiel https://your-company.odoo.com.",
+          "JSON-RPC authenticate akzeptiert einen API-Schlüssel oder das Kontopasswort für diese Anmeldung. Bevorzugen Sie einen API-Schlüssel, wenn Odoo einen anbietet.",
+          "Lassen Sie das Geheimnis beim erneuten Speichern leer, um den gespeicherten Wert zu behalten."
+        ]
+      }
+    ]
+  },
+  "form": {
+    "urlLabel": "Odoo-URL",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Datenbank",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Benutzeranmeldung",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "API-Schlüssel oder Passwort",
+    "apiKeyPlaceholder": "Odoo-API-Schlüssel oder Kontopasswort",
+    "apiKeyHint": "Odoo-JSON-RPC akzeptiert einen API-Schlüssel oder das Kontopasswort für diese Anmeldung.",
+    "apiKeySetPlaceholder": "Leer lassen, um das gespeicherte Geheimnis zu behalten",
+    "apiKeySetHint": "Ein Geheimnis ist bereits gespeichert. Geben Sie nur einen neuen API-Schlüssel oder ein Passwort ein, um es zu ersetzen."
+  },
+  "save": "Speichern",
+  "saved": "Odoo-Verbindung gespeichert",
+  "test": "Testen",
+  "testOk": "Odoo hat die Anmeldung akzeptiert",
+  "testError": "Test der Odoo-Verbindung fehlgeschlagen",
+  "saveError": "Die Odoo-Verbindung konnte nicht gespeichert werden",
+  "loadError": "Die Odoo-Verbindung konnte nicht geladen werden"
+}

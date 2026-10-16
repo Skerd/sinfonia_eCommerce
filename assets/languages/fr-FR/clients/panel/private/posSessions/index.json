@@ -56,6 +56,7 @@
     },
     "name": "Nom",
     "config": "Configuration du point de vente",
+    "currency": "Devise",
     "state": "Canton / État",
     "openedBy": "Ouvert par",
     "closedBy": "Fermé par",

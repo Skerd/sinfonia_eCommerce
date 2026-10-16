@@ -19,6 +19,8 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         pospaymentmethods: "posPaymentMethods_configurations",
         fiscalconfigs: "fiscalConfigs_configurations",
         cmsblocks: "cmsBlocks_configurations",
+        odooconnection: "odooConnection_configurations",
+        odooimport: "odooimport_configurations",
     },
     pathRoomOverrides: {
         "account/addresses": "customeraddresses",

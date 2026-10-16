@@ -40,6 +40,20 @@
   "createReturnRequest": "Create return request",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "type": {
+        "return": "Return",
+        "exchange": "Exchange",
+        "refund": "Refund"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "received": "Received",
+        "completed": "Completed"
+      }
+    },
     "order": "Order",
     "type": "Type",
     "status": "Status",

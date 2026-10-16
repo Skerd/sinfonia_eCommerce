@@ -40,6 +40,20 @@
   "createReturnRequest": "Return antrag erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
+    "!enums": {
+      "type": {
+        "return": "Return",
+        "exchange": "Exchange",
+        "refund": "Rückerstattung"
+      },
+      "status": {
+        "pending": "Ausstehend",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "received": "Erhalten",
+        "completed": "Abgeschlossen"
+      }
+    },
     "order": "Auftrag",
     "type": "Typ",
     "status": "Status",

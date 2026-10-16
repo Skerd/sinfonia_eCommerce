@@ -41,6 +41,13 @@
   "createStockCount": "Inventur erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "applied": "Gebucht",
+        "cancelled": "Storniert"
+      }
+    },
     "warehouse": "Lager",
     "status": "Status",
     "lines": {

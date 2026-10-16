@@ -40,6 +40,13 @@
   "createStockTransfer": "Create transfer",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "done": "Done",
+        "cancelled": "Cancelled"
+      }
+    },
     "fromWarehouse": "From warehouse",
     "toWarehouse": "To warehouse",
     "status": "Status",

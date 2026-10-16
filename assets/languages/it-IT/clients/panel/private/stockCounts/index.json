@@ -41,6 +41,13 @@
   "createStockCount": "Crea inventario",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "applied": "Applicato",
+        "cancelled": "Annullato"
+      }
+    },
     "warehouse": "Magazzino",
     "status": "Stato",
     "lines": {

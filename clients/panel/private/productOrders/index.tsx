@@ -1,7 +1,9 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductOrderCard from "./center/cardView/productOrderCard.tsx";
@@ -16,6 +18,27 @@ import ShipProductOrderAction from "@eCommerceModule/components/custom/productOr
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 
 function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+        {
+            field: "paymentStatus",
+            label: String(resolveLanguageKey("fields.paymentStatus")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["unpaid", "authorized", "paid", "partially_refunded", "refunded", "voided"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.paymentStatus.${value}`)),
+            })),
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<ProductOrder>
             apiUrl="/api/eCommerce/productOrder"
@@ -25,6 +48,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
             buildEditPath={() => ""}
             rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx"
             renderActionMenuChildren={(order, bindRowAction) => (
                 <>

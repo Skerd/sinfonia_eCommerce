@@ -40,6 +40,14 @@
   "createFulfillment": "Creare soddisfazione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "shipped": "Spedito",
+        "delivered": "Consegnato",
+        "failed": "Non riuscito"
+      }
+    },
     "order": "Ordine",
     "status": "Stato",
     "items": {

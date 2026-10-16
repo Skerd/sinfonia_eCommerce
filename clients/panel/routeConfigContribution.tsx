@@ -44,6 +44,8 @@ import AllPricingRules from "@eCommerceModule/clients/panel/private/pricingRules
 import CreatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/createPricingRule.tsx";
 import EditPricingRule from "@eCommerceModule/clients/panel/private/pricingRules/editPricingRule.tsx";
 import ECommerceAnalytics from "@eCommerceModule/clients/panel/private/analytics/index.tsx";
+import OdooConnectionPage from "@eCommerceModule/clients/panel/private/odooConnection/index.tsx";
+import OdooImportPage from "@eCommerceModule/clients/panel/private/odooImport/index.tsx";
 import AllFulfillments from "@eCommerceModule/clients/panel/private/fulfillments/index.tsx";
 import CreateFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/createFulfillment.tsx";
 import EditFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/editFulfillment.tsx";
@@ -196,6 +198,12 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (action === "edit" && cmsBlockId) return <EditCmsBlock entityId={cmsBlockId} />;
                 return <AllCmsBlocks />;
             }
+            if (resource === "odooconnection") {
+                return <OdooConnectionPage />;
+            }
+            if (resource === "odooimport") {
+                return <OdooImportPage />;
+            }
             return undefined;
         }
 
@@ -251,6 +259,9 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         }
         if (resource === "analytics") {
             return <ECommerceAnalytics />;
+        }
+        if (resource === "odooimport") {
+            return <OdooImportPage />;
         }
         if (resource === "fulfillments") {
             const fulfillmentId = searchParams.get("fulfillmentId") || undefined;

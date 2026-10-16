@@ -40,6 +40,13 @@
   "createStockTransfer": "Créer un transfert",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "done": "Terminé",
+        "cancelled": "Annulé"
+      }
+    },
     "fromWarehouse": "Entrepôt de départ",
     "toWarehouse": "Entrepôt d'arrivée",
     "status": "Statut",

@@ -40,6 +40,13 @@
   "createStockTransfer": "Umlagerung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "done": "Abgeschlossen",
+        "cancelled": "Storniert"
+      }
+    },
     "fromWarehouse": "Von Lager",
     "toWarehouse": "Nach Lager",
     "status": "Status",

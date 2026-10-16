@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooImport/index.tsx",
+  "title": "Importo nga Odoo",
+  "description": "Merr katalogun, stokun, lëvizjet dhe përdoruesit nga lidhja e ruajtur e Odoo. Një rinisje përditëson të njëjtat rekorde.",
+  "help": {
+    "ariaLabel": "Rreth importit Odoo",
+    "title": "Rreth importit Odoo",
+    "overview": "Importi lexon Odoo me JSON-RPC duke përdorur lidhjen e ruajtur te cilësimet e kompanisë.",
+    "sections": [
+      {
+        "title": "Çfarë shkruhet",
+        "body": "Çdo grup i zgjedhur përditësohet sipas ID-së së Odoo.",
+        "items": [
+          "Kategori, produkte, variante, magazina, stok, lëvizje, transfere të brendshme dhe përdorues.",
+          "Një provë autentikon dhe numëron rekordet pa shkruar.",
+          "Përdoruesit e importuar janë të ftuar dhe nuk hyjnë derisa një administrator të ridërgojë ftesën."
+        ]
+      }
+    ]
+  },
+  "durationWarning": "Një katalog i madh mund të zgjasë disa minuta. Mbaje këtë faqe hapur derisa importi të mbarojë.",
+  "stockOverwriteWarning": "Një rinisje zëvendëson sasinë në magazinë me sasinë e Odoo. Shitjet e regjistruara këtu që nga importi i fundit mbishkruhen.",
+  "missingConnectionTitle": "Nuk ka lidhje Odoo",
+  "missingConnection": "Ruaj serverin Odoo të kësaj kompanie para importit.",
+  "openConnection": "Hap lidhjen Odoo",
+  "connectionTitle": "Serveri",
+  "datasets": {
+    "categories": "Kategori",
+    "products": "Produkte dhe variante",
+    "warehouses": "Magazina",
+    "inventory": "Stoku në dorë",
+    "stockChanges": "Lëvizjet e stokut",
+    "actions": "Transfere të brendshme",
+    "users": "Përdorues"
+  },
+  "dryRunLabel": "Provë",
+  "dryRunDescription": "Autentiko dhe numëro rekordet pa shkruar.",
+  "submit": "Importo",
+  "loadError": "Lidhja Odoo nuk u ngarkua",
+  "result": {
+    "title": "Importi mbaroi",
+    "dryRunTitle": "Prova mbaroi",
+    "created": "Krijuar",
+    "updated": "Përditësuar",
+    "skipped": "Anashkaluar"
+  },
+  "axios": {
+    "success": {
+      "title": "Importi Odoo mbaroi",
+      "dryRun": "Prova Odoo mbaroi"
+    },
+    "error": {
+      "title": "Importi Odoo dështoi"
+    }
+  }
+}

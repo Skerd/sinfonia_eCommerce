@@ -40,6 +40,20 @@
   "createReturnRequest": "Crea richiesta di reso",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
+    "!enums": {
+      "type": {
+        "return": "Ritorno",
+        "exchange": "Scambio",
+        "refund": "Rimborso"
+      },
+      "status": {
+        "pending": "In sospeso",
+        "approved": "Approvata",
+        "rejected": "Rifiutato",
+        "received": "Ricevuto",
+        "completed": "Completato"
+      }
+    },
     "order": "Ordine",
     "type": "Tipo",
     "status": "Stato",

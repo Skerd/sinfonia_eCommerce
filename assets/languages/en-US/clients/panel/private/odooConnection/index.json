@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooConnection/index.tsx",
+  "title": "Odoo connection",
+  "description": "Save the Odoo server this company imports from. The API key or account password is stored encrypted and is never shown again.",
+  "help": {
+    "ariaLabel": "About the Odoo connection",
+    "title": "About the Odoo connection",
+    "overview": "One Odoo server per company. Import uses this connection over JSON-RPC from the API server.",
+    "sections": [
+      {
+        "title": "What to enter",
+        "body": "Use the same URL, database, and login that work in Odoo, plus an API key or that user's password.",
+        "items": [
+          "The URL is the Odoo origin, for example https://your-company.odoo.com.",
+          "JSON-RPC authenticate accepts an API key or the account password for that login. Prefer an API key when Odoo provides one.",
+          "Leave the secret blank when saving again to keep the value that is already stored."
+        ]
+      }
+    ]
+  },
+  "form": {
+    "urlLabel": "Odoo URL",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Database",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "User login",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "API key or password",
+    "apiKeyPlaceholder": "Odoo API key or account password",
+    "apiKeyHint": "Odoo JSON-RPC accepts an API key or the account password for this login.",
+    "apiKeySetPlaceholder": "Leave blank to keep the stored secret",
+    "apiKeySetHint": "A secret is already stored. Enter a new API key or password only to replace it."
+  },
+  "save": "Save",
+  "saved": "Odoo connection saved",
+  "test": "Test",
+  "testOk": "Odoo accepted the login",
+  "testError": "Odoo connection test failed",
+  "saveError": "Could not save the Odoo connection",
+  "loadError": "Could not load the Odoo connection"
+}

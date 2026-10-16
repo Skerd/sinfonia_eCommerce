@@ -41,6 +41,13 @@
   "createStockCount": "Créer un inventaire",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "applied": "Appliqué",
+        "cancelled": "Annulé"
+      }
+    },
     "warehouse": "Entrepôt",
     "status": "Statut",
     "lines": {

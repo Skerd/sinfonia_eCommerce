@@ -40,6 +40,14 @@
   "createFulfillment": "Fulfillment erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "failed": "Fehlgeschlagen"
+      }
+    },
     "order": "Auftrag",
     "status": "Status",
     "items": {

@@ -13,6 +13,8 @@
     "Inventories": "Inventories",
     "Inventorymovements": "Inventory movements",
     "Odoocataloglinks": "Odoo-Katalogverknüpfungen",
+    "Odooconnections": "Odoo-Verbindungen",
+    "Odoolinks": "Odoo-Verknüpfungen",
     "Poscompanyposlocks": "POS firma locks",
     "Posconfigs": "POS configs",
     "Posorders": "POS aufträge",
@@ -372,6 +374,30 @@
       "odooId": "Odoo-ID",
       "odooModel": "Odoo-Modell",
       "odoocataloglinks": "Odoo-Katalogverknüpfungen",
+      "updatedAt": "Aktualisiert am"
+    },
+    "Odooconnections": {
+      "apiKeyEncrypted": "API-Schlüssel oder Passwort",
+      "createdAt": "Erstellt am",
+      "createdBy": "Erstellt von",
+      "database": "Datenbank",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von",
+      "odooconnections": "Odoo-Verbindungen",
+      "updatedAt": "Aktualisiert am",
+      "url": "URL",
+      "username": "Benutzeranmeldung"
+    },
+    "Odoolinks": {
+      "createdAt": "Erstellt am",
+      "createdBy": "Erstellt von",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von",
+      "localId": "Lokaler Datensatz",
+      "localModel": "Lokales Modell",
+      "odooId": "Odoo-ID",
+      "odooModel": "Odoo-Modell",
+      "odoolinks": "Odoo-Verknüpfungen",
       "updatedAt": "Aktualisiert am"
     },
     "Poscompanyposlocks": {

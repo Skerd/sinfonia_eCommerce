@@ -25,6 +25,12 @@ export function inventoryEditPath(inventory: {_id: string; product: {title: stri
 function AllInventories({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
+            field: "product",
+            label: resolveLanguageKey("fields.product"),
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/eCommerce/product/select",
+        },
+        {
             field: "warehouse",
             label: resolveLanguageKey("fields.warehouse"),
             type: COLUMN_TYPE.OBJECT_ID,

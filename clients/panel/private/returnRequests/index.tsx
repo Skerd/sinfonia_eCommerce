@@ -1,7 +1,9 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -20,6 +22,27 @@ export function returnRequestEditPath(entity: {_id: string; type?: string}) {
 }
 
 function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["pending", "approved", "rejected", "received", "completed"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+        {
+            field: "type",
+            label: String(resolveLanguageKey("fields.type")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: ["return", "exchange", "refund"].map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.type.${value}`)),
+            })),
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<ReturnRequest>
             apiUrl="/api/eCommerce/returnRequest"
@@ -32,6 +55,7 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createReturnRequest"
             buildEditPath={returnRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             renderActionMenuChildren={(_entity, bindRowAction) => (

@@ -40,6 +40,20 @@
   "createReturnRequest": "Créer une demande de retour",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
+    "!enums": {
+      "type": {
+        "return": "Retour",
+        "exchange": "Échange",
+        "refund": "Remboursement"
+      },
+      "status": {
+        "pending": "En attente",
+        "approved": "Approuvée",
+        "rejected": "Rejeté",
+        "received": "Reçu",
+        "completed": "Terminé"
+      }
+    },
     "order": "Commande",
     "type": "Type",
     "status": "Statut",

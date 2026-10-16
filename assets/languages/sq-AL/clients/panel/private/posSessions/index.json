@@ -56,6 +56,7 @@
     },
     "name": "Emri",
     "config": "Konfigurimi POS",
+    "currency": "Monedha",
     "state": "Gjendja",
     "openedBy": "Hapur nga",
     "closedBy": "Mbyllur nga",

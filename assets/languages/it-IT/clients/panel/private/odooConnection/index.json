@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/odooConnection/index.tsx",
+  "title": "Connessione Odoo",
+  "description": "Salva il server Odoo da cui questa azienda importa. La chiave API o la password dell'account è archiviata crittografata e non viene più mostrata.",
+  "help": {
+    "ariaLabel": "Informazioni sulla connessione Odoo",
+    "title": "Informazioni sulla connessione Odoo",
+    "overview": "Un server Odoo per azienda. L'importazione usa questa connessione JSON-RPC dal server API.",
+    "sections": [
+      {
+        "title": "Cosa inserire",
+        "body": "Usa lo stesso URL, database e accesso che funzionano in Odoo, più una chiave API o la password di quell'utente.",
+        "items": [
+          "L'URL è l'origine Odoo, ad esempio https://your-company.odoo.com.",
+          "JSON-RPC authenticate accetta una chiave API o la password dell'account per quell'accesso. Preferisci una chiave API quando Odoo ne fornisce una.",
+          "Lascia il segreto vuoto al salvataggio successivo per mantenere il valore già archiviato."
+        ]
+      }
+    ]
+  },
+  "form": {
+    "urlLabel": "URL Odoo",
+    "urlPlaceholder": "https://your-company.odoo.com",
+    "dbLabel": "Database",
+    "dbPlaceholder": "odoo",
+    "usernameLabel": "Accesso utente",
+    "usernamePlaceholder": "admin",
+    "apiKeyLabel": "Chiave API o password",
+    "apiKeyPlaceholder": "Chiave API Odoo o password dell'account",
+    "apiKeyHint": "JSON-RPC di Odoo accetta una chiave API o la password dell'account per questo accesso.",
+    "apiKeySetPlaceholder": "Lascia vuoto per mantenere il segreto salvato",
+    "apiKeySetHint": "Un segreto è già salvato. Inserisci una nuova chiave API o password solo per sostituirlo."
+  },
+  "save": "Salva",
+  "saved": "Connessione Odoo salvata",
+  "test": "Verifica",
+  "testOk": "Odoo ha accettato l'accesso",
+  "testError": "Verifica della connessione Odoo non riuscita",
+  "saveError": "Impossibile salvare la connessione Odoo",
+  "loadError": "Impossibile caricare la connessione Odoo"
+}

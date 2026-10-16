@@ -40,6 +40,14 @@
   "createFulfillment": "Create fulfillment",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "failed": "Failed"
+      }
+    },
     "order": "Order",
     "status": "Status",
     "items": {
