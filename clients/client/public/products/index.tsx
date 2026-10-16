@@ -1,14 +1,22 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {ChevronLeft, ChevronRight, Search, X} from "lucide-react";
+import {ChevronLeft, ChevronRight, Search, SlidersHorizontal, X} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import ShopProductCard from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
 import {SHOP_BUTTON_SECONDARY_CLASS, SHOP_FIELD_INPUT_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import ShopAdvancedFilters, {
+    clearShopFilterParams,
+    readShopFilterSelection,
+    shopFilterCount,
+    shopFilterQuery,
+} from "@eCommerceModule/clients/client/public/products/shopAdvancedFilters.tsx";
 import type {
+    ShopFacets,
     ShopProductsResponse,
     ShopTaxonomyResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
@@ -27,10 +35,35 @@ function pageWindow(page: number, totalPages: number): (number | null)[] {
     return sorted.flatMap((p, i) => (i > 0 && p - sorted[i - 1] > 1 ? [null, p] : [p]));
 }
 
+function priceChipLabel(
+    resolveLanguageKey: WithLanguageType["resolveLanguageKey"],
+    formatMoney: (amount: number | null | undefined) => string,
+    min: string,
+    max: string,
+): string {
+    if (min && max) {
+        return resolveLanguageKey("priceBetween")
+            .replace("{min}", formatMoney(Number(min)))
+            .replace("{max}", formatMoney(Number(max)));
+    }
+    if (min) return resolveLanguageKey("priceFrom").replace("{price}", formatMoney(Number(min)));
+    return resolveLanguageKey("priceUpTo").replace("{price}", formatMoney(Number(max)));
+}
+
+function FilterChip({label, onRemove, removeLabel}: {label: string; onRemove: () => void; removeLabel: string}) {
+    return (
+        <button type="button" onClick={onRemove} className="inline-flex items-center gap-1 rounded-full bg-shop-cream px-3 py-1.5 font-medium hover:bg-shop-sand" aria-label={removeLabel}>
+            {label} <X className="h-3.5 w-3.5" aria-hidden />
+        </button>
+    );
+}
+
 function ProductsPage({resolveLanguageKey}: WithLanguageType) {
+    const {formatMoney} = useShopConfig();
     const [searchParams, setSearchParams] = useSearchParams();
     const [result, setResult] = useState<ShopProductsResponse | null>(null);
     const [taxonomy, setTaxonomy] = useState<ShopTaxonomyResponse["data"] | null>(null);
+    const [facets, setFacets] = useState<ShopFacets | null>(null);
     const [loading, setLoading] = useState(true);
     const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +72,10 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
     const collectionSlug = searchParams.get("collection") ?? "";
     const sort = searchParams.get("sort") ?? "newest";
     const page = Math.max(1, Number(searchParams.get("page")) || 1);
+    const selection = readShopFilterSelection(searchParams);
+    const filterCount = shopFilterCount(selection);
+    const queryKey = searchParams.toString();
+    const [filtersOpen, setFiltersOpen] = useState(filterCount > 0);
     const [searchInput, setSearchInput] = useState(search);
 
     // Back/forward changes the URL search; keep the search box showing it.
@@ -47,15 +84,21 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
     }, [search]);
 
     const updateParams = useCallback(
-        (updates: Record<string, string | undefined>) => {
-            const next = new URLSearchParams(searchParams);
-            for (const [key, value] of Object.entries(updates)) {
-                if (value) next.set(key, value);
-                else next.delete(key);
-            }
-            setSearchParams(next);
+        (updates: Record<string, string | string[] | undefined>) => {
+            setSearchParams(prev => {
+                const next = new URLSearchParams(prev);
+                for (const [key, value] of Object.entries(updates)) {
+                    next.delete(key);
+                    if (Array.isArray(value)) {
+                        for (const item of value) if (item) next.append(key, item);
+                    } else if (value) {
+                        next.set(key, value);
+                    }
+                }
+                return next;
+            });
         },
-        [searchParams, setSearchParams],
+        [setSearchParams],
     );
 
     useEffect(() => {
@@ -74,17 +117,46 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
     }, []);
 
     useEffect(() => {
+        setFacets(null);
+        if (!filtersOpen) return;
         let cancelled = false;
-        setLoading(true);
         (async () => {
             try {
-                const res = await apiClient.post<ShopProductsResponse>("/api/eCommerce/shopProducts", {
+                const res = await apiClient.post<{data: ShopFacets}>("/api/eCommerce/shopFacets", {
                     search: search || undefined,
                     categorySlug: categorySlug || undefined,
                     collectionSlug: collectionSlug || undefined,
-                    sort,
-                    page,
+                });
+                if (!cancelled) setFacets(res.data.data);
+            } catch {
+                if (!cancelled) setFacets({total: 0, brands: [], types: [], attributes: [], inStock: 0, onSale: 0, rated: 0});
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [filtersOpen, search, categorySlug, collectionSlug]);
+
+    useEffect(() => {
+        let cancelled = false;
+        setLoading(true);
+        const active = readShopFilterSelection(searchParams);
+        const activeSearch = searchParams.get("search") ?? "";
+        const activeCategory = searchParams.get("category") ?? "";
+        const activeCollection = searchParams.get("collection") ?? "";
+        const requestedSort = searchParams.get("sort");
+        const activeSort = SHOP_PRODUCT_SORTS.find(option => option === requestedSort) ?? "newest";
+        const activePage = Math.max(1, Number(searchParams.get("page")) || 1);
+        (async () => {
+            try {
+                const res = await apiClient.post<ShopProductsResponse>("/api/eCommerce/shopProducts", {
+                    search: activeSearch || undefined,
+                    categorySlug: activeCategory || undefined,
+                    collectionSlug: activeCollection || undefined,
+                    sort: activeSort,
+                    page: activePage,
                     limit: PAGE_SIZE,
+                    ...shopFilterQuery(active),
                 });
                 if (!cancelled) setResult(res.data);
             } catch {
@@ -96,7 +168,7 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
         return () => {
             cancelled = true;
         };
-    }, [search, categorySlug, collectionSlug, sort, page]);
+    }, [queryKey, searchParams]);
 
     const totalPages = result ? Math.max(1, Math.ceil(result.total / PAGE_SIZE)) : 1;
     const categories = taxonomy?.categories ?? [];
@@ -107,14 +179,14 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
     const activeTopId = activeCategory?.parent ?? activeCategory?._id;
     const subCategories = activeTopId ? categories.filter(category => category.parent === activeTopId) : [];
     const activeCollection = collections.find(collection => collection.slug === collectionSlug);
-    const hasFilters = Boolean(search || categorySlug || collectionSlug);
+    const hasFilters = Boolean(search || categorySlug || collectionSlug || filterCount > 0);
 
     function goToPage(next: number) {
         updateParams({page: next > 1 ? String(next) : undefined});
         resultsRef.current?.scrollIntoView({block: "start"});
     }
 
-    const clearAll = () => updateParams({search: undefined, category: undefined, collection: undefined, page: undefined});
+    const clearAll = () => updateParams({search: undefined, category: undefined, collection: undefined, page: undefined, ...clearShopFilterParams()});
 
     return (
         <div className="flex flex-col gap-8">
@@ -147,7 +219,7 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
                             className={cn(SHOP_FIELD_INPUT_CLASS, "pl-10 sm:max-w-sm")}
                         />
                     </form>
-                    <div className="flex gap-3">
+                    <div className="flex flex-wrap gap-3">
                         {collections.length > 0 && (
                             <select
                                 value={collectionSlug}
@@ -171,8 +243,32 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
                                 <option key={option} value={option}>{resolveLanguageKey(`sort.${option}`)}</option>
                             ))}
                         </select>
+                        <button
+                            type="button"
+                            aria-expanded={filtersOpen}
+                            aria-controls="shop-advanced-filters"
+                            onClick={() => setFiltersOpen(open => !open)}
+                            className={cn(SHOP_BUTTON_SECONDARY_CLASS, "w-auto shrink-0 px-4", filterCount > 0 && "border-shop-ink")}
+                        >
+                            <SlidersHorizontal className="h-4 w-4" aria-hidden />
+                            {resolveLanguageKey("filters")}
+                            {filterCount > 0 && (
+                                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-shop-ink px-1 text-[11px] font-bold text-white tabular-nums">
+                                    {filterCount}
+                                </span>
+                            )}
+                        </button>
                     </div>
                 </div>
+
+                {filtersOpen && (
+                    <ShopAdvancedFilters
+                        resolveLanguageKey={resolveLanguageKey}
+                        facets={facets}
+                        selection={selection}
+                        onChange={updateParams}
+                    />
+                )}
 
                 {topCategories.length > 0 && (
                     <nav aria-label={resolveLanguageKey("categoriesLabel")} className="-mx-4 flex flex-col gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
@@ -223,20 +319,63 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
                     <div className="flex flex-wrap items-center gap-2 text-sm">
                         <span className="text-shop-ink-muted">{resolveLanguageKey("activeFilters")}</span>
                         {search && (
-                            <button type="button" onClick={() => updateParams({search: undefined, page: undefined})} className="inline-flex items-center gap-1 rounded-full bg-shop-cream px-3 py-1.5 font-medium hover:bg-shop-sand" aria-label={resolveLanguageKey("removeFilter").replace("{filter}", search)}>
-                                “{search}” <X className="h-3.5 w-3.5" aria-hidden />
-                            </button>
+                            <FilterChip label={`“${search}”`} onRemove={() => updateParams({search: undefined, page: undefined})} removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", search)} />
                         )}
                         {activeCategory && (
-                            <button type="button" onClick={() => updateParams({category: undefined, page: undefined})} className="inline-flex items-center gap-1 rounded-full bg-shop-cream px-3 py-1.5 font-medium hover:bg-shop-sand" aria-label={resolveLanguageKey("removeFilter").replace("{filter}", activeCategory.name)}>
-                                {activeCategory.name} <X className="h-3.5 w-3.5" aria-hidden />
-                            </button>
+                            <FilterChip label={activeCategory.name} onRemove={() => updateParams({category: undefined, page: undefined})} removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", activeCategory.name)} />
                         )}
                         {activeCollection && (
-                            <button type="button" onClick={() => updateParams({collection: undefined, page: undefined})} className="inline-flex items-center gap-1 rounded-full bg-shop-cream px-3 py-1.5 font-medium hover:bg-shop-sand" aria-label={resolveLanguageKey("removeFilter").replace("{filter}", activeCollection.title)}>
-                                {activeCollection.title} <X className="h-3.5 w-3.5" aria-hidden />
-                            </button>
+                            <FilterChip label={activeCollection.title} onRemove={() => updateParams({collection: undefined, page: undefined})} removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", activeCollection.title)} />
                         )}
+                        {(selection.priceMin || selection.priceMax) && (
+                            <FilterChip
+                                label={priceChipLabel(resolveLanguageKey, formatMoney, selection.priceMin, selection.priceMax)}
+                                onRemove={() => updateParams({minPrice: undefined, maxPrice: undefined, page: undefined})}
+                                removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", resolveLanguageKey("price"))}
+                            />
+                        )}
+                        {selection.inStock && (
+                            <FilterChip label={resolveLanguageKey("inStock")} onRemove={() => updateParams({stock: undefined, page: undefined})} removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", resolveLanguageKey("inStock"))} />
+                        )}
+                        {selection.onSale && (
+                            <FilterChip label={resolveLanguageKey("onSale")} onRemove={() => updateParams({sale: undefined, page: undefined})} removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", resolveLanguageKey("onSale"))} />
+                        )}
+                        {selection.minRating && (
+                            <FilterChip
+                                label={resolveLanguageKey("ratingAtLeast").replace("{rating}", selection.minRating)}
+                                onRemove={() => updateParams({rating: undefined, page: undefined})}
+                                removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", resolveLanguageKey("rating"))}
+                            />
+                        )}
+                        {selection.brands.map(brand => (
+                            <FilterChip
+                                key={brand}
+                                label={brand}
+                                onRemove={() => updateParams({brand: selection.brands.filter(item => item !== brand), page: undefined})}
+                                removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", brand)}
+                            />
+                        ))}
+                        {selection.types.map(type => (
+                            <FilterChip
+                                key={type}
+                                label={resolveLanguageKey(`type.${type}`)}
+                                onRemove={() => updateParams({type: selection.types.filter(item => item !== type), page: undefined})}
+                                removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", resolveLanguageKey(`type.${type}`))}
+                            />
+                        ))}
+                        {selection.attributes.map(pair => (
+                            <FilterChip
+                                key={`${pair.name}|${pair.value}`}
+                                label={`${pair.name}: ${pair.value}`}
+                                onRemove={() => updateParams({
+                                    attr: selection.attributes
+                                        .filter(item => item.name !== pair.name || item.value !== pair.value)
+                                        .map(item => `${item.name}|${item.value}`),
+                                    page: undefined,
+                                })}
+                                removeLabel={resolveLanguageKey("removeFilter").replace("{filter}", `${pair.name}: ${pair.value}`)}
+                            />
+                        ))}
                         <button type="button" onClick={clearAll} className="ml-1 font-medium underline underline-offset-4 hover:text-shop-accent">
                             {resolveLanguageKey("clearAll")}
                         </button>
