@@ -64,7 +64,22 @@ function ProviderProfileSection({
     );
     const editConfig = useMemo(() => {
         const node = findFieldNode(config?.nodes, field);
-        return config && node ? {...config, nodes: [node]} : undefined;
+        if (!config || !node?.field) return undefined;
+        // Section header owns the title — clear the field label / FormRepeater section title
+        // so toggling edit does not swap one heading for another and shift the layout.
+        return {
+            ...config,
+            nodes: [{
+                ...node,
+                field: {
+                    ...node.field,
+                    label: undefined,
+                    widgetProps: node.field.widgetProps
+                        ? {...node.field.widgetProps, title: undefined}
+                        : undefined,
+                },
+            }],
+        };
     }, [config, field]);
     const initialValues = useMemo(
         () => ({_id: profile._id, [field]: providerProfileInitialValues(profile, writeFields)[field]}),
@@ -103,18 +118,16 @@ function ProviderProfileSection({
 
     return (
         <section className="flex flex-col gap-3 rounded-lg border border-border/50 p-4">
-            {/* While editing, the field's own label (or repeater header) names the section. */}
-            {!editing && (
-                <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-sm font-medium">{resolveLanguageKey(SECTION_TITLE_KEYS[field])}</h4>
-                    {canEdit && (
-                        <Button type="button" variant="ghost" size="sm" onClick={() => setEditing(true)}>
-                            <Pencil size={14} />
-                            {resolveLanguageKey("account.edit")}
-                        </Button>
-                    )}
-                </div>
-            )}
+            {/* min-h-7 matches Button size="sm" so the title row stays put when Edit hides. */}
+            <div className="flex min-h-7 items-center justify-between gap-2">
+                <h4 className="text-sm font-medium">{resolveLanguageKey(SECTION_TITLE_KEYS[field])}</h4>
+                {canEdit && !editing && (
+                    <Button type="button" variant="ghost" size="sm" onClick={() => setEditing(true)}>
+                        <Pencil size={14} />
+                        {resolveLanguageKey("account.edit")}
+                    </Button>
+                )}
+            </div>
             {editing && editConfig ? (
                 <EditFormViewRenderer<Partial<EditProviderProfileFormType>>
                     config={editConfig}
