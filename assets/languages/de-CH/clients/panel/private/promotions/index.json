@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
   "title": "Promotions",
   "description": "Featured und sponsored inserat promotions. verwalten",
+  "help": {
+    "ariaLabel": "Über Promotionen",
+    "title": "Über Promotionen",
+    "overview": "Eine Promotion hebt ein Inserat als Featured oder Sponsored für ein Start–Ende-Fenster hervor. Lebenszyklus ist aktiv, pausiert oder gestoppt — über Aktionen, nicht per gewöhnlichem Bearbeiten.",
+    "sections": [
+      {
+        "title": "Lebenszyklus",
+        "items": [
+          "Aktiv — Promotion läuft im Datumsfenster.",
+          "Pausieren — nur aus aktiv; Boost gehalten, Kampagne nicht beendet.",
+          "Fortsetzen — nur aus pausiert und nur wenn endAt noch in der Zukunft liegt.",
+          "Stoppen — beendet dauerhaft mit Stoppgrund. Kein Fortsetzen mehr."
+        ]
+      },
+      {
+        "title": "Eigentum",
+        "items": [
+          "Typ ist Featured oder Sponsored.",
+          "Start und Ende begrenzen den Boost.",
+          "Gelöschte Promotionen sind nicht actionable, bis wiederhergestellt."
+        ],
+        "body": "Pausieren, Fortsetzen und Stoppen verlangen Eigentum am Inserat (oder Admin)."
+      }
+    ]
+  },
   "createPromotion": "Promotion erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

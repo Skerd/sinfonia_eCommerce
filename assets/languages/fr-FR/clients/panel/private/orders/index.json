@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Commandes",
   "description": "Gérer les commandes de services entre clients et fournisseurs.",
+  "help": {
+    "ariaLabel": "À propos des commandes",
+    "title": "À propos des commandes",
+    "overview": "Une commande marketplace est un engagement de service entre client et prestataire. Elle peut partir d'une annonce active (package et extras optionnels) ou d'une offre acceptée. Travail, livraison, révisions, jalons et escrow passent par des actions dédiées — pas par l'édition du statut sur le formulaire.",
+    "sections": [
+      {
+        "title": "Statuts",
+        "items": [
+          "En attente — créée ; en attente d'acceptation du prestataire.",
+          "Acceptée — le prestataire a accepté ; le travail n'a pas encore commencé.",
+          "En cours — le prestataire a démarré.",
+          "Terminée — travail fini et escrow restant libéré selon les règles.",
+          "Annulée — arrêtée avant la fin ; l'escrow suit les règles d'annulation."
+        ]
+      },
+      {
+        "title": "Cycle typique",
+        "items": [
+          "Créer depuis une annonce calcule le montant depuis annonce, package et extras ; un prestataire ne peut pas commander sa propre annonce.",
+          "Accepter / démarrer / annuler font avancer ou stoppent l'engagement.",
+          "Livraisons et demandes de révision sont sur des enregistrements liés.",
+          "Les jalons peuvent retenir et libérer l'escrow ; le dernier jalon en attente peut terminer la commande.",
+          "Un litige ouvert bloque certains mouvements d'argent jusqu'à résolution ou clôture."
+        ],
+        "body": "Les actions imposent qui peut faire évoluer la commande et depuis quel statut."
+      },
+      {
+        "title": "Enregistrements liés",
+        "items": [
+          "Les réservations planifient le temps sur une commande.",
+          "Les litiges s'ouvrent quand une partie conteste l'engagement.",
+          "Les avis portent sur une commande terminée et son annonce.",
+          "Le soft delete masque la commande ; elle peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createOrder": "Créer une commande",
   "fields": {
     "status": "Statut",

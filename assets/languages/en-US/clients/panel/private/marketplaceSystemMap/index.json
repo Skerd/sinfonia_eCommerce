@@ -2,6 +2,29 @@
   "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
   "title": "Marketplace System Map",
   "description": "Interactive map of marketplace models, listing/bid flows, escrow bridge, and capabilities. Pan, zoom, and click nodes for details.",
+  "help": {
+    "ariaLabel": "About Marketplace System Map",
+    "title": "About Marketplace System Map",
+    "overview": "This map is a living diagram of the marketplace module: models, how money and work move, and what the product can do. It does not change data — it explains the domain so operators and builders share the same picture.",
+    "sections": [
+      {
+        "title": "The three tabs",
+        "items": [
+          "Model graph — entities and how they reference each other (listings, orders, bids, escrow, and so on).",
+          "How it works — flows such as listing → order, task request → bid → award, and dispute / escrow outcomes.",
+          "Capabilities — what the module supports today at a product level."
+        ]
+      },
+      {
+        "title": "How to read it",
+        "items": [
+          "Pan and zoom the canvas. Click a node for a short description.",
+          "Use it when onboarding staff, designing permissions, or deciding where a new feature should live.",
+          "Operational work still happens on the list pages under Marketplace (listings, orders, disputes, and the rest)."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Model graph",
     "flows": "How it works",

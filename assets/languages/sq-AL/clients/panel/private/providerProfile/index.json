@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Profilet e Ofruesve",
   "description": "Shiko dhe modifiko profilet e ofruesve. Përdor menunë e rreshtit për të lidhur pagesat Stripe.",
+  "help": {
+    "ariaLabel": "Rreth profileve të ofruesit",
+    "title": "Rreth profileve të ofruesit",
+    "overview": "Një profil ofruesi është rekordi i shitësit në marketplace: bio, skills, rating, plus fusha Stripe Connect për pagesa. Onboarding Connect dhe refresh i statusit janë veprime te profili i përdoruesit aktual.",
+    "sections": [
+      {
+        "title": "Fushat e profilit",
+        "items": [
+          "Ofruesi është përdoruesi i këtij profili.",
+          "Bio dhe skills përshkruajnë shitësin në storefront.",
+          "Rating përmbledh feedback nga puna e përfunduar."
+        ]
+      },
+      {
+        "title": "Stripe Connect",
+        "items": [
+          "Create account link — nis ose vazhdon onboarding Express dhe kthen një URL.",
+          "Refresh account status — tërheq flag-et charges/payouts/details nga Stripe te profili.",
+          "Përdorni menunë e rreshtit për Connect kur është e disponueshme.",
+          "Profilet e soft-fshira nuk përdoren për Connect live."
+        ],
+        "body": "Konfigurimi i pagesave kërkon gateway të konfiguruar dhe URL return/refresh Connect të kompanisë."
+      }
+    ]
+  },
   "fields": {
     "provider": "Ofruesi",
     "bio": "Bio",

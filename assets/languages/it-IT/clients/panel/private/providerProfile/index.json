@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Profili dei fornitori",
   "description": "Visualizza e modifica i profili dei fornitori. Utilizza il menu della riga per collegare i pagamenti Stripe.",
+  "help": {
+    "ariaLabel": "Informazioni sui profili fornitore",
+    "title": "Informazioni sui profili fornitore",
+    "overview": "Un profilo fornitore è la scheda venditore marketplace: bio, competenze, rating, più i campi Stripe Connect per i pagamenti. Onboarding Connect e aggiornamento stato sono azioni sul profilo dell'utente corrente.",
+    "sections": [
+      {
+        "title": "Campi del profilo",
+        "items": [
+          "Il fornitore è l'utente di questo profilo.",
+          "Bio e competenze descrivono il venditore in vetrina.",
+          "Il rating riassume il feedback sul lavoro completato."
+        ]
+      },
+      {
+        "title": "Stripe Connect",
+        "items": [
+          "Crea link account — avvia o riprende l'onboarding Express e restituisce un URL.",
+          "Aggiorna stato account — porta i flag charges/payouts/details da Stripe sul profilo.",
+          "Usa il menu di riga per Connect quando disponibile.",
+          "I profili soft-eliminati non si usano per Connect live."
+        ],
+        "body": "La configurazione pagamenti richiede gateway configurato e URL return/refresh Connect dell'azienda."
+      }
+    ]
+  },
   "fields": {
     "provider": "Fornitore",
     "bio": "Bio",

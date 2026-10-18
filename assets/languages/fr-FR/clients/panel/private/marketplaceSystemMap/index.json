@@ -2,6 +2,29 @@
   "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
   "title": "Carte du système du marché",
   "description": "Carte interactive des modèles de marché, des flux de référencement/d'offres, du pont de dépôt et des capacités. Effectuez un panoramique, un zoom et cliquez sur les nœuds pour plus de détails.",
+  "help": {
+    "ariaLabel": "À propos de la carte système Marketplace",
+    "title": "À propos de la carte système Marketplace",
+    "overview": "Cette carte est un diagramme vivant du module marketplace : modèles, circulation de l'argent et du travail, et capacités produit. Elle ne modifie aucune donnée — elle explique le domaine.",
+    "sections": [
+      {
+        "title": "Les trois onglets",
+        "items": [
+          "Graphe de modèles — entités et références (annonces, commandes, offres, escrow, etc.).",
+          "Fonctionnement — flux annonce → commande, demande → offre → attribution, litiges / escrow.",
+          "Capacités — ce que le module prend en charge aujourd'hui."
+        ]
+      },
+      {
+        "title": "Comment la lire",
+        "items": [
+          "Panoramiquez et zoomez. Cliquez un nœud pour une courte description.",
+          "Utile pour l'onboarding, les permissions, ou décider où placer une fonctionnalité.",
+          "Le travail opérationnel reste sur les listes sous Marketplace."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Graphique du modèle",
     "flows": "Comment ça marche",

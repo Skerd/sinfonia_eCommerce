@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
   "title": "Kërkesat për detyra",
   "description": "Publikoni dhe menaxhoni kërkesat e blerësit për oferta, punë me porosi ose prokurim.",
+  "help": {
+    "ariaLabel": "Rreth kërkesave të detyrave",
+    "title": "Rreth kërkesave të detyrave",
+    "overview": "Një kërkesë detyre është një brief blerësi për oferta: titull, përshkrim, kategori, buxhet, vendndodhje dhe media. Hap oferta për 30 ditë. Ofruesit me listim aktiv në të njëjtën kategori dhe qytet mund të njoftohen.",
+    "sections": [
+      {
+        "title": "Statuset",
+        "items": [
+          "Open — pranon oferta deri në skadim.",
+          "Closed — ndaluar pa dhënie; ofertuesit në pritje njoftohen.",
+          "Awarded — një ofertë u pranua; close/reopen nuk e ndryshojnë më statusin."
+        ]
+      },
+      {
+        "title": "Veprimet",
+        "items": [
+          "Close — nga open; njofton përdoruesit që kanë ende ofertë në pritje.",
+          "Reopen — nga closed; rivendos dritaren 30-ditore.",
+          "Notify all — alarmon përsëri ofruesit që përputhen.",
+          "Vetëm kërkuesi (ose admin) mund ta ndryshojë statusin kështu."
+        ]
+      },
+      {
+        "title": "Si lidhet",
+        "items": [
+          "Ofertat lidhen me kërkesën; pranimi i një oferte e jep dhe krijon porosi.",
+          "Kategoria dhe qyteti drejtojnë matching — mbajini të sakta.",
+          "Soft delete i disponueshëm; restore e kthen rreshtin."
+        ]
+      }
+    ]
+  },
   "createTaskRequest": "Krijo kërkesë detyre",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
   "title": "Richieste di attività",
   "description": "Pubblica e gestisci le richieste degli acquirenti per preventivi, lavori personalizzati o appalti.",
+  "help": {
+    "ariaLabel": "Informazioni sulle richieste di lavoro",
+    "title": "Informazioni sulle richieste di lavoro",
+    "overview": "Una richiesta di lavoro è un brief dell'acquirente per preventivi: titolo, descrizione, categoria, budget, luogo e media. Accetta offerte per 30 giorni. I fornitori con un annuncio attivo nella stessa categoria e città possono essere notificati.",
+    "sections": [
+      {
+        "title": "Stati",
+        "items": [
+          "Aperta — accetta offerte fino alla scadenza.",
+          "Chiusa — fermata senza assegnazione; i offerenti in sospeso vengono notificati.",
+          "Assegnata — un'offerta è stata accettata; close/reopen non cambiano più lo stato."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Chiudi — da aperta; notifica chi ha ancora un'offerta in sospeso.",
+          "Riapri — da chiusa; reimposta la finestra di 30 giorni.",
+          "Notifica tutti — avvisa di nuovo i fornitori corrispondenti.",
+          "Solo il richiedente (o un admin) può cambiare lo stato così."
+        ]
+      },
+      {
+        "title": "Come si collega",
+        "items": [
+          "Le offerte si collegano alla richiesta; accettarne una assegna e crea un ordine.",
+          "Categoria e città guidano il matching — tienile accurate.",
+          "Soft delete disponibile; ripristina riporta la riga."
+        ]
+      }
+    ]
+  },
   "createTaskRequest": "Crea richiesta di attività",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

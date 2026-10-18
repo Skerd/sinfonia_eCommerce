@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Recensioni",
   "description": "Visualizza valutazioni e recensioni lasciate dai clienti.",
+  "help": {
+    "ariaLabel": "Informazioni sulle recensioni",
+    "title": "Informazioni sulle recensioni",
+    "overview": "Una recensione è il feedback del cliente su un ordine marketplace completato: rating, commento opzionale, legati a ordine e annuncio. Alimenta la media e il conteggio sull'annuncio.",
+    "sections": [
+      {
+        "title": "Cosa registri",
+        "items": [
+          "Il rating è il punteggio a stelle.",
+          "Il commento è testo libero opzionale.",
+          "Ordine e annuncio identificano cosa è stato recensito; il recensore è il cliente.",
+          "Crea serve a inviare feedback dopo un impegno completato."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Elenca, filtra e apri per moderazione o supporto.",
+          "Nessun workflow di pubblicazione separato — crea e modifica gestiscono il record direttamente.",
+          "Il soft delete toglie la recensione dalle viste predefinite; ripristina la riporta."
+        ]
+      }
+    ]
+  },
   "createReview": "Crea recensione",
   "fields": {
     "rating": "Valutazione",

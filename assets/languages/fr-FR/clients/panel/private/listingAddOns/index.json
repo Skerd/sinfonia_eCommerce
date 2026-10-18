@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
   "title": "Liste des modules complémentaires",
   "description": "Gérez les modules complémentaires facultatifs que les fournisseurs attachent à leurs annonces.",
+  "help": {
+    "ariaLabel": "À propos des extras d'annonce",
+    "title": "À propos des extras d'annonce",
+    "overview": "Un extra est une option que l'acheteur peut joindre en commandant une annonce — livraison express ou livrable supplémentaire. Il appartient à une annonce, a son propre prix et des jours de livraison optionnels, et doit utiliser la même devise que la commande.",
+    "sections": [
+      {
+        "title": "Ce que vous définissez",
+        "items": [
+          "Le nom est ce que voit l'acheteur au checkout.",
+          "Annonce et prestataire sont liés à cette offre.",
+          "Montant et devise doivent correspondre à la devise de l'annonce (ou du package).",
+          "Les jours de livraison, s'ils sont définis, s'ajoutent à la fenêtre de l'annonce ou du package."
+        ]
+      },
+      {
+        "title": "Quand ça compte",
+        "items": [
+          "Seuls les extras de cette annonce sont sélectionnables.",
+          "Un écart de devise bloque la commande.",
+          "Les extras soft-supprimés peuvent être restaurés ; une fois supprimés ils ne sont plus proposés."
+        ],
+        "body": "Les extras sont choisis à la création d'une commande depuis une annonce."
+      }
+    ]
+  },
   "createListingAddOn": "Créer un module complémentaire",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

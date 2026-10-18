@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
   "title": "Paketat e Listimeve",
   "description": "Menaxhoni paketat e shërbimeve që ofruesit ofrojnë për listimet e tyre.",
+  "help": {
+    "ariaLabel": "Rreth paketave të listimeve",
+    "title": "Rreth paketave të listimeve",
+    "overview": "Një paketë është një nivel çmimi në listim — Basic, Standard ose Premium. Kur blerësi porosit me paketë, çmimi dhe ditët e dorëzimit të paketës zëvendësojnë çmimin bazë të listimit.",
+    "sections": [
+      {
+        "title": "Çfarë vendosni",
+        "items": [
+          "Emri dhe përshkrimi opsional përshkruajnë nivelin.",
+          "Shuma dhe monedha janë ajo që ngarkon porosia kur zgjidhet kjo paketë.",
+          "Ditët e dorëzimit bëhen dritarja e afatit (add-on mund të shtojnë ende ditë).",
+          "Renditja e shfaqjes rendit paketat (më e ulëta së pari).",
+          "Listimi dhe ofruesi fiksohen në krijim."
+        ]
+      },
+      {
+        "title": "Si qëndron me listimin",
+        "items": [
+          "Një listim mund të ketë shumë paketa; asnjë nuk kërkohet për aktivizim.",
+          "Porosia pa paketë përdor çmimin bazë dhe ditët e listimit.",
+          "Soft delete e heq paketën nga ofertat; mund të restaurohet."
+        ]
+      }
+    ]
+  },
   "createListingPackage": "Krijo paketë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

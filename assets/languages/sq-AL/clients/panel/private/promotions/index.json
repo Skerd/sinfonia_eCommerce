@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
   "title": "Promocionet",
   "description": "Menaxho promocionet e listimeve të veçuara dhe të sponsorizuara.",
+  "help": {
+    "ariaLabel": "Rreth promocioneve",
+    "title": "Rreth promocioneve",
+    "overview": "Një promocion nxjerr në pah një listim si featured ose sponsored për një dritare fillim–mbarim. Statusi i ciklit është active, paused ose stopped — me veprime, jo me edit të zakonshëm.",
+    "sections": [
+      {
+        "title": "Cikli i jetës",
+        "items": [
+          "Active — promocioni është live brenda dritares së datave.",
+          "Pause — vetëm nga active; boost mbahet pa e mbyllur fushatën.",
+          "Resume — vetëm nga paused, dhe vetëm nëse endAt është ende në të ardhmen.",
+          "Stop — e mbyll përgjithmonë me arsye stop. Nuk rivendoset."
+        ]
+      },
+      {
+        "title": "Pronësia",
+        "items": [
+          "Lloji është featured ose sponsored.",
+          "Fillimi dhe mbarimi kufizojnë boost.",
+          "Promocionet e soft-fshira nuk janë actionable derisa të restaurohen."
+        ],
+        "body": "Pause, resume dhe stop kërkojnë pronësi të listimit (ose admin)."
+      }
+    ]
+  },
   "createPromotion": "Krijo promocion",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

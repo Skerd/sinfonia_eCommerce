@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
   "title": "Bookings",
   "description": "Manage scheduled service bookings.",
+  "help": {
+    "ariaLabel": "About Bookings",
+    "title": "About Bookings",
+    "overview": "A booking schedules a time window for a marketplace order with a provider — start, end, and timezone. It is the calendar attachment for service work that happens at an agreed time.",
+    "sections": [
+      {
+        "title": "What you set",
+        "items": [
+          "Order links the booking to the service engagement.",
+          "Provider is who is expected to deliver in that window.",
+          "Start and end define the slot; timezone stores how that slot was intended to be read.",
+          "Create a booking when the order needs a concrete appointment, not only a delivery due date."
+        ]
+      },
+      {
+        "title": "How it sits with orders",
+        "items": [
+          "Orders track money and delivery status; bookings track when people meet or work.",
+          "Open the related order for accept, start, deliver, dispute, or cancel.",
+          "Soft delete hides the booking; restore returns it."
+        ]
+      }
+    ]
+  },
   "createBooking": "Create booking",
   "fields": {
     "order": "Order",
@@ -15,5 +39,10 @@
     "deletedBy": "Deleted by"
   },
   "searchPlaceholder": "Search or add filters...",
-  "status": { "scheduled": "Scheduled", "in_progress": "In Progress", "completed": "Completed", "cancelled": "Cancelled" }
+  "status": {
+    "scheduled": "Scheduled",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
 }

@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
   "title": "Réservations",
   "description": "Gérer les réservations de services programmés.",
+  "help": {
+    "ariaLabel": "À propos des réservations",
+    "title": "À propos des réservations",
+    "overview": "Une réservation planifie une fenêtre horaire pour une commande marketplace avec un prestataire — début, fin et fuseau. C'est l'attachement calendrier pour un service à un moment convenu.",
+    "sections": [
+      {
+        "title": "Ce que vous définissez",
+        "items": [
+          "La commande lie la réservation à l'engagement.",
+          "Le prestataire est celui qui doit livrer dans cette fenêtre.",
+          "Début et fin définissent le créneau ; le fuseau indique comment le lire.",
+          "Créez une réservation quand il faut un rendez-vous concret, pas seulement une date de livraison."
+        ]
+      },
+      {
+        "title": "Lien avec les commandes",
+        "items": [
+          "Les commandes suivent l'argent et le statut de livraison ; les réservations suivent quand on travaille.",
+          "Ouvrez la commande liée pour accepter, démarrer, livrer, litiger ou annuler.",
+          "Le soft delete masque la réservation ; restaurer la ramène."
+        ]
+      }
+    ]
+  },
   "createBooking": "Créer une réservation",
   "fields": {
     "order": "Commande",

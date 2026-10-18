@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
   "title": "Demandes de tâches",
   "description": "Publiez et gérez les demandes des acheteurs pour des devis, des travaux personnalisés ou des achats.",
+  "help": {
+    "ariaLabel": "À propos des demandes de tâches",
+    "title": "À propos des demandes de tâches",
+    "overview": "Une demande de tâches est un brief acheteur pour des devis : titre, description, catégorie, budget, lieu et médias. Elle accepte des offres pendant 30 jours. Les prestataires avec une annonce active dans la même catégorie et ville peuvent être notifiés.",
+    "sections": [
+      {
+        "title": "Statuts",
+        "items": [
+          "Ouvert — accepte les offres jusqu'à expiration.",
+          "Fermé — arrêté sans attribution ; les enchérisseurs en attente sont notifiés.",
+          "Attribué — une offre a été acceptée ; close/reopen ne changent plus le statut."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Fermer — depuis ouvert ; notifie les utilisateurs qui ont encore une offre en attente.",
+          "Rouvrir — depuis fermé ; réinitialise la fenêtre de 30 jours.",
+          "Notifier tous — alerte à nouveau les prestataires correspondants.",
+          "Seul le demandeur (ou un admin) peut changer le statut ainsi."
+        ]
+      },
+      {
+        "title": "Connexions",
+        "items": [
+          "Les offres s'attachent à la demande ; accepter une offre l'attribue et crée une commande.",
+          "Catégorie et ville pilotent le matching — gardez-les exacts.",
+          "Soft delete disponible ; restaurer ramène la ligne."
+        ]
+      }
+    ]
+  },
   "createTaskRequest": "Créer une demande de tâche",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

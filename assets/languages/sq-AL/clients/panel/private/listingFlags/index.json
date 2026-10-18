@@ -2,6 +2,39 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
   "title": "Raportimet e Listimeve",
   "description": "Shqyrtoni raportimet e dërguara nga përdoruesit për listim të papërshtatshëm.",
+  "help": {
+    "ariaLabel": "Rreth flag të listimeve",
+    "title": "Rreth flag të listimeve",
+    "overview": "Një flag është raport moderimi: një përdorues shënon listimin si i papërshtatshëm, spam, mashtrues ose tjetër, me koment opsional. Vetëm adminët zgjidhin ose hedhin poshtë flag-et në pritje.",
+    "sections": [
+      {
+        "title": "Statuset",
+        "items": [
+          "Pending — në pritje të vendimit të adminit.",
+          "Reviewed — raporti u pranua; ruhet shënimi i zgjidhjes. Admin mund të çaktivizojë edhe listimin.",
+          "Dismissed — raporti u hodh poshtë; shënimi i zgjidhjes mbetet i detyrueshëm."
+        ]
+      },
+      {
+        "title": "Veprimet e adminit",
+        "items": [
+          "Resolve e vendos statusin reviewed dhe regjistron tekstin.",
+          "Opsionalisht çaktivizoni ofertën e listuar si pjesë e resolve.",
+          "Dismiss e vendos statusin dismissed me shpjegim.",
+          "Jo-adminët nuk mund t'i ekzekutojnë këto veprime."
+        ],
+        "body": "Resolve dhe dismiss funksionojnë vetëm ndërsa flag është pending dhe jo soft-fshirë."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijo regjistron një flag të ri kundër një listimi.",
+          "Ndrysho mund të përditësojë arsyen dhe detajet; listimi mbetet i fiksuar pas krijimit.",
+          "Flag-et e soft-fshira mund të restaurohen."
+        ]
+      }
+    ]
+  },
   "createListingFlag": "Krijo raportim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

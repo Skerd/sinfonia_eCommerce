@@ -2,6 +2,39 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
   "title": "Listing Flags",
   "description": "Review reports submitted by users for inappropriate listings.",
+  "help": {
+    "ariaLabel": "About Listing flags",
+    "title": "About Listing flags",
+    "overview": "A listing flag is a moderation report: a user marks a listing as inappropriate, spam, misleading, or other, with an optional comment. Only admins resolve or dismiss pending flags.",
+    "sections": [
+      {
+        "title": "Statuses",
+        "items": [
+          "Pending — waiting for an admin decision.",
+          "Reviewed — the report was upheld; a resolution note is stored. The admin may also deactivate the listing.",
+          "Dismissed — the report was rejected; a resolution note is still required."
+        ]
+      },
+      {
+        "title": "Admin actions",
+        "items": [
+          "Resolve sets status to reviewed and records the resolution text.",
+          "Optionally choose to deactivate the listed offer as part of resolve.",
+          "Dismiss sets status to dismissed with a resolution explanation.",
+          "Non-admins cannot run these actions."
+        ],
+        "body": "Resolve and dismiss only work while the flag is pending and not soft-deleted."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create records a new flag against a listing.",
+          "Edit can update reason and details while the listing itself stays fixed after create.",
+          "Soft-deleted flags can be restored."
+        ]
+      }
+    ]
+  },
   "createListingFlag": "Create listing flag",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

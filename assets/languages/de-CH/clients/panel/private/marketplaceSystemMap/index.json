@@ -2,6 +2,29 @@
   "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
   "title": "Marktplatz System Map",
   "description": "Interactive map von marktplatz models, listing/bid flows, escrow bridge, und capabilities. Pan, zoom, und click nodes für details.",
+  "help": {
+    "ariaLabel": "Über die Marktplatz-Systemkarte",
+    "title": "Über die Marktplatz-Systemkarte",
+    "overview": "Diese Karte ist ein lebendiges Diagramm des Marktplatz-Moduls: Modelle, wie Geld und Arbeit fliessen, und was das Produkt kann. Sie ändert keine Daten — sie erklärt die Domäne.",
+    "sections": [
+      {
+        "title": "Die drei Tabs",
+        "items": [
+          "Modellgraph — Entitäten und Referenzen (Inserate, Bestellungen, Gebote, Escrow usw.).",
+          "So funktioniert es — Abläufe wie Inserat → Bestellung, Auftragsanfrage → Gebot → Zuschlag, Dispute / Escrow.",
+          "Fähigkeiten — was das Modul heute produktseitig unterstützt."
+        ]
+      },
+      {
+        "title": "So lesen Sie sie",
+        "items": [
+          "Canvas schwenken und zoomen. Knoten anklicken für eine Kurzbeschreibung.",
+          "Nutzen Sie sie beim Onboarding, bei Berechtigungen oder wenn Sie entscheiden, wohin ein Feature gehört.",
+          "Operative Arbeit läuft weiterhin auf den Listen unter Marktplatz."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Modell graph",
     "flows": "How it works",

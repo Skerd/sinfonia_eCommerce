@@ -1,7 +1,43 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Categories",
-  "description": "Configure produkt categories für catalogs across ihr tenant.",
+  "description": "Organisieren Sie den Marktplatz-Katalog in einer Eltern-/Kind-Kategoriestruktur für Inserate und Auftragsanfragen.",
+  "help": {
+    "ariaLabel": "Über Inserat-Kategorien",
+    "title": "Über Inserat-Kategorien",
+    "overview": "Inserat-Kategorien sind die Taxonomie des Marktplatzes, nicht der Produktkatalog. Inserate und Auftragsanfragen verweisen auf eine Kategorie. Käufer browsen danach; Anbieter werden bei neuen Auftragsanfragen gematcht, wenn sie ein aktives Inserat in derselben Kategorie und Stadt haben.",
+    "sections": [
+      {
+        "title": "Der Baum",
+        "items": [
+          "Name ist, was Betreiber und Storefront anzeigen.",
+          "Elternteil ist optional. Leer lassen für eine Top-Level-Kategorie.",
+          "Reihenfolge sortiert Geschwister (niedriger zuerst). Auswahllisten und die Standardliste nutzen Reihenfolge, dann Name.",
+          "Slug wird beim Erstellen erzeugt (LCAT-{name}-{random}) und ist danach nicht editierbar. Pro Firma eindeutig.",
+          "Sie können das Elternteil nicht auf die Kategorie selbst oder einen Nachfahren setzen — das wäre ein Zyklus."
+        ],
+        "body": "Kategorien verschachteln sich. Eine Wurzel hat kein Elternteil; ein Kind zeigt auf eine andere Kategorie derselben Firma."
+      },
+      {
+        "title": "Wie der restliche Marktplatz sie nutzt",
+        "items": [
+          "Jedes Inserat braucht eine Kategorie, bevor es im Storefront sinnvoll ist.",
+          "Auftragsanfragen wählen eine Kategorie; passende Anbieter haben ein aktives Inserat in dieser Kategorie und derselben Stadt.",
+          "Demo-Seed kann einen breiten Service-Baum (Design, Tech, Schreiben usw.) für eine neue Firma anlegen.",
+          "Gelöschte Kategorien können wiederhergestellt werden. Lieber Nutzung auf Inseraten korrigieren, als eine noch referenzierte Kategorie zu löschen."
+        ],
+        "body": "Kategorien sind gemeinsame Konfiguration unter Mandant › Systemeinstellungen."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Erstellen öffnet das Kategorieformular. Bearbeiten öffnet eine bestehende Zeile.",
+          "Karten- und Sheet-Ansichten zeigen Name, Slug, Reihenfolge und Elternteil.",
+          "Löschen ist Soft-Delete und kann bei Berechtigung wiederhergestellt werden."
+        ]
+      }
+    ]
+  },
   "createCategory": "Kategorie erstellen",
   "fields": {
     "name": "Name",

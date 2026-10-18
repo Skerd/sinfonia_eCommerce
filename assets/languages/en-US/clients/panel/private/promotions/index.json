@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
   "title": "Promotions",
   "description": "Manage featured and sponsored listing promotions.",
+  "help": {
+    "ariaLabel": "About Promotions",
+    "title": "About Promotions",
+    "overview": "A promotion boosts one listing as featured or sponsored for a start–end window. Lifecycle status is active, paused, or stopped — changed by actions, not by ordinary edit.",
+    "sections": [
+      {
+        "title": "Lifecycle",
+        "items": [
+          "Active — the promotion is live within its date window.",
+          "Pause — only from active; the boost is held without ending the campaign.",
+          "Resume — only from paused, and only if endAt is still in the future.",
+          "Stop — ends the promotion permanently and records a stop reason. It cannot be resumed."
+        ]
+      },
+      {
+        "title": "Ownership",
+        "items": [
+          "Type is featured or sponsored.",
+          "Start and end bound when the boost applies.",
+          "Soft-deleted promotions are not actionable until restored."
+        ],
+        "body": "Pause, resume, and stop require ownership of the listing (or admin)."
+      }
+    ]
+  },
   "createPromotion": "Create promotion",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

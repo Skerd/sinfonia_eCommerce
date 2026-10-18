@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
   "title": "Componenti aggiuntivi dell'elenco",
   "description": "Gestisci i componenti aggiuntivi opzionali che i fornitori allegano ai loro elenchi.",
+  "help": {
+    "ariaLabel": "Informazioni sugli extra degli annunci",
+    "title": "Informazioni sugli extra degli annunci",
+    "overview": "Un extra è un'opzione che l'acquirente può aggiungere ordinando un annuncio — consegna urgente o un deliverable aggiuntivo. Appartiene a un annuncio, ha prezzo proprio e giorni di consegna opzionali, e deve usare la stessa valuta dell'ordine.",
+    "sections": [
+      {
+        "title": "Cosa imposti",
+        "items": [
+          "Il nome è ciò che l'acquirente vede al checkout.",
+          "Annuncio e fornitore sono legati a questa offerta.",
+          "Importo e valuta devono corrispondere alla valuta dell'annuncio (o del package).",
+          "I giorni di consegna, se impostati, si aggiungono alla finestra di annuncio o package."
+        ]
+      },
+      {
+        "title": "Quando conta",
+        "items": [
+          "Solo gli extra di quell'annuncio sono selezionabili.",
+          "Una valuta diversa blocca l'ordine.",
+          "Gli extra soft-eliminati si possono ripristinare; una volta eliminati non sono più offerti."
+        ],
+        "body": "Gli extra si scelgono creando un ordine da un annuncio."
+      }
+    ]
+  },
   "createListingAddOn": "Crea componente aggiuntivo",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

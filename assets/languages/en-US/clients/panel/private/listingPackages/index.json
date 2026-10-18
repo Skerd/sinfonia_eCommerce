@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
   "title": "Listing Packages",
   "description": "Manage service packages that providers offer for their listings.",
+  "help": {
+    "ariaLabel": "About Listing packages",
+    "title": "About Listing packages",
+    "overview": "A package is a priced tier on a listing — for example Basic, Standard, or Premium. When a buyer orders with a package, that package's price and delivery days replace the listing's base price for the order.",
+    "sections": [
+      {
+        "title": "What you set",
+        "items": [
+          "Name and optional description describe the tier.",
+          "Price amount and currency are what the order charges when this package is chosen.",
+          "Delivery days become the order's due-date window (add-ons may still add days).",
+          "Display order sorts packages on the listing (lower first).",
+          "Listing and provider are fixed when the package is created."
+        ]
+      },
+      {
+        "title": "How it sits with the listing",
+        "items": [
+          "A listing can have many packages; none are required to activate the listing.",
+          "Ordering without a package uses the listing base price and delivery days.",
+          "Soft delete removes the package from offers; it can be restored."
+        ]
+      }
+    ]
+  },
   "createListingPackage": "Create package",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

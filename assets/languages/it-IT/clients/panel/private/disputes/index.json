@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Controversie",
   "description": "Esaminare e risolvere le controversie tra clienti e fornitori.",
+  "help": {
+    "ariaLabel": "Informazioni sulle controversie",
+    "title": "Informazioni sulle controversie",
+    "overview": "Una controversia è un conflitto moderato da admin su un ordine marketplace. Finché è aperta o in revisione, gli esiti escrow si decidono a risoluzione o chiusura — non con modifiche di stato casuali.",
+    "sections": [
+      {
+        "title": "Stati",
+        "items": [
+          "Aperta — appena aperta; in attesa di presa in carico admin.",
+          "In revisione — un admin ha avviato la revisione formale.",
+          "Risolta — decisa sul percorso fornitore: l'ordine può completarsi e l'escrow rimanente viene rilasciato.",
+          "Chiusa — terminata senza quel percorso; l'escrow rimanente viene rimborsato secondo le regole di chiusura."
+        ]
+      },
+      {
+        "title": "Azioni admin",
+        "items": [
+          "Avvia revisione — solo da aperta; passa a in revisione.",
+          "Risolvi — da aperta o in revisione; nota di risoluzione obbligatoria; può completare l'ordine e rilasciare escrow.",
+          "Chiudi — da aperta o in revisione; rimborsa l'escrow rimanente secondo la chiusura.",
+          "Cliente e fornitore vengono notificati quando la controversia finisce."
+        ],
+        "body": "Avvia revisione, risolvi e chiudi richiedono un admin. Le controversie soft-eliminate non sono actionable."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Crea apre una controversia su un ordine con problemi.",
+          "Azioni di foglio o riga per revisione, risoluzione e chiusura.",
+          "Soft delete e ripristino seguono i permessi di lista."
+        ]
+      }
+    ]
+  },
   "createDispute": "Crea controversia",
   "fields": {
     "status": "Stato",

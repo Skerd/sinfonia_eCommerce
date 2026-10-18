@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
   "title": "Promotions",
   "description": "Gérez les promotions des annonces en vedette et sponsorisées.",
+  "help": {
+    "ariaLabel": "À propos des promotions",
+    "title": "À propos des promotions",
+    "overview": "Une promotion met en avant une annonce en featured ou sponsored sur une fenêtre début–fin. Le cycle de vie est actif, en pause ou arrêté — via des actions, pas une édition ordinaire.",
+    "sections": [
+      {
+        "title": "Cycle de vie",
+        "items": [
+          "Actif — la promotion est live dans sa fenêtre de dates.",
+          "Pause — uniquement depuis actif ; le boost est suspendu sans terminer la campagne.",
+          "Reprendre — uniquement depuis en pause, et seulement si endAt est encore dans le futur.",
+          "Arrêter — termine définitivement avec un motif. Pas de reprise."
+        ]
+      },
+      {
+        "title": "Propriété",
+        "items": [
+          "Le type est featured ou sponsored.",
+          "Début et fin bornent le boost.",
+          "Les promotions soft-supprimées ne sont pas actionnables tant qu'elles ne sont pas restaurées."
+        ],
+        "body": "Pause, reprise et arrêt exigent la propriété de l'annonce (ou admin)."
+      }
+    ]
+  },
   "createPromotion": "Créer une promotion",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

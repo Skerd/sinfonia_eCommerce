@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Provider Profiles",
   "description": "View and edit provider profiles. Use the row menu to connect Stripe payouts.",
+  "help": {
+    "ariaLabel": "About Provider profiles",
+    "title": "About Provider profiles",
+    "overview": "A provider profile is the marketplace seller record for a user: bio, skills, and rating, plus Stripe Connect fields for payouts. Connect onboarding and status refresh are actions on the current user's profile.",
+    "sections": [
+      {
+        "title": "Profile fields",
+        "items": [
+          "Provider is the user this profile belongs to.",
+          "Bio and skills describe the seller on the storefront.",
+          "Rating summarizes feedback from completed work."
+        ]
+      },
+      {
+        "title": "Stripe Connect",
+        "items": [
+          "Create account link — starts or resumes Express onboarding for the signed-in user's profile and returns a URL to open.",
+          "Refresh account status — pulls charges/payouts/details flags from Stripe onto the profile.",
+          "Use the row menu on this page for Connect when those actions are available.",
+          "Soft-deleted profiles are not used for live Connect flows."
+        ],
+        "body": "Payout setup needs the payment gateway configured and Connect return/refresh URLs set for the company."
+      }
+    ]
+  },
   "fields": {
     "provider": "Provider",
     "bio": "Bio",

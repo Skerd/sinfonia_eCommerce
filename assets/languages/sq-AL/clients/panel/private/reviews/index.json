@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Vlerësimet",
   "description": "Shiko vlerësimet dhe komentet e lëna nga klientët.",
+  "help": {
+    "ariaLabel": "Rreth vlerësimeve",
+    "title": "Rreth vlerësimeve",
+    "overview": "Një review është feedback i klientit për një porosi marketplace të përfunduar: vlerësim, koment opsional, i lidhur me porosinë dhe listimin. Ushqen mesataren dhe numrin e review te listimi.",
+    "sections": [
+      {
+        "title": "Çfarë regjistroni",
+        "items": [
+          "Vlerësimi është nota me yje.",
+          "Komenti është tekst i lirë opsional.",
+          "Porosia dhe listimi identifikojnë çfarë u vlerësua; recensuesi është klienti.",
+          "Krijo shërben për të dërguar feedback pas një angazhimi të përfunduar."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Listoni, filtroni dhe hapni për moderim ose support.",
+          "Nuk ka workflow të veçantë publish — krijo dhe ndrysho menaxhojnë rekordin drejtpërdrejt.",
+          "Soft delete e heq review nga pamjet e parazgjedhura; restore e kthen."
+        ]
+      }
+    ]
+  },
   "createReview": "Shto vlerësim",
   "fields": {
     "rating": "Vlerësimi",

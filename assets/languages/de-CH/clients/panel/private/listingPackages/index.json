@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
   "title": "Inserat Packages",
   "description": "Service packages that providers offer für their inserate. verwalten",
+  "help": {
+    "ariaLabel": "Über Inserat-Pakete",
+    "title": "Über Inserat-Pakete",
+    "overview": "Ein Paket ist eine Preisstufe am Inserat — z. B. Basic, Standard, Premium. Bei Bestellung mit Paket ersetzen dessen Preis und Lieferage den Basispreis des Inserats.",
+    "sections": [
+      {
+        "title": "Was Sie setzen",
+        "items": [
+          "Name und optionale Beschreibung beschreiben die Stufe.",
+          "Preisbetrag und Währung sind der Bestellbetrag bei Wahl dieses Pakets.",
+          "Lieferage werden zum Fälligkeitsfenster (Add-ons können Tage addieren).",
+          "Anzeigereihenfolge sortiert Pakete am Inserat (niedriger zuerst).",
+          "Inserat und Anbieter sind beim Erstellen fix."
+        ]
+      },
+      {
+        "title": "Bezug zum Inserat",
+        "items": [
+          "Ein Inserat kann viele Pakete haben; keines ist nötig zum Aktivieren.",
+          "Bestellung ohne Paket nutzt Basispreis und Lieferage des Inserats.",
+          "Soft-Delete nimmt das Paket aus dem Angebot; Wiederherstellen ist möglich."
+        ]
+      }
+    ]
+  },
   "createListingPackage": "Paket erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

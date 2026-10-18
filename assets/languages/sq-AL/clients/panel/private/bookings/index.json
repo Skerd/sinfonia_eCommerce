@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
   "title": "Rezervimet",
   "description": "Menaxho rezervimet e shërbimeve.",
+  "help": {
+    "ariaLabel": "Rreth rezervimeve",
+    "title": "Rreth rezervimeve",
+    "overview": "Një booking planifikon një dritare kohe për një porosi marketplace me një ofrues — fillim, mbarim dhe zonë orare. Është bashkëngjitja e kalendarit për punë shërbimi në orarin e rënë dakord.",
+    "sections": [
+      {
+        "title": "Çfarë vendosni",
+        "items": [
+          "Porosia lidh booking me angazhimin.",
+          "Ofruesi është ai që pritet të dorëzojë në atë dritare.",
+          "Fillimi dhe mbarimi përcaktojnë slot-in; timezone ruan si duhet të lexohet.",
+          "Krijoni booking kur porosia ka nevojë për takim konkret, jo vetëm datë dorëzimi."
+        ]
+      },
+      {
+        "title": "Si qëndron me porositë",
+        "items": [
+          "Porositë ndjekin paratë dhe statusin e dorëzimit; booking ndjekin kur punohet.",
+          "Hapni porosinë e lidhur për accept, start, deliver, dispute ose cancel.",
+          "Soft delete e fsheh booking; restore e kthen."
+        ]
+      }
+    ]
+  },
   "createBooking": "Krijo rezervim",
   "fields": {
     "order": "Porosia",
@@ -15,5 +39,10 @@
     "deletedBy": "Fshirë nga"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "status": { "scheduled": "Planifikuar", "in_progress": "Në progres", "completed": "Përfunduar", "cancelled": "Anuluar" }
+  "status": {
+    "scheduled": "Planifikuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
 }

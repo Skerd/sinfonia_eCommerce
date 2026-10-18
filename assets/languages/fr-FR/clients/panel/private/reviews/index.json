@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Avis",
   "description": "Consultez les notes et les avis laissés par les clients.",
+  "help": {
+    "ariaLabel": "À propos des avis",
+    "title": "À propos des avis",
+    "overview": "Un avis est le retour client sur une commande marketplace terminée : note, commentaire optionnel, liés à la commande et à l'annonce. Il alimente la moyenne et le nombre d'avis de l'annonce.",
+    "sections": [
+      {
+        "title": "Ce que vous enregistrez",
+        "items": [
+          "La note est le score en étoiles.",
+          "Le commentaire est un texte libre optionnel.",
+          "Commande et annonce identifient ce qui a été évalué ; l'auteur est le client.",
+          "Créer sert à soumettre un retour après un engagement terminé."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Lister, filtrer et ouvrir pour modération ou support.",
+          "Pas de workflow de publication séparé — créer et modifier gèrent l'enregistrement directement.",
+          "Le soft delete retire l'avis des vues par défaut ; restaurer le ramène."
+        ]
+      }
+    ]
+  },
   "createReview": "Créer un avis",
   "fields": {
     "rating": "Note",

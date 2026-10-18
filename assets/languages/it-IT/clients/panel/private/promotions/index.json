@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
   "title": "Promozioni",
   "description": "Gestisci promozioni di elenchi in primo piano e sponsorizzati.",
+  "help": {
+    "ariaLabel": "Informazioni sulle promozioni",
+    "title": "Informazioni sulle promozioni",
+    "overview": "Una promozione spinge un annuncio come featured o sponsored per una finestra inizio–fine. Lo stato del ciclo di vita è attivo, in pausa o interrotto — tramite azioni, non con una modifica ordinaria.",
+    "sections": [
+      {
+        "title": "Ciclo di vita",
+        "items": [
+          "Attivo — la promozione è live nella finestra di date.",
+          "Pausa — solo da attivo; il boost è sospeso senza chiudere la campagna.",
+          "Riprendi — solo da in pausa, e solo se endAt è ancora nel futuro.",
+          "Interrompi — termina definitivamente con un motivo. Non si riprende."
+        ]
+      },
+      {
+        "title": "Proprietà",
+        "items": [
+          "Il tipo è featured o sponsored.",
+          "Inizio e fine delimitano il boost.",
+          "Le promozioni soft-eliminate non sono actionable finché non ripristinate."
+        ],
+        "body": "Pausa, ripresa e interruzione richiedono la proprietà dell'annuncio (o admin)."
+      }
+    ]
+  },
   "createPromotion": "Crea promozione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

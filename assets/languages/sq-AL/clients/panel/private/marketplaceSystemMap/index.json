@@ -2,6 +2,29 @@
   "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
   "title": "Harta e sistemit Marketplace",
   "description": "Hartë interaktive e modeleve të marketplace, rrjedhave të listimeve/ofertave, urës së eskrosë dhe aftësive. Lëvizni, zmadhoni dhe klikoni nyjet për detaje.",
+  "help": {
+    "ariaLabel": "Rreth hartës së sistemit Marketplace",
+    "title": "Rreth hartës së sistemit Marketplace",
+    "overview": "Kjo hartë është një diagram i gjallë i modulit marketplace: modelet, si lëvizin paratë dhe puna, dhe çfarë mund të bëjë produkti. Nuk ndryshon të dhëna — shpjegon domenin.",
+    "sections": [
+      {
+        "title": "Tre tab-et",
+        "items": [
+          "Grafiku i modeleve — entitetet dhe referencat (listime, porosi, oferta, escrow, etj.).",
+          "Si funksionon — rrjedha listim → porosi, kërkesë → ofertë → dhënie, mosmarrëveshje / escrow.",
+          "Aftësitë — çfarë mbështet moduli sot në nivel produkti."
+        ]
+      },
+      {
+        "title": "Si ta lexoni",
+        "items": [
+          "Pan dhe zoom në canvas. Klikoni një nyje për përshkrim të shkurtër.",
+          "Përdoreni për onboarding, leje, ose ku duhet të jetojë një veçori e re.",
+          "Puna operacionale vazhdon te listat nën Marketplace."
+        ]
+      }
+    ]
+  },
   "tabs": {
     "models": "Grafiku i modeleve",
     "flows": "Si funksionon",

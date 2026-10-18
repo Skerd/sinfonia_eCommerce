@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Listimet",
   "description": "Menaxho listimet e produkteve dhe shërbimeve për dyqanin në qiramarrje.",
+  "help": {
+    "ariaLabel": "Rreth listimeve",
+    "title": "Rreth listimeve",
+    "overview": "Një listim është oferta e ofruesit në marketplace — shërbim ose gig me kategori, media, çmim dhe paketa ose add-on opsionale. Vetëm një listim aktiv mund të porositet. Statusi nuk ndryshon me edit të zakonshëm; aktivizo dhe çaktivizo janë veprime të dedikuara.",
+    "sections": [
+      {
+        "title": "Statusi",
+        "items": [
+          "Draft është parazgjedhja ndërsa ndërtoni titullin, kategorinë, median dhe çmimin.",
+          "Aktivizimi kërkon çmim dhe monedhë. Pa to listimi nuk bëhet i porositshëm.",
+          "Çaktivizimi e heq offline listimin aktiv pa e fshirë.",
+          "Vetëm ofruesi i listimit (ose admin) mund të aktivizojë ose çaktivizojë."
+        ],
+        "body": "Statusi është draft, active ose inactive. PATCH nuk mund ta ndryshojë."
+      },
+      {
+        "title": "Çfarë konfiguroni",
+        "items": [
+          "Titulli, përshkrimi, kategoria, tags, FAQ dhe kërkesat e blerësit përshkruajnë ofertën.",
+          "Lloji i çmimit është fixed ose hourly. Çmimi dhe monedha ushqejnë porositë nga çmimi bazë kur nuk zgjidhet paketë.",
+          "Ditët e dorëzimit vendosin dritaren e afatit për porositë nga çmimi bazë.",
+          "Imazhi kryesor është i detyrueshëm; galeritë dhe vendndodhja (shtet / qark / qytet) janë opsionale.",
+          "Paketat dhe add-on janë rekorde të ndara; zëvendësojnë ose shtojnë çmimin dhe dorëzimin kur zgjidhen."
+        ]
+      },
+      {
+        "title": "Si lidhet",
+        "items": [
+          "Porositë mund të krijohen nga një listim aktiv (opsionalisht me paketë dhe add-on).",
+          "Promocionet rrisin dukshmërinë për një dritare datash.",
+          "Flag-et lejojnë raportimin e një listimi; zgjidhja e flag mund ta çaktivizojë.",
+          "Review-t përditësojnë vlerësimin dhe numrin te listimi.",
+          "Fshirja është soft delete dhe mund të restaurohet."
+        ]
+      }
+    ]
+  },
   "createListing": "Krijo listim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

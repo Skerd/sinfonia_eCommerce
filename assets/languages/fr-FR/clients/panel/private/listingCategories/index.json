@@ -1,7 +1,43 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Catégories",
-  "description": "Configurez les catégories de produits pour les catalogues dans votre locataire.",
+  "description": "Organisez le catalogue marketplace en une arborescence parent/enfant utilisée par les annonces et les demandes de tâches.",
+  "help": {
+    "ariaLabel": "À propos des catégories d'annonces",
+    "title": "À propos des catégories d'annonces",
+    "overview": "Les catégories d'annonces sont la taxonomie du marketplace, pas du catalogue produits. Annonces et demandes de tâches pointent vers une catégorie. Les acheteurs naviguent ainsi ; les prestataires sont mis en relation pour une nouvelle demande lorsqu'ils ont une annonce active dans la même catégorie et la même ville.",
+    "sections": [
+      {
+        "title": "L'arborescence",
+        "items": [
+          "Le nom est ce que voient les opérateurs et la vitrine.",
+          "Le parent est optionnel. Laissez vide pour une catégorie racine.",
+          "L'ordre trie les frères (plus petit d'abord). Les listes de sélection et la vue liste utilisent ordre, puis nom.",
+          "Le slug est généré à la création (LCAT-{name}-{random}) et n'est plus modifiable. Unique par société.",
+          "Vous ne pouvez pas définir comme parent la catégorie elle-même ou un de ses descendants — cela créerait un cycle."
+        ],
+        "body": "Les catégories s'imbriquent. Une racine n'a pas de parent ; un enfant pointe vers une autre catégorie de la même société."
+      },
+      {
+        "title": "Comment le reste du marketplace les utilise",
+        "items": [
+          "Chaque annonce doit choisir une catégorie pour être utile en vitrine.",
+          "Les demandes de tâches choisissent une catégorie ; les prestataires correspondants ont une annonce active dans cette catégorie et la même ville.",
+          "Les données de démo peuvent créer un large arbre de services (design, tech, rédaction, etc.) pour une nouvelle société.",
+          "Les catégories soft-supprimées peuvent être restaurées. Préférez corriger l'usage sur les annonces plutôt que supprimer une catégorie encore référencée."
+        ],
+        "body": "Les catégories sont une configuration partagée sous Tenancy › Paramètres système."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer ouvre le formulaire. Modifier ouvre une ligne existante.",
+          "Les vues carte et feuille montrent nom, slug, ordre et parent.",
+          "La suppression est un soft delete et peut être restaurée selon les droits."
+        ]
+      }
+    ]
+  },
   "createCategory": "Créer une catégorie",
   "fields": {
     "name": "Nom",

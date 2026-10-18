@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
   "title": "Aufgabe requests",
   "description": "Post und verwalten käufer requests für quotes, custom arbeit, oder procurement.",
+  "help": {
+    "ariaLabel": "Über Auftragsanfragen",
+    "title": "Über Auftragsanfragen",
+    "overview": "Eine Auftragsanfrage ist ein Käuferbriefing für Angebote: Titel, Beschreibung, Kategorie, Budget, Ort und Medien. Sie nimmt 30 Tage Gebote an. Anbieter mit aktivem Inserat in derselben Kategorie und Stadt können benachrichtigt werden.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Offen — nimmt Gebote bis zum Ablauf an.",
+          "Geschlossen — ohne Zuschlag beendet; ausstehende Bieter werden benachrichtigt.",
+          "Vergeben — ein Gebot wurde angenommen; Close/Reopen ändern den Status nicht mehr."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Schliessen — aus offen; benachrichtigt Nutzer mit noch ausstehendem Gebot.",
+          "Wieder öffnen — aus geschlossen; setzt das 30-Tage-Fenster neu.",
+          "Alle benachrichtigen — warnt passende Anbieter erneut.",
+          "Nur der Anfragende (oder Admin) darf den Status so ändern."
+        ]
+      },
+      {
+        "title": "Verbindungen",
+        "items": [
+          "Gebote hängen an der Anfrage; Annahme vergibt und erzeugt eine Bestellung.",
+          "Kategorie und Stadt steuern Matching — halten Sie sie genau.",
+          "Soft-Delete möglich; Wiederherstellen bringt die Zeile zurück."
+        ]
+      }
+    ]
+  },
   "createTaskRequest": "Aufgabe antrag erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

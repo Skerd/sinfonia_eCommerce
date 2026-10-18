@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Offres",
   "description": "Affichez et gérez les offres sur les demandes de tâches.",
+  "help": {
+    "ariaLabel": "À propos des offres",
+    "title": "À propos des offres",
+    "overview": "Une offre est la proposition d'un prestataire sur une demande : montant, devise, jours de livraison et texte. Les offres en attente peuvent être acceptées ou rejetées. En accepter une attribue la tâche et démarre une commande.",
+    "sections": [
+      {
+        "title": "Statuts",
+        "items": [
+          "En attente — en attente du demandeur.",
+          "Acceptée — cette offre a gagné ; la demande devient attribuée.",
+          "Rejetée — refusée ou retirée ; les autres offres en attente sont rejetées automatiquement quand une est acceptée."
+        ]
+      },
+      {
+        "title": "Accepter et rejeter",
+        "items": [
+          "Accepter marque l'offre, rejette toutes les autres en attente, passe la demande à attribuée et crée une commande en attente.",
+          "Rejeter (ou retirer) ne passe que cette offre à rejetée.",
+          "Seule une offre en attente peut être acceptée ou rejetée."
+        ],
+        "body": "Ce sont des actions sur une offre en attente, pas des éditions de champs ordinaires."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer publie une nouvelle offre sur une demande ouverte.",
+          "Utilisez les actions de ligne ou de feuille pour accepter et rejeter.",
+          "Les offres soft-supprimées peuvent être restaurées selon les droits."
+        ]
+      }
+    ]
+  },
   "createBid": "Créer une enchère",
   "fields": {
     "amount": "Montant",

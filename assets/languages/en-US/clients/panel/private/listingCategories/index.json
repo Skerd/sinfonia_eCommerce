@@ -1,7 +1,43 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Categories",
-  "description": "Configure product categories for catalogs across your tenant.",
+  "description": "Organize the marketplace catalog into a parent/child category tree used by listings and task requests.",
+  "help": {
+    "ariaLabel": "About Listing categories",
+    "title": "About Listing categories",
+    "overview": "Listing categories are the taxonomy for the marketplace, not the product-store catalog. Listings and task requests both point at a category. Buyers browse by them; providers get matched for new task requests when they have an active listing in the same category and city.",
+    "sections": [
+      {
+        "title": "The tree",
+        "items": [
+          "Name is what operators and the storefront show.",
+          "Parent is optional. Leave it empty for a top-level category.",
+          "Order sorts siblings (lower first). Select lists and the default list view use order, then name.",
+          "Slug is generated on create (LCAT-{name}-{random}) and is not editable afterward. It must stay unique per company.",
+          "You cannot set a category's parent to itself or to one of its descendants — that would create a cycle."
+        ],
+        "body": "Categories nest. A root has no parent; a child points at another category in the same company."
+      },
+      {
+        "title": "How the rest of the marketplace uses them",
+        "items": [
+          "Every listing must pick a category before it can be useful on the storefront.",
+          "Task requests pick a category; matching providers are those with an active listing in that category and the same city.",
+          "Demo seed data can create a broad services-style tree (design, tech, writing, and so on) for a new company.",
+          "Soft-deleted categories can be restored. Prefer fixing usage on listings over deleting a category that is still referenced."
+        ],
+        "body": "Categories are shared configuration under Tenancy › System settings."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create opens the category form. Edit opens an existing row.",
+          "Card and sheet views show name, slug, order, and parent.",
+          "Deleting is a soft delete and can be restored from the row actions when you have permission."
+        ]
+      }
+    ]
+  },
   "createCategory": "Create category",
   "fields": {
     "name": "Name",

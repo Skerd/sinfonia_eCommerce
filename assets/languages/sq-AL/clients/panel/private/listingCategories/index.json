@@ -1,7 +1,43 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Kategoritë",
-  "description": "Konfiguroni kategoritë e produkteve për katalogët në qiramarrjen tuaj.",
+  "description": "Organizoni katalogun e marketplace në një pemë kategori prind/fëmijë që përdoret nga listimet dhe kërkesat e detyrave.",
+  "help": {
+    "ariaLabel": "Rreth kategorive të listimeve",
+    "title": "Rreth kategorive të listimeve",
+    "overview": "Kategoritë e listimeve janë taksonomia e marketplace, jo katalogu i produkteve. Listimet dhe kërkesat e detyrave tregojnë një kategori. Blerësit shfletojnë sipas tyre; ofruesit përputhen me kërkesa të reja kur kanë një listim aktiv në të njëjtën kategori dhe qytet.",
+    "sections": [
+      {
+        "title": "Pema",
+        "items": [
+          "Emri është ajo që shohin operatorët dhe storefront.",
+          "Prindi është opsional. Lëreni bosh për kategori të nivelit të lartë.",
+          "Renditja rendit vëllezërit (më e ulëta së pari). Listat e zgjedhjes dhe pamja e listës përdorin renditjen, pastaj emrin.",
+          "Slug gjenerohet në krijim (LCAT-{name}-{random}) dhe nuk editohet më. Unik për kompani.",
+          "Nuk mund ta vendosni prindin te kategoria vetë ose te një pasardhës — do të krijonte cikël."
+        ],
+        "body": "Kategoritë folezohen. Rrënja nuk ka prind; fëmija tregon një kategori tjetër të së njëjtës kompani."
+      },
+      {
+        "title": "Si i përdor pjesa tjetër e marketplace",
+        "items": [
+          "Çdo listim duhet të zgjedhë një kategori për të qenë i dobishëm në storefront.",
+          "Kërkesat e detyrave zgjedhin kategori; ofruesit që përputhen kanë listim aktiv në atë kategori dhe të njëjtin qytet.",
+          "Seed-i demo mund të krijojë një pemë të gjerë shërbimesh (design, tech, shkrim, etj.) për një kompani të re.",
+          "Kategoritë e soft-fshira mund të restaurohen. Preferoni të korrigjoni përdorimin te listimet sesa të fshini një kategori ende të referuar."
+        ],
+        "body": "Kategoritë janë konfigurim i përbashkët nën Tenancy › System settings."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijo hap formularin. Ndrysho hap një rresht ekzistues.",
+          "Pamjet kartë dhe sheet tregojnë emrin, slug, renditjen dhe prindin.",
+          "Fshirja është soft delete dhe mund të restaurohet me leje."
+        ]
+      }
+    ]
+  },
   "createCategory": "Krijo kategori",
   "fields": {
     "name": "Emri",

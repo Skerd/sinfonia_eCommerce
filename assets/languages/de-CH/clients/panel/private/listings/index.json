@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Inserate",
   "description": "Produkt und service inserate für ihr tenant storefront. verwalten",
+  "help": {
+    "ariaLabel": "Über Inserate",
+    "title": "Über Inserate",
+    "overview": "Ein Inserat ist das Angebot eines Anbieters — Service oder Gig mit Kategorie, Medien, Preis und optionalen Paketen oder Add-ons. Nur ein aktives Inserat ist bestellbar. Status ändert sich nicht per gewöhnlichem Bearbeiten; Aktivieren und Deaktivieren sind eigene Aktionen.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Entwurf ist der Standard, während Titel, Kategorie, Medien und Preis entstehen.",
+          "Aktivieren verlangt Preis und Währung. Ohne sie ist das Inserat nicht bestellbar.",
+          "Deaktivieren nimmt ein aktives Inserat offline, ohne es zu löschen.",
+          "Nur der Anbieter des Inserats (oder ein Admin) kann aktivieren oder deaktivieren."
+        ],
+        "body": "Status ist Entwurf, aktiv oder inaktiv. PATCH kann ihn nicht ändern."
+      },
+      {
+        "title": "Was Sie konfigurieren",
+        "items": [
+          "Titel, Beschreibung, Kategorie, Tags, FAQs und Käuferanforderungen beschreiben das Angebot.",
+          "Preistyp ist fest oder stündlich. Preis und Währung treiben Bestellungen vom Basispreis, wenn kein Paket gewählt wird.",
+          "Lieferage setzen das Standard-Fälligkeitsfenster für Bestellungen vom Basispreis.",
+          "Hauptbild ist Pflicht; Galerien und Ort (Land / Kanton / Stadt) sind optional.",
+          "Pakete und Add-ons sind eigene Datensätze am Inserat; sie ersetzen oder erweitern Preis und Lieferzeit bei Auswahl."
+        ]
+      },
+      {
+        "title": "Verbindungen",
+        "items": [
+          "Bestellungen können aus einem aktiven Inserat entstehen (optional mit Paket und Add-ons).",
+          "Promotionen steigern die Sichtbarkeit für ein Zeitfenster.",
+          "Flags melden ein Inserat; Auflösen eines Flags kann es deaktivieren.",
+          "Reviews speisen Bewertung und Anzahl auf dem Inserat.",
+          "Löschen ist Soft-Delete und wiederherstellbar."
+        ]
+      }
+    ]
+  },
   "createListing": "Inserat erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

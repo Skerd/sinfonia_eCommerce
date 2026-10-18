@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Provider Profiles",
   "description": "Und bearbeiten provider profiles. Use die zeile menü bis connect Stripe payouts. anzeigen",
+  "help": {
+    "ariaLabel": "Über Anbieterprofile",
+    "title": "Über Anbieterprofile",
+    "overview": "Ein Anbieterprofil ist der Marktplatz-Verkäuferdatensatz: Bio, Skills, Bewertung sowie Stripe-Connect-Felder für Auszahlungen. Connect-Onboarding und Status-Refresh sind Aktionen am Profil des eingeloggten Users.",
+    "sections": [
+      {
+        "title": "Profilfelder",
+        "items": [
+          "Anbieter ist der User dieses Profils.",
+          "Bio und Skills beschreiben den Verkäufer im Storefront.",
+          "Bewertung fasst Feedback aus abgeschlossener Arbeit zusammen."
+        ]
+      },
+      {
+        "title": "Stripe Connect",
+        "items": [
+          "Account-Link erstellen — startet oder setzt Express-Onboarding fort und liefert eine URL.",
+          "Kontostatus aktualisieren — zieht Charges/Payouts/Details-Flags von Stripe aufs Profil.",
+          "Zeilenmenü auf dieser Seite für Connect, wenn verfügbar.",
+          "Gelöschte Profile werden nicht für Live-Connect genutzt."
+        ],
+        "body": "Auszahlungs-Setup braucht konfiguriertes Payment-Gateway und Connect Return/Refresh-URLs der Firma."
+      }
+    ]
+  },
   "fields": {
     "provider": "Anbieter",
     "bio": "Bio",

@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Porositë",
   "description": "Menaxho porositë e shërbimeve ndërmjet klientëve dhe ofruesve.",
+  "help": {
+    "ariaLabel": "Rreth porosive",
+    "title": "Rreth porosive",
+    "overview": "Një porosi marketplace është angazhim shërbimi midis klientit dhe ofruesit. Mund të nisë nga një listim aktiv (me paketë dhe add-on opsionale) ose nga një ofertë e pranuar. Puna, dorëzimi, rishikimet, milestone dhe escrow kalojnë nëpër veprime të dedikuara — jo duke edituar statusin në formë.",
+    "sections": [
+      {
+        "title": "Statuset",
+        "items": [
+          "Pending — u krijua; në pritje që ofruesi të pranojë.",
+          "Accepted — ofruesi pranoi; puna nuk ka filluar ende.",
+          "In progress — ofruesi filloi punën.",
+          "Completed — puna mbaroi dhe escrow i mbetur u lirua sipas rregullave.",
+          "Cancelled — u ndal përpara përfundimit; escrow ndjek rregullat e anulimit."
+        ]
+      },
+      {
+        "title": "Cikli tipik",
+        "items": [
+          "Krijo nga listimi ndërton shumën nga listimi, paketa dhe add-on; ofruesit nuk mund të porosisin listimin e tyre.",
+          "Accept / start / cancel e avancojnë ose e ndalojnë angazhimin.",
+          "Dorëzimet dhe kërkesat e rishikimit janë në rekorde të lidhura.",
+          "Milestone mund të mbajnë dhe lirojnë escrow; milestone i fundit pending mund të përfundojë porosinë.",
+          "Një dispute e hapur bllokon disa lëvizje parash derisa të zgjidhet ose të mbyllet."
+        ],
+        "body": "Veprimet detyrojnë kush mund ta lëvizë porosinë dhe nga cili status."
+      },
+      {
+        "title": "Rekorde të lidhura",
+        "items": [
+          "Booking planifikojnë kohën kundër një porosie.",
+          "Dispute hapen kur një palë konteston angazhimin.",
+          "Review lihen kundër një porosie të përfunduar dhe listimit të saj.",
+          "Soft delete e fsheh porosinë; mund të restaurohet."
+        ]
+      }
+    ]
+  },
   "createOrder": "Krijo porosi",
   "fields": {
     "status": "Statusi",

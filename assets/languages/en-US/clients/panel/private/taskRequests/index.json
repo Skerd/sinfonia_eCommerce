@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
   "title": "Task requests",
   "description": "Post and manage buyer requests for quotes, custom work, or procurement.",
+  "help": {
+    "ariaLabel": "About Task requests",
+    "title": "About Task requests",
+    "overview": "A task request is a buyer brief seeking quotes: title, description, category, budget, location, and media. It opens for bids for 30 days. Providers with an active listing in the same category and city can be notified.",
+    "sections": [
+      {
+        "title": "Statuses",
+        "items": [
+          "Open — accepting bids until expiry.",
+          "Closed — stopped without an award; pending bidders are notified.",
+          "Awarded — a bid was accepted; status cannot be changed further from close/reopen."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Close — from open; notifies users who still have a pending bid.",
+          "Reopen — from closed; resets the 30-day bidding window so an expired request is not closed again immediately.",
+          "Notify all — alerts matching providers again (active listing in the same category and city).",
+          "Only the requester (or an admin) can change status this way."
+        ]
+      },
+      {
+        "title": "How it connects",
+        "items": [
+          "Bids attach to the task request; accepting a bid awards the request and creates an order.",
+          "Category and city drive provider matching — keep them accurate.",
+          "Soft delete is available; restore brings the row back."
+        ]
+      }
+    ]
+  },
   "createTaskRequest": "Create task request",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

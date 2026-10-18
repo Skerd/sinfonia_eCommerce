@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Litiges",
   "description": "Examiner et résoudre les litiges entre clients et fournisseurs.",
+  "help": {
+    "ariaLabel": "À propos des litiges",
+    "title": "À propos des litiges",
+    "overview": "Un litige est un conflit modéré par un admin sur une commande marketplace. Tant qu'il est ouvert ou en revue, les sorties d'escrow se décident à la résolution ou à la clôture — pas par une édition de statut anecdotique.",
+    "sections": [
+      {
+        "title": "Statuts",
+        "items": [
+          "Ouvert — nouvellement ouvert ; en attente de prise en charge admin.",
+          "En revue — un admin a démarré la revue formelle.",
+          "Résolu — décidé vers le parcours prestataire : la commande peut se terminer et l'escrow restant est libéré.",
+          "Clos — terminé sans ce parcours ; l'escrow restant est remboursé selon les règles de clôture."
+        ]
+      },
+      {
+        "title": "Actions admin",
+        "items": [
+          "Démarrer la revue — uniquement depuis ouvert ; passe en revue.",
+          "Résoudre — depuis ouvert ou en revue ; note de résolution obligatoire ; peut terminer la commande et libérer l'escrow.",
+          "Clore — depuis ouvert ou en revue ; rembourse l'escrow restant selon la clôture.",
+          "Client et prestataire sont notifiés à la fin du litige."
+        ],
+        "body": "Démarrer la revue, résoudre et clore exigent un admin. Les litiges soft-supprimés ne sont pas actionnables."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer ouvre un litige sur une commande problématique.",
+          "Actions de feuille ou de ligne pour revue, résolution et clôture.",
+          "Soft delete et restauration suivent les droits de liste habituels."
+        ]
+      }
+    ]
+  },
   "createDispute": "Créer un litige",
   "fields": {
     "status": "Statut",

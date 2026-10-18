@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Disputes",
   "description": "Review and resolve disputes between customers and providers.",
+  "help": {
+    "ariaLabel": "About Disputes",
+    "title": "About Disputes",
+    "overview": "A dispute is an admin-moderated conflict on a marketplace order. While it is open or under review, escrow outcomes are decided when the dispute is resolved or closed — not by casual status edits.",
+    "sections": [
+      {
+        "title": "Statuses",
+        "items": [
+          "Open — newly raised; waiting for admin intake.",
+          "Under review — an admin has started formal review.",
+          "Resolved — decided for the provider path: order can complete and remaining escrow is released.",
+          "Closed — ended without that resolve path; remaining escrow is refunded per close rules."
+        ]
+      },
+      {
+        "title": "Admin actions",
+        "items": [
+          "Start review — only from open; moves to under review.",
+          "Resolve — from open or under review; requires a resolution note; may complete the order and release remaining escrow.",
+          "Close — from open or under review; refunds remaining escrow according to close handling.",
+          "Customer and provider are notified when the dispute ends."
+        ],
+        "body": "Start review, resolve, and close require an admin. Soft-deleted disputes are not actionable."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create raises a dispute against an order that has an issue.",
+          "Use sheet or row actions for review, resolve, and close.",
+          "Soft delete and restore follow the usual list permissions."
+        ]
+      }
+    ]
+  },
   "createDispute": "Create dispute",
   "fields": {
     "status": "Status",

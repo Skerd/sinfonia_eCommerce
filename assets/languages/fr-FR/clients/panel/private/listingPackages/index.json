@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
   "title": "Liste des packages",
   "description": "Gérez les packages de services proposés par les fournisseurs pour leurs annonces.",
+  "help": {
+    "ariaLabel": "À propos des packages d'annonce",
+    "title": "À propos des packages d'annonce",
+    "overview": "Un package est un niveau tarifaire sur une annonce — Basic, Standard ou Premium. Quand l'acheteur commande avec un package, son prix et ses jours de livraison remplacent le prix de base de l'annonce.",
+    "sections": [
+      {
+        "title": "Ce que vous définissez",
+        "items": [
+          "Nom et description optionnelle décrivent le niveau.",
+          "Montant et devise sont ce que facture la commande si ce package est choisi.",
+          "Les jours de livraison deviennent la fenêtre d'échéance (les extras peuvent encore ajouter des jours).",
+          "L'ordre d'affichage trie les packages (plus petit d'abord).",
+          "Annonce et prestataire sont fixés à la création."
+        ]
+      },
+      {
+        "title": "Lien avec l'annonce",
+        "items": [
+          "Une annonce peut avoir plusieurs packages ; aucun n'est requis pour l'activer.",
+          "Commander sans package utilise le prix de base et les jours de l'annonce.",
+          "Le soft delete retire le package des offres ; il peut être restauré."
+        ]
+      }
+    ]
+  },
   "createListingPackage": "Créer un package",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

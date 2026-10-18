@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
   "title": "Buchungen",
   "description": "Geplante Service-Buchungen verwalten",
+  "help": {
+    "ariaLabel": "Über Buchungen",
+    "title": "Über Buchungen",
+    "overview": "Eine Buchung plant ein Zeitfenster für eine Marktplatz-Bestellung mit einem Anbieter — Start, Ende und Zeitzone. Sie ist der Kalenderanhang für Servicearbeit zum vereinbarten Zeitpunkt.",
+    "sections": [
+      {
+        "title": "Was Sie setzen",
+        "items": [
+          "Bestellung verknüpft die Buchung mit dem Engagement.",
+          "Anbieter ist, wer in diesem Fenster liefern soll.",
+          "Start und Ende definieren den Slot; Zeitzone speichert, wie er gelesen werden soll.",
+          "Buchung anlegen, wenn ein konkreter Termin nötig ist — nicht nur ein Lieferdatum."
+        ]
+      },
+      {
+        "title": "Bezug zu Bestellungen",
+        "items": [
+          "Bestellungen tracken Geld und Lieferstatus; Buchungen tracken wann gearbeitet wird.",
+          "Verwandte Bestellung öffnen für Annehmen, Starten, Liefern, Dispute oder Storno.",
+          "Soft-Delete blendet die Buchung aus; Wiederherstellen bringt sie zurück."
+        ]
+      }
+    ]
+  },
   "createBooking": "Buchung erstellen",
   "fields": {
     "order": "Auftrag",

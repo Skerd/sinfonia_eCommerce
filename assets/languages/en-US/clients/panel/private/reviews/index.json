@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Reviews",
   "description": "View ratings and reviews left by customers.",
+  "help": {
+    "ariaLabel": "About Reviews",
+    "title": "About Reviews",
+    "overview": "A review is customer feedback on a completed marketplace order: rating, optional comment, tied to the order and listing. It feeds the listing's average rating and review count.",
+    "sections": [
+      {
+        "title": "What you record",
+        "items": [
+          "Rating is the star score the customer gives.",
+          "Comment is optional free text.",
+          "Order and listing identify what was reviewed; reviewer is the customer.",
+          "Create is for submitting feedback after a completed engagement."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "List, filter, and open reviews for moderation or support.",
+          "There is no separate publish workflow — create and edit manage the record directly.",
+          "Soft delete removes the review from default views; restore brings it back."
+        ]
+      }
+    ]
+  },
   "createReview": "Create review",
   "fields": {
     "rating": "Rating",

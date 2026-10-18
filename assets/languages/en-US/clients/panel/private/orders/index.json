@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Orders",
   "description": "Manage service orders between customers and providers.",
+  "help": {
+    "ariaLabel": "About Orders",
+    "title": "About Orders",
+    "overview": "A marketplace order is a service engagement between a customer and a provider. It can start from an active listing (with optional package and add-ons) or from an accepted bid on a task request. Work, delivery, revisions, milestones, and escrow release move through dedicated actions — not by editing status on the form.",
+    "sections": [
+      {
+        "title": "Statuses",
+        "items": [
+          "Pending — created; waiting for the provider to accept.",
+          "Accepted — provider accepted; work has not started yet.",
+          "In progress — provider started work.",
+          "Completed — work finished and remaining escrow released as rules allow.",
+          "Cancelled — stopped before completion; escrow handling follows cancel rules."
+        ]
+      },
+      {
+        "title": "Typical lifecycle",
+        "items": [
+          "Create from listing builds amount from listing, package, and add-ons; providers cannot order their own listing.",
+          "Accept / start / cancel advance or stop the engagement.",
+          "Deliveries and revision requests sit on related records tied to the order.",
+          "Milestones can hold and release escrow; completing the last pending milestone can complete the order.",
+          "An open dispute blocks some money movements until it is resolved or closed."
+        ],
+        "body": "Actions enforce who may move the order and from which status."
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Bookings schedule time against an order.",
+          "Disputes open when a party contests the engagement.",
+          "Reviews are left against a completed order and its listing.",
+          "Soft delete hides the order from default lists; it can be restored."
+        ]
+      }
+    ]
+  },
   "createOrder": "Create order",
   "fields": {
     "status": "Status",

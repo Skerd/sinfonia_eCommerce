@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
   "title": "Shtesat e Listimeve",
   "description": "Menaxhoni shtesat opsionale që ofruesit i bashkangjisin listimeve të tyre.",
+  "help": {
+    "ariaLabel": "Rreth add-on të listimeve",
+    "title": "Rreth add-on të listimeve",
+    "overview": "Një add-on është opsion shtesë që blerësi mund të bashkojë kur porosit një listim — dorëzim i shpejtë ose deliverable shtesë. I përket një listimi, ka çmim të vet dhe ditë dorëzimi opsionale, dhe duhet të përdorë të njëjtën monedhë si porosia.",
+    "sections": [
+      {
+        "title": "Çfarë vendosni",
+        "items": [
+          "Emri është ajo që sheh blerësi në checkout.",
+          "Listimi dhe ofruesi janë të lidhur me këtë ofertë.",
+          "Shuma dhe monedha duhet të përputhen me monedhën e listimit (ose paketës).",
+          "Ditët e dorëzimit, nëse vendosen, shtohen mbi dritaren e listimit ose paketës."
+        ]
+      },
+      {
+        "title": "Kur ka rëndësi",
+        "items": [
+          "Vetëm add-on e atij listimi mund të zgjidhen.",
+          "Mos përputhja e monedhës bllokon porosinë.",
+          "Add-on e soft-fshira mund të restaurohen; pasi fshihen nuk ofrohen më."
+        ],
+        "body": "Add-on zgjidhen kur krijohet një porosi nga një listim."
+      }
+    ]
+  },
   "createListingAddOn": "Krijo shtesë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {

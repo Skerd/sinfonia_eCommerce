@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Annunci",
   "description": "Gestisci elenchi di prodotti e servizi per la vetrina del tuo tenant.",
+  "help": {
+    "ariaLabel": "Informazioni sugli annunci",
+    "title": "Informazioni sugli annunci",
+    "overview": "Un annuncio è l'offerta di un fornitore — servizio o gig con categoria, media, prezzo e package o extra opzionali. Solo un annuncio attivo è ordinabile. Lo stato non cambia con una modifica ordinaria; attiva e disattiva sono azioni dedicate.",
+    "sections": [
+      {
+        "title": "Stato",
+        "items": [
+          "Bozza è il default mentre costruisci titolo, categoria, media e prezzo.",
+          "Attivare richiede prezzo e valuta. Senza di essi l'annuncio non è ordinabile.",
+          "Disattivare mette offline un annuncio attivo senza eliminarlo.",
+          "Solo il fornitore dell'annuncio (o un admin) può attivare o disattivare."
+        ],
+        "body": "Lo stato è bozza, attivo o inattivo. PATCH non può cambiarlo."
+      },
+      {
+        "title": "Cosa configuri",
+        "items": [
+          "Titolo, descrizione, categoria, tag, FAQ e requisiti descrivono l'offerta.",
+          "Il tipo di prezzo è fisso o orario. Prezzo e valuta alimentano gli ordini dal prezzo base senza package.",
+          "I giorni di consegna impostano la finestra di scadenza predefinita dal prezzo base.",
+          "L'immagine principale è obbligatoria; gallerie e luogo (paese / stato / città) sono opzionali.",
+          "Package ed extra sono record separati; sostituiscono o estendono prezzo e consegna alla selezione."
+        ]
+      },
+      {
+        "title": "Come si collega",
+        "items": [
+          "Gli ordini possono nascere da un annuncio attivo (package ed extra opzionali).",
+          "Le promozioni aumentano la visibilità per una finestra di date.",
+          "Le segnalazioni permettono di segnalare un annuncio; risolverle può disattivarlo.",
+          "Le recensioni aggiornano rating e conteggio sull'annuncio.",
+          "L'eliminazione è soft delete e si può ripristinare."
+        ]
+      }
+    ]
+  },
   "createListing": "Crea inserzione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

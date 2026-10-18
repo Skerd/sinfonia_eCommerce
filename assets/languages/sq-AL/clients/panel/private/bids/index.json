@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Ofertat",
   "description": "Shiko dhe menaxho ofertat për kërkesat e detyrave.",
+  "help": {
+    "ariaLabel": "Rreth ofertave",
+    "title": "Rreth ofertave",
+    "overview": "Një ofertë është propozimi i ofruesit për një kërkesë detyre: shumë, monedhë, ditë dorëzimi dhe tekst. Ofertat në pritje mund të pranohen ose refuzohen. Pranimi i njëës jep detyrën dhe nis një porosi.",
+    "sections": [
+      {
+        "title": "Statuset",
+        "items": [
+          "Pending — në pritje të kërkuesit.",
+          "Accepted — kjo ofertë fitoi; kërkesa bëhet awarded.",
+          "Rejected — u refuzua ose u tërhoq; ofertat e tjera në pritje refuzohen automatikisht kur pranohet njëra."
+        ]
+      },
+      {
+        "title": "Prano dhe refuzo",
+        "items": [
+          "Accept e shënon ofertën, refuzon çdo ofertë tjetër në pritje, e vendos kërkesën awarded dhe krijon porosi pending.",
+          "Reject (ose withdraw) e vendos vetëm atë ofertë si rejected.",
+          "Vetëm një ofertë pending mund të pranohet ose refuzohet."
+        ],
+        "body": "Këto janë veprime mbi një ofertë pending, jo edit fushash të zakonshme."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijo poston një ofertë të re kundër një kërkese të hapur.",
+          "Përdorni veprimet e rreshtit ose sheet për accept dhe reject.",
+          "Ofertat e soft-fshira mund të restaurohen me leje."
+        ]
+      }
+    ]
+  },
   "createBid": "Krijo ofertë",
   "fields": {
     "amount": "Shuma",
@@ -14,7 +46,11 @@
     "createdAt": "Krijuar"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "status": { "pending": "Në pritje", "accepted": "Pranuar", "rejected": "Refuzuar" },
+  "status": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "rejected": "Refuzuar"
+  },
   "accept": "Prano",
   "reject": "Refuzo / Tërhiq"
 }

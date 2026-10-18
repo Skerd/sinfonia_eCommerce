@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Offerte",
   "description": "Visualizza e gestisci le offerte sulle richieste di attività.",
+  "help": {
+    "ariaLabel": "Informazioni sulle offerte",
+    "title": "Informazioni sulle offerte",
+    "overview": "Un'offerta è la proposta di un fornitore su una richiesta: importo, valuta, giorni di consegna e testo. Le offerte in sospeso possono essere accettate o rifiutate. Accettarne una assegna il lavoro e avvia un ordine.",
+    "sections": [
+      {
+        "title": "Stati",
+        "items": [
+          "In sospeso — in attesa del richiedente.",
+          "Accettata — questa offerta ha vinto; la richiesta diventa assegnata.",
+          "Rifiutata — declinata o ritirata; le altre in sospeso vengono rifiutate automaticamente quando se ne accetta una."
+        ]
+      },
+      {
+        "title": "Accetta e rifiuta",
+        "items": [
+          "Accetta segna l'offerta, rifiuta tutte le altre in sospeso, imposta la richiesta come assegnata e crea un ordine in sospeso.",
+          "Rifiuta (o ritira) imposta solo quella offerta come rifiutata.",
+          "Solo un'offerta in sospeso può essere accettata o rifiutata."
+        ],
+        "body": "Sono azioni su un'offerta in sospeso, non modifiche di campo ordinarie."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Crea pubblica una nuova offerta su una richiesta aperta.",
+          "Usa le azioni di riga o foglio per accettare e rifiutare.",
+          "Le offerte soft-eliminate si possono ripristinare con i permessi."
+        ]
+      }
+    ]
+  },
   "createBid": "Crea offerta",
   "fields": {
     "amount": "Importo",

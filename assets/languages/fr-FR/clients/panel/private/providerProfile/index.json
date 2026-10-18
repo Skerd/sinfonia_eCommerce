@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Profils de fournisseurs",
   "description": "Afficher et modifier les profils des fournisseurs. Utilisez le menu des lignes pour connecter les paiements Stripe.",
+  "help": {
+    "ariaLabel": "À propos des profils prestataires",
+    "title": "À propos des profils prestataires",
+    "overview": "Un profil prestataire est la fiche vendeur marketplace : bio, compétences, note, plus les champs Stripe Connect pour les paiements. L'onboarding Connect et le rafraîchissement de statut sont des actions sur le profil de l'utilisateur connecté.",
+    "sections": [
+      {
+        "title": "Champs du profil",
+        "items": [
+          "Le prestataire est l'utilisateur de ce profil.",
+          "Bio et compétences décrivent le vendeur en vitrine.",
+          "La note résume les retours sur le travail terminé."
+        ]
+      },
+      {
+        "title": "Stripe Connect",
+        "items": [
+          "Créer un lien de compte — démarre ou reprend l'onboarding Express et renvoie une URL.",
+          "Actualiser le statut du compte — ramène les drapeaux charges/payouts/details de Stripe sur le profil.",
+          "Utilisez le menu de ligne pour Connect lorsque disponible.",
+          "Les profils soft-supprimés ne sont pas utilisés pour Connect en production."
+        ],
+        "body": "La configuration des paiements nécessite la passerelle configurée et les URL return/refresh Connect de la société."
+      }
+    ]
+  },
   "fields": {
     "provider": "Fournisseur",
     "bio": "Bio",

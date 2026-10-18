@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
   "title": "Prenotazioni",
   "description": "Gestisci le prenotazioni dei servizi programmati.",
+  "help": {
+    "ariaLabel": "Informazioni sulle prenotazioni",
+    "title": "Informazioni sulle prenotazioni",
+    "overview": "Una prenotazione pianifica una finestra temporale per un ordine marketplace con un fornitore — inizio, fine e fuso orario. È l'allegato calendario per un servizio a un orario concordato.",
+    "sections": [
+      {
+        "title": "Cosa imposti",
+        "items": [
+          "L'ordine collega la prenotazione all'impegno.",
+          "Il fornitore è chi deve consegnare in quella finestra.",
+          "Inizio e fine definiscono lo slot; il fuso indica come leggerlo.",
+          "Crea una prenotazione quando serve un appuntamento concreto, non solo una data di consegna."
+        ]
+      },
+      {
+        "title": "Rapporto con gli ordini",
+        "items": [
+          "Gli ordini tracciano denaro e stato di consegna; le prenotazioni tracciano quando si lavora.",
+          "Apri l'ordine collegato per accettare, avviare, consegnare, contestare o annullare.",
+          "Il soft delete nasconde la prenotazione; ripristina la riporta."
+        ]
+      }
+    ]
+  },
   "createBooking": "Crea prenotazione",
   "fields": {
     "order": "Ordine",

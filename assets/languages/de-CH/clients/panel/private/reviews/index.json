@@ -2,6 +2,30 @@
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Bewertungen",
   "description": "Ratings und bewertungen left von customers. anzeigen",
+  "help": {
+    "ariaLabel": "Über Bewertungen",
+    "title": "Über Bewertungen",
+    "overview": "Eine Bewertung ist Kundenfeedback zu einer abgeschlossenen Marktplatz-Bestellung: Sterne, optionaler Kommentar, verknüpft mit Bestellung und Inserat. Sie speist Durchschnitt und Anzahl auf dem Inserat.",
+    "sections": [
+      {
+        "title": "Was Sie erfassen",
+        "items": [
+          "Bewertung ist die Sternezahl.",
+          "Kommentar ist optionaler Freitext.",
+          "Bestellung und Inserat kennzeichnen, was bewertet wurde; Reviewer ist der Kunde.",
+          "Erstellen dient dem Feedback nach abgeschlossenem Engagement."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Listen, filtern und öffnen für Moderation oder Support.",
+          "Kein separates Publish — Erstellen und Bearbeiten verwalten den Datensatz direkt.",
+          "Soft-Delete blendet aus; Wiederherstellen bringt zurück."
+        ]
+      }
+    ]
+  },
   "createReview": "Bewertung erstellen",
   "fields": {
     "rating": "Bewertung",

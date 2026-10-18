@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Angebote",
   "description": "Und verwalten bids on aufgabe requests. anzeigen",
+  "help": {
+    "ariaLabel": "Über Gebote",
+    "title": "Über Gebote",
+    "overview": "Ein Gebot ist der Vorschlag eines Anbieters auf eine Auftragsanfrage: Betrag, Währung, Lieferage und Text. Ausstehende Gebote können angenommen oder abgelehnt werden. Annahme vergibt den Auftrag und startet eine Bestellung.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Ausstehend — wartet auf den Anfragenden.",
+          "Angenommen — dieses Gebot hat gewonnen; die Anfrage wird vergeben.",
+          "Abgelehnt — abgelehnt oder zurückgezogen; andere ausstehende Gebote werden bei Annahme eines Gebots automatisch abgelehnt."
+        ]
+      },
+      {
+        "title": "Annehmen und ablehnen",
+        "items": [
+          "Annehmen markiert das Gebot, lehnt alle anderen ausstehenden ab, setzt die Anfrage auf vergeben und erzeugt eine ausstehende Bestellung.",
+          "Ablehnen (oder zurückziehen) setzt nur dieses Gebot auf abgelehnt.",
+          "Nur ein ausstehendes Gebot kann angenommen oder abgelehnt werden."
+        ],
+        "body": "Das sind Aktionen auf einem ausstehenden Gebot, keine normalen Feldedits."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Erstellen postet ein neues Gebot auf eine offene Anfrage.",
+          "Zeilen- oder Sheet-Aktionen für Annehmen und Ablehnen.",
+          "Soft-gelöschte Gebote sind bei Berechtigung wiederherstellbar."
+        ]
+      }
+    ]
+  },
   "createBid": "Offerte erstellen",
   "fields": {
     "amount": "Betrag",

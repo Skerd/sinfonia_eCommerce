@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Bestellungen",
   "description": "Service aufträge between customers und providers. verwalten",
+  "help": {
+    "ariaLabel": "Über Bestellungen",
+    "title": "Über Bestellungen",
+    "overview": "Eine Marktplatz-Bestellung ist ein Service-Engagement zwischen Kunde und Anbieter. Sie startet von einem aktiven Inserat (optional Paket und Add-ons) oder von einem angenommenen Gebot. Arbeit, Lieferung, Revisionen, Meilensteine und Escrow laufen über Aktionen — nicht über Status-Edit im Formular.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Ausstehend — erstellt; wartet auf Annahme durch den Anbieter.",
+          "Angenommen — Anbieter hat angenommen; Arbeit noch nicht gestartet.",
+          "In Bearbeitung — Anbieter hat begonnen.",
+          "Abgeschlossen — Arbeit fertig und restliches Escrow freigegeben, soweit Regeln es erlauben.",
+          "Storniert — vor Abschluss gestoppt; Escrow folgt den Storno-Regeln."
+        ]
+      },
+      {
+        "title": "Typischer Lebenszyklus",
+        "items": [
+          "Aus Inserat erzeugen berechnet Betrag aus Inserat, Paket und Add-ons; Anbieter dürfen das eigene Inserat nicht bestellen.",
+          "Annehmen / Starten / Stornieren führen das Engagement weiter oder stoppen es.",
+          "Lieferungen und Revisionsanfragen hängen an verwandten Datensätzen.",
+          "Meilensteine können Escrow halten und freigeben; der letzte ausstehende Meilenstein kann die Bestellung abschliessen.",
+          "Ein offener Dispute blockiert manche Geldbewegungen bis zur Lösung oder Schliessung."
+        ],
+        "body": "Aktionen erzwingen, wer wann wechseln darf."
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Buchungen planen Zeit zu einer Bestellung.",
+          "Disputes öffnen, wenn eine Partei das Engagement bestreitet.",
+          "Reviews gehören zu abgeschlossener Bestellung und Inserat.",
+          "Soft-Delete blendet die Bestellung aus; Wiederherstellen ist möglich."
+        ]
+      }
+    ]
+  },
   "createOrder": "Bestellung erstellen",
   "fields": {
     "status": "Status",

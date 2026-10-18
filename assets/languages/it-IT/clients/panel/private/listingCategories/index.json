@@ -1,7 +1,43 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Categorie",
-  "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
+  "description": "Organizza il catalogo marketplace in un albero categorie padre/figlio usato da annunci e richieste di lavoro.",
+  "help": {
+    "ariaLabel": "Informazioni sulle categorie di elenchi",
+    "title": "Informazioni sulle categorie di elenchi",
+    "overview": "Le categorie di elenchi sono la tassonomia del marketplace, non del catalogo prodotti. Annunci e richieste di lavoro puntano a una categoria. Gli acquirenti navigano così; i fornitori vengono abbinati a nuove richieste se hanno un annuncio attivo nella stessa categoria e città.",
+    "sections": [
+      {
+        "title": "L'albero",
+        "items": [
+          "Il nome è ciò che operatori e vetrina mostrano.",
+          "Il genitore è opzionale. Lasciare vuoto per una categoria di primo livello.",
+          "L'ordine ordina i fratelli (più basso prima). Le liste di selezione e la vista elenco usano ordine, poi nome.",
+          "Lo slug viene generato in creazione (LCAT-{name}-{random}) e non è modificabile. Unico per azienda.",
+          "Non puoi impostare come genitore la categoria stessa o un suo discendente — creerebbe un ciclo."
+        ],
+        "body": "Le categorie si annidano. Una radice non ha genitore; un figlio punta a un'altra categoria della stessa azienda."
+      },
+      {
+        "title": "Come le usa il resto del marketplace",
+        "items": [
+          "Ogni annuncio deve scegliere una categoria per essere utile in vetrina.",
+          "Le richieste scelgono una categoria; i fornitori corrispondenti hanno un annuncio attivo in quella categoria e nella stessa città.",
+          "I seed demo possono creare un ampio albero di servizi (design, tech, scrittura, ecc.) per una nuova azienda.",
+          "Le categorie soft-eliminate si possono ripristinare. Meglio correggere l'uso sugli annunci che eliminare una categoria ancora referenziata."
+        ],
+        "body": "Le categorie sono configurazione condivisa sotto Tenancy › Impostazioni di sistema."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Crea apre il modulo. Modifica apre una riga esistente.",
+          "Le viste scheda e foglio mostrano nome, slug, ordine e genitore.",
+          "L'eliminazione è soft delete e si può ripristinare con i permessi giusti."
+        ]
+      }
+    ]
+  },
   "createCategory": "Crea categoria",
   "fields": {
     "name": "Nome",

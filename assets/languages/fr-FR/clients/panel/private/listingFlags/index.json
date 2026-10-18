@@ -2,6 +2,39 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
   "title": "Liste des drapeaux",
   "description": "Examinez les rapports soumis par les utilisateurs pour détecter les listes inappropriées.",
+  "help": {
+    "ariaLabel": "À propos des signalements d'annonce",
+    "title": "À propos des signalements d'annonce",
+    "overview": "Un signalement est un rapport de modération : un utilisateur marque une annonce comme inappropriée, spam, trompeuse ou autre, avec un commentaire optionnel. Seuls les admins résolvent ou rejettent les signalements en attente.",
+    "sections": [
+      {
+        "title": "Statuts",
+        "items": [
+          "En attente — en attente d'une décision admin.",
+          "Examiné — le signalement est retenu ; une note de résolution est enregistrée. L'admin peut aussi désactiver l'annonce.",
+          "Rejeté — le signalement est écarté ; une note de résolution reste obligatoire."
+        ]
+      },
+      {
+        "title": "Actions admin",
+        "items": [
+          "Résoudre passe le statut à examiné et enregistre le texte.",
+          "Optionnellement désactiver l'annonce dans le cadre de la résolution.",
+          "Rejeter passe le statut à rejeté avec une explication.",
+          "Les non-admins ne peuvent pas exécuter ces actions."
+        ],
+        "body": "Résoudre et rejeter ne fonctionnent que si le signalement est en attente et non soft-supprimé."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer enregistre un nouveau signalement contre une annonce.",
+          "Modifier peut mettre à jour motif et détails ; l'annonce reste fixe après création.",
+          "Les signalements soft-supprimés peuvent être restaurés."
+        ]
+      }
+    ]
+  },
   "createListingFlag": "Créer un indicateur de liste",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

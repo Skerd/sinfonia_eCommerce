@@ -2,6 +2,31 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
   "title": "Inserat Hinzufügen-Ons",
   "description": "Optional hinzufügen-ons that providers attach bis their inserate. verwalten",
+  "help": {
+    "ariaLabel": "Über Inserat-Add-ons",
+    "title": "Über Inserat-Add-ons",
+    "overview": "Ein Add-on ist eine optionale Extra-Leistung beim Bestellen eines Inserats — z. B. Express oder ein zusätzliches Deliverable. Es gehört zu einem Inserat, hat eigenen Preis und optionale Extra-Lieferage und muss dieselbe Währung wie die Bestellung nutzen.",
+    "sections": [
+      {
+        "title": "Was Sie setzen",
+        "items": [
+          "Name ist, was der Käufer beim Checkout sieht.",
+          "Inserat und Anbieter sind an dieses Angebot gebunden.",
+          "Preisbetrag und Währung müssen zur Inserat- bzw. Paketwährung passen.",
+          "Lieferage werden, falls gesetzt, auf das Inserat- oder Paketfenster addiert."
+        ]
+      },
+      {
+        "title": "Wann es zählt",
+        "items": [
+          "Nur Add-ons dieses Inserats sind wählbar.",
+          "Währungs-Mismatch blockiert die Bestellung.",
+          "Gelöschte Add-ons sind wiederherstellbar; nach dem Löschen nicht mehr anbietbar."
+        ],
+        "body": "Add-ons werden beim Erstellen einer Bestellung aus einem Inserat gewählt."
+      }
+    ]
+  },
   "createListingAddOn": "Hinzufügen-on erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

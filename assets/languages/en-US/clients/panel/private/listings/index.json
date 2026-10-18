@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Listings",
   "description": "Manage product and service listings for your tenant storefront.",
+  "help": {
+    "ariaLabel": "About Listings",
+    "title": "About Listings",
+    "overview": "A listing is a provider's offer on the marketplace — a service or gig with category, media, pricing, and optional packages or add-ons. Only an active listing can be ordered. Status is not changed by ordinary edit; activate and deactivate are dedicated actions.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Draft is the default while you build title, category, media, and price.",
+          "Activate requires a price and currency. Without them the listing cannot become orderable.",
+          "Deactivate takes an active listing offline without deleting it.",
+          "Only the listing's provider (or an admin) can activate or deactivate."
+        ],
+        "body": "Status is draft, active, or inactive. PATCH cannot change it."
+      },
+      {
+        "title": "What you configure",
+        "items": [
+          "Title, description, category, tags, FAQs, and buyer requirements describe the offer.",
+          "Pricing type is fixed or hourly. Price and currency power create-from-listing orders when no package is chosen.",
+          "Delivery days set the default due date window for orders from the listing base price.",
+          "Main image is required; galleries and location (country / state / city) are optional.",
+          "Packages and add-ons are separate records attached to the listing; they override or extend price and delivery when the buyer selects them."
+        ]
+      },
+      {
+        "title": "How it connects",
+        "items": [
+          "Orders can be created from an active listing (optionally with a package and add-ons).",
+          "Promotions boost a listing's visibility for a date window.",
+          "Flags let users report a listing; resolving a flag can deactivate it.",
+          "Reviews roll up rating and review count on the listing.",
+          "Deleting is a soft delete and can be restored."
+        ]
+      }
+    ]
+  },
   "createListing": "Create listing",
   "searchPlaceholder": "Search or add filters...",
   "fields": {

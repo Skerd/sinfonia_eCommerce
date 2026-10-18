@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Streitfälle",
   "description": "Prüfung und resolve streitfälle between customers und providers.",
+  "help": {
+    "ariaLabel": "Über Disputes",
+    "title": "Über Disputes",
+    "overview": "Ein Dispute ist ein admin-moderierter Konflikt zu einer Marktplatz-Bestellung. Solange offen oder in Prüfung, werden Escrow-Ausgänge beim Lösen oder Schliessen entschieden — nicht durch beiläufiges Status-Edit.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Offen — neu erhoben; wartet auf Admin-Aufnahme.",
+          "In Prüfung — Admin hat die formale Prüfung gestartet.",
+          "Gelöst — zugunsten des Anbieter-Pfads: Bestellung kann abschliessen, restliches Escrow freigeben.",
+          "Geschlossen — ohne Resolve-Pfad beendet; restliches Escrow wird erstattet gemäss Close-Regeln."
+        ]
+      },
+      {
+        "title": "Admin-Aktionen",
+        "items": [
+          "Prüfung starten — nur aus offen; wechselt zu in Prüfung.",
+          "Lösen — aus offen oder in Prüfung; Auflösungstext nötig; kann Bestellung abschliessen und Escrow freigeben.",
+          "Schliessen — aus offen oder in Prüfung; erstattet restliches Escrow gemäss Close.",
+          "Kunde und Anbieter werden benachrichtigt, wenn der Dispute endet."
+        ],
+        "body": "Prüfung starten, lösen und schliessen brauchen Admin. Gelöschte Disputes sind nicht actionable."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Erstellen erhebt einen Dispute zu einer problematischen Bestellung.",
+          "Sheet- oder Zeilenaktionen für Prüfung, Lösen und Schliessen.",
+          "Soft-Delete und Wiederherstellen folgen den Listenrechten."
+        ]
+      }
+    ]
+  },
   "createDispute": "Streitfall erstellen",
   "fields": {
     "status": "Status",

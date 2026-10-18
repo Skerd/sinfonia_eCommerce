@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Ordini",
   "description": "Gestire gli ordini di servizio tra clienti e fornitori.",
+  "help": {
+    "ariaLabel": "Informazioni sugli ordini",
+    "title": "Informazioni sugli ordini",
+    "overview": "Un ordine marketplace è un impegno di servizio tra cliente e fornitore. Può partire da un annuncio attivo (package ed extra opzionali) o da un'offerta accettata. Lavoro, consegna, revisioni, milestone ed escrow passano da azioni dedicate — non modificando lo stato sul form.",
+    "sections": [
+      {
+        "title": "Stati",
+        "items": [
+          "In sospeso — creato; in attesa che il fornitore accetti.",
+          "Accettato — il fornitore ha accettato; il lavoro non è ancora iniziato.",
+          "In corso — il fornitore ha iniziato.",
+          "Completato — lavoro finito ed escrow rimanente rilasciato secondo le regole.",
+          "Annullato — fermato prima del completamento; l'escrow segue le regole di annullo."
+        ]
+      },
+      {
+        "title": "Ciclo tipico",
+        "items": [
+          "Crea da annuncio calcola l'importo da annuncio, package ed extra; i fornitori non possono ordinare il proprio annuncio.",
+          "Accetta / avvia / annulla fanno avanzare o fermano l'impegno.",
+          "Consegne e richieste di revisione stanno su record collegati.",
+          "Le milestone possono trattenere e rilasciare escrow; l'ultima in sospeso può completare l'ordine.",
+          "Una controversia aperta blocca alcuni movimenti di denaro fino a risoluzione o chiusura."
+        ],
+        "body": "Le azioni impongono chi può muovere l'ordine e da quale stato."
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Le prenotazioni pianificano il tempo su un ordine.",
+          "Le controversie si aprono quando una parte contesta l'impegno.",
+          "Le recensioni riguardano un ordine completato e il suo annuncio.",
+          "Il soft delete nasconde l'ordine; si può ripristinare."
+        ]
+      }
+    ]
+  },
   "createOrder": "Crea ordine",
   "fields": {
     "status": "Stato",

@@ -2,6 +2,38 @@
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Bids",
   "description": "View and manage bids on task requests.",
+  "help": {
+    "ariaLabel": "About Bids",
+    "title": "About Bids",
+    "overview": "A bid is a provider's proposal on a task request: amount, currency, delivery days, and a written proposal. Pending bids can be accepted or rejected. Accepting one awards the task and starts an order.",
+    "sections": [
+      {
+        "title": "Statuses",
+        "items": [
+          "Pending — waiting on the requester.",
+          "Accepted — this bid won; the task request becomes awarded.",
+          "Rejected — declined or withdrawn; other pending bids are rejected automatically when one is accepted."
+        ]
+      },
+      {
+        "title": "Accept and reject",
+        "items": [
+          "Accept marks the bid accepted, rejects every other pending bid on the same task, sets the task request to awarded, and creates a pending order between requester and bidder.",
+          "Reject (or withdraw) sets that bid to rejected only.",
+          "Only a pending bid can be accepted or rejected."
+        ],
+        "body": "These are actions on a pending bid, not ordinary field edits."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create posts a new bid against an open task request.",
+          "Use the row or sheet actions for accept and reject.",
+          "Soft-deleted bids can be restored when permitted."
+        ]
+      }
+    ]
+  },
   "createBid": "Create bid",
   "fields": {
     "amount": "Amount",
@@ -14,7 +46,11 @@
     "createdAt": "Created"
   },
   "searchPlaceholder": "Search or add filters...",
-  "status": { "pending": "Pending", "accepted": "Accepted", "rejected": "Rejected" },
+  "status": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "rejected": "Rejected"
+  },
   "accept": "Accept",
   "reject": "Reject / Withdraw"
 }

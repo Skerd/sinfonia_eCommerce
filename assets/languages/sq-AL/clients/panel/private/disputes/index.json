@@ -2,6 +2,40 @@
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Mosmarrëveshjet",
   "description": "Shqyrtoni dhe zgjidhni mosmarrëveshjet ndërmjet klientëve dhe ofruesve.",
+  "help": {
+    "ariaLabel": "Rreth mosmarrëveshjeve",
+    "title": "Rreth mosmarrëveshjeve",
+    "overview": "Një dispute është konflikt i moderuar nga admin në një porosi marketplace. Ndërsa është open ose under review, rezultatet e escrow vendosen kur dispute zgjidhet ose mbyllet — jo me edit statusi të rastësishëm.",
+    "sections": [
+      {
+        "title": "Statuset",
+        "items": [
+          "Open — sapo u ngrit; në pritje të adminit.",
+          "Under review — admin ka filluar shqyrtimin formal.",
+          "Resolved — u vendos në rrugën e ofruesit: porosia mund të përfundojë dhe escrow i mbetur lirohet.",
+          "Closed — u mbyll pa atë rrugë; escrow i mbetur rimbursohet sipas rregullave të close."
+        ]
+      },
+      {
+        "title": "Veprimet e adminit",
+        "items": [
+          "Start review — vetëm nga open; kalon te under review.",
+          "Resolve — nga open ose under review; kërkon shënim zgjidhjeje; mund të përfundojë porosinë dhe të lirojë escrow.",
+          "Close — nga open ose under review; rimburson escrow të mbetur sipas close.",
+          "Klienti dhe ofruesi njoftohen kur dispute mbaron."
+        ],
+        "body": "Start review, resolve dhe close kërkojnë admin. Dispute të soft-fshira nuk janë actionable."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijo ngrit një dispute kundër një porosie me problem.",
+          "Përdorni veprimet e sheet ose rreshtit për review, resolve dhe close.",
+          "Soft delete dhe restore ndjekin lejet e listës."
+        ]
+      }
+    ]
+  },
   "createDispute": "Hap mosmarrëveshje",
   "fields": {
     "status": "Statusi",

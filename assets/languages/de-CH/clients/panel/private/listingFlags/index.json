@@ -2,6 +2,39 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
   "title": "Inserat Flags",
   "description": "Prüfung reports eingereicht von users für inappropriate inserate.",
+  "help": {
+    "ariaLabel": "Über Inserat-Meldungen",
+    "title": "Über Inserat-Meldungen",
+    "overview": "Eine Inserat-Meldung ist ein Moderationsbericht: ein Nutzer meldet unangemessen, Spam, irreführend oder anderes, optional mit Kommentar. Nur Admins lösen oder verwerfen ausstehende Meldungen.",
+    "sections": [
+      {
+        "title": "Status",
+        "items": [
+          "Ausstehend — wartet auf Admin-Entscheidung.",
+          "Geprüft — Meldung bestätigt; Auflösungstext gespeichert. Optional kann das Inserat deaktiviert werden.",
+          "Verworfen — Meldung abgelehnt; Auflösungstext trotzdem nötig."
+        ]
+      },
+      {
+        "title": "Admin-Aktionen",
+        "items": [
+          "Auflösen setzt Status auf geprüft und speichert den Text.",
+          "Optional das Inserat im Rahmen der Auflösung deaktivieren.",
+          "Verwerfen setzt Status auf verworfen mit Begründung.",
+          "Nicht-Admins können diese Aktionen nicht ausführen."
+        ],
+        "body": "Auflösen und Verwerfen nur bei ausstehender, nicht gelöschter Meldung."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Erstellen erfasst eine neue Meldung zu einem Inserat.",
+          "Bearbeiten kann Grund und Details ändern; das Inserat bleibt nach dem Erstellen fix.",
+          "Soft-gelöschte Meldungen sind wiederherstellbar."
+        ]
+      }
+    ]
+  },
   "createListingFlag": "Inserat flag erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

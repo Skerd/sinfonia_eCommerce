@@ -2,6 +2,43 @@
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Annonces",
   "description": "Gérez les listes de produits et de services pour la vitrine de votre locataire.",
+  "help": {
+    "ariaLabel": "À propos des annonces",
+    "title": "À propos des annonces",
+    "overview": "Une annonce est l'offre d'un prestataire — service ou prestation avec catégorie, médias, prix et packages ou extras optionnels. Seule une annonce active est commandable. Le statut ne change pas par une édition ordinaire ; activer et désactiver sont des actions dédiées.",
+    "sections": [
+      {
+        "title": "Statut",
+        "items": [
+          "Brouillon est le défaut pendant que vous construisez titre, catégorie, médias et prix.",
+          "Activer exige un prix et une devise. Sans eux l'annonce n'est pas commandable.",
+          "Désactiver retire une annonce active sans la supprimer.",
+          "Seul le prestataire de l'annonce (ou un admin) peut activer ou désactiver."
+        ],
+        "body": "Le statut est brouillon, actif ou inactif. PATCH ne peut pas le changer."
+      },
+      {
+        "title": "Ce que vous configurez",
+        "items": [
+          "Titre, description, catégorie, tags, FAQ et exigences décrivent l'offre.",
+          "Le type de prix est fixe ou horaire. Prix et devise alimentent les commandes depuis le prix de base sans package.",
+          "Les jours de livraison définissent la fenêtre d'échéance par défaut depuis le prix de base.",
+          "L'image principale est obligatoire ; galeries et lieu (pays / région / ville) sont optionnels.",
+          "Packages et extras sont des enregistrements séparés ; ils remplacent ou étendent prix et délai à la sélection."
+        ]
+      },
+      {
+        "title": "Connexions",
+        "items": [
+          "Des commandes peuvent être créées depuis une annonce active (package et extras optionnels).",
+          "Les promotions augmentent la visibilité sur une fenêtre de dates.",
+          "Les signalements permettent de signaler une annonce ; les résoudre peut la désactiver.",
+          "Les avis alimentent la note moyenne et le nombre d'avis sur l'annonce.",
+          "La suppression est un soft delete et peut être restaurée."
+        ]
+      }
+    ]
+  },
   "createListing": "Créer une annonce",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
