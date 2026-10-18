@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/center/sheetView/disputeSheetView.tsx",
+  "dispute": "Streitfall",
+  "overview": "Übersicht",
+  "details": "Details",
+  "order": "Auftrag",
+  "initiator": "Initiator",
+  "reason": "Grund",
+  "resolution": "Resolution",
+  "status": "Status",
+  "createdAt": "Opened",
+  "failedTitle": "Streitfall konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese streitfall. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "status_values": {
+    "open": "Offen",
+    "under_review": "In Prüfung",
+    "resolved": "Resolved",
+    "closed": "Geschlossen"
+  }
+}

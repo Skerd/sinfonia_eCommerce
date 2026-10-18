@@ -1,0 +1,32 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossible d'ouvrir un litige"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Litige d'ouverture"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Litige ouvert"
+    }
+  },
+  "form": {
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "reasonLabel": "Motif",
+    "reasonPlaceholder": "Décrivez le problème..."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Litige ouvert"
+  },
+  "formHeader": {
+    "description": "Soumettez un litige pour une commande qui présente un problème.",
+    "title": "Litige ouvert"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/createDispute.tsx",
+  "title": "Modifier le type d’unité"
+}

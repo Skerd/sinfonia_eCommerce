@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx",
+  "failedTitle": "Échec du chargement du module complémentaire de liste",
+  "failedDescription": "Une erreur s'est produite lors du chargement de ce module complémentaire de liste. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "listingAddOnSubtitle": "Module complémentaire d'annonce",
+  "overview": "Vue d'ensemble",
+  "lifecycle": "Cycle de vie",
+  "name": "Nom",
+  "listing": "Annonce",
+  "provider": "Fournisseur",
+  "priceAmount": "Prix",
+  "currency": "Devise",
+  "deliveryDays": "Livraison (jours)",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

@@ -1,0 +1,87 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Konnte nicht erstellen inserat"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Inserat wird erstellt"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Inserat erstellt"
+    }
+  },
+  "form": {
+    "addressCityIdLabel": "Ort",
+    "addressCityLabel": "Ort",
+    "addressCityPlaceholder": "Ort",
+    "addressCountryIdLabel": "Land",
+    "addressCountryLabel": "Land",
+    "addressCountryPlaceholder": "Land",
+    "addressStateIdLabel": "Region / kanton",
+    "addressStateLabel": "Region / kanton",
+    "addressStatePlaceholder": "Kanton oder region",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "Choose a kategorie",
+    "deliveryDaysLabel": "Delivery time (tage)",
+    "deliveryDaysPlaceholder": "E.g. 3",
+    "descriptionLabel": "Beschreibung",
+    "faqAddRow": "FAQ hinzufügen",
+    "faqAnswerLabel": "Antwort",
+    "faqAnswerPlaceholder": "Antwort",
+    "faqQuestionLabel": "Frage",
+    "faqQuestionPlaceholder": "Frage",
+    "faqRemoveRow": "Entfernen FAQ",
+    "faqRowTitle": "FAQ",
+    "faqsSectionTitle": "FAQs",
+    "imageGalleryLabel": "Bild galerie",
+    "listingCreateDescription": "Publizieren a inserat mit pricing, kategorie, und standort details.",
+    "listingCreateTitle": "Inserat erstellen",
+    "listingStatus": {
+      "active": "Aktiv",
+      "draft": "Entwurf",
+      "inactive": "Inaktiv"
+    },
+    "mainImageLabel": "Haupt bild",
+    "priceCurrencyIdLabel": "Währung",
+    "priceCurrencyLabel": "Währung",
+    "priceCurrencyPlaceholder": "Währung",
+    "priceLabel": "Preis",
+    "pricingType": {
+      "fixed": "Fixed preis",
+      "hourly": "Hourly satz"
+    },
+    "pricingTypeLabel": "Pricing typ",
+    "pricingTypePlaceholder": "Pricing typ auswählen",
+    "requirementsLabel": "Requirements",
+    "requirementsPlaceholder": "A requirement und press Eingeben hinzufügen",
+    "requirementsRemoveTooltip": "Entfernen requirement",
+    "section": {
+      "general": "Allgemein",
+      "images": "Images",
+      "location": "Standort",
+      "video": "Video"
+    },
+    "statusLabel": "Status",
+    "statusPlaceholder": "Status auswählen",
+    "tagsLabel": "Tags",
+    "tagsPlaceholder": "Typ a tag und press Eingeben",
+    "tagsRemoveTooltip": "Entfernen tag",
+    "tagsSectionTitle": "Tags",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Inserat bezeichnung",
+    "videoGalleryLabel": "Video galerie"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Inserat erstellen"
+  },
+  "formHeader": {
+    "description": "Publizieren a inserat mit pricing, kategorie, und standort details.",
+    "title": "Inserat erstellen"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listings/createListing.tsx",
+  "title": "Bezeichnung"
+}

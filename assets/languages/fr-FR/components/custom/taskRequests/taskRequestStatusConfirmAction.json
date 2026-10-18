@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
+  "close": {
+    "title": "Fermer cette demande de tâche ?",
+    "description": "Les fournisseurs ne pourront plus faire de nouvelles offres. Vous pouvez le rouvrir plus tard, sauf si la demande a été acceptée.",
+    "confirm": "Confirmer",
+    "axios": {
+      "start": {
+        "title": "Demande de tâche de clôture",
+        "time": 3000
+      },
+      "success": {
+        "title": "Demande de tâche clôturée avec succès",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossible de fermer la demande de tâche, veuillez réessayer",
+        "time": 3000
+      }
+    }
+  },
+  "reopen": {
+    "title": "Rouvrir cette demande de tâche ?",
+    "description": "La demande sera à nouveau ouverte afin que les fournisseurs puissent soumettre des offres.",
+    "confirm": "Confirmer",
+    "axios": {
+      "start": {
+        "title": "Demande de tâche de réouverture",
+        "time": 3000
+      },
+      "success": {
+        "title": "La demande de tâche a été rouverte avec succès",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossible de rouvrir la demande de tâche, veuillez réessayer",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Annuler"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
+  "title": "Shtesat e Listimeve",
+  "description": "Menaxhoni shtesat opsionale që ofruesit i bashkangjisin listimeve të tyre.",
+  "createListingAddOn": "Krijo shtesë",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "listing": "Listimi",
+    "provider": "Ofruesi",
+    "price": {
+      "amount": "Çmimi",
+      "currency": "Valuta"
+    },
+    "deliveryDays": "Ditë dorëzimi",
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

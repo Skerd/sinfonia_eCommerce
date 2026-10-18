@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
+  "formHeader": {
+    "title": "Liste des rapports",
+    "description": "Signalez une annonce pour examen par l’équipe de modération."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Soumettre le rapport"
+  },
+  "form": {
+    "listingLabel": "Annonce",
+    "listingPlaceholder": "Sélectionnez une annonce",
+    "reasonLabel": "Motif",
+    "reasonPlaceholder": "Sélectionnez la raison",
+    "commentLabel": "Détails supplémentaires",
+    "commentPlaceholder": "Détails facultatifs...",
+    "reason_values": {
+      "inappropriate": "Contenu inapproprié",
+      "spam": "Spam",
+      "misleading": "Trompeur",
+      "other": "Autre"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Soumission du rapport",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rapport soumis",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de soumettre le rapport",
+      "time": 3000
+    }
+  }
+}

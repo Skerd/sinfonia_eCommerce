@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "listing": "Inserat",
+  "provider": "Anbieter",
+  "amount": "Betrag",
+  "dueDate": "Fällig",
+  "status": "Status",
+  "total": "Total",
+  "statuses": {
+    "pending": "Ausstehend",
+    "accepted": "Accepted",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
+}

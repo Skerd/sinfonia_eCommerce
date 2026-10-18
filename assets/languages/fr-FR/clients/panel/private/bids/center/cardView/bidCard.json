@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "taskRequest": "Demande de tâche",
+  "name": "Nom",
+  "status": "Statut",
+  "amount": "Montant",
+  "deliveryDays": "Livraison",
+  "days": "jours",
+  "bidder": "Enchérisseur",
+  "offer": "Offre",
+  "statuses": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "rejected": "Rejeté"
+  }
+}

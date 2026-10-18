@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
+  "title": "Aufgabe requests",
+  "description": "Post und verwalten käufer requests für quotes, custom arbeit, oder procurement.",
+  "createTaskRequest": "Aufgabe antrag erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "title": "Bezeichnung",
+    "description": "Beschreibung",
+    "requester": "Requester",
+    "category": "Kategorie",
+    "budgetMin": "Budget (min)",
+    "budgetMax": "Budget (max)",
+    "currency": "Währung",
+    "address": "Adresse",
+    "expiresAt": "Expires",
+    "status": "Status",
+    "mainImage": "Haupt bild",
+    "imageGallery": "Bild galerie",
+    "videoGallery": "Video galerie",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "!enums": {
+      "status": {
+        "open": "Offen",
+        "closed": "Geschlossen",
+        "awarded": "Zuschlag"
+      }
+    }
+  }
+}

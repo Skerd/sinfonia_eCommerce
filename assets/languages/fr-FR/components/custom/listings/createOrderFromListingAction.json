@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listings/createOrderFromListingAction.tsx",
+  "createOrder": {
+    "title": "Commandez ce service",
+    "description": "Passez une commande directement à partir de cette annonce. Le fournisseur recevra une notification et pourra accepter ou refuser.",
+    "noteLabel": "Note complémentaire (facultatif)",
+    "notePlaceholder": "Toute instruction ou détail particulier pour le fournisseur…",
+    "confirm": "Passer la commande",
+    "axios": {
+      "start": {
+        "title": "Passer la commande",
+        "time": 3000
+      },
+      "success": {
+        "title": "Commande passée avec succès",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossible de passer la commande, veuillez réessayer",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Annuler"
+}

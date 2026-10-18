@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/cardView/providerProfileCard.tsx",
+  "provider": "Fornitore",
+  "bio": "Bio",
+  "skills": "Abilità",
+  "rating": "Valutazione",
+  "connect": {
+    "notConnected": "Pagamenti non collegati",
+    "setupIncomplete": "Configurazione dello stripe incompleta",
+    "payoutsEnabled": "Pagamenti abilitati"
+  }
+}

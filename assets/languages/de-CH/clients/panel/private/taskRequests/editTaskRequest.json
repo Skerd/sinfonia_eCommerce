@@ -1,0 +1,61 @@
+{
+  "address": "Adresse",
+  "editDescription": "Aktualisieren fields sie sind allowed bis change.",
+  "editTitle": "Aufgabe antrag bearbeiten",
+  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "errorTitle": "Konnte nicht laden aufgabe antrag",
+  "form": {
+    "addressPrivacyAlert": "Providers kann nicht see ihr exact adresse until sie accept a offerte. Ihr full adresse ist shared only mit die provider sie choose, after sie have agreed on die arbeit.",
+    "budgetMaxLabel": "Budget (max)",
+    "budgetMinLabel": "Budget (min)",
+    "categoryLabel": "Kategorie",
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort auswählen",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "currencyLabel": "Währung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung Placeholder",
+    "editStatusSection": "Status",
+    "expiresAtLabel": "Expires",
+    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "imageGalleryLabel": "Bild galerie",
+    "latitudeLabel": "Breitengrad",
+    "latitudePlaceholder": "Breitengrad",
+    "longitudeLabel": "Längengrad",
+    "longitudePlaceholder": "Längengrad",
+    "mainImageLabel": "Haupt bild",
+    "postalCodeLabel": "Postleitzahl",
+    "postalCodePlaceholder": "Postleitzahl",
+    "section": {
+      "budget": "Kostenvoranschlag",
+      "currencyExpires": "Währung und expiry",
+      "description": "Details",
+      "general": "Allgemein",
+      "images": "Images",
+      "video": "Video"
+    },
+    "stateLabel": "Kanton",
+    "statePlaceholder": "Kanton auswählen",
+    "statusLabel": "Status",
+    "streetLabel": "Strasse",
+    "streetPlaceholder": "Strasse adresse",
+    "taskRequestStatus": {
+      "awarded": "Zuschlag",
+      "closed": "Geschlossen",
+      "open": "Offen"
+    },
+    "titleLabel": "Bezeichnung",
+    "videoGalleryLabel": "Video galerie"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Absenden"
+  },
+  "formHeader": {
+    "description": "Aktualisieren ihr antrag details.",
+    "title": "Aufgabe antrag bearbeiten"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
+  "title": "Bezeichnung"
+}

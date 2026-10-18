@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx",
+  "listing": "Annuncio",
+  "reason": "Motivo",
+  "reporter": "Segnalatore",
+  "status": "Stato",
+  "status_values": {
+    "pending": "In sospeso",
+    "reviewed": "Recensito",
+    "dismissed": "Licenziato"
+  },
+  "reason_values": {
+    "inappropriate": "Contenuti inappropriati",
+    "spam": "Spam",
+    "misleading": "Fuorviante",
+    "other": "Altro"
+  }
+}

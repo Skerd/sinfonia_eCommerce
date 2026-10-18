@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
+  "title": "Promotions",
+  "description": "Featured und sponsored inserat promotions. verwalten",
+  "createPromotion": "Promotion erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "listing": "Inserat",
+    "type": "Typ",
+    "lifecycleStatus": "Lebenszyklusstatus",
+    "stopReason": "Stop grund",
+    "startAt": "Start",
+    "endAt": "Ende",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "!enums": {
+      "type": {
+        "featured": "Featured",
+        "sponsored": "Sponsored"
+      },
+      "lifecycleStatus": {
+        "active": "Aktiv",
+        "paused": "Paused",
+        "stopped": "Stopped"
+      }
+    }
+  }
+}

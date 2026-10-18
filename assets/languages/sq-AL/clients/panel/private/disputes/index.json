@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
+  "title": "Mosmarrëveshjet",
+  "description": "Shqyrtoni dhe zgjidhni mosmarrëveshjet ndërmjet klientëve dhe ofruesve.",
+  "createDispute": "Hap mosmarrëveshje",
+  "fields": {
+    "status": "Statusi",
+    "reason": "Arsyeja",
+    "resolution": "Zgjidhja",
+    "initiator": "Iniciatori",
+    "createdAt": "Hapur",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "status": {
+    "open": "Hapur",
+    "under_review": "Nën shqyrtim",
+    "resolved": "Zgjidhur",
+    "closed": "Mbyllur"
+  }
+}

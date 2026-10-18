@@ -186,7 +186,94 @@
       },
       "analytics": {
         "title": "Analyses"
+      },
+      "eCommerceMarketplace": {
+        "title": "Marché de commerce électronique"
+      },
+      "listingcategories": {
+        "title": "Catégories d'annonces"
+      },
+      "listings": {
+        "title": "Annonces"
+      },
+      "taskrequests": {
+        "title": "Demandes de tâches"
+      },
+      "orders": {
+        "title": "Commandes"
+      },
+      "bids": {
+        "title": "Offres"
+      },
+      "bookings": {
+        "title": "Réservations"
+      },
+      "disputes": {
+        "title": "Litiges"
+      },
+      "reviews": {
+        "title": "Avis"
+      },
+      "promotions": {
+        "title": "Promotions"
+      },
+      "listingflags": {
+        "title": "Liste des drapeaux"
+      },
+      "providerprofile": {
+        "title": "Profils de prestataires"
+      },
+      "listingaddons": {
+        "title": "Liste des modules complémentaires"
+      },
+      "listingpackages": {
+        "title": "Liste des packages"
       }
+    }
+  },
+  "eCommerceMarketplace": {
+    "title": "Marketplace",
+    "listings": {
+      "title": "Annonces"
+    },
+    "taskrequests": {
+      "title": "Demandes de tâches"
+    },
+    "orders": {
+      "title": "Commandes"
+    },
+    "bids": {
+      "title": "Offres"
+    },
+    "bookings": {
+      "title": "Réservations"
+    },
+    "disputes": {
+      "title": "Litiges"
+    },
+    "reviews": {
+      "title": "Avis"
+    },
+    "promotions": {
+      "title": "Promotions"
+    },
+    "listingflags": {
+      "title": "Liste des drapeaux"
+    },
+    "providerprofile": {
+      "title": "Profils de prestataires"
+    },
+    "listingaddons": {
+      "title": "Liste des modules complémentaires"
+    },
+    "listingpackages": {
+      "title": "Liste des packages"
+    },
+    "marketplacesystemmap": {
+      "title": "Carte système"
+    },
+    "listingcategories": {
+      "title": "Catégories d'annonces"
     }
   }
 }

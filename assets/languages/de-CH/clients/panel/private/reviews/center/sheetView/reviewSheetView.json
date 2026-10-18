@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/center/sheetView/reviewSheetView.tsx",
+  "review": "Bewertung",
+  "eCommerce": {
+    "review": "Bewertung"
+  },
+  "overview": "Übersicht",
+  "details": "Details",
+  "order": "Auftrag",
+  "reviewer": "Reviewer",
+  "rating": "Bewertung",
+  "comment": "Kommentar",
+  "listing": "Inserat",
+  "listing.title": "Inserat",
+  "createdAt": "Erstellt",
+  "failedTitle": "Bewertung konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese prüfung. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten."
+}

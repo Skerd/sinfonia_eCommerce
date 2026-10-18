@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/createPromotion.tsx",
+  "formHeader": {
+    "title": "Krijo promocion",
+    "description": "Rrit dukshmërinë e një listimi me promovim të veçuar ose të sponsorizuar."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo promocionin"
+  },
+  "form": {
+    "listingLabel": "Listimi",
+    "listingPlaceholder": "Zgjidh listimin",
+    "typeLabel": "Lloji i promocionit",
+    "promotionTypeLabel": "Lloji i promocionit",
+    "promotionTypePlaceholder": "Zgjidh llojin e promocionit",
+    "promotionTypeFeatured": "I veçuar",
+    "promotionTypeSponsored": "I sponsorizuar",
+    "startAtLabel": "Data dhe ora e fillimit",
+    "startAtPlaceholder": "Fillimi i promocionit",
+    "endAtLabel": "Data dhe ora e mbarimit",
+    "endAtPlaceholder": "Mbarimi i promocionit"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar promocionin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Promocioni u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua promocioni",
+      "time": 3000
+    }
+  }
+}

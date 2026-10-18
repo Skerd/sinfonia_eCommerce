@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/cardView/taskRequestCard.tsx",
+  "failedTitle": "Aufgabe antrag konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese aufgabe antrag. Click bis retry.",
+  "title": "Bezeichnung",
+  "name": "Name",
+  "status": "Status",
+  "category": "Kategorie",
+  "budget": "Kostenvoranschlag",
+  "city": "Ort",
+  "expiresAt": "Expires",
+  "statuses": {
+    "open": "Offen",
+    "closed": "Geschlossen",
+    "awarded": "Zuschlag"
+  }
+}

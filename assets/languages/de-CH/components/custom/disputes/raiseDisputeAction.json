@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/disputes/raiseDisputeAction.tsx",
+  "cancel": "Abbrechen",
+  "raise": {
+    "title": "Offen a streitfall",
+    "description": "Describe die issue. Ein admin may put die streitfall unter prüfung; delivery acceptance stays blocked until die streitfall ist cleared.",
+    "reasonLabel": "Grund",
+    "reasonPlaceholder": "What went wrong?",
+    "confirm": "Submit streitfall",
+    "axios": {
+      "start": {
+        "title": "Submitting streitfall",
+        "time": 3000
+      },
+      "success": {
+        "title": "Streitfall opened",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht offen streitfall",
+        "time": 3000
+      }
+    }
+  }
+}

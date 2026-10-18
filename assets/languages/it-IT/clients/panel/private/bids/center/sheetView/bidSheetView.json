@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Fai un'offerta",
+  "name": "Nome",
+  "overview": "Panoramica",
+  "amount": "Importo",
+  "currency": "Valuta",
+  "deliveryDays": "Giorni di consegna",
+  "proposal": "Proposta",
+  "status": "Stato",
+  "bidder": "Offerente",
+  "taskRequest": "Richiesta di attività",
+  "failedTitle": "Impossibile caricare l'offerta",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa offerta. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "bidStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "rejected": "Rifiutato"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "listing": "Listing",
+  "provider": "Provider",
+  "amount": "Amount",
+  "dueDate": "Due",
+  "status": "Status",
+  "total": "Total",
+  "statuses": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx",
+  "editTitle": "Modifica il profilo del fornitore",
+  "editDescription": "Aggiorna competenze, biografia, portfolio e disponibilità settimanale per questo fornitore.",
+  "errorTitle": "Impossibile caricare il profilo del fornitore",
+  "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
+  "formHeader": {
+    "title": "Modifica il profilo del fornitore",
+    "description": "Aggiorna competenze, biografia, portfolio e disponibilità."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "form": {
+    "skillsLabel": "Abilità",
+    "skillsPlaceholder": "ad es. idraulico, elettrico...",
+    "skillsRemoveTooltip": "Rimuovi abilità",
+    "bioLabel": "Bio",
+    "bioPlaceholder": "Racconta di te ai clienti...",
+    "portfolioLabel": "Immagini del portfolio",
+    "section": {
+      "profile": "Profilo",
+      "availability": "Disponibilità settimanale",
+      "portfolio": "Portafoglio"
+    },
+    "availabilityAddRow": "Aggiungi finestra temporale",
+    "availabilityRemoveRow": "Rimuovi",
+    "availabilityRowTitle": "Finestra di disponibilità",
+    "dayOfWeekLabel": "Giorno della settimana",
+    "startTimeLabel": "Ora di inizio",
+    "startTimePlaceholder": "Scegli l'ora di inizio",
+    "endTimeLabel": "Ora di fine",
+    "endTimePlaceholder": "Scegli l'ora di fine"
+  },
+  "weekday": {
+    "0": "Domenica",
+    "1": "Lunedi",
+    "2": "Martedì",
+    "3": "Mercoledì",
+    "4": "Giovedì",
+    "5": "Venerdì",
+    "6": "Sabato"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del profilo",
+      "time": 3000
+    },
+    "success": {
+      "title": "Profilo aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il profilo",
+      "time": 3000
+    }
+  }
+}

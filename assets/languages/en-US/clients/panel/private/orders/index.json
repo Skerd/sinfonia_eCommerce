@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
+  "title": "Orders",
+  "description": "Manage service orders between customers and providers.",
+  "createOrder": "Create order",
+  "fields": {
+    "status": "Status",
+    "customer": "Customer",
+    "provider": "Provider",
+    "amount": "Amount",
+    "currency": "Currency",
+    "deliveryDueDate": "Due date",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "status": {
+    "pending": "Pending",
+    "in_progress": "In Progress",
+    "submitted": "Submitted",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "disputed": "Disputed"
+  }
+}

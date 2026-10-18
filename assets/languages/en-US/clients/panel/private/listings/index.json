@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Listings",
+  "description": "Manage product and service listings for your tenant storefront.",
+  "createListing": "Create listing",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "pricingType": {
+        "fixed": "Fixed price",
+        "hourly": "Hourly rate"
+      }
+    },
+    "name": "Name",
+    "title": "Title",
+    "description": "Description",
+    "category": "Category",
+    "provider": "Provider",
+    "price": "Price",
+    "priceCurrency": "Currency",
+    "status": "Status",
+    "pricingType": "Pricing type",
+    "deliveryDays": "Delivery days",
+    "address": "Location",
+    "mainImage": "Main image",
+    "imageGallery": "Image gallery",
+    "videoGallery": "Video gallery",
+    "faqs": {
+      "question": "Question",
+      "answer": "Answer"
+    },
+    "requirements": "Requirements",
+    "tags": "Tags",
+    "promotions": "Promotions",
+    "listingPackages": "Packages",
+    "listingAddOns": "Add-ons",
+    "avgRating": "Rating",
+    "reviewCount": "Reviews",
+    "company": "Company",
+    "createdBy": "Created by",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
+  }
+}

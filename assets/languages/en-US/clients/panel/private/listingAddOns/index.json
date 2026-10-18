@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
+  "title": "Listing Add-Ons",
+  "description": "Manage optional add-ons that providers attach to their listings.",
+  "createListingAddOn": "Create add-on",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "listing": "Listing",
+    "provider": "Provider",
+    "price": {
+      "amount": "Price",
+      "currency": "Currency"
+    },
+    "deliveryDays": "Delivery days",
+    "company": "Company",
+    "createdBy": "Created by",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
+  }
+}

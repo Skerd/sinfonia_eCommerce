@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
+  "title": "Elenco bandiere",
+  "description": "Esamina le segnalazioni inviate dagli utenti per elenchi inappropriati.",
+  "createListingFlag": "Crea bandiera dell'elenco",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "listing": "Annuncio",
+    "reason": "Motivo",
+    "status": "Stato",
+    "user": "Segnalatore",
+    "comment": "Commento",
+    "resolution": "Risoluzione",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da",
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "reviewed": "Recensito",
+        "dismissed": "Licenziato"
+      },
+      "reason": {
+        "inappropriate": "Contenuti inappropriati",
+        "spam": "Spam",
+        "misleading": "Fuorviante",
+        "other": "Altro"
+      }
+    }
+  }
+}

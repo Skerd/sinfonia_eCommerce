@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
+  "title": "Listing Packages",
+  "description": "Manage service packages that providers offer for their listings.",
+  "createListingPackage": "Create package",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Name",
+    "listing": "Listing",
+    "description": "Description",
+    "price": {
+      "amount": "Price",
+      "currency": "Currency"
+    },
+    "deliveryDays": "Delivery days",
+    "order": "Display order",
+    "company": "Company",
+    "createdBy": "Created by",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by"
+  }
+}

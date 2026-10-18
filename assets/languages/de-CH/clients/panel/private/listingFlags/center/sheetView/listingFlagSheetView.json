@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
+  "failedTitle": "Inserat flag konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese inserat flag. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "listingFlagSubtitle": "Inserat Flag",
+  "listingFlag": "Inserat Flag",
+  "overview": "Übersicht",
+  "lifecycle": "Lebenszyklus",
+  "details": "Details",
+  "listing": "Inserat",
+  "reason": "Grund",
+  "comment": "Kommentar",
+  "user": "Reporter",
+  "reporter": "Reporter",
+  "status": "Status",
+  "resolution": "Resolution",
+  "listingAction": "Inserat aktion",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von",
+  "status_values": {
+    "pending": "Ausstehend",
+    "reviewed": "Reviewed",
+    "dismissed": "Dismissed"
+  },
+  "reason_values": {
+    "inappropriate": "Inappropriate content",
+    "spam": "Spam",
+    "misleading": "Misleading",
+    "other": "Andere"
+  }
+}

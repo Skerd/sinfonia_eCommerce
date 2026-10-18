@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx",
+  "failedTitle": "Impossibile caricare il pacchetto di elenchi",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo pacchetto di inserzioni. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "listingPackageSubtitle": "Pacchetto di elenchi",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "description": "Descrizione",
+  "name": "Nome",
+  "listing": "Annuncio",
+  "provider": "Fornitore",
+  "priceAmount": "Prezzo",
+  "currency": "Valuta",
+  "deliveryDays": "Consegna (giorni)",
+  "displayOrder": "Ordine di visualizzazione",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

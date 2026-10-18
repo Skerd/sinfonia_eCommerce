@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/orderExtendAction.tsx",
+  "extend": {
+    "title": "Prolungare la data di consegna",
+    "description": "Aggiungi giorni extra alla data di scadenza della consegna. Solo il fornitore può estendere un ordine attivo.",
+    "additionalDaysLabel": "Giorni aggiuntivi",
+    "additionalDaysHint": "Immettere un valore compreso tra 1 e 90 giorni.",
+    "confirm": "Estendere la consegna",
+    "axios": {
+      "start": {
+        "title": "Proroga dell'ordine",
+        "time": 3000
+      },
+      "success": {
+        "title": "Ordine esteso con successo",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossibile estendere l'ordine, riprova",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Annulla"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/components/custom/bids/bidActionConfirmAction.tsx",
+  "accept": {
+    "title": "Accept diese offerte?",
+    "description": "Die offerte will werden marked accepted, die aufgabe antrag zuschlag, und ein auftrag will werden erstellt. Diese kann nicht werden rückgängig von here.",
+    "confirm": "Accept offerte",
+    "axios": {
+      "start": {
+        "title": "Accepting offerte",
+        "time": 3000
+      },
+      "success": {
+        "title": "Offerte accepted erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht accept offerte, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "reject": {
+    "title": "Ablehnen diese offerte?",
+    "description": "Die offerte will werden marked abgelehnt. Die aufgabe requester oder bidder can ablehnen a ausstehend offerte.",
+    "confirm": "Ablehnen offerte",
+    "axios": {
+      "start": {
+        "title": "Rejecting offerte",
+        "time": 3000
+      },
+      "success": {
+        "title": "Offerte abgelehnt erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht ablehnen offerte, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

@@ -1,0 +1,61 @@
+{
+  "address": "Adresse",
+  "editDescription": "Mettez à jour les champs que vous êtes autorisé à modifier.",
+  "editTitle": "Modifier la demande de tâche",
+  "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
+  "errorTitle": "Impossible de charger la demande de tâche",
+  "form": {
+    "addressPrivacyAlert": "Les fournisseurs ne peuvent pas voir votre adresse exacte tant que vous n'avez pas accepté une offre. Votre adresse complète est partagée uniquement avec le prestataire que vous choisissez, après que vous ayez accepté les travaux.",
+    "budgetMaxLabel": "Budget (maximum)",
+    "budgetMinLabel": "Budget (min)",
+    "categoryLabel": "Catégorie",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Sélectionner la ville",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Sélectionner le pays",
+    "currencyLabel": "Devise",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description Espace réservé",
+    "editStatusSection": "Statut",
+    "expiresAtLabel": "Expire",
+    "expiresAtPlaceholder": "aaaa-MM-jj",
+    "imageGalleryLabel": "Galerie d’images",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "mainImageLabel": "Image principale",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "section": {
+      "budget": "Budget",
+      "currencyExpires": "Devise et expiration",
+      "description": "Détails",
+      "general": "Général",
+      "images": "Images",
+      "video": "Vidéo"
+    },
+    "stateLabel": "Canton / État",
+    "statePlaceholder": "Sélectionner le canton",
+    "statusLabel": "Statut",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Adresse postale",
+    "taskRequestStatus": {
+      "awarded": "Récompensé",
+      "closed": "Fermé",
+      "open": "Ouvert"
+    },
+    "titleLabel": "Modifier le type d’unité",
+    "videoGalleryLabel": "Galerie vidéo"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Soumettre"
+  },
+  "formHeader": {
+    "description": "Mettez à jour les détails de votre demande.",
+    "title": "Modifier la demande de tâche"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
+  "title": "Modifier le type d’unité"
+}

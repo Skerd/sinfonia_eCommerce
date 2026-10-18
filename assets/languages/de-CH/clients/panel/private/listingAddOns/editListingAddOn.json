@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/editListingAddOn.tsx",
+  "editTitle": "Inserat hinzufügen-on bearbeiten",
+  "editDescription": "Aktualisieren die name, preis, oder delivery time für diese hinzufügen-on.",
+  "errorTitle": "Konnte nicht laden hinzufügen-on",
+  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "formHeader": {
+    "title": "Inserat hinzufügen-on bearbeiten",
+    "description": "Modify die hinzufügen-on details."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  },
+  "form": {
+    "idLabel": "Protokoll ID",
+    "listingIdLabel": "Inserat",
+    "listingIdPlaceholder": "Inserat auswählen",
+    "nameLabel": "Hinzufügen-on name",
+    "namePlaceholder": "E.g. Express delivery",
+    "priceAmountLabel": "Preis",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysPlaceholder": "E.g. 2"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving hinzufügen-on",
+      "time": 3000
+    },
+    "success": {
+      "title": "Hinzufügen-on aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren hinzufügen-on",
+      "time": 3000
+    }
+  }
+}

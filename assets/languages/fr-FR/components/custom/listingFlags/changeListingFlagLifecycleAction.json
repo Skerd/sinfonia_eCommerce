@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx",
+  "cancel": "Annuler",
+  "resolutionLabel": "Notes de résolution",
+  "resolutionPlaceholder": "Décrivez comment ce rapport a été traité (obligatoire).",
+  "resolutionHint": "Obligatoire. 1 à 2 000 caractères.",
+  "listingActionLabel": "Action de référencement",
+  "listingActionPlaceholder": "Sélectionnez une action",
+  "listingAction_values": {
+    "none": "Aucune action",
+    "deactivate": "Désactiver l'annonce"
+  },
+  "resolve": {
+    "title": "Résoudre l'indicateur de liste",
+    "description": "Marque le rapport comme révisé. Désactivez éventuellement la liste.",
+    "confirm": "Résoudre",
+    "axios": {
+      "start": {
+        "title": "Résolution du drapeau",
+        "time": 3000
+      },
+      "success": {
+        "title": "Indicateur résolu",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossible de résoudre l'indicateur",
+        "time": 3000
+      }
+    }
+  },
+  "dismiss": {
+    "title": "Ignorer l'indicateur d'annonce",
+    "description": "Marque le rapport comme rejeté sans autre action de liste.",
+    "confirm": "Rejeter",
+    "axios": {
+      "start": {
+        "title": "Rejet du drapeau",
+        "time": 3000
+      },
+      "success": {
+        "title": "Drapeau rejeté",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossible de supprimer le drapeau",
+        "time": 3000
+      }
+    }
+  }
+}

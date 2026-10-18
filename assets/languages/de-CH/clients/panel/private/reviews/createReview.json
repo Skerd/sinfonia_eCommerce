@@ -1,0 +1,34 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Konnte nicht submit prüfung"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Submitting prüfung"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Prüfung eingereicht"
+    }
+  },
+  "form": {
+    "commentLabel": "Kommentar",
+    "commentPlaceholder": "Share ihr experience...",
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bestellung auswählen",
+    "ratingLabel": "Bewertung",
+    "ratingPlaceholder": "1–5"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Submit prüfung"
+  },
+  "formHeader": {
+    "description": "Submit a bewertung und feedback für a abgeschlossen auftrag.",
+    "title": "Bewertung erstellen"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
+  "title": "Bezeichnung"
+}

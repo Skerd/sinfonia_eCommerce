@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
+  "title": "Marktplatz System Map",
+  "description": "Interactive map von marktplatz models, listing/bid flows, escrow bridge, und capabilities. Pan, zoom, und click nodes für details.",
+  "tabs": {
+    "models": "Modell graph",
+    "flows": "How it works",
+    "capabilities": "Capabilities"
+  }
+}

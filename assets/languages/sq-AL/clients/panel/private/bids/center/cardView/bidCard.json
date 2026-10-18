@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "taskRequest": "Kërkesë pune",
+  "status": "Statusi",
+  "name": "Emri",
+  "amount": "Shuma",
+  "deliveryDays": "Dorëzimi",
+  "days": "ditë",
+  "bidder": "Ofertuesi",
+  "offer": "Oferta",
+  "statuses": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "rejected": "Refuzuar"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestNotifyAllConfirmAction.tsx",
+  "notifyAll": {
+    "title": "Notify alle providers?",
+    "description": "Send a benachrichtigung bis providers mit aktiv inserate in diese kategorie und ort.",
+    "confirm": "Notify alle",
+    "axios": {
+      "start": {
+        "title": "Sending benachrichtigungen",
+        "time": 3000
+      },
+      "success": {
+        "title": "Providers notified erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht notify providers, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

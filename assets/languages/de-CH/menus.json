@@ -186,7 +186,94 @@
       },
       "analytics": {
         "title": "Analytics"
+      },
+      "eCommerceMarketplace": {
+        "title": "ECommerce Marktplatz"
+      },
+      "listingcategories": {
+        "title": "Inserat categories"
+      },
+      "listings": {
+        "title": "Inserate"
+      },
+      "taskrequests": {
+        "title": "Aufgabe requests"
+      },
+      "orders": {
+        "title": "Bestellungen"
+      },
+      "bids": {
+        "title": "Angebote"
+      },
+      "bookings": {
+        "title": "Buchungen"
+      },
+      "disputes": {
+        "title": "Streitfälle"
+      },
+      "reviews": {
+        "title": "Bewertungen"
+      },
+      "promotions": {
+        "title": "Promotions"
+      },
+      "listingflags": {
+        "title": "Inserat flags"
+      },
+      "providerprofile": {
+        "title": "Provider profiles"
+      },
+      "listingaddons": {
+        "title": "Inserat hinzufügen-ons"
+      },
+      "listingpackages": {
+        "title": "Inserat packages"
       }
+    }
+  },
+  "eCommerceMarketplace": {
+    "title": "Marktplatz",
+    "listings": {
+      "title": "Inserate"
+    },
+    "taskrequests": {
+      "title": "Aufgabe requests"
+    },
+    "orders": {
+      "title": "Bestellungen"
+    },
+    "bids": {
+      "title": "Angebote"
+    },
+    "bookings": {
+      "title": "Buchungen"
+    },
+    "disputes": {
+      "title": "Streitfälle"
+    },
+    "reviews": {
+      "title": "Bewertungen"
+    },
+    "promotions": {
+      "title": "Promotions"
+    },
+    "listingflags": {
+      "title": "Inserat flags"
+    },
+    "providerprofile": {
+      "title": "Provider profiles"
+    },
+    "listingaddons": {
+      "title": "Inserat hinzufügen-ons"
+    },
+    "listingpackages": {
+      "title": "Inserat packages"
+    },
+    "marketplacesystemmap": {
+      "title": "Systemkarte"
+    },
+    "listingcategories": {
+      "title": "Inserat categories"
     }
   }
 }

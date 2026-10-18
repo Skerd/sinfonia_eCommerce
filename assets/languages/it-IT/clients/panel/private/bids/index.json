@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
+  "title": "Offerte",
+  "description": "Visualizza e gestisci le offerte sulle richieste di attività.",
+  "createBid": "Crea offerta",
+  "fields": {
+    "amount": "Importo",
+    "currency": "Valuta",
+    "proposal": "Proposta",
+    "deliveryDays": "Giorni di consegna",
+    "status": "Stato",
+    "bidder": "Offerente",
+    "taskRequest": "Richiesta di attività",
+    "createdAt": "Creato"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "status": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "rejected": "Rifiutato"
+  },
+  "accept": "Accetta",
+  "reject": "Rifiuta/Ritira"
+}

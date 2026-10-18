@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/center/sheetView/reviewSheetView.tsx",
+  "review": "Vlerësimi",
+  "eCommerce": {
+    "review": "Vlerësimi"
+  },
+  "overview": "Vështrim i përgjithshëm",
+  "details": "Detajet",
+  "order": "Porosia",
+  "reviewer": "Vlerësuesi",
+  "rating": "Vlerësimi",
+  "comment": "Komenti",
+  "listing": "Listimi",
+  "listing.title": "Listimi",
+  "createdAt": "Krijuar",
+  "failedTitle": "Ngarkimi i vlerësimit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të vlerësimit. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave."
+}

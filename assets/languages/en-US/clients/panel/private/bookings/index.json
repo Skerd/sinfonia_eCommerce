@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
+  "title": "Bookings",
+  "description": "Manage scheduled service bookings.",
+  "createBooking": "Create booking",
+  "fields": {
+    "order": "Order",
+    "provider": "Provider",
+    "startAt": "Start",
+    "endAt": "End",
+    "timezone": "Timezone",
+    "status": "Status",
+    "createdAt": "Created",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "status": { "scheduled": "Scheduled", "in_progress": "In Progress", "completed": "Completed", "cancelled": "Cancelled" }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
+  "title": "Bestellungen",
+  "description": "Service aufträge between customers und providers. verwalten",
+  "createOrder": "Bestellung erstellen",
+  "fields": {
+    "status": "Status",
+    "customer": "Kunde",
+    "provider": "Anbieter",
+    "amount": "Betrag",
+    "currency": "Währung",
+    "deliveryDueDate": "Fälligkeitsdatum",
+    "createdAt": "Erstellt",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "status": {
+    "pending": "Ausstehend",
+    "in_progress": "In Bearbeitung",
+    "submitted": "Eingereicht",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert",
+    "disputed": "Bestritten"
+  }
+}

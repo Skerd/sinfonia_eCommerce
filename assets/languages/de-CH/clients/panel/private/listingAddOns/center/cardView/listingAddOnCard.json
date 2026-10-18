@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/cardView/listingAddOnCard.tsx",
+  "name": "Name",
+  "listing": "Inserat",
+  "priceAmount": "Preis",
+  "deliveryDays": "Delivery tage",
+  "days": "d"
+}

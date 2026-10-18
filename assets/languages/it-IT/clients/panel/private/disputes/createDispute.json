@@ -1,0 +1,32 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aprire la controversia"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Apertura controversia"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Aperta la controversia"
+    }
+  },
+  "form": {
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona l'ordine",
+    "reasonLabel": "Motivo",
+    "reasonPlaceholder": "Descrivi il problema..."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Contenzioso aperto"
+  },
+  "formHeader": {
+    "description": "Sollevare una controversia per un ordine che presenta un problema.",
+    "title": "Contenzioso aperto"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/createDispute.tsx",
+  "title": "Modifica tipo di unità"
+}

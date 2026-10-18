@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
+  "close": {
+    "title": "Chiudere questa richiesta di attività?",
+    "description": "I fornitori non potranno più fare nuove offerte. Potrai riaprirlo in seguito a meno che la richiesta non sia stata accolta.",
+    "confirm": "Conferma",
+    "axios": {
+      "start": {
+        "title": "Chiusura della richiesta di attività",
+        "time": 3000
+      },
+      "success": {
+        "title": "La richiesta di attività è stata chiusa correttamente",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossibile chiudere la richiesta di attività, riprova",
+        "time": 3000
+      }
+    }
+  },
+  "reopen": {
+    "title": "Riaprire questa richiesta di attività?",
+    "description": "La richiesta verrà nuovamente aperta in modo che i fornitori possano presentare offerte.",
+    "confirm": "Conferma",
+    "axios": {
+      "start": {
+        "title": "Riapertura della richiesta di attività",
+        "time": 3000
+      },
+      "success": {
+        "title": "La richiesta di attività è stata riaperta correttamente",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossibile riaprire la richiesta di attività, riprova",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Annulla"
+}

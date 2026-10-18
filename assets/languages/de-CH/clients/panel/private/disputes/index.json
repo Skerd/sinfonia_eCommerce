@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
+  "title": "Streitfälle",
+  "description": "Prüfung und resolve streitfälle between customers und providers.",
+  "createDispute": "Streitfall erstellen",
+  "fields": {
+    "status": "Status",
+    "reason": "Grund",
+    "resolution": "Resolution",
+    "initiator": "Initiator",
+    "createdAt": "Opened",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "status": {
+    "open": "Offen",
+    "under_review": "In Prüfung",
+    "resolved": "Resolved",
+    "closed": "Geschlossen"
+  }
+}

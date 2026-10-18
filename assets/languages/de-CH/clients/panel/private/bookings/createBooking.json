@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/createBooking.tsx",
+  "formHeader": {
+    "title": "Buchung erstellen",
+    "description": "Terminplan a service buchung für ein auftrag."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Buchung erstellen"
+  },
+  "form": {
+    "orderLabel": "Auftrag",
+    "orderPlaceholder": "Bestellung auswählen",
+    "startAtLabel": "Start time",
+    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "endAtLabel": "End time",
+    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "timezoneLabel": "Zeitzone",
+    "timezonePlaceholder": "UTC"
+  },
+  "axios": {
+    "start": {
+      "title": "Buchung wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Buchung erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen buchung",
+      "time": 3000
+    }
+  }
+}

@@ -76,6 +76,38 @@ import PosTill from "@eCommerceModule/clients/panel/private/pos/index.tsx";
 import AllFiscalConfigs from "@eCommerceModule/clients/panel/private/fiscalConfigs/index.tsx";
 import CreateFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx";
 import EditFiscalConfig from "@eCommerceModule/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx";
+import AllListings from "@eCommerceModule/clients/panel/private/listings";
+import CreateListing from "@eCommerceModule/clients/panel/private/listings/createListing.tsx";
+import EditListing from "@eCommerceModule/clients/panel/private/listings/editListing.tsx";
+import AllTaskRequests from "@eCommerceModule/clients/panel/private/taskRequests";
+import CreateTaskRequest from "@eCommerceModule/clients/panel/private/taskRequests/createTaskRequest.tsx";
+import EditTaskRequest from "@eCommerceModule/clients/panel/private/taskRequests/editTaskRequest.tsx";
+import AllOrders from "@eCommerceModule/clients/panel/private/orders";
+import AllBids from "@eCommerceModule/clients/panel/private/bids";
+import CreateBid from "@eCommerceModule/clients/panel/private/bids/createBid.tsx";
+import AllBookings from "@eCommerceModule/clients/panel/private/bookings";
+import CreateBooking from "@eCommerceModule/clients/panel/private/bookings/createBooking.tsx";
+import AllDisputes from "@eCommerceModule/clients/panel/private/disputes";
+import CreateDispute from "@eCommerceModule/clients/panel/private/disputes/createDispute.tsx";
+import AllReviews from "@eCommerceModule/clients/panel/private/reviews";
+import CreateReview from "@eCommerceModule/clients/panel/private/reviews/createReview.tsx";
+import AllPromotions from "@eCommerceModule/clients/panel/private/promotions";
+import CreatePromotion from "@eCommerceModule/clients/panel/private/promotions/createPromotion.tsx";
+import AllListingFlags from "@eCommerceModule/clients/panel/private/listingFlags";
+import CreateListingFlag from "@eCommerceModule/clients/panel/private/listingFlags/createListingFlag.tsx";
+import EditListingFlag from "@eCommerceModule/clients/panel/private/listingFlags/editListingFlag.tsx";
+import AllProviderProfiles from "@eCommerceModule/clients/panel/private/providerProfile";
+import EditProviderProfile from "@eCommerceModule/clients/panel/private/providerProfile/editProviderProfile.tsx";
+import AllListingAddOns from "@eCommerceModule/clients/panel/private/listingAddOns";
+import CreateListingAddOn from "@eCommerceModule/clients/panel/private/listingAddOns/createListingAddOn.tsx";
+import EditListingAddOn from "@eCommerceModule/clients/panel/private/listingAddOns/editListingAddOn.tsx";
+import AllListingPackages from "@eCommerceModule/clients/panel/private/listingPackages";
+import CreateListingPackage from "@eCommerceModule/clients/panel/private/listingPackages/createListingPackage.tsx";
+import EditListingPackage from "@eCommerceModule/clients/panel/private/listingPackages/editListingPackage.tsx";
+import MarketplaceSystemMap from "@eCommerceModule/clients/panel/private/marketplaceSystemMap";
+import AllListingCategories from "@eCommerceModule/clients/panel/private/listingCategories";
+import CreateListingCategory from "@eCommerceModule/clients/panel/private/listingCategories/createCategory.tsx";
+import EditListingCategory from "@eCommerceModule/clients/panel/private/listingCategories/editCategory.tsx";
 import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/helpers/types/routeConfigContribution.types.ts";
 
 function safeDecode(value: string | null): string | undefined {
@@ -203,6 +235,99 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             }
             if (resource === "odooimport") {
                 return <OdooImportPage />;
+            }
+            if (resource === "listingcategories") {
+                const categoryId = searchParams.get("categoryId") || undefined;
+                const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
+                if (action === "create") return <CreateListingCategory />;
+                if (action === "edit" && categoryId) {
+                    return <EditListingCategory categoryId={categoryId} categoryName={categoryName} />;
+                }
+                return <AllListingCategories />;
+            }
+            return undefined;
+        }
+
+        if (menu === "eCommerceMarketplace") {
+            const resource = subview;
+            const action = segments[2];
+            const listingAddOnId = searchParams.get("listingAddOnId") || undefined;
+            const listingPackageId = searchParams.get("listingPackageId") || undefined;
+            const listingId = searchParams.get("listingId") || undefined;
+            const listingTitle = safeDecode(searchParams.get("listingTitle")) || undefined;
+            const taskRequestId = searchParams.get("taskRequestId") || undefined;
+            const taskRequestTitle = safeDecode(searchParams.get("taskRequestTitle")) || undefined;
+            const listingFlagId = searchParams.get("listingFlagId") || undefined;
+            const profileId = searchParams.get("profileId") || undefined;
+            const profileName = safeDecode(searchParams.get("profileName")) || undefined;
+
+            if (resource === "marketplacesystemmap") {
+                return <MarketplaceSystemMap />;
+            }
+            if (resource === "listingcategories") {
+                const categoryId = searchParams.get("categoryId") || undefined;
+                const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
+                if (action === "create") return <CreateListingCategory />;
+                if (action === "edit" && categoryId) {
+                    return <EditListingCategory categoryId={categoryId} categoryName={categoryName} />;
+                }
+                return <AllListingCategories />;
+            }
+            if (resource === "listings") {
+                if (action === "create") return <CreateListing />;
+                if (action === "edit" && listingId) {
+                    return <EditListing entityId={listingId} entityName={listingTitle} />;
+                }
+                return <AllListings />;
+            }
+            if (resource === "taskrequests") {
+                if (action === "create") return <CreateTaskRequest />;
+                if (action === "edit" && taskRequestId) {
+                    return <EditTaskRequest entityId={taskRequestId} entityName={taskRequestTitle} />;
+                }
+                return <AllTaskRequests />;
+            }
+            if (resource === "orders") {
+                return <AllOrders />;
+            }
+            if (resource === "bids") {
+                if (action === "create") return <CreateBid />;
+                return <AllBids />;
+            }
+            if (resource === "bookings") {
+                if (action === "create") return <CreateBooking />;
+                return <AllBookings />;
+            }
+            if (resource === "disputes") {
+                if (action === "create") return <CreateDispute />;
+                return <AllDisputes />;
+            }
+            if (resource === "reviews") {
+                if (action === "create") return <CreateReview />;
+                return <AllReviews />;
+            }
+            if (resource === "promotions") {
+                if (action === "create") return <CreatePromotion />;
+                return <AllPromotions />;
+            }
+            if (resource === "listingflags") {
+                if (action === "create") return <CreateListingFlag />;
+                if (action === "edit" && listingFlagId) return <EditListingFlag entityId={listingFlagId} />;
+                return <AllListingFlags />;
+            }
+            if (resource === "providerprofile") {
+                if (action === "edit" && profileId) return <EditProviderProfile entityId={profileId} entityName={profileName} />;
+                return <AllProviderProfiles />;
+            }
+            if (resource === "listingaddons") {
+                if (action === "create") return <CreateListingAddOn />;
+                if (action === "edit" && listingAddOnId) return <EditListingAddOn entityId={listingAddOnId} />;
+                return <AllListingAddOns />;
+            }
+            if (resource === "listingpackages") {
+                if (action === "create") return <CreateListingPackage />;
+                if (action === "edit" && listingPackageId) return <EditListingPackage entityId={listingPackageId} />;
+                return <AllListingPackages />;
             }
             return undefined;
         }

@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/submitOrderDeliveryAction.tsx",
+  "submitDelivery": {
+    "title": "Submit delivery",
+    "description": "Send ihr abgeschlossen arbeit bis die customer für prüfung. Sie can include ein optional nachricht.",
+    "messageLabel": "Delivery nachricht",
+    "messagePlaceholder": "Describe what was delivered oder hinzufügen notizen für die customer…",
+    "confirm": "Submit delivery",
+    "axios": {
+      "start": {
+        "title": "Submitting delivery",
+        "time": 3000
+      },
+      "success": {
+        "title": "Delivery eingereicht erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht submit delivery, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

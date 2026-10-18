@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
+  "title": "Vlerësimet",
+  "description": "Shiko vlerësimet dhe komentet e lëna nga klientët.",
+  "createReview": "Shto vlerësim",
+  "fields": {
+    "rating": "Vlerësimi",
+    "comment": "Komenti",
+    "reviewer": "Vlerësuesi",
+    "order": "Porosia",
+    "listing": "Listimi",
+    "listingId": "Listimi",
+    "orderId": "Porosia",
+    "createdAt": "Krijuar",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

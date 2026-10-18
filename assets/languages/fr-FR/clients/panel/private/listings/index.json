@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Annonces",
+  "description": "Gérez les listes de produits et de services pour la vitrine de votre locataire.",
+  "createListing": "Créer une annonce",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "active": "Actif",
+        "inactive": "Inactif"
+      },
+      "pricingType": {
+        "fixed": "Prix fixe",
+        "hourly": "Tarif horaire"
+      }
+    },
+    "name": "Nom",
+    "title": "Modifier le type d’unité",
+    "description": "Description",
+    "category": "Catégorie",
+    "provider": "Fournisseur",
+    "price": "Prix",
+    "priceCurrency": "Devise",
+    "status": "Statut",
+    "pricingType": "Type de prix",
+    "deliveryDays": "Jours de livraison",
+    "address": "Emplacement",
+    "mainImage": "Image principale",
+    "imageGallery": "Galerie d’images",
+    "videoGallery": "Galerie vidéo",
+    "faqs": {
+      "question": "Question",
+      "answer": "Réponse"
+    },
+    "requirements": "Exigences",
+    "tags": "Balises",
+    "promotions": "Promotions",
+    "listingPackages": "Forfaits",
+    "listingAddOns": "Modules complémentaires",
+    "avgRating": "Note",
+    "reviewCount": "Avis",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

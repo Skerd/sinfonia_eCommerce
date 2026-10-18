@@ -186,7 +186,94 @@
       },
       "analytics": {
         "title": "Analisi"
+      },
+      "eCommerceMarketplace": {
+        "title": "Mercato elettronico"
+      },
+      "listingcategories": {
+        "title": "Categorie di elenchi"
+      },
+      "listings": {
+        "title": "Annunci"
+      },
+      "taskrequests": {
+        "title": "Richieste di attività"
+      },
+      "orders": {
+        "title": "Ordini"
+      },
+      "bids": {
+        "title": "Offerte"
+      },
+      "bookings": {
+        "title": "Prenotazioni"
+      },
+      "disputes": {
+        "title": "Controversie"
+      },
+      "reviews": {
+        "title": "Recensioni"
+      },
+      "promotions": {
+        "title": "Promozioni"
+      },
+      "listingflags": {
+        "title": "Elenco bandiere"
+      },
+      "providerprofile": {
+        "title": "Profili dei fornitori"
+      },
+      "listingaddons": {
+        "title": "Componenti aggiuntivi dell'elenco"
+      },
+      "listingpackages": {
+        "title": "Elenco dei pacchetti"
       }
+    }
+  },
+  "eCommerceMarketplace": {
+    "title": "Marketplace",
+    "listings": {
+      "title": "Annunci"
+    },
+    "taskrequests": {
+      "title": "Richieste di attività"
+    },
+    "orders": {
+      "title": "Ordini"
+    },
+    "bids": {
+      "title": "Offerte"
+    },
+    "bookings": {
+      "title": "Prenotazioni"
+    },
+    "disputes": {
+      "title": "Controversie"
+    },
+    "reviews": {
+      "title": "Recensioni"
+    },
+    "promotions": {
+      "title": "Promozioni"
+    },
+    "listingflags": {
+      "title": "Elenco bandiere"
+    },
+    "providerprofile": {
+      "title": "Profili dei fornitori"
+    },
+    "listingaddons": {
+      "title": "Componenti aggiuntivi dell'elenco"
+    },
+    "listingpackages": {
+      "title": "Elenco dei pacchetti"
+    },
+    "marketplacesystemmap": {
+      "title": "Mappa di sistema"
+    },
+    "listingcategories": {
+      "title": "Categorie di elenchi"
     }
   }
 }

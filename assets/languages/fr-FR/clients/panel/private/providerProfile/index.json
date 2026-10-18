@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
+  "title": "Profils de fournisseurs",
+  "description": "Afficher et modifier les profils des fournisseurs. Utilisez le menu des lignes pour connecter les paiements Stripe.",
+  "fields": {
+    "provider": "Fournisseur",
+    "bio": "Bio",
+    "skills": "Compétences",
+    "rating": "Note",
+    "createdAt": "Créé",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+}

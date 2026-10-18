@@ -1,0 +1,38 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile inviare un'offerta"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Invio offerta"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Offerta presentata"
+    }
+  },
+  "form": {
+    "amountLabel": "Importo dell'offerta",
+    "amountPlaceholder": "0.00",
+    "currencyIdLabel": "Valuta",
+    "currencyIdPlaceholder": "Seleziona valuta",
+    "deliveryDaysLabel": "Giorni di consegna",
+    "deliveryDaysPlaceholder": "1",
+    "proposalLabel": "Proposta",
+    "proposalPlaceholder": "Descrivi il tuo approccio...",
+    "taskRequestIdLabel": "Richiesta di attività",
+    "taskRequestIdPlaceholder": "Seleziona la richiesta di attività"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Invia un'offerta"
+  },
+  "formHeader": {
+    "description": "Invia un'offerta per una richiesta di attività.",
+    "title": "Crea offerta"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",
+  "title": "Modifica tipo di unità"
+}

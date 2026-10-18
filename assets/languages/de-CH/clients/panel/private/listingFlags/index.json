@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
+  "title": "Inserat Flags",
+  "description": "Prüfung reports eingereicht von users für inappropriate inserate.",
+  "createListingFlag": "Inserat flag erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "listing": "Inserat",
+    "reason": "Grund",
+    "status": "Status",
+    "user": "Reporter",
+    "comment": "Kommentar",
+    "resolution": "Resolution",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "reviewed": "Reviewed",
+        "dismissed": "Dismissed"
+      },
+      "reason": {
+        "inappropriate": "Inappropriate content",
+        "spam": "Spam",
+        "misleading": "Misleading",
+        "other": "Andere"
+      }
+    }
+  }
+}

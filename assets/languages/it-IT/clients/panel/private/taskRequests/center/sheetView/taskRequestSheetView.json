@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx",
+  "taskRequest": "Richiesta di attività",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "description": "Descrizione",
+  "section": {
+    "generalInfo": "Panoramica",
+    "description": "Descrizione",
+    "media": "Galleria"
+  },
+  "name": "Nome",
+  "title": "Modifica tipo di unità",
+  "status": "Stato",
+  "category": "Categoria",
+  "requester": "Richiedente",
+  "budgetMin": "Budget (min)",
+  "budgetMax": "Budget (massimo)",
+  "currency": "Valuta",
+  "address": "Indirizzo",
+  "country": "Paese",
+  "state": "Cantone / Stato",
+  "city": "Città",
+  "street": "Via",
+  "postalCode": "CAP",
+  "latitude": "Latitudine",
+  "longitude": "Longitudine",
+  "expiresAt": "Scade",
+  "gallery": "Galleria",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare la richiesta di attività",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa richiesta di attività. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "taskRequestStatus": {
+    "open": "Aperto",
+    "closed": "Chiuso",
+    "awarded": "Premiato"
+  }
+}

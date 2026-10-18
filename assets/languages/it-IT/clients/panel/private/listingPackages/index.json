@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
+  "title": "Elenco dei pacchetti",
+  "description": "Gestisci i pacchetti di servizi offerti dai fornitori per le loro inserzioni.",
+  "createListingPackage": "Crea pacchetto",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "listing": "Annuncio",
+    "description": "Descrizione",
+    "price": {
+      "amount": "Prezzo",
+      "currency": "Valuta"
+    },
+    "deliveryDays": "Giorni di consegna",
+    "order": "Ordine di visualizzazione",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

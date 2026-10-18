@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
+  "title": "Bewertungen",
+  "description": "Ratings und bewertungen left von customers. anzeigen",
+  "createReview": "Bewertung erstellen",
+  "fields": {
+    "rating": "Bewertung",
+    "comment": "Kommentar",
+    "reviewer": "Reviewer",
+    "order": "Auftrag",
+    "listing": "Inserat",
+    "listingId": "Inserat",
+    "orderId": "Auftrag",
+    "createdAt": "Erstellt",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+}

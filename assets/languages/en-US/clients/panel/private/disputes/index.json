@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
+  "title": "Disputes",
+  "description": "Review and resolve disputes between customers and providers.",
+  "createDispute": "Create dispute",
+  "fields": {
+    "status": "Status",
+    "reason": "Reason",
+    "resolution": "Resolution",
+    "initiator": "Initiator",
+    "createdAt": "Opened",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted by"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "status": {
+    "open": "Open",
+    "under_review": "Under Review",
+    "resolved": "Resolved",
+    "closed": "Closed"
+  }
+}

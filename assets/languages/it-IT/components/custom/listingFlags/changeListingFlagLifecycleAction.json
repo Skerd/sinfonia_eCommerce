@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx",
+  "cancel": "Annulla",
+  "resolutionLabel": "Note sulla risoluzione",
+  "resolutionPlaceholder": "Descrivi come è stata gestita questa segnalazione (obbligatorio).",
+  "resolutionHint": "Obbligatorio. 1–2000 caratteri.",
+  "listingActionLabel": "Azione di quotazione",
+  "listingActionPlaceholder": "Seleziona l'azione",
+  "listingAction_values": {
+    "none": "Nessuna azione",
+    "deactivate": "Disattiva l'elenco"
+  },
+  "resolve": {
+    "title": "Risolvi il flag dell'elenco",
+    "description": "Contrassegna il report come revisionato. Facoltativamente disattivare l'elenco.",
+    "confirm": "Risolvi",
+    "axios": {
+      "start": {
+        "title": "Risoluzione della bandiera",
+        "time": 3000
+      },
+      "success": {
+        "title": "Segnalazione risolta",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossibile risolvere il flag",
+        "time": 3000
+      }
+    }
+  },
+  "dismiss": {
+    "title": "Ignora il flag dell'elenco",
+    "description": "Contrassegna la segnalazione come ignorata senza ulteriori azioni nell'elenco.",
+    "confirm": "Ignora",
+    "axios": {
+      "start": {
+        "title": "Bandiera di esclusione",
+        "time": 3000
+      },
+      "success": {
+        "title": "Bandiera respinta",
+        "time": 3000
+      },
+      "error": {
+        "title": "Impossibile eliminare la segnalazione",
+        "time": 3000
+      }
+    }
+  }
+}

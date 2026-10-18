@@ -10,7 +10,7 @@ export function buildECommerceTenancySettingsSubCollapsible(
     return {
         title: resolveLanguageKey("menus.tenancy.systemSettings.eCommerce.title"),
         icon: ShoppingBag,
-        permissions: ["warehouses"],
+        permissions: [],
         usersPermissions: [],
         atLeastOnePermission: true,
         items: [
@@ -19,6 +19,14 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 url: "/tenancy/systemSettings/categories",
                 icon: IconCategory2,
                 permissions: ["productcategories"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.tenancy.systemSettings.listingcategories.title"),
+                url: "/tenancy/systemSettings/listingcategories",
+                icon: IconCategory2,
+                permissions: ["listingcategories"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },

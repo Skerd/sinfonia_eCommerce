@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/createBooking.tsx",
+  "formHeader": {
+    "title": "Create booking",
+    "description": "Schedule a service booking for an order."
+  },
+  "formButtons": { "cancel": "Cancel", "submit": "Create booking" },
+  "form": {
+    "orderLabel": "Order",
+    "orderPlaceholder": "Select order",
+    "startAtLabel": "Start time",
+    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "endAtLabel": "End time",
+    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "timezoneLabel": "Timezone",
+    "timezonePlaceholder": "UTC"
+  },
+  "axios": {
+    "start": { "title": "Creating booking", "time": 3000 },
+    "success": { "title": "Booking created", "time": 3000 },
+    "error": { "title": "Could not create booking", "time": 3000 }
+  }
+}

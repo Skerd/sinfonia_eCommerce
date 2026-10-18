@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Annunci",
+  "description": "Gestisci elenchi di prodotti e servizi per la vetrina del tuo tenant.",
+  "createListing": "Crea inserzione",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "active": "Attivo",
+        "inactive": "Inattivo"
+      },
+      "pricingType": {
+        "fixed": "Prezzo fisso",
+        "hourly": "Tariffa oraria"
+      }
+    },
+    "name": "Nome",
+    "title": "Modifica tipo di unità",
+    "description": "Descrizione",
+    "category": "Categoria",
+    "provider": "Fornitore",
+    "price": "Prezzo",
+    "priceCurrency": "Valuta",
+    "status": "Stato",
+    "pricingType": "Tipo di prezzo",
+    "deliveryDays": "Giorni di consegna",
+    "address": "Posizione",
+    "mainImage": "Immagine principale",
+    "imageGallery": "Galleria immagini",
+    "videoGallery": "Galleria video",
+    "faqs": {
+      "question": "Domanda",
+      "answer": "Rispondi"
+    },
+    "requirements": "Requisiti",
+    "tags": "Tag",
+    "promotions": "Promozioni",
+    "listingPackages": "Pacchetti",
+    "listingAddOns": "Componenti aggiuntivi",
+    "avgRating": "Valutazione",
+    "reviewCount": "Recensioni",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da"
+  }
+}

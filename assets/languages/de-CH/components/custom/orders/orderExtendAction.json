@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/orderExtendAction.tsx",
+  "extend": {
+    "title": "Extend delivery datum",
+    "description": "Extra tage bis die delivery fällig datum. Only die provider can extend ein aktiv auftrag. hinzufügen",
+    "additionalDaysLabel": "Zusätzlich tage",
+    "additionalDaysHint": "A wert between 1 und 90 tage. eingeben",
+    "confirm": "Extend delivery",
+    "axios": {
+      "start": {
+        "title": "Extending auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag extended erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht extend auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "listing": "Annuncio",
+  "provider": "Fornitore",
+  "amount": "Importo",
+  "dueDate": "Scadenza",
+  "status": "Stato",
+  "total": "Totale",
+  "statuses": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  }
+}

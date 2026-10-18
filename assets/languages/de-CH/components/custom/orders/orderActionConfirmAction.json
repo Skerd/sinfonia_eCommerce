@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/orderActionConfirmAction.tsx",
+  "accept": {
+    "title": "Accept diese auftrag?",
+    "description": "Die auftrag will werden marked accepted und funds will werden gehalten in escrow.",
+    "confirm": "Accept auftrag",
+    "axios": {
+      "start": {
+        "title": "Accepting auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag accepted erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht accept auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "start": {
+    "title": "Start diese auftrag?",
+    "description": "Die auftrag will move bis in fortschritt. Only die provider can start ein accepted auftrag.",
+    "confirm": "Start auftrag",
+    "axios": {
+      "start": {
+        "title": "Starting auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag started erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht start auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancelOrder": {
+    "title": "Abbrechen diese auftrag?",
+    "description": "Die auftrag will werden marked annulliert. Escrow funds may werden refunded if already gehalten.",
+    "confirm": "Abbrechen auftrag",
+    "axios": {
+      "start": {
+        "title": "Cancelling auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag annulliert erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht abbrechen auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "acceptDelivery": {
+    "title": "Accept delivery und vollständig auftrag?",
+    "description": "Die provider's delivery will werden accepted, escrow funds released, und die auftrag marked abgeschlossen.",
+    "confirm": "Vollständig auftrag",
+    "axios": {
+      "start": {
+        "title": "Completing auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag abgeschlossen erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht vollständig auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

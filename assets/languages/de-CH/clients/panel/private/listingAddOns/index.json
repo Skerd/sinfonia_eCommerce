@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
+  "title": "Inserat Hinzufügen-Ons",
+  "description": "Optional hinzufügen-ons that providers attach bis their inserate. verwalten",
+  "createListingAddOn": "Hinzufügen-on erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "listing": "Inserat",
+    "provider": "Anbieter",
+    "price": {
+      "amount": "Preis",
+      "currency": "Währung"
+    },
+    "deliveryDays": "Delivery tage",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

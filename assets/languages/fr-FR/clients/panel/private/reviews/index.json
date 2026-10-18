@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
+  "title": "Avis",
+  "description": "Consultez les notes et les avis laissés par les clients.",
+  "createReview": "Créer un avis",
+  "fields": {
+    "rating": "Note",
+    "comment": "Commentaire",
+    "reviewer": "Réviseur",
+    "order": "Commande",
+    "listing": "Annonce",
+    "listingId": "Annonce",
+    "orderId": "Commande",
+    "createdAt": "Créé",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+}

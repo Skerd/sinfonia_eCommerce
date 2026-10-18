@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/index.tsx",
+  "title": "Prenotazioni",
+  "description": "Gestisci le prenotazioni dei servizi programmati.",
+  "createBooking": "Crea prenotazione",
+  "fields": {
+    "order": "Ordine",
+    "provider": "Fornitore",
+    "startAt": "Inizia",
+    "endAt": "Fine",
+    "timezone": "Fuso orario",
+    "status": "Stato",
+    "createdAt": "Creato",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "status": {
+    "scheduled": "Pianificata",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/components/custom/orders/requestRevisionAction.tsx",
+  "requestRevision": {
+    "title": "Antrag revision",
+    "description": "Describe what needs bis werden changed. Die provider will re-arbeit und re-submit die delivery.",
+    "reasonLabel": "Revision grund",
+    "reasonPlaceholder": "Explain what needs bis werden revised und why…",
+    "minChars": "Minimum 10 characters erforderlich.",
+    "confirm": "Antrag revision",
+    "axios": {
+      "start": {
+        "title": "Requesting revision",
+        "time": 3000
+      },
+      "success": {
+        "title": "Revision requested erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht antrag revision, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

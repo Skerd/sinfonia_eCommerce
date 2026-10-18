@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
+  "title": "Harta e sistemit Marketplace",
+  "description": "Hartë interaktive e modeleve të marketplace, rrjedhave të listimeve/ofertave, urës së eskrosë dhe aftësive. Lëvizni, zmadhoni dhe klikoni nyjet për detaje.",
+  "tabs": {
+    "models": "Grafiku i modeleve",
+    "flows": "Si funksionon",
+    "capabilities": "Aftësitë"
+  }
+}

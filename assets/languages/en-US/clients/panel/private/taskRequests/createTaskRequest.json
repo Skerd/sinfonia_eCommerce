@@ -1,0 +1,55 @@
+{
+  "address": "Address",
+  "form": {
+    "addressPrivacyAlert": "Providers cannot see your exact address until you accept a bid. Your full address is shared only with the provider you choose, after you have agreed on the work.",
+    "budgetMaxLabel": "Budget (max)",
+    "budgetMinLabel": "Budget (min)",
+    "categoryLabel": "Category",
+    "cityLabel": "City",
+    "cityPlaceholder": "Select city",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Select country",
+    "currencyLabel": "Currency",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "expiresAtLabel": "Expires",
+    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "imageGalleryLabel": "Image gallery",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "mainImageLabel": "Main image",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code",
+    "section": {
+      "budget": "Budget",
+      "currencyExpires": "Currency and expiry",
+      "description": "Details",
+      "general": "General",
+      "images": "Images",
+      "video": "Video"
+    },
+    "stateLabel": "State",
+    "statePlaceholder": "Select state",
+    "streetLabel": "Street",
+    "streetPlaceholder": "Street address",
+    "taskRequestStatus": {
+      "awarded": "Awarded",
+      "closed": "Closed",
+      "open": "Open"
+    },
+    "titleLabel": "Title",
+    "videoGalleryLabel": "Video gallery"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "formHeader": {
+    "description": "Describe what you need. Providers can respond with bids.",
+    "title": "Create task request"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
+  "title": "Title"
+}

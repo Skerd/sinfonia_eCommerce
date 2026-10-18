@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
+  "title": "Catégories",
+  "description": "Configurez les catégories de produits pour les catalogues dans votre locataire.",
+  "createCategory": "Créer une catégorie",
+  "fields": {
+    "name": "Nom",
+    "slug": "Identifiant",
+    "order": "Commande",
+    "parentListingCategory": "Catégorie parente",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+}

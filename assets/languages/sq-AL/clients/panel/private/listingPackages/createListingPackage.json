@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
+  "formHeader": {
+    "title": "Krijo paketë listimi",
+    "description": "Përkufizon një nivel shërbimi që klientët mund ta zgjedhin kur porosin nga një listim."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo paketën"
+  },
+  "form": {
+    "listingIdLabel": "Listimi",
+    "listingIdPlaceholder": "Zgjidh listimin",
+    "nameLabel": "Emri i paketës",
+    "namePlaceholder": "p.sh. Bazë, Standarde, Premium",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Çfarë përfshin kjo paketë...",
+    "priceAmountLabel": "Çmimi",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Zgjidh valutën",
+    "deliveryDaysLabel": "Ditë dorëzimi",
+    "deliveryDaysPlaceholder": "p.sh. 3",
+    "sortOrderLabel": "Rendi i shfaqjes",
+    "sortOrderPlaceholder": "p.sh. 1"
+  },
+  "axios": {
+    "start": {
+      "title": "Po krijohet paketa",
+      "time": 3000
+    },
+    "success": {
+      "title": "Paketa u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua paketa",
+      "time": 3000
+    }
+  }
+}

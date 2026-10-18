@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
+  "editTitle": "Modifier l'indicateur de liste",
+  "editDescription": "Mettre à jour la raison et les détails de ce rapport.",
+  "errorTitle": "Impossible de charger le rapport",
+  "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
+  "formHeader": {
+    "title": "Modifier l'indicateur de liste",
+    "description": "Mettez à jour la raison et les détails supplémentaires. La liste ne peut pas être modifiée."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "form": {
+    "reasonLabel": "Motif",
+    "reasonPlaceholder": "Sélectionnez la raison",
+    "commentLabel": "Détails supplémentaires",
+    "commentPlaceholder": "Détails facultatifs...",
+    "reason_values": {
+      "inappropriate": "Contenu inapproprié",
+      "spam": "Spam",
+      "misleading": "Trompeur",
+      "other": "Autre"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement du rapport",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rapport mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour le rapport",
+      "time": 3000
+    }
+  }
+}

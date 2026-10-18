@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/createListingAddOn.tsx",
+  "formHeader": {
+    "title": "Krijo shtesë listimi",
+    "description": "Shto një shërbim opsional ose përmirësim që klientët mund të blejnë bashkë me listimin."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo shtesën"
+  },
+  "form": {
+    "listingIdLabel": "Listimi",
+    "listingIdPlaceholder": "Zgjidh listimin",
+    "nameLabel": "Emri i shtesës",
+    "namePlaceholder": "p.sh. Dorëzim ekspres",
+    "priceAmountLabel": "Çmimi",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Zgjidh valutën",
+    "deliveryDaysLabel": "Ditë dorëzimi",
+    "deliveryDaysPlaceholder": "p.sh. 2"
+  },
+  "axios": {
+    "start": {
+      "title": "Po krijohet shtesa",
+      "time": 3000
+    },
+    "success": {
+      "title": "Shtesa u krijua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u krijua shtesa",
+      "time": 3000
+    }
+  }
+}

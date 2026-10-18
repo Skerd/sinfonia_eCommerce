@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
+  "title": "Liste des modules complémentaires",
+  "description": "Gérez les modules complémentaires facultatifs que les fournisseurs attachent à leurs annonces.",
+  "createListingAddOn": "Créer un module complémentaire",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "listing": "Annonce",
+    "provider": "Fournisseur",
+    "price": {
+      "amount": "Prix",
+      "currency": "Devise"
+    },
+    "deliveryDays": "Jours de livraison",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

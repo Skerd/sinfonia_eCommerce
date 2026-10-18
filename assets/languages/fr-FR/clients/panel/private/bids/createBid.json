@@ -1,0 +1,38 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossible de soumettre une offre"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Soumettre une offre"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Offre soumise"
+    }
+  },
+  "form": {
+    "amountLabel": "Montant de l'enchère",
+    "amountPlaceholder": "0.00",
+    "currencyIdLabel": "Devise",
+    "currencyIdPlaceholder": "Sélectionner une devise",
+    "deliveryDaysLabel": "Jours de livraison",
+    "deliveryDaysPlaceholder": "1",
+    "proposalLabel": "Proposition",
+    "proposalPlaceholder": "Décrivez votre approche...",
+    "taskRequestIdLabel": "Demande de tâche",
+    "taskRequestIdPlaceholder": "Sélectionner une demande de tâche"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Soumettre une offre"
+  },
+  "formHeader": {
+    "description": "Soumettez une offre pour une demande de tâche.",
+    "title": "Créer une enchère"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",
+  "title": "Modifier le type d’unité"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/cardView/promotionCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i promocionit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të promocionit. Klikoni për të provuar përsëri.",
+  "activePeriod": "Aktive",
+  "listing": "Listimi",
+  "type": "Lloji",
+  "startAt": "Fillim",
+  "endAt": "Mbarim",
+  "featured": "I veçuar",
+  "sponsored": "I sponsorizuar",
+  "active": "Aktive",
+  "upcoming": "Në pritje",
+  "ended": "Përfunduar",
+  "paused": "Në pauzë",
+  "stopped": "E ndalur",
+  "to": "deri"
+}

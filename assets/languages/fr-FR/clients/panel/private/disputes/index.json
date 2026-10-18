@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
+  "title": "Litiges",
+  "description": "Examiner et résoudre les litiges entre clients et fournisseurs.",
+  "createDispute": "Créer un litige",
+  "fields": {
+    "status": "Statut",
+    "reason": "Motif",
+    "resolution": "Résolution",
+    "initiator": "Initiateur",
+    "createdAt": "Ouvert",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "status": {
+    "open": "Ouvert",
+    "under_review": "En cours de révision",
+    "resolved": "Résolu",
+    "closed": "Fermé"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
+  "title": "Bids",
+  "description": "View and manage bids on task requests.",
+  "createBid": "Create bid",
+  "fields": {
+    "amount": "Amount",
+    "currency": "Currency",
+    "proposal": "Proposal",
+    "deliveryDays": "Delivery days",
+    "status": "Status",
+    "bidder": "Bidder",
+    "taskRequest": "Task Request",
+    "createdAt": "Created"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "status": { "pending": "Pending", "accepted": "Accepted", "rejected": "Rejected" },
+  "accept": "Accept",
+  "reject": "Reject / Withdraw"
+}

@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/cardView/listingAddOnCard.tsx",
+  "name": "Nome",
+  "listing": "Annuncio",
+  "priceAmount": "Prezzo",
+  "deliveryDays": "Giorni di consegna",
+  "days": "d"
+}

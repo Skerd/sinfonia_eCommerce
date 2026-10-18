@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/createListingAddOn.tsx",
+  "formHeader": {
+    "title": "Créer un module complémentaire d'annonce",
+    "description": "Ajoutez un service facultatif ou une mise à niveau que les clients peuvent acheter avec une annonce."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un module complémentaire"
+  },
+  "form": {
+    "listingIdLabel": "Annonce",
+    "listingIdPlaceholder": "Sélectionnez une annonce",
+    "nameLabel": "Nom du module complémentaire",
+    "namePlaceholder": "par ex. Livraison express",
+    "priceAmountLabel": "Prix",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "deliveryDaysLabel": "Jours de livraison",
+    "deliveryDaysPlaceholder": "par ex. 2"
+  },
+  "axios": {
+    "start": {
+      "title": "Création d'un module complémentaire",
+      "time": 3000
+    },
+    "success": {
+      "title": "Module complémentaire créé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer le module complémentaire",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
+  "title": "Commandes",
+  "description": "Gérer les commandes de services entre clients et fournisseurs.",
+  "createOrder": "Créer une commande",
+  "fields": {
+    "status": "Statut",
+    "customer": "Client",
+    "provider": "Fournisseur",
+    "amount": "Montant",
+    "currency": "Devise",
+    "deliveryDueDate": "Date d’échéance",
+    "createdAt": "Créé",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "status": {
+    "pending": "En attente",
+    "in_progress": "En cours",
+    "submitted": "Soumis",
+    "completed": "Terminé",
+    "cancelled": "Annulé",
+    "disputed": "Contesté"
+  }
+}

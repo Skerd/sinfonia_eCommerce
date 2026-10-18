@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
+  "title": "Inserat Packages",
+  "description": "Service packages that providers offer für their inserate. verwalten",
+  "createListingPackage": "Paket erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "name": "Name",
+    "listing": "Inserat",
+    "description": "Beschreibung",
+    "price": {
+      "amount": "Preis",
+      "currency": "Währung"
+    },
+    "deliveryDays": "Delivery tage",
+    "order": "Display auftrag",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

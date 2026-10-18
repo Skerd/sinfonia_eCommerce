@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
+  "title": "Liste des packages",
+  "description": "Gérez les packages de services proposés par les fournisseurs pour leurs annonces.",
+  "createListingPackage": "Créer un package",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "name": "Nom",
+    "listing": "Annonce",
+    "description": "Description",
+    "price": {
+      "amount": "Prix",
+      "currency": "Devise"
+    },
+    "deliveryDays": "Jours de livraison",
+    "order": "Ordre d'affichage",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par"
+  }
+}

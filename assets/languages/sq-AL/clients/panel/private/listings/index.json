@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Listimet",
+  "description": "Menaxho listimet e produkteve dhe shërbimeve për dyqanin në qiramarrje.",
+  "createListing": "Krijo listim",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "active": "Aktiv",
+        "inactive": "Joaktiv"
+      },
+      "pricingType": {
+        "fixed": "Çmim fiks",
+        "hourly": "Në orë"
+      }
+    },
+    "name": "Emri",
+    "title": "Titulli",
+    "description": "Përshkrimi",
+    "category": "Kategoria",
+    "provider": "Ofruesi",
+    "price": "Çmimi",
+    "priceCurrency": "Valuta",
+    "status": "Statusi",
+    "pricingType": "Lloji i çmimit",
+    "deliveryDays": "Ditët e dorëzimit",
+    "address": "Vendndodhja",
+    "mainImage": "Imazhi kryesor",
+    "imageGallery": "Galeria e imazheve",
+    "videoGallery": "Galeria e videove",
+    "faqs": {
+      "question": "Pyetja",
+      "answer": "Përgjigjia"
+    },
+    "requirements": "Kërkesat",
+    "tags": "Etiketat",
+    "promotions": "Promocione",
+    "listingPackages": "Paketat",
+    "listingAddOns": "Shtesat",
+    "avgRating": "Vlerësimi",
+    "reviewCount": "Recensione",
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

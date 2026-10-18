@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
+  "editTitle": "Modifica il flag dell'elenco",
+  "editDescription": "Aggiorna il motivo e i dettagli di questa segnalazione.",
+  "errorTitle": "Impossibile caricare il rapporto",
+  "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
+  "formHeader": {
+    "title": "Modifica il flag dell'elenco",
+    "description": "Aggiorna il motivo e i dettagli aggiuntivi. L'elenco non può essere modificato."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "form": {
+    "reasonLabel": "Motivo",
+    "reasonPlaceholder": "Seleziona il motivo",
+    "commentLabel": "Ulteriori dettagli",
+    "commentPlaceholder": "Dettagli facoltativi...",
+    "reason_values": {
+      "inappropriate": "Contenuti inappropriati",
+      "spam": "Spam",
+      "misleading": "Fuorviante",
+      "other": "Altro"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del rapporto",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rapporto aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il rapporto",
+      "time": 3000
+    }
+  }
+}

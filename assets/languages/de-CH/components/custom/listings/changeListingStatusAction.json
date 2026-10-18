@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listings/changeListingStatusAction.tsx",
+  "activate": {
+    "title": "Aktivieren inserat",
+    "description": "Sind sie sicher sie want bis aktivieren",
+    "confirm": "Aktivieren",
+    "axios": {
+      "start": {
+        "title": "Activating inserat",
+        "time": 3000
+      },
+      "success": {
+        "title": "Inserat activated erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht aktivieren inserat, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "deactivate": {
+    "title": "Deaktivieren inserat",
+    "description": "Sind sie sicher sie want bis deaktivieren",
+    "confirm": "Deaktivieren",
+    "axios": {
+      "start": {
+        "title": "Deactivating inserat",
+        "time": 3000
+      },
+      "success": {
+        "title": "Inserat deactivated erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht deaktivieren inserat, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

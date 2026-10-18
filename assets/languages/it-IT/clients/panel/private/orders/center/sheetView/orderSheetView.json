@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/sheetView/orderSheetView.tsx",
+  "order": "Ordine",
+  "listingLabel": "Annuncio",
+  "listing": {
+    "title": "Annuncio"
+  },
+  "taskRequest": "Richiesta di attività",
+  "bid": "Fai un'offerta",
+  "customer": "Cliente",
+  "provider": "Fornitore",
+  "amount": "Importo",
+  "currency": "Valuta",
+  "deliveryDueDate": "Data di scadenza",
+  "status": "Stato",
+  "createdAt": "Creato",
+  "overview": "Panoramica",
+  "references": "Riferimenti",
+  "failedTitle": "Impossibile caricare l'ordine",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo ordine. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "orderStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  }
+}

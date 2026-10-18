@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
+  "title": "Carte du système du marché",
+  "description": "Carte interactive des modèles de marché, des flux de référencement/d'offres, du pont de dépôt et des capacités. Effectuez un panoramique, un zoom et cliquez sur les nœuds pour plus de détails.",
+  "tabs": {
+    "models": "Graphique du modèle",
+    "flows": "Comment ça marche",
+    "capabilities": "Capacités"
+  }
+}

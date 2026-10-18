@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
+  "close": {
+    "title": "Close diese aufgabe antrag?",
+    "description": "Providers will keine longer werden able bis place neu bids. Sie can reopen it later unless die antrag has been zuschlag.",
+    "confirm": "Bestätigen",
+    "axios": {
+      "start": {
+        "title": "Closing aufgabe antrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Aufgabe antrag geschlossen erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht close aufgabe antrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "reopen": {
+    "title": "Reopen diese aufgabe antrag?",
+    "description": "Die antrag will werden offen erneut so providers can submit bids.",
+    "confirm": "Bestätigen",
+    "axios": {
+      "start": {
+        "title": "Reopening aufgabe antrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Aufgabe antrag reopened erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht reopen aufgabe antrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/cardView/promotionCard.tsx",
+  "failedTitle": "Promotion konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese promotion. Click bis retry.",
+  "activePeriod": "Aktiv",
+  "listing": "Inserat",
+  "type": "Typ",
+  "startAt": "Start",
+  "endAt": "Ende",
+  "featured": "Featured",
+  "sponsored": "Sponsored",
+  "active": "Aktiv",
+  "upcoming": "Upcoming",
+  "ended": "Ended",
+  "paused": "Paused",
+  "stopped": "Stopped",
+  "to": "bis"
+}

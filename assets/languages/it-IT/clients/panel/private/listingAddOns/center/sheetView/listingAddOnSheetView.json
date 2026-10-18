@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx",
+  "failedTitle": "Impossibile caricare il componente aggiuntivo dell'elenco",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo componente aggiuntivo dell'elenco. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "listingAddOnSubtitle": "Componente aggiuntivo dell'elenco",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "name": "Nome",
+  "listing": "Annuncio",
+  "provider": "Fornitore",
+  "priceAmount": "Prezzo",
+  "currency": "Valuta",
+  "deliveryDays": "Consegna (giorni)",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
+  "title": "Task requests",
+  "description": "Post and manage buyer requests for quotes, custom work, or procurement.",
+  "createTaskRequest": "Create task request",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "title": "Title",
+    "description": "Description",
+    "requester": "Requester",
+    "category": "Category",
+    "budgetMin": "Budget (min)",
+    "budgetMax": "Budget (max)",
+    "currency": "Currency",
+    "address": "Address",
+    "expiresAt": "Expires",
+    "status": "Status",
+    "mainImage": "Main image",
+    "imageGallery": "Image gallery",
+    "videoGallery": "Video gallery",
+    "company": "Company",
+    "createdBy": "Created by",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by",
+    "!enums": {
+      "status": {
+        "open": "Open",
+        "closed": "Closed",
+        "awarded": "Awarded"
+      }
+    }
+  }
+}

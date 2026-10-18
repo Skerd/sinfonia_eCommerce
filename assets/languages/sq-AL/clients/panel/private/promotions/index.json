@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
+  "title": "Promocionet",
+  "description": "Menaxho promocionet e listimeve të veçuara dhe të sponsorizuara.",
+  "createPromotion": "Krijo promocion",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "listing": "Listimi",
+    "type": "Lloji",
+    "lifecycleStatus": "Statusi i ciklit",
+    "stopReason": "Arsyeja e ndalimit",
+    "startAt": "Fillim",
+    "endAt": "Mbarim",
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "type": {
+        "featured": "I veçuar",
+        "sponsored": "I sponsorizuar"
+      },
+      "lifecycleStatus": {
+        "active": "Aktive",
+        "paused": "Në pauzë",
+        "stopped": "E ndalur"
+      }
+    }
+  }
+}

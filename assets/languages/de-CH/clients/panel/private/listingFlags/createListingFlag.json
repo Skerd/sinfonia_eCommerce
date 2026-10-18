@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
+  "formHeader": {
+    "title": "Bericht inserat",
+    "description": "Flag a inserat für prüfung von die moderation team."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Submit bericht"
+  },
+  "form": {
+    "listingLabel": "Inserat",
+    "listingPlaceholder": "Inserat auswählen",
+    "reasonLabel": "Grund",
+    "reasonPlaceholder": "Grund auswählen",
+    "commentLabel": "Zusätzlich details",
+    "commentPlaceholder": "Optional details...",
+    "reason_values": {
+      "inappropriate": "Inappropriate content",
+      "spam": "Spam",
+      "misleading": "Misleading",
+      "other": "Andere"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Submitting bericht",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bericht eingereicht",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht submit bericht",
+      "time": 3000
+    }
+  }
+}

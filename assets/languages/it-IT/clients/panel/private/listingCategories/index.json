@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
+  "title": "Categorie",
+  "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
+  "createCategory": "Crea categoria",
+  "fields": {
+    "name": "Nome",
+    "slug": "Lumaca",
+    "order": "Ordine",
+    "parentListingCategory": "Categoria genitore",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri..."
+}

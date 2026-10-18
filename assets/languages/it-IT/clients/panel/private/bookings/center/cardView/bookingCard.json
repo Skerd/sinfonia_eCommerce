@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/center/cardView/bookingCard.tsx",
+  "provider": "Fornitore",
+  "startAt": "Inizia",
+  "endAt": "Fine",
+  "timezone": "Fuso orario",
+  "order": "Ordine"
+}

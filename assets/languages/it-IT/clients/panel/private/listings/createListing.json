@@ -1,0 +1,87 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile creare l'elenco"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Creazione dell'elenco"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Annuncio creato"
+    }
+  },
+  "form": {
+    "addressCityIdLabel": "Città",
+    "addressCityLabel": "Città",
+    "addressCityPlaceholder": "Città",
+    "addressCountryIdLabel": "Paese",
+    "addressCountryLabel": "Paese",
+    "addressCountryPlaceholder": "Paese",
+    "addressStateIdLabel": "Regione/stato",
+    "addressStateLabel": "Regione/stato",
+    "addressStatePlaceholder": "Stato o regione",
+    "categoryLabel": "Categoria",
+    "categoryPlaceholder": "Scegli una categoria",
+    "deliveryDaysLabel": "Tempi di consegna (giorni)",
+    "deliveryDaysPlaceholder": "ad es. 3",
+    "descriptionLabel": "Descrizione",
+    "faqAddRow": "Aggiungi domande frequenti",
+    "faqAnswerLabel": "Rispondi",
+    "faqAnswerPlaceholder": "Rispondi",
+    "faqQuestionLabel": "Domanda",
+    "faqQuestionPlaceholder": "Domanda",
+    "faqRemoveRow": "Rimuovi le domande frequenti",
+    "faqRowTitle": "Domande frequenti",
+    "faqsSectionTitle": "Domande frequenti",
+    "imageGalleryLabel": "Galleria immagini",
+    "listingCreateDescription": "Pubblica un annuncio con dettagli su prezzi, categoria e posizione.",
+    "listingCreateTitle": "Crea inserzione",
+    "listingStatus": {
+      "active": "Attivo",
+      "draft": "Bozza",
+      "inactive": "Inattivo"
+    },
+    "mainImageLabel": "Immagine principale",
+    "priceCurrencyIdLabel": "Valuta",
+    "priceCurrencyLabel": "Valuta",
+    "priceCurrencyPlaceholder": "Valuta",
+    "priceLabel": "Prezzo",
+    "pricingType": {
+      "fixed": "Prezzo fisso",
+      "hourly": "Tariffa oraria"
+    },
+    "pricingTypeLabel": "Tipo di prezzo",
+    "pricingTypePlaceholder": "Seleziona il tipo di prezzo",
+    "requirementsLabel": "Requisiti",
+    "requirementsPlaceholder": "Aggiungi un requisito e premi Invio",
+    "requirementsRemoveTooltip": "Rimuovere il requisito",
+    "section": {
+      "general": "Generale",
+      "images": "Immagini",
+      "location": "Posizione",
+      "video": "Video"
+    },
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Seleziona lo stato",
+    "tagsLabel": "Tag",
+    "tagsPlaceholder": "Digita un tag e premi Invio",
+    "tagsRemoveTooltip": "Rimuovi l'etichetta",
+    "tagsSectionTitle": "Tag",
+    "titleLabel": "Modifica tipo di unità",
+    "titlePlaceholder": "Titolo dell'elenco",
+    "videoGalleryLabel": "Galleria video"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea inserzione"
+  },
+  "formHeader": {
+    "description": "Pubblica un annuncio con dettagli su prezzi, categoria e posizione.",
+    "title": "Crea inserzione"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listings/createListing.tsx",
+  "title": "Modifica tipo di unità"
+}

@@ -21,6 +21,7 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         cmsblocks: "cmsBlocks_configurations",
         odooconnection: "odooConnection_configurations",
         odooimport: "odooimport_configurations",
+        listingcategories: "listingcategories_configurations",
     },
     pathRoomOverrides: {
         "account/addresses": "customeraddresses",

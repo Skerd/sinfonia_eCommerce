@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/eCommerce/components/custom/promotions/changePromotionLifecycleAction.tsx",
+  "cancel": "Abbrechen",
+  "pause": {
+    "title": "Pause promotion",
+    "description": "Sind sie sicher sie want bis pause",
+    "confirm": "Pause",
+    "axios": {
+      "start": {
+        "title": "Pausing promotion",
+        "time": 3000
+      },
+      "success": {
+        "title": "Promotion paused erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht pause promotion, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "resume": {
+    "title": "Resume promotion",
+    "description": "Sind sie sicher sie want bis resume",
+    "confirm": "Resume",
+    "axios": {
+      "start": {
+        "title": "Resuming promotion",
+        "time": 3000
+      },
+      "success": {
+        "title": "Promotion resumed erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht resume promotion, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "stop": {
+    "title": "Stop promotion permanently",
+    "description": "Diese kann nicht werden rückgängig. Die promotion will stay on protokoll mit die grund sie provide",
+    "confirm": "Stop permanently",
+    "reasonLabel": "Grund für stopping",
+    "reasonPlaceholder": "E.g. End von kampagne, budget change, compliance…",
+    "reasonHint": "Erforderlich für audit und prüfung. 1–2000 characters.",
+    "axios": {
+      "start": {
+        "title": "Stopping promotion",
+        "time": 3000
+      },
+      "success": {
+        "title": "Promotion stopped erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht stop promotion, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  }
+}

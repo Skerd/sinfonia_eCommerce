@@ -1,0 +1,34 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile inviare la recensione"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Invio recensione"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Recensione inviata"
+    }
+  },
+  "form": {
+    "commentLabel": "Commento",
+    "commentPlaceholder": "Condividi la tua esperienza...",
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona l'ordine",
+    "ratingLabel": "Valutazione",
+    "ratingPlaceholder": "1–5"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Invia recensione"
+  },
+  "formHeader": {
+    "description": "Invia una valutazione e un feedback per un ordine completato.",
+    "title": "Crea recensione"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
+  "title": "Modifica tipo di unità"
+}

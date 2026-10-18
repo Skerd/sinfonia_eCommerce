@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
+  "title": "Controversie",
+  "description": "Esaminare e risolvere le controversie tra clienti e fornitori.",
+  "createDispute": "Crea controversia",
+  "fields": {
+    "status": "Stato",
+    "reason": "Motivo",
+    "resolution": "Risoluzione",
+    "initiator": "Iniziatore",
+    "createdAt": "Aperto",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "status": {
+    "open": "Aperto",
+    "under_review": "In fase di revisione",
+    "resolved": "Risolto",
+    "closed": "Chiuso"
+  }
+}

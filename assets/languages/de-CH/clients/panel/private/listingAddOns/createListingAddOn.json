@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/createListingAddOn.tsx",
+  "formHeader": {
+    "title": "Inserat hinzufügen-on erstellen",
+    "description": "Ein optional service oder upgrade that customers can kauf alongside a inserat. hinzufügen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Hinzufügen-on erstellen"
+  },
+  "form": {
+    "listingIdLabel": "Inserat",
+    "listingIdPlaceholder": "Inserat auswählen",
+    "nameLabel": "Hinzufügen-on name",
+    "namePlaceholder": "E.g. Express delivery",
+    "priceAmountLabel": "Preis",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysPlaceholder": "E.g. 2"
+  },
+  "axios": {
+    "start": {
+      "title": "Hinzufügen-on wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Hinzufügen-on erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen hinzufügen-on",
+      "time": 3000
+    }
+  }
+}

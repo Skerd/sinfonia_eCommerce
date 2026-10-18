@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
+  "title": "Liste des drapeaux",
+  "description": "Examinez les rapports soumis par les utilisateurs pour détecter les listes inappropriées.",
+  "createListingFlag": "Créer un indicateur de liste",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "listing": "Annonce",
+    "reason": "Motif",
+    "status": "Statut",
+    "user": "Signaleur",
+    "comment": "Commentaire",
+    "resolution": "Résolution",
+    "company": "Entreprise",
+    "createdBy": "Créé par",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par",
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "reviewed": "Révisé",
+        "dismissed": "Rejeté"
+      },
+      "reason": {
+        "inappropriate": "Contenu inapproprié",
+        "spam": "Spam",
+        "misleading": "Trompeur",
+        "other": "Autre"
+      }
+    }
+  }
+}

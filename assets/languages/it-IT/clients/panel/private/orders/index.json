@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
+  "title": "Ordini",
+  "description": "Gestire gli ordini di servizio tra clienti e fornitori.",
+  "createOrder": "Crea ordine",
+  "fields": {
+    "status": "Stato",
+    "customer": "Cliente",
+    "provider": "Fornitore",
+    "amount": "Importo",
+    "currency": "Valuta",
+    "deliveryDueDate": "Data di scadenza",
+    "createdAt": "Creato",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "status": {
+    "pending": "In sospeso",
+    "in_progress": "In corso",
+    "submitted": "Inviato",
+    "completed": "Completato",
+    "cancelled": "Annullato",
+    "disputed": "Contestato"
+  }
+}

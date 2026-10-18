@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/createBooking.tsx",
+  "formHeader": {
+    "title": "Crea prenotazione",
+    "description": "Pianifica una prenotazione del servizio per un ordine."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea prenotazione"
+  },
+  "form": {
+    "orderLabel": "Ordine",
+    "orderPlaceholder": "Seleziona l'ordine",
+    "startAtLabel": "Ora di inizio",
+    "startAtPlaceholder": "aaaa-MM-ggTHH:mm",
+    "endAtLabel": "Ora di fine",
+    "endAtPlaceholder": "aaaa-MM-ggTHH:mm",
+    "timezoneLabel": "Fuso orario",
+    "timezonePlaceholder": "UTC"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione della prenotazione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prenotazione creata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la prenotazione",
+      "time": 3000
+    }
+  }
+}

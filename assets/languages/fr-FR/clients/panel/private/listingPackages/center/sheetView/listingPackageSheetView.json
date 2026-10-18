@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx",
+  "failedTitle": "Échec du chargement du package de listing",
+  "failedDescription": "Une erreur s'est produite lors du chargement de ce package de listing. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "listingPackageSubtitle": "Forfait d'annonce",
+  "overview": "Vue d'ensemble",
+  "lifecycle": "Cycle de vie",
+  "description": "Description",
+  "name": "Nom",
+  "listing": "Annonce",
+  "provider": "Fournisseur",
+  "priceAmount": "Prix",
+  "currency": "Devise",
+  "deliveryDays": "Livraison (jours)",
+  "displayOrder": "Ordre d'affichage",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

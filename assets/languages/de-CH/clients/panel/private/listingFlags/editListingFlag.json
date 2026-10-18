@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
+  "editTitle": "Inserat flag bearbeiten",
+  "editDescription": "Aktualisieren die grund und details von diese bericht.",
+  "errorTitle": "Konnte nicht laden bericht",
+  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "formHeader": {
+    "title": "Inserat flag bearbeiten",
+    "description": "Aktualisieren die grund und zusätzlich details. Inserat kann nicht werden changed."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  },
+  "form": {
+    "reasonLabel": "Grund",
+    "reasonPlaceholder": "Grund auswählen",
+    "commentLabel": "Zusätzlich details",
+    "commentPlaceholder": "Optional details...",
+    "reason_values": {
+      "inappropriate": "Inappropriate content",
+      "spam": "Spam",
+      "misleading": "Misleading",
+      "other": "Andere"
+    }
+  },
+  "axios": {
+    "start": {
+      "title": "Saving bericht",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bericht aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren bericht",
+      "time": 3000
+    }
+  }
+}

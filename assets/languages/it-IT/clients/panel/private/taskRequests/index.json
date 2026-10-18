@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
+  "title": "Richieste di attività",
+  "description": "Pubblica e gestisci le richieste degli acquirenti per preventivi, lavori personalizzati o appalti.",
+  "createTaskRequest": "Crea richiesta di attività",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "title": "Modifica tipo di unità",
+    "description": "Descrizione",
+    "requester": "Richiedente",
+    "category": "Categoria",
+    "budgetMin": "Budget (min)",
+    "budgetMax": "Budget (massimo)",
+    "currency": "Valuta",
+    "address": "Indirizzo",
+    "expiresAt": "Scade",
+    "status": "Stato",
+    "mainImage": "Immagine principale",
+    "imageGallery": "Galleria immagini",
+    "videoGallery": "Galleria video",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da",
+    "!enums": {
+      "status": {
+        "open": "Aperto",
+        "closed": "Chiuso",
+        "awarded": "Premiato"
+      }
+    }
+  }
+}

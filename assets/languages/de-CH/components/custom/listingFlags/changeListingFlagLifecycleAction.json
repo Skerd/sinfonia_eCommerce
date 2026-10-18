@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx",
+  "cancel": "Abbrechen",
+  "resolutionLabel": "Resolution notizen",
+  "resolutionPlaceholder": "Describe how diese bericht was handled (erforderlich).",
+  "resolutionHint": "Erforderlich. 1–2000 characters.",
+  "listingActionLabel": "Inserat aktion",
+  "listingActionPlaceholder": "Aktion auswählen",
+  "listingAction_values": {
+    "none": "Keine aktion",
+    "deactivate": "Deaktivieren inserat"
+  },
+  "resolve": {
+    "title": "Resolve inserat flag",
+    "description": "Marks die bericht as reviewed. Optionally deaktivieren die inserat.",
+    "confirm": "Resolve",
+    "axios": {
+      "start": {
+        "title": "Resolving flag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Flag resolved",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht resolve flag",
+        "time": 3000
+      }
+    }
+  },
+  "dismiss": {
+    "title": "Dismiss inserat flag",
+    "description": "Marks die bericht as dismissed ohne further inserat aktion.",
+    "confirm": "Dismiss",
+    "axios": {
+      "start": {
+        "title": "Dismissing flag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Flag dismissed",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht dismiss flag",
+        "time": 3000
+      }
+    }
+  }
+}

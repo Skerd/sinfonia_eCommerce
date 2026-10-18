@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/cardView/taskRequestCard.tsx",
+  "failedTitle": "Impossibile caricare la richiesta di attività",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa richiesta di attività. Fare clic per riprovare.",
+  "title": "Modifica tipo di unità",
+  "name": "Nome",
+  "status": "Stato",
+  "category": "Categoria",
+  "budget": "Budget",
+  "city": "Città",
+  "expiresAt": "Scade",
+  "statuses": {
+    "open": "Aperto",
+    "closed": "Chiuso",
+    "awarded": "Premiato"
+  }
+}

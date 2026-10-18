@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
+  "title": "Promozioni",
+  "description": "Gestisci promozioni di elenchi in primo piano e sponsorizzati.",
+  "createPromotion": "Crea promozione",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "name": "Nome",
+    "listing": "Annuncio",
+    "type": "Tipo",
+    "lifecycleStatus": "Stato del ciclo di vita",
+    "stopReason": "Smettere di ragionare",
+    "startAt": "Inizia",
+    "endAt": "Fine",
+    "company": "Azienda",
+    "createdBy": "Creato da",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da",
+    "!enums": {
+      "type": {
+        "featured": "In evidenza",
+        "sponsored": "Sponsorizzato"
+      },
+      "lifecycleStatus": {
+        "active": "Attivo",
+        "paused": "In pausa",
+        "stopped": "Fermato"
+      }
+    }
+  }
+}

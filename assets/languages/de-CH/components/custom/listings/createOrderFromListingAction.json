@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listings/createOrderFromListingAction.tsx",
+  "createOrder": {
+    "title": "Auftrag diese service",
+    "description": "Place ein auftrag directly von diese inserat. Die provider will receive a benachrichtigung und can accept oder decline.",
+    "noteLabel": "Zusätzlich note (optional)",
+    "notePlaceholder": "Any special instructions oder details für die provider…",
+    "confirm": "Place auftrag",
+    "axios": {
+      "start": {
+        "title": "Placing auftrag",
+        "time": 3000
+      },
+      "success": {
+        "title": "Auftrag placed erfolgreich",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht place auftrag, bitte versuchen erneut",
+        "time": 3000
+      }
+    }
+  },
+  "cancel": "Abbrechen"
+}

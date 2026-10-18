@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
+  "title": "Recensioni",
+  "description": "Visualizza valutazioni e recensioni lasciate dai clienti.",
+  "createReview": "Crea recensione",
+  "fields": {
+    "rating": "Valutazione",
+    "comment": "Commento",
+    "reviewer": "Revisore",
+    "order": "Ordine",
+    "listing": "Annuncio",
+    "listingId": "Annuncio",
+    "orderId": "Ordine",
+    "createdAt": "Creato",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri..."
+}

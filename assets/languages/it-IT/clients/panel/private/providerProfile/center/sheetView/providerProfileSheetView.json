@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx",
+  "failedTitle": "Impossibile caricare il profilo del fornitore",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento del profilo di questo fornitore. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "providerProfileSubtitle": "Profilo del fornitore",
+  "overview": "Panoramica",
+  "user": "Fornitore",
+  "bio": "Bio",
+  "skills": "Abilità",
+  "portfolio": "Portafoglio",
+  "availability": "Disponibilità",
+  "dayOfWeek": "Giorno",
+  "startTime": "Inizia",
+  "endTime": "Fine",
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "rating": "Valutazione",
+  "ratingCount": "Valutazioni totali",
+  "completionRate": "Tasso di completamento",
+  "createdAt": "Creato",
+  "weekday": {
+    "0": "Domenica",
+    "1": "Lunedi",
+    "2": "Martedì",
+    "3": "Mercoledì",
+    "4": "Giovedì",
+    "5": "Venerdì",
+    "6": "Sabato"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "taskRequest": "Richiesta di attività",
+  "name": "Nome",
+  "status": "Stato",
+  "amount": "Importo",
+  "deliveryDays": "Consegna",
+  "days": "giorni",
+  "bidder": "Offerente",
+  "offer": "Offerta",
+  "statuses": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "rejected": "Rifiutato"
+  }
+}

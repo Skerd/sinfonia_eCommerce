@@ -1,0 +1,34 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossible de soumettre l'avis"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Soumettre un avis"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Avis soumis"
+    }
+  },
+  "form": {
+    "commentLabel": "Commentaire",
+    "commentPlaceholder": "Partagez votre expérience...",
+    "orderLabel": "Commande",
+    "orderPlaceholder": "Sélectionnez la commande",
+    "ratingLabel": "Note",
+    "ratingPlaceholder": "1–5"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Envoyer l'avis"
+  },
+  "formHeader": {
+    "description": "Soumettez une note et des commentaires pour une commande terminée.",
+    "title": "Créer un avis"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
+  "title": "Modifier le type d’unité"
+}

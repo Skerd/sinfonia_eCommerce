@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingCategories/createCategory.tsx",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Category name",
+    "parentListingCategoryLabel": "Parent category",
+    "parentListingCategoryPlaceholder": "Optional root category",
+    "orderLabel": "Sort order",
+    "orderPlaceholder": "0",
+    "createCategoryTitle": "Create category",
+    "createCategoryDescription": "Add a category to organize products in your catalog."
+  },
+  "axios": {
+    "start": {
+      "title": "Creating category",
+      "time": 3000
+    },
+    "success": {
+      "title": "Category created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create category",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create category",
+    "description": "Add a category to organize products in your catalog."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create category"
+  }
+}

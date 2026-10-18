@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
+  "title": "Inserate",
+  "description": "Produkt und service inserate für ihr tenant storefront. verwalten",
+  "createListing": "Inserat erstellen",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "pricingType": {
+        "fixed": "Fixed preis",
+        "hourly": "Hourly satz"
+      }
+    },
+    "name": "Name",
+    "title": "Bezeichnung",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "provider": "Anbieter",
+    "price": "Preis",
+    "priceCurrency": "Währung",
+    "status": "Status",
+    "pricingType": "Pricing typ",
+    "deliveryDays": "Delivery tage",
+    "address": "Standort",
+    "mainImage": "Haupt bild",
+    "imageGallery": "Bild galerie",
+    "videoGallery": "Video galerie",
+    "faqs": {
+      "question": "Frage",
+      "answer": "Antwort"
+    },
+    "requirements": "Requirements",
+    "tags": "Tags",
+    "promotions": "Promotions",
+    "listingPackages": "Packages",
+    "listingAddOns": "Hinzufügen-ons",
+    "avgRating": "Bewertung",
+    "reviewCount": "Bewertungen",
+    "company": "Firma",
+    "createdBy": "Erstellt von",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von"
+  }
+}

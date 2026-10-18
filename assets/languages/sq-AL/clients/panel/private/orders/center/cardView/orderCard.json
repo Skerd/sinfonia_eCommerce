@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "listing": "Listimi",
+  "provider": "Ofruesi",
+  "amount": "Shuma",
+  "dueDate": "Afati",
+  "status": "Statusi",
+  "total": "Totali",
+  "statuses": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
+}

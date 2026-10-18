@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
+  "title": "Mappa del sistema del mercato",
+  "description": "Mappa interattiva dei modelli di mercato, flussi di quotazioni/offerte, ponte di deposito a garanzia e funzionalità. Panoramica, zoom e clic sui nodi per i dettagli.",
+  "tabs": {
+    "models": "Grafico del modello",
+    "flows": "Come funziona",
+    "capabilities": "Capacità"
+  }
+}

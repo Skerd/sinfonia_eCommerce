@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
+  "title": "Paketat e Listimeve",
+  "description": "Menaxhoni paketat e shërbimeve që ofruesit ofrojnë për listimet e tyre.",
+  "createListingPackage": "Krijo paketë",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Emri",
+    "listing": "Listimi",
+    "description": "Përshkrimi",
+    "price": {
+      "amount": "Çmimi",
+      "currency": "Valuta"
+    },
+    "deliveryDays": "Ditë dorëzimi",
+    "order": "Rendi i shfaqjes",
+    "company": "Kompania",
+    "createdBy": "Krijuar nga",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga"
+  }
+}

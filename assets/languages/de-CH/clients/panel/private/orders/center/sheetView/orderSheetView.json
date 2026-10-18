@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orders/center/sheetView/orderSheetView.tsx",
+  "order": "Auftrag",
+  "listingLabel": "Inserat",
+  "listing": {
+    "title": "Inserat"
+  },
+  "taskRequest": "Aufgabe antrag",
+  "bid": "Angebot",
+  "customer": "Kunde",
+  "provider": "Anbieter",
+  "amount": "Betrag",
+  "currency": "Währung",
+  "deliveryDueDate": "Fälligkeitsdatum",
+  "status": "Status",
+  "createdAt": "Erstellt",
+  "overview": "Übersicht",
+  "references": "References",
+  "failedTitle": "Bestellung konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese auftrag. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Accepted",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
+}

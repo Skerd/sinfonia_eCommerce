@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
+  "title": "Provider Profiles",
+  "description": "Und bearbeiten provider profiles. Use die zeile menü bis connect Stripe payouts. anzeigen",
+  "fields": {
+    "provider": "Anbieter",
+    "bio": "Bio",
+    "skills": "Skills",
+    "rating": "Bewertung",
+    "createdAt": "Erstellt",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+}

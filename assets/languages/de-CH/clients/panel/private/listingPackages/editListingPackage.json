@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/editListingPackage.tsx",
+  "editTitle": "Inserat paket bearbeiten",
+  "editDescription": "Aktualisieren die details von diese service paket.",
+  "errorTitle": "Konnte nicht laden paket",
+  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "formHeader": {
+    "title": "Inserat paket bearbeiten",
+    "description": "Modify die paket name, preis, oder delivery time."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  },
+  "form": {
+    "idLabel": "Protokoll ID",
+    "listingIdLabel": "Inserat",
+    "listingIdPlaceholder": "Inserat auswählen",
+    "nameLabel": "Paket name",
+    "namePlaceholder": "E.g. Basic, Standard, Premium",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "What's included in diese paket...",
+    "priceAmountLabel": "Preis",
+    "priceAmountPlaceholder": "0.00",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysPlaceholder": "E.g. 3",
+    "sortOrderLabel": "Display auftrag",
+    "sortOrderPlaceholder": "E.g. 1"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving paket",
+      "time": 3000
+    },
+    "success": {
+      "title": "Paket aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren paket",
+      "time": 3000
+    }
+  }
+}

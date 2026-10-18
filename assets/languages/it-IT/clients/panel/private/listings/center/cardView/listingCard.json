@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
+  "name": "Nome",
+  "title": "Modifica tipo di unità",
+  "status": "Stato",
+  "price": "Prezzo",
+  "category": "Categoria",
+  "city": "Città",
+  "perHour": "h",
+  "days": "d",
+  "from": "Da",
+  "featured": "In evidenza",
+  "sponsored": "Sponsorizzato",
+  "statuses": {
+    "active": "Attivo",
+    "draft": "Bozza",
+    "inactive": "Inattivo"
+  }
+}

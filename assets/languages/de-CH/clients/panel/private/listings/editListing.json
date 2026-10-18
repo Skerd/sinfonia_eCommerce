@@ -1,0 +1,92 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Konnte nicht aktualisieren inserat"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Saving inserat"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Inserat aktualisiert"
+    }
+  },
+  "editDescription": "Aktualisieren inserat details.",
+  "editTitle": "Inserat bearbeiten",
+  "errorDescription": "Konnte nicht laden diese inserat. Versuchen erneut.",
+  "errorTitle": "Inserat konnten nicht geladen werden",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "addressCityIdLabel": "Ort",
+    "addressCityLabel": "Ort",
+    "addressCityPlaceholder": "Ort",
+    "addressCountryIdLabel": "Land",
+    "addressCountryLabel": "Land",
+    "addressCountryPlaceholder": "Land",
+    "addressStateIdLabel": "Region / kanton",
+    "addressStateLabel": "Region / kanton",
+    "addressStatePlaceholder": "Kanton oder region",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "Choose a kategorie",
+    "deliveryDaysLabel": "Delivery time (tage)",
+    "deliveryDaysPlaceholder": "E.g. 3",
+    "descriptionLabel": "Beschreibung",
+    "faqAddRow": "FAQ hinzufügen",
+    "faqAnswerLabel": "Antwort",
+    "faqAnswerPlaceholder": "Antwort",
+    "faqQuestionLabel": "Frage",
+    "faqQuestionPlaceholder": "Frage",
+    "faqRemoveRow": "Entfernen FAQ",
+    "faqRowTitle": "FAQ",
+    "faqsSectionTitle": "FAQs",
+    "imageGalleryLabel": "Bild galerie",
+    "listingEditDescription": "Aktualisieren inserat informationen visible bis buyers.",
+    "listingEditTitle": "Inserat bearbeiten",
+    "listingStatus": {
+      "active": "Aktiv",
+      "draft": "Entwurf",
+      "inactive": "Inaktiv"
+    },
+    "mainImageLabel": "Haupt bild",
+    "priceCurrencyIdLabel": "Währung",
+    "priceCurrencyLabel": "Währung",
+    "priceCurrencyPlaceholder": "Währung",
+    "priceLabel": "Preis",
+    "pricingType": {
+      "fixed": "Fixed preis",
+      "hourly": "Hourly satz"
+    },
+    "pricingTypeLabel": "Pricing typ",
+    "pricingTypePlaceholder": "Pricing typ auswählen",
+    "requirementsLabel": "Requirements",
+    "requirementsPlaceholder": "A requirement und press Eingeben hinzufügen",
+    "requirementsRemoveTooltip": "Entfernen requirement",
+    "section": {
+      "general": "Allgemein",
+      "images": "Images",
+      "location": "Standort",
+      "video": "Video"
+    },
+    "statusLabel": "Status",
+    "statusPlaceholder": "Status auswählen",
+    "tagsLabel": "Tags",
+    "tagsPlaceholder": "Typ a tag und press Eingeben",
+    "tagsRemoveTooltip": "Entfernen tag",
+    "tagsSectionTitle": "Tags",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Inserat bezeichnung",
+    "videoGalleryLabel": "Video galerie"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern änderungen"
+  },
+  "formHeader": {
+    "description": "Aktualisieren inserat details.",
+    "title": "Inserat bearbeiten"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/listings/editListing.tsx",
+  "title": "Bezeichnung"
+}

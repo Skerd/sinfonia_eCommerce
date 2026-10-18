@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/cardView/promotionCard.tsx",
+  "failedTitle": "Échec du chargement de la promotion",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette promotion. Cliquez pour réessayer.",
+  "activePeriod": "Actif",
+  "listing": "Annonce",
+  "type": "Type",
+  "startAt": "Commencer",
+  "endAt": "Fin",
+  "featured": "Mis en avant",
+  "sponsored": "Sponsorisé",
+  "active": "Actif",
+  "upcoming": "À venir",
+  "ended": "Terminé",
+  "paused": "En pause",
+  "stopped": "Arrêté",
+  "to": "à"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/cardView/listingPackageCard.tsx",
+  "name": "Nome",
+  "listing": "Annuncio",
+  "priceAmount": "Prezzo",
+  "deliveryDays": "Giorni di consegna",
+  "displayOrder": "Ordine di visualizzazione",
+  "days": "d"
+}

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/disputes/center/cardView/disputeCard.tsx",
+  "reason": "Motivo",
+  "initiator": "Iniziatore",
+  "order": "Ordine",
+  "status": "Stato",
+  "amount": "Importo",
+  "status_values": {
+    "open": "Aperto",
+    "under_review": "In fase di revisione",
+    "resolved": "Risolto",
+    "closed": "Chiuso"
+  }
+}

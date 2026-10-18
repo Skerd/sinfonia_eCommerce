@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/createPromotion.tsx",
+  "formHeader": {
+    "title": "Promotion erstellen",
+    "description": "Boost a inserat's visibility mit a featured oder sponsored promotion."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Promotion erstellen"
+  },
+  "form": {
+    "listingLabel": "Inserat",
+    "listingPlaceholder": "Inserat auswählen",
+    "typeLabel": "Promotion typ",
+    "promotionTypeLabel": "Promotion typ",
+    "promotionTypePlaceholder": "Promotion typ auswählen",
+    "promotionTypeFeatured": "Featured",
+    "promotionTypeSponsored": "Sponsored",
+    "startAtLabel": "Start datum & time",
+    "startAtPlaceholder": "Promotion start",
+    "endAtLabel": "End datum & time",
+    "endAtPlaceholder": "Promotion end"
+  },
+  "axios": {
+    "start": {
+      "title": "Promotion wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Promotion erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen promotion",
+      "time": 3000
+    }
+  }
+}

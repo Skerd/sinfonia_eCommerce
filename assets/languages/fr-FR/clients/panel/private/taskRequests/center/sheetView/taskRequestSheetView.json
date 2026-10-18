@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx",
+  "taskRequest": "Demande de tâche",
+  "overview": "Vue d'ensemble",
+  "lifecycle": "Cycle de vie",
+  "description": "Description",
+  "section": {
+    "generalInfo": "Vue d'ensemble",
+    "description": "Description",
+    "media": "Galerie"
+  },
+  "name": "Nom",
+  "title": "Modifier le type d’unité",
+  "status": "Statut",
+  "category": "Catégorie",
+  "requester": "Demandeur",
+  "budgetMin": "Budget (min)",
+  "budgetMax": "Budget (maximum)",
+  "currency": "Devise",
+  "address": "Adresse",
+  "country": "Pays",
+  "state": "Canton / État",
+  "city": "Ville",
+  "street": "Rue",
+  "postalCode": "Code postal",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "expiresAt": "Expire",
+  "gallery": "Galerie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Échec du chargement de la demande de tâche",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette demande de tâche. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "taskRequestStatus": {
+    "open": "Ouvert",
+    "closed": "Fermé",
+    "awarded": "Récompensé"
+  }
+}

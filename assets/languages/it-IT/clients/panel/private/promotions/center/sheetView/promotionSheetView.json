@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/sheetView/promotionSheetView.tsx",
+  "failedTitle": "Impossibile caricare la promozione",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa promozione. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "promotion": "Promozione",
+  "name": "Nome",
+  "listing": "Annuncio",
+  "type": "Tipo",
+  "lifecycleStatus": "Stato del ciclo di vita",
+  "startAt": "Data di inizio",
+  "endAt": "Data di fine",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "stopReasonSection": "Smettere di ragionare",
+  "stopReason": "Motivo",
+  "type_values": {
+    "featured": "In evidenza",
+    "sponsored": "Sponsorizzato"
+  },
+  "lifecycleStatuses": {
+    "active": "Attivo",
+    "paused": "In pausa",
+    "stopped": "Fermato"
+  },
+  "listingStatus": {
+    "draft": "Bozza",
+    "active": "Attivo",
+    "inactive": "Inattivo"
+  }
+}

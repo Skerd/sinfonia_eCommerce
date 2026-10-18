@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx",
+  "failedTitle": "Provider profil konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese provider profil. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "providerProfileSubtitle": "Provider Profil",
+  "overview": "Übersicht",
+  "user": "Anbieter",
+  "bio": "Bio",
+  "skills": "Skills",
+  "portfolio": "Portfolio",
+  "availability": "Availability",
+  "dayOfWeek": "Day",
+  "startTime": "Start",
+  "endTime": "Ende",
+  "compactView": "Kompakt",
+  "cardsView": "Karten",
+  "rating": "Bewertung",
+  "ratingCount": "Total ratings",
+  "completionRate": "Fertigstellung satz",
+  "createdAt": "Erstellt",
+  "weekday": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  }
+}

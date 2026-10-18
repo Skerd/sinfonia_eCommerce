@@ -1,10 +1,10 @@
 # eCommerce Module (Sinfonia)
 
-Client-side UI for the Arpeggio eCommerce domain: admin panel pages, custom components, sidebar navigation, and dashboard widgets.
+Client-side UI for the Arpeggio eCommerce domain: product commerce and the services marketplace. Admin panel pages, custom components, sidebar navigation, and dashboard widgets.
 
-Types and validators come from **armonia**; API calls target **maestro** routes under `/api/eCommerce/`.
+Types and validators come from **armonia**; API calls target **maestro** routes under `/api/eCommerce/` and `/api/eCommerceMarketplace/`.
 
-Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present modules).
+Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present modules). Marketplace panel routes stay under `/eCommerceMarketplace/...`.
 
 ## Directory layout
 
@@ -71,10 +71,10 @@ Each resource folder typically contains `index.tsx` (list), `create*.tsx`, and `
 
 ## Contributions
 
-- **Sidebar** (`order: 35`) — "Product Commerce" nav group
-- **Routes** (`order: 40`) — maps menu/subview segments to page components
-- **Widgets** — dashboard tiles for commerce KPIs
-- **Tenancy settings** — eCommerce-specific company configuration tabs
+- **Sidebar** (`order: 35`) — "Product Commerce" and "Marketplace" nav groups
+- **Routes** (`order: 40`) — maps `/eCommerce/*` and `/eCommerceMarketplace/*` menu segments to page components
+- **Widgets** — sheet/card widgets for catalog and marketplace entities
+- **Tenancy settings** — product commerce config plus listing categories
 
 ## Path alias
 

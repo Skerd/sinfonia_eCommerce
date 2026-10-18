@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
+  "title": "Angebote",
+  "description": "Und verwalten bids on aufgabe requests. anzeigen",
+  "createBid": "Offerte erstellen",
+  "fields": {
+    "amount": "Betrag",
+    "currency": "Währung",
+    "proposal": "Angebot",
+    "deliveryDays": "Delivery tage",
+    "status": "Status",
+    "bidder": "Bidder",
+    "taskRequest": "Aufgabe Antrag",
+    "createdAt": "Erstellt"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "status": {
+    "pending": "Ausstehend",
+    "accepted": "Accepted",
+    "rejected": "Abgelehnt"
+  },
+  "accept": "Accept",
+  "reject": "Ablehnen / Withdraw"
+}

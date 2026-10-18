@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx",
+  "cancel": "Cancel",
+  "resolutionLabel": "Resolution notes",
+  "resolutionPlaceholder": "Describe how this report was handled (required).",
+  "resolutionHint": "Required. 1–2000 characters.",
+  "listingActionLabel": "Listing action",
+  "listingActionPlaceholder": "Select action",
+  "listingAction_values": {
+    "none": "No action",
+    "deactivate": "Deactivate listing"
+  },
+  "resolve": {
+    "title": "Resolve listing flag",
+    "description": "Marks the report as reviewed. Optionally deactivate the listing.",
+    "confirm": "Resolve",
+    "axios": {
+      "start": { "title": "Resolving flag", "time": 3000 },
+      "success": { "title": "Flag resolved", "time": 3000 },
+      "error": { "title": "Could not resolve flag", "time": 3000 }
+    }
+  },
+  "dismiss": {
+    "title": "Dismiss listing flag",
+    "description": "Marks the report as dismissed without further listing action.",
+    "confirm": "Dismiss",
+    "axios": {
+      "start": { "title": "Dismissing flag", "time": 3000 },
+      "success": { "title": "Flag dismissed", "time": 3000 },
+      "error": { "title": "Could not dismiss flag", "time": 3000 }
+    }
+  }
+}

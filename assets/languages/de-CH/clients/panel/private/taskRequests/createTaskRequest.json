@@ -1,0 +1,55 @@
+{
+  "address": "Adresse",
+  "form": {
+    "addressPrivacyAlert": "Providers kann nicht see ihr exact adresse until sie accept a offerte. Ihr full adresse ist shared only mit die provider sie choose, after sie have agreed on die arbeit.",
+    "budgetMaxLabel": "Budget (max)",
+    "budgetMinLabel": "Budget (min)",
+    "categoryLabel": "Kategorie",
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort auswählen",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "currencyLabel": "Währung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "expiresAtLabel": "Expires",
+    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "imageGalleryLabel": "Bild galerie",
+    "latitudeLabel": "Breitengrad",
+    "latitudePlaceholder": "Breitengrad",
+    "longitudeLabel": "Längengrad",
+    "longitudePlaceholder": "Längengrad",
+    "mainImageLabel": "Haupt bild",
+    "postalCodeLabel": "Postleitzahl",
+    "postalCodePlaceholder": "Postleitzahl",
+    "section": {
+      "budget": "Kostenvoranschlag",
+      "currencyExpires": "Währung und expiry",
+      "description": "Details",
+      "general": "Allgemein",
+      "images": "Images",
+      "video": "Video"
+    },
+    "stateLabel": "Kanton",
+    "statePlaceholder": "Kanton auswählen",
+    "streetLabel": "Strasse",
+    "streetPlaceholder": "Strasse adresse",
+    "taskRequestStatus": {
+      "awarded": "Zuschlag",
+      "closed": "Geschlossen",
+      "open": "Offen"
+    },
+    "titleLabel": "Bezeichnung",
+    "videoGalleryLabel": "Video galerie"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Absenden"
+  },
+  "formHeader": {
+    "description": "Describe what sie need. Providers can respond mit bids.",
+    "title": "Aufgabe antrag erstellen"
+  },
+  "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
+  "title": "Bezeichnung"
+}

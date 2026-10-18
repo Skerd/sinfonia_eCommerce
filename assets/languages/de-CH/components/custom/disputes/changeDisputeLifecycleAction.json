@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/eCommerce/components/custom/disputes/changeDisputeLifecycleAction.tsx",
+  "cancel": "Abbrechen",
+  "resolutionLabel": "Resolution notizen",
+  "resolutionPlaceholder": "Describe how die streitfall was handled (erforderlich für audit).",
+  "resolutionHint": "Erforderlich. 1–2000 characters.",
+  "startReview": {
+    "title": "Mark streitfall unter prüfung",
+    "description": "Die streitfall stays offen während sie investigate. Parties kann nicht accept delivery until die streitfall ist resolved oder geschlossen.",
+    "confirm": "Start prüfung",
+    "axios": {
+      "start": {
+        "title": "Streitfall wird aktualisiert",
+        "time": 3000
+      },
+      "success": {
+        "title": "Streitfall marked unter prüfung",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht aktualisieren streitfall",
+        "time": 3000
+      }
+    }
+  },
+  "resolve": {
+    "title": "Resolve streitfall",
+    "description": "Marks die streitfall resolved und completes die verknüpft auftrag using die same escrow logic as accepting delivery.",
+    "confirm": "Resolve",
+    "axios": {
+      "start": {
+        "title": "Resolving streitfall",
+        "time": 3000
+      },
+      "success": {
+        "title": "Streitfall resolved",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht resolve streitfall",
+        "time": 3000
+      }
+    }
+  },
+  "close": {
+    "title": "Close streitfall (abbrechen auftrag)",
+    "description": "Closes die streitfall und cancels die verknüpft auftrag mit escrow rückerstattung rules matching a normal annullierung.",
+    "confirm": "Close streitfall",
+    "axios": {
+      "start": {
+        "title": "Closing streitfall",
+        "time": 3000
+      },
+      "success": {
+        "title": "Streitfall geschlossen",
+        "time": 3000
+      },
+      "error": {
+        "title": "Konnte nicht close streitfall",
+        "time": 3000
+      }
+    }
+  }
+}

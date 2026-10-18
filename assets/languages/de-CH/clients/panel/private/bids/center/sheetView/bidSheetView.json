@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Angebot",
+  "name": "Name",
+  "overview": "Übersicht",
+  "amount": "Betrag",
+  "currency": "Währung",
+  "deliveryDays": "Delivery tage",
+  "proposal": "Angebot",
+  "status": "Status",
+  "bidder": "Bidder",
+  "taskRequest": "Aufgabe antrag",
+  "failedTitle": "Offerte konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese offerte. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "bidStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Accepted",
+    "rejected": "Abgelehnt"
+  }
+}

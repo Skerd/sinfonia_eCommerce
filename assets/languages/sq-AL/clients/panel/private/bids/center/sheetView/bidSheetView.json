@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Oferta",
+  "name": "Emri",
+  "overview": "Përmbledhje",
+  "amount": "Shuma",
+  "currency": "Valuta",
+  "deliveryDays": "Ditë dorëzimi",
+  "proposal": "Propozimi",
+  "status": "Statusi",
+  "bidder": "Ofertuesi",
+  "taskRequest": "Kërkesë pune",
+  "failedTitle": "Dështoi ngarkimi i ofertës",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të ofertës. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "bidStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "rejected": "Refuzuar"
+  }
+}

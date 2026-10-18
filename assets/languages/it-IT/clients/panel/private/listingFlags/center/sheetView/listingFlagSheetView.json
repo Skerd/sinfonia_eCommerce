@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
+  "failedTitle": "Impossibile caricare il contrassegno dell'elenco",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento del flag dell'elenco. Fare clic per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "listingFlagSubtitle": "Bandiera dell'elenco",
+  "listingFlag": "Bandiera dell'elenco",
+  "overview": "Panoramica",
+  "lifecycle": "Ciclo di vita",
+  "details": "Dettagli",
+  "listing": "Annuncio",
+  "reason": "Motivo",
+  "comment": "Commento",
+  "user": "Segnalatore",
+  "reporter": "Segnalatore",
+  "status": "Stato",
+  "resolution": "Risoluzione",
+  "listingAction": "Azione di quotazione",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "status_values": {
+    "pending": "In sospeso",
+    "reviewed": "Recensito",
+    "dismissed": "Licenziato"
+  },
+  "reason_values": {
+    "inappropriate": "Contenuti inappropriati",
+    "spam": "Spam",
+    "misleading": "Fuorviante",
+    "other": "Altro"
+  }
+}

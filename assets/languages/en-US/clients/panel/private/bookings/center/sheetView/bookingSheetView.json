@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx",
+  "failedTitle": "Failed to load booking",
+  "failedDescription": "Something went wrong while loading this booking. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "bookingSubtitle": "Booking",
+  "overview": "Overview",
+  "order": "Order",
+  "provider": "Provider",
+  "startAt": "Start time",
+  "endAt": "End time",
+  "timezone": "Timezone",
+  "createdAt": "Created"
+}

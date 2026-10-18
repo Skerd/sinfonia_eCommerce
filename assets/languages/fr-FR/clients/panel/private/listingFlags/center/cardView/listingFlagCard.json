@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx",
+  "listing": "Annonce",
+  "reason": "Motif",
+  "reporter": "Signaleur",
+  "status": "Statut",
+  "status_values": {
+    "pending": "En attente",
+    "reviewed": "Révisé",
+    "dismissed": "Rejeté"
+  },
+  "reason_values": {
+    "inappropriate": "Contenu inapproprié",
+    "spam": "Spam",
+    "misleading": "Trompeur",
+    "other": "Autre"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
+  "title": "Offres",
+  "description": "Affichez et gérez les offres sur les demandes de tâches.",
+  "createBid": "Créer une enchère",
+  "fields": {
+    "amount": "Montant",
+    "currency": "Devise",
+    "proposal": "Proposition",
+    "deliveryDays": "Jours de livraison",
+    "status": "Statut",
+    "bidder": "Enchérisseur",
+    "taskRequest": "Demande de tâche",
+    "createdAt": "Créé"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "status": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "rejected": "Rejeté"
+  },
+  "accept": "Accepter",
+  "reject": "Rejeter/Retirer"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/promotions/center/cardView/promotionCard.tsx",
+  "failedTitle": "Impossibile caricare la promozione",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa promozione. Fare clic per riprovare.",
+  "activePeriod": "Attivo",
+  "listing": "Annuncio",
+  "type": "Tipo",
+  "startAt": "Inizia",
+  "endAt": "Fine",
+  "featured": "In evidenza",
+  "sponsored": "Sponsorizzato",
+  "active": "Attivo",
+  "upcoming": "Prossimamente",
+  "ended": "Finito",
+  "paused": "In pausa",
+  "stopped": "Fermato",
+  "to": "a"
+}
