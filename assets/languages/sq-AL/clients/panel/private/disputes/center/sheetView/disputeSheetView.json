@@ -17,5 +17,10 @@
     "under_review": "Nën shqyrtim",
     "resolved": "Zgjidhur",
     "closed": "Mbyllur"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

@@ -2,7 +2,7 @@ import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, With
 import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
+import {type ComponentType, useEffect, useImperativeHandle, useMemo, useRef, useState} from "react";
 import {LoaderCircle, PackageCheck} from "lucide-react";
 import {
     AlertDialog,
@@ -17,6 +17,8 @@ import {
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {SubmitOrderDeliveryFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/submitOrderDelivery.form.validator.ts";
@@ -43,13 +45,16 @@ type SubmitOrderDeliveryActionPublicProps = {
 type SubmitOrderDeliveryActionProps = WithAxiosType<ActionMessage, SubmitOrderDeliveryFormType> &
     SubmitOrderDeliveryActionPublicProps;
 
+/** Files one delivery can carry from this dialog. */
+const MAX_ATTACHMENTS = 10;
+
 function SubmitOrderDeliveryAction({
     orderId,
     displayName,
     openAlert,
     resolveLanguageKey,
     innerRef,
-    onFilterChange,
+    onPost,
     onSuccess = () => {},
     onCancel = () => {},
     loading,
@@ -57,6 +62,8 @@ function SubmitOrderDeliveryAction({
     const {write} = useAccess("orders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
     const [message, setMessage] = useState("");
+    const [files, setFiles] = useState<File[]>([]);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
@@ -71,7 +78,10 @@ function SubmitOrderDeliveryAction({
     }, [openAlert, write]);
 
     useEffect(() => {
-        if (open) setMessage("");
+        if (open) {
+            setMessage("");
+            setFiles([]);
+        }
     }, [open]);
 
     useEffect(() => {
@@ -102,6 +112,42 @@ function SubmitOrderDeliveryAction({
                         disabled={loading}
                         className="min-h-[100px]"
                     />
+                    <Label className="mt-2">{resolveLanguageKey("submitDelivery.attachmentsLabel")}</Label>
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        className="hidden"
+                        multiple
+                        onChange={(e) => {
+                            const picked = Array.from(e.target.files ?? []);
+                            setFiles((prev) => [...prev, ...picked].slice(0, MAX_ATTACHMENTS));
+                            e.target.value = "";
+                        }}
+                        disabled={loading || files.length >= MAX_ATTACHMENTS}
+                    />
+                    <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => fileInputRef.current?.click()}
+                        disabled={loading || files.length >= MAX_ATTACHMENTS}
+                    >
+                        {resolveLanguageKey("submitDelivery.addFile")}
+                    </Button>
+                    {files.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                            {files.map((file, index) => (
+                                <SingleFile
+                                    key={`delivery-file-${index}-${file.name}`}
+                                    file={{id: `delivery-file-${index}`, file, path: URL.createObjectURL(file), body: undefined}}
+                                    canDownload={false}
+                                    canRemove
+                                    isBig={false}
+                                    onRemove={() => setFiles((prev) => prev.filter((_, i) => i !== index))}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
@@ -110,9 +156,10 @@ function SubmitOrderDeliveryAction({
                         onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            onFilterChange({
+                            onPost({
                                 _id: orderId,
                                 ...(message.trim() ? {message: message.trim()} : {}),
+                                ...(files.length > 0 ? {attachments: files} : {}),
                             });
                         }}
                     >

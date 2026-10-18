@@ -10,5 +10,10 @@
   "startAt": "Start time",
   "endAt": "End time",
   "timezone": "Zeitzone",
-  "createdAt": "Erstellt"
+  "createdAt": "Erstellt",
+  "lifecycle": "Lebenszyklus",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

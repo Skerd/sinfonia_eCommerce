@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/orderRevisions/center/cardView/orderRevisionCard.tsx",
+  "orderRevisionStatus": {
+    "pending": "Pending",
+    "completed": "Answered"
+  }
+}

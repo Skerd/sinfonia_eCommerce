@@ -2,6 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {CircleX} from "lucide-react";
 
 type DeactivateListingDropdownProps = WithLanguageType & {
@@ -9,6 +10,10 @@ type DeactivateListingDropdownProps = WithLanguageType & {
 };
 
 function DeactivateListingDropdown({onAction, resolveLanguageKey}: DeactivateListingDropdownProps) {
+    // The server also requires the listing's provider (or an admin)
+    const {write} = useAccess("listings");
+    if (!write) return null;
+
     return (
         <DropdownMenuItem onClick={() => onAction("deactivate")}>
             <CircleX size={16} className="text-warning" />

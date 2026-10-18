@@ -21,8 +21,12 @@ import OrderExtendAction from "@eCommerceModule/components/custom/orders/orderEx
 import RequestRevisionAction from "@eCommerceModule/components/custom/orders/requestRevisionAction.tsx";
 import RaiseDisputeAction from "@eCommerceModule/components/custom/disputes/raiseDisputeAction.tsx";
 import type {OrderConfirmActionKey} from "@eCommerceModule/components/custom/orders/orderActionConfirmAction.tsx";
-
 import RequestRevisionDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/requestRevisionDropdown.tsx";
+import CreateMilestoneDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/createMilestoneDropdown.tsx";
+import ReleaseMilestoneDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/releaseMilestoneDropdown.tsx";
+import CreateMilestoneAction from "@eCommerceModule/components/custom/orders/createMilestoneAction.tsx";
+import ReleaseMilestoneAction from "@eCommerceModule/components/custom/orders/releaseMilestoneAction.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 
 export type OrderSheetViewOwnProps = {
     open: boolean;
@@ -35,12 +39,6 @@ export type OrderSheetViewOwnProps = {
     onSheetRowPatched?: (patch: Partial<Order>) => void;
     fetchId?: string;
 };
-
-function orderEditPath(row: Order) {
-    const params = new URLSearchParams();
-    params.set("orderId", row._id);
-    return `/eCommerceMarketplace/orders/edit?${params.toString()}`;
-}
 
 function OrderSheetView({
     open,
@@ -84,12 +82,20 @@ function OrderSheetView({
         });
     };
 
+    /** Re-reads the order after an action that changes its deliveries, milestones or revisions. */
+    const reloadOrder = () => {
+        apiClient.post<Order>("/api/eCommerceMarketplace/order/single", {_id: entityId}).then((res) => {
+            setSheetData(res.data);
+            onOrderUpdated?.(res.data);
+        });
+    };
+
     return (
         <>
             <SheetViewRenderer
                 config={viewConfig}
                 url="/api/eCommerceMarketplace/order/single"
-                fetchId={fetchId}
+                fetchId={fetchId ?? entityId}
                 onDataFetched={(data) => setSheetData(data)}
                 onSheetRowPatched={onSheetRowPatched}
                 data={sheetData}
@@ -100,7 +106,7 @@ function OrderSheetView({
                 hideActions={hideActions}
                 onDelete={onDelete}
                 onRestore={onRestore}
-                editPath={orderEditPath(asOrder)}
+                hideEdit
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
                     <>
@@ -111,6 +117,8 @@ function OrderSheetView({
                         <SubmitOrderDeliveryDropdown order={asOrder} onAction={setAction} />
                         <AcceptOrderDeliveryDropdown order={asOrder} onAction={setAction} />
                         <RequestRevisionDropdown order={asOrder} onAction={setAction} />
+                        <CreateMilestoneDropdown order={asOrder} onAction={setAction} />
+                        <ReleaseMilestoneDropdown order={asOrder} onAction={setAction} />
                         <RaiseDisputeDropdown order={asOrder} onAction={setAction} />
                     </>
                 }
@@ -124,6 +132,7 @@ function OrderSheetView({
                     url={`/api/eCommerceMarketplace/order/${action}`}
                     onSuccess={(newStatus: OrderStatus) => {
                         applyOrderUpdate({status: newStatus});
+                        if (action === "acceptDelivery") reloadOrder();
                         setAction("");
                     }}
                     onCancel={() => setAction("")}
@@ -136,7 +145,7 @@ function OrderSheetView({
                     openAlert
                     url="/api/eCommerceMarketplace/order/submitDelivery"
                     onSuccess={() => {
-                        applyOrderUpdate({deliverySubmitted: true});
+                        reloadOrder();
                         setAction("");
                     }}
                     onCancel={() => setAction("")}
@@ -163,7 +172,29 @@ function OrderSheetView({
                     openAlert
                     url="/api/eCommerceMarketplace/order/requestRevision"
                     onSuccess={() => {
-                        applyOrderUpdate({deliverySubmitted: false});
+                        reloadOrder();
+                        setAction("");
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+            {action === "createMilestone" && (
+                <CreateMilestoneAction
+                    orderId={String(asOrder._id)}
+                    displayName={displayLabel}
+                    onSuccess={() => {
+                        reloadOrder();
+                        setAction("");
+                    }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+            {action === "releaseMilestone" && (
+                <ReleaseMilestoneAction
+                    milestones={(asOrder.milestones ?? []).filter((milestone) => milestone.status === "pending")}
+                    displayName={displayLabel}
+                    onSuccess={() => {
+                        reloadOrder();
                         setAction("");
                     }}
                     onCancel={() => setAction("")}

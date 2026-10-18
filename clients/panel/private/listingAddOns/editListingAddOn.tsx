@@ -12,13 +12,11 @@ export default createGenericEditPage<ListingAddOn, EditListingAddOnFormType>({
     schema: editListingAddOnFormSchema,
     buildInitialValues: (data, writeFields) => ({
         _id: data._id,
-        listing: writeFields.listing ? data.listing?._id : undefined,
+        // Read-only after create: shown so the provider sees which listing the row belongs to
+        listing: data.listing?._id,
         name: writeFields.name ? data.name : undefined,
         price: writeFields.price
-            ? {
-                amount: (writeFields.price as any)?.keys?.amount !== false ? data.price.amount : undefined,
-                currency: (writeFields.price as any)?.keys?.currency !== false ? data.price.currency._id : undefined,
-            }
+            ? {amount: data.price.amount, currency: data.price.currency?._id}
             : undefined,
         deliveryDays: writeFields.deliveryDays ? data.deliveryDays : undefined,
     }),

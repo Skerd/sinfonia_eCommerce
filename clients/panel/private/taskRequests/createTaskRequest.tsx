@@ -8,7 +8,7 @@ export default createGenericCreatePage<CreateTaskRequestFormType>({
     accessModel: "taskRequests",
     apiUrl: "/api/eCommerceMarketplace/taskRequest",
     schema: createTaskRequestFormSchema,
-    defaultValues: {} as unknown as CreateTaskRequestFormType,
+    defaultValues: {},
     buildFormExtras: () => ({enableLocalFileMultipart: true}),
     successPath: "/eCommerceMarketplace/taskrequests",
     mapSubmitPayload: (data) => {

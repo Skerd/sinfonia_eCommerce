@@ -17,5 +17,10 @@
     "under_review": "In Prüfung",
     "resolved": "Resolved",
     "closed": "Geschlossen"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

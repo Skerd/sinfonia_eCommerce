@@ -6,6 +6,8 @@
     "messageLabel": "Delivery message",
     "messagePlaceholder": "Describe what was delivered or add notes for the customer…",
     "confirm": "Submit delivery",
+    "attachmentsLabel": "Files",
+    "addFile": "Add file",
     "axios": {
       "start": { "title": "Submitting delivery", "time": 3000 },
       "success": { "title": "Delivery submitted successfully", "time": 3000 },

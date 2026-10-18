@@ -17,5 +17,10 @@
     "under_review": "Under Review",
     "resolved": "Resolved",
     "closed": "Closed"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

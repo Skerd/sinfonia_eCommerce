@@ -6,6 +6,8 @@
     "messageLabel": "Mesazhi i dorëzimit",
     "messagePlaceholder": "Përshkruaj çfarë u dorëzua ose shto shënime për klientin…",
     "confirm": "Dërgo dorëzimin",
+    "attachmentsLabel": "Skedarët",
+    "addFile": "Shto skedar",
     "axios": {
       "start": { "title": "Duke dërguar dorëzimin", "time": 3000 },
       "success": { "title": "Dorëzimi u dërgua me sukses", "time": 3000 },

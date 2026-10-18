@@ -17,5 +17,10 @@
     "under_review": "En cours de révision",
     "resolved": "Résolu",
     "closed": "Fermé"
-  }
+  },
+  "lifecycle": "Cycle de vie",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
 }

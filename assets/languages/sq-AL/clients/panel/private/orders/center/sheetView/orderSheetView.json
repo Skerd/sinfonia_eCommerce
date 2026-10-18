@@ -25,5 +25,14 @@
     "in_progress": "Në progres",
     "completed": "Përfunduar",
     "cancelled": "Anuluar"
-  }
+  },
+  "note": "Shënimi i klientit",
+  "deliveries": "Dorëzimet",
+  "milestones": "Fazat",
+  "revisions": "Kërkesat për rishikim",
+  "lifecycle": "Cikli i jetës",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

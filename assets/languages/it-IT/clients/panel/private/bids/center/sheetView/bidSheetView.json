@@ -17,5 +17,11 @@
     "pending": "In sospeso",
     "accepted": "Accettato",
     "rejected": "Rifiutato"
-  }
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
 }

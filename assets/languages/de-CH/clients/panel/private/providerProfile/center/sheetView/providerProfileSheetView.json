@@ -27,5 +27,10 @@
     "4": "Thursday",
     "5": "Friday",
     "6": "Saturday"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

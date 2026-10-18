@@ -27,5 +27,10 @@
     "4": "E enjte",
     "5": "E premte",
     "6": "E shtunë"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

@@ -22,7 +22,7 @@ export default createGenericCreatePage<CreateListingFormType>({
         tags: [],
         requirements: [],
         address: {},
-    } as unknown as CreateListingFormType,
+    },
     buildFormExtras: () => ({enableLocalFileMultipart: true}),
     successPath: "/eCommerceMarketplace/listings",
     mapSubmitPayload: (data) => {

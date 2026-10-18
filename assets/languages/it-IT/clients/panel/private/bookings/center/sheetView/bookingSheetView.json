@@ -10,5 +10,10 @@
   "startAt": "Ora di inizio",
   "endAt": "Ora di fine",
   "timezone": "Fuso orario",
-  "createdAt": "Creato"
+  "createdAt": "Creato",
+  "lifecycle": "Ciclo di vita",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
 }

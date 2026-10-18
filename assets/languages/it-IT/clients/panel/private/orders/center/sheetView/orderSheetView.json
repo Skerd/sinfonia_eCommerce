@@ -25,5 +25,14 @@
     "in_progress": "In corso",
     "completed": "Completato",
     "cancelled": "Annullato"
-  }
+  },
+  "note": "Nota del cliente",
+  "deliveries": "Consegne",
+  "milestones": "Milestone",
+  "revisions": "Richieste di revisione",
+  "lifecycle": "Ciclo di vita",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
 }

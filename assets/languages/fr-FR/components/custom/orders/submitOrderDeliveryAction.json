@@ -6,6 +6,8 @@
     "messageLabel": "Message de livraison",
     "messagePlaceholder": "Décrivez ce qui a été livré ou ajoutez des notes pour le client…",
     "confirm": "Soumettre la livraison",
+    "attachmentsLabel": "Fichiers",
+    "addFile": "Ajouter un fichier",
     "axios": {
       "start": {
         "title": "Soumission de la livraison",

@@ -6,6 +6,8 @@
     "messageLabel": "Messaggio di consegna",
     "messagePlaceholder": "Descrivi cosa è stato consegnato o aggiungi note per il cliente...",
     "confirm": "Invia consegna",
+    "attachmentsLabel": "File",
+    "addFile": "Aggiungi file",
     "axios": {
       "start": {
         "title": "Invio della consegna",

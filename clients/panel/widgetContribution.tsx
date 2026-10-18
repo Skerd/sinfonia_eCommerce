@@ -164,6 +164,12 @@ const ReturnRequestCardLazy = lazy(
 const ListingSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listings/center/sheetView/listingSheetView.tsx"));
 const TaskRequestSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx"));
 const OrderSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orders/center/sheetView/orderSheetView.tsx"));
+const OrderDeliveryCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderDeliveries/center/cardView/orderDeliveryCard.tsx"));
+const OrderDeliverySheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderDeliveries/center/sheetView/orderDeliverySheetView.tsx"));
+const OrderMilestoneCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderMilestones/center/cardView/orderMilestoneCard.tsx"));
+const OrderMilestoneSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderMilestones/center/sheetView/orderMilestoneSheetView.tsx"));
+const OrderRevisionCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderRevisions/center/cardView/orderRevisionCard.tsx"));
+const OrderRevisionSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orderRevisions/center/sheetView/orderRevisionSheetView.tsx"));
 const PromotionCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/promotions/center/cardView/promotionCard.tsx"));
 const PromotionSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/promotions/center/sheetView/promotionSheetView.tsx"));
 const ListingAddOnCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listingAddOns/center/cardView/listingAddOnCard.tsx"));
@@ -228,6 +234,12 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#ListingSheetView": ListingSheetViewLazy,
         "#TaskRequestSheetView": TaskRequestSheetViewLazy,
         "#OrderSheetView": OrderSheetViewLazy,
+        "#OrderDeliveryCard": OrderDeliveryCardLazy,
+        "#OrderDeliverySheetView": OrderDeliverySheetViewLazy,
+        "#OrderMilestoneCard": OrderMilestoneCardLazy,
+        "#OrderMilestoneSheetView": OrderMilestoneSheetViewLazy,
+        "#OrderRevisionCard": OrderRevisionCardLazy,
+        "#OrderRevisionSheetView": OrderRevisionSheetViewLazy,
         "#PromotionCard": PromotionCardLazy,
         "#PromotionSheetView": PromotionSheetViewLazy,
         "#ListingAddOnCard": ListingAddOnCardLazy,
@@ -262,6 +274,9 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#PromotionCard": "promotion",
         "#ListingAddOnCard": "listingAddOn",
         "#ListingPackageCard": "listingPackage",
+        "#OrderDeliveryCard": "delivery",
+        "#OrderMilestoneCard": "milestone",
+        "#OrderRevisionCard": "revision",
     },
     auditSinglePostHints: {
         "#WarehouseSheetView": {url: "/api/eCommerce/warehouse/single", labelFields: ["name", "code"]},

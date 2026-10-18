@@ -1,7 +1,7 @@
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editListingFormSchema} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listing/editListing.form.validator.ts";
 import type {Listing} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listing/listing.dto.ts";
-import type {EditListingFormType, ListingPricingType, ListingStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listing/listing.schema-def.ts";
+import type {EditListingFormType, ListingPricingType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listing/listing.schema-def.ts";
 
 function nonEmptyListingFaqs(rows: {question?: string; answer?: string}[] | undefined,): {question: string; answer: string}[] | undefined {
     if (!rows?.length) return undefined;
@@ -28,7 +28,6 @@ export default createGenericEditPage<Listing, EditListingFormType>({
             priceCurrency: writeFields.priceCurrency ? data.priceCurrency?._id : undefined,
             pricingType: writeFields.pricingType ? data.pricingType : undefined,
             deliveryDays: writeFields.deliveryDays ? data.deliveryDays : undefined,
-            status: writeFields.status ? (data.status as ListingStatus) : undefined,
             address: {
                 country: addrKeys?.country ? data.address?.country?._id : undefined,
                 state: addrKeys?.state ? data.address?.state?._id : undefined,
@@ -40,6 +39,7 @@ export default createGenericEditPage<Listing, EditListingFormType>({
             faqs: writeFields.faqs ? data.faqs ?? [] : undefined,
             requirements: writeFields.requirements ? data.requirements : undefined,
             tags: writeFields.tags ? data.tags ?? [] : undefined,
+        // Cast: InferEditForm puts `_id` on embedded array items (faqs); the DTO rows carry none.
         } as EditListingFormType;
     },
     buildFormExtras: (_entityId, _params, entity) => ({

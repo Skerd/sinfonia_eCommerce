@@ -15,5 +15,10 @@
   "createdAt": "Created",
   "failedTitle": "Failed to load review",
   "failedDescription": "Something went wrong while loading this review. Click to retry.",
-  "failedTooltipDescription": "Click to retry fetching data."
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "lifecycle": "Lifecycle",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

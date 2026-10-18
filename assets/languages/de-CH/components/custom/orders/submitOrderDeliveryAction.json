@@ -6,6 +6,8 @@
     "messageLabel": "Delivery nachricht",
     "messagePlaceholder": "Describe what was delivered oder hinzufügen notizen für die customer…",
     "confirm": "Submit delivery",
+    "attachmentsLabel": "Dateien",
+    "addFile": "Datei hinzufügen",
     "axios": {
       "start": {
         "title": "Submitting delivery",

@@ -23,7 +23,9 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
     const isProvider = order.provider?._id === currentUserId;
     const isCustomer = order.customer?._id === currentUserId;
     const isFinal = order.status === "completed" || order.status === "cancelled";
-    const canCancel = (isProvider || isCustomer) && !isFinal && !!write;
+    // As on the server: the customer only before work starts, nobody while a dispute is open
+    const canCancel = (isProvider || (isCustomer && order.status !== "in_progress"))
+        && !isFinal && !order.hasActiveDispute && !!write;
 
     const triggerAction = () => {
         if (!canCancel) return;

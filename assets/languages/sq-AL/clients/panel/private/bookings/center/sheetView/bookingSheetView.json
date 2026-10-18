@@ -10,5 +10,10 @@
   "startAt": "Ora e fillimit",
   "endAt": "Ora e mbarimit",
   "timezone": "Zona orare",
-  "createdAt": "Krijuar"
+  "createdAt": "Krijuar",
+  "lifecycle": "Cikli i jetës",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }
