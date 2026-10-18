@@ -1,6 +1,6 @@
 import {
     ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Monitor, Receipt, Clock,
-    ArrowLeftRight, Bookmark, Truck, ClipboardList, AlertTriangle, Gavel, Tag, Flag, Calendar, User, Package, Network,
+    ArrowLeftRight, Bookmark, Truck, ClipboardList, AlertTriangle, Gavel, Tag, Flag, Calendar, Package, Network,
 } from "lucide-react";
 import {IconListDetails} from "@tabler/icons-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
@@ -81,7 +81,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
             {title: resolveLanguageKey("menus.eCommerceMarketplace.disputes.title"), url: "/eCommerceMarketplace/disputes", icon: AlertTriangle, permissions: ["disputes"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerceMarketplace.reviews.title"), url: "/eCommerceMarketplace/reviews", icon: Star, permissions: ["reviews"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerceMarketplace.bookings.title"), url: "/eCommerceMarketplace/bookings", icon: Calendar, permissions: ["bookings"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.providerprofile.title"), url: "/eCommerceMarketplace/providerprofile", icon: User, permissions: ["providerprofiles"], usersPermissions: [], atLeastOnePermission: true},
         ];
 
         return [

@@ -108,6 +108,9 @@
     },
     "savedsearches": {
       "title": "Gespeicherte Suchen"
+    },
+    "providerprofile": {
+      "title": "Anbieterprofil"
     }
   },
   "tenancy": {
@@ -221,7 +224,7 @@
         "title": "Inserat flags"
       },
       "providerprofile": {
-        "title": "Provider profiles"
+        "title": "Anbieterprofile"
       },
       "listingaddons": {
         "title": "Inserat hinzufügen-ons"
@@ -259,9 +262,6 @@
     },
     "listingflags": {
       "title": "Inserat flags"
-    },
-    "providerprofile": {
-      "title": "Provider profiles"
     },
     "listingaddons": {
       "title": "Inserat hinzufügen-ons"

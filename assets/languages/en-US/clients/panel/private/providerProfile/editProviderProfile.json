@@ -55,5 +55,9 @@
       "title": "Could not update profile",
       "time": 3000
     }
+  },
+  "account": {
+    "edit": "Edit",
+    "empty": "Nothing added yet."
   }
 }

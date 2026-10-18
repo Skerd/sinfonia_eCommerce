@@ -27,7 +27,7 @@ function providerProfileEditPath(profile: ProviderProfile) {
     params.set("profileId", profile._id);
     const name = profile.user?.name;
     if (name) params.set("profileName", name);
-    return `/eCommerceMarketplace/providerprofile/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/providerprofiles/edit?${params.toString()}`;
 }
 
 type ProviderProfileCardProps = WithLanguageType & {
@@ -171,12 +171,12 @@ function ProviderProfileCard({
                                 {row.averageRating != null ? (
                                     <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-warning">
                                         <IconStar className="h-3 w-3" />
-                                        <DisplayValue path="averageRating" type="number" value={row.averageRating}>
+                                        <DisplayValue type="number" value={row.averageRating}>
                                             {() => row.averageRating!.toFixed(1)}
                                         </DisplayValue>
                                         {row.reviewCount != null ? (
                                             <span className="font-normal text-muted-foreground">
-                                                (<DisplayValue path="reviewCount" type="number" value={row.reviewCount} />)
+                                                (<DisplayValue type="number" value={row.reviewCount} />)
                                             </span>
                                         ) : null}
                                     </span>

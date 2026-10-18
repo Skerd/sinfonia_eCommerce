@@ -108,6 +108,9 @@
     },
     "savedsearches": {
       "title": "Saved searches"
+    },
+    "providerprofile": {
+      "title": "Provider profile"
     }
   },
   "tenancy": {
@@ -259,9 +262,6 @@
     },
     "listingflags": {
       "title": "Listing flags"
-    },
-    "providerprofile": {
-      "title": "Provider profiles"
     },
     "listingaddons": {
       "title": "Listing add-ons"

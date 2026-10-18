@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
-  "title": "Profilet e Ofruesve",
-  "description": "Shiko dhe modifiko profilet e ofruesve. Përdor menunë e rreshtit për të lidhur pagesat Stripe.",
+  "title": "Profilet e ofruesve",
+  "description": "Të gjitha profilet e ofruesve në kompani.",
   "help": {
     "ariaLabel": "Rreth profileve të ofruesit",
     "title": "Rreth profileve të ofruesit",
@@ -16,6 +16,14 @@
         ]
       },
       {
+        "title": "Ku modifikohen profilet",
+        "body": "Çdo përdorues ka të shumtën një profil aktiv ofruesi.",
+        "items": [
+          "Kjo faqe liston të gjitha profilet e ofruesve në kompani, dhe një profil i ri pyet se cilit përdorues i përket.",
+          "Çdo përdorues e modifikon gjithashtu profilin e vet te Cilësimet → Profili i ofruesit, ku hapet drejtpërdrejt si formular."
+        ]
+      },
+      {
         "title": "Stripe Connect",
         "items": [
           "Create account link — nis ose vazhdon onboarding Express dhe kthen një URL.",
@@ -27,6 +35,7 @@
       }
     ]
   },
+  "createProviderProfile": "Krijo profil ofruesi",
   "fields": {
     "provider": "Ofruesi",
     "bio": "Bio",

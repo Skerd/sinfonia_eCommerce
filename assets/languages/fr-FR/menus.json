@@ -108,6 +108,9 @@
     },
     "savedsearches": {
       "title": "Recherches enregistrées"
+    },
+    "providerprofile": {
+      "title": "Profil de prestataire"
     }
   },
   "tenancy": {
@@ -259,9 +262,6 @@
     },
     "listingflags": {
       "title": "Liste des drapeaux"
-    },
-    "providerprofile": {
-      "title": "Profils de prestataires"
     },
     "listingaddons": {
       "title": "Liste des modules complémentaires"

@@ -28,7 +28,7 @@ export const MARKETPLACE_SYSTEM_MAP: SystemMapDataset = {
                 "Seller/provider identity with skills, portfolio, weekly availability windows, and Stripe Connect account flags.",
             keyFields: ["user", "company", "skills", "bio", "availability", "stripeAccountId", "chargesEnabled"],
             apiPath: "/api/eCommerceMarketplace/providerProfile",
-            panelRoute: "/eCommerceMarketplace/providerprofile",
+            panelRoute: "/tenancy/systemSettings/providerprofiles",
             actions: ["createAccountLink", "refreshAccountStatus"],
             position: {x: 40, y: 40},
         },

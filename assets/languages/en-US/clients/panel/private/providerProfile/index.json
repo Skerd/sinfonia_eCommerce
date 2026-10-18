@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
-  "title": "Provider Profiles",
-  "description": "View and edit provider profiles. Use the row menu to connect Stripe payouts.",
+  "title": "Provider profiles",
+  "description": "Every provider profile in the company.",
   "help": {
     "ariaLabel": "About Provider profiles",
     "title": "About Provider profiles",
@@ -16,6 +16,14 @@
         ]
       },
       {
+        "title": "Where profiles are edited",
+        "body": "Each user has at most one live provider profile.",
+        "items": [
+          "This page lists every provider profile in the company, and a new one asks which user it belongs to.",
+          "Each user also edits their own profile under Settings → Provider profile, where it opens directly as a form."
+        ]
+      },
+      {
         "title": "Stripe Connect",
         "items": [
           "Create account link — starts or resumes Express onboarding for the signed-in user's profile and returns a URL to open.",
@@ -27,6 +35,7 @@
       }
     ]
   },
+  "createProviderProfile": "Create provider profile",
   "fields": {
     "provider": "Provider",
     "bio": "Bio",

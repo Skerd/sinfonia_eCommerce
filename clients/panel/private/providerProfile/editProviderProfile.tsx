@@ -4,13 +4,12 @@ import { editProviderProfileFormSchema } from "armonia/src/modules/eCommerce/api
 import type { ProviderProfile } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import type { EditProviderProfileFormType } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.schema-def.ts";
 
-export default createGenericEditPage<ProviderProfile, EditProviderProfileFormType>({
-    languagePath: "src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx",
-    collectionName: "providerprofiles",
-    accessModel: "providerProfiles",
-    apiUrl: "/api/eCommerceMarketplace/providerProfile",
-    schema: editProviderProfileFormSchema,
-    buildInitialValues: (data, writeFields): Partial<EditProviderProfileFormType> => ({
+/** Form values for a profile, limited to the fields the caller may write. Shared with the account sections. */
+export function providerProfileInitialValues(
+    data: ProviderProfile,
+    writeFields: Record<string, unknown>,
+): Partial<EditProviderProfileFormType> {
+    return {
         _id: data._id,
         skills: writeFields.skills ? (data.skills ?? []) : undefined,
         bio: writeFields.bio ? (data.bio ?? "") : undefined,
@@ -24,6 +23,15 @@ export default createGenericEditPage<ProviderProfile, EditProviderProfileFormTyp
                   endTime: slot.endTime,
               })) as EditProviderProfileFormType["availability"])
             : undefined,
-    }),
+    };
+}
+
+export default createGenericEditPage<ProviderProfile, EditProviderProfileFormType>({
+    languagePath: "src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx",
+    collectionName: "providerprofiles",
+    accessModel: "providerProfiles",
+    apiUrl: "/api/eCommerceMarketplace/providerProfile",
+    schema: editProviderProfileFormSchema,
+    buildInitialValues: providerProfileInitialValues,
     submitIcon: <Save />,
 });

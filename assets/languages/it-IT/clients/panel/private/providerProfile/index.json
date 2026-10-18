@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
   "title": "Profili dei fornitori",
-  "description": "Visualizza e modifica i profili dei fornitori. Utilizza il menu della riga per collegare i pagamenti Stripe.",
+  "description": "Tutti i profili fornitore dell'azienda.",
   "help": {
     "ariaLabel": "Informazioni sui profili fornitore",
     "title": "Informazioni sui profili fornitore",
@@ -16,6 +16,14 @@
         ]
       },
       {
+        "title": "Dove si modificano i profili",
+        "body": "Ogni utente ha al massimo un profilo fornitore attivo.",
+        "items": [
+          "Questa pagina elenca tutti i profili fornitore dell'azienda, e un nuovo profilo chiede a quale utente appartiene.",
+          "Ogni utente modifica anche il proprio profilo in Impostazioni → Profilo fornitore, dove si apre direttamente come modulo."
+        ]
+      },
+      {
         "title": "Stripe Connect",
         "items": [
           "Crea link account — avvia o riprende l'onboarding Express e restituisce un URL.",
@@ -27,6 +35,7 @@
       }
     ]
   },
+  "createProviderProfile": "Crea profilo fornitore",
   "fields": {
     "provider": "Fornitore",
     "bio": "Bio",

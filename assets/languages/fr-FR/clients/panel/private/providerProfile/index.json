@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
-  "title": "Profils de fournisseurs",
-  "description": "Afficher et modifier les profils des fournisseurs. Utilisez le menu des lignes pour connecter les paiements Stripe.",
+  "title": "Profils de prestataires",
+  "description": "Tous les profils de prestataires de l'entreprise.",
   "help": {
     "ariaLabel": "À propos des profils prestataires",
     "title": "À propos des profils prestataires",
@@ -16,6 +16,14 @@
         ]
       },
       {
+        "title": "Où les profils sont modifiés",
+        "body": "Chaque utilisateur a au plus un profil de prestataire actif.",
+        "items": [
+          "Cette page liste tous les profils de prestataires de l'entreprise, et un nouveau profil demande à quel utilisateur il appartient.",
+          "Chaque utilisateur modifie aussi son propre profil dans Paramètres → Profil de prestataire, où il s'ouvre directement sous forme de formulaire."
+        ]
+      },
+      {
         "title": "Stripe Connect",
         "items": [
           "Créer un lien de compte — démarre ou reprend l'onboarding Express et renvoie une URL.",
@@ -27,6 +35,7 @@
       }
     ]
   },
+  "createProviderProfile": "Créer un profil de prestataire",
   "fields": {
     "provider": "Fournisseur",
     "bio": "Bio",

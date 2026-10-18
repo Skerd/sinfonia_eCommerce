@@ -108,6 +108,9 @@
     },
     "savedsearches": {
       "title": "Kërkimet e ruajtura"
+    },
+    "providerprofile": {
+      "title": "Profili i ofruesit"
     }
   },
   "tenancy": {
@@ -259,9 +262,6 @@
     },
     "listingflags": {
       "title": "Raportimet"
-    },
-    "providerprofile": {
-      "title": "Profilet e ofruesve"
     },
     "listingaddons": {
       "title": "Shtesa të Listimeve"

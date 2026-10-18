@@ -1,4 +1,5 @@
 import { compose } from "redux";
+import { IconPlus } from "@tabler/icons-react";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
@@ -12,12 +13,14 @@ import ConnectAccountAction, {
 } from "@eCommerceModule/components/custom/providerProfile/connectAccountAction.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
+const PROVIDER_PROFILE_FORM_BASE = "/tenancy/systemSettings/providerprofiles";
+
 function buildProfileEditPath(profile: ProviderProfile) {
     const params = new URLSearchParams();
     params.set("profileId", profile._id);
     const name = getName(profile.user);
     if (name) params.set("profileName", name);
-    return `/eCommerceMarketplace/providerprofile/edit?${params.toString()}`;
+    return `${PROVIDER_PROFILE_FORM_BASE}/edit?${params.toString()}`;
 }
 
 function profileDisplayName(profile: ProviderProfile) {
@@ -46,6 +49,9 @@ function AllProviderProfiles({ resolveLanguageKey }: WithLanguageType) {
             collectionName="providerProfiles"
             accessModel="providerProfiles"
             tableConfigKey="providerprofiles"
+            createPath={`${PROVIDER_PROFILE_FORM_BASE}/create`}
+            createIcon={<IconPlus />}
+            createLanguageKey="createProviderProfile"
             buildEditPath={buildProfileEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx"

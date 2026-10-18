@@ -7,6 +7,7 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import type {Booking} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/booking/booking.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 type BookingSheetViewOwnProps = {
     open: boolean;
@@ -57,6 +58,7 @@ function BookingSheetView({
             onDelete={onDelete}
             onRestore={onRestore}
             editPath=""
+            headerTitle={getName((sheetData as Booking).provider) || undefined}
             onSheetRowPatched={(row) => {
                 setSheetData(row);
                 onSheetRowPatched?.(row as Partial<Booking>);

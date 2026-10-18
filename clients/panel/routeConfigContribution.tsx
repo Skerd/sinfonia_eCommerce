@@ -97,6 +97,7 @@ import AllListingFlags from "@eCommerceModule/clients/panel/private/listingFlags
 import CreateListingFlag from "@eCommerceModule/clients/panel/private/listingFlags/createListingFlag.tsx";
 import EditListingFlag from "@eCommerceModule/clients/panel/private/listingFlags/editListingFlag.tsx";
 import AllProviderProfiles from "@eCommerceModule/clients/panel/private/providerProfile";
+import CreateProviderProfile from "@eCommerceModule/clients/panel/private/providerProfile/createProviderProfile.tsx";
 import EditProviderProfile from "@eCommerceModule/clients/panel/private/providerProfile/editProviderProfile.tsx";
 import AllListingAddOns from "@eCommerceModule/clients/panel/private/listingAddOns";
 import CreateListingAddOn from "@eCommerceModule/clients/panel/private/listingAddOns/createListingAddOn.tsx";
@@ -163,6 +164,13 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateCustomerAddress />;
                 if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
                 return <AllCustomerAddresses companyWide />;
+            }
+            if (resource === "providerprofiles") {
+                const profileId = searchParams.get("profileId") || undefined;
+                const profileName = safeDecode(searchParams.get("profileName")) || undefined;
+                if (action === "create") return <CreateProviderProfile />;
+                if (action === "edit" && profileId) return <EditProviderProfile entityId={profileId} entityName={profileName} />;
+                return <AllProviderProfiles />;
             }
             if (resource === "discounts") {
                 const discountId = searchParams.get("discountId") || undefined;
@@ -258,8 +266,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
             const taskRequestId = searchParams.get("taskRequestId") || undefined;
             const taskRequestTitle = safeDecode(searchParams.get("taskRequestTitle")) || undefined;
             const listingFlagId = searchParams.get("listingFlagId") || undefined;
-            const profileId = searchParams.get("profileId") || undefined;
-            const profileName = safeDecode(searchParams.get("profileName")) || undefined;
 
             if (resource === "marketplacesystemmap") {
                 return <MarketplaceSystemMap />;
@@ -314,10 +320,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateListingFlag />;
                 if (action === "edit" && listingFlagId) return <EditListingFlag entityId={listingFlagId} />;
                 return <AllListingFlags />;
-            }
-            if (resource === "providerprofile") {
-                if (action === "edit" && profileId) return <EditProviderProfile entityId={profileId} entityName={profileName} />;
-                return <AllProviderProfiles />;
             }
             if (resource === "listingaddons") {
                 if (action === "create") return <CreateListingAddOn />;

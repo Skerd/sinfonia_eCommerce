@@ -55,5 +55,9 @@
       "title": "Impossibile aggiornare il profilo",
       "time": 3000
     }
+  },
+  "account": {
+    "edit": "Modifica",
+    "empty": "Ancora nulla di aggiunto."
   }
 }

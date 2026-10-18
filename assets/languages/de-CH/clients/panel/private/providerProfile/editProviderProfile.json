@@ -55,5 +55,9 @@
       "title": "Konnte nicht aktualisieren profil",
       "time": 3000
     }
+  },
+  "account": {
+    "edit": "Bearbeiten",
+    "empty": "Noch nichts erfasst."
   }
 }

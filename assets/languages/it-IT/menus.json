@@ -108,6 +108,9 @@
     },
     "savedsearches": {
       "title": "Ricerche salvate"
+    },
+    "providerprofile": {
+      "title": "Profilo fornitore"
     }
   },
   "tenancy": {
@@ -259,9 +262,6 @@
     },
     "listingflags": {
       "title": "Elenco bandiere"
-    },
-    "providerprofile": {
-      "title": "Profili dei fornitori"
     },
     "listingaddons": {
       "title": "Componenti aggiuntivi dell'elenco"

@@ -31,7 +31,7 @@ function providerProfileEditPath(profile: ProviderProfile) {
     params.set("profileId", profile._id);
     const name = getName(profile.user);
     if (name) params.set("profileName", name);
-    return `/eCommerceMarketplace/providerprofile/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/providerprofiles/edit?${params.toString()}`;
 }
 
 function ProviderProfileSheetView({
@@ -79,6 +79,7 @@ function ProviderProfileSheetView({
                 onDelete={onDelete}
                 onRestore={onRestore}
                 editPath={providerProfileEditPath(asProfile)}
+                headerTitle={displayName}
                 actionMenuAllowCustomChildren
                 onActionMenuAction={(a) => {
                     if (a === "createAccountLink" || a === "refreshAccountStatus") {

@@ -58,5 +58,9 @@
       "title": "Nuk u përditësua profili",
       "time": 3000
     }
+  },
+  "account": {
+    "edit": "Modifiko",
+    "empty": "Ende asgjë e shtuar."
   }
 }

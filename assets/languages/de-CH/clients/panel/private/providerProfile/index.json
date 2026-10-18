@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/index.tsx",
-  "title": "Provider Profiles",
-  "description": "Und bearbeiten provider profiles. Use die zeile menü bis connect Stripe payouts. anzeigen",
+  "title": "Anbieterprofile",
+  "description": "Alle Anbieterprofile im Unternehmen.",
   "help": {
     "ariaLabel": "Über Anbieterprofile",
     "title": "Über Anbieterprofile",
@@ -16,6 +16,14 @@
         ]
       },
       {
+        "title": "Wo Profile bearbeitet werden",
+        "body": "Jeder Benutzer hat höchstens ein aktives Anbieterprofil.",
+        "items": [
+          "Diese Seite listet alle Anbieterprofile des Unternehmens auf, und ein neues Profil fragt, zu welchem Benutzer es gehört.",
+          "Jeder Benutzer bearbeitet sein eigenes Profil auch unter Einstellungen → Anbieterprofil, wo es direkt als Formular geöffnet wird."
+        ]
+      },
+      {
         "title": "Stripe Connect",
         "items": [
           "Account-Link erstellen — startet oder setzt Express-Onboarding fort und liefert eine URL.",
@@ -27,6 +35,7 @@
       }
     ]
   },
+  "createProviderProfile": "Anbieterprofil erstellen",
   "fields": {
     "provider": "Anbieter",
     "bio": "Bio",

@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/providerProfile/createProviderProfile.tsx",
+  "title": "Anbieterprofil erstellen",
+  "formHeader": {
+    "title": "Anbieterprofil erstellen",
+    "description": "Fähigkeiten, Bio, Portfolio und wöchentliche Verfügbarkeit erfassen. Wählen Sie, zu welchem Benutzer es gehört."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Profil erstellen"
+  },
+  "form": {
+    "userLabel": "Benutzer",
+    "userPlaceholder": "Benutzer auswählen",
+    "skillsLabel": "Skills",
+    "skillsPlaceholder": "E.g. plumbing, electrical...",
+    "skillsRemoveTooltip": "Entfernen skill",
+    "bioLabel": "Bio",
+    "bioPlaceholder": "Tell clients about yourself...",
+    "portfolioLabel": "Portfolio images",
+    "section": {
+      "profile": "Profil",
+      "availability": "Weekly availability",
+      "portfolio": "Portfolio"
+    },
+    "availabilityAddRow": "Time window hinzufügen",
+    "availabilityRemoveRow": "Entfernen",
+    "availabilityRowTitle": "Availability window",
+    "dayOfWeekLabel": "Day von woche",
+    "startTimeLabel": "Start time",
+    "startTimePlaceholder": "Pick start time",
+    "endTimeLabel": "End time",
+    "endTimePlaceholder": "Pick end time"
+  },
+  "weekday": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  },
+  "axios": {
+    "start": {
+      "title": "Profil wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Profil erstellt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Profil konnte nicht erstellt werden",
+      "time": 3000
+    }
+  }
+}
