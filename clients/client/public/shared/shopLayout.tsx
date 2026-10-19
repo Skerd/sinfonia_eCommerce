@@ -215,18 +215,36 @@ function ShopLanguageSelect({resolveLanguageKey}: WithLanguageType) {
 
 const FOOTER_LINK_CLASS = "text-shop-ink-muted underline-offset-4 transition-colors hover:text-shop-ink hover:underline";
 
+/** Apex platform shop has no tenant company record — use public Arpeggio contact. */
+const PLATFORM_FOOTER_CONTACT = {
+    email: "arpeggioplatform@gmail.com",
+    instagram: "https://www.instagram.com/arpeggio_platform/",
+    linkedin: "https://www.linkedin.com/in/arpeggio-platform",
+    address: "Tirane/Albania",
+} as const;
+
 function ShopFooter(props: WithLanguageType) {
     const {resolveLanguageKey} = props;
     const {config} = useShopConfig();
     const company = config?.company;
+    const usePlatformContact = config?.mode === "platform";
     const companyName = company?.name ?? config?.companyName ?? resolveLanguageKey("shopFallback");
     const logoUrl = resolveShopMediaUrl(company?.logo);
+
+    const email = company?.email || (usePlatformContact ? PLATFORM_FOOTER_CONTACT.email : undefined);
+    const phoneNumber = company?.phoneNumber;
+    const addresses = company?.addresses?.length
+        ? company.addresses
+        : usePlatformContact
+            ? [{label: PLATFORM_FOOTER_CONTACT.address}]
+            : [];
     const socials = [
         {label: resolveLanguageKey("socialWebsite"), href: company?.website},
-        {label: "LinkedIn", href: company?.linkedin},
-        {label: "Instagram", href: company?.instagram},
+        {label: "LinkedIn", href: company?.linkedin || (usePlatformContact ? PLATFORM_FOOTER_CONTACT.linkedin : undefined)},
+        {label: "Instagram", href: company?.instagram || (usePlatformContact ? PLATFORM_FOOTER_CONTACT.instagram : undefined)},
         {label: "Facebook", href: company?.facebook},
     ].filter((item): item is {label: string; href: string} => Boolean(item.href));
+    const hasContact = Boolean(email || phoneNumber || addresses.length > 0);
 
     return (
         <footer className="mt-24 bg-shop-cream">
@@ -254,22 +272,24 @@ function ShopFooter(props: WithLanguageType) {
                     <Link to="/terms" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navTerms")}</Link>
                 </div>
 
-                <div className="flex flex-col gap-2.5 text-sm">
-                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-shop-ink-faded">{resolveLanguageKey("contactHeading")}</p>
-                    {company?.email ? (
-                        <a href={`mailto:${company.email}`} className={FOOTER_LINK_CLASS}>
-                            {company.email}
-                        </a>
-                    ) : null}
-                    {company?.phoneNumber ? (
-                        <a href={`tel:${company.phoneNumber.replace(/[^\d+]/g, "")}`} className={FOOTER_LINK_CLASS}>
-                            {company.phoneNumber}
-                        </a>
-                    ) : null}
-                    {company?.addresses?.map((address) => (
-                        <p key={address.label} className="text-shop-ink-muted">{address.label}</p>
-                    ))}
-                </div>
+                {hasContact ? (
+                    <div className="flex flex-col gap-2.5 text-sm">
+                        <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-shop-ink-faded">{resolveLanguageKey("contactHeading")}</p>
+                        {email ? (
+                            <a href={`mailto:${email}`} className={FOOTER_LINK_CLASS}>
+                                {email}
+                            </a>
+                        ) : null}
+                        {phoneNumber ? (
+                            <a href={`tel:${phoneNumber.replace(/[^\d+]/g, "")}`} className={FOOTER_LINK_CLASS}>
+                                {phoneNumber}
+                            </a>
+                        ) : null}
+                        {addresses.map((address) => (
+                            <p key={address.label} className="text-shop-ink-muted">{address.label}</p>
+                        ))}
+                    </div>
+                ) : null}
 
                 {socials.length > 0 ? (
                     <div className="flex flex-col gap-2.5 text-sm">
