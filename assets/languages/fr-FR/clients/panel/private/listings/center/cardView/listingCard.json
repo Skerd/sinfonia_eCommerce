@@ -14,7 +14,5 @@
     "active": "Actif",
     "draft": "Brouillon",
     "inactive": "Inactif"
-  },
-  "provider": "Fournisseur",
-  "deliveryDays": "Livraison"
+  }
 }
