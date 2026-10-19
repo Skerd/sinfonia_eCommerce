@@ -1,5 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/home/index.tsx",
+  "loading": "Laden",
   "heroEyebrow": "Neue Saison",
   "heroTitle": "Gemacht für den Alltag, ausgewählt für die Dauer.",
   "heroSubtitle": "Entdecken Sie den ganzen Katalog – Neuheiten, Kollektionen und aktuelle Angebote.",
@@ -10,5 +11,19 @@
   "servicesTitle": "Beliebte Dienstleistungen",
   "servicesLead": "Buchen Sie vertrauenswürdige lokale Anbieter mit klaren Preisen und Paketen.",
   "blogTitle": "Aus dem Blog",
-  "blogAll": "Alle Artikel"
+  "blogAll": "Alle Artikel",
+  "platformBrand": "Arpeggio",
+  "platformHeroTitle": "Ein Marktplatz. Alle Verkäufer.",
+  "platformHeroSubtitle": "Kaufen Sie Produkte, buchen Sie Dienstleistungen und lesen Sie Beiträge von jedem Shop auf der Plattform — oder öffnen Sie den Shop eines Verkäufers für nur dessen Katalog.",
+  "platformCtaProducts": "Produkte durchsuchen",
+  "platformCtaServices": "Dienstleistungen durchsuchen",
+  "platformCtaBlog": "Blog lesen",
+  "platformCtaExplore": "Katalog entdecken",
+  "platformPillarsLabel": "Was Sie hier tun können",
+  "platformPillarProductsTitle": "Produkte aus jedem Shop",
+  "platformPillarProductsBody": "Vergleichen und kaufen Sie über alle Verkäufer in einem Katalog. Jede Produktseite zeigt, wer verkauft.",
+  "platformPillarServicesTitle": "Dienstleistungen mit Escrow",
+  "platformPillarServicesBody": "Beauftragen Sie Anbieter für Aufträge und Pakete. Bestellungen bleiben geschützt, bis die Arbeit erledigt ist.",
+  "platformPillarSellersTitle": "Verkäufer-Shops",
+  "platformPillarSellersBody": "Lieber eine einzelne Marke? Öffnen Sie deren Subdomain-Shop — nur Produkte, Dienstleistungen und Blog dieser Firma."
 }

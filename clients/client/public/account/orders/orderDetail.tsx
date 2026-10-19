@@ -19,6 +19,7 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const {orderId = ""} = useParams();
     const [searchParams] = useSearchParams();
     const justPlaced = searchParams.get("placed") === "1";
+    const siblingCount = (searchParams.get("siblings") ?? "").split(",").filter(Boolean).length;
     const {formatMoney} = useShopConfig();
 
     const [order, setOrder] = useState<BuyerProductOrder | null>(null);
@@ -79,6 +80,12 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         <p className="text-shop-ink-muted">
                             {resolveLanguageKey(paidLater ? "placedPayLater" : "placedPaid")}
                         </p>
+                        {siblingCount > 0 && (
+                            <p className="text-shop-ink-muted">
+                                {resolveLanguageKey("siblingsNotice").replace("{count}", String(siblingCount))}{" "}
+                                <Link to="/account/orders" className={SHOP_LINK_CLASS}>{resolveLanguageKey("viewAllOrders")}</Link>
+                            </p>
+                        )}
                     </div>
                 </div>
             )}

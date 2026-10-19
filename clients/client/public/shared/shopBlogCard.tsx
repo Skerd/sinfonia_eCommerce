@@ -6,6 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
+import ShopSellerCard from "./shopSellerCard.tsx";
 import type {PublicBlogPostItem} from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopBlogCard.tsx";
@@ -89,6 +90,9 @@ function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlo
                 {post.authorName && !featured && (
                     <span className="text-xs text-shop-ink-faded">{resolveLanguageKey("byAuthor").replace("{author}", post.authorName)}</span>
                 )}
+                {post.seller ? (
+                    <ShopSellerCard seller={post.seller} kind="blog" size="compact" nestedInLink />
+                ) : null}
             </div>
         </Link>
     );

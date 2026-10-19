@@ -209,16 +209,21 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const confirmOrder = useCallback(async (checkoutId: string) => {
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: BuyerProductOrder}>("/api/eCommerce/checkout/confirm", {
-                checkoutId,
-                email: email || readStoredEmail() || undefined,
-                phone: shippingAddress.phone || undefined,
-            });
+            const res = await apiClient.post<{data: BuyerProductOrder; siblingOrderIds?: string[]}>(
+                "/api/eCommerce/checkout/confirm",
+                {
+                    checkoutId,
+                    email: email || readStoredEmail() || undefined,
+                    phone: shippingAddress.phone || undefined,
+                },
+            );
             clearCheckoutIdempotencyKey();
             storeEmail("");
             await refreshCart();
             // The confirmation lives on the order's own page, so a refresh or Back keeps it
-            navigate(`/account/orders/${res.data.data._id}?placed=1`, {replace: true});
+            const siblings = res.data.siblingOrderIds?.filter(Boolean) ?? [];
+            const siblingQuery = siblings.length > 0 ? `&siblings=${siblings.join(",")}` : "";
+            navigate(`/account/orders/${res.data.data._id}?placed=1${siblingQuery}`, {replace: true});
         } catch (err) {
             handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("placeOrderError")});
         } finally {

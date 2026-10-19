@@ -9,6 +9,7 @@ import type {CartItem} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {useShopCart} from "./shopCartContext.tsx";
 import {useShopConfig} from "./shopConfigContext.tsx";
+import {shopProductHref} from "./shopProductHref.ts";
 import ShopQuantityStepper from "./shopQuantityStepper.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx";
@@ -30,7 +31,9 @@ function ShopCartLineInner({resolveLanguageKey, item, compact = false, onNavigat
     const title = item.snapshot?.title ?? item.product.title ?? "";
     const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
     const rules = item.quantityRules ?? {min: 1, step: 1};
-    const productHref = item.product.slug ? `/product?slug=${encodeURIComponent(item.product.slug)}` : undefined;
+    const productHref = item.product._id
+        ? shopProductHref({_id: item.product._id, slug: item.product.slug, seller: item.seller})
+        : undefined;
 
     const failed = (fallbackKey: string) => (err: unknown) =>
         handleError(err, {context: "Cart", showToast: true, fallbackMessage: resolveLanguageKey(fallbackKey)});

@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopSellerCard.tsx",
+  "soldBy": "Verkauft von",
+  "offeredBy": "Angeboten von",
+  "publishedBy": "Veröffentlicht von",
+  "visitShop": "{name}-Shop besuchen",
+  "visitShopShort": "Shop besuchen"
+}

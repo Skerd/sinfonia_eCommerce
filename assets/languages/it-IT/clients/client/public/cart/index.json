@@ -26,5 +26,6 @@
   "discountCode": "Codice sconto",
   "giftCardCode": "Codice gift card",
   "apply": "Applica",
-  "checkout": "Vai al checkout"
+  "checkout": "Vai al checkout",
+  "soldBy": "Sold by {name}"
 }

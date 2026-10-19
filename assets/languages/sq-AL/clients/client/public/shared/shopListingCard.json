@@ -10,5 +10,6 @@
   "promotion": {
     "featured": "I veçuar",
     "sponsored": "I sponsorizuar"
-  }
+  },
+  "soldBy": "Sold by {name}"
 }

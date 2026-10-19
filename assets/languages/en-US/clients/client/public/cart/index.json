@@ -26,5 +26,6 @@
   "discountCode": "Discount code",
   "giftCardCode": "Gift card code",
   "apply": "Apply",
-  "checkout": "Go to checkout"
+  "checkout": "Go to checkout",
+  "soldBy": "Sold by {name}"
 }

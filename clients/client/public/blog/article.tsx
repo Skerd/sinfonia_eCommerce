@@ -8,6 +8,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import ShopBlogCard, {blogMetaLine} from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
+import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
 import {SHOP_BUTTON_SECONDARY_CLASS, SHOP_LINK_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import type {
     PublicBlogFormResponseType,
@@ -112,9 +113,12 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                     <h1 className="font-shop-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">{post.title}</h1>
                     {post.excerpt && <p className="text-lg leading-relaxed text-shop-ink-muted sm:text-xl">{post.excerpt}</p>}
                     <div className="flex flex-wrap items-center justify-between gap-4 border-y border-shop-border py-4">
-                        <div className="flex flex-col text-sm">
+                        <div className="flex min-w-0 flex-col gap-2 text-sm">
                             {post.authorName && <span className="font-semibold">{post.authorName}</span>}
                             <span className="text-shop-ink-muted">{blogMetaLine(resolveLanguageKey, post)}</span>
+                            {post.seller ? (
+                                <ShopSellerCard seller={post.seller} kind="blog" size="compact" />
+                            ) : null}
                         </div>
                         <button type="button" onClick={copyLink} className={SHOP_BUTTON_SECONDARY_CLASS}>
                             <Link2 className="h-4 w-4" aria-hidden />

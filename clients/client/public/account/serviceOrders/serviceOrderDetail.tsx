@@ -1,8 +1,10 @@
-import {useCallback, useEffect, useState, type FormEvent} from "react";
+import {useCallback, useEffect, useMemo, useState, type FormEvent} from "react";
 import {Link, useParams, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowLeft, CalendarDays, Check, CircleCheck, Download, Star} from "lucide-react";
+import {ArrowLeft, CalendarDays, Check, CircleCheck, Download, Lock, Star} from "lucide-react";
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -11,6 +13,7 @@ import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {ShopProviderAvatar, useMarketplaceMoney} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {
     SHOP_BUTTON_CLASS,
@@ -18,6 +21,7 @@ import {
     SHOP_FIELD_INPUT_CLASS,
     SHOP_FIELD_LABEL_CLASS,
     SHOP_LINK_CLASS,
+    SHOP_SUBMIT_CLASS,
 } from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import {serviceOrderTitle} from "./index.tsx";
 import type {BuyerServiceOrder} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
@@ -31,6 +35,58 @@ const STEPS = ["pending", "accepted", "in_progress", "completed"] as const;
 const REVISION_REASON_MIN = 10;
 
 type Panel = "cancel" | "revision" | "dispute" | "review" | null;
+
+function EscrowPayForm({
+    clientSecret,
+    payLabel,
+    processingLabel,
+    failedLabel,
+    onPaid,
+}: {
+    clientSecret: string;
+    payLabel: string;
+    processingLabel: string;
+    failedLabel: string;
+    onPaid: () => Promise<void>;
+}) {
+    const stripe = useStripe();
+    const elements = useElements();
+    const [busy, setBusy] = useState(false);
+
+    async function handlePay() {
+        if (!stripe || !elements) return;
+        setBusy(true);
+        try {
+            const {paymentIntent} = await stripe.retrievePaymentIntent(clientSecret);
+            if (paymentIntent?.status === "succeeded") {
+                await onPaid();
+                return;
+            }
+            const result = await stripe.confirmPayment({
+                elements,
+                confirmParams: {return_url: window.location.href},
+                redirect: "if_required",
+            });
+            if (result.error) {
+                toast.error(result.error.message ?? failedLabel);
+                return;
+            }
+            await onPaid();
+        } finally {
+            setBusy(false);
+        }
+    }
+
+    return (
+        <div className="flex flex-col gap-4">
+            <PaymentElement />
+            <button type="button" onClick={() => void handlePay()} disabled={!stripe || busy} className={SHOP_SUBMIT_CLASS}>
+                <Lock className="h-4 w-4" aria-hidden />
+                {busy ? processingLabel : payLabel}
+            </button>
+        </div>
+    );
+}
 
 /** Delivery files are tenant media: fetched with the session token, then opened from memory. */
 async function downloadMedia(media: Media) {
@@ -48,6 +104,11 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams] = useSearchParams();
     const justPlaced = searchParams.get("placed") === "1";
     const formatMoney = useMarketplaceMoney();
+    const {config} = useShopConfig();
+    const stripePromise = useMemo(
+        () => (config?.stripePublishableKey ? loadStripe(config.stripePublishableKey) : null),
+        [config?.stripePublishableKey],
+    );
 
     const [order, setOrder] = useState<BuyerServiceOrder | null>(null);
     const [loading, setLoading] = useState(true);
@@ -153,6 +214,27 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         <p className="text-shop-ink-muted">{resolveLanguageKey("placedMessage")}</p>
                     </div>
                 </div>
+            )}
+
+            {order.escrowClientSecret && stripePromise && (
+                <section className="flex flex-col gap-4 rounded-2xl border border-shop-border p-6" aria-labelledby="shop-escrow-pay">
+                    <div className="flex flex-col gap-1">
+                        <h2 id="shop-escrow-pay" className="font-shop-display text-xl font-semibold">{resolveLanguageKey("payEscrowTitle")}</h2>
+                        <p className="text-sm text-shop-ink-muted">{resolveLanguageKey("payEscrowHint")}</p>
+                    </div>
+                    <Elements stripe={stripePromise} options={{clientSecret: order.escrowClientSecret}}>
+                        <EscrowPayForm
+                            clientSecret={order.escrowClientSecret}
+                            payLabel={resolveLanguageKey("payEscrowButton")}
+                            processingLabel={resolveLanguageKey("payEscrowButton")}
+                            failedLabel={resolveLanguageKey("payEscrowError")}
+                            onPaid={async () => {
+                                toast.success(resolveLanguageKey("payEscrowSuccess"));
+                                await load();
+                            }}
+                        />
+                    </Elements>
+                </section>
             )}
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

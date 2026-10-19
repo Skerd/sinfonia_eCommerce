@@ -26,5 +26,6 @@
   "discountCode": "Rabattcode",
   "giftCardCode": "Geschenkkartencode",
   "apply": "Anwenden",
-  "checkout": "Zur Kasse"
+  "checkout": "Zur Kasse",
+  "soldBy": "Sold by {name}"
 }

@@ -75,5 +75,10 @@
   "disputeOpened": "Litige ouvert. Nous vous recontacterons.",
   "reviewThanks": "Merci pour votre avis !",
   "cancelled": "Commande annulée",
-  "milestoneReleased": "Paiement du jalon libéré"
+  "milestoneReleased": "Paiement du jalon libéré",
+  "payEscrowTitle": "Pay for this order",
+  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
+  "payEscrowButton": "Pay now",
+  "payEscrowSuccess": "Payment submitted",
+  "payEscrowError": "Payment failed"
 }

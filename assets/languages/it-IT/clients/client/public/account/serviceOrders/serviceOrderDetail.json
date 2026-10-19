@@ -75,5 +75,10 @@
   "disputeOpened": "Contestazione aperta. Ti contatteremo.",
   "reviewThanks": "Grazie per la recensione!",
   "cancelled": "Ordine annullato",
-  "milestoneReleased": "Pagamento della milestone rilasciato"
+  "milestoneReleased": "Pagamento della milestone rilasciato",
+  "payEscrowTitle": "Pay for this order",
+  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
+  "payEscrowButton": "Pay now",
+  "payEscrowSuccess": "Payment submitted",
+  "payEscrowError": "Payment failed"
 }

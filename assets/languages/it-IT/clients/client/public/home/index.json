@@ -1,5 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/home/index.tsx",
+  "loading": "Caricamento",
   "heroEyebrow": "Nuova stagione",
   "heroTitle": "Fatti per essere usati, scelti per durare.",
   "heroSubtitle": "Sfoglia tutto il catalogo: novità, collezioni e offerte del momento.",
@@ -10,5 +11,19 @@
   "servicesTitle": "Servizi più richiesti",
   "servicesLead": "Prenota fornitori locali affidabili, con prezzi e pacchetti chiari.",
   "blogTitle": "Dal blog",
-  "blogAll": "Tutti gli articoli"
+  "blogAll": "Tutti gli articoli",
+  "platformBrand": "Arpeggio",
+  "platformHeroTitle": "Un marketplace. Tutti i venditori.",
+  "platformHeroSubtitle": "Acquista prodotti, prenota servizi e leggi le storie di ogni negozio sulla piattaforma — oppure apri il negozio di un venditore per il suo catalogo.",
+  "platformCtaProducts": "Sfoglia i prodotti",
+  "platformCtaServices": "Sfoglia i servizi",
+  "platformCtaBlog": "Leggi il blog",
+  "platformCtaExplore": "Esplora il catalogo",
+  "platformPillarsLabel": "Cosa puoi fare qui",
+  "platformPillarProductsTitle": "Prodotti da ogni negozio",
+  "platformPillarProductsBody": "Confronta e acquista tra tutti i venditori in un unico catalogo. Ogni prodotto indica chi lo vende.",
+  "platformPillarServicesTitle": "Servizi con escrow",
+  "platformPillarServicesBody": "Assumi fornitori per lavori e pacchetti. Gli ordini restano protetti fino al completamento del lavoro.",
+  "platformPillarSellersTitle": "Negozi dei venditori",
+  "platformPillarSellersBody": "Preferisci un solo brand? Apri il negozio sul loro sottodominio: solo prodotti, servizi e blog di quell’azienda."
 }

@@ -1,5 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/home/index.tsx",
+  "loading": "Loading",
   "heroEyebrow": "New season",
   "heroTitle": "Made to be used, chosen to last.",
   "heroSubtitle": "Browse the full catalog — new arrivals, collections and current offers.",
@@ -10,5 +11,19 @@
   "servicesTitle": "Popular services",
   "servicesLead": "Book trusted local providers, with clear prices and packages.",
   "blogTitle": "From the blog",
-  "blogAll": "All stories"
+  "blogAll": "All stories",
+  "platformBrand": "Arpeggio",
+  "platformHeroTitle": "One marketplace. Every seller.",
+  "platformHeroSubtitle": "Shop products, book services, and read stories from every store on the platform — or open a seller’s own shop for their catalog alone.",
+  "platformCtaProducts": "Browse products",
+  "platformCtaServices": "Browse services",
+  "platformCtaBlog": "Read the blog",
+  "platformCtaExplore": "Explore the catalog",
+  "platformPillarsLabel": "What you can do here",
+  "platformPillarProductsTitle": "Products from every store",
+  "platformPillarProductsBody": "Compare and buy across all sellers in one catalog. Each product page shows who is selling it.",
+  "platformPillarServicesTitle": "Services with escrow",
+  "platformPillarServicesBody": "Hire providers for jobs and packages. Orders stay protected until the work is done.",
+  "platformPillarSellersTitle": "Seller storefronts",
+  "platformPillarSellersBody": "Prefer a single brand? Open their subdomain shop — only that company’s products, services, and blog."
 }

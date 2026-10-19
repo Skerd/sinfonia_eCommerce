@@ -3,5 +3,6 @@
   "wasPrice": "Was",
   "noImage": "No image",
   "discount": "−{percent}%",
-  "rating": "Rated {average} out of 5 from {count} reviews"
+  "rating": "Rated {average} out of 5 from {count} reviews",
+  "soldBy": "Sold by {name}"
 }

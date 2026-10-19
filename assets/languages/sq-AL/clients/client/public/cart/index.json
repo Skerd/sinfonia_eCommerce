@@ -26,5 +26,6 @@
   "discountCode": "Kodi i zbritjes",
   "giftCardCode": "Kodi i kartës dhuratë",
   "apply": "Apliko",
-  "checkout": "Vazhdo te pagesa"
+  "checkout": "Vazhdo te pagesa",
+  "soldBy": "Sold by {name}"
 }

@@ -3,5 +3,6 @@
   "wasPrice": "Prima",
   "noImage": "Nessuna immagine",
   "discount": "−{percent}%",
-  "rating": "Valutato {average} su 5 ({count} recensioni)"
+  "rating": "Valutato {average} su 5 ({count} recensioni)",
+  "soldBy": "Sold by {name}"
 }

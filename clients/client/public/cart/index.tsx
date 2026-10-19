@@ -128,13 +128,31 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
             </div>
 
             <div className="grid items-start gap-10 lg:grid-cols-[1fr_380px]">
-                <div className="flex flex-col">
-                    <ul className="divide-y divide-shop-border border-y border-shop-border">
-                        {cart.items.map(item => (
-                            <ShopCartLine key={item._id} item={item} />
-                        ))}
-                    </ul>
-                    <Link to="/products" className={cn(SHOP_LINK_CLASS, "mt-6 self-start text-sm")}>{resolveLanguageKey("continueShopping")}</Link>
+                <div className="flex flex-col gap-8">
+                    {(() => {
+                        const groups = new Map<string, typeof cart.items>();
+                        for (const item of cart.items) {
+                            const key = item.sellerCompanyId ?? item.seller?._id ?? "_";
+                            const list = groups.get(key) ?? [];
+                            list.push(item);
+                            groups.set(key, list);
+                        }
+                        return [...groups.entries()].map(([key, items]) => (
+                            <div key={key} className="flex flex-col gap-2">
+                                {items[0]?.seller?.name && (
+                                    <p className="text-sm font-medium text-shop-ink-muted">
+                                        {resolveLanguageKey("soldBy").replace("{name}", items[0].seller.name)}
+                                    </p>
+                                )}
+                                <ul className="divide-y divide-shop-border border-y border-shop-border">
+                                    {items.map(item => (
+                                        <ShopCartLine key={item._id} item={item} />
+                                    ))}
+                                </ul>
+                            </div>
+                        ));
+                    })()}
+                    <Link to="/products" className={cn(SHOP_LINK_CLASS, "self-start text-sm")}>{resolveLanguageKey("continueShopping")}</Link>
                 </div>
 
                 <aside className="flex flex-col gap-5 rounded-2xl bg-shop-cream p-6 lg:sticky lg:top-28" aria-labelledby="shop-cart-summary">

@@ -10,5 +10,6 @@
   "promotion": {
     "featured": "In evidenza",
     "sponsored": "Sponsorizzato"
-  }
+  },
+  "soldBy": "Sold by {name}"
 }

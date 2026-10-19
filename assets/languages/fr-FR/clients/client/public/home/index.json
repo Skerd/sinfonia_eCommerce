@@ -1,5 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/home/index.tsx",
+  "loading": "Chargement",
   "heroEyebrow": "Nouvelle saison",
   "heroTitle": "Faits pour servir, choisis pour durer.",
   "heroSubtitle": "Parcourez tout le catalogue : nouveautés, collections et offres du moment.",
@@ -10,5 +11,19 @@
   "servicesTitle": "Services populaires",
   "servicesLead": "Réservez des prestataires locaux de confiance, avec des prix et des formules clairs.",
   "blogTitle": "Sur le blog",
-  "blogAll": "Tous les articles"
+  "blogAll": "Tous les articles",
+  "platformBrand": "Arpeggio",
+  "platformHeroTitle": "Une place de marché. Tous les vendeurs.",
+  "platformHeroSubtitle": "Achetez des produits, réservez des services et lisez les articles de chaque boutique sur la plateforme — ou ouvrez la boutique d’un vendeur pour son catalogue seul.",
+  "platformCtaProducts": "Parcourir les produits",
+  "platformCtaServices": "Parcourir les services",
+  "platformCtaBlog": "Lire le blog",
+  "platformCtaExplore": "Explorer le catalogue",
+  "platformPillarsLabel": "Ce que vous pouvez faire ici",
+  "platformPillarProductsTitle": "Produits de chaque boutique",
+  "platformPillarProductsBody": "Comparez et achetez auprès de tous les vendeurs dans un seul catalogue. Chaque fiche produit indique qui vend.",
+  "platformPillarServicesTitle": "Services avec séquestre",
+  "platformPillarServicesBody": "Engagez des prestataires pour des missions et des formules. Les commandes restent protégées jusqu’à la fin du travail.",
+  "platformPillarSellersTitle": "Boutiques des vendeurs",
+  "platformPillarSellersBody": "Vous préférez une seule marque ? Ouvrez leur boutique en sous-domaine — uniquement les produits, services et blog de cette entreprise."
 }

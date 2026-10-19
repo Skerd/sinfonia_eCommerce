@@ -1,5 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/home/index.tsx",
+  "loading": "Duke u ngarkuar",
   "heroEyebrow": "Sezon i ri",
   "heroTitle": "Bërë për t'u përdorur, zgjedhur për të zgjatur.",
   "heroSubtitle": "Shfletoni gjithë katalogun — të rejat, koleksionet dhe ofertat aktuale.",
@@ -10,5 +11,19 @@
   "servicesTitle": "Shërbime të kërkuara",
   "servicesLead": "Rezervoni ofrues vendas të besuar, me çmime dhe paketa të qarta.",
   "blogTitle": "Nga blogu",
-  "blogAll": "Të gjithë artikujt"
+  "blogAll": "Të gjithë artikujt",
+  "platformBrand": "Arpeggio",
+  "platformHeroTitle": "Një treg. Të gjithë shitësit.",
+  "platformHeroSubtitle": "Bleni produkte, rezervoni shërbime dhe lexoni artikuj nga çdo dyqan në platformë — ose hapni dyqanin e një shitësi për katalogun e tij.",
+  "platformCtaProducts": "Shfleto produktet",
+  "platformCtaServices": "Shfleto shërbimet",
+  "platformCtaBlog": "Lexo blogun",
+  "platformCtaExplore": "Eksploro katalogun",
+  "platformPillarsLabel": "Çfarë mund të bëni këtu",
+  "platformPillarProductsTitle": "Produkte nga çdo dyqan",
+  "platformPillarProductsBody": "Krahasoni dhe blini nga të gjithë shitësit në një katalog. Çdo produkt tregon kush e shet.",
+  "platformPillarServicesTitle": "Shërbime me escrow",
+  "platformPillarServicesBody": "Punësoni ofrues për punë dhe paketa. Porositë mbeten të mbrojtura derisa puna të përfundojë.",
+  "platformPillarSellersTitle": "Dyqanet e shitësve",
+  "platformPillarSellersBody": "Preferoni një markë? Hapni dyqanin e tyre në nëndomain — vetëm produktet, shërbimet dhe blogu i asaj kompanie."
 }

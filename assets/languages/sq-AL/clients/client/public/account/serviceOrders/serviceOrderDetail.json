@@ -75,5 +75,10 @@
   "disputeOpened": "Mosmarrëveshja u hap. Do t'ju kontaktojmë.",
   "reviewThanks": "Faleminderit për vlerësimin!",
   "cancelled": "Porosia u anulua",
-  "milestoneReleased": "Pagesa e fazës u lirua"
+  "milestoneReleased": "Pagesa e fazës u lirua",
+  "payEscrowTitle": "Pay for this order",
+  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
+  "payEscrowButton": "Pay now",
+  "payEscrowSuccess": "Payment submitted",
+  "payEscrowError": "Payment failed"
 }

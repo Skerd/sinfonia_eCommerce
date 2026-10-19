@@ -18,6 +18,7 @@ import {
     ShopProviderAvatar,
     useMarketplaceMoney,
 } from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
 import {
     ShopInlineSignIn,
     SHOP_BUTTON_CLASS,
@@ -317,6 +318,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                         <div className="flex flex-col gap-3">
                             {listing.category && <p className="text-xs font-semibold uppercase tracking-[0.18em] text-shop-ink-faded">{listing.category.name}</p>}
                             <h1 className="font-shop-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{listing.title}</h1>
+                            <ShopSellerCard seller={listing.seller} kind="service" size="card" />
                             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-shop-ink-muted">
                                 {provider && (
                                     <Link to={`/provider?id=${encodeURIComponent(provider._id)}`} className="inline-flex items-center gap-2 font-medium text-shop-ink hover:underline underline-offset-4">

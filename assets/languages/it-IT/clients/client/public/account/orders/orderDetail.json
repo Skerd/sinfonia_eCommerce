@@ -38,5 +38,7 @@
   "shipping": "Spedizione",
   "tax": "Tasse",
   "giftCard": "Gift card",
-  "total": "Totale"
+  "total": "Totale",
+  "siblingsNotice": "Your payment also created {count} more order(s) from other sellers. View all orders in your account.",
+  "viewAllOrders": "View all orders"
 }

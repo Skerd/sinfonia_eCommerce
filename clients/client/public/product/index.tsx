@@ -12,7 +12,9 @@ import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCar
 import ShopProductCard, {ShopPrice} from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
 import ShopQuantityStepper from "@eCommerceModule/clients/client/public/shared/shopQuantityStepper.tsx";
 import {ShopInlineSignIn, SHOP_BUTTON_CLASS, SHOP_LINK_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
 import ReviewsSection from "./reviewsSection.tsx";
+import {shopProductHref} from "@eCommerceModule/clients/client/public/shared/shopProductHref.ts";
 import type {
     ShopProductDetail,
     ShopProductResponse,
@@ -48,7 +50,9 @@ const CHIP_CLASS = "inline-flex min-h-11 items-center justify-center rounded-ful
 
 function ProductPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams] = useSearchParams();
+    const productId = searchParams.get("id") ?? "";
     const slug = searchParams.get("slug") ?? "";
+    const sellerCompanyId = searchParams.get("seller") ?? "";
     const {addItem, signInRequired, setMiniCartOpen} = useShopCart();
 
     const [product, setProduct] = useState<ShopProductDetail | null>(null);
@@ -60,13 +64,17 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
     const [adding, setAdding] = useState(false);
 
     useEffect(() => {
-        if (!slug) return;
+        if (!productId && !slug) return;
         let cancelled = false;
         setLoading(true);
         setProduct(null);
         (async () => {
             try {
-                const res = await apiClient.post<ShopProductResponse>("/api/eCommerce/shopProduct", {slug});
+                const res = await apiClient.post<ShopProductResponse>("/api/eCommerce/shopProduct", {
+                    ...(productId ? {id: productId} : {}),
+                    ...(slug ? {slug} : {}),
+                    ...(sellerCompanyId ? {sellerCompanyId} : {}),
+                });
                 if (cancelled) return;
                 const next = res.data.data;
                 const initial = next.variants.find(variant => variant.inStock !== false) ?? next.variants[0];
@@ -84,7 +92,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
         return () => {
             cancelled = true;
         };
-    }, [slug]);
+    }, [productId, slug, sellerCompanyId]);
 
     const groups = useMemo(() => optionGroups(product?.variants ?? []), [product]);
     const selectedVariant = product?.variants.find(variant => variant._id === selectedVariantId);
@@ -130,7 +138,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
         }
     }
 
-    if (!slug) {
+    if (!productId && !slug) {
         return <ProductMissing resolveLanguageKey={resolveLanguageKey} />;
     }
 
@@ -228,6 +236,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                                 </a>
                             ) : null}
                             <ShopPrice price={price} compareAtPrice={compareAt} size="lg" />
+                            <ShopSellerCard seller={product.seller} kind="product" size="card" className="mt-1" />
                         </div>
 
                         {groups.map(group => (
@@ -314,7 +323,9 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                                     {resolveLanguageKey("quantityRule").replace("{min}", String(minQty)).replace("{step}", String(stepQty))}
                                 </p>
                             ) : null}
-                            {signInRequired && <ShopInlineSignIn next={`/product?slug=${encodeURIComponent(slug)}`} />}
+                            {signInRequired && product && (
+                                <ShopInlineSignIn next={shopProductHref(product)} />
+                            )}
                         </div>
 
                         {product.description && (
@@ -341,7 +352,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                 </div>
             </div>
 
-            <ReviewsSection productId={product._id} slug={product.slug} />
+            <ReviewsSection productId={product._id} slug={product.slug} sellerCompanyId={product.seller?._id} />
 
             {product.related.length > 0 && (
                 <section className="flex flex-col gap-6" aria-labelledby="shop-related">

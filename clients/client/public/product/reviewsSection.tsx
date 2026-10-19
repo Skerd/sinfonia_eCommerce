@@ -34,9 +34,13 @@ export function StarRow({value, className}: {value: number; className?: string})
     );
 }
 
-type ReviewsSectionProps = WithLanguageType & {productId: string; slug: string};
+type ReviewsSectionProps = WithLanguageType & {
+    productId: string;
+    slug: string;
+    sellerCompanyId?: string;
+};
 
-function ReviewsSectionInner({resolveLanguageKey, productId, slug}: ReviewsSectionProps) {
+function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompanyId}: ReviewsSectionProps) {
     const {isAuthenticated: signedIn} = useShopAuth();
     const [reviews, setReviews] = useState<ShopProductReview[]>([]);
     const [total, setTotal] = useState(0);
@@ -49,14 +53,19 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug}: ReviewsSecti
 
     const load = useCallback(async () => {
         try {
-            const res = await apiClient.post<ShopProductReviewsResponse>("/api/eCommerce/shopProductReviews", {slug, limit: 20});
+            const res = await apiClient.post<ShopProductReviewsResponse>("/api/eCommerce/shopProductReviews", {
+                id: productId,
+                slug,
+                ...(sellerCompanyId ? {sellerCompanyId} : {}),
+                limit: 20,
+            });
             setReviews(res.data.data ?? []);
             setTotal(res.data.total ?? 0);
             setAverage(res.data.ratingAverage);
         } catch {
             setReviews([]);
         }
-    }, [slug]);
+    }, [productId, slug, sellerCompanyId]);
 
     useEffect(() => {
         void load();

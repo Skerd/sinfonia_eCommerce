@@ -75,5 +75,10 @@
   "disputeOpened": "Streitfall eröffnet. Wir melden uns bei Ihnen.",
   "reviewThanks": "Danke für Ihre Bewertung!",
   "cancelled": "Auftrag storniert",
-  "milestoneReleased": "Meilensteinzahlung freigegeben"
+  "milestoneReleased": "Meilensteinzahlung freigegeben",
+  "payEscrowTitle": "Pay for this order",
+  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
+  "payEscrowButton": "Pay now",
+  "payEscrowSuccess": "Payment submitted",
+  "payEscrowError": "Payment failed"
 }

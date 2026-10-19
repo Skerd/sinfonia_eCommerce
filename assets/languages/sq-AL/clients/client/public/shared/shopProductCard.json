@@ -3,5 +3,6 @@
   "wasPrice": "Më parë",
   "noImage": "Pa imazh",
   "discount": "−{percent}%",
-  "rating": "Vlerësuar {average} nga 5 ({count} vlerësime)"
+  "rating": "Vlerësuar {average} nga 5 ({count} vlerësime)",
+  "soldBy": "Sold by {name}"
 }

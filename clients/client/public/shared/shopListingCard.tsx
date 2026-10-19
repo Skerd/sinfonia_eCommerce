@@ -5,6 +5,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {listingLocationLabel, ShopProviderAvatar, useMarketplaceMoney} from "./shopMarketplace.tsx";
+import ShopSellerCard from "./shopSellerCard.tsx";
 import type {ShopListingCard as ShopListingCardType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopListingCard.tsx";
@@ -66,6 +67,7 @@ function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProp
                 ) : null}
             </div>
             <div className="flex flex-col gap-1.5 px-0.5">
+                <ShopSellerCard seller={listing.seller} kind="service" size="compact" nestedInLink />
                 {listing.provider && (
                     <span className="flex items-center gap-2 text-xs font-medium text-shop-ink-muted">
                         <ShopProviderAvatar name={listing.provider.name} size="sm" />

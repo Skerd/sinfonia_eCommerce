@@ -7,6 +7,8 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ShopProductCard as ShopProductCardType} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {useShopConfig} from "./shopConfigContext.tsx";
+import {shopProductHref} from "./shopProductHref.ts";
+import ShopSellerCard from "./shopSellerCard.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx";
 
@@ -54,7 +56,7 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
     const badge = product.badges?.find(item => !(discount != null && item.toLowerCase() === "sale"));
 
     return (
-        <Link to={`/product?slug=${encodeURIComponent(product.slug)}`} className="group flex flex-col gap-3 rounded-2xl">
+        <Link to={shopProductHref(product)} className="group flex flex-col gap-3 rounded-2xl">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-shop-cream">
                 {imageUrl ? (
                     <img
@@ -82,7 +84,8 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                     )}
                 </div>
             </div>
-            <div className="flex flex-col gap-1 px-0.5">
+            <div className="flex flex-col gap-1.5 px-0.5">
+                <ShopSellerCard seller={product.seller} kind="product" size="compact" nestedInLink />
                 <h3 className="line-clamp-2 text-[15px] font-medium leading-snug underline-offset-4 group-hover:underline">{product.title}</h3>
                 <div className="flex items-center justify-between gap-2">
                     <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} />
