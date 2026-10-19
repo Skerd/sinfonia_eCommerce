@@ -2,7 +2,7 @@ import withLanguage, {type ResolveLanguageKey, type ResolveLanguageKeyImpl, With
 import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
+import {type ComponentType, useEffect, useImperativeHandle, useMemo, useRef, useState} from "react";
 import {CircleCheck, CircleX, LoaderCircle} from "lucide-react";
 import {
     AlertDialog,
@@ -53,7 +53,13 @@ function ChangeListingStatusAction({
     loading,
 }: ChangeListingStatusActionProps) {
     const {write} = useAccess("listings");
-    const [open, setOpen] = useState<boolean>(!!openAlert);
+    /**
+     * Start closed and open on the next macrotask. Opening an AlertDialog in the same turn as a
+     * DropdownMenuItem select races Radix RemoveScroll / body `pointer-events`, which flashes the page.
+     * Same deferral pattern as apiSelect → create dialog (`queueMicrotask`).
+     */
+    const [open, setOpen] = useState(false);
+    const hasBeenOpenRef = useRef(false);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
@@ -63,13 +69,22 @@ function ChangeListingStatusAction({
     }));
 
     useEffect(() => {
-        if (!write) return;
-        setOpen(!!openAlert);
+        if (!write || !openAlert) {
+            setOpen(false);
+            return;
+        }
+        const timer = window.setTimeout(() => setOpen(true), 0);
+        return () => window.clearTimeout(timer);
     }, [openAlert, write]);
 
     useEffect(() => {
-        if (!open) onCancel();
-    }, [open, onCancel]);
+        if (open) {
+            hasBeenOpenRef.current = true;
+            return;
+        }
+        // Skip the initial closed frame before the deferred open — that is not a user cancel.
+        if (hasBeenOpenRef.current) onCancel();
+    }, [open]);
 
     if (!write) return <HiddenElement />;
 
@@ -78,7 +93,7 @@ function ChangeListingStatusAction({
 
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>
-            <AlertDialogContent>
+            <AlertDialogContent onCloseAutoFocus={(e) => e.preventDefault()}>
                 <AlertDialogHeader>
                     <AlertDialogTitle>
                         {resolveLanguageKey(`${actionKey}.title`)}
