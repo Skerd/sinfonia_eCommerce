@@ -11,38 +11,54 @@
         "title": "Cosa cambia il periodo",
         "body": "Il periodo è 7 giorni, 30 giorni, 90 giorni o 1 anno. Non vale per ogni scheda.",
         "items": [
-          "Ricavi, numero di ordini e numero di prodotti seguono il periodo.",
-          "Il grafico è il ricavo pagato per giorno in quel periodo.",
-          "Inventario e carrelli abbandonati sono la situazione attuale. Il periodo non li ricalcola."
+          "Ricavi, ordini, tasse, spedizione e prodotti top seguono il periodo.",
+          "Il grafico mostra ricavo pagato e conteggio ordini pagati per bucket (giornaliero per 7g/30g, settimanale per 90g, mensile per 1a).",
+          "I badge di tendenza confrontano il periodo scelto con la finestra precedente della stessa lunghezza.",
+          "Inventario e carrelli sono la situazione attuale. Il periodo non li ricalcola."
         ]
       },
       {
-        "title": "Le schede di denaro e ordini",
-        "body": "Contano gli ordini pagati, non ogni ordine inserito.",
+        "title": "Denaro e valuta",
+        "body": "Gli importi non vengono mai sommati tra valute.",
         "items": [
-          "Ricavo totale sono gli ordini pagati nel periodo.",
-          "Ordini è il numero di quegli ordini pagati.",
-          "Valore medio dell'ordine è quel ricavo diviso per quel numero."
+          "Il ricavo totale sono gli ordini pagati nel periodo, al netto dei rimborsi.",
+          "Tasse e spedizione sono somme di quegli stessi ordini pagati.",
+          "Usa il selettore valuta quando più di una valuta ha vendite nel periodo."
         ]
       },
       {
-        "title": "Le schede di stock e carrelli",
-        "body": "Sono attuali, quindi possono non coincidere con il periodo scelto. È previsto.",
+        "title": "Ordini, prodotti, stock e carrelli",
+        "body": "Ripartizioni e elenchi usano i dati caricati per questa società.",
         "items": [
-          "I carrelli abbandonati sono inattivi da più di un'ora.",
-          "Scorte basse: una SKU sotto il punto di riordino. Esaurito: una SKU senza quantità disponibile.",
-          "Unità a giacenza è la quantità totale di inventario. Prodotti è il catalogo contato per stato.",
-          "Apri Inventario, Ordini prodotto o Prodotti quando una scheda è ciò su cui devi agire."
+          "Lo stato ordine conta ogni ordine non eliminato nel periodo, non solo quelli pagati.",
+          "Lo stato prodotto è il catalogo attuale, non legato al periodo.",
+          "I prodotti top sono classificati per ricavo di riga nella valuta e periodo scelti.",
+          "I carrelli abbandonati sono inattivi da più di un'ora; quelli attivi aggiornati nell'ultima ora.",
+          "Apri Ordini prodotto, Prodotti o Inventario da un KPI quando devi agire."
         ]
       }
     ]
   },
   "refresh": "Aggiorna",
+  "currency": "Valuta",
   "errorTitle": "Impossibile caricare l'analisi",
   "errorDescription": "Qualcosa è andato storto durante il recupero dei dati del dashboard.",
-  "revenueChartTitle": "Entrate giornaliere",
-  "noChartData": "Nessun dato sulle entrate per questo periodo.",
+  "revenueChartTitle": "Ricavi e ordini",
+  "orderStatusChartTitle": "Ordini per stato",
+  "productStatusChartTitle": "Prodotti per stato",
+  "topProductsChartTitle": "Prodotti top per ricavo",
+  "topProductsTableTitle": "Prodotti top",
+  "noChartData": "Nessun dato per questo periodo.",
+  "noStatusData": "Nessun conteggio di stato per questo periodo.",
+  "noTopProducts": "Nessuna vendita di prodotti per questo periodo.",
+  "totalLabel": "Totale",
   "chart": {
+    "revenue": "Ricavi",
+    "orders": "Ordini"
+  },
+  "table": {
+    "product": "Prodotto",
+    "sold": "Unità vendute",
     "revenue": "Ricavi"
   },
   "period": {
@@ -51,22 +67,47 @@
     "90d": "90 giorni",
     "1y": "1 anno"
   },
+  "orderStatus": {
+    "pending": "In attesa",
+    "confirmed": "Confermato",
+    "processing": "In elaborazione",
+    "shipped": "Spedito",
+    "delivered": "Consegnato",
+    "cancelled": "Annullato",
+    "refunded": "Rimborsato"
+  },
+  "productStatus": {
+    "draft": "Bozza",
+    "active": "Attivo",
+    "archived": "Archiviato"
+  },
   "kpi": {
     "totalRevenue": "Entrate totali",
     "totalRevenueDesc": "Ordini pagati nel periodo",
     "orderCount": "Ordini",
     "orderCountDesc": "Ordini pagati nel periodo",
-    "averageOrderValue": "Media valore dell'ordine",
+    "averageOrderValue": "Valore medio ordine",
     "averageOrderValueDesc": "Entrate per ordine pagato",
+    "totalTax": "Tasse",
+    "totalTaxDesc": "Tasse sugli ordini pagati",
+    "totalShipping": "Spedizione",
+    "totalShippingDesc": "Spedizione sugli ordini pagati",
     "abandonedCarts": "Carrelli abbandonati",
     "abandonedCartsDesc": "Carrelli inattivi per oltre 1 ora",
+    "activeCarts": "Carrelli attivi",
+    "activeCartsDesc": "Carrelli aggiornati nell'ultima ora",
+    "averageCartValue": "Valore medio carrello",
+    "averageCartValueDesc": "Subtotale medio dei carrelli con articoli",
     "lowStock": "Scorte basse",
     "lowStockDesc": "SKU sotto il punto di riordino",
     "outOfStock": "Esaurito",
     "outOfStockDesc": "SKU senza quantità disponibile",
-    "totalOnHand": "Unità a portata di mano",
+    "totalOnHand": "Unità a giacenza",
     "totalOnHandDesc": "Quantità totale di inventario",
     "activeProducts": "Prodotti",
-    "activeProductsDesc": "Prodotti per stato"
+    "activeProductsDesc": "Prodotti per stato",
+    "viewOrders": "Vedi ordini prodotto",
+    "viewProducts": "Vedi prodotti",
+    "viewInventories": "Vedi inventario"
   }
 }

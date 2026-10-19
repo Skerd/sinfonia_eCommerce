@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analytics",
-  "description": "Track revenue, aufträge, inventory, und warenkorb activity.",
+  "description": "Umsatz, Bestellungen, Lager und Warenkorb-Aktivität verfolgen.",
   "help": {
     "ariaLabel": "Über Analysen",
     "title": "Über Analysen",
@@ -11,62 +11,103 @@
         "title": "Was der Zeitraum ändert",
         "body": "Der Zeitraum ist 7 Tage, 30 Tage, 90 Tage oder 1 Jahr. Er gilt nicht für jede Karte.",
         "items": [
-          "Umsatz, Bestellzahlen und Produktzahlen folgen dem Zeitraum.",
-          "Das Diagramm ist bezahlter Umsatz pro Tag in diesem Zeitraum.",
-          "Lager und verlassene Warenkörbe sind der aktuelle Stand. Der Zeitraum rechnet sie nicht neu."
+          "Umsatz, Bestellzahlen, Steuer, Versand und Top-Produkte folgen dem Zeitraum.",
+          "Das Umsatzdiagramm zeigt bezahlten Umsatz und bezahlte Bestellungen pro Bucket (täglich für 7d/30d, wöchentlich für 90d, monatlich für 1y).",
+          "Trend-Badges vergleichen den gewählten Zeitraum mit dem vorherigen Fenster gleicher Länge.",
+          "Lager und Warenkörbe sind der aktuelle Stand. Der Zeitraum rechnet sie nicht neu."
         ]
       },
       {
-        "title": "Die Geld- und Bestellkarten",
-        "body": "Diese zählen bezahlte Bestellungen, nicht jede aufgegebene Bestellung.",
+        "title": "Geld und Währung",
+        "body": "Beträge werden nie über Währungen hinweg summiert.",
         "items": [
-          "Gesamtumsatz sind bezahlte Bestellungen im Zeitraum.",
-          "Bestellungen ist die Anzahl dieser bezahlten Bestellungen.",
-          "Durchschnittlicher Bestellwert ist dieser Umsatz geteilt durch diese Anzahl."
+          "Gesamtumsatz sind bezahlte Bestellungen im Zeitraum, netto nach Rückerstattungen.",
+          "Steuer und Versand sind Summen aus denselben bezahlten Bestellungen.",
+          "Nutzen Sie die Währungsauswahl, wenn im Zeitraum mehr als eine Währung Umsatz hatte."
         ]
       },
       {
-        "title": "Die Bestands- und Warenkorbkarten",
-        "body": "Diese sind aktuell, sie können also vom gewählten Zeitraum abweichen. Das ist erwartet.",
+        "title": "Bestellungen, Produkte, Lager und Warenkörbe",
+        "body": "Aufschlüsselungen und Listen nutzen die geladenen Firmendaten.",
         "items": [
-          "Verlassene Warenkörbe sind länger als eine Stunde inaktiv.",
-          "Niedriger Bestand ist eine SKU unter ihrem Meldebestand. Nicht vorrätig ist eine SKU ohne verfügbare Menge.",
-          "Einheiten auf Lager ist die gesamte Bestandsmenge. Produkte ist der Katalog nach Status.",
-          "Öffnen Sie Lagerbestand, Produktbestellungen oder Produkte, wenn eine Karte das ist, worauf Sie handeln müssen."
+          "Bestellstatus zählt jede nicht gelöschte Bestellung im Zeitraum, nicht nur bezahlte.",
+          "Produktstatus ist der aktuelle Katalog, nicht zeitraumbezogen.",
+          "Top-Produkte rangieren nach Positionsumsatz in der gewählten Währung und Periode.",
+          "Verlassene Warenkörbe sind länger als eine Stunde inaktiv; aktive wurden in der letzten Stunde aktualisiert.",
+          "Öffnen Sie Produktbestellungen, Produkte oder Lagerbestand von einer KPI aus, wenn Sie handeln müssen."
         ]
       }
     ]
   },
-  "refresh": "Refresh",
+  "refresh": "Aktualisieren",
+  "currency": "Währung",
   "errorTitle": "Analytics konnten nicht geladen werden",
-  "errorDescription": "Something went wrong während fetching dashboard daten.",
-  "revenueChartTitle": "Daily revenue",
-  "noChartData": "Keine revenue daten für diese periode.",
+  "errorDescription": "Beim Laden der Dashboard-Daten ist ein Fehler aufgetreten.",
+  "revenueChartTitle": "Umsatz und Bestellungen",
+  "orderStatusChartTitle": "Bestellungen nach Status",
+  "productStatusChartTitle": "Produkte nach Status",
+  "topProductsChartTitle": "Top-Produkte nach Umsatz",
+  "topProductsTableTitle": "Top-Produkte",
+  "noChartData": "Keine Daten für diesen Zeitraum.",
+  "noStatusData": "Keine Statuszahlen für diesen Zeitraum.",
+  "noTopProducts": "Keine Produktverkäufe für diesen Zeitraum.",
+  "totalLabel": "Total",
   "chart": {
-    "revenue": "Revenue"
+    "revenue": "Umsatz",
+    "orders": "Bestellungen"
+  },
+  "table": {
+    "product": "Produkt",
+    "sold": "Verkaufte Einheiten",
+    "revenue": "Umsatz"
   },
   "period": {
-    "7d": "7 tage",
-    "30d": "30 tage",
-    "90d": "90 tage",
-    "1y": "1 jahr"
+    "7d": "7 Tage",
+    "30d": "30 Tage",
+    "90d": "90 Tage",
+    "1y": "1 Jahr"
+  },
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "confirmed": "Bestätigt",
+    "processing": "In Bearbeitung",
+    "shipped": "Versendet",
+    "delivered": "Geliefert",
+    "cancelled": "Storniert",
+    "refunded": "Erstattet"
+  },
+  "productStatus": {
+    "draft": "Entwurf",
+    "active": "Aktiv",
+    "archived": "Archiviert"
   },
   "kpi": {
-    "totalRevenue": "Total revenue",
-    "totalRevenueDesc": "Bezahlt aufträge in periode",
+    "totalRevenue": "Gesamtumsatz",
+    "totalRevenueDesc": "Bezahlte Bestellungen im Zeitraum",
     "orderCount": "Bestellungen",
-    "orderCountDesc": "Bezahlt aufträge in periode",
-    "averageOrderValue": "Avg. auftrag wert",
-    "averageOrderValueDesc": "Revenue per bezahlt auftrag",
-    "abandonedCarts": "Abandoned carts",
-    "abandonedCartsDesc": "Carts inaktiv over 1 stunde",
-    "lowStock": "Low stock",
-    "lowStockDesc": "SKUs below reorder point",
-    "outOfStock": "Out von stock",
-    "outOfStockDesc": "SKUs mit keine verfügbar menge",
-    "totalOnHand": "Units on hand",
-    "totalOnHandDesc": "Total inventory menge",
+    "orderCountDesc": "Bezahlte Bestellungen im Zeitraum",
+    "averageOrderValue": "Ø Bestellwert",
+    "averageOrderValueDesc": "Umsatz pro bezahlter Bestellung",
+    "totalTax": "Steuer",
+    "totalTaxDesc": "Steuer auf bezahlte Bestellungen",
+    "totalShipping": "Versand",
+    "totalShippingDesc": "Versand auf bezahlte Bestellungen",
+    "abandonedCarts": "Verlassene Warenkörbe",
+    "abandonedCartsDesc": "Warenkörbe länger als 1 Stunde inaktiv",
+    "activeCarts": "Aktive Warenkörbe",
+    "activeCartsDesc": "Warenkörbe in der letzten Stunde aktualisiert",
+    "averageCartValue": "Ø Warenkorbwert",
+    "averageCartValueDesc": "Durchschnittlicher Zwischensumme von Warenkörben mit Artikeln",
+    "lowStock": "Niedriger Bestand",
+    "lowStockDesc": "SKUs unter Meldebestand",
+    "outOfStock": "Nicht vorrätig",
+    "outOfStockDesc": "SKUs ohne verfügbare Menge",
+    "totalOnHand": "Einheiten auf Lager",
+    "totalOnHandDesc": "Gesamte Bestandsmenge",
     "activeProducts": "Produkte",
-    "activeProductsDesc": "Produkte von status"
+    "activeProductsDesc": "Produkte nach Status",
+    "viewOrders": "Produktbestellungen öffnen",
+    "viewProducts": "Produkte öffnen",
+    "viewInventories": "Lagerbestand öffnen"
   }
 }

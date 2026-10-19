@@ -11,38 +11,54 @@
         "title": "Çfarë ndryshon periudha",
         "body": "Periudha është 7 ditë, 30 ditë, 90 ditë ose 1 vit. Nuk vlen për çdo kartë.",
         "items": [
-          "Të ardhurat, numri i porosive dhe numri i produkteve ndjekin periudhën.",
-          "Grafiku është të ardhura të paguara për ditë brenda asaj periudhe.",
-          "Inventari dhe shportat e braktisura janë pamja aktuale. Periudha nuk i rillogarit."
+          "Të ardhurat, porositë, taksa, transporti dhe produktet kryesore ndjekin periudhën.",
+          "Grafiku tregon të ardhura të paguara dhe numrin e porosive të paguara për bucket (ditore për 7d/30d, javore për 90d, mujore për 1y).",
+          "Trendet krahasojnë periudhën e zgjedhur me dritaren e mëparshme të së njëjtës gjatësi.",
+          "Inventari dhe shportat janë pamja aktuale. Periudha nuk i rillogarit."
         ]
       },
       {
-        "title": "Kartat e parave dhe të porosive",
-        "body": "Këto numërojnë porositë e paguara, jo çdo porosi të vendosur.",
+        "title": "Paraja dhe valuta",
+        "body": "Shumat nuk mblidhen kurrë midis valutave.",
         "items": [
-          "Të ardhurat totale janë porositë e paguara në periudhë.",
-          "Porositë është numri i atyre porosive të paguara.",
-          "Vlera mesatare e porosisë është ajo e ardhur e pjesëtuar me atë numër."
+          "Të ardhurat totale janë porositë e paguara në periudhë, neto pas rimbursimeve.",
+          "Taksa dhe transporti janë shuma nga të njëjtat porosi të paguara.",
+          "Përdorni zgjedhësin e valutës kur më shumë se një valutë ka shitje në periudhë."
         ]
       },
       {
-        "title": "Kartat e stokut dhe të shportave",
-        "body": "Këto janë aktuale, prandaj mund të mos përputhen me periudhën e zgjedhur. Kjo pritet.",
+        "title": "Porositë, produktet, stoku dhe shportat",
+        "body": "Ndarjet dhe listat përdorin të dhënat e ngarkuara për këtë kompani.",
         "items": [
-          "Shportat e braktisura janë joaktive për më shumë se një orë.",
-          "Stok i ulët është një SKU nën pikën e riporosisë. Pa stok është një SKU pa sasi të disponueshme.",
-          "Njësitë në dorë janë sasia totale e inventarit. Produktet është katalogu i numëruar sipas statusit.",
-          "Hapni Inventarin, Porositë e produkteve ose Produktet kur një kartë është ajo mbi të cilën duhet të veproni."
+          "Statusi i porosisë numëron çdo porosi të pafshirë në periudhë, jo vetëm ato të paguara.",
+          "Statusi i produktit është katalogu aktual, jo i lidhur me periudhën.",
+          "Produktet kryesore renditen sipas të ardhurave të rreshtit në valutën dhe periudhën e zgjedhur.",
+          "Shportat e braktisura janë joaktive mbi një orë; ato aktive janë përditësuar në orën e fundit.",
+          "Hapni Porositë e produkteve, Produktet ose Inventarin nga një KPI kur duhet të veproni."
         ]
       }
     ]
   },
   "refresh": "Rifresko",
-  "errorTitle": "Failed to load analytics",
-  "errorDescription": "Something went wrong while fetching dashboard data.",
-  "revenueChartTitle": "Të ardhurat ditore",
-  "noChartData": "Nuk ka të dhëna të të ardhurave për këtë periudhë.",
+  "currency": "Valuta",
+  "errorTitle": "Analitika nuk u ngarkua",
+  "errorDescription": "Diçka shkoi keq gjatë marrjes së të dhënave të panelit.",
+  "revenueChartTitle": "Të ardhurat dhe porositë",
+  "orderStatusChartTitle": "Porositë sipas statusit",
+  "productStatusChartTitle": "Produktet sipas statusit",
+  "topProductsChartTitle": "Produktet kryesore sipas të ardhurave",
+  "topProductsTableTitle": "Produktet kryesore",
+  "noChartData": "Nuk ka të dhëna për këtë periudhë.",
+  "noStatusData": "Nuk ka numërime statusi për këtë periudhë.",
+  "noTopProducts": "Nuk ka shitje produktesh për këtë periudhë.",
+  "totalLabel": "Totali",
   "chart": {
+    "revenue": "Të ardhurat",
+    "orders": "Porositë"
+  },
+  "table": {
+    "product": "Produkti",
+    "sold": "Njësi të shitura",
     "revenue": "Të ardhurat"
   },
   "period": {
@@ -51,22 +67,47 @@
     "90d": "90 ditë",
     "1y": "1 vit"
   },
+  "orderStatus": {
+    "pending": "Në pritje",
+    "confirmed": "E konfirmuar",
+    "processing": "Në proces",
+    "shipped": "E dërguar",
+    "delivered": "E dorëzuar",
+    "cancelled": "E anuluar",
+    "refunded": "E rimbursuar"
+  },
+  "productStatus": {
+    "draft": "Draft",
+    "active": "Aktive",
+    "archived": "E arkivuar"
+  },
   "kpi": {
-    "totalRevenue": "Total revenue",
-    "totalRevenueDesc": "Paid orders in period",
-    "orderCount": "Orders",
-    "orderCountDesc": "Paid orders in period",
-    "averageOrderValue": "Avg. order value",
-    "averageOrderValueDesc": "Revenue per paid order",
-    "abandonedCarts": "Abandoned carts",
-    "abandonedCartsDesc": "Carts inactive over 1 hour",
-    "lowStock": "Low stock",
-    "lowStockDesc": "SKUs below reorder point",
-    "outOfStock": "Out of stock",
-    "outOfStockDesc": "SKUs with no available quantity",
-    "totalOnHand": "Units on hand",
-    "totalOnHandDesc": "Total inventory quantity",
-    "activeProducts": "Products",
-    "activeProductsDesc": "Products by status"
+    "totalRevenue": "Të ardhurat totale",
+    "totalRevenueDesc": "Porosi të paguara në periudhë",
+    "orderCount": "Porositë",
+    "orderCountDesc": "Porosi të paguara në periudhë",
+    "averageOrderValue": "Vlera mesatare e porosisë",
+    "averageOrderValueDesc": "Të ardhura për porosi të paguar",
+    "totalTax": "Taksa",
+    "totalTaxDesc": "Taksa mbi porositë e paguara",
+    "totalShipping": "Transporti",
+    "totalShippingDesc": "Transporti mbi porositë e paguara",
+    "abandonedCarts": "Shporta të braktisura",
+    "abandonedCartsDesc": "Shporta joaktive mbi 1 orë",
+    "activeCarts": "Shporta aktive",
+    "activeCartsDesc": "Shporta të përditësuara në orën e fundit",
+    "averageCartValue": "Vlera mesatare e shportës",
+    "averageCartValueDesc": "Nëntotali mesatar i shportave me artikuj",
+    "lowStock": "Stok i ulët",
+    "lowStockDesc": "SKU nën pikën e riporosisë",
+    "outOfStock": "Pa stok",
+    "outOfStockDesc": "SKU pa sasi të disponueshme",
+    "totalOnHand": "Njësi në dorë",
+    "totalOnHandDesc": "Sasia totale e inventarit",
+    "activeProducts": "Produktet",
+    "activeProductsDesc": "Produktet sipas statusit",
+    "viewOrders": "Shiko porositë e produkteve",
+    "viewProducts": "Shiko produktet",
+    "viewInventories": "Shiko inventarin"
   }
 }

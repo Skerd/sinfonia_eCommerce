@@ -11,39 +11,55 @@
         "title": "Ce que la période change",
         "body": "La période est 7 jours, 30 jours, 90 jours ou 1 an. Elle ne s'applique pas à chaque carte.",
         "items": [
-          "Le chiffre d'affaires, le nombre de commandes et le nombre de produits suivent la période.",
-          "Le graphique est le chiffre d'affaires payé par jour dans cette période.",
-          "L'inventaire et les paniers abandonnés sont l'image actuelle. La période ne les recalcule pas."
+          "Le chiffre d'affaires, les commandes, la taxe, la livraison et les meilleurs produits suivent la période.",
+          "Le graphique montre le chiffre d'affaires payé et le nombre de commandes payées par bucket (journalier pour 7j/30j, hebdomadaire pour 90j, mensuel pour 1 an).",
+          "Les tendances comparent la période choisie à la fenêtre précédente de même durée.",
+          "L'inventaire et les paniers sont l'image actuelle. La période ne les recalcule pas."
         ]
       },
       {
-        "title": "Les cartes d'argent et de commandes",
-        "body": "Elles comptent les commandes payées, pas chaque commande passée.",
+        "title": "Argent et devise",
+        "body": "Les montants ne sont jamais additionnés entre devises.",
         "items": [
-          "Le chiffre d'affaires total est les commandes payées de la période.",
-          "Commandes est le nombre de ces commandes payées.",
-          "Le panier moyen est ce chiffre d'affaires divisé par ce nombre."
+          "Le chiffre d'affaires total est les commandes payées de la période, net des remboursements.",
+          "Taxe et livraison sont des sommes de ces mêmes commandes payées.",
+          "Utilisez le sélecteur de devise lorsque plus d'une devise a des ventes dans la période."
         ]
       },
       {
-        "title": "Les cartes de stock et de paniers",
-        "body": "Elles sont actuelles, elles peuvent donc différer de la période choisie. C'est attendu.",
+        "title": "Commandes, produits, stock et paniers",
+        "body": "Les ventilations et listes utilisent les données chargées pour cette société.",
         "items": [
-          "Les paniers abandonnés sont inactifs depuis plus d'une heure.",
-          "Stock faible : une SKU sous son seuil. Rupture : une SKU sans quantité disponible.",
-          "Unités en main est la quantité totale d'inventaire. Produits est le catalogue compté par statut.",
-          "Ouvrez l'inventaire, les commandes ou les produits quand une carte est ce sur quoi vous devez agir."
+          "Le statut des commandes compte toute commande non supprimée de la période, pas seulement les payées.",
+          "Le statut produit est le catalogue actuel, non lié à la période.",
+          "Les meilleurs produits sont classés par revenu de ligne dans la devise et la période choisies.",
+          "Les paniers abandonnés sont inactifs depuis plus d'une heure ; les actifs ont été mis à jour dans l'heure.",
+          "Ouvrez Commandes, Produits ou Inventaire depuis un KPI lorsque vous devez agir."
         ]
       }
     ]
   },
   "refresh": "Actualiser",
+  "currency": "Devise",
   "errorTitle": "Échec du chargement des analyses",
   "errorDescription": "Une erreur s'est produite lors de la récupération des données du tableau de bord.",
-  "revenueChartTitle": "Revenu quotidien",
-  "noChartData": "Aucune donnée sur les revenus pour cette période.",
+  "revenueChartTitle": "Revenus et commandes",
+  "orderStatusChartTitle": "Commandes par statut",
+  "productStatusChartTitle": "Produits par statut",
+  "topProductsChartTitle": "Meilleurs produits par revenu",
+  "topProductsTableTitle": "Meilleurs produits",
+  "noChartData": "Aucune donnée pour cette période.",
+  "noStatusData": "Aucun décompte de statut pour cette période.",
+  "noTopProducts": "Aucune vente de produit pour cette période.",
+  "totalLabel": "Total",
   "chart": {
-    "revenue": "Chiffre d’affaires"
+    "revenue": "Chiffre d’affaires",
+    "orders": "Commandes"
+  },
+  "table": {
+    "product": "Produit",
+    "sold": "Unités vendues",
+    "revenue": "Revenu"
   },
   "period": {
     "7d": "7 jours",
@@ -51,15 +67,37 @@
     "90d": "90 jours",
     "1y": "1 an"
   },
+  "orderStatus": {
+    "pending": "En attente",
+    "confirmed": "Confirmée",
+    "processing": "En traitement",
+    "shipped": "Expédiée",
+    "delivered": "Livrée",
+    "cancelled": "Annulée",
+    "refunded": "Remboursée"
+  },
+  "productStatus": {
+    "draft": "Brouillon",
+    "active": "Actif",
+    "archived": "Archivé"
+  },
   "kpi": {
     "totalRevenue": "Revenu total",
     "totalRevenueDesc": "Commandes payées dans la période",
     "orderCount": "Commandes",
     "orderCountDesc": "Commandes payées dans la période",
-    "averageOrderValue": "Moy. valeur de la commande",
+    "averageOrderValue": "Panier moyen",
     "averageOrderValueDesc": "Revenu par commande payée",
-    "abandonedCarts": "Chariots abandonnés",
+    "totalTax": "Taxe",
+    "totalTaxDesc": "Taxe sur les commandes payées",
+    "totalShipping": "Livraison",
+    "totalShippingDesc": "Livraison sur les commandes payées",
+    "abandonedCarts": "Paniers abandonnés",
     "abandonedCartsDesc": "Paniers inactifs depuis plus d'une heure",
+    "activeCarts": "Paniers actifs",
+    "activeCartsDesc": "Paniers mis à jour dans la dernière heure",
+    "averageCartValue": "Valeur moyenne du panier",
+    "averageCartValueDesc": "Sous-total moyen des paniers avec articles",
     "lowStock": "Stock faible",
     "lowStockDesc": "SKU en dessous du point de commande",
     "outOfStock": "Rupture de stock",
@@ -67,6 +105,9 @@
     "totalOnHand": "Unités disponibles",
     "totalOnHandDesc": "Quantité totale d'inventaire",
     "activeProducts": "Produits",
-    "activeProductsDesc": "Produits par statut"
+    "activeProductsDesc": "Produits par statut",
+    "viewOrders": "Voir les commandes",
+    "viewProducts": "Voir les produits",
+    "viewInventories": "Voir l'inventaire"
   }
 }

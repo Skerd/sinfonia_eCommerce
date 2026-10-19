@@ -11,38 +11,54 @@
         "title": "What the period changes",
         "body": "The period is 7 days, 30 days, 90 days, or 1 year. It does not apply to every card.",
         "items": [
-          "Revenue, order counts, and product counts follow the period.",
-          "The daily revenue chart is paid revenue per day inside that period.",
-          "Inventory and abandoned carts are the current picture. Changing the period does not recompute them."
+          "Revenue, order counts, tax, shipping, and top products follow the period.",
+          "The revenue chart is paid revenue and paid order count per bucket inside that period (daily for 7d/30d, weekly for 90d, monthly for 1y).",
+          "Trend badges compare the selected period to the previous window of the same length.",
+          "Inventory and cart cards are the current picture. Changing the period does not recompute them."
         ]
       },
       {
-        "title": "The money and order cards",
-        "body": "These count paid orders, not every order that was placed.",
+        "title": "Money and currency",
+        "body": "Figures are never summed across currencies.",
         "items": [
-          "Total revenue is paid orders in the period.",
-          "Orders is the number of those paid orders.",
-          "Average order value is that revenue divided by that count."
+          "Total revenue is paid orders in the period, net of refunds.",
+          "Tax and shipping are sums from those same paid orders.",
+          "Use the currency control when more than one currency had sales in the period."
         ]
       },
       {
-        "title": "The stock and cart cards",
-        "body": "These are current, so they can disagree with the period you have selected. That is expected.",
+        "title": "Orders, products, stock, and carts",
+        "body": "Breakdown charts and lists use the data already loaded for this company.",
         "items": [
-          "Abandoned carts are carts inactive for more than an hour.",
-          "Low stock is a SKU under its reorder point. Out of stock is a SKU with nothing available.",
-          "Units on hand is the total inventory quantity. Products is the catalog counted by status.",
-          "Open Inventory, Product orders, or Products when a card is the thing you need to act on."
+          "Order status counts every non-deleted order in the period, not only paid ones.",
+          "Product status is the current catalog, not period-scoped.",
+          "Top products rank by line revenue in the selected currency and period.",
+          "Abandoned carts are inactive for more than an hour; active carts were updated within the last hour.",
+          "Open Product orders, Products, or Inventories from a KPI when you need to act on it."
         ]
       }
     ]
   },
   "refresh": "Refresh",
+  "currency": "Currency",
   "errorTitle": "Failed to load analytics",
   "errorDescription": "Something went wrong while fetching dashboard data.",
-  "revenueChartTitle": "Daily revenue",
-  "noChartData": "No revenue data for this period.",
+  "revenueChartTitle": "Revenue and orders",
+  "orderStatusChartTitle": "Orders by status",
+  "productStatusChartTitle": "Products by status",
+  "topProductsChartTitle": "Top products by revenue",
+  "topProductsTableTitle": "Top products",
+  "noChartData": "No data for this period.",
+  "noStatusData": "No status counts for this period.",
+  "noTopProducts": "No product sales for this period.",
+  "totalLabel": "Total",
   "chart": {
+    "revenue": "Revenue",
+    "orders": "Orders"
+  },
+  "table": {
+    "product": "Product",
+    "sold": "Units sold",
     "revenue": "Revenue"
   },
   "period": {
@@ -51,6 +67,20 @@
     "90d": "90 days",
     "1y": "1 year"
   },
+  "orderStatus": {
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "processing": "Processing",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "refunded": "Refunded"
+  },
+  "productStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "archived": "Archived"
+  },
   "kpi": {
     "totalRevenue": "Total revenue",
     "totalRevenueDesc": "Paid orders in period",
@@ -58,8 +88,16 @@
     "orderCountDesc": "Paid orders in period",
     "averageOrderValue": "Avg. order value",
     "averageOrderValueDesc": "Revenue per paid order",
+    "totalTax": "Tax",
+    "totalTaxDesc": "Tax on paid orders",
+    "totalShipping": "Shipping",
+    "totalShippingDesc": "Shipping on paid orders",
     "abandonedCarts": "Abandoned carts",
     "abandonedCartsDesc": "Carts inactive over 1 hour",
+    "activeCarts": "Active carts",
+    "activeCartsDesc": "Carts updated in the last hour",
+    "averageCartValue": "Avg. cart value",
+    "averageCartValueDesc": "Average subtotal of carts with items",
     "lowStock": "Low stock",
     "lowStockDesc": "SKUs below reorder point",
     "outOfStock": "Out of stock",
@@ -67,6 +105,9 @@
     "totalOnHand": "Units on hand",
     "totalOnHandDesc": "Total inventory quantity",
     "activeProducts": "Products",
-    "activeProductsDesc": "Products by status"
+    "activeProductsDesc": "Products by status",
+    "viewOrders": "View product orders",
+    "viewProducts": "View products",
+    "viewInventories": "View inventories"
   }
 }
