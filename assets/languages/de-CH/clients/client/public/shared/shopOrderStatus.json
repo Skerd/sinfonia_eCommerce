@@ -22,5 +22,32 @@
     "partially_fulfilled": "Teilweise versandt",
     "fulfilled": "Versandt",
     "returned": "Zurückgesendet"
+  },
+  "serviceStatus": {
+    "pending": "Wartet auf Anbieter",
+    "accepted": "Angenommen",
+    "in_progress": "In Arbeit",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "jobStatus": {
+    "open": "Offen",
+    "closed": "Geschlossen",
+    "awarded": "Vergeben"
+  },
+  "bidStatus": {
+    "pending": "Neu",
+    "accepted": "Angenommen",
+    "rejected": "Abgelehnt"
+  },
+  "deliveryStatus": {
+    "submitted": "Wartet auf Sie",
+    "accepted": "Angenommen",
+    "revision_requested": "Änderungen angefragt"
+  },
+  "milestoneStatus": {
+    "pending": "Ausstehend",
+    "released": "Freigegeben",
+    "delivered": "Geliefert"
   }
 }

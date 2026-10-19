@@ -22,5 +22,12 @@
   "searchLabel": "Rechercher dans la boutique",
   "navCartCount": "Panier, {count} articles",
   "skipToContent": "Aller au contenu",
-  "languageLabel": "Langue"
+  "languageLabel": "Langue",
+  "navServices": "Services",
+  "navBlog": "Blog",
+  "menuAllProducts": "Voir tous les produits",
+  "menuAllServices": "Voir tous les services",
+  "menuCollections": "Collections",
+  "menuPlaces": "Où nous intervenons",
+  "menuPostJob": "Publier une demande"
 }

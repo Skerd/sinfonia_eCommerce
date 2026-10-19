@@ -6,5 +6,9 @@
   "heroCta": "Shop all products",
   "categoriesTitle": "Shop by category",
   "featuredTitle": "Featured products",
-  "viewAll": "View all"
+  "viewAll": "View all",
+  "servicesTitle": "Popular services",
+  "servicesLead": "Book trusted local providers, with clear prices and packages.",
+  "blogTitle": "From the blog",
+  "blogAll": "All stories"
 }

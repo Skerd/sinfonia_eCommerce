@@ -12,6 +12,8 @@ const NAV = [
     {to: "/account", end: true, labelKey: "navProfile"},
     {to: "/account/security", end: true, labelKey: "navSecurity"},
     {to: "/account/orders", end: false, labelKey: "navOrders"},
+    {to: "/account/services", end: false, labelKey: "navServiceOrders"},
+    {to: "/account/jobs", end: false, labelKey: "navJobs"},
     {to: "/account/giftcards", end: true, labelKey: "navGiftCards"},
     {to: "/account/addresses", end: true, labelKey: "navAddresses"},
 ] as const;

@@ -5,5 +5,7 @@
   "navSecurity": "Sicurezza",
   "navOrders": "Ordini",
   "navGiftCards": "Carte regalo",
-  "navAddresses": "Indirizzi"
+  "navAddresses": "Indirizzi",
+  "navServiceOrders": "Ordini di servizi",
+  "navJobs": "I miei lavori"
 }

@@ -22,5 +22,12 @@
   "searchLabel": "Kërko në dyqan",
   "navCartCount": "Shporta, {count} artikuj",
   "skipToContent": "Kalo te përmbajtja",
-  "languageLabel": "Gjuha"
+  "languageLabel": "Gjuha",
+  "navServices": "Shërbime",
+  "navBlog": "Blog",
+  "menuAllProducts": "Shiko të gjitha produktet",
+  "menuAllServices": "Shiko të gjitha shërbimet",
+  "menuCollections": "Koleksione",
+  "menuPlaces": "Ku punojmë",
+  "menuPostJob": "Posto një punë"
 }

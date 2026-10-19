@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/blog/index.tsx",
+  "eyebrow": "Revista",
+  "title": "Histori dhe ide",
+  "lead": "Lajme, udhëzues dhe shënime nga prapaskenat e ekipit tonë.",
+  "categoriesLabel": "Kategoritë e blogut",
+  "allStories": "Të gjitha",
+  "loading": "Po ngarkohen artikujt",
+  "emptyTitle": "Ende pa artikuj",
+  "emptyMessage": "Artikujt e rinj do të shfaqen këtu sapo të publikohen.",
+  "emptyCategory": "Nuk ka ende artikuj në këtë kategori.",
+  "loadMore": "Ngarko më shumë",
+  "loadingMore": "Po ngarkohet…",
+  "shownOf": "Po shfaqen {shown} nga {total}"
+}

@@ -16,6 +16,7 @@ import {useShopAuth} from "./shopAuthContext.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import ShopMiniCart from "./shopMiniCart.tsx";
 import ShopScrollToTop from "./shopScrollToTop.tsx";
+import {ShopDesktopMenu, ShopMobileMenu, useShopNavMenus, type ShopNavMenus} from "./shopNavMenus.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopLayout.tsx";
 
@@ -56,14 +57,45 @@ function ShopSearchForm({resolveLanguageKey, onSearch, className}: WithLanguageT
     );
 }
 
-/** Home / products / account links; rendered inline on desktop and stacked in the mobile menu. */
-function ShopNavLinks({resolveLanguageKey, onNavigate}: WithLanguageType & {onNavigate?: () => void}) {
+type ShopNavLinksProps = WithLanguageType & {
+    menus: ShopNavMenus;
+    /** Desktop shows dropdown panels; the mobile drawer shows collapsible groups. */
+    variant: "desktop" | "mobile";
+    onNavigate?: () => void;
+};
+
+/** Home / products / services / blog / account links; inline on desktop and stacked in the mobile menu. */
+function ShopNavLinks({resolveLanguageKey, menus, variant, onNavigate}: ShopNavLinksProps) {
     const {isAuthenticated, isHydrating, user, signOutShop} = useShopAuth();
+    const productLabels = {
+        label: resolveLanguageKey("navProducts"),
+        viewAll: resolveLanguageKey("menuAllProducts"),
+        extrasHeading: resolveLanguageKey("menuCollections"),
+    };
+    const serviceLabels = {
+        label: resolveLanguageKey("navServices"),
+        viewAll: resolveLanguageKey("menuAllServices"),
+        extrasHeading: resolveLanguageKey("menuPlaces"),
+        cta: {key: "post-job", label: resolveLanguageKey("menuPostJob"), to: "/account/jobs/new"},
+    };
 
     return (
         <>
             <NavLink to="/" end className={navClass} onClick={onNavigate}>{resolveLanguageKey("navHome")}</NavLink>
-            <NavLink to="/products" className={navClass} onClick={onNavigate}>{resolveLanguageKey("navProducts")}</NavLink>
+            {variant === "desktop" ? (
+                <>
+                    <ShopDesktopMenu menu={menus.products} to="/products" activePaths={["/products", "/product"]} labels={productLabels} linkClassName={navClass} />
+                    {menus.services && (
+                        <ShopDesktopMenu menu={menus.services} to="/services" activePaths={["/services", "/service", "/provider"]} labels={serviceLabels} linkClassName={navClass} />
+                    )}
+                </>
+            ) : (
+                <>
+                    <ShopMobileMenu menu={menus.products} to="/products" labels={productLabels} onNavigate={onNavigate} />
+                    {menus.services && <ShopMobileMenu menu={menus.services} to="/services" labels={serviceLabels} onNavigate={onNavigate} />}
+                </>
+            )}
+            <NavLink to="/blog" className={navClass} onClick={onNavigate}>{resolveLanguageKey("navBlog")}</NavLink>
             {isHydrating ? null : isAuthenticated ? (
                 <>
                     <NavLink to="/account" className={navClass} onClick={onNavigate}>
@@ -98,6 +130,7 @@ function ShopHeader(props: WithLanguageType) {
     const {itemCount} = useShopCart();
     const {config} = useShopConfig();
     const [menuOpen, setMenuOpen] = useState(false);
+    const menus = useShopNavMenus();
     const companyName = config?.company?.name ?? config?.companyName ?? resolveLanguageKey("shopFallback");
 
     return (
@@ -106,9 +139,9 @@ function ShopHeader(props: WithLanguageType) {
                 <Link to="/" className="min-w-0 truncate font-shop-display text-xl font-bold tracking-tight">
                     {companyName}
                 </Link>
-                <ShopSearchForm {...props} className="ml-auto hidden w-64 lg:block" />
-                <nav className="hidden items-center gap-6 md:ml-auto md:flex lg:ml-2" aria-label={resolveLanguageKey("navLabel")}>
-                    <ShopNavLinks {...props} />
+                <ShopSearchForm {...props} className="ml-auto hidden w-56 xl:block" />
+                <nav className="hidden items-center gap-5 md:ml-auto md:flex lg:gap-6 xl:ml-2" aria-label={resolveLanguageKey("navLabel")}>
+                    <ShopNavLinks {...props} menus={menus} variant="desktop" />
                 </nav>
                 <div className="ml-auto flex items-center gap-1 md:ml-0">
                     <NavLink
@@ -149,7 +182,7 @@ function ShopHeader(props: WithLanguageType) {
                             <SheetDescription className="sr-only">{resolveLanguageKey("navLabel")}</SheetDescription>
                             <ShopSearchForm {...props} onSearch={() => setMenuOpen(false)} />
                             <nav className="flex flex-col gap-5 [&_a]:text-lg [&_button]:text-lg" aria-label={resolveLanguageKey("navLabel")}>
-                                <ShopNavLinks {...props} onNavigate={() => setMenuOpen(false)} />
+                                <ShopNavLinks {...props} menus={menus} variant="mobile" onNavigate={() => setMenuOpen(false)} />
                             </nav>
                         </SheetContent>
                     </Sheet>
@@ -215,6 +248,8 @@ function ShopFooter(props: WithLanguageType) {
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-shop-ink-faded">{resolveLanguageKey("shopHeading")}</p>
                     <Link to="/" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navHome")}</Link>
                     <Link to="/products" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navProducts")}</Link>
+                    <Link to="/services" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navServices")}</Link>
+                    <Link to="/blog" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navBlog")}</Link>
                     <Link to="/privacy" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navPrivacy")}</Link>
                     <Link to="/terms" className={FOOTER_LINK_CLASS}>{resolveLanguageKey("navTerms")}</Link>
                 </div>

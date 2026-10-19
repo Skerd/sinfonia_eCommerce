@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/blog/index.tsx",
+  "eyebrow": "Journal",
+  "title": "Stories & ideas",
+  "lead": "News, guides and behind-the-scenes notes from our team.",
+  "categoriesLabel": "Blog categories",
+  "allStories": "All stories",
+  "loading": "Loading stories",
+  "emptyTitle": "No stories yet",
+  "emptyMessage": "New posts will appear here as soon as they are published.",
+  "emptyCategory": "There are no stories in this category yet.",
+  "loadMore": "Load more stories",
+  "loadingMore": "Loading…",
+  "shownOf": "Showing {shown} of {total}"
+}

@@ -5,5 +5,6 @@
   "message": "Melden Sie sich an oder erstellen Sie ein Konto, um fortzufahren.",
   "inlineMessage": "Melden Sie sich an, um dieses Produkt in den Warenkorb zu legen.",
   "logIn": "Anmelden",
-  "signUp": "Registrieren"
+  "signUp": "Registrieren",
+  "inlineOrderMessage": "Melden Sie sich an, um diese Dienstleistung zu bestellen."
 }

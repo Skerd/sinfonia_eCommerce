@@ -5,5 +5,6 @@
   "message": "Accedi o crea un account per continuare.",
   "inlineMessage": "Accedi per aggiungere questo prodotto al carrello.",
   "logIn": "Accedi",
-  "signUp": "Registrati"
+  "signUp": "Registrati",
+  "inlineOrderMessage": "Accedi per ordinare questo servizio."
 }

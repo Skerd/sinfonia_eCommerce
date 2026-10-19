@@ -22,5 +22,12 @@
   "searchLabel": "Cerca nel negozio",
   "navCartCount": "Carrello, {count} articoli",
   "skipToContent": "Vai al contenuto",
-  "languageLabel": "Lingua"
+  "languageLabel": "Lingua",
+  "navServices": "Servizi",
+  "navBlog": "Blog",
+  "menuAllProducts": "Vedi tutti i prodotti",
+  "menuAllServices": "Vedi tutti i servizi",
+  "menuCollections": "Collezioni",
+  "menuPlaces": "Dove lavoriamo",
+  "menuPostJob": "Pubblica un lavoro"
 }

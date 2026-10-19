@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/blog/article.tsx",
+  "loading": "Po ngarkohet artikulli",
+  "breadcrumb": "Navigimi",
+  "blog": "Blog",
+  "readingTime": "{minutes} min lexim",
+  "copyLink": "Kopjo lidhjen",
+  "linkCopied": "Lidhja u kopjua",
+  "linkCopyFailed": "Lidhja nuk u kopjua",
+  "backToBlog": "Kthehu te blogu",
+  "moreStories": "Më shumë artikuj",
+  "notFound": "Artikulli nuk u gjet",
+  "notFoundMessage": "Ky artikull mund të jetë zhvendosur ose çpublikuar."
+}

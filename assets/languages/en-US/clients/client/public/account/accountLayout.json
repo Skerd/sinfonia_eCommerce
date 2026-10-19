@@ -5,5 +5,7 @@
   "navSecurity": "Security",
   "navOrders": "Orders",
   "navGiftCards": "Gift cards",
-  "navAddresses": "Addresses"
+  "navAddresses": "Addresses",
+  "navServiceOrders": "Service orders",
+  "navJobs": "My jobs"
 }

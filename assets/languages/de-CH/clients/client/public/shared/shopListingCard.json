@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopListingCard.tsx",
+  "noImage": "Kein Bild",
+  "fromPrice": "Ab {price}",
+  "perHour": "{price}/Std.",
+  "priceOnRequest": "Preis auf Anfrage",
+  "rating": "Mit {average} von 5 bewertet ({count} Bewertungen)",
+  "deliveryDay": "{days} Tag",
+  "deliveryDays": "{days} Tage",
+  "promotion": {
+    "featured": "Empfohlen",
+    "sponsored": "Gesponsert"
+  }
+}

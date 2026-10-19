@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/blog/article.tsx",
+  "loading": "Artikel wird geladen",
+  "breadcrumb": "Navigationspfad",
+  "blog": "Blog",
+  "readingTime": "{minutes} Min. Lesezeit",
+  "copyLink": "Link kopieren",
+  "linkCopied": "Link kopiert",
+  "linkCopyFailed": "Link konnte nicht kopiert werden",
+  "backToBlog": "Zurück zum Blog",
+  "moreStories": "Weitere Artikel",
+  "notFound": "Artikel nicht gefunden",
+  "notFoundMessage": "Dieser Artikel wurde möglicherweise verschoben oder zurückgezogen."
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/shared/shopBlogCard.tsx",
+  "noImage": "Aucune image",
+  "readingTime": "{minutes} min de lecture",
+  "readStory": "Lire l'article",
+  "byAuthor": "Par {author}"
+}

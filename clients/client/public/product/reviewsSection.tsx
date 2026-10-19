@@ -24,7 +24,7 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/revie
 
 const REVIEWABLE_PAYMENT_STATUSES = new Set(["paid", "partially_refunded"]);
 
-function StarRow({value, className}: {value: number; className?: string}) {
+export function StarRow({value, className}: {value: number; className?: string}) {
     return (
         <span className={cn("inline-flex items-center gap-0.5", className)} aria-hidden>
             {[1, 2, 3, 4, 5].map(n => (

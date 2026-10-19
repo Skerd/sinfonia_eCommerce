@@ -106,13 +106,17 @@ export const ShopSignInPrompt = compose(
     withDebug(true, true),
 )(ShopSignInPromptInner) as unknown as (props: {titleKey: string; next: string}) => ReactElement;
 
-type ShopInlineSignInProps = WithLanguageType & {next: string};
+type ShopInlineSignInProps = WithLanguageType & {
+    next: string;
+    /** What signing in unlocks; the default speaks of the cart. */
+    messageKey?: "inlineMessage" | "inlineOrderMessage";
+};
 
-function ShopInlineSignInInner({resolveLanguageKey, next}: ShopInlineSignInProps) {
+function ShopInlineSignInInner({resolveLanguageKey, next, messageKey = "inlineMessage"}: ShopInlineSignInProps) {
     const loginTo = `/login?next=${encodeURIComponent(next)}`;
     return (
         <p className="text-xs text-shop-ink-muted">
-            {resolveLanguageKey("inlineMessage")}{" "}
+            {resolveLanguageKey(messageKey)}{" "}
             <Link to={loginTo} className={SHOP_LINK_CLASS}>
                 {resolveLanguageKey("logIn")}
             </Link>
@@ -127,4 +131,4 @@ function ShopInlineSignInInner({resolveLanguageKey, next}: ShopInlineSignInProps
 export const ShopInlineSignIn = compose(
     withLanguage("src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx"),
     withDebug(true, true),
-)(ShopInlineSignInInner) as unknown as (props: {next: string}) => ReactElement;
+)(ShopInlineSignInInner) as unknown as (props: {next: string; messageKey?: ShopInlineSignInProps["messageKey"]}) => ReactElement;

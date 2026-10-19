@@ -18,11 +18,22 @@ const TONES: Record<string, string> = {
     fulfilled: "bg-emerald-50 text-emerald-800 ring-emerald-200",
     cancelled: "bg-red-50 text-red-700 ring-red-200",
     voided: "bg-red-50 text-red-700 ring-red-200",
+    // Marketplace orders, jobs, bids and deliveries
+    open: "bg-sky-50 text-sky-800 ring-sky-200",
+    submitted: "bg-sky-50 text-sky-800 ring-sky-200",
+    in_progress: "bg-indigo-50 text-indigo-800 ring-indigo-200",
+    revision_requested: "bg-amber-50 text-amber-800 ring-amber-200",
+    accepted: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+    awarded: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+    completed: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+    released: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+    closed: "bg-shop-cream text-shop-ink-muted ring-shop-border",
+    rejected: "bg-red-50 text-red-700 ring-red-200",
 };
 
 type ShopOrderStatusProps = WithLanguageType & {
     /** Which status field the value comes from: the same word can mean different things. */
-    kind: "status" | "paymentStatus" | "fulfillmentStatus";
+    kind: "status" | "paymentStatus" | "fulfillmentStatus" | "serviceStatus" | "jobStatus" | "bidStatus" | "deliveryStatus" | "milestoneStatus";
     value: string;
 };
 

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/blog/article.tsx",
+  "loading": "Caricamento dell'articolo",
+  "breadcrumb": "Percorso",
+  "blog": "Blog",
+  "readingTime": "{minutes} min di lettura",
+  "copyLink": "Copia link",
+  "linkCopied": "Link copiato",
+  "linkCopyFailed": "Impossibile copiare il link",
+  "backToBlog": "Torna al blog",
+  "moreStories": "Altri articoli",
+  "notFound": "Articolo non trovato",
+  "notFoundMessage": "Questo articolo potrebbe essere stato spostato o rimosso."
+}

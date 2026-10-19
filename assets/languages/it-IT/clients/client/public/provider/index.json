@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/provider/index.tsx",
+  "loading": "Caricamento del fornitore",
+  "breadcrumb": "Percorso",
+  "services": "Servizi",
+  "ratingSummary": "{average} · {count} recensioni",
+  "completionRate": "{rate}% ordini completati",
+  "memberSince": "Membro dal {date}",
+  "skills": "Competenze",
+  "availability": "Disponibilità",
+  "servicesBy": "Servizi di {name}",
+  "portfolio": "Portfolio",
+  "notFound": "Fornitore non trovato",
+  "notFoundMessage": "Questo fornitore al momento non ha servizi nel negozio.",
+  "backToServices": "Sfoglia i servizi"
+}
