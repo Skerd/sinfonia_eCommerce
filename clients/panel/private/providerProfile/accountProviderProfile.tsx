@@ -82,7 +82,7 @@ function AccountProviderProfile({resolveLanguageKey, specificUserId}: AccountPro
                         onClick={reload}
                     />
                 ) : profile ? (
-                    <div className="flex flex-col gap-y-6">
+                    <div className="flex flex-col gap-y-(--density-gap)">
                         {isOwnProfile && (
                             <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border/50 bg-muted/30 p-3">
                                 <span

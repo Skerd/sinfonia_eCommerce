@@ -117,7 +117,7 @@ function ProviderProfileSection({
     }
 
     return (
-        <section className="flex flex-col gap-3 rounded-lg border border-border/50 p-4">
+        <section className="flex flex-col gap-(--density-pad) rounded-lg border border-border/50 p-(--density-pad)">
             {/* min-h-7 matches Button size="sm" so the title row stays put when Edit hides. */}
             <div className="flex min-h-7 items-center justify-between gap-2">
                 <h4 className="text-sm font-medium">{resolveLanguageKey(SECTION_TITLE_KEYS[field])}</h4>
