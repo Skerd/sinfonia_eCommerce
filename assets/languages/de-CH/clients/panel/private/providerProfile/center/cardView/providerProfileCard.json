@@ -8,5 +8,6 @@
     "notConnected": "Payouts nicht connected",
     "setupIncomplete": "Stripe setup incomplete",
     "payoutsEnabled": "Payouts enabled"
-  }
+  },
+  "payouts": "Auszahlungen"
 }

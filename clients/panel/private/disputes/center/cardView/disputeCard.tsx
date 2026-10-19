@@ -1,7 +1,6 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Dispute} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/dispute/dispute.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import DisputeSheetView from "../sheetView/disputeSheetView.tsx";
@@ -10,22 +9,24 @@ import StartReviewDisputeDropdown from "@eCommerceModule/clients/panel/private/d
 import ResolveDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/resolveDisputeDropdown.tsx";
 import CloseDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/closeDisputeDropdown.tsx";
 import type {DisputeLifecycleVerb} from "@eCommerceModule/components/custom/disputes/changeDisputeLifecycleAction.tsx";
-import {IconPackage} from "@tabler/icons-react";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import {IconCurrencyDollar, IconPackage, IconTag, IconUser} from "@tabler/icons-react";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-
-const STATUS_CONFIG: Record<string, {dot: string; dotAnim: string; text: string}> = {
-    open: {dot: "bg-destructive", dotAnim: "animate-pulse", text: "text-destructive"},
-    under_review: {dot: "bg-warning", dotAnim: "animate-pulse", text: "text-warning"},
-    resolved: {dot: "bg-success", dotAnim: "", text: "text-success"},
-    closed: {dot: "bg-muted-foreground/40", dotAnim: "", text: "text-muted-foreground"},
-};
 
 function disputeRowTitle(dispute: Dispute): string {
     const r = dispute.reason?.trim();
     return r ? (r.length > 80 ? `${r.slice(0, 80)}…` : r) : dispute._id;
+}
+
+/** The disputed order's listing title, else its task request title, each only when readable. */
+function disputeOrderTitle(dispute: Dispute, read: unknown) {
+    if (accessFieldPathExists(read, "order.listing.title") && dispute.order?.listing?.title) {
+        return dispute.order.listing.title;
+    }
+    return accessFieldPathExists(read, "order.taskRequest.title") ? dispute.order?.taskRequest?.title : undefined;
 }
 
 type DisputeCardProps = WithLanguageType & {
@@ -97,76 +98,52 @@ function DisputeCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => {
-                const statusCfg = STATUS_CONFIG[row.status] ?? STATUS_CONFIG.closed;
-                const initiatorInitials = [row.initiator?.name?.[0], row.initiator?.surname?.[0]]
-                    .filter(Boolean)
-                    .join("")
-                    .toUpperCase();
-                const orderTitle =
-                    row.order?.listing?.title ||
-                    row.order?.taskRequest?.title ||
-                    row.order?.name ||
-                    row.order?._id;
-                return (
-                    <>
-                        <EntityCard.Header titlePath="reason" title={row.reason}>
-                            <StartReviewDisputeDropdown dispute={row} onAction={setAction} />
-                            <ResolveDisputeDropdown dispute={row} onAction={setAction} />
-                            <CloseDisputeDropdown dispute={row} onAction={setAction} />
-                        </EntityCard.Header>
-                        <div className="flex flex-col gap-2">
-                            <span
-                                className={cn(
-                                    "inline-flex items-center gap-1.5 text-3xs font-semibold tracking-wide uppercase",
-                                    statusCfg.text,
-                                )}
-                            >
-                                <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", statusCfg.dot, statusCfg.dotAnim)} />
-                                <DisplayValue
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="status_values"
-                                    value={row.status}
-                                />
-                            </span>
-                            {row.initiator ? (
-                                <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
-                                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted ring-1 ring-border">
-                                        <span className="text-3xs font-bold leading-none text-foreground">
-                                            {initiatorInitials || "?"}
-                                        </span>
-                                    </div>
-                                    <DisplayValue path="initiator" type="user" value={row.initiator} />
-                                </div>
-                            ) : null}
-                            <div className="h-px bg-border" />
-                            <div className="flex items-end justify-between gap-2">
-                                {orderTitle ? (
-                                    <span className="flex min-w-0 items-center gap-1 truncate text-xs text-muted-foreground">
-                                        <IconPackage className="h-3 w-3 shrink-0" />
-                                        <DisplayValue path="order.listing.title" value={orderTitle} />
-                                    </span>
-                                ) : null}
-                                {row.order?.amount != null ? (
-                                    <div className="ml-auto shrink-0 text-right">
-                                        <div className="mb-0.5 text-3xs leading-none tracking-wide text-muted-foreground uppercase">
-                                            {resolveLanguageKey("amount")}
-                                        </div>
-                                        <span className="text-base font-bold leading-none text-foreground">
-                                            <DisplayValue
-                                                path="order.amount"
-                                                type="currency"
-                                                value={{amount: row.order.amount, currency: row.order.currency}}
-                                            />
-                                        </span>
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </>
-                );
-            }}
+            {({entity: row, read, setAction}) => (
+                <>
+                    <EntityCard.Header titlePath="reason" title={row.reason}>
+                        <StartReviewDisputeDropdown dispute={row} onAction={setAction} />
+                        <ResolveDisputeDropdown dispute={row} onAction={setAction} />
+                        <CloseDisputeDropdown dispute={row} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="status_values"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={IconUser}
+                            label={resolveLanguageKey("initiator")}
+                            tooltip={resolveLanguageKey("initiator")}
+                            path="initiator"
+                            type="user"
+                            value={row.initiator}
+                        />
+                        <EntityCardRow
+                            icon={IconPackage}
+                            label={resolveLanguageKey("order")}
+                            tooltip={resolveLanguageKey("order")}
+                            show={
+                                accessFieldPathExists(read, "order.listing.title") ||
+                                accessFieldPathExists(read, "order.taskRequest.title")
+                            }
+                            value={disputeOrderTitle(row, read)}
+                        />
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("amount")}
+                            tooltip={resolveLanguageKey("amount")}
+                            path="order.amount"
+                            type="currency"
+                            value={{amount: row.order?.amount, currency: row.order?.currency}}
+                        />
+                    </EntityCard.Body>
+                </>
+            )}
         </EntityCard>
     );
 }

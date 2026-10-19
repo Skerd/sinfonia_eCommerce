@@ -1,9 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orderDeliveries/center/cardView/orderDeliveryCard.tsx",
-  "attachments": "pièces jointes",
+  "attachments": "Pièces jointes",
   "orderDeliveryStatus": {
     "submitted": "Soumise",
     "accepted": "Acceptée",
     "revision_requested": "Révision demandée"
-  }
+  },
+  "status": "Statut",
+  "message": "Message"
 }

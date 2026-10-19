@@ -3,5 +3,8 @@
   "orderRevisionStatus": {
     "pending": "Në pritje",
     "completed": "Trajtuar"
-  }
+  },
+  "status": "Statusi",
+  "reason": "Arsyeja",
+  "requestedBy": "Kërkuar nga"
 }

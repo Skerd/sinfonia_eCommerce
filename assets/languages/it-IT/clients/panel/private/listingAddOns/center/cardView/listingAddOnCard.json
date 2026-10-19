@@ -4,5 +4,6 @@
   "listing": "Annuncio",
   "priceAmount": "Prezzo",
   "deliveryDays": "Giorni di consegna",
-  "days": "d"
+  "days": "d",
+  "provider": "Fornitore"
 }

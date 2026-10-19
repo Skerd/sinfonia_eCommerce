@@ -13,5 +13,7 @@
     "open": "Open",
     "closed": "Closed",
     "awarded": "Awarded"
-  }
+  },
+  "requester": "Requester",
+  "bids": "Bids"
 }

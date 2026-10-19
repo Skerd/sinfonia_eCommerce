@@ -4,5 +4,7 @@
     "pending": "Në pritje",
     "released": "Liruar",
     "delivered": "Dorëzuar"
-  }
+  },
+  "status": "Statusi",
+  "amount": "Shuma"
 }

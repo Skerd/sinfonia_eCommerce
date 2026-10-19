@@ -8,12 +8,13 @@
   "city": "Ville",
   "perHour": "h",
   "days": "ré",
-  "from": "Du",
   "featured": "Mis en avant",
   "sponsored": "Sponsorisé",
   "statuses": {
     "active": "Actif",
     "draft": "Brouillon",
     "inactive": "Inactif"
-  }
+  },
+  "provider": "Fournisseur",
+  "deliveryDays": "Livraison"
 }

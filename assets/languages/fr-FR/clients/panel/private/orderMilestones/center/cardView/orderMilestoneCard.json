@@ -4,5 +4,7 @@
     "pending": "En attente",
     "released": "Libérée",
     "delivered": "Livrée"
-  }
+  },
+  "status": "Statut",
+  "amount": "Montant"
 }

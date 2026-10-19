@@ -5,5 +5,7 @@
     "submitted": "Eingereicht",
     "accepted": "Angenommen",
     "revision_requested": "Überarbeitung angefordert"
-  }
+  },
+  "status": "Status",
+  "message": "Nachricht"
 }

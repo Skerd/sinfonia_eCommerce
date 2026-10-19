@@ -4,5 +4,6 @@
   "startAt": "Fillimi",
   "endAt": "Mbarimi",
   "timezone": "Zona orare",
-  "order": "Porosia"
+  "order": "Porosia",
+  "time": "Ora"
 }

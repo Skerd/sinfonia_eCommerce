@@ -1,8 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
-import {Flag, User} from "lucide-react";
+import {Flag, Tag, User} from "lucide-react";
 import type {ListingFlag} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/listingFlag.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ListingFlagSheetView from "@eCommerceModule/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx";
@@ -12,16 +11,9 @@ import ChangeListingFlagLifecycleAction, {
     type ListingFlagLifecycleVerb,
 } from "@eCommerceModule/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-
-const STATUS_CONFIG: Record<string, {dot: string; text: string}> = {
-    pending: {dot: "bg-warning", text: "text-warning"},
-    reviewed: {dot: "bg-info", text: "text-info"},
-    dismissed: {dot: "bg-muted-foreground/40", text: "text-muted-foreground"},
-};
 
 function listingFlagEditPath(flag: ListingFlag) {
     const params = new URLSearchParams();
@@ -98,50 +90,42 @@ function ListingFlagCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => {
-                const statusCfg = STATUS_CONFIG[row.status] ?? STATUS_CONFIG.dismissed;
-                return (
-                    <>
-                        <EntityCard.Header titlePath="listing.title" title={row.listing?.title}>
-                            <ResolveListingFlagDropdown listingFlag={row} onAction={setAction} />
-                            <DismissListingFlagDropdown listingFlag={row} onAction={setAction} />
-                        </EntityCard.Header>
-                        <EntityCard.Body>
-                            <span
-                                className={cn(
-                                    "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                    statusCfg.text,
-                                )}
-                            >
-                                <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", statusCfg.dot)} />
-                                <DisplayValue
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="status_values"
-                                    value={row.status}
-                                />
-                            </span>
-                            <EntityCardRow
-                                icon={Flag}
-                                label={resolveLanguageKey("reason")}
-                                tooltip={resolveLanguageKey("reason")}
-                                path="reason"
-                                type="enum"
-                                languageKeyCategory="reason_values"
-                                value={row.reason}
-                            />
-                            <EntityCardRow
-                                icon={User}
-                                label={resolveLanguageKey("reporter")}
-                                tooltip={resolveLanguageKey("reporter")}
-                                path="user"
-                                type="user"
-                                value={row.user}
-                            />
-                        </EntityCard.Body>
-                    </>
-                );
-            }}
+            {({entity: row, setAction}) => (
+                <>
+                    <EntityCard.Header titlePath="listing.title" title={row.listing?.title}>
+                        <ResolveListingFlagDropdown listingFlag={row} onAction={setAction} />
+                        <DismissListingFlagDropdown listingFlag={row} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={Tag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="status_values"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={Flag}
+                            label={resolveLanguageKey("reason")}
+                            tooltip={resolveLanguageKey("reason")}
+                            path="reason"
+                            type="enum"
+                            languageKeyCategory="reason_values"
+                            value={row.reason}
+                        />
+                        <EntityCardRow
+                            icon={User}
+                            label={resolveLanguageKey("reporter")}
+                            tooltip={resolveLanguageKey("reporter")}
+                            path="user"
+                            type="user"
+                            value={row.user}
+                        />
+                    </EntityCard.Body>
+                </>
+            )}
         </EntityCard>
     );
 }

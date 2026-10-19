@@ -8,12 +8,13 @@
   "city": "Città",
   "perHour": "h",
   "days": "d",
-  "from": "Da",
   "featured": "In evidenza",
   "sponsored": "Sponsorizzato",
   "statuses": {
     "active": "Attivo",
     "draft": "Bozza",
     "inactive": "Inattivo"
-  }
+  },
+  "provider": "Fornitore",
+  "deliveryDays": "Consegna"
 }

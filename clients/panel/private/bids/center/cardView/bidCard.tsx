@@ -1,7 +1,6 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
 import TableAvatar from "@coreModule/components/entityPage/list/tableAvatar.tsx";
 import BidSheetView from "@eCommerceModule/clients/panel/private/bids/center/sheetView/bidSheetView.tsx";
@@ -11,14 +10,11 @@ import RejectBidDropdown from "@eCommerceModule/clients/panel/private/bids/cente
 import BidActionConfirmAction from "@eCommerceModule/components/custom/bids/bidActionConfirmAction.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
+import {IconClipboardList, IconClock, IconCurrencyDollar, IconTag} from "@tabler/icons-react";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-
-const STATUS_CONFIG: Record<string, {dot: string; dotAnim: string; text: string}> = {
-    pending: {dot: "bg-warning", dotAnim: "animate-pulse", text: "text-warning"},
-    accepted: {dot: "bg-success", dotAnim: "", text: "text-success"},
-    rejected: {dot: "bg-muted-foreground/40", dotAnim: "", text: "text-muted-foreground"},
-};
 
 type BidCardProps = WithLanguageType & {
     bid: Bid;
@@ -33,6 +29,7 @@ type BidCardProps = WithLanguageType & {
 
 function BidCard({
     bid,
+    resolveLanguageKey,
     fetchId,
     onDelete,
     onRestore,
@@ -89,62 +86,62 @@ function BidCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => {
-                const statusCfg = STATUS_CONFIG[row.status] ?? STATUS_CONFIG.pending;
-                const taskTitle = row.taskRequest?.title || row.name || row._id;
-                const bidderInitials = [row.bidder?.name?.[0], row.bidder?.surname?.[0]]
-                    .filter(Boolean)
-                    .join("")
-                    .toUpperCase();
-                return (
-                    <>
-                        <EntityCard.Header
-                            titlePath="bidder"
-                            title={<DisplayValue path="bidder" type="user" value={row.bidder} />}
-                            icon={
-                                row.bidder?.photo ? (
-                                    <TableAvatar mediaId={row.bidder.photo} />
-                                ) : (
-                                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
-                                        <span className="text-3xs font-bold leading-none text-primary">
-                                            {bidderInitials || "?"}
-                                        </span>
-                                    </div>
-                                )
-                            }
+            {({entity: row, read, setAction}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath="bidder"
+                        title={<DisplayValue path="bidder" type="user" value={row.bidder} />}
+                        icon={
+                            accessFieldPathExists(read, "bidder") && row.bidder?.photo ? (
+                                <TableAvatar mediaId={row.bidder.photo} />
+                            ) : undefined
+                        }
+                    >
+                        <AcceptBidDropdown bid={row} onAction={setAction} />
+                        <RejectBidDropdown bid={row} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="statuses"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={IconClipboardList}
+                            label={resolveLanguageKey("taskRequest")}
+                            tooltip={resolveLanguageKey("taskRequest")}
+                            path="taskRequest.title"
+                            value={row.taskRequest?.title}
+                        />
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("amount")}
+                            tooltip={resolveLanguageKey("amount")}
+                            path="amount"
+                            type="currency"
+                            value={{amount: row.amount, currency: row.currency}}
+                        />
+                        <EntityCardRow
+                            icon={IconClock}
+                            label={resolveLanguageKey("deliveryDays")}
+                            tooltip={resolveLanguageKey("deliveryDays")}
+                            path="deliveryDays"
+                            type="number"
+                            value={row.deliveryDays}
                         >
-                            <AcceptBidDropdown bid={row} onAction={setAction} />
-                            <RejectBidDropdown bid={row} onAction={setAction} />
-                        </EntityCard.Header>
-                        <div className="flex flex-col gap-1.5">
-                            <span
-                                className={cn(
-                                    "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide",
-                                    statusCfg.text,
-                                )}
-                            >
-                                <span className={cn("h-1.5 w-1.5 rounded-full", statusCfg.dot, statusCfg.dotAnim)} />
-                                <DisplayValue
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="statuses"
-                                    value={row.status}
-                                />
-                            </span>
-                            <div className="flex items-end justify-between gap-2">
-                                <span className="min-w-0 truncate text-xs text-muted-foreground">{taskTitle}</span>
-                                <span className="shrink-0 text-sm font-bold leading-none text-foreground">
-                                    <DisplayValue
-                                        path="amount"
-                                        type="currency"
-                                        value={{amount: row.amount, currency: row.currency}}
-                                    />
-                                </span>
-                            </div>
-                        </div>
-                    </>
-                );
-            }}
+                            {(formatted) => (
+                                <>
+                                    {formatted} {resolveLanguageKey("days")}
+                                </>
+                            )}
+                        </EntityCardRow>
+                    </EntityCard.Body>
+                </>
+            )}
         </EntityCard>
     );
 }

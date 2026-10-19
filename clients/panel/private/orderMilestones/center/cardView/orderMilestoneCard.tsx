@@ -3,15 +3,16 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {OrderMilestone} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.dto.ts";
 import OrderMilestoneSheetView from "@eCommerceModule/clients/panel/private/orderMilestones/center/sheetView/orderMilestoneSheetView.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import {IconCurrencyDollar, IconTag} from "@tabler/icons-react";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 
 type OrderMilestoneCardProps = WithLanguageType & {
     milestone: OrderMilestone;
 };
 
 /** One milestone of the order's escrow on the order sheet. */
-function OrderMilestoneCard({milestone}: OrderMilestoneCardProps) {
+function OrderMilestoneCard({milestone, resolveLanguageKey}: OrderMilestoneCardProps) {
     return (
         <EntityCard
             resource="orderMilestones"
@@ -31,14 +32,26 @@ function OrderMilestoneCard({milestone}: OrderMilestoneCardProps) {
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header
-                        titlePath="name"
-                        title={row.name}
-                        badges={<DisplayValue path="status" type="enum" languageKeyCategory="orderMilestoneStatus" value={row.status} />}
-                    />
-                    <span className="text-base font-bold leading-none text-foreground">
-                        <DisplayValue path="amount" type="currency" value={{amount: row.amount, currency: row.currency}} />
-                    </span>
+                    <EntityCard.Header titlePath="name" title={row.name} />
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="orderMilestoneStatus"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("amount")}
+                            tooltip={resolveLanguageKey("amount")}
+                            path="amount"
+                            type="currency"
+                            value={{amount: row.amount, currency: row.currency}}
+                        />
+                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

@@ -13,5 +13,7 @@
     "open": "Ouvert",
     "closed": "Fermé",
     "awarded": "Récompensé"
-  }
+  },
+  "requester": "Demandeur",
+  "bids": "Offres"
 }

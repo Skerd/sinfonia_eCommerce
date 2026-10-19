@@ -4,5 +4,6 @@
   "startAt": "Commencer",
   "endAt": "Fin",
   "timezone": "Fuseau horaire",
-  "order": "Commande"
+  "order": "Commande",
+  "time": "Heure"
 }

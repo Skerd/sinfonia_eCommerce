@@ -3,15 +3,17 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {OrderRevision} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderRevision/orderRevision.dto.ts";
 import OrderRevisionSheetView from "@eCommerceModule/clients/panel/private/orderRevisions/center/sheetView/orderRevisionSheetView.tsx";
+import {IconMessage, IconTag, IconUser} from "@tabler/icons-react";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 
 type OrderRevisionCardProps = WithLanguageType & {
     revision: OrderRevision;
 };
 
 /** One revision the customer asked for, on the order sheet. */
-function OrderRevisionCard({revision}: OrderRevisionCardProps) {
+function OrderRevisionCard({revision, resolveLanguageKey}: OrderRevisionCardProps) {
     return (
         <EntityCard
             resource="orderRevisions"
@@ -34,14 +36,33 @@ function OrderRevisionCard({revision}: OrderRevisionCardProps) {
                     <EntityCard.Header
                         titlePath="createdAt"
                         title={<DisplayValue path="createdAt" type="dateTime" value={row.createdAt} />}
-                        badges={<DisplayValue path="status" type="enum" languageKeyCategory="orderRevisionStatus" value={row.status} />}
                     />
-                    <div className="flex flex-col gap-2">
-                        <DisplayValue path="reason" value={row.reason}>
-                            {(text) => <p className="line-clamp-3 text-xs leading-normal text-muted-foreground">{text}</p>}
-                        </DisplayValue>
-                        <DisplayValue path="requestedBy" type="user" value={row.requestedBy} />
-                    </div>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="orderRevisionStatus"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={IconMessage}
+                            label={resolveLanguageKey("reason")}
+                            tooltip={resolveLanguageKey("reason")}
+                            path="reason"
+                            value={row.reason}
+                        />
+                        <EntityCardRow
+                            icon={IconUser}
+                            label={resolveLanguageKey("requestedBy")}
+                            tooltip={resolveLanguageKey("requestedBy")}
+                            path="requestedBy"
+                            type="user"
+                            value={row.requestedBy}
+                        />
+                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

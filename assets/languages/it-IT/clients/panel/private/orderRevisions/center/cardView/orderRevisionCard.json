@@ -3,5 +3,8 @@
   "orderRevisionStatus": {
     "pending": "In sospeso",
     "completed": "Gestita"
-  }
+  },
+  "status": "Stato",
+  "reason": "Motivo",
+  "requestedBy": "Richiesto da"
 }

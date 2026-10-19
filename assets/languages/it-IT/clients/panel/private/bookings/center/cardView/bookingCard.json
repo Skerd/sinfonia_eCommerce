@@ -4,5 +4,6 @@
   "startAt": "Inizia",
   "endAt": "Fine",
   "timezone": "Fuso orario",
-  "order": "Ordine"
+  "order": "Ordine",
+  "time": "Orario"
 }

@@ -1,9 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orderDeliveries/center/cardView/orderDeliveryCard.tsx",
-  "attachments": "attachments",
+  "attachments": "Attachments",
   "orderDeliveryStatus": {
     "submitted": "Submitted",
     "accepted": "Accepted",
     "revision_requested": "Revision requested"
-  }
+  },
+  "status": "Status",
+  "message": "Message"
 }

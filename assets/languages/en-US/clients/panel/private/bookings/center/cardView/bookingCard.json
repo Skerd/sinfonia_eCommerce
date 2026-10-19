@@ -4,5 +4,6 @@
   "startAt": "Start",
   "endAt": "End",
   "timezone": "Timezone",
-  "order": "Order"
+  "order": "Order",
+  "time": "Time"
 }

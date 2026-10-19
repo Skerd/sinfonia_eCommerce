@@ -4,5 +4,6 @@
   "startAt": "Start",
   "endAt": "Ende",
   "timezone": "Zeitzone",
-  "order": "Auftrag"
+  "order": "Auftrag",
+  "time": "Zeit"
 }

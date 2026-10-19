@@ -13,5 +13,7 @@
     "open": "Offen",
     "closed": "Geschlossen",
     "awarded": "Zuschlag"
-  }
+  },
+  "requester": "Auftraggeber",
+  "bids": "Angebote"
 }

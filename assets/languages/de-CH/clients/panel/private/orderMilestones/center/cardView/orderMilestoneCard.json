@@ -4,5 +4,7 @@
     "pending": "Ausstehend",
     "released": "Freigegeben",
     "delivered": "Geliefert"
-  }
+  },
+  "status": "Status",
+  "amount": "Betrag"
 }

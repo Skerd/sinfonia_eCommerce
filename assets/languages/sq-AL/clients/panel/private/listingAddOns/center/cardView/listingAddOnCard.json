@@ -4,5 +4,6 @@
   "listing": "Listimi",
   "priceAmount": "Çmimi",
   "deliveryDays": "Ditë dorëzimi",
-  "days": "d"
+  "days": "d",
+  "provider": "Ofruesi"
 }

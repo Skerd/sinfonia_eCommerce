@@ -8,12 +8,13 @@
   "city": "Qyteti",
   "perHour": "orë",
   "days": "ditë",
-  "from": "Nga",
   "featured": "I veçuar",
   "sponsored": "I sponsorizuar",
   "statuses": {
     "active": "Aktiv",
     "draft": "Draft",
     "inactive": "Jo aktiv"
-  }
+  },
+  "provider": "Ofruesi",
+  "deliveryDays": "Dorëzimi"
 }

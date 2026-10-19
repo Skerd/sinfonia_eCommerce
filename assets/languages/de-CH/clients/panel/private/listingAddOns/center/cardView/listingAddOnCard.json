@@ -4,5 +4,6 @@
   "listing": "Inserat",
   "priceAmount": "Preis",
   "deliveryDays": "Delivery tage",
-  "days": "d"
+  "days": "d",
+  "provider": "Anbieter"
 }

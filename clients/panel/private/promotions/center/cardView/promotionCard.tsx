@@ -9,14 +9,13 @@ import PausePromotionDropdown from "@eCommerceModule/clients/panel/private/promo
 import ResumePromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/resumePromotionDropdown.tsx";
 import StopPromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/stopPromotionDropdown.tsx";
 import ChangePromotionLifecycleAction from "@eCommerceModule/components/custom/promotions/changePromotionLifecycleAction.tsx";
-import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {useSelector} from "react-redux";
-import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
-import {IconCalendar, IconListDetails, IconSparkles, IconStar} from "@tabler/icons-react";
+import {IconCalendar, IconCalendarOff, IconListDetails, IconSparkles, IconStar, IconTag} from "@tabler/icons-react";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import type {ReactNode, RefObject} from "react";
 
 export type PromotionDisplayStatus = "stopped" | "paused" | "upcoming" | "active" | "ended";
 
@@ -34,14 +33,6 @@ function derivePromotionDisplayStatus(promotion: Promotion): PromotionDisplaySta
     if (lc === "stopped") return "stopped";
     if (lc === "paused") return "paused";
     return deriveDatePhase(promotion.startAt, promotion.endAt);
-}
-
-function deriveProgress(startAt: Date | string, endAt: Date | string): number {
-    const now = Date.now();
-    const start = new Date(startAt).getTime();
-    const end = new Date(endAt).getTime();
-    if (end <= start) return 0;
-    return Math.min(1, Math.max(0, (now - start) / (end - start)));
 }
 
 type PromotionCardProps = WithLanguageType & {
@@ -64,8 +55,6 @@ function PromotionCard({
     resolveLanguageKey,
     innerRef,
 }: PromotionCardProps) {
-    const {timezone} = useSelector((state: RootState) => state.authentication.user);
-
     return (
         <EntityCard
             resource="promotions"
@@ -112,82 +101,38 @@ function PromotionCard({
                 );
             }}
         >
-            {({entity: row, setAction}) => {
-                const isFeatured = row.type === "featured";
+            {({entity: row, read, setAction}) => {
                 const lifecycle = row.lifecycleStatus ?? "active";
-                const displayStatus = derivePromotionDisplayStatus(row);
-                const progress = deriveProgress(row.startAt, row.endAt);
-                const listingTitle = row.listing?.title || row.listing?.name;
                 const endStillFuture =
                     !!row.endAt && !Number.isNaN(new Date(row.endAt).getTime())
                         ? new Date(row.endAt).getTime() > Date.now()
                         : false;
-                const dateOpts = {
-                    day: "2-digit" as const,
-                    month: "2-digit" as const,
-                    year: "numeric" as const,
-                };
-                const barClass =
-                    displayStatus === "stopped"
-                        ? "bg-muted-foreground/35"
-                        : displayStatus === "paused"
-                          ? "bg-warning/60"
-                          : displayStatus === "active"
-                            ? isFeatured
-                                ? "bg-warning/20"
-                                : "bg-info"
-                            : displayStatus === "ended"
-                              ? "bg-muted-foreground/40"
-                              : "bg-muted-foreground/20";
-                const labelClass =
-                    displayStatus === "active"
-                        ? isFeatured
-                            ? "text-warning"
-                            : "text-info"
-                        : displayStatus === "paused"
-                          ? "text-warning"
-                          : displayStatus === "stopped"
-                            ? "text-destructive/90"
-                            : displayStatus === "upcoming"
-                              ? "text-muted-foreground"
-                              : "text-muted-foreground/60";
-                const dotClass =
-                    displayStatus === "active"
-                        ? isFeatured
-                            ? "bg-warning animate-pulse"
-                            : "bg-info animate-pulse"
-                        : displayStatus === "paused"
-                          ? "bg-warning"
-                          : displayStatus === "stopped"
-                            ? "bg-destructive"
-                            : displayStatus === "upcoming"
-                              ? "bg-muted-foreground/50"
-                              : "bg-muted-foreground/30";
                 return (
                     <>
                         <EntityCard.Header
                             titlePath="name"
-                            title={row.name ?? "—"}
+                            title={row.name}
+                            badgesBesideTitle
                             badges={
-                                <DisplayValue path="type" type="enum" languageKeyCategory="types" value={row.type}>
-                                    {() => (
-                                        <div
-                                            className={cn(
-                                                "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-3xs font-bold tracking-wide uppercase",
-                                                isFeatured
-                                                    ? "bg-warning/10 text-warning dark:bg-warning/40"
-                                                    : "bg-info/10 text-info dark:bg-info/40",
-                                            )}
-                                        >
-                                            {isFeatured ? (
-                                                <IconSparkles className="h-3 w-3" />
-                                            ) : (
-                                                <IconStar className="h-3 w-3" />
-                                            )}
-                                            {resolveLanguageKey(row.type)}
-                                        </div>
-                                    )}
-                                </DisplayValue>
+                                accessFieldPathExists(read, "type") && row.type ? (
+                                    <DisplayValue path="type" value={resolveLanguageKey(row.type)}>
+                                        {(formatted: ReactNode) => (
+                                            <span
+                                                className={cn(
+                                                    "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full shrink-0",
+                                                    row.type === "featured" ? "bg-warning/20 text-warning" : "bg-info/20 text-info",
+                                                )}
+                                            >
+                                                {row.type === "featured" ? (
+                                                    <IconSparkles className="w-3 h-3" />
+                                                ) : (
+                                                    <IconStar className="w-3 h-3" />
+                                                )}
+                                                {formatted}
+                                            </span>
+                                        )}
+                                    </DisplayValue>
+                                ) : undefined
                             }
                         >
                             {!row.deletedAt && lifecycle === "active" && (
@@ -200,67 +145,43 @@ function PromotionCard({
                                 <StopPromotionDropdown onAction={setAction} />
                             )}
                         </EntityCard.Header>
-                        <div className="flex flex-col gap-2.5">
-                            {row.listing ? (
-                                <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
-                                    <IconListDetails className="h-3.5 w-3.5 shrink-0" />
-                                    <DisplayValue path="listing.title" value={listingTitle || "—"} />
-                                </div>
-                            ) : null}
-                            <div className="h-px bg-border" />
-                            <div className="flex flex-col gap-1.5">
-                                <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground">
-                                    <span className="flex shrink-0 items-center gap-1">
-                                        <IconCalendar className="h-3 w-3" />
-                                        <DisplayValue path="startAt" value={row.startAt}>
-                                            {() =>
-                                                row.startAt
-                                                    ? formatDate(row.startAt, {timeZone: timezone, format: dateOpts})
-                                                    : "—"
-                                            }
-                                        </DisplayValue>
-                                    </span>
-                                    {row.startAt && row.endAt ? (
-                                        <div className="flex min-w-0 flex-1 items-center gap-1">
-                                            <div className="h-px flex-1 bg-border" />
-                                            <span className="shrink-0 text-3xs text-muted-foreground/60">
-                                                {resolveLanguageKey("to")}
-                                            </span>
-                                            <div className="h-px flex-1 bg-border" />
-                                        </div>
-                                    ) : null}
-                                    <span className="flex shrink-0 items-center gap-1">
-                                        <IconCalendar className="h-3 w-3" />
-                                        <DisplayValue path="endAt" value={row.endAt}>
-                                            {() =>
-                                                row.endAt
-                                                    ? formatDate(row.endAt, {timeZone: timezone, format: dateOpts})
-                                                    : "—"
-                                            }
-                                        </DisplayValue>
-                                    </span>
-                                </div>
-                                {row.startAt && row.endAt ? (
-                                    <div className="flex items-center gap-2">
-                                        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
-                                            <div
-                                                className={cn("h-full rounded-full transition-all duration-500", barClass)}
-                                                style={{width: `${progress * 100}%`}}
-                                            />
-                                        </div>
-                                        <span
-                                            className={cn(
-                                                "inline-flex shrink-0 items-center gap-1 text-3xs font-semibold",
-                                                labelClass,
-                                            )}
-                                        >
-                                            <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", dotClass)} />
-                                            {resolveLanguageKey(displayStatus)}
-                                        </span>
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
+                        <EntityCard.Body>
+                            {/* Derived from the lifecycle and both dates, so it needs all three. */}
+                            <EntityCardRow
+                                icon={IconTag}
+                                label={resolveLanguageKey("status")}
+                                tooltip={resolveLanguageKey("status")}
+                                show={
+                                    accessFieldPathExists(read, "lifecycleStatus") &&
+                                    accessFieldPathExists(read, "startAt") &&
+                                    accessFieldPathExists(read, "endAt")
+                                }
+                                value={resolveLanguageKey(derivePromotionDisplayStatus(row))}
+                            />
+                            <EntityCardRow
+                                icon={IconListDetails}
+                                label={resolveLanguageKey("listing")}
+                                tooltip={resolveLanguageKey("listing")}
+                                path="listing.title"
+                                value={row.listing?.title}
+                            />
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("startAt")}
+                                tooltip={resolveLanguageKey("startAt")}
+                                path="startAt"
+                                type="date"
+                                value={row.startAt}
+                            />
+                            <EntityCardRow
+                                icon={IconCalendarOff}
+                                label={resolveLanguageKey("endAt")}
+                                tooltip={resolveLanguageKey("endAt")}
+                                path="endAt"
+                                type="date"
+                                value={row.endAt}
+                            />
+                        </EntityCard.Body>
                     </>
                 );
             }}

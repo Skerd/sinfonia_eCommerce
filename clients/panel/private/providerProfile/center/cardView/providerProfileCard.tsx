@@ -1,8 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
-import {IconCode, IconStar} from "@tabler/icons-react";
+import {IconCode, IconCreditCard, IconFileDescription, IconStar} from "@tabler/icons-react";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProviderProfileSheetView from "@eCommerceModule/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx";
@@ -11,8 +10,10 @@ import RefreshAccountStatusDropdown from "@eCommerceModule/clients/panel/private
 import ConnectAccountAction, {
     type ConnectActionKey,
 } from "@eCommerceModule/components/custom/providerProfile/connectAccountAction.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import TableAvatar from "@coreModule/components/entityPage/list/tableAvatar.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 import {getName} from "@coreModule/helpers/general/names.ts";
@@ -114,87 +115,78 @@ function ProviderProfileCard({
                 );
             }}
         >
-            {({entity: row, setAction}) => {
-                const userName = profileDisplayName(row) || "—";
-                const initials = [row.user?.name?.[0], row.user?.surname?.[0]]
-                    .filter(Boolean)
-                    .join("")
-                    .toUpperCase();
-                const connectStatusLabel = row.stripePayoutsEnabled
-                    ? resolveLanguageKey("connect.payoutsEnabled")
+            {({entity: row, read, setAction}) => {
+                const skills = row.skills ?? [];
+                const connectStatusKey = row.stripePayoutsEnabled
+                    ? "connect.payoutsEnabled"
                     : row.stripeAccountId
-                      ? resolveLanguageKey("connect.setupIncomplete")
-                      : resolveLanguageKey("connect.notConnected");
+                      ? "connect.setupIncomplete"
+                      : "connect.notConnected";
                 return (
                     <>
                         <EntityCard.Header
                             titlePath="user"
-                            title={userName}
+                            title={profileDisplayName(row)}
                             icon={
-                                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
-                                    <span className="text-3xs font-bold leading-none text-primary">
-                                        {initials || "?"}
-                                    </span>
-                                </div>
+                                accessFieldPathExists(read, "user") && row.user?.photo ? (
+                                    <TableAvatar mediaId={row.user.photo} />
+                                ) : undefined
                             }
                         >
                             <CreateAccountLinkDropdown profile={row} onAction={setAction} />
                             <RefreshAccountStatusDropdown profile={row} onAction={setAction} />
                         </EntityCard.Header>
-                        <div className="flex flex-col gap-2">
-                            {row.bio ? (
-                                <DisplayValue path="bio" value={row.bio}>
-                                    {(text) => (
-                                        <p className="line-clamp-2 text-xs leading-normal text-muted-foreground">
-                                            {text}
-                                        </p>
-                                    )}
-                                </DisplayValue>
-                            ) : null}
-                            <div className="h-px bg-border" />
-                            <div className="flex items-center justify-between gap-2">
-                                {row.skills && row.skills.length > 0 ? (
-                                    <div className="flex min-w-0 items-center gap-1 truncate">
-                                        <IconCode className="h-3 w-3 shrink-0 text-muted-foreground" />
-                                        <DisplayValue path="skills" value={row.skills.slice(0, 3).join(", ")}>
-                                            {(text) => (
-                                                <span className="truncate text-xs text-muted-foreground">
-                                                    {text}
-                                                    {row.skills && row.skills.length > 3 ? ` +${row.skills.length - 3}` : ""}
-                                                </span>
-                                            )}
-                                        </DisplayValue>
-                                    </div>
-                                ) : (
-                                    <span />
-                                )}
-                                {row.averageRating != null ? (
-                                    <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-warning">
-                                        <IconStar className="h-3 w-3" />
-                                        <DisplayValue type="number" value={row.averageRating}>
-                                            {() => row.averageRating!.toFixed(1)}
-                                        </DisplayValue>
-                                        {row.reviewCount != null ? (
-                                            <span className="font-normal text-muted-foreground">
-                                                (<DisplayValue type="number" value={row.reviewCount} />)
-                                            </span>
-                                        ) : null}
-                                    </span>
-                                ) : null}
-                            </div>
-                            <span
-                                className={cn(
-                                    "inline-flex w-fit items-center text-3xs font-semibold tracking-wide uppercase",
-                                    row.stripePayoutsEnabled
-                                        ? "text-success"
-                                        : row.stripeAccountId
-                                          ? "text-warning"
-                                          : "text-muted-foreground",
-                                )}
+                        <EntityCard.Body>
+                            <EntityCardRow
+                                icon={IconCode}
+                                label={resolveLanguageKey("skills")}
+                                tooltip={resolveLanguageKey("skills")}
+                                path="skills"
+                                value={skills.length > 0 ? skills.slice(0, 3).join(", ") : undefined}
                             >
-                                {connectStatusLabel}
-                            </span>
-                        </div>
+                                {(formatted) => (
+                                    <>
+                                        {formatted}
+                                        {skills.length > 3 ? ` +${skills.length - 3}` : null}
+                                    </>
+                                )}
+                            </EntityCardRow>
+                            <EntityCardRow
+                                icon={IconFileDescription}
+                                label={resolveLanguageKey("bio")}
+                                tooltip={resolveLanguageKey("bio")}
+                                path="bio"
+                                value={row.bio}
+                            />
+                            {/* Computed from reviews, not a model field: the backend decides whether it is sent. */}
+                            {row.averageRating != null && (
+                                <EntityCardRow
+                                    icon={IconStar}
+                                    label={resolveLanguageKey("rating")}
+                                    tooltip={resolveLanguageKey("rating")}
+                                    show
+                                    type="number"
+                                    value={row.averageRating}
+                                >
+                                    {(formatted) => (
+                                        <>
+                                            {formatted}
+                                            {row.reviewCount != null ? ` (${row.reviewCount})` : null}
+                                        </>
+                                    )}
+                                </EntityCardRow>
+                            )}
+                            <EntityCardRow
+                                icon={IconCreditCard}
+                                label={resolveLanguageKey("payouts")}
+                                tooltip={resolveLanguageKey("payouts")}
+                                show={
+                                    accessFieldPathExists(read, "stripePayoutsEnabled") &&
+                                    accessFieldPathExists(read, "stripeAccountId")
+                                }
+                                value={resolveLanguageKey(connectStatusKey)}
+                            />
+                        </EntityCard.Body>
                     </>
                 );
             }}

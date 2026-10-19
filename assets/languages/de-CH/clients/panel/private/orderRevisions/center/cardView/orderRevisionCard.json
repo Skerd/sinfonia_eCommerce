@@ -3,5 +3,8 @@
   "orderRevisionStatus": {
     "pending": "Ausstehend",
     "completed": "Beantwortet"
-  }
+  },
+  "status": "Status",
+  "reason": "Grund",
+  "requestedBy": "Angefordert von"
 }

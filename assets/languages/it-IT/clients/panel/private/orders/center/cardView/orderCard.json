@@ -12,5 +12,6 @@
     "in_progress": "In corso",
     "completed": "Completato",
     "cancelled": "Annullato"
-  }
+  },
+  "customer": "Cliente"
 }

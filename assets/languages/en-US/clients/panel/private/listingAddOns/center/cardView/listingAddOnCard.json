@@ -4,5 +4,6 @@
   "listing": "Listing",
   "priceAmount": "Price",
   "deliveryDays": "Delivery days",
-  "days": "d"
+  "days": "d",
+  "provider": "Provider"
 }

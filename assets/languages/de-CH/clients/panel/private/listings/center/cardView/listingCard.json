@@ -8,12 +8,13 @@
   "city": "Ort",
   "perHour": "h",
   "days": "d",
-  "from": "Von",
   "featured": "Featured",
   "sponsored": "Sponsored",
   "statuses": {
     "active": "Aktiv",
     "draft": "Entwurf",
     "inactive": "Inaktiv"
-  }
+  },
+  "provider": "Anbieter",
+  "deliveryDays": "Lieferung"
 }

@@ -1,12 +1,13 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconCalendar, IconClock, IconUser} from "@tabler/icons-react";
+import {IconClock, IconUser, IconWorld} from "@tabler/icons-react";
 import type {Booking} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/booking/booking.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import BookingSheetView from "@eCommerceModule/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
@@ -26,6 +27,7 @@ type BookingCardProps = WithLanguageType & {
 
 function BookingCard({
     booking,
+    resolveLanguageKey,
     fetchId,
     onDelete,
     onRestore,
@@ -58,34 +60,33 @@ function BookingCard({
                 onSheetRowPatched: (patch: Partial<Booking>) => setEntity({...row, ...patch}),
             })}
         >
-            {({entity: row}) => (
+            {({entity: row, read}) => (
                 <>
-                    <EntityCard.Header
-                        titlePath="startAt"
-                        title={
-                            <span className="flex items-center gap-1.5">
-                                <IconCalendar className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-                                {formatDate(row.startAt, {format: DAY_FORMAT})}
-                            </span>
-                        }
-                    />
-                    <div className="flex items-center justify-between gap-2">
-                        <span className="flex min-w-0 items-center gap-1 truncate text-xs text-muted-foreground">
-                            <IconUser className="h-3 w-3 shrink-0" />
-                            <DisplayValue path="provider" type="user" value={row.provider} />
-                        </span>
-                        <div className="ml-auto flex shrink-0 items-center gap-2">
-                            <span className="flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-                                <IconClock className="h-3 w-3" />
-                                {formatDate(row.startAt, {format: TIME_FORMAT})} – {formatDate(row.endAt, {format: TIME_FORMAT})}
-                            </span>
-                            {row.timezone ? (
-                                <span className="shrink-0 text-3xs font-medium text-muted-foreground">
-                                    {row.timezone}
-                                </span>
-                            ) : null}
-                        </div>
-                    </div>
+                    <EntityCard.Header titlePath="startAt" title={formatDate(row.startAt, {format: DAY_FORMAT})} />
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconUser}
+                            label={resolveLanguageKey("provider")}
+                            tooltip={resolveLanguageKey("provider")}
+                            path="provider"
+                            type="user"
+                            value={row.provider}
+                        />
+                        <EntityCardRow
+                            icon={IconClock}
+                            label={resolveLanguageKey("time")}
+                            tooltip={resolveLanguageKey("time")}
+                            show={accessFieldPathExists(read, "startAt") && accessFieldPathExists(read, "endAt")}
+                            value={`${formatDate(row.startAt, {format: TIME_FORMAT})} – ${formatDate(row.endAt, {format: TIME_FORMAT})}`}
+                        />
+                        <EntityCardRow
+                            icon={IconWorld}
+                            label={resolveLanguageKey("timezone")}
+                            tooltip={resolveLanguageKey("timezone")}
+                            path="timezone"
+                            value={row.timezone}
+                        />
+                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

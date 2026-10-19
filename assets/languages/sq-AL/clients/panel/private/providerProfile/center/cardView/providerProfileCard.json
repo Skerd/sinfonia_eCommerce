@@ -8,5 +8,6 @@
     "notConnected": "Pagesat nuk janë lidhur",
     "setupIncomplete": "Konfigurimi Stripe i paplotë",
     "payoutsEnabled": "Pagesat janë aktive"
-  }
+  },
+  "payouts": "Pagesat"
 }

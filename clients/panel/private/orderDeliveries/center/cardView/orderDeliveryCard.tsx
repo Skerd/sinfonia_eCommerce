@@ -1,11 +1,12 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconPaperclip} from "@tabler/icons-react";
+import {IconMessage, IconPaperclip, IconTag} from "@tabler/icons-react";
 import type {OrderDelivery} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderDelivery/orderDelivery.dto.ts";
 import OrderDeliverySheetView from "@eCommerceModule/clients/panel/private/orderDeliveries/center/sheetView/orderDeliverySheetView.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 
 type OrderDeliveryCardProps = WithLanguageType & {
     delivery: OrderDelivery;
@@ -35,19 +36,33 @@ function OrderDeliveryCard({delivery, resolveLanguageKey}: OrderDeliveryCardProp
                     <EntityCard.Header
                         titlePath="createdAt"
                         title={<DisplayValue path="createdAt" type="dateTime" value={row.createdAt} />}
-                        badges={<DisplayValue path="status" type="enum" languageKeyCategory="orderDeliveryStatus" value={row.status} />}
                     />
-                    <div className="flex flex-col gap-2">
-                        {row.message ? (
-                            <DisplayValue path="message" value={row.message}>
-                                {(text) => <p className="line-clamp-3 text-xs leading-normal text-muted-foreground">{text}</p>}
-                            </DisplayValue>
-                        ) : null}
-                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                            <IconPaperclip className="h-3 w-3 shrink-0" />
-                            {row.attachments.length} {resolveLanguageKey("attachments")}
-                        </span>
-                    </div>
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconTag}
+                            label={resolveLanguageKey("status")}
+                            tooltip={resolveLanguageKey("status")}
+                            path="status"
+                            type="enum"
+                            languageKeyCategory="orderDeliveryStatus"
+                            value={row.status}
+                        />
+                        <EntityCardRow
+                            icon={IconMessage}
+                            label={resolveLanguageKey("message")}
+                            tooltip={resolveLanguageKey("message")}
+                            path="message"
+                            value={row.message}
+                        />
+                        <EntityCardRow
+                            icon={IconPaperclip}
+                            label={resolveLanguageKey("attachments")}
+                            tooltip={resolveLanguageKey("attachments")}
+                            path="attachments"
+                            type="number"
+                            value={row.attachments.length}
+                        />
+                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

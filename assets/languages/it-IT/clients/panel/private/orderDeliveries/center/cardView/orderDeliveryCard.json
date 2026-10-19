@@ -1,9 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orderDeliveries/center/cardView/orderDeliveryCard.tsx",
-  "attachments": "allegati",
+  "attachments": "Allegati",
   "orderDeliveryStatus": {
     "submitted": "Inviata",
     "accepted": "Accettata",
     "revision_requested": "Revisione richiesta"
-  }
+  },
+  "status": "Stato",
+  "message": "Messaggio"
 }

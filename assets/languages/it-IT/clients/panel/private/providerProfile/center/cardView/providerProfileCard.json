@@ -8,5 +8,6 @@
     "notConnected": "Pagamenti non collegati",
     "setupIncomplete": "Configurazione dello stripe incompleta",
     "payoutsEnabled": "Pagamenti abilitati"
-  }
+  },
+  "payouts": "Pagamenti"
 }

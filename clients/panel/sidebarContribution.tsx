@@ -1,6 +1,6 @@
 import {
     ShoppingBag, Boxes, Warehouse, BarChart3, PackageCheck, Undo2, Star, Monitor, Receipt, Clock,
-    ArrowLeftRight, Bookmark, Truck, ClipboardList, AlertTriangle, Gavel, Tag, Flag, Calendar, Package, Network,
+    ArrowLeftRight, Bookmark, Truck, ClipboardList, AlertTriangle, Gavel, Tag, Flag, Calendar, Package,
 } from "lucide-react";
 import {IconListDetails} from "@tabler/icons-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
@@ -69,7 +69,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
         ];
 
         const marketplaceItems: NavItem[] = [
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.marketplacesystemmap.title"), url: "/eCommerceMarketplace/marketplacesystemmap", icon: Network, permissions: ["listings"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerceMarketplace.listings.title"), url: "/eCommerceMarketplace/listings", icon: IconListDetails, permissions: ["listings"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerceMarketplace.listingaddons.title"), url: "/eCommerceMarketplace/listingaddons", icon: Package, permissions: ["listingaddons"], usersPermissions: [], atLeastOnePermission: true},
             {title: resolveLanguageKey("menus.eCommerceMarketplace.listingpackages.title"), url: "/eCommerceMarketplace/listingpackages", icon: Package, permissions: ["listingpackages"], usersPermissions: [], atLeastOnePermission: true},

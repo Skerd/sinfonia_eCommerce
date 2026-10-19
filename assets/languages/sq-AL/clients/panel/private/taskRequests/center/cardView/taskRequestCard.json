@@ -13,5 +13,7 @@
     "open": "Hapur",
     "closed": "Mbyllur",
     "awarded": "Dhuruar"
-  }
+  },
+  "requester": "Kërkuesi",
+  "bids": "Ofertat"
 }
