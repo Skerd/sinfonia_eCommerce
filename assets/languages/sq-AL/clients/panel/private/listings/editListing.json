@@ -54,6 +54,8 @@
     "priceCurrencyLabel": "Monedha",
     "priceCurrencyPlaceholder": "Monedha",
     "priceLabel": "Çmimi",
+    "providerLabel": "Ofruesi",
+    "providerPlaceholder": "Zgjidh përdoruesin që ofron këtë listing",
     "pricingType": {
       "fixed": "Çmim fiks",
       "hourly": "Në orë"

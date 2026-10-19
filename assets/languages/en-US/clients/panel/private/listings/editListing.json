@@ -54,6 +54,8 @@
     "priceCurrencyLabel": "Currency",
     "priceCurrencyPlaceholder": "Currency",
     "priceLabel": "Price",
+    "providerLabel": "Provider",
+    "providerPlaceholder": "Select the user who provides this listing",
     "pricingType": {
       "fixed": "Fixed price",
       "hourly": "Hourly rate"

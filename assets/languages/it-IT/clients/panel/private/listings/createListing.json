@@ -49,6 +49,8 @@
     "priceCurrencyLabel": "Valuta",
     "priceCurrencyPlaceholder": "Valuta",
     "priceLabel": "Prezzo",
+    "providerLabel": "Fornitore",
+    "providerPlaceholder": "Seleziona l'utente che fornisce questo listing",
     "pricingType": {
       "fixed": "Prezzo fisso",
       "hourly": "Tariffa oraria"

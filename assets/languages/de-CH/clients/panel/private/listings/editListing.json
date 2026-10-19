@@ -54,6 +54,8 @@
     "priceCurrencyLabel": "Währung",
     "priceCurrencyPlaceholder": "Währung",
     "priceLabel": "Preis",
+    "providerLabel": "Anbieter",
+    "providerPlaceholder": "Benutzer wählen, der dieses Listing erbringt",
     "pricingType": {
       "fixed": "Fixed preis",
       "hourly": "Hourly satz"

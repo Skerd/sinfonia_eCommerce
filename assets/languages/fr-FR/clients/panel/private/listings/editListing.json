@@ -54,6 +54,8 @@
     "priceCurrencyLabel": "Devise",
     "priceCurrencyPlaceholder": "Devise",
     "priceLabel": "Prix",
+    "providerLabel": "Prestataire",
+    "providerPlaceholder": "Sélectionner l'utilisateur qui fournit ce listing",
     "pricingType": {
       "fixed": "Prix fixe",
       "hourly": "Tarif horaire"
