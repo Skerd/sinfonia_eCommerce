@@ -5,33 +5,41 @@
   "help": {
     "ariaLabel": "Informazioni sugli ordini POS",
     "title": "Informazioni sugli ordini POS",
-    "overview": "Un ordine POS è una vendita battuta in cassa. Questa pagina ne è il registro. Le righe non si creano, non si modificano e non si eliminano qui.",
+    "overview": "Un ordine POS è una vendita registrata su una cassa, o il suo rimborso. Questa pagina è l’archivio di quelle vendite; le righe sono create dalla cassa e qui non vengono né create, né modificate, né eliminate.",
     "sections": [
       {
-        "title": "Cos'è una riga",
-        "body": "La vendita si scrive quando la cassa incassa. L'elenco serve a ritrovarla.",
+        "title": "Gli stati",
         "items": [
-          "Gli stati sono bozza, pagato, annullato e rimborsato.",
-          "La riga tiene sessione, cassa, cassiere e il cliente se ne era stato associato uno.",
-          "Ristampa, dal menu di riga, invia di nuovo lo scontrino."
+          "Bozza è un carrello sospeso sulla cassa.",
+          "Pagato è una vendita conclusa. Annullato è un carrello sospeso scartato, o annullato alla chiusura forzata della sua sessione.",
+          "Rimborsato indica una vendita le cui unità sono state tutte rimborsate. Ogni rimborso è anche un ordine a sé, collegato alla vendita."
         ]
       },
       {
-        "title": "Rimborsi",
-        "body": "Un rimborso non è una modifica della vendita originale. È un altro ordine.",
+        "title": "Cosa conserva una riga",
+        "body": "L’ordine viene scritto quando la cassa incassa.",
         "items": [
-          "Una vendita pagata si rimborsa dalla cassa, per intero o per quantità di riga.",
-          "L'ordine di rimborso resta collegato alla vendita che storna.",
-          "Ogni riga di vendita ricorda quanto è già stato rimborsato, così un secondo rimborso non copre le stesse unità."
+          "Sessione, cassa, cassiere e il cliente, se associato.",
+          "Righe con prodotto, variante, quantità, prezzo unitario, sconto, quota d’imposta e quanto di ogni riga è già stato rimborsato.",
+          "Pagamenti per metodo, resto dato ed esito fiscale (codici fiscali e stato della fattura elettronica) quando la cassa fiscalizza.",
+          "Un collegamento all’ordine di prodotti duplicato che mantiene la vendita nei registri degli ordini e nei ricavi."
         ]
       },
       {
-        "title": "Dove si fa il lavoro",
-        "body": "Il denaro si muove in cassa. Questa pagina serve a cercare la vendita.",
+        "title": "Rimborsi e ristampe",
+        "body": "Il denaro si muove in cassa; questa pagina serve a ritrovare la vendita.",
         "items": [
-          "Apri il punto vendita per vendere, sospendere un carrello o rimborsare.",
-          "Apri le sessioni POS per vedere il cassetto di quella vendita.",
-          "Gli ordini di catalogo sono un altro elenco. Una vendita in cassa non compare lì."
+          "Rimborsa una vendita pagata dalla cassa, per intero o per quantità di riga. Un rimborso non può superare quanto resta su ogni riga.",
+          "Ristampa, dal menu della riga, riproduce lo scontrino.",
+          "Gli ordini di prodotti generati dalla cassa non si possono rimborsare o rendere dalla pagina Ordini di prodotti; così cassetto e giacenza restano allineati."
+        ]
+      },
+      {
+        "title": "Pagine collegate",
+        "items": [
+          "Punto di vendita per vendere, sospendere o rimborsare.",
+          "Sessioni POS per vedere il cassetto a cui apparteneva una vendita.",
+          "Movimenti di magazzino per le voci di vendita e reso di ogni vendita in cassa."
         ]
       }
     ]

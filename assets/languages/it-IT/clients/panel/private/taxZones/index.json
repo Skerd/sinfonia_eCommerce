@@ -5,24 +5,32 @@
   "help": {
     "ariaLabel": "Informazioni su Zone fiscali",
     "title": "Informazioni su Zone fiscali",
-    "overview": "Il checkout calcola l'imposta dall'indirizzo di spedizione. Ogni zona attiva di quel paese che corrisponde anche a stato e codice postale aggiunge le sue aliquote. Nome, paese e almeno un'aliquota sono obbligatori.",
+    "overview": "Le zone fiscali decidono l’imposta addebitata al checkout e la quota IVA nei prezzi di cassa. Una zona copre un paese, eventualmente ristretto a province e codici postali, e contiene una o più aliquote con nome.",
     "sections": [
       {
-        "title": "Come corrisponde un indirizzo",
-        "body": "Le zone si leggono dalla priorità più alta alla più bassa, e ogni corrispondenza si applica. La priorità non sceglie un solo vincitore.",
+        "title": "Associare un indirizzo",
+        "body": "Il checkout usa l’indirizzo di spedizione; la cassa l’indirizzo del suo primo magazzino.",
         "items": [
-          "Se elencate stati, lo stato dell'indirizzo deve essere uno di essi. Una lista vuota corrisponde a tutto il paese.",
-          "I modelli di codice postale sono facoltativi. Una lista vuota corrisponde a ogni codice. * è un jolly, per esempio 10*.",
-          "Senza paese sull'indirizzo non c'è imposta."
+          "Il paese deve corrispondere. Le province elencate restringono; nessuna provincia copre tutto il paese.",
+          "I modelli di codice postale sono facoltativi; * è l’unico jolly, ad esempio 10*.",
+          "Ogni zona attiva corrispondente si applica, la più prioritaria prima. Un indirizzo senza zona corrispondente non paga imposte."
         ]
       },
       {
-        "title": "Come si sommano le aliquote",
-        "body": "Ogni aliquota è una percentuale di una base progressiva che parte dal subtotale imponibile.",
+        "title": "Aliquote",
         "items": [
-          "Un'aliquota può valere per tutti i prodotti, solo fisici o solo digitali.",
-          "Un'aliquota composta si aggiunge alla base, quindi la successiva si calcola sul subtotale più l'imposta già aggiunta.",
-          "Un'aliquota non composta non alza la base."
+          "Ogni aliquota ha un nome, una percentuale e a cosa si applica: tutti i prodotti, solo fisici o solo digitali.",
+          "Prodotti fisici, variabili e bundle prendono le aliquote fisiche; i prodotti digitali quelle digitali; ogni prodotto prende le aliquote «tutti».",
+          "Un’aliquota composta si calcola sulla base più le imposte già aggiunte prima di essa."
+        ]
+      },
+      {
+        "title": "Come si calcola l’importo",
+        "items": [
+          "Le righe sono raggruppate in fisiche, digitali e altre, lo sconto d’ordine viene ripartito tra i gruppi in base al valore e ogni gruppo è tassato con le sue aliquote.",
+          "L’ordine conserva un dettaglio per nome e percentuale di aliquota.",
+          "I prezzi di cassa includono l’IVA: la quota d’imposta viene estratta dal prezzo invece di essere aggiunta.",
+          "Attiva e disattiva accendono e spengono la zona. L’eliminazione è logica e la zona può essere ripristinata."
         ]
       }
     ]

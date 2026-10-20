@@ -5,31 +5,39 @@
   "help": {
     "ariaLabel": "Rreth kërkesave të detyrave",
     "title": "Rreth kërkesave të detyrave",
-    "overview": "Një kërkesë detyre është një brief blerësi për oferta: titull, përshkrim, kategori, buxhet, vendndodhje dhe media. Hap oferta për 30 ditë. Ofruesit me listim aktiv në të njëjtën kategori dhe qytet mund të njoftohen.",
+    "overview": "Një kërkesë për detyrë është përshkrimi i një blerësi që u kërkon oferta ofruesve: çfarë i duhet, në cilën kategori dhe vend, me çfarë buxheti. Mbetet e hapur për oferta 30 ditë. Pranimi i një oferte e cakton dhe hap një porosi.",
     "sections": [
+      {
+        "title": "Fushat",
+        "items": [
+          "Titulli, kategoria, buxheti minimal dhe maksimal, monedha, adresa dhe imazhi kryesor janë të detyrueshëm; përshkrimi dhe galeritë janë opsionale.",
+          "Kërkuesi është kush e publikon. Kategoria dhe qyteti vendosin cilët ofrues njoftohen."
+        ]
+      },
       {
         "title": "Statuset",
         "items": [
-          "Open — pranon oferta deri në skadim.",
-          "Closed — ndaluar pa dhënie; ofertuesit në pritje njoftohen.",
-          "Awarded — një ofertë u pranua; close/reopen nuk e ndryshojnë më statusin."
+          "E hapur: pranon oferta deri në skadim.",
+          "E mbyllur: nuk pranon më oferta, me zgjedhjen e kërkuesit ose sepse kaluan 30 ditë. Një proces çdo orë mbyll kërkesat e skaduara.",
+          "E caktuar: një ofertë u pranua; statusi nuk mund të ndryshojë më."
         ]
       },
       {
         "title": "Veprimet",
+        "body": "Vetëm kërkuesi, ose një administrator, mund ta ndryshojë statusin.",
         "items": [
-          "Close — nga open; njofton përdoruesit që kanë ende ofertë në pritje.",
-          "Reopen — nga closed; rivendos dritaren 30-ditore.",
-          "Notify all — alarmon përsëri ofruesit që përputhen.",
-          "Vetëm kërkuesi (ose admin) mund ta ndryshojë statusin kështu."
+          "Mbyll: nga e hapur. Të gjithë ata me ofertë në pritje njoftohen.",
+          "Rihap: nga e mbyllur. Rinis dritaren 30-ditore, që një kërkesë e skaduar të mos mbyllet sërish menjëherë.",
+          "Njofto të gjithë: njofton sërish çdo ofrues me një listim aktiv në të njëjtën kategori dhe qytet."
         ]
       },
       {
-        "title": "Si lidhet",
+        "title": "Ofertat dhe caktimi",
         "items": [
-          "Ofertat lidhen me kërkesën; pranimi i një oferte e jep dhe krijon porosi.",
-          "Kategoria dhe qyteti drejtojnë matching — mbajini të sakta.",
-          "Soft delete i disponueshëm; restore e kthen rreshtin."
+          "Ofruesit bëjnë oferta sa kohë është e hapur dhe e paskaduar; askush nuk mund të bëjë ofertë për kërkesën e vet.",
+          "Pranimi i një oferte refuzon të tjerat, e shënon kërkesën si të caktuar dhe hap një porosi në pritje mes kërkuesit dhe ofertuesit.",
+          "Çdo rresht tregon sa oferta aktive ka. Joadministratorët shohin kërkesat e veta.",
+          "Fshirja është e butë dhe kërkesa mund të rikthehet."
         ]
       }
     ]

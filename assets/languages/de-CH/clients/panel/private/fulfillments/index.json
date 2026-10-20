@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Über Fulfillments",
     "title": "Über Fulfillments",
-    "overview": "Ein Fulfillment ist eine Sendung einer Produktbestellung. Das Versenden einer Bestellung legt eines an. Sie können auch hier eines anlegen. Der Status ist ausstehend, versendet, geliefert oder fehlgeschlagen, und er speist die Bestellung.",
+    "overview": "Eine Erfüllung ist eine Sendung einer Produktbestellung: welche Bestellzeilen und wie viele Einheiten mit welchem Versanddienst und welcher Sendungsverfolgung unterwegs sind. Das Versenden einer Bestellung erstellt sie automatisch; Sie können sie auch hier anlegen, um eine Bestellung auf mehrere Pakete aufzuteilen. Ihr Status — ausstehend, versendet, zugestellt oder gescheitert — bestimmt den Versand- und Zustellstatus der Bestellung.",
     "sections": [
       {
-        "title": "Wie eine Sendung sich bewegt",
-        "body": "Versenden, Liefern und Fehlschlagen sind nur aus dem hier genannten Status zulässig.",
+        "title": "Eine Sendung anlegen",
+        "body": "Eine Sendung kann nur abdecken, was noch nicht versendet ist.",
         "items": [
-          "Versenden geht nur aus ausstehend, und nur wenn die Bestellung selbst nicht noch ausstehend, storniert oder erstattet ist.",
-          "Versenden verbraucht den für diese Positionen reservierten Bestand und kann die Bestellung auf versendet setzen.",
-          "Liefern geht nur aus versendet. Die Lieferung der letzten offenen Sendung kann die Bestellung auf geliefert setzen.",
-          "Fehlschlagen geht aus ausstehend oder versendet. Eine bereits abgegangene Sendung als fehlgeschlagen zu markieren macht diese Sendung rückgängig. Ist die Bestellung storniert oder erstattet, wird noch gehaltener Bestand freigegeben."
+          "Wählen Sie die Bestellung, dann die Zeilen und je die Menge. Jede Zeile muss zu dieser Bestellung gehören, und die Menge darf nicht übersteigen, was frühere Sendungen offen gelassen haben.",
+          "Eine hier angelegte Sendung beginnt als ausstehend: Noch ist nichts unterwegs, und der Bestand ist unberührt.",
+          "Nach dem Anlegen sind Bestellung und Zeilen fest. Versanddienst, Tracking, Daten und Notizen bleiben bearbeitbar."
         ]
       },
       {
-        "title": "Was Sie darauf festhalten",
-        "body": "Spediteur und Tracking gehören auf die Sendung, nicht in den Kopf der Bestellung.",
+        "title": "Wie sich eine Sendung bewegt",
+        "body": "Versenden, Zustellen und Scheitern sind Aktionen, jede nur aus dem hier genannten Status erlaubt. Sie brauchen die Berechtigung, den Sendungsstatus zu schreiben.",
         "items": [
-          "Spediteur, Sendungsnummer und Tracking-Link sind die Angaben, die der Kunde beim Versand erhält.",
-          "Versendet am, voraussichtliche Lieferung und geliefert am markieren die Zeitachse.",
-          "Die Positionen sind Mengen der Bestellartikel. Eine spätere Sendung kann abdecken, was eine frühere offen gelassen hat."
+          "Versenden geht nur aus ausstehend und nur, wenn die Bestellung nicht ausstehend, storniert oder erstattet ist. Es speichert die Versandzeit und das eingegebene Tracking.",
+          "Das Versenden nimmt die Einheiten aus dem Bestand: Die Reservierungen der Bestellung werden in den Lagern verbraucht, in denen sie reserviert wurden. Nie reservierte Einheiten werden sofort reserviert; reicht der Bestand nicht, wird die Sendung als nicht vorrätig abgelehnt.",
+          "Zustellen geht nur aus versendet. Wird die letzte nicht gescheiterte Sendung zugestellt, wird die Bestellung zugestellt und der Kunde einmal informiert.",
+          "Scheitern geht aus ausstehend oder versendet. Scheitert ein bereits unterwegs befindliches Paket, kommen seine Einheiten zurück an Lager und werden wieder für die Bestellung reserviert, damit eine neue Sendung sie nehmen kann. Ist die Bestellung bis dahin storniert oder erstattet, werden diese Einheiten stattdessen freigegeben."
         ]
       },
       {
-        "title": "Wie es zur Bestellung steht",
-        "body": "Der Fulfillment-Status der Bestellung wird aus ihren Sendungen abgeleitet. Ein Teilsversand lässt sie teilweise erfüllt.",
+        "title": "Was die Bestellung sieht",
+        "body": "Der Erfüllungsstatus der Bestellung wird bei jeder Änderung einer Sendung aus ihren Sendungen berechnet.",
         "items": [
-          "Öffnen Sie die Bestellung aus der Zeile, wenn Sie Zahlung, Storno oder Erstattung brauchen. Das bleibt an der Bestellung.",
-          "Eine empfangene Rückgabe legt die Ware in das Lager zurück, aus dem die Position versendet wurde.",
-          "Das Löschen ist ein Soft-Delete und das Fulfillment kann wiederhergestellt werden."
+          "Jede Zeile voll versendet macht die Bestellung erfüllt; einige Zeilen versendet machen sie teilweise erfüllt.",
+          "Alle Zeilen versendet setzt die Bestellung auf versendet. Eine voll versendete Bestellung, deren Sendung scheitert, geht zurück auf in Bearbeitung.",
+          "Jede Änderung fügt der Zeitleiste der Bestellung einen Eintrag hinzu."
+        ]
+      },
+      {
+        "title": "Was Sie darauf erfassen",
+        "body": "Das Tracking gehört zur Sendung, nicht zur Bestellung.",
+        "items": [
+          "Versanddienst, Sendungsnummer und Tracking-Link erhält der Kunde in der Versandnachricht.",
+          "Voraussichtliche Zustellung, versendet am und zugestellt am markieren die Zeitleiste. Notizen sind für Mitarbeitende.",
+          "Jede Zeile zeigt das versendete Produkt mit Titel und Bild."
+        ]
+      },
+      {
+        "title": "Verwandte Seiten",
+        "items": [
+          "Öffnen Sie die Bestellung für Zahlung, Stornierung oder Erstattung; diese bleiben bei der Bestellung.",
+          "Eine empfangene Retourenanfrage bringt Ware in das Lager zurück, aus dem die Zeile versendet wurde.",
+          "Das Löschen einer Sendung ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

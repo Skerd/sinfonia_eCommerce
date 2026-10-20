@@ -5,24 +5,32 @@
   "help": {
     "ariaLabel": "Rreth Zonat tatimore",
     "title": "Rreth Zonat tatimore",
-    "overview": "Pagesa e llogarit tatimin nga adresa e transportit. Çdo zonë aktive e atij vendi që përputhet edhe me shtetin dhe kodin postar i shton normat e saj. Emri, vendi dhe të paktën një normë janë të detyrueshme.",
+    "overview": "Zonat tatimore vendosin tatimin e tarifuar në checkout dhe pjesën e TVSH-së brenda çmimeve në arkë. Një zonë mbulon një shtet, opsionalisht të kufizuar në rajone dhe kode postare, dhe ka një ose më shumë norma me emër.",
     "sections": [
       {
-        "title": "Si përputhet një adresë",
-        "body": "Zonat lexohen nga prioriteti më i lartë te më i ulëti, dhe çdo përputhje zbatohet. Prioriteti nuk zgjedh një fitues të vetëm.",
+        "title": "Përputhja e një adrese",
+        "body": "Checkout-i përdor adresën e dërgesës; arka adresën e magazinës së saj të parë.",
         "items": [
-          "Nëse listoni shtete, shteti i adresës duhet të jetë njëri prej tyre. Lista bosh përputhet me gjithë vendin.",
-          "Modelet e kodit postar janë opsionale. Një listë bosh përputhet me çdo kod. * është një shenjë e lirë, për shembull 10*.",
-          "Pa vend në adresë nuk ka tatim."
+          "Shteti duhet të përputhet. Rajonet e listuara kufizojnë; pa rajone mbulohet gjithë shteti.",
+          "Modelet e kodit postar janë opsionale; * është i vetmi shenjë e lirë, për shembull 10*.",
+          "Çdo zonë aktive që përputhet zbatohet, me përparësinë më të lartë së pari. Një adresë pa zonë që përputhet nuk paguan tatim."
         ]
       },
       {
-        "title": "Si grumbullohen normat",
-        "body": "Çdo normë është një përqindje e një baze që fillon si nëntotali i tatueshëm.",
+        "title": "Normat",
         "items": [
-          "Një normë mund të zbatohet te të gjitha produktet, vetëm fizike, ose vetëm dixhitale.",
-          "Një normë e përbërë i shtohet bazës, kështu norma tjetër llogaritet mbi nëntotalin plus tatimin tashmë të shtuar.",
-          "Një normë jo e përbërë nuk e ngre bazën."
+          "Çdo normë ka një emër, një përqindje dhe për çfarë vlen: të gjitha produktet, vetëm fizike ose vetëm dixhitale.",
+          "Produktet fizike, të ndryshueshme dhe paketat marrin normat fizike; produktet dixhitale normat dixhitale; çdo produkt merr normat «të gjitha».",
+          "Një normë e përbërë llogaritet mbi bazën plus tatimet e shtuara tashmë para saj."
+        ]
+      },
+      {
+        "title": "Si llogaritet shuma",
+        "items": [
+          "Rreshtat grupohen në fizikë, dixhitalë dhe të tjerë, zbritja e porosisë ndahet mes grupeve sipas vlerës, dhe çdo grup tatohet me normat e veta.",
+          "Porosia mban një zbërthim sipas emrit dhe përqindjes së normës.",
+          "Çmimet në arkë përfshijnë TVSH-në: pjesa e tatimit nxirret nga çmimi në vend që t’i shtohet.",
+          "Aktivizo dhe çaktivizo e ndezin dhe e fikin zonën. Fshirja është e butë dhe zona mund të rikthehet."
         ]
       }
     ]

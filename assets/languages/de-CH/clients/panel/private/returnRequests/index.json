@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Über Rückgabeanfragen",
     "title": "Über Rückgabeanfragen",
-    "overview": "Eine Rückgabeanfrage verlangt, Ware zurückzusenden, zu tauschen oder eine Produktbestellung zu erstatten. Der Typ ist Rückgabe, Tausch oder Erstattung. Der Status läuft ausstehend, genehmigt, abgelehnt, empfangen, abgeschlossen.",
+    "overview": "Eine Retourenanfrage bittet darum, Ware zurückzusenden, umzutauschen oder Geld für eine Produktbestellung zurückzuerhalten. Ihr Typ ist Rücksendung, Umtausch oder Erstattung, und ihr Status läuft ausstehend → genehmigt oder abgelehnt → empfangen → abgeschlossen. Kunden stellen sie in ihrem Konto; Mitarbeitende können sie auch hier anlegen.",
     "sections": [
       {
-        "title": "Der Weg",
-        "body": "Genehmigen und Ablehnen sind der Entscheid. Empfangen und Abschliessen sind das, was nach einem Ja passiert. Jeder Schritt wird abgelehnt, wenn die Anfrage nicht im vorherigen Zustand ist.",
+        "title": "Was eine Anfrage enthält",
+        "body": "Eine Anfrage zeigt immer auf eine Bestellung und bestimmte Zeilen davon.",
         "items": [
-          "Genehmigen und Ablehnen gelten nur für eine ausstehende Anfrage. Beide halten fest, wer sie wann erledigt hat, und der Kunde wird informiert.",
-          "Beim Genehmigen können Sie einen Erstattungsbetrag setzen. Er darf den Wert der Positionen auf der Anfrage nicht übersteigen.",
-          "Ablehnen schliesst die Anfrage und bewegt keinen Bestand.",
-          "Empfangen gilt nur für eine genehmigte Anfrage. Abschliessen erst, nachdem sie empfangen wurde."
+          "Jede Zeile ist ein Bestellartikel, eine Menge und ein Grund. Nur versendete Mengen können beansprucht werden, und von einer anderen offenen Anfrage beanspruchte Einheiten sind nicht erneut verfügbar.",
+          "Der Erstattungsbetrag ist optional und darf nie den Wert der beanspruchten Zeilen übersteigen.",
+          "Ein Kassenverkauf kann hier nicht retourniert werden; er wird an der Kasse erstattet.",
+          "Nach dem Stellen sind die Zeilen fest. Kundennotiz und Admin-Notiz bleiben auf der Anfrage.",
+          "Mitarbeitende mit Zugriff auf Retouren werden benachrichtigt, wenn eine neue Anfrage gespeichert wird."
         ]
       },
       {
-        "title": "Was Empfangen und Abschliessen mit Bestand und Geld tun",
-        "body": "Eine reine Erstattung hat nichts, das ins Regal zurückgeht. Eine Rückgabe oder ein Tausch schon.",
+        "title": "Entscheiden: genehmigen oder ablehnen",
+        "body": "Beides geht nur bei einer ausstehenden Anfrage. Beides speichert, wer wann entschieden hat, und der Kunde wird informiert.",
         "items": [
-          "Beim Empfangen legt eine Rückgabe oder ein Tausch die Mengen zurück auf Lager, in das Lager, aus dem jede Position versendet wurde, und schreibt eine Rückgabebewegung. Ein Bundle kommt als seine Komponenten zurück.",
-          "Eine Position, die nie Bestand genommen hat, oder deren Lagerzeile fehlt, wird an der Bestellung vermerkt statt wieder eingelagert.",
-          "Abschliessen zahlt den vereinbarten Betrag über die Erstattung der Bestellung, bei Rückgabe oder Erstattung. Ein Tausch zahlt nichts zurück."
+          "Genehmigen kann den Erstattungsbetrag setzen oder korrigieren, weiterhin begrenzt auf den Wert der beanspruchten Zeilen, und eine Admin-Notiz hinzufügen.",
+          "Ablehnen schliesst die Anfrage mit einem optionalen Grund. Es bewegt weder Bestand noch Geld."
         ]
       },
       {
-        "title": "Woran die Anfrage hängt",
-        "body": "Die Anfrage zeigt immer auf eine Bestellung und auf bestimmte Positionen dieser Bestellung.",
+        "title": "Empfangen: Ware kommt zurück",
+        "body": "Empfangen geht nur bei einer genehmigten Anfrage.",
         "items": [
-          "Jede Position ist ein Bestellartikel, eine Menge und ein Grund.",
-          "Kundennotiz und Admin-Notiz bleiben auf der Anfrage. Die Geldbewegung, falls es eine gibt, ist die Erstattung der Bestellung.",
-          "Das Löschen ist ein Soft-Delete und die Anfrage kann wiederhergestellt werden."
+          "Bei Rücksendung oder Umtausch kommen die beanspruchten Einheiten im Lager, aus dem jede Zeile versendet wurde, zurück an Lager, und für jede wird eine Rückgabe-Bewegung geschrieben. Ein Bundle kommt als seine Komponenten zurück.",
+          "Eine Zeile, deren Verkauf nie Bestand genommen hat (nicht geführtes Produkt) oder deren Bestandszeile fehlt, wird in der Zeitleiste der Bestellung vermerkt statt eingelagert.",
+          "Eine reine Erstattungsanfrage hat nichts zu empfangen; Empfangen setzt nur den Status weiter."
+        ]
+      },
+      {
+        "title": "Abschliessen: Geld geht zurück",
+        "body": "Abschliessen geht erst, nachdem die Anfrage empfangen wurde.",
+        "items": [
+          "Bei Rücksendung oder Erstattung mit Erstattungsbetrag führt der Abschluss die Erstattung der Bestellung um diesen Betrag aus, bei Kartenzahlungen über das Gateway. Dafür ist zusätzlich die Berechtigung nötig, den Zahlungsstatus der Bestellung zu schreiben.",
+          "Ein Umtausch erstattet nichts; der Ersatz wird als neue Erfüllungsarbeit behandelt.",
+          "Deckt die Erstattung den gesamten Rest der Bestellung, gelten auch die Regeln der vollen Erstattung."
+        ]
+      },
+      {
+        "title": "Verwandte Seiten",
+        "items": [
+          "Die Bestellung zeigt die Erstattung, die Einlagerungs-Hinweise und die Zeitleiste.",
+          "Lagerbewegungen zeigen die Rückgabe-Einträge mit dieser Anfrage als Referenz.",
+          "Das Löschen einer Anfrage ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

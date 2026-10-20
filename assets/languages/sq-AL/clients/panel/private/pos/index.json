@@ -4,33 +4,63 @@
   "help": {
     "ariaLabel": "Rreth pikës së shitjes",
     "title": "Rreth pikës së shitjes",
-    "overview": "Pika e shitjes shet nga një arkë dyqani. Kjo faqe është arka, jo një listë. Zgjidhni një arkë, hapni një sesion me paratë që janë tashmë në sirtar, pastaj shisni. Pasi sesioni është i hapur, arka ka udhëzuesin e vet të shkurtoreve.",
+    "overview": "Pika e shitjes është arka e dyqanit. Kjo faqe është vetë arka, jo një listë. Zgjidhni një arkë, hapni një seancë me paratë që janë tashmë në sirtar, pastaj shisni. Çdo shitje e paguar bëhet porosi POS, merr stokun drejtpërdrejt nga magazinat e arkës dhe dyfishohet si porosi produkti e dorëzuar dhe e paguar për kontabilitetin.",
     "sections": [
       {
-        "title": "Hapja",
-        "body": "Një arkë vjen nga konfigurimet POS. Ky ekran hap vetëm një që është tashmë e ngritur.",
+        "title": "Hapja e arkës",
+        "body": "Një arkë është një konfigurim POS i krijuar te Konfigurimet. Ky ekran hap vetëm një arkë që ekziston, është aktive dhe nuk është në pauzë.",
         "items": [
-          "Zgjidhni arkën, pastaj hapni një sesion me gjendjen e hapjes.",
-          "Hyrja dhe dalja e parasë regjistrojnë lëvizjet e mëvonshme të sirtarit. Mbyllja numëron sirtarin dhe e mbyll sesionin.",
-          "Ato sesione listohen te Sesionet POS. Nuk i krijoni nga ajo listë."
+          "Zgjidhni arkën, pastaj hapni një seancë me numërimin e parave fillestare. Për çdo arkë mund të jetë e hapur vetëm një seancë njëherësh.",
+          "Arka ka nevojë për një monedhë dhe të paktën një magazinë për t’u hapur dhe për të shitur.",
+          "Pasi hapet, arka tregon udhëzuesin e vet të shkurtoreve të tastierës."
         ]
       },
       {
         "title": "Shitja",
-        "body": "Katalogu në arkë janë produktet e kësaj kompanie. Një rresht merr stok nga magazina e arkës.",
+        "body": "Katalogu janë produktet aktive të kësaj kompanie. Çmimet vijnë nga katalogu; arkëtari nuk mund të shkruajë çmim.",
         "items": [
-          "Kërkoni ose skanoni një barkod. Variantet zgjidhen para se të shtohet rreshti.",
-          "Mund të mbani një shportë dhe ta rifilloni, të lidhni një klient, të zbritni një rresht ose porosinë, të ndani pagesën dhe të rimbursoni një shitje të paguar.",
-          "Një rimbursim këtu bëhet një porosi POS më vete, e lidhur me shitjen, dhe del te Porositë POS."
+          "Kartat dhuratë dhe shkarkimet dixhitale nuk shiten në arkë; lëshohen vetëm nga porositë online.",
+          "Kërkoni, ose skanoni një barkod; barkodi i një varianti shton drejtpërdrejt atë variant. Një produkt i ndryshueshëm kërkon së pari variantin.",
+          "Çmimet në arkë përfshijnë TVSH-në. Pjesa e tatimit e çdo rreshti llogaritet nga zonat tatimore të adresës së magazinës së parë të arkës, pas pjesës së rreshtit në zbritjen e porosisë.",
+          "Një rresht merr stokun nga magazinat e arkës me radhë, duke marrë nga secila derisa të arrihet sasia. Nëse nuk mjaftojnë, shitja refuzohet, përveç kur arka lejon shitjen mbi stok.",
+          "Zbritjet e rreshtit dhe të porosisë dhe ndryshimet e sasisë lejohen vetëm kur arka i lejon. Me PIN për zbritje aktiv, një shitje me zbritje kërkon PIN-in e menaxherit.",
+          "Lidhni një klient për ta regjistruar shitjen në emrin e tij."
         ]
       },
       {
-        "title": "Kur arka nuk shet",
-        "body": "Ndalimi dhe joaktivja janë bllokime, jo gabime të shportës.",
+        "title": "Marrja e pagesës",
+        "body": "Një shitje mund të ndahet në disa metoda pagese.",
         "items": [
-          "Një arkë e ndalur nuk mund të shesë. Mund të hidhni shportat e mbajtura dhe të mbyllni sesionin. Një ndalim i gjithë kompanisë bllokon çdo arkë, jo vetëm këtë.",
-          "Një arkë joaktive nuk mund të hapet.",
-          "Nëse për arkën nuk ka fiskalizim aktiv, shitjet mbi të nuk fiskalizohen."
+          "Pagesat duhet të mbulojnë totalin. Paratë e dhëna tepër kthehen si kusur dhe në sirtar hyn vetëm paraja neto.",
+          "Një metodë karte me terminal tarifon së pari terminalin: manual do të thotë që arkëtari konfirmon në një pajisje të jashtme; HTTP lokal ia dërgon shumën urës së terminalit dhe pret miratim, refuzim ose skadim kohe.",
+          "Pagesa shkruan porosinë POS si të paguar, lëvizjet e stokut dhe porosinë e produktit të dyfishuar. Një kërkesë e përsëritur pagese për të njëjtën shitje njihet dhe nuk tarifohet dy herë.",
+          "Nëse arka ka një konfigurim fiskal aktiv me certifikatë, shitja fiskalizohet në CIS dhe regjistrohet një e-faturë. Shitja përfundon edhe nëse CIS kthen gabim; rezultati ruhet te porosia."
+        ]
+      },
+      {
+        "title": "Shportat e pezulluara",
+        "body": "Pezullo e vendos shportën aktuale si porosi POS në draft, që të shërbeni dikë tjetër.",
+        "items": [
+          "Një shportë e pezulluar mund të rimerret më vonë në të njëjtën arkë, ose të hidhet.",
+          "Një seancë nuk mund të mbyllet sa kohë ka shporta të pezulluara; rimerrini ose hidhini më parë."
+        ]
+      },
+      {
+        "title": "Rimbursimet",
+        "body": "Një rimbursim është porosi POS më vete, e lidhur me shitjen që kthen.",
+        "items": [
+          "Rimburso duke zgjedhur sasi rreshtash, ose rimburso gjithë pjesën e mbetur të shitjes. Një shumë e pjesshme pa rreshta refuzohet, sepse arka nuk do ta dinte çfarë të kthejë në stok.",
+          "Çdo rresht shitjeje mban mend çfarë është rimbursuar tashmë, që të njëjtat njësi të mos rimbursohen dy herë. Zbritja e porosisë ndahet në rreshtat e rimbursuar.",
+          "Njësitë e rimbursuara kthehen në magazinat nga i mori shitja; pjesa tepër shkon te magazina e parë e arkës.",
+          "Një rimbursim në para dalë nga sirtari. Me PIN për rimbursim aktiv, kërkohet PIN-i i menaxherit."
+        ]
+      },
+      {
+        "title": "Sirtari dhe mbyllja",
+        "items": [
+          "Futja dhe nxjerrja e parave regjistrojnë lëvizje sirtari me arsye; nuk janë shitje. Një nxjerrje nuk mund të marrë më shumë se ç’ka sirtari dhe, me PIN për nxjerrje parash aktiv, kërkon PIN-in e menaxherit.",
+          "Mbyllja kërkon paratë e numëruara. Nëse ndryshojnë nga shuma e pritur me një qindarkë ose më shumë, kërkohet një arsye dhe diferenca shkruhet në seancë.",
+          "Vënia e një arke në pauzë e ndalon të marrë pagesa dhe ia mbyll me forcë seancën e hapur, duke anuluar shportat e pezulluara. Vënia e të gjitha arkave në pauzë bën të njëjtën gjë për çdo arkë të kompanisë."
         ]
       }
     ]

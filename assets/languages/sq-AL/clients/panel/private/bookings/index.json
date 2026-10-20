@@ -5,23 +5,22 @@
   "help": {
     "ariaLabel": "Rreth rezervimeve",
     "title": "Rreth rezervimeve",
-    "overview": "Një booking planifikon një dritare kohe për një porosi marketplace me një ofrues — fillim, mbarim dhe zonë orare. Është bashkëngjitja e kalendarit për punë shërbimi në orarin e rënë dakord.",
+    "overview": "Një rezervim e vendos një porosi tregu në kalendar: një orë fillimi dhe mbarimi, me zonën kohore të rënë dakord. Përdoreni kur puna bëhet me takim, jo vetëm brenda një afati.",
     "sections": [
       {
-        "title": "Çfarë vendosni",
+        "title": "Krijimi",
         "items": [
-          "Porosia lidh booking me angazhimin.",
-          "Ofruesi është ai që pritet të dorëzojë në atë dritare.",
-          "Fillimi dhe mbarimi përcaktojnë slot-in; timezone ruan si duhet të lexohet.",
-          "Krijoni booking kur porosia ka nevojë për takim konkret, jo vetëm datë dorëzimi."
+          "Secila palë e porosisë mund ta rezervojë, sa kohë porosia është e pranuar ose në vazhdim.",
+          "Një rezervim për porosi. Ofruesi merret nga porosia.",
+          "Mbarimi duhet të jetë pas fillimit."
         ]
       },
       {
-        "title": "Si qëndron me porositë",
+        "title": "Ndryshimi",
         "items": [
-          "Porositë ndjekin paratë dhe statusin e dorëzimit; booking ndjekin kur punohet.",
-          "Hapni porosinë e lidhur për accept, start, deliver, dispute ose cancel.",
-          "Soft delete e fsheh booking; restore e kthen."
+          "Vetëm ofruesi, ose një administrator, e riplanifikon.",
+          "Fshirja është e butë dhe rezervimi mund të rikthehet.",
+          "Joadministratorët shohin vetëm rezervimet e porosive të veta."
         ]
       }
     ]

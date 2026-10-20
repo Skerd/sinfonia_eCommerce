@@ -58,5 +58,40 @@
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
     "deletedBy": "Deleted by"
+  },
+  "help": {
+    "ariaLabel": "About Collections",
+    "title": "About Collections",
+    "overview": "A collection is a merchandising group of products, such as \"Summer sale\" or \"New arrivals\", shown on the storefront and usable as a target for discounts and pricing rules. It is either manual (you pick the products) or dynamic (rules pick them).",
+    "sections": [
+      {
+        "title": "Manual or dynamic",
+        "body": "The type decides where membership comes from.",
+        "items": [
+          "Manual: the collection contains exactly the products you add.",
+          "Dynamic: membership is computed live from rules, and only active products qualify. A dynamic collection with no rules contains nothing.",
+          "Match all requires every rule; match any requires at least one."
+        ]
+      },
+      {
+        "title": "Rules",
+        "body": "Each rule is a field, an operator, and a value.",
+        "items": [
+          "Tag, brand, vendor, and product type support equals, not equals, contains, not contains, and starts with.",
+          "Category supports equals (or contains) and not equals (or not contains) against the product's categories.",
+          "Price supports equals, not equals, greater than, and less than.",
+          "Inventory level is accepted but not applied yet; a rule on it is ignored."
+        ]
+      },
+      {
+        "title": "Storefront and pricing",
+        "items": [
+          "Activate and deactivate set whether the collection is visible on the storefront. A hidden collection is not listed or browsable, but still exists for discounts and pricing rules.",
+          "Discounts and pricing rules aimed at a collection use the same membership the storefront shows.",
+          "Name, description, main image, position, and SEO title and description shape the collection page.",
+          "Deleting is a soft delete and it can be restored."
+        ]
+      }
+    ]
   }
 }

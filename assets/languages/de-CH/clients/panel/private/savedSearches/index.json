@@ -5,33 +5,33 @@
   "help": {
     "ariaLabel": "Über Gespeicherte Suchen",
     "title": "Über Gespeicherte Suchen",
-    "overview": "Eine gespeicherte Suche merkt sich einen Katalogfilter, den ein Kunde erneut ausführen kann. Sie ist kein Produkt und keine Bestellung. Sie merkt sich, wie der Katalog eingegrenzt werden sollte.",
+    "overview": "Eine gespeicherte Suche ist ein Katalogfilter, den ein Kunde benannt hat, um ihn erneut auszuführen. Sie ist kein Produkt, keine Bestellung und keine Kollektion; sie merkt sich nur, wie der Katalog eingegrenzt wurde.",
     "sections": [
       {
         "title": "Was gespeichert wird",
-        "body": "Der Name ist die Bezeichnung. Der Rest ist der Filter.",
+        "body": "Der Name ist die Bezeichnung; der Rest ist der Filter.",
         "items": [
-          "Der Name ist erforderlich.",
-          "Kategorien können mehrere sein. Die Kollektion ist eine.",
-          "Mindestpreis, Höchstpreis und Sortierung sind optional. Leere werden einfach nicht angewendet."
+          "Name ist Pflicht.",
+          "Kategorien können mehrere sein; Kollektion ist eine.",
+          "Mindestpreis, Höchstpreis und Sortierung sind optional. Ein leerer Wert wird einfach nicht angewendet.",
+          "Der Kunde ist der Besitzer der Suche."
         ]
       },
       {
         "title": "Wessen Suchen diese Seite zeigt",
-        "body": "Dieselben Daten werden auf zwei Arten gelistet.",
+        "body": "Dieselben Datensätze werden auf zwei Arten gelistet.",
         "items": [
-          "Aus dem eCommerce-Menü listet diese Seite jede gespeicherte Suche der Firma, und eine neue fragt, welchem Kunden sie gehört.",
+          "Aus dem eCommerce-Menü listet diese Seite jede gespeicherte Suche der Firma, und eine neue fragt, zu welchem Kunden sie gehört.",
           "Als eigene Liste eines Kunden zeigt sie nur seine, und eine neue Suche wird unter diesem Kunden abgelegt.",
-          "Das Löschen ist ein Soft-Delete und die Suche kann wiederhergestellt werden."
+          "Das Löschen einer gespeicherten Suche ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       },
       {
         "title": "Was sie nicht tut",
-        "body": "Eine Suche zu speichern ändert den Katalog nicht.",
+        "body": "Das Speichern einer Suche ändert nichts im Katalog.",
         "items": [
-          "Sie blendet keine Produkte aus, ändert keinen Preis und legt keine Kollektion an.",
-          "Kategorien, Kollektionen und Preise werden auf jenen Seiten bearbeitet. Diese Zeile zeigt nur darauf.",
-          "Erneutes Ausführen wendet denselben Filter auf den Katalog an, wie er jetzt ist, nicht wie er beim Speichern war."
+          "Sie blendet keine Produkte aus, ändert keine Preise und legt keine Kollektion an.",
+          "Erneut ausgeführt, wendet sie denselben Filter auf den Katalog an, wie er jetzt ist, nicht wie er beim Speichern war."
         ]
       }
     ]

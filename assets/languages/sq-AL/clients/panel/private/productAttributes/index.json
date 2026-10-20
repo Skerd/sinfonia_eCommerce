@@ -5,15 +5,24 @@
   "help": {
     "ariaLabel": "Rreth Atributet e produktit",
     "title": "Rreth Atributet e produktit",
-    "overview": "Atributet janë lista opsionesh të përbashkëta, si madhësia ose ngjyra. Një variant zgjedh më vonë një vlerë nga çdo atribut që e identifikon atë SKU. Emri është i detyrueshëm.",
+    "overview": "Atributet janë lista opsionesh të përbashkëta si Madhësia ose Ngjyra. Një variant zgjedh një vlerë nga çdo atribut që e përcakton, ndaj atributi është ai që e kthen një produkt në disa SKU.",
     "sections": [
       {
-        "title": "Si bëhen opsionet një SKU",
-        "body": "Vlerat janë zgjedhjet, për shembull S, M dhe L. Mund të ruani deri në 50 vlera. Pozicioni rendit atributet.",
+        "title": "Fushat",
         "items": [
-          "I dukshëm në faqen e produktit e shfaq listën në dyqan. Nuk e ndryshon çmimin.",
-          "Përdoret për variante e shënon atributin si një që e ndan produktin në SKU. Varianti ruan atributin dhe vlerën e zgjedhur.",
-          "Shporta llogarit çmimin e variantit, ose çmimin e produktit kur nuk ka variant."
+          "Emri është i detyrueshëm. Vlerat janë zgjedhjet që shohin blerësit, për shembull S, M, L; deri në 50.",
+          "I dukshëm në faqen e produktit e shfaq atributin te detajet e produktit. Nuk ndryshon çmimet.",
+          "I përdorur për variante e shënon si atribut që i ndan produktet në SKU.",
+          "Pozicioni rendit atributet në faqen e produktit dhe në zgjedhësin e varianteve."
+        ]
+      },
+      {
+        "title": "Si e përdorin variantet",
+        "items": [
+          "Çdo variant ruan çifte atribut-vlerë. Dy variante aktive të të njëjtit produkt nuk mund të kenë të njëjtën kombinim.",
+          "Shporta dhe arka tarifojnë çmimin e variantit, ose të produktit kur varianti nuk ka.",
+          "Një atribut i përdorur nga ndonjë variant aktiv nuk mund të fshihet. Hiqeni së pari nga ato variante.",
+          "Fshirja është e butë dhe atributi mund të rikthehet."
         ]
       }
     ]

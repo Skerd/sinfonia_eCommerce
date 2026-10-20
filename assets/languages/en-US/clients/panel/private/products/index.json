@@ -5,38 +5,70 @@
   "help": {
     "ariaLabel": "About Products",
     "title": "About Products",
-    "overview": "A product is one sellable catalog item for this company. The shop sells it only while the status is active. Draft is the working copy. Archived is off sale and can come back as a draft.",
+    "overview": "A product is one sellable catalog item of this company. The shop and the till sell it only while its status is active. Draft is the working copy nobody can buy, and archived takes it off sale without losing it. Everything the storefront shows about the item — price, media, stock, SEO, related items — is edited here.",
     "sections": [
       {
         "title": "What the type changes",
-        "body": "The type decides how the item is sold and how stock moves. It is set on the product and stays the frame for pricing, shipping, and inventory.",
+        "body": "The type is the frame for pricing, shipping, stock, and what happens after payment. Choose it first; most other fields depend on it.",
         "items": [
-          "Physical ships and can track inventory, weight, and dimensions.",
-          "Digital is delivered as a download. A full refund of the order expires those downloads.",
-          "A service is sold without a shipment.",
-          "Variable is sold through its variants. A variant with no price of its own uses the product price.",
-          "A bundle is a set of other products. When stock moves, the bundle is opened one level. Each component must be a live product of this company, and it cannot itself be a bundle.",
-          "A gift card is sold as store credit."
+          "Physical ships to an address and is stock-tracked. It carries weight, dimensions, shipping class, and a hazmat flag; weight-based shipping rates use the weight.",
+          "Variable is sold through its variants (size, colour, and so on). Each variant is its own SKU with its own stock row. A variant without its own price uses the product price.",
+          "Digital is delivered as a download. Payment issues a download entitlement, limited by the download limit and the expiry days. A full refund of the order expires those downloads.",
+          "Service is sold without a shipment and without stock.",
+          "Bundle is a set of other products with a quantity each. It holds no stock itself: when stock moves, the bundle is opened one level into its components. Each component must be a live product of this company and cannot itself be a bundle.",
+          "Gift card is sold as store credit. Payment issues one card per unit, with a balance equal to the unit price. Gift-card lines are never discounted and never count toward discount minimums."
         ]
       },
       {
         "title": "Status and the row actions",
-        "body": "Publish, archive, and revert to draft change status. Each one is refused when the product is not in the state that action expects.",
+        "body": "Status is not changed by a plain edit. Publish, archive, and revert to draft are actions, and each one is refused when the product is not in the state it expects.",
         "items": [
-          "Publish is only from draft. A product without variants must already have a price. The first publish records the publish date.",
-          "Archive is from draft or active and takes the product off sale.",
-          "Revert to draft is only from archived. It clears the publish date so the product is not put straight back on sale.",
-          "Duplicate copies the details into a new draft. The title is the original plus \" (Copy)\". Ratings, review counts, and variants are not copied.",
+          "Publish is only from draft. A product without variants must already have a price, because an active product is sold at that price. The first publish records the publish date.",
+          "Scheduled publishing: a draft with a publish date in the past is put on sale automatically by a job that runs every five minutes, as long as it has a price.",
+          "Archive is from draft or active and takes the product off sale. Carts drop it the next time they are priced.",
+          "Revert to draft is only from archived. It clears the publish date so the scheduled job does not put it straight back on sale.",
+          "Duplicate copies the details into a new draft titled with \" (Copy)\". Variants, stock rows, reviews, ratings, and the publish date are not copied, and a fresh slug is generated.",
           "Deleting a product is a soft delete and it can be restored."
         ]
       },
       {
-        "title": "How it connects to the rest of the menu",
-        "body": "The product is the catalog record. Stock, orders, and reviews hang off it.",
+        "title": "Price fields",
+        "body": "Only the price is charged. The other money fields describe it.",
         "items": [
-          "Categories and collections group it in the shop. A product can sit in more than one category.",
-          "Inventory, under Stock, holds the quantity per warehouse. A product with no inventory row is treated as untracked at checkout.",
-          "A review on a paid order line updates this product's rating average, rating count, and review count."
+          "Price is the unit price the cart starts from, before pricing rules and discount codes.",
+          "Compare-at price is the struck-through \"was\" price the shop can show. MSRP is the manufacturer's suggested price. Cost price is for your margin reports and is never shown to buyers.",
+          "Sale start and sale end bound the sale window shown on the storefront.",
+          "Minimum, maximum, and step quantity are the order-quantity rules; the cart enforces them and the storefront steps quantities the same way.",
+          "Taxable and tax class describe the item for tax. Tax itself comes from the tax zones of the shipping address."
+        ]
+      },
+      {
+        "title": "Stock",
+        "body": "A physical or variable product is stock-tracked unless track inventory is switched off (on the product, or on the variant).",
+        "items": [
+          "A tracked item can only be sold from stock that exists. With no inventory row in an active warehouse, checkout refuses the line as out of stock.",
+          "Low stock threshold, safety stock, backorder, and preorder fields describe how you want the item handled; the per-warehouse quantities and reorder points live on the Inventory page.",
+          "An untracked item (switched off, or a digital, service, or gift-card product) is sold without touching stock."
+        ]
+      },
+      {
+        "title": "Storefront content and SEO",
+        "body": "These fields only change how the product is presented and found.",
+        "items": [
+          "Main image, gallery, videos, and documents are the media. Highlights, specifications, FAQs, care instructions, and warranty fill the product page.",
+          "Related products, upsells, cross-sells, and frequently bought together are the recommendation slots. Featured and badges highlight the item in lists.",
+          "Identifiers (SKU, barcode, GTIN, UPC, EAN, ISBN, MPN, HS code, country of origin) are used for search, scanning at the till, and customs.",
+          "SEO holds the meta title and description, keywords, canonical URL, Open Graph and Twitter card fields, sitemap inclusion and priority, and no-index."
+        ]
+      },
+      {
+        "title": "How it connects",
+        "body": "The product is the catalog record; stock, orders, and reviews hang off it.",
+        "items": [
+          "Categories and collections group it in the shop. It can sit in several categories, but pricing rules aimed at a category only look at the first one.",
+          "Variants and their attributes are under Configurations. Stock per warehouse is under Stock → Inventory.",
+          "Order lines keep a snapshot of the title, SKU, type, and variant label, so later edits never rewrite past orders.",
+          "A review on a paid order line updates the rating average, rating count, and review count shown here."
         ]
       }
     ]

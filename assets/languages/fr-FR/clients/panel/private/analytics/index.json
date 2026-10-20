@@ -5,36 +5,41 @@
   "help": {
     "ariaLabel": "À propos des analyses",
     "title": "À propos des analyses",
-    "overview": "Les analyses résument le chiffre d'affaires payé, les commandes, l'inventaire et les paniers de cette société. C'est une lecture de ces données. Rien sur cette page ne crée de commande, de produit ou de mouvement de stock.",
+    "overview": "L’analytique résume chiffre d’affaires, commandes, produits, stock et paniers de cette société. Elle ne fait que lire les fiches existantes ; rien ici ne change une commande, un produit ou le stock. Chaque carte exige l’accès en lecture aux données qui la composent.",
     "sections": [
       {
-        "title": "Ce que la période change",
-        "body": "La période est 7 jours, 30 jours, 90 jours ou 1 an. Elle ne s'applique pas à chaque carte.",
+        "title": "La période",
+        "body": "Choisissez 7 jours, 30 jours, 90 jours ou 1 an. Toutes les cartes ne la suivent pas.",
         "items": [
-          "Le chiffre d'affaires, les commandes, la taxe, la livraison et les meilleurs produits suivent la période.",
-          "Le graphique montre le chiffre d'affaires payé et le nombre de commandes payées par bucket (journalier pour 7j/30j, hebdomadaire pour 90j, mensuel pour 1 an).",
-          "Les tendances comparent la période choisie à la fenêtre précédente de même durée.",
-          "L'inventaire et les paniers sont l'image actuelle. La période ne les recalcule pas."
+          "Chiffre d’affaires, nombre de commandes, panier moyen, taxes, expédition et meilleurs produits suivent la période.",
+          "Le graphique montre le chiffre d’affaires payé et les commandes payées par jour sur 7 et 30 jours, par semaine sur 90 jours et par mois sur un an.",
+          "Les badges de tendance comparent la période à la fenêtre de même durée juste avant.",
+          "Les cartes stock et paniers montrent l’état actuel et ne changent pas avec la période."
         ]
       },
       {
         "title": "Argent et devise",
         "body": "Les montants ne sont jamais additionnés entre devises.",
         "items": [
-          "Le chiffre d'affaires total est les commandes payées de la période, net des remboursements.",
-          "Taxe et livraison sont des sommes de ces mêmes commandes payées.",
-          "Utilisez le sélecteur de devise lorsque plus d'une devise a des ventes dans la période."
+          "Le chiffre d’affaires est celui des commandes payées sur la période, net des remboursements enregistrés sur elles.",
+          "Les chiffres concernent une devise : celle choisie, ou à défaut celle ayant le plus de commandes payées sur la période. Le sélecteur de devise liste chaque devise ayant eu des ventes.",
+          "Taxes et expédition sont les totaux de ces mêmes commandes payées."
         ]
       },
       {
-        "title": "Commandes, produits, stock et paniers",
-        "body": "Les ventilations et listes utilisent les données chargées pour cette société.",
+        "title": "Commandes et produits",
         "items": [
-          "Le statut des commandes compte toute commande non supprimée de la période, pas seulement les payées.",
-          "Le statut produit est le catalogue actuel, non lié à la période.",
-          "Les meilleurs produits sont classés par revenu de ligne dans la devise et la période choisies.",
-          "Les paniers abandonnés sont inactifs depuis plus d'une heure ; les actifs ont été mis à jour dans l'heure.",
-          "Ouvrez Commandes, Produits ou Inventaire depuis un KPI lorsque vous devez agir."
+          "Le statut des commandes compte chaque commande non supprimée passée dans la période, payée ou non.",
+          "Les meilleurs produits sont classés par chiffre d’affaires de ligne dans la devise et la période choisies, avec le titre gardé sur la ligne de commande.",
+          "Le statut des produits est le catalogue actuel réparti en brouillon, actif et archivé."
+        ]
+      },
+      {
+        "title": "Stock et paniers",
+        "items": [
+          "Le stock montre combien de lignes sont basses (disponible au-dessus de zéro mais sous le seuil de réapprovisionnement), combien sont en rupture (rien de disponible) et le total des unités en stock.",
+          "Les paniers abandonnés ont des articles et n’ont pas été touchés depuis plus d’une heure ; les paniers actifs ont changé dans l’heure. Les acheteurs connectés reçoivent un e-mail de rappel pour un panier laissé un jour.",
+          "Ouvrez Commandes de produits, Produits ou Inventaire depuis une carte pour agir sur ce qu’elle montre."
         ]
       }
     ]

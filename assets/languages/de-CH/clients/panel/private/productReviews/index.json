@@ -5,33 +5,32 @@
   "help": {
     "ariaLabel": "Über Produktbewertungen",
     "title": "Über Produktbewertungen",
-    "overview": "Eine Produktbewertung gehört zu einer Position einer bezahlten Bestellung. Die Note fliesst in Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen des Produkts. Marketplace-Bewertungen sind eine eigene Liste und ändern diese Zahlen nicht.",
+    "overview": "Eine Produktbewertung ist die Bewertung und der Kommentar eines Käufers zu einem bezahlten Produkt. Sie gehört zu einer bezahlten Bestellung und einem Produkt darauf und speist den Bewertungsschnitt, die Anzahl Bewertungen und die Anzahl Rezensionen dieses Produkts. Marktplatz-Bewertungen sind eine eigene Liste.",
     "sections": [
       {
-        "title": "Was Sie anlegen können",
-        "body": "Die Bewertung hängt an einem echten Kauf. Sie ist kein freistehender Kommentar.",
+        "title": "Wer was bewerten kann",
+        "body": "Eine Bewertung hängt an einem echten Kauf, nicht an einem freien Kommentar.",
         "items": [
-          "Sie zeigt auf eine bezahlte Bestellung und ein Produkt auf dieser Bestellung.",
-          "Der Bewerter ist der Kunde der Bestellung. Sie wählen keine andere Person und können ihn später nicht ändern.",
-          "Bestellung und Produkt bleiben fest, sobald die Bewertung existiert."
+          "Nur der Kunde der Bestellung kann die Bewertung anlegen; sie wird unter seinem Namen veröffentlicht.",
+          "Die Bestellung muss bezahlt oder teilweise erstattet sein, und das Produkt muss darauf stehen.",
+          "Eine Bewertung pro Produkt und Bestellung. Kassenverkäufe ergeben hier keine bewertbaren Bestellungen."
         ]
       },
       {
-        "title": "Was Sie noch bearbeiten können",
-        "body": "Text und Note können sich ändern. Die Verbindung zum Kauf nicht.",
+        "title": "Was sich später ändern kann",
+        "body": "Text und Note können sich ändern; der Bezug zum Kauf nicht.",
         "items": [
-          "Note, Titel und Kommentar können bearbeitet werden.",
-          "Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen des Produkts folgen den Bewertungen, die noch leben.",
-          "Das Löschen ist ein Soft-Delete und die Bewertung kann wiederhergestellt werden."
+          "Bewertung (1 bis 5), Titel und Kommentar können bearbeitet werden.",
+          "Bestellung und Produkt sind nach dem Anlegen fest.",
+          "Bewertungsschnitt (auf eine Dezimale), Anzahl Bewertungen und Anzahl Rezensionen des Produkts werden bei jedem Anlegen, jeder Notenänderung, jedem Löschen und jedem Wiederherstellen aus den aktiven Bewertungen neu berechnet."
         ]
       },
       {
-        "title": "Wo sie erscheint",
-        "body": "Moderiert wird hier. Die Zahl, mit der verkauft wird, steht am Produkt.",
+        "title": "Moderation",
         "items": [
-          "Öffnen Sie das Produkt, um die Summe zu sehen, die der Shop nutzt.",
-          "Öffnen Sie die Bestellung, um den Kauf zu sehen, um den es geht.",
-          "Ein Kassenverkauf landet nicht in dieser Liste. Diese Bewertungen sind Katalogbestellungen."
+          "Nur ein Administrator kann eine Bewertung löschen. Löschen ist ein Soft Delete; Wiederherstellen bringt die Bewertung zurück.",
+          "Eine gelöschte Bewertung kann nicht wiederhergestellt werden, solange eine aktive Bewertung für dieselbe Bestellung und dasselbe Produkt existiert.",
+          "Öffnen Sie das Produkt, um die Zahlen zu sehen, die der Shop zeigt, oder die Bestellung, um den Kauf zu sehen."
         ]
       }
     ]

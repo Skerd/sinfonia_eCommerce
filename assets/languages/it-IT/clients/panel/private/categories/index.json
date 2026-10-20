@@ -5,15 +5,30 @@
   "help": {
     "ariaLabel": "Informazioni su Categorie",
     "title": "Informazioni su Categorie",
-    "overview": "Le categorie raggruppano i prodotti nel catalogo. Un prodotto può stare in più categorie. Il nome è obbligatorio; categoria padre e ordine sono facoltativi.",
+    "overview": "Le categorie sono l’albero del catalogo prodotti. Raggruppano i prodotti nel negozio, nei filtri, negli sconti e nelle regole di prezzo. Un prodotto può stare in più categorie. Gli annunci del marketplace usano le proprie categorie di annunci.",
     "sections": [
       {
-        "title": "Come le usa il catalogo",
-        "body": "Lo slug nasce dal nome e resta univoco nella società. Rinominare la categoria lo ricostruisce. Il padre annida la categoria e l'ordine la dispone tra le sorelle.",
+        "title": "L’albero",
         "items": [
-          "Una regola di prezzo su una categoria corrisponde solo alla prima categoria del prodotto.",
-          "Uno sconto su una categoria corrisponde se una qualunque categoria del prodotto è selezionata.",
-          "L'eliminazione è logica e la categoria può essere ripristinata."
+          "Il nome è obbligatorio. Lo slug ne deriva, è mantenuto unico nella società e ricostruito quando il nome cambia.",
+          "Genitore annida la categoria sotto un’altra; lascialo vuoto per una categoria di primo livello. Una categoria non può essere posta sotto sé stessa o un suo discendente.",
+          "L’ordine ordina le categorie sorelle, le più piccole prima."
+        ]
+      },
+      {
+        "title": "Dove contano le categorie",
+        "body": "La stessa categoria viene letta in modo diverso da funzioni diverse.",
+        "items": [
+          "Navigazione del negozio, filtri prodotto, ricerche salvate e collezioni dinamiche usano tutte le categorie di un prodotto.",
+          "Uno sconto rivolto a una categoria si applica quando è selezionata una qualsiasi delle categorie del prodotto.",
+          "Una regola di prezzo rivolta a una categoria guarda solo la prima categoria del prodotto."
+        ]
+      },
+      {
+        "title": "Eliminazione",
+        "items": [
+          "L’eliminazione è logica e la categoria può essere ripristinata. I prodotti mantengono le loro altre categorie.",
+          "L’importazione Odoo può creare e aggiornare categorie dalle categorie prodotto di Odoo."
         ]
       }
     ]

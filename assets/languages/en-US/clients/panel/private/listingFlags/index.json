@@ -5,32 +5,29 @@
   "help": {
     "ariaLabel": "About Listing flags",
     "title": "About Listing flags",
-    "overview": "A listing flag is a moderation report: a user marks a listing as inappropriate, spam, misleading, or other, with an optional comment. Only admins resolve or dismiss pending flags.",
+    "overview": "A listing flag is a moderation report: a user marks a listing as inappropriate, spam, misleading, or other, with an optional comment. Administrators review reports and decide them.",
     "sections": [
       {
-        "title": "Statuses",
+        "title": "Reporting",
         "items": [
-          "Pending — waiting for an admin decision.",
-          "Reviewed — the report was upheld; a resolution note is stored. The admin may also deactivate the listing.",
-          "Dismissed — the report was rejected; a resolution note is still required."
+          "The reporter is whoever creates the flag. One live report per user and listing.",
+          "While pending, the reporter can still edit the reason and comment; the listing is fixed.",
+          "Reports are private: administrators see them all, everyone else only their own."
         ]
       },
       {
-        "title": "Admin actions",
+        "title": "Statuses and decisions",
+        "body": "Only an administrator can decide, only while the report is pending, and a resolution note is always required.",
         "items": [
-          "Resolve sets status to reviewed and records the resolution text.",
-          "Optionally choose to deactivate the listed offer as part of resolve.",
-          "Dismiss sets status to dismissed with a resolution explanation.",
-          "Non-admins cannot run these actions."
-        ],
-        "body": "Resolve and dismiss only work while the flag is pending and not soft-deleted."
+          "Pending: waiting for a decision.",
+          "Resolve marks the report reviewed (upheld). Choose deactivate to take the listing offline at the same time, or none to keep it live.",
+          "Dismiss marks the report dismissed (rejected)."
+        ]
       },
       {
-        "title": "On this page",
+        "title": "Deleting",
         "items": [
-          "Create records a new flag against a listing.",
-          "Edit can update reason and details while the listing itself stays fixed after create.",
-          "Soft-deleted flags can be restored."
+          "Deleting is a soft delete and it can be restored, unless the same user has since filed a new report on that listing."
         ]
       }
     ]

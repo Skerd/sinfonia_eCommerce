@@ -5,15 +5,24 @@
   "help": {
     "ariaLabel": "About Product Attributes",
     "title": "About Product Attributes",
-    "overview": "Attributes are shared option lists, such as Size or Color. A variant later picks one value from each attribute that identifies that SKU. The name is required.",
+    "overview": "Attributes are shared option lists such as Size or Colour. A variant picks one value from each attribute that defines it, so the attribute is what turns one product into several SKUs.",
     "sections": [
       {
-        "title": "How options become a SKU",
-        "body": "Values are the choices shoppers see, for example S, M, and L. You can store up to 50 values. Position controls the order of the attributes.",
+        "title": "Fields",
         "items": [
-          "Visible on the product page shows the list on the storefront. It does not change the price.",
-          "Used for variants marks the attribute as one that should split a product into SKUs. The variant itself stores the attribute and the chosen value.",
-          "The price the cart charges is the variant price, or the product price when no variant is selected."
+          "Name is required. Values are the choices buyers see, for example S, M, L; up to 50.",
+          "Visible on product page shows the attribute in the product's details. It does not change prices.",
+          "Used for variants marks it as an attribute that splits products into SKUs.",
+          "Position orders attributes on the product page and in the variant picker."
+        ]
+      },
+      {
+        "title": "How variants use it",
+        "items": [
+          "Each variant stores attribute-and-value pairs. Two live variants of the same product cannot have the same combination.",
+          "The cart and the till charge the variant price, or the product price when the variant has none.",
+          "An attribute used by any live variant cannot be deleted. Remove it from those variants first.",
+          "Deleting is a soft delete and it can be restored."
         ]
       }
     ]

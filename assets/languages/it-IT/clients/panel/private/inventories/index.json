@@ -5,34 +5,61 @@
   "help": {
     "ariaLabel": "Informazioni sull'inventario",
     "title": "Informazioni sull'inventario",
-    "overview": "Una riga di inventario è lo stock di un prodotto, o di una variante, in un magazzino. Il disponibile è la giacenza meno la quantità riservata per i checkout aperti. È il numero che il negozio può ancora vendere.",
+    "overview": "Una riga di inventario è la giacenza di un prodotto, o di una variante, in un magazzino. Ha tre numeri: disponibile fisico, riservato e disponibile (fisico meno riservato). Disponibile è ciò che checkout e cassa possono ancora vendere. Ogni variazione della giacenza fisica lascia un movimento nel registro di magazzino.",
     "sections": [
       {
-        "title": "Giacenza, riservato, disponibile",
-        "body": "Le tre quantità non sono tre stock. Riservato è un blocco dentro la giacenza.",
+        "title": "Fisico, riservato, disponibile",
+        "body": "Non sono tre giacenze. Riservato è un vincolo all’interno della giacenza fisica.",
         "items": [
-          "Giacenza è ciò che il magazzino ha.",
-          "Riservato è ciò che i checkout aperti hanno già preso e non ancora spedito o liberato.",
-          "Disponibile è giacenza meno riservato. Può andare in negativo se un conteggio trova meno di quanto gli ordini trattengono."
+          "Fisico è ciò che si trova materialmente nel magazzino.",
+          "Riservato è ciò che checkout aperti e ordini non spediti hanno impegnato. Viene riservato al passo di pagamento e liberato se il checkout scade, se l’ordine viene annullato o rimborsato per intero.",
+          "Disponibile è fisico meno riservato. Un inventario che trova meno di quanto riservato può renderlo negativo."
         ]
       },
       {
-        "title": "Quando il checkout usa la riga",
-        "body": "Un prodotto è tracciato solo dove esiste una riga. Nessuna riga significa che la riga d'ordine non viene presa dallo stock.",
+        "title": "Quali articoli servono una riga",
+        "body": "Un prodotto fisico o variabile è gestito a magazzino salvo che la gestione sia disattivata sul prodotto o sulla variante.",
         "items": [
-          "Una riga di checkout viene riservata solo se esiste una riga per quel prodotto o variante.",
-          "Si usa il magazzino attivo predefinito se può coprire la quantità. Altrimenti il primo che può coprirla.",
-          "Spedire consuma la prenotazione. Annullare o rimborsare per intero prima la libera."
+          "Un articolo gestito si vende solo da righe di magazzini attivi. Senza riga, o senza abbastanza disponibile, il checkout rifiuta la riga come esaurita.",
+          "Il checkout preferisce un magazzino che copra tutta la riga, prima quello predefinito; altrimenti divide la riga su più magazzini, prima quello predefinito.",
+          "Prodotti digitali, servizi e carte regalo, e gli articoli senza gestione, non hanno bisogno di righe. Un bundle non ha mai una riga; i suoi componenti sì.",
+          "C’è una riga attiva per prodotto, variante e magazzino."
         ]
       },
       {
-        "title": "Cos'altro cambia i numeri",
-        "body": "Puoi modificare una riga qui. Le altre pagine di stock scrivono gli stessi numeri e lasciano un movimento.",
+        "title": "Creare e modificare una riga",
+        "body": "Creare una riga è ciò che avvia lo stoccaggio di un articolo in un magazzino.",
         "items": [
-          "Un trasferimento sposta lo stock libero tra magazzini. Le unità già riservate non si muovono mai.",
-          "Un conteggio imposta la giacenza su quanto contato e scrive una rettifica.",
-          "Vendite, resi, carichi, danni e svalutazioni stanno sotto Movimenti di inventario, con la quantità prima e dopo.",
-          "L'eliminazione è logica e la riga può essere ripristinata."
+          "Prodotto, variante e magazzino sono fissi una volta creata la riga, perché riserve e storico dipendono da essi.",
+          "Una quantità iniziale alla creazione scrive un movimento iniziale. Dopo, la giacenza fisica cambia solo tramite azioni, mai con una semplice modifica.",
+          "Punto di riordino e quantità di riordino guidano l’avviso di scorta bassa."
+        ]
+      },
+      {
+        "title": "Rifornire e scaricare",
+        "body": "Sono le azioni manuali di giacenza. Entrambe richiedono il permesso di scrivere la giacenza fisica.",
+        "items": [
+          "Rifornisci aggiunge unità e può registrare fornitore, numero di ricevuta, file della ricevuta, data, costo unitario, lotto e data di scadenza.",
+          "Scarica toglie unità come perdita, danno o rettifica. Riprende il costo unitario e la scadenza dell’ultimo arrivo dello stesso lotto, così la perdita è valorizzata.",
+          "Uno scarico che lascerebbe meno giacenza fisica di quanto riservato viene rifiutato."
+        ]
+      },
+      {
+        "title": "Avvisi di scorta bassa",
+        "body": "Un processo orario controlla ogni riga con punto di riordino.",
+        "items": [
+          "Quando il disponibile scende sotto il punto di riordino (senza essere negativo), il personale viene avvisato una volta.",
+          "L’avviso si riattiva quando il disponibile risale al punto di riordino o oltre."
+        ]
+      },
+      {
+        "title": "Cos’altro cambia i numeri",
+        "body": "Ognuna delle variazioni seguenti scrive un movimento con la quantità prima e dopo.",
+        "items": [
+          "Spedire un ordine consuma le sue riserve; una spedizione fallita rimette le unità.",
+          "Un trasferimento di magazzino sposta giacenza libera tra magazzini; un inventario imposta la giacenza fisica sulla quantità contata.",
+          "Un reso ricevuto rimette merce; una vendita e un rimborso in cassa prendono e restituiscono giacenza direttamente.",
+          "Una riga con giacenza o riserve non può essere eliminata. Eliminare una riga vuota è un’eliminazione logica e può essere ripristinata, salvo che nel frattempo esista una riga attiva per lo stesso articolo."
         ]
       }
     ]

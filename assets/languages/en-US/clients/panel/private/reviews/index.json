@@ -5,23 +5,28 @@
   "help": {
     "ariaLabel": "About Reviews",
     "title": "About Reviews",
-    "overview": "A review is customer feedback on a completed marketplace order: rating, optional comment, tied to the order and listing. It feeds the listing's average rating and review count.",
+    "overview": "A marketplace review is the customer's rating and comment on a completed order. It belongs to the order and its listing, and feeds the listing's average rating and review count and the provider's reputation.",
     "sections": [
       {
-        "title": "What you record",
+        "title": "Who can review",
         "items": [
-          "Rating is the star score the customer gives.",
-          "Comment is optional free text.",
-          "Order and listing identify what was reviewed; reviewer is the customer.",
-          "Create is for submitting feedback after a completed engagement."
+          "Only the order's customer, only once the order is completed, and only once per order.",
+          "Listing and reviewer are set by the server from the order and the caller.",
+          "Customers can also review from their storefront account, where completed orders without a review are offered."
         ]
       },
       {
-        "title": "On this page",
+        "title": "What it changes",
         "items": [
-          "List, filter, and open reviews for moderation or support.",
-          "There is no separate publish workflow — create and edit manage the record directly.",
-          "Soft delete removes the review from default views; restore brings it back."
+          "The listing's average rating and review count are recomputed from its live reviews.",
+          "The provider profile shows the average rating across all their orders, from listings and task requests alike."
+        ]
+      },
+      {
+        "title": "Moderation",
+        "items": [
+          "Reviews are not edited after they are written.",
+          "Only an administrator can delete a review; deleting is a soft delete and restoring brings the rating back."
         ]
       }
     ]

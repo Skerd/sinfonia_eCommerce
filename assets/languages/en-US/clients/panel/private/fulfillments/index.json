@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "About Fulfillments",
     "title": "About Fulfillments",
-    "overview": "A fulfillment is one shipment of a product order. Shipping an order creates one. You can also create one here. Its status is pending, shipped, delivered, or failed, and that status feeds the order.",
+    "overview": "A fulfillment is one shipment of a product order: which order lines and how many units left, with which carrier and tracking. Shipping an order creates one automatically; you can also create one here to split an order into several parcels. Its status — pending, shipped, delivered, or failed — drives the order's shipped and delivered status.",
     "sections": [
       {
-        "title": "How a shipment moves",
-        "body": "Ship, deliver, and fail are only legal from the status named here. The order itself has to be ready too.",
+        "title": "Creating a shipment",
+        "body": "A shipment can only cover what is still unshipped.",
         "items": [
-          "Ship is only from pending, and only when the order is not still pending, cancelled, or refunded.",
-          "Shipping consumes the stock reserved for those lines and can move the order to shipped.",
-          "Deliver is only from shipped. Delivering the last open shipment can move the order to delivered.",
-          "Fail is from pending or shipped. Failing a shipment that already left reverses that shipment. If the order is cancelled or refunded, stock still held is released."
+          "Pick the order, then the lines and the quantity of each. Every line must belong to that order, and the quantity cannot exceed what earlier shipments left open.",
+          "A shipment created here starts as pending: nothing has left yet and stock is untouched.",
+          "Once created, the order and the lines are fixed. Carrier, tracking, dates, and notes stay editable."
+        ]
+      },
+      {
+        "title": "How a shipment moves",
+        "body": "Ship, deliver, and fail are actions, each legal only from the status named here. They need permission to write the shipment status.",
+        "items": [
+          "Ship is only from pending, and only when the order is not pending, cancelled, or refunded. It records the shipped time and the tracking you enter.",
+          "Shipping takes the units out of stock: the order's holds are consumed in the warehouses they were reserved in. Units that were never held are reserved on the spot; if there is not enough stock, the shipment is refused as out of stock.",
+          "Deliver is only from shipped. When the last shipment that did not fail is delivered, the order becomes delivered and the customer is told once.",
+          "Fail is from pending or shipped. Failing a parcel that already left puts its units back on hand and holds them for the order again, so a new shipment can take them. If the order is cancelled or refunded by then, those units are released instead."
+        ]
+      },
+      {
+        "title": "What the order sees",
+        "body": "The order's fulfillment status is computed from its shipments every time one changes.",
+        "items": [
+          "Every line fully shipped makes the order fulfilled; some lines shipped make it partially fulfilled.",
+          "All lines shipped moves the order to shipped. A fully shipped order whose shipment failed goes back to processing.",
+          "Each change adds an entry to the order timeline."
         ]
       },
       {
         "title": "What you record on it",
-        "body": "The shipment is the place for the carrier and the tracking, not the order header.",
+        "body": "The shipment, not the order, is where tracking lives.",
         "items": [
-          "Carrier, tracking number, and tracking link are the details the customer is told when it ships.",
-          "Shipped at, estimated delivery, and delivered at mark the timeline.",
-          "The lines are quantities of the order's items. A later shipment can cover what an earlier one left."
+          "Carrier, tracking number, and tracking link are what the customer receives in the shipping message.",
+          "Estimated delivery, shipped at, and delivered at mark the timeline. Notes are for staff.",
+          "Each line shows the product it ships, with its title and image."
         ]
       },
       {
-        "title": "How it sits with the order",
-        "body": "The order's fulfillment status is derived from its shipments, so a partial ship leaves the order partly fulfilled.",
+        "title": "Related pages",
         "items": [
-          "Open the order from the row when you need payment, cancel, or refund. Those stay on the order.",
-          "A return that is received puts goods back in the warehouse the line shipped from.",
-          "Deleting a fulfillment is a soft delete and it can be restored."
+          "Open the order for payment, cancel, or refund; those stay on the order.",
+          "A received return request puts goods back in the warehouse the line shipped from.",
+          "Deleting a shipment is a soft delete and it can be restored."
         ]
       }
     ]

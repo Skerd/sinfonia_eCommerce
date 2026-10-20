@@ -58,5 +58,40 @@
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
     "deletedBy": "Gelöscht von"
+  },
+  "help": {
+    "ariaLabel": "Über Kollektionen",
+    "title": "Über Kollektionen",
+    "overview": "Eine Kollektion ist eine Merchandising-Gruppe von Produkten, etwa „Sommer-Sale“ oder „Neuheiten“, die im Shop gezeigt wird und als Ziel für Rabatte und Preisregeln dienen kann. Sie ist entweder manuell (Sie wählen die Produkte) oder dynamisch (Regeln wählen sie).",
+    "sections": [
+      {
+        "title": "Manuell oder dynamisch",
+        "body": "Der Typ bestimmt, woher die Mitgliedschaft kommt.",
+        "items": [
+          "Manuell: Die Kollektion enthält genau die Produkte, die Sie hinzufügen.",
+          "Dynamisch: Die Mitgliedschaft wird laufend aus Regeln berechnet, und nur aktive Produkte qualifizieren sich. Eine dynamische Kollektion ohne Regeln enthält nichts.",
+          "„Alle erfüllen“ verlangt jede Regel; „eine erfüllen“ verlangt mindestens eine."
+        ]
+      },
+      {
+        "title": "Regeln",
+        "body": "Jede Regel ist ein Feld, ein Operator und ein Wert.",
+        "items": [
+          "Tag, Marke, Anbieter und Produkttyp unterstützen gleich, ungleich, enthält, enthält nicht und beginnt mit.",
+          "Kategorie unterstützt gleich (oder enthält) und ungleich (oder enthält nicht) gegenüber den Kategorien des Produkts.",
+          "Preis unterstützt gleich, ungleich, grösser als und kleiner als.",
+          "Lagerbestand wird akzeptiert, aber noch nicht angewendet; eine Regel darauf wird ignoriert."
+        ]
+      },
+      {
+        "title": "Shop und Preise",
+        "items": [
+          "Aktivieren und Deaktivieren bestimmen, ob die Kollektion im Shop sichtbar ist. Eine ausgeblendete Kollektion wird weder gelistet noch ist sie durchsuchbar, besteht aber weiter für Rabatte und Preisregeln.",
+          "Rabatte und Preisregeln für eine Kollektion nutzen dieselbe Mitgliedschaft, die der Shop zeigt.",
+          "Name, Beschreibung, Hauptbild, Position sowie SEO-Titel und -Beschreibung gestalten die Kollektionsseite.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+        ]
+      }
+    ]
   }
 }

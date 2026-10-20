@@ -5,31 +5,31 @@
   "help": {
     "ariaLabel": "About the eCommerce system map",
     "title": "About the eCommerce system map",
-    "overview": "The system map is a picture of the catalog eCommerce module: its models, the checkout flow, and what the module can do. It does not change data. The marketplace has its own map.",
+    "overview": "The system map is a read-only picture of the catalog eCommerce module: every model and how they reference each other, the main flows step by step, and what the module offers. It changes no data. The marketplace has its own map.",
     "sections": [
       {
         "title": "Model graph",
-        "body": "This is the default tab. It is the data model, laid out so you can see what points at what.",
+        "body": "The default tab: the data model, grouped into catalog, ordering, payments, point of sale, escrow, and shared clusters.",
         "items": [
-          "Pan and zoom, or use the zoom and fit controls.",
-          "Click a node for its fields, the API path, and where that screen lives in the panel.",
-          "Filter the graph by the catalog, ordering, payments, escrow, and shared groups when the full map is too much."
+          "Pan and zoom, or use the zoom and fit controls. Filter by cluster when the full map is too much.",
+          "Click a node to see its description, key fields, API path, actions, and the panel page that manages it.",
+          "Edges show which model points at which; bridge edges cross into the finance module."
         ]
       },
       {
         "title": "How it works",
-        "body": "This tab is the checkout story, from the catalog to the order, rather than the list of models.",
+        "body": "Flows tell the story in order rather than as a list of models.",
         "items": [
-          "Follow it when you want the order of steps: product, cart, payment, stock, shipment.",
-          "It is the same module the other eCommerce menu entries operate. It is not a second checkout."
+          "Catalog and merchandising, inventory, cart → checkout → order, post-purchase operations, point of sale, and the Odoo import each have their own flow.",
+          "Dashed steps are the way back, such as a failed shipment or an expired checkout."
         ]
       },
       {
         "title": "Capabilities",
-        "body": "This tab groups what the module covers, so you can see the surface area without opening every menu.",
+        "body": "What the module covers, so you can find where a job belongs.",
         "items": [
-          "Use it to find which area a job belongs to, then open that page from the eCommerce menu.",
-          "Catalog settings such as categories, warehouses, and discounts live under Configurations, not in this menu group. The map still shows them, because the catalog uses them."
+          "Lists the features, the API areas, the scheduled jobs, and the public storefront routes.",
+          "Catalog settings such as categories, warehouses, discounts, tills, and fiscal configs live under Configurations, not in this menu; the map still shows them."
         ]
       }
     ]

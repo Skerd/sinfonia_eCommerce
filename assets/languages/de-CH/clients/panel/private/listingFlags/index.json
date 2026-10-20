@@ -5,32 +5,29 @@
   "help": {
     "ariaLabel": "Über Inserat-Meldungen",
     "title": "Über Inserat-Meldungen",
-    "overview": "Eine Inserat-Meldung ist ein Moderationsbericht: ein Nutzer meldet unangemessen, Spam, irreführend oder anderes, optional mit Kommentar. Nur Admins lösen oder verwerfen ausstehende Meldungen.",
+    "overview": "Eine Inseratmeldung ist ein Moderationshinweis: Ein Benutzer markiert ein Inserat als unangemessen, Spam, irreführend oder anderes, mit optionalem Kommentar. Administratoren prüfen und entscheiden Meldungen.",
     "sections": [
       {
-        "title": "Status",
+        "title": "Melden",
         "items": [
-          "Ausstehend — wartet auf Admin-Entscheidung.",
-          "Geprüft — Meldung bestätigt; Auflösungstext gespeichert. Optional kann das Inserat deaktiviert werden.",
-          "Verworfen — Meldung abgelehnt; Auflösungstext trotzdem nötig."
+          "Der Meldende ist, wer die Meldung anlegt. Eine aktive Meldung pro Benutzer und Inserat.",
+          "Solange sie ausstehend ist, kann der Meldende Grund und Kommentar noch bearbeiten; das Inserat ist fest.",
+          "Meldungen sind privat: Administratoren sehen alle, alle anderen nur ihre eigenen."
         ]
       },
       {
-        "title": "Admin-Aktionen",
+        "title": "Status und Entscheide",
+        "body": "Nur ein Administrator kann entscheiden, nur solange die Meldung ausstehend ist, und eine Begründung ist immer Pflicht.",
         "items": [
-          "Auflösen setzt Status auf geprüft und speichert den Text.",
-          "Optional das Inserat im Rahmen der Auflösung deaktivieren.",
-          "Verwerfen setzt Status auf verworfen mit Begründung.",
-          "Nicht-Admins können diese Aktionen nicht ausführen."
-        ],
-        "body": "Auflösen und Verwerfen nur bei ausstehender, nicht gelöschter Meldung."
+          "Ausstehend: wartet auf einen Entscheid.",
+          "Erledigen markiert die Meldung als geprüft (bestätigt). Wählen Sie Deaktivieren, um das Inserat gleichzeitig offline zu nehmen, oder Keine, um es online zu lassen.",
+          "Verwerfen markiert die Meldung als verworfen (abgewiesen)."
+        ]
       },
       {
-        "title": "Auf dieser Seite",
+        "title": "Löschen",
         "items": [
-          "Erstellen erfasst eine neue Meldung zu einem Inserat.",
-          "Bearbeiten kann Grund und Details ändern; das Inserat bleibt nach dem Erstellen fix.",
-          "Soft-gelöschte Meldungen sind wiederherstellbar."
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden, ausser derselbe Benutzer hat inzwischen eine neue Meldung zu diesem Inserat erstellt."
         ]
       }
     ]

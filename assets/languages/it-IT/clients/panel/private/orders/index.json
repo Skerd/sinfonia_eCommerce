@@ -5,36 +5,51 @@
   "help": {
     "ariaLabel": "Informazioni sugli ordini",
     "title": "Informazioni sugli ordini",
-    "overview": "Un ordine marketplace è un impegno di servizio tra cliente e fornitore. Può partire da un annuncio attivo (package ed extra opzionali) o da un'offerta accettata. Lavoro, consegna, revisioni, milestone ed escrow passano da azioni dedicate — non modificando lo stato sul form.",
+    "overview": "Un ordine del marketplace è un incarico di servizio tra un cliente e un fornitore, il cui prezzo resta in deposito di garanzia finché il lavoro non viene accettato. Nasce da un annuncio attivo o da un’offerta accettata. Ogni passo è un’azione con regole su chi può farla e quando; lo stato non si modifica mai direttamente.",
     "sections": [
       {
         "title": "Stati",
         "items": [
-          "In sospeso — creato; in attesa che il fornitore accetti.",
-          "Accettato — il fornitore ha accettato; il lavoro non è ancora iniziato.",
-          "In corso — il fornitore ha iniziato.",
-          "Completato — lavoro finito ed escrow rimanente rilasciato secondo le regole.",
-          "Annullato — fermato prima del completamento; l'escrow segue le regole di annullo."
+          "In attesa: creato, aspetta che il fornitore accetti.",
+          "Accettato: il fornitore ha preso l’incarico; l’importo dell’ordine è tenuto in deposito.",
+          "In corso: il fornitore ha iniziato; consegne, revisioni e rilasci di milestone avvengono qui.",
+          "Completato: il lavoro è stato accettato e il resto del deposito pagato.",
+          "Annullato: fermato prima del completamento; ciò che era ancora trattenuto è stato rimborsato."
         ]
       },
       {
-        "title": "Ciclo tipico",
+        "title": "Azioni del fornitore",
         "items": [
-          "Crea da annuncio calcola l'importo da annuncio, package ed extra; i fornitori non possono ordinare il proprio annuncio.",
-          "Accetta / avvia / annulla fanno avanzare o fermano l'impegno.",
-          "Consegne e richieste di revisione stanno su record collegati.",
-          "Le milestone possono trattenere e rilasciare escrow; l'ultima in sospeso può completare l'ordine.",
-          "Una controversia aperta blocca alcuni movimenti di denaro fino a risoluzione o chiusura."
-        ],
-        "body": "Le azioni impongono chi può muovere l'ordine e da quale stato."
+          "Accetta (da in attesa) registra il vincolo in deposito per l’importo dell’ordine nel registro finanziario; se i pagamenti con carta sono configurati, viene aperto presso il gateway un pagamento per quell’importo.",
+          "Avvia (da accettato) porta l’ordine in corso.",
+          "Invia consegna (in corso) manda un messaggio e dei file. Può attendere risposta una sola consegna alla volta, e una nuova risponde a una richiesta di revisione aperta.",
+          "Proroga aggiunge giorni alla scadenza in qualsiasi momento prima che l’ordine sia definitivo; il cliente viene avvisato."
+        ]
       },
       {
-        "title": "Record correlati",
+        "title": "Azioni del cliente",
         "items": [
-          "Le prenotazioni pianificano il tempo su un ordine.",
-          "Le controversie si aprono quando una parte contesta l'impegno.",
-          "Le recensioni riguardano un ordine completato e il suo annuncio.",
-          "Il soft delete nasconde l'ordine; si può ripristinare."
+          "Accetta consegna completa l’ordine e rilascia al fornitore ciò che è ancora trattenuto, meno la commissione della piattaforma del 10%. Bloccato finché c’è una controversia aperta.",
+          "Richiedi revisione rimanda indietro la consegna in attesa con un motivo. Al massimo 3 revisioni per ordine.",
+          "Se il cliente non risponde a una consegna per 3 giorni, un processo orario la accetta per lui, salvo una controversia aperta.",
+          "Le milestone dividono l’importo trattenuto: il cliente le crea (mai più dell’importo dell’ordine in totale) e le rilascia una per una durante il lavoro. Rilasciare l’ultima quando non resta nulla trattenuto completa l’ordine."
+        ]
+      },
+      {
+        "title": "Annullamento e controversie",
+        "items": [
+          "Il fornitore può annullare in qualsiasi momento prima che l’ordine sia definitivo; il cliente solo prima che il lavoro inizi. Dopo, un disaccordo passa per una controversia.",
+          "Nessuno può annullare finché c’è una controversia aperta. Annullare rimborsa tutto ciò che è ancora trattenuto.",
+          "Una controversia decisa a favore del fornitore completa l’ordine e paga; a favore del cliente lo annulla e rimborsa."
+        ]
+      },
+      {
+        "title": "Denaro e record",
+        "body": "Rilasci e rimborsi possono pagare solo ciò che è ancora trattenuto, quindi milestone, accettazione, controversie e annullamento insieme non superano mai il vincolo.",
+        "items": [
+          "Ogni rilascio viene pagato sull’account Stripe collegato del fornitore, se ne ha uno; il rilascio è comunque registrato nel registro.",
+          "La scheda dell’ordine mostra consegne, milestone e revisioni. Anche prenotazioni, controversie e recensioni dipendono dall’ordine.",
+          "I non amministratori vedono solo gli ordini di cui sono parte. Solo un amministratore può eliminare un ordine, e solo quando è definitivo."
         ]
       }
     ]

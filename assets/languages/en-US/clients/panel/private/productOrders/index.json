@@ -5,35 +5,67 @@
   "help": {
     "ariaLabel": "About Product orders",
     "title": "About Product orders",
-    "overview": "A product order is one customer checkout. Checkout writes the order. This page does not create one. Three statuses move on their own: the order, the payment, and the fulfillment.",
+    "overview": "A product order is one customer purchase from the shop, or one till sale mirrored for the books. Checkout writes it; this page never creates one. Each order carries three statuses that move separately — the order, the payment, and the fulfillment — plus a timeline of every step and who took it.",
     "sections": [
       {
-        "title": "The three statuses",
-        "body": "Read them together. An order can be paid and still unfulfilled, or shipped and only partly refunded.",
+        "title": "How an order is created",
+        "body": "The order is the end of checkout, not the start.",
         "items": [
-          "Order status runs pending, confirmed, processing, shipped, delivered, cancelled, refunded.",
-          "Payment status runs unpaid, authorized, paid, partially refunded, refunded, voided.",
-          "Fulfillment status runs unfulfilled, partially fulfilled, fulfilled, returned."
+          "Checkout first re-prices the cart from the live catalog, then holds stock for every tracked line before any money is taken. If a line cannot be covered, checkout stops and nothing is held.",
+          "Card payments create the order when the payment succeeds, either on the buyer's confirmation or from the payment webhook, whichever arrives first. The order is written only once.",
+          "Cash on delivery and bank transfer create a pending, unpaid order. Staff confirm it and mark it paid when the money arrives.",
+          "A checkout that is never completed expires after its time limit; a job releases its held stock every hour. If its payment did go through, the job places the order instead.",
+          "On the platform shop, a cart with several sellers becomes one order per seller company."
         ]
       },
       {
-        "title": "What the row actions do",
-        "body": "Confirm, mark processing, ship, mark paid, cancel, and refund are separate. Each one is refused outside its state.",
+        "title": "The three statuses",
+        "body": "Read them together. An order can be paid and still unfulfilled, or shipped and partly refunded.",
         "items": [
-          "Confirm is only from pending. It acknowledges the order, which is the usual step for cash on delivery or a bank transfer, and tells the customer.",
+          "Order status: pending, confirmed, processing, shipped, delivered, cancelled, refunded.",
+          "Payment status: unpaid, authorized, paid, partially refunded, refunded, voided.",
+          "Fulfillment status: unfulfilled, partially fulfilled, fulfilled, returned. It is derived from the order's shipments.",
+          "Shipped and delivered are also derived: shipped once every line has left, delivered once every shipment that did not fail is delivered."
+        ]
+      },
+      {
+        "title": "Row actions",
+        "body": "Each action is refused outside the state it expects. Status actions need permission to write the order status; money actions need permission to write the payment status.",
+        "items": [
+          "Confirm is only from pending. It acknowledges the order and tells the customer.",
           "Mark processing is only from confirmed. It means the order is being prepared.",
-          "Ship is from confirmed or processing. It creates a fulfillment for the quantities still unfulfilled, takes those units out of stock, and sets the order status from its shipments. You can record a carrier, a tracking number, and a tracking link.",
-          "Mark paid records an offline payment (cash on delivery or bank transfer) and only while payment is unpaid and the order is not cancelled or refunded. A pending order is confirmed at the same time. Gift cards and downloads bought with the order are issued. Stock stays held until it ships.",
-          "Cancel is blocked once the order is shipped, delivered, cancelled, or refunded. A paid or partially refunded order must be refunded before it can be cancelled. Cancel releases stock still held and returns store credit applied with a gift card.",
-          "Refund is for a paid or partially refunded order. A full refund also returns that store credit, disables gift cards the order issued, expires its downloads, and releases stock still held."
+          "Ship is from confirmed or processing. It creates one shipment for every quantity still unshipped, takes those units out of stock, and records the carrier, tracking number, and tracking link the customer is sent.",
+          "Mark paid records an offline payment with an optional reference, only while the payment is unpaid and the order is not cancelled or refunded. A pending order is confirmed at the same time, and gift cards and downloads bought with the order are issued.",
+          "Cancel is blocked once the order is shipped, delivered, cancelled, or refunded, and a paid order must be refunded first. It releases the stock still held and gives back store credit paid with a gift card.",
+          "Refund is for a paid or partially refunded order, in full or by an amount. A card payment is refunded through the gateway; an offline payment is recorded as a manual refund."
+        ]
+      },
+      {
+        "title": "What a full refund undoes",
+        "body": "A partial refund only moves money. A refund of everything that is left also unwinds what the order gave out.",
+        "items": [
+          "Store credit spent on the order goes back to the gift card.",
+          "Gift cards the order issued are disabled, and its download links expire.",
+          "Stock still held for unshipped lines is released. Units that already shipped come back only through a received return request.",
+          "The order becomes refunded. A till sale cannot be refunded here: it is refunded on the till, which keeps the drawer and the stock in step."
+        ]
+      },
+      {
+        "title": "Customer messages and the timeline",
+        "body": "The buyer is told at each step that matters to them, after the change is saved.",
+        "items": [
+          "Confirmation, shipping (with tracking), delivery, payment, cancellation, refund, and return decisions each send the customer a notification and email.",
+          "Every action adds a timeline entry with the time, the staff member, and any note, reference, or tracking number.",
+          "Notes are visible to the customer; internal notes are for staff only."
         ]
       },
       {
         "title": "Where the rest of the work is",
-        "body": "This list is the order. The shipment and the return are their own pages.",
+        "body": "The order is the header. Shipments and returns are their own records.",
         "items": [
           "Each shipment is a row under Fulfillments, with its own pending, shipped, delivered, or failed status.",
           "A return, exchange, or refund request is a row under Return requests. Completing one can refund this order.",
+          "Till sales appear here as already delivered and paid, marked as POS sales, with an in-store pickup address.",
           "Deleting an order is a soft delete and it can be restored."
         ]
       }

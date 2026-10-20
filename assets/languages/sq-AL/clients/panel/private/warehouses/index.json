@@ -5,16 +5,29 @@
   "help": {
     "ariaLabel": "Rreth Magazinat",
     "title": "Rreth Magazinat",
-    "overview": "Një magazinë është një vend që mban stokun. Inventari ruhet për produkt ose variant në një magazinë: në dorë, dhe i rezervuar për pagesat e hapura. Emri dhe kodi janë të detyrueshëm.",
+    "overview": "Një magazinë është një vend stoku. Rreshtat e inventarit, transferimet, numërimet, rezervimet e porosive dhe arkat tregojnë të gjitha magazina. Emri dhe kodi janë të detyrueshëm; adresa është opsionale por përcakton TVSH-në e shitjeve në arkë.",
     "sections": [
       {
-        "title": "Ku e merr pagesa stokun",
-        "body": "Një rresht rezervohet vetëm kur ekziston një inventar për atë produkt ose variant. Pa rresht trajtohet si i pandjekur.",
+        "title": "E paracaktuar dhe aktive",
         "items": [
-          "Magazina aktive e paracaktuar përdoret kur ka mjaft stok të lirë. Përndryshe përdoret magazina e parë që e mbulon sasinë.",
-          "Vetëm një magazinë është e paracaktuar. Cakto të paracaktuar heq të mëparshmen.",
-          "Çaktivizimi e ndalon zgjedhjen e magazinës. Nëse është magazina e vetme e një arke, çaktivizimi bllokohet derisa arka të ketë një magazinë tjetër.",
-          "Fshirja është e butë dhe magazina mund të rikthehet."
+          "Cakto si të paracaktuar e bën këtë magazinë të paracaktuarën e kompanisë dhe heq të mëparshmen. Checkout-i provon së pari magazinën e paracaktuar.",
+          "Vetëm magazinat aktive mbajnë stok për checkout-in dhe mund t’u caktohen arkave.",
+          "Çaktivizimi i një magazine që është e vetmja e një arke refuzohet; përndryshe hiqet nga arkat që kanë ende një magazinë tjetër."
+        ]
+      },
+      {
+        "title": "Fshirja",
+        "body": "Stoku nuk mund të zhduket bashkë me magazinën e vet.",
+        "items": [
+          "Një magazinë, rreshtat e së cilës kanë ende stok ose rezervime, nuk mund të fshihet. Transferoni ose zbritni stokun më parë.",
+          "Fshirja është e butë dhe magazina mund të rikthehet, përveç kur një magazinë tjetër aktive përdor ndërkohë të njëjtin kod."
+        ]
+      },
+      {
+        "title": "Faqe të lidhura",
+        "items": [
+          "Inventari tregon stokun për artikull në çdo magazinë; Lëvizjet e stokut tregojnë historikun e tij.",
+          "Importi nga Odoo mund të krijojë magazina nga Odoo."
         ]
       }
     ]

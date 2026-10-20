@@ -5,15 +5,24 @@
   "help": {
     "ariaLabel": "Über Produktattribute",
     "title": "Über Produktattribute",
-    "overview": "Attribute sind gemeinsame Optionslisten, etwa Grösse oder Farbe. Eine Variante wählt später je einen Wert der Attribute, die diese SKU kennzeichnen. Der Name ist erforderlich.",
+    "overview": "Attribute sind gemeinsame Optionslisten wie Grösse oder Farbe. Eine Variante wählt aus jedem sie bestimmenden Attribut einen Wert, also macht das Attribut aus einem Produkt mehrere SKUs.",
     "sections": [
       {
-        "title": "Wie Optionen zu einer SKU werden",
-        "body": "Werte sind die Auswahl, zum Beispiel S, M und L. Sie können bis zu 50 Werte speichern. Die Position steuert die Reihenfolge der Attribute.",
+        "title": "Felder",
         "items": [
-          "Sichtbar auf der Produktseite zeigt die Liste im Shop. Der Preis ändert sich dadurch nicht.",
-          "Für Varianten verwendet markiert das Attribut als eines, das ein Produkt in SKUs teilt. Die Variante speichert Attribut und gewählten Wert.",
-          "Der Warenkorb berechnet den Variantenpreis, oder den Produktpreis, wenn keine Variante gewählt ist."
+          "Name ist Pflicht. Werte sind die Auswahlmöglichkeiten für Käufer, zum Beispiel S, M, L; bis zu 50.",
+          "Auf Produktseite sichtbar zeigt das Attribut in den Produktdetails. Es ändert keine Preise.",
+          "Für Varianten verwendet markiert es als Attribut, das Produkte in SKUs aufteilt.",
+          "Position ordnet Attribute auf der Produktseite und in der Variantenauswahl."
+        ]
+      },
+      {
+        "title": "Wie Varianten es nutzen",
+        "items": [
+          "Jede Variante speichert Attribut-Wert-Paare. Zwei aktive Varianten desselben Produkts können nicht dieselbe Kombination haben.",
+          "Warenkorb und Kasse berechnen den Variantenpreis oder den Produktpreis, wenn die Variante keinen hat.",
+          "Ein Attribut, das von einer aktiven Variante genutzt wird, kann nicht gelöscht werden. Entfernen Sie es zuerst aus diesen Varianten.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

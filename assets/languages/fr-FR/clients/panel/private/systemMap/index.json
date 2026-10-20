@@ -5,31 +5,31 @@
   "help": {
     "ariaLabel": "À propos de la carte système eCommerce",
     "title": "À propos de la carte système eCommerce",
-    "overview": "La carte système est une image du module eCommerce catalogue : ses modèles, le parcours de paiement et ce que le module sait faire. Elle ne change pas les données. La marketplace a sa propre carte.",
+    "overview": "La carte système est une image en lecture seule du module eCommerce catalogue : chaque modèle et leurs références, les principaux flux étape par étape et ce que le module offre. Elle ne modifie aucune donnée. La place de marché a sa propre carte.",
     "sections": [
       {
         "title": "Graphe des modèles",
-        "body": "C'est l'onglet par défaut. C'est le modèle de données, disposé pour voir ce qui pointe vers quoi.",
+        "body": "L’onglet par défaut : le modèle de données, groupé en catalogue, commande, paiements, point de vente, séquestre et commun.",
         "items": [
-          "Déplacez et zoomez, ou utilisez les contrôles de zoom et d'ajustement.",
-          "Cliquez un nœud pour ses champs, le chemin d'API et l'endroit où cet écran vit dans le panneau.",
-          "Filtrez par catalogue, commandes, paiements, séquestre et partagé quand la carte entière est trop dense."
+          "Déplacez et zoomez, ou utilisez les commandes de zoom et d’ajustement. Filtrez par groupe quand la carte complète est trop chargée.",
+          "Cliquez sur un nœud pour voir sa description, ses champs clés, son chemin d’API, ses actions et la page du panneau qui le gère.",
+          "Les arêtes montrent quel modèle pointe vers lequel ; les arêtes pont passent dans le module finance."
         ]
       },
       {
         "title": "Comment ça marche",
-        "body": "Cet onglet est l'histoire du paiement, du catalogue à la commande, plutôt que la liste des modèles.",
+        "body": "Les flux racontent l’histoire dans l’ordre plutôt qu’en liste de modèles.",
         "items": [
-          "Suivez-le pour l'ordre des étapes : produit, panier, paiement, stock, expédition.",
-          "C'est le même module que les autres entrées du menu eCommerce. Ce n'est pas un second paiement."
+          "Catalogue et merchandising, stock, panier → checkout → commande, opérations après achat, point de vente et import Odoo ont chacun leur flux.",
+          "Les étapes en pointillé sont le chemin de retour, comme un envoi échoué ou un checkout expiré."
         ]
       },
       {
         "title": "Capacités",
-        "body": "Cet onglet regroupe ce que le module couvre, pour voir la surface sans ouvrir chaque menu.",
+        "body": "Ce que couvre le module, pour trouver où va une tâche.",
         "items": [
-          "Utilisez-le pour voir à quelle zone un travail appartient, puis ouvrez cette page depuis le menu eCommerce.",
-          "Les réglages catalogue comme les catégories, les entrepôts et les remises sont sous Configurations, pas dans ce groupe de menu. La carte les montre quand même, parce que le catalogue s'en sert."
+          "Liste les fonctionnalités, les domaines d’API, les tâches planifiées et les routes publiques de la boutique.",
+          "Les réglages du catalogue comme catégories, entrepôts, remises, caisses et configurations fiscales sont sous Configurations, pas dans ce menu ; la carte les montre quand même."
         ]
       }
     ]

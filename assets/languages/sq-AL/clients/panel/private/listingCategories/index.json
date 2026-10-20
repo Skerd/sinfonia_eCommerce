@@ -5,35 +5,23 @@
   "help": {
     "ariaLabel": "Rreth kategorive të listimeve",
     "title": "Rreth kategorive të listimeve",
-    "overview": "Kategoritë e listimeve janë taksonomia e marketplace, jo katalogu i produkteve. Listimet dhe kërkesat e detyrave tregojnë një kategori. Blerësit shfletojnë sipas tyre; ofruesit përputhen me kërkesa të reja kur kanë një listim aktiv në të njëjtën kategori dhe qytet.",
+    "overview": "Kategoritë e listimeve janë pema e vetë tregut, e ndarë nga kategoritë e produkteve. Listimet dhe kërkesat për detyra zgjedhin secila një. Blerësit shfletojnë sipas tyre, dhe ofruesit lidhen me kërkesat e reja për detyra sipas kategorisë dhe qytetit.",
     "sections": [
       {
         "title": "Pema",
         "items": [
-          "Emri është ajo që shohin operatorët dhe storefront.",
-          "Prindi është opsional. Lëreni bosh për kategori të nivelit të lartë.",
-          "Renditja rendit vëllezërit (më e ulëta së pari). Listat e zgjedhjes dhe pamja e listës përdorin renditjen, pastaj emrin.",
-          "Slug gjenerohet në krijim (LCAT-{name}-{random}) dhe nuk editohet më. Unik për kompani.",
-          "Nuk mund ta vendosni prindin te kategoria vetë ose te një pasardhës — do të krijonte cikël."
-        ],
-        "body": "Kategoritë folezohen. Rrënja nuk ka prind; fëmija tregon një kategori tjetër të së njëjtës kompani."
+          "Emri është i detyrueshëm. Prindi është opsional; lëreni bosh për një kategori të nivelit të parë. Një kategori nuk mund të jetë nën veten ose nën një pasardhës të saj.",
+          "Rendi rendit kategoritë motra, më të voglat së pari; listat renditen sipas rendit, pastaj emrit.",
+          "Slug-u krijohet gjatë krijimit dhe është unik në kompani."
+        ]
       },
       {
-        "title": "Si i përdor pjesa tjetër e marketplace",
+        "title": "Si i përdor tregu",
         "items": [
-          "Çdo listim duhet të zgjedhë një kategori për të qenë i dobishëm në storefront.",
-          "Kërkesat e detyrave zgjedhin kategori; ofruesit që përputhen kanë listim aktiv në atë kategori dhe të njëjtin qytet.",
-          "Seed-i demo mund të krijojë një pemë të gjerë shërbimesh (design, tech, shkrim, etj.) për një kompani të re.",
-          "Kategoritë e soft-fshira mund të restaurohen. Preferoni të korrigjoni përdorimin te listimet sesa të fshini një kategori ende të referuar."
-        ],
-        "body": "Kategoritë janë konfigurim i përbashkët nën Tenancy › System settings."
-      },
-      {
-        "title": "Në këtë faqe",
-        "items": [
-          "Krijo hap formularin. Ndrysho hap një rresht ekzistues.",
-          "Pamjet kartë dhe sheet tregojnë emrin, slug, renditjen dhe prindin.",
-          "Fshirja është soft delete dhe mund të restaurohet me leje."
+          "Çdo listim dhe çdo kërkesë për detyrë ka një kategori.",
+          "Kur publikohet ose rishpallet një kërkesë për detyrë, njoftohen ofruesit me listim aktiv në të njëjtën kategori dhe qytet.",
+          "Menytë dhe filtrat e shërbimeve në dyqan ndërtohen nga kjo pemë.",
+          "Fshirja është e butë dhe kategoria mund të rikthehet. Ricaktoni listimet para se të fshini një kategori ende në përdorim."
         ]
       }
     ]

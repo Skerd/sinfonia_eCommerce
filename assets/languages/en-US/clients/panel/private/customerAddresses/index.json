@@ -34,5 +34,36 @@
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
     "deletedBy": "Deleted by"
+  },
+  "help": {
+    "ariaLabel": "About Customer addresses",
+    "title": "About Customer addresses",
+    "overview": "Customer addresses are the saved billing and shipping addresses of shop customers. Buyers manage their own from their account; this page lets staff see and maintain every customer's addresses.",
+    "sections": [
+      {
+        "title": "Fields",
+        "items": [
+          "Customer and type (billing or shipping) are required.",
+          "First and last name, street, city, country, and map coordinates are required; email, phone, state, postal code, and a label are optional.",
+          "Country, state, and postal code are what tax zones and shipping zones match against at checkout."
+        ]
+      },
+      {
+        "title": "Default addresses",
+        "body": "Each customer has at most one default address per type.",
+        "items": [
+          "Set default, or saving an address as default, clears the previous default of the same type for that customer.",
+          "Checkout and the customer's account offer the default first."
+        ]
+      },
+      {
+        "title": "Two views of the same records",
+        "items": [
+          "From Configurations, every customer's addresses are listed and a new one asks which customer it belongs to.",
+          "In the customer's own account, only their addresses are listed and new ones are filed under them.",
+          "Deleting is a soft delete and it can be restored."
+        ]
+      }
+    ]
   }
 }

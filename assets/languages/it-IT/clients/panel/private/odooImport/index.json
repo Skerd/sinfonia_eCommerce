@@ -5,15 +5,34 @@
   "help": {
     "ariaLabel": "Informazioni sull'importazione Odoo",
     "title": "Informazioni sull'importazione Odoo",
-    "overview": "L'importazione legge Odoo in JSON-RPC con la connessione salvata nelle impostazioni aziendali.",
+    "overview": "L’importazione Odoo copia dati di catalogo, giacenza e utenti da Odoo in questa società, usando la connessione Odoo salvata. Scegli quali insiemi di dati importare e puoi prima fare una prova a vuoto.",
     "sections": [
       {
-        "title": "Cosa viene scritto",
-        "body": "Ogni set di dati scelto viene aggiornato in base all'id Odoo.",
+        "title": "Insiemi di dati",
+        "body": "Ogni record è associato al suo ID Odoo, quindi rieseguire l’importazione aggiorna ciò che ha creato invece di duplicarlo.",
         "items": [
-          "Categorie, prodotti, varianti, magazzini, scorte, movimenti, trasferimenti interni e utenti.",
-          "Una prova autentica e conta i record senza scrivere.",
-          "Gli utenti importati sono invitati e non possono accedere finché un amministratore non reinvia l'invito."
+          "Categorie: categorie prodotto di Odoo.",
+          "Prodotti: modelli di prodotto con le loro varianti e valori di attributo. I prodotti Odoo archiviati arrivano archiviati; le varianti archiviate arrivano inattive.",
+          "Magazzini: magazzini Odoo, creati attivi.",
+          "Inventario: quantità fisiche per prodotto e magazzino dalla giacenza interna di Odoo; le righe esistenti vengono impostate sulla quantità Odoo.",
+          "Variazioni di giacenza: movimenti di magazzino Odoo completati, scritti come movimenti di magazzino con un motivo corrispondente.",
+          "Azioni: trasferimenti interni completati, scritti come trasferimenti di magazzino completati.",
+          "Utenti: utenti interni Odoo, invitati nella società con il ruolo di registrazione. Non possono accedere finché non accettano l’invito."
+        ]
+      },
+      {
+        "title": "Prova a vuoto e risultati",
+        "items": [
+          "Una prova a vuoto accede a Odoo e conta solo ciò che ogni insieme leggerebbe; non viene scritto nulla.",
+          "Un’esecuzione reale riporta per ogni insieme i conteggi di creati, aggiornati e saltati. Le righe che non si possono associare (ad esempio un movimento per un prodotto non importato) vengono saltate.",
+          "Importa i prodotti prima dell’inventario e delle variazioni di giacenza, e i magazzini prima dell’inventario, così i riferimenti vengono trovati."
+        ]
+      },
+      {
+        "title": "Permessi",
+        "items": [
+          "Serve il permesso di creare ogni tipo di record importato, più i collegamenti Odoo che ricordano le associazioni.",
+          "Deve essere selezionato almeno un insieme di dati."
         ]
       }
     ]

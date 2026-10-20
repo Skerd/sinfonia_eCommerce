@@ -5,34 +5,61 @@
   "help": {
     "ariaLabel": "À propos de l'inventaire",
     "title": "À propos de l'inventaire",
-    "overview": "Une ligne d'inventaire est le stock d'un produit, ou d'une variante, dans un entrepôt. Le disponible est le stock en main moins la quantité réservée pour les paiements ouverts. C'est le nombre que la boutique peut encore vendre.",
+    "overview": "Une ligne de stock est le stock d’un produit, ou d’une variante, dans un entrepôt. Elle porte trois nombres : en stock, réservé et disponible (en stock moins réservé). Disponible est ce que le checkout et la caisse peuvent encore vendre. Chaque changement de « en stock » laisse un mouvement dans le journal de stock.",
     "sections": [
       {
-        "title": "En main, réservé, disponible",
-        "body": "Les trois quantités ne sont pas trois stocks. Réservé est une retenue à l'intérieur du stock en main.",
+        "title": "En stock, réservé, disponible",
+        "body": "Ce ne sont pas trois stocks. Réservé est une retenue à l’intérieur de « en stock ».",
         "items": [
-          "En main est ce que l'entrepôt a.",
-          "Réservé est ce que les paiements ouverts ont déjà pris et pas encore expédié ou libéré.",
-          "Disponible est en main moins réservé. Il peut devenir négatif si un comptage trouve moins que ce que les commandes retiennent."
+          "En stock est ce qui est physiquement dans l’entrepôt.",
+          "Réservé est ce que les checkouts ouverts et les commandes non expédiées ont revendiqué. C’est réservé à l’étape de paiement et libéré si le checkout expire, si la commande est annulée ou entièrement remboursée.",
+          "Disponible est en stock moins réservé. Un inventaire qui trouve moins que ce qui est réservé peut le rendre négatif."
         ]
       },
       {
-        "title": "Quand le paiement utilise la ligne",
-        "body": "Un produit n'est suivi que là où une ligne existe. Pas de ligne : l'article n'est pas pris sur le stock.",
+        "title": "Quels articles ont besoin d’une ligne",
+        "body": "Un produit physique ou variable est suivi en stock sauf si le suivi est désactivé sur le produit ou sa variante.",
         "items": [
-          "Une ligne de paiement n'est réservée que s'il existe une ligne pour ce produit ou cette variante.",
-          "L'entrepôt actif par défaut est utilisé s'il peut couvrir la quantité. Sinon le premier qui le peut.",
-          "Expédier consomme la réservation. Annuler ou rembourser en totalité avant cela la libère."
+          "Un article suivi ne peut être vendu que depuis des lignes d’entrepôts actifs. Sans ligne, ou sans assez de disponible, le checkout refuse la ligne comme en rupture.",
+          "Le checkout préfère un entrepôt qui couvre toute la ligne, l’entrepôt par défaut d’abord ; sinon il répartit la ligne sur plusieurs entrepôts, celui par défaut d’abord.",
+          "Les produits numériques, services et cartes cadeaux, et les articles sans suivi, n’ont pas besoin de ligne. Un lot n’a jamais de ligne ; ses composants en ont.",
+          "Il y a une ligne active par produit, variante et entrepôt."
         ]
       },
       {
-        "title": "Ce qui change encore les chiffres",
-        "body": "Vous pouvez modifier une ligne ici. Les autres pages de stock écrivent les mêmes chiffres et laissent un mouvement.",
+        "title": "Créer et modifier une ligne",
+        "body": "Créer une ligne est ce qui fait démarrer le stockage d’un article dans un entrepôt.",
         "items": [
-          "Un transfert déplace le stock libre entre entrepôts. Les unités déjà réservées ne bougent jamais.",
-          "Un comptage fixe le stock en main sur ce qui a été compté et écrit un ajustement.",
-          "Ventes, retours, réapprovisionnements, dommages et mises au rebut sont sous Mouvements d'inventaire, avec la quantité avant et après.",
-          "La suppression est logique et la ligne peut être restaurée."
+          "Produit, variante et entrepôt sont figés une fois la ligne créée, car réservations et historique en dépendent.",
+          "Une quantité initiale à la création écrit un mouvement initial. Ensuite, « en stock » ne change que par des actions, jamais par une simple modification.",
+          "Seuil de réapprovisionnement et quantité de réapprovisionnement pilotent l’alerte de stock bas."
+        ]
+      },
+      {
+        "title": "Réapprovisionner et déduire",
+        "body": "Ce sont les actions de stock manuelles. Les deux exigent le droit d’écrire « en stock ».",
+        "items": [
+          "Réapprovisionner ajoute des unités et peut enregistrer le fournisseur, le numéro de reçu, les fichiers de reçu, la date, le coût unitaire, le lot et la date de péremption.",
+          "Déduire retire des unités comme perte, casse ou ajustement. Cela reprend le coût unitaire et la péremption de la dernière livraison du même lot, pour que la perte soit valorisée.",
+          "Une déduction qui laisserait moins en stock que ce qui est réservé est refusée."
+        ]
+      },
+      {
+        "title": "Alertes de stock bas",
+        "body": "Une tâche horaire surveille chaque ligne ayant un seuil de réapprovisionnement.",
+        "items": [
+          "Quand le disponible passe sous le seuil (sans être négatif), le personnel est prévenu une fois.",
+          "L’alerte se réarme quand le disponible remonte au seuil ou au-dessus."
+        ]
+      },
+      {
+        "title": "Ce qui change aussi les nombres",
+        "body": "Chaque changement ci-dessous écrit un mouvement avec la quantité avant et après.",
+        "items": [
+          "Expédier une commande consomme ses réservations ; un envoi échoué remet des unités.",
+          "Un transfert de stock déplace du stock libre entre entrepôts ; un inventaire fixe « en stock » à la quantité comptée.",
+          "Un retour reçu remet de la marchandise ; une vente et un remboursement en caisse prennent et rendent le stock directement.",
+          "Une ligne qui a encore du stock ou des réservations ne peut pas être supprimée. Supprimer une ligne vide est une suppression douce et elle peut être restaurée, sauf si une ligne active existe désormais pour le même article."
         ]
       }
     ]

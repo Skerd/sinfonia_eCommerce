@@ -5,15 +5,32 @@
   "help": {
     "ariaLabel": "À propos des méthodes de paiement aux points de vente",
     "title": "À propos des méthodes de paiement aux points de vente",
-    "overview": "Une méthode de paiement est espèces ou carte. Une configuration de point de vente choisit les méthodes que sa caisse propose. Nom et type sont obligatoires. La séquence est l'ordre des boutons en caisse.",
+    "overview": "Un mode de paiement est un bouton de la caisse : espèces ou carte. Les caisses choisissent les modes qu’elles proposent. Nom et type sont obligatoires ; la séquence est l’ordre d’affichage des boutons.",
     "sections": [
       {
-        "title": "Comment la caisse encaisse",
-        "body": "Espèces et carte sont des méthodes distinctes. Une caisse doit garder au moins une méthode.",
+        "title": "Espèces",
         "items": [
-          "Les espèces peuvent lister des montants rapides séparés par des virgules, par exemple 0.5, 1, 5, 10, 20. Une liste vide utilise les pastilles intégrées.",
-          "La carte active le chemin terminal. Manuel signifie que le caissier confirme le débit. HTTP local parle à un pont de terminal avec protocole, hôte, port, identifiant de terminal et chemin.",
-          "Désactiver masque la méthode pour les nouveaux paiements. La suppression est logique et la méthode peut être restaurée."
+          "Les montants rapides sont des valeurs séparées par des virgules, par exemple 0.5, 1, 5, 10, 20, affichées comme puces en un clic. Une liste vide utilise les puces intégrées.",
+          "Paiements en espèces, monnaie rendue, remboursements en espèces et mouvements du tiroir mettent à jour l’espèce attendue de la séance."
+        ]
+      },
+      {
+        "title": "Carte et terminaux de paiement",
+        "body": "Un mode carte peut piloter un terminal bancaire.",
+        "items": [
+          "Terminal désactivé : le caissier passe la carte sur un appareil séparé et enregistre le paiement.",
+          "Fournisseur manuel : la caisse demande au caissier de confirmer le débit sur le terminal externe.",
+          "Fournisseur HTTP local : la caisse envoie le montant, avec l’identifiant du terminal, à une passerelle de terminal selon le protocole, l’hôte, le port et le chemin, et attend l’accord, le refus ou l’expiration.",
+          "Tester la connexion vérifie que la passerelle répond avant de l’utiliser en caisse."
+        ]
+      },
+      {
+        "title": "Activer, désactiver, supprimer",
+        "body": "Une caisse doit toujours garder au moins un mode de paiement.",
+        "items": [
+          "Désactiver masque le mode pour les nouveaux paiements et dans la liste d’affectation des caisses.",
+          "Désactiver ou supprimer un mode le retire de chaque caisse ; c’est refusé si une caisse se retrouvait sans mode.",
+          "La suppression est douce et le mode peut être restauré."
         ]
       }
     ]

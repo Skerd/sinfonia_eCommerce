@@ -5,33 +5,32 @@
   "help": {
     "ariaLabel": "Informazioni sulle recensioni prodotto",
     "title": "Informazioni sulle recensioni prodotto",
-    "overview": "Una recensione prodotto appartiene a una riga di un ordine pagato. Il voto alimenta media, numero di voti e numero di recensioni del prodotto. Le recensioni del marketplace sono un elenco a parte e non cambiano questi numeri.",
+    "overview": "Una recensione di prodotto è la valutazione e il commento di un acquirente su un prodotto che ha pagato. Appartiene a un ordine pagato e a un prodotto di quell’ordine, e alimenta la valutazione media, il numero di valutazioni e il numero di recensioni di quel prodotto. Le recensioni del marketplace sono un elenco separato.",
     "sections": [
       {
-        "title": "Cosa puoi creare",
-        "body": "La recensione è legata a un acquisto reale. Non è un commento libero.",
+        "title": "Chi può recensire cosa",
+        "body": "Una recensione è legata a un acquisto reale, non a un commento libero.",
         "items": [
-          "Punta a un ordine pagato e a un prodotto di quell'ordine.",
-          "L'autore è il cliente dell'ordine. Non scegli un'altra persona e non puoi cambiarlo dopo.",
-          "Ordine e prodotto restano fissi una volta creata la recensione."
+          "Solo il cliente dell’ordine può creare la recensione; viene pubblicata con il suo nome.",
+          "L’ordine deve essere pagato o parzialmente rimborsato, e il prodotto deve esserci.",
+          "Una recensione per prodotto per ordine. Le vendite in cassa qui non producono ordini recensibili."
         ]
       },
       {
-        "title": "Cosa puoi ancora modificare",
-        "body": "Testo e voto possono cambiare. Il legame con l'acquisto no.",
+        "title": "Cosa può cambiare dopo",
+        "body": "Testo e punteggio possono cambiare; il legame con l’acquisto no.",
         "items": [
-          "Voto, titolo e commento si possono modificare.",
-          "Media, numero di voti e numero di recensioni del prodotto seguono le recensioni ancora attive.",
-          "L'eliminazione è logica e la recensione può essere ripristinata."
+          "Valutazione (da 1 a 5), titolo e commento si possono modificare.",
+          "Ordine e prodotto sono fissi una volta creata la recensione.",
+          "La valutazione media del prodotto (a un decimale), il numero di valutazioni e il numero di recensioni vengono ricalcolati dalle recensioni attive a ogni creazione, cambio di valutazione, eliminazione e ripristino."
         ]
       },
       {
-        "title": "Dove compare",
-        "body": "La moderazione è qui. Il numero con cui si vende sta sul prodotto.",
+        "title": "Moderazione",
         "items": [
-          "Apri il prodotto per vedere l'aggregato che usa il negozio.",
-          "Apri l'ordine per vedere l'acquisto di cui parla la recensione.",
-          "Una vendita in cassa non finisce in questo elenco. Queste recensioni sono ordini di catalogo."
+          "Solo un amministratore può eliminare una recensione. È un’eliminazione logica; il ripristino riporta la valutazione.",
+          "Una recensione eliminata non può essere ripristinata se esiste una recensione attiva per lo stesso ordine e prodotto.",
+          "Apri il prodotto per vedere i numeri mostrati dal negozio, o l’ordine per vedere l’acquisto."
         ]
       }
     ]

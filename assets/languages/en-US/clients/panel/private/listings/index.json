@@ -5,36 +5,49 @@
   "help": {
     "ariaLabel": "About Listings",
     "title": "About Listings",
-    "overview": "A listing is a provider's offer on the marketplace — a service or gig with category, media, pricing, and optional packages or add-ons. Only an active listing can be ordered. Status is not changed by ordinary edit; activate and deactivate are dedicated actions.",
+    "overview": "A listing is a provider's service offer on the marketplace: what they do, in which category and place, at what price, with optional packages and add-ons. Buyers order from active listings. Status is draft, active, or inactive and is changed only by the activate and deactivate actions.",
     "sections": [
       {
         "title": "Status",
         "items": [
-          "Draft is the default while you build title, category, media, and price.",
-          "Activate requires a price and currency. Without them the listing cannot become orderable.",
-          "Deactivate takes an active listing offline without deleting it.",
-          "Only the listing's provider (or an admin) can activate or deactivate."
-        ],
-        "body": "Status is draft, active, or inactive. PATCH cannot change it."
+          "Draft is the default while the offer is being built. Nobody can order it.",
+          "Activate makes it orderable. It requires a price and a currency, because an order without a package is priced from them.",
+          "Deactivate takes it offline without deleting it. Resolving a report against it can also deactivate it.",
+          "Only the listing's provider, or an administrator, can activate or deactivate."
+        ]
       },
       {
         "title": "What you configure",
         "items": [
-          "Title, description, category, tags, FAQs, and buyer requirements describe the offer.",
-          "Pricing type is fixed or hourly. Price and currency power create-from-listing orders when no package is chosen.",
-          "Delivery days set the default due date window for orders from the listing base price.",
-          "Main image is required; galleries and location (country / state / city) are optional.",
-          "Packages and add-ons are separate records attached to the listing; they override or extend price and delivery when the buyer selects them."
+          "Title, description, category, tags, FAQs, and buyer requirements describe the offer. Category is a listing category, not a product category.",
+          "Pricing type is fixed or hourly. Price and currency are the base price; delivery days set the default due date of an order.",
+          "Main image is required; image and video galleries are optional.",
+          "Country, state, and city place the offer. City and category decide which task requests the provider is told about.",
+          "Provider is the user who sells it: yourself, or another user of the same company."
         ]
       },
       {
-        "title": "How it connects",
+        "title": "How an order is priced from it",
+        "body": "A buyer orders an active listing, optionally with one package and any add-ons.",
         "items": [
-          "Orders can be created from an active listing (optionally with a package and add-ons).",
-          "Promotions boost a listing's visibility for a date window.",
-          "Flags let users report a listing; resolving a flag can deactivate it.",
-          "Reviews roll up rating and review count on the listing.",
-          "Deleting is a soft delete and can be restored."
+          "Without a package: the listing price and delivery days. With a package: the package's price and delivery days instead.",
+          "Each add-on adds its price and its extra delivery days. Add-ons must belong to this listing and use the order's currency.",
+          "A provider cannot order their own listing."
+        ]
+      },
+      {
+        "title": "Visibility and reputation",
+        "items": [
+          "A running promotion (featured or sponsored) puts the listing first in the storefront's recommended sort for its dates.",
+          "Reviews on completed orders give the listing its average rating and review count.",
+          "Users can report a listing; administrators review reports under Listing flags."
+        ]
+      },
+      {
+        "title": "Who sees what",
+        "items": [
+          "Administrators see and manage every listing in the company. Other users change only listings they provide.",
+          "Deleting is a soft delete and it can be restored. Its packages and add-ons cannot be restored while the listing is deleted."
         ]
       }
     ]

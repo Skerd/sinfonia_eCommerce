@@ -5,15 +5,34 @@
   "help": {
     "ariaLabel": "About Odoo import",
     "title": "About Odoo import",
-    "overview": "The import reads Odoo over JSON-RPC using the connection saved in tenancy settings.",
+    "overview": "The Odoo import copies catalog, stock, and user data from Odoo into this company, using the saved Odoo connection. You choose which datasets to bring in, and can do a dry run first.",
     "sections": [
       {
-        "title": "What is written",
-        "body": "Each selected dataset is upserted by Odoo id.",
+        "title": "Datasets",
+        "body": "Each record is matched to its Odoo id, so running the import again updates what it created instead of duplicating it.",
         "items": [
-          "Categories, products, variants, warehouses, on-hand stock, stock movements, internal transfers, and users.",
-          "A dry run authenticates and counts records without writing.",
-          "Imported users are invited and cannot sign in until an administrator resends the invitation."
+          "Categories: Odoo product categories.",
+          "Products: product templates with their variants and attribute values. Archived Odoo products arrive archived; archived variants arrive inactive.",
+          "Warehouses: Odoo warehouses, created active.",
+          "Inventory: on-hand quantities per product and warehouse from Odoo's internal stock; existing rows are set to the Odoo quantity.",
+          "Stock changes: completed Odoo stock moves, written as stock movements with a matching reason.",
+          "Actions: completed internal transfers, written as done stock transfers.",
+          "Users: internal Odoo users, invited into the company with the sign-up role. They cannot sign in until they accept the invitation."
+        ]
+      },
+      {
+        "title": "Dry run and results",
+        "items": [
+          "A dry run signs in to Odoo and only counts what each dataset would read; nothing is written.",
+          "A real run reports created, updated, and skipped counts per dataset. Rows that cannot be matched (for example a stock move for a product that was not imported) are skipped.",
+          "Import products before inventory and stock changes, and warehouses before inventory, so the references can be found."
+        ]
+      },
+      {
+        "title": "Permissions",
+        "items": [
+          "You need permission to create each kind of record you import, plus the Odoo link records that remember the matches.",
+          "At least one dataset must be selected."
         ]
       }
     ]

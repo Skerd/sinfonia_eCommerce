@@ -34,5 +34,36 @@
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
     "deletedBy": "Gelöscht von"
+  },
+  "help": {
+    "ariaLabel": "Über Kundenadressen",
+    "title": "Über Kundenadressen",
+    "overview": "Kundenadressen sind die gespeicherten Rechnungs- und Lieferadressen von Shop-Kunden. Käufer verwalten ihre eigenen im Konto; auf dieser Seite sehen und pflegen Mitarbeitende die Adressen aller Kunden.",
+    "sections": [
+      {
+        "title": "Felder",
+        "items": [
+          "Kunde und Typ (Rechnung oder Lieferung) sind Pflicht.",
+          "Vor- und Nachname, Strasse, Ort, Land und Kartenkoordinaten sind Pflicht; E-Mail, Telefon, Kanton bzw. Bundesland, Postleitzahl und eine Bezeichnung sind optional.",
+          "Land, Kanton bzw. Bundesland und Postleitzahl sind das, womit Steuer- und Versandzonen im Checkout abgeglichen werden."
+        ]
+      },
+      {
+        "title": "Standardadressen",
+        "body": "Jeder Kunde hat höchstens eine Standardadresse pro Typ.",
+        "items": [
+          "Als Standard setzen, oder eine Adresse als Standard speichern, hebt den bisherigen Standard desselben Typs für diesen Kunden auf.",
+          "Checkout und Kundenkonto bieten den Standard zuerst an."
+        ]
+      },
+      {
+        "title": "Zwei Ansichten derselben Datensätze",
+        "items": [
+          "Unter Konfigurationen werden die Adressen aller Kunden gelistet, und eine neue fragt, zu welchem Kunden sie gehört.",
+          "Im eigenen Konto des Kunden werden nur seine Adressen gelistet, und neue werden unter ihm abgelegt.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+        ]
+      }
+    ]
   }
 }

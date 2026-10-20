@@ -5,33 +5,42 @@
   "help": {
     "ariaLabel": "Über POS-Sitzungen",
     "title": "Über POS-Sitzungen",
-    "overview": "Eine Sitzung ist eine Öffnung einer Kasse, vom Anfangsbestand bis zur Schlusszählung. Sitzungen werden an der Kasse geöffnet und geschlossen. Diese Seite listet sie nur.",
+    "overview": "Eine Sitzung ist eine Öffnung einer Kasse, vom Zählen des Anfangsbargelds bis zum Schlusszählen. Sitzungen werden an der Kasse geöffnet und geschlossen; diese Seite listet sie, damit Sie jede Schublade prüfen können.",
     "sections": [
       {
-        "title": "Die Status",
-        "body": "Der Status sagt, wo die Schublade in dieser Öffnung steht, nicht ob die Kasse verkaufen darf.",
+        "title": "Die Zustände",
+        "body": "Der Zustand zeigt, wo diese Öffnung der Schublade steht, nicht ob die Kasse verkaufen darf.",
         "items": [
-          "Öffnung ist die Zählung, bevor der Verkauf beginnt.",
-          "Geöffnet ist das Verkaufsfenster. Ein- und Auszahlung passieren hier.",
-          "Schliessung ist die Zählung am Ende. Geschlossen ist eine beendete Sitzung."
+          "Geöffnet ist das Verkaufsfenster: Die Kasse öffnet eine Sitzung mit ihrem Anfangsbestand direkt in diesem Zustand.",
+          "Geschlossen ist eine beendete Sitzung, von der Kasse geschlossen oder zwangsweise geschlossen, als die Kasse pausiert oder deaktiviert wurde.",
+          "Eröffnungskontrolle und Schlusskontrolle sind reservierte Zustände; die aktuelle Kasse hält nicht darin an."
         ]
       },
       {
-        "title": "Was festgehalten wird",
-        "body": "Die Sitzung ist die Kassenschublade dieser Öffnung, plus die Verkäufe, die darauf gebongt wurden.",
+        "title": "Was die Sitzung verfolgt",
+        "body": "Die Sitzung ist die Bargeldschublade dieser Öffnung plus die darauf erfassten Verkäufe.",
         "items": [
-          "Der Anfangsbestand ist, was beim Öffnen in der Schublade lag.",
-          "Einzahlung und Auszahlung sind Schubladenbewegungen mit einem Grund. Sie sind keine Verkäufe.",
-          "Schliessen hält das gezählte Bargeld fest. Abstimmen vergleicht diese Zählung mit dem, was die Sitzung aus Anfangsbestand, Kassenbewegungen und Barverkäufen erwartet hat."
+          "Anfangsbestand ist das zu Beginn gezählte Bargeld.",
+          "Bareinlage und Barentnahme sind Schubladenbewegungen mit Betrag, Grund, Zeit und wer sie ausgeführt hat.",
+          "Erwartetes Bargeld beginnt beim Anfangsbestand und folgt jeder Bargeldbewegung, jedem Barverkauf (abzüglich Rückgeld) und jeder Bargeld-Erstattung.",
+          "Schlussbestand ist das am Ende gezählte Bargeld. Die Differenz zum erwarteten Bargeld und ihr Grund werden in den Sitzungsnotizen vermerkt."
         ]
       },
       {
-        "title": "Wer es darf",
-        "body": "Die Schaltflächen sind an der Kasse. Die Berechtigung liegt auf der Sitzung.",
+        "title": "Abgleich",
+        "body": "Der Abgleich vergleicht die Zählung mit dem, was die Sitzung erwartet hat, aufgeschlüsselt nach Zahlungsart.",
         "items": [
-          "Öffnen, Schliessen und Abstimmen brauchen die Schreibberechtigung für den Sitzungsstatus.",
-          "Ein- und Auszahlung brauchen die Schreibberechtigung für Kassenbewegungen.",
-          "Die Verkäufe der Sitzung stehen unter POS-Bestellungen, gefiltert nach dieser Sitzung."
+          "Er listet Anfangsbestand, Bargeldbewegungen, Verkäufe und Erstattungen pro Zahlungsart sowie die Differenz.",
+          "Eine Differenz von einem Rappen oder mehr kann nicht ohne Grund geschlossen werden."
+        ]
+      },
+      {
+        "title": "Wer es tun kann",
+        "body": "Die Schaltflächen sind an der Kasse; die Berechtigungen liegen auf der Sitzung.",
+        "items": [
+          "Öffnen, Schliessen und Abgleichen brauchen die Berechtigung, den Sitzungszustand zu schreiben. Bargeldbewegungen brauchen die Berechtigung, Bargeldbewegungen zu schreiben.",
+          "Die Verkäufe einer Sitzung stehen unter POS-Bestellungen, gefiltert nach dieser Sitzung.",
+          "Sitzungen können in dieser Liste weder angelegt, bearbeitet noch gelöscht werden."
         ]
       }
     ]

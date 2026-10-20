@@ -5,36 +5,68 @@
   "help": {
     "ariaLabel": "Über Produktbestellungen",
     "title": "Über Produktbestellungen",
-    "overview": "Eine Produktbestellung ist ein Kunden-Checkout. Der Checkout schreibt die Bestellung. Diese Seite legt keine an. Drei Status laufen getrennt: die Bestellung, die Zahlung und das Fulfillment.",
+    "overview": "Eine Produktbestellung ist ein Kundeneinkauf im Shop oder ein Kassenverkauf, der für die Buchhaltung gespiegelt wird. Der Checkout schreibt sie; diese Seite erstellt nie eine. Jede Bestellung hat drei Status, die sich getrennt bewegen — Bestellung, Zahlung und Erfüllung — sowie eine Zeitleiste aller Schritte und wer sie ausgeführt hat.",
     "sections": [
       {
-        "title": "Die drei Status",
-        "body": "Lesen Sie sie zusammen. Eine Bestellung kann bezahlt und trotzdem nicht erfüllt sein, oder versendet und nur teilweise erstattet.",
+        "title": "Wie eine Bestellung entsteht",
+        "body": "Die Bestellung ist das Ende des Checkouts, nicht der Anfang.",
         "items": [
-          "Der Bestellstatus läuft ausstehend, bestätigt, in Bearbeitung, versendet, geliefert, storniert, erstattet.",
-          "Der Zahlungsstatus läuft unbezahlt, autorisiert, bezahlt, teilweise erstattet, erstattet, storniert.",
-          "Der Fulfillment-Status läuft unerfüllt, teilweise erfüllt, erfüllt, zurückgegeben."
+          "Der Checkout berechnet den Warenkorb zuerst neu aus dem aktuellen Katalog und reserviert dann Bestand für jede geführte Zeile, bevor Geld genommen wird. Kann eine Zeile nicht gedeckt werden, stoppt der Checkout und nichts wird reserviert.",
+          "Kartenzahlungen erstellen die Bestellung, wenn die Zahlung gelingt — bei der Bestätigung des Käufers oder über den Zahlungs-Webhook, je nachdem, was zuerst eintrifft. Die Bestellung wird nur einmal geschrieben.",
+          "Nachnahme und Banküberweisung erstellen eine ausstehende, unbezahlte Bestellung. Mitarbeitende bestätigen sie und markieren sie als bezahlt, wenn das Geld eingeht.",
+          "Ein nie abgeschlossener Checkout läuft nach seiner Frist ab; ein stündlicher Job gibt seinen reservierten Bestand frei. Ist die Zahlung doch durchgegangen, legt der Job stattdessen die Bestellung an.",
+          "Im Plattform-Shop wird ein Warenkorb mit mehreren Verkäufern zu einer Bestellung pro Verkäuferfirma."
         ]
       },
       {
-        "title": "Was die Zeilenaktionen tun",
-        "body": "Bestätigen, In Bearbeitung, Versenden, Als bezahlt markieren, Stornieren und Erstatten sind getrennt. Jede wird ausserhalb ihres Zustands abgelehnt.",
+        "title": "Die drei Status",
+        "body": "Lesen Sie sie zusammen. Eine Bestellung kann bezahlt und noch nicht erfüllt sein, oder versendet und teilweise erstattet.",
         "items": [
-          "Bestätigen geht nur aus ausstehend. Es bestätigt die Bestellung, der übliche Schritt bei Nachnahme oder Banküberweisung, und informiert den Kunden.",
-          "In Bearbeitung geht nur aus bestätigt.",
-          "Versenden geht aus bestätigt oder in Bearbeitung. Es legt ein Fulfillment für die noch offenen Mengen an, nimmt diese Einheiten aus dem Bestand und setzt den Bestellstatus aus den Sendungen. Sie können Spediteur, Sendungsnummer und Tracking-Link erfassen.",
-          "Als bezahlt markieren erfasst eine Offline-Zahlung und nur, solange die Zahlung unbezahlt ist und die Bestellung nicht storniert oder erstattet ist. Eine ausstehende Bestellung wird dabei bestätigt. Geschenkkarten und Downloads der Bestellung werden ausgestellt. Bestand bleibt gehalten, bis er versendet wird.",
-          "Stornieren ist blockiert, sobald die Bestellung versendet, geliefert, storniert oder erstattet ist. Eine bezahlte oder teilweise erstattete Bestellung muss zuerst erstattet werden. Stornieren gibt noch gehaltenen Bestand frei und schreibt Guthaben zurück, das mit einer Geschenkkarte verrechnet wurde.",
-          "Erstatten gilt für eine bezahlte oder teilweise erstattete Bestellung. Eine volle Erstattung schreibt dieses Guthaben ebenfalls zurück, deaktiviert Geschenkkarten dieser Bestellung, lässt ihre Downloads ablaufen und gibt noch gehaltenen Bestand frei."
+          "Bestellstatus: ausstehend, bestätigt, in Bearbeitung, versendet, zugestellt, storniert, erstattet.",
+          "Zahlungsstatus: unbezahlt, autorisiert, bezahlt, teilweise erstattet, erstattet, storniert (voided).",
+          "Erfüllungsstatus: nicht erfüllt, teilweise erfüllt, erfüllt, retourniert. Er wird aus den Sendungen der Bestellung abgeleitet.",
+          "Versendet und zugestellt werden ebenfalls abgeleitet: versendet, sobald jede Zeile unterwegs ist; zugestellt, sobald jede nicht gescheiterte Sendung zugestellt ist."
+        ]
+      },
+      {
+        "title": "Zeilenaktionen",
+        "body": "Jede Aktion wird ausserhalb ihres erwarteten Zustands abgelehnt. Statusaktionen brauchen die Berechtigung, den Bestellstatus zu schreiben; Geldaktionen die Berechtigung, den Zahlungsstatus zu schreiben.",
+        "items": [
+          "Bestätigen geht nur aus ausstehend. Es bestätigt die Bestellung und informiert den Kunden.",
+          "In Bearbeitung setzen geht nur aus bestätigt. Es bedeutet, dass die Bestellung vorbereitet wird.",
+          "Versenden geht aus bestätigt oder in Bearbeitung. Es erstellt eine Sendung für alle noch nicht versendeten Mengen, nimmt diese Einheiten aus dem Bestand und speichert Versanddienst, Sendungsnummer und Tracking-Link, die der Kunde erhält.",
+          "Als bezahlt markieren erfasst eine Offline-Zahlung mit optionaler Referenz, nur solange die Zahlung unbezahlt und die Bestellung weder storniert noch erstattet ist. Eine ausstehende Bestellung wird dabei bestätigt, und mit der Bestellung gekaufte Geschenkkarten und Downloads werden ausgestellt.",
+          "Stornieren ist gesperrt, sobald die Bestellung versendet, zugestellt, storniert oder erstattet ist, und eine bezahlte Bestellung muss zuerst erstattet werden. Es gibt den noch reservierten Bestand frei und gibt mit einer Geschenkkarte bezahltes Guthaben zurück.",
+          "Erstatten ist für eine bezahlte oder teilweise erstattete Bestellung, ganz oder um einen Betrag. Eine Kartenzahlung wird über das Zahlungs-Gateway erstattet; eine Offline-Zahlung wird als manuelle Erstattung erfasst."
+        ]
+      },
+      {
+        "title": "Was eine volle Erstattung rückgängig macht",
+        "body": "Eine Teilerstattung bewegt nur Geld. Eine Erstattung des gesamten Rests macht auch rückgängig, was die Bestellung ausgegeben hat.",
+        "items": [
+          "Für die Bestellung verwendetes Guthaben geht auf die Geschenkkarte zurück.",
+          "Von der Bestellung ausgestellte Geschenkkarten werden deaktiviert, und ihre Download-Links laufen ab.",
+          "Noch für nicht versendete Zeilen reservierter Bestand wird freigegeben. Bereits versendete Einheiten kommen nur über eine empfangene Retoure zurück.",
+          "Die Bestellung wird erstattet. Ein Kassenverkauf kann hier nicht erstattet werden: Er wird an der Kasse erstattet, damit Kassenschublade und Bestand übereinstimmen."
+        ]
+      },
+      {
+        "title": "Kundennachrichten und Zeitleiste",
+        "body": "Der Käufer wird bei jedem für ihn wichtigen Schritt informiert, nachdem die Änderung gespeichert ist.",
+        "items": [
+          "Bestätigung, Versand (mit Tracking), Zustellung, Zahlung, Stornierung, Erstattung und Retourenentscheide senden dem Kunden je eine Benachrichtigung und E-Mail.",
+          "Jede Aktion fügt der Zeitleiste einen Eintrag mit Zeit, Mitarbeitendem und allfälliger Notiz, Referenz oder Sendungsnummer hinzu.",
+          "Notizen sieht der Kunde; interne Notizen sind nur für Mitarbeitende."
         ]
       },
       {
         "title": "Wo der Rest der Arbeit liegt",
-        "body": "Diese Liste ist die Bestellung. Sendung und Rückgabe sind eigene Seiten.",
+        "body": "Die Bestellung ist der Kopf. Sendungen und Retouren sind eigene Datensätze.",
         "items": [
-          "Jede Sendung ist eine Zeile unter Fulfillments, mit eigenem Status ausstehend, versendet, geliefert oder fehlgeschlagen.",
-          "Eine Rückgabe, ein Tausch oder eine Erstattung ist eine Zeile unter Rückgabeanfragen. Abschliessen kann diese Bestellung erstatten.",
-          "Das Löschen ist ein Soft-Delete und die Bestellung kann wiederhergestellt werden."
+          "Jede Sendung ist eine Zeile unter Erfüllungen, mit eigenem Status ausstehend, versendet, zugestellt oder gescheitert.",
+          "Eine Rücksende-, Umtausch- oder Erstattungsanfrage ist eine Zeile unter Retourenanfragen. Ihr Abschluss kann diese Bestellung erstatten.",
+          "Kassenverkäufe erscheinen hier bereits als zugestellt und bezahlt, als POS-Verkauf markiert, mit einer Abholadresse im Laden.",
+          "Das Löschen einer Bestellung ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

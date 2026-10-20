@@ -34,5 +34,36 @@
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
     "deletedBy": "Eliminato da"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sugli indirizzi dei clienti",
+    "title": "Informazioni sugli indirizzi dei clienti",
+    "overview": "Gli indirizzi dei clienti sono gli indirizzi di fatturazione e spedizione salvati dai clienti del negozio. Gli acquirenti gestiscono i propri dal loro account; questa pagina permette al personale di vedere e aggiornare gli indirizzi di tutti i clienti.",
+    "sections": [
+      {
+        "title": "Campi",
+        "items": [
+          "Cliente e tipo (fatturazione o spedizione) sono obbligatori.",
+          "Nome e cognome, via, città, paese e coordinate sulla mappa sono obbligatori; e-mail, telefono, provincia, codice postale e un’etichetta sono facoltativi.",
+          "Paese, provincia e codice postale sono ciò che zone fiscali e di spedizione confrontano al checkout."
+        ]
+      },
+      {
+        "title": "Indirizzi predefiniti",
+        "body": "Ogni cliente ha al massimo un indirizzo predefinito per tipo.",
+        "items": [
+          "Imposta come predefinito, o salvare un indirizzo come predefinito, toglie il precedente predefinito dello stesso tipo per quel cliente.",
+          "Checkout e account del cliente propongono prima il predefinito."
+        ]
+      },
+      {
+        "title": "Due viste degli stessi record",
+        "items": [
+          "Da Configurazioni sono elencati gli indirizzi di tutti i clienti e uno nuovo chiede a quale cliente appartiene.",
+          "Nell’account del cliente sono elencati solo i suoi indirizzi e i nuovi vengono archiviati sotto di lui.",
+          "L’eliminazione è logica e l’indirizzo può essere ripristinato."
+        ]
+      }
+    ]
   }
 }

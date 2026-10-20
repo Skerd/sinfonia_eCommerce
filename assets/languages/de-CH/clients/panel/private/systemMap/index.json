@@ -5,31 +5,31 @@
   "help": {
     "ariaLabel": "Über die eCommerce-Systemkarte",
     "title": "Über die eCommerce-Systemkarte",
-    "overview": "Die Systemkarte ist ein Bild des Katalog-eCommerce-Moduls: seiner Modelle, des Checkout-Ablaufs und dessen, was das Modul kann. Sie ändert keine Daten. Der Marketplace hat eine eigene Karte.",
+    "overview": "Die Systemkarte ist ein schreibgeschütztes Bild des Katalog-eCommerce-Moduls: jedes Modell und wie sie aufeinander verweisen, die Hauptabläufe Schritt für Schritt und was das Modul bietet. Sie ändert keine Daten. Der Marktplatz hat eine eigene Karte.",
     "sections": [
       {
         "title": "Modellgraph",
-        "body": "Das ist der Standardreiter. Es ist das Datenmodell, so ausgelegt, dass Sie sehen, was worauf zeigt.",
+        "body": "Der Standard-Tab: das Datenmodell, gruppiert in Katalog, Bestellung, Zahlungen, Kasse, Treuhand und gemeinsame Bereiche.",
         "items": [
-          "Verschieben und zoomen Sie, oder nutzen Sie Zoom und Einpassen.",
-          "Klicken Sie einen Knoten für seine Felder, den API-Pfad und wo dieser Bildschirm im Panel liegt.",
-          "Filtern Sie nach Katalog, Bestellung, Zahlungen, Treuhand und Gemeinsam, wenn die ganze Karte zu viel ist."
+          "Schwenken und zoomen Sie oder nutzen Sie die Zoom- und Einpassen-Steuerung. Filtern Sie nach Bereich, wenn die ganze Karte zu viel ist.",
+          "Klicken Sie auf einen Knoten, um Beschreibung, Schlüsselfelder, API-Pfad, Aktionen und die verwaltende Panel-Seite zu sehen.",
+          "Kanten zeigen, welches Modell auf welches verweist; Brückenkanten führen ins Finanzmodul."
         ]
       },
       {
-        "title": "So funktioniert es",
-        "body": "Dieser Reiter ist die Checkout-Geschichte, vom Katalog bis zur Bestellung, nicht die Liste der Modelle.",
+        "title": "Wie es funktioniert",
+        "body": "Abläufe erzählen die Geschichte der Reihe nach statt als Liste von Modellen.",
         "items": [
-          "Folgen Sie ihm, wenn Sie die Reihenfolge wollen: Produkt, Warenkorb, Zahlung, Bestand, Sendung.",
-          "Es ist dasselbe Modul, das die anderen eCommerce-Menüpunkte bedienen. Es ist kein zweiter Checkout."
+          "Katalog und Merchandising, Bestand, Warenkorb → Checkout → Bestellung, Nachkauf-Abläufe, Kasse und der Odoo-Import haben je einen eigenen Ablauf.",
+          "Gestrichelte Schritte sind der Rückweg, etwa eine gescheiterte Sendung oder ein abgelaufener Checkout."
         ]
       },
       {
-        "title": "Funktionen",
-        "body": "Dieser Reiter gruppiert, was das Modul abdeckt, damit Sie die Fläche sehen, ohne jedes Menü zu öffnen.",
+        "title": "Fähigkeiten",
+        "body": "Was das Modul abdeckt, damit Sie finden, wohin eine Aufgabe gehört.",
         "items": [
-          "Nutzen Sie ihn, um zu sehen, in welchen Bereich eine Aufgabe gehört, und öffnen Sie dann diese Seite aus dem eCommerce-Menü.",
-          "Katalogeinstellungen wie Kategorien, Lager und Rabatte liegen unter Konfigurationen, nicht in dieser Menügruppe. Die Karte zeigt sie trotzdem, weil der Katalog sie nutzt."
+          "Listet die Funktionen, die API-Bereiche, die geplanten Jobs und die öffentlichen Shop-Routen.",
+          "Katalogeinstellungen wie Kategorien, Lager, Rabatte, Kassen und Fiskalkonfigurationen liegen unter Konfigurationen, nicht in diesem Menü; die Karte zeigt sie trotzdem."
         ]
       }
     ]

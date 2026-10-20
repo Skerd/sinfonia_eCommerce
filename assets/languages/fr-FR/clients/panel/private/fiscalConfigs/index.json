@@ -5,16 +5,34 @@
   "help": {
     "ariaLabel": "À propos des configurations fiscales",
     "title": "À propos des configurations fiscales",
-    "overview": "Une configuration fiscale est l'identité CIS albanaise qui signe un ticket de caisse : NIPT, unité commerciale, opérateur, code logiciel, TCR, points d'accès et certificat de signature. Une configuration de point de vente pointe vers une configuration fiscale. Sans sélection, cette caisse ne fiscalise pas.",
+    "overview": "Une configuration fiscale est l’identité CIS albanaise avec laquelle une caisse signe ses tickets : NIPT du contribuable, unité commerciale, opérateur, codes logiciel et mainteneur, la caisse enregistreuse (TCR), les points d’accès CIS et le certificat de signature. Une caisse pointe vers une configuration fiscale ; une caisse sans configuration ne fiscalise pas.",
     "sections": [
       {
-        "title": "Quand une vente est fiscalisée",
-        "body": "Après le paiement, la fiscalisation part lorsque cette configuration est active et qu'un certificat est joint. Une facture fiscale réussie est toujours suivie d'une facture électronique. Le paiement reste valide si le CIS renvoie une erreur.",
+        "title": "Ce que vous saisissez",
         "items": [
-          "Le NIPT retombe sur la TVA de la société lorsque le champ est vide. Le code TCR doit déjà être enregistré avant qu'une facture puisse être signée.",
-          "La facture fiscale est marquée comme facture électronique et le document UBL est enregistré auprès du CIS.",
-          "Test et production choisissent l'environnement CIS auquel appartiennent les URL et le certificat.",
-          "Le certificat est un fichier PKCS#12. Un mot de passe vide à l'édition conserve le mot de passe enregistré."
+          "Le nom désigne la configuration. Le NIPT reprend le numéro de TVA de la société s’il est vide.",
+          "Code logiciel, code d’unité commerciale et code opérateur sont obligatoires. Le code mainteneur est facultatif.",
+          "Code TCR, identifiant interne TCR et type TCR (normal ou distributeur) identifient la caisse enregistreuse. Enregistrer la TCR remplit le code et exige le droit de modifier les configurations fiscales.",
+          "Les URL de fiscalisation, de facture électronique et de self-care pointent vers le CIS ; une URL de proxy est facultative. L’environnement choisit test ou production.",
+          "Nom, adresse, ville et pays du vendeur et l’indicateur d’assujettissement à la TVA figurent sur les documents fiscaux.",
+          "Le certificat est un fichier PKCS#12. En modification, laisser le mot de passe vide garde celui enregistré."
+        ]
+      },
+      {
+        "title": "Quand une vente est fiscalisée",
+        "body": "Après le paiement d’une vente en caisse, la fiscalisation se lance si la configuration de la caisse est active et a un certificat.",
+        "items": [
+          "La vente est signée et envoyée au CIS ; les codes fiscaux reviennent sur la commande au point de vente. Une facture fiscale réussie est toujours suivie d’un enregistrement de facture électronique (UBL).",
+          "Les remboursements en caisse ne sont pas fiscalisés automatiquement.",
+          "Si le CIS échoue, le paiement est quand même conclu et l’erreur est enregistrée sur la commande ; elle peut être fiscalisée à nouveau plus tard.",
+          "La recherche de contribuable demande au CIS les données d’une entreprise d’après son NIPT."
+        ]
+      },
+      {
+        "title": "Active et inactive",
+        "items": [
+          "Désactiver arrête la fiscalisation pour chaque caisse qui utilise la configuration, sans la détacher.",
+          "La suppression est douce et la configuration peut être restaurée."
         ]
       }
     ]

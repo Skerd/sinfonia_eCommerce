@@ -5,31 +5,30 @@
   "help": {
     "ariaLabel": "About Bids",
     "title": "About Bids",
-    "overview": "A bid is a provider's proposal on a task request: amount, currency, delivery days, and a written proposal. Pending bids can be accepted or rejected. Accepting one awards the task and starts an order.",
+    "overview": "A bid is a provider's quote on a task request: amount, delivery days, and a written proposal. The requester accepts one bid, which awards the task and opens an order.",
     "sections": [
       {
-        "title": "Statuses",
+        "title": "Placing a bid",
         "items": [
-          "Pending — waiting on the requester.",
-          "Accepted — this bid won; the task request becomes awarded.",
-          "Rejected — declined or withdrawn; other pending bids are rejected automatically when one is accepted."
+          "The task request must be open and not expired, and must belong to someone else.",
+          "One live bid per bidder and request. The bidder and the currency are set by the server, from the caller and the request.",
+          "Bids are not edited after placing; withdraw and bid again instead."
         ]
       },
       {
-        "title": "Accept and reject",
+        "title": "Statuses and actions",
+        "body": "Only a pending bid can be accepted or rejected.",
         "items": [
-          "Accept marks the bid accepted, rejects every other pending bid on the same task, sets the task request to awarded, and creates a pending order between requester and bidder.",
-          "Reject (or withdraw) sets that bid to rejected only.",
-          "Only a pending bid can be accepted or rejected."
-        ],
-        "body": "These are actions on a pending bid, not ordinary field edits."
+          "Accept (requester only): this bid becomes accepted, every other pending bid on the request is rejected, the request becomes awarded, and a pending order is opened with the bid amount and a due date from its delivery days. Bidders are notified.",
+          "Reject: the requester declines it, or the bidder withdraws it. Only a declined bidder is notified."
+        ]
       },
       {
-        "title": "On this page",
+        "title": "Who sees what",
+        "body": "Bids are private to the bidder and the requester.",
         "items": [
-          "Create posts a new bid against an open task request.",
-          "Use the row or sheet actions for accept and reject.",
-          "Soft-deleted bids can be restored when permitted."
+          "A non-administrator sees their own bids and the bids on their own requests, never a competitor's.",
+          "The bidder, or an administrator, can delete a bid while it is still pending."
         ]
       }
     ]

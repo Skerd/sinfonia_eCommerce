@@ -5,25 +5,23 @@
   "help": {
     "ariaLabel": "About Listing add-ons",
     "title": "About Listing add-ons",
-    "overview": "An add-on is an optional extra the buyer can attach when ordering a listing — for example rush delivery or an extra deliverable. It belongs to one listing, carries its own price and optional extra delivery days, and must use the same currency as the order.",
+    "overview": "An add-on is an optional extra a buyer can attach when ordering a listing, such as express delivery or an extra revision. It belongs to one listing and adds its own price and, optionally, extra delivery days.",
     "sections": [
       {
-        "title": "What you set",
+        "title": "Fields",
         "items": [
-          "Name is what the buyer sees at checkout.",
-          "Listing and provider are fixed to the offer this add-on extends.",
-          "Price amount and currency must match the listing (or package) currency when the order is built.",
-          "Delivery days, if set, are added on top of the listing or package delivery window."
+          "Listing is required and fixed; only that listing's provider can create or delete its add-ons.",
+          "Name is what the buyer sees. Price amount and currency are what it adds.",
+          "Delivery days, if set, are added to the listing's or package's delivery window."
         ]
       },
       {
-        "title": "When it matters",
+        "title": "Ordering with add-ons",
         "items": [
-          "Only add-ons that belong to that listing can be selected.",
-          "Currency mismatch with the listing or package blocks the order.",
-          "Soft-deleted add-ons can be restored; they stop being offerable once deleted."
-        ],
-        "body": "Add-ons are chosen when creating an order from a listing."
+          "Only add-ons of the listing being ordered can be selected, each once.",
+          "Each add-on must use the same currency as the order (the package's, or the listing's when there is no package); a mismatch blocks the order.",
+          "Deleting is a soft delete. An add-on cannot be restored while its listing is deleted."
+        ]
       }
     ]
   },

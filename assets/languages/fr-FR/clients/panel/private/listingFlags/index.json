@@ -5,32 +5,29 @@
   "help": {
     "ariaLabel": "À propos des signalements d'annonce",
     "title": "À propos des signalements d'annonce",
-    "overview": "Un signalement est un rapport de modération : un utilisateur marque une annonce comme inappropriée, spam, trompeuse ou autre, avec un commentaire optionnel. Seuls les admins résolvent ou rejettent les signalements en attente.",
+    "overview": "Un signalement d’annonce est un rapport de modération : un utilisateur marque une annonce comme inappropriée, spam, trompeuse ou autre, avec un commentaire facultatif. Les administrateurs examinent et tranchent les signalements.",
     "sections": [
       {
-        "title": "Statuts",
+        "title": "Signaler",
         "items": [
-          "En attente — en attente d'une décision admin.",
-          "Examiné — le signalement est retenu ; une note de résolution est enregistrée. L'admin peut aussi désactiver l'annonce.",
-          "Rejeté — le signalement est écarté ; une note de résolution reste obligatoire."
+          "L’auteur est celui qui crée le signalement. Un seul signalement actif par utilisateur et par annonce.",
+          "Tant qu’il est en attente, l’auteur peut encore modifier le motif et le commentaire ; l’annonce est figée.",
+          "Les signalements sont privés : les administrateurs les voient tous, les autres uniquement les leurs."
         ]
       },
       {
-        "title": "Actions admin",
+        "title": "Statuts et décisions",
+        "body": "Seul un administrateur décide, seulement tant que le signalement est en attente, et une note de résolution est toujours obligatoire.",
         "items": [
-          "Résoudre passe le statut à examiné et enregistre le texte.",
-          "Optionnellement désactiver l'annonce dans le cadre de la résolution.",
-          "Rejeter passe le statut à rejeté avec une explication.",
-          "Les non-admins ne peuvent pas exécuter ces actions."
-        ],
-        "body": "Résoudre et rejeter ne fonctionnent que si le signalement est en attente et non soft-supprimé."
+          "En attente : attend une décision.",
+          "Résoudre marque le signalement comme examiné (retenu). Choisissez désactiver pour mettre l’annonce hors ligne en même temps, ou aucune pour la laisser en ligne.",
+          "Rejeter marque le signalement comme rejeté."
+        ]
       },
       {
-        "title": "Sur cette page",
+        "title": "Suppression",
         "items": [
-          "Créer enregistre un nouveau signalement contre une annonce.",
-          "Modifier peut mettre à jour motif et détails ; l'annonce reste fixe après création.",
-          "Les signalements soft-supprimés peuvent être restaurés."
+          "La suppression est douce et le signalement peut être restauré, sauf si le même utilisateur a depuis signalé à nouveau cette annonce."
         ]
       }
     ]

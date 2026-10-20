@@ -5,16 +5,34 @@
   "help": {
     "ariaLabel": "Über Fiskalkonfigurationen",
     "title": "Über Fiskalkonfigurationen",
-    "overview": "Eine Fiskalkonfiguration ist die albanische CIS Identität, mit der ein Kassenbeleg signiert wird: NIPT, Geschäftseinheit, Operator, Softwarecode, TCR, Endpunkte und das Signaturzertifikat. Eine POS Konfiguration zeigt auf eine Fiskalkonfiguration. Ohne Auswahl fiskalisiert diese Kasse nicht.",
+    "overview": "Eine Fiskalkonfiguration ist die albanische CIS-Identität, mit der eine Kasse ihre Belege signiert: NIPT des Steuerpflichtigen, Geschäftseinheit, Operator, Software- und Wartungscodes, die Registrierkasse (TCR), die CIS-Endpunkte und das Signaturzertifikat. Eine Kasse verweist auf eine Fiskalkonfiguration; eine Kasse ohne fiskalisiert nicht.",
     "sections": [
       {
-        "title": "Wann ein Verkauf fiskalisiert wird",
-        "body": "Nach der Zahlung läuft die Fiskalisierung, wenn diese Konfiguration aktiv ist und ein Zertifikat hängt. Nach einer erfolgreichen Fiskalrechnung folgt immer eine E-Rechnung. Die Zahlung bleibt gültig, wenn CIS einen Fehler meldet.",
+        "title": "Was Sie erfassen",
         "items": [
-          "NIPT fällt auf die MwSt Nummer der Firma zurück, wenn das Feld leer ist. Der TCR Code muss registriert sein, bevor eine Rechnung signiert werden kann.",
-          "Die Fiskalrechnung wird als E-Rechnung markiert und das UBL Dokument bei CIS registriert.",
-          "Test und Produktion wählen, zu welcher CIS Umgebung die URLs und das Zertifikat gehören.",
-          "Das Zertifikat ist eine PKCS#12 Datei. Ein leeres Passwort beim Bearbeiten behält das gespeicherte Passwort."
+          "Name bezeichnet die Konfiguration. NIPT fällt auf die MWST-Nummer der Firma zurück, wenn leer.",
+          "Softwarecode, Geschäftseinheitscode und Operatorcode sind Pflicht. Wartungscode ist optional.",
+          "TCR-Code, interne TCR-ID und TCR-Typ (regulär oder Automat) identifizieren die Registrierkasse. Das Registrieren der TCR füllt den Code aus und braucht die Berechtigung, Fiskalkonfigurationen zu bearbeiten.",
+          "Fiskalisierungs-, E-Rechnungs- und Self-Care-URLs zeigen auf CIS; eine Proxy-URL ist optional. Umgebung wählt Test oder Produktion.",
+          "Name, Adresse, Ort und Land des Verkäufers sowie das Kennzeichen MWST-pflichtig erscheinen auf Fiskaldokumenten.",
+          "Zertifikat ist eine PKCS#12-Datei. Beim Bearbeiten behält ein leeres Passwortfeld das gespeicherte Passwort."
+        ]
+      },
+      {
+        "title": "Wann ein Verkauf fiskalisiert wird",
+        "body": "Nach der Bezahlung eines Kassenverkaufs läuft die Fiskalisierung, wenn die Konfiguration der Kasse aktiv ist und ein Zertifikat hat.",
+        "items": [
+          "Der Verkauf wird signiert und an CIS gesendet; die Fiskalcodes kommen auf die POS-Bestellung zurück. Auf eine erfolgreiche Fiskalrechnung folgt immer eine E-Rechnungs-Registrierung (UBL).",
+          "Kassenerstattungen werden nicht automatisch fiskalisiert.",
+          "Scheitert CIS, wird die Zahlung trotzdem abgeschlossen und der Fehler auf der POS-Bestellung gespeichert; sie kann später erneut fiskalisiert werden.",
+          "Die Steuerpflichtigen-Abfrage holt bei CIS die Angaben eines Unternehmens anhand seiner NIPT."
+        ]
+      },
+      {
+        "title": "Aktiv und inaktiv",
+        "items": [
+          "Deaktivieren stoppt die Fiskalisierung für jede Kasse, die die Konfiguration nutzt, ohne die Verknüpfung zu lösen.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

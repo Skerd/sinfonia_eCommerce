@@ -5,36 +5,41 @@
   "help": {
     "ariaLabel": "Rreth analizave",
     "title": "Rreth analizave",
-    "overview": "Analizat përmbledhin të ardhurat e paguara, porositë, inventarin dhe shportat e kësaj kompanie. Është një lexim i atyre të dhënave. Në këtë faqe nuk krijohet porosi, produkt ose ndryshim stoku.",
+    "overview": "Analitika përmbledh të ardhurat, porositë, produktet, stokun dhe shportat e kësaj kompanie. Vetëm lexon të dhënat ekzistuese; asgjë këtu nuk ndryshon një porosi, një produkt ose stokun. Çdo kartë kërkon qasje leximi te të dhënat pas saj.",
     "sections": [
       {
-        "title": "Çfarë ndryshon periudha",
-        "body": "Periudha është 7 ditë, 30 ditë, 90 ditë ose 1 vit. Nuk vlen për çdo kartë.",
+        "title": "Periudha",
+        "body": "Zgjidhni 7 ditë, 30 ditë, 90 ditë ose 1 vit. Jo çdo kartë e ndjek.",
         "items": [
-          "Të ardhurat, porositë, taksa, transporti dhe produktet kryesore ndjekin periudhën.",
-          "Grafiku tregon të ardhura të paguara dhe numrin e porosive të paguara për bucket (ditore për 7d/30d, javore për 90d, mujore për 1y).",
-          "Trendet krahasojnë periudhën e zgjedhur me dritaren e mëparshme të së njëjtës gjatësi.",
-          "Inventari dhe shportat janë pamja aktuale. Periudha nuk i rillogarit."
+          "Të ardhurat, numri i porosive, vlera mesatare e porosisë, tatimi, transporti dhe produktet kryesore ndjekin periudhën.",
+          "Grafiku tregon të ardhurat e paguara dhe porositë e paguara për ditë për 7 dhe 30 ditë, për javë për 90 ditë dhe për muaj për një vit.",
+          "Distinktivët e prirjes e krahasojnë periudhën me dritaren me të njëjtën gjatësi menjëherë para saj.",
+          "Kartat e stokut dhe shportave tregojnë gjendjen aktuale dhe nuk ndryshojnë me periudhën."
         ]
       },
       {
-        "title": "Paraja dhe valuta",
-        "body": "Shumat nuk mblidhen kurrë midis valutave.",
+        "title": "Paratë dhe monedha",
+        "body": "Shumat nuk mblidhen kurrë mes monedhave.",
         "items": [
-          "Të ardhurat totale janë porositë e paguara në periudhë, neto pas rimbursimeve.",
-          "Taksa dhe transporti janë shuma nga të njëjtat porosi të paguara.",
-          "Përdorni zgjedhësin e valutës kur më shumë se një valutë ka shitje në periudhë."
+          "Të ardhurat janë porositë e paguara në periudhë, neto nga rimbursimet e regjistruara mbi to.",
+          "Shifrat janë për një monedhë: atë që zgjidhni, ose përndryshe atë me më shumë porosi të paguara në periudhë. Zgjedhësi i monedhës liston çdo monedhë me shitje.",
+          "Tatimi dhe transporti janë totalet e po atyre porosive të paguara."
         ]
       },
       {
-        "title": "Porositë, produktet, stoku dhe shportat",
-        "body": "Ndarjet dhe listat përdorin të dhënat e ngarkuara për këtë kompani.",
+        "title": "Porositë dhe produktet",
         "items": [
-          "Statusi i porosisë numëron çdo porosi të pafshirë në periudhë, jo vetëm ato të paguara.",
-          "Statusi i produktit është katalogu aktual, jo i lidhur me periudhën.",
-          "Produktet kryesore renditen sipas të ardhurave të rreshtit në valutën dhe periudhën e zgjedhur.",
-          "Shportat e braktisura janë joaktive mbi një orë; ato aktive janë përditësuar në orën e fundit.",
-          "Hapni Porositë e produkteve, Produktet ose Inventarin nga një KPI kur duhet të veproni."
+          "Statusi i porosive numëron çdo porosi të pafshirë të bërë në periudhë, të paguar apo jo.",
+          "Produktet kryesore renditen sipas të ardhurave të rreshtit në monedhën dhe periudhën e zgjedhur, me titullin e ruajtur në rreshtin e porosisë.",
+          "Statusi i produkteve është katalogu aktual i ndarë në draft, aktiv dhe i arkivuar."
+        ]
+      },
+      {
+        "title": "Stoku dhe shportat",
+        "items": [
+          "Stoku tregon sa rreshta janë të ulët (të disponueshëm mbi zero por nën pikën e rifurnizimit), sa janë jashtë stoku (asgjë e disponueshme) dhe totalin e njësive në gjendje.",
+          "Shportat e braktisura kanë artikuj dhe nuk janë prekur për më shumë se një orë; shportat aktive kanë ndryshuar brenda orës. Blerësit e identifikuar marrin një email kujtese për një shportë të lënë një ditë.",
+          "Hapni Porositë e produkteve, Produktet ose Inventarin nga një kartë për të vepruar mbi atë që tregon."
         ]
       }
     ]

@@ -5,24 +5,53 @@
   "help": {
     "ariaLabel": "Rreth Konfigurimet POS",
     "title": "Rreth Konfigurimet POS",
-    "overview": "Një konfigurim POS është një arkë. Kërkon një emër, të paktën një metodë pagese dhe të paktën një magazinë. Arkëtari hap një sesion në atë arkë dhe shet sipas listës së saj të çmimeve.",
+    "overview": "Një konfigurim POS është një arkë: butonat e saj të pagesës, magazinat nga shet, monedha, kuponët, fiskalizimi dhe çfarë mund të bëjë arkëtari. Një arkëtar hap një seancë në të nga faqja Pika e shitjes.",
     "sections": [
       {
-        "title": "Çfarë mund të bëjë arkëtari",
-        "body": "Çmimi i arkës është çmimi i variantit, ose çmimi i produktit pa variant. Arka nuk pranon një çmim të shtypur nga arkëtari.",
+        "title": "Çfarë i duhet një arke",
+        "body": "Emri, të paktën një metodë pagese dhe të paktën një magazinë janë të detyrueshme.",
         "items": [
-          "Metodat e pagesës janë butonat e arkës. Magazinat janë vendet e stokut nga të cilat ajo arkë shet.",
-          "Një konfigurim fiskal opsional e lidh këtë arkë me fiskalizimin shqiptar. Kreu dhe fundi i kuponit shtypen në kupon.",
-          "Lejo zbritjen, ndryshimin e sasisë dhe shitjen mbi stok e kontrollojnë arkëtarin. PIN për zbritje, dalje parash dhe rimbursim kërkon një PIN menaxheri para veprimit.",
-          "Kontrolli i arkës ndjek sirtarin. Shënimi i skanerit të barkodit e ndez skanimin për këtë arkë."
+          "Metodat e pagesës janë butonat e arkës, sipas renditjes së tyre. Mund të caktohen vetëm metoda aktive.",
+          "Magazinat janë burimet e stokut të arkës, me radhë: një shitje merr nga e para, pastaj nga e radhës. Mund të caktohen vetëm magazina aktive. Adresa e magazinës së parë përcakton edhe normat e TVSH-së të shitjeve në arkë.",
+          "Një monedhë kërkohet për të hapur seancë dhe për të shitur.",
+          "Konfigurimi fiskal e lidh arkën me fiskalizimin shqiptar CIS. Pa të, arka nuk fiskalizon.",
+          "Koka dhe fundi i kuponit shtypen në çdo kupon."
         ]
       },
       {
-        "title": "Ndalo dhe rifillo",
-        "body": "Një arkë joaktive, një arkë e ndalur ose një bllokim kompanie refuzon pagesat e reja.",
+        "title": "Kontrollet e arkëtarit",
+        "body": "Këta çelësa vendosin çfarë mund të bëjë arkëtari pa menaxher.",
         "items": [
-          "Ndalo të gjitha arkat e bllokon kompaninë dhe i mbyll me forcë sesionet e hapura.",
-          "Rifillo të gjitha arkat heq vetëm bllokimin e kompanisë. Një arkë e ndalur veçmas mbetet e ndalur."
+          "Lejo zbritjen dhe lejo ndryshimin e sasisë zhbllokojnë këto ndryshime në arkë.",
+          "Lejo shitjen mbi stok lejon një shitje edhe kur magazinat nuk kanë stok të mjaftueshëm; mungesa merret nga magazina e fundit.",
+          "PIN për zbritje, PIN për nxjerrje parash dhe PIN për rimbursim kërkojnë PIN-in e menaxherit për atë veprim.",
+          "Kontrolli i parave ndjek sirtarin; lexuesi i barkodit aktivizon skanimin."
+        ]
+      },
+      {
+        "title": "Menaxherët dhe PIN-et",
+        "body": "Menaxherët janë përdoruesit e lejuar të miratojnë veprimet e mbrojtura me PIN në këtë arkë.",
+        "items": [
+          "Çdo menaxher vendos PIN-in e vet, mund ta ndryshojë me PIN-in aktual ose ta fshijë.",
+          "Një PIN i harruar mund të rivendoset me një lidhje të dërguar me email, e vlefshme 24 orë dhe e përdorshme një herë.",
+          "Heqja e një përdoruesi nga menaxherët i heq edhe PIN-in nga arka."
+        ]
+      },
+      {
+        "title": "Aktive, në pauzë dhe kyçja e kompanisë",
+        "body": "Tre çelësa ndalojnë një arkë të marrë pagesa.",
+        "items": [
+          "Çaktivizo e fik arkën dhe ia mbyll me forcë seancat e hapura; nuk mund të hapet sërish derisa të aktivizohet.",
+          "Pauza ndal shitjet e një arke me arsye opsionale dhe ia mbyll me forcë seancat e hapura: shportat e pezulluara anulohen dhe pagesat në terminal që janë në proces anulohen kur është e mundur. Vazhdo e heq pauzën.",
+          "Vër në pauzë të gjitha arkat vendos një kyçje për gjithë kompaninë dhe mbyll me forcë çdo seancë të hapur. Sa kohë është aktive, asnjë arkë nuk mund të vazhdojë. Vazhdo të gjitha heq vetëm kyçjen e kompanisë; arkat e vëna në pauzë një nga një mbeten në pauzë."
+        ]
+      },
+      {
+        "title": "Cilësime të lidhura",
+        "items": [
+          "Metodat e pagesës dhe konfigurimet fiskale janë faqe më vete te Konfigurimet.",
+          "Një magazinë që është e vetmja e një arke nuk mund të çaktivizohet ose fshihet; një e ndarë me të tjera hiqet nga arka.",
+          "Fshirja e një arke është fshirje e butë dhe mund të rikthehet."
         ]
       }
     ]

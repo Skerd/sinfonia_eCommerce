@@ -5,38 +5,70 @@
   "help": {
     "ariaLabel": "À propos des produits",
     "title": "À propos des produits",
-    "overview": "Un produit est un article vendable du catalogue de cette société. La boutique ne le vend que tant que le statut est actif. Le brouillon est la copie de travail. Archivé est hors vente et peut revenir en brouillon.",
+    "overview": "Un produit est un article vendable du catalogue de cette société. La boutique et la caisse ne le vendent que tant que son statut est actif. Brouillon est la copie de travail que personne ne peut acheter, et archivé le retire de la vente sans le perdre. Tout ce que la boutique montre de l’article — prix, médias, stock, SEO, articles liés — se modifie ici.",
     "sections": [
       {
-        "title": "Ce que le type change",
-        "body": "Le type décide comment l'article est vendu et comment le stock bouge.",
+        "title": "Ce que change le type",
+        "body": "Le type est le cadre du prix, de l’expédition, du stock et de ce qui se passe après le paiement. Choisissez-le d’abord ; la plupart des autres champs en dépendent.",
         "items": [
-          "Physique s'expédie et peut suivre le stock, le poids et les dimensions.",
-          "Numérique est livré en téléchargement. Un remboursement total de la commande fait expirer ces téléchargements.",
-          "Un service est vendu sans expédition.",
-          "Variable est vendu par ses variantes. Une variante sans prix propre utilise le prix du produit.",
-          "Un lot est un ensemble d'autres produits. Quand le stock bouge, le lot est ouvert d'un niveau. Chaque composant doit être un produit vivant de cette société, et il ne peut pas lui-même être un lot.",
-          "Une carte cadeau est vendue comme crédit magasin."
+          "Physique est expédié à une adresse et suivi en stock. Il porte un poids, des dimensions, une classe d’expédition et un indicateur de matière dangereuse ; les tarifs d’expédition au poids utilisent le poids.",
+          "Variable est vendu via ses variantes (taille, couleur, etc.). Chaque variante est son propre SKU avec sa propre ligne de stock. Une variante sans prix propre utilise le prix du produit.",
+          "Numérique est livré en téléchargement. Le paiement émet un droit de téléchargement, limité par la limite de téléchargements et les jours d’expiration. Un remboursement complet de la commande fait expirer ces téléchargements.",
+          "Service est vendu sans expédition et sans stock.",
+          "Lot est un ensemble d’autres produits avec chacun une quantité. Il n’a pas de stock propre : quand le stock bouge, le lot est ouvert d’un niveau en ses composants. Chaque composant doit être un produit actif non supprimé de cette société et ne peut pas être lui-même un lot.",
+          "Carte cadeau est vendue comme avoir. Le paiement émet une carte par unité, avec un solde égal au prix unitaire. Les lignes de carte cadeau ne sont jamais remisées et ne comptent jamais pour les minimums de remise."
         ]
       },
       {
         "title": "Statut et actions de ligne",
-        "body": "Publier, archiver et revenir au brouillon changent le statut. Chacune est refusée si le produit n'est pas dans l'état attendu.",
+        "body": "Le statut ne change pas par une simple modification. Publier, archiver et repasser en brouillon sont des actions, et chacune est refusée si le produit n’est pas dans l’état attendu.",
         "items": [
-          "Publier ne part que d'un brouillon. Un produit sans variantes doit déjà avoir un prix. La première publication enregistre la date.",
-          "Archiver part d'un brouillon ou d'un produit actif et le retire de la vente.",
-          "Revenir au brouillon ne part que d'un produit archivé et efface la date de publication pour qu'il ne soit pas remis en vente aussitôt.",
-          "Dupliquer copie les informations dans un nouveau brouillon. Le titre est l'original plus \" (Copy)\". Notes, nombre d'avis et variantes ne sont pas copiés.",
-          "La suppression est logique et le produit peut être restauré."
+          "Publier n’est possible que depuis brouillon. Un produit sans variantes doit déjà avoir un prix, car un produit actif est vendu à ce prix. La première publication enregistre la date de publication.",
+          "Publication planifiée : un brouillon dont la date de publication est passée est mis en vente automatiquement par une tâche qui tourne toutes les cinq minutes, s’il a un prix.",
+          "Archiver est possible depuis brouillon ou actif et retire le produit de la vente. Les paniers le retirent au prochain calcul de prix.",
+          "Repasser en brouillon n’est possible que depuis archivé. Cela efface la date de publication pour que la tâche planifiée ne le remette pas aussitôt en vente.",
+          "Dupliquer copie les informations dans un nouveau brouillon intitulé avec « (Copy) ». Variantes, lignes de stock, avis, notes et date de publication ne sont pas copiés, et un nouveau slug est généré.",
+          "Supprimer un produit est une suppression douce et il peut être restauré."
         ]
       },
       {
-        "title": "Comment il se relie au reste du menu",
-        "body": "Le produit est la fiche catalogue. Le stock, les commandes et les avis s'y rattachent.",
+        "title": "Champs de prix",
+        "body": "Seul le prix est facturé. Les autres champs monétaires le décrivent.",
         "items": [
-          "Catégories et collections le regroupent dans la boutique. Un produit peut appartenir à plusieurs catégories.",
-          "L'inventaire, sous Stock, tient la quantité par entrepôt. Un produit sans ligne d'inventaire est traité comme non suivi au paiement.",
-          "Un avis sur une ligne de commande payée met à jour la moyenne, le nombre de notes et le nombre d'avis de ce produit."
+          "Prix est le prix unitaire de départ du panier, avant les règles de prix et les codes de remise.",
+          "Prix barré est l’ancien prix que la boutique peut afficher. PVC est le prix de vente conseillé du fabricant. Prix de revient sert à vos analyses de marge et n’est jamais montré aux acheteurs.",
+          "Début et fin de promotion bornent la période de promotion affichée en boutique.",
+          "Quantités minimale, maximale et pas sont les règles de quantité commandée ; le panier les applique et la boutique compte les quantités de la même façon.",
+          "Taxable et classe de taxe décrivent l’article fiscalement. La taxe elle-même vient des zones fiscales de l’adresse de livraison."
+        ]
+      },
+      {
+        "title": "Stock",
+        "body": "Un produit physique ou variable est suivi en stock sauf si le suivi du stock est désactivé (sur le produit ou sur la variante).",
+        "items": [
+          "Un article suivi ne peut être vendu que sur du stock existant. Sans ligne de stock dans un entrepôt actif, le checkout refuse la ligne comme en rupture.",
+          "Seuil de stock bas, stock de sécurité, commande en souffrance et précommande décrivent comment traiter l’article ; les quantités et seuils de réapprovisionnement par entrepôt sont sur la page Inventaire.",
+          "Un article non suivi (désactivé, ou produit numérique, service ou carte cadeau) est vendu sans toucher au stock."
+        ]
+      },
+      {
+        "title": "Contenu boutique et SEO",
+        "body": "Ces champs ne changent que la présentation du produit et la façon dont on le trouve.",
+        "items": [
+          "Image principale, galerie, vidéos et documents sont les médias. Points forts, caractéristiques, FAQ, conseils d’entretien et garantie remplissent la page produit.",
+          "Produits liés, ventes additionnelles, ventes croisées et « souvent achetés ensemble » sont les emplacements de recommandation. Mis en avant et badges signalent l’article dans les listes.",
+          "Les identifiants (SKU, code-barres, GTIN, UPC, EAN, ISBN, MPN, code SH, pays d’origine) servent à la recherche, au scan en caisse et à la douane.",
+          "SEO contient méta-titre et description, mots-clés, URL canonique, champs Open Graph et Twitter Card, inclusion et priorité dans le sitemap, et no-index."
+        ]
+      },
+      {
+        "title": "Liens avec le reste",
+        "body": "Le produit est la fiche catalogue ; stock, commandes et avis s’y rattachent.",
+        "items": [
+          "Catégories et collections le regroupent en boutique. Il peut être dans plusieurs catégories, mais les règles de prix visant une catégorie ne regardent que la première.",
+          "Les variantes et leurs attributs sont sous Configurations. Le stock par entrepôt est sous Stock → Inventaire.",
+          "Les lignes de commande gardent un instantané du titre, du SKU, du type et du libellé de variante, pour que les modifications ultérieures ne réécrivent jamais les commandes passées.",
+          "Un avis sur une ligne de commande payée met à jour la note moyenne, le nombre de notes et le nombre d’avis affichés ici."
         ]
       }
     ]

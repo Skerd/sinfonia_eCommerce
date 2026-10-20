@@ -5,31 +5,30 @@
   "help": {
     "ariaLabel": "À propos des offres",
     "title": "À propos des offres",
-    "overview": "Une offre est la proposition d'un prestataire sur une demande : montant, devise, jours de livraison et texte. Les offres en attente peuvent être acceptées ou rejetées. En accepter une attribue la tâche et démarre une commande.",
+    "overview": "Une offre est le devis d’un prestataire sur une demande de tâche : montant, jours de livraison et une proposition écrite. Le demandeur accepte une offre, ce qui attribue la tâche et ouvre une commande.",
     "sections": [
       {
-        "title": "Statuts",
+        "title": "Faire une offre",
         "items": [
-          "En attente — en attente du demandeur.",
-          "Acceptée — cette offre a gagné ; la demande devient attribuée.",
-          "Rejetée — refusée ou retirée ; les autres offres en attente sont rejetées automatiquement quand une est acceptée."
+          "La demande de tâche doit être ouverte, non expirée et appartenir à quelqu’un d’autre.",
+          "Une offre active par prestataire et par demande. L’auteur et la devise sont fixés par le serveur, à partir de l’appelant et de la demande.",
+          "Une offre n’est pas modifiée après envoi ; retirez-la et faites-en une nouvelle."
         ]
       },
       {
-        "title": "Accepter et rejeter",
+        "title": "Statuts et actions",
+        "body": "Seule une offre en attente peut être acceptée ou rejetée.",
         "items": [
-          "Accepter marque l'offre, rejette toutes les autres en attente, passe la demande à attribuée et crée une commande en attente.",
-          "Rejeter (ou retirer) ne passe que cette offre à rejetée.",
-          "Seule une offre en attente peut être acceptée ou rejetée."
-        ],
-        "body": "Ce sont des actions sur une offre en attente, pas des éditions de champs ordinaires."
+          "Accepter (demandeur seulement) : cette offre devient acceptée, toute autre offre en attente sur la demande est rejetée, la demande est attribuée et une commande en attente est ouverte avec le montant de l’offre et une échéance tirée de ses jours de livraison. Les prestataires sont prévenus.",
+          "Rejeter : le demandeur la décline, ou le prestataire la retire. Seul un prestataire décliné est prévenu."
+        ]
       },
       {
-        "title": "Sur cette page",
+        "title": "Qui voit quoi",
+        "body": "Les offres sont privées entre le prestataire et le demandeur.",
         "items": [
-          "Créer publie une nouvelle offre sur une demande ouverte.",
-          "Utilisez les actions de ligne ou de feuille pour accepter et rejeter.",
-          "Les offres soft-supprimées peuvent être restaurées selon les droits."
+          "Un non-administrateur voit ses propres offres et celles faites sur ses propres demandes, jamais celles d’un concurrent.",
+          "L’auteur, ou un administrateur, peut supprimer une offre tant qu’elle est en attente."
         ]
       }
     ]

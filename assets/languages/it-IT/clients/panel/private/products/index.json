@@ -5,38 +5,70 @@
   "help": {
     "ariaLabel": "Informazioni sui prodotti",
     "title": "Informazioni sui prodotti",
-    "overview": "Un prodotto è un articolo vendibile del catalogo di questa società. Il negozio lo vende solo mentre lo stato è attivo. La bozza è la copia di lavoro. Archiviato è fuori vendita e può tornare bozza.",
+    "overview": "Un prodotto è un articolo vendibile del catalogo di questa società. Il negozio e la cassa lo vendono solo finché il suo stato è attivo. Bozza è la copia di lavoro che nessuno può acquistare, e archiviato lo toglie dalla vendita senza perderlo. Tutto ciò che il negozio mostra dell’articolo — prezzo, media, giacenza, SEO, articoli correlati — si modifica qui.",
     "sections": [
       {
         "title": "Cosa cambia il tipo",
-        "body": "Il tipo decide come l'articolo si vende e come si muove lo stock.",
+        "body": "Il tipo è la cornice per prezzo, spedizione, giacenza e ciò che accade dopo il pagamento. Sceglilo per primo; la maggior parte degli altri campi dipende da esso.",
         "items": [
-          "Fisico si spedisce e può tracciare stock, peso e dimensioni.",
-          "Digitale si consegna come download. Un rimborso completo dell'ordine fa scadere quei download.",
-          "Un servizio si vende senza spedizione.",
-          "Variabile si vende tramite le varianti. Una variante senza un prezzo proprio usa il prezzo del prodotto.",
-          "Un bundle è un insieme di altri prodotti. Quando lo stock si muove, il bundle si apre di un livello. Ogni componente deve essere un prodotto vivo di questa società e non può essere a sua volta un bundle.",
-          "Una gift card si vende come credito negozio."
+          "Fisico viene spedito a un indirizzo ed è gestito a magazzino. Ha peso, dimensioni, classe di spedizione e un indicatore di merce pericolosa; le tariffe di spedizione a peso usano il peso.",
+          "Variabile si vende tramite le sue varianti (taglia, colore, ecc.). Ogni variante è uno SKU a sé con la propria riga di giacenza. Una variante senza prezzo proprio usa il prezzo del prodotto.",
+          "Digitale viene consegnato come download. Il pagamento concede un diritto di download, limitato dal numero massimo di download e dai giorni di scadenza. Un rimborso totale dell’ordine fa scadere quei download.",
+          "Servizio si vende senza spedizione e senza giacenza.",
+          "Bundle è un insieme di altri prodotti, ciascuno con una quantità. Non ha giacenza propria: quando la giacenza si muove, il bundle viene aperto di un livello nei suoi componenti. Ogni componente deve essere un prodotto attivo non eliminato di questa società e non può essere a sua volta un bundle.",
+          "Carta regalo si vende come credito. Il pagamento emette una carta per unità, con un saldo pari al prezzo unitario. Le righe di carte regalo non sono mai scontate e non contano mai per i minimi degli sconti."
         ]
       },
       {
         "title": "Stato e azioni di riga",
-        "body": "Pubblica, archivia e torna a bozza cambiano lo stato. Ognuna viene rifiutata se il prodotto non è nello stato atteso.",
+        "body": "Lo stato non cambia con una semplice modifica. Pubblica, archivia e torna a bozza sono azioni, e ciascuna viene rifiutata se il prodotto non è nello stato previsto.",
         "items": [
-          "Pubblica parte solo da bozza. Un prodotto senza varianti deve già avere un prezzo. La prima pubblicazione registra la data.",
-          "Archivia parte da bozza o attivo e toglie il prodotto dalla vendita.",
-          "Torna a bozza parte solo da archiviato e cancella la data di pubblicazione, così non torna subito in vendita.",
-          "Duplica copia i dati in una nuova bozza. Il titolo è l'originale più \" (Copy)\". Voti, numero di recensioni e varianti non vengono copiati.",
-          "L'eliminazione è logica e il prodotto può essere ripristinato."
+          "Pubblica è possibile solo da bozza. Un prodotto senza varianti deve già avere un prezzo, perché un prodotto attivo si vende a quel prezzo. La prima pubblicazione registra la data di pubblicazione.",
+          "Pubblicazione programmata: una bozza con data di pubblicazione passata viene messa in vendita automaticamente da un processo che gira ogni cinque minuti, purché abbia un prezzo.",
+          "Archivia è possibile da bozza o attivo e toglie il prodotto dalla vendita. I carrelli lo rimuovono al successivo ricalcolo dei prezzi.",
+          "Torna a bozza è possibile solo da archiviato. Cancella la data di pubblicazione, così il processo programmato non lo rimette subito in vendita.",
+          "Duplica copia i dati in una nuova bozza intitolata con \" (Copy)\". Varianti, righe di giacenza, recensioni, valutazioni e data di pubblicazione non vengono copiate, e viene generato un nuovo slug.",
+          "Eliminare un prodotto è un’eliminazione logica e può essere ripristinato."
         ]
       },
       {
-        "title": "Come si collega al resto del menu",
-        "body": "Il prodotto è la scheda di catalogo. Stock, ordini e recensioni vi si agganciano.",
+        "title": "Campi di prezzo",
+        "body": "Viene addebitato solo il prezzo. Gli altri campi monetari lo descrivono.",
         "items": [
-          "Categorie e collezioni lo raggruppano nel negozio. Un prodotto può stare in più categorie.",
-          "L'inventario, sotto Stock, tiene la quantità per magazzino. Un prodotto senza riga di inventario è trattato come non tracciato al checkout.",
-          "Una recensione su una riga di ordine pagato aggiorna media, numero di voti e numero di recensioni di questo prodotto."
+          "Prezzo è il prezzo unitario da cui parte il carrello, prima delle regole di prezzo e dei codici sconto.",
+          "Prezzo di confronto è il prezzo barrato che il negozio può mostrare. MSRP è il prezzo consigliato dal produttore. Prezzo di costo serve alle analisi di margine e non viene mai mostrato agli acquirenti.",
+          "Inizio e fine saldi delimitano il periodo di saldo mostrato nel negozio.",
+          "Quantità minima, massima e passo sono le regole di quantità ordinabile; il carrello le applica e il negozio conta le quantità allo stesso modo.",
+          "Tassabile e classe fiscale descrivono l’articolo a fini fiscali. L’imposta stessa deriva dalle zone fiscali dell’indirizzo di spedizione."
+        ]
+      },
+      {
+        "title": "Giacenza",
+        "body": "Un prodotto fisico o variabile è gestito a magazzino, salvo che la gestione della giacenza sia disattivata (sul prodotto o sulla variante).",
+        "items": [
+          "Un articolo gestito si può vendere solo da giacenza esistente. Senza una riga di giacenza in un magazzino attivo, il checkout rifiuta la riga come esaurita.",
+          "Soglia di scorta bassa, scorta di sicurezza, ordini arretrati e preordine descrivono come gestire l’articolo; quantità e punti di riordino per magazzino sono nella pagina Inventario.",
+          "Un articolo non gestito (disattivato, o un prodotto digitale, servizio o carta regalo) si vende senza toccare la giacenza."
+        ]
+      },
+      {
+        "title": "Contenuti del negozio e SEO",
+        "body": "Questi campi cambiano solo come il prodotto viene presentato e trovato.",
+        "items": [
+          "Immagine principale, galleria, video e documenti sono i media. Punti salienti, specifiche, FAQ, istruzioni di cura e garanzia riempiono la pagina prodotto.",
+          "Prodotti correlati, upsell, cross-sell e «spesso acquistati insieme» sono gli spazi di raccomandazione. In evidenza e badge mettono in risalto l’articolo negli elenchi.",
+          "Gli identificativi (SKU, codice a barre, GTIN, UPC, EAN, ISBN, MPN, codice SA, paese di origine) servono per la ricerca, la scansione in cassa e la dogana.",
+          "SEO contiene meta titolo e descrizione, parole chiave, URL canonico, campi Open Graph e Twitter Card, inclusione e priorità nella sitemap e no-index."
+        ]
+      },
+      {
+        "title": "Come si collega",
+        "body": "Il prodotto è la scheda di catalogo; giacenza, ordini e recensioni dipendono da esso.",
+        "items": [
+          "Categorie e collezioni lo raggruppano nel negozio. Può stare in più categorie, ma le regole di prezzo rivolte a una categoria guardano solo la prima.",
+          "Varianti e loro attributi sono sotto Configurazioni. La giacenza per magazzino è sotto Magazzino → Inventario.",
+          "Le righe d’ordine conservano un’istantanea di titolo, SKU, tipo ed etichetta della variante, così le modifiche successive non riscrivono mai gli ordini passati.",
+          "Una recensione su una riga d’ordine pagata aggiorna la valutazione media, il numero di valutazioni e il numero di recensioni mostrati qui."
         ]
       }
     ]

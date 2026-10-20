@@ -5,33 +5,30 @@
   "help": {
     "ariaLabel": "À propos des litiges",
     "title": "À propos des litiges",
-    "overview": "Un litige est un conflit modéré par un admin sur une commande marketplace. Tant qu'il est ouvert ou en revue, les sorties d'escrow se décident à la résolution ou à la clôture — pas par une édition de statut anecdotique.",
+    "overview": "Un litige est un désaccord sur une commande de la place de marché, tranché par un administrateur. Tant qu’il est ouvert, l’argent de la commande est gelé : pas d’acceptation de livraison, de libération de jalon, d’acceptation automatique ni d’annulation. La décision dit qui reçoit ce qui est encore conservé.",
     "sections": [
       {
-        "title": "Statuts",
+        "title": "Ouvrir un litige",
         "items": [
-          "Ouvert — nouvellement ouvert ; en attente de prise en charge admin.",
-          "En revue — un admin a démarré la revue formelle.",
-          "Résolu — décidé vers le parcours prestataire : la commande peut se terminer et l'escrow restant est libéré.",
-          "Clos — terminé sans ce parcours ; l'escrow restant est remboursé selon les règles de clôture."
+          "Chaque partie de la commande peut en ouvrir un, sur une commande ni terminée ni annulée. Un litige par commande.",
+          "L’appelant est l’initiateur ; l’autre partie est prévenue.",
+          "Les clients peuvent aussi en ouvrir un depuis leur compte boutique."
         ]
       },
       {
-        "title": "Actions admin",
+        "title": "Statuts et décisions",
+        "body": "Seul un administrateur tranche, et une note de résolution est obligatoire.",
         "items": [
-          "Démarrer la revue — uniquement depuis ouvert ; passe en revue.",
-          "Résoudre — depuis ouvert ou en revue ; note de résolution obligatoire ; peut terminer la commande et libérer l'escrow.",
-          "Clore — depuis ouvert ou en revue ; rembourse l'escrow restant selon la clôture.",
-          "Client et prestataire sont notifiés à la fin du litige."
-        ],
-        "body": "Démarrer la revue, résoudre et clore exigent un admin. Les litiges soft-supprimés ne sont pas actionnables."
+          "Ouvert : soulevé et en attente. Démarrer l’examen le passe en cours d’examen.",
+          "Résoudre (depuis ouvert ou en cours d’examen) tranche pour le prestataire : une livraison en attente est acceptée, la commande terminée et le reste du séquestre libéré au prestataire.",
+          "Clore (depuis ouvert ou en cours d’examen) tranche pour le client : la commande est annulée et le reste du séquestre remboursé.",
+          "Les deux parties sont prévenues de l’issue."
+        ]
       },
       {
-        "title": "Sur cette page",
+        "title": "Suppression",
         "items": [
-          "Créer ouvre un litige sur une commande problématique.",
-          "Actions de feuille ou de ligne pour revue, résolution et clôture.",
-          "Soft delete et restauration suivent les droits de liste habituels."
+          "Seul un administrateur peut supprimer un litige, car un litige ouvert bloque le versement. Un litige supprimé ne peut faire l’objet d’aucune action avant d’être restauré."
         ]
       }
     ]

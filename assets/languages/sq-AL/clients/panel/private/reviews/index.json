@@ -5,23 +5,28 @@
   "help": {
     "ariaLabel": "Rreth vlerësimeve",
     "title": "Rreth vlerësimeve",
-    "overview": "Një review është feedback i klientit për një porosi marketplace të përfunduar: vlerësim, koment opsional, i lidhur me porosinë dhe listimin. Ushqen mesataren dhe numrin e review te listimi.",
+    "overview": "Një vlerësim tregu është nota dhe komenti i klientit për një porosi të përfunduar. I përket porosisë dhe listimit të saj, dhe ushqen notën mesatare dhe numrin e vlerësimeve të listimit si dhe reputacionin e ofruesit.",
     "sections": [
       {
-        "title": "Çfarë regjistroni",
+        "title": "Kush mund të vlerësojë",
         "items": [
-          "Vlerësimi është nota me yje.",
-          "Komenti është tekst i lirë opsional.",
-          "Porosia dhe listimi identifikojnë çfarë u vlerësua; recensuesi është klienti.",
-          "Krijo shërben për të dërguar feedback pas një angazhimi të përfunduar."
+          "Vetëm klienti i porosisë, vetëm kur porosia është përfunduar, dhe vetëm një herë për porosi.",
+          "Listimi dhe vlerësuesi vendosen nga serveri nga porosia dhe thirrësi.",
+          "Klientët mund të vlerësojnë edhe nga llogaria e tyre në dyqan, ku ofrohen porositë e përfunduara pa vlerësim."
         ]
       },
       {
-        "title": "Në këtë faqe",
+        "title": "Çfarë ndryshon",
         "items": [
-          "Listoni, filtroni dhe hapni për moderim ose support.",
-          "Nuk ka workflow të veçantë publish — krijo dhe ndrysho menaxhojnë rekordin drejtpërdrejt.",
-          "Soft delete e heq review nga pamjet e parazgjedhura; restore e kthen."
+          "Nota mesatare dhe numri i vlerësimeve të listimit rillogariten nga vlerësimet e tij aktive.",
+          "Profili i ofruesit tregon notën mesatare mbi të gjitha porositë e tij, nga listimet dhe nga kërkesat për detyra."
+        ]
+      },
+      {
+        "title": "Moderimi",
+        "items": [
+          "Vlerësimet nuk ndryshohen pasi shkruhen.",
+          "Vetëm një administrator mund ta fshijë një vlerësim; fshirja është e butë dhe rikthimi e sjell notën përsëri."
         ]
       }
     ]

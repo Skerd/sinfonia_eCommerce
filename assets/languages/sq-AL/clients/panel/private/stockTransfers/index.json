@@ -5,34 +5,35 @@
   "help": {
     "ariaLabel": "Rreth transferimeve të stokut",
     "title": "Rreth transferimeve të stokut",
-    "overview": "Një transferim stoku lëviz stokun e lirë nga një magazinë në një tjetër. Mbetet draft derisa të përfundohet ose të anulohet. Përfundimi është çasti kur sasitë lëvizin vërtet.",
+    "overview": "Një transferim stoku lëviz stok të lirë nga një magazinë në një tjetër. Është draft derisa të përfundohet ose anulohet; përfundimi është momenti kur sasitë lëvizin vërtet, të gjithë rreshtat bashkë.",
     "sections": [
       {
         "title": "Drafti",
-        "body": "Sa kohë është draft, asgjë nuk ka lënë magazinën burim.",
+        "body": "Sa kohë është draft, asgjë nuk ka dalë nga magazina burim dhe dokumenti mund të ndryshojë ende.",
         "items": [
-          "Nga magazina dhe te magazina janë të dyja të detyrueshme dhe janë magazina të ndryshme.",
-          "Çdo rresht është një produkt, një variant opsional dhe një sasi.",
-          "Një draft mund ta ndryshoni ende. Vetëm një draft mund të përfundohet ose të anulohet."
+          "Nga dhe Te janë të detyrueshme dhe duhet të jenë dy magazina të ndryshme të kësaj kompanie.",
+          "Çdo rresht është një produkt, një variant opsional dhe një sasi. Çdo rresht duhet të jetë artikull i ndryshëm i ndjekur në stok; një paketë produktesh nuk mund të jetë rresht, lëvizni përbërësit e saj.",
+          "Vetëm një draft mund të ndryshohet, përfundohet ose anulohet."
         ]
       },
       {
         "title": "Çfarë bën përfundimi",
-        "body": "Përfundimi është krejt ose asgjë. Një rresht i shkurtër e refuzon gjithë transferimin.",
+        "body": "Përfundimi është gjithçka ose asgjë: një rresht i pamjaftueshëm refuzon gjithë transferimin dhe asgjë nuk lëviz.",
         "items": [
-          "Çdo rresht largohet nga burimi dhe arrin te destinacioni.",
-          "Lëviz vetëm stoku i lirë. Njësitë tashmë të rezervuara për porosi të hapura qëndrojnë.",
-          "Nëse destinacioni s'e ka pasur kurrë artikullin, rreshti i inventarit krijohet.",
-          "Regjistri merr një transferim jashtë te burimi dhe një transferim brenda te destinacioni."
+          "Rreshtat rikontrollohen së pari, sepse produktet ose magazinat mund të kenë ndryshuar që kur u ruajt drafti.",
+          "Çdo rresht largohet nga burimi dhe mbërrin në destinacion. Lëviz vetëm stoku i lirë; njësitë e rezervuara për porosi të hapura mbeten ku janë.",
+          "Nëse destinacioni nuk e ka mbajtur kurrë artikullin, krijohet rreshti i tij i inventarit.",
+          "Regjistri merr një lëvizje transferimi dalës te burimi dhe një hyrëse te destinacioni, të dyja me referencë te ky transferim. Regjistrohen kur u përfundua dhe nga kush.",
+          "Përfundimi ose anulimi kërkon lejen për të shkruar statusin e transferimit."
         ]
       },
       {
-        "title": "Pastaj",
-        "body": "Një transferim i përfunduar është histori. Një draft i anuluar s'ka lëvizur kurrë stok.",
+        "title": "Pas përfundimit",
+        "body": "Një transferim i përfunduar është histori; një draft i anuluar nuk lëvizi kurrë asgjë.",
         "items": [
-          "Anulimi niset vetëm nga drafti. Një transferim i përfunduar nuk zhbëhet nga këtu.",
-          "Sasitë e reja janë te Inventari. Dy lëvizjet janë te Lëvizjet e inventarit.",
-          "Fshirja është e butë dhe transferimi mund të rikthehet."
+          "Anulo është i mundur vetëm nga draft, kështu që një transferim i përfunduar nuk zhbëhet këtu. Krijoni një transferim në drejtim të kundërt.",
+          "Një transferim i përfunduar nuk mund të fshihet. Një draft ose një i anuluar fshihet butë dhe mund të rikthehet.",
+          "Importi nga Odoo mund të sjellë transferime të brendshme nga Odoo; ato mbërrijnë tashmë të përfunduara."
         ]
       }
     ]

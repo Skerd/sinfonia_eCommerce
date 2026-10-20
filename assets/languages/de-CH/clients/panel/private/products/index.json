@@ -5,38 +5,70 @@
   "help": {
     "ariaLabel": "Über Produkte",
     "title": "Über Produkte",
-    "overview": "Ein Produkt ist ein verkaufbarer Katalogartikel dieser Firma. Der Shop verkauft es nur, solange der Status aktiv ist. Entwurf ist die Arbeitskopie. Archiviert ist ausser Verkauf und kann als Entwurf zurückkommen.",
+    "overview": "Ein Produkt ist ein verkaufbarer Katalogartikel dieser Firma. Shop und Kasse verkaufen es nur, solange sein Status aktiv ist. Entwurf ist die Arbeitskopie, die niemand kaufen kann, und Archiviert nimmt es aus dem Verkauf, ohne es zu verlieren. Alles, was der Shop über den Artikel zeigt — Preis, Medien, Bestand, SEO, verwandte Artikel —, wird hier bearbeitet.",
     "sections": [
       {
         "title": "Was der Typ ändert",
-        "body": "Der Typ entscheidet, wie der Artikel verkauft wird und wie Bestand sich bewegt.",
+        "body": "Der Typ ist der Rahmen für Preis, Versand, Bestand und das, was nach der Zahlung passiert. Wählen Sie ihn zuerst; die meisten anderen Felder hängen davon ab.",
         "items": [
-          "Physisch wird versendet und kann Bestand, Gewicht und Masse führen.",
-          "Digital wird als Download geliefert. Eine volle Erstattung der Bestellung lässt diese Downloads ablaufen.",
-          "Eine Dienstleistung wird ohne Sendung verkauft.",
-          "Variabel wird über seine Varianten verkauft. Eine Variante ohne eigenen Preis nutzt den Produktpreis.",
-          "Ein Bundle ist eine Gruppe anderer Produkte. Wenn Bestand sich bewegt, wird das Bundle eine Ebene tief geöffnet. Jede Komponente muss ein lebendes Produkt dieser Firma sein und darf selbst kein Bundle sein.",
-          "Eine Geschenkkarte wird als Ladenguthaben verkauft."
+          "Physisch wird an eine Adresse versendet und hat Bestandsführung. Er trägt Gewicht, Masse, Versandklasse und ein Gefahrgut-Kennzeichen; gewichtsbasierte Versandtarife verwenden das Gewicht.",
+          "Variabel wird über seine Varianten verkauft (Grösse, Farbe usw.). Jede Variante ist eine eigene SKU mit eigener Bestandszeile. Eine Variante ohne eigenen Preis nutzt den Produktpreis.",
+          "Digital wird als Download geliefert. Die Zahlung erteilt eine Download-Berechtigung, begrenzt durch das Download-Limit und die Ablauftage. Eine volle Erstattung der Bestellung lässt diese Downloads ablaufen.",
+          "Dienstleistung wird ohne Sendung und ohne Bestand verkauft.",
+          "Bundle ist eine Gruppe anderer Produkte mit je einer Menge. Es hat selbst keinen Bestand: Bewegt sich Bestand, wird das Bundle eine Ebene tief in seine Komponenten geöffnet. Jede Komponente muss ein aktives, nicht gelöschtes Produkt dieser Firma sein und darf selbst kein Bundle sein.",
+          "Geschenkkarte wird als Guthaben verkauft. Die Zahlung stellt pro Einheit eine Karte aus, mit einem Saldo in Höhe des Stückpreises. Geschenkkarten-Zeilen werden nie rabattiert und zählen nie zu Rabatt-Mindestwerten."
         ]
       },
       {
         "title": "Status und die Zeilenaktionen",
-        "body": "Veröffentlichen, Archivieren und Zurück zum Entwurf ändern den Status. Jede Aktion wird abgelehnt, wenn das Produkt nicht im erwarteten Zustand ist.",
+        "body": "Der Status ändert sich nicht durch einfaches Bearbeiten. Veröffentlichen, Archivieren und Zurück zum Entwurf sind Aktionen, und jede wird abgelehnt, wenn das Produkt nicht im erwarteten Zustand ist.",
         "items": [
-          "Veröffentlichen geht nur aus einem Entwurf. Ein Produkt ohne Varianten braucht bereits einen Preis. Die erste Veröffentlichung schreibt das Veröffentlichungsdatum.",
-          "Archivieren geht aus Entwurf oder aktiv und nimmt das Produkt aus dem Verkauf.",
-          "Zurück zum Entwurf geht nur aus archiviert und löscht das Veröffentlichungsdatum, damit das Produkt nicht sofort wieder in den Verkauf geht.",
-          "Duplizieren kopiert die Angaben in einen neuen Entwurf. Der Titel ist das Original plus \" (Copy)\". Bewertungen, Anzahl Rezensionen und Varianten werden nicht kopiert.",
-          "Das Löschen ist ein Soft-Delete und das Produkt kann wiederhergestellt werden."
+          "Veröffentlichen geht nur aus einem Entwurf. Ein Produkt ohne Varianten braucht bereits einen Preis, weil ein aktives Produkt zu diesem Preis verkauft wird. Die erste Veröffentlichung speichert das Veröffentlichungsdatum.",
+          "Geplantes Veröffentlichen: Ein Entwurf mit einem Veröffentlichungsdatum in der Vergangenheit wird von einem Job, der alle fünf Minuten läuft, automatisch in den Verkauf genommen, sofern er einen Preis hat.",
+          "Archivieren geht aus Entwurf oder aktiv und nimmt das Produkt aus dem Verkauf. Warenkörbe entfernen es bei der nächsten Preisberechnung.",
+          "Zurück zum Entwurf geht nur aus Archiviert. Es löscht das Veröffentlichungsdatum, damit der geplante Job es nicht sofort wieder in den Verkauf nimmt.",
+          "Duplizieren kopiert die Angaben in einen neuen Entwurf mit dem Titel plus \" (Copy)\". Varianten, Bestandszeilen, Bewertungen, Ratings und das Veröffentlichungsdatum werden nicht kopiert, und ein neuer Slug wird erzeugt.",
+          "Das Löschen eines Produkts ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       },
       {
-        "title": "Wie es am Rest des Menüs hängt",
-        "body": "Das Produkt ist der Katalogdatensatz. Bestand, Bestellungen und Bewertungen hängen daran.",
+        "title": "Preisfelder",
+        "body": "Berechnet wird nur der Preis. Die anderen Geldfelder beschreiben ihn.",
         "items": [
-          "Kategorien und Kollektionen gruppieren es im Shop. Ein Produkt kann in mehreren Kategorien liegen.",
-          "Der Lagerbestand unter Bestand hält die Menge pro Lager. Ein Produkt ohne Lagerzeile gilt im Checkout als nicht bestandsgeführt.",
-          "Eine Bewertung auf einer bezahlten Bestellposition aktualisiert Durchschnitt, Anzahl Bewertungen und Anzahl Rezensionen dieses Produkts."
+          "Preis ist der Stückpreis, von dem der Warenkorb ausgeht, vor Preisregeln und Rabattcodes.",
+          "Vergleichspreis ist der durchgestrichene „statt“-Preis, den der Shop zeigen kann. UVP ist die unverbindliche Preisempfehlung des Herstellers. Einstandspreis dient Ihren Margenauswertungen und wird Käufern nie gezeigt.",
+          "Aktionsbeginn und Aktionsende begrenzen das im Shop gezeigte Aktionsfenster.",
+          "Mindest-, Höchst- und Schrittmenge sind die Bestellmengen-Regeln; der Warenkorb setzt sie durch, und der Shop zählt Mengen auf dieselbe Weise.",
+          "Steuerpflichtig und Steuerklasse beschreiben den Artikel steuerlich. Die Steuer selbst kommt aus den Steuerzonen der Lieferadresse."
+        ]
+      },
+      {
+        "title": "Bestand",
+        "body": "Ein physisches oder variables Produkt hat Bestandsführung, ausser „Bestand führen“ ist ausgeschaltet (am Produkt oder an der Variante).",
+        "items": [
+          "Ein geführter Artikel kann nur aus vorhandenem Bestand verkauft werden. Ohne Bestandszeile in einem aktiven Lager lehnt der Checkout die Zeile als nicht vorrätig ab.",
+          "Mindestbestand-Schwelle, Sicherheitsbestand, Rückstand und Vorbestellung beschreiben, wie der Artikel behandelt werden soll; Mengen und Meldebestände pro Lager stehen auf der Seite Bestand.",
+          "Ein nicht geführter Artikel (ausgeschaltet, oder ein digitales, Dienstleistungs- oder Geschenkkarten-Produkt) wird verkauft, ohne den Bestand zu berühren."
+        ]
+      },
+      {
+        "title": "Shop-Inhalte und SEO",
+        "body": "Diese Felder ändern nur, wie das Produkt präsentiert und gefunden wird.",
+        "items": [
+          "Hauptbild, Galerie, Videos und Dokumente sind die Medien. Highlights, Spezifikationen, FAQs, Pflegehinweise und Garantie füllen die Produktseite.",
+          "Verwandte Produkte, Upsells, Cross-Sells und „häufig zusammen gekauft“ sind die Empfehlungsplätze. Hervorgehoben und Badges heben den Artikel in Listen hervor.",
+          "Kennungen (SKU, Barcode, GTIN, UPC, EAN, ISBN, MPN, HS-Code, Ursprungsland) dienen der Suche, dem Scannen an der Kasse und dem Zoll.",
+          "SEO enthält Meta-Titel und -Beschreibung, Keywords, kanonische URL, Open-Graph- und Twitter-Card-Felder, Sitemap-Aufnahme und -Priorität sowie No-Index."
+        ]
+      },
+      {
+        "title": "Wie es zusammenhängt",
+        "body": "Das Produkt ist der Katalogeintrag; Bestand, Bestellungen und Bewertungen hängen daran.",
+        "items": [
+          "Kategorien und Kollektionen gruppieren es im Shop. Es kann in mehreren Kategorien sein, aber Preisregeln für eine Kategorie betrachten nur die erste.",
+          "Varianten und ihre Attribute finden Sie unter Konfigurationen. Bestand pro Lager unter Lager → Bestand.",
+          "Bestellzeilen behalten eine Momentaufnahme von Titel, SKU, Typ und Variantenbezeichnung, damit spätere Änderungen vergangene Bestellungen nie umschreiben.",
+          "Eine Bewertung zu einer bezahlten Bestellzeile aktualisiert den Bewertungsschnitt, die Anzahl Bewertungen und die Anzahl Rezensionen, die hier gezeigt werden."
         ]
       }
     ]

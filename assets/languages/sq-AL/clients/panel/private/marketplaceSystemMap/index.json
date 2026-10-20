@@ -5,22 +5,28 @@
   "help": {
     "ariaLabel": "Rreth hartës së sistemit Marketplace",
     "title": "Rreth hartës së sistemit Marketplace",
-    "overview": "Kjo hartë është një diagram i gjallë i modulit marketplace: modelet, si lëvizin paratë dhe puna, dhe çfarë mund të bëjë produkti. Nuk ndryshon të dhëna — shpjegon domenin.",
+    "overview": "Kjo hartë është një pamje vetëm për lexim e tregut të shërbimeve: modelet e tij, si lëvizin puna dhe paratë mes klientit dhe ofruesit, dhe çfarë ofron moduli. Nuk ndryshon të dhëna.",
     "sections": [
       {
-        "title": "Tre tab-et",
+        "title": "Grafi i modeleve",
         "items": [
-          "Grafiku i modeleve — entitetet dhe referencat (listime, porosi, oferta, escrow, etj.).",
-          "Si funksionon — rrjedha listim → porosi, kërkesë → ofertë → dhënie, mosmarrëveshje / escrow.",
-          "Aftësitë — çfarë mbështet moduli sot në nivel produkti."
+          "Listimet me paketat, shtesat, raportimet dhe promovimet; kërkesat për detyra dhe ofertat; porositë me dorëzimet, pikat kryesore, rishikimet, rezervimet, ankesat dhe vlerësimet; profilet e ofruesve; dhe regjistri i depozitës së financave.",
+          "Klikoni një nyje për përshkrimin, fushat kyçe, shtegun e API-t, veprimet dhe faqen e panelit."
         ]
       },
       {
-        "title": "Si ta lexoni",
+        "title": "Si funksionon",
         "items": [
-          "Pan dhe zoom në canvas. Klikoni një nyje për përshkrim të shkurtër.",
-          "Përdoreni për onboarding, leje, ose ku duhet të jetojë një veçori e re.",
-          "Puna operacionale vazhdon te listat nën Marketplace."
+          "«Bli një listim» dhe «detyrë → ofertë → porosi» tregojnë si nis një porosi.",
+          "Cikli i jetës së porosisë (dorëzime, rishikime, pika kryesore, pranim automatik pas 3 ditësh, lirim minus tarifën) dhe ankesat → rimbursim tregojnë si përfundon.",
+          "Moderimi dhe promovimi mbulon raportimet dhe promovimet; regjistrimi i ofruesit mbulon konfigurimin e profilit dhe pagesat me Stripe Connect."
+        ]
+      },
+      {
+        "title": "Aftësitë",
+        "items": [
+          "Çfarë mbështet sot tregu, zonat e API-t, proceset e planifikuara dhe rrugët e dyqanit.",
+          "Puna e përditshme bëhet në faqet e Tregut; përdoreni hartën për të trajnuar stafin ose për të planifikuar lejet."
         ]
       }
     ]

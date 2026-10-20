@@ -5,34 +5,44 @@
   "help": {
     "ariaLabel": "Informazioni sui movimenti di inventario",
     "title": "Informazioni sui movimenti di inventario",
-    "overview": "Questo è il libro di magazzino. Ogni variazione della giacenza scrive una riga, e la riga resta. La pagina è in sola lettura: qui non si inserisce nulla a mano.",
+    "overview": "Questo è il registro di magazzino. Ogni variazione di una giacenza fisica scrive qui una riga, e le righe non vengono mai modificate né eliminate. Risponde a «perché questo magazzino ne ha così tanti?» — ogni riga mostra la variazione, la quantità prima e dopo, il motivo, chi l’ha fatta e cosa l’ha causata.",
     "sections": [
       {
         "title": "Cosa registra una riga",
-        "body": "La riga è la variazione, non lo stock attuale. Lo stock attuale resta sulla riga di inventario.",
+        "body": "La riga è la variazione, non la giacenza attuale. La giacenza attuale sta sulla riga di inventario.",
         "items": [
-          "Tiene prodotto, variante se c'è, magazzino e la riga di inventario a cui appartiene.",
-          "La quantità è la variazione. Prima e dopo sono la giacenza intorno a quella variazione.",
-          "Il motivo dice perché. Nota, numero ricevuta, lotto, scadenza e costo unitario ci sono quando l'azione li aveva."
+          "Prodotto, variante se presente, magazzino e la riga di inventario a cui appartiene.",
+          "Quantità è la variazione con segno: positiva in entrata, negativa in uscita. Quantità prima e dopo è la giacenza fisica attorno a quella variazione.",
+          "Eseguito da è l’utente, e il riferimento punta alla causa: un ordine, una spedizione, una richiesta di reso, un trasferimento di magazzino, un inventario, una vendita in cassa o la riga di inventario stessa.",
+          "Fornitore, numero di ricevuta, file della ricevuta, lotto, scadenza e costo unitario compaiono quando l’azione che ha scritto la riga li aveva."
         ]
       },
       {
         "title": "I motivi",
-        "body": "Il motivo lo imposta l'azione. Su questa pagina non lo scegli.",
+        "body": "Il motivo è impostato da ciò che ha fatto la variazione. Qui non lo scegli mai.",
         "items": [
-          "Carico e iniziale sono entrate. Vendita è un'uscita su un ordine o una vendita in cassa.",
-          "Reso è merce rimessa quando una richiesta di reso viene ricevuta.",
-          "Trasferimento in entrata e in uscita sono i due lati di un trasferimento completato.",
-          "Rettifica è un conteggio. Danno e svalutazione tolgono merce senza una vendita."
+          "Iniziale è la quantità di partenza di una nuova riga di inventario. Rifornimento è merce ricevuta.",
+          "Vendita è merce che esce con un ordine spedito o una vendita in cassa.",
+          "Reso è merce rimessa da una richiesta di reso ricevuta o da un rimborso in cassa.",
+          "Trasferimento in uscita e in entrata sono i due lati di un trasferimento di magazzino completato.",
+          "Rettifica è un inventario o una correzione manuale. Danno e perdita tolgono merce senza vendita."
         ]
       },
       {
-        "title": "Perché non puoi modificarla",
-        "body": "Il libro è la storia. Cambiare una riga farebbe mentire il prima e il dopo.",
+        "title": "Valorizzare la giacenza",
+        "body": "Le righe in entrata portano il costo; quelle in uscita lo ereditano.",
         "items": [
-          "Le righe non si possono creare, modificare o eliminare da questa pagina.",
-          "Per cambiare lo stock usa Inventario, un trasferimento, un conteggio, una spedizione o un reso.",
-          "Apri la riga per vedere prodotto, magazzino e riferimento a cui punta il movimento."
+          "Un rifornimento registra costo unitario, lotto e scadenza inseriti.",
+          "Uno scarico manuale copia costo unitario e scadenza dell’ultima riga in entrata dello stesso lotto (o dell’ultima riga in entrata in assoluto), così le perdite sono valorizzate."
+        ]
+      },
+      {
+        "title": "Perché non puoi modificarlo",
+        "body": "Il registro è lo storico. Modificare una riga renderebbe falsi il prima e il dopo.",
+        "items": [
+          "Nessuno può creare, modificare o eliminare righe qui.",
+          "Per cambiare la giacenza usa Inventario (rifornisci, scarica), un trasferimento, un inventario, una spedizione d’ordine o un reso.",
+          "Filtra per prodotto, magazzino, motivo o data per verificare un articolo; anche la riga di inventario apre il proprio storico."
         ]
       }
     ]

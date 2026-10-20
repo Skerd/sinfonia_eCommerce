@@ -4,33 +4,63 @@
   "help": {
     "ariaLabel": "About Point of Sale",
     "title": "About Point of Sale",
-    "overview": "Point of Sale sells from a shop till. This page is the till, not a list. You pick a register, open a session with the cash already in the drawer, then sell. Once the session is open, the till has its own shortcut guide.",
+    "overview": "Point of Sale is the shop till. This page is the till itself, not a list. Pick a register, open a session with the cash already in the drawer, then sell. Every paid sale becomes a POS order, takes stock straight from the till's warehouses, and is mirrored as a delivered, paid product order for the books.",
     "sections": [
       {
-        "title": "Opening",
-        "body": "A till comes from POS configs. This screen only opens one that is already set up.",
+        "title": "Opening the till",
+        "body": "A till is a POS config set up under Configurations. This screen only opens one that exists, is active, and is not paused.",
         "items": [
-          "Choose the register, then open a session with the opening cash balance.",
-          "Cash in and cash out record later drawer moves. Close counts the drawer and ends the session.",
-          "Those sessions are listed under POS sessions. You do not create them from that list."
+          "Choose the register, then open a session with the opening cash count. One session per till can be open at a time.",
+          "The till needs a currency and at least one warehouse to open and sell.",
+          "Once open, the till shows its own keyboard-shortcut guide."
         ]
       },
       {
         "title": "Selling",
-        "body": "The catalog on the till is this company's products. A line takes stock from the till's warehouse.",
+        "body": "The catalog is this company's active products. Prices come from the catalog; the cashier cannot type a price.",
         "items": [
-          "Search or scan a barcode to add a product. Variants are chosen before the line is added.",
-          "You can hold a cart and resume it, attach a customer, discount a line or the order, split the payment, and refund a paid sale.",
-          "A refund done here becomes its own POS order, linked back to the sale, and that order shows under POS orders."
+          "Gift cards and digital downloads are not sold at the till; they are only issued by online orders.",
+          "Search, or scan a barcode; a variant barcode adds that variant directly. A variable product asks for its variant first.",
+          "Till prices include VAT. The tax share of each line is worked out from the tax zones of the till's first warehouse address, after the line's share of any order discount.",
+          "A line takes stock from the till's warehouses in order, filling from each until the quantity is met. If they do not hold enough, the sale is refused unless the till allows overselling.",
+          "Line and order discounts and quantity changes are allowed only when the till permits them. With PIN for discount on, a discounted sale needs a manager PIN.",
+          "Attach a customer to put the sale under their name."
         ]
       },
       {
-        "title": "When the till will not sell",
-        "body": "Pause and inactive are blocks, not errors in the cart.",
+        "title": "Taking payment",
+        "body": "One sale can be split across several payment methods.",
         "items": [
-          "A paused till cannot sell. You can still discard held carts and close the session. A company-wide pause blocks every till, not just this one.",
-          "An inactive till cannot be opened.",
-          "If no fiscalization is active for the till, sales on it are not fiscalized."
+          "The payments must cover the total. Cash given beyond the total is returned as change and only the net cash enters the drawer.",
+          "A card method with a terminal charges the terminal first: manual means the cashier confirms on an external device; local HTTP sends the amount to the terminal bridge and waits for approval, decline, or timeout.",
+          "Paying writes the POS order as paid, the stock movements, and the mirrored product order. A repeated payment request for the same sale is recognised and not charged twice.",
+          "If the till has an active fiscal configuration with a certificate, the sale is fiscalized with CIS and an e-invoice is registered. The sale still completes if CIS returns an error; the result is stored on the order."
+        ]
+      },
+      {
+        "title": "Held carts",
+        "body": "Hold parks the current cart as a draft POS order so you can serve someone else.",
+        "items": [
+          "A held cart can be resumed later on the same till, or discarded.",
+          "A session cannot be closed while it still has held carts; resume or discard them first."
+        ]
+      },
+      {
+        "title": "Refunds",
+        "body": "A refund is its own POS order, linked to the sale it reverses.",
+        "items": [
+          "Refund by selecting line quantities, or refund the whole remaining sale. A partial amount without lines is refused, because the till would not know what to restock.",
+          "Each sale line remembers what was already refunded, so the same units cannot be refunded twice. The order discount is shared out over the refunded lines.",
+          "Refunded units go back to the warehouses the sale took them from; anything beyond that goes to the till's first warehouse.",
+          "A cash refund comes out of the drawer. With PIN for refund on, a manager PIN is required."
+        ]
+      },
+      {
+        "title": "The drawer and closing",
+        "items": [
+          "Cash in and cash out record drawer moves with a reason; they are not sales. Cash out cannot take more than the drawer holds, and with PIN for cash out on it needs a manager PIN.",
+          "Close asks for the counted cash. If it differs from the expected amount by a cent or more, a reason is required, and the difference is written on the session.",
+          "Pausing a till stops it taking money and force-closes its open session, cancelling held carts. Pausing all tills does this for every till of the company."
         ]
       }
     ]

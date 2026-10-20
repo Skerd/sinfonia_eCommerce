@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Informazioni sulle richieste di reso",
     "title": "Informazioni sulle richieste di reso",
-    "overview": "Una richiesta di reso chiede di rimandare indietro la merce, di cambiarla o di rimborsare un ordine. Il tipo è reso, cambio o rimborso. Lo stato segue in attesa, approvata, rifiutata, ricevuta, completata.",
+    "overview": "Una richiesta di reso chiede di rimandare merce, cambiarla o ottenere un rimborso per un ordine di prodotti. Il suo tipo è reso, cambio o rimborso, e il suo stato segue in attesa → approvata o rifiutata → ricevuta → completata. I clienti la fanno dal proprio account; il personale può crearla anche qui.",
     "sections": [
       {
-        "title": "Il percorso",
-        "body": "Approva e rifiuta sono la decisione. Ricevi e completa sono ciò che segue un sì. Ogni passo è rifiutato se la richiesta non è nello stato precedente.",
+        "title": "Cosa contiene una richiesta",
+        "body": "Una richiesta punta sempre a un ordine e a righe precise di esso.",
         "items": [
-          "Approva e rifiuta valgono solo per una richiesta in attesa. Entrambe registrano chi l'ha risolta e quando, e il cliente viene avvisato.",
-          "In approvazione puoi impostare un importo di rimborso, che non può superare il valore delle righe della richiesta.",
-          "Rifiuta chiude la richiesta e non muove stock.",
-          "Ricevi vale solo per una richiesta approvata. Completa solo dopo che è stata ricevuta."
+          "Ogni riga è un articolo d’ordine, una quantità e un motivo. Si possono reclamare solo quantità spedite, e le unità già reclamate da un’altra richiesta aperta non sono di nuovo disponibili.",
+          "L’importo del rimborso è facoltativo e non può mai superare il valore delle righe reclamate.",
+          "Una vendita in cassa non si rende qui; si rimborsa in cassa.",
+          "Una volta richieste, le righe sono fisse. Nota del cliente e nota amministrativa restano sulla richiesta.",
+          "Il personale con accesso ai resi viene avvisato quando una nuova richiesta viene salvata."
         ]
       },
       {
-        "title": "Cosa fanno ricezione e completamento a stock e denaro",
-        "body": "Un solo rimborso non ha nulla da rimettere a scaffale. Un reso o un cambio sì.",
+        "title": "Decidere: approvare o rifiutare",
+        "body": "Entrambe valgono solo per una richiesta in attesa. Entrambe registrano chi ha deciso e quando, e il cliente viene avvisato.",
         "items": [
-          "Alla ricezione, un reso o un cambio rimette le quantità disponibili nel magazzino da cui è partita ogni riga e scrive un movimento di reso. Un bundle torna come i suoi componenti.",
-          "Una riga che non ha mai preso stock, o la cui riga di inventario non c'è più, viene annotata sull'ordine invece di essere rimessa a stock.",
-          "Completa paga l'importo concordato tramite il rimborso dell'ordine, per un reso o un rimborso. Un cambio non restituisce nulla."
+          "Approva può impostare o correggere l’importo del rimborso, sempre entro il valore delle righe reclamate, e aggiungere una nota amministrativa.",
+          "Rifiuta chiude la richiesta con un motivo facoltativo. Non muove né giacenza né denaro."
         ]
       },
       {
-        "title": "A cosa è attaccata la richiesta",
-        "body": "La richiesta punta sempre a un ordine e a righe precise di quell'ordine.",
+        "title": "Ricevere: la merce torna",
+        "body": "Ricevi è possibile solo per una richiesta approvata.",
         "items": [
-          "Ogni riga è un articolo dell'ordine, una quantità e un motivo.",
-          "Nota del cliente e nota interna restano sulla richiesta. Il movimento di denaro, se c'è, è il rimborso dell'ordine.",
-          "L'eliminazione è logica e la richiesta può essere ripristinata."
+          "Per un reso o un cambio, le unità reclamate tornano in giacenza nel magazzino da cui è partita ogni riga, e per ciascuna si scrive un movimento di reso. Un bundle torna sotto forma dei suoi componenti.",
+          "Una riga la cui vendita non ha mai preso giacenza (prodotto non gestito) o la cui riga di giacenza non esiste più viene annotata nella cronologia dell’ordine invece di essere rimessa a magazzino.",
+          "Una richiesta di solo rimborso non ha nulla da ricevere; riceverla fa solo avanzare lo stato."
+        ]
+      },
+      {
+        "title": "Completare: i soldi tornano",
+        "body": "Completa è possibile solo dopo che la richiesta è stata ricevuta.",
+        "items": [
+          "Per un reso o un rimborso con importo, completare esegue il rimborso dell’ordine per quell’importo, tramite il gateway per i pagamenti con carta. Serve anche il permesso di scrivere lo stato del pagamento dell’ordine.",
+          "Un cambio non rimborsa nulla; la sostituzione viene gestita come nuovo lavoro di evasione.",
+          "Se il rimborso copre tutto il resto dell’ordine, si applicano anche le regole del rimborso totale."
+        ]
+      },
+      {
+        "title": "Pagine collegate",
+        "items": [
+          "L’ordine mostra il rimborso, le note di rientro a magazzino e la cronologia.",
+          "I movimenti di magazzino mostrano le voci di reso con questa richiesta come riferimento.",
+          "Eliminare una richiesta è un’eliminazione logica e può essere ripristinata."
         ]
       }
     ]

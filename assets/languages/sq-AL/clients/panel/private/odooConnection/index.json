@@ -5,15 +5,22 @@
   "help": {
     "ariaLabel": "Rreth lidhjes Odoo",
     "title": "Rreth lidhjes Odoo",
-    "overview": "Një server Odoo për kompani. Importi e përdor këtë lidhje me JSON-RPC nga serveri API.",
+    "overview": "Lidhja me Odoo ruan si e arrin kjo kompani serverin e saj Odoo. Ka një lidhje për kompani; importi nga Odoo e përdor për të lexuar të dhëna me JSON-RPC nga serveri i API-t.",
     "sections": [
       {
-        "title": "Çfarë të vendosësh",
-        "body": "Përdor të njëjtën URL, bazë dhe hyrje që funksionojnë në Odoo, plus një çelës API ose fjalëkalimin e atij përdoruesi.",
+        "title": "Çfarë të futni",
+        "body": "Përdorni të njëjtën URL, bazë të dhënash dhe hyrje që funksionojnë në Odoo.",
         "items": [
-          "URL-ja është origjina e Odoo, p.sh. https://your-company.odoo.com.",
-          "JSON-RPC authenticate pranon një çelës API ose fjalëkalimin e llogarisë për atë hyrje. Prefero një çelës API kur Odoo e ofron.",
-          "Lëre sekretet bosh kur ruan përsëri për të mbajtur vlerën e ruajtur."
+          "URL është adresa e Odoo, për shembull https://your-company.odoo.com. Baza e të dhënave është emri i bazës së Odoo.",
+          "Emri i përdoruesit është hyrja në Odoo. Sekreti është një çelës API (i preferuar) ose fjalëkalimi i atij përdoruesi.",
+          "Sekreti është i detyrueshëm herën e parë dhe ruhet i enkriptuar. Lëreni bosh kur ruani sërish për të mbajtur atë të ruajtur."
+        ]
+      },
+      {
+        "title": "Për çfarë përdoret lidhja",
+        "items": [
+          "Vetëm importi lexon nga Odoo; asgjë nuk shkruhet kurrë mbrapsht në Odoo.",
+          "Importi identifikohet së pari, ndaj një URL, bazë ose sekret i gabuar shfaqet atje si gabim."
         ]
       }
     ]

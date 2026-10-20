@@ -5,25 +5,23 @@
   "help": {
     "ariaLabel": "Informazioni sugli extra degli annunci",
     "title": "Informazioni sugli extra degli annunci",
-    "overview": "Un extra è un'opzione che l'acquirente può aggiungere ordinando un annuncio — consegna urgente o un deliverable aggiuntivo. Appartiene a un annuncio, ha prezzo proprio e giorni di consegna opzionali, e deve usare la stessa valuta dell'ordine.",
+    "overview": "Un componente aggiuntivo è un extra facoltativo che un acquirente può aggiungere ordinando un annuncio, come consegna espressa o una revisione in più. Appartiene a un annuncio e aggiunge il proprio prezzo e, facoltativamente, giorni di consegna.",
     "sections": [
       {
-        "title": "Cosa imposti",
+        "title": "Campi",
         "items": [
-          "Il nome è ciò che l'acquirente vede al checkout.",
-          "Annuncio e fornitore sono legati a questa offerta.",
-          "Importo e valuta devono corrispondere alla valuta dell'annuncio (o del package).",
-          "I giorni di consegna, se impostati, si aggiungono alla finestra di annuncio o package."
+          "L’annuncio è obbligatorio e fisso; solo il fornitore di quell’annuncio può creare o eliminare i suoi componenti.",
+          "Il nome è ciò che vede l’acquirente. Importo e valuta del prezzo sono ciò che aggiunge.",
+          "I giorni di consegna, se impostati, si sommano alla finestra di consegna dell’annuncio o del pacchetto."
         ]
       },
       {
-        "title": "Quando conta",
+        "title": "Ordinare con componenti aggiuntivi",
         "items": [
-          "Solo gli extra di quell'annuncio sono selezionabili.",
-          "Una valuta diversa blocca l'ordine.",
-          "Gli extra soft-eliminati si possono ripristinare; una volta eliminati non sono più offerti."
-        ],
-        "body": "Gli extra si scelgono creando un ordine da un annuncio."
+          "Si possono scegliere solo i componenti dell’annuncio ordinato, ciascuno una volta.",
+          "Ogni componente deve usare la stessa valuta dell’ordine (quella del pacchetto, o dell’annuncio senza pacchetto); una differenza blocca l’ordine.",
+          "L’eliminazione è logica. Un componente non può essere ripristinato finché il suo annuncio è eliminato."
+        ]
       }
     ]
   },

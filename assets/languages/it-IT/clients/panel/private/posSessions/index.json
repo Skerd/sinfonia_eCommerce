@@ -5,33 +5,42 @@
   "help": {
     "ariaLabel": "Informazioni sulle sessioni POS",
     "title": "Informazioni sulle sessioni POS",
-    "overview": "Una sessione è un'apertura di cassa, dal conteggio iniziale a quello di chiusura. Le sessioni si aprono e si chiudono in cassa. Questa pagina le elenca soltanto.",
+    "overview": "Una sessione è un’apertura di cassa, dal conteggio del fondo cassa al conteggio di chiusura. Le sessioni si aprono e si chiudono in cassa; questa pagina le elenca perché tu possa controllare ogni cassetto.",
     "sections": [
       {
         "title": "Gli stati",
-        "body": "Lo stato dice dov'è il cassetto in quell'apertura, non se la cassa può vendere.",
+        "body": "Lo stato indica a che punto è quell’apertura del cassetto, non se la cassa può vendere.",
         "items": [
-          "Apertura è il conteggio prima di vendere.",
-          "Aperta è la finestra di vendita. Entrate e uscite avvengono qui.",
-          "Chiusura è il conteggio finale. Chiusa è una sessione finita."
+          "Aperta è la finestra di vendita: la cassa apre una sessione direttamente in questo stato con il suo fondo cassa.",
+          "Chiusa è una sessione terminata, chiusa dal cassiere o chiusa forzatamente quando la cassa è stata messa in pausa o disattivata.",
+          "Controllo di apertura e controllo di chiusura sono stati riservati; la cassa attuale non vi si ferma."
         ]
       },
       {
-        "title": "Cosa viene registrato",
-        "body": "La sessione è il cassetto di quell'apertura, più le vendite battute su di essa.",
+        "title": "Cosa segue la sessione",
+        "body": "La sessione è il cassetto di quell’apertura più le vendite registrate.",
         "items": [
-          "Il fondo cassa è ciò che c'era nel cassetto all'apertura.",
-          "Entrata e uscita sono movimenti del cassetto con un motivo. Non sono vendite.",
-          "Chiudi registra il contante contato. Riconcilia confronta quel conteggio con ciò che la sessione si aspettava da fondo, movimenti e vendite in contanti."
+          "Il fondo cassa è il contante contato all’inizio.",
+          "Versamenti e prelievi sono movimenti del cassetto con importo, motivo, ora e autore.",
+          "Il contante atteso parte dal fondo cassa e segue ogni movimento di contante, vendita in contanti (al netto del resto) e rimborso in contanti.",
+          "Il saldo di chiusura è il contante contato alla fine. La differenza dal contante atteso, e il suo motivo, vengono annotati nelle note della sessione."
+        ]
+      },
+      {
+        "title": "Riconciliazione",
+        "body": "La riconciliazione confronta il conteggio con ciò che la sessione si aspettava, suddiviso per metodo di pagamento.",
+        "items": [
+          "Elenca fondo cassa, movimenti di contante, vendite e rimborsi per metodo e la differenza.",
+          "Una differenza di un centesimo o più non può essere chiusa senza motivo."
         ]
       },
       {
         "title": "Chi può farlo",
-        "body": "I pulsanti stanno in cassa. Il permesso sta sulla sessione.",
+        "body": "I pulsanti sono in cassa; i permessi stanno sulla sessione.",
         "items": [
-          "Aprire, chiudere e riconciliare richiedono il permesso di scrivere lo stato della sessione.",
-          "Entrate e uscite richiedono il permesso di scrivere i movimenti di cassa.",
-          "Le vendite della sessione sono sotto Ordini POS, filtrate per questa sessione."
+          "Aprire, chiudere e riconciliare richiedono il permesso di scrivere lo stato della sessione. I movimenti di contante richiedono il permesso di scrivere i movimenti di contante.",
+          "Le vendite di una sessione sono elencate sotto Ordini POS, filtrate per quella sessione.",
+          "Le sessioni non si possono creare, modificare o eliminare da questo elenco."
         ]
       }
     ]

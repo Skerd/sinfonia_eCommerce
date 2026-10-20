@@ -5,24 +5,53 @@
   "help": {
     "ariaLabel": "À propos des configurations de point de vente",
     "title": "À propos des configurations de point de vente",
-    "overview": "Une configuration de point de vente est une caisse. Elle exige un nom, au moins un moyen de paiement et au moins un entrepôt. Un caissier ouvre une session sur cette caisse et vend selon sa liste de prix.",
+    "overview": "Une configuration de point de vente est une caisse : ses boutons de paiement, les entrepôts dont elle vend, sa devise, ses tickets, sa fiscalisation et ce que le caissier peut faire. Un caissier y ouvre une séance depuis la page Point de vente.",
     "sections": [
       {
-        "title": "Ce que le caissier peut faire",
-        "body": "Le prix de caisse est le prix de la variante, ou le prix du produit sans variante. La caisse n'accepte pas un prix saisi par le caissier.",
+        "title": "Ce qu’il faut à une caisse",
+        "body": "Nom, au moins un mode de paiement et au moins un entrepôt sont obligatoires.",
         "items": [
-          "Les moyens de paiement sont les boutons de la caisse. Les entrepôts sont les lieux de stock depuis lesquels cette caisse vend.",
-          "Une configuration fiscale facultative relie cette caisse à la fiscalisation albanaise. L'en-tête et le pied du ticket sont imprimés sur le reçu.",
-          "Autoriser remise, changement de quantité et survente règle le caissier. Le PIN pour remise, sortie d'espèces et remboursement demande un PIN manager avant l'action.",
-          "Le contrôle de caisse suit le tiroir. L'indicateur de lecteur de codes-barres active la lecture pour cette caisse."
+          "Les modes de paiement sont les boutons de la caisse, dans leur ordre. Seuls les modes actifs peuvent être assignés.",
+          "Les entrepôts sont les sources de stock de la caisse, dans l’ordre : une vente puise dans le premier, puis le suivant. Seuls les entrepôts actifs peuvent être assignés. L’adresse du premier entrepôt détermine aussi les taux de TVA des ventes en caisse.",
+          "Une devise est requise pour ouvrir une séance et vendre.",
+          "La configuration fiscale relie la caisse à la fiscalisation albanaise CIS. Sans elle, la caisse ne fiscalise pas.",
+          "En-tête et pied de ticket sont imprimés sur chaque ticket."
         ]
       },
       {
-        "title": "Pause et reprise",
-        "body": "Une caisse inactive, une caisse en pause ou un verrou société refuse les nouveaux paiements.",
+        "title": "Contrôles du caissier",
+        "body": "Ces interrupteurs décident de ce que le caissier peut faire sans responsable.",
         "items": [
-          "Mettre toutes les caisses en pause verrouille la société et force la clôture des sessions ouvertes.",
-          "Reprendre toutes les caisses lève seulement le verrou société. Une caisse mise en pause seule reste en pause."
+          "Autoriser la remise et autoriser le changement de quantité débloquent ces modifications en caisse.",
+          "Autoriser la survente laisse passer une vente même si les entrepôts n’ont pas assez de stock ; le manque est pris sur le dernier entrepôt.",
+          "PIN pour remise, PIN pour sortie d’espèces et PIN pour remboursement exigent un PIN de responsable pour cette action.",
+          "Contrôle des espèces suit le tiroir ; lecteur de codes-barres active le scan."
+        ]
+      },
+      {
+        "title": "Responsables et PIN",
+        "body": "Les responsables sont les utilisateurs autorisés à approuver les actions protégées par PIN sur cette caisse.",
+        "items": [
+          "Chaque responsable définit son propre PIN, peut le changer avec le PIN actuel, ou l’effacer.",
+          "Un PIN oublié peut être réinitialisé par un lien envoyé par e-mail, valable 24 heures et utilisable une fois.",
+          "Retirer un utilisateur des responsables retire aussi son PIN de la caisse."
+        ]
+      },
+      {
+        "title": "Active, en pause et verrou société",
+        "body": "Trois interrupteurs empêchent une caisse d’encaisser.",
+        "items": [
+          "Désactiver éteint la caisse et clôture de force ses séances ouvertes ; elle ne peut plus être ouverte avant d’être réactivée.",
+          "Mettre en pause arrête les ventes d’une caisse avec un motif facultatif et clôture de force ses séances ouvertes : les paniers en attente sont annulés et les paiements terminal en cours annulés si possible. Reprendre lève la pause.",
+          "Mettre toutes les caisses en pause pose un verrou sur toute la société et clôture de force chaque séance ouverte. Tant qu’il est actif, aucune caisse ne peut reprendre. Tout reprendre ne lève que le verrou société ; les caisses mises en pause une par une restent en pause."
+        ]
+      },
+      {
+        "title": "Paramètres liés",
+        "items": [
+          "Modes de paiement et configurations fiscales sont des pages à part sous Configurations.",
+          "Un entrepôt qui est le seul entrepôt d’une caisse ne peut être ni désactivé ni supprimé ; un entrepôt partagé avec d’autres est plutôt retiré de la caisse.",
+          "Supprimer une caisse est une suppression douce et elle peut être restaurée."
         ]
       }
     ]

@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Rreth përmbushjeve",
     "title": "Rreth përmbushjeve",
-    "overview": "Një përmbushje është një dërgesë e një porosie produkti. Dërgimi i një porosie krijon një të tillë. Mund ta krijoni edhe këtu. Statusi është në pritje, e dërguar, e dorëzuar ose e dështuar, dhe ushqen porosinë.",
+    "overview": "Një përmbushje është një dërgesë e një porosie produkti: cilët rreshta dhe sa njësi u nisën, me cilin transportues dhe çfarë gjurmimi. Dërgimi i një porosie krijon një automatikisht; mund ta krijoni edhe këtu për ta ndarë porosinë në disa pako. Statusi i saj — në pritje, e dërguar, e dorëzuar ose e dështuar — përcakton statusin e dërguar dhe të dorëzuar të porosisë.",
     "sections": [
       {
+        "title": "Krijimi i një dërgese",
+        "body": "Një dërgesë mund të mbulojë vetëm atë që nuk është dërguar ende.",
+        "items": [
+          "Zgjidhni porosinë, pastaj rreshtat dhe sasinë e secilit. Çdo rresht duhet t’i përkasë asaj porosie, dhe sasia nuk mund të kalojë atë që dërgesat e mëparshme lanë të hapur.",
+          "Një dërgesë e krijuar këtu nis në pritje: ende asgjë nuk është nisur dhe stoku nuk preket.",
+          "Pasi krijohet, porosia dhe rreshtat janë të fiksuar. Transportuesi, gjurmimi, datat dhe shënimet mbeten të ndryshueshme."
+        ]
+      },
+      {
         "title": "Si lëviz një dërgesë",
-        "body": "Dërgimi, dorëzimi dhe dështimi janë të ligjshme vetëm nga statusi i përmendur.",
+        "body": "Dërgo, dorëzo dhe dështoi janë veprime, secili i lejuar vetëm nga statusi i përmendur. Kërkojnë lejen për të shkruar statusin e dërgesës.",
         "items": [
-          "Dërgohet vetëm nga në pritje, dhe vetëm kur vetë porosia nuk është ende në pritje, e anuluar ose e rimbursuar.",
-          "Dërgimi konsumon stokun e rezervuar për ato rreshta dhe mund ta kalojë porosinë në të dërguar.",
-          "Dorëzohet vetëm nga e dërguar. Dorëzimi i dërgesës së fundit të hapur mund ta kalojë porosinë në të dorëzuar.",
-          "Dështimi niset nga në pritje ose e dërguar. Një dërgesë që ka nisur kthehet mbrapsht. Nëse porosia është anuluar ose rimbursuar, stoku ende i mbajtur lirohet."
+          "Dërgo është i mundur vetëm nga në pritje, dhe vetëm kur porosia nuk është në pritje, e anuluar ose e rimbursuar. Regjistron orën e dërgimit dhe gjurmimin e futur.",
+          "Dërgimi i heq njësitë nga stoku: rezervimet e porosisë konsumohen në magazinat ku u bënë. Njësitë që nuk u rezervuan kurrë rezervohen në çast; nëse stoku nuk mjafton, dërgesa refuzohet si jashtë stoku.",
+          "Dorëzo është i mundur vetëm nga e dërguar. Kur dorëzohet dërgesa e fundit e padështuar, porosia bëhet e dorëzuar dhe klienti njoftohet një herë.",
+          "Dështoi është i mundur nga në pritje ose e dërguar. Një pako e nisur që dështon i kthen njësitë në stok dhe i rezervon sërish për porosinë, që një dërgesë e re t’i marrë. Nëse ndërkohë porosia është anuluar ose rimbursuar, këto njësi lirohen."
         ]
       },
       {
-        "title": "Çfarë regjistroni mbi të",
-        "body": "Transportuesi dhe gjurmimi qëndrojnë te dërgesa, jo te kreu i porosisë.",
+        "title": "Çfarë sheh porosia",
+        "body": "Statusi i përmbushjes së porosisë rillogaritet nga dërgesat e saj sa herë ndryshon një prej tyre.",
         "items": [
-          "Transportuesi, numri i gjurmimit dhe lidhja janë ato që merr klienti kur dërgohet.",
-          "Dërguar më, dorëzimi i parashikuar dhe dorëzuar më shënojnë kohështrirjen.",
-          "Rreshtat janë sasi të artikujve të porosisë. Një dërgesë e mëvonshme mund të mbulojë atë që një e mëparshme la hapur."
+          "Të gjithë rreshtat të dërguar plotësisht e bëjnë porosinë të përmbushur; disa rreshta të dërguar e bëjnë pjesërisht të përmbushur.",
+          "Të gjithë rreshtat të dërguar e kalojnë porosinë në të dërguar. Një porosi e dërguar plotësisht, dërgesa e së cilës dështon, kthehet në përpunim.",
+          "Çdo ndryshim shton një hyrje në kronologjinë e porosisë."
         ]
       },
       {
-        "title": "Si qëndron me porosinë",
-        "body": "Statusi i përmbushjes së porosisë rrjedh nga dërgesat e saj. Një dërgim i pjesshëm e lë pjesërisht të përmbushur.",
+        "title": "Çfarë regjistroni në të",
+        "body": "Gjurmimi i përket dërgesës, jo porosisë.",
         "items": [
-          "Hapni porosinë nga rreshti kur ju duhet pagesa, anulimi ose rimbursimi. Ato mbeten te porosia.",
-          "Një kthim i pranuar e kthen mallin në magazinën nga ku u dërgua rreshti.",
-          "Fshirja është e butë dhe përmbushja mund të rikthehet."
+          "Transportuesi, numri i gjurmimit dhe lidhja e gjurmimit janë ato që merr klienti në mesazhin e dërgimit.",
+          "Dorëzimi i parashikuar, dërguar më dhe dorëzuar më shënojnë kronologjinë. Shënimet janë për stafin.",
+          "Çdo rresht tregon produktin që dërgon, me titullin dhe imazhin."
+        ]
+      },
+      {
+        "title": "Faqe të lidhura",
+        "items": [
+          "Hapni porosinë për pagesën, anulimin ose rimbursimin; ato mbeten te porosia.",
+          "Një kërkesë kthimi e marrë e kthen mallin në magazinën nga u nis rreshti.",
+          "Fshirja e një dërgese është fshirje e butë dhe mund të rikthehet."
         ]
       }
     ]

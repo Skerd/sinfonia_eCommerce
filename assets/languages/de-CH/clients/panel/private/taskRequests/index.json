@@ -5,31 +5,39 @@
   "help": {
     "ariaLabel": "Über Auftragsanfragen",
     "title": "Über Auftragsanfragen",
-    "overview": "Eine Auftragsanfrage ist ein Käuferbriefing für Angebote: Titel, Beschreibung, Kategorie, Budget, Ort und Medien. Sie nimmt 30 Tage Gebote an. Anbieter mit aktivem Inserat in derselben Kategorie und Stadt können benachrichtigt werden.",
+    "overview": "Ein Auftrag ist die Ausschreibung eines Käufers, der Anbieter um Offerten bittet: was er braucht, in welcher Kategorie und an welchem Ort, mit welchem Budget. Er ist 30 Tage für Gebote offen. Das Annehmen eines Gebots vergibt ihn und eröffnet eine Bestellung.",
     "sections": [
+      {
+        "title": "Felder",
+        "items": [
+          "Titel, Kategorie, Budget-Minimum und -Maximum, Währung, Adresse und Hauptbild sind Pflicht; Beschreibung und Galerien sind optional.",
+          "Auftraggeber ist, wer ihn veröffentlicht. Kategorie und Ort bestimmen, welche Anbieter informiert werden."
+        ]
+      },
       {
         "title": "Status",
         "items": [
-          "Offen — nimmt Gebote bis zum Ablauf an.",
-          "Geschlossen — ohne Zuschlag beendet; ausstehende Bieter werden benachrichtigt.",
-          "Vergeben — ein Gebot wurde angenommen; Close/Reopen ändern den Status nicht mehr."
+          "Offen: nimmt Gebote an, bis er abläuft.",
+          "Geschlossen: nimmt keine Gebote mehr an, nach Wahl des Auftraggebers oder weil 30 Tage vergangen sind. Ein stündlicher Job schliesst abgelaufene Aufträge.",
+          "Vergeben: Ein Gebot wurde angenommen; der Status kann sich nicht mehr ändern."
         ]
       },
       {
         "title": "Aktionen",
+        "body": "Nur der Auftraggeber oder ein Administrator kann den Status ändern.",
         "items": [
-          "Schliessen — aus offen; benachrichtigt Nutzer mit noch ausstehendem Gebot.",
-          "Wieder öffnen — aus geschlossen; setzt das 30-Tage-Fenster neu.",
-          "Alle benachrichtigen — warnt passende Anbieter erneut.",
-          "Nur der Anfragende (oder Admin) darf den Status so ändern."
+          "Schliessen: aus offen. Alle mit einem ausstehenden Gebot werden benachrichtigt.",
+          "Wieder öffnen: aus geschlossen. Es startet das 30-Tage-Fenster neu, damit ein abgelaufener Auftrag nicht sofort wieder geschlossen wird.",
+          "Alle benachrichtigen: informiert erneut jeden Anbieter mit einem aktiven Inserat in derselben Kategorie und am selben Ort."
         ]
       },
       {
-        "title": "Verbindungen",
+        "title": "Gebote und Vergabe",
         "items": [
-          "Gebote hängen an der Anfrage; Annahme vergibt und erzeugt eine Bestellung.",
-          "Kategorie und Stadt steuern Matching — halten Sie sie genau.",
-          "Soft-Delete möglich; Wiederherstellen bringt die Zeile zurück."
+          "Anbieter bieten, solange er offen und nicht abgelaufen ist; niemand kann auf seinen eigenen Auftrag bieten.",
+          "Das Annehmen eines Gebots lehnt die anderen ab, markiert den Auftrag als vergeben und eröffnet eine ausstehende Bestellung zwischen Auftraggeber und Bieter.",
+          "Jede Zeile zeigt, wie viele aktive Gebote sie hat. Nicht-Administratoren sehen ihre eigenen Aufträge.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

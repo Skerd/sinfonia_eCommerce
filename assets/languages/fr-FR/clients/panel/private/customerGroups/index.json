@@ -5,15 +5,29 @@
   "help": {
     "ariaLabel": "À propos des groupes de clients",
     "title": "À propos des groupes de clients",
-    "overview": "Les groupes segmentent les clients, par exemple détail et gros. Un client peut appartenir à plusieurs groupes. Les règles de prix lisent ces appartenances. Le nom est obligatoire.",
+    "overview": "Les groupes de clients segmentent les acheteurs, par exemple particuliers et grossistes, pour que les règles de tarification donnent à chaque groupe ses propres prix. Un client peut appartenir à plusieurs groupes.",
     "sections": [
       {
-        "title": "Comment une règle voit le client",
-        "body": "L'appartenance est un enregistrement distinct par client et par groupe. Le nombre de membres suit ces enregistrements. Un panier invité n'a aucun groupe.",
+        "title": "Appartenance",
+        "body": "L’appartenance est gérée uniquement par le personnel, car elle change ce que paient les clients.",
         "items": [
-          "Une règle de prix sans groupe s'applique à chaque panier. Une règle qui liste des groupes ne s'applique que si le client connecté en fait partie.",
-          "Définir par défaut marque un seul groupe et retire le précédent. Cela n'ajoute pas de clients.",
-          "La suppression est logique et le groupe peut être restauré."
+          "Ajouter un membre et retirer un membre gèrent une fiche par client dans le groupe ; un client ne peut pas être ajouté deux fois.",
+          "Le nombre de membres affiché sur le groupe suit ces fiches.",
+          "Définir par défaut fait d’un groupe le groupe par défaut de la société et retire le précédent. Cela n’ajoute personne en soi."
+        ]
+      },
+      {
+        "title": "Comment les prix lisent les groupes",
+        "items": [
+          "Une règle de tarification sans groupe s’applique à tout panier. Une règle qui liste des groupes ne s’applique que si le client connecté est dans l’un d’eux.",
+          "Les paniers invités n’appartiennent à aucun groupe.",
+          "Les codes de remise ne vérifient pas les groupes quand ils sont appliqués."
+        ]
+      },
+      {
+        "title": "Suppression",
+        "items": [
+          "Supprimer un groupe est une suppression douce qui retire aussi ses appartenances. Le restaurer les rétablit, sauf pour les clients ré-ajoutés entre-temps."
         ]
       }
     ]

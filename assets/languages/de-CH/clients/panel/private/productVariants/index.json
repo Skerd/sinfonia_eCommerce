@@ -5,15 +5,36 @@
   "help": {
     "ariaLabel": "Über Produktvarianten",
     "title": "Über Produktvarianten",
-    "overview": "Eine Variante ist eine verkaufbare SKU eines Produkts. Warenkorb und Kasse berechnen den Variantenpreis, sobald eine Variante gewählt ist. Nur eine aktive Variante ist verkaufbar. Das Produkt ist erforderlich.",
+    "overview": "Eine Variante ist eine verkaufbare SKU eines variablen Produkts, bestimmt durch ihre Kombination von Attributwerten (zum Beispiel Rot / XL). Warenkorb und Kasse berechnen den eigenen Variantenpreis, wenn sie einen hat. Nur eine aktive Variante kann verkauft werden.",
     "sections": [
       {
-        "title": "Preis, Identität und Bestand",
-        "body": "Jede Variante speichert eigene SKU, Barcode, Preis, Vergleichspreis, Einstand, Gewicht und die Attributkombination. Fehlt der Variantenpreis, gilt der Produktpreis.",
+        "title": "Identität",
         "items": [
-          "Aktivieren Sie die Bestandsführung, wenn diese SKU gezählt werden soll. Der Checkout reserviert die Variante dann in einem Lager, das sie führt.",
-          "Eine Zeile ohne Bestandsdatensatz gilt als nicht geführt und wird nicht reserviert.",
-          "Eine inaktive Variante fällt beim nächsten Neubewerten aus dem Warenkorb."
+          "Produkt ist Pflicht und für immer fest: Bestandszeilen und Bestellzeilen hängen an Produkt und Variante zusammen.",
+          "Attributkombination ist die Menge der Attribut-Wert-Paare. Zwei aktive Varianten eines Produkts können keine Kombination teilen.",
+          "SKU und Barcode identifizieren sie; ein gescannter Varianten-Barcode fügt an der Kasse genau diese Variante hinzu."
+        ]
+      },
+      {
+        "title": "Preis, Gewicht, Medien",
+        "items": [
+          "Preis, Vergleichspreis und Einstandspreis funktionieren wie beim Produkt. Eine Variante ohne Preis wird zum Produktpreis verkauft.",
+          "Gewicht, Masse, Hauptbild und Anzeigereihenfolge beschreiben die Variante in der Auswahl im Shop."
+        ]
+      },
+      {
+        "title": "Bestand",
+        "items": [
+          "Eine Variante eines geführten Produkts hat Bestandsführung, ausser „Bestand führen“ ist an der Variante aus. Dann braucht jedes Lager eine Bestandszeile für diese Variante.",
+          "Ohne Zeile in einem aktiven Lager lehnt der Checkout die Variante als nicht vorrätig ab."
+        ]
+      },
+      {
+        "title": "Status und das Produkt",
+        "items": [
+          "Aktive Varianten werden verkauft; eine inaktive Variante wird bei der nächsten Preisberechnung aus Warenkörben entfernt.",
+          "Variantenliste, Variantenzahl und das Kennzeichen „hat Varianten“ des Produkts folgen seinen aktiven Varianten; ein Produkt mit mindestens einer Variante kann ohne eigenen Preis veröffentlicht werden.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

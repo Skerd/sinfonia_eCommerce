@@ -5,15 +5,36 @@
   "help": {
     "ariaLabel": "About Product variants",
     "title": "About Product variants",
-    "overview": "A variant is one sellable SKU of a product. The cart and the till charge the variant price when a variant is selected. Only an active variant can be sold. The product is required.",
+    "overview": "A variant is one sellable SKU of a variable product, defined by its combination of attribute values (for example Red / XL). The cart and the till charge the variant's own price when it has one. Only an active variant can be sold.",
     "sections": [
       {
-        "title": "Price, identity, and stock",
-        "body": "Each variant stores its own SKU, barcode, price, compare-at price, cost, weight, and the attribute combination that identifies it. If the variant has no price, the product price is used.",
+        "title": "Identity",
         "items": [
-          "Turn on track inventory when this SKU should be counted. Checkout then reserves that variant from a warehouse that holds it.",
-          "A line with no inventory row is treated as untracked and is not reserved.",
-          "An inactive variant is removed from the cart the next time the cart is priced."
+          "Product is required and fixed for good: stock rows and order lines are keyed on the product and the variant together.",
+          "Attribute combination is the set of attribute-and-value pairs. Two live variants of one product cannot share a combination.",
+          "SKU and barcode identify it; a scanned variant barcode adds that exact variant at the till."
+        ]
+      },
+      {
+        "title": "Price, weight, media",
+        "items": [
+          "Price, compare-at price, and cost work like the product's. A variant without a price sells at the product price.",
+          "Weight, dimensions, main image, and display order describe the variant on the storefront picker."
+        ]
+      },
+      {
+        "title": "Stock",
+        "items": [
+          "A variant of a tracked product is stock-tracked unless track inventory is off on the variant. Then each warehouse needs an inventory row for this variant.",
+          "With no row in an active warehouse, checkout refuses the variant as out of stock."
+        ]
+      },
+      {
+        "title": "Status and the product",
+        "items": [
+          "Active variants are sold; an inactive variant is removed from carts the next time they are priced.",
+          "The product's variant list, variant count, and has-variants flag follow its live variants; a product with at least one variant can be published without its own price.",
+          "Deleting is a soft delete and it can be restored."
         ]
       }
     ]

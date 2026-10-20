@@ -5,31 +5,39 @@
   "help": {
     "ariaLabel": "À propos des demandes de tâches",
     "title": "À propos des demandes de tâches",
-    "overview": "Une demande de tâches est un brief acheteur pour des devis : titre, description, catégorie, budget, lieu et médias. Elle accepte des offres pendant 30 jours. Les prestataires avec une annonce active dans la même catégorie et ville peuvent être notifiés.",
+    "overview": "Une demande de tâche est le brief d’un acheteur qui demande des devis aux prestataires : ce dont il a besoin, dans quelle catégorie et à quel endroit, pour quel budget. Elle reste ouverte aux offres pendant 30 jours. Accepter une offre l’attribue et ouvre une commande.",
     "sections": [
+      {
+        "title": "Champs",
+        "items": [
+          "Titre, catégorie, budget minimum et maximum, devise, adresse et image principale sont obligatoires ; description et galeries sont facultatives.",
+          "Le demandeur est celui qui la publie. Catégorie et ville décident des prestataires informés."
+        ]
+      },
       {
         "title": "Statuts",
         "items": [
-          "Ouvert — accepte les offres jusqu'à expiration.",
-          "Fermé — arrêté sans attribution ; les enchérisseurs en attente sont notifiés.",
-          "Attribué — une offre a été acceptée ; close/reopen ne changent plus le statut."
+          "Ouverte : accepte des offres jusqu’à expiration.",
+          "Fermée : n’accepte plus d’offres, par choix du demandeur ou parce que 30 jours sont passés. Une tâche horaire ferme les demandes expirées.",
+          "Attribuée : une offre a été acceptée ; le statut ne peut plus changer."
         ]
       },
       {
         "title": "Actions",
+        "body": "Seul le demandeur, ou un administrateur, peut changer le statut.",
         "items": [
-          "Fermer — depuis ouvert ; notifie les utilisateurs qui ont encore une offre en attente.",
-          "Rouvrir — depuis fermé ; réinitialise la fenêtre de 30 jours.",
-          "Notifier tous — alerte à nouveau les prestataires correspondants.",
-          "Seul le demandeur (ou un admin) peut changer le statut ainsi."
+          "Fermer : depuis ouverte. Tous ceux qui ont une offre en attente sont prévenus.",
+          "Rouvrir : depuis fermée. Cela relance la fenêtre de 30 jours, pour qu’une demande expirée ne soit pas aussitôt refermée.",
+          "Prévenir tout le monde : informe à nouveau chaque prestataire ayant une annonce active dans la même catégorie et la même ville."
         ]
       },
       {
-        "title": "Connexions",
+        "title": "Offres et attribution",
         "items": [
-          "Les offres s'attachent à la demande ; accepter une offre l'attribue et crée une commande.",
-          "Catégorie et ville pilotent le matching — gardez-les exacts.",
-          "Soft delete disponible ; restaurer ramène la ligne."
+          "Les prestataires font des offres tant qu’elle est ouverte et non expirée ; personne ne peut faire d’offre sur sa propre demande.",
+          "Accepter une offre rejette les autres, marque la demande comme attribuée et ouvre une commande en attente entre le demandeur et l’auteur de l’offre.",
+          "Chaque ligne indique combien d’offres actives elle a. Les non-administrateurs voient leurs propres demandes.",
+          "La suppression est douce et la demande peut être restaurée."
         ]
       }
     ]

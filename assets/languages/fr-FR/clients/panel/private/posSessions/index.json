@@ -5,33 +5,42 @@
   "help": {
     "ariaLabel": "À propos des sessions PDV",
     "title": "À propos des sessions PDV",
-    "overview": "Une session est une ouverture de caisse, du comptage d'ouverture au comptage de clôture. Les sessions s'ouvrent et se ferment sur la caisse. Cette page ne fait que les lister.",
+    "overview": "Une séance est une ouverture de caisse, du comptage du fonds de caisse au comptage de clôture. Les séances sont ouvertes et clôturées sur la caisse ; cette page les liste pour que vous puissiez contrôler chaque tiroir.",
     "sections": [
       {
         "title": "Les états",
-        "body": "L'état dit où en est le tiroir dans cette ouverture, pas si la caisse a le droit de vendre.",
+        "body": "L’état indique où en est cette ouverture du tiroir, pas si la caisse peut vendre.",
         "items": [
-          "L'ouverture est le comptage avant la vente.",
-          "Ouverte est la fenêtre de vente. Les entrées et sorties d'espèces s'y font.",
-          "La clôture est le comptage de fin. Fermée est une session terminée."
+          "Ouverte est la période de vente : la caisse ouvre une séance directement dans cet état avec son fonds de caisse.",
+          "Clôturée est une séance terminée, clôturée par le caissier ou clôturée de force quand la caisse a été mise en pause ou désactivée.",
+          "Contrôle d’ouverture et contrôle de clôture sont des états réservés ; la caisse actuelle ne s’y arrête pas."
         ]
       },
       {
-        "title": "Ce qui est enregistré",
-        "body": "La session est le tiroir de cette ouverture, plus les ventes qui y ont été passées.",
+        "title": "Ce que suit la séance",
+        "body": "La séance est le tiroir-caisse de cette ouverture plus les ventes qui y ont été enregistrées.",
         "items": [
-          "Le fond de caisse est ce qu'il y avait dans le tiroir à l'ouverture.",
-          "Entrée et sortie d'espèces sont des mouvements du tiroir avec un motif. Ce ne sont pas des ventes.",
-          "Fermer enregistre l'argent compté. Rapprocher compare ce comptage à ce que la session attendait du fond, des mouvements et des ventes en espèces."
+          "Le fonds de caisse est l’espèce comptée au départ.",
+          "Entrée et sortie d’espèces sont des mouvements du tiroir avec un montant, un motif, une heure et leur auteur.",
+          "L’espèce attendue part du fonds de caisse et suit chaque mouvement d’espèces, vente en espèces (nette de la monnaie) et remboursement en espèces.",
+          "Le solde de clôture est l’espèce comptée à la fin. L’écart avec l’espèce attendue, et son motif, sont inscrits dans les notes de la séance."
+        ]
+      },
+      {
+        "title": "Rapprochement",
+        "body": "Le rapprochement compare le comptage avec ce que la séance attendait, détaillé par mode de paiement.",
+        "items": [
+          "Il liste le fonds de caisse, les mouvements d’espèces, les ventes et remboursements par mode, et l’écart.",
+          "Un écart d’un centime ou plus ne peut pas être clôturé sans motif."
         ]
       },
       {
         "title": "Qui peut le faire",
-        "body": "Les boutons sont sur la caisse. Le droit est sur la session.",
+        "body": "Les boutons sont sur la caisse ; les droits sont sur la séance.",
         "items": [
-          "Ouvrir, fermer et rapprocher exigent le droit d'écrire l'état de la session.",
-          "Les entrées et sorties d'espèces exigent le droit d'écrire les mouvements de caisse.",
-          "Les ventes de la session sont sous Commandes PDV, filtrées par cette session."
+          "Ouvrir, clôturer et rapprocher exigent le droit d’écrire l’état de la séance. Les mouvements d’espèces exigent le droit d’écrire les mouvements d’espèces.",
+          "Les ventes d’une séance sont listées sous Commandes au point de vente, filtrées par cette séance.",
+          "Les séances ne peuvent pas être créées, modifiées ou supprimées depuis cette liste."
         ]
       }
     ]

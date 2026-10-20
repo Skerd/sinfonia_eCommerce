@@ -5,33 +5,33 @@
   "help": {
     "ariaLabel": "Informazioni sulle ricerche salvate",
     "title": "Informazioni sulle ricerche salvate",
-    "overview": "Una ricerca salvata conserva un filtro di catalogo che un cliente può rieseguire. Non è un prodotto e non è un ordine. Ricorda come voleva restringere il catalogo.",
+    "overview": "Una ricerca salvata è un filtro di catalogo a cui un cliente ha dato un nome per poterlo rieseguire. Non è un prodotto, un ordine o una collezione; ricorda solo come è stato ristretto il catalogo.",
     "sections": [
       {
         "title": "Cosa viene salvato",
-        "body": "Il nome è l'etichetta. Il resto è il filtro.",
+        "body": "Il nome è l’etichetta; il resto è il filtro.",
         "items": [
           "Il nome è obbligatorio.",
-          "Le categorie possono essere più di una. La collezione è una.",
-          "Prezzo minimo, prezzo massimo e ordinamento sono facoltativi. Quelli vuoti semplicemente non si applicano."
+          "Le categorie possono essere più d’una; la collezione è una.",
+          "Prezzo minimo, prezzo massimo e ordinamento sono facoltativi. Un campo vuoto semplicemente non si applica.",
+          "Il cliente è il proprietario della ricerca."
         ]
       },
       {
-        "title": "Di chi sono le ricerche di questa pagina",
-        "body": "Gli stessi dati si elencano in due modi.",
+        "title": "Di chi sono le ricerche mostrate",
+        "body": "Gli stessi record sono elencati in due modi.",
         "items": [
-          "Aperta dal menu eCommerce, questa pagina elenca ogni ricerca salvata della società, e una nuova chiede a quale cliente appartiene.",
-          "Aperta come elenco personale di un cliente, mostra solo le sue, e una nuova ricerca viene archiviata sotto quel cliente.",
-          "L'eliminazione è logica e la ricerca può essere ripristinata."
+          "Dal menu eCommerce, questa pagina elenca ogni ricerca salvata della società, e una nuova chiede a quale cliente appartiene.",
+          "Come elenco proprio di un cliente, mostra solo le sue, e una nuova ricerca viene archiviata sotto quel cliente.",
+          "Eliminare una ricerca salvata è un’eliminazione logica e può essere ripristinata."
         ]
       },
       {
         "title": "Cosa non fa",
-        "body": "Salvare una ricerca non cambia il catalogo.",
+        "body": "Salvare una ricerca non cambia nulla nel catalogo.",
         "items": [
-          "Non nasconde prodotti, non cambia un prezzo e non crea una collezione.",
-          "Categorie, collezioni e prezzi si modificano su quelle pagine. Questa riga si limita a indicarli.",
-          "Rieseguirla applica lo stesso filtro al catalogo com'è adesso, non com'era quando la ricerca è stata salvata."
+          "Non nasconde prodotti, non cambia prezzi e non crea collezioni.",
+          "Rieseguita, applica lo stesso filtro al catalogo com’è adesso, non com’era quando è stata salvata."
         ]
       }
     ]

@@ -5,31 +5,30 @@
   "help": {
     "ariaLabel": "Informazioni sulle offerte",
     "title": "Informazioni sulle offerte",
-    "overview": "Un'offerta è la proposta di un fornitore su una richiesta: importo, valuta, giorni di consegna e testo. Le offerte in sospeso possono essere accettate o rifiutate. Accettarne una assegna il lavoro e avvia un ordine.",
+    "overview": "Un’offerta è il preventivo di un fornitore su una richiesta di attività: importo, giorni di consegna e una proposta scritta. Il richiedente accetta un’offerta, che assegna l’attività e apre un ordine.",
     "sections": [
       {
-        "title": "Stati",
+        "title": "Fare un’offerta",
         "items": [
-          "In sospeso — in attesa del richiedente.",
-          "Accettata — questa offerta ha vinto; la richiesta diventa assegnata.",
-          "Rifiutata — declinata o ritirata; le altre in sospeso vengono rifiutate automaticamente quando se ne accetta una."
+          "La richiesta di attività deve essere aperta, non scaduta e di qualcun altro.",
+          "Un’offerta attiva per offerente e richiesta. Offerente e valuta sono impostati dal server, dal chiamante e dalla richiesta.",
+          "Le offerte non si modificano dopo l’invio; ritirala e fanne una nuova."
         ]
       },
       {
-        "title": "Accetta e rifiuta",
+        "title": "Stati e azioni",
+        "body": "Solo un’offerta in attesa può essere accettata o rifiutata.",
         "items": [
-          "Accetta segna l'offerta, rifiuta tutte le altre in sospeso, imposta la richiesta come assegnata e crea un ordine in sospeso.",
-          "Rifiuta (o ritira) imposta solo quella offerta come rifiutata.",
-          "Solo un'offerta in sospeso può essere accettata o rifiutata."
-        ],
-        "body": "Sono azioni su un'offerta in sospeso, non modifiche di campo ordinarie."
+          "Accetta (solo il richiedente): questa offerta diventa accettata, ogni altra offerta in attesa sulla richiesta viene rifiutata, la richiesta viene assegnata e si apre un ordine in attesa con l’importo dell’offerta e una scadenza dai suoi giorni di consegna. Gli offerenti vengono avvisati.",
+          "Rifiuta: il richiedente la declina, o l’offerente la ritira. Viene avvisato solo un offerente declinato."
+        ]
       },
       {
-        "title": "In questa pagina",
+        "title": "Chi vede cosa",
+        "body": "Le offerte sono private tra offerente e richiedente.",
         "items": [
-          "Crea pubblica una nuova offerta su una richiesta aperta.",
-          "Usa le azioni di riga o foglio per accettare e rifiutare.",
-          "Le offerte soft-eliminate si possono ripristinare con i permessi."
+          "Un non amministratore vede le proprie offerte e quelle fatte sulle proprie richieste, mai quelle di un concorrente.",
+          "L’offerente, o un amministratore, può eliminare un’offerta finché è in attesa."
         ]
       }
     ]

@@ -5,36 +5,68 @@
   "help": {
     "ariaLabel": "Rreth porosive të produkteve",
     "title": "Rreth porosive të produkteve",
-    "overview": "Një porosi produkti është një blerje e klientit. Blerja e shkruan porosinë. Kjo faqe nuk krijon një të tillë. Tre statuse lëvizin veçmas: porosia, pagesa dhe përmbushja.",
+    "overview": "Një porosi produkti është një blerje e klientit në dyqan, ose një shitje në arkë e dyfishuar për kontabilitetin. Checkout-i e shkruan; kjo faqe nuk krijon kurrë një të tillë. Çdo porosi ka tre statuse që lëvizin veçmas — porosia, pagesa dhe përmbushja — plus një kronologji të çdo hapi dhe kush e bëri.",
     "sections": [
       {
-        "title": "Tre statuset",
-        "body": "Lexojini bashkë. Një porosi mund të jetë e paguar dhe ende e papërmbushur, ose e dërguar dhe vetëm pjesërisht e rimbursuar.",
+        "title": "Si krijohet një porosi",
+        "body": "Porosia është fundi i checkout-it, jo fillimi.",
         "items": [
-          "Statusi i porosisë ecën në pritje, e konfirmuar, në përpunim, e dërguar, e dorëzuar, e anuluar, e rimbursuar.",
-          "Statusi i pagesës ecën e papaguar, e autorizuar, e paguar, pjesërisht e rimbursuar, e rimbursuar, e anuluar.",
-          "Statusi i përmbushjes ecën e papërmbushur, pjesërisht e përmbushur, e përmbushur, e kthyer."
+          "Checkout-i së pari rillogarit shportën nga katalogu aktual, pastaj rezervon stokun për çdo rresht të ndjekur para se të merret ndonjë pagesë. Nëse një rresht nuk mund të mbulohet, checkout-i ndalon dhe asgjë nuk rezervohet.",
+          "Pagesat me kartë krijojnë porosinë kur pagesa ka sukses, me konfirmimin e blerësit ose nga webhook-u i pagesës, cilado që vjen e para. Porosia shkruhet vetëm një herë.",
+          "Pagesa në dorëzim dhe transferta bankare krijojnë një porosi në pritje, të papaguar. Stafi e konfirmon dhe e shënon të paguar kur mbërrijnë paratë.",
+          "Një checkout që nuk përfundon kurrë skadon pas afatit të tij; një proces çdo orë liron stokun e rezervuar. Nëse pagesa ka kaluar gjithsesi, procesi krijon porosinë.",
+          "Në dyqanin e platformës, një shportë me disa shitës bëhet një porosi për çdo kompani shitëse."
         ]
       },
       {
-        "title": "Çfarë bëjnë veprimet",
-        "body": "Konfirmo, shëno në përpunim, dërgo, shëno të paguar, anulo dhe rimburso janë të ndara. Secili refuzohet jashtë gjendjes së vet.",
+        "title": "Tre statuset",
+        "body": "Lexojini bashkë. Një porosi mund të jetë e paguar dhe e papërmbushur, ose e dërguar dhe pjesërisht e rimbursuar.",
         "items": [
-          "Konfirmimi niset vetëm nga në pritje. E njeh porosinë, hapi i zakonshëm për pagesë në dorëzim ose transfertë bankare, dhe e njofton klientin.",
-          "Shënimi në përpunim niset vetëm nga e konfirmuar.",
-          "Dërgimi niset nga e konfirmuar ose në përpunim. Krijon një përmbushje për sasitë ende të hapura, i nxjerr ato njësi nga stoku dhe e vendos statusin e porosisë nga dërgesat. Mund të regjistroni transportuesin, numrin e gjurmimit dhe lidhjen.",
-          "Shënimi si e paguar regjistron një pagesë jashtë linje, vetëm sa kohë pagesa është e papaguar dhe porosia nuk është anuluar ose rimbursuar. Një porosi në pritje konfirmohet njëkohësisht. Kartat e dhuratave dhe shkarkimet e blera lëshohen. Stoku mbetet i mbajtur derisa të dërgohet.",
-          "Anulimi bllokohet pasi porosia është dërguar, dorëzuar, anuluar ose rimbursuar. Një porosi e paguar ose pjesërisht e rimbursuar duhet rimbursuar më parë. Anulimi liron stokun ende të mbajtur dhe kthen kredinë e dyqanit të zbatuar me një kartë dhurate.",
-          "Rimbursimi vlen për një porosi të paguar ose pjesërisht të rimbursuar. Një rimbursim i plotë e kthen edhe atë kredi, çaktivizon kartat e dhuratave të lëshuara, i skadon shkarkimet dhe liron stokun ende të mbajtur."
+          "Statusi i porosisë: në pritje, e konfirmuar, në përpunim, e dërguar, e dorëzuar, e anuluar, e rimbursuar.",
+          "Statusi i pagesës: e papaguar, e autorizuar, e paguar, pjesërisht e rimbursuar, e rimbursuar, e anuluar (voided).",
+          "Statusi i përmbushjes: e papërmbushur, pjesërisht e përmbushur, e përmbushur, e kthyer. Del nga dërgesat e porosisë.",
+          "E dërguar dhe e dorëzuar gjithashtu nxirren: e dërguar kur çdo rresht është nisur, e dorëzuar kur çdo dërgesë e padështuar është dorëzuar."
+        ]
+      },
+      {
+        "title": "Veprimet e rreshtit",
+        "body": "Çdo veprim refuzohet jashtë gjendjes së pritur. Veprimet e statusit kërkojnë lejen për të shkruar statusin e porosisë; veprimet me para, lejen për të shkruar statusin e pagesës.",
+        "items": [
+          "Konfirmo është i mundur vetëm nga në pritje. E konfirmon porosinë dhe njofton klientin.",
+          "Kalo në përpunim është i mundur vetëm nga e konfirmuar. Do të thotë se porosia po përgatitet.",
+          "Dërgo është i mundur nga e konfirmuar ose në përpunim. Krijon një dërgesë për të gjitha sasitë ende të padërguara, i heq ato njësi nga stoku dhe regjistron transportuesin, numrin dhe lidhjen e gjurmimit që i dërgohen klientit.",
+          "Shëno të paguar regjistron një pagesë jashtë linje me një referencë opsionale, vetëm sa kohë pagesa është e papaguar dhe porosia nuk është e anuluar ose e rimbursuar. Një porosi në pritje konfirmohet njëkohësisht, dhe kartat dhuratë e shkarkimet e blera lëshohen.",
+          "Anulo bllokohet sapo porosia është e dërguar, e dorëzuar, e anuluar ose e rimbursuar, dhe një porosi e paguar duhet së pari të rimbursohet. Liron stokun ende të rezervuar dhe kthen kreditin e paguar me kartë dhuratë.",
+          "Rimburso është për një porosi të paguar ose pjesërisht të rimbursuar, plotësisht ose me një shumë. Pagesa me kartë rimbursohet përmes portës së pagesës; pagesa jashtë linje regjistrohet si rimbursim manual."
+        ]
+      },
+      {
+        "title": "Çfarë zhbën një rimbursim i plotë",
+        "body": "Një rimbursim i pjesshëm lëviz vetëm para. Rimbursimi i gjithë pjesës së mbetur zhbën edhe atë që lëshoi porosia.",
+        "items": [
+          "Kredia e përdorur në porosi kthehet në kartën dhuratë.",
+          "Kartat dhuratë të lëshuara nga porosia çaktivizohen, dhe lidhjet e saj të shkarkimit skadojnë.",
+          "Stoku ende i rezervuar për rreshtat e padërguar lirohet. Njësitë e dërguara kthehen vetëm përmes një kërkese kthimi të marrë.",
+          "Porosia bëhet e rimbursuar. Një shitje në arkë nuk rimbursohet këtu: rimbursohet në arkë, që sirtari dhe stoku të mbeten në përputhje."
+        ]
+      },
+      {
+        "title": "Mesazhet për klientin dhe kronologjia",
+        "body": "Blerësi njoftohet në çdo hap që ka rëndësi për të, pasi ndryshimi të jetë ruajtur.",
+        "items": [
+          "Konfirmimi, dërgimi (me gjurmim), dorëzimi, pagesa, anulimi, rimbursimi dhe vendimet për kthimet i dërgojnë secili klientit një njoftim dhe një email.",
+          "Çdo veprim shton një hyrje në kronologji me orën, anëtarin e stafit dhe çdo shënim, referencë ose numër gjurmimi.",
+          "Shënimet i sheh klienti; shënimet e brendshme janë vetëm për stafin."
         ]
       },
       {
         "title": "Ku është pjesa tjetër e punës",
-        "body": "Kjo listë është porosia. Dërgesa dhe kthimi kanë faqet e tyre.",
+        "body": "Porosia është koka. Dërgesat dhe kthimet janë kartela më vete.",
         "items": [
-          "Çdo dërgesë është një rresht te Përmbushjet, me status në pritje, e dërguar, e dorëzuar ose e dështuar.",
-          "Një kthim, një ndërrim ose një rimbursim është një rresht te Kërkesat e kthimit. Përfundimi i tij mund ta rimbursojë këtë porosi.",
-          "Fshirja është e butë dhe porosia mund të rikthehet."
+          "Çdo dërgesë është një rresht te Përmbushjet, me statusin e vet në pritje, e dërguar, e dorëzuar ose e dështuar.",
+          "Një kërkesë kthimi, këmbimi ose rimbursimi është një rresht te Kërkesat për kthim. Përfundimi i saj mund ta rimbursojë këtë porosi.",
+          "Shitjet në arkë shfaqen këtu tashmë të dorëzuara dhe të paguara, të shënuara si shitje POS, me adresë marrjeje në dyqan.",
+          "Fshirja e një porosie është fshirje e butë dhe mund të rikthehet."
         ]
       }
     ]

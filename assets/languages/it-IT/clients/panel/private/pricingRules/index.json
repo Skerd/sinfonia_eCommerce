@@ -5,25 +5,38 @@
   "help": {
     "ariaLabel": "Informazioni su Regole sui prezzi",
     "title": "Informazioni su Regole sui prezzi",
-    "overview": "Le regole sui prezzi cambiano il prezzo unitario prima di un codice sconto. Ogni riga del carrello riceve al massimo una regola. Nome, tipo, valore e ambito sono obbligatori.",
+    "overview": "Le regole di prezzo cambiano automaticamente il prezzo unitario di una riga, prima di qualsiasi codice sconto. Usale per prezzi all’ingrosso, saldi per categoria o maggiorazioni. Ogni riga del carrello riceve al massimo una regola. Nome, tipo, valore e ambito sono obbligatori.",
     "sections": [
       {
         "title": "Quale regola vince",
-        "body": "Le regole attive sono ordinate per priorità, la più alta prima, poi la più recente. Si applica la prima regola che corrisponde alla riga. Le successive di quella riga sono saltate.",
+        "body": "Le regole attive sono ordinate per priorità (la più alta prima), poi dalla più recente. Per ogni riga si applica la prima regola che si qualifica e corrisponde; le altre vengono saltate per quella riga.",
         "items": [
-          "Una regola senza gruppi vale per ogni carrello. Una regola con gruppi vale solo se il cliente connesso è in uno di essi. Gli ospiti corrispondono solo alle regole senza gruppi.",
-          "Si applica a tutti, o al gruppo clienti, tocca ogni riga. Prodotto, categoria e collezione toccano solo gli obiettivi scelti. La categoria usa la prima categoria del prodotto.",
-          "L'importo minimo usa il subtotale prima di ogni regola. La quantità minima usa il numero di unità. Fuori dal periodo la regola è ignorata."
+          "Una regola fuori dalle sue date di inizio e fine viene ignorata.",
+          "Gruppi di clienti: una regola senza gruppi vale per tutti; una regola con gruppi solo per i clienti connessi in uno di essi. Gli ospiti corrispondono solo alle regole senza gruppi.",
+          "L’importo minimo dell’ordine si confronta con il subtotale del carrello prima di ogni regola; la quantità minima con le unità totali nel carrello."
         ]
       },
       {
-        "title": "Cosa fanno i tipi",
-        "body": "L'adeguamento si applica al prezzo unitario di catalogo. Il risultato non scende sotto zero.",
+        "title": "Ambito",
         "items": [
-          "Lo sconto percentuale riduce il prezzo unitario di quella percentuale.",
-          "Lo sconto fisso sottrae il valore dal prezzo unitario.",
-          "Il prezzo fisso sostituisce il prezzo unitario con il valore.",
-          "Il sovrapprezzo aggiunge il valore al prezzo unitario."
+          "Tutto e gruppo di clienti colpiscono ogni riga di un carrello idoneo.",
+          "Prodotto, categoria e collezione colpiscono solo le destinazioni scelte. Categoria guarda solo la prima categoria del prodotto."
+        ]
+      },
+      {
+        "title": "Tipi",
+        "body": "La modifica si applica al prezzo unitario di catalogo, e il risultato non è mai sotto zero.",
+        "items": [
+          "Sconto percentuale riduce il prezzo di quella percentuale. Sconto fisso sottrae il valore.",
+          "Prezzo fisso sostituisce il prezzo con il valore. Maggiorazione aggiunge il valore."
+        ]
+      },
+      {
+        "title": "Dove si applica",
+        "items": [
+          "Il carrello ricalcola ogni volta dal prezzo di catalogo, quindi una regola non viene mai applicata su un prezzo già modificato.",
+          "Ogni riga mostra la regola che l’ha cambiata. La cassa usa i prezzi di catalogo e non applica regole di prezzo.",
+          "Attiva e disattiva accendono e spengono la regola. L’eliminazione è logica e la regola può essere ripristinata."
         ]
       }
     ]

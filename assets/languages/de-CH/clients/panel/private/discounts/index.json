@@ -5,25 +5,41 @@
   "help": {
     "ariaLabel": "Über Rabatte",
     "title": "Über Rabatte",
-    "overview": "Ein Rabatt ist ein Code, den der Käufer eingibt. Der Warenkorb hält einen Rabatt gleichzeitig. Bei jeder Neubewertung wird er erneut geprüft und entfernt, wenn er nicht mehr gilt. Der Code wird in Grossbuchstaben gespeichert. Titel, Typ, Wert, Geltungsbereich und Startdatum sind erforderlich.",
+    "overview": "Ein Rabatt ist ein Code, den ein Käufer im Warenkorb eingibt. Der Warenkorb hält jeweils einen Code. Er wird bei jeder Neuberechnung des Warenkorbs erneut geprüft und entfernt, wenn er nicht mehr gilt. Titel, Typ, Wert, Geltungsbereich und Startdatum sind Pflicht; der Code wird in Grossbuchstaben gespeichert.",
     "sections": [
       {
         "title": "Wann der Betrag berechnet wird",
-        "body": "Zuerst steht der Stückpreis: Katalogpreis, dann eine Preisregel. Der Rabatt geht von diesem Preis ab. Geschenkkarten werden nie rabattiert und zählen nicht zu den Mindestwerten.",
+        "body": "Reihenfolge im Warenkorb: Katalogpreis → eine Preisregel pro Zeile → der Rabattcode → Versand → Steuer.",
         "items": [
-          "Prozent zieht diesen Prozentsatz von den betroffenen Zeilen ab. Festbetrag zieht einen Betrag ab, nie mehr als diese Zeilen.",
-          "Gratisversand senkt die Warensumme nicht. Der Checkout erlässt die Versandkosten, solange dieser Rabatt gilt.",
-          "Kauf X erhalte Y gruppiert die berechtigten Stück als Kaufmenge plus Gratis Menge und zieht die günstigsten Stück jeder vollständigen Gruppe ab.",
-          "Gilt für Bestellung trifft jede Waren Zeile. Produkt, Kategorie oder Kollektion trifft nur die gewählten Ziele. Kategorie trifft jede Kategorie des Produkts."
+          "Prozent zieht diesen Prozentsatz von den Zeilen im Geltungsbereich ab. Fix zieht einen festen Betrag ab, nie mehr, als diese Zeilen wert sind.",
+          "Gratisversand senkt die Ware nicht; der Checkout berechnet keinen Versand, solange er angewendet ist.",
+          "Kaufe X, erhalte Y zählt berechtigte Einheiten, gruppiert sie als Kauf- plus Gratismenge und macht die günstigsten Einheiten jeder vollständigen Gruppe gratis. Er braucht Kaufmenge, Gratismenge und die berechtigten Produkte.",
+          "Geschenkkarten-Zeilen werden nie rabattiert und zählen nie zu Mindestwerten."
         ]
       },
       {
-        "title": "Was den Code sperrt",
-        "body": "Der Rabatt muss aktiv und zwischen Start und Ende liegen. Ein leeres Enddatum bedeutet, dass er nicht abläuft.",
+        "title": "Geltungsbereich",
         "items": [
-          "Das Nutzungslimit stoppt den Code nach so vielen Einsätzen. Das Limit pro Kunde zählt nicht stornierte Bestellungen dieses Kunden.",
-          "Mindestbestellwert und Mindestmenge gelten nur für Waren, nach den Preisregeln.",
-          "Kundengruppen am Rabatt werden beim Einlösen des Codes nicht geprüft."
+          "Bestellung umfasst jede Warenzeile. Produkt, Kategorie oder Kollektion umfasst nur die ausgewählten Ziele.",
+          "Kategorie greift bei irgendeiner Kategorie des Produkts. Kollektion nutzt dieselbe Mitgliedschaft, die der Shop zeigt.",
+          "Im Plattform-Shop kann ein Warenkorb mit mehreren Verkäufern keinen Code eines Verkäufers nutzen."
+        ]
+      },
+      {
+        "title": "Was einen Code sperrt",
+        "items": [
+          "Er muss aktiv und innerhalb von Start- und Enddatum sein; ohne Enddatum läuft er nie ab.",
+          "Nutzungslimit stoppt ihn nach so vielen Nutzungen. Nutzungslimit pro Kunde zählt die nicht stornierten Bestellungen dieses Kunden mit dem Code.",
+          "Mindestbestellwert und Mindestmenge zählen nur Ware, nach den Preisregeln.",
+          "Auf dem Rabatt gespeicherte Kundengruppen werden beim Anwenden des Codes nicht geprüft."
+        ]
+      },
+      {
+        "title": "Eine Nutzung zählen",
+        "items": [
+          "Eine Nutzung wird gezählt, wenn die Bestellung aufgegeben wird, nicht wenn der Code eingetippt wird.",
+          "Hat der Code aufgehört zu gelten, während der Käufer per Karte bezahlte, behält die Bestellung ihn (eine Ablehnung würde das Geld stranden lassen), und die Nutzung wird trotzdem gezählt. Unbezahlte Bestellungen werden stattdessen abgelehnt.",
+          "Aktivieren und Deaktivieren schalten den Code ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

@@ -5,34 +5,35 @@
   "help": {
     "ariaLabel": "Über Lagertransfers",
     "title": "Über Lagertransfers",
-    "overview": "Ein Lagertransfer bewegt freien Bestand von einem Lager in ein anderes. Er bleibt ein Entwurf, bis er abgeschlossen oder abgebrochen wird. Abschliessen ist der Moment, in dem die Mengen wirklich gehen.",
+    "overview": "Eine Umlagerung bewegt freien Bestand von einem Lager in ein anderes. Sie ist ein Entwurf, bis sie abgeschlossen oder storniert wird; der Abschluss ist der Moment, in dem sich die Mengen tatsächlich bewegen, alle Zeilen zusammen.",
     "sections": [
       {
         "title": "Der Entwurf",
-        "body": "Solange er ein Entwurf ist, hat nichts das Quelllager verlassen.",
+        "body": "Solange sie ein Entwurf ist, hat nichts das Quelllager verlassen, und das Dokument kann sich noch ändern.",
         "items": [
-          "Von-Lager und Nach-Lager sind beide erforderlich und sind verschiedene Lager.",
-          "Jede Position ist ein Produkt, eine optionale Variante und eine Menge.",
-          "Einen Entwurf können Sie noch ändern. Nur ein Entwurf kann abgeschlossen oder abgebrochen werden."
+          "Von und Nach sind beide Pflicht und müssen zwei verschiedene Lager dieser Firma sein.",
+          "Jede Zeile ist ein Produkt, eine optionale Variante und eine Menge. Jede Zeile muss ein anderer Artikel mit Bestandsführung sein; ein Bundle kann keine Zeile sein, bewegen Sie stattdessen seine Komponenten.",
+          "Nur ein Entwurf kann bearbeitet, abgeschlossen oder storniert werden."
         ]
       },
       {
         "title": "Was Abschliessen tut",
-        "body": "Abschliessen ist alles oder nichts. Eine zu kurze Position lehnt den ganzen Transfer ab.",
+        "body": "Abschliessen gilt ganz oder gar nicht: Eine zu knappe Zeile lehnt die ganze Umlagerung ab, und nichts bewegt sich.",
         "items": [
-          "Jede Position verlässt die Quelle und kommt am Ziel an.",
-          "Nur freier Bestand bewegt sich. Einheiten, die schon für offene Bestellungen reserviert sind, bleiben.",
-          "Hat das Ziel den Artikel noch nie geführt, wird die Lagerzeile angelegt.",
-          "Das Journal bekommt einen Transfer raus an der Quelle und einen Transfer rein am Ziel."
+          "Die Zeilen werden zuerst neu geprüft, weil sich Produkte oder Lager seit dem Speichern des Entwurfs geändert haben können.",
+          "Jede Zeile verlässt die Quelle und kommt am Ziel an. Nur freier Bestand bewegt sich; für offene Bestellungen reservierte Einheiten bleiben, wo sie sind.",
+          "Hat das Ziel den Artikel nie geführt, wird seine Bestandszeile angelegt.",
+          "Das Journal erhält eine Umlagerung-aus-Bewegung an der Quelle und eine Umlagerung-ein-Bewegung am Ziel, beide mit Verweis auf diese Umlagerung. Abgeschlossen am und von werden gespeichert.",
+          "Abschliessen oder Stornieren braucht die Berechtigung, den Status der Umlagerung zu schreiben."
         ]
       },
       {
-        "title": "Danach",
-        "body": "Ein abgeschlossener Transfer ist Geschichte. Ein abgebrochener Entwurf hat nie Bestand bewegt.",
+        "title": "Nach dem Abschluss",
+        "body": "Eine abgeschlossene Umlagerung ist Historie; ein stornierter Entwurf hat nie etwas bewegt.",
         "items": [
-          "Abbrechen geht nur aus einem Entwurf, ein abgeschlossener Transfer wird hier nicht rückgängig gemacht.",
-          "Die neuen Mengen stehen im Lagerbestand. Die beiden Bewegungen stehen unter Lagerbewegungen.",
-          "Das Löschen ist ein Soft-Delete und der Transfer kann wiederhergestellt werden."
+          "Stornieren geht nur aus Entwurf, eine abgeschlossene Umlagerung wird hier also nicht rückgängig gemacht. Legen Sie stattdessen eine Umlagerung in die Gegenrichtung an.",
+          "Eine abgeschlossene Umlagerung kann nicht gelöscht werden. Ein Entwurf oder eine stornierte ist ein Soft Delete und kann wiederhergestellt werden.",
+          "Der Odoo-Import kann interne Transfers aus Odoo übernehmen; sie kommen bereits abgeschlossen an."
         ]
       }
     ]

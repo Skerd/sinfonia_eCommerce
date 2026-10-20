@@ -5,15 +5,29 @@
   "help": {
     "ariaLabel": "Informazioni su Gruppi di clienti",
     "title": "Informazioni su Gruppi di clienti",
-    "overview": "I gruppi segmentano i clienti, per esempio dettaglio e ingrosso. Un cliente può stare in più gruppi. Le regole di prezzo leggono quelle appartenenze. Il nome è obbligatorio.",
+    "overview": "I gruppi di clienti segmentano gli acquirenti, ad esempio dettaglio e ingrosso, così le regole di prezzo possono dare a ogni gruppo i propri prezzi. Un cliente può appartenere a più gruppi.",
     "sections": [
       {
-        "title": "Come una regola vede il cliente",
-        "body": "L'appartenenza è un record distinto per cliente e gruppo. Il numero di membri segue quei record. Un carrello ospite non ha gruppi.",
+        "title": "Appartenenza",
+        "body": "L’appartenenza è gestita solo dal personale, perché cambia quanto pagano i clienti.",
         "items": [
-          "Una regola di prezzo senza gruppi vale per ogni carrello. Una regola con gruppi vale solo se il cliente connesso è in uno di essi.",
-          "Imposta predefinito marca un solo gruppo e toglie il precedente. Non aggiunge clienti da solo.",
-          "L'eliminazione è logica e il gruppo può essere ripristinato."
+          "Aggiungi membro e rimuovi membro gestiscono un record per cliente nel gruppo; un cliente non può essere aggiunto due volte.",
+          "Il numero di membri mostrato sul gruppo segue quei record.",
+          "Imposta come predefinito rende un gruppo il predefinito della società e toglie il precedente. Non aggiunge nessuno da solo."
+        ]
+      },
+      {
+        "title": "Come i prezzi leggono i gruppi",
+        "items": [
+          "Una regola di prezzo senza gruppi vale per ogni carrello. Una regola che elenca gruppi vale solo se il cliente connesso è in uno di essi.",
+          "I carrelli degli ospiti non appartengono a nessun gruppo.",
+          "I codici sconto non controllano i gruppi quando vengono applicati."
+        ]
+      },
+      {
+        "title": "Eliminazione",
+        "items": [
+          "Eliminare un gruppo è un’eliminazione logica che toglie anche le sue appartenenze. Ripristinarlo le riporta, tranne per i clienti aggiunti di nuovo nel frattempo."
         ]
       }
     ]

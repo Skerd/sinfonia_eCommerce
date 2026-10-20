@@ -5,33 +5,32 @@
   "help": {
     "ariaLabel": "Rreth profileve të ofruesit",
     "title": "Rreth profileve të ofruesit",
-    "overview": "Një profil ofruesi është rekordi i shitësit në marketplace: bio, skills, rating, plus fusha Stripe Connect për pagesa. Onboarding Connect dhe refresh i statusit janë veprime te profili i përdoruesit aktual.",
+    "overview": "Një profil ofruesi është kartela e shitësit të një përdoruesi në treg: biografia, aftësitë, portofoli, disponueshmëria javore, reputacioni dhe llogaria Stripe Connect që merr pagesat. Çdo përdorues ka të shumtën një profil aktiv.",
     "sections": [
       {
         "title": "Fushat e profilit",
         "items": [
-          "Ofruesi është përdoruesi i këtij profili.",
-          "Bio dhe skills përshkruajnë shitësin në storefront.",
-          "Rating përmbledh feedback nga puna e përfunduar."
+          "Biografia, aftësitë dhe portofoli e përshkruajnë ofruesin në dyqan.",
+          "Disponueshmëria është një listë intervalesh javore: dita e javës, ora e fillimit dhe ora e mbarimit.",
+          "Reputacioni llogaritet, nuk shkruhet: nota mesatare e vlerësimeve në të gjitha porositë e tij, dhe pjesa e porosive të mbaruara që përfunduan në vend që të anuloheshin."
         ]
       },
       {
-        "title": "Ku modifikohen profilet",
-        "body": "Çdo përdorues ka të shumtën një profil aktiv ofruesi.",
+        "title": "Ku ndryshohen profilet",
         "items": [
-          "Kjo faqe liston të gjitha profilet e ofruesve në kompani, dhe një profil i ri pyet se cilit përdorues i përket.",
-          "Çdo përdorues e modifikon gjithashtu profilin e vet te Cilësimet → Profili i ofruesit, ku hapet drejtpërdrejt si formular."
+          "Kjo faqe liston çdo profil ofruesi të kompanisë; një i ri pyet cilit përdorues i përket.",
+          "Çdo përdorues ndryshon edhe të vetin te Cilësimet → Profili i ofruesit, ku hapet drejtpërdrejt si formular."
         ]
       },
       {
-        "title": "Stripe Connect",
+        "title": "Pagesat me Stripe Connect",
+        "body": "Pagesat kërkojnë portën e pagesës dhe adresat e kthimit dhe rifreskimit të Connect të konfiguruara.",
         "items": [
-          "Create account link — nis ose vazhdon onboarding Express dhe kthen një URL.",
-          "Refresh account status — tërheq flag-et charges/payouts/details nga Stripe te profili.",
-          "Përdorni menunë e rreshtit për Connect kur është e disponueshme.",
-          "Profilet e soft-fshira nuk përdoren për Connect live."
-        ],
-        "body": "Konfigurimi i pagesave kërkon gateway të konfiguruar dhe URL return/refresh Connect të kompanisë."
+          "Krijo lidhjen e llogarisë nis ose vazhdon regjistrimin në Stripe Express për profilin e përdoruesit të identifikuar dhe kthen faqen që duhet hapur.",
+          "Rifresko statusin e llogarisë sjell nga Stripe në profil shenjat pagesat aktive, pagesat jashtë aktive dhe të dhënat e dorëzuara.",
+          "Kur lirohet depozita e një porosie, pjesa e ofruesit transferohet në këtë llogari nëse ekziston.",
+          "Fshirja e një profili është fshirje e butë dhe mund të rikthehet; një profil i fshirë nuk përdoret për Connect."
+        ]
       }
     ]
   },

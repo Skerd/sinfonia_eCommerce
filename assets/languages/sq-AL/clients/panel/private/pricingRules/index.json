@@ -5,25 +5,38 @@
   "help": {
     "ariaLabel": "Rreth Rregullat e çmimeve",
     "title": "Rreth Rregullat e çmimeve",
-    "overview": "Rregullat e çmimeve e ndryshojnë çmimin për njësi para se të aplikohet një kod zbritjeje. Çdo rresht i shportës merr më së shumti një rregull. Emri, lloji, vlera dhe ku zbatohet janë të detyrueshme.",
+    "overview": "Rregullat e çmimeve ndryshojnë automatikisht çmimin për njësi të një rreshti, para çdo kodi zbritjeje. Përdorini për çmime shumice, ulje sipas kategorisë ose shtesa. Çdo rresht i shportës merr të shumtën një rregull. Emri, tipi, vlera dhe fusha e zbatimit janë të detyrueshme.",
     "sections": [
       {
         "title": "Cili rregull fiton",
-        "body": "Rregullat aktive renditen sipas prioritetit, më i larti i pari, pastaj më i riu. Rregulli i parë që përputhet me rreshtin aplikohet. Rregullat e mëvonshme të atij rreshti kapërcehen.",
+        "body": "Rregullat aktive renditen sipas përparësisë (më e larta së pari), pastaj nga më i riu. Për çdo rresht zbatohet rregulli i parë që kualifikohet dhe përputhet; të tjerët kapërcehen për atë rresht.",
         "items": [
-          "Një rregull pa grupe klientësh vlen për çdo shportë. Një rregull me grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre. Mysafirët përputhen vetëm me rregulla pa grupe.",
-          "Zbatohet te të gjitha, ose te grupi i klientëve, prek çdo rresht. Produkti, kategoria dhe koleksioni prekin vetëm objektivat e zgjedhur. Kategoria përdor kategorinë e parë të produktit.",
-          "Shuma minimale përdor nëntotalin para çdo rregulli. Sasia minimale përdor numrin e njësive. Jashtë periudhës rregulli shpërfillet."
+          "Një rregull jashtë datave të fillimit dhe mbarimit injorohet.",
+          "Grupet e klientëve: një rregull pa grupe vlen për të gjithë; një rregull me grupe vetëm për klientët e identifikuar në njërin prej tyre. Mysafirët përputhen vetëm me rregullat pa grupe.",
+          "Shuma minimale e porosisë krahasohet me nëntotalin e shportës para çdo rregulli; sasia minimale me totalin e njësive në shportë."
         ]
       },
       {
-        "title": "Çfarë bëjnë llojet",
-        "body": "Ndryshimi zbatohet mbi çmimin e katalogut për njësi. Rezultati nuk bie nën zero.",
+        "title": "Fusha e zbatimit",
         "items": [
-          "Zbritja në përqindje e ul çmimin për njësi me atë përqindje.",
-          "Zbritja fikse e zbret vlerën nga çmimi për njësi.",
-          "Çmimi fiks e zëvendëson çmimin për njësi me vlerën.",
-          "Shtesa e shton vlerën te çmimi për njësi."
+          "Të gjitha dhe grupi i klientëve prekin çdo rresht të një shporte që kualifikohet.",
+          "Produkt, kategori dhe koleksion prekin vetëm objektivat e zgjedhur. Kategoria shikon vetëm kategorinë e parë të produktit."
+        ]
+      },
+      {
+        "title": "Tipet",
+        "body": "Rregullimi zbatohet mbi çmimin për njësi të katalogut, dhe rezultati nuk është kurrë nën zero.",
+        "items": [
+          "Zbritje në përqindje e ul çmimin me atë përqindje. Zbritje fikse zbret vlerën.",
+          "Çmim fiks e zëvendëson çmimin me vlerën. Shtesë i shton vlerën."
+        ]
+      },
+      {
+        "title": "Ku zbatohet",
+        "items": [
+          "Shporta rillogarit çdo herë nga çmimi i katalogut, ndaj një rregull nuk zbatohet kurrë mbi një çmim të rregulluar tashmë.",
+          "Çdo rresht tregon rregullin që e ndryshoi. Arka përdor çmimet e katalogut dhe nuk zbaton rregulla çmimesh.",
+          "Aktivizo dhe çaktivizo e ndezin dhe e fikin rregullin. Fshirja është e butë dhe rregulli mund të rikthehet."
         ]
       }
     ]

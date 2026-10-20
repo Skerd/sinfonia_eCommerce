@@ -5,24 +5,22 @@
   "help": {
     "ariaLabel": "Informazioni sui package degli annunci",
     "title": "Informazioni sui package degli annunci",
-    "overview": "Un package è un livello di prezzo sull'annuncio — Basic, Standard o Premium. Ordinando con un package, prezzo e giorni di consegna del package sostituiscono il prezzo base dell'annuncio.",
+    "overview": "Un pacchetto è un livello di prezzo di un annuncio, come Base, Standard o Premium. Quando un acquirente ordina con un pacchetto, prezzo e giorni di consegna del pacchetto sostituiscono quelli base dell’annuncio.",
     "sections": [
       {
-        "title": "Cosa imposti",
+        "title": "Campi",
         "items": [
-          "Nome e descrizione opzionale descrivono il livello.",
-          "Importo e valuta sono ciò che addebita l'ordine se si sceglie questo package.",
-          "I giorni di consegna diventano la finestra di scadenza (gli extra possono ancora aggiungere giorni).",
-          "L'ordine di visualizzazione ordina i package (più basso prima).",
-          "Annuncio e fornitore sono fissi in creazione."
+          "L’annuncio è obbligatorio e fisso; solo il fornitore di quell’annuncio può creare o eliminare i suoi pacchetti.",
+          "Nome e descrizione descrivono il livello. L’ordine di visualizzazione ordina i pacchetti sull’annuncio, i più piccoli prima.",
+          "Importo e valuta del prezzo sono ciò che l’ordine addebita. I giorni di consegna diventano la finestra di scadenza dell’ordine."
         ]
       },
       {
-        "title": "Rapporto con l'annuncio",
+        "title": "Ordinare con un pacchetto",
         "items": [
-          "Un annuncio può avere molti package; nessuno è richiesto per attivarlo.",
-          "Ordinare senza package usa prezzo base e giorni dell'annuncio.",
-          "Il soft delete toglie il package dalle offerte; si può ripristinare."
+          "I componenti aggiuntivi scelti con il pacchetto devono usare la valuta del pacchetto; i loro giorni in più si sommano.",
+          "Un annuncio non ha bisogno di pacchetti; senza pacchetto si usa il suo prezzo.",
+          "L’eliminazione è logica. Un pacchetto non può essere ripristinato finché il suo annuncio è eliminato."
         ]
       }
     ]

@@ -5,15 +5,34 @@
   "help": {
     "ariaLabel": "Rreth importit Odoo",
     "title": "Rreth importit Odoo",
-    "overview": "Importi lexon Odoo me JSON-RPC duke përdorur lidhjen e ruajtur te cilësimet e kompanisë.",
+    "overview": "Importi nga Odoo kopjon të dhëna katalogu, stoku dhe përdoruesish nga Odoo në këtë kompani, duke përdorur lidhjen e ruajtur me Odoo. Ju zgjidhni cilat grupe të dhënash të sillni dhe mund të bëni së pari një provë pa shkruar.",
     "sections": [
       {
-        "title": "Çfarë shkruhet",
-        "body": "Çdo grup i zgjedhur përditësohet sipas ID-së së Odoo.",
+        "title": "Grupet e të dhënave",
+        "body": "Çdo e dhënë lidhet me ID-në e saj në Odoo, ndaj ekzekutimi i sërishëm përditëson atë që krijoi në vend që ta dyfishojë.",
         "items": [
-          "Kategori, produkte, variante, magazina, stok, lëvizje, transfere të brendshme dhe përdorues.",
-          "Një provë autentikon dhe numëron rekordet pa shkruar.",
-          "Përdoruesit e importuar janë të ftuar dhe nuk hyjnë derisa një administrator të ridërgojë ftesën."
+          "Kategoritë: kategoritë e produkteve në Odoo.",
+          "Produktet: shabllonet e produkteve me variantet dhe vlerat e atributeve. Produktet e arkivuara në Odoo vijnë të arkivuara; variantet e arkivuara vijnë joaktive.",
+          "Magazinat: magazinat e Odoo, të krijuara aktive.",
+          "Inventari: sasitë në gjendje për produkt dhe magazinë nga stoku i brendshëm i Odoo; rreshtat ekzistues vendosen sa sasia në Odoo.",
+          "Ndryshimet e stokut: lëvizjet e përfunduara të stokut në Odoo, të shkruara si lëvizje stoku me arsyen përkatëse.",
+          "Veprimet: transferimet e brendshme të përfunduara, të shkruara si transferime stoku të përfunduara.",
+          "Përdoruesit: përdoruesit e brendshëm të Odoo, të ftuar në kompani me rolin e regjistrimit. Nuk mund të hyjnë derisa ta pranojnë ftesën."
+        ]
+      },
+      {
+        "title": "Prova dhe rezultatet",
+        "items": [
+          "Një provë identifikohet në Odoo dhe numëron vetëm atë që do të lexonte çdo grup; asgjë nuk shkruhet.",
+          "Një ekzekutim i vërtetë raporton për çdo grup numrat e të krijuarave, të përditësuarave dhe të kapërcyerave. Rreshtat që nuk mund të lidhen (për shembull një lëvizje stoku për një produkt të paimportuar) kapërcehen.",
+          "Importoni produktet para inventarit dhe ndryshimeve të stokut, dhe magazinat para inventarit, që referencat të gjenden."
+        ]
+      },
+      {
+        "title": "Lejet",
+        "items": [
+          "Ju duhet leja për të krijuar çdo lloj të dhëne që importoni, plus lidhjet me Odoo që mbajnë mend përputhjet.",
+          "Duhet zgjedhur të paktën një grup të dhënash."
         ]
       }
     ]

@@ -5,36 +5,49 @@
   "help": {
     "ariaLabel": "Rreth listimeve",
     "title": "Rreth listimeve",
-    "overview": "Një listim është oferta e ofruesit në marketplace — shërbim ose gig me kategori, media, çmim dhe paketa ose add-on opsionale. Vetëm një listim aktiv mund të porositet. Statusi nuk ndryshon me edit të zakonshëm; aktivizo dhe çaktivizo janë veprime të dedikuara.",
+    "overview": "Një listim është oferta e shërbimit të një ofruesi në treg: çfarë bën, në cilën kategori dhe vend, me çfarë çmimi, me paketa dhe shtesa opsionale. Blerësit porosisin nga listimet aktive. Statusi është draft, aktiv ose joaktiv dhe ndryshohet vetëm me veprimet aktivizo dhe çaktivizo.",
     "sections": [
       {
         "title": "Statusi",
         "items": [
-          "Draft është parazgjedhja ndërsa ndërtoni titullin, kategorinë, median dhe çmimin.",
-          "Aktivizimi kërkon çmim dhe monedhë. Pa to listimi nuk bëhet i porositshëm.",
-          "Çaktivizimi e heq offline listimin aktiv pa e fshirë.",
-          "Vetëm ofruesi i listimit (ose admin) mund të aktivizojë ose çaktivizojë."
-        ],
-        "body": "Statusi është draft, active ose inactive. PATCH nuk mund ta ndryshojë."
+          "Draft është statusi i paracaktuar ndërsa oferta ndërtohet. Askush nuk mund ta porosisë.",
+          "Aktivizo e bën të porositshëm. Kërkon një çmim dhe një monedhë, sepse një porosi pa paketë llogaritet prej tyre.",
+          "Çaktivizo e nxjerr jashtë linje pa e fshirë. Edhe zgjidhja e një raportimi kundër tij mund ta çaktivizojë.",
+          "Vetëm ofruesi i listimit, ose një administrator, mund ta aktivizojë ose çaktivizojë."
+        ]
       },
       {
         "title": "Çfarë konfiguroni",
         "items": [
-          "Titulli, përshkrimi, kategoria, tags, FAQ dhe kërkesat e blerësit përshkruajnë ofertën.",
-          "Lloji i çmimit është fixed ose hourly. Çmimi dhe monedha ushqejnë porositë nga çmimi bazë kur nuk zgjidhet paketë.",
-          "Ditët e dorëzimit vendosin dritaren e afatit për porositë nga çmimi bazë.",
-          "Imazhi kryesor është i detyrueshëm; galeritë dhe vendndodhja (shtet / qark / qytet) janë opsionale.",
-          "Paketat dhe add-on janë rekorde të ndara; zëvendësojnë ose shtojnë çmimin dhe dorëzimin kur zgjidhen."
+          "Titulli, përshkrimi, kategoria, etiketat, FAQ dhe kërkesat ndaj blerësit e përshkruajnë ofertën. Kategoria është kategori listimesh, jo produktesh.",
+          "Tipi i çmimit është fiks ose për orë. Çmimi dhe monedha janë çmimi bazë; ditët e dorëzimit caktojnë afatin e paracaktuar të një porosie.",
+          "Imazhi kryesor është i detyrueshëm; galeritë e imazheve dhe videove janë opsionale.",
+          "Shteti, rajoni dhe qyteti e vendosin ofertën. Qyteti dhe kategoria vendosin për cilat kërkesa për detyra njoftohet ofruesi.",
+          "Ofruesi është përdoruesi që shet: ju vetë, ose një përdorues tjetër i së njëjtës kompani."
         ]
       },
       {
-        "title": "Si lidhet",
+        "title": "Si llogaritet një porosi prej tij",
+        "body": "Një blerës porosit një listim aktiv, opsionalisht me një paketë dhe shtesa.",
         "items": [
-          "Porositë mund të krijohen nga një listim aktiv (opsionalisht me paketë dhe add-on).",
-          "Promocionet rrisin dukshmërinë për një dritare datash.",
-          "Flag-et lejojnë raportimin e një listimi; zgjidhja e flag mund ta çaktivizojë.",
-          "Review-t përditësojnë vlerësimin dhe numrin te listimi.",
-          "Fshirja është soft delete dhe mund të restaurohet."
+          "Pa paketë: çmimi dhe ditët e dorëzimit të listimit. Me paketë: çmimi dhe ditët e dorëzimit të paketës në vend të tyre.",
+          "Çdo shtesë shton çmimin e vet dhe ditët shtesë të dorëzimit. Shtesat duhet t’i përkasin këtij listimi dhe të përdorin monedhën e porosisë.",
+          "Një ofrues nuk mund të porosisë listimin e vet."
+        ]
+      },
+      {
+        "title": "Dukshmëria dhe reputacioni",
+        "items": [
+          "Një promovim në vazhdim (i theksuar ose i sponsorizuar) e vendos listimin në krye të renditjes së rekomanduar të dyqanit gjatë datave të tij.",
+          "Vlerësimet e porosive të përfunduara i japin listimit notën mesatare dhe numrin e vlerësimeve.",
+          "Përdoruesit mund ta raportojnë një listim; administratorët i shqyrtojnë raportimet te Raportimet."
+        ]
+      },
+      {
+        "title": "Kush sheh çfarë",
+        "items": [
+          "Administratorët shohin dhe menaxhojnë çdo listim të kompanisë. Përdoruesit e tjerë ndryshojnë vetëm listimet që ofrojnë.",
+          "Fshirja është e butë dhe listimi mund të rikthehet. Paketat dhe shtesat e tij nuk mund të rikthehen sa kohë listimi është i fshirë."
         ]
       }
     ]

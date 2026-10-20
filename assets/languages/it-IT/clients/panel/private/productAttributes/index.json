@@ -5,15 +5,24 @@
   "help": {
     "ariaLabel": "Informazioni su Attributi del prodotto",
     "title": "Informazioni su Attributi del prodotto",
-    "overview": "Gli attributi sono elenchi di opzioni condivisi, come taglia o colore. Una variante sceglie poi un valore per ogni attributo che identifica quello SKU. Il nome è obbligatorio.",
+    "overview": "Gli attributi sono elenchi di opzioni condivisi come Taglia o Colore. Una variante sceglie un valore da ogni attributo che la definisce, quindi è l’attributo a trasformare un prodotto in più SKU.",
     "sections": [
       {
-        "title": "Come le opzioni diventano uno SKU",
-        "body": "I valori sono le scelte, per esempio S, M e L. Se ne possono salvare fino a 50. La posizione ordina gli attributi.",
+        "title": "Campi",
         "items": [
-          "Visibile nella pagina prodotto mostra l'elenco in vetrina. Non cambia il prezzo.",
-          "Usato per le varianti indica che l'attributo deve dividere un prodotto in SKU. La variante memorizza attributo e valore scelto.",
-          "Il carrello addebita il prezzo della variante, oppure il prezzo del prodotto se non c'è una variante."
+          "Il nome è obbligatorio. I valori sono le scelte viste dagli acquirenti, ad esempio S, M, L; fino a 50.",
+          "Visibile nella pagina prodotto mostra l’attributo nei dettagli del prodotto. Non cambia i prezzi.",
+          "Usato per le varianti lo segna come attributo che divide i prodotti in SKU.",
+          "La posizione ordina gli attributi nella pagina prodotto e nel selettore di varianti."
+        ]
+      },
+      {
+        "title": "Come lo usano le varianti",
+        "items": [
+          "Ogni variante memorizza coppie attributo-valore. Due varianti attive dello stesso prodotto non possono avere la stessa combinazione.",
+          "Carrello e cassa addebitano il prezzo della variante, o quello del prodotto se la variante non ne ha.",
+          "Un attributo usato da una variante attiva non può essere eliminato. Rimuovilo prima da quelle varianti.",
+          "L’eliminazione è logica e l’attributo può essere ripristinato."
         ]
       }
     ]

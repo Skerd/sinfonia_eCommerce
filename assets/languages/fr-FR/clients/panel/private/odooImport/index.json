@@ -5,15 +5,34 @@
   "help": {
     "ariaLabel": "À propos de l'import Odoo",
     "title": "À propos de l'import Odoo",
-    "overview": "L'import lit Odoo en JSON-RPC avec la connexion enregistrée dans les paramètres de la société.",
+    "overview": "L’import Odoo copie des données de catalogue, de stock et d’utilisateurs depuis Odoo vers cette société, avec la connexion Odoo enregistrée. Vous choisissez les jeux de données à reprendre, et pouvez d’abord faire un essai à blanc.",
     "sections": [
       {
-        "title": "Ce qui est écrit",
-        "body": "Chaque jeu de données choisi est mis à jour par identifiant Odoo.",
+        "title": "Jeux de données",
+        "body": "Chaque fiche est associée à son identifiant Odoo, donc relancer l’import met à jour ce qu’il a créé au lieu de le dupliquer.",
         "items": [
-          "Catégories, produits, variantes, entrepôts, stock, mouvements, transferts internes et utilisateurs.",
-          "Un essai authentifie et compte les enregistrements sans écrire.",
-          "Les utilisateurs importés sont invités et ne peuvent pas se connecter tant qu'un administrateur n'a pas renvoyé l'invitation."
+          "Catégories : catégories de produits Odoo.",
+          "Produits : modèles de produits avec leurs variantes et valeurs d’attributs. Les produits Odoo archivés arrivent archivés ; les variantes archivées arrivent inactives.",
+          "Entrepôts : entrepôts Odoo, créés actifs.",
+          "Inventaire : quantités en stock par produit et entrepôt depuis le stock interne d’Odoo ; les lignes existantes sont fixées à la quantité Odoo.",
+          "Changements de stock : mouvements de stock Odoo terminés, écrits comme mouvements de stock avec un motif correspondant.",
+          "Actions : transferts internes terminés, écrits comme transferts de stock terminés.",
+          "Utilisateurs : utilisateurs internes Odoo, invités dans la société avec le rôle d’inscription. Ils ne peuvent se connecter qu’après avoir accepté l’invitation."
+        ]
+      },
+      {
+        "title": "Essai à blanc et résultats",
+        "items": [
+          "Un essai à blanc se connecte à Odoo et compte seulement ce que chaque jeu lirait ; rien n’est écrit.",
+          "Une vraie exécution indique les nombres créés, mis à jour et ignorés par jeu. Les lignes qui ne peuvent être associées (par exemple un mouvement pour un produit non importé) sont ignorées.",
+          "Importez les produits avant l’inventaire et les changements de stock, et les entrepôts avant l’inventaire, pour que les références soient trouvées."
+        ]
+      },
+      {
+        "title": "Droits",
+        "items": [
+          "Il faut le droit de créer chaque type de fiche importée, plus les liens Odoo qui retiennent les correspondances.",
+          "Au moins un jeu de données doit être sélectionné."
         ]
       }
     ]

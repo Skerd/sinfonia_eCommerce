@@ -5,15 +5,29 @@
   "help": {
     "ariaLabel": "Über Kundengruppen",
     "title": "Über Kundengruppen",
-    "overview": "Gruppen teilen Kunden, zum Beispiel Einzelhandel und Grosshandel. Ein Kunde kann in mehreren Gruppen sein. Preisregeln lesen diese Mitgliedschaften. Der Name ist erforderlich.",
+    "overview": "Kundengruppen teilen Käufer ein, zum Beispiel Detailhandel und Grosshandel, damit Preisregeln jeder Gruppe eigene Preise geben können. Ein Kunde kann mehreren Gruppen angehören.",
     "sections": [
       {
-        "title": "Wie eine Regel den Kunden sieht",
-        "body": "Die Mitgliedschaft ist ein eigener Datensatz je Kunde und Gruppe. Die Mitgliederzahl folgt diesen Datensätzen. Ein Gastwarenkorb hat keine Gruppen.",
+        "title": "Mitgliedschaft",
+        "body": "Die Mitgliedschaft verwalten nur Mitarbeitende, weil sie ändert, was Kunden zahlen.",
+        "items": [
+          "Mitglied hinzufügen und Mitglied entfernen verwalten einen Datensatz pro Kunde in der Gruppe; ein Kunde kann nicht zweimal hinzugefügt werden.",
+          "Die auf der Gruppe gezeigte Mitgliederzahl folgt diesen Datensätzen.",
+          "Als Standard setzen markiert eine Gruppe als Firmenstandard und hebt den bisherigen auf. Es fügt selbst niemanden hinzu."
+        ]
+      },
+      {
+        "title": "Wie Preise Gruppen lesen",
         "items": [
           "Eine Preisregel ohne Gruppen gilt für jeden Warenkorb. Eine Regel mit Gruppen gilt nur, wenn der angemeldete Kunde in einer davon ist.",
-          "Als Standard setzen markiert eine Gruppe und löscht den bisherigen Standard. Kunden werden dadurch nicht hinzugefügt.",
-          "Das Löschen ist ein Soft-Delete und die Gruppe kann wiederhergestellt werden."
+          "Gast-Warenkörbe gehören zu keiner Gruppe.",
+          "Rabattcodes prüfen beim Anwenden keine Gruppen."
+        ]
+      },
+      {
+        "title": "Löschen",
+        "items": [
+          "Das Löschen einer Gruppe ist ein Soft Delete und entfernt ihre Mitgliedschaften mit. Das Wiederherstellen bringt diese Mitgliedschaften zurück, ausser für inzwischen neu hinzugefügte Kunden."
         ]
       }
     ]

@@ -5,23 +5,22 @@
   "help": {
     "ariaLabel": "À propos des réservations",
     "title": "À propos des réservations",
-    "overview": "Une réservation planifie une fenêtre horaire pour une commande marketplace avec un prestataire — début, fin et fuseau. C'est l'attachement calendrier pour un service à un moment convenu.",
+    "overview": "Une réservation place une commande de la place de marché dans le calendrier : une heure de début et de fin, avec le fuseau horaire convenu. Utilisez-la quand le travail a lieu sur rendez-vous, pas seulement avant une échéance.",
     "sections": [
       {
-        "title": "Ce que vous définissez",
+        "title": "Créer",
         "items": [
-          "La commande lie la réservation à l'engagement.",
-          "Le prestataire est celui qui doit livrer dans cette fenêtre.",
-          "Début et fin définissent le créneau ; le fuseau indique comment le lire.",
-          "Créez une réservation quand il faut un rendez-vous concret, pas seulement une date de livraison."
+          "Chaque partie de la commande peut réserver, tant que la commande est acceptée ou en cours.",
+          "Une réservation par commande. Le prestataire est repris de la commande.",
+          "La fin doit être après le début."
         ]
       },
       {
-        "title": "Lien avec les commandes",
+        "title": "Modifier",
         "items": [
-          "Les commandes suivent l'argent et le statut de livraison ; les réservations suivent quand on travaille.",
-          "Ouvrez la commande liée pour accepter, démarrer, livrer, litiger ou annuler.",
-          "Le soft delete masque la réservation ; restaurer la ramène."
+          "Seul le prestataire, ou un administrateur, replanifie.",
+          "La suppression est douce et la réservation peut être restaurée.",
+          "Les non-administrateurs ne voient que les réservations de leurs propres commandes."
         ]
       }
     ]

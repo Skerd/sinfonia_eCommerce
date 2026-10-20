@@ -5,33 +5,30 @@
   "help": {
     "ariaLabel": "About Disputes",
     "title": "About Disputes",
-    "overview": "A dispute is an admin-moderated conflict on a marketplace order. While it is open or under review, escrow outcomes are decided when the dispute is resolved or closed — not by casual status edits.",
+    "overview": "A dispute is a disagreement about a marketplace order that an administrator decides. While it is open, the order's money is frozen: no delivery acceptance, milestone release, auto-acceptance, or cancellation. The decision says who gets what is still held.",
     "sections": [
       {
-        "title": "Statuses",
+        "title": "Raising a dispute",
         "items": [
-          "Open — newly raised; waiting for admin intake.",
-          "Under review — an admin has started formal review.",
-          "Resolved — decided for the provider path: order can complete and remaining escrow is released.",
-          "Closed — ended without that resolve path; remaining escrow is refunded per close rules."
+          "Either party of the order can raise one, on an order that is not completed or cancelled. One dispute per order.",
+          "The caller is the initiator; the other party is notified.",
+          "Customers can also raise one from their storefront account."
         ]
       },
       {
-        "title": "Admin actions",
+        "title": "Statuses and decisions",
+        "body": "Only an administrator decides, and a resolution note is required.",
         "items": [
-          "Start review — only from open; moves to under review.",
-          "Resolve — from open or under review; requires a resolution note; may complete the order and release remaining escrow.",
-          "Close — from open or under review; refunds remaining escrow according to close handling.",
-          "Customer and provider are notified when the dispute ends."
-        ],
-        "body": "Start review, resolve, and close require an admin. Soft-deleted disputes are not actionable."
+          "Open: raised and waiting. Start review moves it to under review.",
+          "Resolve (from open or under review) decides for the provider: a waiting delivery is accepted, the order completes, and the rest of the escrow is released to the provider.",
+          "Close (from open or under review) decides for the customer: the order is cancelled and the rest of the escrow is refunded.",
+          "Both parties are notified of the outcome."
+        ]
       },
       {
-        "title": "On this page",
+        "title": "Deleting",
         "items": [
-          "Create raises a dispute against an order that has an issue.",
-          "Use sheet or row actions for review, resolve, and close.",
-          "Soft delete and restore follow the usual list permissions."
+          "Only an administrator can delete a dispute, because an open one blocks the payout. A deleted dispute cannot be acted on until restored."
         ]
       }
     ]

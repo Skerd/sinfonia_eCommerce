@@ -5,33 +5,33 @@
   "help": {
     "ariaLabel": "About Saved searches",
     "title": "About Saved searches",
-    "overview": "A saved search stores a catalog filter a customer can run again. It is not a product and not an order. It remembers how they wanted the catalog narrowed.",
+    "overview": "A saved search is a catalog filter a customer named so they can run it again. It is not a product, an order, or a collection; it only remembers how the catalog was narrowed.",
     "sections": [
       {
         "title": "What is stored",
-        "body": "The name is the label. The rest is the filter.",
+        "body": "The name is the label; the rest is the filter.",
         "items": [
           "Name is required.",
-          "Categories can be several. Collection is one.",
-          "Minimum price, maximum price, and sort are optional. Empty ones are simply not applied."
+          "Categories can be several; collection is one.",
+          "Minimum price, maximum price, and sort are optional. An empty one is simply not applied.",
+          "The customer is the owner of the search."
         ]
       },
       {
         "title": "Whose searches this page shows",
         "body": "The same records are listed two ways.",
         "items": [
-          "Opened from the eCommerce menu, this page lists every saved search in the company, and a new one asks which customer it belongs to.",
-          "Opened as a customer's own list, it shows only theirs, and a new search is filed under that customer.",
+          "From the eCommerce menu, this page lists every saved search in the company, and a new one asks which customer it belongs to.",
+          "As a customer's own list, it shows only theirs, and a new search is filed under that customer.",
           "Deleting a saved search is a soft delete and it can be restored."
         ]
       },
       {
         "title": "What it does not do",
-        "body": "Saving a search does not change the catalog.",
+        "body": "Saving a search changes nothing in the catalog.",
         "items": [
-          "It does not hide products, change a price, or create a collection.",
-          "Categories, collections, and prices are edited on those pages. This row only points at them.",
-          "Running it again applies the same filter to the catalog as it is now, not as it was when the search was saved."
+          "It does not hide products, change prices, or create a collection.",
+          "Running it again applies the same filter to the catalog as it is now, not as it was when saved."
         ]
       }
     ]

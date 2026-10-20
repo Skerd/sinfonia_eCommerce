@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Informazioni sulle evasioni",
     "title": "Informazioni sulle evasioni",
-    "overview": "Un'evasione è una spedizione di un ordine prodotto. Spedire un ordine ne crea una. Puoi anche crearla qui. Lo stato è in attesa, spedita, consegnata o non riuscita, e alimenta l'ordine.",
+    "overview": "Un adempimento è una spedizione di un ordine di prodotti: quali righe e quante unità sono partite, con quale corriere e quale tracciamento. Spedire un ordine ne crea uno automaticamente; puoi anche crearne uno qui per dividere un ordine in più colli. Il suo stato — in attesa, spedito, consegnato o fallito — determina lo stato spedito e consegnato dell’ordine.",
     "sections": [
       {
+        "title": "Creare una spedizione",
+        "body": "Una spedizione può coprire solo ciò che non è ancora stato spedito.",
+        "items": [
+          "Scegli l’ordine, poi le righe e la quantità di ciascuna. Ogni riga deve appartenere a quell’ordine, e la quantità non può superare ciò che le spedizioni precedenti hanno lasciato aperto.",
+          "Una spedizione creata qui parte in attesa: non è ancora partito nulla e la giacenza non è toccata.",
+          "Una volta creata, ordine e righe sono fissi. Corriere, tracciamento, date e note restano modificabili."
+        ]
+      },
+      {
         "title": "Come si muove una spedizione",
-        "body": "Spedisci, consegna e segna come non riuscita sono legali solo dallo stato indicato.",
+        "body": "Spedisci, consegna e fallita sono azioni, ciascuna permessa solo dallo stato indicato. Richiedono il permesso di scrivere lo stato della spedizione.",
         "items": [
-          "Si spedisce solo da in attesa, e solo se l'ordine stesso non è ancora in attesa, annullato o rimborsato.",
-          "Spedire consuma lo stock riservato per quelle righe e può portare l'ordine a spedito.",
-          "Si consegna solo da spedita. Consegnare l'ultima spedizione aperta può portare l'ordine a consegnato.",
-          "Si segna come non riuscita da in attesa o spedita. Una spedizione già partita viene annullata. Se l'ordine è annullato o rimborsato, lo stock ancora trattenuto viene liberato."
+          "Spedisci è possibile solo da in attesa, e solo se l’ordine non è in attesa, annullato o rimborsato. Registra l’ora di spedizione e il tracciamento inserito.",
+          "La spedizione toglie le unità dalla giacenza: le riserve dell’ordine vengono consumate nei magazzini in cui erano state fatte. Le unità mai riservate vengono riservate sul momento; se la giacenza non basta, la spedizione viene rifiutata come esaurita.",
+          "Consegna è possibile solo da spedito. Quando l’ultima spedizione non fallita è consegnata, l’ordine diventa consegnato e il cliente viene avvisato una volta.",
+          "Fallita è possibile da in attesa o spedito. Un collo già partito che fallisce rimette le sue unità in giacenza e le riserva di nuovo per l’ordine, così una nuova spedizione può prenderle. Se nel frattempo l’ordine è annullato o rimborsato, quelle unità vengono invece liberate."
         ]
       },
       {
-        "title": "Cosa ci registri",
-        "body": "Corriere e tracking stanno sulla spedizione, non nell'intestazione dell'ordine.",
+        "title": "Cosa vede l’ordine",
+        "body": "Lo stato di evasione dell’ordine viene ricalcolato dalle sue spedizioni a ogni cambiamento.",
         "items": [
-          "Corriere, numero di tracking e link sono ciò che il cliente riceve alla spedizione.",
-          "Spedito il, consegna prevista e consegnato il segnano la cronologia.",
-          "Le righe sono quantità degli articoli dell'ordine. Una spedizione successiva può coprire ciò che una precedente ha lasciato."
+          "Tutte le righe spedite per intero rendono l’ordine evaso; alcune righe spedite lo rendono parzialmente evaso.",
+          "Tutte le righe spedite portano l’ordine a spedito. Un ordine spedito per intero la cui spedizione fallisce torna in lavorazione.",
+          "Ogni cambiamento aggiunge una voce alla cronologia dell’ordine."
         ]
       },
       {
-        "title": "Come sta rispetto all'ordine",
-        "body": "Lo stato di evasione dell'ordine deriva dalle sue spedizioni. Una spedizione parziale lo lascia evaso in parte.",
+        "title": "Cosa vi registri",
+        "body": "È la spedizione, non l’ordine, a contenere il tracciamento.",
         "items": [
-          "Apri l'ordine dalla riga per pagamento, annullo o rimborso. Restano sull'ordine.",
-          "Un reso ricevuto rimette la merce nel magazzino da cui è partita la riga.",
-          "L'eliminazione è logica e l'evasione può essere ripristinata."
+          "Corriere, numero e link di tracciamento sono ciò che il cliente riceve nel messaggio di spedizione.",
+          "Consegna stimata, spedito il e consegnato il scandiscono la cronologia. Le note sono per il personale.",
+          "Ogni riga mostra il prodotto spedito, con titolo e immagine."
+        ]
+      },
+      {
+        "title": "Pagine collegate",
+        "items": [
+          "Apri l’ordine per pagamento, annullamento o rimborso; restano sull’ordine.",
+          "Una richiesta di reso ricevuta rimette la merce nel magazzino da cui è partita la riga.",
+          "Eliminare una spedizione è un’eliminazione logica e può essere ripristinata."
         ]
       }
     ]

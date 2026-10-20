@@ -5,15 +5,32 @@
   "help": {
     "ariaLabel": "Über POS-Zahlungsmethoden",
     "title": "Über POS-Zahlungsmethoden",
-    "overview": "Eine Zahlungsmethode ist Bar oder Karte. Eine POS Konfiguration wählt, welche Methoden ihre Kasse anbietet. Name und Typ sind erforderlich. Die Reihenfolge ist die Ordnung der Schaltflächen an der Kasse.",
+    "overview": "Eine Zahlungsart ist eine Schaltfläche der Kasse: Bargeld oder Karte. Kassen wählen, welche Zahlungsarten sie anbieten. Name und Typ sind Pflicht; die Reihenfolge bestimmt, wie die Schaltflächen erscheinen.",
     "sections": [
       {
-        "title": "Wie die Kasse kassiert",
-        "body": "Bar und Karte sind getrennte Methoden. Eine Kasse muss mindestens eine Methode behalten.",
+        "title": "Bargeld",
         "items": [
-          "Bar kann Schnellbeträge als kommagetrennte Werte listen, zum Beispiel 0.5, 1, 5, 10, 20. Eine leere Liste nutzt die eingebauten Chips.",
-          "Karte schaltet den Terminalweg ein. Manuell bedeutet, der Kassierer bestätigt die Belastung. Lokales HTTP spricht mit einer Terminalbrücke über Protokoll, Host, Port, Terminal ID und Pfad.",
-          "Deaktivieren verbirgt die Methode für neue Zahlungen. Das Löschen ist ein Soft-Delete und die Methode kann wiederhergestellt werden."
+          "Schnellbeträge sind kommagetrennte Werte, zum Beispiel 0.5, 1, 5, 10, 20, angezeigt als Ein-Klick-Chips. Eine leere Liste nutzt die eingebauten Chips.",
+          "Barzahlungen, Rückgeld, Bargeld-Erstattungen und Schubladenbewegungen aktualisieren das erwartete Bargeld der Sitzung."
+        ]
+      },
+      {
+        "title": "Karte und Zahlungsterminals",
+        "body": "Eine Kartenzahlungsart kann ein Bankterminal ansteuern.",
+        "items": [
+          "Terminal aus: Die Kasse nimmt die Karte auf einem separaten Gerät und erfasst die Zahlung.",
+          "Anbieter Manuell: Die Kasse bittet, die Belastung am externen Terminal zu bestätigen.",
+          "Anbieter Lokales HTTP: Die Kasse sendet den Betrag mit der Terminal-ID an eine Terminal-Brücke unter Protokoll, Host, Port und Pfad und wartet auf Genehmigung, Ablehnung oder Zeitüberschreitung.",
+          "Verbindung testen prüft, ob die Brücke antwortet, bevor Sie sie an der Kasse nutzen."
+        ]
+      },
+      {
+        "title": "Aktivieren, deaktivieren, löschen",
+        "body": "Eine Kasse muss immer mindestens eine Zahlungsart behalten.",
+        "items": [
+          "Deaktivieren blendet die Zahlungsart für neue Zahlungen und in der Zuweisungsliste der Kassen aus.",
+          "Deaktivieren oder Löschen einer Zahlungsart entfernt sie von jeder Kasse; es wird abgelehnt, wenn eine Kasse ohne Zahlungsart bliebe.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

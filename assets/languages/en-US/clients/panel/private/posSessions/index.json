@@ -5,33 +5,42 @@
   "help": {
     "ariaLabel": "About POS sessions",
     "title": "About POS sessions",
-    "overview": "A session is one opening of a till, from the opening cash count to the closing count. Sessions are opened and closed on the till. This page only lists them.",
+    "overview": "A session is one opening of a till, from the opening cash count to the closing count. Sessions are opened and closed on the till; this page lists them so you can audit each drawer.",
     "sections": [
       {
         "title": "The states",
-        "body": "The state is where the drawer is in that opening, not whether the till is allowed to sell.",
+        "body": "The state is where that opening of the drawer is, not whether the till may sell.",
         "items": [
-          "Opening is the count before selling starts.",
-          "Opened is the selling window. Cash in and cash out happen here.",
-          "Closing is the count at the end. Closed is a finished session."
+          "Opened is the selling window: the till opens a session straight into this state with its opening balance.",
+          "Closed is a finished session, closed by the cashier or force-closed when the till was paused or deactivated.",
+          "Opening control and closing control are reserved states; the current till does not stop in them."
         ]
       },
       {
-        "title": "What gets recorded",
-        "body": "The session is the cash drawer for that opening, plus the sales that were rung on it.",
+        "title": "What the session tracks",
+        "body": "The session is the cash drawer for that opening plus the sales rung on it.",
         "items": [
-          "Opening balance is what was in the drawer when it opened.",
-          "Cash in and cash out are drawer moves with a reason. They are not sales.",
-          "Close records the counted cash. Reconcile compares that count with what the session expected from the opening balance, the cash moves, and the cash sales."
+          "Opening balance is the cash counted at the start.",
+          "Cash in and cash out are drawer moves with an amount, a reason, a time, and who did it.",
+          "Expected cash starts at the opening balance and follows every cash move, cash sale (net of change), and cash refund.",
+          "Closing balance is the counted cash at the end. The difference from expected cash, and its reason, are written in the session notes."
+        ]
+      },
+      {
+        "title": "Reconciliation",
+        "body": "Reconcile compares the count with what the session expected, broken down by payment method.",
+        "items": [
+          "It lists the opening balance, cash moves, sales and refunds per method, and the difference.",
+          "A difference of a cent or more cannot be closed without a reason."
         ]
       },
       {
         "title": "Who can do it",
-        "body": "The buttons live on the till. The permission lives on the session.",
+        "body": "The buttons live on the till; the permissions live on the session.",
         "items": [
-          "Opening, closing, and reconciling need permission to write the session state.",
-          "Cash in and cash out need permission to write cash moves.",
-          "The sales from the session are listed under POS orders, filtered by this session."
+          "Opening, closing, and reconciling need permission to write the session state. Cash moves need permission to write cash moves.",
+          "The sales of a session are listed under POS orders, filtered by that session.",
+          "Sessions cannot be created, edited, or deleted from this list."
         ]
       }
     ]

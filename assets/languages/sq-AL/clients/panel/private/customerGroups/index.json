@@ -5,15 +5,29 @@
   "help": {
     "ariaLabel": "Rreth Grupet e klientëve",
     "title": "Rreth Grupet e klientëve",
-    "overview": "Grupet i ndajnë klientët, për shembull pakicë dhe shumicë. Një klient mund të jetë në më shumë se një grup. Rregullat e çmimeve lexojnë ato anëtarësime. Emri është i detyrueshëm.",
+    "overview": "Grupet e klientëve i ndajnë blerësit, për shembull pakicë dhe shumicë, që rregullat e çmimeve t’i japin çdo grupi çmimet e veta. Një klient mund t’u përkasë disa grupeve.",
     "sections": [
       {
-        "title": "Si e sheh rregulli klientin",
-        "body": "Anëtarësia është një regjistrim më vete për çdo klient në grup. Numri i anëtarëve ndjek ato regjistrime. Shporta e mysafirit nuk ka grupe.",
+        "title": "Anëtarësia",
+        "body": "Anëtarësinë e menaxhon vetëm stafi, sepse ndryshon atë që paguajnë klientët.",
         "items": [
-          "Një rregull çmimi pa grupe vlen për çdo shportë. Një rregull me grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre.",
-          "Cakto të paracaktuar shënon një grup dhe heq të mëparshmin. Nuk shton klientë vetë.",
-          "Fshirja është e butë dhe grupi mund të rikthehet."
+          "Shto anëtar dhe hiq anëtar menaxhojnë një të dhënë për çdo klient në grup; një klient nuk mund të shtohet dy herë.",
+          "Numri i anëtarëve që tregohet te grupi ndjek këto të dhëna.",
+          "Cakto si të paracaktuar e bën një grup të paracaktuarin e kompanisë dhe heq të mëparshmin. Nuk shton askënd vetë."
+        ]
+      },
+      {
+        "title": "Si i lexojnë çmimet grupet",
+        "items": [
+          "Një rregull çmimi pa grupe vlen për çdo shportë. Një rregull që liston grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre.",
+          "Shportat e mysafirëve nuk i përkasin asnjë grupi.",
+          "Kodet e zbritjes nuk i kontrollojnë grupet kur zbatohen."
+        ]
+      },
+      {
+        "title": "Fshirja",
+        "items": [
+          "Fshirja e një grupi është fshirje e butë dhe heq bashkë me të anëtarësitë. Rikthimi i sjell përsëri, përveç klientëve të shtuar sërish ndërkohë."
         ]
       }
     ]

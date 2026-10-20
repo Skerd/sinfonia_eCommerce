@@ -5,33 +5,33 @@
   "help": {
     "ariaLabel": "Rreth kërkimeve të ruajtura",
     "title": "Rreth kërkimeve të ruajtura",
-    "overview": "Një kërkim i ruajtur ruan një filtër katalogu që një klient mund ta ekzekutojë përsëri. Nuk është produkt dhe nuk është porosi. Kujton si donte të ngushtohej katalogu.",
+    "overview": "Një kërkim i ruajtur është një filtër katalogu që një klient e ka emërtuar për ta ekzekutuar sërish. Nuk është produkt, porosi apo koleksion; mban mend vetëm si u ngushtua katalogu.",
     "sections": [
       {
         "title": "Çfarë ruhet",
-        "body": "Emri është etiketa. Pjesa tjetër është filtri.",
+        "body": "Emri është etiketa; pjesa tjetër është filtri.",
         "items": [
           "Emri është i detyrueshëm.",
-          "Kategoritë mund të jenë disa. Koleksioni është një.",
-          "Çmimi minimal, çmimi maksimal dhe renditja janë opsionale. Të zbrazëtat thjesht nuk zbatohen."
+          "Kategoritë mund të jenë disa; koleksioni është një.",
+          "Çmimi minimal, çmimi maksimal dhe renditja janë opsionale. Një fushë bosh thjesht nuk zbatohet.",
+          "Klienti është pronari i kërkimit."
         ]
       },
       {
         "title": "Kërkimet e kujt tregon kjo faqe",
-        "body": "Të njëjtat regjistrime listohen në dy mënyra.",
+        "body": "Të njëjtat të dhëna listohen në dy mënyra.",
         "items": [
-          "E hapur nga menuja e eCommerce, kjo faqe liston çdo kërkim të ruajtur të kompanisë, dhe një i ri pyet cilit klient i përket.",
-          "E hapur si lista e vet e një klienti, tregon vetëm të tijat, dhe një kërkim i ri arkivohet nën atë klient.",
-          "Fshirja është e butë dhe kërkimi mund të rikthehet."
+          "Nga menyja eCommerce, kjo faqe liston çdo kërkim të ruajtur të kompanisë, dhe një i ri pyet cilit klient i përket.",
+          "Si listë e vetë klientit, tregon vetëm të tijat, dhe një kërkim i ri ruhet nën atë klient.",
+          "Fshirja e një kërkimi të ruajtur është fshirje e butë dhe mund të rikthehet."
         ]
       },
       {
         "title": "Çfarë nuk bën",
-        "body": "Ruajtja e një kërkimi nuk e ndryshon katalogun.",
+        "body": "Ruajtja e një kërkimi nuk ndryshon asgjë në katalog.",
         "items": [
-          "Nuk fsheh produkte, nuk ndryshon një çmim dhe nuk krijon një koleksion.",
-          "Kategoritë, koleksionet dhe çmimet ndryshohen në ato faqe. Ky rresht vetëm tregon te ato.",
-          "Ekzekutimi përsëri e zbaton të njëjtin filtër mbi katalogun siç është tani, jo siç ishte kur u ruajt kërkimi."
+          "Nuk fsheh produkte, nuk ndryshon çmime dhe nuk krijon koleksion.",
+          "Kur ekzekutohet sërish, zbaton të njëjtin filtër mbi katalogun siç është tani, jo siç ishte kur u ruajt."
         ]
       }
     ]

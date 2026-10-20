@@ -5,35 +5,36 @@
   "help": {
     "ariaLabel": "À propos des comptages de stock",
     "title": "À propos des comptages de stock",
-    "overview": "Un comptage enregistre ce qui est réellement en rayon dans un entrepôt, puis corrige le stock en main. Il reste un brouillon jusqu'à ce qu'il soit appliqué ou annulé. Appliquer est le moment où les chiffres changent.",
+    "overview": "Un inventaire enregistre ce qui est réellement en rayon dans un entrepôt, puis corrige « en stock » en conséquence. Il reste un brouillon pendant le comptage ; l’appliquer est le moment où les nombres changent.",
     "sections": [
       {
         "title": "Le brouillon",
-        "body": "Compter ne change pas le stock. Appliquer le change.",
+        "body": "Compter ne change rien. Appliquer, si.",
         "items": [
-          "Le comptage concerne un entrepôt.",
-          "Chaque ligne est un produit, une variante facultative, ce qui était attendu et ce qui a été compté.",
-          "Une quantité comptée vide signifie que la ligne n'a pas été comptée. Appliquer la laisse.",
-          "Seul un brouillon peut être appliqué ou annulé."
+          "Un inventaire concerne un entrepôt et reste un inventaire de cet entrepôt.",
+          "Chaque ligne est un produit, une variante facultative, la quantité attendue à l’ajout de la ligne et la quantité comptée. Les lignes doivent être des articles différents suivis en stock ; un lot ne peut pas être une ligne.",
+          "Laissez la quantité comptée vide pour un article non compté ; appliquer le laisse tel quel.",
+          "Seul un brouillon peut être modifié, appliqué ou annulé."
         ]
       },
       {
         "title": "Ce que fait appliquer",
-        "body": "L'écart est pris sur le stock en main maintenant, pas sur l'instantané du début du comptage.",
+        "body": "L’écart est calculé contre « en stock » au moment d’appliquer, pas contre l’instantané attendu.",
         "items": [
-          "Appliquer fixe le stock en main à la quantité comptée pour chaque ligne qui a un comptage.",
-          "Les ventes parties pendant le comptage ne sont pas annulées, parce que l'écart utilise le stock au moment d'appliquer.",
-          "Chaque changement écrit un mouvement d'ajustement.",
-          "Un comptage inférieur à ce qui est retenu pour des commandes est accepté. Le disponible peut devenir négatif. Le rayon est ce qu'il est."
+          "Pour chaque ligne comptée, « en stock » devient la quantité comptée. Les ventes expédiées pendant le comptage ne sont donc pas annulées.",
+          "Un article jamais stocké dans l’entrepôt reçoit une nouvelle ligne de stock.",
+          "Chaque changement écrit un mouvement d’ajustement référant à cet inventaire. Appliqué le et par sont enregistrés.",
+          "Un comptage inférieur à ce qui est réservé pour des commandes est accepté : le rayon est ce qu’il est, et le disponible montre le manque en négatif.",
+          "Appliquer ou annuler exige le droit d’écrire le statut de l’inventaire."
         ]
       },
       {
         "title": "Une fois appliqué",
-        "body": "Le comptage reste la trace de ce qui a été compté. Le stock vit sur la ligne d'inventaire.",
+        "body": "L’inventaire reste comme trace de ce qui a été trouvé.",
         "items": [
-          "Annuler ne part que d'un brouillon. Un comptage appliqué ne se retourne pas depuis cette page.",
-          "Regardez l'inventaire pour le nouveau stock en main, et les mouvements pour les ajustements.",
-          "La suppression est logique et le comptage peut être restauré."
+          "Annuler n’est possible que depuis brouillon. Un inventaire appliqué n’est pas défait ici ; recomptez.",
+          "Un inventaire appliqué ne peut pas être supprimé. Un brouillon ou un inventaire annulé est une suppression douce et peut être restauré.",
+          "Voyez Inventaire pour le nouveau « en stock » et Mouvements de stock pour les ajustements."
         ]
       }
     ]

@@ -5,33 +5,41 @@
   "help": {
     "ariaLabel": "Über POS-Bestellungen",
     "title": "Über POS-Bestellungen",
-    "overview": "Eine POS-Bestellung ist ein Verkauf an der Kasse. Diese Seite ist die Aufzeichnung dieser Verkäufe. Zeilen werden hier nicht erstellt, bearbeitet oder gelöscht.",
+    "overview": "Eine POS-Bestellung ist ein an einer Kasse erfasster Verkauf oder dessen Erstattung. Diese Seite ist das Verzeichnis dieser Verkäufe; Zeilen werden von der Kasse angelegt und hier weder angelegt, bearbeitet noch gelöscht.",
     "sections": [
       {
-        "title": "Was eine Zeile ist",
-        "body": "Der Verkauf wird geschrieben, wenn die Kasse die Zahlung annimmt. Die Liste ist, wie Sie ihn danach finden.",
+        "title": "Die Zustände",
         "items": [
-          "Status sind Entwurf, bezahlt, storniert und erstattet.",
-          "Die Zeile hält Sitzung, Kasse, Kassierer und den Kunden, wenn einer zugeordnet war.",
-          "Nachdrucken im Zeilenmenü sendet den Beleg erneut."
+          "Entwurf ist ein an der Kasse geparkter Warenkorb.",
+          "Bezahlt ist ein abgeschlossener Verkauf. Storniert ist ein verworfener geparkter Warenkorb oder einer, der beim zwangsweisen Schliessen seiner Sitzung storniert wurde.",
+          "Erstattet markiert einen Verkauf, dessen Einheiten alle erstattet sind. Jede Erstattung ist zudem eine eigene Bestellung mit Verweis auf den Verkauf."
         ]
       },
       {
-        "title": "Erstattungen",
-        "body": "Eine Erstattung ist keine Bearbeitung des ursprünglichen Verkaufs. Sie ist eine weitere Bestellung.",
+        "title": "Was eine Zeile festhält",
+        "body": "Die Bestellung wird geschrieben, wenn die Kasse die Zahlung annimmt.",
         "items": [
-          "Ein bezahlter Verkauf wird an der Kasse erstattet, ganz oder nach Positionsmenge.",
-          "Die Erstattungsbestellung bleibt mit dem Verkauf verknüpft, den sie umkehrt.",
-          "Jede Verkaufsposition merkt sich, wie viel bereits erstattet wurde, damit eine zweite Erstattung dieselben Einheiten nicht noch einmal deckt."
+          "Sitzung, Kasse, Kassierende und der Kunde, falls einer angehängt wurde.",
+          "Zeilen mit Produkt, Variante, Menge, Stückpreis, Rabatt, Steueranteil und wie viel jeder Zeile bisher erstattet wurde.",
+          "Zahlungen pro Zahlungsart, das Rückgeld und das Fiskalergebnis (Fiskalcodes und E-Rechnungsstatus), wenn die Kasse fiskalisiert.",
+          "Ein Verweis auf die gespiegelte Produktbestellung, die den Verkauf in den Bestellbüchern und im Umsatz hält."
         ]
       },
       {
-        "title": "Wo die Arbeit geschieht",
-        "body": "Geld bewegt sich an der Kasse. Diese Seite dient dazu, den Verkauf nachzuschlagen.",
+        "title": "Erstattungen und Nachdrucke",
+        "body": "Geld bewegt sich an der Kasse; diese Seite dient dem Auffinden des Verkaufs.",
         "items": [
-          "Öffnen Sie die Kasse, um zu verkaufen, einen Warenkorb zu parken oder zu erstatten.",
-          "Öffnen Sie POS-Sitzungen, um die Schublade zu sehen, zu der der Verkauf gehörte.",
-          "Produktbestellungen des Katalogs sind eine andere Liste. Ein Kassenverkauf erscheint dort nicht."
+          "Erstatten Sie einen bezahlten Verkauf an der Kasse, ganz oder nach Zeilenmenge. Eine Erstattung kann nicht mehr betragen, als auf jeder Zeile übrig ist.",
+          "Nachdrucken im Zeilenmenü erzeugt den Beleg erneut.",
+          "Von der Kasse erzeugte Produktbestellungen können nicht auf der Seite Produktbestellungen erstattet oder retourniert werden; so bleiben Schublade und Bestand im Einklang."
+        ]
+      },
+      {
+        "title": "Verwandte Seiten",
+        "items": [
+          "Point of Sale zum Verkaufen, Parken oder Erstatten.",
+          "POS-Sitzungen, um die Schublade zu sehen, zu der ein Verkauf gehörte.",
+          "Lagerbewegungen für die Verkaufs- und Rückgabe-Einträge jedes Kassenverkaufs."
         ]
       }
     ]

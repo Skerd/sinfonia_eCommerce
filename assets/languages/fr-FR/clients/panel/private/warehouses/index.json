@@ -5,16 +5,29 @@
   "help": {
     "ariaLabel": "À propos des entrepôts",
     "title": "À propos des entrepôts",
-    "overview": "Un entrepôt est un lieu qui détient le stock. Le stock est tenu par produit ou variante dans un entrepôt : disponible, et réservé pour les checkouts ouverts. Nom et code sont obligatoires.",
+    "overview": "Un entrepôt est un lieu de stockage. Lignes de stock, transferts, inventaires, réservations de commande et caisses pointent tous vers des entrepôts. Nom et code sont obligatoires ; l’adresse est facultative mais détermine la TVA des ventes en caisse.",
     "sections": [
       {
-        "title": "D'où le checkout prend le stock",
-        "body": "Une ligne n'est réservée que si une fiche de stock existe pour ce produit ou cette variante. Sans fiche, elle est considérée comme non suivie.",
+        "title": "Par défaut et actif",
         "items": [
-          "L'entrepôt actif par défaut est utilisé lorsqu'il a assez de stock disponible. Sinon le premier entrepôt qui couvre la quantité est utilisé.",
-          "Un seul entrepôt est celui par défaut. Définir par défaut retire le précédent.",
-          "Désactiver empêche de choisir l'entrepôt. S'il est le seul entrepôt d'une caisse, la désactivation est bloquée jusqu'à ce que la caisse ait un autre entrepôt.",
-          "La suppression est logique et l'entrepôt peut être restauré."
+          "Définir par défaut fait de cet entrepôt celui par défaut de la société et retire le précédent. Le checkout essaie d’abord l’entrepôt par défaut.",
+          "Seuls les entrepôts actifs fournissent du stock au checkout et peuvent être assignés aux caisses.",
+          "Désactiver un entrepôt qui est le seul d’une caisse est refusé ; sinon il est retiré des caisses qui ont encore un autre entrepôt."
+        ]
+      },
+      {
+        "title": "Suppression",
+        "body": "Le stock ne peut pas disparaître avec son entrepôt.",
+        "items": [
+          "Un entrepôt dont des lignes ont encore du stock ou des réservations ne peut pas être supprimé. Transférez ou sortez d’abord le stock.",
+          "La suppression est douce et l’entrepôt peut être restauré, sauf si un autre entrepôt actif utilise désormais le même code."
+        ]
+      },
+      {
+        "title": "Pages liées",
+        "items": [
+          "Inventaire montre le stock par article dans chaque entrepôt ; Mouvements de stocks montre son historique.",
+          "L’import Odoo peut créer des entrepôts depuis Odoo."
         ]
       }
     ]

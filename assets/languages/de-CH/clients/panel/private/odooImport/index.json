@@ -5,15 +5,34 @@
   "help": {
     "ariaLabel": "Zum Odoo-Import",
     "title": "Zum Odoo-Import",
-    "overview": "Der Import liest Odoo per JSON-RPC mit der in den Mandanteneinstellungen gespeicherten Verbindung.",
+    "overview": "Der Odoo-Import kopiert Katalog-, Bestands- und Benutzerdaten aus Odoo in diese Firma, über die gespeicherte Odoo-Verbindung. Sie wählen, welche Datensätze übernommen werden, und können zuerst einen Probelauf machen.",
     "sections": [
       {
-        "title": "Was geschrieben wird",
-        "body": "Jeder gewählte Datensatz wird anhand der Odoo-ID aktualisiert.",
+        "title": "Datensätze",
+        "body": "Jeder Datensatz wird seiner Odoo-ID zugeordnet, ein erneuter Import aktualisiert also, was er angelegt hat, statt es zu verdoppeln.",
         "items": [
-          "Kategorien, Produkte, Varianten, Lager, Bestand, Bewegungen, interne Transfers und Benutzer.",
-          "Ein Testlauf authentifiziert und zählt Datensätze, ohne zu schreiben.",
-          "Importierte Benutzer sind eingeladen und können sich erst anmelden, wenn ein Administrator die Einladung erneut sendet."
+          "Kategorien: Odoo-Produktkategorien.",
+          "Produkte: Produktvorlagen mit ihren Varianten und Attributwerten. Archivierte Odoo-Produkte kommen archiviert an; archivierte Varianten inaktiv.",
+          "Lager: Odoo-Lager, aktiv angelegt.",
+          "Bestand: Mengen an Lager pro Produkt und Lager aus dem internen Odoo-Bestand; bestehende Zeilen werden auf die Odoo-Menge gesetzt.",
+          "Bestandsänderungen: erledigte Odoo-Lagerbewegungen, als Lagerbewegungen mit passendem Grund geschrieben.",
+          "Aktionen: erledigte interne Transfers, als abgeschlossene Umlagerungen geschrieben.",
+          "Benutzer: interne Odoo-Benutzer, mit der Registrierungsrolle in die Firma eingeladen. Sie können sich erst anmelden, wenn sie die Einladung annehmen."
+        ]
+      },
+      {
+        "title": "Probelauf und Ergebnisse",
+        "items": [
+          "Ein Probelauf meldet sich bei Odoo an und zählt nur, was jeder Datensatz lesen würde; nichts wird geschrieben.",
+          "Ein echter Lauf meldet pro Datensatz angelegte, aktualisierte und übersprungene Zahlen. Nicht zuordenbare Zeilen (zum Beispiel eine Lagerbewegung für ein nicht importiertes Produkt) werden übersprungen.",
+          "Importieren Sie Produkte vor Bestand und Bestandsänderungen und Lager vor Bestand, damit die Verweise gefunden werden."
+        ]
+      },
+      {
+        "title": "Berechtigungen",
+        "items": [
+          "Sie brauchen die Berechtigung, jede importierte Art von Datensatz anzulegen, plus die Odoo-Verknüpfungen, die sich die Zuordnungen merken.",
+          "Mindestens ein Datensatz muss ausgewählt sein."
         ]
       }
     ]

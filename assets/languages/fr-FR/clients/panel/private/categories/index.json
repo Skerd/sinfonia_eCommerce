@@ -5,15 +5,30 @@
   "help": {
     "ariaLabel": "À propos des catégories",
     "title": "À propos des catégories",
-    "overview": "Les catégories regroupent les produits du catalogue. Un produit peut appartenir à plusieurs catégories. Le nom est obligatoire ; la catégorie parente et l'ordre d'affichage sont facultatifs.",
+    "overview": "Les catégories sont l’arbre du catalogue produits. Elles regroupent les produits en boutique, dans les filtres, les remises et les règles de tarification. Un produit peut être dans plusieurs catégories. Les annonces de la place de marché utilisent leurs propres catégories d’annonces.",
     "sections": [
       {
-        "title": "Comment le catalogue les utilise",
-        "body": "Le slug est généré à partir du nom et reste unique dans la société. Renommer la catégorie reconstruit le slug. La parente imbrique la catégorie, et l'ordre la classe parmi ses voisines.",
+        "title": "L’arbre",
         "items": [
-          "Une règle de prix visant une catégorie ne correspond qu'à la première catégorie du produit.",
-          "Une remise visant une catégorie correspond si l'une des catégories du produit est sélectionnée.",
-          "La suppression est logique et la catégorie peut être restaurée."
+          "Le nom est obligatoire. Le slug en est tiré, maintenu unique dans la société et reconstruit quand le nom change.",
+          "Parent place la catégorie sous une autre ; laissez vide pour une catégorie de premier niveau. Une catégorie ne peut pas être placée sous elle-même ni sous un de ses descendants.",
+          "L’ordre trie les catégories sœurs, les plus petites d’abord."
+        ]
+      },
+      {
+        "title": "Où les catégories comptent",
+        "body": "La même catégorie est lue différemment selon la fonction.",
+        "items": [
+          "Navigation boutique, filtres produits, recherches enregistrées et collections dynamiques utilisent toutes les catégories d’un produit.",
+          "Une remise visant une catégorie s’applique quand l’une quelconque des catégories du produit est sélectionnée.",
+          "Une règle de tarification visant une catégorie ne regarde que la première catégorie du produit."
+        ]
+      },
+      {
+        "title": "Suppression",
+        "items": [
+          "La suppression est douce et la catégorie peut être restaurée. Les produits gardent leurs autres catégories.",
+          "L’import Odoo peut créer et mettre à jour des catégories depuis les catégories de produits Odoo."
         ]
       }
     ]

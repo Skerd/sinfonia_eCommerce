@@ -5,31 +5,39 @@
   "help": {
     "ariaLabel": "Informazioni sulle richieste di lavoro",
     "title": "Informazioni sulle richieste di lavoro",
-    "overview": "Una richiesta di lavoro è un brief dell'acquirente per preventivi: titolo, descrizione, categoria, budget, luogo e media. Accetta offerte per 30 giorni. I fornitori con un annuncio attivo nella stessa categoria e città possono essere notificati.",
+    "overview": "Una richiesta di attività è il brief di un acquirente che chiede preventivi ai fornitori: cosa gli serve, in quale categoria e dove, con quale budget. Resta aperta alle offerte per 30 giorni. Accettare un’offerta la assegna e apre un ordine.",
     "sections": [
+      {
+        "title": "Campi",
+        "items": [
+          "Titolo, categoria, budget minimo e massimo, valuta, indirizzo e immagine principale sono obbligatori; descrizione e gallerie sono facoltative.",
+          "Il richiedente è chi la pubblica. Categoria e città decidono quali fornitori vengono informati."
+        ]
+      },
       {
         "title": "Stati",
         "items": [
-          "Aperta — accetta offerte fino alla scadenza.",
-          "Chiusa — fermata senza assegnazione; i offerenti in sospeso vengono notificati.",
-          "Assegnata — un'offerta è stata accettata; close/reopen non cambiano più lo stato."
+          "Aperta: accetta offerte fino alla scadenza.",
+          "Chiusa: non accetta più offerte, per scelta del richiedente o perché sono passati 30 giorni. Un processo orario chiude le richieste scadute.",
+          "Assegnata: un’offerta è stata accettata; lo stato non può più cambiare."
         ]
       },
       {
         "title": "Azioni",
+        "body": "Solo il richiedente, o un amministratore, può cambiare lo stato.",
         "items": [
-          "Chiudi — da aperta; notifica chi ha ancora un'offerta in sospeso.",
-          "Riapri — da chiusa; reimposta la finestra di 30 giorni.",
-          "Notifica tutti — avvisa di nuovo i fornitori corrispondenti.",
-          "Solo il richiedente (o un admin) può cambiare lo stato così."
+          "Chiudi: da aperta. Tutti quelli con un’offerta in attesa vengono avvisati.",
+          "Riapri: da chiusa. Fa ripartire la finestra di 30 giorni, così una richiesta scaduta non viene richiusa subito.",
+          "Avvisa tutti: informa di nuovo ogni fornitore con un annuncio attivo nella stessa categoria e città."
         ]
       },
       {
-        "title": "Come si collega",
+        "title": "Offerte e assegnazione",
         "items": [
-          "Le offerte si collegano alla richiesta; accettarne una assegna e crea un ordine.",
-          "Categoria e città guidano il matching — tienile accurate.",
-          "Soft delete disponibile; ripristina riporta la riga."
+          "I fornitori fanno offerte finché è aperta e non scaduta; nessuno può fare offerte sulla propria richiesta.",
+          "Accettare un’offerta rifiuta le altre, segna la richiesta come assegnata e apre un ordine in attesa tra richiedente e offerente.",
+          "Ogni riga mostra quante offerte attive ha. I non amministratori vedono le proprie richieste.",
+          "L’eliminazione è logica e la richiesta può essere ripristinata."
         ]
       }
     ]

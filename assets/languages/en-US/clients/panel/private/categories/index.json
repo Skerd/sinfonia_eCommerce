@@ -5,15 +5,30 @@
   "help": {
     "ariaLabel": "About Categories",
     "title": "About Categories",
-    "overview": "Categories group products in the catalog. A product can sit in more than one category. The name is required; a parent and a display order are optional.",
+    "overview": "Categories are the product catalog's tree. They group products on the storefront, in filters, in discounts, and in pricing rules. A product can sit in several categories. Marketplace listings use their own listing categories.",
     "sections": [
       {
-        "title": "How the catalog uses them",
-        "body": "The slug is built from the name and kept unique inside the company. Renaming the category rebuilds the slug. Parent nests the category under another one, and order sorts it among its siblings.",
+        "title": "The tree",
         "items": [
-          "A pricing rule aimed at a category matches only the product's first category.",
-          "A discount aimed at a category matches if any of the product's categories is selected.",
-          "Deleting a category is a soft delete and it can be restored. Products that pointed at it keep their other categories."
+          "Name is required. The slug is built from it, kept unique inside the company, and rebuilt when the name changes.",
+          "Parent nests the category under another; leave it empty for a top-level one. A category cannot be placed under itself or one of its descendants.",
+          "Order sorts siblings, lower first."
+        ]
+      },
+      {
+        "title": "Where categories matter",
+        "body": "The same category is read differently by different features.",
+        "items": [
+          "Storefront navigation, product filters, saved searches, and dynamic collections use every category of a product.",
+          "A discount aimed at a category matches when any of the product's categories is selected.",
+          "A pricing rule aimed at a category looks only at the product's first category."
+        ]
+      },
+      {
+        "title": "Deleting",
+        "items": [
+          "Deleting is a soft delete and it can be restored. Products keep their other categories.",
+          "The Odoo import can create and update categories from Odoo product categories."
         ]
       }
     ]

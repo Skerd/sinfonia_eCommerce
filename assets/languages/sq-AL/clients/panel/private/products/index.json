@@ -5,38 +5,70 @@
   "help": {
     "ariaLabel": "Rreth produkteve",
     "title": "Rreth produkteve",
-    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani e shet vetëm sa kohë statusi është aktiv. Drafti është kopja e punës. I arkivuari është jashtë shitjes dhe mund të kthehet draft.",
+    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani dhe arka e shesin vetëm sa kohë statusi i tij është aktiv. Draft është kopja e punës që askush nuk mund ta blejë, dhe i arkivuar e heq nga shitja pa e humbur. Gjithçka që dyqani tregon për artikullin — çmimi, mediat, stoku, SEO, artikujt e lidhur — ndryshohet këtu.",
     "sections": [
       {
-        "title": "Çfarë ndryshon lloji",
-        "body": "Lloji vendos si shitet artikulli dhe si lëviz stoku.",
+        "title": "Çfarë ndryshon tipi",
+        "body": "Tipi është korniza për çmimin, transportin, stokun dhe çfarë ndodh pas pagesës. Zgjidheni të parin; shumica e fushave të tjera varen prej tij.",
         "items": [
-          "Fizik dërgohet dhe mund të gjurmojë stokun, peshën dhe përmasat.",
-          "Dixhital dorëzohet si shkarkim. Një rimbursim i plotë i porosisë i skadon ato shkarkime.",
-          "Një shërbim shitet pa dërgesë.",
-          "I ndryshueshëm shitet përmes varianteve. Një variant pa çmim të vetin përdor çmimin e produktit.",
-          "Një paketë është një grup produktesh të tjera. Kur stoku lëviz, paketa hapet një nivel. Çdo përbërës duhet të jetë një produkt i gjallë i kësaj kompanie dhe nuk mund të jetë vetë paketë.",
-          "Një kartë dhurate shitet si kredi dyqani."
+          "Fizik dërgohet në një adresë dhe ndiqet në stok. Ka peshë, përmasa, klasë transporti dhe një shenjë për mallra të rrezikshme; tarifat e transportit sipas peshës përdorin peshën.",
+          "I ndryshueshëm shitet përmes varianteve të tij (madhësi, ngjyrë etj.). Çdo variant është SKU më vete me rreshtin e vet të stokut. Një variant pa çmim të vetin përdor çmimin e produktit.",
+          "Dixhital dorëzohet si shkarkim. Pagesa jep një të drejtë shkarkimi, të kufizuar nga limiti i shkarkimeve dhe ditët e skadimit. Një rimbursim i plotë i porosisë i bën këto shkarkime të skadojnë.",
+          "Shërbim shitet pa dërgesë dhe pa stok.",
+          "Paketë produktesh është një grup produktesh të tjera, secili me një sasi. Nuk ka stok të vetin: kur stoku lëviz, paketa hapet një nivel në përbërësit e saj. Çdo përbërës duhet të jetë një produkt aktiv, i pafshirë, i kësaj kompanie dhe nuk mund të jetë vetë paketë.",
+          "Kartë dhuratë shitet si kredi. Pagesa lëshon një kartë për njësi, me bilanc të barabartë me çmimin për njësi. Rreshtat e kartave dhuratë nuk zbriten kurrë dhe nuk numërohen kurrë për minimumet e zbritjeve."
         ]
       },
       {
         "title": "Statusi dhe veprimet e rreshtit",
-        "body": "Publikimi, arkivimi dhe kthimi në draft e ndryshojnë statusin. Secili refuzohet kur produkti nuk është në gjendjen e pritur.",
+        "body": "Statusi nuk ndryshon me një modifikim të thjeshtë. Publiko, arkivo dhe kthe në draft janë veprime, dhe secili refuzohet kur produkti nuk është në gjendjen e pritur.",
         "items": [
-          "Publikimi niset vetëm nga drafti. Një produkt pa variante duhet të ketë tashmë një çmim. Publikimi i parë regjistron datën.",
-          "Arkivimi niset nga drafti ose aktivi dhe e heq produktin nga shitja.",
-          "Kthimi në draft niset vetëm nga i arkivuari dhe pastron datën e publikimit, që të mos kthehet menjëherë në shitje.",
-          "Dublikimi i kopjon të dhënat në një draft të ri. Titulli është origjinali plus \" (Copy)\". Vlerësimet, numri i komenteve dhe variantet nuk kopjohen.",
-          "Fshirja është e butë dhe produkti mund të rikthehet."
+          "Publiko është i mundur vetëm nga draft. Një produkt pa variante duhet të ketë tashmë një çmim, sepse një produkt aktiv shitet me atë çmim. Publikimi i parë regjistron datën e publikimit.",
+          "Publikimi i planifikuar: një draft me datë publikimi në të kaluarën vihet automatikisht në shitje nga një proces që punon çdo pesë minuta, nëse ka çmim.",
+          "Arkivo është i mundur nga draft ose aktiv dhe e heq produktin nga shitja. Shportat e heqin në llogaritjen e radhës së çmimeve.",
+          "Kthe në draft është i mundur vetëm nga i arkivuar. Fshin datën e publikimit që procesi i planifikuar të mos e kthejë menjëherë në shitje.",
+          "Dyfisho kopjon të dhënat në një draft të ri me titullin plus \" (Copy)\". Variantet, rreshtat e stokut, vlerësimet, notat dhe data e publikimit nuk kopjohen, dhe krijohet një slug i ri.",
+          "Fshirja e një produkti është fshirje e butë dhe mund të rikthehet."
         ]
       },
       {
-        "title": "Si lidhet me pjesën tjetër të menusë",
-        "body": "Produkti është regjistri i katalogut. Stoku, porositë dhe vlerësimet varen prej tij.",
+        "title": "Fushat e çmimit",
+        "body": "Faturohet vetëm çmimi. Fushat e tjera monetare e përshkruajnë.",
         "items": [
-          "Kategoritë dhe koleksionet e grupojnë në dyqan. Një produkt mund të qëndrojë në më shumë se një kategori.",
-          "Inventari, te Stoku, mban sasinë për magazinë. Një produkt pa rresht inventari trajtohet si i pagjurmuar në blerje.",
-          "Një vlerësim mbi një rresht porosie të paguar përditëson mesataren, numrin e notave dhe numrin e vlerësimeve të këtij produkti."
+          "Çmimi është çmimi për njësi nga nis shporta, para rregullave të çmimeve dhe kodeve të zbritjes.",
+          "Çmimi i krahasimit është çmimi i vjetër i vizatuar që dyqani mund të tregojë. MSRP është çmimi i rekomanduar nga prodhuesi. Çmimi i kostos shërben për analizat e marzhit dhe nuk u tregohet kurrë blerësve.",
+          "Fillimi dhe mbarimi i uljes kufizojnë periudhën e uljes të treguar në dyqan.",
+          "Sasia minimale, maksimale dhe hapi janë rregullat e sasisë së porosisë; shporta i zbaton dhe dyqani i numëron sasitë në të njëjtën mënyrë.",
+          "I tatueshëm dhe klasa tatimore e përshkruajnë artikullin për tatimin. Vetë tatimi vjen nga zonat tatimore të adresës së dërgesës."
+        ]
+      },
+      {
+        "title": "Stoku",
+        "body": "Një produkt fizik ose i ndryshueshëm ndiqet në stok, përveç kur ndjekja e stokut është e çaktivizuar (te produkti ose te varianti).",
+        "items": [
+          "Një artikull i ndjekur mund të shitet vetëm nga stok që ekziston. Pa rresht stoku në një magazinë aktive, checkout-i e refuzon rreshtin si jashtë stoku.",
+          "Pragu i stokut të ulët, stoku i sigurisë, porositë e prapambetura dhe porosia paraprake përshkruajnë si doni të trajtohet artikulli; sasitë dhe pikat e rifurnizimit për magazinë janë në faqen Inventari.",
+          "Një artikull i pandjekur (i çaktivizuar, ose produkt dixhital, shërbim apo kartë dhuratë) shitet pa prekur stokun."
+        ]
+      },
+      {
+        "title": "Përmbajtja e dyqanit dhe SEO",
+        "body": "Këto fusha ndryshojnë vetëm mënyrën si paraqitet dhe gjendet produkti.",
+        "items": [
+          "Imazhi kryesor, galeria, videot dhe dokumentet janë mediat. Pikat kryesore, specifikimet, FAQ, udhëzimet e kujdesit dhe garancia mbushin faqen e produktit.",
+          "Produktet e lidhura, upsell, cross-sell dhe «blihen shpesh bashkë» janë vendet e rekomandimeve. I theksuar dhe distinktivët e nxjerrin artikullin në pah në lista.",
+          "Identifikuesit (SKU, barkodi, GTIN, UPC, EAN, ISBN, MPN, kodi HS, vendi i origjinës) përdoren për kërkimin, skanimin në arkë dhe doganën.",
+          "SEO përmban meta titullin dhe përshkrimin, fjalët kyçe, URL kanonike, fushat Open Graph dhe Twitter Card, përfshirjen dhe përparësinë në sitemap, dhe no-index."
+        ]
+      },
+      {
+        "title": "Si lidhet",
+        "body": "Produkti është kartela e katalogut; stoku, porositë dhe vlerësimet varen prej tij.",
+        "items": [
+          "Kategoritë dhe koleksionet e grupojnë në dyqan. Mund të jetë në disa kategori, por rregullat e çmimeve që synojnë një kategori shohin vetëm të parën.",
+          "Variantet dhe atributet e tyre janë te Konfigurimet. Stoku për magazinë është te Stoku → Inventari.",
+          "Rreshtat e porosisë ruajnë një pamje të titullit, SKU-së, tipit dhe etiketës së variantit, që ndryshimet e mëvonshme të mos rishkruajnë kurrë porositë e kaluara.",
+          "Një vlerësim mbi një rresht porosie të paguar përditëson notën mesatare, numrin e notave dhe numrin e vlerësimeve të treguara këtu."
         ]
       }
     ]

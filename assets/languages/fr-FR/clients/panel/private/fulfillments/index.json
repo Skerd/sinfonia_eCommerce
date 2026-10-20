@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "À propos des expéditions",
     "title": "À propos des expéditions",
-    "overview": "Une expédition est un envoi d'une commande produit. Expédier une commande en crée une. Vous pouvez aussi en créer une ici. Son statut est en attente, expédiée, livrée ou en échec, et il alimente la commande.",
+    "overview": "Une exécution est un envoi d’une commande produit : quelles lignes et combien d’unités sont parties, avec quel transporteur et quel suivi. Expédier une commande en crée une automatiquement ; vous pouvez aussi en créer une ici pour répartir une commande en plusieurs colis. Son statut — en attente, expédié, livré ou échoué — détermine le statut expédié et livré de la commande.",
     "sections": [
       {
-        "title": "Comment un envoi avance",
-        "body": "Expédier, livrer et marquer en échec ne sont légaux que depuis le statut indiqué.",
+        "title": "Créer un envoi",
+        "body": "Un envoi ne peut couvrir que ce qui n’est pas encore expédié.",
         "items": [
-          "On n'expédie qu'une expédition en attente, et seulement si la commande n'est pas elle-même en attente, annulée ou remboursée.",
-          "Expédier consomme le stock réservé pour ces lignes et peut passer la commande à expédiée.",
-          "On ne livre qu'une expédition déjà expédiée. Livrer le dernier envoi ouvert peut passer la commande à livrée.",
-          "On ne marque en échec qu'une expédition en attente ou déjà expédiée. Un envoi déjà parti est annulé. Si la commande est annulée ou remboursée, le stock encore retenu est libéré."
+          "Choisissez la commande, puis les lignes et la quantité de chacune. Chaque ligne doit appartenir à cette commande, et la quantité ne peut dépasser ce que les envois précédents ont laissé ouvert.",
+          "Un envoi créé ici commence en attente : rien n’est encore parti et le stock n’est pas touché.",
+          "Une fois créé, la commande et les lignes sont figées. Transporteur, suivi, dates et notes restent modifiables."
         ]
       },
       {
-        "title": "Ce que vous y notez",
-        "body": "Le transporteur et le suivi sont sur l'envoi, pas dans l'en-tête de la commande.",
+        "title": "Comment un envoi évolue",
+        "body": "Expédier, livrer et échouer sont des actions, chacune permise seulement depuis le statut indiqué. Elles exigent le droit d’écrire le statut de l’envoi.",
         "items": [
-          "Transporteur, numéro de suivi et lien sont ce que le client reçoit à l'expédition.",
-          "Expédié le, livraison estimée et livré le marquent la chronologie.",
-          "Les lignes sont des quantités des articles de la commande. Un envoi plus tard peut couvrir ce qu'un précédent a laissé."
+          "Expédier n’est possible que depuis en attente, et seulement si la commande n’est ni en attente, ni annulée, ni remboursée. Cela enregistre l’heure d’expédition et le suivi saisi.",
+          "Expédier retire les unités du stock : les réservations de la commande sont consommées dans les entrepôts où elles ont été faites. Les unités jamais réservées le sont sur le moment ; si le stock manque, l’envoi est refusé pour rupture.",
+          "Livrer n’est possible que depuis expédié. Quand le dernier envoi non échoué est livré, la commande devient livrée et le client est prévenu une fois.",
+          "Échouer est possible depuis en attente ou expédié. Un colis déjà parti qui échoue remet ses unités en stock et les réserve à nouveau pour la commande, pour qu’un nouvel envoi les prenne. Si la commande est entre-temps annulée ou remboursée, ces unités sont libérées à la place."
         ]
       },
       {
-        "title": "Comment il se rapporte à la commande",
-        "body": "Le statut d'expédition de la commande est déduit de ses envois. Un envoi partiel la laisse partiellement expédiée.",
+        "title": "Ce que voit la commande",
+        "body": "Le statut d’exécution de la commande est recalculé depuis ses envois à chaque changement.",
         "items": [
-          "Ouvrez la commande depuis la ligne pour le paiement, l'annulation ou le remboursement. Cela reste sur la commande.",
-          "Un retour reçu remet les articles dans l'entrepôt d'où la ligne est partie.",
-          "La suppression est logique et l'expédition peut être restaurée."
+          "Toutes les lignes entièrement expédiées rendent la commande exécutée ; certaines lignes expédiées la rendent partiellement exécutée.",
+          "Toutes les lignes expédiées passent la commande à expédiée. Une commande entièrement expédiée dont l’envoi échoue revient en préparation.",
+          "Chaque changement ajoute une entrée à la chronologie de la commande."
+        ]
+      },
+      {
+        "title": "Ce que vous y enregistrez",
+        "body": "C’est l’envoi, pas la commande, qui porte le suivi.",
+        "items": [
+          "Transporteur, numéro et lien de suivi sont ce que le client reçoit dans le message d’expédition.",
+          "Livraison estimée, expédié le et livré le jalonnent la chronologie. Les notes sont pour le personnel.",
+          "Chaque ligne montre le produit expédié, avec son titre et son image."
+        ]
+      },
+      {
+        "title": "Pages liées",
+        "items": [
+          "Ouvrez la commande pour le paiement, l’annulation ou le remboursement ; ils restent sur la commande.",
+          "Une demande de retour reçue remet la marchandise dans l’entrepôt d’où la ligne est partie.",
+          "Supprimer un envoi est une suppression douce et il peut être restauré."
         ]
       }
     ]

@@ -5,36 +5,41 @@
   "help": {
     "ariaLabel": "About Analytics",
     "title": "About Analytics",
-    "overview": "Analytics summarizes paid revenue, orders, inventory, and carts for this company. It is a read of those records. Nothing on this page creates an order, a product, or a stock change.",
+    "overview": "Analytics summarizes revenue, orders, products, stock, and carts for this company. It only reads existing records; nothing here changes an order, a product, or stock. Each card needs read access to the data behind it.",
     "sections": [
       {
-        "title": "What the period changes",
-        "body": "The period is 7 days, 30 days, 90 days, or 1 year. It does not apply to every card.",
+        "title": "The period",
+        "body": "Choose 7 days, 30 days, 90 days, or 1 year. Not every card follows it.",
         "items": [
-          "Revenue, order counts, tax, shipping, and top products follow the period.",
-          "The revenue chart is paid revenue and paid order count per bucket inside that period (daily for 7d/30d, weekly for 90d, monthly for 1y).",
-          "Trend badges compare the selected period to the previous window of the same length.",
-          "Inventory and cart cards are the current picture. Changing the period does not recompute them."
+          "Revenue, order counts, average order value, tax, shipping, and top products follow the period.",
+          "The revenue chart shows paid revenue and paid orders per day for 7 and 30 days, per week for 90 days, and per month for a year.",
+          "Trend badges compare the period with the window of the same length just before it.",
+          "Stock and cart cards are the current picture and do not change with the period."
         ]
       },
       {
         "title": "Money and currency",
-        "body": "Figures are never summed across currencies.",
+        "body": "Amounts are never added up across currencies.",
         "items": [
-          "Total revenue is paid orders in the period, net of refunds.",
-          "Tax and shipping are sums from those same paid orders.",
-          "Use the currency control when more than one currency had sales in the period."
+          "Revenue is paid orders in the period, net of the refunds recorded against them.",
+          "Figures are for one currency: the one you pick, or else the one with the most paid orders in the period. The currency control lists every currency that had sales.",
+          "Tax and shipping are totals of those same paid orders."
         ]
       },
       {
-        "title": "Orders, products, stock, and carts",
-        "body": "Breakdown charts and lists use the data already loaded for this company.",
+        "title": "Orders and products",
         "items": [
-          "Order status counts every non-deleted order in the period, not only paid ones.",
-          "Product status is the current catalog, not period-scoped.",
-          "Top products rank by line revenue in the selected currency and period.",
-          "Abandoned carts are inactive for more than an hour; active carts were updated within the last hour.",
-          "Open Product orders, Products, or Inventories from a KPI when you need to act on it."
+          "Order status counts every non-deleted order placed in the period, paid or not.",
+          "Top products rank by line revenue in the chosen currency and period, using the title kept on the order line.",
+          "Product status is the current catalog split into draft, active, and archived."
+        ]
+      },
+      {
+        "title": "Stock and carts",
+        "items": [
+          "Stock shows how many rows are low (available above zero but under the reorder point), how many are out of stock (nothing available), and the total units on hand.",
+          "Abandoned carts have items and have not been touched for more than an hour; active carts changed within the hour. Signed-in buyers get one reminder email for a cart left for a day.",
+          "Open Product orders, Products, or Inventory from a card to act on what it shows."
         ]
       }
     ]

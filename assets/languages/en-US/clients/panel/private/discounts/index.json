@@ -5,25 +5,41 @@
   "help": {
     "ariaLabel": "About Discounts",
     "title": "About Discounts",
-    "overview": "A discount is a code the shopper enters. The cart holds one discount at a time. It is checked again whenever the cart is re-priced, and dropped if it no longer qualifies. The code is stored in uppercase. Title, type, value, what it applies to, and a start date are required.",
+    "overview": "A discount is a code a buyer enters at the cart. The cart holds one code at a time. It is checked again whenever the cart is re-priced and dropped if it no longer qualifies. Title, type, value, scope, and start date are required; the code is stored in uppercase.",
     "sections": [
       {
-        "title": "When the amount is calculated",
-        "body": "The cart sets the unit price first: catalog price, then one pricing rule. The discount is taken off that price. Gift-card lines are never discounted and do not count toward minimums.",
+        "title": "When the amount is worked out",
+        "body": "Order of operations in the cart: catalog price → one pricing rule per line → the discount code → shipping → tax.",
         "items": [
-          "Percentage takes that percent off the lines in scope. Fixed takes a flat amount, never more than those lines.",
-          "Free shipping does not reduce the merchandise total. Checkout waives the shipping charge while this discount is applied.",
-          "Buy X get Y groups the eligible units as buy quantity plus get quantity, then subtracts the cheapest units in each complete group.",
-          "Applies to order covers every merchandise line. Product, category, or collection covers only the targets you select. Category matches any category on the product."
+          "Percentage takes that percent off the lines in scope. Fixed takes a flat amount, never more than those lines are worth.",
+          "Free shipping does not reduce merchandise; checkout charges no shipping while it is applied.",
+          "Buy X get Y counts eligible units, groups them as buy plus get quantity, and makes the cheapest units in each complete group free. It needs buy quantity, get quantity, and the eligible products.",
+          "Gift-card lines are never discounted and never count toward minimums."
         ]
       },
       {
-        "title": "What blocks the code",
-        "body": "The discount must be active and inside its start and end. An empty end date means it does not expire.",
+        "title": "Scope",
         "items": [
-          "Usage limit stops the code after that many uses. Usage limit per customer counts non-cancelled orders for that customer.",
-          "Minimum order amount and minimum quantity use merchandise only, after pricing rules.",
+          "Order covers every merchandise line. Product, category, or collection covers only the selected targets.",
+          "Category matches any category of the product. Collection uses the same membership the storefront shows.",
+          "On the platform shop, a cart with several sellers cannot use a seller's code."
+        ]
+      },
+      {
+        "title": "What blocks a code",
+        "items": [
+          "It must be active and inside its start and end dates; no end date means it never expires.",
+          "Usage limit stops it after that many uses. Usage limit per customer counts that customer's non-cancelled orders with the code.",
+          "Minimum order amount and minimum quantity count merchandise only, after pricing rules.",
           "Customer groups saved on the discount are not checked when the code is applied."
+        ]
+      },
+      {
+        "title": "Counting a use",
+        "items": [
+          "A use is counted when the order is placed, not when the code is typed.",
+          "If the code stopped qualifying while the buyer paid by card, the order keeps it (refusing would strand the money) and the use is still counted. Unpaid orders are refused instead.",
+          "Activate and deactivate switch the code on and off. Deleting is a soft delete and it can be restored."
         ]
       }
     ]

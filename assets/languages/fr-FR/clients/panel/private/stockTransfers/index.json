@@ -5,34 +5,35 @@
   "help": {
     "ariaLabel": "À propos des transferts de stock",
     "title": "À propos des transferts de stock",
-    "overview": "Un transfert déplace le stock libre d'un entrepôt vers un autre. Il reste un brouillon jusqu'à ce qu'il soit terminé ou annulé. Terminer est le moment où les quantités bougent vraiment.",
+    "overview": "Un transfert de stock déplace du stock libre d’un entrepôt à un autre. C’est un brouillon jusqu’à ce qu’il soit terminé ou annulé ; le terminer est le moment où les quantités bougent vraiment, toutes les lignes ensemble.",
     "sections": [
       {
         "title": "Le brouillon",
-        "body": "Tant qu'il est brouillon, rien n'a quitté l'entrepôt source.",
+        "body": "Tant que c’est un brouillon, rien n’a quitté l’entrepôt source et le document peut encore changer.",
         "items": [
-          "Entrepôt source et entrepôt de destination sont tous deux requis et sont des entrepôts différents.",
-          "Chaque ligne est un produit, une variante facultative et une quantité.",
-          "Vous pouvez encore modifier un brouillon. Seul un brouillon peut être terminé ou annulé."
+          "Source et destination sont obligatoires et doivent être deux entrepôts différents de cette société.",
+          "Chaque ligne est un produit, une variante facultative et une quantité. Chaque ligne doit être un article différent suivi en stock ; un lot ne peut pas être une ligne, déplacez plutôt ses composants.",
+          "Seul un brouillon peut être modifié, terminé ou annulé."
         ]
       },
       {
         "title": "Ce que fait terminer",
-        "body": "Terminer est tout ou rien. Une ligne trop courte refuse tout le transfert.",
+        "body": "Terminer est tout ou rien : une ligne insuffisante refuse tout le transfert et rien ne bouge.",
         "items": [
-          "Chaque ligne quitte la source et arrive à destination.",
-          "Seul le stock libre bouge. Les unités déjà réservées pour des commandes ouvertes restent.",
-          "Si la destination n'a jamais stocké l'article, la ligne d'inventaire est créée.",
-          "Le journal reçoit un transfert sortant à la source et un transfert entrant à destination."
+          "Les lignes sont d’abord revérifiées, car produits ou entrepôts ont pu changer depuis l’enregistrement du brouillon.",
+          "Chaque ligne quitte la source et arrive à la destination. Seul le stock libre bouge ; les unités réservées pour des commandes ouvertes restent en place.",
+          "Si la destination n’a jamais stocké l’article, sa ligne de stock est créée.",
+          "Le journal reçoit un mouvement de transfert sortant sur la source et entrant sur la destination, tous deux référant à ce transfert. Terminé le et par sont enregistrés.",
+          "Terminer ou annuler exige le droit d’écrire le statut du transfert."
         ]
       },
       {
-        "title": "Ensuite",
-        "body": "Un transfert terminé est de l'historique. Un brouillon annulé n'a jamais bougé de stock.",
+        "title": "Une fois terminé",
+        "body": "Un transfert terminé est de l’historique ; un brouillon annulé n’a jamais rien bougé.",
         "items": [
-          "Annuler ne part que d'un brouillon. Un transfert terminé ne s'annule pas d'ici.",
-          "Les nouvelles quantités sont dans l'inventaire. Les deux mouvements sont sous Mouvements d'inventaire.",
-          "La suppression est logique et le transfert peut être restauré."
+          "Annuler n’est possible que depuis brouillon, donc un transfert terminé n’est pas défait ici. Créez plutôt un transfert en sens inverse.",
+          "Un transfert terminé ne peut pas être supprimé. Un brouillon ou un transfert annulé est une suppression douce et peut être restauré.",
+          "L’import Odoo peut reprendre des transferts internes d’Odoo ; ils arrivent déjà terminés."
         ]
       }
     ]

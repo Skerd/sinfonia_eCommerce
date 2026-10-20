@@ -5,24 +5,32 @@
   "help": {
     "ariaLabel": "Über Steuerzonen",
     "title": "Über Steuerzonen",
-    "overview": "Der Checkout berechnet die Steuer aus der Lieferadresse. Jede aktive Zone dieses Landes, die auch Kanton und Postleitzahl trifft, addiert ihre Sätze. Name, Land und mindestens ein Satz sind erforderlich.",
+    "overview": "Steuerzonen bestimmen die im Checkout berechnete Steuer und den MWST-Anteil in Kassenpreisen. Eine Zone umfasst ein Land, optional eingegrenzt auf Kantone bzw. Bundesländer und Postleitzahlen, und hat einen oder mehrere benannte Sätze.",
     "sections": [
       {
-        "title": "Wie eine Adresse passt",
-        "body": "Zonen werden von der höchsten Priorität zur niedrigsten gelesen, und jede passende Zone gilt. Die Priorität wählt nicht einen einzigen Gewinner.",
+        "title": "Eine Adresse zuordnen",
+        "body": "Der Checkout nutzt die Lieferadresse; die Kasse die Adresse ihres ersten Lagers.",
         "items": [
-          "Wenn Sie Kantone listen, muss der Kanton der Adresse dabei sein. Leer bedeutet das ganze Land.",
-          "Postleitzahl Muster sind optional. Eine leere Liste trifft jede Postleitzahl. * ist ein Platzhalter, zum Beispiel 10*.",
-          "Fehlt das Land der Adresse, gibt es keine Steuer."
+          "Das Land muss übereinstimmen. Aufgeführte Kantone bzw. Bundesländer grenzen ein; leer deckt das ganze Land ab.",
+          "Postleitzahl-Muster sind optional; * ist der einzige Platzhalter, zum Beispiel 10*.",
+          "Jede passende aktive Zone gilt, höchste Priorität zuerst. Eine Adresse ohne passende Zone zahlt keine Steuer."
         ]
       },
       {
-        "title": "Wie Sätze sich stapeln",
-        "body": "Jeder Satz ist ein Prozentsatz einer laufenden Basis, die als steuerbare Zwischensumme beginnt.",
+        "title": "Sätze",
         "items": [
-          "Ein Satz kann für alle Produkte, nur physische oder nur digitale Produkte gelten.",
-          "Ein zusammengesetzter Satz wird auf die Basis addiert, sodass der nächste Satz auf Zwischensumme plus bereits addierte Steuer rechnet.",
-          "Ein Satz ohne Zusammensetzung hebt die Basis nicht an."
+          "Jeder Satz hat einen Namen, einen Prozentsatz und wofür er gilt: alle Produkte, nur physische oder nur digitale.",
+          "Physische, variable und Bundle-Produkte nehmen physische Sätze; digitale Produkte digitale Sätze; jedes Produkt nimmt Sätze für alle.",
+          "Ein zusammengesetzter Satz wird auf die Basis plus die zuvor bereits hinzugefügten Steuern berechnet."
+        ]
+      },
+      {
+        "title": "Wie der Betrag berechnet wird",
+        "items": [
+          "Zeilen werden nach physisch, digital und übrigen gruppiert, der Bestellrabatt wird nach Wert auf die Gruppen verteilt, und jede Gruppe wird mit ihren Sätzen besteuert.",
+          "Die Bestellung behält eine Aufschlüsselung pro Satzname und Prozentsatz.",
+          "Kassenpreise enthalten die MWST: Der Steueranteil wird aus dem Preis herausgerechnet statt aufgeschlagen.",
+          "Aktivieren und Deaktivieren schalten die Zone ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

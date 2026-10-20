@@ -5,32 +5,29 @@
   "help": {
     "ariaLabel": "Informazioni sulle segnalazioni degli annunci",
     "title": "Informazioni sulle segnalazioni degli annunci",
-    "overview": "Una segnalazione è un report di moderazione: un utente segnala un annuncio come inappropriato, spam, fuorviante o altro, con commento opzionale. Solo gli admin risolvono o respingono le segnalazioni in sospeso.",
+    "overview": "Una segnalazione di annuncio è un rapporto di moderazione: un utente indica un annuncio come inappropriato, spam, ingannevole o altro, con un commento facoltativo. Gli amministratori esaminano e decidono le segnalazioni.",
     "sections": [
       {
-        "title": "Stati",
+        "title": "Segnalare",
         "items": [
-          "In sospeso — in attesa di decisione admin.",
-          "Esaminata — la segnalazione è accolta; viene salvata una nota di risoluzione. L'admin può anche disattivare l'annuncio.",
-          "Respinta — la segnalazione è scartata; serve comunque una nota di risoluzione."
+          "L’autore è chi crea la segnalazione. Una sola segnalazione attiva per utente e annuncio.",
+          "Finché è in attesa, l’autore può ancora modificare motivo e commento; l’annuncio è fisso.",
+          "Le segnalazioni sono private: gli amministratori le vedono tutte, gli altri solo le proprie."
         ]
       },
       {
-        "title": "Azioni admin",
+        "title": "Stati e decisioni",
+        "body": "Solo un amministratore decide, solo finché la segnalazione è in attesa, e una nota di risoluzione è sempre obbligatoria.",
         "items": [
-          "Risolvi imposta lo stato a esaminata e registra il testo.",
-          "Opzionalmente disattiva l'annuncio come parte della risoluzione.",
-          "Respingi imposta lo stato a respinta con una spiegazione.",
-          "I non-admin non possono eseguire queste azioni."
-        ],
-        "body": "Risolvi e respingi funzionano solo se la segnalazione è in sospeso e non soft-eliminata."
+          "In attesa: attende una decisione.",
+          "Risolvi segna la segnalazione come esaminata (accolta). Scegli disattiva per mettere offline l’annuncio contestualmente, o nessuna per lasciarlo online.",
+          "Archivia segna la segnalazione come respinta."
+        ]
       },
       {
-        "title": "In questa pagina",
+        "title": "Eliminazione",
         "items": [
-          "Crea registra una nuova segnalazione su un annuncio.",
-          "Modifica può aggiornare motivo e dettagli; l'annuncio resta fisso dopo la creazione.",
-          "Le segnalazioni soft-eliminate si possono ripristinare."
+          "L’eliminazione è logica e la segnalazione può essere ripristinata, salvo che lo stesso utente abbia nel frattempo segnalato di nuovo quell’annuncio."
         ]
       }
     ]

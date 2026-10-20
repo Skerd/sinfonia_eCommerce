@@ -5,24 +5,32 @@
   "help": {
     "ariaLabel": "À propos des zones fiscales",
     "title": "À propos des zones fiscales",
-    "overview": "Le checkout calcule la taxe à partir de l'adresse de livraison. Chaque zone active de ce pays qui correspond aussi à l'état et au code postal ajoute ses taux. Nom, pays et au moins un taux sont obligatoires.",
+    "overview": "Les zones fiscales décident de la taxe facturée au checkout et de la part de TVA dans les prix en caisse. Une zone couvre un pays, éventuellement restreint à des régions et des codes postaux, et porte un ou plusieurs taux nommés.",
     "sections": [
       {
-        "title": "Comment une adresse correspond",
-        "body": "Les zones sont lues de la priorité la plus haute à la plus basse, et chaque correspondance s'applique. La priorité ne choisit pas un seul gagnant.",
+        "title": "Faire correspondre une adresse",
+        "body": "Le checkout utilise l’adresse de livraison ; la caisse, l’adresse de son premier entrepôt.",
         "items": [
-          "Si vous listez des états, l'état de l'adresse doit en faire partie. Une liste vide correspond à tout le pays.",
-          "Les motifs de code postal sont facultatifs. Une liste vide correspond à chaque code. * est un joker, par exemple 10*.",
-          "Sans pays sur l'adresse, il n'y a pas de taxe."
+          "Le pays doit correspondre. Les régions listées restreignent ; aucune région couvre tout le pays.",
+          "Les modèles de code postal sont facultatifs ; * est le seul joker, par exemple 10*.",
+          "Chaque zone active correspondante s’applique, la plus prioritaire d’abord. Une adresse sans zone correspondante ne paie pas de taxe."
         ]
       },
       {
-        "title": "Comment les taux s'empilent",
-        "body": "Chaque taux est un pourcentage d'une base courante qui commence au sous-total taxable.",
+        "title": "Taux",
         "items": [
-          "Un taux peut viser tous les produits, seulement les produits physiques, ou seulement les produits numériques.",
-          "Un taux composé s'ajoute à la base, donc le taux suivant se calcule sur le sous-total plus la taxe déjà ajoutée.",
-          "Un taux non composé n'augmente pas la base."
+          "Chaque taux a un nom, un pourcentage et ce à quoi il s’applique : tous les produits, physiques seulement ou numériques seulement.",
+          "Les produits physiques, variables et lots prennent les taux physiques ; les produits numériques, les taux numériques ; chaque produit prend les taux « tous ».",
+          "Un taux composé est calculé sur la base plus les taxes déjà ajoutées avant lui."
+        ]
+      },
+      {
+        "title": "Comment le montant est calculé",
+        "items": [
+          "Les lignes sont regroupées en physique, numérique et autres, la remise de commande est répartie entre les groupes selon leur valeur, et chaque groupe est taxé avec ses taux.",
+          "La commande garde un détail par nom de taux et pourcentage.",
+          "Les prix en caisse incluent la TVA : la part de taxe est extraite du prix au lieu d’être ajoutée.",
+          "Activer et désactiver allument et éteignent la zone. La suppression est douce et la zone peut être restaurée."
         ]
       }
     ]

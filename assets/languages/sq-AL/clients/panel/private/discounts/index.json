@@ -5,25 +5,41 @@
   "help": {
     "ariaLabel": "Rreth Zbritjet",
     "title": "Rreth Zbritjet",
-    "overview": "Një zbritje është një kod që blerësi e shkruan. Shporta mban një zbritje në të njëjtën kohë. Kontrollohet sa herë riçmohet shporta dhe hiqet nëse nuk kualifikohet më. Kodi ruhet me shkronja të mëdha. Titulli, lloji, vlera, ku zbatohet dhe data e fillimit janë të detyrueshme.",
+    "overview": "Një zbritje është një kod që blerësi fut në shportë. Shporta mban një kod njëherësh. Rikontrollohet sa herë rillogaritet shporta dhe hiqet nëse nuk vlen më. Titulli, tipi, vlera, fusha e zbatimit dhe data e fillimit janë të detyrueshme; kodi ruhet me shkronja të mëdha.",
     "sections": [
       {
         "title": "Kur llogaritet shuma",
-        "body": "Shporta vendos së pari çmimin për njësi: çmimi i katalogut, pastaj një rregull çmimi. Zbritja hiqet nga ai çmim. Kartat dhuratë nuk zbriten dhe nuk numërohen te minimumet.",
+        "body": "Rendi i veprimeve në shportë: çmimi i katalogut → një rregull çmimi për rresht → kodi i zbritjes → transporti → tatimi.",
         "items": [
-          "Përqindja heq atë përqindje nga rreshtat në fushëveprim. Fikse heq një shumë, kurrë më shumë se ata rreshta.",
-          "Transporti falas nuk e ul totalin e mallit. Pagesa e heq koston e transportit sa kohë kjo zbritje është e aplikuar.",
-          "Bli X merr Y i grupon njësitë e përshtatshme si sasi blerjeje plus sasi dhurate dhe heq njësitë më të lira të çdo grupi të plotë.",
-          "Zbatohet te porosia mbulon çdo rresht malli. Produkti, kategoria ose koleksioni mbulon vetëm objektivat e zgjedhur. Kategoria përputhet me çdo kategori të produktit."
+          "Përqindje heq atë përqindje nga rreshtat brenda fushës. Fikse heq një shumë fikse, kurrë më shumë se vlera e atyre rreshtave.",
+          "Transport falas nuk e ul mallin; checkout-i nuk tarifon transport sa kohë zbatohet.",
+          "Bli X merr Y numëron njësitë e kualifikuara, i grupon si sasi blerjeje plus dhuratë dhe i bën falas njësitë më të lira në çdo grup të plotë. Kërkon sasinë e blerjes, sasinë dhuratë dhe produktet e kualifikuara.",
+          "Rreshtat e kartave dhuratë nuk zbriten kurrë dhe nuk numërohen për minimumet."
         ]
       },
       {
-        "title": "Çfarë e bllokon kodin",
-        "body": "Zbritja duhet të jetë aktive dhe brenda fillimit dhe mbarimit. Një mbarim bosh do të thotë se nuk skadon.",
+        "title": "Fusha e zbatimit",
         "items": [
-          "Kufiri i përdorimit e ndal kodin pas aq përdorimesh. Kufiri për klient numëron porositë e paanulura të atij klienti.",
-          "Shuma minimale dhe sasia minimale përdorin vetëm mallin, pas rregullave të çmimit.",
-          "Grupet e klientëve të ruajtura te zbritja nuk kontrollohen kur aplikohet kodi."
+          "Porosi mbulon çdo rresht malli. Produkt, kategori ose koleksion mbulojnë vetëm objektivat e zgjedhur.",
+          "Kategoria vlen për çdo kategori të produktit. Koleksioni përdor të njëjtën anëtarësi që tregon dyqani.",
+          "Në dyqanin e platformës, një shportë me disa shitës nuk mund të përdorë kodin e një shitësi."
+        ]
+      },
+      {
+        "title": "Çfarë e bllokon një kod",
+        "items": [
+          "Duhet të jetë aktiv dhe brenda datave të fillimit dhe mbarimit; pa datë mbarimi nuk skadon kurrë.",
+          "Limiti i përdorimit e ndal pas aq përdorimeve. Limiti për klient numëron porositë e paanuluara të atij klienti me kodin.",
+          "Shuma minimale e porosisë dhe sasia minimale numërojnë vetëm mallin, pas rregullave të çmimeve.",
+          "Grupet e klientëve të ruajtura te zbritja nuk kontrollohen kur zbatohet kodi."
+        ]
+      },
+      {
+        "title": "Numërimi i një përdorimi",
+        "items": [
+          "Një përdorim numërohet kur bëhet porosia, jo kur shkruhet kodi.",
+          "Nëse kodi pushoi së vlejturi ndërsa blerësi paguante me kartë, porosia e mban (refuzimi do t’i ngecte paratë) dhe përdorimi numërohet gjithsesi. Porositë e papaguara refuzohen.",
+          "Aktivizo dhe çaktivizo e ndezin dhe e fikin kodin. Fshirja është e butë dhe zbritja mund të rikthehet."
         ]
       }
     ]

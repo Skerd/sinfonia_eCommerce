@@ -5,25 +5,33 @@
   "help": {
     "ariaLabel": "About Shipping Zones",
     "title": "About Shipping Zones",
-    "overview": "Checkout offers every rate from active zones that match the destination. The shopper picks one. A zone needs a name and at least one rate. A zone with no countries does not match.",
+    "overview": "Shipping zones decide which delivery options the buyer is offered at checkout and what they cost. A zone lists countries, optionally states and postal codes, and one or more rates. Checkout offers every rate of every active zone that matches; the buyer picks one.",
     "sections": [
       {
-        "title": "How a destination matches",
-        "body": "Country must be one of the zone countries. State and postal code narrow it further.",
+        "title": "Matching a destination",
         "items": [
-          "If you list states, the destination state must be one of them. Leave states empty to match the whole country.",
-          "Postal patterns are optional. An empty list matches every postal code. Use * as a wildcard, for example 10*.",
+          "The destination country must be one of the zone's countries; a zone with no countries matches nothing.",
+          "Listed states narrow it; empty states cover the whole country. Postal patterns are optional and use * as the only wildcard.",
           "Without a destination country, no rates are offered."
         ]
       },
       {
-        "title": "How a rate is priced",
-        "body": "Each matching rate is listed with its name, price, carrier, and estimated days. Carrier and days do not change the price.",
+        "title": "Rate types",
+        "body": "Each rate shows its name, price, carrier, and estimated days. Carrier and days do not change the price.",
         "items": [
-          "Flat charges its price. Free charges 0, and is hidden when the order amount is outside its minimum or maximum.",
-          "Weight uses the cart weight and is hidden outside its weight window. Price uses the merchandise subtotal and its order-amount window.",
-          "Quantity compares the item count with the minimum and maximum order-amount fields, not the money total.",
-          "A free-shipping discount waives the shipping charge at checkout. It does not remove the rates from this list."
+          "Flat always charges its price.",
+          "Free charges nothing, and is hidden when the order amount is outside its minimum or maximum, which is how \"free over 50\" is built.",
+          "Weight charges its price when the cart weight is inside its minimum and maximum weight.",
+          "Price charges its price when the merchandise subtotal is inside its minimum and maximum order amount.",
+          "Quantity charges its price when the number of items is inside the minimum and maximum order amount fields (they are read as item counts for this type)."
+        ]
+      },
+      {
+        "title": "Together with discounts and orders",
+        "items": [
+          "A free-shipping discount waives the charge but does not hide the rates.",
+          "The chosen rate's name, carrier, and price are copied onto the order.",
+          "Activate and deactivate switch the zone on and off. Deleting is a soft delete and it can be restored."
         ]
       }
     ]

@@ -5,22 +5,28 @@
   "help": {
     "ariaLabel": "Über die Marktplatz-Systemkarte",
     "title": "Über die Marktplatz-Systemkarte",
-    "overview": "Diese Karte ist ein lebendiges Diagramm des Marktplatz-Moduls: Modelle, wie Geld und Arbeit fliessen, und was das Produkt kann. Sie ändert keine Daten — sie erklärt die Domäne.",
+    "overview": "Diese Karte ist ein schreibgeschütztes Bild des Dienstleistungs-Marktplatzes: seine Modelle, wie Arbeit und Geld zwischen Kunde und Anbieter fliessen und was das Modul bietet. Sie ändert keine Daten.",
     "sections": [
       {
-        "title": "Die drei Tabs",
+        "title": "Modellgraph",
         "items": [
-          "Modellgraph — Entitäten und Referenzen (Inserate, Bestellungen, Gebote, Escrow usw.).",
-          "So funktioniert es — Abläufe wie Inserat → Bestellung, Auftragsanfrage → Gebot → Zuschlag, Dispute / Escrow.",
-          "Fähigkeiten — was das Modul heute produktseitig unterstützt."
+          "Inserate mit ihren Paketen, Zusatzleistungen, Meldungen und Promotionen; Aufträge und Gebote; Bestellungen mit Lieferungen, Meilensteinen, Überarbeitungen, Buchungen, Streitfällen und Bewertungen; Anbieterprofile; und das Treuhandjournal der Finanzen.",
+          "Klicken Sie auf einen Knoten für Beschreibung, Schlüsselfelder, API-Pfad, Aktionen und Panel-Seite."
         ]
       },
       {
-        "title": "So lesen Sie sie",
+        "title": "Wie es funktioniert",
         "items": [
-          "Canvas schwenken und zoomen. Knoten anklicken für eine Kurzbeschreibung.",
-          "Nutzen Sie sie beim Onboarding, bei Berechtigungen oder wenn Sie entscheiden, wohin ein Feature gehört.",
-          "Operative Arbeit läuft weiterhin auf den Listen unter Marktplatz."
+          "„Inserat kaufen“ und „Auftrag → Gebot → Bestellung“ zeigen, wie eine Bestellung beginnt.",
+          "Bestell-Lebenszyklus (Lieferungen, Überarbeitungen, Meilensteine, automatische Abnahme nach 3 Tagen, Freigabe abzüglich Gebühr) und Streitfälle → Erstattung zeigen, wie sie endet.",
+          "Moderation & Promotion umfasst Meldungen und Hervorhebungen; Anbieter-Onboarding umfasst Profileinrichtung und Stripe-Connect-Auszahlungen."
+        ]
+      },
+      {
+        "title": "Fähigkeiten",
+        "items": [
+          "Was der Marktplatz heute unterstützt, seine API-Bereiche, geplanten Jobs und Shop-Routen.",
+          "Die tägliche Arbeit findet auf den Marktplatz-Seiten statt; nutzen Sie die Karte, um Mitarbeitende einzuarbeiten oder Berechtigungen zu planen."
         ]
       }
     ]

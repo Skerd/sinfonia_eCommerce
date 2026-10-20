@@ -5,24 +5,22 @@
   "help": {
     "ariaLabel": "À propos des packages d'annonce",
     "title": "À propos des packages d'annonce",
-    "overview": "Un package est un niveau tarifaire sur une annonce — Basic, Standard ou Premium. Quand l'acheteur commande avec un package, son prix et ses jours de livraison remplacent le prix de base de l'annonce.",
+    "overview": "Un package est un palier tarifaire d’une annonce, comme Basique, Standard ou Premium. Quand un acheteur commande avec un package, le prix et les jours de livraison du package remplacent ceux de base de l’annonce.",
     "sections": [
       {
-        "title": "Ce que vous définissez",
+        "title": "Champs",
         "items": [
-          "Nom et description optionnelle décrivent le niveau.",
-          "Montant et devise sont ce que facture la commande si ce package est choisi.",
-          "Les jours de livraison deviennent la fenêtre d'échéance (les extras peuvent encore ajouter des jours).",
-          "L'ordre d'affichage trie les packages (plus petit d'abord).",
-          "Annonce et prestataire sont fixés à la création."
+          "L’annonce est obligatoire et figée ; seul le prestataire de cette annonce peut créer ou supprimer ses packages.",
+          "Nom et description décrivent le palier. L’ordre d’affichage trie les packages sur l’annonce, les plus petits d’abord.",
+          "Montant et devise du prix sont ce que la commande facture. Les jours de livraison deviennent la fenêtre d’échéance de la commande."
         ]
       },
       {
-        "title": "Lien avec l'annonce",
+        "title": "Commander avec un package",
         "items": [
-          "Une annonce peut avoir plusieurs packages ; aucun n'est requis pour l'activer.",
-          "Commander sans package utilise le prix de base et les jours de l'annonce.",
-          "Le soft delete retire le package des offres ; il peut être restauré."
+          "Les modules choisis avec le package doivent utiliser la devise du package ; leurs jours supplémentaires s’ajoutent.",
+          "Une annonce n’a pas besoin de packages ; sans package, son propre prix est utilisé.",
+          "La suppression est douce. Un package ne peut pas être restauré tant que son annonce est supprimée."
         ]
       }
     ]

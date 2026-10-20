@@ -5,34 +5,44 @@
   "help": {
     "ariaLabel": "À propos des mouvements d'inventaire",
     "title": "À propos des mouvements d'inventaire",
-    "overview": "C'est le journal de stock. Chaque changement de quantité en main écrit une ligne, et la ligne reste. La page est en lecture seule : rien ne s'y saisit à la main.",
+    "overview": "C’est le journal de stock. Chaque changement d’une quantité en stock écrit une ligne ici, et les lignes ne sont jamais modifiées ni supprimées. Il répond à « pourquoi cet entrepôt en a-t-il autant ? » — chaque ligne montre le changement, la quantité avant et après, le motif, qui l’a fait et ce qui l’a causé.",
     "sections": [
       {
-        "title": "Ce qu'une ligne enregistre",
-        "body": "La ligne est le changement, pas le stock actuel. Le stock actuel reste sur la ligne d'inventaire.",
+        "title": "Ce qu’enregistre une ligne",
+        "body": "La ligne est le changement, pas le stock actuel. Le stock actuel est sur la ligne de stock.",
         "items": [
-          "Elle garde le produit, la variante s'il y en a une, l'entrepôt et la ligne d'inventaire.",
-          "La quantité est le changement. Avant et après sont le stock en main autour de ce changement.",
-          "Le motif dit pourquoi. Note, numéro de reçu, lot, péremption et coût unitaire sont là quand l'action les avait."
+          "Produit, variante s’il y en a une, entrepôt et la ligne de stock à laquelle elle appartient.",
+          "Quantité est le changement signé : positif en entrée, négatif en sortie. Quantité avant et après est le stock autour de ce changement.",
+          "Effectué par est l’utilisateur, et la référence pointe vers la cause : une commande, un envoi, une demande de retour, un transfert de stock, un inventaire, une vente en caisse ou la ligne de stock elle-même.",
+          "Fournisseur, numéro de reçu, fichiers de reçu, lot, péremption et coût unitaire apparaissent quand l’action qui a écrit la ligne les avait."
         ]
       },
       {
         "title": "Les motifs",
-        "body": "Le motif est posé par l'action. Vous ne le choisissez pas sur cette page.",
+        "body": "Le motif est fixé par ce qui a fait le changement. Vous ne le choisissez jamais ici.",
         "items": [
-          "Réapprovisionnement et initial sont des entrées. Vente est une sortie sur une commande ou une vente en caisse.",
-          "Retour est la marchandise remise quand une demande de retour est reçue.",
-          "Transfert entrant et transfert sortant sont les deux côtés d'un transfert terminé.",
-          "Ajustement est un comptage. Dommage et mise au rebut sortent de la marchandise sans vente."
+          "Initial est la quantité de départ d’une nouvelle ligne de stock. Réapprovisionnement est de la marchandise reçue.",
+          "Vente est de la marchandise qui part avec une commande expédiée ou une vente en caisse.",
+          "Retour est de la marchandise remise par une demande de retour reçue ou un remboursement en caisse.",
+          "Transfert sortant et transfert entrant sont les deux côtés d’un transfert de stock terminé.",
+          "Ajustement est un inventaire ou une correction manuelle. Casse et perte retirent de la marchandise sans vente."
         ]
       },
       {
-        "title": "Pourquoi vous ne pouvez pas la modifier",
-        "body": "Le journal est l'historique. Modifier une ligne ferait mentir l'avant et l'après.",
+        "title": "Valoriser le stock",
+        "body": "Les lignes entrantes portent le coût ; les sortantes en héritent.",
         "items": [
-          "Les lignes ne peuvent pas être créées, modifiées ou supprimées depuis cette page.",
-          "Pour changer le stock, utilisez l'inventaire, un transfert, un comptage, une expédition ou un retour.",
-          "Ouvrez la ligne pour voir le produit, l'entrepôt et la référence que le mouvement vise."
+          "Un réapprovisionnement enregistre le coût unitaire, le lot et la péremption saisis.",
+          "Une déduction manuelle copie le coût unitaire et la péremption de la dernière ligne entrante du même lot (ou de la dernière ligne entrante tout court), pour que les pertes soient valorisées."
+        ]
+      },
+      {
+        "title": "Pourquoi vous ne pouvez pas le modifier",
+        "body": "Le journal est l’historique. Modifier une ligne rendrait l’avant et l’après faux.",
+        "items": [
+          "Personne ne peut créer, modifier ou supprimer des lignes ici.",
+          "Pour changer le stock, utilisez Inventaire (réapprovisionner, déduire), un transfert, un inventaire, une expédition de commande ou un retour.",
+          "Filtrez par produit, entrepôt, motif ou date pour contrôler un article ; la ligne de stock ouvre aussi son propre historique."
         ]
       }
     ]

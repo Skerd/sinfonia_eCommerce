@@ -5,24 +5,32 @@
   "help": {
     "ariaLabel": "About Tax Zones",
     "title": "About Tax Zones",
-    "overview": "Checkout calculates tax from the shipping address. Every active zone for that country that also matches state and postal code adds its rates. Name, country, and at least one rate are required.",
+    "overview": "Tax zones decide the tax charged at checkout and the VAT share inside till prices. A zone covers one country, optionally narrowed to states and postal codes, and holds one or more named rates.",
     "sections": [
       {
-        "title": "How an address matches",
-        "body": "Zones are read from highest priority to lowest, and every match is applied. Priority does not pick a single winner.",
+        "title": "Matching an address",
+        "body": "Checkout uses the shipping address; the till uses its first warehouse's address.",
         "items": [
-          "If you list states, the address state must be one of them. Leave states empty to match the whole country.",
-          "Postal patterns are optional. An empty list matches every postal code. Use * as a wildcard, for example 10*.",
-          "A missing country on the address produces no tax."
+          "Country must match. Listed states narrow it; empty states cover the whole country.",
+          "Postal patterns are optional; * is the only wildcard, for example 10*.",
+          "Every active zone that matches applies, highest priority first. An address that matches no zone pays no tax."
         ]
       },
       {
-        "title": "How rates stack",
-        "body": "Each rate is a percentage of a running base that starts as the taxable subtotal.",
+        "title": "Rates",
         "items": [
-          "A rate can apply to all products, physical products only, or digital products only.",
-          "A compound rate is added onto the base, so the next rate is calculated on subtotal plus the tax already added.",
-          "A rate that is not compound does not raise the base."
+          "Each rate has a name, a percentage, and what it applies to: all products, physical only, or digital only.",
+          "Physical, variable, and bundle products take physical rates; digital products take digital rates; every product takes all rates.",
+          "A compound rate is charged on the base plus the taxes already added before it."
+        ]
+      },
+      {
+        "title": "How the amount is calculated",
+        "items": [
+          "Lines are grouped by physical, digital, and other, the order discount is shared across the groups by value, and each group is taxed with its rates.",
+          "The order keeps a breakdown per rate name and percentage.",
+          "Till prices include VAT: the tax share is extracted from the price rather than added on top.",
+          "Activate and deactivate switch the zone on and off. Deleting is a soft delete and it can be restored."
         ]
       }
     ]

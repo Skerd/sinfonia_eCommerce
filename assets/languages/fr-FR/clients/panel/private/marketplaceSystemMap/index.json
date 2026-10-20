@@ -5,22 +5,28 @@
   "help": {
     "ariaLabel": "À propos de la carte système Marketplace",
     "title": "À propos de la carte système Marketplace",
-    "overview": "Cette carte est un diagramme vivant du module marketplace : modèles, circulation de l'argent et du travail, et capacités produit. Elle ne modifie aucune donnée — elle explique le domaine.",
+    "overview": "Cette carte est une image en lecture seule de la place de marché de services : ses modèles, comment le travail et l’argent circulent entre client et prestataire, et ce que le module offre. Elle ne modifie aucune donnée.",
     "sections": [
       {
-        "title": "Les trois onglets",
+        "title": "Graphe des modèles",
         "items": [
-          "Graphe de modèles — entités et références (annonces, commandes, offres, escrow, etc.).",
-          "Fonctionnement — flux annonce → commande, demande → offre → attribution, litiges / escrow.",
-          "Capacités — ce que le module prend en charge aujourd'hui."
+          "Annonces avec leurs packages, modules, signalements et promotions ; demandes de tâches et offres ; commandes avec livraisons, jalons, révisions, réservations, litiges et avis ; profils de prestataires ; et le registre de séquestre de la finance.",
+          "Cliquez sur un nœud pour sa description, ses champs clés, son chemin d’API, ses actions et sa page du panneau."
         ]
       },
       {
-        "title": "Comment la lire",
+        "title": "Comment ça marche",
         "items": [
-          "Panoramiquez et zoomez. Cliquez un nœud pour une courte description.",
-          "Utile pour l'onboarding, les permissions, ou décider où placer une fonctionnalité.",
-          "Le travail opérationnel reste sur les listes sous Marketplace."
+          "« Acheter une annonce » et « tâche → offre → commande » montrent comment une commande commence.",
+          "Le cycle de vie de la commande (livraisons, révisions, jalons, acceptation automatique après 3 jours, libération moins les frais) et litiges → remboursement montrent comment elle se termine.",
+          "Modération et promotion couvre les signalements et mises en avant ; l’inscription du prestataire couvre la configuration du profil et les versements Stripe Connect."
+        ]
+      },
+      {
+        "title": "Capacités",
+        "items": [
+          "Ce que la place de marché permet aujourd’hui, ses domaines d’API, tâches planifiées et routes de la boutique.",
+          "Le travail quotidien se fait sur les pages Marketplace ; utilisez la carte pour former le personnel ou planifier les droits."
         ]
       }
     ]

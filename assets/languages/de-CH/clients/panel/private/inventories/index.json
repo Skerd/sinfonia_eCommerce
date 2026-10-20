@@ -5,34 +5,61 @@
   "help": {
     "ariaLabel": "Über Lagerbestand",
     "title": "Über Lagerbestand",
-    "overview": "Eine Lagerzeile ist der Bestand eines Produkts oder einer Variante in einem Lager. Verfügbar ist der Bestand auf Lager abzüglich der Menge, die offene Checkouts reserviert haben. Das ist die Menge, die der Shop noch verkaufen kann.",
+    "overview": "Eine Bestandszeile ist der Bestand eines Produkts oder einer Variante in einem Lager. Sie hat drei Zahlen: an Lager, reserviert und verfügbar (an Lager minus reserviert). Verfügbar ist, was Checkout und Kasse noch verkaufen können. Jede Änderung von „an Lager“ hinterlässt eine Bewegung im Lagerjournal.",
     "sections": [
       {
-        "title": "Auf Lager, reserviert, verfügbar",
-        "body": "Die drei Mengen sind nicht drei Bestände. Reserviert ist eine Sperre innerhalb von auf Lager.",
+        "title": "An Lager, reserviert, verfügbar",
+        "body": "Das sind keine drei Bestände. Reserviert ist ein Vorbehalt innerhalb von „an Lager“.",
         "items": [
-          "Auf Lager ist, was das Lager hat.",
-          "Reserviert ist, was offene Checkouts schon beansprucht und noch nicht versendet oder freigegeben haben.",
-          "Verfügbar ist auf Lager minus reserviert. Es kann negativ werden, wenn eine Inventur weniger findet, als Bestellungen halten."
+          "An Lager ist, was physisch im Lager liegt.",
+          "Reserviert ist, was offene Checkouts und nicht versendete Bestellungen beansprucht haben. Es wird im Zahlungsschritt reserviert und freigegeben, wenn der Checkout abläuft, die Bestellung storniert oder voll erstattet wird.",
+          "Verfügbar ist an Lager minus reserviert. Eine Inventur, die weniger findet als reserviert ist, kann es negativ machen."
         ]
       },
       {
-        "title": "Wann der Checkout die Zeile nutzt",
-        "body": "Ein Produkt wird nur dort geführt, wo eine Zeile existiert. Keine Zeile heisst, die Position wird nicht aus dem Bestand genommen.",
+        "title": "Welche Artikel eine Zeile brauchen",
+        "body": "Ein physisches oder variables Produkt hat Bestandsführung, ausser „Bestand führen“ ist am Produkt oder an der Variante ausgeschaltet.",
         "items": [
-          "Eine Checkout-Position wird nur reserviert, wenn eine Zeile für dieses Produkt oder diese Variante existiert.",
-          "Das aktive Standardlager wird verwendet, wenn es die Menge decken kann. Sonst das erste Lager, das sie decken kann.",
-          "Versenden verbraucht die Reservierung. Stornieren oder volle Erstattung davor gibt sie frei."
+          "Ein geführter Artikel kann nur aus Zeilen in aktiven Lagern verkauft werden. Ohne Zeile oder ohne genug Verfügbares lehnt der Checkout die Zeile als nicht vorrätig ab.",
+          "Der Checkout bevorzugt ein Lager, das die ganze Zeile deckt, das Standardlager zuerst; sonst teilt er die Zeile auf mehrere Lager auf, das Standardlager zuerst.",
+          "Digitale, Dienstleistungs- und Geschenkkarten-Produkte sowie Artikel ohne Bestandsführung brauchen keine Zeile. Ein Bundle hat nie eine Zeile; seine Komponenten schon.",
+          "Pro Produkt, Variante und Lager gibt es eine aktive Zeile."
+        ]
+      },
+      {
+        "title": "Eine Zeile anlegen und bearbeiten",
+        "body": "Mit dem Anlegen einer Zeile beginnt die Lagerhaltung eines Artikels in einem Lager.",
+        "items": [
+          "Produkt, Variante und Lager sind nach dem Anlegen fest, weil Reservierungen und Historie daran hängen.",
+          "Eine Anfangsmenge beim Anlegen schreibt eine Anfangsbewegung. Danach ändert sich „an Lager“ nur durch Aktionen, nie durch einfaches Bearbeiten.",
+          "Meldebestand und Nachbestellmenge steuern die Warnung bei niedrigem Bestand."
+        ]
+      },
+      {
+        "title": "Auffüllen und Ausbuchen",
+        "body": "Das sind die manuellen Bestandsaktionen. Beide brauchen die Berechtigung, „an Lager“ zu schreiben.",
+        "items": [
+          "Auffüllen fügt Einheiten hinzu und kann Lieferant, Belegnummer, Belegdateien, Datum, Stückkosten, Charge sowie Ablaufdatum erfassen.",
+          "Ausbuchen entfernt Einheiten als Abschreibung, Schaden oder Korrektur. Es übernimmt Stückkosten und Ablaufdatum der letzten Lieferung derselben Charge, damit der Verlust bewertet ist.",
+          "Eine Ausbuchung, die weniger an Lager liesse als reserviert ist, wird abgelehnt."
+        ]
+      },
+      {
+        "title": "Warnungen bei niedrigem Bestand",
+        "body": "Ein stündlicher Job prüft jede Zeile mit Meldebestand.",
+        "items": [
+          "Fällt das Verfügbare unter den Meldebestand (und ist nicht negativ), werden Mitarbeitende einmal benachrichtigt.",
+          "Die Warnung wird wieder scharf, sobald das Verfügbare den Meldebestand wieder erreicht oder übersteigt."
         ]
       },
       {
         "title": "Was die Zahlen sonst ändert",
-        "body": "Sie können eine Zeile hier bearbeiten. Die anderen Bestandsseiten schreiben dieselben Zahlen und hinterlassen eine Bewegung.",
+        "body": "Jede der folgenden Änderungen schreibt eine Bewegung mit der Menge vorher und nachher.",
         "items": [
-          "Ein Lagertransfer bewegt freien Bestand zwischen Lagern. Bereits reservierte Einheiten bewegen sich nie.",
-          "Eine Inventur setzt den Bestand auf das Gezählte und schreibt eine Anpassung.",
-          "Verkäufe, Rückgaben, Wareneingänge, Schaden und Abschreibungen stehen unter Lagerbewegungen, mit der Menge davor und danach.",
-          "Das Löschen ist ein Soft-Delete und die Zeile kann wiederhergestellt werden."
+          "Das Versenden einer Bestellung verbraucht ihre Reservierungen; eine gescheiterte Sendung bringt Einheiten zurück.",
+          "Eine Umlagerung bewegt freien Bestand zwischen Lagern; eine Inventur setzt „an Lager“ auf die gezählte Menge.",
+          "Eine empfangene Retoure bringt Ware zurück; ein Kassenverkauf und eine Kassenerstattung nehmen und geben Bestand direkt.",
+          "Eine Zeile mit Bestand oder Reservierungen kann nicht gelöscht werden. Das Löschen einer leeren Zeile ist ein Soft Delete und kann wiederhergestellt werden, ausser es gibt inzwischen eine aktive Zeile für denselben Artikel."
         ]
       }
     ]

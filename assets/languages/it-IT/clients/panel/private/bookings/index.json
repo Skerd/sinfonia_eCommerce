@@ -5,23 +5,22 @@
   "help": {
     "ariaLabel": "Informazioni sulle prenotazioni",
     "title": "Informazioni sulle prenotazioni",
-    "overview": "Una prenotazione pianifica una finestra temporale per un ordine marketplace con un fornitore — inizio, fine e fuso orario. È l'allegato calendario per un servizio a un orario concordato.",
+    "overview": "Una prenotazione mette un ordine del marketplace in calendario: un orario di inizio e di fine, con il fuso orario concordato. Usala quando il lavoro avviene su appuntamento, non solo entro una scadenza.",
     "sections": [
       {
-        "title": "Cosa imposti",
+        "title": "Creare",
         "items": [
-          "L'ordine collega la prenotazione all'impegno.",
-          "Il fornitore è chi deve consegnare in quella finestra.",
-          "Inizio e fine definiscono lo slot; il fuso indica come leggerlo.",
-          "Crea una prenotazione quando serve un appuntamento concreto, non solo una data di consegna."
+          "Ciascuna parte dell’ordine può prenotare, finché l’ordine è accettato o in corso.",
+          "Una prenotazione per ordine. Il fornitore viene preso dall’ordine.",
+          "La fine deve essere dopo l’inizio."
         ]
       },
       {
-        "title": "Rapporto con gli ordini",
+        "title": "Modificare",
         "items": [
-          "Gli ordini tracciano denaro e stato di consegna; le prenotazioni tracciano quando si lavora.",
-          "Apri l'ordine collegato per accettare, avviare, consegnare, contestare o annullare.",
-          "Il soft delete nasconde la prenotazione; ripristina la riporta."
+          "Solo il fornitore, o un amministratore, ripianifica.",
+          "L’eliminazione è logica e la prenotazione può essere ripristinata.",
+          "I non amministratori vedono solo le prenotazioni dei propri ordini."
         ]
       }
     ]

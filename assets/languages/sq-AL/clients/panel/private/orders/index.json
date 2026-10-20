@@ -5,36 +5,51 @@
   "help": {
     "ariaLabel": "Rreth porosive",
     "title": "Rreth porosive",
-    "overview": "Një porosi marketplace është angazhim shërbimi midis klientit dhe ofruesit. Mund të nisë nga një listim aktiv (me paketë dhe add-on opsionale) ose nga një ofertë e pranuar. Puna, dorëzimi, rishikimet, milestone dhe escrow kalojnë nëpër veprime të dedikuara — jo duke edituar statusin në formë.",
+    "overview": "Një porosi tregu është një angazhim shërbimi mes një klienti dhe një ofruesi, çmimi i së cilës mbahet në depozitë garancie derisa puna të pranohet. Nis nga një listim aktiv ose nga një ofertë e pranuar. Çdo hap është veprim me rregulla se kush mund ta bëjë dhe kur; statusi nuk ndryshohet kurrë drejtpërdrejt.",
     "sections": [
       {
         "title": "Statuset",
         "items": [
-          "Pending — u krijua; në pritje që ofruesi të pranojë.",
-          "Accepted — ofruesi pranoi; puna nuk ka filluar ende.",
-          "In progress — ofruesi filloi punën.",
-          "Completed — puna mbaroi dhe escrow i mbetur u lirua sipas rregullave.",
-          "Cancelled — u ndal përpara përfundimit; escrow ndjek rregullat e anulimit."
+          "Në pritje: e krijuar, pret që ofruesi ta pranojë.",
+          "E pranuar: ofruesi e mori punën; shuma e porosisë mbahet në depozitë.",
+          "Në vazhdim: ofruesi nisi; dorëzimet, rishikimet dhe lirimet e pikave kryesore ndodhin këtu.",
+          "E përfunduar: puna u pranua dhe pjesa e mbetur e depozitës u pagua.",
+          "E anuluar: u ndal para përfundimit; ajo që mbahej ende u rimbursua."
         ]
       },
       {
-        "title": "Cikli tipik",
+        "title": "Veprimet e ofruesit",
         "items": [
-          "Krijo nga listimi ndërton shumën nga listimi, paketa dhe add-on; ofruesit nuk mund të porosisin listimin e tyre.",
-          "Accept / start / cancel e avancojnë ose e ndalojnë angazhimin.",
-          "Dorëzimet dhe kërkesat e rishikimit janë në rekorde të lidhura.",
-          "Milestone mund të mbajnë dhe lirojnë escrow; milestone i fundit pending mund të përfundojë porosinë.",
-          "Një dispute e hapur bllokon disa lëvizje parash derisa të zgjidhet ose të mbyllet."
-        ],
-        "body": "Veprimet detyrojnë kush mund ta lëvizë porosinë dhe nga cili status."
+          "Prano (nga në pritje) regjistron bllokimin në depozitë për shumën e porosisë në regjistrin financiar; kur pagesat me kartë janë konfiguruar, hapet në portën e pagesës një pagesë për atë shumë.",
+          "Nis (nga e pranuar) e kalon porosinë në vazhdim.",
+          "Dërgo dorëzimin (në vazhdim) dërgon një mesazh dhe skedarë. Vetëm një dorëzim mund të presë përgjigje njëherësh, dhe një i ri i përgjigjet një kërkese të hapur rishikimi.",
+          "Zgjat i shton ditë afatit në çdo kohë para se porosia të jetë përfundimtare; klienti njoftohet."
+        ]
       },
       {
-        "title": "Rekorde të lidhura",
+        "title": "Veprimet e klientit",
         "items": [
-          "Booking planifikojnë kohën kundër një porosie.",
-          "Dispute hapen kur një palë konteston angazhimin.",
-          "Review lihen kundër një porosie të përfunduar dhe listimit të saj.",
-          "Soft delete e fsheh porosinë; mund të restaurohet."
+          "Prano dorëzimin e përfundon porosinë dhe i liron ofruesit atë që mbahet ende, minus tarifën 10% të platformës. E bllokuar sa kohë ka ankesë të hapur.",
+          "Kërko rishikim e kthen dorëzimin në pritje me një arsye. Të shumtën 3 rishikime për porosi.",
+          "Nëse klienti nuk i përgjigjet një dorëzimi për 3 ditë, një proces çdo orë e pranon për të, përveç kur ka ankesë të hapur.",
+          "Pikat kryesore e ndajnë shumën e mbajtur: klienti i krijon (gjithsej kurrë më shumë se shuma e porosisë) dhe i liron një nga një gjatë punës. Lirimi i të fundit kur nuk mbahet më asgjë e përfundon porosinë."
+        ]
+      },
+      {
+        "title": "Anulimi dhe ankesat",
+        "items": [
+          "Ofruesi mund të anulojë në çdo kohë para se porosia të jetë përfundimtare; klienti vetëm para se të nisë puna. Pas kësaj, një mosmarrëveshje kalon përmes një ankese.",
+          "Askush nuk mund të anulojë sa kohë ka ankesë të hapur. Anulimi rimburson gjithçka që mbahet ende.",
+          "Një ankesë e vendosur në favor të ofruesit e përfundon porosinë dhe paguan; në favor të klientit e anulon dhe rimburson."
+        ]
+      },
+      {
+        "title": "Paratë dhe të dhënat",
+        "body": "Lirimet dhe rimbursimet mund të paguajnë vetëm atë që mbahet ende, ndaj pikat kryesore, pranimi, ankesat dhe anulimi bashkë nuk e kalojnë kurrë bllokimin.",
+        "items": [
+          "Çdo lirim paguhet në llogarinë Stripe të lidhur të ofruesit nëse ka; lirimi regjistrohet në regjistër në çdo rast.",
+          "Kartela e porosisë tregon dorëzimet, pikat kryesore dhe rishikimet. Rezervimet, ankesat dhe vlerësimet varen gjithashtu nga porosia.",
+          "Joadministratorët shohin vetëm porositë ku janë palë. Vetëm një administrator mund ta fshijë një porosi, dhe vetëm kur është përfundimtare."
         ]
       }
     ]

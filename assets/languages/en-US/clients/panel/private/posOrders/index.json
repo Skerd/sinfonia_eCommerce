@@ -5,33 +5,41 @@
   "help": {
     "ariaLabel": "About POS orders",
     "title": "About POS orders",
-    "overview": "A POS order is a sale rung up on a till. This page is the record of those sales. Rows are not created, edited, or deleted here.",
+    "overview": "A POS order is a sale rung up on a till, or the refund of one. This page is the record of those sales; rows are created by the till and are not created, edited, or deleted here.",
     "sections": [
       {
-        "title": "What a row is",
-        "body": "The sale is written when the till takes payment. The list is how you find it afterwards.",
+        "title": "The states",
         "items": [
-          "States are draft, paid, cancelled, and refunded.",
-          "The row keeps the session, the till, the cashier, and the customer when one was attached.",
-          "Reprint, from the row menu, sends the receipt again."
+          "Draft is a held cart parked on the till.",
+          "Paid is a completed sale. Cancelled is a held cart that was discarded, or one cancelled when its session was force-closed.",
+          "Refunded marks a sale whose units have all been refunded. Each refund is also its own order, linked back to the sale."
         ]
       },
       {
-        "title": "Refunds",
-        "body": "A refund is not an edit of the original sale. It is another order.",
+        "title": "What a row keeps",
+        "body": "The order is written when the till takes payment.",
         "items": [
-          "A paid sale is refunded from the till, in full or by line quantity.",
-          "The refund order stays linked to the sale it reverses.",
-          "Each sale line remembers how much of it has already been refunded, so a second refund cannot cover the same units twice."
+          "Session, till, cashier, and the customer when one was attached.",
+          "Lines with product, variant, quantity, unit price, discount, tax share, and how much of each line has been refunded so far.",
+          "Payments per method, the change given, and the fiscal result (fiscal codes and e-invoice status) when the till fiscalizes.",
+          "A link to the mirrored product order that keeps the sale in the order books and revenue."
         ]
       },
       {
-        "title": "Where to do the work",
-        "body": "Money moves on the till. This page is for looking the sale up.",
+        "title": "Refunds and reprints",
+        "body": "Money moves on the till; this page is for finding the sale.",
         "items": [
-          "Open Point of Sale to sell, hold a cart, or refund.",
-          "Open POS sessions to see the drawer that sale belonged to.",
-          "Catalog product orders are a different list. A till sale does not appear there."
+          "Refund a paid sale from the till, in full or by line quantity. A refund cannot exceed what is left on each line.",
+          "Reprint, from the row menu, produces the receipt again.",
+          "Product orders made by the till cannot be refunded or returned from the Product orders page; that keeps the drawer and the stock in step."
+        ]
+      },
+      {
+        "title": "Related pages",
+        "items": [
+          "Point of Sale to sell, hold, or refund.",
+          "POS sessions to see the drawer a sale belonged to.",
+          "Stock movements for the sale and return entries of each till sale."
         ]
       }
     ]

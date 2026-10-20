@@ -5,31 +5,31 @@
   "help": {
     "ariaLabel": "Rreth hartës së sistemit eCommerce",
     "title": "Rreth hartës së sistemit eCommerce",
-    "overview": "Harta e sistemit është një pamje e modulit eCommerce të katalogut: modelet, rrjedha e blerjes dhe çfarë mund të bëjë moduli. Nuk ndryshon të dhëna. Marketplace ka hartën e vet.",
+    "overview": "Harta e sistemit është një pamje vetëm për lexim e modulit eCommerce të katalogut: çdo model dhe si i referohen njëri-tjetrit, rrjedhat kryesore hap pas hapi dhe çfarë ofron moduli. Nuk ndryshon të dhëna. Tregu ka hartën e vet.",
     "sections": [
       {
         "title": "Grafi i modeleve",
-        "body": "Kjo është skeda e paracaktuar. Është modeli i të dhënave, i shtrirë që të shihni çfarë tregon te çfarë.",
+        "body": "Skeda e paracaktuar: modeli i të dhënave, i grupuar në katalog, porosi, pagesa, pikë shitjeje, depozitë garancie dhe të përbashkëta.",
         "items": [
-          "Lëvizni dhe zmadhoni, ose përdorni komandat e zmadhimit dhe përshtatjes.",
-          "Klikoni një nyje për fushat, shtegun e API-së dhe ku jeton ai ekran në panel.",
-          "Filtroni sipas katalogut, porosive, pagesave, escrow dhe të përbashkëtave kur harta e plotë është tepër."
+          "Lëvizni dhe zmadhoni, ose përdorni kontrollet e zmadhimit dhe përshtatjes. Filtroni sipas grupit kur harta e plotë është shumë.",
+          "Klikoni një nyje për të parë përshkrimin, fushat kyçe, shtegun e API-t, veprimet dhe faqen e panelit që e menaxhon.",
+          "Lidhjet tregojnë cili model i referohet cilit; lidhjet urë kalojnë në modulin e financave."
         ]
       },
       {
         "title": "Si funksionon",
-        "body": "Kjo skedë është historia e blerjes, nga katalogu te porosia, jo lista e modeleve.",
+        "body": "Rrjedhat e tregojnë historinë me radhë, jo si listë modelesh.",
         "items": [
-          "Ndiqeni për radhën e hapave: produkt, shportë, pagesë, stok, dërgesë.",
-          "Është i njëjti modul mbi të cilin punojnë hyrjet e tjera të menusë eCommerce. Nuk është një blerje e dytë."
+          "Katalogu dhe merchandising-u, stoku, shporta → checkout → porosia, operacionet pas blerjes, pika e shitjes dhe importi nga Odoo kanë secila rrjedhën e vet.",
+          "Hapat me vija të ndërprera janë rruga e kthimit, si një dërgesë e dështuar ose një checkout i skaduar."
         ]
       },
       {
         "title": "Aftësitë",
-        "body": "Kjo skedë grupon çfarë mbulon moduli, që të shihni sipërfaqen pa hapur çdo menu.",
+        "body": "Çfarë mbulon moduli, që të gjeni ku shkon një punë.",
         "items": [
-          "Përdoreni për të parë cilit sektor i përket një punë, pastaj hapni atë faqe nga menuja e eCommerce.",
-          "Cilësimet e katalogut si kategoritë, magazinat dhe zbritjet janë te Konfigurimet, jo në këtë grup menuje. Harta i tregon prapë, sepse katalogu i përdor."
+          "Liston funksionet, zonat e API-t, proceset e planifikuara dhe rrugët publike të dyqanit.",
+          "Cilësimet e katalogut si kategoritë, magazinat, zbritjet, arkat dhe konfigurimet fiskale janë te Konfigurimet, jo në këtë meny; harta i tregon gjithsesi."
         ]
       }
     ]

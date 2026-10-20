@@ -5,24 +5,22 @@
   "help": {
     "ariaLabel": "Rreth paketave të listimeve",
     "title": "Rreth paketave të listimeve",
-    "overview": "Një paketë është një nivel çmimi në listim — Basic, Standard ose Premium. Kur blerësi porosit me paketë, çmimi dhe ditët e dorëzimit të paketës zëvendësojnë çmimin bazë të listimit.",
+    "overview": "Një paketë është një nivel çmimi i një listimi, si Bazë, Standard ose Premium. Kur një blerës porosit me paketë, çmimi dhe ditët e dorëzimit të paketës zëvendësojnë ato bazë të listimit.",
     "sections": [
       {
-        "title": "Çfarë vendosni",
+        "title": "Fushat",
         "items": [
-          "Emri dhe përshkrimi opsional përshkruajnë nivelin.",
-          "Shuma dhe monedha janë ajo që ngarkon porosia kur zgjidhet kjo paketë.",
-          "Ditët e dorëzimit bëhen dritarja e afatit (add-on mund të shtojnë ende ditë).",
-          "Renditja e shfaqjes rendit paketat (më e ulëta së pari).",
-          "Listimi dhe ofruesi fiksohen në krijim."
+          "Listimi është i detyrueshëm dhe i fiksuar; vetëm ofruesi i atij listimi mund të krijojë ose fshijë paketat e tij.",
+          "Emri dhe përshkrimi e përshkruajnë nivelin. Rendi i shfaqjes rendit paketat në listim, më të voglat së pari.",
+          "Shuma dhe monedha e çmimit janë ajo që tarifon porosia. Ditët e dorëzimit bëhen dritarja e afatit të porosisë."
         ]
       },
       {
-        "title": "Si qëndron me listimin",
+        "title": "Porosia me paketë",
         "items": [
-          "Një listim mund të ketë shumë paketa; asnjë nuk kërkohet për aktivizim.",
-          "Porosia pa paketë përdor çmimin bazë dhe ditët e listimit.",
-          "Soft delete e heq paketën nga ofertat; mund të restaurohet."
+          "Shtesat e zgjedhura me paketën duhet të përdorin monedhën e paketës; ditët e tyre shtesë shtohen.",
+          "Një listim nuk ka nevojë për paketa; pa paketë përdoret çmimi i vet.",
+          "Fshirja është e butë. Një paketë nuk mund të rikthehet sa kohë listimi i saj është i fshirë."
         ]
       }
     ]

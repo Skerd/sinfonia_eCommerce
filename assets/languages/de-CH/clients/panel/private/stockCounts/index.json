@@ -5,35 +5,36 @@
   "help": {
     "ariaLabel": "Über Inventuren",
     "title": "Über Inventuren",
-    "overview": "Eine Inventur hält fest, was in einem Lager tatsächlich im Regal liegt, und korrigiert danach den Bestand. Sie bleibt ein Entwurf, bis sie angewendet oder abgebrochen wird. Anwenden ist der Moment, in dem die Zahlen sich ändern.",
+    "overview": "Eine Inventur erfasst, was tatsächlich in einem Lager im Regal liegt, und korrigiert dann „an Lager“ entsprechend. Während Sie zählen, bleibt sie ein Entwurf; das Anwenden ist der Moment, in dem sich die Zahlen ändern.",
     "sections": [
       {
         "title": "Der Entwurf",
-        "body": "Zählen ändert den Bestand nicht. Anwenden tut es.",
+        "body": "Zählen ändert nichts. Anwenden schon.",
         "items": [
-          "Die Inventur gilt für ein Lager.",
-          "Jede Position ist ein Produkt, eine optionale Variante, was erwartet wurde und was gezählt wurde.",
-          "Eine leere Zählmenge heisst, die Position wurde nicht gezählt. Anwenden lässt sie in Ruhe.",
-          "Nur ein Entwurf kann angewendet oder abgebrochen werden."
+          "Eine Inventur gilt für ein Lager und bleibt eine Inventur dieses Lagers.",
+          "Jede Zeile ist ein Produkt, eine optionale Variante, die beim Hinzufügen erwartete Menge und die gezählte Menge. Zeilen müssen verschiedene Artikel mit Bestandsführung sein; ein Bundle kann keine Zeile sein.",
+          "Lassen Sie die gezählte Menge für einen nicht gezählten Artikel leer; Anwenden lässt ihn unverändert.",
+          "Nur ein Entwurf kann bearbeitet, angewendet oder storniert werden."
         ]
       },
       {
         "title": "Was Anwenden tut",
-        "body": "Die Differenz gilt gegen den Bestand jetzt, nicht gegen den Stand beim Start der Zählung.",
+        "body": "Die Differenz wird gegen „an Lager“ zum Zeitpunkt des Anwendens gerechnet, nicht gegen die erwartete Momentaufnahme.",
         "items": [
-          "Anwenden setzt den Bestand auf die gezählte Menge für jede Position mit einer Zählung.",
-          "Verkäufe, die während der Zählung versendet wurden, werden nicht rückgängig gemacht, weil die Differenz den Bestand zum Zeitpunkt des Anwendens nutzt.",
-          "Jede Änderung schreibt eine Anpassungsbewegung.",
-          "Eine Zählung unter der für Bestellungen gehaltenen Menge wird akzeptiert. Die Verfügbarkeit kann negativ werden. Das Regal ist, wie es ist."
+          "Für jede gezählte Zeile wird „an Lager“ zur gezählten Menge. Während des Zählens versendete Verkäufe werden daher nicht rückgängig gemacht.",
+          "Ein Artikel, den das Lager nie geführt hat, erhält eine neue Bestandszeile.",
+          "Jede Änderung schreibt eine Korrektur-Bewegung mit Verweis auf diese Inventur. Angewendet am und von werden gespeichert.",
+          "Eine Zählung unter der für Bestellungen reservierten Menge wird akzeptiert: Das Regal ist, wie es ist, und „verfügbar“ zeigt den Fehlbestand negativ.",
+          "Anwenden oder Stornieren braucht die Berechtigung, den Status der Inventur zu schreiben."
         ]
       },
       {
-        "title": "Nachdem sie angewendet wurde",
-        "body": "Die Inventur bleibt der Beleg dessen, was gezählt wurde. Der Bestand lebt auf der Lagerzeile.",
+        "title": "Nach dem Anwenden",
+        "body": "Die Inventur bleibt als Nachweis dessen, was gefunden wurde.",
         "items": [
-          "Abbrechen geht nur aus einem Entwurf. Eine angewendete Inventur wird auf dieser Seite nicht zurückgedreht.",
-          "Schauen Sie im Lagerbestand nach dem neuen Bestand und unter Lagerbewegungen nach den Anpassungen.",
-          "Das Löschen ist ein Soft-Delete und die Inventur kann wiederhergestellt werden."
+          "Stornieren geht nur aus Entwurf. Eine angewendete Inventur wird hier nicht rückgängig gemacht; zählen Sie erneut.",
+          "Eine angewendete Inventur kann nicht gelöscht werden. Ein Entwurf oder eine stornierte ist ein Soft Delete und kann wiederhergestellt werden.",
+          "Unter Bestand sehen Sie das neue „an Lager“, unter Lagerbewegungen die Korrekturen."
         ]
       }
     ]

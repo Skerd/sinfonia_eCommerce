@@ -5,23 +5,22 @@
   "help": {
     "ariaLabel": "Über Buchungen",
     "title": "Über Buchungen",
-    "overview": "Eine Buchung plant ein Zeitfenster für eine Marktplatz-Bestellung mit einem Anbieter — Start, Ende und Zeitzone. Sie ist der Kalenderanhang für Servicearbeit zum vereinbarten Zeitpunkt.",
+    "overview": "Eine Buchung setzt eine Marktplatz-Bestellung in den Kalender: Start- und Endzeit mit der Zeitzone, in der sie vereinbart wurde. Nutzen Sie sie, wenn die Arbeit zu einem Termin stattfindet, nicht nur bis zu einem Fälligkeitsdatum.",
     "sections": [
       {
-        "title": "Was Sie setzen",
+        "title": "Anlegen",
         "items": [
-          "Bestellung verknüpft die Buchung mit dem Engagement.",
-          "Anbieter ist, wer in diesem Fenster liefern soll.",
-          "Start und Ende definieren den Slot; Zeitzone speichert, wie er gelesen werden soll.",
-          "Buchung anlegen, wenn ein konkreter Termin nötig ist — nicht nur ein Lieferdatum."
+          "Jede Partei der Bestellung kann sie buchen, solange die Bestellung angenommen oder in Arbeit ist.",
+          "Eine Buchung pro Bestellung. Der Anbieter wird aus der Bestellung übernommen.",
+          "Das Ende muss nach dem Start liegen."
         ]
       },
       {
-        "title": "Bezug zu Bestellungen",
+        "title": "Ändern",
         "items": [
-          "Bestellungen tracken Geld und Lieferstatus; Buchungen tracken wann gearbeitet wird.",
-          "Verwandte Bestellung öffnen für Annehmen, Starten, Liefern, Dispute oder Storno.",
-          "Soft-Delete blendet die Buchung aus; Wiederherstellen bringt sie zurück."
+          "Nur der Anbieter oder ein Administrator verschiebt.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden.",
+          "Nicht-Administratoren sehen nur die Buchungen ihrer eigenen Bestellungen."
         ]
       }
     ]

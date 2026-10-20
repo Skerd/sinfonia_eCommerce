@@ -5,16 +5,29 @@
   "help": {
     "ariaLabel": "Über Lager",
     "title": "Über Lager",
-    "overview": "Ein Lager ist ein Ort, der Bestand hält. Der Bestand liegt je Produkt oder Variante in einem Lager: vorhanden und reserviert für offene Checkouts. Name und Code sind erforderlich.",
+    "overview": "Ein Lager ist ein Bestandsort. Bestandszeilen, Umlagerungen, Inventuren, Reservierungen von Bestellungen und Kassen zeigen alle auf Lager. Name und Code sind Pflicht; die Adresse ist optional, bestimmt aber die MWST von Kassenverkäufen.",
     "sections": [
       {
-        "title": "Wo der Checkout Bestand nimmt",
-        "body": "Eine Zeile wird nur reserviert, wenn ein Bestandsdatensatz für dieses Produkt oder diese Variante existiert. Ohne Datensatz gilt sie als nicht geführt.",
+        "title": "Standard und aktiv",
         "items": [
-          "Das aktive Standardlager wird genutzt, wenn es genug verfügbaren Bestand hat. Sonst das erste Lager, das die Menge deckt.",
-          "Nur ein Lager ist Standard. Als Standard setzen löscht den bisherigen Standard.",
-          "Deaktivieren verhindert, dass das Lager gewählt wird. Ist es das einzige Lager einer Kasse, ist das Deaktivieren gesperrt, bis die Kasse ein anderes Lager hat.",
-          "Das Löschen ist ein Soft-Delete und das Lager kann wiederhergestellt werden."
+          "Als Standard setzen macht dieses Lager zum Firmenstandard und hebt den bisherigen auf. Der Checkout versucht zuerst das Standardlager.",
+          "Nur aktive Lager halten Bestand für den Checkout und können Kassen zugewiesen werden.",
+          "Das Deaktivieren eines Lagers, das das einzige Lager einer Kasse ist, wird abgelehnt; sonst wird es von Kassen entfernt, die noch ein anderes Lager haben."
+        ]
+      },
+      {
+        "title": "Löschen",
+        "body": "Bestand kann nicht mit seinem Lager verschwinden.",
+        "items": [
+          "Ein Lager, dessen Zeilen noch Bestand oder Reservierungen haben, kann nicht gelöscht werden. Lagern Sie den Bestand zuerst um oder buchen Sie ihn aus.",
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden, ausser ein anderes aktives Lager nutzt inzwischen denselben Code."
+        ]
+      },
+      {
+        "title": "Verwandte Seiten",
+        "items": [
+          "Bestand zeigt den Bestand pro Artikel in jedem Lager; Lagerbewegungen zeigen seine Historie.",
+          "Der Odoo-Import kann Lager aus Odoo anlegen."
         ]
       }
     ]

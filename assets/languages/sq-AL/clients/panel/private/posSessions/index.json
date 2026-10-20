@@ -5,33 +5,42 @@
   "help": {
     "ariaLabel": "Rreth sesioneve POS",
     "title": "Rreth sesioneve POS",
-    "overview": "Një sesion është një hapje arke, nga numërimi i hapjes te numërimi i mbylljes. Sesionet hapen dhe mbyllen në arkë. Kjo faqe vetëm i liston.",
+    "overview": "Një seancë është një hapje e arkës, nga numërimi i parave fillestare deri te numërimi i mbylljes. Seancat hapen dhe mbyllen në arkë; kjo faqe i liston që të kontrolloni çdo sirtar.",
     "sections": [
       {
         "title": "Gjendjet",
-        "body": "Gjendja thotë ku është sirtari në atë hapje, jo nëse arka lejohet të shesë.",
+        "body": "Gjendja tregon ku është ajo hapje e sirtarit, jo nëse arka mund të shesë.",
         "items": [
-          "Hapja është numërimi para se të fillojë shitja.",
-          "E hapur është dritarja e shitjes. Hyrja dhe dalja ndodhin këtu.",
-          "Mbyllja është numërimi në fund. E mbyllur është një sesion i përfunduar."
+          "E hapur është dritarja e shitjes: arka e hap seancën drejtpërdrejt në këtë gjendje me paratë fillestare.",
+          "E mbyllur është seancë e përfunduar, e mbyllur nga arkëtari ose e mbyllur me forcë kur arka u vu në pauzë ose u çaktivizua.",
+          "Kontrolli i hapjes dhe kontrolli i mbylljes janë gjendje të rezervuara; arka aktuale nuk ndalet në to."
         ]
       },
       {
-        "title": "Çfarë regjistrohet",
-        "body": "Sesioni është sirtari i asaj hapjeje, plus shitjet e regjistruara mbi të.",
+        "title": "Çfarë ndjek seanca",
+        "body": "Seanca është sirtari i parave për atë hapje plus shitjet e regjistruara në të.",
         "items": [
-          "Gjendja e hapjes është ajo që ishte në sirtar kur u hap.",
-          "Hyrja dhe dalja janë lëvizje sirtari me një arsye. Nuk janë shitje.",
-          "Mbyllja regjistron paratë e numëruara. Barazimi e krahason atë numërim me atë që sesioni priste nga gjendja e hapjes, lëvizjet dhe shitjet me para në dorë."
+          "Paratë fillestare janë paratë e numëruara në fillim.",
+          "Futjet dhe nxjerrjet e parave janë lëvizje sirtari me shumë, arsye, orë dhe kush i bëri.",
+          "Paratë e pritura nisin nga paratë fillestare dhe ndjekin çdo lëvizje parash, shitje në para (neto nga kusuri) dhe rimbursim në para.",
+          "Bilanci i mbylljes janë paratë e numëruara në fund. Diferenca nga paratë e pritura dhe arsyeja e saj shkruhen në shënimet e seancës."
+        ]
+      },
+      {
+        "title": "Rakordimi",
+        "body": "Rakordimi krahason numërimin me atë që priste seanca, të ndarë sipas metodës së pagesës.",
+        "items": [
+          "Liston paratë fillestare, lëvizjet e parave, shitjet dhe rimbursimet sipas metodës, dhe diferencën.",
+          "Një diferencë prej një qindarke ose më shumë nuk mund të mbyllet pa arsye."
         ]
       },
       {
         "title": "Kush mund ta bëjë",
-        "body": "Butonat janë në arkë. Leja është te sesioni.",
+        "body": "Butonat janë në arkë; lejet janë te seanca.",
         "items": [
-          "Hapja, mbyllja dhe barazimi kërkojnë leje për të shkruar gjendjen e sesionit.",
-          "Hyrja dhe dalja kërkojnë leje për të shkruar lëvizjet e arkës.",
-          "Shitjet e sesionit listohen te Porositë POS, të filtruara sipas këtij sesioni."
+          "Hapja, mbyllja dhe rakordimi kërkojnë lejen për të shkruar gjendjen e seancës. Lëvizjet e parave kërkojnë lejen për të shkruar lëvizjet e parave.",
+          "Shitjet e një seance listohen te Porositë POS, të filtruara sipas asaj seance.",
+          "Seancat nuk mund të krijohen, ndryshohen ose fshihen nga kjo listë."
         ]
       }
     ]

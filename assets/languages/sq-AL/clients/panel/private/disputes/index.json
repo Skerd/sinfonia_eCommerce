@@ -5,33 +5,30 @@
   "help": {
     "ariaLabel": "Rreth mosmarrëveshjeve",
     "title": "Rreth mosmarrëveshjeve",
-    "overview": "Një dispute është konflikt i moderuar nga admin në një porosi marketplace. Ndërsa është open ose under review, rezultatet e escrow vendosen kur dispute zgjidhet ose mbyllet — jo me edit statusi të rastësishëm.",
+    "overview": "Një ankesë është një mosmarrëveshje për një porosi tregu që e vendos një administrator. Sa kohë është e hapur, paratë e porosisë janë të ngrira: pa pranim dorëzimi, lirim pikash kryesore, pranim automatik apo anulim. Vendimi thotë kush merr atë që mbahet ende.",
     "sections": [
       {
-        "title": "Statuset",
+        "title": "Hapja e një ankese",
         "items": [
-          "Open — sapo u ngrit; në pritje të adminit.",
-          "Under review — admin ka filluar shqyrtimin formal.",
-          "Resolved — u vendos në rrugën e ofruesit: porosia mund të përfundojë dhe escrow i mbetur lirohet.",
-          "Closed — u mbyll pa atë rrugë; escrow i mbetur rimbursohet sipas rregullave të close."
+          "Secila palë e porosisë mund të hapë një, për një porosi që nuk është as e përfunduar as e anuluar. Një ankesë për porosi.",
+          "Thirrësi është nismëtari; pala tjetër njoftohet.",
+          "Klientët mund të hapin një edhe nga llogaria e tyre në dyqan."
         ]
       },
       {
-        "title": "Veprimet e adminit",
+        "title": "Statuset dhe vendimet",
+        "body": "Vetëm një administrator vendos, dhe një shënim zgjidhjeje është i detyrueshëm.",
         "items": [
-          "Start review — vetëm nga open; kalon te under review.",
-          "Resolve — nga open ose under review; kërkon shënim zgjidhjeje; mund të përfundojë porosinë dhe të lirojë escrow.",
-          "Close — nga open ose under review; rimburson escrow të mbetur sipas close.",
-          "Klienti dhe ofruesi njoftohen kur dispute mbaron."
-        ],
-        "body": "Start review, resolve dhe close kërkojnë admin. Dispute të soft-fshira nuk janë actionable."
+          "E hapur: e ngritur dhe në pritje. Nis shqyrtimin e kalon në shqyrtim.",
+          "Zgjidh (nga e hapur ose në shqyrtim) vendos për ofruesin: një dorëzim në pritje pranohet, porosia përfundon dhe pjesa e mbetur e depozitës i lirohet ofruesit.",
+          "Mbyll (nga e hapur ose në shqyrtim) vendos për klientin: porosia anulohet dhe pjesa e mbetur e depozitës rimbursohet.",
+          "Të dyja palët njoftohen për rezultatin."
+        ]
       },
       {
-        "title": "Në këtë faqe",
+        "title": "Fshirja",
         "items": [
-          "Krijo ngrit një dispute kundër një porosie me problem.",
-          "Përdorni veprimet e sheet ose rreshtit për review, resolve dhe close.",
-          "Soft delete dhe restore ndjekin lejet e listës."
+          "Vetëm një administrator mund ta fshijë një ankesë, sepse një e hapur bllokon pagesën. Mbi një ankesë të fshirë nuk mund të veprohet derisa të rikthehet."
         ]
       }
     ]

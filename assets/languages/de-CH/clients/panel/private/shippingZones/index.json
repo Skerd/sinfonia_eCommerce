@@ -5,25 +5,33 @@
   "help": {
     "ariaLabel": "Über Versandzonen",
     "title": "Über Versandzonen",
-    "overview": "Der Checkout bietet jeden Tarif aktiver Zonen, die zum Ziel passen. Der Käufer wählt einen. Eine Zone braucht einen Namen und mindestens einen Tarif. Eine Zone ohne Länder passt nicht.",
+    "overview": "Versandzonen bestimmen, welche Lieferoptionen dem Käufer im Checkout angeboten werden und was sie kosten. Eine Zone listet Länder, optional Kantone bzw. Bundesländer und Postleitzahlen, und einen oder mehrere Tarife. Der Checkout bietet jeden Tarif jeder passenden aktiven Zone an; der Käufer wählt einen.",
     "sections": [
       {
-        "title": "Wie ein Ziel passt",
-        "body": "Das Land muss zu den Ländern der Zone gehören. Kanton und Postleitzahl grenzen weiter ein.",
+        "title": "Ein Ziel zuordnen",
         "items": [
-          "Wenn Sie Kantone listen, muss der Zielkanton dabei sein. Leer bedeutet das ganze Land.",
-          "Postleitzahl Muster sind optional. Eine leere Liste trifft jede Postleitzahl. * ist ein Platzhalter, zum Beispiel 10*.",
+          "Das Zielland muss eines der Länder der Zone sein; eine Zone ohne Länder passt auf nichts.",
+          "Aufgeführte Kantone bzw. Bundesländer grenzen ein; leer deckt das ganze Land ab. Postleitzahl-Muster sind optional und nutzen * als einzigen Platzhalter.",
           "Ohne Zielland werden keine Tarife angeboten."
         ]
       },
       {
-        "title": "Wie ein Tarif berechnet wird",
-        "body": "Jeder passende Tarif erscheint mit Name, Preis, Transporteur und geschätzten Tagen. Transporteur und Tage ändern den Preis nicht.",
+        "title": "Tariftypen",
+        "body": "Jeder Tarif zeigt Namen, Preis, Versanddienst und voraussichtliche Tage. Versanddienst und Tage ändern den Preis nicht.",
         "items": [
-          "Pauschal berechnet seinen Preis. Gratis ist 0 und wird versteckt, wenn der Bestellwert ausserhalb von Minimum oder Maximum liegt.",
-          "Gewicht nutzt das Warenkorbgewicht und wird ausserhalb des Gewichtsfensters versteckt. Preis nutzt die Warensumme und das Bestellwertfenster.",
-          "Menge vergleicht die Stückzahl mit den Feldern für Mindest- und Höchstbestellwert, nicht mit dem Geldbetrag.",
-          "Ein Gratisversand Rabatt erlässt die Versandkosten im Checkout. Er entfernt die Tarife nicht aus dieser Liste."
+          "Pauschal berechnet immer seinen Preis.",
+          "Gratis berechnet nichts und wird ausgeblendet, wenn der Bestellwert ausserhalb seines Minimums oder Maximums liegt — so entsteht „gratis ab 50“.",
+          "Gewicht berechnet seinen Preis, wenn das Warenkorbgewicht innerhalb von Mindest- und Höchstgewicht liegt.",
+          "Preis berechnet seinen Preis, wenn die Waren-Zwischensumme innerhalb von Mindest- und Höchstbestellwert liegt.",
+          "Menge berechnet seinen Preis, wenn die Artikelanzahl innerhalb der Felder Mindest- und Höchstbestellwert liegt (sie werden bei diesem Typ als Stückzahlen gelesen)."
+        ]
+      },
+      {
+        "title": "Zusammen mit Rabatten und Bestellungen",
+        "items": [
+          "Ein Gratisversand-Rabatt erlässt die Gebühr, blendet die Tarife aber nicht aus.",
+          "Name, Versanddienst und Preis des gewählten Tarifs werden auf die Bestellung kopiert.",
+          "Aktivieren und Deaktivieren schalten die Zone ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]

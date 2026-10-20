@@ -5,36 +5,41 @@
   "help": {
     "ariaLabel": "Informazioni sulle analisi",
     "title": "Informazioni sulle analisi",
-    "overview": "Le analisi riassumono ricavi pagati, ordini, inventario e carrelli di questa società. È una lettura di quei dati. Su questa pagina non nasce un ordine, un prodotto o un movimento di stock.",
+    "overview": "Le analisi riassumono ricavi, ordini, prodotti, giacenza e carrelli di questa società. Leggono solo i record esistenti; nulla qui cambia un ordine, un prodotto o la giacenza. Ogni scheda richiede l’accesso in lettura ai dati che contiene.",
     "sections": [
       {
-        "title": "Cosa cambia il periodo",
-        "body": "Il periodo è 7 giorni, 30 giorni, 90 giorni o 1 anno. Non vale per ogni scheda.",
+        "title": "Il periodo",
+        "body": "Scegli 7 giorni, 30 giorni, 90 giorni o 1 anno. Non tutte le schede lo seguono.",
         "items": [
-          "Ricavi, ordini, tasse, spedizione e prodotti top seguono il periodo.",
-          "Il grafico mostra ricavo pagato e conteggio ordini pagati per bucket (giornaliero per 7g/30g, settimanale per 90g, mensile per 1a).",
-          "I badge di tendenza confrontano il periodo scelto con la finestra precedente della stessa lunghezza.",
-          "Inventario e carrelli sono la situazione attuale. Il periodo non li ricalcola."
+          "Ricavi, numero di ordini, valore medio dell’ordine, imposte, spedizione e prodotti migliori seguono il periodo.",
+          "Il grafico mostra ricavi pagati e ordini pagati al giorno per 7 e 30 giorni, a settimana per 90 giorni e al mese per un anno.",
+          "I badge di tendenza confrontano il periodo con la finestra della stessa durata immediatamente precedente.",
+          "Le schede di giacenza e carrelli mostrano la situazione attuale e non cambiano con il periodo."
         ]
       },
       {
         "title": "Denaro e valuta",
-        "body": "Gli importi non vengono mai sommati tra valute.",
+        "body": "Gli importi non vengono mai sommati tra valute diverse.",
         "items": [
-          "Il ricavo totale sono gli ordini pagati nel periodo, al netto dei rimborsi.",
-          "Tasse e spedizione sono somme di quegli stessi ordini pagati.",
-          "Usa il selettore valuta quando più di una valuta ha vendite nel periodo."
+          "I ricavi sono gli ordini pagati nel periodo, al netto dei rimborsi registrati su di essi.",
+          "Le cifre riguardano una valuta: quella scelta, o altrimenti quella con più ordini pagati nel periodo. Il selettore di valuta elenca ogni valuta con vendite.",
+          "Imposte e spedizione sono i totali di quegli stessi ordini pagati."
         ]
       },
       {
-        "title": "Ordini, prodotti, stock e carrelli",
-        "body": "Ripartizioni e elenchi usano i dati caricati per questa società.",
+        "title": "Ordini e prodotti",
         "items": [
-          "Lo stato ordine conta ogni ordine non eliminato nel periodo, non solo quelli pagati.",
-          "Lo stato prodotto è il catalogo attuale, non legato al periodo.",
-          "I prodotti top sono classificati per ricavo di riga nella valuta e periodo scelti.",
-          "I carrelli abbandonati sono inattivi da più di un'ora; quelli attivi aggiornati nell'ultima ora.",
-          "Apri Ordini prodotto, Prodotti o Inventario da un KPI quando devi agire."
+          "Lo stato degli ordini conta ogni ordine non eliminato effettuato nel periodo, pagato o no.",
+          "I prodotti migliori sono ordinati per ricavo di riga nella valuta e nel periodo scelti, con il titolo conservato sulla riga d’ordine.",
+          "Lo stato dei prodotti è il catalogo attuale suddiviso in bozza, attivo e archiviato."
+        ]
+      },
+      {
+        "title": "Giacenza e carrelli",
+        "items": [
+          "La giacenza mostra quante righe sono basse (disponibile sopra zero ma sotto il punto di riordino), quante sono esaurite (nulla disponibile) e le unità fisiche totali.",
+          "I carrelli abbandonati hanno articoli e non sono stati toccati da più di un’ora; quelli attivi sono cambiati nell’ultima ora. Gli acquirenti registrati ricevono un’e-mail di promemoria per un carrello lasciato da un giorno.",
+          "Apri Ordini di prodotti, Prodotti o Inventario da una scheda per agire su ciò che mostra."
         ]
       }
     ]

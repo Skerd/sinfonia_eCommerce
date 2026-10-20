@@ -5,25 +5,23 @@
   "help": {
     "ariaLabel": "Über Inserat-Add-ons",
     "title": "Über Inserat-Add-ons",
-    "overview": "Ein Add-on ist eine optionale Extra-Leistung beim Bestellen eines Inserats — z. B. Express oder ein zusätzliches Deliverable. Es gehört zu einem Inserat, hat eigenen Preis und optionale Extra-Lieferage und muss dieselbe Währung wie die Bestellung nutzen.",
+    "overview": "Eine Zusatzleistung ist ein optionales Extra, das ein Käufer bei der Bestellung eines Inserats hinzufügen kann, etwa Expresslieferung oder eine zusätzliche Überarbeitung. Sie gehört zu einem Inserat und addiert ihren eigenen Preis und optional zusätzliche Liefertage.",
     "sections": [
       {
-        "title": "Was Sie setzen",
+        "title": "Felder",
         "items": [
-          "Name ist, was der Käufer beim Checkout sieht.",
-          "Inserat und Anbieter sind an dieses Angebot gebunden.",
-          "Preisbetrag und Währung müssen zur Inserat- bzw. Paketwährung passen.",
-          "Lieferage werden, falls gesetzt, auf das Inserat- oder Paketfenster addiert."
+          "Inserat ist Pflicht und fest; nur der Anbieter dieses Inserats kann seine Zusatzleistungen anlegen oder löschen.",
+          "Name ist, was der Käufer sieht. Preisbetrag und Währung sind, was sie hinzufügt.",
+          "Liefertage, falls gesetzt, werden zum Lieferfenster des Inserats oder Pakets addiert."
         ]
       },
       {
-        "title": "Wann es zählt",
+        "title": "Mit Zusatzleistungen bestellen",
         "items": [
-          "Nur Add-ons dieses Inserats sind wählbar.",
-          "Währungs-Mismatch blockiert die Bestellung.",
-          "Gelöschte Add-ons sind wiederherstellbar; nach dem Löschen nicht mehr anbietbar."
-        ],
-        "body": "Add-ons werden beim Erstellen einer Bestellung aus einem Inserat gewählt."
+          "Nur Zusatzleistungen des bestellten Inserats können gewählt werden, jede einmal.",
+          "Jede Zusatzleistung muss dieselbe Währung wie die Bestellung nutzen (die des Pakets oder, ohne Paket, die des Inserats); eine Abweichung blockiert die Bestellung.",
+          "Löschen ist ein Soft Delete. Eine Zusatzleistung kann nicht wiederhergestellt werden, solange ihr Inserat gelöscht ist."
+        ]
       }
     ]
   },

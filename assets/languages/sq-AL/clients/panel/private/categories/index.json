@@ -5,15 +5,30 @@
   "help": {
     "ariaLabel": "Rreth Kategoritë",
     "title": "Rreth Kategoritë",
-    "overview": "Kategoritë grupojnë produktet në katalog. Një produkt mund të qëndrojë në më shumë se një kategori. Emri është i detyrueshëm; prindi dhe renditja janë opsionale.",
+    "overview": "Kategoritë janë pema e katalogut të produkteve. Ato grupojnë produktet në dyqan, në filtra, në zbritje dhe në rregullat e çmimeve. Një produkt mund të jetë në disa kategori. Listimet e tregut përdorin kategoritë e veta të listimeve.",
     "sections": [
       {
-        "title": "Si i përdor katalogu",
-        "body": "Slug-u ndërtohet nga emri dhe mbetet unik brenda kompanisë. Ndryshimi i emrit e rindërton slug-un. Prindi e fut kategorinë brenda një tjetre, renditja e rendit mes motrave.",
+        "title": "Pema",
         "items": [
-          "Një rregull çmimi mbi një kategori përputhet vetëm me kategorinë e parë të produktit.",
-          "Një zbritje mbi një kategori përputhet nëse ndonjë nga kategoritë e produktit është zgjedhur.",
-          "Fshirja është e butë dhe kategoria mund të rikthehet."
+          "Emri është i detyrueshëm. Slug-u ndërtohet prej tij, mbahet unik brenda kompanisë dhe rindërtohet kur ndryshon emri.",
+          "Prindi e vendos kategorinë nën një tjetër; lëreni bosh për një kategori të nivelit të parë. Një kategori nuk mund të vendoset nën veten ose nën një pasardhës të saj.",
+          "Rendi rendit kategoritë motra, më të voglat së pari."
+        ]
+      },
+      {
+        "title": "Ku kanë rëndësi kategoritë",
+        "body": "E njëjta kategori lexohet ndryshe nga funksione të ndryshme.",
+        "items": [
+          "Navigimi i dyqanit, filtrat e produkteve, kërkimet e ruajtura dhe koleksionet dinamike përdorin çdo kategori të një produkti.",
+          "Një zbritje që synon një kategori zbatohet kur është zgjedhur ndonjëra nga kategoritë e produktit.",
+          "Një rregull çmimi që synon një kategori shikon vetëm kategorinë e parë të produktit."
+        ]
+      },
+      {
+        "title": "Fshirja",
+        "items": [
+          "Fshirja është e butë dhe kategoria mund të rikthehet. Produktet mbajnë kategoritë e tjera.",
+          "Importi nga Odoo mund të krijojë dhe përditësojë kategori nga kategoritë e produkteve në Odoo."
         ]
       }
     ]

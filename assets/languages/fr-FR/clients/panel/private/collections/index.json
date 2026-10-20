@@ -58,5 +58,40 @@
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
     "deletedBy": "Supprimé par"
+  },
+  "help": {
+    "ariaLabel": "À propos des collections",
+    "title": "À propos des collections",
+    "overview": "Une collection est un groupe marchand de produits, comme « Soldes d’été » ou « Nouveautés », affiché en boutique et utilisable comme cible de remises et de règles de tarification. Elle est soit manuelle (vous choisissez les produits), soit dynamique (des règles les choisissent).",
+    "sections": [
+      {
+        "title": "Manuelle ou dynamique",
+        "body": "Le type décide d’où vient l’appartenance.",
+        "items": [
+          "Manuelle : la collection contient exactement les produits que vous ajoutez.",
+          "Dynamique : l’appartenance est calculée en direct à partir de règles, et seuls les produits actifs comptent. Une collection dynamique sans règle ne contient rien.",
+          "Toutes les conditions exige chaque règle ; au moins une exige une seule."
+        ]
+      },
+      {
+        "title": "Règles",
+        "body": "Chaque règle est un champ, un opérateur et une valeur.",
+        "items": [
+          "Étiquette, marque, fournisseur et type de produit acceptent égal, différent, contient, ne contient pas et commence par.",
+          "Catégorie accepte égal (ou contient) et différent (ou ne contient pas) par rapport aux catégories du produit.",
+          "Prix accepte égal, différent, supérieur à et inférieur à.",
+          "Niveau de stock est accepté mais pas encore appliqué ; une règle dessus est ignorée."
+        ]
+      },
+      {
+        "title": "Boutique et prix",
+        "items": [
+          "Activer et désactiver décident si la collection est visible en boutique. Une collection masquée n’est ni listée ni consultable, mais existe toujours pour les remises et les règles de tarification.",
+          "Les remises et règles de tarification visant une collection utilisent la même appartenance que celle affichée en boutique.",
+          "Nom, description, image principale, position et titre et description SEO façonnent la page de la collection.",
+          "La suppression est douce et la collection peut être restaurée."
+        ]
+      }
+    ]
   }
 }

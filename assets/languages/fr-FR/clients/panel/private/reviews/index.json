@@ -5,23 +5,28 @@
   "help": {
     "ariaLabel": "À propos des avis",
     "title": "À propos des avis",
-    "overview": "Un avis est le retour client sur une commande marketplace terminée : note, commentaire optionnel, liés à la commande et à l'annonce. Il alimente la moyenne et le nombre d'avis de l'annonce.",
+    "overview": "Un avis de la place de marché est la note et le commentaire du client sur une commande terminée. Il appartient à la commande et à son annonce, et alimente la note moyenne et le nombre d’avis de l’annonce ainsi que la réputation du prestataire.",
     "sections": [
       {
-        "title": "Ce que vous enregistrez",
+        "title": "Qui peut évaluer",
         "items": [
-          "La note est le score en étoiles.",
-          "Le commentaire est un texte libre optionnel.",
-          "Commande et annonce identifient ce qui a été évalué ; l'auteur est le client.",
-          "Créer sert à soumettre un retour après un engagement terminé."
+          "Seul le client de la commande, seulement une fois la commande terminée, et une seule fois par commande.",
+          "Annonce et auteur sont fixés par le serveur à partir de la commande et de l’appelant.",
+          "Les clients peuvent aussi évaluer depuis leur compte boutique, qui propose les commandes terminées sans avis."
         ]
       },
       {
-        "title": "Sur cette page",
+        "title": "Ce qu’il change",
         "items": [
-          "Lister, filtrer et ouvrir pour modération ou support.",
-          "Pas de workflow de publication séparé — créer et modifier gèrent l'enregistrement directement.",
-          "Le soft delete retire l'avis des vues par défaut ; restaurer le ramène."
+          "La note moyenne et le nombre d’avis de l’annonce sont recalculés depuis ses avis actifs.",
+          "Le profil du prestataire affiche la note moyenne sur toutes ses commandes, issues d’annonces comme de demandes de tâches."
+        ]
+      },
+      {
+        "title": "Modération",
+        "items": [
+          "Les avis ne sont pas modifiés après leur rédaction.",
+          "Seul un administrateur peut supprimer un avis ; la suppression est douce et restaurer rétablit la note."
         ]
       }
     ]

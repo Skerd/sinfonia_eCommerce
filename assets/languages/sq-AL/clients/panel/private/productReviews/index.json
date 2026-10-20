@@ -5,33 +5,32 @@
   "help": {
     "ariaLabel": "Rreth vlerësimeve të produkteve",
     "title": "Rreth vlerësimeve të produkteve",
-    "overview": "Një vlerësim produkti i përket një rreshti të një porosie të paguar. Nota ushqen mesataren, numrin e notave dhe numrin e vlerësimeve të produktit. Vlerësimet e marketplace janë një listë më vete dhe nuk i ndryshojnë këto numra.",
+    "overview": "Një vlerësim produkti është nota dhe komenti i një blerësi për një produkt që ka paguar. I përket një porosie të paguar dhe një produkti në të, dhe ushqen notën mesatare, numrin e notave dhe numrin e vlerësimeve të atij produkti. Vlerësimet e tregut janë listë më vete.",
     "sections": [
       {
-        "title": "Çfarë mund të krijoni",
-        "body": "Vlerësimi lidhet me një blerje të vërtetë. Nuk është një koment i lirë.",
+        "title": "Kush mund të vlerësojë çfarë",
+        "body": "Një vlerësim lidhet me një blerje reale, jo me një koment të lirë.",
         "items": [
-          "Tregon te një porosi e paguar dhe te një produkt i asaj porosie.",
-          "Vlerësuesi është klienti i porosisë. Nuk zgjidhni një person tjetër dhe nuk mund ta ndryshoni më vonë.",
-          "Porosia dhe produkti mbeten të fiksuar pasi vlerësimi ekziston."
+          "Vetëm klienti i porosisë mund ta krijojë vlerësimin; publikohet me emrin e tij.",
+          "Porosia duhet të jetë e paguar ose pjesërisht e rimbursuar, dhe produkti duhet të jetë në të.",
+          "Një vlerësim për produkt për porosi. Shitjet në arkë nuk krijojnë këtu porosi të vlerësueshme."
         ]
       },
       {
-        "title": "Çfarë mund të ndryshoni ende",
-        "body": "Teksti dhe nota mund të ndryshojnë. Lidhja me blerjen jo.",
+        "title": "Çfarë mund të ndryshojë më vonë",
+        "body": "Teksti dhe nota mund të ndryshojnë; lidhja me blerjen jo.",
         "items": [
-          "Nota, titulli dhe komenti mund të ndryshohen.",
-          "Mesatarja, numri i notave dhe numri i vlerësimeve të produktit ndjekin vlerësimet që janë ende gjallë.",
-          "Fshirja është e butë dhe vlerësimi mund të rikthehet."
+          "Nota (1 deri 5), titulli dhe komenti mund të ndryshohen.",
+          "Porosia dhe produkti janë të fiksuar pasi krijohet vlerësimi.",
+          "Nota mesatare e produktit (me një decimal), numri i notave dhe numri i vlerësimeve rillogariten nga vlerësimet aktive në çdo krijim, ndryshim note, fshirje dhe rikthim."
         ]
       },
       {
-        "title": "Ku del",
-        "body": "Moderimi bëhet këtu. Numri me të cilin shitet është te produkti.",
+        "title": "Moderimi",
         "items": [
-          "Hapni produktin për të parë shumën që përdor dyqani.",
-          "Hapni porosinë për të parë blerjen për të cilën bëhet fjalë.",
-          "Një shitje në arkë nuk bie në këtë listë. Këto vlerësime janë porosi katalogu."
+          "Vetëm një administrator mund ta fshijë një vlerësim. Fshirja është e butë; rikthimi e sjell notën përsëri.",
+          "Një vlerësim i fshirë nuk mund të rikthehet sa kohë ekziston një vlerësim aktiv për të njëjtën porosi dhe produkt.",
+          "Hapni produktin për të parë numrat që tregon dyqani, ose porosinë për të parë blerjen."
         ]
       }
     ]

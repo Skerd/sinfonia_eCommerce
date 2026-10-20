@@ -5,16 +5,34 @@
   "help": {
     "ariaLabel": "Rreth Konfigurime fiskale",
     "title": "Rreth Konfigurime fiskale",
-    "overview": "Një konfigurim fiskal është identiteti CIS shqiptar që nënshkruan kuponin e arkës: NIPT, njësi biznesi, operator, kod softueri, TCR, pikat e lidhjes dhe certifikata e nënshkrimit. Një konfigurim POS tregon te një konfigurim fiskal. Pa zgjedhje, ajo arkë nuk fiskalizon.",
+    "overview": "Një konfigurim fiskal është identiteti shqiptar CIS me të cilin një arkë nënshkruan kuponët: NIPT-i i tatimpaguesit, njësia e biznesit, operatori, kodet e softuerit dhe mirëmbajtësit, arka regjistruese (TCR), pikat fundore të CIS dhe certifikata e nënshkrimit. Një arkë tregon një konfigurim fiskal; një arkë pa të nuk fiskalizon.",
     "sections": [
       {
-        "title": "Kur fiskalizohet një shitje",
-        "body": "Pas pagesës, fiskalizimi niset kur ky konfigurim është aktiv dhe është bashkëngjitur një certifikatë. Pas një fature fiskale të suksesshme krijohet gjithmonë një e-faturë. Pagesa mbetet e vlefshme nëse CIS kthen një gabim.",
+        "title": "Çfarë futni",
         "items": [
-          "NIPT bie te TVSH e kompanisë kur fusha është bosh. Kodi TCR duhet të jetë i regjistruar para se një faturë të nënshkruhet.",
-          "Fatura fiskale shënohet si e-faturë dhe dokumenti UBL regjistrohet te CIS.",
-          "Testi dhe prodhimi zgjedhin mjedisin CIS ku i përkasin URL-të dhe certifikata.",
-          "Certifikata është një skedar PKCS#12. Një fjalëkalim bosh në ndryshim e ruan fjalëkalimin e ruajtur."
+          "Emri e identifikon konfigurimin. NIPT-i merr numrin e TVSH-së së kompanisë kur lihet bosh.",
+          "Kodi i softuerit, kodi i njësisë së biznesit dhe kodi i operatorit janë të detyrueshëm. Kodi i mirëmbajtësit është opsional.",
+          "Kodi TCR, ID-ja e brendshme TCR dhe tipi TCR (i rregullt ose automat) identifikojnë arkën regjistruese. Regjistrimi i TCR plotëson kodin dhe kërkon lejen për të ndryshuar konfigurimet fiskale.",
+          "URL-të e fiskalizimit, e-faturës dhe self-care tregojnë CIS; një URL proxy është opsionale. Mjedisi zgjedh testim ose prodhim.",
+          "Emri, adresa, qyteti dhe shteti i shitësit dhe shenja e regjistrimit në TVSH shfaqen në dokumentet fiskale.",
+          "Certifikata është skedar PKCS#12. Gjatë ndryshimit, lënia bosh e fjalëkalimit mban atë të ruajtur."
+        ]
+      },
+      {
+        "title": "Kur fiskalizohet një shitje",
+        "body": "Pas pagesës së një shitjeje në arkë, fiskalizimi nis kur konfigurimi i arkës është aktiv dhe ka certifikatë.",
+        "items": [
+          "Shitja nënshkruhet dhe dërgohet në CIS; kodet fiskale kthehen te porosia POS. Një faturë fiskale e suksesshme pasohet gjithmonë nga regjistrimi i e-faturës (UBL).",
+          "Rimbursimet në arkë nuk fiskalizohen automatikisht.",
+          "Nëse CIS dështon, pagesa përfundon gjithsesi dhe gabimi ruhet te porosia POS; mund të fiskalizohet sërish më vonë.",
+          "Kërkimi i tatimpaguesit i kërkon CIS të dhënat e një biznesi sipas NIPT-it."
+        ]
+      },
+      {
+        "title": "Aktiv dhe joaktiv",
+        "items": [
+          "Çaktivizimi ndal fiskalizimin për çdo arkë që e përdor konfigurimin, pa e shkëputur.",
+          "Fshirja është e butë dhe konfigurimi mund të rikthehet."
         ]
       }
     ]

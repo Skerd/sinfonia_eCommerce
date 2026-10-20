@@ -5,34 +5,35 @@
   "help": {
     "ariaLabel": "About Stock transfers",
     "title": "About Stock transfers",
-    "overview": "A stock transfer moves free stock from one warehouse to another. It stays a draft until it is completed or cancelled. Completing it is the moment the quantities actually move.",
+    "overview": "A stock transfer moves free stock from one warehouse to another. It is a draft until it is completed or cancelled; completing it is the moment the quantities actually move, all lines together.",
     "sections": [
       {
         "title": "The draft",
-        "body": "While it is a draft, nothing has left the source warehouse.",
+        "body": "While it is a draft, nothing has left the source warehouse and the document can still change.",
         "items": [
-          "From warehouse and to warehouse are both required, and they are different warehouses.",
-          "Each line is a product, an optional variant, and a quantity.",
-          "You can still change a draft. Only a draft can be completed or cancelled."
+          "From and to are both required and must be two different warehouses of this company.",
+          "Each line is a product, an optional variant, and a quantity. Every line must be a different, stock-tracked item; a bundle cannot be a line, move its components instead.",
+          "Only a draft can be edited, completed, or cancelled."
         ]
       },
       {
         "title": "What complete does",
-        "body": "Complete is all or nothing. One short line refuses the whole transfer.",
+        "body": "Complete is all or nothing: one short line refuses the whole transfer and nothing moves.",
         "items": [
-          "Every line leaves the source and arrives at the destination.",
-          "Only free stock moves. Units already reserved for open orders stay where they are.",
-          "If the destination has never stocked that item, the inventory row is created.",
-          "The ledger gets a transfer out on the source and a transfer in on the destination."
+          "Lines are re-checked first, because products or warehouses may have changed since the draft was saved.",
+          "Every line leaves the source and arrives at the destination. Only free stock moves; units reserved for open orders stay where they are.",
+          "If the destination has never stocked the item, its inventory row is created.",
+          "The ledger gets a transfer-out movement on the source and a transfer-in on the destination, both pointing at this transfer. Done at and done by are recorded.",
+          "Completing or cancelling needs permission to write the transfer status."
         ]
       },
       {
         "title": "After it is done",
-        "body": "A completed transfer is history. A cancelled draft never moved stock.",
+        "body": "A completed transfer is history; a cancelled draft never moved anything.",
         "items": [
-          "Cancel is only from draft, so a completed transfer is not undone from here.",
-          "The new on-hand numbers are on Inventory. The two movements are under Stock movements.",
-          "Deleting a transfer is a soft delete and it can be restored."
+          "Cancel is only from draft, so a completed transfer is not undone here. Create a transfer in the other direction instead.",
+          "A completed transfer cannot be deleted. A draft or cancelled one is a soft delete and can be restored.",
+          "The Odoo import can bring in internal transfers from Odoo; they arrive already done."
         ]
       }
     ]

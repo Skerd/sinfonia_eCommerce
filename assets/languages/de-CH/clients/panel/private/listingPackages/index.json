@@ -5,24 +5,22 @@
   "help": {
     "ariaLabel": "Über Inserat-Pakete",
     "title": "Über Inserat-Pakete",
-    "overview": "Ein Paket ist eine Preisstufe am Inserat — z. B. Basic, Standard, Premium. Bei Bestellung mit Paket ersetzen dessen Preis und Lieferage den Basispreis des Inserats.",
+    "overview": "Ein Paket ist eine Preisstufe eines Inserats, etwa Basic, Standard oder Premium. Bestellt ein Käufer mit einem Paket, ersetzen Preis und Liefertage des Pakets den Grundpreis und die Liefertage des Inserats.",
     "sections": [
       {
-        "title": "Was Sie setzen",
+        "title": "Felder",
         "items": [
-          "Name und optionale Beschreibung beschreiben die Stufe.",
-          "Preisbetrag und Währung sind der Bestellbetrag bei Wahl dieses Pakets.",
-          "Lieferage werden zum Fälligkeitsfenster (Add-ons können Tage addieren).",
-          "Anzeigereihenfolge sortiert Pakete am Inserat (niedriger zuerst).",
-          "Inserat und Anbieter sind beim Erstellen fix."
+          "Inserat ist Pflicht und fest; nur der Anbieter dieses Inserats kann seine Pakete anlegen oder löschen.",
+          "Name und Beschreibung beschreiben die Stufe. Anzeigereihenfolge sortiert Pakete auf dem Inserat, kleinere zuerst.",
+          "Preisbetrag und Währung sind, was die Bestellung berechnet. Liefertage werden zum Fälligkeitsfenster der Bestellung."
         ]
       },
       {
-        "title": "Bezug zum Inserat",
+        "title": "Mit einem Paket bestellen",
         "items": [
-          "Ein Inserat kann viele Pakete haben; keines ist nötig zum Aktivieren.",
-          "Bestellung ohne Paket nutzt Basispreis und Lieferage des Inserats.",
-          "Soft-Delete nimmt das Paket aus dem Angebot; Wiederherstellen ist möglich."
+          "Mit dem Paket gewählte Zusatzleistungen müssen die Währung des Pakets nutzen; ihre zusätzlichen Tage werden dazugezählt.",
+          "Ein Inserat braucht keine Pakete; ohne Paket gilt sein eigener Preis.",
+          "Löschen ist ein Soft Delete. Ein Paket kann nicht wiederhergestellt werden, solange sein Inserat gelöscht ist."
         ]
       }
     ]

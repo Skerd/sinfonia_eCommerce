@@ -5,36 +5,68 @@
   "help": {
     "ariaLabel": "Informazioni sugli ordini prodotto",
     "title": "Informazioni sugli ordini prodotto",
-    "overview": "Un ordine prodotto è un checkout del cliente. Il checkout scrive l'ordine. Questa pagina non ne crea uno. Tre stati si muovono da soli: l'ordine, il pagamento e l'evasione.",
+    "overview": "Un ordine di prodotti è un acquisto di un cliente nel negozio, o una vendita in cassa duplicata per la contabilità. Il checkout lo scrive; questa pagina non ne crea mai. Ogni ordine ha tre stati che si muovono separatamente — l’ordine, il pagamento e l’evasione — più una cronologia di ogni passo e di chi lo ha fatto.",
     "sections": [
       {
-        "title": "I tre stati",
-        "body": "Leggili insieme. Un ordine può essere pagato e ancora non evaso, oppure spedito e rimborsato solo in parte.",
+        "title": "Come nasce un ordine",
+        "body": "L’ordine è la fine del checkout, non l’inizio.",
         "items": [
-          "Lo stato ordine segue in attesa, confermato, in lavorazione, spedito, consegnato, annullato, rimborsato.",
-          "Lo stato pagamento segue non pagato, autorizzato, pagato, rimborsato in parte, rimborsato, annullato.",
-          "Lo stato evasione segue non evaso, evaso in parte, evaso, reso."
+          "Il checkout prima ricalcola il carrello dal catalogo attuale, poi riserva la giacenza di ogni riga gestita prima di incassare. Se una riga non può essere coperta, il checkout si ferma e nulla viene riservato.",
+          "I pagamenti con carta creano l’ordine quando il pagamento riesce, alla conferma dell’acquirente o dal webhook di pagamento, quello che arriva prima. L’ordine viene scritto una sola volta.",
+          "Contrassegno e bonifico creano un ordine in attesa, non pagato. Il personale lo conferma e lo segna come pagato quando arrivano i soldi.",
+          "Un checkout mai completato scade dopo il suo termine; un processo orario libera la giacenza riservata. Se il pagamento è comunque andato a buon fine, il processo crea invece l’ordine.",
+          "Nel negozio piattaforma, un carrello con più venditori diventa un ordine per ogni società venditrice."
         ]
       },
       {
-        "title": "Cosa fanno le azioni",
-        "body": "Conferma, segna in lavorazione, spedisci, segna pagato, annulla e rimborsa sono separate. Ognuna è rifiutata fuori dal suo stato.",
+        "title": "I tre stati",
+        "body": "Leggili insieme. Un ordine può essere pagato e non evaso, o spedito e parzialmente rimborsato.",
         "items": [
-          "Conferma parte solo da in attesa. Riconosce l'ordine, il passo abituale per il contrassegno o un bonifico, e avvisa il cliente.",
-          "Segna in lavorazione parte solo da confermato.",
-          "Spedisci parte da confermato o in lavorazione. Crea un'evasione per le quantità ancora aperte, toglie quelle unità dallo stock e imposta lo stato dell'ordine dalle spedizioni. Puoi registrare corriere, numero di tracking e link.",
-          "Segna pagato registra un pagamento offline, solo finché il pagamento è non pagato e l'ordine non è annullato o rimborsato. Un ordine in attesa viene confermato insieme. Gift card e download acquistati vengono emessi. Lo stock resta trattenuto fino alla spedizione.",
-          "Annulla è bloccato quando l'ordine è spedito, consegnato, annullato o rimborsato. Un ordine pagato o rimborsato in parte va rimborsato prima. Annulla libera lo stock ancora trattenuto e restituisce il credito negozio di una gift card.",
-          "Rimborsa vale per un ordine pagato o rimborsato in parte. Un rimborso completo restituisce anche quel credito, disattiva le gift card emesse, fa scadere i download e libera lo stock ancora trattenuto."
+          "Stato dell’ordine: in attesa, confermato, in lavorazione, spedito, consegnato, annullato, rimborsato.",
+          "Stato del pagamento: non pagato, autorizzato, pagato, parzialmente rimborsato, rimborsato, stornato.",
+          "Stato di evasione: non evaso, parzialmente evaso, evaso, reso. Deriva dalle spedizioni dell’ordine.",
+          "Anche spedito e consegnato sono derivati: spedito quando ogni riga è partita, consegnato quando ogni spedizione non fallita è consegnata."
+        ]
+      },
+      {
+        "title": "Azioni di riga",
+        "body": "Ogni azione viene rifiutata fuori dal suo stato previsto. Le azioni di stato richiedono il permesso di scrivere lo stato dell’ordine; quelle sui soldi il permesso di scrivere lo stato del pagamento.",
+        "items": [
+          "Conferma è possibile solo da in attesa. Conferma l’ordine e avvisa il cliente.",
+          "Metti in lavorazione è possibile solo da confermato. Significa che l’ordine è in preparazione.",
+          "Spedisci è possibile da confermato o in lavorazione. Crea una spedizione per tutte le quantità non ancora spedite, toglie quelle unità dalla giacenza e registra corriere, numero e link di tracciamento inviati al cliente.",
+          "Segna come pagato registra un pagamento offline con un riferimento facoltativo, solo finché il pagamento è non pagato e l’ordine non è annullato né rimborsato. Un ordine in attesa viene confermato contestualmente, e carte regalo e download acquistati con l’ordine vengono emessi.",
+          "Annulla è bloccato quando l’ordine è spedito, consegnato, annullato o rimborsato, e un ordine pagato deve prima essere rimborsato. Libera la giacenza ancora riservata e restituisce il credito pagato con una carta regalo.",
+          "Rimborsa riguarda un ordine pagato o parzialmente rimborsato, in tutto o per un importo. Un pagamento con carta viene rimborsato tramite il gateway; un pagamento offline viene registrato come rimborso manuale."
+        ]
+      },
+      {
+        "title": "Cosa annulla un rimborso totale",
+        "body": "Un rimborso parziale muove solo denaro. Il rimborso di tutto il resto annulla anche ciò che l’ordine ha emesso.",
+        "items": [
+          "Il credito usato sull’ordine torna sulla carta regalo.",
+          "Le carte regalo emesse dall’ordine vengono disattivate e i suoi link di download scadono.",
+          "La giacenza ancora riservata per righe non spedite viene liberata. Le unità già spedite tornano solo tramite una richiesta di reso ricevuta.",
+          "L’ordine diventa rimborsato. Una vendita in cassa non si rimborsa qui: si rimborsa in cassa, così cassetto e giacenza restano allineati."
+        ]
+      },
+      {
+        "title": "Messaggi al cliente e cronologia",
+        "body": "L’acquirente viene informato a ogni passo importante per lui, dopo che la modifica è salvata.",
+        "items": [
+          "Conferma, spedizione (con tracciamento), consegna, pagamento, annullamento, rimborso e decisioni sui resi inviano ciascuno una notifica e un’e-mail al cliente.",
+          "Ogni azione aggiunge una voce alla cronologia con l’ora, il membro del personale e l’eventuale nota, riferimento o numero di tracciamento.",
+          "Le note sono visibili al cliente; le note interne sono solo per il personale."
         ]
       },
       {
         "title": "Dove sta il resto del lavoro",
-        "body": "Questo elenco è l'ordine. Spedizione e reso hanno pagine proprie.",
+        "body": "L’ordine è l’intestazione. Spedizioni e resi sono schede a sé.",
         "items": [
-          "Ogni spedizione è una riga sotto Evasioni, con stato in attesa, spedita, consegnata o non riuscita.",
-          "Un reso, un cambio o un rimborso è una riga sotto Richieste di reso. Completarla può rimborsare questo ordine.",
-          "L'eliminazione è logica e l'ordine può essere ripristinato."
+          "Ogni spedizione è una riga sotto Adempimenti, con il proprio stato in attesa, spedita, consegnata o fallita.",
+          "Una richiesta di reso, cambio o rimborso è una riga sotto Richieste di reso. Completarla può rimborsare questo ordine.",
+          "Le vendite in cassa compaiono qui già consegnate e pagate, segnate come vendite POS, con un indirizzo di ritiro in negozio.",
+          "Eliminare un ordine è un’eliminazione logica e può essere ripristinato."
         ]
       }
     ]

@@ -5,15 +5,22 @@
   "help": {
     "ariaLabel": "À propos de la connexion Odoo",
     "title": "À propos de la connexion Odoo",
-    "overview": "Un serveur Odoo par société. L'import utilise cette connexion en JSON-RPC depuis le serveur API.",
+    "overview": "La connexion Odoo enregistre comment cette société joint son serveur Odoo. Il y a une connexion par société ; l’import Odoo l’utilise pour lire les données en JSON-RPC depuis le serveur d’API.",
     "sections": [
       {
-        "title": "Ce qu'il faut saisir",
-        "body": "Utilisez la même URL, base et identifiant que dans Odoo, plus une clé API ou le mot de passe de cet utilisateur.",
+        "title": "Quoi saisir",
+        "body": "Utilisez la même URL, la même base et le même identifiant qui fonctionnent dans Odoo.",
         "items": [
-          "L'URL est l'origine Odoo, par exemple https://your-company.odoo.com.",
-          "JSON-RPC authenticate accepte une clé API ou le mot de passe du compte pour cet identifiant. Préférez une clé API lorsque Odoo en fournit une.",
-          "Laissez le secret vide lors d'un nouvel enregistrement pour conserver la valeur déjà stockée."
+          "L’URL est l’adresse Odoo, par exemple https://your-company.odoo.com. La base est le nom de la base de données Odoo.",
+          "Le nom d’utilisateur est l’identifiant Odoo. Le secret est une clé d’API (de préférence) ou le mot de passe de cet utilisateur.",
+          "Le secret est obligatoire la première fois et stocké chiffré. Laissez-le vide lors d’un nouvel enregistrement pour garder celui déjà stocké."
+        ]
+      },
+      {
+        "title": "À quoi sert la connexion",
+        "items": [
+          "Seul l’import lit depuis Odoo ; rien n’est jamais réécrit dans Odoo.",
+          "L’import s’authentifie d’abord, donc une URL, une base ou un secret erronés apparaissent comme une erreur à ce moment-là."
         ]
       }
     ]

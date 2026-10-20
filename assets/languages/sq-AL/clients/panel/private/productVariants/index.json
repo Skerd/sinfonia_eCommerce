@@ -5,15 +5,36 @@
   "help": {
     "ariaLabel": "Rreth Variantet e produkteve",
     "title": "Rreth Variantet e produkteve",
-    "overview": "Një variant është një SKU i shitshëm i një produkti. Shporta dhe arka llogarisin çmimin e variantit kur ai është zgjedhur. Shitet vetëm një variant aktiv. Produkti është i detyrueshëm.",
+    "overview": "Një variant është një SKU i shitshëm i një produkti të ndryshueshëm, i përcaktuar nga kombinimi i vlerave të atributeve (për shembull E kuqe / XL). Shporta dhe arka tarifojnë çmimin e vetë variantit kur ka. Vetëm një variant aktiv mund të shitet.",
     "sections": [
       {
-        "title": "Çmimi, identiteti dhe stoku",
-        "body": "Çdo variant ruan SKU, barkod, çmim, çmim krahasues, kosto, peshë dhe kombinimin e atributeve. Pa çmim varianti përdoret çmimi i produktit.",
+        "title": "Identiteti",
         "items": [
-          "Aktivizoni ndjekjen e inventarit kur ai SKU duhet të numërohet. Pagesa e rezervon variantin në një magazinë që e mban.",
-          "Një rresht pa inventar trajtohet si i pandjekur dhe nuk rezervohet.",
-          "Një variant joaktiv hiqet nga shporta në çmimin tjetër."
+          "Produkti është i detyrueshëm dhe i përhershëm: rreshtat e stokut dhe rreshtat e porosive varen bashkë nga produkti dhe varianti.",
+          "Kombinimi i atributeve është grupi i çifteve atribut-vlerë. Dy variante aktive të një produkti nuk mund të ndajnë një kombinim.",
+          "SKU dhe barkodi e identifikojnë; një barkod varianti i skanuar shton në arkë pikërisht atë variant."
+        ]
+      },
+      {
+        "title": "Çmimi, pesha, mediat",
+        "items": [
+          "Çmimi, çmimi i krahasimit dhe kostoja funksionojnë si te produkti. Një variant pa çmim shitet me çmimin e produktit.",
+          "Pesha, përmasat, imazhi kryesor dhe rendi i shfaqjes e përshkruajnë variantin në zgjedhësin e dyqanit."
+        ]
+      },
+      {
+        "title": "Stoku",
+        "items": [
+          "Një variant i një produkti të ndjekur ndiqet në stok, përveç kur ndjekja është e çaktivizuar te varianti. Atëherë çdo magazinë ka nevojë për një rresht inventari për këtë variant.",
+          "Pa rresht në një magazinë aktive, checkout-i e refuzon variantin si jashtë stoku."
+        ]
+      },
+      {
+        "title": "Statusi dhe produkti",
+        "items": [
+          "Variantet aktive shiten; një variant joaktiv hiqet nga shportat në llogaritjen e radhës së çmimeve.",
+          "Lista e varianteve të produktit, numri i tyre dhe shenja «ka variante» ndjekin variantet aktive; një produkt me të paktën një variant mund të publikohet pa çmim të vetin.",
+          "Fshirja është e butë dhe varianti mund të rikthehet."
         ]
       }
     ]

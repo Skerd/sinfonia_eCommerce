@@ -5,36 +5,49 @@
   "help": {
     "ariaLabel": "À propos des annonces",
     "title": "À propos des annonces",
-    "overview": "Une annonce est l'offre d'un prestataire — service ou prestation avec catégorie, médias, prix et packages ou extras optionnels. Seule une annonce active est commandable. Le statut ne change pas par une édition ordinaire ; activer et désactiver sont des actions dédiées.",
+    "overview": "Une annonce est l’offre de service d’un prestataire sur la place de marché : ce qu’il fait, dans quelle catégorie et à quel endroit, à quel prix, avec des packages et modules complémentaires facultatifs. Les acheteurs commandent depuis des annonces actives. Le statut est brouillon, actif ou inactif et ne change que par les actions activer et désactiver.",
     "sections": [
       {
         "title": "Statut",
         "items": [
-          "Brouillon est le défaut pendant que vous construisez titre, catégorie, médias et prix.",
-          "Activer exige un prix et une devise. Sans eux l'annonce n'est pas commandable.",
-          "Désactiver retire une annonce active sans la supprimer.",
-          "Seul le prestataire de l'annonce (ou un admin) peut activer ou désactiver."
-        ],
-        "body": "Le statut est brouillon, actif ou inactif. PATCH ne peut pas le changer."
+          "Brouillon est le statut par défaut pendant la construction de l’offre. Personne ne peut la commander.",
+          "Activer la rend commandable. Cela exige un prix et une devise, car une commande sans package est calculée à partir d’eux.",
+          "Désactiver la met hors ligne sans la supprimer. Traiter un signalement contre elle peut aussi la désactiver.",
+          "Seul le prestataire de l’annonce, ou un administrateur, peut activer ou désactiver."
+        ]
       },
       {
         "title": "Ce que vous configurez",
         "items": [
-          "Titre, description, catégorie, tags, FAQ et exigences décrivent l'offre.",
-          "Le type de prix est fixe ou horaire. Prix et devise alimentent les commandes depuis le prix de base sans package.",
-          "Les jours de livraison définissent la fenêtre d'échéance par défaut depuis le prix de base.",
-          "L'image principale est obligatoire ; galeries et lieu (pays / région / ville) sont optionnels.",
-          "Packages et extras sont des enregistrements séparés ; ils remplacent ou étendent prix et délai à la sélection."
+          "Titre, description, catégorie, étiquettes, FAQ et exigences envers l’acheteur décrivent l’offre. La catégorie est une catégorie d’annonces, pas une catégorie de produits.",
+          "Le type de tarification est fixe ou horaire. Prix et devise sont le prix de base ; les jours de livraison fixent l’échéance par défaut d’une commande.",
+          "L’image principale est obligatoire ; les galeries d’images et de vidéos sont facultatives.",
+          "Pays, région et ville situent l’offre. Ville et catégorie décident des demandes de tâches dont le prestataire est informé.",
+          "Le prestataire est l’utilisateur qui vend : vous-même, ou un autre utilisateur de la même société."
         ]
       },
       {
-        "title": "Connexions",
+        "title": "Comment une commande en est calculée",
+        "body": "Un acheteur commande une annonce active, éventuellement avec un package et des modules complémentaires.",
         "items": [
-          "Des commandes peuvent être créées depuis une annonce active (package et extras optionnels).",
-          "Les promotions augmentent la visibilité sur une fenêtre de dates.",
-          "Les signalements permettent de signaler une annonce ; les résoudre peut la désactiver.",
-          "Les avis alimentent la note moyenne et le nombre d'avis sur l'annonce.",
-          "La suppression est un soft delete et peut être restaurée."
+          "Sans package : prix et jours de livraison de l’annonce. Avec un package : prix et jours de livraison du package à la place.",
+          "Chaque module complémentaire ajoute son prix et ses jours de livraison supplémentaires. Les modules doivent appartenir à cette annonce et utiliser la devise de la commande.",
+          "Un prestataire ne peut pas commander sa propre annonce."
+        ]
+      },
+      {
+        "title": "Visibilité et réputation",
+        "items": [
+          "Une promotion en cours (mise en avant ou sponsorisée) place l’annonce en tête du tri recommandé de la boutique pendant ses dates.",
+          "Les avis sur les commandes terminées donnent à l’annonce sa note moyenne et son nombre d’avis.",
+          "Les utilisateurs peuvent signaler une annonce ; les administrateurs examinent les signalements dans la liste des signalements."
+        ]
+      },
+      {
+        "title": "Qui voit quoi",
+        "items": [
+          "Les administrateurs voient et gèrent toutes les annonces de la société. Les autres utilisateurs ne modifient que les annonces qu’ils proposent.",
+          "La suppression est douce et l’annonce peut être restaurée. Ses packages et modules ne peuvent pas être restaurés tant que l’annonce est supprimée."
         ]
       }
     ]

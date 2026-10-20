@@ -5,34 +5,44 @@
   "help": {
     "ariaLabel": "Über Lagerbewegungen",
     "title": "Über Lagerbewegungen",
-    "overview": "Das ist das Lagerjournal. Jede Änderung der Menge auf Lager schreibt eine Zeile, und die Zeile bleibt. Die Seite ist nur lesbar: hier wird nichts von Hand erfasst.",
+    "overview": "Das ist das Lagerjournal. Jede Änderung einer Menge „an Lager“ schreibt hier eine Zeile, und Zeilen werden nie bearbeitet oder entfernt. Es beantwortet „warum hat dieses Lager so viel?“ — jede Zeile zeigt die Änderung, die Menge vorher und nachher, den Grund, wer sie ausgeführt hat und was sie ausgelöst hat.",
     "sections": [
       {
         "title": "Was eine Zeile festhält",
-        "body": "Die Zeile ist die Änderung, nicht der aktuelle Bestand. Der aktuelle Bestand bleibt auf der Lagerzeile.",
+        "body": "Die Zeile ist die Änderung, nicht der aktuelle Bestand. Der aktuelle Bestand steht auf der Bestandszeile.",
         "items": [
-          "Sie hält Produkt, die Variante falls vorhanden, das Lager und die Lagerzeile, zu der sie gehört.",
-          "Menge ist die Änderung. Menge davor und danach sind der Bestand um diese Änderung.",
-          "Der Grund sagt warum. Notiz, Belegnummer, Charge, Ablauf und Stückkosten stehen da, wenn die Aktion sie hatte."
+          "Produkt, Variante falls vorhanden, Lager und die Bestandszeile, zu der sie gehört.",
+          "Menge ist die vorzeichenbehaftete Änderung: positiv rein, negativ raus. Menge vorher und nachher ist „an Lager“ um diese Änderung herum.",
+          "Ausgeführt von ist der Benutzer, und die Referenz zeigt auf den Auslöser: eine Bestellung, eine Sendung, eine Retourenanfrage, eine Umlagerung, eine Inventur, einen Kassenverkauf oder die Bestandszeile selbst.",
+          "Lieferant, Belegnummer, Belegdateien, Charge, Ablaufdatum und Stückkosten erscheinen, wenn die auslösende Aktion sie hatte."
         ]
       },
       {
         "title": "Die Gründe",
-        "body": "Den Grund setzt die Aktion. Auf dieser Seite wählen Sie ihn nicht.",
+        "body": "Der Grund wird von dem gesetzt, was die Änderung ausgelöst hat. Sie wählen ihn hier nie.",
         "items": [
-          "Wareneingang und Anfangsbestand sind Ware, die hereinkommt. Verkauf ist Ware, die mit einer Bestellung oder einem Kassenverkauf geht.",
-          "Rückgabe ist Ware, die zurückgelegt wird, wenn eine Rückgabeanfrage empfangen wird.",
-          "Transfer rein und Transfer raus sind die beiden Seiten eines abgeschlossenen Lagertransfers.",
-          "Anpassung ist eine Inventur. Schaden und Abschreibung nehmen Ware ohne Verkauf heraus."
+          "Anfangsbestand ist die Startmenge einer neuen Bestandszeile. Auffüllen ist erhaltene Ware.",
+          "Verkauf ist Ware, die mit einer versendeten Bestellung oder einem Kassenverkauf hinausgeht.",
+          "Rückgabe ist Ware, die durch eine empfangene Retourenanfrage oder eine Kassenerstattung zurückkommt.",
+          "Umlagerung aus und Umlagerung ein sind die beiden Seiten einer abgeschlossenen Umlagerung.",
+          "Korrektur ist eine Inventur oder eine manuelle Korrektur. Schaden und Abschreibung nehmen Ware ohne Verkauf heraus."
         ]
       },
       {
-        "title": "Warum Sie sie nicht bearbeiten können",
-        "body": "Das Journal ist die Geschichte. Eine Zeile zu ändern würde Vorher und Nachher verfälschen.",
+        "title": "Bestand bewerten",
+        "body": "Eingehende Zeilen tragen die Kosten; ausgehende übernehmen sie.",
         "items": [
-          "Zeilen können auf dieser Seite nicht erstellt, bearbeitet oder gelöscht werden.",
-          "Um Bestand zu ändern, nutzen Sie Lagerbestand, einen Transfer, eine Inventur, einen Versand oder eine Rückgabe.",
-          "Öffnen Sie die Zeile, um zu sehen, auf welches Produkt, welches Lager und welchen Bezug die Bewegung zeigt."
+          "Ein Auffüllen speichert die eingegebenen Stückkosten, Charge und Ablaufdatum.",
+          "Eine manuelle Ausbuchung übernimmt Stückkosten und Ablaufdatum der letzten eingehenden Zeile derselben Charge (oder der letzten eingehenden Zeile überhaupt), damit Abschreibungen bewertet sind."
+        ]
+      },
+      {
+        "title": "Warum Sie es nicht bearbeiten können",
+        "body": "Das Journal ist die Historie. Eine geänderte Zeile würde Vorher und Nachher falsch machen.",
+        "items": [
+          "Zeilen können hier von niemandem angelegt, bearbeitet oder gelöscht werden.",
+          "Um Bestand zu ändern, nutzen Sie Bestand (Auffüllen, Ausbuchen), eine Umlagerung, eine Inventur, eine Bestellsendung oder eine Retoure.",
+          "Filtern Sie nach Produkt, Lager, Grund oder Datum, um einen Artikel zu prüfen; die Bestandszeile öffnet auch ihre eigene Historie."
         ]
       }
     ]

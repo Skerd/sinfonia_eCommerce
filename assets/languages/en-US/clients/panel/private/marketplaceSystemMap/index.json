@@ -5,22 +5,28 @@
   "help": {
     "ariaLabel": "About Marketplace System Map",
     "title": "About Marketplace System Map",
-    "overview": "This map is a living diagram of the marketplace module: models, how money and work move, and what the product can do. It does not change data — it explains the domain so operators and builders share the same picture.",
+    "overview": "This map is a read-only picture of the services marketplace: its models, how work and money move between customer and provider, and what the module offers. It changes no data.",
     "sections": [
       {
-        "title": "The three tabs",
+        "title": "Model graph",
         "items": [
-          "Model graph — entities and how they reference each other (listings, orders, bids, escrow, and so on).",
-          "How it works — flows such as listing → order, task request → bid → award, and dispute / escrow outcomes.",
-          "Capabilities — what the module supports today at a product level."
+          "Listings with their packages, add-ons, flags, and promotions; task requests and bids; orders with deliveries, milestones, revisions, bookings, disputes, and reviews; provider profiles; and the finance escrow ledger.",
+          "Click a node for its description, key fields, API path, actions, and panel page."
         ]
       },
       {
-        "title": "How to read it",
+        "title": "How it works",
         "items": [
-          "Pan and zoom the canvas. Click a node for a short description.",
-          "Use it when onboarding staff, designing permissions, or deciding where a new feature should live.",
-          "Operational work still happens on the list pages under Marketplace (listings, orders, disputes, and the rest)."
+          "Buy a listing and task-to-bid-to-order show how an order starts.",
+          "Order lifecycle (deliveries, revisions, milestones, auto-accept after 3 days, release minus the fee) and disputes → refund show how it ends.",
+          "Moderation & promotion covers reports and boosts; provider onboarding covers profile setup and Stripe Connect payouts."
+        ]
+      },
+      {
+        "title": "Capabilities",
+        "items": [
+          "What the marketplace supports today, its API areas, scheduled jobs, and storefront routes.",
+          "Day-to-day work happens on the Marketplace pages; use the map to onboard staff or plan permissions."
         ]
       }
     ]

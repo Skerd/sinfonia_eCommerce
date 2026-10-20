@@ -5,35 +5,36 @@
   "help": {
     "ariaLabel": "Rreth numërimeve të stokut",
     "title": "Rreth numërimeve të stokut",
-    "overview": "Një numërim regjistron çfarë është vërtet në raft në një magazinë, pastaj e korrigjon sasinë në dorë. Mbetet draft derisa të zbatohet ose të anulohet. Zbatimi është çasti kur numrat ndryshojnë.",
+    "overview": "Një numërim stoku regjistron atë që është realisht në raft në një magazinë, pastaj korrigjon sasinë në gjendje sipas saj. Mbetet draft ndërsa numëroni; zbatimi është momenti kur ndryshojnë numrat.",
     "sections": [
       {
         "title": "Drafti",
-        "body": "Numërimi nuk e ndryshon stokun. Zbatimi po.",
+        "body": "Numërimi nuk ndryshon asgjë. Zbatimi po.",
         "items": [
-          "Numërimi është për një magazinë.",
-          "Çdo rresht është një produkt, një variant opsional, çfarë pritej dhe çfarë u numërua.",
-          "Një sasi e numëruar bosh do të thotë se ai rresht nuk është numëruar. Zbatimi e lë.",
-          "Vetëm një draft mund të zbatohet ose të anulohet."
+          "Një numërim është për një magazinë dhe mbetet numërim i asaj magazine.",
+          "Çdo rresht është një produkt, një variant opsional, sasia e pritur kur u shtua rreshti dhe sasia e numëruar. Rreshtat duhet të jenë artikuj të ndryshëm të ndjekur në stok; një paketë produktesh nuk mund të jetë rresht.",
+          "Lëreni bosh sasinë e numëruar për një artikull që nuk e numëruat; zbatimi e lë siç është.",
+          "Vetëm një draft mund të ndryshohet, zbatohet ose anulohet."
         ]
       },
       {
         "title": "Çfarë bën zbatimi",
-        "body": "Diferenca merret kundrejt sasisë në dorë tani, jo kundrejt fotografisë së fillimit të numërimit.",
+        "body": "Diferenca llogaritet ndaj sasisë në gjendje në momentin e zbatimit, jo ndaj pamjes së pritur.",
         "items": [
-          "Zbatimi e vendos sasinë në dorë te sasia e numëruar për çdo rresht që ka numërim.",
-          "Shitjet e dërguara gjatë numërimit nuk zhbëhen, sepse diferenca përdor stokun në çastin e zbatimit.",
-          "Çdo ndryshim shkruan një lëvizje rregullimi.",
-          "Një numërim nën atë që mbahet për porosi pranohet. Disponueshmëria mund të shkojë negative. Rafti është siç është."
+          "Për çdo rresht të numëruar, sasia në gjendje bëhet sasia e numëruar. Prandaj shitjet e dërguara gjatë numërimit nuk zhbëhen.",
+          "Një artikull që magazina nuk e ka mbajtur kurrë merr një rresht të ri inventari.",
+          "Çdo ndryshim shkruan një lëvizje rregullimi me referencë te ky numërim. Regjistrohen kur u zbatua dhe nga kush.",
+          "Një numërim nën sasinë e rezervuar për porosi pranohet: rafti është ai që është, dhe i disponueshmi e tregon mungesën si negative.",
+          "Zbatimi ose anulimi kërkon lejen për të shkruar statusin e numërimit."
         ]
       },
       {
-        "title": "Pasi zbatohet",
-        "body": "Numërimi mbetet regjistrimi i asaj që u numërua. Stoku jeton te rreshti i inventarit.",
+        "title": "Pas zbatimit",
+        "body": "Numërimi mbetet si dëshmi e asaj që u gjet.",
         "items": [
-          "Anulimi niset vetëm nga drafti. Një numërim i zbatuar nuk kthehet mbrapsht nga kjo faqe.",
-          "Shikoni Inventarin për sasinë e re në dorë dhe Lëvizjet e inventarit për rregullimet.",
-          "Fshirja është e butë dhe numërimi mund të rikthehet."
+          "Anulo është i mundur vetëm nga draft. Një numërim i zbatuar nuk zhbëhet këtu; numëroni sërish.",
+          "Një numërim i zbatuar nuk mund të fshihet. Një draft ose një i anuluar fshihet butë dhe mund të rikthehet.",
+          "Shihni Inventarin për sasinë e re në gjendje dhe Lëvizjet e stokut për rregullimet."
         ]
       }
     ]

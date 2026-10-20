@@ -5,25 +5,30 @@
   "help": {
     "ariaLabel": "Rreth promocioneve",
     "title": "Rreth promocioneve",
-    "overview": "Një promocion nxjerr në pah një listim si featured ose sponsored për një dritare fillim–mbarim. Statusi i ciklit është active, paused ose stopped — me veprime, jo me edit të zakonshëm.",
+    "overview": "Një promovim e nxjerr në pah një listim, të theksuar ose të sponsorizuar, për një dritare nga fillimi deri në mbarim. Është në vazhdim sa kohë cikli i jetës është aktiv dhe dita e sotme bie brenda datave. Cikli i jetës është aktiv, në pauzë ose i ndaluar dhe ndryshohet vetëm me veprime.",
     "sections": [
       {
-        "title": "Cikli i jetës",
+        "title": "Krijimi",
         "items": [
-          "Active — promocioni është live brenda dritares së datave.",
-          "Pause — vetëm nga active; boost mbahet pa e mbyllur fushatën.",
-          "Resume — vetëm nga paused, dhe vetëm nëse endAt është ende në të ardhmen.",
-          "Stop — e mbyll përgjithmonë me arsye stop. Nuk rivendoset."
+          "Ofruesi i listimit, ose një administrator, promovon një listim aktiv.",
+          "Tipi është i theksuar ose i sponsorizuar. Fillimi dhe mbarimi kufizojnë kur vlen promovimi."
         ]
       },
       {
-        "title": "Pronësia",
+        "title": "Cikli i jetës",
+        "body": "Pauza, vazhdimi dhe ndalimi kërkojnë pronësinë e listimit, ose administrator.",
         "items": [
-          "Lloji është featured ose sponsored.",
-          "Fillimi dhe mbarimi kufizojnë boost.",
-          "Promocionet e soft-fshira nuk janë actionable derisa të restaurohen."
-        ],
-        "body": "Pause, resume dhe stop kërkojnë pronësi të listimit (ose admin)."
+          "Pauza është e mundur vetëm nga aktiv: promovimi ndalet pa e mbyllur fushatën.",
+          "Vazhdo është i mundur vetëm nga në pauzë, dhe vetëm sa kohë data e mbarimit është në të ardhmen.",
+          "Ndalo e mbyll promovimin përgjithmonë me një arsye ndalimi; nuk mund të vazhdojë."
+        ]
+      },
+      {
+        "title": "Efekti",
+        "items": [
+          "Në renditjen e rekomanduar të dyqanit, listimet me promovim në vazhdim dalin të parat, më të rejat së pari, pastaj të tjerat.",
+          "Promovimet e fshira nuk mund të vihen në pauzë, të vazhdohen ose të ndalen derisa të rikthehen."
+        ]
       }
     ]
   },

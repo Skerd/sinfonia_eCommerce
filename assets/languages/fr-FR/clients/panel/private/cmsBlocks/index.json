@@ -5,15 +5,31 @@
   "help": {
     "ariaLabel": "À propos des blocs CMS",
     "title": "À propos des blocs CMS",
-    "overview": "Les blocs CMS sont les sections de la vitrine, comme une bannière, un carrousel ou une annonce. La boutique charge les blocs actifs dont les dates incluent maintenant, ordonnés par position de la plus basse à la plus haute. Type et titre sont obligatoires.",
+    "overview": "Les blocs CMS sont les sections de la page d’accueil de votre boutique, comme une bannière principale, un carrousel ou une barre d’annonce. La boutique affiche les blocs actifs dont les dates incluent maintenant, dans l’ordre des positions. Type et titre sont obligatoires ; choisir un type affiche les champs qu’il requiert.",
     "sections": [
       {
-        "title": "Comment la vitrine les choisit",
-        "body": "La position est l'ordre d'affichage. Réordonner sur cette page écrit ces positions. Un bloc hors de son début ou de sa fin reste enregistré mais n'est pas envoyé à la boutique.",
+        "title": "Types",
         "items": [
-          "Le type choisit la mise en page : bannière, carrousel, collection en vedette, tendances, meilleures ventes, vente flash, annonce, HTML personnalisé, vidéo, grille, vitrine de catégories ou section promotionnelle.",
-          "La visibilité peut limiter ordinateur, mobile et tablette, et lister des régions. Un nouveau bloc vaut pour les trois appareils.",
-          "La suppression est logique et le bloc peut être restauré."
+          "Bannière principale, carrousel et section promotionnelle montrent des images avec un titre et un lien d’appel à l’action.",
+          "Collection mise en avant, tendances, meilleures ventes, vente flash, grille et vitrine de catégories montrent des produits d’une collection ou de catégories, jusqu’à une limite.",
+          "Barre d’annonce montre un court message avec un lien facultatif. Vidéo intègre une URL de vidéo.",
+          "HTML personnalisé affiche votre propre balisage ; il est nettoyé avant que la boutique l’affiche."
+        ]
+      },
+      {
+        "title": "Quand et où il s’affiche",
+        "items": [
+          "Début et fin bornent quand le bloc est affiché. En dehors, il reste enregistré mais n’est pas envoyé à la boutique.",
+          "La position est l’ordre sur la page ; Réordonner réécrit les positions dans l’ordre que vous choisissez.",
+          "La visibilité peut limiter le bloc à ordinateur, tablette ou mobile, et à des régions. Les nouveaux blocs s’affichent sur tous les appareils.",
+          "La boutique plateforme qui liste tous les vendeurs n’utilise les blocs d’aucun vendeur."
+        ]
+      },
+      {
+        "title": "Statut",
+        "items": [
+          "Activer et désactiver affichent ou masquent le bloc sans le supprimer.",
+          "La suppression est douce et le bloc peut être restauré."
         ]
       }
     ]

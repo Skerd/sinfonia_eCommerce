@@ -4,33 +4,63 @@
   "help": {
     "ariaLabel": "Über Kasse",
     "title": "Über Kasse",
-    "overview": "Die Kasse verkauft an einem Ladenterminal. Diese Seite ist die Kasse, keine Liste. Sie wählen eine Kasse, öffnen eine Sitzung mit dem Bargeld, das schon in der Schublade liegt, und verkaufen. Sobald die Sitzung offen ist, hat die Kasse eine eigene Kurzanleitung.",
+    "overview": "Point of Sale ist die Ladenkasse. Diese Seite ist die Kasse selbst, keine Liste. Wählen Sie eine Kasse, eröffnen Sie eine Sitzung mit dem Bargeld, das schon in der Schublade liegt, und verkaufen Sie. Jeder bezahlte Verkauf wird zu einer POS-Bestellung, nimmt Bestand direkt aus den Lagern der Kasse und wird für die Buchhaltung als zugestellte, bezahlte Produktbestellung gespiegelt.",
     "sections": [
       {
-        "title": "Öffnen",
-        "body": "Eine Kasse kommt aus den POS-Konfigurationen. Dieser Bildschirm öffnet nur eine, die schon eingerichtet ist.",
+        "title": "Die Kasse eröffnen",
+        "body": "Eine Kasse ist eine POS-Konfiguration unter Konfigurationen. Dieser Bildschirm eröffnet nur eine, die existiert, aktiv und nicht pausiert ist.",
         "items": [
-          "Wählen Sie die Kasse und öffnen Sie eine Sitzung mit dem Anfangsbestand.",
-          "Einzahlung und Auszahlung halten spätere Schubladenbewegungen fest. Schliessen zählt die Schublade und beendet die Sitzung.",
-          "Diese Sitzungen stehen unter POS-Sitzungen. Sie legen sie nicht aus dieser Liste an."
+          "Wählen Sie die Kasse und eröffnen Sie eine Sitzung mit dem gezählten Anfangsbargeld. Pro Kasse kann jeweils eine Sitzung offen sein.",
+          "Die Kasse braucht eine Währung und mindestens ein Lager, um zu öffnen und zu verkaufen.",
+          "Nach dem Öffnen zeigt die Kasse ihre eigene Übersicht der Tastenkürzel."
         ]
       },
       {
         "title": "Verkaufen",
-        "body": "Der Katalog an der Kasse sind die Produkte dieser Firma. Eine Position nimmt Bestand aus dem Lager der Kasse.",
+        "body": "Der Katalog sind die aktiven Produkte dieser Firma. Preise kommen aus dem Katalog; die Kassierin oder der Kassierer kann keinen Preis eintippen.",
         "items": [
-          "Suchen oder scannen Sie einen Barcode. Varianten werden gewählt, bevor die Position hinzukommt.",
-          "Sie können einen Warenkorb parken und wieder aufnehmen, einen Kunden zuordnen, eine Position oder die Bestellung rabattieren, die Zahlung teilen und einen bezahlten Verkauf erstatten.",
-          "Eine Erstattung hier wird eine eigene POS-Bestellung, verknüpft mit dem Verkauf, und erscheint unter POS-Bestellungen."
+          "Geschenkkarten und digitale Downloads werden nicht an der Kasse verkauft; sie werden nur von Online-Bestellungen ausgestellt.",
+          "Suchen oder einen Barcode scannen; ein Varianten-Barcode fügt genau diese Variante hinzu. Ein variables Produkt fragt zuerst nach seiner Variante.",
+          "Kassenpreise enthalten die MWST. Der Steueranteil jeder Zeile ergibt sich aus den Steuerzonen der Adresse des ersten Kassenlagers, nach dem Anteil der Zeile an einem Bestellrabatt.",
+          "Eine Zeile nimmt Bestand der Reihe nach aus den Lagern der Kasse, aus jedem, bis die Menge erreicht ist. Reicht der Bestand nicht, wird der Verkauf abgelehnt, ausser die Kasse erlaubt Überverkauf.",
+          "Zeilen- und Bestellrabatte sowie Mengenänderungen sind nur erlaubt, wenn die Kasse sie zulässt. Mit „PIN für Rabatt“ braucht ein rabattierter Verkauf eine Manager-PIN.",
+          "Hängen Sie einen Kunden an, um den Verkauf auf seinen Namen zu buchen."
         ]
       },
       {
-        "title": "Wann die Kasse nicht verkauft",
-        "body": "Pause und inaktiv sind Sperren, keine Fehler im Warenkorb.",
+        "title": "Zahlung annehmen",
+        "body": "Ein Verkauf kann auf mehrere Zahlungsarten aufgeteilt werden.",
         "items": [
-          "Eine pausierte Kasse kann nicht verkaufen. Gehaltene Warenkörbe können Sie trotzdem verwerfen und die Sitzung schliessen. Eine Pause für die ganze Firma sperrt jede Kasse, nicht nur diese.",
-          "Eine inaktive Kasse kann nicht geöffnet werden.",
-          "Ist für die Kasse keine Fiskalisierung aktiv, werden Verkäufe auf ihr nicht fiskalisiert."
+          "Die Zahlungen müssen den Gesamtbetrag decken. Zu viel gegebenes Bargeld wird als Rückgeld ausgegeben, und nur das Netto-Bargeld kommt in die Schublade.",
+          "Eine Kartenzahlungsart mit Terminal belastet zuerst das Terminal: Manuell heisst, die Kasse bestätigt auf einem externen Gerät; lokales HTTP sendet den Betrag an die Terminal-Brücke und wartet auf Genehmigung, Ablehnung oder Zeitüberschreitung.",
+          "Das Bezahlen schreibt die POS-Bestellung als bezahlt, die Lagerbewegungen und die gespiegelte Produktbestellung. Eine wiederholte Zahlungsanfrage für denselben Verkauf wird erkannt und nicht doppelt belastet.",
+          "Hat die Kasse eine aktive Fiskalkonfiguration mit Zertifikat, wird der Verkauf bei CIS fiskalisiert und eine E-Rechnung registriert. Der Verkauf wird auch abgeschlossen, wenn CIS einen Fehler meldet; das Ergebnis wird auf der Bestellung gespeichert."
+        ]
+      },
+      {
+        "title": "Geparkte Warenkörbe",
+        "body": "Parken legt den aktuellen Warenkorb als Entwurfs-POS-Bestellung ab, damit Sie jemand anderen bedienen können.",
+        "items": [
+          "Ein geparkter Warenkorb kann später an derselben Kasse fortgesetzt oder verworfen werden.",
+          "Eine Sitzung kann nicht geschlossen werden, solange sie geparkte Warenkörbe hat; setzen Sie diese zuerst fort oder verwerfen Sie sie."
+        ]
+      },
+      {
+        "title": "Erstattungen",
+        "body": "Eine Erstattung ist eine eigene POS-Bestellung, verknüpft mit dem Verkauf, den sie umkehrt.",
+        "items": [
+          "Erstatten Sie durch Auswahl von Zeilenmengen oder erstatten Sie den ganzen Rest des Verkaufs. Ein Teilbetrag ohne Zeilen wird abgelehnt, weil die Kasse nicht wüsste, was einzulagern ist.",
+          "Jede Verkaufszeile merkt sich, was bereits erstattet wurde, damit dieselben Einheiten nicht zweimal erstattet werden. Der Bestellrabatt wird auf die erstatteten Zeilen verteilt.",
+          "Erstattete Einheiten gehen in die Lager zurück, aus denen der Verkauf sie genommen hat; was darüber hinausgeht, geht ins erste Lager der Kasse.",
+          "Eine Bargeld-Erstattung geht aus der Schublade. Mit „PIN für Erstattung“ ist eine Manager-PIN nötig."
+        ]
+      },
+      {
+        "title": "Die Schublade und das Schliessen",
+        "items": [
+          "Bareinlage und Barentnahme erfassen Schubladenbewegungen mit Grund; sie sind keine Verkäufe. Eine Entnahme kann nicht mehr nehmen, als in der Schublade ist, und braucht mit „PIN für Barentnahme“ eine Manager-PIN.",
+          "Schliessen fragt nach dem gezählten Bargeld. Weicht es um einen Rappen oder mehr vom erwarteten Betrag ab, ist ein Grund nötig, und die Differenz wird auf der Sitzung vermerkt.",
+          "Das Pausieren einer Kasse stoppt Zahlungen und schliesst ihre offene Sitzung zwangsweise, wobei geparkte Warenkörbe storniert werden. „Alle Kassen pausieren“ tut dies für jede Kasse der Firma."
         ]
       }
     ]

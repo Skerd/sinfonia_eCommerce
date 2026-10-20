@@ -5,15 +5,30 @@
   "help": {
     "ariaLabel": "Über Kategorien",
     "title": "Über Kategorien",
-    "overview": "Kategorien gruppieren Produkte im Katalog. Ein Produkt kann in mehreren Kategorien liegen. Der Name ist erforderlich; übergeordnete Kategorie und Reihenfolge sind optional.",
+    "overview": "Kategorien sind der Baum des Produktkatalogs. Sie gruppieren Produkte im Shop, in Filtern, in Rabatten und in Preisregeln. Ein Produkt kann in mehreren Kategorien sein. Marktplatz-Inserate nutzen eigene Inseratkategorien.",
     "sections": [
       {
-        "title": "So nutzt der Katalog sie",
-        "body": "Der Slug wird aus dem Namen erzeugt und bleibt innerhalb der Firma eindeutig. Eine Umbenennung baut den Slug neu. Die übergeordnete Kategorie verschachtelt den Eintrag, die Reihenfolge sortiert ihn unter den Geschwistern.",
+        "title": "Der Baum",
         "items": [
-          "Eine Preisregel auf eine Kategorie trifft nur die erste Kategorie des Produkts.",
-          "Ein Rabatt auf eine Kategorie trifft, sobald eine der Produktkategorien ausgewählt ist.",
-          "Das Löschen ist ein Soft-Delete und die Kategorie kann wiederhergestellt werden."
+          "Name ist Pflicht. Der Slug wird daraus gebildet, innerhalb der Firma eindeutig gehalten und bei Namensänderung neu gebildet.",
+          "Übergeordnet ordnet die Kategorie einer anderen unter; leer lassen für eine oberste Kategorie. Eine Kategorie kann nicht unter sich selbst oder einen ihrer Nachfahren gestellt werden.",
+          "Reihenfolge sortiert Geschwister, kleinere zuerst."
+        ]
+      },
+      {
+        "title": "Wo Kategorien zählen",
+        "body": "Dieselbe Kategorie wird von verschiedenen Funktionen unterschiedlich gelesen.",
+        "items": [
+          "Shop-Navigation, Produktfilter, gespeicherte Suchen und dynamische Kollektionen nutzen jede Kategorie eines Produkts.",
+          "Ein Rabatt für eine Kategorie greift, wenn irgendeine Kategorie des Produkts ausgewählt ist.",
+          "Eine Preisregel für eine Kategorie betrachtet nur die erste Kategorie des Produkts."
+        ]
+      },
+      {
+        "title": "Löschen",
+        "items": [
+          "Löschen ist ein Soft Delete und kann wiederhergestellt werden. Produkte behalten ihre anderen Kategorien.",
+          "Der Odoo-Import kann Kategorien aus Odoo-Produktkategorien anlegen und aktualisieren."
         ]
       }
     ]

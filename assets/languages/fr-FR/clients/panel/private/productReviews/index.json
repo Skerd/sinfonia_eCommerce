@@ -5,33 +5,32 @@
   "help": {
     "ariaLabel": "À propos des avis produits",
     "title": "À propos des avis produits",
-    "overview": "Un avis produit appartient à une ligne d'une commande payée. La note alimente la moyenne, le nombre de notes et le nombre d'avis du produit. Les avis marketplace sont une liste à part et ne changent pas ces chiffres.",
+    "overview": "Un avis produit est la note et le commentaire d’un acheteur sur un produit qu’il a payé. Il appartient à une commande payée et à un produit de celle-ci, et alimente la note moyenne, le nombre de notes et le nombre d’avis de ce produit. Les avis de la place de marché sont une liste séparée.",
     "sections": [
       {
-        "title": "Ce que vous pouvez créer",
-        "body": "L'avis est lié à un achat réel. Ce n'est pas un commentaire libre.",
+        "title": "Qui peut évaluer quoi",
+        "body": "Un avis est lié à un achat réel, pas un commentaire libre.",
         "items": [
-          "Il pointe vers une commande payée et un produit de cette commande.",
-          "L'auteur est le client de la commande. Vous ne choisissez pas une autre personne et vous ne pouvez pas le changer ensuite.",
-          "Commande et produit sont fixes une fois l'avis créé."
+          "Seul le client de la commande peut créer l’avis ; il est publié sous son nom.",
+          "La commande doit être payée ou partiellement remboursée, et le produit doit y figurer.",
+          "Un avis par produit et par commande. Les ventes en caisse ne produisent pas ici de commandes évaluables."
         ]
       },
       {
-        "title": "Ce que vous pouvez encore modifier",
-        "body": "Le texte et la note peuvent changer. Le lien à l'achat non.",
+        "title": "Ce qui peut changer ensuite",
+        "body": "Le texte et la note peuvent changer ; le lien avec l’achat non.",
         "items": [
-          "La note, le titre et le commentaire peuvent être modifiés.",
-          "La moyenne, le nombre de notes et le nombre d'avis du produit suivent les avis encore en vie.",
-          "La suppression est logique et l'avis peut être restauré."
+          "Note (1 à 5), titre et commentaire peuvent être modifiés.",
+          "Commande et produit sont figés une fois l’avis créé.",
+          "La note moyenne du produit (à une décimale), le nombre de notes et le nombre d’avis sont recalculés depuis les avis actifs à chaque création, changement de note, suppression et restauration."
         ]
       },
       {
-        "title": "Où il apparaît",
-        "body": "La modération est ici. Le chiffre vendu est sur le produit.",
+        "title": "Modération",
         "items": [
-          "Ouvrez le produit pour voir l'agrégat que la boutique utilise.",
-          "Ouvrez la commande pour voir l'achat dont parle l'avis.",
-          "Une vente en caisse n'arrive pas dans cette liste. Ces avis sont des commandes catalogue."
+          "Seul un administrateur peut supprimer un avis. La suppression est douce ; restaurer rétablit la note.",
+          "Un avis supprimé ne peut pas être restauré tant qu’un avis actif existe pour la même commande et le même produit.",
+          "Ouvrez le produit pour voir les chiffres affichés par la boutique, ou la commande pour voir l’achat."
         ]
       }
     ]

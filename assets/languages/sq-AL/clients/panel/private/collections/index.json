@@ -58,5 +58,40 @@
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
     "deletedBy": "Fshirë nga"
+  },
+  "help": {
+    "ariaLabel": "Rreth koleksioneve",
+    "title": "Rreth koleksioneve",
+    "overview": "Një koleksion është një grup tregtar produktesh, si «Ulje vere» ose «Të rejat», i shfaqur në dyqan dhe i përdorshëm si objektiv për zbritje dhe rregulla çmimesh. Është ose manual (ju zgjidhni produktet) ose dinamik (i zgjedhin rregullat).",
+    "sections": [
+      {
+        "title": "Manual ose dinamik",
+        "body": "Tipi vendos nga vjen anëtarësia.",
+        "items": [
+          "Manual: koleksioni përmban pikërisht produktet që shtoni.",
+          "Dinamik: anëtarësia llogaritet drejtpërdrejt nga rregullat, dhe kualifikohen vetëm produktet aktive. Një koleksion dinamik pa rregulla nuk përmban asgjë.",
+          "Të gjitha kushtet kërkon çdo rregull; të paktën një kërkon vetëm një."
+        ]
+      },
+      {
+        "title": "Rregullat",
+        "body": "Çdo rregull është një fushë, një operator dhe një vlerë.",
+        "items": [
+          "Etiketa, marka, furnitori dhe tipi i produktit mbështesin e barabartë, jo e barabartë, përmban, nuk përmban dhe fillon me.",
+          "Kategoria mbështet e barabartë (ose përmban) dhe jo e barabartë (ose nuk përmban) ndaj kategorive të produktit.",
+          "Çmimi mbështet e barabartë, jo e barabartë, më i madh se dhe më i vogël se.",
+          "Niveli i stokut pranohet por ende nuk zbatohet; një rregull mbi të injorohet."
+        ]
+      },
+      {
+        "title": "Dyqani dhe çmimet",
+        "items": [
+          "Aktivizo dhe çaktivizo vendosin nëse koleksioni është i dukshëm në dyqan. Një koleksion i fshehur nuk listohet as nuk mund të shfletohet, por ekziston ende për zbritjet dhe rregullat e çmimeve.",
+          "Zbritjet dhe rregullat e çmimeve që synojnë një koleksion përdorin të njëjtën anëtarësi që tregon dyqani.",
+          "Emri, përshkrimi, imazhi kryesor, pozicioni dhe titulli e përshkrimi SEO i japin formë faqes së koleksionit.",
+          "Fshirja është e butë dhe koleksioni mund të rikthehet."
+        ]
+      }
+    ]
   }
 }

@@ -5,23 +5,22 @@
   "help": {
     "ariaLabel": "About Bookings",
     "title": "About Bookings",
-    "overview": "A booking schedules a time window for a marketplace order with a provider — start, end, and timezone. It is the calendar attachment for service work that happens at an agreed time.",
+    "overview": "A booking puts a marketplace order on the calendar: a start and end time, with the timezone it was agreed in. Use it when the work happens at an appointment, not only by a due date.",
     "sections": [
       {
-        "title": "What you set",
+        "title": "Creating",
         "items": [
-          "Order links the booking to the service engagement.",
-          "Provider is who is expected to deliver in that window.",
-          "Start and end define the slot; timezone stores how that slot was intended to be read.",
-          "Create a booking when the order needs a concrete appointment, not only a delivery due date."
+          "Either party of the order can book it, while the order is accepted or in progress.",
+          "One booking per order. The provider is taken from the order.",
+          "End must be after start."
         ]
       },
       {
-        "title": "How it sits with orders",
+        "title": "Changing",
         "items": [
-          "Orders track money and delivery status; bookings track when people meet or work.",
-          "Open the related order for accept, start, deliver, dispute, or cancel.",
-          "Soft delete hides the booking; restore returns it."
+          "Only the provider, or an administrator, reschedules.",
+          "Deleting is a soft delete and it can be restored.",
+          "Non-administrators see only the bookings of their own orders."
         ]
       }
     ]

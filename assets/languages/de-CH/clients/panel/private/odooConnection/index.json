@@ -5,15 +5,22 @@
   "help": {
     "ariaLabel": "Zur Odoo-Verbindung",
     "title": "Zur Odoo-Verbindung",
-    "overview": "Ein Odoo-Server pro Firma. Der Import nutzt diese Verbindung per JSON-RPC vom API-Server.",
+    "overview": "Die Odoo-Verbindung speichert, wie diese Firma ihren Odoo-Server erreicht. Es gibt eine Verbindung pro Firma; der Odoo-Import nutzt sie, um Daten über JSON-RPC vom API-Server aus zu lesen.",
     "sections": [
       {
         "title": "Was einzugeben ist",
-        "body": "Verwenden Sie dieselbe URL, Datenbank und Anmeldung wie in Odoo, plus einen API-Schlüssel oder das Passwort dieses Benutzers.",
+        "body": "Verwenden Sie dieselbe URL, Datenbank und Anmeldung, die in Odoo funktionieren.",
         "items": [
-          "Die URL ist der Odoo-Ursprung, zum Beispiel https://your-company.odoo.com.",
-          "JSON-RPC authenticate akzeptiert einen API-Schlüssel oder das Kontopasswort für diese Anmeldung. Bevorzugen Sie einen API-Schlüssel, wenn Odoo einen anbietet.",
-          "Lassen Sie das Geheimnis beim erneuten Speichern leer, um den gespeicherten Wert zu behalten."
+          "URL ist die Odoo-Adresse, zum Beispiel https://your-company.odoo.com. Datenbank ist der Name der Odoo-Datenbank.",
+          "Benutzername ist die Odoo-Anmeldung. Das Geheimnis ist ein API-Schlüssel (bevorzugt) oder das Passwort dieses Benutzers.",
+          "Das Geheimnis ist beim ersten Mal Pflicht und wird verschlüsselt gespeichert. Lassen Sie es beim erneuten Speichern leer, um das gespeicherte zu behalten."
+        ]
+      },
+      {
+        "title": "Wofür die Verbindung genutzt wird",
+        "items": [
+          "Nur der Import liest aus Odoo; es wird nie etwas in Odoo zurückgeschrieben.",
+          "Der Import meldet sich zuerst an, sodass eine falsche URL, Datenbank oder ein falsches Geheimnis dort als Fehler erscheint."
         ]
       }
     ]

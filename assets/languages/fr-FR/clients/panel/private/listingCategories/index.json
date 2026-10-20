@@ -5,35 +5,23 @@
   "help": {
     "ariaLabel": "À propos des catégories d'annonces",
     "title": "À propos des catégories d'annonces",
-    "overview": "Les catégories d'annonces sont la taxonomie du marketplace, pas du catalogue produits. Annonces et demandes de tâches pointent vers une catégorie. Les acheteurs naviguent ainsi ; les prestataires sont mis en relation pour une nouvelle demande lorsqu'ils ont une annonce active dans la même catégorie et la même ville.",
+    "overview": "Les catégories d’annonces sont l’arbre propre de la place de marché, distinct des catégories de produits. Annonces et demandes de tâches en choisissent chacune une. Les acheteurs naviguent par elles, et les prestataires sont associés aux nouvelles demandes de tâches par catégorie et ville.",
     "sections": [
       {
-        "title": "L'arborescence",
+        "title": "L’arbre",
         "items": [
-          "Le nom est ce que voient les opérateurs et la vitrine.",
-          "Le parent est optionnel. Laissez vide pour une catégorie racine.",
-          "L'ordre trie les frères (plus petit d'abord). Les listes de sélection et la vue liste utilisent ordre, puis nom.",
-          "Le slug est généré à la création (LCAT-{name}-{random}) et n'est plus modifiable. Unique par société.",
-          "Vous ne pouvez pas définir comme parent la catégorie elle-même ou un de ses descendants — cela créerait un cycle."
-        ],
-        "body": "Les catégories s'imbriquent. Une racine n'a pas de parent ; un enfant pointe vers une autre catégorie de la même société."
+          "Le nom est obligatoire. Le parent est facultatif ; laissez vide pour une catégorie de premier niveau. Une catégorie ne peut pas être sous elle-même ni sous un de ses descendants.",
+          "L’ordre trie les catégories sœurs, les plus petites d’abord ; les listes trient par ordre, puis par nom.",
+          "Le slug est généré à la création et est unique dans la société."
+        ]
       },
       {
-        "title": "Comment le reste du marketplace les utilise",
+        "title": "Comment la place de marché les utilise",
         "items": [
-          "Chaque annonce doit choisir une catégorie pour être utile en vitrine.",
-          "Les demandes de tâches choisissent une catégorie ; les prestataires correspondants ont une annonce active dans cette catégorie et la même ville.",
-          "Les données de démo peuvent créer un large arbre de services (design, tech, rédaction, etc.) pour une nouvelle société.",
-          "Les catégories soft-supprimées peuvent être restaurées. Préférez corriger l'usage sur les annonces plutôt que supprimer une catégorie encore référencée."
-        ],
-        "body": "Les catégories sont une configuration partagée sous Tenancy › Paramètres système."
-      },
-      {
-        "title": "Sur cette page",
-        "items": [
-          "Créer ouvre le formulaire. Modifier ouvre une ligne existante.",
-          "Les vues carte et feuille montrent nom, slug, ordre et parent.",
-          "La suppression est un soft delete et peut être restaurée selon les droits."
+          "Chaque annonce et chaque demande de tâche a une catégorie.",
+          "Quand une demande de tâche est publiée ou ré-annoncée, les prestataires ayant une annonce active dans la même catégorie et la même ville sont prévenus.",
+          "Les menus et filtres de services de la boutique sont construits à partir de cet arbre.",
+          "La suppression est douce et la catégorie peut être restaurée. Réaffectez les annonces avant de supprimer une catégorie encore utilisée."
         ]
       }
     ]

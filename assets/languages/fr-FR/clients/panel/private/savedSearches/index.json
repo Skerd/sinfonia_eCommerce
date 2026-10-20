@@ -5,33 +5,33 @@
   "help": {
     "ariaLabel": "À propos des recherches enregistrées",
     "title": "À propos des recherches enregistrées",
-    "overview": "Une recherche enregistrée garde un filtre de catalogue qu'un client peut relancer. Ce n'est ni un produit ni une commande. Elle retient comment le catalogue devait être réduit.",
+    "overview": "Une recherche enregistrée est un filtre de catalogue qu’un client a nommé pour pouvoir le relancer. Ce n’est ni un produit, ni une commande, ni une collection ; elle se souvient seulement de la façon dont le catalogue a été restreint.",
     "sections": [
       {
         "title": "Ce qui est enregistré",
-        "body": "Le nom est l'étiquette. Le reste est le filtre.",
+        "body": "Le nom est le libellé ; le reste est le filtre.",
         "items": [
           "Le nom est obligatoire.",
-          "Les catégories peuvent être plusieurs. La collection est unique.",
-          "Prix minimum, prix maximum et tri sont facultatifs. Les vides ne sont simplement pas appliqués."
+          "Les catégories peuvent être plusieurs ; la collection est unique.",
+          "Prix minimum, prix maximum et tri sont facultatifs. Un champ vide n’est simplement pas appliqué.",
+          "Le client est le propriétaire de la recherche."
         ]
       },
       {
-        "title": "Les recherches que cette page montre",
-        "body": "Les mêmes enregistrements sont listés de deux façons.",
+        "title": "Les recherches de qui cette page montre",
+        "body": "Les mêmes fiches sont listées de deux façons.",
         "items": [
-          "Ouverte depuis le menu eCommerce, cette page liste chaque recherche de la société, et une nouvelle demande à quel client elle appartient.",
-          "Ouverte comme liste propre d'un client, elle ne montre que les siennes, et une nouvelle recherche est rangée sous ce client.",
-          "La suppression est logique et la recherche peut être restaurée."
+          "Depuis le menu eCommerce, cette page liste chaque recherche enregistrée de la société, et une nouvelle demande à quel client elle appartient.",
+          "Comme liste propre d’un client, elle ne montre que les siennes, et une nouvelle recherche est classée sous ce client.",
+          "Supprimer une recherche enregistrée est une suppression douce et elle peut être restaurée."
         ]
       },
       {
-        "title": "Ce qu'elle ne fait pas",
-        "body": "Enregistrer une recherche ne change pas le catalogue.",
+        "title": "Ce qu’elle ne fait pas",
+        "body": "Enregistrer une recherche ne change rien au catalogue.",
         "items": [
-          "Elle ne masque pas de produits, ne change pas un prix et ne crée pas de collection.",
-          "Catégories, collections et prix se modifient sur ces pages. Cette ligne ne fait que les viser.",
-          "La relancer applique le même filtre au catalogue tel qu'il est maintenant, pas tel qu'il était à l'enregistrement."
+          "Elle ne masque pas de produits, ne change pas de prix et ne crée pas de collection.",
+          "Relancée, elle applique le même filtre au catalogue tel qu’il est maintenant, pas tel qu’il était lors de l’enregistrement."
         ]
       }
     ]

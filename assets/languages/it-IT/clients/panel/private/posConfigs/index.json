@@ -5,24 +5,53 @@
   "help": {
     "ariaLabel": "Informazioni su Configurazioni POS",
     "title": "Informazioni su Configurazioni POS",
-    "overview": "Una configurazione POS è una cassa. Richiede un nome, almeno un metodo di pagamento e almeno un magazzino. Un cassiere apre una sessione su quella cassa e vende secondo il suo listino.",
+    "overview": "Una configurazione POS è una cassa: i suoi pulsanti di pagamento, i magazzini da cui vende, la valuta, gli scontrini, la fiscalizzazione e ciò che il cassiere può fare. Un cassiere vi apre una sessione dalla pagina Punto di vendita.",
     "sections": [
       {
-        "title": "Cosa può fare il cassiere",
-        "body": "Il prezzo di cassa è il prezzo della variante, o il prezzo del prodotto senza variante. La cassa non accetta un prezzo digitato dal cassiere.",
+        "title": "Cosa serve a una cassa",
+        "body": "Nome, almeno un metodo di pagamento e almeno un magazzino sono obbligatori.",
         "items": [
-          "I metodi di pagamento sono i pulsanti della cassa. I magazzini sono i luoghi di scorta da cui quella cassa vende.",
-          "Una configurazione fiscale facoltativa collega questa cassa alla fiscalizzazione albanese. Intestazione e piè di ricevuta sono stampati sullo scontrino.",
-          "Consenti sconto, cambio quantità e vendita oltre giacenza regolano il cassiere. Il PIN per sconto, uscita cassa e rimborso chiede un PIN responsabile prima dell'azione.",
-          "Il controllo cassa segue il cassetto. Il flag del lettore barcode accende la scansione per questa cassa."
+          "I metodi di pagamento sono i pulsanti della cassa, nel loro ordine. Si possono assegnare solo metodi attivi.",
+          "I magazzini sono le fonti di giacenza della cassa, in ordine: una vendita attinge dal primo, poi dal successivo. Si possono assegnare solo magazzini attivi. L’indirizzo del primo magazzino decide anche le aliquote IVA delle vendite in cassa.",
+          "Una valuta è necessaria per aprire una sessione e vendere.",
+          "La configurazione fiscale collega la cassa alla fiscalizzazione albanese CIS. Senza, la cassa non fiscalizza.",
+          "Intestazione e piè di pagina dello scontrino vengono stampati su ogni scontrino."
         ]
       },
       {
-        "title": "Pausa e ripresa",
-        "body": "Una cassa inattiva, una cassa in pausa o un blocco azienda rifiuta i nuovi pagamenti.",
+        "title": "Controlli del cassiere",
+        "body": "Questi interruttori decidono cosa il cassiere può fare senza un responsabile.",
         "items": [
-          "Metti in pausa tutte le casse blocca l'azienda e chiude forzatamente le sessioni aperte.",
-          "Riprendi tutte le casse toglie solo il blocco azienda. Una cassa messa in pausa da sola resta in pausa."
+          "Consenti sconto e consenti cambio quantità sbloccano queste modifiche in cassa.",
+          "Consenti vendita oltre giacenza lascia passare una vendita anche se i magazzini non hanno abbastanza giacenza; la mancanza viene presa dall’ultimo magazzino.",
+          "PIN per sconto, PIN per prelievo e PIN per rimborso richiedono un PIN di responsabile per quell’azione.",
+          "Controllo contante segue il cassetto; lettore di codici a barre attiva la scansione."
+        ]
+      },
+      {
+        "title": "Responsabili e PIN",
+        "body": "I responsabili sono gli utenti autorizzati ad approvare le azioni protette da PIN su questa cassa.",
+        "items": [
+          "Ogni responsabile imposta il proprio PIN, può cambiarlo con il PIN attuale o cancellarlo.",
+          "Un PIN dimenticato si può reimpostare con un link inviato via e-mail, valido 24 ore e utilizzabile una volta.",
+          "Togliere un utente dai responsabili rimuove anche il suo PIN dalla cassa."
+        ]
+      },
+      {
+        "title": "Attiva, in pausa e blocco aziendale",
+        "body": "Tre interruttori impediscono a una cassa di incassare.",
+        "items": [
+          "Disattiva spegne la cassa e chiude forzatamente le sue sessioni aperte; non si può più aprire finché non viene riattivata.",
+          "Pausa ferma le vendite di una cassa con un motivo facoltativo e chiude forzatamente le sue sessioni aperte: i carrelli sospesi vengono annullati e i pagamenti in corso sul terminale stornati quando possibile. Riprendi la toglie.",
+          "Metti in pausa tutte le casse imposta un blocco su tutta la società e chiude forzatamente ogni sessione aperta. Finché è attivo, nessuna cassa può riprendere. Riprendi tutte toglie solo il blocco aziendale; le casse messe in pausa singolarmente restano in pausa."
+        ]
+      },
+      {
+        "title": "Impostazioni collegate",
+        "items": [
+          "Metodi di pagamento e configurazioni fiscali sono pagine a sé sotto Configurazioni.",
+          "Un magazzino che è l’unico di una cassa non può essere disattivato né eliminato; uno condiviso con altri viene invece tolto dalla cassa.",
+          "Eliminare una cassa è un’eliminazione logica e può essere ripristinata."
         ]
       }
     ]

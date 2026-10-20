@@ -5,16 +5,34 @@
   "help": {
     "ariaLabel": "Informazioni su Configurazioni fiscali",
     "title": "Informazioni su Configurazioni fiscali",
-    "overview": "Una configurazione fiscale è l'identità CIS albanese che firma uno scontrino: NIPT, unità commerciale, operatore, codice software, TCR, endpoint e certificato di firma. Una configurazione POS punta a una configurazione fiscale. Senza selezione, quella cassa non fiscalizza.",
+    "overview": "Una configurazione fiscale è l’identità CIS albanese con cui una cassa firma i propri scontrini: NIPT del contribuente, unità aziendale, operatore, codici software e manutentore, il registratore di cassa (TCR), gli endpoint CIS e il certificato di firma. Una cassa punta a una configurazione fiscale; una cassa senza non fiscalizza.",
     "sections": [
       {
-        "title": "Quando una vendita viene fiscalizzata",
-        "body": "Dopo il pagamento, la fiscalizzazione parte se questa configurazione è attiva e c'è un certificato. Dopo una fattura fiscale riuscita viene sempre creata la fattura elettronica. Il pagamento resta valido se il CIS restituisce un errore.",
+        "title": "Cosa inserisci",
         "items": [
-          "Il NIPT ricade sulla partita IVA della società se il campo è vuoto. Il codice TCR deve essere già registrato prima di firmare una fattura.",
-          "La fattura fiscale è segnata come fattura elettronica e il documento UBL viene registrato presso il CIS.",
-          "Test e produzione scelgono l'ambiente CIS a cui appartengono gli URL e il certificato.",
-          "Il certificato è un file PKCS#12. Una password vuota in modifica conserva quella salvata."
+          "Il nome identifica la configurazione. Il NIPT ripiega sulla partita IVA della società se vuoto.",
+          "Codice software, codice unità aziendale e codice operatore sono obbligatori. Il codice manutentore è facoltativo.",
+          "Codice TCR, ID interno TCR e tipo TCR (normale o distributore) identificano il registratore di cassa. Registrare il TCR compila il codice e richiede il permesso di modificare le configurazioni fiscali.",
+          "Gli URL di fiscalizzazione, fattura elettronica e self-care puntano al CIS; un URL proxy è facoltativo. L’ambiente sceglie test o produzione.",
+          "Nome, indirizzo, città e paese del venditore e l’indicatore di soggetto IVA compaiono sui documenti fiscali.",
+          "Il certificato è un file PKCS#12. In modifica, lasciare vuota la password mantiene quella salvata."
+        ]
+      },
+      {
+        "title": "Quando una vendita viene fiscalizzata",
+        "body": "Dopo il pagamento di una vendita in cassa, la fiscalizzazione parte se la configurazione della cassa è attiva e ha un certificato.",
+        "items": [
+          "La vendita viene firmata e inviata al CIS; i codici fiscali tornano sull’ordine POS. Una fattura fiscale riuscita è sempre seguita dalla registrazione della fattura elettronica (UBL).",
+          "I rimborsi in cassa non vengono fiscalizzati automaticamente.",
+          "Se il CIS fallisce, il pagamento si conclude comunque e l’errore viene salvato sull’ordine POS; può essere fiscalizzato di nuovo in seguito.",
+          "La ricerca contribuente chiede al CIS i dati di un’impresa tramite il suo NIPT."
+        ]
+      },
+      {
+        "title": "Attiva e inattiva",
+        "items": [
+          "Disattivare ferma la fiscalizzazione per ogni cassa che usa la configurazione, senza scollegarla.",
+          "L’eliminazione è logica e la configurazione può essere ripristinata."
         ]
       }
     ]

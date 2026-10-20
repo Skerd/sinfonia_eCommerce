@@ -5,25 +5,23 @@
   "help": {
     "ariaLabel": "À propos des extras d'annonce",
     "title": "À propos des extras d'annonce",
-    "overview": "Un extra est une option que l'acheteur peut joindre en commandant une annonce — livraison express ou livrable supplémentaire. Il appartient à une annonce, a son propre prix et des jours de livraison optionnels, et doit utiliser la même devise que la commande.",
+    "overview": "Un module complémentaire est un supplément facultatif qu’un acheteur peut ajouter en commandant une annonce, comme une livraison express ou une révision supplémentaire. Il appartient à une annonce et ajoute son propre prix et, éventuellement, des jours de livraison.",
     "sections": [
       {
-        "title": "Ce que vous définissez",
+        "title": "Champs",
         "items": [
-          "Le nom est ce que voit l'acheteur au checkout.",
-          "Annonce et prestataire sont liés à cette offre.",
-          "Montant et devise doivent correspondre à la devise de l'annonce (ou du package).",
-          "Les jours de livraison, s'ils sont définis, s'ajoutent à la fenêtre de l'annonce ou du package."
+          "L’annonce est obligatoire et figée ; seul le prestataire de cette annonce peut créer ou supprimer ses modules.",
+          "Le nom est ce que voit l’acheteur. Montant et devise du prix sont ce qu’il ajoute.",
+          "Les jours de livraison, s’ils sont renseignés, s’ajoutent à la fenêtre de livraison de l’annonce ou du package."
         ]
       },
       {
-        "title": "Quand ça compte",
+        "title": "Commander avec des modules",
         "items": [
-          "Seuls les extras de cette annonce sont sélectionnables.",
-          "Un écart de devise bloque la commande.",
-          "Les extras soft-supprimés peuvent être restaurés ; une fois supprimés ils ne sont plus proposés."
-        ],
-        "body": "Les extras sont choisis à la création d'une commande depuis une annonce."
+          "Seuls les modules de l’annonce commandée peuvent être choisis, chacun une fois.",
+          "Chaque module doit utiliser la même devise que la commande (celle du package, ou de l’annonce sans package) ; un écart bloque la commande.",
+          "La suppression est douce. Un module ne peut pas être restauré tant que son annonce est supprimée."
+        ]
       }
     ]
   },

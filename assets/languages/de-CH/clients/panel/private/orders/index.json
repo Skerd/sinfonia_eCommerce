@@ -5,36 +5,51 @@
   "help": {
     "ariaLabel": "Über Bestellungen",
     "title": "Über Bestellungen",
-    "overview": "Eine Marktplatz-Bestellung ist ein Service-Engagement zwischen Kunde und Anbieter. Sie startet von einem aktiven Inserat (optional Paket und Add-ons) oder von einem angenommenen Gebot. Arbeit, Lieferung, Revisionen, Meilensteine und Escrow laufen über Aktionen — nicht über Status-Edit im Formular.",
+    "overview": "Eine Marktplatz-Bestellung ist ein Dienstleistungsauftrag zwischen einem Kunden und einem Anbieter, dessen Preis treuhänderisch gehalten wird, bis die Arbeit abgenommen ist. Sie beginnt aus einem aktiven Inserat oder einem angenommenen Gebot. Jeder Schritt ist eine Aktion mit Regeln, wer sie wann ausführen darf; der Status wird nie direkt bearbeitet.",
     "sections": [
       {
         "title": "Status",
         "items": [
-          "Ausstehend — erstellt; wartet auf Annahme durch den Anbieter.",
-          "Angenommen — Anbieter hat angenommen; Arbeit noch nicht gestartet.",
-          "In Bearbeitung — Anbieter hat begonnen.",
-          "Abgeschlossen — Arbeit fertig und restliches Escrow freigegeben, soweit Regeln es erlauben.",
-          "Storniert — vor Abschluss gestoppt; Escrow folgt den Storno-Regeln."
+          "Ausstehend: angelegt, wartet darauf, dass der Anbieter annimmt.",
+          "Angenommen: Der Anbieter hat den Auftrag übernommen; der Bestellbetrag wird treuhänderisch gehalten.",
+          "In Arbeit: Der Anbieter hat begonnen; Lieferungen, Überarbeitungen und Meilenstein-Freigaben finden hier statt.",
+          "Abgeschlossen: Die Arbeit wurde abgenommen und der Rest des Treuhandbetrags ausbezahlt.",
+          "Storniert: vor dem Abschluss gestoppt; was noch gehalten wurde, wurde erstattet."
         ]
       },
       {
-        "title": "Typischer Lebenszyklus",
+        "title": "Aktionen des Anbieters",
         "items": [
-          "Aus Inserat erzeugen berechnet Betrag aus Inserat, Paket und Add-ons; Anbieter dürfen das eigene Inserat nicht bestellen.",
-          "Annehmen / Starten / Stornieren führen das Engagement weiter oder stoppen es.",
-          "Lieferungen und Revisionsanfragen hängen an verwandten Datensätzen.",
-          "Meilensteine können Escrow halten und freigeben; der letzte ausstehende Meilenstein kann die Bestellung abschliessen.",
-          "Ein offener Dispute blockiert manche Geldbewegungen bis zur Lösung oder Schliessung."
-        ],
-        "body": "Aktionen erzwingen, wer wann wechseln darf."
+          "Annehmen (aus ausstehend) bucht die Treuhandsperre für den Bestellbetrag im Finanzjournal; sind Kartenzahlungen eingerichtet, wird beim Gateway eine Zahlung über diesen Betrag eröffnet.",
+          "Beginnen (aus angenommen) setzt die Bestellung auf in Arbeit.",
+          "Lieferung einreichen (in Arbeit) sendet eine Nachricht und Dateien. Es kann jeweils nur eine Lieferung auf Antwort warten, und eine neue beantwortet eine offene Überarbeitungsanfrage.",
+          "Verlängern fügt dem Fälligkeitsdatum jederzeit vor dem Abschluss Tage hinzu; der Kunde wird benachrichtigt."
+        ]
       },
       {
-        "title": "Verwandte Datensätze",
+        "title": "Aktionen des Kunden",
         "items": [
-          "Buchungen planen Zeit zu einer Bestellung.",
-          "Disputes öffnen, wenn eine Partei das Engagement bestreitet.",
-          "Reviews gehören zu abgeschlossener Bestellung und Inserat.",
-          "Soft-Delete blendet die Bestellung aus; Wiederherstellen ist möglich."
+          "Lieferung annehmen schliesst die Bestellung ab und gibt das noch Gehaltene an den Anbieter frei, abzüglich der Plattformgebühr von 10 %. Gesperrt, solange ein Streitfall offen ist.",
+          "Überarbeitung anfordern schickt die wartende Lieferung mit einem Grund zurück. Höchstens 3 Überarbeitungen pro Bestellung.",
+          "Antwortet der Kunde 3 Tage lang nicht auf eine Lieferung, nimmt ein stündlicher Job sie für ihn an, ausser ein Streitfall ist offen.",
+          "Meilensteine teilen den gehaltenen Betrag auf: Der Kunde legt sie an (insgesamt nie mehr als der Bestellbetrag) und gibt sie während der Arbeit einzeln frei. Die Freigabe des letzten, wenn nichts mehr gehalten wird, schliesst die Bestellung ab."
+        ]
+      },
+      {
+        "title": "Stornieren und Streitfälle",
+        "items": [
+          "Der Anbieter kann jederzeit vor dem Abschluss stornieren; der Kunde nur, bevor die Arbeit beginnt. Danach geht eine Uneinigkeit über einen Streitfall.",
+          "Niemand kann stornieren, solange ein Streitfall offen ist. Stornieren erstattet alles noch Gehaltene.",
+          "Ein Streitfall zugunsten des Anbieters schliesst die Bestellung ab und zahlt aus; zugunsten des Kunden storniert er und erstattet."
+        ]
+      },
+      {
+        "title": "Geld und Datensätze",
+        "body": "Freigaben und Erstattungen können nur auszahlen, was noch gehalten wird, sodass Meilensteine, Abnahme, Streitfälle und Stornierung zusammen nie die Sperre übersteigen.",
+        "items": [
+          "Jede Freigabe zahlt auf das verbundene Stripe-Konto des Anbieters, falls er eines hat; im Journal wird die Freigabe in jedem Fall erfasst.",
+          "Das Bestellblatt zeigt seine Lieferungen, Meilensteine und Überarbeitungen. Buchungen, Streitfälle und Bewertungen hängen ebenfalls an der Bestellung.",
+          "Nicht-Administratoren sehen nur Bestellungen, an denen sie beteiligt sind. Nur ein Administrator kann eine Bestellung löschen, und erst wenn sie abgeschlossen oder storniert ist."
         ]
       }
     ]

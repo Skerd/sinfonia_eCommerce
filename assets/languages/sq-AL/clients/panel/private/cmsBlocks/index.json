@@ -5,14 +5,30 @@
   "help": {
     "ariaLabel": "Rreth Blloqet CMS",
     "title": "Rreth Blloqet CMS",
-    "overview": "Blloqet CMS janë seksionet e dyqanit, si një baner, një rrëshqitës ose një njoftim. Dyqani ngarkon blloqet aktive datat e të cilave përfshijnë tani, të renditura sipas pozicionit nga më i ulëti te më i larti. Lloji dhe titulli janë të detyrueshëm.",
+    "overview": "Blloqet CMS janë seksionet e faqes kryesore të dyqanit, si një banner kryesor, një slider ose një shirit njoftimesh. Dyqani tregon blloqet aktive, datat e të cilëve përfshijnë tani, sipas renditjes së pozicioneve. Tipi dhe titulli janë të detyrueshëm; zgjedhja e një tipi tregon fushat që i duhen.",
     "sections": [
       {
-        "title": "Si i zgjedh dyqani",
-        "body": "Pozicioni është renditja e shfaqjes. Rirenditja në këtë faqe i shkruan ato pozicione. Një bllok jashtë fillimit ose mbarimit mbetet i ruajtur, por nuk i dërgohet dyqanit.",
+        "title": "Tipet",
         "items": [
-          "Lloji zgjedh paraqitjen: baner, rrëshqitës, koleksion i veçuar, në trend, më të shiturit, shitje e shpejtë, njoftim, HTML e personalizuar, video, rrjetë, vitrinë kategorish ose seksion promocional.",
-          "Dukshmëria mund të kufizojë desktopin, celularin dhe tabletin dhe të listojë rajone. Një bllok i ri vlen për të tre pajisjet.",
+          "Banneri kryesor, slider-i dhe seksioni promovues tregojnë imazhe me një titull dhe një lidhje thirrjeje për veprim.",
+          "Koleksioni i theksuar, në trend, më të shiturat, shitja flash, rrjeta dhe vitrina e kategorive tregojnë produkte nga një koleksion ose nga kategori, deri në një kufi.",
+          "Shiriti i njoftimeve tregon një mesazh të shkurtër me lidhje opsionale. Video përfshin një URL videoje.",
+          "HTML i personalizuar tregon markup-in tuaj; pastrohet para se dyqani ta shfaqë."
+        ]
+      },
+      {
+        "title": "Kur dhe ku shfaqet",
+        "items": [
+          "Fillimi dhe mbarimi kufizojnë kur shfaqet blloku. Jashtë tyre mbetet i ruajtur por nuk i dërgohet dyqanit.",
+          "Pozicioni është rendi në faqe; Rirendit i rishkruan pozicionet sipas rendit që zgjidhni.",
+          "Dukshmëria mund ta kufizojë bllokun në desktop, tablet ose celular, dhe në rajone. Blloqet e reja shfaqen në të gjitha pajisjet.",
+          "Dyqani i platformës që liston të gjithë shitësit nuk përdor blloqet e asnjë shitësi."
+        ]
+      },
+      {
+        "title": "Statusi",
+        "items": [
+          "Aktivizo dhe çaktivizo e shfaqin ose e fshehin bllokun pa e fshirë.",
           "Fshirja është e butë dhe blloku mund të rikthehet."
         ]
       }

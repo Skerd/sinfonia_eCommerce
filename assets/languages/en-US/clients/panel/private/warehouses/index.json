@@ -5,16 +5,29 @@
   "help": {
     "ariaLabel": "About Warehouses",
     "title": "About Warehouses",
-    "overview": "A warehouse is a place that holds stock. Inventory is stored per product or variant in a warehouse: on hand, and reserved for open checkouts. Name and code are required.",
+    "overview": "A warehouse is a stock location. Inventory rows, stock transfers, stock counts, order holds, and tills all point at warehouses. Name and code are required; the address is optional but decides the VAT of till sales.",
     "sections": [
       {
-        "title": "Where checkout takes stock",
-        "body": "A line is reserved only when an inventory row exists for that product or variant. A line with no row is treated as untracked.",
+        "title": "Default and active",
         "items": [
-          "The default active warehouse is used when it has enough available stock. Otherwise the first warehouse that can cover the quantity is used.",
-          "Only one warehouse is the default. Set default clears the previous default.",
-          "Deactivate stops the warehouse from being chosen. If it is the only warehouse on a till, deactivation is blocked until that till has another warehouse.",
-          "Deleting a warehouse is a soft delete and it can be restored."
+          "Set default makes this warehouse the company default and clears the previous one. Checkout tries the default warehouse first.",
+          "Only active warehouses hold stock for checkout and can be assigned to tills.",
+          "Deactivating a warehouse that is the only warehouse of a till is refused; otherwise it is removed from tills that still have another warehouse."
+        ]
+      },
+      {
+        "title": "Deleting",
+        "body": "Stock cannot vanish with its warehouse.",
+        "items": [
+          "A warehouse whose rows still hold stock or reservations cannot be deleted. Transfer or write the stock off first.",
+          "Deleting is a soft delete and it can be restored, unless another live warehouse now uses the same code."
+        ]
+      },
+      {
+        "title": "Related pages",
+        "items": [
+          "Inventory shows the stock per item in each warehouse; Stock movements shows its history.",
+          "The Odoo import can create warehouses from Odoo."
         ]
       }
     ]

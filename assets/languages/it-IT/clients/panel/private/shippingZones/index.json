@@ -5,25 +5,33 @@
   "help": {
     "ariaLabel": "Informazioni su Zone di spedizione",
     "title": "Informazioni su Zone di spedizione",
-    "overview": "Il checkout propone ogni tariffa delle zone attive che corrispondono alla destinazione. L'acquirente ne sceglie una. Una zona richiede un nome e almeno una tariffa. Una zona senza paesi non corrisponde.",
+    "overview": "Le zone di spedizione decidono quali opzioni di consegna vengono offerte all’acquirente al checkout e quanto costano. Una zona elenca paesi, eventualmente province e codici postali, e una o più tariffe. Il checkout offre ogni tariffa di ogni zona attiva corrispondente; l’acquirente ne sceglie una.",
     "sections": [
       {
-        "title": "Come corrisponde una destinazione",
-        "body": "Il paese deve essere tra i paesi della zona. Stato e codice postale la restringono ancora.",
+        "title": "Associare una destinazione",
         "items": [
-          "Se elencate stati, lo stato di destinazione deve essere uno di essi. Una lista vuota corrisponde a tutto il paese.",
-          "I modelli di codice postale sono facoltativi. Una lista vuota corrisponde a ogni codice. * è un jolly, per esempio 10*.",
-          "Senza paese di destinazione non si propongono tariffe."
+          "Il paese di destinazione deve essere uno dei paesi della zona; una zona senza paesi non corrisponde a nulla.",
+          "Le province elencate restringono; nessuna provincia copre tutto il paese. I modelli di codice postale sono facoltativi e usano * come unico jolly.",
+          "Senza paese di destinazione non viene offerta alcuna tariffa."
         ]
       },
       {
-        "title": "Come si calcola una tariffa",
-        "body": "Ogni tariffa corrispondente compare con nome, prezzo, corriere e giorni stimati. Corriere e giorni non cambiano il prezzo.",
+        "title": "Tipi di tariffa",
+        "body": "Ogni tariffa mostra nome, prezzo, corriere e giorni stimati. Corriere e giorni non cambiano il prezzo.",
         "items": [
-          "La forfettaria addebita il suo prezzo. Gratuita è 0 e si nasconde quando l'importo ordine è fuori dal minimo o dal massimo.",
-          "Il peso usa il peso del carrello e si nasconde fuori dalla finestra di peso. Il prezzo usa il subtotale merce e la finestra di importo.",
-          "La quantità confronta il numero di articoli con i campi di importo minimo e massimo, non con il totale in denaro.",
-          "Uno sconto di spedizione gratuita azzera la spedizione al checkout. Non toglie le tariffe da questo elenco."
+          "Forfettaria addebita sempre il suo prezzo.",
+          "Gratuita non addebita nulla ed è nascosta quando l’importo dell’ordine è fuori dal suo minimo o massimo: così si costruisce «gratis oltre 50».",
+          "Peso addebita il suo prezzo quando il peso del carrello è tra il peso minimo e massimo.",
+          "Prezzo addebita il suo prezzo quando il subtotale della merce è tra l’importo d’ordine minimo e massimo.",
+          "Quantità addebita il suo prezzo quando il numero di articoli è tra i campi importo d’ordine minimo e massimo (letti come numero di articoli per questo tipo)."
+        ]
+      },
+      {
+        "title": "Con sconti e ordini",
+        "items": [
+          "Uno sconto spedizione gratuita annulla il costo ma non nasconde le tariffe.",
+          "Nome, corriere e prezzo della tariffa scelta vengono copiati sull’ordine.",
+          "Attiva e disattiva accendono e spengono la zona. L’eliminazione è logica e la zona può essere ripristinata."
         ]
       }
     ]

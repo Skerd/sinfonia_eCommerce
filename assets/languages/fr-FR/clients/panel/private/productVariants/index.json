@@ -5,15 +5,36 @@
   "help": {
     "ariaLabel": "À propos des variantes de produits",
     "title": "À propos des variantes de produits",
-    "overview": "Une variante est un SKU vendable d'un produit. Le panier et la caisse facturent le prix de la variante lorsqu'elle est choisie. Seule une variante active se vend. Le produit est obligatoire.",
+    "overview": "Une variante est un SKU vendable d’un produit variable, défini par sa combinaison de valeurs d’attributs (par exemple Rouge / XL). Le panier et la caisse facturent le prix propre de la variante quand elle en a un. Seule une variante active peut être vendue.",
     "sections": [
       {
-        "title": "Prix, identité et stock",
-        "body": "Chaque variante porte son SKU, son code-barres, son prix, son prix barré, son coût, son poids et la combinaison d'attributs. Sans prix de variante, le prix du produit est utilisé.",
+        "title": "Identité",
         "items": [
-          "Activez le suivi de stock lorsque ce SKU doit être compté. Le checkout réserve alors la variante dans un entrepôt qui la détient.",
-          "Une ligne sans fiche de stock est considérée comme non suivie et n'est pas réservée.",
-          "Une variante inactive quitte le panier au prochain calcul du prix."
+          "Le produit est obligatoire et définitif : lignes de stock et lignes de commande dépendent à la fois du produit et de la variante.",
+          "La combinaison d’attributs est l’ensemble des paires attribut-valeur. Deux variantes actives d’un produit ne peuvent pas partager une combinaison.",
+          "SKU et code-barres l’identifient ; un code-barres de variante scanné ajoute exactement cette variante en caisse."
+        ]
+      },
+      {
+        "title": "Prix, poids, médias",
+        "items": [
+          "Prix, prix barré et prix de revient fonctionnent comme ceux du produit. Une variante sans prix est vendue au prix du produit.",
+          "Poids, dimensions, image principale et ordre d’affichage décrivent la variante dans le sélecteur de la boutique."
+        ]
+      },
+      {
+        "title": "Stock",
+        "items": [
+          "Une variante d’un produit suivi est suivie en stock sauf si le suivi est désactivé sur la variante. Chaque entrepôt a alors besoin d’une ligne de stock pour cette variante.",
+          "Sans ligne dans un entrepôt actif, le checkout refuse la variante comme en rupture."
+        ]
+      },
+      {
+        "title": "Statut et produit",
+        "items": [
+          "Les variantes actives sont vendues ; une variante inactive est retirée des paniers au prochain calcul de prix.",
+          "La liste des variantes du produit, leur nombre et l’indicateur « a des variantes » suivent ses variantes actives ; un produit avec au moins une variante peut être publié sans prix propre.",
+          "La suppression est douce et la variante peut être restaurée."
         ]
       }
     ]

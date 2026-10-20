@@ -5,23 +5,28 @@
   "help": {
     "ariaLabel": "Über Bewertungen",
     "title": "Über Bewertungen",
-    "overview": "Eine Bewertung ist Kundenfeedback zu einer abgeschlossenen Marktplatz-Bestellung: Sterne, optionaler Kommentar, verknüpft mit Bestellung und Inserat. Sie speist Durchschnitt und Anzahl auf dem Inserat.",
+    "overview": "Eine Marktplatz-Bewertung ist die Note und der Kommentar des Kunden zu einer abgeschlossenen Bestellung. Sie gehört zur Bestellung und ihrem Inserat und speist den Bewertungsschnitt und die Anzahl Bewertungen des Inserats sowie den Ruf des Anbieters.",
     "sections": [
       {
-        "title": "Was Sie erfassen",
+        "title": "Wer bewerten kann",
         "items": [
-          "Bewertung ist die Sternezahl.",
-          "Kommentar ist optionaler Freitext.",
-          "Bestellung und Inserat kennzeichnen, was bewertet wurde; Reviewer ist der Kunde.",
-          "Erstellen dient dem Feedback nach abgeschlossenem Engagement."
+          "Nur der Kunde der Bestellung, erst wenn die Bestellung abgeschlossen ist, und nur einmal pro Bestellung.",
+          "Inserat und Bewertender setzt der Server aus der Bestellung und dem Aufrufer.",
+          "Kunden können auch aus ihrem Shop-Konto bewerten, wo abgeschlossene Bestellungen ohne Bewertung angeboten werden."
         ]
       },
       {
-        "title": "Auf dieser Seite",
+        "title": "Was sie ändert",
         "items": [
-          "Listen, filtern und öffnen für Moderation oder Support.",
-          "Kein separates Publish — Erstellen und Bearbeiten verwalten den Datensatz direkt.",
-          "Soft-Delete blendet aus; Wiederherstellen bringt zurück."
+          "Bewertungsschnitt und Anzahl Bewertungen des Inserats werden aus seinen aktiven Bewertungen neu berechnet.",
+          "Das Anbieterprofil zeigt den Bewertungsschnitt über alle seine Bestellungen, aus Inseraten und Aufträgen gleichermassen."
+        ]
+      },
+      {
+        "title": "Moderation",
+        "items": [
+          "Bewertungen werden nach dem Schreiben nicht bearbeitet.",
+          "Nur ein Administrator kann eine Bewertung löschen; Löschen ist ein Soft Delete, und Wiederherstellen bringt die Bewertung zurück."
         ]
       }
     ]

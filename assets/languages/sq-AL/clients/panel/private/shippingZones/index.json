@@ -5,25 +5,33 @@
   "help": {
     "ariaLabel": "Rreth Zonat e transportit",
     "title": "Rreth Zonat e transportit",
-    "overview": "Pagesa ofron çdo tarifë të zonave aktive që përputhen me destinacionin. Blerësi zgjedh një. Një zonë kërkon një emër dhe të paktën një tarifë. Një zonë pa vende nuk përputhet.",
+    "overview": "Zonat e transportit vendosin cilat mundësi dorëzimi i ofrohen blerësit në checkout dhe sa kushtojnë. Një zonë liston shtete, opsionalisht rajone dhe kode postare, dhe një ose më shumë tarifa. Checkout-i ofron çdo tarifë të çdo zone aktive që përputhet; blerësi zgjedh njërën.",
     "sections": [
       {
-        "title": "Si përputhet një destinacion",
-        "body": "Vendi duhet të jetë një nga vendet e zonës. Shteti dhe kodi postar e ngushtojnë më tej.",
+        "title": "Përputhja e një destinacioni",
         "items": [
-          "Nëse listoni shtete, shteti i destinacionit duhet të jetë njëri prej tyre. Lista bosh përputhet me gjithë vendin.",
-          "Modelet e kodit postar janë opsionale. Një listë bosh përputhet me çdo kod. * është një shenjë e lirë, për shembull 10*.",
-          "Pa vend destinacioni nuk ofrohen tarifa."
+          "Shteti i destinacionit duhet të jetë një nga shtetet e zonës; një zonë pa shtete nuk përputhet me asgjë.",
+          "Rajonet e listuara kufizojnë; pa rajone mbulohet gjithë shteti. Modelet e kodit postar janë opsionale dhe përdorin * si të vetmen shenjë të lirë.",
+          "Pa shtet destinacioni nuk ofrohet asnjë tarifë."
         ]
       },
       {
-        "title": "Si çmohet një tarifë",
-        "body": "Çdo tarifë që përputhet shfaqet me emër, çmim, transportues dhe ditë të parashikuara. Transportuesi dhe ditët nuk e ndryshojnë çmimin.",
+        "title": "Tipet e tarifave",
+        "body": "Çdo tarifë tregon emrin, çmimin, transportuesin dhe ditët e parashikuara. Transportuesi dhe ditët nuk e ndryshojnë çmimin.",
         "items": [
-          "E sheshtë ngarkon çmimin e saj. Falas është 0 dhe fshihet kur shuma e porosisë është jashtë minimumit ose maksimumit.",
-          "Pesha përdor peshën e shportës dhe fshihet jashtë dritares së peshës. Çmimi përdor nëntotalin e mallit dhe dritaren e shumës.",
-          "Sasia krahason numrin e artikujve me fushat e shumës minimale dhe maksimale, jo me totalin në para.",
-          "Një zbritje transporti falas e heq koston në pagesë. Nuk i heq tarifat nga kjo listë."
+          "E sheshtë tarifon gjithmonë çmimin e saj.",
+          "Falas nuk tarifon asgjë dhe fshihet kur shuma e porosisë është jashtë minimumit ose maksimumit të saj — kështu ndërtohet «falas mbi 50».",
+          "Peshë tarifon çmimin kur pesha e shportës është brenda peshës minimale dhe maksimale.",
+          "Çmim tarifon çmimin kur nëntotali i mallit është brenda shumës minimale dhe maksimale të porosisë.",
+          "Sasi tarifon çmimin kur numri i artikujve është brenda fushave shuma minimale dhe maksimale e porosisë (për këtë tip lexohen si numër artikujsh)."
+        ]
+      },
+      {
+        "title": "Bashkë me zbritjet dhe porositë",
+        "items": [
+          "Një zbritje me transport falas e heq tarifën por nuk i fsheh tarifat.",
+          "Emri, transportuesi dhe çmimi i tarifës së zgjedhur kopjohen te porosia.",
+          "Aktivizo dhe çaktivizo e ndezin dhe e fikin zonën. Fshirja është e butë dhe zona mund të rikthehet."
         ]
       }
     ]

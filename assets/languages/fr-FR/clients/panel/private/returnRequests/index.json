@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "À propos des demandes de retour",
     "title": "À propos des demandes de retour",
-    "overview": "Une demande de retour sert à renvoyer des articles, à les échanger ou à rembourser une commande. Le type est retour, échange ou remboursement. Le statut suit en attente, approuvée, refusée, reçue, close.",
+    "overview": "Une demande de retour demande de renvoyer des articles, de les échanger ou d’être remboursé pour une commande produit. Son type est retour, échange ou remboursement, et son statut suit en attente → approuvée ou refusée → reçue → terminée. Les clients la font depuis leur compte ; le personnel peut aussi la créer ici.",
     "sections": [
       {
-        "title": "Le parcours",
-        "body": "Approuver et refuser sont la décision. Recevoir et clôturer sont ce qui suit un oui. Chaque étape est refusée si la demande n'est pas dans l'état précédent.",
+        "title": "Ce que contient une demande",
+        "body": "Une demande pointe toujours vers une commande et des lignes précises de celle-ci.",
         "items": [
-          "Approuver et refuser ne concernent qu'une demande en attente. Les deux notent qui l'a tranchée et quand, et le client est prévenu.",
-          "À l'approbation vous pouvez fixer un montant de remboursement, qui ne peut pas dépasser la valeur des lignes de la demande.",
-          "Refuser ferme la demande et ne déplace pas de stock.",
-          "Recevoir ne concerne qu'une demande approuvée. Clôturer seulement après réception."
+          "Chaque ligne est un article de commande, une quantité et un motif. Seules les quantités expédiées peuvent être réclamées, et les unités déjà réclamées par une autre demande ouverte ne sont plus disponibles.",
+          "Le montant de remboursement est facultatif et ne peut jamais dépasser la valeur des lignes réclamées.",
+          "Une vente en caisse ne peut pas être retournée ici ; elle est remboursée à la caisse.",
+          "Une fois demandées, les lignes sont figées. La note client et la note admin restent sur la demande.",
+          "Le personnel ayant accès aux retours est prévenu quand une nouvelle demande est enregistrée."
         ]
       },
       {
-        "title": "Ce que la réception et la clôture font au stock et à l'argent",
-        "body": "Un remboursement seul n'a rien à remettre en rayon. Un retour ou un échange si.",
+        "title": "Décider : approuver ou refuser",
+        "body": "Les deux ne concernent qu’une demande en attente. Les deux enregistrent qui a décidé et quand, et le client est prévenu.",
         "items": [
-          "À la réception, un retour ou un échange remet les quantités en stock dans l'entrepôt d'où chaque ligne est partie, et écrit un mouvement de retour. Un lot revient sous forme de ses composants.",
-          "Une ligne qui n'a jamais pris de stock, ou dont la ligne d'inventaire a disparu, est notée sur la commande au lieu d'être réintégrée.",
-          "Clôturer verse le montant convenu via le remboursement de la commande, pour un retour ou un remboursement. Un échange ne reverse rien."
+          "Approuver peut fixer ou corriger le montant de remboursement, toujours plafonné à la valeur des lignes réclamées, et ajouter une note admin.",
+          "Refuser clôt la demande avec un motif facultatif. Cela ne bouge ni stock ni argent."
         ]
       },
       {
-        "title": "À quoi la demande est attachée",
-        "body": "La demande pointe toujours vers une commande et vers des lignes précises de cette commande.",
+        "title": "Recevoir : la marchandise revient",
+        "body": "Recevoir n’est possible que pour une demande approuvée.",
         "items": [
-          "Chaque ligne est un article de commande, une quantité et un motif.",
-          "La note client et la note interne restent sur la demande. Le mouvement d'argent, s'il y en a un, est le remboursement de la commande.",
-          "La suppression est logique et la demande peut être restaurée."
+          "Pour un retour ou un échange, les unités réclamées reviennent en stock dans l’entrepôt d’où chaque ligne est partie, et un mouvement de retour est écrit pour chacune. Un lot revient sous forme de ses composants.",
+          "Une ligne dont la vente n’a jamais pris de stock (produit non suivi) ou dont la ligne de stock a disparu est notée dans la chronologie de la commande au lieu d’être remise en stock.",
+          "Une demande de remboursement seul n’a rien à recevoir ; la recevoir fait seulement avancer le statut."
+        ]
+      },
+      {
+        "title": "Terminer : l’argent revient",
+        "body": "Terminer n’est possible qu’après réception de la demande.",
+        "items": [
+          "Pour un retour ou un remboursement avec montant, terminer lance le remboursement de la commande pour ce montant, via la passerelle pour les paiements par carte. Cela exige aussi le droit d’écrire le statut de paiement de la commande.",
+          "Un échange ne rembourse rien ; le remplacement est traité comme un nouveau travail d’exécution.",
+          "Si le remboursement couvre tout le reste de la commande, les règles du remboursement complet s’appliquent aussi."
+        ]
+      },
+      {
+        "title": "Pages liées",
+        "items": [
+          "La commande montre le remboursement, les notes de remise en stock et la chronologie.",
+          "Les mouvements de stock montrent les entrées de retour avec cette demande comme référence.",
+          "Supprimer une demande est une suppression douce et elle peut être restaurée."
         ]
       }
     ]

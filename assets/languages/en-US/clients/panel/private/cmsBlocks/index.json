@@ -5,15 +5,31 @@
   "help": {
     "ariaLabel": "About CMS Blocks",
     "title": "About CMS Blocks",
-    "overview": "CMS blocks are the sections of the storefront, such as a hero, a slider, or an announcement. The shop loads active blocks whose dates include now, ordered by position from lowest to highest. Type and title are required. Choosing a type shows the fields that type needs.",
+    "overview": "CMS blocks are the sections of your storefront home page, such as a hero banner, a slider, or an announcement bar. The shop shows active blocks whose dates include now, in position order. Type and title are required; choosing a type shows the fields that type needs.",
     "sections": [
       {
-        "title": "How the storefront picks them",
-        "body": "Position is the display order. Reorder on this page writes those positions. A block outside its start or end stays saved but is not sent to the shop.",
+        "title": "Types",
         "items": [
-          "Type chooses the layout: hero, slider, featured collection, trending, best sellers, flash sale, announcement, custom HTML, video, grid, category showcase, or promotional section.",
-          "Visibility can limit desktop, mobile, and tablet, and can list regions. A new block defaults to all three devices.",
-          "Deleting a block is a soft delete and it can be restored."
+          "Hero banner, slider, and promotional section show images with a headline and a call-to-action link.",
+          "Featured collection, trending, best sellers, flash sale, grid, and category showcase show products from a collection or categories, up to a limit.",
+          "Announcement bar shows a short message with an optional link. Video embeds a video URL.",
+          "Custom HTML shows your own markup; it is sanitized before the storefront renders it."
+        ]
+      },
+      {
+        "title": "When and where it shows",
+        "items": [
+          "Start and end bound when the block is shown. Outside them it stays saved but is not sent to the shop.",
+          "Position is the order on the page; Reorder rewrites positions in the order you arrange.",
+          "Visibility can limit the block to desktop, tablet, or mobile, and to regions. New blocks show on all devices.",
+          "The platform shop that lists every seller does not use any seller's blocks."
+        ]
+      },
+      {
+        "title": "Status",
+        "items": [
+          "Activate and deactivate show or hide the block without deleting it.",
+          "Deleting is a soft delete and it can be restored."
         ]
       }
     ]

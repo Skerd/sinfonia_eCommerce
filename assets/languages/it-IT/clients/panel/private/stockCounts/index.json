@@ -5,35 +5,36 @@
   "help": {
     "ariaLabel": "Informazioni sui conteggi di stock",
     "title": "Informazioni sui conteggi di stock",
-    "overview": "Un conteggio registra cosa c'è davvero a scaffale in un magazzino e poi corregge la giacenza. Resta una bozza finché non viene applicato o annullato. Applicare è il momento in cui i numeri cambiano.",
+    "overview": "Un inventario registra ciò che c’è davvero sugli scaffali di un magazzino, poi corregge la giacenza fisica di conseguenza. Resta una bozza mentre si conta; applicarlo è il momento in cui i numeri cambiano.",
     "sections": [
       {
         "title": "La bozza",
-        "body": "Contare non cambia lo stock. Applicare sì.",
+        "body": "Contare non cambia nulla. Applicare sì.",
         "items": [
-          "Il conteggio è per un magazzino.",
-          "Ogni riga è un prodotto, una variante facoltativa, quanto era atteso e quanto è stato contato.",
-          "Una quantità contata vuota significa che la riga non è stata contata. Applica la lascia stare.",
-          "Solo una bozza può essere applicata o annullata."
+          "Un inventario riguarda un magazzino e resta un inventario di quel magazzino.",
+          "Ogni riga è un prodotto, una variante facoltativa, la quantità attesa quando la riga è stata aggiunta e la quantità contata. Le righe devono essere articoli diversi gestiti a magazzino; un bundle non può essere una riga.",
+          "Lascia vuota la quantità contata per un articolo non contato; applicare lo lascia invariato.",
+          "Solo una bozza può essere modificata, applicata o annullata."
         ]
       },
       {
-        "title": "Cosa fa applica",
-        "body": "La differenza è sulla giacenza di adesso, non sull'istantanea di quando il conteggio è iniziato.",
+        "title": "Cosa fa applicare",
+        "body": "La differenza si calcola sulla giacenza fisica al momento dell’applicazione, non sull’istantanea attesa.",
         "items": [
-          "Applica imposta la giacenza sulla quantità contata per ogni riga che ha un conteggio.",
-          "Le vendite spedite mentre contavi non vengono annullate, perché la differenza usa lo stock al momento di applicare.",
-          "Ogni variazione scrive un movimento di rettifica.",
-          "Un conteggio sotto quanto è trattenuto per gli ordini viene accettato. La disponibilità può andare in negativo. Lo scaffale è quello che è."
+          "Per ogni riga contata, la giacenza fisica diventa la quantità contata. Le vendite spedite durante il conteggio quindi non vengono annullate.",
+          "Un articolo mai stoccato nel magazzino riceve una nuova riga di inventario.",
+          "Ogni variazione scrive un movimento di rettifica riferito a questo inventario. Applicato il e da vengono registrati.",
+          "Un conteggio inferiore a quanto riservato per ordini è accettato: lo scaffale è quello che è, e il disponibile mostra la mancanza in negativo.",
+          "Applicare o annullare richiede il permesso di scrivere lo stato dell’inventario."
         ]
       },
       {
-        "title": "Dopo l'applicazione",
-        "body": "Il conteggio resta la traccia di ciò che è stato contato. Lo stock vive sulla riga di inventario.",
+        "title": "Dopo l’applicazione",
+        "body": "L’inventario resta come traccia di ciò che è stato trovato.",
         "items": [
-          "Annulla parte solo da bozza. Un conteggio applicato non si storna da questa pagina.",
-          "Guarda Inventario per la nuova giacenza e Movimenti di inventario per le rettifiche.",
-          "L'eliminazione è logica e il conteggio può essere ripristinato."
+          "Annulla è possibile solo da bozza. Un inventario applicato non si annulla qui; conta di nuovo.",
+          "Un inventario applicato non può essere eliminato. Una bozza o un inventario annullato è un’eliminazione logica e può essere ripristinato.",
+          "Vedi Inventario per la nuova giacenza fisica e i movimenti di magazzino per le rettifiche."
         ]
       }
     ]

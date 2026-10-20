@@ -5,15 +5,22 @@
   "help": {
     "ariaLabel": "Informazioni sulla connessione Odoo",
     "title": "Informazioni sulla connessione Odoo",
-    "overview": "Un server Odoo per azienda. L'importazione usa questa connessione JSON-RPC dal server API.",
+    "overview": "La connessione Odoo salva come questa società raggiunge il proprio server Odoo. C’è una connessione per società; l’importazione Odoo la usa per leggere i dati via JSON-RPC dal server API.",
     "sections": [
       {
         "title": "Cosa inserire",
-        "body": "Usa lo stesso URL, database e accesso che funzionano in Odoo, più una chiave API o la password di quell'utente.",
+        "body": "Usa lo stesso URL, database e accesso che funzionano in Odoo.",
         "items": [
-          "L'URL è l'origine Odoo, ad esempio https://your-company.odoo.com.",
-          "JSON-RPC authenticate accetta una chiave API o la password dell'account per quell'accesso. Preferisci una chiave API quando Odoo ne fornisce una.",
-          "Lascia il segreto vuoto al salvataggio successivo per mantenere il valore già archiviato."
+          "L’URL è l’indirizzo Odoo, ad esempio https://your-company.odoo.com. Il database è il nome del database Odoo.",
+          "Il nome utente è l’accesso Odoo. Il segreto è una chiave API (preferibile) o la password di quell’utente.",
+          "Il segreto è obbligatorio la prima volta e viene salvato cifrato. Lascialo vuoto quando salvi di nuovo per mantenere quello salvato."
+        ]
+      },
+      {
+        "title": "A cosa serve la connessione",
+        "items": [
+          "Solo l’importazione legge da Odoo; non viene mai riscritto nulla in Odoo.",
+          "L’importazione si autentica per prima cosa, quindi un URL, un database o un segreto errati compaiono lì come errore."
         ]
       }
     ]

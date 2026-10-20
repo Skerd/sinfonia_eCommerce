@@ -5,33 +5,41 @@
   "help": {
     "ariaLabel": "À propos des commandes PDV",
     "title": "À propos des commandes PDV",
-    "overview": "Une commande PDV est une vente passée en caisse. Cette page en est l'enregistrement. Les lignes ne se créent, ne se modifient et ne se suppriment pas ici.",
+    "overview": "Une commande au point de vente est une vente enregistrée sur une caisse, ou son remboursement. Cette page est le registre de ces ventes ; les lignes sont créées par la caisse et ne sont ni créées, ni modifiées, ni supprimées ici.",
     "sections": [
       {
-        "title": "Ce qu'est une ligne",
-        "body": "La vente est écrite quand la caisse encaisse. La liste sert à la retrouver.",
+        "title": "Les états",
         "items": [
-          "Les états sont brouillon, payée, annulée et remboursée.",
-          "La ligne garde la session, la caisse, le caissier et le client s'il y en avait un.",
-          "Réimprimer, dans le menu de la ligne, renvoie le reçu."
+          "Brouillon est un panier mis en attente sur la caisse.",
+          "Payé est une vente conclue. Annulé est un panier en attente abandonné, ou annulé lors de la clôture forcée de sa séance.",
+          "Remboursé marque une vente dont toutes les unités ont été remboursées. Chaque remboursement est aussi sa propre commande, liée à la vente."
         ]
       },
       {
-        "title": "Remboursements",
-        "body": "Un remboursement n'est pas une modification de la vente d'origine. C'est une autre commande.",
+        "title": "Ce que garde une ligne",
+        "body": "La commande est écrite quand la caisse encaisse.",
         "items": [
-          "Une vente payée se rembourse depuis la caisse, en totalité ou par quantité de ligne.",
-          "La commande de remboursement reste liée à la vente qu'elle inverse.",
-          "Chaque ligne de vente retient ce qui a déjà été remboursé, pour qu'un second remboursement ne couvre pas les mêmes unités."
+          "Séance, caisse, caissier et le client s’il a été associé.",
+          "Lignes avec produit, variante, quantité, prix unitaire, remise, part de taxe et ce qui a déjà été remboursé sur chaque ligne.",
+          "Paiements par mode, monnaie rendue et résultat fiscal (codes fiscaux et statut de la facture électronique) quand la caisse fiscalise.",
+          "Un lien vers la commande produit dupliquée qui garde la vente dans les registres de commandes et le chiffre d’affaires."
         ]
       },
       {
-        "title": "Où se fait le travail",
-        "body": "L'argent bouge en caisse. Cette page sert à retrouver la vente.",
+        "title": "Remboursements et réimpressions",
+        "body": "L’argent bouge à la caisse ; cette page sert à retrouver la vente.",
         "items": [
-          "Ouvrez le point de vente pour vendre, mettre un panier en attente ou rembourser.",
-          "Ouvrez les sessions PDV pour voir le tiroir de cette vente.",
-          "Les commandes catalogue sont une autre liste. Une vente en caisse n'y apparaît pas."
+          "Remboursez une vente payée depuis la caisse, en totalité ou par quantité de ligne. Un remboursement ne peut dépasser ce qui reste sur chaque ligne.",
+          "Réimprimer, depuis le menu de ligne, reproduit le ticket.",
+          "Les commandes produits issues de la caisse ne peuvent pas être remboursées ou retournées depuis la page Commandes de produits ; cela garde le tiroir et le stock cohérents."
+        ]
+      },
+      {
+        "title": "Pages liées",
+        "items": [
+          "Point de vente pour vendre, mettre en attente ou rembourser.",
+          "Séances PLV pour voir le tiroir auquel une vente appartenait.",
+          "Mouvements de stocks pour les entrées de vente et de retour de chaque vente en caisse."
         ]
       }
     ]

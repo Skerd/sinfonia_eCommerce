@@ -5,16 +5,29 @@
   "help": {
     "ariaLabel": "Informazioni su Magazzini",
     "title": "Informazioni su Magazzini",
-    "overview": "Un magazzino è un luogo che detiene le scorte. La giacenza è per prodotto o variante in un magazzino: disponibile e prenotata per i checkout aperti. Nome e codice sono obbligatori.",
+    "overview": "Un magazzino è un luogo di stoccaggio. Righe di inventario, trasferimenti, inventari, riserve degli ordini e casse puntano tutti a magazzini. Nome e codice sono obbligatori; l’indirizzo è facoltativo ma decide l’IVA delle vendite in cassa.",
     "sections": [
       {
-        "title": "Da dove il checkout prende le scorte",
-        "body": "Una riga si prenota solo se esiste una giacenza per quel prodotto o variante. Senza giacenza è trattata come non tracciata.",
+        "title": "Predefinito e attivo",
         "items": [
-          "Il magazzino attivo predefinito si usa quando ha abbastanza disponibile. Altrimenti si usa il primo magazzino che copre la quantità.",
-          "Un solo magazzino è quello predefinito. Imposta predefinito toglie il precedente.",
-          "Disattivare impedisce di scegliere il magazzino. Se è l'unico magazzino di una cassa, la disattivazione è bloccata finché la cassa non ha un altro magazzino.",
-          "L'eliminazione è logica e il magazzino può essere ripristinato."
+          "Imposta come predefinito rende questo magazzino il predefinito della società e toglie il precedente. Il checkout prova prima il magazzino predefinito.",
+          "Solo i magazzini attivi forniscono giacenza al checkout e possono essere assegnati alle casse.",
+          "Disattivare un magazzino che è l’unico di una cassa viene rifiutato; altrimenti viene tolto dalle casse che hanno ancora un altro magazzino."
+        ]
+      },
+      {
+        "title": "Eliminazione",
+        "body": "La giacenza non può sparire con il suo magazzino.",
+        "items": [
+          "Un magazzino le cui righe hanno ancora giacenza o riserve non può essere eliminato. Trasferisci o scarica prima la giacenza.",
+          "L’eliminazione è logica e il magazzino può essere ripristinato, salvo che un altro magazzino attivo usi nel frattempo lo stesso codice."
+        ]
+      },
+      {
+        "title": "Pagine collegate",
+        "items": [
+          "Inventario mostra la giacenza per articolo in ogni magazzino; i movimenti di magazzino ne mostrano lo storico.",
+          "L’importazione Odoo può creare magazzini da Odoo."
         ]
       }
     ]

@@ -5,34 +5,51 @@
   "help": {
     "ariaLabel": "Rreth kërkesave të kthimit",
     "title": "Rreth kërkesave të kthimit",
-    "overview": "Një kërkesë kthimi kërkon të kthehen mallrat, të ndërrohen ose të rimbursohet një porosi. Lloji është kthim, ndërrim ose rimbursim. Statusi ecën në pritje, e miratuar, e refuzuar, e pranuar, e përfunduar.",
+    "overview": "Një kërkesë kthimi kërkon të kthehet malli, të këmbehet ose të rimbursohet për një porosi produkti. Tipi i saj është kthim, këmbim ose rimbursim, dhe statusi kalon në pritje → e miratuar ose e refuzuar → e marrë → e përfunduar. Klientët e bëjnë nga llogaria e tyre; stafi mund ta krijojë edhe këtu.",
     "sections": [
       {
-        "title": "Rruga",
-        "body": "Miratimi dhe refuzimi janë vendimi. Pranimi dhe përfundimi janë ajo që ndodh pas një po. Çdo hap refuzohet nëse kërkesa nuk është në gjendjen e mëparshme.",
+        "title": "Çfarë përmban një kërkesë",
+        "body": "Një kërkesë tregon gjithmonë një porosi dhe rreshta të caktuar të saj.",
         "items": [
-          "Miratimi dhe refuzimi vlejnë vetëm për një kërkesë në pritje. Të dyja regjistrojnë kush e zgjidhi dhe kur, dhe klienti njoftohet.",
-          "Në miratim mund të vendosni një shumë rimbursimi, që nuk mund të kalojë vlerën e rreshtave të kërkesës.",
-          "Refuzimi e mbyll kërkesën dhe nuk lëviz stok.",
-          "Pranimi vlen vetëm për një kërkesë të miratuar. Përfundimi vetëm pasi është pranuar."
+          "Çdo rresht është një artikull porosie, një sasi dhe një arsye. Mund të kërkohen vetëm sasi të dërguara, dhe njësitë e kërkuara tashmë nga një kërkesë tjetër e hapur nuk janë sërish në dispozicion.",
+          "Shuma e rimbursimit është opsionale dhe nuk mund të kalojë kurrë vlerën e rreshtave të kërkuar.",
+          "Një shitje në arkë nuk kthehet këtu; rimbursohet në arkë.",
+          "Pasi kërkohen, rreshtat janë të fiksuar. Shënimi i klientit dhe shënimi i administratorit mbeten te kërkesa.",
+          "Stafi me qasje te kthimet njoftohet kur ruhet një kërkesë e re."
         ]
       },
       {
-        "title": "Çfarë bëjnë pranimi dhe përfundimi me stokun dhe paratë",
-        "body": "Një kërkesë vetëm për rimbursim s'ka çfarë të kthejë në raft. Një kthim ose një ndërrim ka.",
+        "title": "Vendimi: mirato ose refuzo",
+        "body": "Të dyja vlejnë vetëm për një kërkesë në pritje. Të dyja regjistrojnë kush vendosi dhe kur, dhe klienti njoftohet.",
         "items": [
-          "Në pranim, një kthim ose një ndërrim i kthen sasitë në gjendje në magazinën nga ku u dërgua çdo rresht dhe shkruan një lëvizje kthimi. Një paketë kthehet si përbërësit e saj.",
-          "Një rresht që s'ka marrë kurrë stok, ose rreshti i inventarit të të cilit mungon, shënohet te porosia në vend që të rikthehet në stok.",
-          "Përfundimi paguan shumën e rënë dakord përmes rimbursimit të porosisë, për një kthim ose një rimbursim. Një ndërrim nuk kthen para."
+          "Mirato mund të caktojë ose korrigjojë shumën e rimbursimit, gjithmonë brenda vlerës së rreshtave të kërkuar, dhe të shtojë një shënim administratori.",
+          "Refuzo e mbyll kërkesën me një arsye opsionale. Nuk lëviz as stok as para."
         ]
       },
       {
-        "title": "Me çfarë lidhet kërkesa",
-        "body": "Kërkesa tregon gjithmonë te një porosi dhe te rreshta të caktuar të asaj porosie.",
+        "title": "Marrja: malli kthehet",
+        "body": "Merr është i mundur vetëm për një kërkesë të miratuar.",
         "items": [
-          "Çdo rresht është një artikull porosie, një sasi dhe një arsye.",
-          "Shënimi i klientit dhe shënimi i administratorit qëndrojnë te kërkesa. Lëvizja e parave, nëse ka, është rimbursimi i porosisë.",
-          "Fshirja është e butë dhe kërkesa mund të rikthehet."
+          "Për një kthim ose këmbim, njësitë e kërkuara kthehen në stok në magazinën nga u nis çdo rresht, dhe për secilën shkruhet një lëvizje kthimi. Një paketë produktesh kthehet si përbërësit e saj.",
+          "Një rresht, shitja e të cilit nuk mori kurrë stok (produkt i pandjekur) ose rreshti i stokut i të cilit nuk ekziston më, shënohet në kronologjinë e porosisë në vend që të rikthehet në stok.",
+          "Një kërkesë vetëm për rimbursim nuk ka çfarë të marrë; marrja vetëm e çon statusin përpara."
+        ]
+      },
+      {
+        "title": "Përfundimi: paratë kthehen",
+        "body": "Përfundo është i mundur vetëm pasi kërkesa është marrë.",
+        "items": [
+          "Për një kthim ose rimbursim me shumë, përfundimi ekzekuton rimbursimin e porosisë për atë shumë, përmes portës së pagesës për pagesat me kartë. Kërkon edhe lejen për të shkruar statusin e pagesës së porosisë.",
+          "Një këmbim nuk rimburson asgjë; zëvendësimi trajtohet si punë e re përmbushjeje.",
+          "Nëse rimbursimi mbulon gjithë pjesën e mbetur të porosisë, zbatohen edhe rregullat e rimbursimit të plotë."
+        ]
+      },
+      {
+        "title": "Faqe të lidhura",
+        "items": [
+          "Porosia tregon rimbursimin, shënimet e rikthimit në stok dhe kronologjinë.",
+          "Lëvizjet e stokut tregojnë hyrjet e kthimit me këtë kërkesë si referencë.",
+          "Fshirja e një kërkese është fshirje e butë dhe mund të rikthehet."
         ]
       }
     ]

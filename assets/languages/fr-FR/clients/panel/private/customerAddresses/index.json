@@ -34,5 +34,36 @@
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
     "deletedBy": "Supprimé par"
+  },
+  "help": {
+    "ariaLabel": "À propos des adresses clients",
+    "title": "À propos des adresses clients",
+    "overview": "Les adresses clients sont les adresses de facturation et de livraison enregistrées par les clients de la boutique. Les acheteurs gèrent les leurs depuis leur compte ; cette page permet au personnel de voir et tenir à jour les adresses de tous les clients.",
+    "sections": [
+      {
+        "title": "Champs",
+        "items": [
+          "Client et type (facturation ou livraison) sont obligatoires.",
+          "Prénom et nom, rue, ville, pays et coordonnées cartographiques sont obligatoires ; e-mail, téléphone, région, code postal et un libellé sont facultatifs.",
+          "Pays, région et code postal sont ce que les zones fiscales et de livraison comparent au checkout."
+        ]
+      },
+      {
+        "title": "Adresses par défaut",
+        "body": "Chaque client a au plus une adresse par défaut par type.",
+        "items": [
+          "Définir par défaut, ou enregistrer une adresse comme par défaut, retire l’ancienne adresse par défaut du même type pour ce client.",
+          "Le checkout et le compte client proposent d’abord l’adresse par défaut."
+        ]
+      },
+      {
+        "title": "Deux vues des mêmes fiches",
+        "items": [
+          "Depuis Configurations, les adresses de tous les clients sont listées et une nouvelle demande à quel client elle appartient.",
+          "Dans le compte du client, seules ses adresses sont listées et les nouvelles sont classées sous lui.",
+          "La suppression est douce et l’adresse peut être restaurée."
+        ]
+      }
+    ]
   }
 }

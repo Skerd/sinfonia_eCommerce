@@ -5,25 +5,23 @@
   "help": {
     "ariaLabel": "Rreth add-on të listimeve",
     "title": "Rreth add-on të listimeve",
-    "overview": "Një add-on është opsion shtesë që blerësi mund të bashkojë kur porosit një listim — dorëzim i shpejtë ose deliverable shtesë. I përket një listimi, ka çmim të vet dhe ditë dorëzimi opsionale, dhe duhet të përdorë të njëjtën monedhë si porosia.",
+    "overview": "Një shtesë është një ekstra opsionale që blerësi mund t’ia bashkëngjisë porosisë së një listimi, si dorëzim ekspres ose një rishikim shtesë. I përket një listimi dhe shton çmimin e vet dhe, opsionalisht, ditë dorëzimi.",
     "sections": [
       {
-        "title": "Çfarë vendosni",
+        "title": "Fushat",
         "items": [
-          "Emri është ajo që sheh blerësi në checkout.",
-          "Listimi dhe ofruesi janë të lidhur me këtë ofertë.",
-          "Shuma dhe monedha duhet të përputhen me monedhën e listimit (ose paketës).",
-          "Ditët e dorëzimit, nëse vendosen, shtohen mbi dritaren e listimit ose paketës."
+          "Listimi është i detyrueshëm dhe i fiksuar; vetëm ofruesi i atij listimi mund të krijojë ose fshijë shtesat e tij.",
+          "Emri është ajo që sheh blerësi. Shuma dhe monedha e çmimit janë ajo që shton.",
+          "Ditët e dorëzimit, nëse vendosen, i shtohen dritares së dorëzimit të listimit ose paketës."
         ]
       },
       {
-        "title": "Kur ka rëndësi",
+        "title": "Porosia me shtesa",
         "items": [
-          "Vetëm add-on e atij listimi mund të zgjidhen.",
-          "Mos përputhja e monedhës bllokon porosinë.",
-          "Add-on e soft-fshira mund të restaurohen; pasi fshihen nuk ofrohen më."
-        ],
-        "body": "Add-on zgjidhen kur krijohet një porosi nga një listim."
+          "Mund të zgjidhen vetëm shtesat e listimit që porositet, secila një herë.",
+          "Çdo shtesë duhet të përdorë të njëjtën monedhë si porosia (atë të paketës, ose të listimit pa paketë); një mospërputhje e bllokon porosinë.",
+          "Fshirja është e butë. Një shtesë nuk mund të rikthehet sa kohë listimi i saj është i fshirë."
+        ]
       }
     ]
   },

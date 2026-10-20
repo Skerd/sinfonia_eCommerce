@@ -58,5 +58,40 @@
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
     "deletedBy": "Eliminato da"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sulle collezioni",
+    "title": "Informazioni sulle collezioni",
+    "overview": "Una collezione è un gruppo commerciale di prodotti, come «Saldi estivi» o «Novità», mostrato nel negozio e utilizzabile come destinazione di sconti e regole di prezzo. È manuale (scegli tu i prodotti) o dinamica (li scelgono delle regole).",
+    "sections": [
+      {
+        "title": "Manuale o dinamica",
+        "body": "Il tipo decide da dove viene l’appartenenza.",
+        "items": [
+          "Manuale: la collezione contiene esattamente i prodotti che aggiungi.",
+          "Dinamica: l’appartenenza è calcolata in tempo reale dalle regole, e contano solo i prodotti attivi. Una collezione dinamica senza regole non contiene nulla.",
+          "Tutte le condizioni richiede ogni regola; almeno una ne richiede una sola."
+        ]
+      },
+      {
+        "title": "Regole",
+        "body": "Ogni regola è un campo, un operatore e un valore.",
+        "items": [
+          "Tag, marca, fornitore e tipo di prodotto supportano uguale, diverso, contiene, non contiene e inizia con.",
+          "Categoria supporta uguale (o contiene) e diverso (o non contiene) rispetto alle categorie del prodotto.",
+          "Prezzo supporta uguale, diverso, maggiore di e minore di.",
+          "Livello di giacenza è accettato ma non ancora applicato; una regola su di esso viene ignorata."
+        ]
+      },
+      {
+        "title": "Negozio e prezzi",
+        "items": [
+          "Attiva e disattiva decidono se la collezione è visibile nel negozio. Una collezione nascosta non è elencata né consultabile, ma esiste ancora per sconti e regole di prezzo.",
+          "Sconti e regole di prezzo rivolti a una collezione usano la stessa appartenenza mostrata dal negozio.",
+          "Nome, descrizione, immagine principale, posizione e titolo e descrizione SEO danno forma alla pagina della collezione.",
+          "L’eliminazione è logica e la collezione può essere ripristinata."
+        ]
+      }
+    ]
   }
 }

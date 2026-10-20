@@ -5,25 +5,33 @@
   "help": {
     "ariaLabel": "À propos des zones d'expédition",
     "title": "À propos des zones d'expédition",
-    "overview": "Le checkout propose chaque tarif des zones actives qui correspondent à la destination. L'acheteur en choisit un. Une zone exige un nom et au moins un tarif. Une zone sans pays ne correspond pas.",
+    "overview": "Les zones de livraison décident des options de livraison proposées à l’acheteur au checkout et de leur coût. Une zone liste des pays, éventuellement des régions et codes postaux, et un ou plusieurs tarifs. Le checkout propose chaque tarif de chaque zone active correspondante ; l’acheteur en choisit un.",
     "sections": [
       {
-        "title": "Comment une destination correspond",
-        "body": "Le pays doit faire partie des pays de la zone. L'état et le code postal la restreignent encore.",
+        "title": "Faire correspondre une destination",
         "items": [
-          "Si vous listez des états, l'état de destination doit en faire partie. Une liste vide correspond à tout le pays.",
-          "Les motifs de code postal sont facultatifs. Une liste vide correspond à chaque code. * est un joker, par exemple 10*.",
-          "Sans pays de destination, aucun tarif n'est proposé."
+          "Le pays de destination doit être un des pays de la zone ; une zone sans pays ne correspond à rien.",
+          "Les régions listées restreignent ; aucune région couvre tout le pays. Les modèles de code postal sont facultatifs et utilisent * comme seul joker.",
+          "Sans pays de destination, aucun tarif n’est proposé."
         ]
       },
       {
-        "title": "Comment un tarif est calculé",
-        "body": "Chaque tarif correspondant s'affiche avec son nom, son prix, son transporteur et les jours estimés. Le transporteur et les jours ne changent pas le prix.",
+        "title": "Types de tarif",
+        "body": "Chaque tarif affiche son nom, son prix, son transporteur et ses jours estimés. Transporteur et jours ne changent pas le prix.",
         "items": [
-          "Le forfait facture son prix. Gratuit est à 0 et se cache lorsque le montant de commande est hors minimum ou maximum.",
-          "Le poids utilise le poids du panier et se cache hors de sa fenêtre de poids. Le prix utilise le sous-total des marchandises et sa fenêtre de montant.",
-          "La quantité compare le nombre d'articles aux champs de montant minimum et maximum, pas au total en argent.",
-          "Une remise livraison offerte annule les frais au checkout. Elle ne retire pas les tarifs de cette liste."
+          "Forfait facture toujours son prix.",
+          "Gratuit ne facture rien et est masqué quand le montant de commande est hors de son minimum ou maximum : c’est ainsi qu’on construit « gratuit dès 50 ».",
+          "Poids facture son prix quand le poids du panier est entre ses poids minimum et maximum.",
+          "Prix facture son prix quand le sous-total de marchandise est entre ses montants de commande minimum et maximum.",
+          "Quantité facture son prix quand le nombre d’articles est entre les champs montant de commande minimum et maximum (lus comme nombres d’articles pour ce type)."
+        ]
+      },
+      {
+        "title": "Avec les remises et les commandes",
+        "items": [
+          "Une remise livraison gratuite supprime les frais mais ne masque pas les tarifs.",
+          "Nom, transporteur et prix du tarif choisi sont copiés sur la commande.",
+          "Activer et désactiver allument et éteignent la zone. La suppression est douce et la zone peut être restaurée."
         ]
       }
     ]

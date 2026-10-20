@@ -5,25 +5,30 @@
   "help": {
     "ariaLabel": "Über Promotionen",
     "title": "Über Promotionen",
-    "overview": "Eine Promotion hebt ein Inserat als Featured oder Sponsored für ein Start–Ende-Fenster hervor. Lebenszyklus ist aktiv, pausiert oder gestoppt — über Aktionen, nicht per gewöhnlichem Bearbeiten.",
+    "overview": "Eine Promotion hebt ein Inserat als hervorgehoben oder gesponsert für ein Zeitfenster von Start bis Ende hervor. Sie läuft, solange ihr Lebenszyklus aktiv ist und heute innerhalb ihrer Daten liegt. Der Lebenszyklus ist aktiv, pausiert oder gestoppt und wird nur durch Aktionen geändert.",
     "sections": [
       {
-        "title": "Lebenszyklus",
+        "title": "Anlegen",
         "items": [
-          "Aktiv — Promotion läuft im Datumsfenster.",
-          "Pausieren — nur aus aktiv; Boost gehalten, Kampagne nicht beendet.",
-          "Fortsetzen — nur aus pausiert und nur wenn endAt noch in der Zukunft liegt.",
-          "Stoppen — beendet dauerhaft mit Stoppgrund. Kein Fortsetzen mehr."
+          "Der Anbieter des Inserats oder ein Administrator bewirbt ein aktives Inserat.",
+          "Typ ist hervorgehoben oder gesponsert. Start und Ende begrenzen, wann die Hervorhebung gilt."
         ]
       },
       {
-        "title": "Eigentum",
+        "title": "Lebenszyklus",
+        "body": "Pausieren, Fortsetzen und Stoppen brauchen den Besitz des Inserats oder einen Administrator.",
         "items": [
-          "Typ ist Featured oder Sponsored.",
-          "Start und Ende begrenzen den Boost.",
-          "Gelöschte Promotionen sind nicht actionable, bis wiederhergestellt."
-        ],
-        "body": "Pausieren, Fortsetzen und Stoppen verlangen Eigentum am Inserat (oder Admin)."
+          "Pausieren geht nur aus aktiv: Die Hervorhebung stoppt, ohne die Kampagne zu beenden.",
+          "Fortsetzen geht nur aus pausiert und nur, solange das Enddatum noch in der Zukunft liegt.",
+          "Stoppen beendet die Promotion endgültig mit einem Stoppgrund; sie kann nicht fortgesetzt werden."
+        ]
+      },
+      {
+        "title": "Wirkung",
+        "items": [
+          "In der empfohlenen Sortierung des Shops kommen Inserate mit laufender Promotion zuerst, die neuesten zuerst, danach der Rest.",
+          "Gelöschte Promotionen können nicht pausiert, fortgesetzt oder gestoppt werden, bis sie wiederhergestellt sind."
+        ]
       }
     ]
   },

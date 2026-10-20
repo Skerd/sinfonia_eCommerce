@@ -5,25 +5,38 @@
   "help": {
     "ariaLabel": "Über Preisregeln",
     "title": "Über Preisregeln",
-    "overview": "Preisregeln ändern den Stückpreis, bevor ein Rabattcode gilt. Jede Warenkorbzeile erhält höchstens eine Regel. Name, Typ, Wert und Geltungsbereich sind erforderlich.",
+    "overview": "Preisregeln ändern den Stückpreis einer Zeile automatisch, vor jedem Rabattcode. Nutzen Sie sie für Grosshandelspreise, Kategorie-Aktionen oder Zuschläge. Jede Warenkorbzeile erhält höchstens eine Regel. Name, Typ, Wert und Geltungsbereich sind Pflicht.",
     "sections": [
       {
         "title": "Welche Regel gewinnt",
-        "body": "Aktive Regeln stehen nach Priorität, die höchste zuerst, dann die neueste. Die erste passende Regel der Zeile gilt. Spätere Regeln dieser Zeile werden übersprungen.",
+        "body": "Aktive Regeln werden nach Priorität (höchste zuerst), dann nach Neuheit geordnet. Für jede Zeile wird die erste Regel angewendet, die sich qualifiziert und passt; die übrigen werden für diese Zeile übersprungen.",
         "items": [
-          "Eine Regel ohne Kundengruppen gilt für jeden Warenkorb. Eine Regel mit Gruppen gilt nur, wenn der angemeldete Kunde in einer davon ist. Gäste treffen nur Regeln ohne Gruppen.",
-          "Gilt für alle oder für Kundengruppe trifft jede Zeile. Produkt, Kategorie und Kollektion treffen nur die gewählten Ziele. Kategorie nutzt die erste Kategorie des Produkts.",
-          "Der Mindestbestellwert nutzt die Zwischensumme vor jeder Regel. Die Mindestmenge nutzt die Stückzahl. Ausserhalb von Start und Ende wird die Regel ignoriert."
+          "Eine Regel ausserhalb ihres Start- und Enddatums wird ignoriert.",
+          "Kundengruppen: Eine Regel ohne Gruppen gilt für alle; eine Regel mit Gruppen nur für angemeldete Kunden in einer davon. Gäste erfüllen nur Regeln ohne Gruppen.",
+          "Mindestbestellwert wird gegen die Warenkorb-Zwischensumme vor jeder Regel geprüft; Mindestmenge gegen die Gesamtzahl der Einheiten im Warenkorb."
         ]
       },
       {
-        "title": "Was die Typen tun",
-        "body": "Die Anpassung gilt auf den Katalog Stückpreis. Das Ergebnis liegt nie unter null.",
+        "title": "Geltungsbereich",
         "items": [
-          "Prozent Rabatt senkt den Stückpreis um diesen Prozentsatz.",
-          "Fest Rabatt zieht den Wert vom Stückpreis ab.",
-          "Festpreis ersetzt den Stückpreis durch den Wert.",
-          "Zuschlag addiert den Wert zum Stückpreis."
+          "Alle und Kundengruppe treffen jede Zeile eines qualifizierten Warenkorbs.",
+          "Produkt, Kategorie und Kollektion treffen nur die ausgewählten Ziele. Kategorie betrachtet nur die erste Kategorie des Produkts."
+        ]
+      },
+      {
+        "title": "Typen",
+        "body": "Die Anpassung wird auf den Katalog-Stückpreis angewendet, und das Ergebnis ist nie unter null.",
+        "items": [
+          "Prozentrabatt senkt den Preis um diesen Prozentsatz. Fixrabatt zieht den Wert ab.",
+          "Fixpreis ersetzt den Preis durch den Wert. Zuschlag addiert den Wert."
+        ]
+      },
+      {
+        "title": "Wo sie gilt",
+        "items": [
+          "Der Warenkorb rechnet jedes Mal neu vom Katalogpreis aus, eine Regel wird also nie auf einen bereits angepassten Preis angewendet.",
+          "Jede Zeile zeigt die Regel, die sie geändert hat. Die Kasse nutzt Katalogpreise und wendet keine Preisregeln an.",
+          "Aktivieren und Deaktivieren schalten die Regel ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
         ]
       }
     ]
