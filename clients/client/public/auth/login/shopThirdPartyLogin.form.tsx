@@ -8,7 +8,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {logIn} from "@coreModule/helpers/redux/slices/authSlice.ts";
 import type {ThirdPartyLoginFormType} from "armonia/src/modules/core/api/user/public/login/thirdPartyLogin.form.type.ts";
 import type {ThirdPartyLoginFormResponseType} from "armonia/src/modules/core/api/user/public/login/thirdPartyLogin.form.response.type.ts";
-import {shopSafeNext} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
+import {safeNextPath} from "@coreModule/helpers/publicAuth/safeNextPath.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/auth/login/shopThirdPartyLogin.form.tsx";
 const submittedOauthCodes = new Set<string>();
@@ -20,7 +20,7 @@ type ShopThirdPartyLoginFormProps = WithLanguageType &
 
 function oauthNextFromCallback(searchParams: URLSearchParams): string {
     const fromState = searchParams.get("state");
-    return shopSafeNext(fromState ? `?next=${encodeURIComponent(fromState)}` : "");
+    return safeNextPath(fromState ? `?next=${encodeURIComponent(fromState)}` : "", "/account");
 }
 
 function ShopThirdPartyLoginForm({

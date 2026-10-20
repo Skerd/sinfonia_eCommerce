@@ -96,8 +96,3 @@ export function useShopAuth(): ShopAuthContextValue {
     }
     return value;
 }
-
-export function shopSafeNext(search: string, fallback = "/account"): string {
-    const next = new URLSearchParams(search).get("next");
-    return next && next.startsWith("/") && !next.startsWith("//") ? next : fallback;
-}

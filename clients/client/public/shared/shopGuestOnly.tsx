@@ -1,6 +1,7 @@
 import {Navigate, useLocation} from "react-router-dom";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import {shopSafeNext, useShopAuth} from "./shopAuthContext.tsx";
+import {safeNextPath} from "@coreModule/helpers/publicAuth/safeNextPath.ts";
+import {useShopAuth} from "./shopAuthContext.tsx";
 
 function ShopGuestOnly({children}: {children: React.ReactNode}) {
     const {isAuthenticated, isHydrating} = useShopAuth();
@@ -11,7 +12,7 @@ function ShopGuestOnly({children}: {children: React.ReactNode}) {
     }
 
     if (isAuthenticated) {
-        return <Navigate to={shopSafeNext(location.search)} replace />;
+        return <Navigate to={safeNextPath(location.search, "/account")} replace />;
     }
 
     return children;

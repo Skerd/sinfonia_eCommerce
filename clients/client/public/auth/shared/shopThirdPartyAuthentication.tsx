@@ -4,7 +4,7 @@ import {getClientConfig} from "@coreModule/helpers/general/config.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import {SiApple, SiGoogle} from "@icons-pack/react-simple-icons";
 import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {shopSafeNext} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
+import {safeNextPath} from "@coreModule/helpers/publicAuth/safeNextPath.ts";
 
 const PARTY_ICONS: Record<string, ReactNode> = {
     google: <SiGoogle className="size-4" />,
@@ -35,7 +35,7 @@ function ShopThirdPartyAuthentication({
         return null;
     }
 
-    const next = shopSafeNext(location.search);
+    const next = safeNextPath(location.search, "/account");
 
     return (
         <div className="flex flex-col gap-3">

@@ -1,12 +1,10 @@
-import {useEffect, useImperativeHandle, useRef, useState} from "react";
 import {compose} from "redux";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {ChangeForgottenPasswordFormType} from "armonia/src/modules/core/api/user/public/forgotPassword/changeForgottenPassword.form.type.ts";
-import {changeForgottenPasswordFormSchema} from "armonia/src/modules/core/api/user/public/forgotPassword/changeForgottenPassword.form.validator.ts";
+import {usePublicResetPasswordForm} from "@coreModule/helpers/publicAuth/usePublicResetPasswordForm.ts";
 import {ChangeForgottenPasswordFormResponseType} from "armonia/src/modules/core/api/user/public/forgotPassword/changeForgottenPassword.form.response.type.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import ShopGuestOnly from "@eCommerceModule/clients/client/public/shared/shopGuestOnly.tsx";
@@ -22,8 +20,6 @@ import {
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/auth/resetPassword/index.tsx";
 
-type FieldErrors = Partial<Record<"password" | "confirmPassword", string>>;
-
 type ResetPasswordPageProps = WithLanguageType &
     WithAxiosType<ChangeForgottenPasswordFormResponseType, ChangeForgottenPasswordFormType>;
 
@@ -35,85 +31,13 @@ function ResetPasswordPageInner({
     innerRef,
     error,
 }: ResetPasswordPageProps) {
-    const params = useParams();
-    const openStarted = useRef(false);
-    const [verifying, setVerifying] = useState(true);
-    const [verifyError, setVerifyError] = useState(false);
-    const [resetPasswordCode, setResetPasswordCode] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-    const [success, setSuccess] = useState(false);
-
-    useEffect(() => {
-        const code = params.code;
-        if (!code || openStarted.current) {
-            if (!code) {
-                setVerifying(false);
-                setVerifyError(true);
-            }
-            return;
-        }
-        openStarted.current = true;
-        setVerifying(true);
-        setVerifyError(false);
-        apiClient
-            .post("/api/user/forgotPassword/openLink", {resetPasswordCode: code})
-            .then(() => {
-                setResetPasswordCode(code);
-                setVerifying(false);
-            })
-            .catch(() => {
-                setVerifying(false);
-                setVerifyError(true);
-            });
-    }, [params.code]);
-
-    useImperativeHandle(innerRef, () => ({
-        success: () => setSuccess(true),
-        error: () => setSuccess(false),
-    }));
-
-    const clearFieldError = (key: keyof FieldErrors) => {
-        setFieldErrors((prev) => {
-            if (!prev[key]) return prev;
-            const next = {...prev};
-            delete next[key];
-            return next;
-        });
-    };
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        if (loading) return;
-
-        const body: ChangeForgottenPasswordFormType = {
-            password,
-            confirmPassword,
-            resetPasswordCode,
-        };
-
-        const parsed = changeForgottenPasswordFormSchema(languageCode, {
-            passwordLabel: resolveLanguageKey("form.passwordLabel"),
-            confirmPasswordLabel: resolveLanguageKey("form.confirmPasswordLabel"),
-            resetPasswordCodeLabel: resolveLanguageKey("form.resetPasswordCodeLabel"),
-        }).safeParse(body);
-
-        if (!parsed.success) {
-            const nextErrors: FieldErrors = {};
-            for (const issue of parsed.error.issues) {
-                const key = issue.path[0];
-                if (key === "password" || key === "confirmPassword") {
-                    nextErrors[key] = issue.message;
-                }
-            }
-            setFieldErrors(nextErrors);
-            return;
-        }
-
-        setFieldErrors({});
-        onFilterChange(body);
-    };
+    const {
+        verifying, verifyError, success,
+        password, setPassword,
+        confirmPassword, setConfirmPassword,
+        fieldErrors, clearFieldError,
+        handleSubmit,
+    } = usePublicResetPasswordForm({resolveLanguageKey, languageCode, onFilterChange, innerRef, busy: loading});
 
     return (
         <ShopGuestOnly>

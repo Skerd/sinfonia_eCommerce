@@ -1,11 +1,10 @@
-import {useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {ForgotPasswordFormType} from "armonia/src/modules/core/api/user/public/forgotPassword/forgotPassword.form.type.ts";
-import {forgotPasswordFormSchema} from "armonia/src/modules/core/api/user/public/forgotPassword/forgotPassword.form.validator.ts";
+import {usePublicForgotPasswordForm} from "@coreModule/helpers/publicAuth/usePublicForgotPasswordForm.ts";
 import {ForgotPasswordFormResponseType} from "armonia/src/modules/core/api/user/public/forgotPassword/forgotPassword.form.response.type.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import ShopGuestOnly from "@eCommerceModule/clients/client/public/shared/shopGuestOnly.tsx";
@@ -32,33 +31,8 @@ function ForgotPasswordPageInner({
     innerRef,
     error,
 }: ForgotPasswordPageProps) {
-    const [email, setEmail] = useState("");
-    const [fieldError, setFieldError] = useState<string | undefined>();
-    const [submitted, setSubmitted] = useState(false);
-
-    useImperativeHandle(innerRef, () => ({
-        success: () => setSubmitted(true),
-        error: () => setSubmitted(false),
-    }));
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        if (loading) return;
-        setSubmitted(false);
-
-        const body: ForgotPasswordFormType = {email: email.trim()};
-        const parsed = forgotPasswordFormSchema(languageCode, {
-            emailLabel: resolveLanguageKey("form.emailLabel"),
-        }).safeParse(body);
-
-        if (!parsed.success) {
-            setFieldError(parsed.error.issues[0]?.message);
-            return;
-        }
-
-        setFieldError(undefined);
-        onFilterChange(parsed.data);
-    };
+    const {email, changeEmail, fieldError, submitted, handleSubmit} =
+        usePublicForgotPasswordForm({resolveLanguageKey, languageCode, onFilterChange, innerRef, busy: loading});
 
     return (
         <ShopGuestOnly>
@@ -80,10 +54,7 @@ function ForgotPasswordPageInner({
                                 placeholder={resolveLanguageKey("form.emailPlaceholder")}
                                 value={email}
                                 disabled={loading}
-                                onChange={(e) => {
-                                    setFieldError(undefined);
-                                    setEmail(e.target.value);
-                                }}
+                                onChange={(e) => changeEmail(e.target.value)}
                                 className={cn(SHOP_FIELD_INPUT_CLASS, fieldError && SHOP_FIELD_ERROR_CLASS)}
                             />
                             <ShopFieldError message={fieldError} />

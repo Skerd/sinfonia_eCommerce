@@ -1,10 +1,10 @@
-import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {ActivateAccountFormType} from "armonia/src/modules/core/api/user/public/activateAccount/activateAccount.form.type.ts";
+import {usePublicActivateAccount} from "@coreModule/helpers/publicAuth/usePublicActivateAccount.ts";
 import {ActivateAccountFormResponseType} from "armonia/src/modules/core/api/user/public/activateAccount/activateAccount.form.response.type.ts";
 import {
     SHOP_LINK_CLASS,
@@ -23,24 +23,7 @@ function ActivatePageInner({
     loading,
     innerRef,
 }: ActivatePageProps) {
-    const params = useParams();
-    const [phase, setPhase] = useState<"loading" | "success" | "error">("loading");
-
-    useEffect(() => {
-        const code = params.code;
-        if (!code) {
-            setPhase("error");
-            return;
-        }
-        setPhase("loading");
-        onFilterChange({code});
-    }, [params.code]);
-
-    useImperativeHandle(innerRef, () => ({
-        start: () => setPhase("loading"),
-        success: () => setPhase("success"),
-        error: () => setPhase("error"),
-    }));
+    const {phase} = usePublicActivateAccount({onFilterChange, innerRef});
 
     return (
         <ShopAuthPageShell

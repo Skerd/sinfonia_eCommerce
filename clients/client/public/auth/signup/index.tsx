@@ -1,11 +1,10 @@
-import {useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {SignUpFormType} from "armonia/src/modules/core/api/user/public/signUp/signup.form.type.ts";
-import {signupFormSchema} from "armonia/src/modules/core/api/user/public/signUp/signup.form.validator.ts";
+import {usePublicSignUpForm} from "@coreModule/helpers/publicAuth/usePublicSignUpForm.ts";
 import {SignupFormResponseType} from "armonia/src/modules/core/api/user/public/signUp/signup.form.response.type.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import ShopGuestOnly from "@eCommerceModule/clients/client/public/shared/shopGuestOnly.tsx";
@@ -22,9 +21,6 @@ import ShopThirdPartyAuthentication from "@eCommerceModule/clients/client/public
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/auth/signup/index.tsx";
 
-type FieldKey = "name" | "surname" | "email" | "password" | "confirmPassword";
-type FieldErrors = Partial<Record<FieldKey, string>>;
-
 type SignUpPageProps = WithLanguageType & WithAxiosType<SignupFormResponseType, SignUpFormType>;
 
 function SignUpPageInner({
@@ -35,70 +31,16 @@ function SignUpPageInner({
     innerRef,
     error,
 }: SignUpPageProps) {
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-    const [submitted, setSubmitted] = useState(false);
-
-    useImperativeHandle(innerRef, () => ({
-        success: () => setSubmitted(true),
-        error: () => setSubmitted(false),
-    }));
-
-    const clearFieldError = (key: FieldKey) => {
-        setFieldErrors((prev) => {
-            if (!prev[key]) return prev;
-            const next = {...prev};
-            delete next[key];
-            return next;
-        });
-    };
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        if (loading) return;
-        setSubmitted(false);
-
-        const body: SignUpFormType = {
-            name: name.trim(),
-            surname: surname.trim(),
-            email: email.trim(),
-            password,
-            confirmPassword,
-        };
-
-        const parsed = signupFormSchema(languageCode, {
-            nameLabel: resolveLanguageKey("form.nameLabel"),
-            surnameLabel: resolveLanguageKey("form.surnameLabel"),
-            emailLabel: resolveLanguageKey("form.emailLabel"),
-            passwordLabel: resolveLanguageKey("form.passwordLabel"),
-            confirmPasswordLabel: resolveLanguageKey("form.confirmPasswordLabel"),
-        }).safeParse(body);
-
-        if (!parsed.success) {
-            const nextErrors: FieldErrors = {};
-            for (const issue of parsed.error.issues) {
-                const key = issue.path[0];
-                if (
-                    key === "name" ||
-                    key === "surname" ||
-                    key === "email" ||
-                    key === "password" ||
-                    key === "confirmPassword"
-                ) {
-                    nextErrors[key] = issue.message;
-                }
-            }
-            setFieldErrors(nextErrors);
-            return;
-        }
-
-        setFieldErrors({});
-        onFilterChange(body);
-    };
+    const {
+        name, setName,
+        surname, setSurname,
+        email, setEmail,
+        password, setPassword,
+        confirmPassword, setConfirmPassword,
+        submitted,
+        fieldErrors, clearFieldError,
+        handleSubmit,
+    } = usePublicSignUpForm({resolveLanguageKey, languageCode, onFilterChange, innerRef, busy: loading});
 
     return (
         <ShopGuestOnly>
