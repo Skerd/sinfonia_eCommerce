@@ -15,6 +15,7 @@ import {ShopConfigProvider, useShopConfig} from "./shopConfigContext.tsx";
 import {useShopAuth} from "./shopAuthContext.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import ShopMiniCart from "./shopMiniCart.tsx";
+import ShopChat from "./shopChat.tsx";
 import ShopScrollToTop from "./shopScrollToTop.tsx";
 import {ShopDesktopMenu, ShopMobileMenu, useShopNavMenus, type ShopNavMenus} from "./shopNavMenus.tsx";
 
@@ -331,6 +332,7 @@ function ShopLayoutInner(props: WithLanguageType) {
                     <ShopFooter {...props} />
                 </div>
                 <ShopMiniCart />
+                <ShopChat />
             </ShopCartProvider>
         </ShopConfigProvider>
     );
