@@ -179,6 +179,8 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const {user} = useShopAuth();
 
     const [checkout, setCheckout] = useState<Checkout | null>(null);
+    // What is charged: the checkout's currency, or the cart's before the checkout exists
+    const currency = checkout?.currency ?? cart?.currency;
     const [step, setStep] = useState<Step>("address");
     const [countries, setCountries] = useState<ShopCountry[]>([]);
     const [states, setStates] = useState<ShopState[]>([]);
@@ -459,33 +461,33 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 </span>
                             </div>
                             <span className="min-w-0 flex-1 line-clamp-2">{item.snapshot?.title}</span>
-                            <span className="tabular-nums">{formatMoney(item.totalPrice)}</span>
+                            <span className="tabular-nums">{formatMoney(item.totalPrice, currency)}</span>
                         </li>
                     );
                 })}
             </ul>
             <dl className="flex flex-col gap-2.5 border-t border-shop-border pt-4 text-[15px]">
-                <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(checkout?.subtotal ?? cart?.subtotal)}</dd></div>
+                <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(checkout?.subtotal ?? cart?.subtotal, currency)}</dd></div>
                 {(checkout?.discountTotal ?? 0) > 0 && (
-                    <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(checkout?.discountTotal)}</dd></div>
+                    <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(checkout?.discountTotal, currency)}</dd></div>
                 )}
                 <div className="flex justify-between">
                     <dt className="text-shop-ink-muted">{resolveLanguageKey("shipping")}</dt>
-                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal, currency) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
                 </div>
                 <div className="flex justify-between">
                     <dt className="text-shop-ink-muted">{resolveLanguageKey("tax")}</dt>
-                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal, currency) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
                 </div>
                 {(checkout?.giftCard?.amount ?? 0) > 0 && (
                     <div className="flex justify-between text-shop-success">
                         <dt>{resolveLanguageKey("giftCard").replace("{code}", checkout?.giftCard?.code ?? "")}</dt>
-                        <dd className="tabular-nums">−{formatMoney(checkout?.giftCard?.amount)}</dd>
+                        <dd className="tabular-nums">−{formatMoney(checkout?.giftCard?.amount, currency)}</dd>
                     </div>
                 )}
                 <div className="flex items-baseline justify-between border-t border-shop-border pt-3">
                     <dt className="font-semibold">{resolveLanguageKey("total")}</dt>
-                    <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal)}</dd>
+                    <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</dd>
                 </div>
             </dl>
         </div>
@@ -539,7 +541,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                         {resolveLanguageKey("showSummary")}
                         <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
                     </span>
-                    <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal)}</span>
+                    <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</span>
                 </summary>
                 <div className="px-5 pb-5">{summary}</div>
             </details>
@@ -730,7 +732,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                                 )}
                                             </span>
                                         </span>
-                                        <span className="font-semibold tabular-nums">{rate.price === 0 ? resolveLanguageKey("free") : formatMoney(rate.price)}</span>
+                                        <span className="font-semibold tabular-nums">{rate.price === 0 ? resolveLanguageKey("free") : formatMoney(rate.price, currency)}</span>
                                     </label>
                                 ))}
                             </fieldset>
@@ -783,7 +785,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <Elements stripe={stripePromise} options={{clientSecret: checkout.stripeClientSecret}}>
                                     <StripePaymentStep
                                         clientSecret={checkout.stripeClientSecret}
-                                        payLabel={resolveLanguageKey("payNow").replace("{amount}", formatMoney(checkout.grandTotal))}
+                                        payLabel={resolveLanguageKey("payNow").replace("{amount}", formatMoney(checkout.grandTotal, currency))}
                                         processingLabel={resolveLanguageKey("processing")}
                                         paymentFailedLabel={resolveLanguageKey("paymentFailed")}
                                         onPaid={() => confirmOrder(checkout._id)}
@@ -795,7 +797,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
 
                             {(checkout.paymentMethod === "cod" || checkout.paymentMethod === "bank_transfer") && (
                                 <button type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className={SHOP_SUBMIT_CLASS}>
-                                    {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrderAmount").replace("{amount}", formatMoney(checkout.grandTotal))}
+                                    {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrderAmount").replace("{amount}", formatMoney(checkout.grandTotal, currency))}
                                 </button>
                             )}
                         </div>

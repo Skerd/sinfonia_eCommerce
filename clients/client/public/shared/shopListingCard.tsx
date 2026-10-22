@@ -4,7 +4,8 @@ import {Clock, ImageOff, MapPin, Star} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
-import {listingLocationLabel, ShopProviderAvatar, useMarketplaceMoney} from "./shopMarketplace.tsx";
+import {listingLocationLabel, ShopProviderAvatar} from "./shopMarketplace.tsx";
+import {useShopConfig} from "./shopConfigContext.tsx";
 import ShopSellerCard from "./shopSellerCard.tsx";
 import type {ShopListingCard as ShopListingCardType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
 
@@ -26,7 +27,7 @@ export function listingPriceLabel(
 }
 
 function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProps) {
-    const formatMoney = useMarketplaceMoney();
+    const {formatMoney} = useShopConfig();
     const imageUrl = resolveShopMediaUrl(listing.mainImage);
     const location = listingLocationLabel(listing.location);
     const price = listing.fromPrice ?? listing.price;

@@ -120,10 +120,10 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                                             <p className="text-sm text-shop-ink-muted tabular-nums">
                                                 {resolveLanguageKey("quantityTimes")
                                                     .replace("{quantity}", String(item.quantity))
-                                                    .replace("{price}", formatMoney(item.unitPrice))}
+                                                    .replace("{price}", formatMoney(item.unitPrice, order.currency))}
                                             </p>
                                         </div>
-                                        <span className="font-medium tabular-nums">{formatMoney(item.totalPrice)}</span>
+                                        <span className="font-medium tabular-nums">{formatMoney(item.totalPrice, order.currency)}</span>
                                     </li>
                                 );
                             })}
@@ -194,18 +194,18 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         )}
                     </section>
                     <dl className="flex flex-col gap-2.5 border-t border-shop-border pt-5 text-[15px]">
-                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(order.subtotal)}</dd></div>
+                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(order.subtotal, order.currency)}</dd></div>
                         {order.discountTotal > 0 && (
-                            <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(order.discountTotal)}</dd></div>
+                            <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(order.discountTotal, order.currency)}</dd></div>
                         )}
-                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("shipping")}</dt><dd className="tabular-nums">{formatMoney(order.shippingTotal)}</dd></div>
-                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("tax")}</dt><dd className="tabular-nums">{formatMoney(order.taxTotal)}</dd></div>
+                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("shipping")}</dt><dd className="tabular-nums">{formatMoney(order.shippingTotal, order.currency)}</dd></div>
+                        <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("tax")}</dt><dd className="tabular-nums">{formatMoney(order.taxTotal, order.currency)}</dd></div>
                         {(order.giftCard?.amount ?? 0) > 0 && (
-                            <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("giftCard")}</dt><dd className="tabular-nums">−{formatMoney(order.giftCard?.amount)}</dd></div>
+                            <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("giftCard")}</dt><dd className="tabular-nums">−{formatMoney(order.giftCard?.amount, order.currency)}</dd></div>
                         )}
                         <div className="flex items-baseline justify-between border-t border-shop-border pt-3">
                             <dt className="font-semibold">{resolveLanguageKey("total")}</dt>
-                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(order.grandTotal)}</dd>
+                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(order.grandTotal, order.currency)}</dd>
                         </div>
                     </dl>
                 </aside>

@@ -11,8 +11,9 @@
         "title": "Insiemi di dati",
         "body": "Ogni record è associato al suo ID Odoo, quindi rieseguire l’importazione aggiorna ciò che ha creato invece di duplicarlo.",
         "items": [
+          "Valute: valute Odoo attive, abbinate tramite codice ISO (EUR, USD, …). Una valuta già presente qui viene riutilizzata così com’è; una mancante viene creata.",
           "Categorie: categorie prodotto di Odoo.",
-          "Prodotti: modelli di prodotto con le loro varianti e valori di attributo. I prodotti Odoo archiviati arrivano archiviati; le varianti archiviate arrivano inattive.",
+          "Prodotti: modelli di prodotto con le loro varianti e valori di attributo. I prodotti Odoo archiviati arrivano archiviati; le varianti archiviate arrivano inattive. Ogni prodotto riceve la sua valuta Odoo, abbinata o creata anche quando Valute non è selezionato.",
           "Magazzini: magazzini Odoo, creati attivi.",
           "Inventario: quantità fisiche per prodotto e magazzino dalla giacenza interna di Odoo; le righe esistenti vengono impostate sulla quantità Odoo.",
           "Variazioni di giacenza: movimenti di magazzino Odoo completati, scritti come movimenti di magazzino con un motivo corrispondente.",
@@ -44,6 +45,7 @@
   "openConnection": "Apri la connessione Odoo",
   "connectionTitle": "Server",
   "datasets": {
+    "currencies": "Valute",
     "categories": "Categorie",
     "products": "Prodotti e varianti",
     "warehouses": "Magazzini",

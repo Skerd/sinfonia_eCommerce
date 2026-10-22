@@ -211,24 +211,17 @@ function PriceField({
     value,
     onChange,
     onCommit,
-    symbol,
     placeholder,
 }: {
     label: string;
     value: string;
     onChange: (value: string) => void;
     onCommit: () => void;
-    symbol?: string;
     placeholder?: string;
 }) {
     return (
-        <label className="relative min-w-0 flex-1">
+        <label className="min-w-0 flex-1">
             <span className="sr-only">{label}</span>
-            {symbol && (
-                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-shop-ink-faded" aria-hidden>
-                    {symbol}
-                </span>
-            )}
             <input
                 type="number"
                 inputMode="decimal"
@@ -244,7 +237,7 @@ function PriceField({
                         onCommit();
                     }
                 }}
-                className={cn(SHOP_FIELD_INPUT_CLASS, "h-10", symbol && (symbol.length > 1 ? "pl-12" : "pl-8"))}
+                className={cn(SHOP_FIELD_INPUT_CLASS, "h-10")}
             />
         </label>
     );
@@ -258,8 +251,7 @@ type ShopAdvancedFiltersProps = {
 };
 
 export default function ShopAdvancedFilters({resolveLanguageKey, facets, selection, onChange}: ShopAdvancedFiltersProps) {
-    const {formatMoney, config} = useShopConfig();
-    const symbol = config?.currency?.symbol || undefined;
+    const {formatMoney} = useShopConfig();
     const [minInput, setMinInput] = useState(selection.priceMin);
     const [maxInput, setMaxInput] = useState(selection.priceMax);
 
@@ -306,7 +298,6 @@ export default function ShopAdvancedFilters({resolveLanguageKey, facets, selecti
                             value={minInput}
                             onChange={setMinInput}
                             onCommit={commitPrice}
-                            symbol={symbol}
                             placeholder={facets?.priceMin != null ? String(facets.priceMin) : undefined}
                         />
                         <span className="shrink-0 text-sm text-shop-ink-faded">{resolveLanguageKey("priceTo")}</span>
@@ -315,7 +306,6 @@ export default function ShopAdvancedFilters({resolveLanguageKey, facets, selecti
                             value={maxInput}
                             onChange={setMaxInput}
                             onCommit={commitPrice}
-                            symbol={symbol}
                             placeholder={facets?.priceMax != null ? String(facets.priceMax) : undefined}
                         />
                     </div>

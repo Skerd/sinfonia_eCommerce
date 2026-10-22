@@ -8,7 +8,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
-import {useMarketplaceMoney} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {SHOP_BUTTON_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import {orderStatuses} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.schema-def.ts";
@@ -26,7 +26,7 @@ export function serviceOrderTitle(order: BuyerServiceOrder): string {
 }
 
 function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
-    const formatMoney = useMarketplaceMoney();
+    const {formatMoney} = useShopConfig();
     const [searchParams, setSearchParams] = useSearchParams();
     const page = Math.max(1, Number(searchParams.get("page")) || 1);
     const requestedStatus = searchParams.get("status");

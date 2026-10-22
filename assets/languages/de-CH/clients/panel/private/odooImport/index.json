@@ -11,8 +11,9 @@
         "title": "Datensätze",
         "body": "Jeder Datensatz wird seiner Odoo-ID zugeordnet, ein erneuter Import aktualisiert also, was er angelegt hat, statt es zu verdoppeln.",
         "items": [
+          "Währungen: aktive Odoo-Währungen, abgeglichen über den ISO-Code (EUR, USD, …). Eine hier bereits vorhandene Währung wird unverändert übernommen; eine fehlende wird angelegt.",
           "Kategorien: Odoo-Produktkategorien.",
-          "Produkte: Produktvorlagen mit ihren Varianten und Attributwerten. Archivierte Odoo-Produkte kommen archiviert an; archivierte Varianten inaktiv.",
+          "Produkte: Produktvorlagen mit ihren Varianten und Attributwerten. Archivierte Odoo-Produkte kommen archiviert an; archivierte Varianten inaktiv. Jedes Produkt erhält seine Odoo-Währung; sie wird auch abgeglichen oder angelegt, wenn Währungen nicht ausgewählt ist.",
           "Lager: Odoo-Lager, aktiv angelegt.",
           "Bestand: Mengen an Lager pro Produkt und Lager aus dem internen Odoo-Bestand; bestehende Zeilen werden auf die Odoo-Menge gesetzt.",
           "Bestandsänderungen: erledigte Odoo-Lagerbewegungen, als Lagerbewegungen mit passendem Grund geschrieben.",
@@ -44,6 +45,7 @@
   "openConnection": "Odoo-Verbindung öffnen",
   "connectionTitle": "Server",
   "datasets": {
+    "currencies": "Währungen",
     "categories": "Kategorien",
     "products": "Produkte und Varianten",
     "warehouses": "Lager",

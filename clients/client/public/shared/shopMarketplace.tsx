@@ -1,31 +1,8 @@
-import {useCallback} from "react";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
-import {useShopConfig} from "./shopConfigContext.tsx";
 import type {
     ShopAvailabilitySlot,
     ShopListingLocation,
-    ShopMarketplaceCurrency,
 } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
-
-type MarketplaceCurrency = Pick<ShopMarketplaceCurrency, "symbol" | "abbreviation" | "decimalPlaces">;
-
-/**
- * Formats a marketplace amount in its own currency (a listing need not use the
- * shop currency); falls back to the shop currency when the record has none.
- */
-export function useMarketplaceMoney(): (amount: number | undefined | null, currency?: MarketplaceCurrency) => string {
-    const {formatMoney} = useShopConfig();
-    return useCallback((amount, currency) => {
-        if (amount == null || Number.isNaN(amount)) return "";
-        const decimals = currency?.decimalPlaces ?? 2;
-        if (currency?.abbreviation) {
-            return formatCurrency(amount, currency.abbreviation, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
-        }
-        if (currency?.symbol) return `${currency.symbol}${amount.toFixed(decimals)}`;
-        return formatMoney(amount);
-    }, [formatMoney]);
-}
 
 /** "City, State, Country" with whichever levels the listing has. */
 export function listingLocationLabel(location: ShopListingLocation | undefined): string {

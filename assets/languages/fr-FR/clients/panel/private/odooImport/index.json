@@ -11,8 +11,9 @@
         "title": "Jeux de données",
         "body": "Chaque fiche est associée à son identifiant Odoo, donc relancer l’import met à jour ce qu’il a créé au lieu de le dupliquer.",
         "items": [
+          "Devises : devises Odoo actives, rapprochées par code ISO (EUR, USD, …). Une devise qui existe déjà ici est reprise telle quelle ; une devise manquante est créée.",
           "Catégories : catégories de produits Odoo.",
-          "Produits : modèles de produits avec leurs variantes et valeurs d’attributs. Les produits Odoo archivés arrivent archivés ; les variantes archivées arrivent inactives.",
+          "Produits : modèles de produits avec leurs variantes et valeurs d’attributs. Les produits Odoo archivés arrivent archivés ; les variantes archivées arrivent inactives. Chaque produit reçoit sa devise Odoo, rapprochée ou créée même si Devises n’est pas sélectionné.",
           "Entrepôts : entrepôts Odoo, créés actifs.",
           "Inventaire : quantités en stock par produit et entrepôt depuis le stock interne d’Odoo ; les lignes existantes sont fixées à la quantité Odoo.",
           "Changements de stock : mouvements de stock Odoo terminés, écrits comme mouvements de stock avec un motif correspondant.",
@@ -44,6 +45,7 @@
   "openConnection": "Ouvrir la connexion Odoo",
   "connectionTitle": "Serveur",
   "datasets": {
+    "currencies": "Devises",
     "categories": "Catégories",
     "products": "Produits et variantes",
     "warehouses": "Entrepôts",

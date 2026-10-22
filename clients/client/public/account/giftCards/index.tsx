@@ -7,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {useShopConfig, type ShopMoneyCurrency} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx";
 
@@ -16,6 +16,7 @@ type MyGiftCard = {
     code: string;
     initialBalance: number;
     balance: number;
+    currency?: ShopMoneyCurrency;
     status: "active" | "depleted" | "disabled";
     expiresAt?: string;
     createdAt?: string;
@@ -83,9 +84,9 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                                     <Gift className="h-5 w-5 opacity-70" aria-hidden />
                                 </div>
                                 <div>
-                                    <p className="font-shop-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance)}</p>
+                                    <p className="font-shop-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance, card.currency)}</p>
                                     <p className="text-sm opacity-70">
-                                        {resolveLanguageKey("ofInitial").replace("{amount}", formatMoney(card.initialBalance))}
+                                        {resolveLanguageKey("ofInitial").replace("{amount}", formatMoney(card.initialBalance, card.currency))}
                                     </p>
                                 </div>
                                 <div className="flex items-center justify-between gap-2">

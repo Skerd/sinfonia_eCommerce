@@ -11,8 +11,9 @@
         "title": "Grupet e të dhënave",
         "body": "Çdo e dhënë lidhet me ID-në e saj në Odoo, ndaj ekzekutimi i sërishëm përditëson atë që krijoi në vend që ta dyfishojë.",
         "items": [
+          "Monedhat: monedhat aktive në Odoo, të përputhura sipas kodit ISO (EUR, USD, …). Një monedhë që ekziston tashmë këtu ripërdoret ashtu siç është; një që mungon krijohet.",
           "Kategoritë: kategoritë e produkteve në Odoo.",
-          "Produktet: shabllonet e produkteve me variantet dhe vlerat e atributeve. Produktet e arkivuara në Odoo vijnë të arkivuara; variantet e arkivuara vijnë joaktive.",
+          "Produktet: shabllonet e produkteve me variantet dhe vlerat e atributeve. Produktet e arkivuara në Odoo vijnë të arkivuara; variantet e arkivuara vijnë joaktive. Çdo produkt merr monedhën e vet nga Odoo, e cila përputhet ose krijohet edhe kur Monedhat nuk është zgjedhur.",
           "Magazinat: magazinat e Odoo, të krijuara aktive.",
           "Inventari: sasitë në gjendje për produkt dhe magazinë nga stoku i brendshëm i Odoo; rreshtat ekzistues vendosen sa sasia në Odoo.",
           "Ndryshimet e stokut: lëvizjet e përfunduara të stokut në Odoo, të shkruara si lëvizje stoku me arsyen përkatëse.",
@@ -44,6 +45,7 @@
   "openConnection": "Hap lidhjen Odoo",
   "connectionTitle": "Serveri",
   "datasets": {
+    "currencies": "Monedhat",
     "categories": "Kategori",
     "products": "Produkte dhe variante",
     "warehouses": "Magazina",

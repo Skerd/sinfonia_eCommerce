@@ -235,7 +235,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                                         .replace("{count}", String(product.ratingCount))}
                                 </a>
                             ) : null}
-                            <ShopPrice price={price} compareAtPrice={compareAt} size="lg" />
+                            <ShopPrice price={price} compareAtPrice={compareAt} currency={product.currency} size="lg" />
                             <ShopSellerCard seller={product.seller} kind="product" size="card" className="mt-1" />
                         </div>
 

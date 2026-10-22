@@ -6,7 +6,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {useMarketplaceMoney} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {SHOP_BUTTON_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import type {BuyerTaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
@@ -16,7 +16,7 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/jobs/
 const PAGE_SIZE = 10;
 
 function JobsPage({resolveLanguageKey}: WithLanguageType) {
-    const formatMoney = useMarketplaceMoney();
+    const {formatMoney} = useShopConfig();
     const [searchParams, setSearchParams] = useSearchParams();
     const page = Math.max(1, Number(searchParams.get("page")) || 1);
 

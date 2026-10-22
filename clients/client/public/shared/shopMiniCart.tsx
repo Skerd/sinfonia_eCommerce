@@ -42,13 +42,13 @@ function ShopMiniCartInner({resolveLanguageKey}: WithLanguageType) {
                     <>
                         <ul className="flex-1 divide-y divide-shop-border overflow-y-auto px-6">
                             {items.map(item => (
-                                <ShopCartLine key={item._id} item={item} compact onNavigate={close} />
+                                <ShopCartLine key={item._id} item={item} currency={cart?.currency} compact onNavigate={close} />
                             ))}
                         </ul>
                         <div className="flex flex-col gap-3 border-t border-shop-border px-6 py-5">
                             <div className="flex items-baseline justify-between">
                                 <span className="text-sm text-shop-ink-muted">{resolveLanguageKey("subtotal")}</span>
-                                <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(cart?.subtotal)}</span>
+                                <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(cart?.subtotal, cart?.currency)}</span>
                             </div>
                             <p className="text-xs text-shop-ink-faded">{resolveLanguageKey("taxNote")}</p>
                             <div className="grid grid-cols-2 gap-3">

@@ -10,7 +10,8 @@ import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
-import {ShopProviderAvatar, useMarketplaceMoney} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {ShopProviderAvatar} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {
     SHOP_BUTTON_CLASS,
@@ -26,7 +27,7 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams] = useSearchParams();
     const justPosted = searchParams.get("posted") === "1";
     const navigate = useNavigate();
-    const formatMoney = useMarketplaceMoney();
+    const {formatMoney} = useShopConfig();
 
     const [job, setJob] = useState<BuyerTaskRequest | null>(null);
     const [loading, setLoading] = useState(true);

@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ShopProductCard as ShopProductCardType} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
-import {useShopConfig} from "./shopConfigContext.tsx";
+import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
 import ShopSellerCard from "./shopSellerCard.tsx";
 
@@ -21,22 +21,23 @@ export function shopDiscountPercent(price: number | undefined, compareAtPrice: n
 type ShopPriceProps = WithLanguageType & {
     price: number | undefined;
     compareAtPrice?: number;
+    currency?: ShopMoneyCurrency;
     size?: "sm" | "lg";
 };
 
 /** Price with its struck compare-at price when on sale. */
-function ShopPriceInner({resolveLanguageKey, price, compareAtPrice, size = "sm"}: ShopPriceProps) {
+function ShopPriceInner({resolveLanguageKey, price, compareAtPrice, currency, size = "sm"}: ShopPriceProps) {
     const {formatMoney} = useShopConfig();
     const onSale = shopDiscountPercent(price, compareAtPrice) != null;
     return (
         <span className="inline-flex flex-wrap items-baseline gap-x-2">
             <span className={cn("font-shop-display font-semibold tabular-nums", size === "lg" ? "text-3xl" : "text-[15px]", onSale && "text-shop-accent")}>
-                {formatMoney(price)}
+                {formatMoney(price, currency)}
             </span>
             {onSale && (
                 <span className={cn("text-shop-ink-faded tabular-nums line-through", size === "lg" ? "text-base" : "text-sm")}>
                     <span className="sr-only">{resolveLanguageKey("wasPrice")} </span>
-                    {formatMoney(compareAtPrice)}
+                    {formatMoney(compareAtPrice, currency)}
                 </span>
             )}
         </span>
@@ -88,7 +89,7 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                 <ShopSellerCard seller={product.seller} kind="product" size="compact" nestedInLink />
                 <h3 className="line-clamp-2 text-[15px] font-medium leading-snug underline-offset-4 group-hover:underline">{product.title}</h3>
                 <div className="flex items-center justify-between gap-2">
-                    <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} />
+                    <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} currency={product.currency} />
                     {product.ratingCount ? (
                         <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-shop-ink-muted">
                             <Star className="h-3.5 w-3.5 fill-shop-ink text-shop-ink" aria-hidden />

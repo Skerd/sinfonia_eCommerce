@@ -12,7 +12,7 @@ import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
-import {ShopProviderAvatar, useMarketplaceMoney} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {ShopProviderAvatar} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {
@@ -103,8 +103,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const {orderId = ""} = useParams();
     const [searchParams] = useSearchParams();
     const justPlaced = searchParams.get("placed") === "1";
-    const formatMoney = useMarketplaceMoney();
-    const {config} = useShopConfig();
+    const {config, formatMoney} = useShopConfig();
     const stripePromise = useMemo(
         () => (config?.stripePublishableKey ? loadStripe(config.stripePublishableKey) : null),
         [config?.stripePublishableKey],

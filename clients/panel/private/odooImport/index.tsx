@@ -23,6 +23,7 @@ import type {OdooImportFormType} from "armonia/src/modules/eCommerce/api/eCommer
 import type {OdooImportCounts, OdooImportResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/odooImport/odooImport.form.response.type.ts";
 
 const ALL_DATASETS = {
+    currencies: true,
     categories: true,
     products: true,
     warehouses: true,

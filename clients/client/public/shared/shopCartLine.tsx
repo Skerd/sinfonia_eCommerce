@@ -8,7 +8,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import type {CartItem} from "armonia/src/modules/eCommerce/api/eCommerce/private/cart/cart.dto.ts";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {useShopCart} from "./shopCartContext.tsx";
-import {useShopConfig} from "./shopConfigContext.tsx";
+import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
 import ShopQuantityStepper from "./shopQuantityStepper.tsx";
 
@@ -16,6 +16,8 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopCa
 
 type ShopCartLineProps = WithLanguageType & {
     item: CartItem;
+    /** The cart's currency. */
+    currency?: ShopMoneyCurrency;
     /** Tighter layout for the slide-over cart. */
     compact?: boolean;
     /** Called when the buyer follows the product link (closes the slide-over). */
@@ -23,7 +25,7 @@ type ShopCartLineProps = WithLanguageType & {
 };
 
 /** One cart line: image, linked title, quantity stepper, line total and remove. */
-function ShopCartLineInner({resolveLanguageKey, item, compact = false, onNavigate}: ShopCartLineProps) {
+function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false, onNavigate}: ShopCartLineProps) {
     const {pendingItemIds, updateItem, removeItem} = useShopCart();
     const {formatMoney} = useShopConfig();
     const itemId = item._id ?? "";
@@ -61,10 +63,10 @@ function ShopCartLineInner({resolveLanguageKey, item, compact = false, onNavigat
                             <p className="mt-0.5 text-xs text-shop-ink-faded">{resolveLanguageKey("sku").replace("{sku}", item.snapshot.sku)}</p>
                         )}
                         <p className="mt-0.5 text-sm text-shop-ink-muted tabular-nums">
-                            {resolveLanguageKey("each").replace("{price}", formatMoney(item.unitPrice))}
+                            {resolveLanguageKey("each").replace("{price}", formatMoney(item.unitPrice, currency))}
                         </p>
                     </div>
-                    <p className="shrink-0 font-shop-display text-[15px] font-semibold tabular-nums">{formatMoney(item.totalPrice)}</p>
+                    <p className="shrink-0 font-shop-display text-[15px] font-semibold tabular-nums">{formatMoney(item.totalPrice, currency)}</p>
                 </div>
                 <div className="mt-auto flex items-center justify-between gap-3 pt-2">
                     <ShopQuantityStepper

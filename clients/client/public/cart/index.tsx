@@ -146,7 +146,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
                                 )}
                                 <ul className="divide-y divide-shop-border border-y border-shop-border">
                                     {items.map(item => (
-                                        <ShopCartLine key={item._id} item={item} />
+                                        <ShopCartLine key={item._id} item={item} currency={cart.currency} />
                                     ))}
                                 </ul>
                             </div>
@@ -160,7 +160,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
                     <dl className="flex flex-col gap-3 text-[15px]">
                         <div className="flex justify-between gap-4">
                             <dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt>
-                            <dd className="tabular-nums">{formatMoney(cart.subtotal)}</dd>
+                            <dd className="tabular-nums">{formatMoney(cart.subtotal, cart.currency)}</dd>
                         </div>
                         {(cart.discountTotal ?? 0) > 0 && (
                             <div className="flex justify-between gap-4 text-shop-success">
@@ -174,7 +174,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
                                         {resolveLanguageKey("remove")}
                                     </button>
                                 </dt>
-                                <dd className="tabular-nums">−{formatMoney(cart.discountTotal)}</dd>
+                                <dd className="tabular-nums">−{formatMoney(cart.discountTotal, cart.currency)}</dd>
                             </div>
                         )}
                         {giftCardAmount > 0 && (
@@ -189,12 +189,12 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
                                         {resolveLanguageKey("remove")}
                                     </button>
                                 </dt>
-                                <dd className="tabular-nums">−{formatMoney(giftCardAmount)}</dd>
+                                <dd className="tabular-nums">−{formatMoney(giftCardAmount, cart.currency)}</dd>
                             </div>
                         )}
                         <div className="flex items-baseline justify-between gap-4 border-t border-shop-border pt-3">
                             <dt className="font-semibold">{resolveLanguageKey("estimatedTotal")}</dt>
-                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(estimate)}</dd>
+                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(estimate, cart.currency)}</dd>
                         </div>
                     </dl>
                     <p className="-mt-2 text-xs text-shop-ink-muted">{resolveLanguageKey("shippingNote")}</p>

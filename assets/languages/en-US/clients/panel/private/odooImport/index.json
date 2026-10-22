@@ -11,8 +11,9 @@
         "title": "Datasets",
         "body": "Each record is matched to its Odoo id, so running the import again updates what it created instead of duplicating it.",
         "items": [
+          "Currencies: active Odoo currencies, matched by ISO code (EUR, USD, …). A currency that already exists here is reused as it is; a missing one is created.",
           "Categories: Odoo product categories.",
-          "Products: product templates with their variants and attribute values. Archived Odoo products arrive archived; archived variants arrive inactive.",
+          "Products: product templates with their variants and attribute values. Archived Odoo products arrive archived; archived variants arrive inactive. Each product gets its Odoo currency, which is matched or created even when Currencies is not selected.",
           "Warehouses: Odoo warehouses, created active.",
           "Inventory: on-hand quantities per product and warehouse from Odoo's internal stock; existing rows are set to the Odoo quantity.",
           "Stock changes: completed Odoo stock moves, written as stock movements with a matching reason.",
@@ -44,6 +45,7 @@
   "openConnection": "Open Odoo connection",
   "connectionTitle": "Server",
   "datasets": {
+    "currencies": "Currencies",
     "categories": "Categories",
     "products": "Products and variants",
     "warehouses": "Warehouses",

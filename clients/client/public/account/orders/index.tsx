@@ -94,7 +94,7 @@ function OrdersPage({resolveLanguageKey}: WithLanguageType) {
                                             {resolveLanguageKey(itemCount === 1 ? "itemCountOne" : "itemCount").replace("{count}", String(itemCount))}
                                         </span>
                                     </div>
-                                    <span className="font-shop-display font-semibold tabular-nums">{formatMoney(order.grandTotal)}</span>
+                                    <span className="font-shop-display font-semibold tabular-nums">{formatMoney(order.grandTotal, order.currency)}</span>
                                     <ChevronRight className="h-4 w-4 shrink-0 text-shop-ink-faded transition-transform group-hover:translate-x-0.5" aria-hidden />
                                 </Link>
                             </li>

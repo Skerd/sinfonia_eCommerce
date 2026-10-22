@@ -16,8 +16,8 @@ import {
     listingLocationLabel,
     ShopAvailability,
     ShopProviderAvatar,
-    useMarketplaceMoney,
 } from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
+import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
 import {
     ShopInlineSignIn,
@@ -69,7 +69,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [searchParams] = useSearchParams();
     const id = searchParams.get("id") ?? "";
     const navigate = useNavigate();
-    const formatMoney = useMarketplaceMoney();
+    const {formatMoney} = useShopConfig();
     const {isAuthenticated, isHydrating, user} = useShopAuth();
 
     const [listing, setListing] = useState<ShopListingDetail | null>(null);
