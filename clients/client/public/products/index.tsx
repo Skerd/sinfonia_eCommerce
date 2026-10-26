@@ -69,6 +69,8 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
 
     const search = searchParams.get("search") ?? "";
     const categorySlug = searchParams.get("category") ?? "";
+    /** Platform shop only: one seller's products (company id), e.g. from the portal. */
+    const seller = searchParams.get("seller") ?? "";
     const collectionSlug = searchParams.get("collection") ?? "";
     const sort = searchParams.get("sort") ?? "newest";
     const page = Math.max(1, Number(searchParams.get("page")) || 1);
@@ -124,6 +126,7 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
             try {
                 const res = await apiClient.post<{data: ShopFacets}>("/api/eCommerce/shopFacets", {
                     search: search || undefined,
+                    sellerCompanyId: seller || undefined,
                     categorySlug: categorySlug || undefined,
                     collectionSlug: collectionSlug || undefined,
                 });
@@ -135,7 +138,7 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
         return () => {
             cancelled = true;
         };
-    }, [filtersOpen, search, categorySlug, collectionSlug]);
+    }, [filtersOpen, search, seller, categorySlug, collectionSlug]);
 
     useEffect(() => {
         let cancelled = false;
@@ -151,6 +154,7 @@ function ProductsPage({resolveLanguageKey}: WithLanguageType) {
             try {
                 const res = await apiClient.post<ShopProductsResponse>("/api/eCommerce/shopProducts", {
                     search: activeSearch || undefined,
+                    sellerCompanyId: searchParams.get("seller") || undefined,
                     categorySlug: activeCategory || undefined,
                     collectionSlug: activeCollection || undefined,
                     sort: activeSort,
