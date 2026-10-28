@@ -3,6 +3,6 @@
   "soldBy": "Sold by",
   "offeredBy": "Offered by",
   "publishedBy": "Published by",
-  "visitShop": "Visit {name} shop",
-  "visitShopShort": "Visit shop"
+  "visitShop": "Visit {name}",
+  "visitShopShort": "Visit site"
 }

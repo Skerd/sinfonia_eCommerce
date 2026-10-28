@@ -11,6 +11,8 @@ import {useShopCart} from "./shopCartContext.tsx";
 import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
 import ShopQuantityStepper from "./shopQuantityStepper.tsx";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx";
 
@@ -26,6 +28,7 @@ type ShopCartLineProps = WithLanguageType & {
 
 /** One cart line: image, linked title, quantity stepper, line total and remove. */
 function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false, onNavigate}: ShopCartLineProps) {
+    const base = useSectionBase();
     const {pendingItemIds, updateItem, removeItem} = useShopCart();
     const {formatMoney} = useShopConfig();
     const itemId = item._id ?? "";
@@ -34,14 +37,14 @@ function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false,
     const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
     const rules = item.quantityRules ?? {min: 1, step: 1};
     const productHref = item.product._id
-        ? shopProductHref({_id: item.product._id, slug: item.product.slug, seller: item.seller})
+        ? shopProductHref(base, {_id: item.product._id, slug: item.product.slug, seller: item.seller})
         : undefined;
 
     const failed = (fallbackKey: string) => (err: unknown) =>
         handleError(err, {context: "Cart", showToast: true, fallbackMessage: resolveLanguageKey(fallbackKey)});
 
     const image = (
-        <div className={cn("shrink-0 overflow-hidden rounded-xl bg-shop-cream", compact ? "h-20 w-16" : "h-28 w-24 sm:h-32 sm:w-28")}>
+        <div className={cn("shrink-0 overflow-hidden rounded-xl bg-muted", compact ? "h-20 w-16" : "h-28 w-24 sm:h-32 sm:w-28")}>
             {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
         </div>
     );
@@ -60,13 +63,13 @@ function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false,
                             <p className="line-clamp-2 text-[15px] font-medium leading-snug">{title}</p>
                         )}
                         {item.snapshot?.sku && !compact && (
-                            <p className="mt-0.5 text-xs text-shop-ink-faded">{resolveLanguageKey("sku").replace("{sku}", item.snapshot.sku)}</p>
+                            <p className="mt-0.5 text-xs text-muted-foreground">{resolveLanguageKey("sku").replace("{sku}", item.snapshot.sku)}</p>
                         )}
-                        <p className="mt-0.5 text-sm text-shop-ink-muted tabular-nums">
+                        <p className="mt-0.5 text-sm text-muted-foreground tabular-nums">
                             {resolveLanguageKey("each").replace("{price}", formatMoney(item.unitPrice, currency))}
                         </p>
                     </div>
-                    <p className="shrink-0 font-shop-display text-[15px] font-semibold tabular-nums">{formatMoney(item.totalPrice, currency)}</p>
+                    <p className="shrink-0 font-display text-[15px] font-semibold tabular-nums">{formatMoney(item.totalPrice, currency)}</p>
                 </div>
                 <div className="mt-auto flex items-center justify-between gap-3 pt-2">
                     <ShopQuantityStepper
@@ -82,16 +85,18 @@ function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false,
                             void updateItem(itemId, next).catch(failed("updateError"));
                         }}
                     />
-                    <button
+                    <Button
                         type="button"
+                        variant="ghost"
+                        size={compact ? "icon" : "default"}
                         onClick={() => void removeItem(itemId).catch(failed("removeError"))}
                         disabled={pending}
-                        className="inline-flex items-center gap-1 text-sm text-shop-ink-muted underline-offset-4 transition-colors hover:text-shop-danger hover:underline disabled:opacity-50"
+                        className="text-muted-foreground hover:text-destructive"
                         aria-label={resolveLanguageKey("removeLabel").replace("{item}", title)}
                     >
-                        <X className="h-4 w-4" aria-hidden />
+                        <X aria-hidden />
                         <span className={compact ? "sr-only" : undefined}>{resolveLanguageKey("remove")}</span>
-                    </button>
+                    </Button>
                 </div>
             </div>
         </li>

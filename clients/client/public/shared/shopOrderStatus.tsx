@@ -27,7 +27,7 @@ const TONES: Record<string, string> = {
     awarded: "bg-emerald-50 text-emerald-800 ring-emerald-200",
     completed: "bg-emerald-50 text-emerald-800 ring-emerald-200",
     released: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-    closed: "bg-shop-cream text-shop-ink-muted ring-shop-border",
+    closed: "bg-muted text-muted-foreground ring-border",
     rejected: "bg-red-50 text-red-700 ring-red-200",
 };
 
@@ -40,7 +40,7 @@ type ShopOrderStatusProps = WithLanguageType & {
 /** Translated order / payment / fulfillment status pill. */
 function ShopOrderStatusInner({resolveLanguageKey, kind, value}: ShopOrderStatusProps) {
     return (
-        <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset", TONES[value] ?? "bg-shop-cream text-shop-ink-muted ring-shop-border")}>
+        <span className={cn("inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset", TONES[value] ?? "bg-muted text-muted-foreground ring-border")}>
             {resolveLanguageKey(`${kind}.${value}`, true) ?? value.replaceAll("_", " ")}
         </span>
     );

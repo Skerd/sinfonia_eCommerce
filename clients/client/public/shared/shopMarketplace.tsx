@@ -25,7 +25,7 @@ export function ShopProviderAvatar({name, size = "md", className}: {name: string
         <span
             aria-hidden
             className={cn(
-                "inline-flex shrink-0 items-center justify-center rounded-full bg-shop-ink font-shop-display font-semibold text-white",
+                "inline-flex shrink-0 items-center justify-center rounded-full bg-foreground font-display font-semibold text-background",
                 size === "sm" && "h-7 w-7 text-[11px]",
                 size === "md" && "h-11 w-11 text-sm",
                 size === "lg" && "h-20 w-20 text-2xl",
@@ -53,10 +53,10 @@ export function ShopAvailability({slots, languageCode}: {slots: ShopAvailability
         .filter(entry => entry.windows.length > 0);
 
     return (
-        <dl className="divide-y divide-shop-border text-sm">
+        <dl className="divide-y divide-border text-sm">
             {days.map(entry => (
                 <div key={entry.day} className="flex justify-between gap-6 py-2.5">
-                    <dt className="capitalize text-shop-ink-muted">{weekdayName(entry.day, languageCode)}</dt>
+                    <dt className="capitalize text-muted-foreground">{weekdayName(entry.day, languageCode)}</dt>
                     <dd className="text-right font-medium tabular-nums">
                         {entry.windows.map(window => `${window.startTime}–${window.endTime}`).join(", ")}
                     </dd>

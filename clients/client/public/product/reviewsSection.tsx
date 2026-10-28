@@ -8,17 +8,16 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {useShopAuth} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
-import {
-    SHOP_BUTTON_CLASS,
-    SHOP_FIELD_INPUT_CLASS,
-    SHOP_FIELD_LABEL_CLASS,
-} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
 import type {
     ShopProductReview,
     ShopProductReviewsResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";
 
@@ -28,7 +27,7 @@ export function StarRow({value, className}: {value: number; className?: string})
     return (
         <span className={cn("inline-flex items-center gap-0.5", className)} aria-hidden>
             {[1, 2, 3, 4, 5].map(n => (
-                <Star key={n} className={cn("h-4 w-4", n <= value ? "fill-shop-ink text-shop-ink" : "text-shop-ink/25")} />
+                <Star key={n} className={cn("h-4 w-4", n <= value ? "fill-foreground text-foreground" : "text-foreground/25")} />
             ))}
         </span>
     );
@@ -41,7 +40,7 @@ type ReviewsSectionProps = WithLanguageType & {
 };
 
 function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompanyId}: ReviewsSectionProps) {
-    const {isAuthenticated: signedIn} = useShopAuth();
+    const {isAuthenticated: signedIn} = usePortalSession();
     const [reviews, setReviews] = useState<ShopProductReview[]>([]);
     const [total, setTotal] = useState(0);
     const [average, setAverage] = useState<number | undefined>(undefined);
@@ -118,76 +117,77 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
     }
 
     return (
-        <section id="shop-reviews" className="scroll-mt-28 border-t border-shop-border pt-12" aria-labelledby="shop-reviews-title">
+        <section id="shop-reviews" className="scroll-mt-28 border-t border-border pt-12" aria-labelledby="shop-reviews-title">
             <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
                 <div className="flex flex-col gap-4">
-                    <h2 id="shop-reviews-title" className="font-shop-display text-2xl font-semibold tracking-tight sm:text-3xl">{resolveLanguageKey("title")}</h2>
+                    <h2 id="shop-reviews-title" className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">{resolveLanguageKey("title")}</h2>
                     {average != null && total > 0 ? (
                         <div className="flex items-center gap-3">
-                            <span className="font-shop-display text-5xl font-bold tabular-nums">{average.toFixed(1)}</span>
+                            <span className="font-display text-5xl font-bold tabular-nums">{average.toFixed(1)}</span>
                             <div className="flex flex-col gap-1">
                                 <StarRow value={Math.round(average)} />
-                                <span className="text-sm text-shop-ink-muted">
+                                <span className="text-sm text-muted-foreground">
                                     {resolveLanguageKey(total === 1 ? "countOne" : "count").replace("{count}", String(total))}
                                 </span>
                             </div>
                         </div>
                     ) : (
-                        <p className="text-shop-ink-muted">{resolveLanguageKey("empty")}</p>
+                        <p className="text-muted-foreground">{resolveLanguageKey("empty")}</p>
                     )}
 
                     {reviewableOrderId && (
-                        <form onSubmit={submitReview} className="mt-2 flex flex-col gap-4 rounded-2xl bg-shop-cream p-5">
+                        <form onSubmit={submitReview} className="mt-2 flex flex-col gap-4 rounded-2xl bg-muted p-5">
                             <p className="font-semibold">{resolveLanguageKey("writeTitle")}</p>
                             <fieldset>
                                 <legend className="mb-2 text-sm font-medium">{resolveLanguageKey("ratingLabel")}</legend>
                                 <div className="flex gap-1">
                                     {[1, 2, 3, 4, 5].map(n => (
-                                        <button
+                                        <Button
                                             key={n}
                                             type="button"
+                                            variant="ghost"
+                                            size="icon-lg"
                                             onClick={() => setRating(n)}
                                             aria-label={resolveLanguageKey("starsOption").replace("{count}", String(n))}
                                             aria-pressed={n === rating}
-                                            className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white"
                                         >
-                                            <Star className={cn("h-6 w-6", n <= rating ? "fill-shop-ink text-shop-ink" : "text-shop-ink/25")} />
-                                        </button>
+                                            <Star className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
+                                        </Button>
                                     ))}
                                 </div>
                             </fieldset>
-                            <label className={SHOP_FIELD_LABEL_CLASS}>
+                            <Label className="flex-col items-stretch gap-1.5">
                                 {resolveLanguageKey("titleLabel")}
-                                <input value={title} onChange={e => setTitle(e.target.value)} maxLength={200} className={SHOP_FIELD_INPUT_CLASS} />
-                            </label>
-                            <label className={SHOP_FIELD_LABEL_CLASS}>
+                                <Input value={title} onChange={e => setTitle(e.target.value)} maxLength={200} />
+                            </Label>
+                            <Label className="flex-col items-stretch gap-1.5">
                                 {resolveLanguageKey("commentLabel")}
-                                <textarea
-                                    value={comment}
-                                    onChange={e => setComment(e.target.value)}
-                                    rows={4}
-                                    maxLength={2000}
-                                    className={cn(SHOP_FIELD_INPUT_CLASS, "h-auto py-2.5")}
-                                />
-                            </label>
-                            <button type="submit" disabled={submitting} className={SHOP_BUTTON_CLASS}>
+                                <Textarea
+                  value={comment}
+                  onChange={e => setComment(e.target.value)}
+                  rows={4}
+                  maxLength={2000}
+                  className="h-auto py-2.5"
+                />
+                            </Label>
+                            <Button size="lg" type="submit" disabled={submitting} >
                                 {submitting ? resolveLanguageKey("submitting") : resolveLanguageKey("submit")}
-                            </button>
+                            </Button>
                         </form>
                     )}
                 </div>
 
                 {reviews.length > 0 && (
-                    <ul className="flex flex-col divide-y divide-shop-border">
+                    <ul className="flex flex-col divide-y divide-border">
                         {reviews.map(review => (
                             <li key={review._id} className="flex flex-col gap-2 py-6 first:pt-0">
                                 <div className="flex items-center justify-between gap-3">
                                     <StarRow value={review.rating} />
                                     <span className="sr-only">{resolveLanguageKey("starsValue").replace("{count}", String(review.rating))}</span>
-                                    {review.createdAt && <span className="text-xs text-shop-ink-faded">{formatDate(review.createdAt, {format: DATE_FORMATS.date})}</span>}
+                                    {review.createdAt && <span className="text-xs text-muted-foreground">{formatDate(review.createdAt, {format: DATE_FORMATS.date})}</span>}
                                 </div>
                                 {review.title && <p className="font-semibold">{review.title}</p>}
-                                {review.comment && <p className="text-[15px] leading-relaxed text-shop-ink-muted">{review.comment}</p>}
+                                {review.comment && <p className="text-[15px] leading-relaxed text-muted-foreground">{review.comment}</p>}
                                 <p className="text-sm font-medium">{review.reviewerName}</p>
                             </li>
                         ))}

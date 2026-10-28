@@ -1,56 +1,30 @@
-import {Suspense} from "react";
-import {NavLink, Outlet} from "react-router-dom";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
+import AccountShell from "@coreModule/clients/portal/account/accountShell.tsx";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/accountLayout.tsx";
 
 const NAV = [
-    {to: "/account", end: true, labelKey: "navProfile"},
-    {to: "/account/security", end: true, labelKey: "navSecurity"},
-    {to: "/account/orders", end: false, labelKey: "navOrders"},
-    {to: "/account/services", end: false, labelKey: "navServiceOrders"},
-    {to: "/account/jobs", end: false, labelKey: "navJobs"},
-    {to: "/account/giftcards", end: true, labelKey: "navGiftCards"},
-    {to: "/account/addresses", end: true, labelKey: "navAddresses"},
+    {path: "/orders", end: false, labelKey: "navOrders"},
+    {path: "/services", end: false, labelKey: "navServiceOrders"},
+    {path: "/jobs", end: false, labelKey: "navJobs"},
+    {path: "/giftcards", end: true, labelKey: "navGiftCards"},
+    {path: "/addresses", end: true, labelKey: "navAddresses"},
 ] as const;
 
+/** The shop's part of the visitor's account; profile and security live in the portal's account. */
 function AccountLayoutInner({resolveLanguageKey}: WithLanguageType) {
+    const base = useSectionBase();
     return (
-        <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
-            <nav
-                aria-label={resolveLanguageKey("navLabel")}
-                className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0 lg:sticky lg:top-28 lg:self-start lg:[overflow-anchor:none]"
-            >
-                <ul className="flex gap-2 lg:flex-col lg:gap-1">
-                    {NAV.map((item) => (
-                        <li key={item.to} className="shrink-0">
-                            <NavLink
-                                to={item.to}
-                                end={item.end}
-                                onMouseDown={(event) => event.preventDefault()}
-                                className={({isActive}) =>
-                                    cn(
-                                        "flex h-10 items-center rounded-full px-4 text-[15px] font-medium transition-colors lg:rounded-xl",
-                                        isActive ? "bg-shop-ink text-white" : "text-shop-ink-muted hover:bg-shop-cream hover:text-shop-ink",
-                                    )
-                                }
-                            >
-                                {resolveLanguageKey(item.labelKey)}
-                            </NavLink>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-            <div className="min-w-0">
-                <Suspense fallback={<Loader />}>
-                    <Outlet />
-                </Suspense>
-            </div>
-        </div>
+        <AccountShell
+            navLabel={resolveLanguageKey("navLabel")}
+            items={[
+                {to: "/account", end: true, label: resolveLanguageKey("navAccount")},
+                ...NAV.map((item) => ({to: `${base}/account${item.path}`, end: item.end, label: resolveLanguageKey(item.labelKey)})),
+            ]}
+        />
     );
 }
 

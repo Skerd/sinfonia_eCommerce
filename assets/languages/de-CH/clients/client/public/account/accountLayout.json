@@ -1,11 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/account/accountLayout.tsx",
   "navLabel": "Konto",
-  "navProfile": "Profil",
-  "navSecurity": "Sicherheit",
   "navOrders": "Bestellungen",
   "navGiftCards": "Geschenkkarten",
   "navAddresses": "Adressen",
   "navServiceOrders": "Dienstleistungsaufträge",
-  "navJobs": "Meine Ausschreibungen"
+  "navJobs": "Meine Ausschreibungen",
+  "navAccount": "← Mein Konto"
 }

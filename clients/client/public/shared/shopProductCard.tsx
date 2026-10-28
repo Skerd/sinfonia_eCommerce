@@ -9,6 +9,7 @@ import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
 import ShopSellerCard from "./shopSellerCard.tsx";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx";
 
@@ -31,11 +32,11 @@ function ShopPriceInner({resolveLanguageKey, price, compareAtPrice, currency, si
     const onSale = shopDiscountPercent(price, compareAtPrice) != null;
     return (
         <span className="inline-flex flex-wrap items-baseline gap-x-2">
-            <span className={cn("font-shop-display font-semibold tabular-nums", size === "lg" ? "text-3xl" : "text-[15px]", onSale && "text-shop-accent")}>
+            <span className={cn("font-display font-semibold tabular-nums", size === "lg" ? "text-3xl" : "text-[15px]", onSale && "text-primary")}>
                 {formatMoney(price, currency)}
             </span>
             {onSale && (
-                <span className={cn("text-shop-ink-faded tabular-nums line-through", size === "lg" ? "text-base" : "text-sm")}>
+                <span className={cn("text-muted-foreground tabular-nums line-through", size === "lg" ? "text-base" : "text-sm")}>
                     <span className="sr-only">{resolveLanguageKey("wasPrice")} </span>
                     {formatMoney(compareAtPrice, currency)}
                 </span>
@@ -51,14 +52,15 @@ type ShopProductCardProps = WithLanguageType & {
 };
 
 function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProps) {
+    const base = useSectionBase();
     const imageUrl = resolveShopMediaUrl(product.mainImage);
     const discount = shopDiscountPercent(product.price, product.compareAtPrice);
     // The computed saving already covers a merchant "sale" badge
     const badge = product.badges?.find(item => !(discount != null && item.toLowerCase() === "sale"));
 
     return (
-        <Link to={shopProductHref(product)} className="group flex flex-col gap-3 rounded-2xl">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-shop-cream">
+        <Link to={shopProductHref(base, product)} className="group flex flex-col gap-3 rounded-2xl">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-muted">
                 {imageUrl ? (
                     <img
                         src={imageUrl}
@@ -67,19 +69,19 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                         className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     />
                 ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-shop-ink-faded">
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
                         <ImageOff className="h-6 w-6" aria-hidden />
                         <span className="text-xs">{resolveLanguageKey("noImage")}</span>
                     </div>
                 )}
                 <div className="absolute left-3 top-3 flex flex-col items-start gap-1.5">
                     {discount != null && (
-                        <span className="rounded-full bg-shop-accent px-2.5 py-1 text-[11px] font-semibold text-white">
+                        <span className="rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground">
                             {resolveLanguageKey("discount").replace("{percent}", String(discount))}
                         </span>
                     )}
                     {badge && (
-                        <span className="rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold capitalize text-shop-ink shadow-sm">
+                        <span className="rounded-full bg-card/95 px-2.5 py-1 text-[11px] font-semibold capitalize text-foreground shadow-sm">
                             {badge}
                         </span>
                     )}
@@ -91,8 +93,8 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                 <div className="flex items-center justify-between gap-2">
                     <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} currency={product.currency} />
                     {product.ratingCount ? (
-                        <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-shop-ink-muted">
-                            <Star className="h-3.5 w-3.5 fill-shop-ink text-shop-ink" aria-hidden />
+                        <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-muted-foreground">
+                            <Star className="h-3.5 w-3.5 fill-foreground text-foreground" aria-hidden />
                             <span aria-hidden>{product.ratingAverage?.toFixed(1)} ({product.ratingCount})</span>
                             <span className="sr-only">
                                 {resolveLanguageKey("rating")

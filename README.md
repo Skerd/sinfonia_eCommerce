@@ -10,34 +10,38 @@ Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present 
 
 ```
 eCommerce/
-├── apps/shop/                  # Vite shop client (index.html + entry)
-├── assets/languages/           # Module i18n (en-US, sq-AL)
+├── assets/languages/           # Module i18n (5 locales)
 ├── clients/panel/
 │   ├── private/<resource>/     # List, create, edit pages
 │   ├── sidebarContribution.tsx
 │   ├── routeConfigContribution.tsx
 │   ├── widgetContribution.tsx
 │   └── tenancySettingsContribution.tsx
-├── clients/client/public/      # Buyer storefront pages (shop app)
-│   ├── shared/                 # shopLayout, cart/config contexts, product card
-│   ├── home/ products/ product/ cart/ checkout/ account/orders/
+├── clients/client/public/      # Storefront pages (rendered by the portal under /shop)
+│   ├── shared/                 # cart/config contexts, mini cart, cards, shopSiteRoutes
+│   ├── product/ service/ provider/ blog/ cart/ checkout/ legal/ account/
+├── clients/portal/             # Portal contribution: catalogs, home block, filters, provider
 └── components/
     └── cms/                    # CMS-specific UI
 ```
 
-## Storefront (shop app)
+## Storefront (in the portal)
 
-The buyer-facing storefront is a separate Vite client: run with `VITE_SINFONIA_APP=shop`
-(discovered from `src/modules/eCommerce/apps/shop/`). Pages are hand-built
-React (no ViewConfig) hitting the public maestro routes `shopProducts`, `shopProduct`,
-`shopTaxonomy`, `shopConfig`, `shopCountries`, `shopStates`, `shopCities`, `cmsBlock/public`,
-plus the authenticated cart/checkout routers and the buyer order routes `productOrder/{my,mySingle}`
-(which return the buyer DTO, without staff fields). Copy is translated with `withLanguage`
-(dictionaries under `assets/languages/<locale>/clients/client/public/`); controls are styled with the
-`SHOP_*` constants in `shared/shopAuthChrome.tsx` and the `--color-shop-*` tokens in `apps/shop/index.css`,
-because the shop does not load the panel theme. A placed order is confirmed on its own page,
-`/account/orders/:orderId?placed=1`. Cart and checkout require a signed-in user (JWT in localStorage — shared origin
-with the core app); Stripe checkout renders a Payment Element from the checkout DTO's
+The storefront has no app of its own: the core `portal` app renders it under `/shop` on every host
+(every listed seller on the apex, one company on its own site), inside the portal's shell (navbar,
+footer, chat). The contribution in `clients/portal/portalContribution.tsx` adds the product and
+service catalogs to the portal home (with `shopProductFilters` / `shopServiceFilters`), the company's
+CMS blocks and categories (`shopHome`), the cart in the navbar (`shopMiniCart`) and its state
+(`shopSiteProvider`). `/shop/products` and `/shop/services` open that catalog.
+
+Pages are hand-built React (no ViewConfig) on the core shadcn components, hitting the public maestro
+routes `shopProducts`, `shopProduct`, `shopTaxonomy`, `shopConfig`, `shopCountries`, `shopStates`,
+`shopCities`, `cmsBlock/public`, plus the authenticated cart/checkout routers and the buyer order routes
+`productOrder/{my,mySingle}` (which return the buyer DTO, without staff fields). Links start at the
+section base (`useSectionBase()`). Copy is translated with `withLanguage` (dictionaries under
+`assets/languages/<locale>/clients/client/public/`). A placed order is confirmed on its own page,
+`/shop/account/orders/:orderId?placed=1`. Cart and checkout require a signed-in portal account (one
+session across the portal zone); Stripe checkout renders a Payment Element from the checkout DTO's
 `stripeClientSecret` when `shopConfig` returns a publishable key.
 
 ## Panel pages

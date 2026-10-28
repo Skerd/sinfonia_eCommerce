@@ -3,6 +3,8 @@ import {Minus, Plus, Trash2} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {ButtonGroup, ButtonGroupText} from "@coreModule/components/ui/button-group.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopQuantityStepper.tsx";
 
@@ -31,40 +33,38 @@ function ShopQuantityStepperInner({
     const removes = belowMin && removeBelowMin;
     const canDecrease = !disabled && (!belowMin || removeBelowMin);
     const canIncrease = !disabled && (max == null || up <= max);
-    const buttonClass = cn(
-        "flex items-center justify-center text-shop-ink transition-colors hover:bg-shop-cream disabled:cursor-not-allowed disabled:opacity-35",
-        size === "md" ? "h-11 w-11" : "h-9 w-9",
-    );
+    const buttonSize = size === "md" ? "icon-lg" : "icon";
 
     return (
-        <div
-            className={cn("inline-flex items-center rounded-full border border-shop-border bg-white", disabled && "opacity-70")}
-            role="group"
+        <ButtonGroup
+            className={cn(disabled && "opacity-70")}
             aria-label={resolveLanguageKey("groupLabel").replace("{item}", itemLabel)}
             aria-busy={disabled}
         >
-            <button
+            <Button
                 type="button"
-                className={cn(buttonClass, "rounded-l-full")}
+                variant="outline"
+                size={buttonSize}
                 onClick={() => onChange(removes ? 0 : down)}
                 disabled={!canDecrease}
                 aria-label={(removes ? resolveLanguageKey("remove") : resolveLanguageKey("decrease")).replace("{item}", itemLabel)}
             >
-                {removes ? <Trash2 className="h-4 w-4" /> : <Minus className="h-4 w-4" />}
-            </button>
-            <span className={cn("min-w-8 text-center font-medium tabular-nums", size === "md" ? "text-[15px]" : "text-sm")} aria-live="polite">
+                {removes ? <Trash2 /> : <Minus />}
+            </Button>
+            <ButtonGroupText className={cn("min-w-10 justify-center bg-card font-medium tabular-nums", size === "sm" && "px-2")} aria-live="polite">
                 {value}
-            </span>
-            <button
+            </ButtonGroupText>
+            <Button
                 type="button"
-                className={cn(buttonClass, "rounded-r-full")}
+                variant="outline"
+                size={buttonSize}
                 onClick={() => onChange(up)}
                 disabled={!canIncrease}
                 aria-label={resolveLanguageKey("increase").replace("{item}", itemLabel)}
             >
-                <Plus className="h-4 w-4" />
-            </button>
-        </div>
+                <Plus />
+            </Button>
+        </ButtonGroup>
     );
 }
 

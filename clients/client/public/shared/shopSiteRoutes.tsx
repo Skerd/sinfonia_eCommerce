@@ -1,31 +1,20 @@
 import {lazy, Suspense} from "react";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useSearchParams} from "react-router-dom";
 import ErrorBoundary from "@coreModule/components/custom/errors/errorBoundary.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import ShopLayout from "@eCommerceModule/clients/client/public/shared/shopLayout.tsx";
-import {ShopAuthProvider} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
-import ShopAuthGuard from "@eCommerceModule/clients/client/public/shared/shopAuthGuard.tsx";
+import SitePageLayout from "@coreModule/clients/portal/shared/sitePageLayout.tsx";
+import {RequireSession} from "@coreModule/clients/portal/shared/sessionRoutes.tsx";
 
-const HomePage = lazy(() => import("@eCommerceModule/clients/client/public/home/index.tsx"));
-const ProductsPage = lazy(() => import("@eCommerceModule/clients/client/public/products/index.tsx"));
 const ProductPage = lazy(() => import("@eCommerceModule/clients/client/public/product/index.tsx"));
-const ServicesPage = lazy(() => import("@eCommerceModule/clients/client/public/services/index.tsx"));
 const ServicePage = lazy(() => import("@eCommerceModule/clients/client/public/service/index.tsx"));
 const ProviderPage = lazy(() => import("@eCommerceModule/clients/client/public/provider/index.tsx"));
 const BlogPage = lazy(() => import("@eCommerceModule/clients/client/public/blog/index.tsx"));
 const BlogArticlePage = lazy(() => import("@eCommerceModule/clients/client/public/blog/article.tsx"));
 const CartPage = lazy(() => import("@eCommerceModule/clients/client/public/cart/index.tsx"));
 const CheckoutPage = lazy(() => import("@eCommerceModule/clients/client/public/checkout/index.tsx"));
-const LoginPage = lazy(() => import("@eCommerceModule/clients/client/public/auth/login/index.tsx"));
-const SignUpPage = lazy(() => import("@eCommerceModule/clients/client/public/auth/signup/index.tsx"));
-const ActivatePage = lazy(() => import("@eCommerceModule/clients/client/public/auth/activate/index.tsx"));
-const ForgotPasswordPage = lazy(() => import("@eCommerceModule/clients/client/public/auth/forgotPassword/index.tsx"));
-const ResetPasswordPage = lazy(() => import("@eCommerceModule/clients/client/public/auth/resetPassword/index.tsx"));
 const PrivacyPage = lazy(() => import("@eCommerceModule/clients/client/public/legal/privacy/index.tsx"));
 const TermsPage = lazy(() => import("@eCommerceModule/clients/client/public/legal/terms/index.tsx"));
 const AccountLayout = lazy(() => import("@eCommerceModule/clients/client/public/account/accountLayout.tsx"));
-const ProfilePage = lazy(() => import("@eCommerceModule/clients/client/public/account/profile/index.tsx"));
-const SecurityPage = lazy(() => import("@eCommerceModule/clients/client/public/account/security/index.tsx"));
 const OrdersPage = lazy(() => import("@eCommerceModule/clients/client/public/account/orders/index.tsx"));
 const OrderDetailPage = lazy(() => import("@eCommerceModule/clients/client/public/account/orders/orderDetail.tsx"));
 const GiftCardsPage = lazy(() => import("@eCommerceModule/clients/client/public/account/giftCards/index.tsx"));
@@ -38,52 +27,57 @@ const JobDetailPage = lazy(() => import("@eCommerceModule/clients/client/public/
 const NotFoundPage = lazy(() => import("@eCommerceModule/clients/client/public/notFound/index.tsx"));
 
 /**
- * The shop: one company's on its own host, every live seller's on the shop apex, and on the
- * portal under `/shop`.
+ * The shop's browse pages are the portal's home catalog. `/products` and `/services` (which
+ * merchants also link to from their CMS blocks) open it on that kind, with their category and search.
+ */
+function ShopCatalog({kind}: {kind: "product" | "service"}) {
+    const [params] = useSearchParams();
+    const catalog = new URLSearchParams({kind});
+    const category = params.get("category");
+    const search = params.get("search");
+    if (category) catalog.set("f.category", category);
+    if (search) catalog.set("q", search);
+    return <Navigate to={`/?${catalog}`} replace />;
+}
+
+/**
+ * The shop, under `/shop` on every host: one company's on its own site, every listed
+ * seller's on the apex. The cart and its state come from the shell (`ShopSiteProvider`).
  */
 export default function ShopSiteRoutes() {
     return (
-        <ShopAuthProvider>
-            <Suspense fallback={<Loader />}>
-                <Routes>
-                    <Route element={<ShopLayout />}>
-                        <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
-                        <Route path="products" element={<ErrorBoundary><ProductsPage /></ErrorBoundary>} />
-                        <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
-                        <Route path="services" element={<ErrorBoundary><ServicesPage /></ErrorBoundary>} />
-                        <Route path="service" element={<ErrorBoundary><ServicePage /></ErrorBoundary>} />
-                        <Route path="provider" element={<ErrorBoundary><ProviderPage /></ErrorBoundary>} />
-                        <Route path="blog" element={<ErrorBoundary><BlogPage /></ErrorBoundary>} />
-                        <Route path="blog/:slug" element={<ErrorBoundary><BlogArticlePage /></ErrorBoundary>} />
-                        <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
-                        <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
-                        <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
-                        <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
-                        <Route path="login" element={<ErrorBoundary><LoginPage /></ErrorBoundary>} />
-                        <Route path="login/:platform" element={<ErrorBoundary><LoginPage /></ErrorBoundary>} />
-                        <Route path="signup" element={<ErrorBoundary><SignUpPage /></ErrorBoundary>} />
-                        <Route path="activate/:code" element={<ErrorBoundary><ActivatePage /></ErrorBoundary>} />
-                        <Route path="forgot-password" element={<ErrorBoundary><ForgotPasswordPage /></ErrorBoundary>} />
-                        <Route path="reset-password/:code" element={<ErrorBoundary><ResetPasswordPage /></ErrorBoundary>} />
-                        <Route path="account" element={<ShopAuthGuard />}>
-                            <Route element={<AccountLayout />}>
-                                <Route index element={<ErrorBoundary><ProfilePage /></ErrorBoundary>} />
-                                <Route path="security" element={<ErrorBoundary><SecurityPage /></ErrorBoundary>} />
-                                <Route path="orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
-                                <Route path="orders/:orderId" element={<ErrorBoundary><OrderDetailPage /></ErrorBoundary>} />
-                                <Route path="giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
-                                <Route path="addresses" element={<ErrorBoundary><AddressesPage /></ErrorBoundary>} />
-                                <Route path="services" element={<ErrorBoundary><ServiceOrdersPage /></ErrorBoundary>} />
-                                <Route path="services/:orderId" element={<ErrorBoundary><ServiceOrderDetailPage /></ErrorBoundary>} />
-                                <Route path="jobs" element={<ErrorBoundary><JobsPage /></ErrorBoundary>} />
-                                <Route path="jobs/new" element={<ErrorBoundary><NewJobPage /></ErrorBoundary>} />
-                                <Route path="jobs/:jobId" element={<ErrorBoundary><JobDetailPage /></ErrorBoundary>} />
-                            </Route>
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                <Route element={<SitePageLayout />}>
+                    <Route index element={<ShopCatalog kind="product" />} />
+                    <Route path="products" element={<ShopCatalog kind="product" />} />
+                    <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
+                    <Route path="services" element={<ShopCatalog kind="service" />} />
+                    <Route path="service" element={<ErrorBoundary><ServicePage /></ErrorBoundary>} />
+                    <Route path="provider" element={<ErrorBoundary><ProviderPage /></ErrorBoundary>} />
+                    <Route path="blog" element={<ErrorBoundary><BlogPage /></ErrorBoundary>} />
+                    <Route path="blog/:slug" element={<ErrorBoundary><BlogArticlePage /></ErrorBoundary>} />
+                    <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
+                    <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
+                    <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
+                    <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
+                    <Route path="account" element={<RequireSession />}>
+                        <Route element={<AccountLayout />}>
+                            <Route index element={<Navigate to="orders" replace />} />
+                            <Route path="orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
+                            <Route path="orders/:orderId" element={<ErrorBoundary><OrderDetailPage /></ErrorBoundary>} />
+                            <Route path="giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
+                            <Route path="addresses" element={<ErrorBoundary><AddressesPage /></ErrorBoundary>} />
+                            <Route path="services" element={<ErrorBoundary><ServiceOrdersPage /></ErrorBoundary>} />
+                            <Route path="services/:orderId" element={<ErrorBoundary><ServiceOrderDetailPage /></ErrorBoundary>} />
+                            <Route path="jobs" element={<ErrorBoundary><JobsPage /></ErrorBoundary>} />
+                            <Route path="jobs/new" element={<ErrorBoundary><NewJobPage /></ErrorBoundary>} />
+                            <Route path="jobs/:jobId" element={<ErrorBoundary><JobDetailPage /></ErrorBoundary>} />
                         </Route>
-                        <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                     </Route>
-                </Routes>
-            </Suspense>
-        </ShopAuthProvider>
+                    <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
+                </Route>
+            </Routes>
+        </Suspense>
     );
 }

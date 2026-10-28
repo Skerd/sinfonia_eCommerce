@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/eCommerce/clients/portal/shopProductFilters.tsx",
+  "any": "Tous",
+  "category": "Catégorie",
+  "brand": "Marque"
+}

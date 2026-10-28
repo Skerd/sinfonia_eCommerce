@@ -1,7 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/shared/shopMiniCart.tsx",
   "title": "Shporta juaj ({count})",
-  "close": "Mbyll shportën",
   "description": "Artikujt në shportë",
   "empty": "Shporta juaj është bosh.",
   "browse": "Shfleto produktet",

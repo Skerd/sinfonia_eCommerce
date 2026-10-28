@@ -8,6 +8,7 @@ import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import ShopSellerCard from "./shopSellerCard.tsx";
 import type {PublicBlogPostItem} from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopBlogCard.tsx";
 
@@ -35,19 +36,20 @@ type ShopBlogCardProps = WithLanguageType & {
 };
 
 function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlogCardProps) {
+    const base = useSectionBase();
     const imageUrl = resolveShopMediaUrl(post.mainImage);
     const TitleTag = featured ? "h2" : "h3";
 
     return (
         <Link
-            to={`/blog/${encodeURIComponent(post.slug)}`}
+            to={`${base}/blog/${encodeURIComponent(post.slug)}`}
             className={cn(
                 "group flex flex-col gap-4",
-                featured && "overflow-hidden rounded-3xl bg-shop-cream lg:grid lg:grid-cols-[1.25fr_1fr] lg:items-stretch lg:gap-0",
+                featured && "overflow-hidden rounded-3xl bg-muted lg:grid lg:grid-cols-[1.25fr_1fr] lg:items-stretch lg:gap-0",
             )}
         >
             <div className={cn(
-                "relative w-full overflow-hidden bg-shop-cream",
+                "relative w-full overflow-hidden bg-muted",
                 featured ? "aspect-[16/10] lg:aspect-auto lg:min-h-[420px]" : "aspect-[16/10] rounded-2xl",
             )}>
                 {imageUrl ? (
@@ -58,7 +60,7 @@ function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlo
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     />
                 ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-shop-ink-faded">
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
                         <ImageOff className="h-6 w-6" aria-hidden />
                         <span className="text-xs">{resolveLanguageKey("noImage")}</span>
                     </div>
@@ -67,28 +69,28 @@ function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlo
             <div className={cn("flex flex-col gap-3", featured ? "justify-center p-6 sm:p-10" : "px-0.5")}>
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
                     {post.category && (
-                        <span className="rounded-full bg-shop-ink px-2.5 py-1 font-semibold text-white">{post.category.name}</span>
+                        <span className="rounded-full bg-foreground px-2.5 py-1 font-semibold text-background">{post.category.name}</span>
                     )}
-                    <span className="text-shop-ink-faded">{blogMetaLine(resolveLanguageKey, post)}</span>
+                    <span className="text-muted-foreground">{blogMetaLine(resolveLanguageKey, post)}</span>
                 </div>
                 <TitleTag
                     className={cn(
-                        "font-shop-display font-semibold tracking-tight underline-offset-4 group-hover:underline",
+                        "font-display font-semibold tracking-tight underline-offset-4 group-hover:underline",
                         featured ? "text-3xl leading-tight sm:text-4xl" : "line-clamp-2 text-xl leading-snug",
                     )}
                 >
                     {post.title}
                 </TitleTag>
                 {post.excerpt && (
-                    <p className={cn("leading-relaxed text-shop-ink-muted", featured ? "text-base sm:text-lg" : "line-clamp-3 text-[15px]")}>
+                    <p className={cn("leading-relaxed text-muted-foreground", featured ? "text-base sm:text-lg" : "line-clamp-3 text-[15px]")}>
                         {post.excerpt}
                     </p>
                 )}
                 {featured && (
-                    <span className="mt-2 text-sm font-semibold text-shop-accent">{resolveLanguageKey("readStory")} →</span>
+                    <span className="mt-2 text-sm font-semibold text-primary">{resolveLanguageKey("readStory")} →</span>
                 )}
                 {post.authorName && !featured && (
-                    <span className="text-xs text-shop-ink-faded">{resolveLanguageKey("byAuthor").replace("{author}", post.authorName)}</span>
+                    <span className="text-xs text-muted-foreground">{resolveLanguageKey("byAuthor").replace("{author}", post.authorName)}</span>
                 )}
                 {post.seller ? (
                     <ShopSellerCard seller={post.seller} kind="blog" size="compact" nestedInLink />

@@ -5,17 +5,16 @@ import {toast} from "sonner";
 import {ArrowLeft, ImagePlus, LocateFixed} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import SinglePinMap from "@coreModule/components/viewEngine/widgets/addresses/mapWithPins.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
-import {
-    SHOP_BUTTON_CLASS,
-    SHOP_BUTTON_SECONDARY_CLASS,
-    SHOP_FIELD_INPUT_CLASS,
-    SHOP_FIELD_LABEL_CLASS,
-} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
+import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import type {
     ShopListingCategory,
     ShopListingTaxonomyResponse,
@@ -55,6 +54,7 @@ function orderedCategories(categories: ShopListingCategory[]): {category: ShopLi
 }
 
 function NewJobPage({resolveLanguageKey}: WithLanguageType) {
+    const base = useSectionBase();
     const navigate = useNavigate();
     const {config} = useShopConfig();
     const [form, setForm] = useState(EMPTY_FORM);
@@ -143,7 +143,7 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
         payload.append("mainImage", image);
         try {
             const res = await apiClient.put<{data: {_id: string}}>("/api/eCommerceMarketplace/taskRequest/createMine", payload);
-            navigate(`/account/jobs/${res.data.data._id}?posted=1`);
+            navigate(`${base}/account/jobs/${res.data.data._id}?posted=1`);
         } catch (err) {
             handleError(err, {context: "NewJob", showToast: true, fallbackMessage: resolveLanguageKey("submitError")});
             setSubmitting(false);
@@ -152,42 +152,42 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
 
     return (
         <div className="flex flex-col gap-8">
-            <Link to="/account/jobs" className="inline-flex items-center gap-1.5 self-start text-sm text-shop-ink-muted hover:text-shop-ink">
+            <Link to={`${base}/account/jobs`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToJobs")}
             </Link>
             <div className="flex flex-col gap-2">
-                <h1 className="font-shop-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
-                <p className="max-w-2xl text-shop-ink-muted">{resolveLanguageKey("lead")}</p>
+                <h1 className="font-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
+                <p className="max-w-2xl text-muted-foreground">{resolveLanguageKey("lead")}</p>
             </div>
 
             <form onSubmit={submit} className="flex max-w-3xl flex-col gap-8">
                 <section className="flex flex-col gap-4">
                     <h2 className="font-semibold">{resolveLanguageKey("sectionWhat")}</h2>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("titleLabel")}
-                        <input required maxLength={200} value={form.title} onChange={event => setField("title", event.target.value)} placeholder={resolveLanguageKey("titlePlaceholder")} className={SHOP_FIELD_INPUT_CLASS} />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Input required maxLength={200} value={form.title} onChange={event => setField("title", event.target.value)} placeholder={resolveLanguageKey("titlePlaceholder")} />
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("descriptionLabel")}
-                        <textarea rows={5} maxLength={5000} value={form.description} onChange={event => setField("description", event.target.value)} placeholder={resolveLanguageKey("descriptionPlaceholder")} className={cn(SHOP_FIELD_INPUT_CLASS, "h-auto py-2.5")} />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Textarea rows={5} maxLength={5000} value={form.description} onChange={event => setField("description", event.target.value)} placeholder={resolveLanguageKey("descriptionPlaceholder")} className="h-auto py-2.5" />
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("categoryLabel")}
-                        <select required value={form.category} onChange={event => setField("category", event.target.value)} className={SHOP_FIELD_INPUT_CLASS}>
+                        <NativeSelect required value={form.category} onChange={event => setField("category", event.target.value)} className="w-full">
                             <option value="">{resolveLanguageKey("categoryPlaceholder")}</option>
                             {orderedCategories(categories).map(({category, depth}) => (
                                 <option key={category._id} value={category._id}>{`${"  ".repeat(depth)}${category.name}`}</option>
                             ))}
-                        </select>
-                    </label>
+                        </NativeSelect>
+                    </Label>
                     <div className="flex flex-col gap-1.5 text-sm font-medium">
                         {resolveLanguageKey("imageLabel")}
-                        <label className="flex cursor-pointer items-center gap-4 rounded-2xl border border-dashed border-shop-border p-4 hover:border-shop-ink">
-                            <span className="flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-shop-cream text-shop-ink-faded">
+                        <label className="flex cursor-pointer items-center gap-4 rounded-2xl border border-dashed border-border p-4 hover:border-foreground">
+                            <span className="flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-muted text-muted-foreground">
                                 {imagePreview ? <img src={imagePreview} alt="" className="h-full w-full object-cover" /> : <ImagePlus className="h-6 w-6" aria-hidden />}
                             </span>
-                            <span className="font-normal text-shop-ink-muted">{image?.name ?? resolveLanguageKey("imageHint")}</span>
+                            <span className="font-normal text-muted-foreground">{image?.name ?? resolveLanguageKey("imageHint")}</span>
                             <input required type="file" accept="image/*" className="sr-only" onChange={event => setImage(event.target.files?.[0] ?? null)} />
                         </label>
                     </div>
@@ -196,50 +196,50 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
                 <section className="flex flex-col gap-4">
                     <h2 className="font-semibold">{resolveLanguageKey("sectionBudget")}</h2>
                     <div className="grid gap-4 sm:grid-cols-2">
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("budgetMinLabel").replace("{currency}", currency?.abbreviation ?? currency?.symbol ?? "")}
-                            <input required type="number" min={0} step="0.01" inputMode="decimal" value={form.budgetMin} onChange={event => setField("budgetMin", event.target.value)} className={SHOP_FIELD_INPUT_CLASS} />
-                        </label>
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                            <Input required type="number" min={0} step="0.01" inputMode="decimal" value={form.budgetMin} onChange={event => setField("budgetMin", event.target.value)} />
+                        </Label>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("budgetMaxLabel").replace("{currency}", currency?.abbreviation ?? currency?.symbol ?? "")}
-                            <input required type="number" min={0} step="0.01" inputMode="decimal" value={form.budgetMax} onChange={event => setField("budgetMax", event.target.value)} className={SHOP_FIELD_INPUT_CLASS} />
-                        </label>
+                            <Input required type="number" min={0} step="0.01" inputMode="decimal" value={form.budgetMax} onChange={event => setField("budgetMax", event.target.value)} />
+                        </Label>
                     </div>
                 </section>
 
                 <section className="flex flex-col gap-4">
                     <h2 className="font-semibold">{resolveLanguageKey("sectionWhere")}</h2>
                     <div className="grid gap-4 sm:grid-cols-2">
-                        <label className={cn(SHOP_FIELD_LABEL_CLASS, "sm:col-span-2")}>
+                        <Label className="flex-col items-stretch gap-1.5 sm:col-span-2">
                             {resolveLanguageKey("streetLabel")}
-                            <input required maxLength={200} value={form.street} onChange={event => setField("street", event.target.value)} className={SHOP_FIELD_INPUT_CLASS} />
-                        </label>
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                            <Input required maxLength={200} value={form.street} onChange={event => setField("street", event.target.value)} />
+                        </Label>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("countryLabel")}
-                            <select required value={form.country} onChange={event => setForm(current => ({...current, country: event.target.value, city: ""}))} className={SHOP_FIELD_INPUT_CLASS}>
+                            <NativeSelect required value={form.country} onChange={event => setForm(current => ({...current, country: event.target.value, city: ""}))} className="w-full">
                                 <option value="">{resolveLanguageKey("selectPlaceholder")}</option>
                                 {countries.map(country => <option key={country._id} value={country._id}>{country.name}</option>)}
-                            </select>
-                        </label>
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                            </NativeSelect>
+                        </Label>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("cityLabel")}
-                            <select required disabled={!form.country} value={form.city} onChange={event => setField("city", event.target.value)} className={SHOP_FIELD_INPUT_CLASS}>
+                            <NativeSelect required disabled={!form.country} value={form.city} onChange={event => setField("city", event.target.value)} className="w-full">
                                 <option value="">{resolveLanguageKey("selectPlaceholder")}</option>
                                 {cities.map(city => <option key={city._id} value={city._id}>{city.name}</option>)}
-                            </select>
-                        </label>
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                            </NativeSelect>
+                        </Label>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("postalCodeLabel")}
-                            <input required maxLength={20} value={form.postalCode} onChange={event => setField("postalCode", event.target.value)} className={SHOP_FIELD_INPUT_CLASS} />
-                        </label>
+                            <Input required maxLength={20} value={form.postalCode} onChange={event => setField("postalCode", event.target.value)} />
+                        </Label>
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
                             <span className="font-medium">{resolveLanguageKey("pinLabel")}</span>
-                            <button type="button" onClick={locateMe} className="inline-flex items-center gap-1.5 font-medium text-shop-accent hover:underline underline-offset-4">
-                                <LocateFixed className="h-4 w-4" aria-hidden />
+                            <Button variant="link" type="button" onClick={locateMe} className="h-auto gap-1.5 p-0">
+                                <LocateFixed aria-hidden />
                                 {resolveLanguageKey("useMyLocation")}
-                            </button>
+                            </Button>
                         </div>
                         <div className="h-72 overflow-hidden rounded-2xl">
                             <SinglePinMap
@@ -248,15 +248,15 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
                                 onPinChange={coords => setPin(coords)}
                             />
                         </div>
-                        <p className="text-xs text-shop-ink-muted">{resolveLanguageKey(pin ? "pinSet" : "pinHint")}</p>
+                        <p className="text-xs text-muted-foreground">{resolveLanguageKey(pin ? "pinSet" : "pinHint")}</p>
                     </div>
                 </section>
 
-                <div className="flex flex-wrap gap-3 border-t border-shop-border pt-6">
-                    <button type="submit" disabled={submitting || !currency} className={SHOP_BUTTON_CLASS}>
+                <div className="flex flex-wrap gap-3 border-t border-border pt-6">
+                    <Button size="lg" type="submit" disabled={submitting || !currency} >
                         {resolveLanguageKey(submitting ? "submitting" : "submit")}
-                    </button>
-                    <Link to="/account/jobs" className={SHOP_BUTTON_SECONDARY_CLASS}>{resolveLanguageKey("cancel")}</Link>
+                    </Button>
+                    <Button asChild variant="outline" size="lg"><Link to={`${base}/account/jobs`}>{resolveLanguageKey("cancel")}</Link></Button>
                 </div>
             </form>
         </div>

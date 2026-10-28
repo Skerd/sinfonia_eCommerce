@@ -3,10 +3,9 @@ import {useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import ShopBlogCard from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
-import {SHOP_BUTTON_SECONDARY_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 import type {
     PublicBlogCategoryItem,
     PublicBlogFormResponseType,
@@ -16,8 +15,6 @@ import type {
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/index.tsx";
 
 const PAGE_SIZE = 12;
-
-const CHIP_CLASS = "inline-flex h-10 shrink-0 items-center whitespace-nowrap rounded-full border px-4 text-sm font-medium transition-colors";
 
 function BlogPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -83,36 +80,38 @@ function BlogPage({resolveLanguageKey}: WithLanguageType) {
     return (
         <div className="flex flex-col gap-10 sm:gap-14">
             <header className="flex flex-col gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-shop-ink-faded">{resolveLanguageKey("eyebrow")}</p>
-                <h1 className="max-w-3xl font-shop-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">{resolveLanguageKey("eyebrow")}</p>
+                <h1 className="max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
                     {activeCategory?.name ?? resolveLanguageKey("title")}
                 </h1>
-                <p className="max-w-2xl text-lg leading-relaxed text-shop-ink-muted">{resolveLanguageKey("lead")}</p>
+                <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">{resolveLanguageKey("lead")}</p>
             </header>
 
             {categories.length > 0 && (
                 <nav aria-label={resolveLanguageKey("categoriesLabel")} className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
                     <ul className="flex gap-2 sm:flex-wrap">
                         <li>
-                            <button
+                            <Button
                                 type="button"
                                 onClick={() => selectCategory("")}
                                 aria-pressed={!categorySlug}
-                                className={cn(CHIP_CLASS, !categorySlug ? "border-shop-ink bg-shop-ink text-white" : "border-shop-border hover:border-shop-ink")}
+                                variant={!categorySlug ? "default" : "outline"}
+                                size="lg"
                             >
                                 {resolveLanguageKey("allStories")}
-                            </button>
+                            </Button>
                         </li>
                         {categories.map(category => (
                             <li key={category._id}>
-                                <button
+                                <Button
                                     type="button"
                                     onClick={() => selectCategory(category.slug)}
                                     aria-pressed={category.slug === categorySlug}
-                                    className={cn(CHIP_CLASS, category.slug === categorySlug ? "border-shop-ink bg-shop-ink text-white" : "border-shop-border hover:border-shop-ink")}
+                                    variant={category.slug === categorySlug ? "default" : "outline"}
+                                    size="lg"
                                 >
                                     {category.name}
-                                </button>
+                                </Button>
                             </li>
                         ))}
                     </ul>
@@ -121,25 +120,25 @@ function BlogPage({resolveLanguageKey}: WithLanguageType) {
 
             {loading ? (
                 <div className="flex flex-col gap-10" aria-busy="true" aria-label={resolveLanguageKey("loading")}>
-                    <div className="aspect-[16/7] animate-pulse rounded-3xl bg-shop-cream" />
+                    <div className="aspect-[16/7] animate-pulse rounded-3xl bg-muted" />
                     <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                         {Array.from({length: 3}, (_, i) => (
                             <div key={i} className="flex flex-col gap-3">
-                                <div className="aspect-[16/10] animate-pulse rounded-2xl bg-shop-cream" />
-                                <div className="h-5 w-3/4 animate-pulse rounded bg-shop-cream" />
-                                <div className="h-4 w-full animate-pulse rounded bg-shop-cream" />
+                                <div className="aspect-[16/10] animate-pulse rounded-2xl bg-muted" />
+                                <div className="h-5 w-3/4 animate-pulse rounded bg-muted" />
+                                <div className="h-4 w-full animate-pulse rounded bg-muted" />
                             </div>
                         ))}
                     </div>
                 </div>
             ) : posts.length === 0 ? (
-                <div className="flex flex-col items-center gap-4 rounded-3xl bg-shop-cream px-6 py-20 text-center">
-                    <p className="font-shop-display text-2xl font-semibold">{resolveLanguageKey("emptyTitle")}</p>
-                    <p className="max-w-md text-shop-ink-muted">{resolveLanguageKey(categorySlug ? "emptyCategory" : "emptyMessage")}</p>
+                <div className="flex flex-col items-center gap-4 rounded-3xl bg-muted px-6 py-20 text-center">
+                    <p className="font-display text-2xl font-semibold">{resolveLanguageKey("emptyTitle")}</p>
+                    <p className="max-w-md text-muted-foreground">{resolveLanguageKey(categorySlug ? "emptyCategory" : "emptyMessage")}</p>
                     {categorySlug && (
-                        <button type="button" onClick={() => selectCategory("")} className={SHOP_BUTTON_SECONDARY_CLASS}>
+                        <Button variant="outline" size="lg" type="button" onClick={() => selectCategory("")} >
                             {resolveLanguageKey("allStories")}
-                        </button>
+                        </Button>
                     )}
                 </div>
             ) : (
@@ -154,10 +153,10 @@ function BlogPage({resolveLanguageKey}: WithLanguageType) {
                     )}
                     {posts.length < total && (
                         <div className="flex flex-col items-center gap-2">
-                            <button type="button" onClick={loadMore} disabled={loadingMore} className={SHOP_BUTTON_SECONDARY_CLASS}>
+                            <Button variant="outline" size="lg" type="button" onClick={loadMore} disabled={loadingMore} >
                                 {resolveLanguageKey(loadingMore ? "loadingMore" : "loadMore")}
-                            </button>
-                            <p className="text-xs text-shop-ink-faded">
+                            </Button>
+                            <p className="text-xs text-muted-foreground">
                                 {resolveLanguageKey("shownOf").replace("{shown}", String(posts.length)).replace("{total}", String(total))}
                             </p>
                         </div>

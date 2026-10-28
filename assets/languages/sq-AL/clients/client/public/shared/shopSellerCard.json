@@ -3,6 +3,6 @@
   "soldBy": "Shitet nga",
   "offeredBy": "Ofrohet nga",
   "publishedBy": "Publikuar nga",
-  "visitShop": "Hap dyqanin {name}",
-  "visitShopShort": "Hap dyqanin"
+  "visitShop": "Hap {name}",
+  "visitShopShort": "Vizito faqen"
 }

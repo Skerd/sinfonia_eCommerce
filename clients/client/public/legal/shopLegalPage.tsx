@@ -31,14 +31,14 @@ export function ShopLegalPage({
 }) {
     return (
         <article className="mx-auto max-w-2xl py-4">
-            <h1 className="font-shop-display text-3xl font-semibold">{title}</h1>
-            <p className="mt-2 text-xs text-shop-ink-faded">{lastUpdated}</p>
-            <p className="mt-6 text-sm leading-relaxed text-shop-ink-muted">{interpolate(intro, values)}</p>
+            <h1 className="font-display text-3xl font-semibold">{title}</h1>
+            <p className="mt-2 text-xs text-muted-foreground">{lastUpdated}</p>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{interpolate(intro, values)}</p>
             <div className="mt-10 flex flex-col gap-8">
                 {sections.map((section) => (
                     <section key={section.title}>
-                        <h2 className="font-shop-display text-xl font-semibold">{section.title}</h2>
-                        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-shop-ink-muted">
+                        <h2 className="font-display text-xl font-semibold">{section.title}</h2>
+                        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
                             {interpolate(section.body, values)}
                         </p>
                     </section>

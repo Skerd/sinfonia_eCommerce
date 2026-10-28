@@ -8,6 +8,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig, type ShopMoneyCurrency} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx";
 
@@ -56,14 +57,14 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
 
     return (
         <div className="flex flex-col gap-6">
-            <h1 className="font-shop-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
+            <h1 className="font-display text-3xl font-bold tracking-tight">{resolveLanguageKey("title")}</h1>
 
             {loading ? (
-                <div className="h-40 animate-pulse rounded-2xl bg-shop-cream" aria-busy="true" aria-label={resolveLanguageKey("loading")} />
+                <div className="h-40 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />
             ) : cards.length === 0 ? (
-                <div className="flex flex-col items-center gap-3 rounded-3xl bg-shop-cream px-6 py-16 text-center">
-                    <Gift className="h-8 w-8 text-shop-ink-faded" aria-hidden />
-                    <p className="max-w-sm text-shop-ink-muted">{resolveLanguageKey("empty")}</p>
+                <div className="flex flex-col items-center gap-3 rounded-3xl bg-muted px-6 py-16 text-center">
+                    <Gift className="h-8 w-8 text-muted-foreground" aria-hidden />
+                    <p className="max-w-sm text-muted-foreground">{resolveLanguageKey("empty")}</p>
                 </div>
             ) : (
                 <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -74,7 +75,7 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                                 key={card._id}
                                 className={cn(
                                     "flex min-h-52 flex-col justify-between gap-4 rounded-2xl p-5",
-                                    active ? "bg-shop-ink text-white" : "border border-shop-border bg-shop-cream text-shop-ink-muted",
+                                    active ? "bg-foreground text-background" : "border border-border bg-muted text-muted-foreground",
                                 )}
                             >
                                 <div className="flex items-center justify-between gap-2">
@@ -84,21 +85,21 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                                     <Gift className="h-5 w-5 opacity-70" aria-hidden />
                                 </div>
                                 <div>
-                                    <p className="font-shop-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance, card.currency)}</p>
+                                    <p className="font-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance, card.currency)}</p>
                                     <p className="text-sm opacity-70">
                                         {resolveLanguageKey("ofInitial").replace("{amount}", formatMoney(card.initialBalance, card.currency))}
                                     </p>
                                 </div>
                                 <div className="flex items-center justify-between gap-2">
                                     <span className="font-mono text-sm tracking-wider">{card.code}</span>
-                                    <button
+                                    <Button
                                         type="button"
                                         onClick={() => copyCode(card.code)}
-                                        className="flex h-9 w-9 items-center justify-center rounded-full opacity-80 transition-opacity hover:opacity-100"
+                                        variant="ghost" size="icon" className="hover:bg-current/10"
                                         aria-label={resolveLanguageKey("copyLabel").replace("{code}", card.code)}
                                     >
                                         <Copy className="h-4 w-4" />
-                                    </button>
+                                    </Button>
                                 </div>
                                 {card.expiresAt && (
                                     <p className="text-xs opacity-70">{resolveLanguageKey("expires").replace("{date}", formatDate(card.expiresAt, {format: DATE_FORMATS.date}))}</p>

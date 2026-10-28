@@ -3,6 +3,6 @@
   "soldBy": "Venduto da",
   "offeredBy": "Offerto da",
   "publishedBy": "Pubblicato da",
-  "visitShop": "Visita il negozio di {name}",
-  "visitShopShort": "Visita il negozio"
+  "visitShop": "Visita {name}",
+  "visitShopShort": "Visita il sito"
 }

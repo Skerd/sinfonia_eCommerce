@@ -1,11 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/account/accountLayout.tsx",
   "navLabel": "Account",
-  "navProfile": "Profilo",
-  "navSecurity": "Sicurezza",
   "navOrders": "Ordini",
   "navGiftCards": "Carte regalo",
   "navAddresses": "Indirizzi",
   "navServiceOrders": "Ordini di servizi",
-  "navJobs": "I miei lavori"
+  "navJobs": "I miei lavori",
+  "navAccount": "← Il mio account"
 }

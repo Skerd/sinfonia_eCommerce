@@ -17,24 +17,23 @@ import {
     useShopCart,
 } from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
-import {useShopAuth} from "@eCommerceModule/clients/client/public/shared/shopAuthContext.tsx";
+import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
 import {shopErrorCode} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
-import {
-    ShopFieldError,
-    ShopSignInPrompt,
-    SHOP_BUTTON_SECONDARY_CLASS,
-    SHOP_FIELD_ERROR_CLASS,
-    SHOP_FIELD_INPUT_CLASS,
-    SHOP_FIELD_LABEL_CLASS,
-    SHOP_SUBMIT_CLASS,
-} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {ShopSignInPrompt} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import type {Checkout, CheckoutAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkout.dto.ts";
 import {checkoutAddressZod} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutAddress.form.validator.ts";
 import {confirmCheckoutFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/confirmCheckout.form.validator.ts";
 import type {CheckoutPaymentMethodType} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutPayment.form.validator.ts";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
+import {FieldError} from "@coreModule/components/ui/field.tsx";
+import {RadioGroup, RadioGroupItem} from "@coreModule/components/ui/radio-group.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/checkout/index.tsx";
 
@@ -110,11 +109,11 @@ function savedToCheckoutAddress(address: CustomerAddress): CheckoutAddress {
 
 function Field({label, error, className, children}: {label: string; error?: string; className?: string; children: ReactNode}) {
     return (
-        <label className={cn(SHOP_FIELD_LABEL_CLASS, className)}>
+        <Label className={cn("flex-col items-stretch gap-1.5", className)}>
             {label}
             {children}
-            <ShopFieldError message={error} />
-        </label>
+            <FieldError>{error}</FieldError>
+        </Label>
     );
 }
 
@@ -163,20 +162,21 @@ function StripePaymentStep({clientSecret, payLabel, processingLabel, paymentFail
     return (
         <div className="flex flex-col gap-5">
             <PaymentElement />
-            <button type="button" onClick={handlePay} disabled={!stripe || submitting} className={SHOP_SUBMIT_CLASS}>
+            <Button size="lg" type="button" onClick={handlePay} disabled={!stripe || submitting} className="w-full">
                 <Lock className="h-4 w-4" aria-hidden />
                 {submitting ? processingLabel : payLabel}
-            </button>
+            </Button>
         </div>
     );
 }
 
 function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
+    const base = useSectionBase();
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
     const {cart, loading: cartLoading, signInRequired, refresh: refreshCart} = useShopCart();
     const {config, formatMoney} = useShopConfig();
-    const {user} = useShopAuth();
+    const {user} = usePortalSession();
 
     const [checkout, setCheckout] = useState<Checkout | null>(null);
     // What is charged: the checkout's currency, or the cart's before the checkout exists
@@ -225,7 +225,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
             // The confirmation lives on the order's own page, so a refresh or Back keeps it
             const siblings = res.data.siblingOrderIds?.filter(Boolean) ?? [];
             const siblingQuery = siblings.length > 0 ? `&siblings=${siblings.join(",")}` : "";
-            navigate(`/account/orders/${res.data.data._id}?placed=1${siblingQuery}`, {replace: true});
+            navigate(`${base}/account/orders/${res.data.data._id}?placed=1${siblingQuery}`, {replace: true});
         } catch (err) {
             handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("placeOrderError")});
         } finally {
@@ -421,18 +421,18 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     }
 
     if (signInRequired) {
-        return <ShopSignInPrompt titleKey="checkoutTitle" next="/checkout" />;
+        return <ShopSignInPrompt titleKey="checkoutTitle" next={`${base}/checkout`} />;
     }
 
     if (!checkout && cartLoading) {
-        return <div className="h-72 animate-pulse rounded-2xl bg-shop-cream" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
+        return <div className="h-72 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
     }
 
     if (!checkout && (!cart || cart.items.length === 0)) {
         return (
             <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-20 text-center">
-                <h1 className="font-shop-display text-3xl font-semibold tracking-tight">{resolveLanguageKey("emptyTitle")}</h1>
-                <Link to="/products" className={SHOP_BUTTON_SECONDARY_CLASS}>{resolveLanguageKey("browse")}</Link>
+                <h1 className="font-display text-3xl font-semibold tracking-tight">{resolveLanguageKey("emptyTitle")}</h1>
+                <Button asChild variant="outline" size="lg"><Link to={`${base}/products`}>{resolveLanguageKey("browse")}</Link></Button>
             </div>
         );
     }
@@ -453,10 +453,10 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                     return (
                         <li key={`${item.product}-${index}`} className="flex items-center gap-3 text-sm">
                             <div className="relative h-16 w-14 shrink-0">
-                                <div className="h-full w-full overflow-hidden rounded-lg bg-white">
+                                <div className="h-full w-full overflow-hidden rounded-lg bg-card">
                                     {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}
                                 </div>
-                                <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-shop-ink px-1 text-[11px] font-semibold text-white">
+                                <span className="absolute -right-1.5 -top-1.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-foreground px-1 text-[11px] font-semibold text-background">
                                     {item.quantity}
                                 </span>
                             </div>
@@ -466,28 +466,28 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                     );
                 })}
             </ul>
-            <dl className="flex flex-col gap-2.5 border-t border-shop-border pt-4 text-[15px]">
-                <div className="flex justify-between"><dt className="text-shop-ink-muted">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(checkout?.subtotal ?? cart?.subtotal, currency)}</dd></div>
+            <dl className="flex flex-col gap-2.5 border-t border-border pt-4 text-[15px]">
+                <div className="flex justify-between"><dt className="text-muted-foreground">{resolveLanguageKey("subtotal")}</dt><dd className="tabular-nums">{formatMoney(checkout?.subtotal ?? cart?.subtotal, currency)}</dd></div>
                 {(checkout?.discountTotal ?? 0) > 0 && (
-                    <div className="flex justify-between text-shop-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(checkout?.discountTotal, currency)}</dd></div>
+                    <div className="flex justify-between text-success"><dt>{resolveLanguageKey("discount")}</dt><dd className="tabular-nums">−{formatMoney(checkout?.discountTotal, currency)}</dd></div>
                 )}
                 <div className="flex justify-between">
-                    <dt className="text-shop-ink-muted">{resolveLanguageKey("shipping")}</dt>
-                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal, currency) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                    <dt className="text-muted-foreground">{resolveLanguageKey("shipping")}</dt>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.shippingTotal, currency) : <span className="text-muted-foreground">{resolveLanguageKey("nextStep")}</span>}</dd>
                 </div>
                 <div className="flex justify-between">
-                    <dt className="text-shop-ink-muted">{resolveLanguageKey("tax")}</dt>
-                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal, currency) : <span className="text-shop-ink-faded">{resolveLanguageKey("nextStep")}</span>}</dd>
+                    <dt className="text-muted-foreground">{resolveLanguageKey("tax")}</dt>
+                    <dd className="tabular-nums">{checkout?.selectedShippingRate ? formatMoney(checkout.taxTotal, currency) : <span className="text-muted-foreground">{resolveLanguageKey("nextStep")}</span>}</dd>
                 </div>
                 {(checkout?.giftCard?.amount ?? 0) > 0 && (
-                    <div className="flex justify-between text-shop-success">
+                    <div className="flex justify-between text-success">
                         <dt>{resolveLanguageKey("giftCard").replace("{code}", checkout?.giftCard?.code ?? "")}</dt>
                         <dd className="tabular-nums">−{formatMoney(checkout?.giftCard?.amount, currency)}</dd>
                     </div>
                 )}
-                <div className="flex items-baseline justify-between border-t border-shop-border pt-3">
+                <div className="flex items-baseline justify-between border-t border-border pt-3">
                     <dt className="font-semibold">{resolveLanguageKey("total")}</dt>
-                    <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</dd>
+                    <dd className="font-display text-2xl font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</dd>
                 </div>
             </dl>
         </div>
@@ -496,7 +496,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     return (
         <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-6">
-                <h1 className="font-shop-display text-4xl font-bold tracking-tight sm:text-5xl">{resolveLanguageKey("title")}</h1>
+                <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">{resolveLanguageKey("title")}</h1>
                 <ol className="flex items-center gap-2 text-sm sm:gap-4" aria-label={resolveLanguageKey("stepsLabel")}>
                     {STEPS.map((id, index) => {
                         const done = index < stepIndex;
@@ -505,11 +505,11 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                             <>
                                 <span className={cn(
                                     "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold",
-                                    done ? "bg-shop-ink text-white" : current ? "bg-shop-accent text-white" : "border border-shop-border text-shop-ink-faded",
+                                    done ? "bg-foreground text-background" : current ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground",
                                 )}>
                                     {done ? <Check className="h-3.5 w-3.5" aria-hidden /> : index + 1}
                                 </span>
-                                <span className={cn("hidden sm:inline", current ? "font-semibold" : done ? "" : "text-shop-ink-faded")}>
+                                <span className={cn("hidden sm:inline", current ? "font-semibold" : done ? "" : "text-muted-foreground")}>
                                     {resolveLanguageKey(`steps.${id}`)}
                                 </span>
                             </>
@@ -517,31 +517,32 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                         return (
                             <li key={id} className="flex items-center gap-2 sm:gap-4" aria-current={current ? "step" : undefined}>
                                 {done && !submitting ? (
-                                    <button
+                                    <Button
                                         type="button"
+                                        variant="link"
                                         onClick={() => setStep(id)}
-                                        className="flex items-center gap-2 rounded-full underline-offset-4 hover:underline"
+                                        className="h-auto gap-2 p-0 text-foreground"
                                         aria-label={resolveLanguageKey("backTo").replace("{step}", resolveLanguageKey(`steps.${id}`))}
                                     >
                                         {label}
-                                    </button>
+                                    </Button>
                                 ) : (
                                     <span className="flex items-center gap-2">{label}</span>
                                 )}
-                                {index < STEPS.length - 1 && <span className="h-px w-6 bg-shop-border sm:w-12" aria-hidden />}
+                                {index < STEPS.length - 1 && <span className="h-px w-6 bg-border sm:w-12" aria-hidden />}
                             </li>
                         );
                     })}
                 </ol>
             </div>
 
-            <details className="group rounded-2xl bg-shop-cream lg:hidden">
+            <details className="group rounded-2xl bg-muted lg:hidden">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
                     <span className="flex items-center gap-2 text-sm font-medium">
                         {resolveLanguageKey("showSummary")}
                         <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
                     </span>
-                    <span className="font-shop-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</span>
+                    <span className="font-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</span>
                 </summary>
                 <div className="px-5 pb-5">{summary}</div>
             </details>
@@ -551,38 +552,37 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                     {step === "address" && (
                         <form onSubmit={submitAddress} noValidate className="flex flex-col gap-6">
                             <section className="flex flex-col gap-4">
-                                <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("contactTitle")}</h2>
+                                <h2 className="font-display text-xl font-semibold">{resolveLanguageKey("contactTitle")}</h2>
                                 <Field label={resolveLanguageKey("email")} error={errors.email}>
-                                    <input
-                                        name="email"
-                                        type="email"
-                                        autoComplete="email"
-                                        value={email}
-                                        onChange={e => {
-                                            setEmail(e.target.value);
-                                            setErrors(current => ({...current, email: undefined}));
-                                        }}
-                                        aria-invalid={Boolean(errors.email)}
-                                        className={cn(SHOP_FIELD_INPUT_CLASS, errors.email && SHOP_FIELD_ERROR_CLASS)}
-                                    />
+                                    <Input
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={e => {
+                      setEmail(e.target.value);
+                      setErrors(current => ({...current, email: undefined}));
+                    }}
+                    aria-invalid={Boolean(errors.email)}
+                  />
                                 </Field>
                             </section>
 
                             <section className="flex flex-col gap-4">
-                                <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("shippingAddressTitle")}</h2>
+                                <h2 className="font-display text-xl font-semibold">{resolveLanguageKey("shippingAddressTitle")}</h2>
                                 {savedAddresses.length > 0 ? (
                                     <Field label={resolveLanguageKey("savedAddress")}>
-                                        <select
-                                            value={selectedSavedId}
-                                            onChange={(e) => {
-                                                const id = e.target.value;
-                                                setSelectedSavedId(id);
-                                                const saved = savedAddresses.find((address) => address._id === id);
-                                                setShippingAddress(saved ? savedToCheckoutAddress(saved) : EMPTY_ADDRESS);
-                                                setErrors({});
-                                            }}
-                                            className={SHOP_FIELD_INPUT_CLASS}
-                                        >
+                                        <NativeSelect
+                      value={selectedSavedId}
+                      onChange={(e) => {
+                        const id = e.target.value;
+                        setSelectedSavedId(id);
+                        const saved = savedAddresses.find((address) => address._id === id);
+                        setShippingAddress(saved ? savedToCheckoutAddress(saved) : EMPTY_ADDRESS);
+                        setErrors({});
+                      }}
+                      className="w-full"
+                    >
                                             <option value="">{resolveLanguageKey("newAddress")}</option>
                                             {savedAddresses.map((address) => (
                                                 <option key={address._id} value={address._id}>
@@ -591,7 +591,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                                     {address.isDefault ? ` (${resolveLanguageKey("defaultAddress")})` : ""}
                                                 </option>
                                             ))}
-                                        </select>
+                                        </NativeSelect>
                                     </Field>
                                 ) : null}
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -600,131 +600,124 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                         ["lastName", "family-name"],
                                     ] as const).map(([key, autoComplete]) => (
                                         <Field key={key} label={resolveLanguageKey(key)} error={errors[key]}>
-                                            <input
-                                                name={key}
-                                                autoComplete={autoComplete}
-                                                value={shippingAddress[key]}
-                                                onChange={e => updateAddress({...shippingAddress, [key]: e.target.value}, key)}
-                                                aria-invalid={Boolean(errors[key])}
-                                                className={cn(SHOP_FIELD_INPUT_CLASS, errors[key] && SHOP_FIELD_ERROR_CLASS)}
-                                            />
+                                            <Input
+                        name={key}
+                        autoComplete={autoComplete}
+                        value={shippingAddress[key]}
+                        onChange={e => updateAddress({...shippingAddress, [key]: e.target.value}, key)}
+                        aria-invalid={Boolean(errors[key])}
+                      />
                                         </Field>
                                     ))}
                                     <Field label={resolveLanguageKey("street")} error={errors.street} className="sm:col-span-2">
-                                        <input
-                                            name="street"
-                                            autoComplete="street-address"
-                                            value={shippingAddress.street}
-                                            onChange={e => updateAddress({...shippingAddress, street: e.target.value}, "street")}
-                                            aria-invalid={Boolean(errors.street)}
-                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.street && SHOP_FIELD_ERROR_CLASS)}
-                                        />
+                                        <Input
+                      name="street"
+                      autoComplete="street-address"
+                      value={shippingAddress.street}
+                      onChange={e => updateAddress({...shippingAddress, street: e.target.value}, "street")}
+                      aria-invalid={Boolean(errors.street)}
+                    />
                                     </Field>
                                     <Field label={resolveLanguageKey("city")} error={errors.city}>
-                                        <input
-                                            name="city"
-                                            autoComplete="address-level2"
-                                            value={shippingAddress.city}
-                                            onChange={e => updateAddress({...shippingAddress, city: e.target.value}, "city")}
-                                            aria-invalid={Boolean(errors.city)}
-                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.city && SHOP_FIELD_ERROR_CLASS)}
-                                        />
+                                        <Input
+                      name="city"
+                      autoComplete="address-level2"
+                      value={shippingAddress.city}
+                      onChange={e => updateAddress({...shippingAddress, city: e.target.value}, "city")}
+                      aria-invalid={Boolean(errors.city)}
+                    />
                                     </Field>
                                     <Field label={resolveLanguageKey("postalCode")}>
-                                        <input
-                                            name="postalCode"
-                                            autoComplete="postal-code"
-                                            value={shippingAddress.postalCode ?? ""}
-                                            onChange={e => updateAddress({...shippingAddress, postalCode: e.target.value}, "postalCode")}
-                                            className={SHOP_FIELD_INPUT_CLASS}
-                                        />
+                                        <Input
+                      name="postalCode"
+                      autoComplete="postal-code"
+                      value={shippingAddress.postalCode ?? ""}
+                      onChange={e => updateAddress({...shippingAddress, postalCode: e.target.value}, "postalCode")}
+                      
+                    />
                                     </Field>
                                     <Field label={resolveLanguageKey("country")} error={errors.country}>
-                                        <select
-                                            name="country"
-                                            autoComplete="country"
-                                            value={shippingAddress.country ?? ""}
-                                            onChange={e => updateAddress({...shippingAddress, country: e.target.value, state: ""}, "country")}
-                                            aria-invalid={Boolean(errors.country)}
-                                            className={cn(SHOP_FIELD_INPUT_CLASS, errors.country && SHOP_FIELD_ERROR_CLASS, !shippingAddress.country && "text-shop-ink-faded")}
-                                        >
+                                        <NativeSelect
+                      name="country"
+                      autoComplete="country"
+                      value={shippingAddress.country ?? ""}
+                      onChange={e => updateAddress({...shippingAddress, country: e.target.value, state: ""}, "country")}
+                      aria-invalid={Boolean(errors.country)}
+                      className={cn("w-full", !shippingAddress.country && "text-muted-foreground")}
+                    >
                                             <option value="">{resolveLanguageKey("selectCountry")}</option>
                                             {countries.map(country => (
                                                 <option key={country._id} value={country._id}>{country.name}</option>
                                             ))}
-                                        </select>
+                                        </NativeSelect>
                                     </Field>
                                     <Field label={resolveLanguageKey("state")}>
                                         {states.length > 0 ? (
-                                            <select
-                                                name="state"
-                                                autoComplete="address-level1"
-                                                value={shippingAddress.state ?? ""}
-                                                onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
-                                                className={cn(SHOP_FIELD_INPUT_CLASS, !shippingAddress.state && "text-shop-ink-faded")}
-                                            >
+                                            <NativeSelect
+                        name="state"
+                        autoComplete="address-level1"
+                        value={shippingAddress.state ?? ""}
+                        onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
+                        className={cn("w-full", !shippingAddress.state && "text-muted-foreground")}
+                      >
                                                 <option value="">{resolveLanguageKey("selectState")}</option>
                                                 {states.map(state => (
                                                     <option key={state._id} value={state.name}>{state.name}</option>
                                                 ))}
-                                            </select>
+                                            </NativeSelect>
                                         ) : (
-                                            <input
-                                                name="state"
-                                                autoComplete="address-level1"
-                                                value={shippingAddress.state ?? ""}
-                                                onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
-                                                className={SHOP_FIELD_INPUT_CLASS}
-                                            />
+                                            <Input
+                        name="state"
+                        autoComplete="address-level1"
+                        value={shippingAddress.state ?? ""}
+                        onChange={e => updateAddress({...shippingAddress, state: e.target.value}, "state")}
+                        
+                      />
                                         )}
                                     </Field>
                                     <Field label={resolveLanguageKey("phone")} className="sm:col-span-2">
-                                        <input
-                                            name="phone"
-                                            type="tel"
-                                            autoComplete="tel"
-                                            value={shippingAddress.phone ?? ""}
-                                            onChange={e => updateAddress({...shippingAddress, phone: e.target.value}, "phone")}
-                                            className={SHOP_FIELD_INPUT_CLASS}
-                                        />
+                                        <Input
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={shippingAddress.phone ?? ""}
+                      onChange={e => updateAddress({...shippingAddress, phone: e.target.value}, "phone")}
+                      
+                    />
                                     </Field>
                                 </div>
                             </section>
-                            <button type="submit" disabled={submitting || !checkout} className={SHOP_SUBMIT_CLASS}>
+                            <Button size="lg" type="submit" disabled={submitting || !checkout} className="w-full">
                                 {submitting ? resolveLanguageKey("saving") : resolveLanguageKey("continueToShipping")}
-                            </button>
+                            </Button>
                         </form>
                     )}
 
                     {step === "shipping" && checkout && (
                         <form onSubmit={submitShipping} className="flex flex-col gap-6">
                             <fieldset className="flex flex-col gap-3">
-                                <legend className="mb-4 font-shop-display text-xl font-semibold">{resolveLanguageKey("shippingMethodTitle")}</legend>
+                                <legend className="mb-4 font-display text-xl font-semibold">{resolveLanguageKey("shippingMethodTitle")}</legend>
                                 {checkout.availableShippingRates.length === 0 ? (
-                                    <p className="rounded-xl bg-shop-cream p-4 text-shop-ink-muted">{resolveLanguageKey("noShippingRates")}</p>
-                                ) : checkout.availableShippingRates.map((rate, index) => (
+                                    <p className="rounded-xl bg-muted p-4 text-muted-foreground">{resolveLanguageKey("noShippingRates")}</p>
+                                ) : (
+                                    <RadioGroup value={String(rateIndex)} onValueChange={(value) => setRateIndex(Number(value))} className="gap-3">
+                                    {checkout.availableShippingRates.map((rate, index) => (
                                     <label
                                         key={`${rate.name}-${index}`}
                                         className={cn(
                                             "flex cursor-pointer items-center justify-between gap-4 rounded-xl border p-4 transition-colors",
-                                            rateIndex === index ? "border-shop-ink bg-shop-cream/60" : "border-shop-border hover:border-shop-ink/40",
+                                            rateIndex === index ? "border-foreground bg-muted/60" : "border-border hover:border-foreground/40",
                                         )}
                                     >
                                         <span className="flex items-center gap-3">
-                                            <input
-                                                type="radio"
-                                                name="shippingRate"
-                                                checked={rateIndex === index}
-                                                onChange={() => setRateIndex(index)}
-                                                className="h-4 w-4 accent-shop-ink"
-                                            />
+                                            <RadioGroupItem value={String(index)} />
                                             <span className="flex flex-col">
                                                 <span className="font-medium">
                                                     {rate.name || resolveLanguageKey("shipping")}
-                                                    {rate.carrier && <span className="font-normal text-shop-ink-muted"> · {rate.carrier}</span>}
+                                                    {rate.carrier && <span className="font-normal text-muted-foreground"> · {rate.carrier}</span>}
                                                 </span>
                                                 {rate.estimatedDeliveryDays != null && (
-                                                    <span className="text-sm text-shop-ink-muted">
+                                                    <span className="text-sm text-muted-foreground">
                                                         {rate.estimatedDeliveryDays === 1
                                                             ? resolveLanguageKey("deliveryDayOne")
                                                             : resolveLanguageKey("deliveryDays").replace("{days}", String(rate.estimatedDeliveryDays))}
@@ -734,51 +727,56 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                         </span>
                                         <span className="font-semibold tabular-nums">{rate.price === 0 ? resolveLanguageKey("free") : formatMoney(rate.price, currency)}</span>
                                     </label>
-                                ))}
+                                    ))}
+                                    </RadioGroup>
+                                )}
                             </fieldset>
-                            <button type="submit" disabled={submitting || checkout.availableShippingRates.length === 0} className={SHOP_SUBMIT_CLASS}>
+                            <Button size="lg" type="submit" disabled={submitting || checkout.availableShippingRates.length === 0} className="w-full">
                                 {submitting ? resolveLanguageKey("saving") : resolveLanguageKey("continueToPayment")}
-                            </button>
+                            </Button>
                         </form>
                     )}
 
                     {step === "payment" && checkout && fullyCovered && (
                         <div className="flex flex-col gap-5">
-                            <h2 className="font-shop-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</h2>
-                            <p className="rounded-xl bg-shop-cream p-4 text-shop-success">
+                            <h2 className="font-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</h2>
+                            <p className="rounded-xl bg-muted p-4 text-success">
                                 {resolveLanguageKey("coveredByGiftCard").replace("{code}", checkout.giftCard?.code ?? "")}
                             </p>
-                            <button type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className={SHOP_SUBMIT_CLASS}>
+                            <Button size="lg" type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className="w-full">
                                 {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrder")}
-                            </button>
+                            </Button>
                         </div>
                     )}
 
                     {step === "payment" && checkout && !fullyCovered && (
                         <div className="flex flex-col gap-6">
                             <fieldset className="flex flex-col gap-3" disabled={submitting}>
-                                <legend className="mb-4 font-shop-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</legend>
+                                <legend className="mb-4 font-display text-xl font-semibold">{resolveLanguageKey("paymentTitle")}</legend>
+                                <RadioGroup
+                                    value={checkout.paymentMethod ?? ""}
+                                    onValueChange={(value) => {
+                                        const method = paymentMethods.find((candidate) => candidate.id === value);
+                                        if (method) void selectPaymentMethod(method.id);
+                                    }}
+                                    className="gap-3"
+                                >
                                 {paymentMethods.filter(method => method.available).map(method => (
                                     <label
                                         key={method.id}
                                         className={cn(
                                             "flex cursor-pointer items-center gap-3 rounded-xl border p-4 transition-colors",
-                                            checkout.paymentMethod === method.id ? "border-shop-ink bg-shop-cream/60" : "border-shop-border hover:border-shop-ink/40",
+                                            checkout.paymentMethod === method.id ? "border-foreground bg-muted/60" : "border-border hover:border-foreground/40",
                                         )}
                                     >
-                                        <input
-                                            type="radio"
-                                            name="paymentMethod"
-                                            checked={checkout.paymentMethod === method.id}
-                                            onChange={() => selectPaymentMethod(method.id)}
-                                            className="h-4 w-4 accent-shop-ink"
-                                        />
+                                        <RadioGroupItem value={method.id} />
                                         <span className="flex flex-col">
                                             <span className="font-medium">{resolveLanguageKey(`methods.${method.id}.label`)}</span>
-                                            <span className="text-sm text-shop-ink-muted">{resolveLanguageKey(`methods.${method.id}.hint`)}</span>
+                                            <span className="text-sm text-muted-foreground">{resolveLanguageKey(`methods.${method.id}.hint`)}</span>
                                         </span>
                                     </label>
                                 ))}
+                                </RadioGroup>
                             </fieldset>
 
                             {checkout.paymentMethod === "stripe" && checkout.stripeClientSecret && stripePromise && (
@@ -796,16 +794,16 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                             )}
 
                             {(checkout.paymentMethod === "cod" || checkout.paymentMethod === "bank_transfer") && (
-                                <button type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className={SHOP_SUBMIT_CLASS}>
+                                <Button size="lg" type="button" onClick={() => confirmOrder(checkout._id)} disabled={submitting} className="w-full">
                                     {submitting ? resolveLanguageKey("placingOrder") : resolveLanguageKey("placeOrderAmount").replace("{amount}", formatMoney(checkout.grandTotal, currency))}
-                                </button>
+                                </Button>
                             )}
                         </div>
                     )}
                 </div>
 
-                <aside className="hidden rounded-2xl bg-shop-cream p-6 lg:sticky lg:top-28 lg:block" aria-labelledby="shop-checkout-summary">
-                    <h2 id="shop-checkout-summary" className="mb-5 font-shop-display text-xl font-semibold">{resolveLanguageKey("summaryTitle")}</h2>
+                <aside className="hidden rounded-2xl bg-muted p-6 lg:sticky lg:top-28 lg:block" aria-labelledby="shop-checkout-summary">
+                    <h2 id="shop-checkout-summary" className="mb-5 font-display text-xl font-semibold">{resolveLanguageKey("summaryTitle")}</h2>
                     {summary}
                 </aside>
             </div>

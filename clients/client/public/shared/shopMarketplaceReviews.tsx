@@ -47,43 +47,43 @@ function ShopMarketplaceReviewsInner({resolveLanguageKey, listingId, providerId,
     }, [listingId, providerId]);
 
     return (
-        <section id="shop-reviews" className="scroll-mt-28 border-t border-shop-border pt-12" aria-labelledby="shop-reviews-title">
+        <section id="shop-reviews" className="scroll-mt-28 border-t border-border pt-12" aria-labelledby="shop-reviews-title">
             <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
                 <div className="flex flex-col gap-4">
-                    <h2 id="shop-reviews-title" className="font-shop-display text-2xl font-semibold tracking-tight sm:text-3xl">{resolveLanguageKey("title")}</h2>
+                    <h2 id="shop-reviews-title" className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">{resolveLanguageKey("title")}</h2>
                     {average != null && count ? (
                         <div className="flex items-center gap-3">
-                            <span className="font-shop-display text-5xl font-bold tabular-nums">{average.toFixed(1)}</span>
+                            <span className="font-display text-5xl font-bold tabular-nums">{average.toFixed(1)}</span>
                             <div className="flex flex-col gap-1">
                                 <StarRow value={Math.round(average)} />
-                                <span className="text-sm text-shop-ink-muted">
+                                <span className="text-sm text-muted-foreground">
                                     {resolveLanguageKey(count === 1 ? "countOne" : "count").replace("{count}", String(count))}
                                 </span>
                             </div>
                         </div>
                     ) : total > 0 ? (
                         // The stored average can lag behind the reviews; the count comes from the list itself
-                        <p className="text-shop-ink-muted">
+                        <p className="text-muted-foreground">
                             {resolveLanguageKey(total === 1 ? "countOne" : "count").replace("{count}", String(total))}
                         </p>
                     ) : (
-                        <p className="text-shop-ink-muted">{resolveLanguageKey("empty")}</p>
+                        <p className="text-muted-foreground">{resolveLanguageKey("empty")}</p>
                     )}
                 </div>
 
                 {reviews.length > 0 && (
-                    <ul className="flex flex-col divide-y divide-shop-border">
+                    <ul className="flex flex-col divide-y divide-border">
                         {reviews.map(review => (
                             <li key={review._id} className="flex flex-col gap-2 py-6 first:pt-0">
                                 <div className="flex items-center justify-between gap-3">
                                     <StarRow value={review.rating} />
                                     <span className="sr-only">{resolveLanguageKey("starsValue").replace("{count}", String(review.rating))}</span>
-                                    {review.createdAt && <span className="text-xs text-shop-ink-faded">{formatDate(review.createdAt, {format: DATE_FORMATS.date})}</span>}
+                                    {review.createdAt && <span className="text-xs text-muted-foreground">{formatDate(review.createdAt, {format: DATE_FORMATS.date})}</span>}
                                 </div>
-                                {review.comment && <p className="text-[15px] leading-relaxed text-shop-ink-muted">{review.comment}</p>}
+                                {review.comment && <p className="text-[15px] leading-relaxed text-muted-foreground">{review.comment}</p>}
                                 <p className="text-sm">
                                     <span className="font-medium">{review.reviewerName}</span>
-                                    {providerId && review.listingTitle && <span className="text-shop-ink-faded"> · {review.listingTitle}</span>}
+                                    {providerId && review.listingTitle && <span className="text-muted-foreground"> · {review.listingTitle}</span>}
                                 </p>
                             </li>
                         ))}

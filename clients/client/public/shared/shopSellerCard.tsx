@@ -6,6 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ShopSeller} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 import type {PublicBlogSeller} from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
+import {companySiteOrigin} from "@coreModule/clients/portal/shared/portalZone.ts";
 import {useShopConfig} from "./shopConfigContext.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {ShopProviderAvatar} from "./shopMarketplace.tsx";
@@ -14,13 +15,21 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopSe
 
 type SellerRef = ShopSeller | PublicBlogSeller;
 
-/** Opens the seller's own subdomain shop, keeping the current port for local DX. */
-export function sellerShopHref(seller: Pick<SellerRef, "shopHost">): string | undefined {
-    const host = seller.shopHost?.trim();
+/**
+ * The seller's own shop, the same way car rental and dental open "Visit site":
+ * `{slug}.{portal zone}/shop`. A stored host covers a build with no portal zone.
+ */
+export function sellerShopHref(seller: Pick<SellerRef, "siteHost" | "siteSlug">): string | undefined {
+    const slug = seller.siteSlug?.trim();
+    if (slug) {
+        const origin = companySiteOrigin(slug);
+        if (origin) return `${origin}/shop`;
+    }
+    const host = seller.siteHost?.trim();
     if (!host) return undefined;
     const {protocol, port} = window.location;
     const portSuffix = port ? `:${port}` : "";
-    return `${protocol}//${host}${portSuffix}/`;
+    return `${protocol}//${host}${portSuffix}/shop`;
 }
 
 function SellerMark({seller, size}: {seller: SellerRef; size: "sm" | "md"}) {
@@ -29,7 +38,7 @@ function SellerMark({seller, size}: {seller: SellerRef; size: "sm" | "md"}) {
         return (
             <span
                 className={cn(
-                    "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-1 ring-shop-border",
+                    "inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-card ring-1 ring-border",
                     size === "sm" && "h-7 w-7",
                     size === "md" && "h-11 w-11",
                 )}
@@ -127,8 +136,8 @@ function ShopSellerCardInner({
             <>
                 <SellerMark seller={seller} size="sm" />
                 <span className="min-w-0 truncate">
-                    <span className="text-shop-ink-faded">{label} </span>
-                    <span className={cn("font-medium text-shop-ink", shopHref && "underline-offset-2 group-hover/seller:underline")}>
+                    <span className="text-muted-foreground">{label} </span>
+                    <span className={cn("font-medium text-foreground", shopHref && "underline-offset-2 group-hover/seller:underline")}>
                         {seller.name}
                     </span>
                 </span>
@@ -137,7 +146,7 @@ function ShopSellerCardInner({
 
         if (!shopHref) {
             return (
-                <span className={cn("inline-flex max-w-full items-center gap-2 text-xs text-shop-ink-muted", className)}>
+                <span className={cn("inline-flex max-w-full items-center gap-2 text-xs text-muted-foreground", className)}>
                     {body}
                 </span>
             );
@@ -149,7 +158,7 @@ function ShopSellerCardInner({
                 nestedInLink={nestedInLink}
                 ariaLabel={visitLabel}
                 className={cn(
-                    "group/seller inline-flex max-w-full items-center gap-2 text-xs text-shop-ink-muted hover:text-shop-ink",
+                    "group/seller inline-flex max-w-full items-center gap-2 text-xs text-muted-foreground hover:text-foreground",
                     className,
                 )}
             >
@@ -162,9 +171,9 @@ function ShopSellerCardInner({
         <>
             <SellerMark seller={seller} size="md" />
             <div className="min-w-0 flex-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-shop-ink-faded">{label}</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{label}</p>
                 <p className={cn(
-                    "truncate font-shop-display text-base font-semibold tracking-tight",
+                    "truncate font-display text-base font-semibold tracking-tight",
                     shopHref && "underline-offset-2 group-hover/seller:underline",
                 )}>
                     {seller.name}
@@ -174,7 +183,7 @@ function ShopSellerCardInner({
     );
 
     return (
-        <div className={cn("flex items-center gap-3 rounded-2xl border border-shop-border bg-shop-cream/60 px-4 py-3", className)}>
+        <div className={cn("flex items-center gap-3 rounded-2xl border border-border bg-muted/60 px-4 py-3", className)}>
             {shopHref ? (
                 <SellerShopControl
                     href={shopHref}
@@ -190,7 +199,7 @@ function ShopSellerCardInner({
             {shopHref ? (
                 <a
                     href={shopHref}
-                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-shop-border bg-white px-3 py-2 text-xs font-semibold text-shop-ink transition-colors hover:border-shop-ink"
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:border-foreground"
                 >
                     <Store className="h-3.5 w-3.5" aria-hidden />
                     {resolveLanguageKey("visitShopShort")}

@@ -12,17 +12,12 @@ import {
     type MyCustomerAddressCreateFormType,
 } from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/myCustomerAddress.form.validator.ts";
 import {customerAddressTypes} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.schema-def.ts";
-import {cn} from "@coreModule/components/lib/utils.ts";
-import {
-    SHOP_BUTTON_CLASS,
-    SHOP_BUTTON_SECONDARY_CLASS,
-    SHOP_FIELD_ERROR_CLASS,
-    SHOP_FIELD_INPUT_CLASS,
-    SHOP_FIELD_LABEL_CLASS,
-    SHOP_LINK_CLASS,
-    SHOP_SUBMIT_CLASS,
-    ShopFieldError,
-} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
+import {FieldError} from "@coreModule/components/ui/field.tsx";
+import {Checkbox} from "@coreModule/components/ui/checkbox.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx";
 
@@ -212,60 +207,60 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
     };
 
     if (loading) {
-        return <div className="h-48 animate-pulse rounded-xl bg-shop-cream" />;
+        return <div className="h-48 animate-pulse rounded-xl bg-muted" />;
     }
 
     return (
         <div className="flex flex-col gap-8">
             <div className="flex items-center justify-between gap-4">
                 <div>
-                    <h1 className="font-shop-display text-3xl font-semibold">{resolveLanguageKey("title")}</h1>
-                    <p className="mt-2 text-sm text-shop-ink-muted">{resolveLanguageKey("subtitle")}</p>
+                    <h1 className="font-display text-3xl font-semibold">{resolveLanguageKey("title")}</h1>
+                    <p className="mt-2 text-sm text-muted-foreground">{resolveLanguageKey("subtitle")}</p>
                 </div>
-                <button type="button" onClick={startCreate} className={SHOP_BUTTON_CLASS}>
+                <Button size="lg" type="button" onClick={startCreate} >
                     {resolveLanguageKey("add")}
-                </button>
+                </Button>
             </div>
 
             {addresses.length === 0 && !showForm ? (
-                <div className="rounded-xl border border-dashed border-shop-border py-16 text-center text-shop-ink-muted">
+                <div className="rounded-xl border border-dashed border-border py-16 text-center text-muted-foreground">
                     {resolveLanguageKey("empty")}
                 </div>
             ) : (
                 <ul className="grid gap-4 sm:grid-cols-2">
                     {addresses.map((address) => (
-                        <li key={address._id} className="rounded-2xl border border-shop-border p-4 text-sm">
+                        <li key={address._id} className="rounded-2xl border border-border p-4 text-sm">
                             <p className="font-semibold">
                                 {address.label || resolveLanguageKey(`type.${address.type}`)}
                                 {address.isDefault ? (
-                                    <span className="ml-2 text-xs font-medium text-shop-accent">{resolveLanguageKey("default")}</span>
+                                    <span className="ml-2 text-xs font-medium text-primary">{resolveLanguageKey("default")}</span>
                                 ) : null}
                             </p>
-                            <p className="mt-1 text-shop-ink-muted">
+                            <p className="mt-1 text-muted-foreground">
                                 {address.firstName} {address.lastName}
                             </p>
-                            <p className="text-shop-ink-muted">{address.street}</p>
-                            <p className="text-shop-ink-muted">
+                            <p className="text-muted-foreground">{address.street}</p>
+                            <p className="text-muted-foreground">
                                 {[address.city?.name, address.postalCode, address.country?.name].filter(Boolean).join(", ")}
                             </p>
                             {confirmDeleteId === address._id ? (
                                 <div className="mt-3 flex flex-wrap items-center gap-3" role="group" aria-label={resolveLanguageKey("confirmDelete")}>
                                     <span className="text-sm font-medium">{resolveLanguageKey("confirmDelete")}</span>
-                                    <button type="button" onClick={() => handleDelete(address._id)} className="text-sm font-semibold text-shop-danger underline-offset-4 hover:underline">
+                                    <Button variant="link" type="button" onClick={() => handleDelete(address._id)} className="h-auto p-0 font-semibold text-destructive">
                                         {resolveLanguageKey("delete")}
-                                    </button>
-                                    <button type="button" onClick={() => setConfirmDeleteId(null)} className="text-sm font-medium text-shop-ink-muted underline-offset-4 hover:underline">
+                                    </Button>
+                                    <Button variant="link" type="button" onClick={() => setConfirmDeleteId(null)} className="h-auto p-0 text-muted-foreground">
                                         {resolveLanguageKey("keep")}
-                                    </button>
+                                    </Button>
                                 </div>
                             ) : (
                                 <div className="mt-3 flex gap-4">
-                                    <button type="button" onClick={() => startEdit(address)} className={SHOP_LINK_CLASS}>
+                                    <Button variant="link" type="button" onClick={() => startEdit(address)} className="h-auto p-0">
                                         {resolveLanguageKey("edit")}
-                                    </button>
-                                    <button type="button" onClick={() => setConfirmDeleteId(address._id)} className="text-sm font-medium text-shop-danger underline-offset-4 hover:underline">
+                                    </Button>
+                                    <Button variant="link" type="button" onClick={() => setConfirmDeleteId(address._id)} className="h-auto p-0 text-destructive">
                                         {resolveLanguageKey("delete")}
-                                    </button>
+                                    </Button>
                                 </div>
                             )}
                         </li>
@@ -274,140 +269,139 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
             )}
 
             {showForm ? (
-                <form className="flex max-w-lg flex-col gap-4 rounded-2xl border border-shop-border p-5" onSubmit={handleSave} noValidate>
-                    <h2 className="font-shop-display text-xl font-semibold">
+                <form className="flex max-w-lg flex-col gap-4 rounded-2xl border border-border p-5" onSubmit={handleSave} noValidate>
+                    <h2 className="font-display text-xl font-semibold">
                         {editingId ? resolveLanguageKey("editTitle") : resolveLanguageKey("createTitle")}
                     </h2>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.typeLabel")}
-                        <select
-                            value={form.type}
-                            onChange={(e) => setField("type", e.target.value as (typeof customerAddressTypes)[number])}
-                            className={`${SHOP_FIELD_INPUT_CLASS} bg-white`}
-                        >
+                        <NativeSelect
+              value={form.type}
+              onChange={(e) => setField("type", e.target.value as (typeof customerAddressTypes)[number])}
+              className="w-full bg-card"
+            >
                             {customerAddressTypes.map((type) => (
                                 <option key={type} value={type}>{resolveLanguageKey(`type.${type}`)}</option>
                             ))}
-                        </select>
-                    </label>
+                        </NativeSelect>
+                    </Label>
                     <div className="grid grid-cols-2 gap-3">
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("form.firstNameLabel")}
-                            <input
-                                value={form.firstName}
-                                autoComplete="given-name"
-                                onChange={(e) => setField("firstName", e.target.value)}
-                                className={cn(SHOP_FIELD_INPUT_CLASS, fieldErrors.firstName && SHOP_FIELD_ERROR_CLASS)}
-                            />
-                            <ShopFieldError message={fieldErrors.firstName} />
-                        </label>
-                        <label className={SHOP_FIELD_LABEL_CLASS}>
+                            <Input
+                value={form.firstName}
+                autoComplete="given-name"
+                onChange={(e) => setField("firstName", e.target.value)}
+                aria-invalid={fieldErrors.firstName ? true : undefined}
+              />
+                            <FieldError>{fieldErrors.firstName}</FieldError>
+                        </Label>
+                        <Label className="flex-col items-stretch gap-1.5">
                             {resolveLanguageKey("form.lastNameLabel")}
-                            <input
-                                value={form.lastName}
-                                autoComplete="family-name"
-                                onChange={(e) => setField("lastName", e.target.value)}
-                                className={cn(SHOP_FIELD_INPUT_CLASS, fieldErrors.lastName && SHOP_FIELD_ERROR_CLASS)}
-                            />
-                            <ShopFieldError message={fieldErrors.lastName} />
-                        </label>
+                            <Input
+                value={form.lastName}
+                autoComplete="family-name"
+                onChange={(e) => setField("lastName", e.target.value)}
+                aria-invalid={fieldErrors.lastName ? true : undefined}
+              />
+                            <FieldError>{fieldErrors.lastName}</FieldError>
+                        </Label>
                     </div>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.streetLabel")}
-                        <input
-                            value={form.street}
-                            autoComplete="street-address"
-                            onChange={(e) => setField("street", e.target.value)}
-                            className={cn(SHOP_FIELD_INPUT_CLASS, fieldErrors.street && SHOP_FIELD_ERROR_CLASS)}
-                        />
-                        <ShopFieldError message={fieldErrors.street} />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Input
+              value={form.street}
+              autoComplete="street-address"
+              onChange={(e) => setField("street", e.target.value)}
+              aria-invalid={fieldErrors.street ? true : undefined}
+            />
+                        <FieldError>{fieldErrors.street}</FieldError>
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.countryLabel")}
-                        <select
-                            value={form.country}
-                            onChange={(e) => {
-                                setForm((prev) => ({...prev, country: e.target.value, city: ""}));
-                                setFieldErrors((prev) => {
-                                    const next = {...prev};
-                                    delete next.country;
-                                    delete next.city;
-                                    return next;
-                                });
-                            }}
-                            className={cn(SHOP_FIELD_INPUT_CLASS, "bg-white", fieldErrors.country && SHOP_FIELD_ERROR_CLASS)}
-                        >
+                        <NativeSelect
+              value={form.country}
+              onChange={(e) => {
+                setForm((prev) => ({...prev, country: e.target.value, city: ""}));
+                setFieldErrors((prev) => {
+                  const next = {...prev};
+                  delete next.country;
+                  delete next.city;
+                  return next;
+                });
+              }}
+              className="w-full bg-card" aria-invalid={fieldErrors.country ? true : undefined}
+            >
                             <option value="">{resolveLanguageKey("form.countryPlaceholder")}</option>
                             {countries.map((country) => (
                                 <option key={country._id} value={country._id}>{country.name}</option>
                             ))}
-                        </select>
-                        <ShopFieldError message={fieldErrors.country} />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        </NativeSelect>
+                        <FieldError>{fieldErrors.country}</FieldError>
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.cityLabel")}
-                        <select
-                            value={form.city}
-                            disabled={!form.country}
-                            onChange={(e) => setField("city", e.target.value)}
-                            className={cn(SHOP_FIELD_INPUT_CLASS, "bg-white", fieldErrors.city && SHOP_FIELD_ERROR_CLASS)}
-                        >
+                        <NativeSelect
+              value={form.city}
+              disabled={!form.country}
+              onChange={(e) => setField("city", e.target.value)}
+              className="w-full bg-card" aria-invalid={fieldErrors.city ? true : undefined}
+            >
                             <option value="">{resolveLanguageKey("form.cityPlaceholder")}</option>
                             {cities.map((city) => (
                                 <option key={city._id} value={city._id}>{city.name}</option>
                             ))}
-                        </select>
-                        <ShopFieldError message={fieldErrors.city} />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        </NativeSelect>
+                        <FieldError>{fieldErrors.city}</FieldError>
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.postalCodeLabel")}
-                        <input
-                            value={form.postalCode ?? ""}
-                            autoComplete="postal-code"
-                            onChange={(e) => setField("postalCode", e.target.value)}
-                            className={SHOP_FIELD_INPUT_CLASS}
-                        />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Input
+              value={form.postalCode ?? ""}
+              autoComplete="postal-code"
+              onChange={(e) => setField("postalCode", e.target.value)}
+              
+            />
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.phoneLabel")}
-                        <input
-                            type="tel"
-                            value={form.phone ?? ""}
-                            autoComplete="tel"
-                            onChange={(e) => setField("phone", e.target.value)}
-                            className={SHOP_FIELD_INPUT_CLASS}
-                        />
-                    </label>
-                    <label className={SHOP_FIELD_LABEL_CLASS}>
+                        <Input
+              type="tel"
+              value={form.phone ?? ""}
+              autoComplete="tel"
+              onChange={(e) => setField("phone", e.target.value)}
+              
+            />
+                    </Label>
+                    <Label className="flex-col items-stretch gap-1.5">
                         {resolveLanguageKey("form.labelLabel")}
-                        <input
-                            value={form.label ?? ""}
-                            onChange={(e) => setField("label", e.target.value)}
-                            className={SHOP_FIELD_INPUT_CLASS}
-                        />
-                    </label>
-                    <label className="flex items-center gap-2 text-sm text-shop-ink">
-                        <input
-                            type="checkbox"
+                        <Input
+              value={form.label ?? ""}
+              onChange={(e) => setField("label", e.target.value)}
+              
+            />
+                    </Label>
+                    <Label>
+                        <Checkbox
                             checked={Boolean(form.isDefault)}
-                            onChange={(e) => setField("isDefault", e.target.checked)}
+                            onCheckedChange={(checked) => setField("isDefault", checked === true)}
                         />
                         {resolveLanguageKey("form.isDefaultLabel")}
-                    </label>
+                    </Label>
                     <div className="flex gap-3">
-                        <button type="submit" disabled={saving} className={SHOP_SUBMIT_CLASS}>
+                        <Button size="lg" type="submit" disabled={saving} className="w-full">
                             {saving ? resolveLanguageKey("saving") : resolveLanguageKey("save")}
-                        </button>
-                        <button
+                        </Button>
+                        <Button variant="outline" size="lg"
                             type="button"
                             onClick={() => {
                                 setShowForm(false);
                                 setEditingId(null);
                             }}
-                            className={SHOP_BUTTON_SECONDARY_CLASS}
+                            
                         >
                             {resolveLanguageKey("cancel")}
-                        </button>
+                        </Button>
                     </div>
                 </form>
             ) : null}

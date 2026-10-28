@@ -13,7 +13,8 @@ import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {useDynamicLanguage} from "@coreModule/helpers/hooks/useDynamicLanguage.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import ShopProductCard from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
-import {SHOP_BUTTON_CLASS} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/components/cms/CmsBlockRenderer.tsx";
 
@@ -42,10 +43,16 @@ function categoryRefIds(values: CategorySimple[] | undefined): string[] {
     return values.map((category) => category._id).filter((id) => id.length > 0);
 }
 
+/** Merchants write site paths from the shop's root (`/products`); in the portal the shop lives under its section base. */
+function isSitePath(href: string): boolean {
+    return href.startsWith("/") && !href.startsWith("//");
+}
+
 /** In-app link for site paths, a plain anchor for anything else. */
 function CmsLink({href, className, children}: {href: string; className?: string; children: React.ReactNode}) {
-    if (href.startsWith("/") && !href.startsWith("//")) {
-        return <Link to={href} className={className}>{children}</Link>;
+    const base = useSectionBase();
+    if (isSitePath(href)) {
+        return <Link to={`${base}${href}`} className={className}>{children}</Link>;
     }
     return <a href={href} className={className}>{children}</a>;
 }
@@ -53,7 +60,7 @@ function CmsLink({href, className, children}: {href: string; className?: string;
 function CmsHero({title, config, headingLevel = "h2"}: {title: string; config: CmsBlockConfig; headingLevel?: HeadingLevel}) {
     const Heading = headingLevel;
     return (
-        <div className="grid overflow-hidden rounded-3xl bg-shop-cream md:min-h-[440px] md:grid-cols-2">
+        <div className="grid overflow-hidden rounded-3xl bg-muted md:min-h-[440px] md:grid-cols-2">
             {config.imageUrl ? (
                 <img
                     src={config.imageUrl}
@@ -62,15 +69,15 @@ function CmsHero({title, config, headingLevel = "h2"}: {title: string; config: C
                 />
             ) : null}
             <div className={cn("flex flex-col items-start justify-center gap-4 px-6 py-10 sm:px-10 md:py-14 lg:px-14", !config.imageUrl && "md:col-span-2")}>
-                <Heading className="max-w-xl font-shop-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+                <Heading className="max-w-xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                     {config.headline ?? title}
                 </Heading>
-                {config.subheadline ? <p className="max-w-md text-base leading-relaxed text-shop-ink-muted sm:text-lg">{config.subheadline}</p> : null}
+                {config.subheadline ? <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">{config.subheadline}</p> : null}
                 {config.ctaHref && config.ctaLabel ? (
-                    <CmsLink href={config.ctaHref} className={cn(SHOP_BUTTON_CLASS, "mt-2")}>
+                    <Button asChild size="lg" className="mt-2 self-start"><CmsLink href={config.ctaHref}>
                         {config.ctaLabel}
                         <ArrowRight className="h-4 w-4" aria-hidden />
-                    </CmsLink>
+                    </CmsLink></Button>
                 ) : null}
             </div>
         </div>
@@ -91,32 +98,22 @@ function CmsSlider({title, slides, headingLevel}: {title: string; slides: CmsBlo
             </div>
             {slides.length > 1 ? (
                 <div className="mt-4 flex items-center justify-center gap-3">
-                    <button
-                        type="button"
-                        onClick={() => go(index - 1)}
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-shop-border bg-white hover:border-shop-ink"
-                        aria-label={resolveLanguageKey("previousSlide")}
-                    >
-                        <ChevronLeft className="h-4 w-4" />
-                    </button>
+                    <Button type="button" variant="outline" size="icon" onClick={() => go(index - 1)} aria-label={resolveLanguageKey("previousSlide")}>
+                        <ChevronLeft />
+                    </Button>
                     {slides.map((item, slideIndex) => (
                         <button
                             key={`${item.headline ?? "slide"}-${slideIndex}`}
                             type="button"
                             aria-label={resolveLanguageKey("slide").replace("{number}", String(slideIndex + 1)).replace("{total}", String(slides.length))}
                             aria-current={slideIndex === index}
-                            className={cn("h-2 rounded-full transition-all", slideIndex === index ? "w-6 bg-shop-ink" : "w-2 bg-shop-ink/25")}
+                            className={cn("h-2 rounded-full transition-all", slideIndex === index ? "w-6 bg-foreground" : "w-2 bg-foreground/25")}
                             onClick={() => setIndex(slideIndex)}
                         />
                     ))}
-                    <button
-                        type="button"
-                        onClick={() => go(index + 1)}
-                        className="flex h-9 w-9 items-center justify-center rounded-full border border-shop-border bg-white hover:border-shop-ink"
-                        aria-label={resolveLanguageKey("nextSlide")}
-                    >
-                        <ChevronRight className="h-4 w-4" />
-                    </button>
+                    <Button type="button" variant="outline" size="icon" onClick={() => go(index + 1)} aria-label={resolveLanguageKey("nextSlide")}>
+                        <ChevronRight />
+                    </Button>
                 </div>
             ) : null}
         </div>
@@ -129,7 +126,7 @@ function CmsGrid({items}: {items: CmsBlockGridItem[]}) {
             {items.map((item, index) => {
                 const body = (
                     <>
-                        <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-shop-cream">
+                        <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
                             {item.imageUrl ? (
                                 <img src={item.imageUrl} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                             ) : null}
@@ -151,8 +148,8 @@ function CmsGrid({items}: {items: CmsBlockGridItem[]}) {
 function CmsSectionHeading({title, subtitle}: {title: string; subtitle?: string}) {
     return (
         <div className="flex flex-col gap-1.5">
-            <h2 className="font-shop-display text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
-            {subtitle ? <p className="max-w-2xl text-shop-ink-muted">{subtitle}</p> : null}
+            <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+            {subtitle ? <p className="max-w-2xl text-muted-foreground">{subtitle}</p> : null}
         </div>
     );
 }
@@ -214,20 +211,21 @@ function CmsProductStrip({
 /** Merchant HTML (sanitized by the API); its site links navigate in-app instead of reloading the shop. */
 function CmsCustomHtml({html}: {html: string}) {
     const navigate = useNavigate();
+    const base = useSectionBase();
 
     function handleClick(event: MouseEvent<HTMLDivElement>) {
         const anchor = (event.target as HTMLElement).closest("a");
         const href = anchor?.getAttribute("href");
         if (!anchor || !href || anchor.target || event.defaultPrevented || event.button !== 0
             || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        if (href.startsWith("/") && !href.startsWith("//")) {
+        if (isSitePath(href)) {
             event.preventDefault();
-            navigate(href);
+            navigate(`${base}${href}`);
         }
     }
 
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions -- delegates to the anchors inside, which keep their own keyboard behaviour
-    return <div className="text-[15px] leading-relaxed [&_a]:text-shop-accent [&_a]:underline" onClick={handleClick} dangerouslySetInnerHTML={{__html: html}} />;
+    return <div className="text-[15px] leading-relaxed [&_a]:text-primary [&_a]:underline" onClick={handleClick} dangerouslySetInnerHTML={{__html: html}} />;
 }
 
 function renderBlockContent(block: CmsBlock, headingLevel: HeadingLevel | undefined) {
@@ -285,7 +283,7 @@ function renderBlockContent(block: CmsBlock, headingLevel: HeadingLevel | undefi
         case "announcement_bar": {
             const message = config.message ?? block.title;
             return (
-                <p className="rounded-full bg-shop-ink px-5 py-3 text-center text-sm font-medium text-white">
+                <p className="rounded-full bg-foreground px-5 py-3 text-center text-sm font-medium text-background">
                     {config.linkHref ? (
                         <CmsLink href={config.linkHref} className="underline-offset-4 hover:underline">{message}</CmsLink>
                     ) : message}
@@ -296,7 +294,7 @@ function renderBlockContent(block: CmsBlock, headingLevel: HeadingLevel | undefi
             return config.html ? <CmsCustomHtml html={config.html} /> : null;
         case "video":
             return config.url ? (
-                <div className="aspect-video w-full overflow-hidden rounded-3xl bg-shop-cream">
+                <div className="aspect-video w-full overflow-hidden rounded-3xl bg-muted">
                     <iframe
                         title={block.title}
                         src={config.url}

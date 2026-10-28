@@ -15,17 +15,13 @@ import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared
 import {ShopProviderAvatar} from "@eCommerceModule/clients/client/public/shared/shopMarketplace.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
-import {
-    SHOP_BUTTON_CLASS,
-    SHOP_BUTTON_SECONDARY_CLASS,
-    SHOP_FIELD_INPUT_CLASS,
-    SHOP_FIELD_LABEL_CLASS,
-    SHOP_LINK_CLASS,
-    SHOP_SUBMIT_CLASS,
-} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import {serviceOrderTitle} from "./index.tsx";
 import type {BuyerServiceOrder} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
 import type {Media} from "armonia/src/modules/core/types/index.ts";
+import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
+import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderDetail.tsx";
 
@@ -80,10 +76,10 @@ function EscrowPayForm({
     return (
         <div className="flex flex-col gap-4">
             <PaymentElement />
-            <button type="button" onClick={() => void handlePay()} disabled={!stripe || busy} className={SHOP_SUBMIT_CLASS}>
+            <Button size="lg" type="button" onClick={() => void handlePay()} disabled={!stripe || busy} className="w-full">
                 <Lock className="h-4 w-4" aria-hidden />
                 {busy ? processingLabel : payLabel}
-            </button>
+            </Button>
         </div>
     );
 }
@@ -100,6 +96,7 @@ async function downloadMedia(media: Media) {
 }
 
 function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
+    const base = useSectionBase();
     const {orderId = ""} = useParams();
     const [searchParams] = useSearchParams();
     const justPlaced = searchParams.get("placed") === "1";
@@ -158,14 +155,14 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     }
 
     if (loading) {
-        return <div className="h-96 animate-pulse rounded-2xl bg-shop-cream" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
+        return <div className="h-96 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
     }
 
     if (!order) {
         return (
             <div className="flex flex-col items-start gap-4">
-                <h1 className="font-shop-display text-3xl font-bold tracking-tight">{resolveLanguageKey("notFound")}</h1>
-                <Link to="/account/services" className={SHOP_LINK_CLASS}>{resolveLanguageKey("backToOrders")}</Link>
+                <h1 className="font-display text-3xl font-bold tracking-tight">{resolveLanguageKey("notFound")}</h1>
+                <Button asChild variant="link" className="h-auto p-0"><Link to={`${base}/account/services`}>{resolveLanguageKey("backToOrders")}</Link></Button>
             </div>
         );
     }
@@ -200,26 +197,26 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
 
     return (
         <div className="flex flex-col gap-8">
-            <Link to="/account/services" className="inline-flex items-center gap-1.5 self-start text-sm text-shop-ink-muted hover:text-shop-ink">
+            <Link to={`${base}/account/services`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToOrders")}
             </Link>
 
             {justPlaced && (
-                <div className="flex gap-4 rounded-2xl bg-shop-cream p-6" role="status">
-                    <CircleCheck className="h-7 w-7 shrink-0 text-shop-success" aria-hidden />
+                <div className="flex gap-4 rounded-2xl bg-muted p-6" role="status">
+                    <CircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
                     <div className="flex flex-col gap-1">
-                        <p className="font-shop-display text-xl font-semibold">{resolveLanguageKey("placedTitle")}</p>
-                        <p className="text-shop-ink-muted">{resolveLanguageKey("placedMessage")}</p>
+                        <p className="font-display text-xl font-semibold">{resolveLanguageKey("placedTitle")}</p>
+                        <p className="text-muted-foreground">{resolveLanguageKey("placedMessage")}</p>
                     </div>
                 </div>
             )}
 
             {order.escrowClientSecret && stripePromise && (
-                <section className="flex flex-col gap-4 rounded-2xl border border-shop-border p-6" aria-labelledby="shop-escrow-pay">
+                <section className="flex flex-col gap-4 rounded-2xl border border-border p-6" aria-labelledby="shop-escrow-pay">
                     <div className="flex flex-col gap-1">
-                        <h2 id="shop-escrow-pay" className="font-shop-display text-xl font-semibold">{resolveLanguageKey("payEscrowTitle")}</h2>
-                        <p className="text-sm text-shop-ink-muted">{resolveLanguageKey("payEscrowHint")}</p>
+                        <h2 id="shop-escrow-pay" className="font-display text-xl font-semibold">{resolveLanguageKey("payEscrowTitle")}</h2>
+                        <p className="text-sm text-muted-foreground">{resolveLanguageKey("payEscrowHint")}</p>
                     </div>
                     <Elements stripe={stripePromise} options={{clientSecret: order.escrowClientSecret}}>
                         <EscrowPayForm
@@ -238,13 +235,13 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 {imageUrl && (
-                    <div className="h-20 w-28 shrink-0 overflow-hidden rounded-2xl bg-shop-cream">
+                    <div className="h-20 w-28 shrink-0 overflow-hidden rounded-2xl bg-muted">
                         <img src={imageUrl} alt="" className="h-full w-full object-cover" />
                     </div>
                 )}
                 <div className="flex min-w-0 flex-col gap-2">
-                    <h1 className="font-shop-display text-3xl font-bold tracking-tight">{serviceOrderTitle(order)}</h1>
-                    <div className="flex flex-wrap items-center gap-2 text-sm text-shop-ink-muted">
+                    <h1 className="font-display text-3xl font-bold tracking-tight">{serviceOrderTitle(order)}</h1>
+                    <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                         <span>{order.name}</span>
                         {order.createdAt && <span>· {resolveLanguageKey("placedOn").replace("{date}", formatDate(order.createdAt, {format: DATE_FORMATS.date}))}</span>}
                         <ShopOrderStatus kind="serviceStatus" value={status} />
@@ -265,8 +262,8 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         const done = index <= stepIndex;
                         return (
                             <li key={step} className="flex flex-col gap-2" aria-current={index === stepIndex ? "step" : undefined}>
-                                <span className={cn("h-1.5 rounded-full", done ? "bg-shop-ink" : "bg-shop-sand")} aria-hidden />
-                                <span className={cn("text-xs font-medium sm:text-sm", done ? "text-shop-ink" : "text-shop-ink-faded")}>
+                                <span className={cn("h-1.5 rounded-full", done ? "bg-foreground" : "bg-accent")} aria-hidden />
+                                <span className={cn("text-xs font-medium sm:text-sm", done ? "text-foreground" : "text-muted-foreground")}>
                                     {resolveLanguageKey(`steps.${step}`)}
                                 </span>
                             </li>
@@ -278,72 +275,72 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
             <div className="grid items-start gap-8 lg:grid-cols-[1fr_340px]">
                 <div className="flex flex-col gap-8">
                     {canAnswerDelivery && panel === null && (
-                        <div className="flex flex-col gap-4 rounded-2xl border border-shop-accent/30 bg-shop-accent/5 p-5">
+                        <div className="flex flex-col gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-5">
                             <div className="flex flex-col gap-1">
                                 <p className="font-semibold">{resolveLanguageKey("deliveryReadyTitle")}</p>
-                                <p className="text-sm text-shop-ink-muted">{resolveLanguageKey("deliveryReadyMessage")}</p>
+                                <p className="text-sm text-muted-foreground">{resolveLanguageKey("deliveryReadyMessage")}</p>
                             </div>
                             <div className="flex flex-wrap gap-3">
-                                <button
+                                <Button size="lg"
                                     type="button"
                                     disabled={busy || order.hasActiveDispute}
                                     onClick={() => run(() => apiClient.post("/api/eCommerceMarketplace/order/acceptDelivery", {_id: order._id}), "deliveryAccepted")}
-                                    className={SHOP_BUTTON_CLASS}
+                                    
                                 >
                                     <Check className="h-4 w-4" aria-hidden />
                                     {resolveLanguageKey("acceptDelivery")}
-                                </button>
-                                <button type="button" disabled={busy} onClick={() => openPanel("revision")} className={SHOP_BUTTON_SECONDARY_CLASS}>
+                                </Button>
+                                <Button variant="outline" size="lg" type="button" disabled={busy} onClick={() => openPanel("revision")} >
                                     {resolveLanguageKey("requestRevision")}
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     )}
 
                     {panel && (
-                        <form onSubmit={submitPanel} className="flex flex-col gap-4 rounded-2xl bg-shop-cream p-5">
+                        <form onSubmit={submitPanel} className="flex flex-col gap-4 rounded-2xl bg-muted p-5">
                             <p className="font-semibold">{resolveLanguageKey(`panel.${panel}.title`)}</p>
-                            <p className="text-sm text-shop-ink-muted">{resolveLanguageKey(`panel.${panel}.message`)}</p>
+                            <p className="text-sm text-muted-foreground">{resolveLanguageKey(`panel.${panel}.message`)}</p>
                             {panel === "review" && (
                                 <fieldset>
                                     <legend className="mb-2 text-sm font-medium">{resolveLanguageKey("ratingLabel")}</legend>
                                     <div className="flex gap-1">
                                         {[1, 2, 3, 4, 5].map(n => (
-                                            <button
+                                            <Button
                                                 key={n}
                                                 type="button"
                                                 onClick={() => setRating(n)}
                                                 aria-label={resolveLanguageKey("starsOption").replace("{count}", String(n))}
                                                 aria-pressed={n === rating}
-                                                className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white"
+                                                variant="ghost" size="icon-lg"
                                             >
-                                                <Star className={cn("h-6 w-6", n <= rating ? "fill-shop-ink text-shop-ink" : "text-shop-ink/25")} />
-                                            </button>
+                                                <Star className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
+                                            </Button>
                                         ))}
                                     </div>
                                 </fieldset>
                             )}
                             {panel !== "cancel" && (
-                                <label className={SHOP_FIELD_LABEL_CLASS}>
+                                <Label className="flex-col items-stretch gap-1.5">
                                     {resolveLanguageKey(`panel.${panel}.field`)}
-                                    <textarea
-                                        value={text}
-                                        onChange={event => setText(event.target.value)}
-                                        rows={4}
-                                        maxLength={2000}
-                                        required={panel !== "review"}
-                                        minLength={panel === "revision" ? REVISION_REASON_MIN : undefined}
-                                        className={cn(SHOP_FIELD_INPUT_CLASS, "h-auto bg-white py-2.5")}
-                                    />
-                                </label>
+                                    <Textarea
+                    value={text}
+                    onChange={event => setText(event.target.value)}
+                    rows={4}
+                    maxLength={2000}
+                    required={panel !== "review"}
+                    minLength={panel === "revision" ? REVISION_REASON_MIN : undefined}
+                    className="h-auto bg-card py-2.5"
+                  />
+                                </Label>
                             )}
                             <div className="flex flex-wrap gap-3">
-                                <button type="submit" disabled={busy} className={cn(SHOP_BUTTON_CLASS, panel === "cancel" && "bg-shop-danger hover:bg-shop-danger/90")}>
+                                <Button size="lg" type="submit" disabled={busy} className={cn(panel === "cancel" && "bg-destructive hover:bg-destructive/90")}>
                                     {resolveLanguageKey(busy ? "working" : `panel.${panel}.submit`)}
-                                </button>
-                                <button type="button" disabled={busy} onClick={() => setPanel(null)} className={SHOP_BUTTON_SECONDARY_CLASS}>
+                                </Button>
+                                <Button variant="outline" size="lg" type="button" disabled={busy} onClick={() => setPanel(null)} >
                                     {resolveLanguageKey("back")}
-                                </button>
+                                </Button>
                             </div>
                         </form>
                     )}
@@ -351,35 +348,35 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                     {order.note && (
                         <section className="flex flex-col gap-2" aria-labelledby="shop-service-note">
                             <h2 id="shop-service-note" className="font-semibold">{resolveLanguageKey("noteTitle")}</h2>
-                            <p className="whitespace-pre-line rounded-2xl border border-shop-border p-4 text-[15px] text-shop-ink-muted">{order.note}</p>
+                            <p className="whitespace-pre-line rounded-2xl border border-border p-4 text-[15px] text-muted-foreground">{order.note}</p>
                         </section>
                     )}
 
                     <section className="flex flex-col gap-3" aria-labelledby="shop-service-deliveries">
                         <h2 id="shop-service-deliveries" className="font-semibold">{resolveLanguageKey("deliveriesTitle")}</h2>
                         {deliveries.length === 0 ? (
-                            <p className="text-sm text-shop-ink-muted">{resolveLanguageKey("noDeliveries")}</p>
+                            <p className="text-sm text-muted-foreground">{resolveLanguageKey("noDeliveries")}</p>
                         ) : (
                             <ul className="flex flex-col gap-3">
                                 {deliveries.map(delivery => (
-                                    <li key={delivery._id} className="flex flex-col gap-3 rounded-2xl border border-shop-border p-4">
+                                    <li key={delivery._id} className="flex flex-col gap-3 rounded-2xl border border-border p-4">
                                         <div className="flex flex-wrap items-center justify-between gap-2">
                                             <ShopOrderStatus kind="deliveryStatus" value={delivery.status} />
-                                            {delivery.createdAt && <span className="text-xs text-shop-ink-faded">{formatDate(delivery.createdAt, {format: DATE_FORMATS.dateTime})}</span>}
+                                            {delivery.createdAt && <span className="text-xs text-muted-foreground">{formatDate(delivery.createdAt, {format: DATE_FORMATS.dateTime})}</span>}
                                         </div>
-                                        {delivery.message && <p className="whitespace-pre-line text-[15px] text-shop-ink-muted">{delivery.message}</p>}
+                                        {delivery.message && <p className="whitespace-pre-line text-[15px] text-muted-foreground">{delivery.message}</p>}
                                         {delivery.attachments.length > 0 && (
                                             <ul className="flex flex-wrap gap-2">
                                                 {delivery.attachments.map(file => (
                                                     <li key={file._id}>
-                                                        <button
+                                                        <Button variant="outline" size="lg"
                                                             type="button"
                                                             onClick={() => downloadMedia(file).catch(() => toast.error(resolveLanguageKey("downloadError")))}
-                                                            className={cn(SHOP_BUTTON_SECONDARY_CLASS, "h-9 px-4")}
+                                                            className="h-9 px-4"
                                                         >
                                                             <Download className="h-4 w-4" aria-hidden />
                                                             {file.name || resolveLanguageKey("attachment")}
-                                                        </button>
+                                                        </Button>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -395,8 +392,8 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                             <h2 id="shop-service-revisions" className="font-semibold">{resolveLanguageKey("revisionsTitle")}</h2>
                             <ul className="flex flex-col gap-2">
                                 {revisions.map(revision => (
-                                    <li key={revision._id} className="flex flex-col gap-1 rounded-2xl bg-shop-cream/60 p-4">
-                                        <span className="text-xs text-shop-ink-faded">
+                                    <li key={revision._id} className="flex flex-col gap-1 rounded-2xl bg-muted/60 p-4">
+                                        <span className="text-xs text-muted-foreground">
                                             {formatDate(revision.createdAt, {format: DATE_FORMATS.dateTime})} · {resolveLanguageKey(`revisionStatus.${revision.status}`)}
                                         </span>
                                         <p className="whitespace-pre-line text-[15px]">{revision.reason}</p>
@@ -409,21 +406,21 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                     {milestones.length > 0 && (
                         <section className="flex flex-col gap-3" aria-labelledby="shop-service-milestones">
                             <h2 id="shop-service-milestones" className="font-semibold">{resolveLanguageKey("milestonesTitle")}</h2>
-                            <ul className="divide-y divide-shop-border border-y border-shop-border">
+                            <ul className="divide-y divide-border border-y border-border">
                                 {milestones.map(milestone => (
                                     <li key={milestone._id} className="flex flex-wrap items-center gap-3 py-3">
                                         <span className="flex-1 font-medium">{milestone.name}</span>
                                         <span className="tabular-nums">{formatMoney(milestone.amount, milestone.currency)}</span>
                                         <ShopOrderStatus kind="milestoneStatus" value={milestone.status} />
                                         {milestone.status === "pending" && status === "in_progress" && (
-                                            <button
+                                            <Button variant="outline" size="lg"
                                                 type="button"
                                                 disabled={busy}
                                                 onClick={() => run(() => apiClient.post("/api/eCommerceMarketplace/order/releaseMilestone", {milestone: milestone._id}), "milestoneReleased")}
-                                                className={cn(SHOP_BUTTON_SECONDARY_CLASS, "h-9 px-4")}
+                                                className="h-9 px-4"
                                             >
                                                 {resolveLanguageKey("releaseMilestone")}
-                                            </button>
+                                            </Button>
                                         )}
                                     </li>
                                 ))}
@@ -436,14 +433,14 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                             <h2 id="shop-service-bookings" className="font-semibold">{resolveLanguageKey("bookingsTitle")}</h2>
                             <ul className="flex flex-col gap-2">
                                 {bookings.map(booking => (
-                                    <li key={booking._id} className="flex items-center gap-3 rounded-2xl border border-shop-border p-4 text-sm">
-                                        <CalendarDays className="h-5 w-5 shrink-0 text-shop-accent" aria-hidden />
+                                    <li key={booking._id} className="flex items-center gap-3 rounded-2xl border border-border p-4 text-sm">
+                                        <CalendarDays className="h-5 w-5 shrink-0 text-primary" aria-hidden />
                                         <span>
                                             {formatDate(booking.startAt, {format: DATE_FORMATS.dateTime, timeZone: booking.timezone})}
                                             {" – "}
                                             {formatDate(booking.endAt, {format: DATE_FORMATS.time, timeZone: booking.timezone})}
                                         </span>
-                                        <span className="text-shop-ink-faded">{booking.timezone}</span>
+                                        <span className="text-muted-foreground">{booking.timezone}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -451,55 +448,55 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                     )}
                 </div>
 
-                <aside className="flex flex-col gap-6 rounded-2xl bg-shop-cream p-6 lg:sticky lg:top-28">
+                <aside className="flex flex-col gap-6 rounded-2xl bg-muted p-6 lg:sticky lg:top-28">
                     {order.provider && (
                         <section className="flex items-center gap-3">
                             <ShopProviderAvatar name={providerName} />
                             <div className="flex min-w-0 flex-col">
-                                <span className="text-xs text-shop-ink-faded">{resolveLanguageKey("provider")}</span>
-                                <Link to={`/provider?id=${encodeURIComponent(order.provider._id)}`} className="truncate font-semibold hover:underline underline-offset-4">
+                                <span className="text-xs text-muted-foreground">{resolveLanguageKey("provider")}</span>
+                                <Link to={`${base}/provider?id=${encodeURIComponent(order.provider._id)}`} className="truncate font-semibold hover:underline underline-offset-4">
                                     {providerName}
                                 </Link>
                             </div>
                         </section>
                     )}
-                    <dl className="flex flex-col gap-2.5 border-t border-shop-border pt-5 text-[15px]">
+                    <dl className="flex flex-col gap-2.5 border-t border-border pt-5 text-[15px]">
                         {order.deliveryDueDate && (
                             <div className="flex justify-between gap-4">
-                                <dt className="text-shop-ink-muted">{resolveLanguageKey("dueDate")}</dt>
+                                <dt className="text-muted-foreground">{resolveLanguageKey("dueDate")}</dt>
                                 <dd>{formatDate(order.deliveryDueDate, {format: DATE_FORMATS.date})}</dd>
                             </div>
                         )}
-                        <div className="flex items-baseline justify-between border-t border-shop-border pt-3">
+                        <div className="flex items-baseline justify-between border-t border-border pt-3">
                             <dt className="font-semibold">{resolveLanguageKey("total")}</dt>
-                            <dd className="font-shop-display text-2xl font-semibold tabular-nums">{formatMoney(order.amount, order.currency)}</dd>
+                            <dd className="font-display text-2xl font-semibold tabular-nums">{formatMoney(order.amount, order.currency)}</dd>
                         </div>
                     </dl>
                     {order.listing && (
-                        <Link to={`/service?id=${encodeURIComponent(order.listing._id)}`} className={cn(SHOP_LINK_CLASS, "text-sm")}>
+                        <Button asChild variant="link" className="h-auto p-0 text-sm"><Link to={`${base}/service?id=${encodeURIComponent(order.listing._id)}`}>
                             {resolveLanguageKey("viewService")}
-                        </Link>
+                        </Link></Button>
                     )}
                     {(canCancel || canDispute || canReview) && panel === null && (
-                        <div className="flex flex-col gap-2 border-t border-shop-border pt-5">
+                        <div className="flex flex-col gap-2 border-t border-border pt-5">
                             {canReview && (
-                                <button type="button" onClick={() => openPanel("review")} className={SHOP_BUTTON_CLASS}>
+                                <Button size="lg" type="button" onClick={() => openPanel("review")} >
                                     {resolveLanguageKey("leaveReview")}
-                                </button>
+                                </Button>
                             )}
                             {canDispute && (
-                                <button type="button" onClick={() => openPanel("dispute")} className={cn(SHOP_BUTTON_SECONDARY_CLASS, "bg-transparent")}>
+                                <Button variant="outline" size="lg" type="button" onClick={() => openPanel("dispute")} className="bg-transparent">
                                     {resolveLanguageKey("reportProblem")}
-                                </button>
+                                </Button>
                             )}
                             {canCancel && (
-                                <button type="button" onClick={() => openPanel("cancel")} className="h-11 text-sm font-semibold text-shop-danger hover:underline underline-offset-4">
+                                <Button type="button" onClick={() => openPanel("cancel")} variant="ghost" size="lg" className="text-destructive hover:text-destructive">
                                     {resolveLanguageKey("cancelOrder")}
-                                </button>
+                                </Button>
                             )}
                         </div>
                     )}
-                    {order.reviewed && <p className="text-sm text-shop-ink-muted">{resolveLanguageKey("reviewedNote")}</p>}
+                    {order.reviewed && <p className="text-sm text-muted-foreground">{resolveLanguageKey("reviewedNote")}</p>}
                 </aside>
             </div>
         </div>
