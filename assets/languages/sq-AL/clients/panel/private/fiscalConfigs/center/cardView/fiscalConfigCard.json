@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx",
+  "failedTitle": "Ngarkimi i konfigurimit fiskal dështoi",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "name": "Emri",
   "nipt": "NIPT",
   "tcrCode": "TCR",

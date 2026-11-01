@@ -62,8 +62,8 @@ function CmsBlockCard({
             sheetEntityProp="cmsBlock"
             deleteUrl="/api/eCommerce/cmsBlock"
             restoreUrl="/api/eCommerce/cmsBlock/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

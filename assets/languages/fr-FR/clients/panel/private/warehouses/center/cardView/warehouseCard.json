@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
+  "failedTitle": "Échec du chargement de l'entrepôt",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "code": "Code",
   "location": "Emplacement",

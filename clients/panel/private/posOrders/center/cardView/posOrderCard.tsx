@@ -67,8 +67,8 @@ function PosOrderCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/posOrder"
             restoreUrl="/api/eCommerce/posOrder/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

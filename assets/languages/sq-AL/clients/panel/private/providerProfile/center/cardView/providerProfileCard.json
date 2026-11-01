@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/cardView/providerProfileCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i profilit të ofruesit",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "provider": "Ofruesi",
   "bio": "Biografia",
   "skills": "Aftësitë",

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "failedTitle": "Inventory movement konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "quantity": "Menge",
   "beforeAfter": "Before → after",
   "receipt": "Receipt",

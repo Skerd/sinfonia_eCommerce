@@ -59,8 +59,8 @@ function ListingFlagCard({
             sheetEntityProp="listingFlag"
             deleteUrl="/api/eCommerceMarketplace/listingFlag"
             restoreUrl="/api/eCommerceMarketplace/listingFlag/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="listing.title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

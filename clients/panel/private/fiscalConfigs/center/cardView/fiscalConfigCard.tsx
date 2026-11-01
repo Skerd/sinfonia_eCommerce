@@ -62,8 +62,8 @@ function FiscalConfigCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/fiscalConfig"
             restoreUrl="/api/eCommerce/fiscalConfig/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

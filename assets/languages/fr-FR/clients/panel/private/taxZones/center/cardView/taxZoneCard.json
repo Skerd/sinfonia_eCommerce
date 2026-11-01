@@ -4,6 +4,8 @@
   "inactive": "Inactif",
   "name": "Nom",
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/cardView/taxZoneCard.tsx",
+  "failedTitle": "Échec du chargement de la zone fiscale",
+  "failedDescription": "Touchez pour réessayer.",
   "priority": "Priorité",
   "rates": "Tarifs"
 }

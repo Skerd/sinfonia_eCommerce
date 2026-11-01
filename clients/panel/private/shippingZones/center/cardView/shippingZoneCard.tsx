@@ -60,8 +60,8 @@ function ShippingZoneCard({
             sheetEntityProp="shippingZone"
             deleteUrl="/api/eCommerce/shippingZone"
             restoreUrl="/api/eCommerce/shippingZone/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

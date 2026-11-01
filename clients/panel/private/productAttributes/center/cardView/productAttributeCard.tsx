@@ -75,8 +75,8 @@ function ProductAttributeCard({
             sheetEntityProp="productAttribute"
             deleteUrl="/api/eCommerce/productAttribute"
             restoreUrl="/api/eCommerce/productAttribute/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

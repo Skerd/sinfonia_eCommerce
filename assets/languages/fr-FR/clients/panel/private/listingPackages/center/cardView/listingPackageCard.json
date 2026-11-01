@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/cardView/listingPackageCard.tsx",
+  "failedTitle": "Échec du chargement du package de listing",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "listing": "Annonce",
   "priceAmount": "Prix",

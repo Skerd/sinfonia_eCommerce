@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
+  "failedTitle": "Impossibile caricare il magazzino",
+  "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
   "code": "Codice",
   "location": "Posizione",

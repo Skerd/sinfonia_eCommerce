@@ -74,8 +74,8 @@ function OrderCard({
             sheetEntityProp="order"
             deleteUrl="/api/eCommerceMarketplace/order"
             restoreUrl="/api/eCommerceMarketplace/order/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="listing.title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

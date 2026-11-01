@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
+  "failedTitle": "Failed to load listing",
+  "failedDescription": "Tap to retry.",
   "name": "Name",
   "title": "Title",
   "status": "Status",

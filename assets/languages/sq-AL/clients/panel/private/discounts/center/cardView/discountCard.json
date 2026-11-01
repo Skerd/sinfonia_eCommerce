@@ -9,6 +9,8 @@
   },
   "inactive": "Inactive",
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
+  "failedTitle": "Nuk u ngarkua zbritja",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "title": "Title",
   "type": "Type",
   "value": "Value"

@@ -4,5 +4,7 @@
   "memberCount": "Member Count",
   "members": "Members",
   "name": "Name",
-  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx"
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx",
+  "failedTitle": "Failed to load customer group",
+  "failedDescription": "Tap to retry."
 }

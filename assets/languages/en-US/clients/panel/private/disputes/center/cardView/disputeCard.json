@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/disputes/center/cardView/disputeCard.tsx",
+  "failedTitle": "Failed to load dispute",
+  "failedDescription": "Tap to retry.",
   "reason": "Reason",
   "initiator": "Initiator",
   "order": "Order",

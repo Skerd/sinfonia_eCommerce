@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx",
+  "failedTitle": "Nuk u ngarkua metoda e pagesës",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "name": "Emri",
   "type": "Lloji",
   "sequence": "Renditja",

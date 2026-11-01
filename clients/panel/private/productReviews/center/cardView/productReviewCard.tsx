@@ -89,8 +89,8 @@ function ProductReviewCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/productReview"
             restoreUrl="/api/eCommerce/productReview/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath={["title", "product.title", "rating"]}
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
+  "failedTitle": "Échec du chargement de la commande de produits",
+  "failedDescription": "Touchez pour réessayer.",
   "orderStatus": {
     "pending": "En attente",
     "confirmed": "Confirmé",

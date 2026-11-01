@@ -4,5 +4,7 @@
   "memberCount": "Conteggio dei membri",
   "members": "Membri",
   "name": "Nome",
-  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx"
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx",
+  "failedTitle": "Impossibile caricare il gruppo clienti",
+  "failedDescription": "Tocca per riprovare."
 }

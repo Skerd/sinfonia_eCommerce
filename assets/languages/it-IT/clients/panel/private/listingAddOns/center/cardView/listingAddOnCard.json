@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/cardView/listingAddOnCard.tsx",
+  "failedTitle": "Impossibile caricare il componente aggiuntivo dell'elenco",
+  "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
   "listing": "Annuncio",
   "priceAmount": "Prezzo",

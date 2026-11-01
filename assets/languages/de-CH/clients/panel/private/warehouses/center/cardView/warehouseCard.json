@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
+  "failedTitle": "Warehouse konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "code": "Code",
   "location": "Standort",

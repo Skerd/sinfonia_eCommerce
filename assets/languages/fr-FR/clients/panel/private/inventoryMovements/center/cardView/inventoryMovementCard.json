@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "failedTitle": "Échec du chargement du mouvement de stock",
+  "failedDescription": "Touchez pour réessayer.",
   "quantity": "Qté",
   "beforeAfter": "Avant → après",
   "receipt": "Reçu",

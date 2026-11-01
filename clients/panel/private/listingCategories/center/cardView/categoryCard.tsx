@@ -54,8 +54,8 @@ function ListingCategoryCard({
             sheetEntityProp="category"
             deleteUrl="/api/eCommerceMarketplace/listingCategory"
             restoreUrl="/api/eCommerceMarketplace/listingCategory/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

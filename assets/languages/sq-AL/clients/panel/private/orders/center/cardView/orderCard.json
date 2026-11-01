@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i porosisë",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "listing": "Listimi",
   "provider": "Ofruesi",
   "amount": "Shuma",

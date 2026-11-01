@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
+  "failedTitle": "Ngarkimi i sesionit POS dështoi",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "name": "Emri",
   "state": "Gjendja",
   "orderCount": "Porosi",

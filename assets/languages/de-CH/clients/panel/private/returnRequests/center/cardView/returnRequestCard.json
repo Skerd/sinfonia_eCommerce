@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "failedTitle": "Return antrag konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "type": "Typ",
   "status": "Status",
   "refundAmount": "Rückerstattung betrag",

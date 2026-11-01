@@ -1,6 +1,8 @@
 {
   "name": "Nome",
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
+  "failedTitle": "Impossibile caricare l'attributo prodotto",
+  "failedDescription": "Tocca per riprovare.",
   "position": "Posizione",
   "usedForVariants": "Utilizzato per le varianti",
   "values": "Valori",

@@ -67,8 +67,8 @@ function DisputeCard({
             sheetEntityProp="dispute"
             deleteUrl="/api/eCommerceMarketplace/dispute"
             restoreUrl="/api/eCommerceMarketplace/dispute/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="reason"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

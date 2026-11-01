@@ -54,8 +54,8 @@ function CategoryCard({
             sheetEntityProp="category"
             deleteUrl="/api/eCommerce/category"
             restoreUrl="/api/eCommerce/category/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

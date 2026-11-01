@@ -4,5 +4,7 @@
   "memberCount": "Numri i anëtarëve",
   "members": "Anëtarët",
   "name": "Emri",
-  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx"
+  "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx",
+  "failedTitle": "Nuk u ngarkua grupi i klientëve",
+  "failedDescription": "Prekni për të provuar përsëri."
 }

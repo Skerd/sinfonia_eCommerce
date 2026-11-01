@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orders/center/cardView/orderCard.tsx",
+  "failedTitle": "Failed to load order",
+  "failedDescription": "Tap to retry.",
   "listing": "Listing",
   "provider": "Provider",
   "amount": "Amount",

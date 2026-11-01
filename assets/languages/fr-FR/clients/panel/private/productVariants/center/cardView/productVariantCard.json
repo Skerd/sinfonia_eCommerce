@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/cardView/productVariantCard.tsx",
+  "failedTitle": "Échec du chargement de la variante",
+  "failedDescription": "Touchez pour réessayer.",
   "sku": "SKU",
   "price": "Prix",
   "status": "Statut",

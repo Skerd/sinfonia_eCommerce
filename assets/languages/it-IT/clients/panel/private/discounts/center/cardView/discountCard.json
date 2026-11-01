@@ -9,6 +9,8 @@
   },
   "inactive": "Inattivo",
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
+  "failedTitle": "Impossibile caricare lo sconto",
+  "failedDescription": "Tocca per riprovare.",
   "title": "Modifica tipo di unità",
   "type": "Tipo",
   "value": "Valore"

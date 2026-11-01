@@ -73,8 +73,8 @@ function TaskRequestCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerceMarketplace/taskRequest"
             restoreUrl="/api/eCommerceMarketplace/taskRequest/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

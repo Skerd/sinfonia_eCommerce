@@ -56,8 +56,8 @@ function SavedSearchCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/savedSearch"
             restoreUrl="/api/eCommerce/savedSearch/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId, lockCustomer})}

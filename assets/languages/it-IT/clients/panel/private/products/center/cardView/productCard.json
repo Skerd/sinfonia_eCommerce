@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "failedTitle": "Impossibile caricare il prodotto",
+  "failedDescription": "Tocca per riprovare.",
   "salePercentOff": "{{percent}}% di sconto",
   "timerDays": "Giorni",
   "timerHours": "Ore",

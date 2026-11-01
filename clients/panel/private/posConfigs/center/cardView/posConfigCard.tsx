@@ -80,8 +80,8 @@ function PosConfigCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/posConfig"
             restoreUrl="/api/eCommerce/posConfig/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

@@ -144,8 +144,8 @@ function ProductCard({
             sheetEntityProp="product"
             deleteUrl="/api/eCommerce/product"
             restoreUrl="/api/eCommerce/product/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({setEntity}) => ({

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "failedTitle": "Impossibile caricare il movimento di magazzino",
+  "failedDescription": "Tocca per riprovare.",
   "quantity": "Qtà",
   "beforeAfter": "Prima → dopo",
   "receipt": "Ricevuta",

@@ -71,8 +71,8 @@ function PromotionCard({
             sheetEntityProp="promotion"
             deleteUrl="/api/eCommerceMarketplace/promotion"
             restoreUrl="/api/eCommerceMarketplace/promotion/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

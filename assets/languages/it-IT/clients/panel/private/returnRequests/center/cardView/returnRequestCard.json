@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "failedTitle": "Impossibile caricare la richiesta di reso",
+  "failedDescription": "Tocca per riprovare.",
   "type": "Tipo",
   "status": "Stato",
   "refundAmount": "Importo del rimborso",

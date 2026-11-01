@@ -61,8 +61,8 @@ function ListingCard({
             sheetEntityProp="listing"
             deleteUrl="/api/eCommerceMarketplace/listing"
             restoreUrl="/api/eCommerceMarketplace/listing/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

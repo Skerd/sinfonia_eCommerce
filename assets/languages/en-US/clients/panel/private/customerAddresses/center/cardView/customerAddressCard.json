@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "failedTitle": "Failed to load address",
+  "failedDescription": "Tap to retry.",
   "type": "Type",
   "addressType": {
     "billing": "Billing",

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/center/cardView/categoryCard.tsx",
+  "failedTitle": "Impossibile caricare la categoria",
+  "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
   "slug": "Lumaca",
   "parentCategory": "Categoria genitore",

@@ -4,6 +4,8 @@
   "inactive": "Inaktiv",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/cardView/taxZoneCard.tsx",
+  "failedTitle": "Steuer zone konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "priority": "Priority",
   "rates": "Rates"
 }

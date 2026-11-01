@@ -27,8 +27,8 @@ function OrderDeliveryCard({delivery, resolveLanguageKey}: OrderDeliveryCardProp
             sheetEntityProp="delivery"
             deleteUrl="/api/eCommerceMarketplace/orderDelivery"
             restoreUrl="/api/eCommerceMarketplace/orderDelivery/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="createdAt"
         >
             {({entity: row}) => (

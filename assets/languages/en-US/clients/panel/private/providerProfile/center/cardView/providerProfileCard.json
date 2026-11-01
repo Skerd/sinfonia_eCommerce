@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/cardView/providerProfileCard.tsx",
+  "failedTitle": "Failed to load provider profile",
+  "failedDescription": "Tap to retry.",
   "provider": "Provider",
   "bio": "Bio",
   "skills": "Skills",

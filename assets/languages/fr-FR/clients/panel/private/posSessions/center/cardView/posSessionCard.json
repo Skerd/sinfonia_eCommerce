@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
+  "failedTitle": "Échec du chargement de la session PDV",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "state": "Canton / État",
   "orderCount": "Commandes",

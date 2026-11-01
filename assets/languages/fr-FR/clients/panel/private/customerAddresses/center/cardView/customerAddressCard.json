@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "failedTitle": "Échec du chargement de l'adresse",
+  "failedDescription": "Touchez pour réessayer.",
   "type": "Type",
   "addressType": {
     "billing": "Facturation",

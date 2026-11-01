@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Failed to load bid",
+  "failedDescription": "Tap to retry.",
   "taskRequest": "Task request",
   "name": "Name",
   "status": "Status",

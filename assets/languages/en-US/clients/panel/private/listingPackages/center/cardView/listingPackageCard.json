@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/cardView/listingPackageCard.tsx",
+  "failedTitle": "Failed to load listing package",
+  "failedDescription": "Tap to retry.",
   "name": "Name",
   "listing": "Listing",
   "priceAmount": "Price",

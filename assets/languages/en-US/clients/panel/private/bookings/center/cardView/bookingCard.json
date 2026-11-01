@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bookings/center/cardView/bookingCard.tsx",
+  "failedTitle": "Failed to load booking",
+  "failedDescription": "Tap to retry.",
   "provider": "Provider",
   "startAt": "Start",
   "endAt": "End",

@@ -58,8 +58,8 @@ function ReturnRequestCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/returnRequest"
             restoreUrl="/api/eCommerce/returnRequest/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="type"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

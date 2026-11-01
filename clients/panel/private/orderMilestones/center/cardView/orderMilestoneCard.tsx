@@ -26,8 +26,8 @@ function OrderMilestoneCard({milestone, resolveLanguageKey}: OrderMilestoneCardP
             sheetEntityProp="milestone"
             deleteUrl="/api/eCommerceMarketplace/orderMilestone"
             restoreUrl="/api/eCommerceMarketplace/orderMilestone/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
         >
             {({entity: row}) => (

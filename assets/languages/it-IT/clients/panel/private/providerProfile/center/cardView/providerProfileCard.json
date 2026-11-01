@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/cardView/providerProfileCard.tsx",
+  "failedTitle": "Impossibile caricare il profilo del fornitore",
+  "failedDescription": "Tocca per riprovare.",
   "provider": "Fornitore",
   "bio": "Bio",
   "skills": "Abilità",

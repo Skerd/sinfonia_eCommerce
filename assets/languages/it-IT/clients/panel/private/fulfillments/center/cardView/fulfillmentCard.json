@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/cardView/fulfillmentCard.tsx",
+  "failedTitle": "Impossibile caricare l'adempimento",
+  "failedDescription": "Tocca per riprovare.",
   "status": "Stato",
   "carrier": "Portatore",
   "trackingNumber": "Numero di tracciamento",

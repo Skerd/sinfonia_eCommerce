@@ -16,6 +16,8 @@
   },
   "inactive": "Inactif",
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
+  "failedTitle": "Échec du chargement du bloc CMS",
+  "failedDescription": "Touchez pour réessayer.",
   "position": "Poste",
   "title": "Modifier le type d’unité",
   "type": "Type"

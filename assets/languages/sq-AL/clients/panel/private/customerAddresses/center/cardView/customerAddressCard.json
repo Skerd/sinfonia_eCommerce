@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
+  "failedTitle": "Ngarkimi i adresës dështoi",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "type": "Lloji",
   "addressType": {
     "billing": "Faturim",

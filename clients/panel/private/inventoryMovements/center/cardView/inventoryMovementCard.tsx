@@ -50,8 +50,8 @@ function InventoryMovementCard({
             sheetEntityProp="movement"
             deleteUrl=""
             restoreUrl=""
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="reason"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

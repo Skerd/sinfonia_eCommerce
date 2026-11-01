@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/savedSearches/center/cardView/savedSearchCard.tsx",
+  "failedTitle": "Impossibile caricare la ricerca salvata",
+  "failedDescription": "Tocca per riprovare.",
   "customer": "Cliente",
   "categoryIds": "Categorie",
   "collectionId": "Collezione",

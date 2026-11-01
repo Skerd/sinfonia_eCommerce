@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx",
+  "failedTitle": "Failed to load listing flag",
+  "failedDescription": "Tap to retry.",
   "listing": "Listing",
   "reason": "Reason",
   "reporter": "Reporter",

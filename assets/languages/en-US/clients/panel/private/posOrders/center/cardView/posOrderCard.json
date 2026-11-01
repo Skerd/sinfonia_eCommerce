@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/cardView/posOrderCard.tsx",
+  "failedTitle": "Failed to load POS order",
+  "failedDescription": "Tap to retry.",
   "items": "items",
   "orderState": {
     "draft": "Draft",

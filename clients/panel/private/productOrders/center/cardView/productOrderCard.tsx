@@ -88,8 +88,8 @@ function ProductOrderCard({
             sheetEntityProp="order"
             deleteUrl="/api/eCommerce/productOrder"
             restoreUrl="/api/eCommerce/productOrder/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="orderNumber"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

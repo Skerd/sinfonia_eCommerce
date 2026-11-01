@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/cardView/posConfigCard.tsx",
+  "failedTitle": "Impossibile caricare il manager POS",
+  "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
   "warehouses": "Magazzini",
   "fiscalConfig": "Configurazione fiscale",

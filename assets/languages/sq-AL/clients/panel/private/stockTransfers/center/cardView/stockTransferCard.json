@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/cardView/stockTransferCard.tsx",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "status": "Statusi",
   "toWarehouse": "Te magazina",
   "stockTransferStatus": {

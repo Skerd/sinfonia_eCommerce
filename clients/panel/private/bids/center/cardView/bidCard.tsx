@@ -54,8 +54,8 @@ function BidCard({
             sheetEntityProp="bid"
             deleteUrl="/api/eCommerceMarketplace/bid"
             restoreUrl="/api/eCommerceMarketplace/bid/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

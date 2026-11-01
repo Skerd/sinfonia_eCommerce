@@ -37,8 +37,8 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/stockTransfer"
             restoreUrl="/api/eCommerce/stockTransfer/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath={["fromWarehouse.name", "toWarehouse.name"]}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,

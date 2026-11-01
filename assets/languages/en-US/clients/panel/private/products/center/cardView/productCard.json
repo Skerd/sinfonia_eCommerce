@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/center/cardView/productCard.tsx",
+  "failedTitle": "Failed to load product",
+  "failedDescription": "Tap to retry.",
   "salePercentOff": "{{percent}}% Off",
   "timerDays": "Days",
   "timerHours": "Hours",

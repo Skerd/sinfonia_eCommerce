@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/cardView/stockCountCard.tsx",
+  "failedTitle": "Échec du chargement",
+  "failedDescription": "Touchez pour réessayer.",
   "status": "Statut",
   "lines": "Lignes",
   "stockCountStatus": {

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx",
+  "failedTitle": "Échec du chargement de la configuration fiscale",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "nipt": "NIPT",
   "tcrCode": "RCT",

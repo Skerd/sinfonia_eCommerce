@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
+  "failedTitle": "Failed to load inventory movement",
+  "failedDescription": "Tap to retry.",
   "quantity": "Qty",
   "beforeAfter": "Before → after",
   "receipt": "Receipt",

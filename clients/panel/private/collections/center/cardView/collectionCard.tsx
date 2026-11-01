@@ -63,8 +63,8 @@ function CollectionCard({
             sheetEntityProp="collection"
             deleteUrl="/api/eCommerce/collection"
             restoreUrl="/api/eCommerce/collection/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

@@ -4,5 +4,7 @@
   "inactive": "Inactive",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/cardView/shippingZoneCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i zonës së transportit",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "rates": "Rates"
 }

@@ -66,8 +66,8 @@ function WarehouseCard({
             sheetEntityProp="warehouse"
             deleteUrl="/api/eCommerce/warehouse"
             restoreUrl="/api/eCommerce/warehouse/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

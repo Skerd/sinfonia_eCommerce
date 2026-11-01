@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orderMilestones/center/cardView/orderMilestoneCard.tsx",
+  "failedTitle": "Failed to load",
+  "failedDescription": "Tap to retry.",
   "orderMilestoneStatus": {
     "pending": "Pending",
     "released": "Released",

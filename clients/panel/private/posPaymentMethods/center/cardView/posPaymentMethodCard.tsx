@@ -62,8 +62,8 @@ function PosPaymentMethodCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/posPaymentMethod"
             restoreUrl="/api/eCommerce/posPaymentMethod/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

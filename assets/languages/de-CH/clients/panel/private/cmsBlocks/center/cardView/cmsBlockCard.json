@@ -16,6 +16,8 @@
   },
   "inactive": "Inaktiv",
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
+  "failedTitle": "CMS block konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "position": "Position",
   "title": "Bezeichnung",
   "type": "Typ"

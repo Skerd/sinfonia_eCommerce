@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/cardView/posPaymentMethodCard.tsx",
+  "failedTitle": "Échec du chargement du mode de paiement",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "type": "Type",
   "sequence": "Séquence",

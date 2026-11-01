@@ -1,6 +1,8 @@
 {
   "name": "Emri",
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
+  "failedTitle": "Ngarkimi i atributit të produktit dështoi",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "position": "Pozicioni",
   "usedForVariants": "Përdoret për variantet",
   "values": "Vlerat",

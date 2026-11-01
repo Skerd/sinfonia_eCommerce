@@ -63,8 +63,8 @@ function CustomerGroupCard({
             sheetEntityProp="customerGroup"
             deleteUrl="/api/eCommerce/customerGroup"
             restoreUrl="/api/eCommerce/customerGroup/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

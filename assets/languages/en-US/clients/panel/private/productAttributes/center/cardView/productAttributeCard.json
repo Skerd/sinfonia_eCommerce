@@ -1,6 +1,8 @@
 {
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
+  "failedTitle": "Failed to load product attribute",
+  "failedDescription": "Tap to retry.",
   "position": "Position",
   "usedForVariants": "Used for variants",
   "values": "Values",

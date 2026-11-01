@@ -36,8 +36,8 @@ function StockCountCard({entity, resolveLanguageKey, fetchId, hideActions = fals
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/stockCount"
             restoreUrl="/api/eCommerce/stockCount/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="warehouse.name"
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,

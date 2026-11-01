@@ -61,8 +61,8 @@ function DiscountCard({
             sheetEntityProp="discount"
             deleteUrl="/api/eCommerce/discount"
             restoreUrl="/api/eCommerce/discount/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

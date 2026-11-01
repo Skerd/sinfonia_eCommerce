@@ -9,6 +9,8 @@
   },
   "inactive": "Inaktiv",
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
+  "failedTitle": "Rabatt konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "title": "Bezeichnung",
   "type": "Typ",
   "value": "Wert"

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
+  "failedTitle": "Failed to load POS session",
+  "failedDescription": "Tap to retry.",
   "name": "Name",
   "state": "State",
   "orderCount": "Orders",

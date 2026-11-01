@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/center/cardView/stockCountCard.tsx",
+  "failedTitle": "Laden fehlgeschlagen",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "status": "Status",
   "lines": "Positionen",
   "stockCountStatus": {

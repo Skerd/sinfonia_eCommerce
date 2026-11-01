@@ -60,8 +60,8 @@ function FulfillmentCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/fulfillment"
             restoreUrl="/api/eCommerce/fulfillment/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="trackingNumber"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

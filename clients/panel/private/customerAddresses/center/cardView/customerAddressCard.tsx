@@ -69,8 +69,8 @@ function CustomerAddressCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/customerAddress"
             restoreUrl="/api/eCommerce/customerAddress/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath={["firstName", "lastName"]}
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Échec du chargement de l'offre",
+  "failedDescription": "Touchez pour réessayer.",
   "taskRequest": "Demande de tâche",
   "name": "Nom",
   "status": "Statut",

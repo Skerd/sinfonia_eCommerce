@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bookings/center/cardView/bookingCard.tsx",
+  "failedTitle": "Buchung konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "provider": "Anbieter",
   "startAt": "Start",
   "endAt": "Ende",

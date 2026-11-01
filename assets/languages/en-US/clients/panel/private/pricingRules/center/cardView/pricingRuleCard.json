@@ -3,6 +3,8 @@
   "inactive": "Inactive",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
+  "failedTitle": "Failed to load pricing rule",
+  "failedDescription": "Tap to retry.",
   "pricingRuleType": {
     "fixed_discount": "Fixed discount",
     "fixed_price": "Fixed price",

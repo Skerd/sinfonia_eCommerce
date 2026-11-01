@@ -54,8 +54,8 @@ function ProductVariantCard({
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/productVariant"
             restoreUrl="/api/eCommerce/productVariant/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="sku"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/cardView/inventoryCard.tsx",
+  "failedTitle": "Failed to load inventory",
+  "failedDescription": "Tap to retry.",
   "onHand": "On hand",
   "reserved": "Reserved",
   "available": "Available",

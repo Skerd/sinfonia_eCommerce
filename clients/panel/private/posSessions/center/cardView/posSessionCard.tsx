@@ -48,8 +48,8 @@ function PosSessionCard({
             sheetEntityProp="entity"
             deleteUrl=""
             restoreUrl=""
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

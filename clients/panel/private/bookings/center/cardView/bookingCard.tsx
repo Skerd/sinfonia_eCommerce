@@ -51,8 +51,8 @@ function BookingCard({
             sheetEntityProp="booking"
             deleteUrl="/api/eCommerceMarketplace/booking"
             restoreUrl="/api/eCommerceMarketplace/booking/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="startAt"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

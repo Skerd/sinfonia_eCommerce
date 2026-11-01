@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/cardView/inventoryCard.tsx",
+  "failedTitle": "Inventory konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "onHand": "On hand",
   "reserved": "Reserviert",
   "available": "Verfügbar",

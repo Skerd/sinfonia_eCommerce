@@ -68,8 +68,8 @@ function ProviderProfileCard({
             sheetEntityProp="profile"
             deleteUrl="/api/eCommerceMarketplace/providerProfile"
             restoreUrl="/api/eCommerceMarketplace/providerProfile/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="user"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

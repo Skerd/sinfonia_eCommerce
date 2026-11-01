@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/cardView/posConfigCard.tsx",
+  "failedTitle": "Échec du chargement du manager PDV",
+  "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "warehouses": "Entrepôts",
   "fiscalConfig": "Configuration fiscale",

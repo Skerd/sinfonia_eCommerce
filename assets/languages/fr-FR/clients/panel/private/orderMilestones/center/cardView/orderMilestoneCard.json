@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orderMilestones/center/cardView/orderMilestoneCard.tsx",
+  "failedTitle": "Échec du chargement",
+  "failedDescription": "Touchez pour réessayer.",
   "orderMilestoneStatus": {
     "pending": "En attente",
     "released": "Libérée",

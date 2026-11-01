@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx",
+  "failedTitle": "Failed to load fiscal config",
+  "failedDescription": "Tap to retry.",
   "name": "Name",
   "nipt": "NIPT",
   "tcrCode": "TCR",

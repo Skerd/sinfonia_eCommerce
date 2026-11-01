@@ -64,8 +64,8 @@ function ReviewCard({
             sheetEntityProp="review"
             deleteUrl="/api/eCommerceMarketplace/review"
             restoreUrl="/api/eCommerceMarketplace/review/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="comment"
             innerRef={innerRef}
             sheetProps={() => ({fetchId: fetchId ?? review._id})}

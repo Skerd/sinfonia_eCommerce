@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
+  "failedTitle": "Failed to load return request",
+  "failedDescription": "Tap to retry.",
   "type": "Type",
   "status": "Status",
   "refundAmount": "Refund amount",

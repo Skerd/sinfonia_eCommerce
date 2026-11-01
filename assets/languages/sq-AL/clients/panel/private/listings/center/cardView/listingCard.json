@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i listimit",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "title": "Titulli",
   "name": "Emri",
   "status": "Statusi",

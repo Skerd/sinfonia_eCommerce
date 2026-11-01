@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/center/cardView/stockTransferCard.tsx",
+  "failedTitle": "Caricamento non riuscito",
+  "failedDescription": "Tocca per riprovare.",
   "status": "Stato",
   "toWarehouse": "A magazzino",
   "stockTransferStatus": {

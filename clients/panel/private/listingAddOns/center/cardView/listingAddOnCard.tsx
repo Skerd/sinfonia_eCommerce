@@ -51,8 +51,8 @@ function ListingAddOnCard({
             sheetEntityProp="listingAddOn"
             deleteUrl="/api/eCommerceMarketplace/listingAddOn"
             restoreUrl="/api/eCommerceMarketplace/listingAddOn/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

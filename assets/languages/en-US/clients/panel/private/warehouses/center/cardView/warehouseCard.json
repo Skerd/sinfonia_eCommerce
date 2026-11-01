@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
+  "failedTitle": "Failed to load warehouse",
+  "failedDescription": "Tap to retry.",
   "name": "Name",
   "code": "Code",
   "location": "Location",

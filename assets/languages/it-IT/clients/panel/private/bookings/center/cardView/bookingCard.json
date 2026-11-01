@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bookings/center/cardView/bookingCard.tsx",
+  "failedTitle": "Impossibile caricare la prenotazione",
+  "failedDescription": "Tocca per riprovare.",
   "provider": "Fornitore",
   "startAt": "Inizia",
   "endAt": "Fine",

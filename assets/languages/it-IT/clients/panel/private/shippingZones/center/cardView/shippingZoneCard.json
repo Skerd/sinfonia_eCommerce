@@ -4,5 +4,7 @@
   "inactive": "Inattivo",
   "name": "Nome",
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/cardView/shippingZoneCard.tsx",
+  "failedTitle": "Impossibile caricare la zona di spedizione",
+  "failedDescription": "Tocca per riprovare.",
   "rates": "Tariffe"
 }

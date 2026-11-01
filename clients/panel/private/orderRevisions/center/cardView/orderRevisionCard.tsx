@@ -27,8 +27,8 @@ function OrderRevisionCard({revision, resolveLanguageKey}: OrderRevisionCardProp
             sheetEntityProp="revision"
             deleteUrl="/api/eCommerceMarketplace/orderRevision"
             restoreUrl="/api/eCommerceMarketplace/orderRevision/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="createdAt"
         >
             {({entity: row}) => (

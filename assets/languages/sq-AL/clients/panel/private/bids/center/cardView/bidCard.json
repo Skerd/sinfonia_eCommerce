@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i ofertës",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "taskRequest": "Kërkesë pune",
   "status": "Statusi",
   "name": "Emri",

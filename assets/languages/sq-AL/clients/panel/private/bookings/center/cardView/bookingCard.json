@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bookings/center/cardView/bookingCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i rezervimit",
+  "failedDescription": "Prekni për të provuar përsëri.",
   "provider": "Ofruesi",
   "startAt": "Fillimi",
   "endAt": "Mbarimi",

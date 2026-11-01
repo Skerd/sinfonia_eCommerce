@@ -1,5 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/cardView/listingPackageCard.tsx",
+  "failedTitle": "Inserat paket konnten nicht geladen werden",
+  "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "listing": "Inserat",
   "priceAmount": "Preis",

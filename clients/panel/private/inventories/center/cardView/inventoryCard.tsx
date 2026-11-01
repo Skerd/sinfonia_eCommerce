@@ -56,8 +56,8 @@ function InventoryCard({
             sheetEntityProp="inventory"
             deleteUrl="/api/eCommerce/inventory"
             restoreUrl=""
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="product.title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({

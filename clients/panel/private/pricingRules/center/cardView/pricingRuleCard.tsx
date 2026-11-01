@@ -61,8 +61,8 @@ function PricingRuleCard({
             sheetEntityProp="pricingRule"
             deleteUrl="/api/eCommerce/pricingRule"
             restoreUrl="/api/eCommerce/pricingRule/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({
