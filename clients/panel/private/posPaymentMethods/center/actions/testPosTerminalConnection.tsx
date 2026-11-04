@@ -12,7 +12,7 @@ type TestPosTerminalConnectionProps = WithLanguageType & {
 
 function TestPosTerminalConnection({entity, onAction, resolveLanguageKey}: TestPosTerminalConnectionProps) {
     if (!entity.terminalEnabled) return null;
-    if (entity.type !== "card" && entity.type !== "bank") return null;
+    if (entity.type !== "card") return null;
 
     return (
         <DropdownMenuItem onClick={() => onAction("testPosTerminalConnection")}>

@@ -17,7 +17,7 @@ import ReviewsSection from "./reviewsSection.tsx";
 import {shopProductHref} from "@eCommerceModule/clients/client/public/shared/shopProductHref.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import DetailPage, {DetailBelow, DetailHeading, DetailSection, DetailSpecs, DetailStatus, DetailText} from "@coreModule/clients/portal/shared/detailPage.tsx";
+import DetailPage, {DetailBelow, DetailHeading, DetailSection, DetailSpecs, DetailText} from "@coreModule/clients/portal/shared/detailPage.tsx";
 import DetailGallery from "@coreModule/clients/portal/shared/detailGallery.tsx";
 import type {
     ShopProductDetail,
