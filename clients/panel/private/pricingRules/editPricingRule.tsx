@@ -20,7 +20,7 @@ function fillLabelMap(
     }
 }
 
-/** Match pricing rule form DateInput `valueFormat: "yyyy-MM-dd HH:mm"` (local time). */
+/** Match pricing rule form DateInput `valueFormat: "YYYY-MM-DD HH:mm"` (local time). */
 function toFormDateTime(value: string | Date | undefined | null): string | undefined {
     if (!value) return undefined;
     const d = new Date(value);

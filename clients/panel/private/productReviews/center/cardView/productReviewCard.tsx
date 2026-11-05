@@ -4,7 +4,9 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import {CheckCircleIcon, StarIcon} from "lucide-react";
-import {formatDistanceToNow} from "date-fns";
+import {useSelector} from "react-redux";
+import {formatRelativeToNow} from "@coreModule/helpers/general/dateTime.ts";
+import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {Avatar, AvatarFallback, AvatarImage} from "@coreModule/components/ui/avatar.tsx";
 import ProductReviewSheetView from "@eCommerceModule/clients/panel/private/productReviews/center/sheetView/productReviewSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -74,6 +76,7 @@ function ProductReviewCard({
     sheetOnly = false,
     innerRef,
 }: ProductReviewCardProps) {
+    const languageCode = useSelector((state: RootState) => state.language.languageCode);
     return (
         <EntityCard
             resource="productReviews"
@@ -110,7 +113,7 @@ function ProductReviewCard({
                     : undefined;
                 const verified = Boolean(row.order?._id);
                 const relativeDate = row.createdAt
-                    ? formatDistanceToNow(new Date(row.createdAt), {addSuffix: true})
+                    ? formatRelativeToNow(row.createdAt, languageCode)
                     : undefined;
                 return (
                     <>

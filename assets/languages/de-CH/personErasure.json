@@ -1,0 +1,5 @@
+{
+  "modules": {
+    "eCommerce": "Shop: Bestellungen bleiben für die Buchhaltung erhalten, ohne Name, E-Mail, Telefon oder Strasse; Warenkörbe, gespeicherte Adressen, gespeicherte Suchen und Kundengruppen-Mitgliedschaften werden gelöscht."
+  }
+}
