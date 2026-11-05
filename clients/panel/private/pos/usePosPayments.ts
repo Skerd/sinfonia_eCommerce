@@ -15,6 +15,7 @@ import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {addMoney, allocateMinor, minorToNumber, percentOfMoney, prorateMoney, roundToCurrency, subtractMoney, toMinor} from "armonia/src/modules/core/helpers/money.ts";
 
 type ResolveManagerPin = (
     needed: boolean,
@@ -115,7 +116,7 @@ export function usePosPayments({
     );
 
     const paidAmount = useMemo(
-        () => payments.reduce((sum, p) => sum + Math.max(0, Number(p.amount) || 0), 0),
+        () => addMoney(...payments.map((p) => Math.max(0, Number(p.amount) || 0))),
         [payments],
     );
 
@@ -142,33 +143,33 @@ export function usePosPayments({
             .filter(Boolean) as CartLine[];
     }, [cart, itemsSplitActive, splitSelection]);
 
-    const shareSubtotal = useMemo(() => shareLines.reduce((sum, line) => sum + lineTotal(line), 0), [shareLines]);
+    const shareSubtotal = useMemo(() => addMoney(...shareLines.map(lineTotal)), [shareLines]);
     const shareDiscountAmount = useMemo(
-        () => shareSubtotal * (Math.min(100, Math.max(0, orderDiscountPercent)) / 100),
+        () => percentOfMoney(shareSubtotal, Math.min(100, Math.max(0, orderDiscountPercent))),
         [shareSubtotal, orderDiscountPercent],
     );
     const shareTotal = useMemo(
-        () => Math.max(0, shareSubtotal - shareDiscountAmount),
+        () => Math.max(0, subtractMoney(shareSubtotal, shareDiscountAmount)),
         [shareSubtotal, shareDiscountAmount],
     );
 
-    const cartSubtotal = useMemo(() => cart.reduce((sum, line) => sum + lineTotal(line), 0), [cart]);
+    const cartSubtotal = useMemo(() => addMoney(...cart.map(lineTotal)), [cart]);
     const cartDiscountAmount = useMemo(
-        () => cartSubtotal * (Math.min(100, Math.max(0, orderDiscountPercent)) / 100),
+        () => percentOfMoney(cartSubtotal, Math.min(100, Math.max(0, orderDiscountPercent))),
         [cartSubtotal, orderDiscountPercent],
     );
     const total = useMemo(
-        () => Math.max(0, cartSubtotal - cartDiscountAmount),
+        () => Math.max(0, subtractMoney(cartSubtotal, cartDiscountAmount)),
         [cartSubtotal, cartDiscountAmount],
     );
 
     const payableTotal = itemsSplitActive ? shareTotal : total;
-    const remaining = useMemo(() => Math.max(0, payableTotal - paidAmount), [payableTotal, paidAmount]);
-    const change = useMemo(() => Math.max(0, paidAmount - payableTotal), [paidAmount, payableTotal]);
+    const remaining = useMemo(() => Math.max(0, subtractMoney(payableTotal, paidAmount)), [payableTotal, paidAmount]);
+    const change = useMemo(() => Math.max(0, subtractMoney(paidAmount, payableTotal)), [paidAmount, payableTotal]);
 
     const equalPerPerson = useMemo(() => {
         const n = Math.max(2, Math.min(20, splitGuests || 2));
-        return Number((total / n).toFixed(2));
+        return prorateMoney(total, 1, n);
     }, [total, splitGuests]);
 
     useEffect(() => {
@@ -192,7 +193,7 @@ export function usePosPayments({
         setPayments((prev) => {
             if (prev.length !== 1) return prev;
             const only = prev[0];
-            const target = Number(payableTotal.toFixed(2));
+            const target = roundToCurrency(payableTotal);
             if (only.type === "cash") {
                 if (only.amount <= 0 || only.amount < target - 0.001) {
                     return [{...only, amount: target}];
@@ -257,7 +258,7 @@ export function usePosPayments({
             paymentMethodId: method._id,
             name: method.name,
             type: method.type,
-            amount: Number(Math.max(0, amount).toFixed(2)),
+            amount: roundToCurrency(Math.max(0, amount)),
             terminalEnabled: method.terminalEnabled,
             terminalProvider: method.terminalProvider,
             terminalProtocol: method.terminalProtocol,
@@ -276,15 +277,8 @@ export function usePosPayments({
             toast.error(rk("errors.splitFailed"));
             return;
         }
-        const cents = Math.round(total * 100);
-        const base = Math.floor(cents / n);
-        let leftover = cents - base * n;
-        const amounts: number[] = [];
-        for (let i = 0; i < n; i++) {
-            const extra = leftover > 0 ? 1 : 0;
-            if (leftover > 0) leftover -= 1;
-            amounts.push((base + extra) / 100);
-        }
+        // Shares that add up to the total exactly; leftover cents go to the first guests (D35).
+        const amounts = allocateMinor(toMinor(total), n).map((share) => minorToNumber(share));
         const lines = amounts
             .map((amt, idx) => {
                 const line = makePaymentLine(first._id, amt);
@@ -324,7 +318,7 @@ export function usePosPayments({
             setShowPayment(true);
             return;
         }
-        const amount = remaining > 0.001 ? Number(remaining.toFixed(2)) : 0;
+        const amount = remaining > 0.001 ? roundToCurrency(remaining) : 0;
         const line = makePaymentLine(methodId, amount);
         if (!line) return;
         setPayments((prev) => [...prev, line]);
@@ -334,7 +328,7 @@ export function usePosPayments({
 
     const updatePaymentAmount = (id: string, amount: number) => {
         setPayments((prev) =>
-            prev.map((p) => (p.id === id ? {...p, amount: Number(Math.max(0, amount).toFixed(2))} : p)),
+            prev.map((p) => (p.id === id ? {...p, amount: roundToCurrency(Math.max(0, amount))} : p)),
         );
     };
 
@@ -351,7 +345,7 @@ export function usePosPayments({
         if (!targetId) return;
         setPayments((prev) =>
             prev.map((p) =>
-                p.id === targetId ? {...p, amount: Number((Math.max(0, p.amount) + extra).toFixed(2))} : p,
+                p.id === targetId ? {...p, amount: addMoney(Math.max(0, p.amount), extra)} : p,
             ),
         );
         setActivePaymentId(targetId);
@@ -361,8 +355,8 @@ export function usePosPayments({
         const targetId = activePayment?.id ?? payments[payments.length - 1]?.id;
         if (!targetId) return;
         setPayments((prev) => {
-            const others = prev.filter((p) => p.id !== targetId).reduce((s, p) => s + p.amount, 0);
-            const exact = Number(Math.max(0, payableTotal - others).toFixed(2));
+            const others = addMoney(...prev.filter((p) => p.id !== targetId).map((p) => p.amount));
+            const exact = Math.max(0, subtractMoney(payableTotal, others));
             return prev.map((p) => (p.id === targetId ? {...p, amount: exact} : p));
         });
     };
@@ -371,7 +365,7 @@ export function usePosPayments({
         if (payments.length) return payments.filter((p) => p.amount > 0);
         const first = paymentMethods[0];
         if (!first) return [];
-        const line = makePaymentLine(first._id, Number(targetTotal.toFixed(2)));
+        const line = makePaymentLine(first._id, roundToCurrency(targetTotal));
         return line ? [line] : [];
     };
 
@@ -399,7 +393,7 @@ export function usePosPayments({
         const orderLines = payingShare ? shareLines : cart;
         const targetTotal = payingShare ? shareTotal : total;
         const tenderLines = ensurePaymentsForPay(targetTotal);
-        const tenderTotal = tenderLines.reduce((s, p) => s + p.amount, 0);
+        const tenderTotal = addMoney(...tenderLines.map((p) => p.amount));
         if (!tenderLines.length || tenderTotal + 0.001 < targetTotal) return;
         if (payments.length > 0 && paidAmount + 0.001 < targetTotal) return;
 
@@ -439,14 +433,14 @@ export function usePosPayments({
                         {
                             sessionId: session._id,
                             paymentMethodId: line.paymentMethodId,
-                            amount: Number(line.amount.toFixed(2)),
+                            amount: roundToCurrency(line.amount),
                             currency: currencyCode,
                         },
                         {signal: abort.signal},
                     );
                     charged.push({
                         paymentMethodId: line.paymentMethodId,
-                        amount: Number(line.amount.toFixed(2)),
+                        amount: roundToCurrency(line.amount),
                         terminalAuthCode: termRes.data.data.authCode,
                         terminalReference: termRes.data.data.reference,
                         terminalId: termRes.data.data.terminalId || line.terminalId,
@@ -454,7 +448,7 @@ export function usePosPayments({
                 } else {
                     charged.push({
                         paymentMethodId: line.paymentMethodId,
-                        amount: Number(line.amount.toFixed(2)),
+                        amount: roundToCurrency(line.amount),
                         terminalId: line.terminalId,
                     });
                 }

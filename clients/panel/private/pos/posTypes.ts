@@ -1,6 +1,7 @@
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
+import {multiplyMoney, percentOfMoney, subtractMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 export type CatalogVariant = {
     _id: string;
@@ -157,8 +158,9 @@ export function formatMoney(value: number, currencyCode = "EUR"): string {
     }
 }
 
+/** A line after its discount, rounded like the server's till sale (D35), so screen and receipt agree. */
 export function lineTotal(line: CartLine): number {
-    const raw = line.unitPrice * line.quantity;
-    const discount = raw * (Math.min(100, Math.max(0, line.discountPercent)) / 100);
-    return Math.max(0, raw - discount);
+    const gross = multiplyMoney(line.unitPrice, line.quantity);
+    const discount = percentOfMoney(gross, Math.min(100, Math.max(0, line.discountPercent)));
+    return Math.max(0, subtractMoney(gross, discount));
 }

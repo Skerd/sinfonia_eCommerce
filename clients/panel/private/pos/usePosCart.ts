@@ -12,6 +12,7 @@ import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {addMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 type ResolveManagerPin = (
     needed: boolean,
@@ -60,7 +61,7 @@ export function usePosCart({
     const prevCartLenRef = useRef(0);
 
     const itemCount = useMemo(() => cart.reduce((sum, line) => sum + line.quantity, 0), [cart]);
-    const subtotal = useMemo(() => cart.reduce((sum, line) => sum + lineTotal(line), 0), [cart]);
+    const subtotal = useMemo(() => addMoney(...cart.map(lineTotal)), [cart]);
     const orderDiscountAmount = useMemo(
         () => subtotal * (Math.min(100, Math.max(0, orderDiscountPercent)) / 100),
         [subtotal, orderDiscountPercent],

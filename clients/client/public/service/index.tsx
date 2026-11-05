@@ -32,6 +32,7 @@ import type {
     ShopListingResponse,
     ShopMarketplaceCurrency,
 } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
+import {addMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/service/index.tsx";
 
@@ -138,7 +139,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
     // The server refuses add-ons priced in another currency than the chosen offer
     const addOns = listing.addOns.filter(addOn => !addOn.currency || !selected?.currency || addOn.currency._id === selected.currency._id);
     const chosenAddOns = addOns.filter(addOn => addOnIds.includes(addOn._id));
-    const total = (selected?.price ?? 0) + chosenAddOns.reduce((sum, addOn) => sum + addOn.price, 0);
+    const total = addMoney(selected?.price ?? 0, ...chosenAddOns.map((addOn) => addOn.price));
     const totalDays = (selected?.deliveryDays ?? 0) + chosenAddOns.reduce((sum, addOn) => sum + (addOn.deliveryDays ?? 0), 0);
     const location = listingLocationLabel(listing.location);
     const isOwnListing = Boolean(user.id) && user.id === listing.provider?._id;
