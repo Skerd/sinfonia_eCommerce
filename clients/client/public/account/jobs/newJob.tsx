@@ -2,10 +2,10 @@ import {useEffect, useMemo, useState, type FormEvent} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowLeft, ImagePlus, LocateFixed} from "lucide-react";
+import {IconArrowLeft, IconPhotoPlus, IconCurrentLocation} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import SinglePinMap from "@coreModule/components/viewEngine/widgets/addresses/mapWithPins.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
@@ -27,6 +27,11 @@ type ShopCity = {_id: string; name: string};
 
 /** Where the map opens before the buyer drops a pin (same default as the panel's pin picker). */
 const DEFAULT_PIN = {lat: 41.3275, lng: 19.8187};
+
+const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/shopListingTaxonomy"};
+const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopCountries"};
+const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopCities"};
+const CREATE_JOB_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerceMarketplace/taskRequest/createMine"};
 
 const EMPTY_FORM = {
     title: "",
@@ -60,45 +65,25 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
     const [form, setForm] = useState(EMPTY_FORM);
     const [pin, setPin] = useState<{lat: number; lng: number} | null>(null);
     const [image, setImage] = useState<File | null>(null);
-    const [categories, setCategories] = useState<ShopListingCategory[]>([]);
-    const [countries, setCountries] = useState<ShopCountry[]>([]);
-    const [cities, setCities] = useState<ShopCity[]>([]);
-    const [submitting, setSubmitting] = useState(false);
+    const taxonomy = useHttpRequest<ShopListingTaxonomyResponse>(TAXONOMY_REQUEST, {}, 1);
+    const countryList = useHttpRequest<{data: ShopCountry[]}>(COUNTRIES_REQUEST, {}, 1);
+    const categories: ShopListingCategory[] = taxonomy.data?.data.categories ?? [];
+    const countries: ShopCountry[] = countryList.data?.data ?? [];
 
+    const [citiesCount, setCitiesCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            const [taxonomy, countryList] = await Promise.allSettled([
-                apiClient.post<ShopListingTaxonomyResponse>("/api/eCommerceMarketplace/shopListingTaxonomy", {}),
-                apiClient.get<{data: ShopCountry[]}>("/api/eCommerce/shopCountries"),
-            ]);
-            if (cancelled) return;
-            setCategories(taxonomy.status === "fulfilled" ? taxonomy.value.data.data.categories : []);
-            setCountries(countryList.status === "fulfilled" ? countryList.value.data.data ?? [] : []);
-        })();
-        return () => {
-            cancelled = true;
-        };
-    }, []);
-
-    useEffect(() => {
-        if (!form.country) {
-            setCities([]);
-            return;
-        }
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: ShopCity[]}>("/api/eCommerce/shopCities", {countryId: form.country});
-                if (!cancelled) setCities(res.data.data ?? []);
-            } catch {
-                if (!cancelled) setCities([]);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (form.country) setCitiesCount((count) => count + 1);
     }, [form.country]);
+    const cityList = useHttpRequest<{data: ShopCity[]}>(CITIES_REQUEST, {countryId: form.country}, citiesCount);
+    const cities: ShopCity[] = form.country && !cityList.error ? cityList.data?.data ?? [] : [];
+
+    const [createCall, setCreateCall] = useState<{form: FormData; count: number}>(() => ({form: new FormData(), count: 0}));
+    const createRequest = useHttpRequest<{data: {_id: string}}>(CREATE_JOB_REQUEST, createCall.form, createCall.count, true, {
+        success: (response) => navigate(`${base}/account/jobs/${response.data._id}?posted=1`),
+        error: (err) => handleError(err, {context: "NewJob", showToast: true, fallbackMessage: resolveLanguageKey("submitError")}),
+    });
+    // Stays busy after success: the page navigates to the new job.
+    const submitting = createRequest.loading || (createCall.count > 0 && !!createRequest.data);
 
     const imagePreview = useMemo(() => (image ? URL.createObjectURL(image) : undefined), [image]);
     useEffect(() => () => {
@@ -115,14 +100,13 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
         );
     }
 
-    async function submit(event: FormEvent) {
+    function submit(event: FormEvent) {
         event.preventDefault();
         if (!pin) {
             toast.error(resolveLanguageKey("pinRequired"));
             return;
         }
         if (!image || !currency) return;
-        setSubmitting(true);
         const payload = new FormData();
         payload.append("data", JSON.stringify({
             title: form.title.trim(),
@@ -141,19 +125,13 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
             },
         }));
         payload.append("mainImage", image);
-        try {
-            const res = await apiClient.put<{data: {_id: string}}>("/api/eCommerceMarketplace/taskRequest/createMine", payload);
-            navigate(`${base}/account/jobs/${res.data.data._id}?posted=1`);
-        } catch (err) {
-            handleError(err, {context: "NewJob", showToast: true, fallbackMessage: resolveLanguageKey("submitError")});
-            setSubmitting(false);
-        }
+        setCreateCall((current) => ({form: payload, count: current.count + 1}));
     }
 
     return (
         <div className="flex flex-col gap-8">
             <Link to={`${base}/account/jobs`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" aria-hidden />
+                <IconArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToJobs")}
             </Link>
             <div className="flex flex-col gap-2">
@@ -185,10 +163,10 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
                         {resolveLanguageKey("imageLabel")}
                         <label className="flex cursor-pointer items-center gap-4 rounded-2xl border border-dashed border-border p-4 hover:border-foreground">
                             <span className="flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-muted text-muted-foreground">
-                                {imagePreview ? <img src={imagePreview} alt="" className="h-full w-full object-cover" /> : <ImagePlus className="h-6 w-6" aria-hidden />}
+                                {imagePreview ? <img src={imagePreview} alt="" className="h-full w-full object-cover" /> : <IconPhotoPlus className="h-6 w-6" aria-hidden />}
                             </span>
                             <span className="font-normal text-muted-foreground">{image?.name ?? resolveLanguageKey("imageHint")}</span>
-                            <input required type="file" accept="image/*" className="sr-only" onChange={event => setImage(event.target.files?.[0] ?? null)} />
+                            <Input bare required type="file" accept="image/*" className="sr-only" onChange={event => setImage(event.target.files?.[0] ?? null)} />
                         </label>
                     </div>
                 </section>
@@ -237,7 +215,7 @@ function NewJobPage({resolveLanguageKey}: WithLanguageType) {
                         <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
                             <span className="font-medium">{resolveLanguageKey("pinLabel")}</span>
                             <Button variant="link" type="button" onClick={locateMe} className="h-auto gap-1.5 p-0">
-                                <LocateFixed aria-hidden />
+                                <IconCurrentLocation aria-hidden />
                                 {resolveLanguageKey("useMyLocation")}
                             </Button>
                         </div>

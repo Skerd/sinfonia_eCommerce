@@ -1,7 +1,6 @@
 import {compose} from "redux";
-import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {CatalogFilterSelect} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
 import {uniqueBySlug} from "./shopCategories.ts";
 import type {
@@ -11,23 +10,15 @@ import type {
     ShopTaxonomyResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 
+const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy"};
+const FACETS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopFacets"};
+
 /** The product catalog's filters: the shop's categories and brands. */
 function ShopProductFilters({resolveLanguageKey}: WithLanguageType) {
-    const [categories, setCategories] = useState<ShopCategory[]>([]);
-    const [brands, setBrands] = useState<ShopFacetOption[]>([]);
-
-    useEffect(() => {
-        let cancelled = false;
-        Promise.all([
-            apiClient.post<ShopTaxonomyResponse>("/api/eCommerce/shopTaxonomy", {}),
-            apiClient.post<ShopFacetsResponse>("/api/eCommerce/shopFacets", {}),
-        ]).then(([taxonomy, facets]) => {
-            if (cancelled) return;
-            setCategories(uniqueBySlug(taxonomy.data.data.categories));
-            setBrands(facets.data.data.brands);
-        }).catch(() => undefined);
-        return () => { cancelled = true; };
-    }, []);
+    const taxonomy = useHttpRequest<ShopTaxonomyResponse>(TAXONOMY_REQUEST, {}, 1);
+    const facets = useHttpRequest<ShopFacetsResponse>(FACETS_REQUEST, {}, 1);
+    const categories: ShopCategory[] = uniqueBySlug(taxonomy.data?.data.categories ?? []);
+    const brands: ShopFacetOption[] = facets.data?.data.brands ?? [];
 
     const any = resolveLanguageKey("any");
     return (

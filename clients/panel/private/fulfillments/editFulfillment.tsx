@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editFulfillmentFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/editFulfillment.form.validator.ts";
 import type {EditFulfillmentFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
@@ -10,12 +10,12 @@ export default createGenericEditPage<Fulfillment, EditFulfillmentFormType>({
     accessModel: "fulfillments",
     apiUrl: "/api/eCommerce/fulfillment",
     schema: editFulfillmentFormSchema,
-    mapEntityData: (data: any) => ({
+    mapEntityData: (data) => ({
         ...data,
         order: data.order?._id ?? data.order,
         shippedAt: data.shippedAt ? new Date(data.shippedAt).toISOString().split("T")[0] : undefined,
         estimatedDeliveryAt: data.estimatedDeliveryAt ? new Date(data.estimatedDeliveryAt).toISOString().split("T")[0] : undefined,
         deliveredAt: data.deliveredAt ? new Date(data.deliveredAt).toISOString().split("T")[0] : undefined,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

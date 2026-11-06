@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {HandCoins, LoaderCircle} from "lucide-react";
+import {IconCoins, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -95,7 +95,7 @@ function ReleaseMilestoneAction({
                             onPost({milestone: milestoneId});
                         }}
                     >
-                        {loading ? <LoaderCircle className="size-4 animate-spin" /> : <HandCoins size={16} />}
+                        {loading ? <IconLoader2 className="size-4 animate-spin" /> : <IconCoins size={16} />}
                         {resolveLanguageKey("confirm")}
                     </AlertDialogAction>
                 </AlertDialogFooter>

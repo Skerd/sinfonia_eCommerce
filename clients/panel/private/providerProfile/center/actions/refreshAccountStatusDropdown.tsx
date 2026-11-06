@@ -7,7 +7,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
-import {RefreshCw} from "lucide-react";
+import {IconRefresh} from "@tabler/icons-react";
 
 type RefreshAccountStatusDropdownProps = WithLanguageType & {
     profile: ProviderProfile;
@@ -21,7 +21,7 @@ function RefreshAccountStatusDropdown({profile, onAction, resolveLanguageKey}: R
     const {id: currentUserId} = useSelector((state: RootState) => state.authentication.user);
 
     const isOwner = profile.user?._id === currentUserId;
-    const canShow = isOwner && !!profile.stripeAccountId && !!write && !(profile as any).deletedAt;
+    const canShow = isOwner && !!profile.stripeAccountId && !!write && !profile.deletedAt;
 
     const triggerAction = () => {
         if (!canShow) return;
@@ -35,7 +35,7 @@ function RefreshAccountStatusDropdown({profile, onAction, resolveLanguageKey}: R
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <RefreshCw size={16} className="text-info" />
+            <IconRefresh size={16} className="text-info" />
             <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

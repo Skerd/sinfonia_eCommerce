@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useRef, useState} from "react";
-import {LoaderCircle, PackageCheck} from "lucide-react";
+import {IconLoader2, IconPackageImport} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -22,6 +22,7 @@ import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFi
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {SubmitOrderDeliveryFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/submitOrderDelivery.form.validator.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
 function bindSubmitDeliveryAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -113,7 +114,8 @@ function SubmitOrderDeliveryAction({
                         className="min-h-[100px]"
                     />
                     <Label className="mt-2">{resolveLanguageKey("submitDelivery.attachmentsLabel")}</Label>
-                    <input
+                    <Input
+                        bare
                         ref={fileInputRef}
                         type="file"
                         className="hidden"
@@ -164,9 +166,9 @@ function SubmitOrderDeliveryAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <PackageCheck size={16} className="text-success" />
+                            <IconPackageImport size={16} className="text-success" />
                         )}
                         {resolveLanguageKey("submitDelivery.confirm")}
                     </AlertDialogAction>

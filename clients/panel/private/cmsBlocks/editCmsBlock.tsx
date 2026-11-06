@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/inputs/objectIdChipsInput.tsx";
 import {editCmsBlockFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/editCmsBlock.form.validator.ts";
@@ -54,5 +54,5 @@ export default createGenericEditPage<CmsBlock, EditCmsBlockFormType>({
             },
         };
     },
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

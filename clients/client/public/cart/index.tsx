@@ -2,7 +2,7 @@ import {useState, type FormEvent} from "react";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowRight, ChevronDown} from "lucide-react";
+import {IconArrowRight, IconChevronDown} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
@@ -200,7 +200,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
                     <details className="group rounded-xl border border-border bg-card">
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium [&::-webkit-details-marker]:hidden">
                             {resolveLanguageKey("codesToggle")}
-                            <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
+                            <IconChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
                         </summary>
                         <div className="flex flex-col gap-3 px-4 pb-4">
                             <CodeForm label={resolveLanguageKey("discountCode")} applyLabel={resolveLanguageKey("apply")} onApply={handleApplyDiscount} />
@@ -212,7 +212,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
 
                     <Button asChild size="lg" className="w-full"><Link to={`${base}/checkout`}>
                         {resolveLanguageKey("checkout")}
-                        <ArrowRight className="h-4 w-4" aria-hidden />
+                        <IconArrowRight className="h-4 w-4" aria-hidden />
                     </Link></Button>
                 </aside>
             </div>

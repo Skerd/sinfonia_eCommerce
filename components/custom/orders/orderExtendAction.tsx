@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CalendarPlus, LoaderCircle} from "lucide-react";
+import {IconCalendarPlus, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -128,9 +128,9 @@ function OrderExtendAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <CalendarPlus size={16} className="text-primary" />
+                            <IconCalendarPlus size={16} className="text-primary" />
                         )}
                         {resolveLanguageKey("extend.confirm")}
                     </AlertDialogAction>

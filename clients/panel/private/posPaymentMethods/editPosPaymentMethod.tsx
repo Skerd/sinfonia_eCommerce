@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editPosPaymentMethodFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/editPosPaymentMethod.form.validator.ts";
 import type {EditPosPaymentMethodFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.schema-def.ts";
@@ -13,5 +13,5 @@ export default createGenericEditPage<PosPaymentMethod, EditPosPaymentMethodFormT
     mapEntityData: (data) => ({
         ...data,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

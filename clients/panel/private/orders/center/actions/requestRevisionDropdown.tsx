@@ -7,7 +7,7 @@ import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {RotateCcw} from "lucide-react";
+import {IconRotate} from "@tabler/icons-react";
 
 type RequestRevisionDropdownProps = WithLanguageType & {
     order: Order;
@@ -35,7 +35,7 @@ function RequestRevisionDropdown({order, onAction, resolveLanguageKey}: RequestR
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <RotateCcw size={16} className="text-warning" />
+            <IconRotate size={16} className="text-warning" />
             <span className="text-warning">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

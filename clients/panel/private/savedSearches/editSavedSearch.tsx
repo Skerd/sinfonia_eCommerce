@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editSavedSearchFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/savedSearch/editSavedSearch.form.validator.ts";
 import type {EditSavedSearchFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/savedSearch/savedSearch.schema-def.ts";
@@ -32,5 +32,5 @@ export default createGenericEditPage<SavedSearch, EditSavedSearchFormType>({
                 : [],
         };
     },
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

@@ -1,6 +1,6 @@
 import {compose} from "redux";
 import {useMemo, useState, type ReactNode} from "react";
-import {Pencil} from "lucide-react";
+import {IconPencil} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -13,9 +13,8 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import type {ViewNode} from "armonia/src/modules/core/api/auxiliary/private/viewConfig";
 import {editProviderProfileFormSchema} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/editProviderProfile.form.validator.ts";
-import type {EditProviderProfileFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.schema-def.ts";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
-import {providerProfileInitialValues} from "./editProviderProfile.tsx";
+import {providerProfileInitialValues, type ProviderProfileFormValues} from "./editProviderProfile.tsx";
 
 export type ProviderProfileSectionField = "bio" | "skills" | "availability" | "portfolio";
 
@@ -36,7 +35,7 @@ function findFieldNode(nodes: ViewNode[] | undefined, name: string): ViewNode | 
     return undefined;
 }
 
-type ProviderProfileSectionProps = WithLanguageType & WithAxiosType<ProviderProfile, Partial<EditProviderProfileFormType>> & {
+type ProviderProfileSectionProps = WithLanguageType & WithAxiosType<ProviderProfile, Partial<ProviderProfileFormValues>> & {
     profile: ProviderProfile;
     field: ProviderProfileSectionField;
     onSaved: () => void;
@@ -123,13 +122,13 @@ function ProviderProfileSection({
                 <h4 className="text-sm font-medium">{resolveLanguageKey(SECTION_TITLE_KEYS[field])}</h4>
                 {canEdit && !editing && (
                     <Button type="button" variant="ghost" size="sm" onClick={() => setEditing(true)}>
-                        <Pencil size={14} />
+                        <IconPencil size={14} />
                         {resolveLanguageKey("account.edit")}
                     </Button>
                 )}
             </div>
             {editing && editConfig ? (
-                <EditFormViewRenderer<Partial<EditProviderProfileFormType>>
+                <EditFormViewRenderer<Partial<ProviderProfileFormValues>>
                     config={editConfig}
                     resolveLanguageKey={resolveLanguageKey}
                     formSchema={formSchema}
@@ -156,6 +155,6 @@ function ProviderProfileSection({
 
 export default compose(
     withLanguage("src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx"),
-    withAxios<ProviderProfile, Partial<EditProviderProfileFormType>>({url: "/api/eCommerceMarketplace/providerProfile", method: "PATCH", data: {}}, true),
+    withAxios<ProviderProfile, Partial<ProviderProfileFormValues>>({url: "/api/eCommerceMarketplace/providerProfile", method: "PATCH", data: {}}, true),
     withDebug(true, true, "providerProfiles"),
 )(ProviderProfileSection);

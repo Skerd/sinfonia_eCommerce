@@ -7,7 +7,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
-import {Landmark} from "lucide-react";
+import {IconBuildingBank} from "@tabler/icons-react";
 
 type CreateAccountLinkDropdownProps = WithLanguageType & {
     profile: ProviderProfile;
@@ -22,7 +22,7 @@ function CreateAccountLinkDropdown({profile, onAction, resolveLanguageKey}: Crea
 
     const isOwner = profile.user?._id === currentUserId;
     const needsOnboarding = !profile.stripePayoutsEnabled;
-    const canShow = isOwner && needsOnboarding && !!write && !(profile as any).deletedAt;
+    const canShow = isOwner && needsOnboarding && !!write && !profile.deletedAt;
 
     const triggerAction = () => {
         if (!canShow) return;
@@ -38,7 +38,7 @@ function CreateAccountLinkDropdown({profile, onAction, resolveLanguageKey}: Crea
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Landmark size={16} className="text-primary" />
+            <IconBuildingBank size={16} className="text-primary" />
             <span className="text-primary">{resolveLanguageKey(labelKey)}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

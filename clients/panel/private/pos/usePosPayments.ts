@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {requestFromApi} from "@coreModule/helpers/apiClient/requestFromApi.ts";
 import {isAbortError} from "@coreModule/helpers/general/errors.ts";
 import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
@@ -426,24 +426,27 @@ export function usePosPayments({
                 const needsTerminal =
                     (line.type === "card" || line.type === "bank") && !!line.terminalEnabled && line.amount > 0;
                 if (needsTerminal) {
-                    const termRes = await apiClient.post<{
+                    // Awaited chain with the cashier's abort (the kill switch); errors are handled below, so silent.
+                    const termRes = await requestFromApi<{
                         data: {authCode?: string; reference?: string; terminalId?: string};
-                    }>(
-                        "/api/eCommerce/pos/chargeTerminal",
-                        {
+                    }>({
+                        method: "post",
+                        url: "/api/eCommerce/pos/chargeTerminal",
+                        data: {
                             sessionId: session._id,
                             paymentMethodId: line.paymentMethodId,
                             amount: roundToCurrency(line.amount),
                             currency: currencyCode,
                         },
-                        {signal: abort.signal},
-                    );
+                        signal: abort.signal,
+                        silent: true,
+                    });
                     charged.push({
                         paymentMethodId: line.paymentMethodId,
                         amount: roundToCurrency(line.amount),
-                        terminalAuthCode: termRes.data.data.authCode,
-                        terminalReference: termRes.data.data.reference,
-                        terminalId: termRes.data.data.terminalId || line.terminalId,
+                        terminalAuthCode: termRes.data.authCode,
+                        terminalReference: termRes.data.reference,
+                        terminalId: termRes.data.terminalId || line.terminalId,
                     });
                 } else {
                     charged.push({
@@ -454,9 +457,9 @@ export function usePosPayments({
                 }
             }
 
-            const res = await apiClient.post<{
+            const res = await requestFromApi<{
                 data: {order: PosOrder; receipt: ReceiptPayload; session: PosSession};
-            }>("/api/eCommerce/posOrder/pay", {
+            }>({method: "post", url: "/api/eCommerce/posOrder/pay", silent: true, data: {
                 sessionId: session._id,
                 customerId: customerId || undefined,
                 customerName: showCustomer && customerName.trim() ? customerName.trim() : undefined,
@@ -474,9 +477,9 @@ export function usePosPayments({
                     discountPercent: l.discountPercent > 0 ? l.discountPercent : undefined,
                 })),
                 payments: charged,
-            });
-            setSession(res.data.data.session);
-            showReceipt(res.data.data.receipt);
+            }});
+            setSession(res.data.session);
+            showReceipt(res.data.receipt);
             payRequestIdRef.current = null;
 
             if (payingShare) {

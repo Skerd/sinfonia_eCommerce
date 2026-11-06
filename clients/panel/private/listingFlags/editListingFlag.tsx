@@ -1,4 +1,4 @@
-import { Save } from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import { createGenericEditPage } from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import { updateListingFlagFormSchema } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/updateListingFlag.form.validator.ts";
 import type { ListingFlag } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/listingFlag.dto.ts";
@@ -15,5 +15,5 @@ export default createGenericEditPage<ListingFlag, EditListingFlagFormType>({
         reason: writeFields.reason ? data.reason : undefined,
         comment: writeFields.comment ? (data.comment ?? "") : undefined,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

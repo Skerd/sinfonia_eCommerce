@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editShippingZoneFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/editShippingZone.form.validator.ts";
 import type {EditShippingZoneFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/shippingZone.schema-def.ts";
@@ -15,5 +15,5 @@ export default createGenericEditPage<ShippingZone, EditShippingZoneFormType>({
         countries: data.countries?.map((c) => c._id),
         states: data.states?.map((s) => s._id),
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

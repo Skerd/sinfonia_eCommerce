@@ -205,6 +205,7 @@ export default function PosTillDialogs(props: Props) {
                 requirePin={requireRefundPin}
                 requestManagerAuth={onRequestRefundAuth}
                 money={money}
+                decimalPlaces={refundOrder?.decimalPlaces ?? session.decimalPlaces}
                 rk={rk}
                 onOpenChange={onRefundOpenChange}
                 onRefunded={onRefunded}

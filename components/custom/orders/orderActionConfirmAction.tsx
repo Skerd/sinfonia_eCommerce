@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CircleCheck, CircleX, LoaderCircle, Play} from "lucide-react";
+import {IconCircleCheck, IconCircleX, IconLoader2, IconPlayerPlay} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -95,10 +95,10 @@ function OrderActionConfirmAction({
 
     const ActionIcon =
         actionKey === "accept" || actionKey === "acceptDelivery"
-            ? CircleCheck
+            ? IconCircleCheck
             : actionKey === "start"
-              ? Play
-              : CircleX;
+              ? IconPlayerPlay
+              : IconCircleX;
     const iconClass =
         actionKey === "cancel"
             ? "text-destructive"
@@ -129,7 +129,7 @@ function OrderActionConfirmAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
                             <ActionIcon size={16} className={iconClass} />
                         )}

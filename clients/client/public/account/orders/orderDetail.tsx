@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {Link, useParams, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {ArrowLeft, CircleCheck, Download} from "lucide-react";
+import {IconArrowLeft, IconCircleCheck, IconDownload} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
@@ -16,6 +16,9 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/orders/orderDetail.tsx";
 
+const ORDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/mySingle"};
+const DELIVERIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/digitalDelivery/my"};
+
 function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {orderId = ""} = useParams();
@@ -24,32 +27,17 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const siblingCount = (searchParams.get("siblings") ?? "").split(",").filter(Boolean).length;
     const {formatMoney} = useShopConfig();
 
-    const [order, setOrder] = useState<BuyerProductOrder | null>(null);
-    const [deliveries, setDeliveries] = useState<DigitalDelivery[]>([]);
-    const [loading, setLoading] = useState(true);
-
+    const [loadCount, setLoadCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const [orderRes, deliveriesRes] = await Promise.all([
-                    apiClient.post<{data: BuyerProductOrder}>("/api/eCommerce/productOrder/mySingle", {_id: orderId}),
-                    apiClient.post<{data: DigitalDelivery[]}>("/api/eCommerce/digitalDelivery/my", {orderId}),
-                ]);
-                if (cancelled) return;
-                setOrder(orderRes.data.data);
-                setDeliveries(deliveriesRes.data.data ?? []);
-            } catch {
-                if (!cancelled) setOrder(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setLoadCount((count) => count + 1);
     }, [orderId]);
+    const orderRequest = useHttpRequest<{data: BuyerProductOrder}>(ORDER_REQUEST, {_id: orderId}, loadCount);
+    const deliveriesRequest = useHttpRequest<{data: DigitalDelivery[]}>(DELIVERIES_REQUEST, {orderId}, loadCount);
+    // Shown together, as one load: either failing means the order cannot be shown.
+    const failed = !!orderRequest.error || !!deliveriesRequest.error;
+    const order: BuyerProductOrder | null = failed ? null : orderRequest.data?.data ?? null;
+    const deliveries: DigitalDelivery[] = deliveriesRequest.data?.data ?? [];
+    const loading = loadCount === 0 || orderRequest.loading || deliveriesRequest.loading;
 
     if (loading) {
         return <div className="h-96 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
@@ -70,13 +58,13 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     return (
         <div className="flex flex-col gap-8">
             <Link to={`${base}/account/orders`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" aria-hidden />
+                <IconArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToOrders")}
             </Link>
 
             {justPlaced && (
                 <div className="flex gap-4 rounded-2xl bg-muted p-6" role="status">
-                    <CircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
+                    <IconCircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
                     <div className="flex flex-col gap-1">
                         <p className="font-display text-xl font-semibold">{resolveLanguageKey("placedTitle")}</p>
                         <p className="text-muted-foreground">
@@ -153,7 +141,7 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                           rel="noreferrer"
                           
                        >
-                                                    <Download className="h-4 w-4" aria-hidden />
+                                                    <IconDownload className="h-4 w-4" aria-hidden />
                                                     {file.fileName ?? resolveLanguageKey("download")}
                                                 </a></Button>
                                             </li>

@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editProductReviewFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/editProductReview.form.validator.ts";
 import type {EditProductReviewFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.schema-def.ts";
@@ -16,5 +16,5 @@ export default createGenericEditPage<ProductReview, EditProductReviewFormType>({
         title: data.title,
         comment: data.comment,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

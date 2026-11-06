@@ -13,7 +13,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CirclePlay, Cog, OctagonPause} from "lucide-react";
+import {IconPlayerPlay, IconSettings, IconPlayerPause} from "@tabler/icons-react";
 import PauseAllPosConfigsDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx";
 import ResumeAllPosConfigsDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx";
 
@@ -56,7 +56,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                         aria-label={rk("bulkMenu.triggerAria")}
                         title={rk("bulkMenu.triggerAria")}
                     >
-                        <Cog className="size-4" />
+                        <IconSettings className="size-4" />
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-72">
@@ -75,7 +75,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                             className="cursor-pointer items-start gap-2 py-2"
                             onSelect={() => setResumeAllOpen(true)}
                         >
-                            <CirclePlay className="mt-0.5 size-4 shrink-0 text-success" />
+                            <IconPlayerPlay className="mt-0.5 size-4 shrink-0 text-success" />
                             <div className="flex flex-col min-w-0 gap-y-0.5">
                                 <div className="text-sm font-medium leading-none">{rk("bulkMenu.resumeAll")}</div>
                                 <div className="text-xs text-muted-foreground leading-snug">
@@ -88,7 +88,7 @@ function PosConfigsBulkMenu({resolveLanguageKey, onChanged, data, justForceRefre
                             className="cursor-pointer items-start gap-2 py-2"
                             onSelect={() => setPauseAllOpen(true)}
                         >
-                            <OctagonPause className="mt-0.5 size-4 shrink-0 text-destructive" />
+                            <IconPlayerPause className="mt-0.5 size-4 shrink-0 text-destructive" />
                             <div className="flex flex-col min-w-0 gap-y-0.5">
                                 <div className="text-sm font-medium leading-none">{rk("bulkMenu.pauseAll")}</div>
                                 <div className="text-xs text-muted-foreground leading-snug">

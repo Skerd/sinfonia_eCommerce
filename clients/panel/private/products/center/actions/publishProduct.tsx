@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Globe} from "lucide-react";
+import {IconWorld} from "@tabler/icons-react";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
 
 type Props = WithLanguageType & {
@@ -20,7 +20,7 @@ function PublishProduct({entity, resolveLanguageKey, onAction}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("publishProduct")}>
-            <Globe className="text-success" size={16} />
+            <IconWorld className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

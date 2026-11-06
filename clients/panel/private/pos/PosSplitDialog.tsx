@@ -1,4 +1,4 @@
-import {Minus, Plus} from "lucide-react";
+import {IconMinus, IconPlus} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,
@@ -49,8 +49,9 @@ export default function PosSplitDialog({
                 </DialogHeader>
                 <div className="flex flex-col gap-y-3 py-1">
                     <div className="grid grid-cols-2 gap-2">
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             onClick={() => onSplitModeChange("equal")}
                             className={cn(
                                 "rounded-xl border px-3 py-3 text-left transition-colors",
@@ -61,9 +62,10 @@ export default function PosSplitDialog({
                         >
                             <div className="text-sm font-semibold">{rk("split.equal")}</div>
                             <div className="mt-1 text-2xs text-muted-foreground">{rk("split.equalHint")}</div>
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             type="button"
+                            variant="bare"
                             onClick={() => onSplitModeChange("items")}
                             className={cn(
                                 "rounded-xl border px-3 py-3 text-left transition-colors",
@@ -74,7 +76,7 @@ export default function PosSplitDialog({
                         >
                             <div className="text-sm font-semibold">{rk("split.items")}</div>
                             <div className="mt-1 text-2xs text-muted-foreground">{rk("split.itemsHint")}</div>
-                        </button>
+                        </Button>
                     </div>
 
                     {splitMode === "equal" && (
@@ -82,13 +84,14 @@ export default function PosSplitDialog({
                             <div className="flex items-center justify-between gap-2">
                                 <span className="text-sm font-medium">{rk("split.guests")}</span>
                                 <div className="flex items-center overflow-hidden rounded-md border border-border bg-card">
-                                    <button
+                                    <Button
                                         type="button"
+                                        variant="bare"
                                         className="flex size-8 items-center justify-center hover:bg-muted"
                                         onClick={() => onSplitGuestsChange(Math.max(2, splitGuests - 1))}
                                     >
-                                        <Minus className="size-3.5" />
-                                    </button>
+                                        <IconMinus className="size-3.5" />
+                                    </Button>
                                     <PosNumpadField
                                         value={splitGuests}
                                         onValueChange={(n) =>
@@ -103,13 +106,14 @@ export default function PosSplitDialog({
                                         clearLabel={rk("numpad.clear")}
                                         buttonClassName="flex h-8 w-12 items-center justify-center text-sm font-semibold"
                                     />
-                                    <button
+                                    <Button
                                         type="button"
+                                        variant="bare"
                                         className="flex size-8 items-center justify-center hover:bg-muted"
                                         onClick={() => onSplitGuestsChange(Math.min(20, splitGuests + 1))}
                                     >
-                                        <Plus className="size-3.5" />
-                                    </button>
+                                        <IconPlus className="size-3.5" />
+                                    </Button>
                                 </div>
                             </div>
                             <div className="flex items-center justify-between text-sm tabular-nums">

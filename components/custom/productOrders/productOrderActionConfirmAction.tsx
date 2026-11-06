@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {Banknote, CircleCheck, CircleX, LoaderCircle, Package} from "lucide-react";
+import {IconCash, IconCircleCheck, IconCircleX, IconLoader2, IconPackage} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -99,10 +99,10 @@ function ProductOrderActionConfirmAction({
 
     if (!canWrite) return <HiddenElement />;
 
-    const ActionIcon = actionKey === "confirm" ? CircleCheck
-        : actionKey === "markProcessing" ? Package
-        : actionKey === "markPaid" ? Banknote
-        : CircleX;
+    const ActionIcon = actionKey === "confirm" ? IconCircleCheck
+        : actionKey === "markProcessing" ? IconPackage
+        : actionKey === "markPaid" ? IconCash
+        : IconCircleX;
     const iconClass = actionKey === "cancel" ? "text-destructive" : actionKey === "markProcessing" ? "text-info" : "text-success";
 
     return (
@@ -128,7 +128,7 @@ function ProductOrderActionConfirmAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
                             <ActionIcon size={16} className={iconClass} />
                         )}

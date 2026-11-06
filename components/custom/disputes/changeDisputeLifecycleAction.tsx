@@ -4,12 +4,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {
-    ClipboardList,
-    CircleCheck,
-    CircleX,
-    LoaderCircle,
-} from "lucide-react";
+import {IconClipboardList, IconCircleCheck, IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -42,9 +37,9 @@ function bindDisputeLifecycleLanguageKey(
 }
 
 const verbIcon = {
-    startReview: ClipboardList,
-    resolve: CircleCheck,
-    close: CircleX,
+    startReview: IconClipboardList,
+    resolve: IconCircleCheck,
+    close: IconCircleX,
 };
 
 function buildSuccessPatch(verb: DisputeLifecycleVerb, resolution: string): Partial<Dispute> {
@@ -164,7 +159,7 @@ function ChangeDisputeLifecycleAction({
                         disabled={submitBlocked}
                     >
                         {loading ? (
-                            <LoaderCircle className="animate-spin" />
+                            <IconLoader2 className="animate-spin" />
                         ) : (
                             <Icon size={16} />
                         )}

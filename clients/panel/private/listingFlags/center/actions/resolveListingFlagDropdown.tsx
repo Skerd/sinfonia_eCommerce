@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ListingFlag} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/listingFlag.dto.ts";
 
@@ -21,7 +21,7 @@ function ResolveListingFlagDropdown({listingFlag, onAction, resolveLanguageKey}:
 
     return (
         <DropdownMenuItem onClick={() => onAction("resolve")}>
-            <CircleCheck size={16} className="text-success" />
+            <IconCircleCheck size={16} className="text-success" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

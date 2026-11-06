@@ -1,6 +1,6 @@
 import {useEffect, useState, type MouseEvent} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {ArrowRight, ChevronLeft, ChevronRight} from "lucide-react";
+import {IconArrowRight, IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 import type {CmsBlock, CmsBlockConfig, CmsBlockGridItem, CmsBlockSlide} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 import type {CollectionSimple} from "armonia/src/modules/eCommerce/dto/collection.dto.ts";
 import type {CategorySimple} from "armonia/src/modules/eCommerce/dto/category.dto.ts";
@@ -9,13 +9,14 @@ import type {
     ShopProductsResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 import type {ShopProductSort} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopProducts.form.validator.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {useDynamicLanguage} from "@coreModule/helpers/hooks/useDynamicLanguage.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import ShopProductCard from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
+const SHOP_PRODUCTS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProducts"};
 const LANGUAGE_PATH = "src/modules/eCommerce/components/cms/CmsBlockRenderer.tsx";
 
 type HeadingLevel = "h1" | "h2";
@@ -76,7 +77,7 @@ function CmsHero({title, config, headingLevel = "h2"}: {title: string; config: C
                 {config.ctaHref && config.ctaLabel ? (
                     <Button asChild size="lg" className="mt-2 self-start"><CmsLink href={config.ctaHref}>
                         {config.ctaLabel}
-                        <ArrowRight className="h-4 w-4" aria-hidden />
+                        <IconArrowRight className="h-4 w-4" aria-hidden />
                     </CmsLink></Button>
                 ) : null}
             </div>
@@ -99,12 +100,13 @@ function CmsSlider({title, slides, headingLevel}: {title: string; slides: CmsBlo
             {slides.length > 1 ? (
                 <div className="mt-4 flex items-center justify-center gap-3">
                     <Button type="button" variant="outline" size="icon" onClick={() => go(index - 1)} aria-label={resolveLanguageKey("previousSlide")}>
-                        <ChevronLeft />
+                        <IconChevronLeft />
                     </Button>
                     {slides.map((item, slideIndex) => (
-                        <button
+                        <Button
                             key={`${item.headline ?? "slide"}-${slideIndex}`}
                             type="button"
+                            variant="bare"
                             aria-label={resolveLanguageKey("slide").replace("{number}", String(slideIndex + 1)).replace("{total}", String(slides.length))}
                             aria-current={slideIndex === index}
                             className={cn("h-2 rounded-full transition-all", slideIndex === index ? "w-6 bg-foreground" : "w-2 bg-foreground/25")}
@@ -112,7 +114,7 @@ function CmsSlider({title, slides, headingLevel}: {title: string; slides: CmsBlo
                         />
                     ))}
                     <Button type="button" variant="outline" size="icon" onClick={() => go(index + 1)} aria-label={resolveLanguageKey("nextSlide")}>
-                        <ChevronRight />
+                        <IconChevronRight />
                     </Button>
                 </div>
             ) : null}
@@ -171,28 +173,18 @@ function CmsProductStrip({
     collectionId?: string;
     categoryIds?: string[];
 }) {
-    const [products, setProducts] = useState<ShopProductCardType[]>([]);
     const categoryKey = categoryIds?.join(",");
-
+    const [productsCount, setProductsCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<ShopProductsResponse>("/api/eCommerce/shopProducts", {
-                    sort,
-                    limit,
-                    collectionId,
-                    categoryIds: categoryKey ? categoryKey.split(",") : undefined,
-                });
-                if (!cancelled) setProducts(res.data.data ?? []);
-            } catch {
-                if (!cancelled) setProducts([]);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setProductsCount((count) => count + 1);
     }, [sort, limit, collectionId, categoryKey]);
+    const productsRequest = useHttpRequest<ShopProductsResponse>(SHOP_PRODUCTS_REQUEST, {
+        sort,
+        limit,
+        collectionId,
+        categoryIds: categoryKey ? categoryKey.split(",") : undefined,
+    }, productsCount);
+    const products: ShopProductCardType[] = productsRequest.error ? [] : productsRequest.data?.data ?? [];
 
     if (products.length === 0) return null;
 

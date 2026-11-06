@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {LoaderCircle, RotateCcw} from "lucide-react";
+import {IconLoader2, IconRotate} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -133,9 +133,9 @@ function RefundProductOrderAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <RotateCcw size={16} className="text-warning" />
+                            <IconRotate size={16} className="text-warning" />
                         )}
                         {resolveLanguageKey("refund.confirm")}
                     </AlertDialogAction>

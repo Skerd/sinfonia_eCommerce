@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CircleX} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Dispute} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/dispute/dispute.dto.ts";
 
@@ -23,7 +23,7 @@ function CloseDisputeDropdown({dispute, onAction, resolveLanguageKey}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("close")}>
-            <CircleX size={16} className="text-destructive" />
+            <IconCircleX size={16} className="text-destructive" />
             <span className="">{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

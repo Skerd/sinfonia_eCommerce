@@ -2,13 +2,13 @@ import {useCallback, useEffect, useMemo, useRef, useState, type FormEvent, type 
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {Check, ChevronDown, Lock} from "lucide-react";
+import {IconCheck, IconChevronDown, IconLock} from "@tabler/icons-react";
 import {loadStripe, type Stripe as StripeJs} from "@stripe/stripe-js";
 import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {requestFromApi} from "@coreModule/helpers/apiClient/requestFromApi.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import {
@@ -163,7 +163,7 @@ function StripePaymentStep({clientSecret, payLabel, processingLabel, paymentFail
         <div className="flex flex-col gap-5">
             <PaymentElement />
             <Button size="lg" type="button" onClick={handlePay} disabled={!stripe || submitting} className="w-full">
-                <Lock className="h-4 w-4" aria-hidden />
+                <IconLock className="h-4 w-4" aria-hidden />
                 {submitting ? processingLabel : payLabel}
             </Button>
         </div>
@@ -211,21 +211,19 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const confirmOrder = useCallback(async (checkoutId: string) => {
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: BuyerProductOrder; siblingOrderIds?: string[]}>(
-                "/api/eCommerce/checkout/confirm",
-                {
-                    checkoutId,
-                    email: email || readStoredEmail() || undefined,
-                    phone: shippingAddress.phone || undefined,
-                },
-            );
+            // Silent: each step below shows its own `handleError` toast, as before.
+            const res = await requestFromApi<{data: BuyerProductOrder; siblingOrderIds?: string[]}>({method: "post", url: "/api/eCommerce/checkout/confirm", data: {
+                checkoutId,
+                email: email || readStoredEmail() || undefined,
+                phone: shippingAddress.phone || undefined,
+            }, silent: true});
             clearCheckoutIdempotencyKey();
             storeEmail("");
             await refreshCart();
             // The confirmation lives on the order's own page, so a refresh or Back keeps it
-            const siblings = res.data.siblingOrderIds?.filter(Boolean) ?? [];
+            const siblings = res.siblingOrderIds?.filter(Boolean) ?? [];
             const siblingQuery = siblings.length > 0 ? `&siblings=${siblings.join(",")}` : "";
-            navigate(`${base}/account/orders/${res.data.data._id}?placed=1${siblingQuery}`, {replace: true});
+            navigate(`${base}/account/orders/${res.data._id}?placed=1${siblingQuery}`, {replace: true});
         } catch (err) {
             handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("placeOrderError")});
         } finally {
@@ -236,10 +234,10 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     /** Starts or resumes the checkout for the current cart; restarts once if the stored one is stale. */
     const initCheckout = useCallback(async (allowRestart = true): Promise<Checkout | null> => {
         try {
-            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/init", {
+            const res = await requestFromApi<{data: Checkout}>({method: "post", url: "/api/eCommerce/checkout/init", data: {
                 idempotencyKey: getOrCreateIdempotencyKey(),
-            });
-            const next = res.data.data;
+            }, silent: true});
+            const next = res.data;
             setCheckout(next);
             setStep(stepFor(next));
             if (next.shippingAddress) setShippingAddress({...EMPTY_ADDRESS, ...next.shippingAddress});
@@ -274,8 +272,8 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await apiClient.get<{data: ShopCountry[]}>("/api/eCommerce/shopCountries");
-                if (!cancelled) setCountries(res.data.data ?? []);
+                const res = await requestFromApi<{data: ShopCountry[]}>({method: "get", url: "/api/eCommerce/shopCountries", silent: true});
+                if (!cancelled) setCountries(res.data ?? []);
             } catch {
                 if (!cancelled) setCountries([]);
             }
@@ -295,8 +293,8 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await apiClient.post<{data: ShopState[]}>("/api/eCommerce/shopStates", {countryId});
-                if (!cancelled) setStates(res.data.data ?? []);
+                const res = await requestFromApi<{data: ShopState[]}>({method: "post", url: "/api/eCommerce/shopStates", data: {countryId}, silent: true});
+                if (!cancelled) setStates(res.data ?? []);
             } catch {
                 if (!cancelled) setStates([]);
             }
@@ -311,9 +309,9 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await apiClient.post<{data: CustomerAddress[]}>("/api/eCommerce/customerAddress/my", {});
+                const res = await requestFromApi<{data: CustomerAddress[]}>({method: "post", url: "/api/eCommerce/customerAddress/my", data: {}, silent: true});
                 if (cancelled) return;
-                const addresses = res.data.data ?? [];
+                const addresses = res.data ?? [];
                 setSavedAddresses(addresses);
                 // Start from the default shipping address unless the checkout already has one
                 const preferred = addresses.find(address => address.isDefault && address.type === "shipping")
@@ -372,11 +370,11 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         storeEmail(email.trim());
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/address", {
+            const res = await requestFromApi<{data: Checkout}>({method: "post", url: "/api/eCommerce/checkout/address", data: {
                 checkoutId: checkout._id,
                 shippingAddress,
-            });
-            setCheckout(res.data.data);
+            }, silent: true});
+            setCheckout(res.data);
             setRateIndex(0);
             setStep("shipping");
         } catch (err) {
@@ -391,11 +389,11 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         if (!checkout) return;
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/shipping", {
+            const res = await requestFromApi<{data: Checkout}>({method: "post", url: "/api/eCommerce/checkout/shipping", data: {
                 checkoutId: checkout._id,
                 rateIndex,
-            });
-            setCheckout(res.data.data);
+            }, silent: true});
+            setCheckout(res.data);
             setStep("payment");
         } catch (err) {
             handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("shippingError")});
@@ -408,11 +406,11 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         if (!checkout || checkout.paymentMethod === method) return;
         setSubmitting(true);
         try {
-            const res = await apiClient.post<{data: Checkout}>("/api/eCommerce/checkout/payment", {
+            const res = await requestFromApi<{data: Checkout}>({method: "post", url: "/api/eCommerce/checkout/payment", data: {
                 checkoutId: checkout._id,
                 paymentMethod: method,
-            });
-            setCheckout(res.data.data);
+            }, silent: true});
+            setCheckout(res.data);
         } catch (err) {
             handleError(err, {context: "Checkout", showToast: true, fallbackMessage: resolveLanguageKey("paymentMethodError")});
         } finally {
@@ -507,7 +505,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                     "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold",
                                     done ? "bg-foreground text-background" : current ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground",
                                 )}>
-                                    {done ? <Check className="h-3.5 w-3.5" aria-hidden /> : index + 1}
+                                    {done ? <IconCheck className="h-3.5 w-3.5" aria-hidden /> : index + 1}
                                 </span>
                                 <span className={cn("hidden sm:inline", current ? "font-semibold" : done ? "" : "text-muted-foreground")}>
                                     {resolveLanguageKey(`steps.${id}`)}
@@ -540,7 +538,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
                     <span className="flex items-center gap-2 text-sm font-medium">
                         {resolveLanguageKey("showSummary")}
-                        <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
+                        <IconChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden />
                     </span>
                     <span className="font-display text-lg font-semibold tabular-nums">{formatMoney(checkout?.grandTotal ?? cart?.subtotal, currency)}</span>
                 </summary>

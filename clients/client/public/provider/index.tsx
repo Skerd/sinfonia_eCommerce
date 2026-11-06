@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {CalendarClock, ChevronRight, Star} from "lucide-react";
+import {IconCalendarTime, IconChevronRight, IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import ShopListingCard from "@eCommerceModule/clients/client/public/shared/shopListingCard.tsx";
@@ -14,33 +14,21 @@ import type {ShopProviderResponse} from "armonia/src/modules/eCommerce/api/eComm
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
+const PROVIDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/shopProvider"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/provider/index.tsx";
 
 function ProviderPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const base = useSectionBase();
     const [searchParams] = useSearchParams();
     const id = searchParams.get("id") ?? "";
-    const [data, setData] = useState<ShopProviderResponse["data"] | null>(null);
-    const [loading, setLoading] = useState(true);
-
+    const [providerCount, setProviderCount] = useState(0);
     useEffect(() => {
-        if (!id) return;
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const res = await apiClient.post<ShopProviderResponse>("/api/eCommerceMarketplace/shopProvider", {id});
-                if (!cancelled) setData(res.data.data);
-            } catch {
-                if (!cancelled) setData(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (id) setProviderCount((count) => count + 1);
     }, [id]);
+    const providerRequest = useHttpRequest<ShopProviderResponse>(PROVIDER_REQUEST, {id}, providerCount);
+    const data: ShopProviderResponse["data"] | null = providerRequest.error ? null : providerRequest.data?.data ?? null;
+    // Waits for an id, as before the first request.
+    const loading = providerRequest.loading || providerCount === 0;
 
     if (id && loading) {
         return (
@@ -72,7 +60,7 @@ function ProviderPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                 <nav aria-label={resolveLanguageKey("breadcrumb")} className="text-sm text-muted-foreground">
                     <ol className="flex flex-wrap items-center gap-1.5">
                         <li><Link to={`${base}/services`} className="hover:text-foreground">{resolveLanguageKey("services")}</Link></li>
-                        <li aria-hidden><ChevronRight className="h-3.5 w-3.5" /></li>
+                        <li aria-hidden><IconChevronRight className="h-3.5 w-3.5" /></li>
                         <li aria-current="page" className="text-foreground">{provider.name}</li>
                     </ol>
                 </nav>
@@ -86,7 +74,7 @@ function ProviderPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
                                     {provider.reviewCount ? (
                                         <a href="#shop-reviews" className="inline-flex items-center gap-1 hover:text-foreground">
-                                            <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
+                                            <IconStar className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
                                             {resolveLanguageKey("ratingSummary")
                                                 .replace("{average}", provider.averageRating?.toFixed(1) ?? "")
                                                 .replace("{count}", String(provider.reviewCount))}
@@ -113,7 +101,7 @@ function ProviderPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                     {provider.availability?.length ? (
                         <div className="flex flex-col gap-3 rounded-2xl bg-card p-5">
                             <h2 className="inline-flex items-center gap-2 text-sm font-semibold">
-                                <CalendarClock className="h-4 w-4" aria-hidden />
+                                <IconCalendarTime className="h-4 w-4" aria-hidden />
                                 {resolveLanguageKey("availability")}
                             </h2>
                             <ShopAvailability slots={provider.availability} languageCode={languageCode} />

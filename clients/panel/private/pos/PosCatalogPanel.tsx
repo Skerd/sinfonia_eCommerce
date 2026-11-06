@@ -1,8 +1,9 @@
 import {useEffect, useRef, useState, type RefObject} from "react";
-import {Check, ScanBarcode, Search, ShoppingBag} from "lucide-react";
+import {IconCheck, IconBarcode, IconSearch, IconShoppingBag} from "@tabler/icons-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import LoadMoreSentinel from "@coreModule/components/custom/loader/loadMoreSentinel.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {
     CatalogCategory,
@@ -89,7 +90,7 @@ export default function PosCatalogPanel({
         <section className="flex min-h-0 min-w-0 flex-1 flex-col border-b border-border lg:border-b-0 lg:border-r">
             <div className="flex shrink-0 gap-2 border-b border-border bg-muted/40 p-3">
                 <div className="relative min-w-0 flex-1">
-                    <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                    <IconSearch className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                     <Input
                         placeholder={rk("searchPlaceholder")}
                         value={search}
@@ -99,7 +100,7 @@ export default function PosCatalogPanel({
                 </div>
                 {config?.ifaceBarcodeScanner !== false && (
                     <div className="relative w-36 shrink-0 sm:w-48">
-                        <ScanBarcode className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                        <IconBarcode className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                         <Input
                             ref={barcodeRef}
                             data-pos-barcode="1"
@@ -120,8 +121,9 @@ export default function PosCatalogPanel({
 
             <div className="flex shrink-0 items-center gap-2 border-b border-border bg-card/60 px-3 py-2">
                     <div ref={categoryScrollRef} className="hide-scrollbar flex min-w-0 flex-1 gap-1.5 overflow-x-auto overflow-y-hidden">
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             onClick={() => onCategoryChange(null)}
                             className={cn(
                                 "shrink-0 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
@@ -131,13 +133,14 @@ export default function PosCatalogPanel({
                             )}
                         >
                             {rk("categories.all")}
-                        </button>
+                        </Button>
                         {categories.map((cat) => {
                             const selected = categoryId === cat._id;
                             return (
-                                <button
+                                <Button
                                     key={cat._id}
                                     type="button"
+                                    variant="bare"
                                     onClick={() => onCategoryChange(selected ? null : cat._id)}
                                     className={cn(
                                         "shrink-0 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
@@ -147,7 +150,7 @@ export default function PosCatalogPanel({
                                     )}
                                 >
                                     {cat.name}
-                                </button>
+                                </Button>
                             );
                         })}
                         {categoryQueryNormalized && !categoriesLoading && categories.length === 0 && (
@@ -191,8 +194,9 @@ export default function PosCatalogPanel({
                                 className="h-8 w-full text-xs focus-visible:ring-success/50"
                             />
                         </div>
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             aria-label={rk("categories.search")}
                             aria-expanded={categorySearchOpen}
                             onClick={() => {
@@ -206,8 +210,8 @@ export default function PosCatalogPanel({
                                     : "border-border bg-background text-muted-foreground hover:border-success/40 hover:text-foreground",
                             )}
                         >
-                            <Search className="size-4" />
-                        </button>
+                            <IconSearch className="size-4" />
+                        </Button>
                     </div>
                 </div>
 
@@ -233,9 +237,10 @@ export default function PosCatalogPanel({
                                 product.stockQty != null &&
                                 product.stockQty <= 0;
                             return (
-                                <button
+                                <Button
                                     key={product._id}
                                     type="button"
+                                    variant="bare"
                                     disabled={outOfStock && !inCart}
                                     onClick={() => {
                                         if (outOfStock) return;
@@ -284,7 +289,7 @@ export default function PosCatalogPanel({
                                         )}
                                         {inCart && (
                                             <span className="absolute right-1.5 top-1.5 z-[2] flex h-5 min-w-5 items-center justify-center rounded-full bg-success px-1 text-3xs font-bold text-success-foreground shadow-sm">
-                                                {cartQty > 1 ? cartQty : <Check className="size-3" strokeWidth={3} />}
+                                                {cartQty > 1 ? cartQty : <IconCheck className="size-3" strokeWidth={3} />}
                                             </span>
                                         )}
                                         {product.stockQty != null && !product.hasVariants && (
@@ -322,12 +327,12 @@ export default function PosCatalogPanel({
                                             ) : null}
                                         </div>
                                     </div>
-                                </button>
+                                </Button>
                             );
                         })}
                         {!catalog.length && (
                             <div className="col-span-full flex flex-col items-center justify-center gap-2 py-16 text-center text-sm text-muted-foreground">
-                                <ShoppingBag className="size-8 opacity-40" />
+                                <IconShoppingBag className="size-8 opacity-40" />
                                 {rk("catalogEmpty")}
                             </div>
                         )}

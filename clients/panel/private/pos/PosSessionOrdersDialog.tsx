@@ -1,4 +1,4 @@
-import {Printer, Undo2} from "lucide-react";
+import {IconPrinter, IconArrowBackUp} from "@tabler/icons-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
@@ -73,7 +73,7 @@ export default function PosSessionOrdersDialog({
                                             onClick={() => onRefundOrder(order)}
                                             title={rk("refund.title")}
                                         >
-                                            <Undo2 className="size-3.5" />
+                                            <IconArrowBackUp className="size-3.5" />
                                             {rk("sessionOrders.refund")}
                                         </Button>
                                     )}
@@ -83,7 +83,7 @@ export default function PosSessionOrdersDialog({
                                     className="h-8"
                                     onClick={() => onReprintOrder(order._id)}
                                 >
-                                    <Printer className="size-3.5" />
+                                    <IconPrinter className="size-3.5" />
                                     {rk("sessionOrders.reprint")}
                                 </Button>
                             </div>

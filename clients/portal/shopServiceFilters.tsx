@@ -1,7 +1,6 @@
 import {compose} from "redux";
-import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {CatalogFilterSelect} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
 import {uniqueBySlug, withListings} from "./shopCategories.ts";
 import type {
@@ -9,22 +8,14 @@ import type {
     ShopListingTaxonomyResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
 
+const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/shopListingTaxonomy"};
+
 /** The service catalog's filter: the marketplace categories that lead to at least one service. */
 function ShopServiceFilters({resolveLanguageKey}: WithLanguageType) {
-    const [categories, setCategories] = useState<ShopListingCategory[]>([]);
-
-    useEffect(() => {
-        let cancelled = false;
-        apiClient.post<ShopListingTaxonomyResponse>("/api/eCommerceMarketplace/shopListingTaxonomy", {})
-            .then((res) => {
-                if (cancelled) return;
-                const all = res.data.data.categories;
-                const keep = withListings(all);
-                setCategories(uniqueBySlug(all.filter((category) => keep.has(category._id))));
-            })
-            .catch(() => undefined);
-        return () => { cancelled = true; };
-    }, []);
+    const taxonomy = useHttpRequest<ShopListingTaxonomyResponse>(TAXONOMY_REQUEST, {}, 1);
+    const all = taxonomy.data?.data.categories ?? [];
+    const keep = withListings(all);
+    const categories: ShopListingCategory[] = uniqueBySlug(all.filter((category) => keep.has(category._id)));
 
     return (
         <CatalogFilterSelect

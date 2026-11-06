@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {KeyRound} from "lucide-react";
+import {IconKey} from "@tabler/icons-react";
 
 type Props = WithLanguageType & {
     onAction: (action: string) => void;
@@ -11,7 +11,7 @@ type Props = WithLanguageType & {
 function ClearManagerPinMenuItem({onAction, resolveLanguageKey}: Props) {
     return (
         <DropdownMenuItem onClick={() => onAction("clearManagerPin")}>
-            <KeyRound size={16} />
+            <IconKey size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

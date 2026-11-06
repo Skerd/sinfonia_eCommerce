@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {Clock, ImageOff, MapPin, Star} from "lucide-react";
+import {IconClock, IconPhotoOff, IconMapPin, IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
@@ -46,7 +46,7 @@ function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProp
                     />
                 ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
-                        <ImageOff className="h-6 w-6" aria-hidden />
+                        <IconPhotoOff className="h-6 w-6" aria-hidden />
                         <span className="text-xs">{resolveLanguageKey("noImage")}</span>
                     </div>
                 )}
@@ -64,7 +64,7 @@ function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProp
                 </div>
                 {listing.deliveryDays ? (
                     <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-foreground/85 px-2.5 py-1 text-[11px] font-semibold text-background backdrop-blur">
-                        <Clock className="h-3 w-3" aria-hidden />
+                        <IconClock className="h-3 w-3" aria-hidden />
                         {resolveLanguageKey(listing.deliveryDays === 1 ? "deliveryDay" : "deliveryDays").replace("{days}", String(listing.deliveryDays))}
                     </span>
                 ) : null}
@@ -80,7 +80,7 @@ function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProp
                 <h3 className="line-clamp-2 text-[15px] font-medium leading-snug underline-offset-4 group-hover:underline">{listing.title}</h3>
                 {location && (
                     <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                        <IconMapPin className="h-3.5 w-3.5 shrink-0" aria-hidden />
                         <span className="truncate">{location}</span>
                     </span>
                 )}
@@ -92,7 +92,7 @@ function ShopListingCardInner({resolveLanguageKey, listing}: ShopListingCardProp
                     </span>
                     {listing.reviewCount ? (
                         <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-muted-foreground">
-                            <Star className="h-3.5 w-3.5 fill-foreground text-foreground" aria-hidden />
+                            <IconStar className="h-3.5 w-3.5 fill-foreground text-foreground" aria-hidden />
                             <span aria-hidden>{listing.avgRating?.toFixed(1)} ({listing.reviewCount})</span>
                             <span className="sr-only">
                                 {resolveLanguageKey("rating")

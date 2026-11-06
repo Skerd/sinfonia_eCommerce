@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 type ActivateListingDropdownProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -16,7 +16,7 @@ function ActivateListingDropdown({onAction, resolveLanguageKey}: ActivateListing
 
     return (
         <DropdownMenuItem onClick={() => onAction("activate")}>
-            <CircleCheck size={16} className="text-success" />
+            <IconCircleCheck size={16} className="text-success" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/inputs/objectIdChipsInput.tsx";
 import {editPosConfigFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/editPosConfig.form.validator.ts";
@@ -84,5 +84,5 @@ export default createGenericEditPage<PosConfig, EditPosConfigFormType>({
             },
         };
     },
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

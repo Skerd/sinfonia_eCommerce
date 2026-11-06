@@ -14,7 +14,7 @@ export default createGenericCreatePage<CreateTaxZoneFormType>({
         country: "",
         priority: 0,
         rates: [{name: "Default", rate: 0, isCompound: false, appliesTo: "all"}],
-    } as unknown as CreateTaxZoneFormType,
+    },
     successPath: "/tenancy/systemSettings/taxzones",
     submitIcon: <IconPlus />,
 });

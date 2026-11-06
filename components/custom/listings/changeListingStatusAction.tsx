@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useRef, useState} from "react";
-import {CircleCheck, CircleX, LoaderCircle} from "lucide-react";
+import {IconCircleCheck, IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -117,11 +117,11 @@ function ChangeListingStatusAction({
                         disabled={loading}
                     >
                         {loading ? (
-                            <LoaderCircle className="animate-spin" />
+                            <IconLoader2 className="animate-spin" />
                         ) : isActivate ? (
-                            <CircleCheck size={16} />
+                            <IconCircleCheck size={16} />
                         ) : (
-                            <CircleX size={16} />
+                            <IconCircleX size={16} />
                         )}
                         {resolveLanguageKey(`${actionKey}.confirm`)}
                     </AlertDialogAction>

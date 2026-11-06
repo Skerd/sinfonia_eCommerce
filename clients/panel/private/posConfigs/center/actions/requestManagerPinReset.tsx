@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Mail} from "lucide-react";
+import {IconMail} from "@tabler/icons-react";
 
 type Props = WithLanguageType & {
     onAction: (action: string) => void;
@@ -11,7 +11,7 @@ type Props = WithLanguageType & {
 function RequestManagerPinResetMenuItem({onAction, resolveLanguageKey}: Props) {
     return (
         <DropdownMenuItem onClick={() => onAction("requestManagerPinReset")}>
-            <Mail size={16} />
+            <IconMail size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

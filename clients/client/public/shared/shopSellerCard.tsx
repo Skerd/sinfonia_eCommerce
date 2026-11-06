@@ -1,6 +1,6 @@
 import type {KeyboardEvent, MouseEvent, ReactNode} from "react";
 import {compose} from "redux";
-import {Store} from "lucide-react";
+import {IconBuildingStore} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -10,6 +10,7 @@ import {companySiteOrigin} from "@coreModule/clients/portal/shared/portalZone.ts
 import {useShopConfig} from "./shopConfigContext.tsx";
 import {resolveShopMediaUrl} from "./shopMedia.ts";
 import {ShopProviderAvatar} from "./shopMarketplace.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopSellerCard.tsx";
 
@@ -91,8 +92,9 @@ function SellerShopControl({
 }) {
     if (nestedInLink) {
         return (
-            <button
+            <Button
                 type="button"
+                variant="bare"
                 aria-label={ariaLabel}
                 className={cn("cursor-pointer text-left", className)}
                 onClick={(event) => openSellerShop(event, href)}
@@ -101,7 +103,7 @@ function SellerShopControl({
                 }}
             >
                 {children}
-            </button>
+            </Button>
         );
     }
 
@@ -201,7 +203,7 @@ function ShopSellerCardInner({
                     href={shopHref}
                     className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground transition-colors hover:border-foreground"
                 >
-                    <Store className="h-3.5 w-3.5" aria-hidden />
+                    <IconBuildingStore className="h-3.5 w-3.5" aria-hidden />
                     {resolveLanguageKey("visitShopShort")}
                 </a>
             ) : null}

@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editCustomerAddressFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/editCustomerAddress.form.validator.ts";
 import type {EditCustomerAddressFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.schema-def.ts";
@@ -10,7 +10,7 @@ export default createGenericEditPage<CustomerAddress, EditCustomerAddressFormTyp
     accessModel: "customerAddresses",
     apiUrl: "/api/eCommerce/customerAddress",
     schema: editCustomerAddressFormSchema,
-    mapEntityData: (data: any) => ({
+    mapEntityData: (data) => ({
         ...data,
         type: data.type,
         customer: data.customer?._id ?? data.customer,
@@ -23,5 +23,5 @@ export default createGenericEditPage<CustomerAddress, EditCustomerAddressFormTyp
     buildFormExtras: (_entityId, params) => ({
         lockCustomer: params.get("lockCustomer") === "1",
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

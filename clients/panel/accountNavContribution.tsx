@@ -1,4 +1,4 @@
-import {Bookmark, BriefcaseBusiness, MapPin} from "lucide-react";
+import {IconBookmark, IconBriefcase, IconMapPin} from "@tabler/icons-react";
 import type {AccountNavContribution} from "@coreModule/helpers/types/accountNavContribution.types.ts";
 
 const eCommerceAccountNavContribution: AccountNavContribution = {
@@ -9,7 +9,7 @@ const eCommerceAccountNavContribution: AccountNavContribution = {
             {
                 title: resolveLanguageKey("menus.eCommerce.customeraddresses.title"),
                 url: "/account/addresses",
-                icon: MapPin,
+                icon: IconMapPin,
                 permissions: ["customerAddresses"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -17,7 +17,7 @@ const eCommerceAccountNavContribution: AccountNavContribution = {
             {
                 title: resolveLanguageKey("menus.eCommerce.savedsearches.title"),
                 url: "/account/savedsearches",
-                icon: Bookmark,
+                icon: IconBookmark,
                 permissions: ["savedsearches"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -25,7 +25,7 @@ const eCommerceAccountNavContribution: AccountNavContribution = {
             {
                 title: resolveLanguageKey("menus.eCommerce.providerprofile.title"),
                 url: "/account/providerprofile",
-                icon: BriefcaseBusiness,
+                icon: IconBriefcase,
                 permissions: ["providerprofiles"],
                 usersPermissions: [],
                 atLeastOnePermission: true,

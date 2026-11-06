@@ -10,7 +10,7 @@ import type {AnalyticsProductsResponse} from "armonia/src/modules/eCommerce/api/
 import type {AnalyticsCartsResponse} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.carts.response.type.ts";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
@@ -52,6 +52,15 @@ type AnalyticsData = {
     carts: AnalyticsCartsResponse | null;
 };
 
+const REVENUE_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/analytics/revenue"};
+const ORDERS_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/analytics/orders"};
+const INVENTORY_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/analytics/inventory"};
+const PRODUCTS_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/analytics/products"};
+const CARTS_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/analytics/carts"};
+
+/** A GET url with its query string (the analytics endpoints read the period and currency from it). */
+const withQuery = (url: string, query: Record<string, string>) => `${url}?${new URLSearchParams(query).toString()}`;
+
 const EMPTY_DATA: AnalyticsData = {
     revenue: null,
     orders: null,
@@ -82,43 +91,28 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
     const [period, setPeriod] = useState<AnalyticsPeriod>("30d");
     const [currencyId, setCurrencyId] = useState("");
-    const [data, setData] = useState<AnalyticsData>(EMPTY_DATA);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-
-    const fetchAnalytics = useCallback(async () => {
-        setLoading(true);
-        setError(false);
-        try {
-            const params: {period: AnalyticsPeriod; currency?: string} = {period};
-            if (currencyId) params.currency = currencyId;
-            const query = {params};
-            const [revenueRes, ordersRes, inventoryRes, productsRes, cartsRes] = await Promise.all([
-                apiClient.get<{data: AnalyticsRevenueResponse}>("/api/eCommerce/analytics/revenue", query),
-                apiClient.get<{data: AnalyticsOrdersResponse}>("/api/eCommerce/analytics/orders", {params: {period}}),
-                apiClient.get<{data: AnalyticsInventoryResponse}>("/api/eCommerce/analytics/inventory"),
-                apiClient.get<{data: AnalyticsProductsResponse}>("/api/eCommerce/analytics/products", query),
-                apiClient.get<{data: AnalyticsCartsResponse}>("/api/eCommerce/analytics/carts"),
-            ]);
-            setData({
-                revenue: revenueRes.data.data ?? null,
-                orders: ordersRes.data.data ?? null,
-                inventory: inventoryRes.data.data ?? null,
-                products: productsRes.data.data ?? null,
-                carts: cartsRes.data.data ?? null,
-            });
-        } catch {
-            setError(true);
-            setData(EMPTY_DATA);
-        } finally {
-            setLoading(false);
-        }
-    }, [period, currencyId]);
-
+    // The five widgets load together; one failure shows the error state for the page, as one request did.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchAnalytics = useCallback(() => setFetchCount((count) => count + 1), []);
     useEffect(() => {
-        if (!read) return;
-        void fetchAnalytics();
-    }, [fetchAnalytics, read]);
+        if (read) fetchAnalytics();
+    }, [fetchAnalytics, read, period, currencyId]);
+    const filterQuery: Record<string, string> = currencyId ? {period, currency: currencyId} : {period};
+    const revenueRequest = useHttpRequest<{data: AnalyticsRevenueResponse}>(REVENUE_REQUEST, {}, fetchCount, true, {}, {url: withQuery(REVENUE_REQUEST.url, filterQuery)});
+    const ordersRequest = useHttpRequest<{data: AnalyticsOrdersResponse}>(ORDERS_REQUEST, {}, fetchCount, true, {}, {url: withQuery(ORDERS_REQUEST.url, {period})});
+    const inventoryRequest = useHttpRequest<{data: AnalyticsInventoryResponse}>(INVENTORY_REQUEST, {}, fetchCount);
+    const productsRequest = useHttpRequest<{data: AnalyticsProductsResponse}>(PRODUCTS_REQUEST, {}, fetchCount, true, {}, {url: withQuery(PRODUCTS_REQUEST.url, filterQuery)});
+    const cartsRequest = useHttpRequest<{data: AnalyticsCartsResponse}>(CARTS_REQUEST, {}, fetchCount);
+    const requests = [revenueRequest, ordersRequest, inventoryRequest, productsRequest, cartsRequest];
+    const loading = fetchCount === 0 || requests.some((request) => request.loading);
+    const error = requests.some((request) => !!request.error);
+    const data: AnalyticsData = error ? EMPTY_DATA : {
+        revenue: revenueRequest.data?.data ?? null,
+        orders: ordersRequest.data?.data ?? null,
+        inventory: inventoryRequest.data?.data ?? null,
+        products: productsRequest.data?.data ?? null,
+        carts: cartsRequest.data?.data ?? null,
+    };
 
     const totalProducts = useMemo(
         () => Object.values(data.products?.byStatus ?? {}).reduce((sum, count) => sum + count, 0),
@@ -180,7 +174,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                             </SelectContent>
                         </Select>
                     )}
-                    <Button type="button" variant="outline" size="sm" onClick={() => void fetchAnalytics()} disabled={loading}>
+                    <Button type="button" variant="outline" size="sm" onClick={fetchAnalytics} disabled={loading}>
                         {rk("refresh")}
                     </Button>
                 </div>
@@ -190,7 +184,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                 <ErrorView
                     title={rk("errorTitle")}
                     description={rk("errorDescription")}
-                    onClick={() => void fetchAnalytics()}
+                    onClick={fetchAnalytics}
                 />
             )}
 

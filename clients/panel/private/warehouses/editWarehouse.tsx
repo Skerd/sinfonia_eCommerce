@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editWarehouseFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/editWarehouse.form.validator.ts";
 import type {EditWarehouseFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.schema-def.ts";
@@ -26,5 +26,5 @@ export default createGenericEditPage<Warehouse, EditWarehouseFormType>({
                 longitude: 19.8189,
             },
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

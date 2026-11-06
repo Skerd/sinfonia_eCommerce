@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {ChevronLeft, ChevronRight, Plus} from "lucide-react";
+import {IconChevronLeft, IconChevronRight, IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
@@ -16,35 +16,22 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/jobs/
 
 const PAGE_SIZE = 10;
 
+const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/taskRequest/my"};
+
 function JobsPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {formatMoney} = useShopConfig();
     const [searchParams, setSearchParams] = useSearchParams();
     const page = Math.max(1, Number(searchParams.get("page")) || 1);
 
-    const [jobs, setJobs] = useState<BuyerTaskRequest[]>([]);
-    const [total, setTotal] = useState(0);
-    const [loading, setLoading] = useState(true);
-
+    const [listCount, setListCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: BuyerTaskRequest[]; total: number}>("/api/eCommerceMarketplace/taskRequest/my", {page, limit: PAGE_SIZE});
-                if (cancelled) return;
-                setJobs(res.data.data ?? []);
-                setTotal(res.data.total ?? 0);
-            } catch {
-                if (!cancelled) setJobs([]);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setListCount((count) => count + 1);
     }, [page]);
+    const list = useHttpRequest<{data: BuyerTaskRequest[]; total: number}>(LIST_REQUEST, {page, limit: PAGE_SIZE}, listCount);
+    const jobs: BuyerTaskRequest[] = list.error ? [] : list.data?.data ?? [];
+    const total = list.data?.total ?? 0;
+    const loading = list.loading || listCount === 0;
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
     const goToPage = (next: number) => setSearchParams(next > 1 ? {page: String(next)} : {});
@@ -57,7 +44,7 @@ function JobsPage({resolveLanguageKey}: WithLanguageType) {
                     <p className="text-sm text-muted-foreground">{resolveLanguageKey("lead")}</p>
                 </div>
                 <Button asChild size="lg"><Link to={`${base}/account/jobs/new`}>
-                    <Plus className="h-4 w-4" aria-hidden />
+                    <IconPlus className="h-4 w-4" aria-hidden />
                     {resolveLanguageKey("postJob")}
                 </Link></Button>
             </div>
@@ -98,7 +85,7 @@ function JobsPage({resolveLanguageKey}: WithLanguageType) {
                                 <span className="shrink-0 rounded-full bg-muted px-3 py-1 text-sm font-medium tabular-nums">
                                     {resolveLanguageKey(job.bidCount === 1 ? "bidCountOne" : "bidCount").replace("{count}", String(job.bidCount ?? 0))}
                                 </span>
-                                <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
+                                <IconChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
                             </Link>
                         </li>
                     ))}
@@ -114,7 +101,7 @@ function JobsPage({resolveLanguageKey}: WithLanguageType) {
                         variant="ghost" size="icon-lg"
                         aria-label={resolveLanguageKey("previousPage")}
                     >
-                        <ChevronLeft className="h-4 w-4" />
+                        <IconChevronLeft className="h-4 w-4" />
                     </Button>
                     <span className="text-sm text-muted-foreground">
                         {resolveLanguageKey("pageOf").replace("{page}", String(page)).replace("{total}", String(totalPages))}
@@ -126,7 +113,7 @@ function JobsPage({resolveLanguageKey}: WithLanguageType) {
                         variant="ghost" size="icon-lg"
                         aria-label={resolveLanguageKey("nextPage")}
                     >
-                        <ChevronRight className="h-4 w-4" />
+                        <IconChevronRight className="h-4 w-4" />
                     </Button>
                 </nav>
             )}

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {Landmark, LoaderCircle, RefreshCw} from "lucide-react";
+import {IconBuildingBank, IconLoader2, IconRefresh} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -90,7 +90,7 @@ function ConnectAccountAction({
 
     if (!write) return <HiddenElement />;
 
-    const ActionIcon = actionKey === "createAccountLink" ? Landmark : RefreshCw;
+    const ActionIcon = actionKey === "createAccountLink" ? IconBuildingBank : IconRefresh;
     const iconClass = actionKey === "createAccountLink" ? "text-primary" : "text-info";
 
     return (
@@ -116,7 +116,7 @@ function ConnectAccountAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
                             <ActionIcon size={16} className={iconClass} />
                         )}

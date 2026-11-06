@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {ImageOff} from "lucide-react";
+import {IconPhotoOff} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -61,7 +61,7 @@ function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlo
                     />
                 ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
-                        <ImageOff className="h-6 w-6" aria-hidden />
+                        <IconPhotoOff className="h-6 w-6" aria-hidden />
                         <span className="text-xs">{resolveLanguageKey("noImage")}</span>
                     </div>
                 )}

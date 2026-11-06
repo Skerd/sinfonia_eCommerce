@@ -26,7 +26,9 @@ import CreateMilestoneDropdown from "@eCommerceModule/clients/panel/private/orde
 import ReleaseMilestoneDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/releaseMilestoneDropdown.tsx";
 import CreateMilestoneAction from "@eCommerceModule/components/custom/orders/createMilestoneAction.tsx";
 import ReleaseMilestoneAction from "@eCommerceModule/components/custom/orders/releaseMilestoneAction.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+
+const ORDER_SINGLE_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/order/single"};
 
 export type OrderSheetViewOwnProps = {
     open: boolean;
@@ -68,6 +70,16 @@ function OrderSheetView({
 
     const entityId = orderProp?._id ?? fetchId;
     const asOrder = sheetData as Order;
+
+    /** Re-reads the order after an action that changes its deliveries, milestones or revisions. */
+    const [reloadCount, setReloadCount] = useState(0);
+    useHttpRequest<Order>(ORDER_SINGLE_REQUEST, {_id: entityId}, reloadCount, true, {
+        success: (order) => {
+            setSheetData(order);
+            onOrderUpdated?.(order);
+        },
+    });
+    const reloadOrder = () => setReloadCount((count) => count + 1);
     const displayLabel = asOrder.listing?.title || asOrder.taskRequest?.title || String(entityId ?? "");
 
     if (!viewConfig) return null;
@@ -82,13 +94,6 @@ function OrderSheetView({
         });
     };
 
-    /** Re-reads the order after an action that changes its deliveries, milestones or revisions. */
-    const reloadOrder = () => {
-        apiClient.post<Order>("/api/eCommerceMarketplace/order/single", {_id: entityId}).then((res) => {
-            setSheetData(res.data);
-            onOrderUpdated?.(res.data);
-        });
-    };
 
     return (
         <>

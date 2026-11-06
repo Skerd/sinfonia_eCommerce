@@ -9,7 +9,7 @@ export default createGenericCreatePage<CreateStockTransferFormType>({
     accessModel: "stockTransfers",
     apiUrl: "/api/eCommerce/stockTransfer",
     schema: createStockTransferFormSchema,
-    defaultValues: {fromWarehouse: "", toWarehouse: "", lines: [{product: "", quantity: 1}]} as unknown as CreateStockTransferFormType,
+    defaultValues: {fromWarehouse: "", toWarehouse: "", lines: [{product: "", quantity: 1}]},
     successPath: "/eCommerce/stocktransfers",
     submitIcon: <IconPlus />,
 });

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 type ConfirmOrderDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -31,7 +31,7 @@ function ConfirmOrderDropdown({order, onAction, resolveLanguageKey}: ConfirmOrde
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleCheck size={16} className="text-success" />
+            <IconCircleCheck size={16} className="text-success" />
             <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
-import {LockOpen} from "lucide-react";
+import {IconLockOpen} from "@tabler/icons-react";
 
 type ReopenTaskRequestDropdownProps = WithLanguageType & {
     entity: TaskRequest;
@@ -33,7 +33,7 @@ function ReopenTaskRequestDropdown({entity, onAction, resolveLanguageKey}: Reope
         <DropdownMenuItem
             onClick={() => {triggerAction();}}
         >
-            <LockOpen className="size-4" />
+            <IconLockOpen className="size-4" />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

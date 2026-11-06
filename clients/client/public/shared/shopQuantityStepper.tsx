@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {Minus, Plus, Trash2} from "lucide-react";
+import {IconMinus, IconPlus, IconTrash} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -49,7 +49,7 @@ function ShopQuantityStepperInner({
                 disabled={!canDecrease}
                 aria-label={(removes ? resolveLanguageKey("remove") : resolveLanguageKey("decrease")).replace("{item}", itemLabel)}
             >
-                {removes ? <Trash2 /> : <Minus />}
+                {removes ? <IconTrash /> : <IconMinus />}
             </Button>
             <ButtonGroupText className={cn("min-w-10 justify-center bg-card font-medium tabular-nums", size === "sm" && "px-2")} aria-live="polite">
                 {value}
@@ -62,7 +62,7 @@ function ShopQuantityStepperInner({
                 disabled={!canIncrease}
                 aria-label={resolveLanguageKey("increase").replace("{item}", itemLabel)}
             >
-                <Plus />
+                <IconPlus />
             </Button>
         </ButtonGroup>
     );

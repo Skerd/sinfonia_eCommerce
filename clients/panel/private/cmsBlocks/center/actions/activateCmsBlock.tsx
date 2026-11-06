@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Power} from "lucide-react";
+import {IconPower} from "@tabler/icons-react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 
 type ActivateCmsBlockProps = WithLanguageType & {
@@ -19,7 +19,7 @@ function ActivateCmsBlock({entity, resolveLanguageKey, onAction}: ActivateCmsBlo
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateCmsBlock")}>
-            <Power className="text-success" size={16} />
+            <IconPower className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

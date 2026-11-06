@@ -2,11 +2,11 @@ import {useCallback, useEffect, useState} from "react";
 import {Link, useNavigate, useParams, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowLeft, CircleCheck, Clock, MapPin} from "lucide-react";
+import {IconArrowLeft, IconCircleCheck, IconClock, IconMapPin} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
@@ -19,6 +19,11 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/jobs/jobDetail.tsx";
 
+const JOB_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/taskRequest/mySingle"};
+const ACCEPT_BID_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/bid/accept"};
+/** Reject a bid, close or reopen the job: the url is set per action. */
+const JOB_ACTION_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace"};
+
 function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {jobId = ""} = useParams();
@@ -27,57 +32,42 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
     const navigate = useNavigate();
     const {formatMoney} = useShopConfig();
 
-    const [job, setJob] = useState<BuyerTaskRequest | null>(null);
-    const [loading, setLoading] = useState(true);
     const [confirmBidId, setConfirmBidId] = useState<string | null>(null);
-    const [busy, setBusy] = useState(false);
 
-    const load = useCallback(async () => {
-        try {
-            const res = await apiClient.post<{data: BuyerTaskRequest}>("/api/eCommerceMarketplace/taskRequest/mySingle", {_id: jobId});
-            setJob(res.data.data);
-        } catch {
-            setJob(null);
-        }
-    }, [jobId]);
-
+    const [jobCount, setJobCount] = useState(0);
+    const load = useCallback(() => setJobCount((count) => count + 1), []);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        load().finally(() => {
-            if (!cancelled) setLoading(false);
-        });
-        return () => {
-            cancelled = true;
-        };
-    }, [load]);
+        load();
+    }, [load, jobId]);
+    const jobRequest = useHttpRequest<{data: BuyerTaskRequest}>(JOB_REQUEST, {_id: jobId}, jobCount);
+    const job: BuyerTaskRequest | null = jobRequest.error ? null : jobRequest.data?.data ?? null;
+    // The skeleton shows while this job loads, not while it reloads after an action.
+    const loading = jobCount === 0 || (jobRequest.loading && job?._id !== jobId);
 
-    async function run(request: () => Promise<unknown>, successKey: string) {
-        setBusy(true);
-        try {
-            await request();
-            toast.success(resolveLanguageKey(successKey));
+    const actionError = (err: unknown) => handleError(err, {context: "Job", showToast: true, fallbackMessage: resolveLanguageKey("actionError")});
+    const [action, setAction] = useState<{path: string; id: string; successKey: string; count: number}>({path: "", id: "", successKey: "", count: 0});
+    const actionRequest = useHttpRequest(JOB_ACTION_REQUEST, {_id: action.id}, action.count, true, {
+        success: () => {
+            toast.success(resolveLanguageKey(action.successKey));
             setConfirmBidId(null);
-            await load();
-        } catch (err) {
-            handleError(err, {context: "Job", showToast: true, fallbackMessage: resolveLanguageKey("actionError")});
-        } finally {
-            setBusy(false);
-        }
-    }
+            load();
+        },
+        error: actionError,
+    }, {url: `${JOB_ACTION_REQUEST.url}/${action.path}`});
+    const run = (path: string, id: string, successKey: string) =>
+        setAction((current) => ({path, id, successKey, count: current.count + 1}));
 
     /** Accepting a bid creates the order; send the buyer to it. */
-    async function acceptBid(bidId: string) {
-        setBusy(true);
-        try {
-            const res = await apiClient.post<{message: string; _id: string}>("/api/eCommerceMarketplace/bid/accept", {_id: bidId});
+    const [acceptCall, setAcceptCall] = useState({id: "", count: 0});
+    const acceptRequest = useHttpRequest<{message: string; _id: string}>(ACCEPT_BID_REQUEST, {_id: acceptCall.id}, acceptCall.count, true, {
+        success: (response) => {
             toast.success(resolveLanguageKey("bidAccepted"));
-            navigate(`${base}/account/services/${res.data._id}`);
-        } catch (err) {
-            handleError(err, {context: "Job", showToast: true, fallbackMessage: resolveLanguageKey("actionError")});
-            setBusy(false);
-        }
-    }
+            navigate(`${base}/account/services/${response._id}`);
+        },
+        error: actionError,
+    });
+    const acceptBid = (bidId: string) => setAcceptCall((current) => ({id: bidId, count: current.count + 1}));
+    const busy = actionRequest.loading || acceptRequest.loading || (acceptCall.count > 0 && !!acceptRequest.data);
 
     if (loading) {
         return <div className="h-96 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
@@ -100,13 +90,13 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
     return (
         <div className="flex flex-col gap-8">
             <Link to={`${base}/account/jobs`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" aria-hidden />
+                <IconArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToJobs")}
             </Link>
 
             {justPosted && (
                 <div className="flex gap-4 rounded-2xl bg-muted p-6" role="status">
-                    <CircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
+                    <IconCircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
                     <div className="flex flex-col gap-1">
                         <p className="font-display text-xl font-semibold">{resolveLanguageKey("postedTitle")}</p>
                         <p className="text-muted-foreground">{resolveLanguageKey("postedMessage")}</p>
@@ -145,7 +135,7 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
                                                 <div className="flex min-w-0 flex-1 flex-col">
                                                     <span className="font-semibold">{bidderName}</span>
                                                     <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                                                        <Clock className="h-3.5 w-3.5" aria-hidden />
+                                                        <IconClock className="h-3.5 w-3.5" aria-hidden />
                                                         {resolveLanguageKey(bid.deliveryDays === 1 ? "deliveryDay" : "deliveryDays").replace("{days}", String(bid.deliveryDays))}
                                                     </span>
                                                 </div>
@@ -174,7 +164,7 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
                                                         <Button variant="outline" size="lg"
                                                             type="button"
                                                             disabled={busy}
-                                                            onClick={() => run(() => apiClient.post("/api/eCommerceMarketplace/bid/reject", {_id: bid._id}), "bidRejected")}
+                                                            onClick={() => run("bid/reject", bid._id, "bidRejected")}
                                                             
                                                         >
                                                             {resolveLanguageKey("rejectBid")}
@@ -206,7 +196,7 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
                     </dl>
                     {place && (
                         <p className="flex items-start gap-2 border-t border-border pt-4 text-sm text-muted-foreground">
-                            <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                            <IconMapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                             {place}
                         </p>
                     )}
@@ -214,10 +204,7 @@ function JobDetailPage({resolveLanguageKey}: WithLanguageType) {
                         <Button variant="outline" size="lg"
                             type="button"
                             disabled={busy}
-                            onClick={() => run(
-                                () => apiClient.post(`/api/eCommerceMarketplace/taskRequest/${isOpen ? "close" : "reopen"}`, {_id: job._id}),
-                                isOpen ? "jobClosed" : "jobReopened",
-                            )}
+                            onClick={() => run(`taskRequest/${isOpen ? "close" : "reopen"}`, job._id, isOpen ? "jobClosed" : "jobReopened")}
                             className="bg-transparent"
                         >
                             {resolveLanguageKey(isOpen ? "closeJob" : "reopenJob")}

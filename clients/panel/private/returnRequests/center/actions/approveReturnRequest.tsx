@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Check} from "lucide-react";
+import {IconCheck} from "@tabler/icons-react";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 
 type ApproveReturnRequestProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function ApproveReturnRequest({entity, resolveLanguageKey, onAction}: ApproveRet
 
     return (
         <DropdownMenuItem onClick={() => onAction("approveReturnRequest")}>
-            <Check className="text-success" size={16} />
+            <IconCheck className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

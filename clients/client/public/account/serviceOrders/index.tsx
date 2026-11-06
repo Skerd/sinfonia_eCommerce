@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {BellDot, ChevronLeft, ChevronRight, Clock} from "lucide-react";
+import {IconBellRinging, IconChevronLeft, IconChevronRight, IconClock} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
@@ -23,6 +23,8 @@ export function serviceOrderTitle(order: BuyerServiceOrder): string {
     return order.listing?.title ?? order.taskRequest?.title ?? order.name;
 }
 
+const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/order/my"};
+
 function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {formatMoney} = useShopConfig();
@@ -31,33 +33,14 @@ function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
     const requestedStatus = searchParams.get("status");
     const status = orderStatuses.find(value => value === requestedStatus);
 
-    const [orders, setOrders] = useState<BuyerServiceOrder[]>([]);
-    const [total, setTotal] = useState(0);
-    const [loading, setLoading] = useState(true);
-
+    const [listCount, setListCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: BuyerServiceOrder[]; total: number}>("/api/eCommerceMarketplace/order/my", {
-                    page,
-                    limit: PAGE_SIZE,
-                    status,
-                });
-                if (cancelled) return;
-                setOrders(res.data.data ?? []);
-                setTotal(res.data.total ?? 0);
-            } catch {
-                if (!cancelled) setOrders([]);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setListCount((count) => count + 1);
     }, [page, status]);
+    const list = useHttpRequest<{data: BuyerServiceOrder[]; total: number}>(LIST_REQUEST, {page, limit: PAGE_SIZE, status}, listCount);
+    const orders: BuyerServiceOrder[] = list.error ? [] : list.data?.data ?? [];
+    const total = list.data?.total ?? 0;
+    const loading = list.loading || listCount === 0;
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
     const goTo = (next: {page?: number; status?: string}) => {
@@ -124,20 +107,20 @@ function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
                                             {order.provider && <span>· {[order.provider.name, order.provider.surname].filter(Boolean).join(" ")}</span>}
                                             {order.deliveryDueDate && order.status !== "completed" && order.status !== "cancelled" && (
                                                 <span className="inline-flex items-center gap-1">
-                                                    · <Clock className="h-3.5 w-3.5" aria-hidden />
+                                                    · <IconClock className="h-3.5 w-3.5" aria-hidden />
                                                     {resolveLanguageKey("dueOn").replace("{date}", formatDate(order.deliveryDueDate, {format: DATE_FORMATS.date}))}
                                                 </span>
                                             )}
                                         </span>
                                         {needsAction && (
                                             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                                                <BellDot className="h-4 w-4" aria-hidden />
+                                                <IconBellRinging className="h-4 w-4" aria-hidden />
                                                 {resolveLanguageKey("deliveryWaiting")}
                                             </span>
                                         )}
                                     </div>
                                     <span className="font-display font-semibold tabular-nums">{formatMoney(order.amount, order.currency)}</span>
-                                    <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
+                                    <IconChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
                                 </Link>
                             </li>
                         );
@@ -154,7 +137,7 @@ function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
                         variant="ghost" size="icon-lg"
                         aria-label={resolveLanguageKey("previousPage")}
                     >
-                        <ChevronLeft className="h-4 w-4" />
+                        <IconChevronLeft className="h-4 w-4" />
                     </Button>
                     <span className="text-sm text-muted-foreground">
                         {resolveLanguageKey("pageOf").replace("{page}", String(page)).replace("{total}", String(totalPages))}
@@ -166,7 +149,7 @@ function ServiceOrdersPage({resolveLanguageKey}: WithLanguageType) {
                         variant="ghost" size="icon-lg"
                         aria-label={resolveLanguageKey("nextPage")}
                     >
-                        <ChevronRight className="h-4 w-4" />
+                        <IconChevronRight className="h-4 w-4" />
                     </Button>
                 </nav>
             )}

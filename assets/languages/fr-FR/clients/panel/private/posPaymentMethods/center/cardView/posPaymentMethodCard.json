@@ -9,9 +9,6 @@
   "inactive": "Inactif",
   "paymentType": {
     "cash": "Comptant",
-    "card": "Carte",
-    "bank": "Banque",
-    "customer_account": "Compte client",
-    "other": "Autre"
+    "card": "Carte"
   }
 }

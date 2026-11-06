@@ -2,13 +2,14 @@ import {useCallback, useEffect, useMemo, useState, type FormEvent} from "react";
 import {Link, useParams, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowLeft, CalendarDays, Check, CircleCheck, Download, Lock, Star} from "lucide-react";
+import {IconArrowLeft, IconCalendarMonth, IconCheck, IconCircleCheck, IconDownload, IconLock, IconStar} from "@tabler/icons-react";
 import {loadStripe} from "@stripe/stripe-js";
 import {Elements, PaymentElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {downloadFromApi} from "@coreModule/helpers/media/downloadFromApi.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
@@ -77,22 +78,19 @@ function EscrowPayForm({
         <div className="flex flex-col gap-4">
             <PaymentElement />
             <Button size="lg" type="button" onClick={() => void handlePay()} disabled={!stripe || busy} className="w-full">
-                <Lock className="h-4 w-4" aria-hidden />
+                <IconLock className="h-4 w-4" aria-hidden />
                 {busy ? processingLabel : payLabel}
             </Button>
         </div>
     );
 }
 
-/** Delivery files are tenant media: fetched with the session token, then opened from memory. */
-async function downloadMedia(media: Media) {
-    const res = await apiClient.get<Blob>(`/api/auxiliary/media/${media._id}`, {responseType: "blob"});
-    const url = URL.createObjectURL(res.data);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = media.name || media._id;
-    link.click();
-    URL.revokeObjectURL(url);
+const ORDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/order/mySingle"};
+const MARKETPLACE_URL = "/api/eCommerceMarketplace";
+
+/** Delivery files are tenant media: fetched with the session token, then saved from memory. */
+function downloadMedia(media: Media) {
+    return downloadFromApi({url: `/api/auxiliary/media/${media._id}`, fileName: media.name || media._id});
 }
 
 function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
@@ -106,32 +104,18 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
         [config?.stripePublishableKey],
     );
 
-    const [order, setOrder] = useState<BuyerServiceOrder | null>(null);
-    const [loading, setLoading] = useState(true);
     const [panel, setPanel] = useState<Panel>(null);
     const [text, setText] = useState("");
     const [rating, setRating] = useState(5);
-    const [busy, setBusy] = useState(false);
-
-    const load = useCallback(async () => {
-        try {
-            const res = await apiClient.post<{data: BuyerServiceOrder}>("/api/eCommerceMarketplace/order/mySingle", {_id: orderId});
-            setOrder(res.data.data);
-        } catch {
-            setOrder(null);
-        }
-    }, [orderId]);
-
+    const [orderCount, setOrderCount] = useState(0);
+    const load = useCallback(() => setOrderCount((count) => count + 1), []);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        load().finally(() => {
-            if (!cancelled) setLoading(false);
-        });
-        return () => {
-            cancelled = true;
-        };
-    }, [load]);
+        load();
+    }, [load, orderId]);
+    const orderRequest = useHttpRequest<{data: BuyerServiceOrder}>(ORDER_REQUEST, {_id: orderId}, orderCount);
+    const order: BuyerServiceOrder | null = orderRequest.error ? null : orderRequest.data?.data ?? null;
+    // The skeleton shows while this order loads, not while it reloads after an action.
+    const loading = orderCount === 0 || (orderRequest.loading && order?._id !== orderId);
 
     function openPanel(next: Panel) {
         setPanel(next);
@@ -140,19 +124,19 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     }
 
     /** Runs one buyer action, then reloads the order so every block reflects the new state. */
-    async function run(request: () => Promise<unknown>, successKey: string) {
-        setBusy(true);
-        try {
-            await request();
-            toast.success(resolveLanguageKey(successKey));
+    const [action, setAction] = useState<{request: HttpRequest; body: Record<string, unknown>; successKey: string; count: number}>(
+        {request: {method: "POST", url: MARKETPLACE_URL}, body: {}, successKey: "", count: 0},
+    );
+    const {loading: busy} = useHttpRequest(action.request, action.body, action.count, true, {
+        success: () => {
+            toast.success(resolveLanguageKey(action.successKey));
             setPanel(null);
-            await load();
-        } catch (err) {
-            handleError(err, {context: "ServiceOrder", showToast: true, fallbackMessage: resolveLanguageKey("actionError")});
-        } finally {
-            setBusy(false);
-        }
-    }
+            load();
+        },
+        error: (err) => handleError(err, {context: "ServiceOrder", showToast: true, fallbackMessage: resolveLanguageKey("actionError")}),
+    });
+    const run = (method: "POST" | "PUT", path: string, body: Record<string, unknown>, successKey: string) =>
+        setAction((current) => ({request: {method, url: `${MARKETPLACE_URL}/${path}`}, body, successKey, count: current.count + 1}));
 
     if (loading) {
         return <div className="h-96 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;
@@ -185,26 +169,26 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
         event.preventDefault();
         if (!order) return;
         if (panel === "revision") {
-            void run(() => apiClient.post("/api/eCommerceMarketplace/order/requestRevision", {_id: order._id, reason: text.trim()}), "revisionSent");
+            run("POST", "order/requestRevision", {_id: order._id, reason: text.trim()}, "revisionSent");
         } else if (panel === "dispute") {
-            void run(() => apiClient.put("/api/eCommerceMarketplace/dispute/createMine", {order: order._id, reason: text.trim()}), "disputeOpened");
+            run("PUT", "dispute/createMine", {order: order._id, reason: text.trim()}, "disputeOpened");
         } else if (panel === "review") {
-            void run(() => apiClient.put("/api/eCommerceMarketplace/review/createMine", {order: order._id, rating, comment: text.trim() || undefined}), "reviewThanks");
+            run("PUT", "review/createMine", {order: order._id, rating, comment: text.trim() || undefined}, "reviewThanks");
         } else if (panel === "cancel") {
-            void run(() => apiClient.post("/api/eCommerceMarketplace/order/cancel", {_id: order._id}), "cancelled");
+            run("POST", "order/cancel", {_id: order._id}, "cancelled");
         }
     }
 
     return (
         <div className="flex flex-col gap-8">
             <Link to={`${base}/account/services`} className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" aria-hidden />
+                <IconArrowLeft className="h-4 w-4" aria-hidden />
                 {resolveLanguageKey("backToOrders")}
             </Link>
 
             {justPlaced && (
                 <div className="flex gap-4 rounded-2xl bg-muted p-6" role="status">
-                    <CircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
+                    <IconCircleCheck className="h-7 w-7 shrink-0 text-success" aria-hidden />
                     <div className="flex flex-col gap-1">
                         <p className="font-display text-xl font-semibold">{resolveLanguageKey("placedTitle")}</p>
                         <p className="text-muted-foreground">{resolveLanguageKey("placedMessage")}</p>
@@ -226,7 +210,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                             failedLabel={resolveLanguageKey("payEscrowError")}
                             onPaid={async () => {
                                 toast.success(resolveLanguageKey("payEscrowSuccess"));
-                                await load();
+                                load();
                             }}
                         />
                     </Elements>
@@ -284,10 +268,10 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                                 <Button size="lg"
                                     type="button"
                                     disabled={busy || order.hasActiveDispute}
-                                    onClick={() => run(() => apiClient.post("/api/eCommerceMarketplace/order/acceptDelivery", {_id: order._id}), "deliveryAccepted")}
+                                    onClick={() => run("POST", "order/acceptDelivery", {_id: order._id}, "deliveryAccepted")}
                                     
                                 >
-                                    <Check className="h-4 w-4" aria-hidden />
+                                    <IconCheck className="h-4 w-4" aria-hidden />
                                     {resolveLanguageKey("acceptDelivery")}
                                 </Button>
                                 <Button variant="outline" size="lg" type="button" disabled={busy} onClick={() => openPanel("revision")} >
@@ -314,7 +298,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                                                 aria-pressed={n === rating}
                                                 variant="ghost" size="icon-lg"
                                             >
-                                                <Star className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
+                                                <IconStar className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
                                             </Button>
                                         ))}
                                     </div>
@@ -371,10 +355,10 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                                                     <li key={file._id}>
                                                         <Button variant="outline" size="lg"
                                                             type="button"
-                                                            onClick={() => downloadMedia(file).catch(() => toast.error(resolveLanguageKey("downloadError")))}
+                                                            onClick={() => void downloadMedia(file)}
                                                             className="h-9 px-4"
                                                         >
-                                                            <Download className="h-4 w-4" aria-hidden />
+                                                            <IconDownload className="h-4 w-4" aria-hidden />
                                                             {file.name || resolveLanguageKey("attachment")}
                                                         </Button>
                                                     </li>
@@ -416,7 +400,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                                             <Button variant="outline" size="lg"
                                                 type="button"
                                                 disabled={busy}
-                                                onClick={() => run(() => apiClient.post("/api/eCommerceMarketplace/order/releaseMilestone", {milestone: milestone._id}), "milestoneReleased")}
+                                                onClick={() => run("POST", "order/releaseMilestone", {milestone: milestone._id}, "milestoneReleased")}
                                                 className="h-9 px-4"
                                             >
                                                 {resolveLanguageKey("releaseMilestone")}
@@ -434,7 +418,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                             <ul className="flex flex-col gap-2">
                                 {bookings.map(booking => (
                                     <li key={booking._id} className="flex items-center gap-3 rounded-2xl border border-border p-4 text-sm">
-                                        <CalendarDays className="h-5 w-5 shrink-0 text-primary" aria-hidden />
+                                        <IconCalendarMonth className="h-5 w-5 shrink-0 text-primary" aria-hidden />
                                         <span>
                                             {formatDate(booking.startAt, {format: DATE_FORMATS.dateTime, timeZone: booking.timezone})}
                                             {" – "}

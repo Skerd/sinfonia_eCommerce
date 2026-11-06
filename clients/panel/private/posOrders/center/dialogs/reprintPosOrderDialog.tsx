@@ -1,6 +1,6 @@
 import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
-import {LoaderCircle, Printer} from "lucide-react";
+import {IconLoader2, IconPrinter} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -108,7 +108,7 @@ function ReprintPosOrderDialog({
                     <div className="max-h-[60vh] overflow-y-auto px-1 py-2">
                         {loading && !displayReceipt && (
                             <div className="flex items-center justify-center gap-2 py-8 text-sm text-muted-foreground">
-                                <LoaderCircle className="size-4 animate-spin" />
+                                <IconLoader2 className="size-4 animate-spin" />
                                 {rk("loading")}
                             </div>
                         )}
@@ -139,9 +139,9 @@ function ReprintPosOrderDialog({
                             onClick={() => window.print()}
                         >
                             {loading ? (
-                                <LoaderCircle className="size-4 animate-spin" />
+                                <IconLoader2 className="size-4 animate-spin" />
                             ) : (
-                                <Printer className="size-4" />
+                                <IconPrinter className="size-4" />
                             )}
                             {rk("confirm")}
                         </Button>

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {Bell, LoaderCircle} from "lucide-react";
+import {IconBell, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -97,10 +97,10 @@ function TaskRequestNotifyAllConfirmAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
                             <>
-                                <Bell className="size-4" />
+                                <IconBell className="size-4" />
                                 {resolveLanguageKey(`${actionKey}.confirm`)}
                             </>
                         )}

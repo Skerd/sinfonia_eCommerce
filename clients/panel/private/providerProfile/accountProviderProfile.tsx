@@ -1,12 +1,12 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-import {Landmark, Plus, RefreshCw} from "lucide-react";
+import {IconBuildingBank, IconPlus, IconRefresh} from "@tabler/icons-react";
 import {toast} from "sonner";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -19,6 +19,8 @@ import ConnectAccountAction, {
 } from "@eCommerceModule/components/custom/providerProfile/connectAccountAction.tsx";
 import ProviderProfileSection, {type ProviderProfileSectionField} from "./providerProfileSection.tsx";
 
+const PROFILES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/providerProfile"};
+const CREATE_PROFILE_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerceMarketplace/providerProfile"};
 const SECTIONS: ProviderProfileSectionField[] = ["bio", "skills", "availability", "portfolio"];
 
 type AccountProviderProfileProps = WithLanguageType & {
@@ -29,37 +31,29 @@ type AccountProviderProfileProps = WithLanguageType & {
 function AccountProviderProfile({resolveLanguageKey, specificUserId}: AccountProviderProfileProps) {
     const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const ownerId = specificUserId || currentUserId;
-    const [profile, setProfile] = useState<ProviderProfile | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const [reloadCount, setReloadCount] = useState(0);
+    const [profileCount, setProfileCount] = useState(0);
     const [action, setAction] = useState<ConnectActionKey | "">("");
-    const [creating, setCreating] = useState(false);
+    const [createCount, setCreateCount] = useState(0);
 
+    const reload = () => setProfileCount((n) => n + 1);
     useEffect(() => {
-        if (!ownerId) return;
-        // Ignore responses that arrive after the owner changed or the tab unmounted.
-        let stale = false;
-        setLoading(true);
-        setError(false);
-        apiClient
-            .post<TableResponse<ProviderProfile>>("/api/eCommerceMarketplace/providerProfile", {offset: 0, limit: 20, userId: ownerId})
-            .then((res) => { if (!stale) setProfile(res.data?.data?.find((row) => !row.deletedAt) ?? null); })
-            .catch(() => { if (!stale) setError(true); })
-            .finally(() => { if (!stale) setLoading(false); });
-        return () => { stale = true; };
-    }, [ownerId, reloadCount]);
+        if (ownerId) reload();
+    }, [ownerId]);
+    const profileRequest = useHttpRequest<TableResponse<ProviderProfile>>(
+        PROFILES_REQUEST,
+        {offset: 0, limit: 20, userId: ownerId},
+        profileCount,
+    );
+    const profile = profileRequest.data?.data?.find((row) => !row.deletedAt) ?? null;
+    // Waits for an owner, as before the first request.
+    const loading = profileRequest.loading || profileCount === 0;
+    const error = !!profileRequest.error;
 
-    const reload = () => setReloadCount((n) => n + 1);
-
-    const createProfile = () => {
-        setCreating(true);
-        apiClient
-            .put("/api/eCommerceMarketplace/providerProfile", {userId: ownerId})
-            .then(reload)
-            .catch(() => toast.error(String(resolveLanguageKey("empty.createFailed"))))
-            .finally(() => setCreating(false));
-    };
+    const {loading: creating} = useHttpRequest(CREATE_PROFILE_REQUEST, {userId: ownerId}, createCount, true, {
+        success: reload,
+        error: () => toast.error(String(resolveLanguageKey("empty.createFailed"))),
+    });
+    const createProfile = () => setCreateCount((n) => n + 1);
 
     // Stripe Connect onboarding always acts on the signed-in user's own profile.
     const isOwnProfile = !!profile && profile.user?._id === currentUserId;
@@ -100,13 +94,13 @@ function AccountProviderProfile({resolveLanguageKey, specificUserId}: AccountPro
                                 <div className="flex gap-2">
                                     {!profile.stripePayoutsEnabled && (
                                         <Button size="sm" onClick={() => setAction("createAccountLink")}>
-                                            <Landmark size={16} />
+                                            <IconBuildingBank size={16} />
                                             {resolveLanguageKey(profile.stripeAccountId ? "connect.continue" : "connect.start")}
                                         </Button>
                                     )}
                                     {!!profile.stripeAccountId && (
                                         <Button size="sm" variant="outline" onClick={() => setAction("refreshAccountStatus")}>
-                                            <RefreshCw size={16} />
+                                            <IconRefresh size={16} />
                                             {resolveLanguageKey("connect.refresh")}
                                         </Button>
                                     )}
@@ -124,7 +118,7 @@ function AccountProviderProfile({resolveLanguageKey, specificUserId}: AccountPro
                             <p className="text-sm text-muted-foreground">{resolveLanguageKey("empty.description")}</p>
                         </div>
                         <Button size="sm" disabled={creating} onClick={createProfile}>
-                            <Plus size={16} />
+                            <IconPlus size={16} />
                             {resolveLanguageKey("empty.create")}
                         </Button>
                     </div>

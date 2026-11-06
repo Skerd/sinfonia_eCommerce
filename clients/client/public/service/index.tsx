@@ -1,11 +1,11 @@
 import {useEffect, useMemo, useState} from "react";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {Check, ChevronDown, ChevronRight, Clock, ImageOff, MapPin, Star} from "lucide-react";
+import {IconCheck, IconChevronDown, IconChevronRight, IconClock, IconPhotoOff, IconMapPin, IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
@@ -49,6 +49,9 @@ type ServiceOption = {
 };
 
 /** The base offer first (when the listing has a price), then its packages in their set order. */
+const LISTING_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/shopListing"};
+const ORDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/order/createFromListing"};
+
 function serviceOptions(listing: ShopListingDetail, standardName: string): ServiceOption[] {
     const base: ServiceOption[] = listing.price != null
         ? [{id: "", name: standardName, price: listing.price, currency: listing.currency, deliveryDays: listing.deliveryDays ?? 1}]
@@ -74,40 +77,36 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const {formatMoney} = useShopConfig();
     const {isAuthenticated, isHydrating, user} = usePortalSession();
 
-    const [listing, setListing] = useState<ShopListingDetail | null>(null);
-    const [loading, setLoading] = useState(true);
     const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
     const [optionId, setOptionId] = useState("");
     const [addOnIds, setAddOnIds] = useState<string[]>([]);
     const [note, setNote] = useState("");
-    const [ordering, setOrdering] = useState(false);
 
+    const [listingCount, setListingCount] = useState(0);
     useEffect(() => {
-        if (!id) return;
-        let cancelled = false;
-        setLoading(true);
-        setListing(null);
-        (async () => {
-            try {
-                const res = await apiClient.post<ShopListingResponse>("/api/eCommerceMarketplace/shopListing", {id});
-                if (cancelled) return;
-                const next = res.data.data;
-                setListing(next);
-                setActiveImage(next.mainImage);
-                // Without a base price the first package is the default offer
-                setOptionId(next.price != null ? "" : next.packages[0]?._id ?? "");
-                setAddOnIds([]);
-                setNote("");
-            } catch {
-                if (!cancelled) setListing(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (id) setListingCount((count) => count + 1);
     }, [id]);
+    const listingRequest = useHttpRequest<ShopListingResponse>(LISTING_REQUEST, {id}, listingCount, true, {
+        success: (response) => {
+            const next = response.data;
+            setActiveImage(next.mainImage);
+            // Without a base price the first package is the default offer
+            setOptionId(next.price != null ? "" : next.packages[0]?._id ?? "");
+            setAddOnIds([]);
+            setNote("");
+        },
+    });
+    const listing: ShopListingDetail | null = listingRequest.loading || listingRequest.error ? null : listingRequest.data?.data ?? null;
+    // Waits for an id, as before the first request.
+    const loading = listingCount === 0 || listingRequest.loading;
+
+    const [orderCall, setOrderCall] = useState<{body: Record<string, unknown>; count: number}>({body: {}, count: 0});
+    const orderRequest = useHttpRequest<{message: string; _id: string}>(ORDER_REQUEST, orderCall.body, orderCall.count, true, {
+        success: (response) => navigate(`${base}/account/services/${response._id}?placed=1`),
+        error: (err) => handleError(err, {context: "Service", showToast: true, fallbackMessage: resolveLanguageKey("orderError")}),
+    });
+    // Stays busy after success: the page navigates to the new order.
+    const ordering = orderRequest.loading || (orderCall.count > 0 && !!orderRequest.data);
 
     const options = useMemo(
         () => (listing ? serviceOptions(listing, resolveLanguageKey("standardPackage")) : []),
@@ -149,21 +148,17 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
         setAddOnIds(current => current.includes(addOnId) ? current.filter(item => item !== addOnId) : [...current, addOnId]);
     }
 
-    async function placeOrder() {
+    function placeOrder() {
         if (!listing || !selected) return;
-        setOrdering(true);
-        try {
-            const res = await apiClient.post<{message: string; _id: string}>("/api/eCommerceMarketplace/order/createFromListing", {
+        setOrderCall((current) => ({
+            body: {
                 listing: listing._id,
                 ...(selected.id && {package: selected.id}),
                 addOns: chosenAddOns.map(addOn => addOn._id),
                 note: note.trim() || undefined,
-            });
-            navigate(`${base}/account/services/${res.data._id}?placed=1`);
-        } catch (err) {
-            handleError(err, {context: "Service", showToast: true, fallbackMessage: resolveLanguageKey("orderError")});
-            setOrdering(false);
-        }
+            },
+            count: current.count + 1,
+        }));
     }
 
     return (
@@ -172,15 +167,15 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                 <nav aria-label={resolveLanguageKey("breadcrumb")} className="text-sm text-muted-foreground">
                     <ol className="flex flex-wrap items-center gap-1.5">
                         <li><Link to={base} className="hover:text-foreground">{resolveLanguageKey("home")}</Link></li>
-                        <li aria-hidden><ChevronRight className="h-3.5 w-3.5" /></li>
+                        <li aria-hidden><IconChevronRight className="h-3.5 w-3.5" /></li>
                         <li><Link to={`${base}/services`} className="hover:text-foreground">{resolveLanguageKey("services")}</Link></li>
                         {listing.category && (
                             <>
-                                <li aria-hidden><ChevronRight className="h-3.5 w-3.5" /></li>
+                                <li aria-hidden><IconChevronRight className="h-3.5 w-3.5" /></li>
                                 <li><Link to={`${base}/services?category=${encodeURIComponent(listing.category.slug)}`} className="hover:text-foreground">{listing.category.name}</Link></li>
                             </>
                         )}
-                        <li aria-hidden><ChevronRight className="h-3.5 w-3.5" /></li>
+                        <li aria-hidden><IconChevronRight className="h-3.5 w-3.5" /></li>
                         <li aria-current="page" className="max-w-[16rem] truncate text-foreground">{listing.title}</li>
                     </ol>
                 </nav>
@@ -194,7 +189,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                     <img src={resolveShopMediaUrl(activeImage)} alt={listing.title} className="h-full w-full object-cover" />
                                 ) : (
                                     <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
-                                        <ImageOff className="h-8 w-8" aria-hidden />
+                                        <IconPhotoOff className="h-8 w-8" aria-hidden />
                                         <span className="text-sm">{resolveLanguageKey("noImage")}</span>
                                     </div>
                                 )}
@@ -203,8 +198,9 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <ul className="flex gap-2 overflow-x-auto">
                                     {gallery.map((image, index) => (
                                         <li key={image} className="shrink-0">
-                                            <button
+                                            <Button
                                                 type="button"
+                                                variant="bare"
                                                 onClick={() => setActiveImage(image)}
                                                 aria-label={resolveLanguageKey("imageOf").replace("{number}", String(index + 1)).replace("{total}", String(gallery.length))}
                                                 aria-pressed={activeImage === image}
@@ -214,7 +210,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                                 )}
                                             >
                                                 <img src={resolveShopMediaUrl(image)} alt="" className="h-full w-full object-cover" />
-                                            </button>
+                                            </Button>
                                         </li>
                                     ))}
                                 </ul>
@@ -243,7 +239,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <ul className="flex flex-col gap-2">
                                     {listing.requirements.map(requirement => (
                                         <li key={requirement} className="flex gap-2.5 text-[15px] text-muted-foreground">
-                                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
+                                            <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
                                             {requirement}
                                         </li>
                                     ))}
@@ -259,7 +255,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                         <details key={faq.question} className="group py-4">
                                             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium [&::-webkit-details-marker]:hidden">
                                                 {faq.question}
-                                                <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden />
+                                                <IconChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden />
                                             </summary>
                                             <p className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-muted-foreground">{faq.answer}</p>
                                         </details>
@@ -280,7 +276,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
                                             {provider.reviewCount ? (
                                                 <span className="inline-flex items-center gap-1">
-                                                    <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
+                                                    <IconStar className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
                                                     {resolveLanguageKey("ratingSummary")
                                                         .replace("{average}", provider.averageRating?.toFixed(1) ?? "")
                                                         .replace("{count}", String(provider.reviewCount))}
@@ -330,7 +326,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 )}
                                 {listing.reviewCount ? (
                                     <a href="#shop-reviews" className="inline-flex items-center gap-1.5 hover:text-foreground">
-                                        <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
+                                        <IconStar className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
                                         {resolveLanguageKey("ratingSummary")
                                             .replace("{average}", listing.avgRating?.toFixed(1) ?? "")
                                             .replace("{count}", String(listing.reviewCount))}
@@ -339,7 +335,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                             </div>
                             {location && (
                                 <p className="flex items-center gap-2 rounded-xl bg-muted px-3.5 py-2.5 text-sm">
-                                    <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                                    <IconMapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden />
                                     <span>{resolveLanguageKey("availableIn").replace("{place}", location)}</span>
                                 </p>
                             )}
@@ -361,7 +357,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                                     active ? "border-foreground bg-foreground text-background" : "hover:bg-muted",
                                                 )}
                                             >
-                                                <button type="button" onClick={() => setOptionId(option.id)} aria-pressed={active}>
+                                                <Button type="button" variant="bare" onClick={() => setOptionId(option.id)} aria-pressed={active}>
                                                     <span className="flex items-baseline justify-between gap-3">
                                                         <span className="font-semibold">{option.name}</span>
                                                         <span className="font-display text-lg font-semibold tabular-nums">
@@ -372,10 +368,10 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                                         <span className={cn("text-sm leading-relaxed", active ? "text-background/80" : "text-muted-foreground")}>{option.description}</span>
                                                     )}
                                                     <span className={cn("inline-flex items-center gap-1.5 text-xs font-medium", active ? "text-background/80" : "text-muted-foreground")}>
-                                                        <Clock className="h-3.5 w-3.5" aria-hidden />
+                                                        <IconClock className="h-3.5 w-3.5" aria-hidden />
                                                         {resolveLanguageKey(option.deliveryDays === 1 ? "deliveryDay" : "deliveryDays").replace("{days}", String(option.deliveryDays))}
                                                     </span>
-                                                </button>
+                                                </Button>
                                             </Item>
                                         );
                                     })}
@@ -425,7 +421,7 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                     </div>
                                 </dl>
                                 <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                                    <Clock className="h-4 w-4" aria-hidden />
+                                    <IconClock className="h-4 w-4" aria-hidden />
                                     {resolveLanguageKey("estimatedDelivery").replace(
                                         "{date}",
                                         formatDate(new Date(Date.now() + totalDays * DAY_MS), {format: {weekday: "short", day: "numeric", month: "long"}}),

@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {PowerOff} from "lucide-react";
+import {IconPlugConnectedX} from "@tabler/icons-react";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
 
 type DeactivateWarehouseProps = WithLanguageType & {
@@ -19,7 +19,7 @@ function DeactivateWarehouse({entity, resolveLanguageKey, onAction}: DeactivateW
 
     return (
         <DropdownMenuItem onClick={() => onAction("deactivateWarehouse")}>
-            <PowerOff className="text-destructive" size={16} />
+            <IconPlugConnectedX className="text-destructive" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

@@ -22,7 +22,7 @@ export default createGenericCreatePage<CreateDiscountFormType>({
         startsAt: toFormDateTime(new Date()),
         customerGroups: [],
         targetIds: [],
-    } as unknown as CreateDiscountFormType,
+    },
     successPath: "/tenancy/systemSettings/discounts",
     submitIcon: <IconPlus />,
 });

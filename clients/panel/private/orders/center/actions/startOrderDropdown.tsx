@@ -7,7 +7,7 @@ import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {Play} from "lucide-react";
+import {IconPlayerPlay} from "@tabler/icons-react";
 
 type StartOrderDropdownProps = WithLanguageType & {
     order: Order;
@@ -35,7 +35,7 @@ function StartOrderDropdown({order, onAction, resolveLanguageKey}: StartOrderDro
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Play size={16} className="text-info" />
+            <IconPlayerPlay size={16} className="text-info" />
             <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 type AcceptBidDropdownProps = WithLanguageType & {
     bid: Bid;
@@ -31,7 +31,7 @@ function AcceptBidDropdown({bid, onAction, resolveLanguageKey}: AcceptBidDropdow
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleCheck size={16} className="text-success" />
+            <IconCircleCheck size={16} className="text-success" />
             <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {X} from "lucide-react";
+import {IconX} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
@@ -94,7 +94,7 @@ function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false,
                         className="text-muted-foreground hover:text-destructive"
                         aria-label={resolveLanguageKey("removeLabel").replace("{item}", title)}
                     >
-                        <X aria-hidden />
+                        <IconX aria-hidden />
                         <span className={compact ? "sr-only" : undefined}>{resolveLanguageKey("remove")}</span>
                     </Button>
                 </div>

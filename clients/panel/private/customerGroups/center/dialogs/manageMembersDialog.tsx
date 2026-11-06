@@ -5,8 +5,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 import type {CustomerGroupMember} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroupMember/customerGroupMember.dto.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import {handleError, isAbortError} from "@coreModule/helpers/general/errors.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import UserAvatar from "@coreModule/components/custom/avatar/userAvatar.tsx";
 import {
@@ -25,6 +25,9 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {IconTrash} from "@tabler/icons-react";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
+const MEMBERS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/customerGroup/members/list"};
+const ADD_MEMBER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/customerGroup/addMember"};
+const REMOVE_MEMBER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/customerGroup/removeMember"};
 const PAGE_SIZE = 5;
 
 type Props = WithLanguageType & {
@@ -55,15 +58,12 @@ function ManageMembersDialog({
     const [members, setMembers] = useState<CustomerGroupMember[]>([]);
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(false);
     const hasLoadedOnce = useRef(false);
     const [selectedUser, setSelectedUser] = useState<{
         id: string;
         label: string;
         photo?: string;
     } | null>(null);
-    const [adding, setAdding] = useState(false);
-    const [removingUserId, setRemovingUserId] = useState<string | null>(null);
 
     const totalPages = total === 0 ? 0 : Math.ceil(total / PAGE_SIZE);
     const rangeLabel =
@@ -75,32 +75,32 @@ function ManageMembersDialog({
                   return start === end ? `${start} / ${total}` : `${start}–${end} / ${total}`;
               })();
 
-    const loadMembers = useCallback(async (pageNum: number, signal?: AbortSignal) => {
-        setLoading(true);
-        try {
-            const res = await apiClient.post<{data: CustomerGroupMember[]; total: number}>(
-                "/api/eCommerce/customerGroup/members/list",
-                {customerGroupId: customerGroup._id, page: pageNum, limit: PAGE_SIZE},
-                signal ? {signal} : undefined,
-            );
-            setMembers(res.data.data ?? []);
-            setTotal(res.data.total ?? 0);
-            hasLoadedOnce.current = true;
-        } catch (error) {
-            if (isAbortError(error, signal)) return;
-            handleError(error, {
-                context: "ManageMembersDialog",
-                showToast: true,
-                message: String(resolveLanguageKeyRef.current("loadError") ?? "loadError"),
-            });
-            if (!hasLoadedOnce.current) {
-                setMembers([]);
-                setTotal(0);
-            }
-        } finally {
-            setLoading(false);
-        }
-    }, [customerGroup._id]);
+    const [membersCall, setMembersCall] = useState({page: 1, count: 0});
+    const {loading} = useHttpRequest<{data: CustomerGroupMember[]; total: number}>(
+        MEMBERS_REQUEST,
+        {customerGroupId: customerGroup._id, page: membersCall.page, limit: PAGE_SIZE},
+        membersCall.count,
+        true,
+        {
+            success: (response) => {
+                setMembers(response.data ?? []);
+                setTotal(response.total ?? 0);
+                hasLoadedOnce.current = true;
+            },
+            error: (error) => {
+                handleError(error, {
+                    context: "ManageMembersDialog",
+                    showToast: true,
+                    message: String(resolveLanguageKeyRef.current("loadError") ?? "loadError"),
+                });
+                if (!hasLoadedOnce.current) {
+                    setMembers([]);
+                    setTotal(0);
+                }
+            },
+        },
+    );
+    const loadMembers = useCallback((pageNum: number) => setMembersCall((current) => ({page: pageNum, count: current.count + 1})), []);
 
     useEffect(() => {
         if (!open) {
@@ -119,24 +119,15 @@ function ManageMembersDialog({
     }, [customerGroup._id, open]);
 
     useEffect(() => {
-        if (!open) return;
-
-        const controller = new AbortController();
-        void loadMembers(page, controller.signal);
-
-        return () => {
-            controller.abort();
-        };
+        if (open) loadMembers(page);
     }, [open, customerGroup._id, page, loadMembers]);
 
-    const handleAdd = async () => {
-        if (!selectedUser) return;
-        setAdding(true);
-        try {
-            await apiClient.post("/api/eCommerce/customerGroup/addMember", {
-                userId: selectedUser.id,
-                customerGroup: customerGroup._id,
-            });
+    // The user being added: the success handler shows them before the list reloads.
+    const [addCall, setAddCall] = useState<{user: {id: string; label: string; photo?: string} | null; count: number}>({user: null, count: 0});
+    const {loading: adding} = useHttpRequest(ADD_MEMBER_REQUEST, {userId: addCall.user?.id, customerGroup: customerGroup._id}, addCall.count, true, {
+        success: () => {
+            const selectedUser = addCall.user;
+            if (!selectedUser) return;
             toast.success(rk("addSuccess"));
             const [name = selectedUser.label, ...surnameParts] = selectedUser.label.trim().split(/\s+/);
             const surname = surnameParts.join(" ");
@@ -162,21 +153,18 @@ function ManageMembersDialog({
             }
             setSelectedUser(null);
             onSuccess?.(1);
-        } catch {
-            toast.error(rk("addError"));
-        } finally {
-            setAdding(false);
-        }
+        },
+        error: () => toast.error(rk("addError")),
+    });
+    const handleAdd = () => {
+        if (!selectedUser) return;
+        setAddCall((current) => ({user: selectedUser, count: current.count + 1}));
     };
 
-    const handleRemove = async (userId: string) => {
-        if (!userId) return;
-        setRemovingUserId(userId);
-        try {
-            await apiClient.post("/api/eCommerce/customerGroup/removeMember", {
-                userId,
-                customerGroup: customerGroup._id,
-            });
+    const [removeCall, setRemoveCall] = useState({userId: "", count: 0});
+    const removeRequest = useHttpRequest(REMOVE_MEMBER_REQUEST, {userId: removeCall.userId, customerGroup: customerGroup._id}, removeCall.count, true, {
+        success: () => {
+            const userId = removeCall.userId;
             toast.success(rk("removeSuccess"));
             const nextLength = members.filter((m) => m.user?._id !== userId).length;
             const nextTotal = Math.max(0, total - 1);
@@ -185,14 +173,16 @@ function ManageMembersDialog({
             if (nextLength === 0 && page > 1) {
                 setPage((p) => p - 1);
             } else if (nextLength < PAGE_SIZE && nextTotal > (page - 1) * PAGE_SIZE + nextLength) {
-                void loadMembers(page);
+                loadMembers(page);
             }
             onSuccess?.(-1);
-        } catch {
-            toast.error(rk("removeError"));
-        } finally {
-            setRemovingUserId(null);
-        }
+        },
+        error: () => toast.error(rk("removeError")),
+    });
+    const removingUserId = removeRequest.loading ? removeCall.userId : null;
+    const handleRemove = (userId: string) => {
+        if (!userId) return;
+        setRemoveCall((current) => ({userId, count: current.count + 1}));
     };
 
     return (

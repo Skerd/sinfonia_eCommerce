@@ -27,10 +27,7 @@
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Cash",
-      "card": "Card",
-      "bank": "Bank",
-      "customer_account": "Customer account",
-      "other": "Other"
+      "card": "Card"
     },
     "terminalProvider": {
       "manual": "Manual (external terminal)",

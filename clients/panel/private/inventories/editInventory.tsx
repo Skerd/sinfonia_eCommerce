@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editInventoryFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/editInventory.form.validator.ts";
 import type {EditInventoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.schema-def.ts";
@@ -16,5 +16,5 @@ export default createGenericEditPage<Inventory, EditInventoryFormType>({
         variant: data.variant?._id,
         warehouse: data.warehouse?._id,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

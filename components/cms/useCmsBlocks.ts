@@ -1,36 +1,20 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpError, type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+
+const PUBLIC_BLOCKS_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/cmsBlock/public"};
 
 type UseCmsBlocksResult = {
     blocks: CmsBlock[];
     loading: boolean;
-    error: unknown;
-    refetch: () => Promise<void>;
+    error: HttpError | null;
+    refetch: () => void;
 };
 
 export function useCmsBlocks(): UseCmsBlocksResult {
-    const [blocks, setBlocks] = useState<CmsBlock[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<unknown>(null);
+    const [fetchCount, setFetchCount] = useState(1);
+    const {data, loading, error} = useHttpRequest<{data: CmsBlock[]}>(PUBLIC_BLOCKS_REQUEST, {}, fetchCount);
+    const refetch = useCallback(() => setFetchCount((count) => count + 1), []);
 
-    const refetch = useCallback(async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const res = await apiClient.get<{data: CmsBlock[]}>("/api/eCommerce/cmsBlock/public");
-            setBlocks(res.data.data ?? []);
-        } catch (err) {
-            setError(err);
-            setBlocks([]);
-        } finally {
-            setLoading(false);
-        }
-    }, []);
-
-    useEffect(() => {
-        void refetch();
-    }, [refetch]);
-
-    return {blocks, loading, error, refetch};
+    return {blocks: error ? [] : data?.data ?? [], loading, error, refetch};
 }

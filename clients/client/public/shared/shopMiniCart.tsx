@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {ShoppingBag} from "lucide-react";
+import {IconShoppingBag} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -25,7 +25,7 @@ function ShopMiniCartInner({resolveLanguageKey}: WithLanguageType) {
         <Sheet open={miniCartOpen} onOpenChange={setMiniCartOpen}>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="relative" aria-label={resolveLanguageKey("title").replace("{count}", String(itemCount))}>
-                    <ShoppingBag />
+                    <IconShoppingBag />
                     {itemCount > 0 ? (
                         <Badge className="absolute -top-1 -right-1 h-4 min-w-4 px-1 text-3xs tabular-nums">{itemCount}</Badge>
                     ) : null}

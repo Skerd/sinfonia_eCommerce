@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Copy} from "lucide-react";
+import {IconCopy} from "@tabler/icons-react";
 import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/product/product.dto.ts";
 
 type Props = WithLanguageType & {
@@ -19,7 +19,7 @@ function DuplicateProduct({entity, resolveLanguageKey, onAction}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("duplicateProduct")}>
-            <Copy size={16} />
+            <IconCopy size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

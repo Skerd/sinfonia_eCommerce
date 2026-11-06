@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {LoaderCircle, Truck} from "lucide-react";
+import {IconLoader2, IconTruck} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -132,9 +132,9 @@ function ShipProductOrderAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <Truck size={16} className="text-info" />
+                            <IconTruck size={16} className="text-info" />
                         )}
                         {resolveLanguageKey("ship.confirm")}
                     </AlertDialogAction>

@@ -1,11 +1,10 @@
-import {useEffect, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {Copy, Gift} from "lucide-react";
+import {IconCopy, IconGift} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig, type ShopMoneyCurrency} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -23,28 +22,14 @@ type MyGiftCard = {
     createdAt?: string;
 };
 
+const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/finance/giftCard/my"};
+
 function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
     const {formatMoney} = useShopConfig();
 
-    const [cards, setCards] = useState<MyGiftCard[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: MyGiftCard[]}>("/api/finance/giftCard/my", {});
-                if (!cancelled) setCards(res.data.data ?? []);
-            } catch {
-                if (!cancelled) setCards([]);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
-    }, []);
+    const list = useHttpRequest<{data: MyGiftCard[]}>(LIST_REQUEST, {}, 1);
+    const cards: MyGiftCard[] = list.error ? [] : list.data?.data ?? [];
+    const loading = list.loading;
 
     async function copyCode(code: string) {
         try {
@@ -63,7 +48,7 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                 <div className="h-40 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />
             ) : cards.length === 0 ? (
                 <div className="flex flex-col items-center gap-3 rounded-3xl bg-muted px-6 py-16 text-center">
-                    <Gift className="h-8 w-8 text-muted-foreground" aria-hidden />
+                    <IconGift className="h-8 w-8 text-muted-foreground" aria-hidden />
                     <p className="max-w-sm text-muted-foreground">{resolveLanguageKey("empty")}</p>
                 </div>
             ) : (
@@ -82,7 +67,7 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                                     <span className="text-xs font-semibold uppercase tracking-wider opacity-70">
                                         {resolveLanguageKey(`status.${card.status}`)}
                                     </span>
-                                    <Gift className="h-5 w-5 opacity-70" aria-hidden />
+                                    <IconGift className="h-5 w-5 opacity-70" aria-hidden />
                                 </div>
                                 <div>
                                     <p className="font-display text-3xl font-semibold tabular-nums">{formatMoney(card.balance, card.currency)}</p>
@@ -98,7 +83,7 @@ function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
                                         variant="ghost" size="icon" className="hover:bg-current/10"
                                         aria-label={resolveLanguageKey("copyLabel").replace("{code}", card.code)}
                                     >
-                                        <Copy className="h-4 w-4" />
+                                        <IconCopy className="h-4 w-4" />
                                     </Button>
                                 </div>
                                 {card.expiresAt && (

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {Truck} from "lucide-react";
+import {IconTruck} from "@tabler/icons-react";
 
 type ShipOrderDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -31,7 +31,7 @@ function ShipOrderDropdown({order, onAction, resolveLanguageKey}: ShipOrderDropd
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Truck size={16} className="text-info" />
+            <IconTruck size={16} className="text-info" />
             <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

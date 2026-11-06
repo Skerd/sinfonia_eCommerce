@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Power} from "lucide-react";
+import {IconPower} from "@tabler/icons-react";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
 
 type ActivateWarehouseProps = WithLanguageType & {
@@ -19,7 +19,7 @@ function ActivateWarehouse({entity, resolveLanguageKey, onAction}: ActivateWareh
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateWarehouse")}>
-            <Power className="text-success" size={16} />
+            <IconPower className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

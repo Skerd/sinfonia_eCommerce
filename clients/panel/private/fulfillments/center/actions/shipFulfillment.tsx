@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Truck} from "lucide-react";
+import {IconTruck} from "@tabler/icons-react";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 
 type ShipFulfillmentProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function ShipFulfillment({entity, resolveLanguageKey, onAction}: ShipFulfillment
 
     return (
         <DropdownMenuItem onClick={() => onAction("shipFulfillment")}>
-            <Truck className="text-primary" size={16} />
+            <IconTruck className="text-primary" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

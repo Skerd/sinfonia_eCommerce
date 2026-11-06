@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from "react";
-import {Minus, Plus} from "lucide-react";
+import {IconMinus, IconPlus} from "@tabler/icons-react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {
@@ -13,7 +13,10 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {posRefundAmount} from "armonia/src/modules/eCommerce/helpers/posRefundAmount.ts";
 import type {PosOrder, PosOrderLine} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
+
+const REFUND_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/posOrder/refund"};
 
 type Props = {
     open: boolean;
@@ -21,11 +24,22 @@ type Props = {
     onOpenChange: (open: boolean) => void;
     onRefunded: () => void;
     money: (n: number) => string;
+    /** The till currency's `decimalPlaces`, so the total shown is the amount the server refunds. */
+    decimalPlaces?: number;
     rk: (key: string) => string;
     requirePin: boolean;
     /** Shared manager-picker + PIN flow from the till host. */
     requestManagerAuth?: () => Promise<{managerPin: string; managerId: string} | null>;
 };
+
+/** What the server refunds for the picked quantities: the shared rule maestro `refundPosOrder` books. */
+function pickedRefundAmount(order: PosOrder, qtyByLine: Record<string, number>, decimalPlaces?: number): number {
+    const lines = order.lines ?? [];
+    const picks = lines
+        .map((line) => ({line, quantity: qtyByLine[line._id ?? ""] ?? 0}))
+        .filter(({quantity}) => quantity > 0);
+    return posRefundAmount({lines, discountTotal: order.discountTotal}, picks, decimalPlaces);
+}
 
 function remainingQty(line: PosOrderLine): number {
     return Math.max(0, Number(line.quantity) - Number(line.quantityRefunded ?? 0));
@@ -37,13 +51,22 @@ export default function PosRefundDialog({
     onOpenChange,
     onRefunded,
     money,
+    decimalPlaces,
     rk,
     requirePin,
     requestManagerAuth,
 }: Props) {
     const [qtyByLine, setQtyByLine] = useState<Record<string, number>>({});
     const [reason, setReason] = useState("");
-    const [busy, setBusy] = useState(false);
+    const [refund, setRefund] = useState<{payload: Record<string, unknown>; count: number}>({payload: {}, count: 0});
+    const {loading: busy} = useHttpRequest(REFUND_REQUEST, refund.payload, refund.count, true, {
+        success: () => {
+            toast.success(rk("refundDialog.success"));
+            onOpenChange(false);
+            onRefunded();
+        },
+        error: () => toast.error(rk("refundDialog.failed")),
+    });
 
     useEffect(() => {
         if (open) {
@@ -56,13 +79,7 @@ export default function PosRefundDialog({
     const lines = useMemo(() => order?.lines ?? [], [order?.lines]);
     const refundableLines = useMemo(() => lines.filter((l) => remainingQty(l) > 0.0001), [lines]);
     const hasSelection = Object.values(qtyByLine).some((q) => q > 0);
-    const refundTotal = refundableLines.reduce((sum, line) => {
-        const lineId = line._id ?? "";
-        const qty = qtyByLine[lineId] ?? 0;
-        if (qty <= 0) return sum;
-        const unit = line.quantity > 0 ? line.priceTotal / line.quantity : 0;
-        return sum + unit * qty;
-    }, 0);
+    const refundTotal = order ? pickedRefundAmount(order, qtyByLine, decimalPlaces) : 0;
 
     const bump = (lineId: string, delta: number, max: number) => {
         setQtyByLine((prev) => ({...prev, [lineId]: Math.max(0, Math.min(max, (prev[lineId] ?? 0) + delta))}));
@@ -82,9 +99,8 @@ export default function PosRefundDialog({
             managerPin = auth.managerPin;
             managerId = auth.managerId;
         }
-        setBusy(true);
-        try {
-            await apiClient.post("/api/eCommerce/posOrder/refund", {
+        setRefund((current) => ({
+            payload: {
                 _id: order._id,
                 reason: reason.trim() || undefined,
                 managerPin,
@@ -92,15 +108,9 @@ export default function PosRefundDialog({
                 lines: refundableLines
                     .filter((line) => (qtyByLine[line._id ?? ""] ?? 0) > 0)
                     .map((line) => ({lineId: line._id, quantity: qtyByLine[line._id ?? ""]})),
-            });
-            toast.success(rk("refundDialog.success"));
-            onOpenChange(false);
-            onRefunded();
-        } catch {
-            toast.error(rk("refundDialog.failed"));
-        } finally {
-            setBusy(false);
-        }
+            },
+            count: current.count + 1,
+        }));
     };
 
     const selectAll = () => {
@@ -159,25 +169,27 @@ export default function PosRefundDialog({
                                     </span>
                                 ) : (
                                     <div className="flex shrink-0 items-center overflow-hidden rounded-md border border-border bg-background">
-                                        <button
+                                        <Button
                                             type="button"
+                                            variant="bare"
                                             className="flex size-7 items-center justify-center hover:bg-muted disabled:opacity-40"
                                             disabled={qty <= 0}
                                             onClick={() => bump(lineId, -1, remaining)}
                                         >
-                                            <Minus className="size-3" />
-                                        </button>
+                                            <IconMinus className="size-3" />
+                                        </Button>
                                         <div className="flex h-7 w-11 items-center justify-center text-xs font-semibold tabular-nums">
                                             {qty}/{remaining}
                                         </div>
-                                        <button
+                                        <Button
                                             type="button"
+                                            variant="bare"
                                             className="flex size-7 items-center justify-center hover:bg-muted disabled:opacity-40"
                                             disabled={qty >= remaining}
                                             onClick={() => bump(lineId, 1, remaining)}
                                         >
-                                            <Plus className="size-3" />
-                                        </button>
+                                            <IconPlus className="size-3" />
+                                        </Button>
                                     </div>
                                 )}
                             </div>

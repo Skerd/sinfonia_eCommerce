@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom";
-import {ArrowLeft, Monitor} from "lucide-react";
+import {IconArrowLeft, IconDeviceDesktop} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {PageHelp, type PageHelpContent} from "@coreModule/components/custom/pageHelp.tsx";
-import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
+import type {PosConfigChoice} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 
 type Props = {
-    configs: PosConfig[];
+    configs: PosConfigChoice[];
     rk: (key: string) => string;
     help?: PageHelpContent;
     onSelect: (id: string) => void;
@@ -18,7 +18,7 @@ export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
             <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border px-5 py-4">
                 <div>
                     <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-success">
-                        <Monitor className="size-3.5" />
+                        <IconDeviceDesktop className="size-3.5" />
                         {rk("title")}
                     </div>
                     <div className="mt-1 flex min-w-0 items-center gap-1.5">
@@ -29,7 +29,7 @@ export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
                 </div>
                 <Button variant="outline" className="border-border bg-card text-foreground hover:bg-muted" asChild>
                     <Link to="/tenancy/systemSettings/posconfigs">
-                        <ArrowLeft className="size-4" />
+                        <IconArrowLeft className="size-4" />
                         {rk("backToConfigs")}
                     </Link>
                 </Button>
@@ -37,9 +37,10 @@ export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
             <div className="min-h-0 flex-1 overflow-y-auto p-5">
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {configs.map((c) => (
-                        <button
+                        <Button
                             key={c._id}
                             type="button"
+                            variant="bare"
                             onClick={() => onSelect(c._id)}
                             className={cn(
                                 "group rounded-2xl border border-border bg-card p-5 text-left",
@@ -48,7 +49,7 @@ export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
                             )}
                         >
                             <div className="mb-4 flex size-11 items-center justify-center rounded-xl bg-success/15 text-success">
-                                <Monitor className="size-5" />
+                                <IconDeviceDesktop className="size-5" />
                             </div>
                             <div className="text-lg font-semibold tracking-tight">{c.name}</div>
                             {!!c.warehouses?.length && (
@@ -59,7 +60,7 @@ export default function PosConfigPicker({configs, rk, help, onSelect}: Props) {
                             <div className="mt-4 text-xs font-medium uppercase tracking-wide text-success/80 opacity-0 transition-opacity group-hover:opacity-100">
                                 {rk("picker.open")} →
                             </div>
-                        </button>
+                        </Button>
                     ))}
                     {!configs.length && (
                         <div className="col-span-full rounded-2xl border border-dashed border-border bg-card/40 px-8 py-16 text-center text-sm text-muted-foreground">

@@ -1,4 +1,4 @@
-import {Check, Printer} from "lucide-react";
+import {IconCheck, IconPrinter} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,
@@ -45,7 +45,7 @@ export default function PosReceipt({
                 <DialogContent className="max-w-[22rem] print:hidden">
                     <DialogHeader>
                         <DialogTitle className="flex items-center gap-2">
-                            <Check className="size-5 text-success" />
+                            <IconCheck className="size-5 text-success" />
                             {rk("receipt.title")}
                         </DialogTitle>
                     </DialogHeader>
@@ -62,7 +62,7 @@ export default function PosReceipt({
                             {rk("newOrder")}
                         </Button>
                         <Button className="bg-success hover:bg-success" onClick={onPrint}>
-                            <Printer className="size-4" />
+                            <IconPrinter className="size-4" />
                             {rk("receipt.print")}
                         </Button>
                     </DialogFooter>

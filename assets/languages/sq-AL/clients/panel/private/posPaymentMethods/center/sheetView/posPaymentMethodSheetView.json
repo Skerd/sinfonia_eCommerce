@@ -28,10 +28,7 @@
   "deletedBy": "Fshirë nga",
   "paymentType": {
     "cash": "Cash",
-    "card": "Kartë",
-    "bank": "Bankë",
-    "customer_account": "Llogari klienti",
-    "other": "Tjetër"
+    "card": "Kartë"
   },
   "terminalProvider": {
     "manual": "Manuale",

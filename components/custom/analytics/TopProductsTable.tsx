@@ -1,6 +1,7 @@
 import type {AnalyticsTopProduct} from "armonia/src/modules/eCommerce/api/eCommerce/private/analytics/analytics.products.response.type.ts";
 import {DashboardWidgetCard, DashboardWidgetEmpty} from "@coreModule/components/custom/dashboardWidgetCard.tsx";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {Table} from "@coreModule/components/ui/table/table.tsx";
 
 export type TopProductsTableProps = {
     products: AnalyticsTopProduct[];
@@ -27,7 +28,7 @@ export function TopProductsTable({
                 </div>
             ) : (
                 <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <Table bare className="w-full text-sm">
                         <thead>
                             <tr className="border-b text-left text-xs text-muted-foreground">
                                 <th className="px-6 py-2 font-medium">#</th>
@@ -54,7 +55,7 @@ export function TopProductsTable({
                                 </tr>
                             ))}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             )}
         </DashboardWidgetCard>

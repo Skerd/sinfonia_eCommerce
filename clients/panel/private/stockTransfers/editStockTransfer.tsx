@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editStockTransferFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockTransfer/editStockTransfer.form.validator.ts";
 import type {EditStockTransferFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockTransfer/stockTransfer.schema-def.ts";
@@ -10,15 +10,15 @@ export default createGenericEditPage<StockTransfer, EditStockTransferFormType>({
     accessModel: "stockTransfers",
     apiUrl: "/api/eCommerce/stockTransfer",
     schema: editStockTransferFormSchema,
-    mapEntityData: (data: any) => ({
+    mapEntityData: (data) => ({
         ...data,
         fromWarehouse: data.fromWarehouse?._id ?? data.fromWarehouse,
         toWarehouse: data.toWarehouse?._id ?? data.toWarehouse,
-        lines: (data.lines ?? []).map((line: any) => ({
+        lines: (data.lines ?? []).map((line) => ({
             product: line.product?._id ?? line.product,
             variant: line.variant?._id ?? line.variant,
             quantity: line.quantity,
         })),
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

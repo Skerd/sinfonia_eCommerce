@@ -3,7 +3,7 @@ import {useSearchParams} from "react-router-dom";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import ShopBlogCard from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import type {
@@ -15,6 +15,7 @@ import type {
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/index.tsx";
 
 const PAGE_SIZE = 12;
+const BLOG_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog"};
 
 function BlogPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -24,51 +25,38 @@ function BlogPage({resolveLanguageKey}: WithLanguageType) {
     const [categories, setCategories] = useState<PublicBlogCategoryItem[]>([]);
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(true);
-    const [loadingMore, setLoadingMore] = useState(false);
 
+    // The first page (with the categories) for the chosen category.
+    const [firstPageCount, setFirstPageCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
         setPage(1);
-        (async () => {
-            try {
-                const res = await apiClient.post<PublicBlogFormResponseType>("/api/auxiliary/public/blog", {
-                    categorySlug: categorySlug || undefined,
-                    limit: PAGE_SIZE,
-                });
-                if (cancelled) return;
-                setPosts(res.data.posts ?? []);
-                setTotal(res.data.total ?? 0);
-                setCategories(res.data.categories ?? []);
-            } catch {
-                if (!cancelled) setPosts([]);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setFirstPageCount((count) => count + 1);
     }, [categorySlug]);
+    const firstPage = useHttpRequest<PublicBlogFormResponseType>(BLOG_REQUEST, {categorySlug: categorySlug || undefined, limit: PAGE_SIZE}, firstPageCount, true, {
+        success: (response) => {
+            setPosts(response.posts ?? []);
+            setTotal(response.total ?? 0);
+            setCategories(response.categories ?? []);
+        },
+        error: () => setPosts([]),
+    });
+    const loading = firstPage.loading || firstPageCount === 0;
 
-    async function loadMore() {
-        const next = page + 1;
-        setLoadingMore(true);
-        try {
-            const res = await apiClient.post<PublicBlogFormResponseType>("/api/auxiliary/public/blog", {
-                categorySlug: categorySlug || undefined,
-                limit: PAGE_SIZE,
-                page: next,
-            });
-            setPosts(current => [...current, ...(res.data.posts ?? [])]);
-            setPage(next);
-        } catch {
-            // The button stays for another try
-        } finally {
-            setLoadingMore(false);
-        }
-    }
+    // Further pages append; on failure the button stays for another try.
+    const [moreCount, setMoreCount] = useState(0);
+    const {loading: loadingMore} = useHttpRequest<PublicBlogFormResponseType>(
+        BLOG_REQUEST,
+        {categorySlug: categorySlug || undefined, limit: PAGE_SIZE, page: page + 1},
+        moreCount,
+        true,
+        {
+            success: (response) => {
+                setPosts(current => [...current, ...(response.posts ?? [])]);
+                setPage(current => current + 1);
+            },
+        },
+    );
+    const loadMore = () => setMoreCount((count) => count + 1);
 
     const selectCategory = (slug: string) => setSearchParams(slug ? {category: slug} : {});
     const activeCategory = categories.find(category => category.slug === categorySlug);

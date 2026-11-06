@@ -1,5 +1,5 @@
-import {createContext, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {createContext, useContext, useMemo, type ReactNode} from "react";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {ShopConfigResponse, ShopCurrency} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 
@@ -20,26 +20,11 @@ const ShopConfigContext = createContext<ShopConfigContextValue>({
     formatMoney: () => "",
 });
 
-export function ShopConfigProvider({children}: {children: ReactNode}) {
-    const [config, setConfig] = useState<ShopConfig | null>(null);
-    const [loading, setLoading] = useState(true);
+const CONFIG_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopConfig"};
 
-    useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.get<ShopConfigResponse>("/api/eCommerce/shopConfig");
-                if (!cancelled) setConfig(res.data.data ?? null);
-            } catch {
-                if (!cancelled) setConfig(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
-    }, []);
+export function ShopConfigProvider({children}: {children: ReactNode}) {
+    const {data, loading} = useHttpRequest<ShopConfigResponse>(CONFIG_REQUEST, {}, 1);
+    const config = data?.data ?? null;
 
     const value = useMemo<ShopConfigContextValue>(() => ({
         config,

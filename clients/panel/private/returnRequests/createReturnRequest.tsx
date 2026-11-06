@@ -9,7 +9,7 @@ export default createGenericCreatePage<CreateReturnRequestFormType>({
     accessModel: "returnRequests",
     apiUrl: "/api/eCommerce/returnRequest",
     schema: createReturnRequestFormSchema,
-    defaultValues: {order: "", type: "return", status: "pending", items: [{orderItemId: "", quantity: 1, reason: ""}]} as unknown as CreateReturnRequestFormType,
+    defaultValues: {order: "", type: "return", items: [{orderItemId: "", quantity: 1, reason: ""}]},
     successPath: "/eCommerce/returnrequests",
     submitIcon: <IconPlus />,
 });

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {ChevronLeft} from "lucide-react";
+import {IconChevronLeft} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {
@@ -78,18 +78,19 @@ export default function PosPinDialog({
                         </label>
                         <div className="flex flex-col max-h-[40vh] gap-y-1.5 overflow-y-auto">
                             {managers.map((m) => (
-                                <button
+                                <Button
                                     key={m._id}
                                     type="button"
+                                    variant="bare"
                                     disabled={busy}
                                     onClick={() => setSelectedManagerId(m._id)}
                                     className={cn(
-                                        "flex w-full items-center rounded-md border border-border bg-card px-3 py-2.5 text-left text-sm font-medium text-foreground transition-colors",
+                                        "flex w-full items-center rounded-md border border-border bg-card px-3 py-2.5 text-left text-sm font-medium text-foreground transition-colors disabled:pointer-events-auto disabled:opacity-100",
                                         "hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                                     )}
                                 >
                                     {m.label}
-                                </button>
+                                </Button>
                             ))}
                         </div>
                         <DialogFooter className="gap-2 sm:gap-0 pt-2">
@@ -113,7 +114,7 @@ export default function PosPinDialog({
                                         setSelectedManagerId(null);
                                     }}
                                 >
-                                    <ChevronLeft className="size-4" />
+                                    <IconChevronLeft className="size-4" />
                                     {t("pinDialog.changeManager", "Change")}
                                 </Button>
                                 <span className="truncate text-sm font-medium text-foreground">{selected.label}</span>

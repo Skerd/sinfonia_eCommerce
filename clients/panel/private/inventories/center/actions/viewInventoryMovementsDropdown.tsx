@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
-import {History} from "lucide-react";
+import {IconHistory} from "@tabler/icons-react";
 
 type ViewInventoryMovementsDropdownProps = WithLanguageType & {
     inventory: Inventory;
@@ -33,7 +33,7 @@ function ViewInventoryMovementsDropdown({
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <History size={16} />
+            <IconHistory size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

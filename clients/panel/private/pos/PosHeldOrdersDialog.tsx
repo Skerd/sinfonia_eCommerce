@@ -1,4 +1,4 @@
-import {Trash2} from "lucide-react";
+import {IconTrash} from "@tabler/icons-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
@@ -67,7 +67,7 @@ export default function PosHeldOrdersDialog({
                                     className="h-8 text-destructive"
                                     onClick={() => onDiscardHeld(order._id)}
                                 >
-                                    <Trash2 className="size-3.5" />
+                                    <IconTrash className="size-3.5" />
                                 </Button>
                             </div>
                         ))

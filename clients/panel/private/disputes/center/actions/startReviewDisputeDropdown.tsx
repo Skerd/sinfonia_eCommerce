@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {ClipboardList} from "lucide-react";
+import {IconClipboardList} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Dispute} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/dispute/dispute.dto.ts";
 
@@ -23,7 +23,7 @@ function StartReviewDisputeDropdown({dispute, onAction, resolveLanguageKey}: Pro
 
     return (
         <DropdownMenuItem onClick={() => onAction("startReview")}>
-            <ClipboardList size={16} />
+            <IconClipboardList size={16} />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

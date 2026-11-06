@@ -1,5 +1,5 @@
 import {buttonLike} from "@coreModule/helpers/general/a11y.ts";
-import {Trash2} from "lucide-react";
+import {IconTrash} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PosNumpadField from "@eCommerceModule/clients/panel/private/pos/PosNumpad.tsx";
@@ -75,19 +75,20 @@ export default function PosPaymentSection({
                     </div>
                     <div className="grid grid-cols-2 gap-1">
                         {paymentMethods.map((m) => (
-                            <button
+                            <Button
                                 key={m._id}
                                 type="button"
+                                variant="bare"
                                 disabled={!cartHasItems}
                                 onClick={() => onAddPaymentMethod(m._id)}
                                 className={cn(
                                     "flex h-8 items-center justify-center rounded-lg border text-xs font-semibold transition-colors",
                                     "border-border bg-card text-foreground hover:border-success/40 hover:bg-muted",
-                                    "disabled:cursor-not-allowed disabled:opacity-40",
+                                    "disabled:pointer-events-auto disabled:cursor-not-allowed disabled:opacity-40",
                                 )}
                             >
                                 + {m.name}
-                            </button>
+                            </Button>
                         ))}
                         {!paymentMethods.length && (
                             <span className="col-span-2 text-2xs text-muted-foreground">
@@ -134,8 +135,9 @@ export default function PosPaymentSection({
                                                 align="right"
                                                 buttonClassName="flex h-7 w-20 items-center justify-end rounded-md border border-input bg-background px-2 text-sm font-semibold"
                                             />
-                                            <button
+                                            <Button
                                                 type="button"
+                                                variant="bare"
                                                 className="shrink-0 rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-destructive"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
@@ -143,8 +145,8 @@ export default function PosPaymentSection({
                                                 }}
                                                 aria-label={rk("remove")}
                                             >
-                                                <Trash2 className="size-3.5" />
-                                            </button>
+                                                <IconTrash className="size-3.5" />
+                                            </Button>
                                         </div>
                                         {isCard && p.terminalEnabled && (
                                             <div className="mt-1 text-3xs text-muted-foreground">
@@ -159,9 +161,10 @@ export default function PosPaymentSection({
                                         {isCash && active && (
                                             <div className="mt-1 flex flex-wrap gap-1">
                                                 {cashQuickAmounts.map((amt) => (
-                                                    <button
+                                                    <Button
                                                         key={amt}
                                                         type="button"
+                                                        variant="bare"
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             onBumpPaymentAmount(amt);
@@ -169,11 +172,12 @@ export default function PosPaymentSection({
                                                         className="rounded-md border border-border bg-background px-1.5 py-0.5 text-3xs font-semibold tabular-nums text-foreground/80 hover:border-success/40 hover:text-success"
                                                     >
                                                         {formatQuickAmount(amt)}
-                                                    </button>
+                                                    </Button>
                                                 ))}
                                                 {remaining > 0.001 && (
-                                                    <button
+                                                    <Button
                                                         type="button"
+                                                        variant="bare"
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             onSetExactPayment();
@@ -181,7 +185,7 @@ export default function PosPaymentSection({
                                                         className="rounded-md border border-success/30 bg-success/10 px-1.5 py-0.5 text-3xs font-semibold tabular-nums text-success hover:bg-success/20"
                                                     >
                                                         {rk("exact")}
-                                                    </button>
+                                                    </Button>
                                                 )}
                                             </div>
                                         )}

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CircleCheck, CircleX, LoaderCircle} from "lucide-react";
+import {IconCircleCheck, IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -105,11 +105,11 @@ function BidActionConfirmAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : isAccept ? (
-                            <CircleCheck size={16} className="text-success" />
+                            <IconCircleCheck size={16} className="text-success" />
                         ) : (
-                            <CircleX size={16} className="text-destructive" />
+                            <IconCircleX size={16} className="text-destructive" />
                         )}
                         {resolveLanguageKey(`${actionKey}.confirm`)}
                     </AlertDialogAction>

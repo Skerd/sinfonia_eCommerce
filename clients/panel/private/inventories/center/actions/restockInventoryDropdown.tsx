@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
-import {PackagePlus} from "lucide-react";
+import {IconPackageImport} from "@tabler/icons-react";
 
 type RestockInventoryDropdownProps = WithLanguageType & {
     inventory: Inventory;
@@ -28,7 +28,7 @@ function RestockInventoryDropdown({inventory, onAction, resolveLanguageKey}: Res
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <PackagePlus size={16} className="text-success" />
+            <IconPackageImport size={16} className="text-success" />
             <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

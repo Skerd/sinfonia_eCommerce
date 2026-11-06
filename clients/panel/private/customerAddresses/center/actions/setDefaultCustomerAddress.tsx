@@ -6,7 +6,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Star} from "lucide-react";
+import {IconStar} from "@tabler/icons-react";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 
 type SetDefaultCustomerAddressProps = WithLanguageType & {
@@ -28,7 +28,7 @@ function SetDefaultCustomerAddress({entity, resolveLanguageKey, onAction}: SetDe
 
     return (
         <DropdownMenuItem onClick={() => onAction("setDefaultCustomerAddress")}>
-            <Star className="text-warning" size={16} />
+            <IconStar className="text-warning" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

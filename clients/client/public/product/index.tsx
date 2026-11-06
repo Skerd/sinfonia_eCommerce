@@ -1,11 +1,11 @@
 import {useEffect, useMemo, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {Star} from "lucide-react";
+import {IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
@@ -28,6 +28,8 @@ import type {
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/index.tsx";
 
 type OptionSelection = Record<string, string>;
+
+const PRODUCT_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProduct"};
 
 function optionValue(variant: ShopProductVariant, name: string): string | undefined {
     return variant.options?.find(option => option.name === name)?.value;
@@ -58,44 +60,33 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
     const sellerCompanyId = searchParams.get("seller") ?? "";
     const {addItem, signInRequired, setMiniCartOpen} = useShopCart();
 
-    const [product, setProduct] = useState<ShopProductDetail | null>(null);
-    const [loading, setLoading] = useState(true);
     const [selection, setSelection] = useState<OptionSelection>({});
     const [selectedVariantId, setSelectedVariantId] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [activeImage, setActiveImage] = useState<string | undefined>(undefined);
     const [adding, setAdding] = useState(false);
 
+    const [productCount, setProductCount] = useState(0);
     useEffect(() => {
-        if (!productId && !slug) return;
-        let cancelled = false;
-        setLoading(true);
-        setProduct(null);
-        (async () => {
-            try {
-                const res = await apiClient.post<ShopProductResponse>("/api/eCommerce/shopProduct", {
-                    ...(productId ? {id: productId} : {}),
-                    ...(slug ? {slug} : {}),
-                    ...(sellerCompanyId ? {sellerCompanyId} : {}),
-                });
-                if (cancelled) return;
-                const next = res.data.data;
-                const initial = next.variants.find(variant => variant.inStock !== false) ?? next.variants[0];
-                setProduct(next);
-                setSelection(selectionOf(initial));
-                setSelectedVariantId(initial?._id ?? "");
-                setQuantity(Math.max(1, next.minOrderQty ?? 1));
-                setActiveImage(resolveShopMediaUrl(initial?.mainImage ?? next.mainImage));
-            } catch {
-                if (!cancelled) setProduct(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (productId || slug) setProductCount((count) => count + 1);
     }, [productId, slug, sellerCompanyId]);
+    const productRequest = useHttpRequest<ShopProductResponse>(PRODUCT_REQUEST, {
+        ...(productId ? {id: productId} : {}),
+        ...(slug ? {slug} : {}),
+        ...(sellerCompanyId ? {sellerCompanyId} : {}),
+    }, productCount, true, {
+        success: (response) => {
+            const next = response.data;
+            const initial = next.variants.find(variant => variant.inStock !== false) ?? next.variants[0];
+            setSelection(selectionOf(initial));
+            setSelectedVariantId(initial?._id ?? "");
+            setQuantity(Math.max(1, next.minOrderQty ?? 1));
+            setActiveImage(resolveShopMediaUrl(initial?.mainImage ?? next.mainImage));
+        },
+    });
+    const product: ShopProductDetail | null = productRequest.loading || productRequest.error ? null : productRequest.data?.data ?? null;
+    // Waits for an id or slug, as before the first request.
+    const loading = productCount === 0 || productRequest.loading;
 
     const groups = useMemo(() => optionGroups(product?.variants ?? []), [product]);
     const selectedVariant = product?.variants.find(variant => variant._id === selectedVariantId);
@@ -195,7 +186,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
             <DetailHeading eyebrow={category?.name} title={product.title}>
                 {product.ratingCount ? (
                     <a href="#shop-reviews" className="inline-flex items-center gap-1.5 self-start text-sm text-muted-foreground hover:text-foreground">
-                        <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
+                        <IconStar className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
                         {resolveLanguageKey("ratingSummary")
                             .replace("{average}", product.ratingAverage?.toFixed(1) ?? "")
                             .replace("{count}", String(product.ratingCount))}

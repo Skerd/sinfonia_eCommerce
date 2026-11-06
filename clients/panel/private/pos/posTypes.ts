@@ -116,6 +116,9 @@ export type ReceiptPayload = {
     fiscalAttempted?: boolean;
 };
 
+/** A till the picker offers: the select endpoint returns only its id and name. */
+export type PosConfigChoice = Pick<PosConfig, "_id" | "name"> & Partial<Pick<PosConfig, "warehouses">>;
+
 export type SessionBundle = {
     session: PosSession;
     config: PosConfig;

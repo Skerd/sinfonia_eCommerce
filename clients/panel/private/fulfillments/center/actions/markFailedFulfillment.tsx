@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {X} from "lucide-react";
+import {IconX} from "@tabler/icons-react";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 
 type MarkFailedFulfillmentProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function MarkFailedFulfillment({entity, resolveLanguageKey, onAction}: MarkFaile
 
     return (
         <DropdownMenuItem onClick={() => onAction("markFailedFulfillment")}>
-            <X className="text-destructive" size={16} />
+            <IconX className="text-destructive" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

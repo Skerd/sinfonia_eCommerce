@@ -9,7 +9,7 @@ export default createGenericCreatePage<CreateFulfillmentFormType>({
     accessModel: "fulfillments",
     apiUrl: "/api/eCommerce/fulfillment",
     schema: createFulfillmentFormSchema,
-    defaultValues: {order: "", status: "pending", items: [{orderItemId: "", quantity: 1}]} as unknown as CreateFulfillmentFormType,
+    defaultValues: {order: "", items: [{orderItemId: "", quantity: 1}]},
     successPath: "/eCommerce/fulfillments",
     submitIcon: <IconPlus />,
 });

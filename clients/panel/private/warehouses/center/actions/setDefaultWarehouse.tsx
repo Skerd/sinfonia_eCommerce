@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Star} from "lucide-react";
+import {IconStar} from "@tabler/icons-react";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
 
 type SetDefaultWarehouseProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function SetDefaultWarehouse({entity, resolveLanguageKey, onAction}: SetDefaultW
 
     return (
         <DropdownMenuItem onClick={() => onAction("setDefaultWarehouse")}>
-            <Star className="text-warning" size={16} />
+            <IconStar className="text-warning" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

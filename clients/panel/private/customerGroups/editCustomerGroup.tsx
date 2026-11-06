@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editCustomerGroupFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/editCustomerGroup.form.validator";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto";
@@ -10,5 +10,5 @@ export default createGenericEditPage<CustomerGroup, EditCustomerGroupFormType>({
     accessModel: "customerGroups",
     apiUrl: "/api/eCommerce/customerGroup",
     schema: editCustomerGroupFormSchema,
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

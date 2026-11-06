@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
-import {CheckCircleIcon, StarIcon} from "lucide-react";
+import {IconCircleCheck, IconStar} from "@tabler/icons-react";
 import {useSelector} from "react-redux";
 import {formatRelativeToNow} from "@coreModule/helpers/general/dateTime.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
@@ -28,7 +28,7 @@ function Stars({value}: {value: number}) {
     return (
         <div className="flex items-center gap-0.5" aria-label={`${value} / 5`}>
             {Array.from({length: 5}).map((_, i) => (
-                <StarIcon
+                <IconStar
                     key={i}
                     className={cn(
                         "size-4",
@@ -158,7 +158,7 @@ function ProductReviewCard({
                                     <DisplayValue path="order" value={row.order}>
                                         {() => (
                                             <span className="inline-flex min-w-0 items-center gap-1 text-success">
-                                                <CheckCircleIcon className="size-3.5 shrink-0" />
+                                                <IconCircleCheck className="size-3.5 shrink-0" />
                                                 <span className="truncate">{resolveLanguageKey("verifiedPurchase")}</span>
                                             </span>
                                         )}

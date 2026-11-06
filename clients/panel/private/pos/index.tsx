@@ -18,6 +18,7 @@ import {usePosPayments} from "@eCommerceModule/clients/panel/private/pos/usePosP
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {formatMoney, posFiscalizationActive} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 function PosTill({resolveLanguageKey}: WithLanguageType) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
@@ -143,13 +144,14 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                     <div className="max-w-md text-sm font-semibold text-muted-foreground">
                         {rk("inactive.banner")}
                     </div>
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         className="text-sm text-primary underline"
                         onClick={() => sessionApi.navigate("/tenancy/systemSettings/posconfigs")}
                     >
                         {rk("backToConfigs")}
-                    </button>
+                    </Button>
                 </div>
             );
         }
@@ -170,13 +172,14 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
                         {companyPaused ? rk("paused.companyBanner") : rk("paused.banner")}
                     </div>
                     {reason ? <div className="text-xs text-muted-foreground">{reason}</div> : null}
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         className="text-sm text-primary underline"
                         onClick={() => sessionApi.navigate("/tenancy/systemSettings/posconfigs")}
                     >
                         {rk("backToConfigs")}
-                    </button>
+                    </Button>
                 </div>
             );
         }

@@ -140,7 +140,7 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
                 if (action === "create") return <CreateCategory />;
                 if (action === "edit" && categoryId) {
-                    return <EditCategory categoryId={categoryId} categoryName={categoryName} />;
+                    return <EditCategory entityId={categoryId} entityName={categoryName} />;
                 }
                 return <AllCategories />;
             }
@@ -252,7 +252,7 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
                 if (action === "create") return <CreateListingCategory />;
                 if (action === "edit" && categoryId) {
-                    return <EditListingCategory categoryId={categoryId} categoryName={categoryName} />;
+                    return <EditListingCategory entityId={categoryId} entityName={categoryName} />;
                 }
                 return <AllListingCategories />;
             }
@@ -278,7 +278,7 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
                 if (action === "create") return <CreateListingCategory />;
                 if (action === "edit" && categoryId) {
-                    return <EditListingCategory categoryId={categoryId} categoryName={categoryName} />;
+                    return <EditListingCategory entityId={categoryId} entityName={categoryName} />;
                 }
                 return <AllListingCategories />;
             }

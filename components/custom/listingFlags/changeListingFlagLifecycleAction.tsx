@@ -4,7 +4,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CircleCheck, CircleX, LoaderCircle} from "lucide-react";
+import {IconCircleCheck, IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -44,8 +44,8 @@ function bindListingFlagLifecycleLanguageKey(
 }
 
 const verbIcon = {
-    resolve: CircleCheck,
-    dismiss: CircleX,
+    resolve: IconCircleCheck,
+    dismiss: IconCircleX,
 };
 
 function buildSuccessPatch(verb: ListingFlagLifecycleVerb, resolution: string): Partial<ListingFlag> {
@@ -184,7 +184,7 @@ function ChangeListingFlagLifecycleAction({
                         }}
                         disabled={submitBlocked}
                     >
-                        {loading ? <LoaderCircle className="animate-spin" /> : <Icon size={16} />}
+                        {loading ? <IconLoader2 className="animate-spin" /> : <Icon size={16} />}
                         {resolveLanguageKey(`${verb}.confirm`)}
                     </AlertDialogAction>
                 </AlertDialogFooter>

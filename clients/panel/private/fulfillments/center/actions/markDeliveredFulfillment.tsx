@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {PackageCheck} from "lucide-react";
+import {IconPackageImport} from "@tabler/icons-react";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
 
 type MarkDeliveredFulfillmentProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function MarkDeliveredFulfillment({entity, resolveLanguageKey, onAction}: MarkDe
 
     return (
         <DropdownMenuItem onClick={() => onAction("markDeliveredFulfillment")}>
-            <PackageCheck className="text-success" size={16} />
+            <IconPackageImport className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Star} from "lucide-react";
+import {IconStar} from "@tabler/icons-react";
 import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerGroup/customerGroup.dto.ts";
 
 type SetDefaultCustomerGroupProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function SetDefaultCustomerGroup({entity, resolveLanguageKey, onAction}: SetDefa
 
     return (
         <DropdownMenuItem onClick={() => onAction("setDefaultCustomerGroup")}>
-            <Star className="text-warning" size={16} />
+            <IconStar className="text-warning" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

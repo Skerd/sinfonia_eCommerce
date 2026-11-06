@@ -1,14 +1,5 @@
 import {Link} from "react-router-dom";
-import {
-    ArrowLeft,
-    Banknote,
-    BanknoteArrowDown,
-    CircleHelp,
-    DoorClosed,
-    ListOrdered,
-    Monitor,
-    Ticket,
-} from "lucide-react";
+import {IconArrowLeft, IconCash, IconCashMinus, IconHelpCircle, IconDoor, IconListNumbers, IconDeviceDesktop, IconTicket} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
@@ -73,7 +64,7 @@ export default function PosTillHeader({
             <header className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border bg-card px-3 py-2 print:hidden">
             <div className="flex min-w-0 flex-1 items-center gap-3">
                 <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-success/15 text-success">
-                    <Monitor className="size-4" />
+                    <IconDeviceDesktop className="size-4" />
                 </div>
                 <div className="min-w-0">
                     <div className="truncate text-sm font-semibold tracking-tight">{config?.name ?? rk("title")}</div>
@@ -114,7 +105,7 @@ export default function PosTillHeader({
                     onClick={onInfo}
                     title={`${rk("info.title")} (F1)`}
                 >
-                    <CircleHelp className="size-3.5" />
+                    <IconHelpCircle className="size-3.5" />
                 </Button>
                 <Button
                     size="sm"
@@ -123,7 +114,7 @@ export default function PosTillHeader({
                     onClick={onHeld}
                     title={`${rk("held.title")} (F3)`}
                 >
-                    <Ticket className="size-3.5" />
+                    <IconTicket className="size-3.5" />
                     {rk("held.title")}
                 </Button>
                 <Button
@@ -133,7 +124,7 @@ export default function PosTillHeader({
                     onClick={onOrders}
                     title={`${rk("orders")} (F6)`}
                 >
-                    <ListOrdered className="size-3.5" />
+                    <IconListNumbers className="size-3.5" />
                     {rk("orders")}
                 </Button>
                 {ifaceCashControl && (
@@ -145,7 +136,7 @@ export default function PosTillHeader({
                             onClick={onCashIn}
                             disabled={isPaused}
                         >
-                            <Banknote className="size-3.5" />
+                            <IconCash className="size-3.5" />
                             {rk("cashIn")}
                         </Button>
                         <Button
@@ -155,7 +146,7 @@ export default function PosTillHeader({
                             onClick={onCashOut}
                             disabled={isPaused}
                         >
-                            <BanknoteArrowDown className="size-3.5" />
+                            <IconCashMinus className="size-3.5" />
                             {rk("cashOut")}
                         </Button>
                     </>
@@ -166,12 +157,12 @@ export default function PosTillHeader({
                     className="h-8 border-border bg-background text-foreground hover:bg-muted"
                     onClick={onCloseSession}
                 >
-                    <DoorClosed className="size-3.5" />
+                    <IconDoor className="size-3.5" />
                     {rk("closeSession")}
                 </Button>
                 <Button size="sm" variant="ghost" className="h-8 text-muted-foreground hover:bg-muted hover:text-foreground" asChild>
                     <Link to="/tenancy/systemSettings/posconfigs">
-                        <ArrowLeft className="size-3.5" />
+                        <IconArrowLeft className="size-3.5" />
                         {rk("back")}
                     </Link>
                 </Button>

@@ -4,7 +4,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {CirclePause, CirclePlay, LoaderCircle, OctagonAlert} from "lucide-react";
+import {IconPlayerPause, IconPlayerPlay, IconLoader2, IconAlertOctagon} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -37,9 +37,9 @@ function bindPromotionLifecycleLanguageKey(
 }
 
 const verbIcon = {
-    pause: CirclePause,
-    resume: CirclePlay,
-    stop: OctagonAlert,
+    pause: IconPlayerPause,
+    resume: IconPlayerPlay,
+    stop: IconAlertOctagon,
 };
 
 export type ChangePromotionLifecycleActionProps = WithAxiosType<ActionMessage> & {
@@ -155,7 +155,7 @@ function ChangePromotionLifecycleAction({
                         disabled={verb === "stop" ? stopSubmitBlocked : loading}
                     >
                         {loading ? (
-                            <LoaderCircle className="animate-spin" />
+                            <IconLoader2 className="animate-spin" />
                         ) : (
                             <Icon size={16} />
                         )}

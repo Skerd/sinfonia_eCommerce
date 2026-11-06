@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CircleCheck, CircleX} from "lucide-react";
+import {IconCircleCheck, IconCircleX} from "@tabler/icons-react";
 import {STOCK_DOCUMENT_ACTIONS, type StockDocumentEntity, type StockDocumentResource} from "./stockDocumentActions.ts";
 
 type Props = WithLanguageType & {
@@ -22,8 +22,8 @@ function StockDocumentActionItems({resource, entity, onAction, resolveLanguageKe
             {Object.keys(STOCK_DOCUMENT_ACTIONS[resource].actions).map(action => (
                 <DropdownMenuItem key={action} onClick={() => onAction(action)}>
                     {action === "cancel"
-                        ? <CircleX className="text-destructive" size={16} />
-                        : <CircleCheck className="text-success" size={16} />}
+                        ? <IconCircleX className="text-destructive" size={16} />
+                        : <IconCircleCheck className="text-success" size={16} />}
                     {resolveLanguageKey(`${resource}.${action}`)}
                 </DropdownMenuItem>
             ))}

@@ -34,7 +34,7 @@ function PosSessionSheetView({
 
     useEffect(() => {
         if (!entityProp) return;
-        setSheetData(entityProp as unknown as Record<string, unknown>);
+        setSheetData(entityProp);
     }, [entityProp]);
 
     const entityId = entityProp?._id ?? fetchId;

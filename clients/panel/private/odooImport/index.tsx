@@ -1,10 +1,10 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
 import {toast} from "sonner";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
@@ -33,47 +33,38 @@ const ALL_DATASETS = {
     users: true,
 } satisfies Record<(typeof odooImportDatasets)[number], boolean>;
 
+const CONNECTION_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/odooConnection"};
+const IMPORT_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/odooImport"};
+
 function OdooImportPage({resolveLanguageKey}: WithLanguageType) {
     const {read} = useAccess("odooconnections");
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
-    const [connection, setConnection] = useState<OdooConnection | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [running, setRunning] = useState(false);
     const [dryRun, setDryRun] = useState(true);
     const [datasets, setDatasets] = useState(ALL_DATASETS);
     const [result, setResult] = useState<OdooImportResponse | null>(null);
 
-    const load = useCallback(async () => {
-        setLoading(true);
-        try {
-            const response = await apiClient.get<{data: OdooConnection | null}>("/api/eCommerce/odooConnection");
-            setConnection(response.data.data);
-        } catch (error) {
-            handleError(error, {showToast: true, fallbackMessage: String(resolveLanguageKey("loadError") ?? "loadError")});
-        } finally {
-            setLoading(false);
-        }
-    }, [resolveLanguageKey]);
-
+    const [loadCount, setLoadCount] = useState(0);
     useEffect(() => {
-        if (!read) return;
-        void load();
-    }, [load, read]);
+        if (read) setLoadCount((count) => count + 1);
+    }, [read]);
+    const connectionRequest = useHttpRequest<{data: OdooConnection | null}>(CONNECTION_REQUEST, {}, loadCount, true, {
+        error: (error) => handleError(error, {showToast: true, fallbackMessage: String(resolveLanguageKey("loadError") ?? "loadError")}),
+    });
+    const connection = connectionRequest.data?.data ?? null;
+    // Shows the loader until the first load settles, as before.
+    const loading = loadCount === 0 || connectionRequest.loading;
 
-    async function onRun() {
-        setRunning(true);
-        setResult(null);
-        try {
-            const body: OdooImportFormType = {...datasets, dryRun};
-            const response = await apiClient.post<OdooImportResponse>("/api/eCommerce/odooImport", body);
-            setResult(response.data);
-            toast.success(dryRun ? rk("axios.success.dryRun") : rk("axios.success.title"));
-        } catch (error) {
-            handleError(error, {showToast: true, fallbackMessage: rk("axios.error.title")});
-        } finally {
-            setRunning(false);
-        }
-    }
+    const [runCount, setRunCount] = useState(0);
+    const importBody: OdooImportFormType = {...datasets, dryRun};
+    const {loading: running} = useHttpRequest<OdooImportResponse>(IMPORT_REQUEST, importBody, runCount, true, {
+        start: () => setResult(null),
+        success: (response) => {
+            setResult(response);
+            toast.success(response.dryRun ? rk("axios.success.dryRun") : rk("axios.success.title"));
+        },
+        error: (error) => handleError(error, {showToast: true, fallbackMessage: rk("axios.error.title")}),
+    });
+    const onRun = () => setRunCount((count) => count + 1);
 
     if (read === false) return <Forbidden />;
     if (loading) return <Loader />;
@@ -126,7 +117,7 @@ function OdooImportPage({resolveLanguageKey}: WithLanguageType) {
                             <p className="text-sm text-muted-foreground">{rk("dryRunDescription")}</p>
                         </CardContent>
                         <CardFooter>
-                            <Button type="button" onClick={() => void onRun()} disabled={running}>
+                            <Button type="button" onClick={onRun} disabled={running}>
                                 {rk("submit")}
                             </Button>
                         </CardFooter>

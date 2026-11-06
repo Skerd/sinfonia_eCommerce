@@ -4,7 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
-import {Bell} from "lucide-react";
+import {IconBell} from "@tabler/icons-react";
 
 type NotifyAllTaskRequestDropdownProps = WithLanguageType & {
     entity: TaskRequest;
@@ -24,7 +24,7 @@ function NotifyAllTaskRequestDropdown({onAction, resolveLanguageKey}: NotifyAllT
         <DropdownMenuItem
             onClick={() => {triggerAction();}}
         >
-            <Bell className="size-4" />
+            <IconBell className="size-4" />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

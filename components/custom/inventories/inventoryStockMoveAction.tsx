@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {LoaderCircle, PackageMinus, PackagePlus} from "lucide-react";
+import {IconLoader2, IconPackageExport, IconPackageImport} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -76,7 +76,7 @@ function InventoryStockMoveAction({
 
     const prefix = mode;
     const isRestock = mode === "restock";
-    const ConfirmIcon = isRestock ? PackagePlus : PackageMinus;
+    const ConfirmIcon = isRestock ? IconPackageImport : IconPackageExport;
 
     useImperativeHandle(innerRef, () => ({
         success: (response?: Inventory) => {
@@ -303,7 +303,7 @@ function InventoryStockMoveAction({
                             onFormDataChange(formData);
                         }}
                     >
-                        {loading ? <LoaderCircle className="size-4 animate-spin" /> : <ConfirmIcon size={16} />}
+                        {loading ? <IconLoader2 className="size-4 animate-spin" /> : <ConfirmIcon size={16} />}
                         {resolveLanguageKey(`${prefix}.confirm`)}
                     </AlertDialogAction>
                 </AlertDialogFooter>

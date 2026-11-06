@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
-import {CircleX} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 
 type DeactivateListingDropdownProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -16,7 +16,7 @@ function DeactivateListingDropdown({onAction, resolveLanguageKey}: DeactivateLis
 
     return (
         <DropdownMenuItem onClick={() => onAction("deactivate")}>
-            <CircleX size={16} className="text-warning" />
+            <IconCircleX size={16} className="text-warning" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

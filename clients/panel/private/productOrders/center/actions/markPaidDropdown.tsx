@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {Banknote} from "lucide-react";
+import {IconCash} from "@tabler/icons-react";
 
 type MarkPaidDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -32,7 +32,7 @@ function MarkPaidDropdown({order, onAction, resolveLanguageKey}: MarkPaidDropdow
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Banknote size={16} className="text-success" />
+            <IconCash size={16} className="text-success" />
             <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

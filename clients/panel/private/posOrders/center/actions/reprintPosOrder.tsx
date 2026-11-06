@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Printer} from "lucide-react";
+import {IconPrinter} from "@tabler/icons-react";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 
 type ReprintPosOrderProps = WithLanguageType & {
@@ -20,7 +20,7 @@ function ReprintPosOrder({entity, resolveLanguageKey, onAction}: ReprintPosOrder
 
     return (
         <DropdownMenuItem onClick={() => onAction("reprintPosOrder")}>
-            <Printer className="text-info" size={16} />
+            <IconPrinter className="text-info" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

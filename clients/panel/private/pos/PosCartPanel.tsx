@@ -1,12 +1,5 @@
 import type {RefObject} from "react";
-import {
-    CreditCard,
-    Pause,
-    Percent,
-    Scissors,
-    ShoppingBag,
-    UserRound,
-} from "lucide-react";
+import {IconCreditCard, IconPlayerPause, IconPercentage, IconScissors, IconShoppingBag, IconUser} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import PosNumpadField from "@eCommerceModule/clients/panel/private/pos/PosNumpad.tsx";
 import PosCustomerSearch from "@eCommerceModule/clients/panel/private/pos/PosCustomerSearch.tsx";
@@ -158,7 +151,7 @@ export default function PosCartPanel({
             <div className="flex shrink-0 items-center justify-between gap-2 border-b border-border px-4 py-3">
                 <div className="flex items-center gap-2.5">
                     <div className="flex size-8 items-center justify-center rounded-lg bg-success/15 text-success">
-                        <ShoppingBag className="size-4" />
+                        <IconShoppingBag className="size-4" />
                     </div>
                     <div>
                         <div className="text-sm font-semibold leading-none">
@@ -183,7 +176,7 @@ export default function PosCartPanel({
                             onClick={onToggleLineDiscount}
                             title={rk("lineDiscount")}
                         >
-                            <Percent className="size-3.5" />
+                            <IconPercentage className="size-3.5" />
                         </Button>
                     )}
                     <Button
@@ -193,7 +186,7 @@ export default function PosCartPanel({
                         onClick={onToggleCustomer}
                         title={rk("customerName")}
                     >
-                        <UserRound className="size-3.5" />
+                        <IconUser className="size-3.5" />
                     </Button>
                     <Button
                         size="sm"
@@ -202,7 +195,7 @@ export default function PosCartPanel({
                         onClick={onTogglePayment}
                         title={rk("paymentMethods")}
                     >
-                        <CreditCard className="size-3.5" />
+                        <IconCreditCard className="size-3.5" />
                     </Button>
                     <Button
                         size="sm"
@@ -212,7 +205,7 @@ export default function PosCartPanel({
                         disabled={!cart.length || total <= 0}
                         title={rk("split.title")}
                     >
-                        <Scissors className="size-3.5" />
+                        <IconScissors className="size-3.5" />
                     </Button>
                     <Button
                         size="sm"
@@ -222,7 +215,7 @@ export default function PosCartPanel({
                         disabled={!cart.length || holdBusy}
                         title={`${rk("hold")} (F4)`}
                     >
-                        <Pause className="size-3.5" />
+                        <IconPlayerPause className="size-3.5" />
                     </Button>
                     <Button
                         size="sm"
@@ -254,7 +247,7 @@ export default function PosCartPanel({
             <div ref={cartScrollRef} className="min-h-0 flex-1 gap-y-1 overflow-y-auto px-2 py-2">
                 {!cart.length && (
                     <div className="flex h-full min-h-[8rem] flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-background/50 px-4 text-center text-sm text-muted-foreground">
-                        <ShoppingBag className="size-7 opacity-40" />
+                        <IconShoppingBag className="size-7 opacity-40" />
                         {rk("cartEmpty")}
                     </div>
                 )}

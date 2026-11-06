@@ -6,7 +6,7 @@ import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {Milestone} from "lucide-react";
+import {IconTimelineEvent} from "@tabler/icons-react";
 
 type CreateMilestoneDropdownProps = WithLanguageType & {
     order: Order;
@@ -27,7 +27,7 @@ function CreateMilestoneDropdown({order, onAction, resolveLanguageKey}: CreateMi
 
     return (
         <DropdownMenuItem onClick={() => onAction("createMilestone")}>
-            <Milestone size={16} className="text-primary" />
+            <IconTimelineEvent size={16} className="text-primary" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

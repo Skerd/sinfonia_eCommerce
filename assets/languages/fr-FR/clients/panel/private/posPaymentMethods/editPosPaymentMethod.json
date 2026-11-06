@@ -30,10 +30,7 @@
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Comptant",
-      "card": "Carte",
-      "bank": "Banque",
-      "customer_account": "Compte client",
-      "other": "Autre"
+      "card": "Carte"
     },
     "terminalProvider": {
       "manual": "Manuel (terminal externe)",

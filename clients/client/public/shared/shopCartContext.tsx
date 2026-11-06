@@ -1,7 +1,7 @@
 import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode} from "react";
 import {useSelector} from "react-redux";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {requestFromApi} from "@coreModule/helpers/apiClient/requestFromApi.ts";
 import {useDynamicLanguage} from "@coreModule/helpers/hooks/useDynamicLanguage.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Cart, CartNotices} from "armonia/src/modules/eCommerce/api/eCommerce/private/cart/cart.dto.ts";
@@ -94,8 +94,8 @@ export function ShopCartProvider({children}: {children: ReactNode}) {
         }
         setLoading(true);
         try {
-            const res = await apiClient.get<{data: Cart | null}>("/api/eCommerce/cart");
-            acceptCart(res.data.data ?? null);
+            const res = await requestFromApi<{data: Cart | null}>({method: "get", url: "/api/eCommerce/cart", silent: true});
+            acceptCart(res.data ?? null);
         } catch {
             setCart(null);
         } finally {
@@ -120,41 +120,42 @@ export function ShopCartProvider({children}: {children: ReactNode}) {
         }
     }, []);
 
+    // Silent: the cart's callers show their own toasts, as before.
     const addItem = useCallback(async (productId: string, variantId: string | undefined, quantity: number) => {
-        const res = await apiClient.put<{data: Cart}>("/api/eCommerce/cart/item", {productId, variantId, quantity});
-        acceptMutation(res.data.data);
+        const res = await requestFromApi<{data: Cart}>({method: "put", url: "/api/eCommerce/cart/item", data: {productId, variantId, quantity}, silent: true});
+        acceptMutation(res.data);
     }, [acceptMutation]);
 
     const updateItem = useCallback((itemId: string, quantity: number) => withItemLock(itemId, async () => {
-        const res = await apiClient.patch<{data: Cart}>("/api/eCommerce/cart/item", {itemId, quantity});
-        acceptMutation(res.data.data);
+        const res = await requestFromApi<{data: Cart}>({method: "patch", url: "/api/eCommerce/cart/item", data: {itemId, quantity}, silent: true});
+        acceptMutation(res.data);
     }), [acceptMutation, withItemLock]);
 
     const removeItem = useCallback((itemId: string) => withItemLock(itemId, async () => {
-        const res = await apiClient.delete<{data: Cart}>(`/api/eCommerce/cart/item/${itemId}`);
-        acceptMutation(res.data.data);
+        const res = await requestFromApi<{data: Cart}>({method: "delete", url: `/api/eCommerce/cart/item/${itemId}`, silent: true});
+        acceptMutation(res.data);
     }), [acceptMutation, withItemLock]);
 
     const applyDiscount = useCallback(async (code: string) => {
-        const res = await apiClient.post<{valid: boolean; data?: Cart; message?: string}>("/api/eCommerce/cart/apply-discount", {code});
-        if (res.data.valid && res.data.data) acceptMutation(res.data.data);
-        return {valid: res.data.valid, message: res.data.message};
+        const res = await requestFromApi<{valid: boolean; data?: Cart; message?: string}>({method: "post", url: "/api/eCommerce/cart/apply-discount", data: {code}, silent: true});
+        if (res.valid && res.data) acceptMutation(res.data);
+        return {valid: res.valid, message: res.message};
     }, [acceptMutation]);
 
     const removeDiscount = useCallback(async () => {
-        const res = await apiClient.delete<{data: Cart}>("/api/eCommerce/cart/discount");
-        acceptMutation(res.data.data);
+        const res = await requestFromApi<{data: Cart}>({method: "delete", url: "/api/eCommerce/cart/discount", silent: true});
+        acceptMutation(res.data);
     }, [acceptMutation]);
 
     const applyGiftCard = useCallback(async (code: string) => {
-        const res = await apiClient.post<{valid: boolean; data?: Cart; message?: string}>("/api/eCommerce/cart/apply-gift-card", {code});
-        if (res.data.valid && res.data.data) acceptMutation(res.data.data);
-        return {valid: res.data.valid, message: res.data.message};
+        const res = await requestFromApi<{valid: boolean; data?: Cart; message?: string}>({method: "post", url: "/api/eCommerce/cart/apply-gift-card", data: {code}, silent: true});
+        if (res.valid && res.data) acceptMutation(res.data);
+        return {valid: res.valid, message: res.message};
     }, [acceptMutation]);
 
     const removeGiftCard = useCallback(async () => {
-        const res = await apiClient.delete<{data: Cart}>("/api/eCommerce/cart/gift-card");
-        acceptMutation(res.data.data);
+        const res = await requestFromApi<{data: Cart}>({method: "delete", url: "/api/eCommerce/cart/gift-card", silent: true});
+        acceptMutation(res.data);
     }, [acceptMutation]);
 
     const itemCount = useMemo(

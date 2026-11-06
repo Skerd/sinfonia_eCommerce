@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {StarRow} from "@eCommerceModule/clients/client/public/product/reviewsSection.tsx";
 import type {
@@ -10,6 +10,7 @@ import type {
     ShopMarketplaceReviewsResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
 
+const REVIEWS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/shopMarketplaceReviews"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopMarketplaceReviews.tsx";
 
 type ShopMarketplaceReviewsProps = WithLanguageType & {
@@ -22,29 +23,13 @@ type ShopMarketplaceReviewsProps = WithLanguageType & {
 
 /** Read-only reviews block; buyers review from their completed order in the account. */
 function ShopMarketplaceReviewsInner({resolveLanguageKey, listingId, providerId, average, count}: ShopMarketplaceReviewsProps) {
-    const [reviews, setReviews] = useState<ShopMarketplaceReview[]>([]);
-    const [total, setTotal] = useState(0);
-
+    const [reviewsCount, setReviewsCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<ShopMarketplaceReviewsResponse>("/api/eCommerceMarketplace/shopMarketplaceReviews", {
-                    listingId,
-                    providerId,
-                    limit: 20,
-                });
-                if (cancelled) return;
-                setReviews(res.data.data ?? []);
-                setTotal(res.data.total ?? 0);
-            } catch {
-                if (!cancelled) setReviews([]);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setReviewsCount((count) => count + 1);
     }, [listingId, providerId]);
+    const reviewsRequest = useHttpRequest<ShopMarketplaceReviewsResponse>(REVIEWS_REQUEST, {listingId, providerId, limit: 20}, reviewsCount);
+    const reviews: ShopMarketplaceReview[] = reviewsRequest.error ? [] : reviewsRequest.data?.data ?? [];
+    const total = reviewsRequest.data?.total ?? 0;
 
     return (
         <section id="shop-reviews" className="scroll-mt-28 border-t border-border pt-12" aria-labelledby="shop-reviews-title">

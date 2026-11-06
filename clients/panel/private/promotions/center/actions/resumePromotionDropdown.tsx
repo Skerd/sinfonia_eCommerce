@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CirclePlay} from "lucide-react";
+import {IconPlayerPlay} from "@tabler/icons-react";
 
 type ResumePromotionDropdownProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -11,7 +11,7 @@ type ResumePromotionDropdownProps = WithLanguageType & {
 function ResumePromotionDropdown({onAction, resolveLanguageKey}: ResumePromotionDropdownProps) {
     return (
         <DropdownMenuItem onClick={() => onAction("resume")}>
-            <CirclePlay size={16} className="text-success" />
+            <IconPlayerPlay size={16} className="text-success" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

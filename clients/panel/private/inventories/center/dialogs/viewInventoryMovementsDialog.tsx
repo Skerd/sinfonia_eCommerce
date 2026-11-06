@@ -93,8 +93,9 @@ function ViewInventoryMovementsDialog({
                             renderItem={(movement) => {
                                 const qty = movement.quantity ?? 0;
                                 return (
-                                    <button
+                                    <Button
                                         type="button"
+                                        variant="bare"
                                         className="flex w-full min-w-0 items-start gap-3 rounded-md border px-3 py-2 text-left hover:bg-muted/40"
                                         onClick={() => setSelectedMovement(movement)}
                                     >
@@ -140,7 +141,7 @@ function ViewInventoryMovementsDialog({
                                                     : null}
                                             </p>
                                         </div>
-                                    </button>
+                                    </Button>
                                 );
                             }}
                             renderError={({onRetry}) => (

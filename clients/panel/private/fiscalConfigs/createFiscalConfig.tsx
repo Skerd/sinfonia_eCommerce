@@ -22,7 +22,7 @@ export default createGenericCreatePage<CreateFiscalConfigFormType>({
         environment: "test",
         isVatRegistered: true,
         certificate: [],
-    } as unknown as CreateFiscalConfigFormType,
+    },
     successPath: "/tenancy/systemSettings/fiscalconfigs",
     submitIcon: <IconPlus />,
 });

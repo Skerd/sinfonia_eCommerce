@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editCollectionFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/editCollection.form.validator.ts";
 import type {EditCollectionFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.schema-def.ts";
@@ -18,5 +18,5 @@ export default createGenericEditPage<Collection, EditCollectionFormType>({
     buildFormExtras: (_id, _params, entity) => ({
         products: entity?.products?.map((p) => ({value: p._id, label: p.title})) ?? [],
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

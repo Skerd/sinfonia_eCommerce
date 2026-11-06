@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CheckCircle} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 
 type Props = WithLanguageType & {
@@ -20,7 +20,7 @@ function CompleteReturnRequest({entity, resolveLanguageKey, onAction}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction("completeReturnRequest")}>
-            <CheckCircle className="text-success" size={16} />
+            <IconCircleCheck className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

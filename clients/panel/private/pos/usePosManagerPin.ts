@@ -1,10 +1,12 @@
 import {useCallback, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {PosConfigManager} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosPinManagerOption} from "@eCommerceModule/clients/panel/private/pos/PosPinDialog.tsx";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
+
+const VERIFY_PIN_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/pos/verifyPin"};
 
 export type PosManagerAuth = {
     pin: string;
@@ -21,11 +23,28 @@ export function usePosManagerPin(
     resolveLanguageKey: ResolveLanguageKey,
 ) {
     const [pinOpen, setPinOpen] = useState(false);
-    const [pinBusy, setPinBusy] = useState(false);
     const [pinTitle, setPinTitle] = useState("");
     const pinResolverRef = useRef<((auth: PosManagerAuth | null) => void) | null>(null);
     const managerAuthRef = useRef<PosManagerAuth | null>(null);
     const discountUnlockedRef = useRef(false);
+
+    // The PIN check is awaited by the action that asked for it; the hook's result settles that promise.
+    const verifyResolverRef = useRef<((valid: boolean) => void) | null>(null);
+    const [verifyCall, setVerifyCall] = useState<{payload: Record<string, unknown>; count: number}>({payload: {}, count: 0});
+    const settleVerify = (valid: boolean) => {
+        const resolve = verifyResolverRef.current;
+        verifyResolverRef.current = null;
+        resolve?.(valid);
+    };
+    const {loading: pinBusy} = useHttpRequest(VERIFY_PIN_REQUEST, verifyCall.payload, verifyCall.count, true, {
+        success: () => settleVerify(true),
+        error: () => settleVerify(false),
+    });
+    const verifyPin = useCallback((payload: Record<string, unknown>) => new Promise<boolean>((resolve) => {
+        verifyResolverRef.current?.(false);
+        verifyResolverRef.current = resolve;
+        setVerifyCall((current) => ({payload, count: current.count + 1}));
+    }), []);
 
     const pinManagers: PosPinManagerOption[] = useMemo(() => {
         return (managers ?? [])
@@ -59,24 +78,16 @@ export function usePosManagerPin(
             const auth = await askManagerPin(title);
             if (!auth) return null;
             if (!configId) return null;
-            setPinBusy(true);
-            try {
-                await apiClient.post("/api/eCommerce/pos/verifyPin", {
-                    configId,
-                    pin: auth.pin,
-                    managerId: auth.managerId,
-                });
+            const valid = await verifyPin({configId, pin: auth.pin, managerId: auth.managerId});
+            if (valid) {
                 managerAuthRef.current = auth;
                 return auth;
-            } catch {
-                toast.error(String(resolveLanguageKey("errors.pinInvalid") ?? "errors.pinInvalid"));
-                managerAuthRef.current = null;
-                return null;
-            } finally {
-                setPinBusy(false);
             }
+            toast.error(String(resolveLanguageKey("errors.pinInvalid") ?? "errors.pinInvalid"));
+            managerAuthRef.current = null;
+            return null;
         },
-        [askManagerPin, configId, pinManagers.length, resolveLanguageKey],
+        [askManagerPin, configId, pinManagers.length, resolveLanguageKey, verifyPin],
     );
 
     const resetManagerPin = useCallback(() => {

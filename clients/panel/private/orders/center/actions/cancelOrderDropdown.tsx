@@ -7,7 +7,7 @@ import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {CircleX} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 
 type CancelOrderDropdownProps = WithLanguageType & {
     order: Order;
@@ -39,7 +39,7 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleX size={16} className="text-destructive" />
+            <IconCircleX size={16} className="text-destructive" />
             <span className="text-destructive">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

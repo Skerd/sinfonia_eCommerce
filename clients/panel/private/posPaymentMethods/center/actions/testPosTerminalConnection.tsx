@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Cable} from "lucide-react";
+import {IconPlug} from "@tabler/icons-react";
 import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.dto.ts";
 
 type TestPosTerminalConnectionProps = WithLanguageType & {
@@ -16,7 +16,7 @@ function TestPosTerminalConnection({entity, onAction, resolveLanguageKey}: TestP
 
     return (
         <DropdownMenuItem onClick={() => onAction("testPosTerminalConnection")}>
-            <Cable size={16} />
+            <IconPlug size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

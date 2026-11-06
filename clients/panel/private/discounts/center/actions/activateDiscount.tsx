@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Power} from "lucide-react";
+import {IconPower} from "@tabler/icons-react";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
 
 type ActivateDiscountProps = WithLanguageType & {
@@ -19,7 +19,7 @@ function ActivateDiscount({entity, resolveLanguageKey, onAction}: ActivateDiscou
 
     return (
         <DropdownMenuItem onClick={() => onAction("activateDiscount")}>
-            <Power className="text-success" size={16} />
+            <IconPower className="text-success" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

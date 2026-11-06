@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {AlertTriangle, LoaderCircle} from "lucide-react";
+import {IconAlertTriangle, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -120,9 +120,9 @@ function RaiseDisputeAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <AlertTriangle size={16} className="text-warning" />
+                            <IconAlertTriangle size={16} className="text-warning" />
                         )}
                         {resolveLanguageKey("raise.confirm")}
                     </AlertDialogAction>

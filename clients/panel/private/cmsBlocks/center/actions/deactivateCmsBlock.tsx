@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {PowerOff} from "lucide-react";
+import {IconPlugConnectedX} from "@tabler/icons-react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
 
 type DeactivateCmsBlockProps = WithLanguageType & {
@@ -19,7 +19,7 @@ function DeactivateCmsBlock({entity, resolveLanguageKey, onAction}: DeactivateCm
 
     return (
         <DropdownMenuItem onClick={() => onAction("deactivateCmsBlock")}>
-            <PowerOff className="text-destructive" size={16} />
+            <IconPlugConnectedX className="text-destructive" size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

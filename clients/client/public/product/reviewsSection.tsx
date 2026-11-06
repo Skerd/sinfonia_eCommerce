@@ -1,11 +1,11 @@
 import {useCallback, useEffect, useState, type FormEvent} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {Star} from "lucide-react";
+import {IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
@@ -19,6 +19,9 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 
+const REVIEWS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProductReviews"};
+const MY_ORDERS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/my"};
+const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/productReview"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";
 
 const REVIEWABLE_PAYMENT_STATUSES = new Set(["paid", "partially_refunded"]);
@@ -27,7 +30,7 @@ export function StarRow({value, className}: {value: number; className?: string})
     return (
         <span className={cn("inline-flex items-center gap-0.5", className)} aria-hidden>
             {[1, 2, 3, 4, 5].map(n => (
-                <Star key={n} className={cn("h-4 w-4", n <= value ? "fill-foreground text-foreground" : "text-foreground/25")} />
+                <IconStar key={n} className={cn("h-4 w-4", n <= value ? "fill-foreground text-foreground" : "text-foreground/25")} />
             ))}
         </span>
     );
@@ -41,79 +44,64 @@ type ReviewsSectionProps = WithLanguageType & {
 
 function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompanyId}: ReviewsSectionProps) {
     const {isAuthenticated: signedIn} = usePortalSession();
-    const [reviews, setReviews] = useState<ShopProductReview[]>([]);
-    const [total, setTotal] = useState(0);
-    const [average, setAverage] = useState<number | undefined>(undefined);
     const [reviewableOrderId, setReviewableOrderId] = useState<string | null>(null);
     const [rating, setRating] = useState(5);
     const [title, setTitle] = useState("");
     const [comment, setComment] = useState("");
-    const [submitting, setSubmitting] = useState(false);
 
-    const load = useCallback(async () => {
-        try {
-            const res = await apiClient.post<ShopProductReviewsResponse>("/api/eCommerce/shopProductReviews", {
-                id: productId,
-                slug,
-                ...(sellerCompanyId ? {sellerCompanyId} : {}),
-                limit: 20,
-            });
-            setReviews(res.data.data ?? []);
-            setTotal(res.data.total ?? 0);
-            setAverage(res.data.ratingAverage);
-        } catch {
-            setReviews([]);
-        }
-    }, [productId, slug, sellerCompanyId]);
-
+    const [reviewsCount, setReviewsCount] = useState(0);
+    const load = useCallback(() => setReviewsCount((count) => count + 1), []);
     useEffect(() => {
-        void load();
-    }, [load]);
+        load();
+    }, [load, productId, slug, sellerCompanyId]);
+    const reviewsRequest = useHttpRequest<ShopProductReviewsResponse>(REVIEWS_REQUEST, {
+        id: productId,
+        slug,
+        ...(sellerCompanyId ? {sellerCompanyId} : {}),
+        limit: 20,
+    }, reviewsCount);
+    const reviews: ShopProductReview[] = reviewsRequest.error ? [] : reviewsRequest.data?.data ?? [];
+    const total = reviewsRequest.data?.total ?? 0;
+    const average = reviewsRequest.data?.ratingAverage;
 
     // A signed-in buyer can review when they have a paid order containing this product
+    const [ordersCount, setOrdersCount] = useState(0);
     useEffect(() => {
-        if (!signedIn) return;
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: BuyerProductOrder[]}>("/api/eCommerce/productOrder/my", {limit: 50});
-                if (cancelled) return;
-                const match = (res.data.data ?? []).find(order =>
-                    REVIEWABLE_PAYMENT_STATUSES.has(order.paymentStatus) && order.items?.some(item => item.product?._id === productId),
-                );
-                setReviewableOrderId(match?._id ?? null);
-            } catch {
-                setReviewableOrderId(null);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (signedIn) setOrdersCount((count) => count + 1);
     }, [signedIn, productId]);
+    useHttpRequest<{data: BuyerProductOrder[]}>(MY_ORDERS_REQUEST, {limit: 50}, ordersCount, true, {
+        success: (response) => {
+            const match = (response.data ?? []).find(order =>
+                REVIEWABLE_PAYMENT_STATUSES.has(order.paymentStatus) && order.items?.some(item => item.product?._id === productId),
+            );
+            setReviewableOrderId(match?._id ?? null);
+        },
+        error: () => setReviewableOrderId(null),
+    });
 
-    async function submitReview(event: FormEvent) {
-        event.preventDefault();
-        if (!reviewableOrderId) return;
-        setSubmitting(true);
-        try {
-            await apiClient.put("/api/eCommerce/productReview", {
-                order: reviewableOrderId,
-                product: productId,
-                rating,
-                title: title.trim() || undefined,
-                comment: comment.trim() || undefined,
-            });
+    const [reviewCount, setReviewCount] = useState(0);
+    const {loading: submitting} = useHttpRequest(CREATE_REVIEW_REQUEST, {
+        order: reviewableOrderId,
+        product: productId,
+        rating,
+        title: title.trim() || undefined,
+        comment: comment.trim() || undefined,
+    }, reviewCount, true, {
+        success: () => {
             toast.success(resolveLanguageKey("thanks"));
             setTitle("");
             setComment("");
             // One review per order line: the same order can't be reviewed again
             setReviewableOrderId(null);
-            await load();
-        } catch (err) {
-            handleError(err, {context: "Reviews", showToast: true, fallbackMessage: resolveLanguageKey("submitError")});
-        } finally {
-            setSubmitting(false);
-        }
+            load();
+        },
+        error: (err) => handleError(err, {context: "Reviews", showToast: true, fallbackMessage: resolveLanguageKey("submitError")}),
+    });
+
+    function submitReview(event: FormEvent) {
+        event.preventDefault();
+        if (!reviewableOrderId) return;
+        setReviewCount((count) => count + 1);
     }
 
     return (
@@ -151,7 +139,7 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
                                             aria-label={resolveLanguageKey("starsOption").replace("{count}", String(n))}
                                             aria-pressed={n === rating}
                                         >
-                                            <Star className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
+                                            <IconStar className={cn("size-6", n <= rating ? "fill-foreground text-foreground" : "text-foreground/25")} />
                                         </Button>
                                     ))}
                                 </div>

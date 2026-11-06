@@ -9,7 +9,7 @@ export default createGenericCreatePage<CreateStockCountFormType>({
     accessModel: "stockCounts",
     apiUrl: "/api/eCommerce/stockCount",
     schema: createStockCountFormSchema,
-    defaultValues: {warehouse: ""} as unknown as CreateStockCountFormType,
+    defaultValues: {warehouse: ""},
     successPath: "/eCommerce/stockcounts",
     submitIcon: <IconPlus />,
 });

@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editFiscalConfigFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/editFiscalConfig.form.validator.ts";
 import type {EditFiscalConfigFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/fiscalConfig.schema-def.ts";
@@ -15,5 +15,5 @@ export default createGenericEditPage<FiscalConfig, EditFiscalConfigFormType>({
         certificate: data.certificate?.map(media => media._id) ?? [],
         certificatePassword: "",
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

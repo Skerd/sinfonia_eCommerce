@@ -1,4 +1,4 @@
-import { Save } from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import { createGenericEditPage } from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import { editListingPackageFormSchema } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingPackage/editListingPackage.form.validator.ts";
 import type { ListingPackage } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingPackage/listingPackage.dto.ts";
@@ -22,5 +22,5 @@ export default createGenericEditPage<ListingPackage, EditListingPackageFormType>
         deliveryDays: writeFields.deliveryDays ? data.deliveryDays : undefined,
         order: writeFields.order ? data.order : undefined,
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

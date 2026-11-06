@@ -7,7 +7,7 @@ import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {PackageCheck} from "lucide-react";
+import {IconPackageImport} from "@tabler/icons-react";
 
 type SubmitOrderDeliveryDropdownProps = WithLanguageType & {
     order: Order;
@@ -35,7 +35,7 @@ function SubmitOrderDeliveryDropdown({order, onAction, resolveLanguageKey}: Subm
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <PackageCheck size={16} className="text-success" />
+            <IconPackageImport size={16} className="text-success" />
             <span className="text-success">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

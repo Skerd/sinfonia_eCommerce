@@ -1,6 +1,7 @@
 import {buttonLike} from "@coreModule/helpers/general/a11y.ts";
-import {Minus, Plus, Trash2} from "lucide-react";
+import {IconMinus, IconPlus, IconTrash} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 import PosNumpadField from "@eCommerceModule/clients/panel/private/pos/PosNumpad.tsx";
 import {type CartLine, lineTotal} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 
@@ -67,8 +68,9 @@ export default function PosCartLine({
             </div>
             {itemsSplitActive ? (
                 <div className="flex shrink-0 items-center overflow-hidden rounded-md border border-warning/40 bg-card">
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         tabIndex={-1}
                         className="flex size-7 items-center justify-center hover:bg-muted"
                         onMouseDown={(e) => e.preventDefault()}
@@ -77,13 +79,14 @@ export default function PosCartLine({
                             onBumpSplitQty(-1);
                         }}
                     >
-                        <Minus className="size-3" />
-                    </button>
+                        <IconMinus className="size-3" />
+                    </Button>
                     <div className="flex h-7 w-10 items-center justify-center text-xs font-semibold tabular-nums">
                         {shareQty}/{line.quantity}
                     </div>
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         tabIndex={-1}
                         className="flex size-7 items-center justify-center hover:bg-muted"
                         onMouseDown={(e) => e.preventDefault()}
@@ -92,13 +95,14 @@ export default function PosCartLine({
                             onBumpSplitQty(1);
                         }}
                     >
-                        <Plus className="size-3" />
-                    </button>
+                        <IconPlus className="size-3" />
+                    </Button>
                 </div>
             ) : (
                 <div className="relative flex shrink-0 items-center overflow-hidden rounded-md border border-border bg-card">
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         tabIndex={-1}
                         className="flex size-7 items-center justify-center hover:bg-muted disabled:opacity-40"
                         disabled={!allowQuantityChange}
@@ -108,8 +112,8 @@ export default function PosCartLine({
                             onUpdateLineQty(-1);
                         }}
                     >
-                        <Minus className="size-3" />
-                    </button>
+                        <IconMinus className="size-3" />
+                    </Button>
                     <PosNumpadField
                         value={line.quantity}
                         onValueChange={onSetLineQty}
@@ -122,8 +126,9 @@ export default function PosCartLine({
                         clearLabel={rk("numpad.clear")}
                         buttonClassName="flex h-7 w-9 items-center justify-center text-xs font-semibold"
                     />
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         tabIndex={-1}
                         className="flex size-7 items-center justify-center hover:bg-muted disabled:opacity-40"
                         disabled={!allowQuantityChange}
@@ -133,8 +138,8 @@ export default function PosCartLine({
                             onUpdateLineQty(1);
                         }}
                     >
-                        <Plus className="size-3" />
-                    </button>
+                        <IconPlus className="size-3" />
+                    </Button>
                 </div>
             )}
             {allowDiscount && showLineDiscount && (
@@ -157,9 +162,10 @@ export default function PosCartLine({
             <div className="w-16 shrink-0 text-right text-sm font-semibold tabular-nums text-foreground">
                 {money(lineTotal(line))}
             </div>
-            <button
+            <Button
                 type="button"
-                className="shrink-0 rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-destructive"
+                variant="bare"
+                className="shrink-0 rounded-md p-1 text-muted-foreground hover:bg-muted hover:text-destructive disabled:pointer-events-auto disabled:opacity-100"
                 onClick={(e) => {
                     e.stopPropagation();
                     onRemove();
@@ -167,8 +173,8 @@ export default function PosCartLine({
                 aria-label={rk("remove")}
                 disabled={itemsSplitActive}
             >
-                <Trash2 className="size-3.5" />
-            </button>
+                <IconTrash className="size-3.5" />
+            </Button>
         </div>
     );
 }

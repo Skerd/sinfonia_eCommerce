@@ -1,4 +1,4 @@
-import {CircleHelp} from "lucide-react";
+import {IconHelpCircle} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,
@@ -46,7 +46,7 @@ export default function PosInfoDialog({open, onOpenChange, rk}: Props) {
             <DialogContent className="print:hidden sm:max-w-lg">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-2">
-                        <CircleHelp className="size-5 text-success" />
+                        <IconHelpCircle className="size-5 text-success" />
                         {rk("info.title")}
                     </DialogTitle>
                     <DialogDescription>{rk("info.description")}</DialogDescription>

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
-import {PackageMinus} from "lucide-react";
+import {IconPackageExport} from "@tabler/icons-react";
 
 type DeductInventoryDropdownProps = WithLanguageType & {
     inventory: Inventory;
@@ -28,7 +28,7 @@ function DeductInventoryDropdown({inventory, onAction, resolveLanguageKey}: Dedu
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <PackageMinus size={16} className="text-warning" />
+            <IconPackageExport size={16} className="text-warning" />
             <span className="text-warning">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

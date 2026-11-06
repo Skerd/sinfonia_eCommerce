@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
-import {Lock} from "lucide-react";
+import {IconLock} from "@tabler/icons-react";
 
 type CloseTaskRequestDropdownProps = WithLanguageType & {
     entity: TaskRequest;
@@ -33,7 +33,7 @@ function CloseTaskRequestDropdown({entity, onAction, resolveLanguageKey}: CloseT
         <DropdownMenuItem
             onClick={() => {triggerAction();}}
         >
-            <Lock className="size-4" />
+            <IconLock className="size-4" />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

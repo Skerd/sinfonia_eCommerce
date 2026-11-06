@@ -6,7 +6,7 @@ import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Listing} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listing/listing.dto.ts";
-import {ShoppingCart} from "lucide-react";
+import {IconShoppingCart} from "@tabler/icons-react";
 
 type CreateOrderFromListingDropdownProps = WithLanguageType & {
     listing: Listing;
@@ -26,7 +26,7 @@ function CreateOrderFromListingDropdown({listing, onAction, resolveLanguageKey}:
 
     return (
         <DropdownMenuItem onClick={() => onAction("createOrderFromListing")}>
-            <ShoppingCart size={16} className="text-info" />
+            <IconShoppingCart size={16} className="text-info" />
             <span className="text-info">{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

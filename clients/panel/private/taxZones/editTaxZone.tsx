@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editTaxZoneFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/editTaxZone.form.validator.ts";
 import type {EditTaxZoneFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.schema-def.ts";
@@ -15,5 +15,5 @@ export default createGenericEditPage<TaxZone, EditTaxZoneFormType>({
         country: data.country?._id,
         states: data.states?.map((s) => s._id),
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

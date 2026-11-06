@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {ImageOff, Star} from "lucide-react";
+import {IconPhotoOff, IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -70,7 +70,7 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                     />
                 ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
-                        <ImageOff className="h-6 w-6" aria-hidden />
+                        <IconPhotoOff className="h-6 w-6" aria-hidden />
                         <span className="text-xs">{resolveLanguageKey("noImage")}</span>
                     </div>
                 )}
@@ -94,7 +94,7 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                     <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} currency={product.currency} />
                     {product.ratingCount ? (
                         <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-xs text-muted-foreground">
-                            <Star className="h-3.5 w-3.5 fill-foreground text-foreground" aria-hidden />
+                            <IconStar className="h-3.5 w-3.5 fill-foreground text-foreground" aria-hidden />
                             <span aria-hidden>{product.ratingAverage?.toFixed(1)} ({product.ratingCount})</span>
                             <span className="sr-only">
                                 {resolveLanguageKey("rating")

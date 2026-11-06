@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {toast} from "sonner";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import {
@@ -39,63 +39,37 @@ const EMPTY_FORM: MyCustomerAddressCreateFormType = {
     isDefault: false,
 };
 
+const MY_ADDRESSES_URL = "/api/eCommerce/customerAddress/my";
+const ADDRESSES_REQUEST: HttpRequest = {method: "POST", url: MY_ADDRESSES_URL};
+const CREATE_ADDRESS_REQUEST: HttpRequest = {method: "PUT", url: MY_ADDRESSES_URL};
+const EDIT_ADDRESS_REQUEST: HttpRequest = {method: "PATCH", url: MY_ADDRESSES_URL};
+const DELETE_ADDRESS_REQUEST: HttpRequest = {method: "DELETE", url: MY_ADDRESSES_URL};
+const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopCountries"};
+const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopCities"};
+
 function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) {
-    const [addresses, setAddresses] = useState<CustomerAddress[]>([]);
-    const [countries, setCountries] = useState<ShopCountry[]>([]);
-    const [cities, setCities] = useState<ShopCity[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [saving, setSaving] = useState(false);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [form, setForm] = useState<MyCustomerAddressCreateFormType>(EMPTY_FORM);
     const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
     const [showForm, setShowForm] = useState(false);
     const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
 
-    const loadAddresses = async () => {
-        const res = await apiClient.post<{data: CustomerAddress[]}>("/api/eCommerce/customerAddress/my", {});
-        setAddresses(res.data.data ?? []);
-    };
+    const loadError = (err: unknown) => handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("loadError")});
+    const [addressesCount, setAddressesCount] = useState(1);
+    const loadAddresses = () => setAddressesCount((count) => count + 1);
+    const addressesRequest = useHttpRequest<{data: CustomerAddress[]}>(ADDRESSES_REQUEST, {}, addressesCount, true, {error: loadError});
+    const countriesRequest = useHttpRequest<{data: ShopCountry[]}>(COUNTRIES_REQUEST, {}, 1, true, {error: loadError});
+    const addresses: CustomerAddress[] = addressesRequest.data?.data ?? [];
+    const countries: ShopCountry[] = countriesRequest.data?.data ?? [];
+    // The page skeleton covers the first load only; reloads after a save keep the list on screen.
+    const loading = (addressesRequest.loading && !addressesRequest.data) || countriesRequest.loading;
 
+    const [citiesCount, setCitiesCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        (async () => {
-            try {
-                const [addressRes, countryRes] = await Promise.all([
-                    apiClient.post<{data: CustomerAddress[]}>("/api/eCommerce/customerAddress/my", {}),
-                    apiClient.get<{data: ShopCountry[]}>("/api/eCommerce/shopCountries"),
-                ]);
-                if (cancelled) return;
-                setAddresses(addressRes.data.data ?? []);
-                setCountries(countryRes.data.data ?? []);
-            } catch (err) {
-                handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("loadError")});
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
-    }, [resolveLanguageKey]);
-
-    useEffect(() => {
-        if (!form.country) {
-            setCities([]);
-            return;
-        }
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<{data: ShopCity[]}>("/api/eCommerce/shopCities", {countryId: form.country});
-                if (!cancelled) setCities(res.data.data ?? []);
-            } catch {
-                if (!cancelled) setCities([]);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        if (form.country) setCitiesCount((count) => count + 1);
     }, [form.country]);
+    const citiesRequest = useHttpRequest<{data: ShopCity[]}>(CITIES_REQUEST, {countryId: form.country}, citiesCount);
+    const cities: ShopCity[] = form.country && !citiesRequest.error ? citiesRequest.data?.data ?? [] : [];
 
     const setField = <K extends keyof MyCustomerAddressCreateFormType>(key: K, value: MyCustomerAddressCreateFormType[K]) => {
         setForm((prev) => ({...prev, [key]: value}));
@@ -133,7 +107,35 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
         setShowForm(true);
     };
 
-    const handleSave = async (event: FormEvent) => {
+    const saveLifecycle = {
+        success: () => {
+            loadAddresses();
+            setShowForm(false);
+            setEditingId(null);
+            toast.success(resolveLanguageKey("saved"));
+        },
+        error: (err: unknown) => handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("saveError")}),
+    };
+    const [createCall, setCreateCall] = useState<{body: Record<string, unknown>; count: number}>({body: {}, count: 0});
+    const [editCall, setEditCall] = useState<{body: Record<string, unknown>; count: number}>({body: {}, count: 0});
+    const createRequest = useHttpRequest(CREATE_ADDRESS_REQUEST, createCall.body, createCall.count, true, saveLifecycle);
+    const editRequest = useHttpRequest(EDIT_ADDRESS_REQUEST, editCall.body, editCall.count, true, saveLifecycle);
+    const saving = createRequest.loading || editRequest.loading;
+
+    const [deleteCall, setDeleteCall] = useState({id: "", count: 0});
+    useHttpRequest(DELETE_ADDRESS_REQUEST, {_id: deleteCall.id}, deleteCall.count, true, {
+        success: () => {
+            loadAddresses();
+            if (editingId === deleteCall.id) {
+                setShowForm(false);
+                setEditingId(null);
+            }
+            toast.success(resolveLanguageKey("deleted"));
+        },
+        error: (err) => handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("deleteError")}),
+    });
+
+    const handleSave = (event: FormEvent) => {
         event.preventDefault();
         if (saving) return;
 
@@ -173,37 +175,14 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
             return;
         }
 
-        setSaving(true);
-        try {
-            if (editingId) {
-                await apiClient.patch("/api/eCommerce/customerAddress/my", parsed.data);
-            } else {
-                await apiClient.put("/api/eCommerce/customerAddress/my", parsed.data);
-            }
-            await loadAddresses();
-            setShowForm(false);
-            setEditingId(null);
-            toast.success(resolveLanguageKey("saved"));
-        } catch (err) {
-            handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("saveError")});
-        } finally {
-            setSaving(false);
-        }
+        const body: Record<string, unknown> = {...parsed.data};
+        if (editingId) setEditCall((current) => ({body, count: current.count + 1}));
+        else setCreateCall((current) => ({body, count: current.count + 1}));
     };
 
-    const handleDelete = async (id: string) => {
+    const handleDelete = (id: string) => {
         setConfirmDeleteId(null);
-        try {
-            await apiClient.delete("/api/eCommerce/customerAddress/my", {data: {_id: id}});
-            await loadAddresses();
-            if (editingId === id) {
-                setShowForm(false);
-                setEditingId(null);
-            }
-            toast.success(resolveLanguageKey("deleted"));
-        } catch (err) {
-            handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("deleteError")});
-        }
+        setDeleteCall((current) => ({id, count: current.count + 1}));
     };
 
     if (loading) {

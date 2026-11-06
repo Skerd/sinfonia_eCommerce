@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useId, useRef, useState, type MouseEvent} from "react";
-import {Delete} from "lucide-react";
+import {IconBackspace} from "@tabler/icons-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {
     Dialog,
@@ -216,13 +216,14 @@ export default function PosNumpadField({
 
     return (
         <div className={cn("inline-flex", className)}>
-            <button
+            <Button
                 type="button"
+                variant="bare"
                 disabled={disabled}
                 onClick={openPad}
                 onMouseDown={(e) => e.preventDefault()}
                 className={cn(
-                    "tabular-nums disabled:cursor-not-allowed disabled:opacity-40",
+                    "tabular-nums disabled:pointer-events-auto disabled:cursor-not-allowed disabled:opacity-40",
                     align === "left" && "text-left",
                     align === "center" && "text-center",
                     align === "right" && "text-right",
@@ -231,7 +232,7 @@ export default function PosNumpadField({
             >
                 {display}
                 {suffix ? <span className="ml-0.5 opacity-70">{suffix}</span> : null}
-            </button>
+            </Button>
 
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogContent
@@ -256,38 +257,41 @@ export default function PosNumpadField({
                             }
                             if (key === "back") {
                                 return (
-                                    <button
+                                    <Button
                                         key="back"
                                         type="button"
+                                        variant="bare"
                                         onClick={backspace}
                                         className="flex h-14 items-center justify-center rounded-xl border border-border bg-card text-foreground hover:bg-muted"
                                         aria-label="Backspace"
                                     >
-                                        <Delete className="size-5" />
-                                    </button>
+                                        <IconBackspace className="size-5" />
+                                    </Button>
                                 );
                             }
                             if (key === ".") {
                                 return (
-                                    <button
+                                    <Button
                                         key="dot"
                                         type="button"
+                                        variant="bare"
                                         onClick={pushDot}
                                         className="flex h-14 items-center justify-center rounded-xl border border-border bg-card text-xl font-semibold hover:bg-muted"
                                     >
                                         .
-                                    </button>
+                                    </Button>
                                 );
                             }
                             return (
-                                <button
+                                <Button
                                     key={key}
                                     type="button"
+                                    variant="bare"
                                     onClick={() => pushDigit(key)}
                                     className="flex h-14 items-center justify-center rounded-xl border border-border bg-card text-xl font-semibold tabular-nums hover:bg-muted"
                                 >
                                     {key}
-                                </button>
+                                </Button>
                             );
                         })}
                     </div>

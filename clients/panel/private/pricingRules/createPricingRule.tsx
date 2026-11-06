@@ -17,7 +17,7 @@ export default createGenericCreatePage<CreatePricingRuleFormType>({
         priority: 0,
         customerGroups: [],
         targetIds: [],
-    } as unknown as CreatePricingRuleFormType,
+    },
     successPath: "/tenancy/systemSettings/pricingrules",
     submitIcon: <IconPlus />,
 });

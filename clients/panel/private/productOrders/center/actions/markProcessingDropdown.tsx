@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {Package} from "lucide-react";
+import {IconPackage} from "@tabler/icons-react";
 
 type MarkProcessingDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -31,7 +31,7 @@ function MarkProcessingDropdown({order, onAction, resolveLanguageKey}: MarkProce
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <Package size={16} className="text-info" />
+            <IconPackage size={16} className="text-info" />
             <span className="text-info">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

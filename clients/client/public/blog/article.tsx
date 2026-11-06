@@ -2,10 +2,10 @@ import {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {ArrowLeft, ChevronRight, Link2} from "lucide-react";
+import {IconArrowLeft, IconChevronRight, IconLink} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
 import ShopBlogCard, {blogMetaLine} from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
 import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
@@ -20,6 +20,8 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/article.tsx";
 
 const MORE_STORIES = 3;
+const POST_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog/single"};
+const RELATED_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog"};
 
 /** Post content is plain text: blank lines separate paragraphs, single newlines stay line breaks. */
 function paragraphs(content: string): string[] {
@@ -29,36 +31,26 @@ function paragraphs(content: string): string[] {
 function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {slug = ""} = useParams();
-    const [post, setPost] = useState<PublicBlogPostItem | null>(null);
-    const [more, setMore] = useState<PublicBlogPostItem[]>([]);
-    const [loading, setLoading] = useState(true);
-
+    const [postCount, setPostCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        setPost(null);
-        setMore([]);
-        (async () => {
-            try {
-                const res = await apiClient.post<PublicBlogSingleFormResponseType>("/api/auxiliary/public/blog/single", {slug});
-                if (cancelled) return;
-                const current = res.data.post;
-                setPost(current);
-                const related = await apiClient.post<PublicBlogFormResponseType>("/api/auxiliary/public/blog", {
-                    categorySlug: current.category?.slug,
-                    limit: MORE_STORIES + 1,
-                });
-                if (!cancelled) setMore((related.data.posts ?? []).filter(item => item._id !== current._id).slice(0, MORE_STORIES));
-            } catch {
-                if (!cancelled) setPost(null);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-        return () => {
-            cancelled = true;
-        };
+        setPostCount((count) => count + 1);
     }, [slug]);
+    const postRequest = useHttpRequest<PublicBlogSingleFormResponseType>(POST_REQUEST, {slug}, postCount, true, {
+        success: () => setRelatedCount((count) => count + 1),
+    });
+    const post: PublicBlogPostItem | null = postRequest.loading || postRequest.error ? null : postRequest.data?.post ?? null;
+
+    // More stories from the same category, once the post is known.
+    const [relatedCount, setRelatedCount] = useState(0);
+    const relatedRequest = useHttpRequest<PublicBlogFormResponseType>(
+        RELATED_REQUEST,
+        {categorySlug: post?.category?.slug, limit: MORE_STORIES + 1},
+        relatedCount,
+    );
+    const more: PublicBlogPostItem[] = post && !relatedRequest.loading
+        ? (relatedRequest.data?.posts ?? []).filter(item => item._id !== post._id).slice(0, MORE_STORIES)
+        : [];
+    const loading = postCount === 0 || postRequest.loading || relatedRequest.loading;
 
     async function copyLink() {
         try {
@@ -102,7 +94,7 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                             <li><Link to={`${base}/blog`} className="hover:text-foreground">{resolveLanguageKey("blog")}</Link></li>
                             {post.category && (
                                 <>
-                                    <li aria-hidden><ChevronRight className="h-3.5 w-3.5" /></li>
+                                    <li aria-hidden><IconChevronRight className="h-3.5 w-3.5" /></li>
                                     <li>
                                         <Link to={`${base}/blog?category=${encodeURIComponent(post.category.slug)}`} className="hover:text-foreground">
                                             {post.category.name}
@@ -123,7 +115,7 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                             ) : null}
                         </div>
                         <Button variant="outline" size="lg" type="button" onClick={copyLink} >
-                            <Link2 className="h-4 w-4" aria-hidden />
+                            <IconLink className="h-4 w-4" aria-hidden />
                             {resolveLanguageKey("copyLink")}
                         </Button>
                     </div>
@@ -149,7 +141,7 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
 
                 <div className="mx-auto w-full max-w-2xl">
                     <Link to={`${base}/blog`} className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
-                        <ArrowLeft className="h-4 w-4" aria-hidden />
+                        <IconArrowLeft className="h-4 w-4" aria-hidden />
                         {resolveLanguageKey("backToBlog")}
                     </Link>
                 </div>

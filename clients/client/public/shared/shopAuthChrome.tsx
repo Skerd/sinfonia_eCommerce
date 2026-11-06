@@ -1,4 +1,4 @@
-import {type ReactElement} from "react";
+import type {ComponentType} from "react";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -28,7 +28,7 @@ function ShopSignInPromptInner({resolveLanguageKey, titleKey, next}: ShopSignInP
 export const ShopSignInPrompt = compose(
     withLanguage("src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx"),
     withDebug(true, true),
-)(ShopSignInPromptInner) as unknown as (props: {titleKey: string; next: string}) => ReactElement;
+)(ShopSignInPromptInner) as ComponentType<{titleKey: string; next: string}>;
 
 type ShopInlineSignInProps = WithLanguageType & {
     next: string;
@@ -52,4 +52,4 @@ function ShopInlineSignInInner({resolveLanguageKey, next, messageKey = "inlineMe
 export const ShopInlineSignIn = compose(
     withLanguage("src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx"),
     withDebug(true, true),
-)(ShopInlineSignInInner) as unknown as (props: {next: string; messageKey?: ShopInlineSignInProps["messageKey"]}) => ReactElement;
+)(ShopInlineSignInInner) as ComponentType<{next: string; messageKey?: ShopInlineSignInProps["messageKey"]}>;

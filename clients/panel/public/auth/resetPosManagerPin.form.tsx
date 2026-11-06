@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useNavigate, useParams} from "react-router-dom";
-import {CircleCheckBig, CircleX, Loader2, ShieldAlert} from "lucide-react";
+import {IconCircleCheck, IconCircleX, IconLoader2, IconShieldExclamation} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -12,8 +12,10 @@ import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} f
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import GoBackToLogin from "@coreModule/clients/panel/public/auth/shared/goBackToLogin.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {resetManagerPinFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/resetManagerPin.form.validator.ts";
+
+const OPEN_RESET_LINK_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/posConfig/openManagerPinResetLink"};
 
 type FormValues = {
     resetCode: string;
@@ -32,36 +34,29 @@ function ResetPosManagerPinForm({
 }: Props) {
     const navigate = useNavigate();
     const params = useParams();
-    const [verifying, setVerifying] = useState(false);
-    const [verifyError, setVerifyError] = useState(false);
+    const resetCode = params.platform;
+    const [verifyCount, setVerifyCount] = useState(0);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
     const formSchema = resetManagerPinFormSchema(languageCode, resolveLanguageKey("form"));
     const form = useForm<FormValues>({
-        resolver: zodResolver(formSchema as any),
+        resolver: zodResolver(formSchema),
         defaultValues: {resetCode: "", pin: "", confirmPin: ""},
     });
 
     useEffect(() => {
-        const code = params.platform;
-        if (!code) {
+        if (!resetCode) {
             navigate("/authenticate/login");
             return;
         }
-        setVerifying(true);
-        setVerifyError(false);
-        apiClient
-            .post("/api/eCommerce/posConfig/openManagerPinResetLink", {resetCode: code})
-            .then(() => {
-                form.setValue("resetCode", code);
-                setVerifying(false);
-            })
-            .catch(() => {
-                setVerifying(false);
-                setVerifyError(true);
-            });
-    }, [params.platform]);
+        setVerifyCount((count) => count + 1);
+    }, [resetCode]);
+    const verify = useHttpRequest(OPEN_RESET_LINK_REQUEST, {resetCode}, verifyCount, true, {
+        success: () => form.setValue("resetCode", resetCode ?? ""),
+    });
+    const verifying = verify.loading;
+    const verifyError = !!verify.error;
 
     useImperativeHandle(innerRef, () => ({
         start: () => {},
@@ -73,7 +68,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <ShieldAlert size={30} className="animate-pulse text-success" />
+                    <IconShieldExclamation size={30} className="animate-pulse text-success" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("verifyingTitle")}
                     </CardTitle>
@@ -90,7 +85,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <CircleX size={30} className="text-destructive" />
+                    <IconCircleX size={30} className="text-destructive" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("invalidTitle")}
                     </CardTitle>
@@ -107,7 +102,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <CircleCheckBig size={30} className="text-success" />
+                    <IconCircleCheck size={30} className="text-success" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("successTitle")}
                     </CardTitle>
@@ -124,7 +119,7 @@ function ResetPosManagerPinForm({
         return (
             <Card className="gap-4 w-full h-fit">
                 <CardHeader className="flex flex-col items-center justify-center text-center">
-                    <CircleX size={30} className="text-destructive" />
+                    <IconCircleX size={30} className="text-destructive" />
                     <CardTitle className="text-lg tracking-tight">
                         {resolveLanguageKey("errorTitle")}
                     </CardTitle>
@@ -191,7 +186,7 @@ function ResetPosManagerPinForm({
                             )}
                         />
                         <Button type="submit" className="w-full" disabled={loading}>
-                            {loading ? <Loader2 className="animate-spin" /> : null}
+                            {loading ? <IconLoader2 className="animate-spin" /> : null}
                             {resolveLanguageKey("submit")}
                         </Button>
                     </form>

@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {PosManagerAuth} from "@eCommerceModule/clients/panel/private/pos/usePosManagerPin.ts";
 import type {
     CartLine,
@@ -13,6 +13,15 @@ import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {addMoney} from "armonia/src/modules/core/helpers/money.ts";
+
+const HOLD_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/posOrder/hold"};
+const HELD_LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/pos/held"};
+const DELETE_HELD_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/posOrder/deleteHeld"};
+
+/** One request per call: the payload is sent when `count` goes up. */
+type Call = {payload: Record<string, unknown>; count: number};
+const NO_CALL: Call = {payload: {}, count: 0};
+const call = (payload: Record<string, unknown>) => (current: Call): Call => ({payload, count: current.count + 1});
 
 type ResolveManagerPin = (
     needed: boolean,
@@ -53,10 +62,8 @@ export function usePosCart({
     const [flashKey, setFlashKey] = useState<string | null>(null);
     const [selectedLineKey, setSelectedLineKey] = useState<string | null>(null);
     const [heldOrderId, setHeldOrderId] = useState<string | null>(null);
-    const [holdBusy, setHoldBusy] = useState(false);
     const [heldOpen, setHeldOpen] = useState(false);
     const [heldOrders, setHeldOrders] = useState<PosOrder[]>([]);
-    const [heldBusy, setHeldBusy] = useState(false);
     const cartScrollRef = useRef<HTMLDivElement>(null);
     const prevCartLenRef = useRef(0);
 
@@ -261,50 +268,45 @@ export function usePosCart({
         [selectedLineKey, config?.allowQuantityChange],
     );
 
-    const holdCart = async () => {
-        if (!session || !cart.length) return;
-        setHoldBusy(true);
-        try {
-            const res = await apiClient.post<{data: PosOrder}>("/api/eCommerce/posOrder/hold", {
-                sessionId: session._id,
-                _id: heldOrderId || undefined,
-                customerId: customerId || undefined,
-                customerName: showCustomer && customerName.trim() ? customerName.trim() : undefined,
-                discountPercent: orderDiscountPercent > 0 ? orderDiscountPercent : undefined,
-                note: heldOrderId ? undefined : undefined,
-                lines: cart.map((l) => ({
-                    productId: l.productId,
-                    variantId: l.variantId,
-                    quantity: l.quantity,
-                    unitPrice: l.unitPrice,
-                    discountPercent: l.discountPercent > 0 ? l.discountPercent : undefined,
-                })),
-            });
-            setHeldOrderId(res.data.data._id);
+    const [holdCall, setHoldCall] = useState<Call>(NO_CALL);
+    const {loading: holdBusy} = useHttpRequest<{data: PosOrder}>(HOLD_REQUEST, holdCall.payload, holdCall.count, true, {
+        success: (response) => {
+            setHeldOrderId(response.data._id);
             clearOrder();
             toast.success(rk("toast.held"));
-        } catch {
-            toast.error(rk("errors.holdFailed"));
-        } finally {
-            setHoldBusy(false);
-        }
+        },
+        error: () => toast.error(rk("errors.holdFailed")),
+    });
+    const holdCart = () => {
+        if (!session || !cart.length) return;
+        setHoldCall(call({
+            sessionId: session._id,
+            _id: heldOrderId || undefined,
+            customerId: customerId || undefined,
+            customerName: showCustomer && customerName.trim() ? customerName.trim() : undefined,
+            discountPercent: orderDiscountPercent > 0 ? orderDiscountPercent : undefined,
+            lines: cart.map((l) => ({
+                productId: l.productId,
+                variantId: l.variantId,
+                quantity: l.quantity,
+                unitPrice: l.unitPrice,
+                discountPercent: l.discountPercent > 0 ? l.discountPercent : undefined,
+            })),
+        }));
     };
 
-    const openHeldList = async () => {
-        if (!session) return;
-        setHeldOpen(true);
-        setHeldBusy(true);
-        try {
-            const res = await apiClient.post<{data: PosOrder[]}>("/api/eCommerce/pos/held", {
-                sessionId: session._id,
-            });
-            setHeldOrders(res.data.data ?? []);
-        } catch {
+    const [heldListCall, setHeldListCall] = useState<Call>(NO_CALL);
+    const {loading: heldBusy} = useHttpRequest<{data: PosOrder[]}>(HELD_LIST_REQUEST, heldListCall.payload, heldListCall.count, true, {
+        success: (response) => setHeldOrders(response.data ?? []),
+        error: () => {
             toast.error(rk("errors.heldLoadFailed"));
             setHeldOrders([]);
-        } finally {
-            setHeldBusy(false);
-        }
+        },
+    });
+    const openHeldList = () => {
+        if (!session) return;
+        setHeldOpen(true);
+        setHeldListCall(call({sessionId: session._id}));
     };
 
     const resumeHeld = (order: PosOrder) => {
@@ -337,16 +339,17 @@ export function usePosCart({
         focusBarcode();
     };
 
-    const discardHeld = async (id: string) => {
-        try {
-            await apiClient.post("/api/eCommerce/posOrder/deleteHeld", {_id: id});
+    const [discardCall, setDiscardCall] = useState<Call>(NO_CALL);
+    useHttpRequest(DELETE_HELD_REQUEST, discardCall.payload, discardCall.count, true, {
+        success: () => {
+            const id = discardCall.payload._id;
             setHeldOrders((prev) => prev.filter((o) => o._id !== id));
             if (heldOrderId === id) setHeldOrderId(null);
             toast.success(rk("toast.heldDiscarded"));
-        } catch {
-            toast.error(rk("errors.heldDeleteFailed"));
-        }
-    };
+        },
+        error: () => toast.error(rk("errors.heldDeleteFailed")),
+    });
+    const discardHeld = (id: string) => setDiscardCall(call({_id: id}));
 
     return {
         cart,

@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {RotateCcw} from "lucide-react";
+import {IconRotate} from "@tabler/icons-react";
 
 type RefundOrderDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -31,7 +31,7 @@ function RefundOrderDropdown({order, onAction, resolveLanguageKey}: RefundOrderD
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <RotateCcw size={16} className="text-warning" />
+            <IconRotate size={16} className="text-warning" />
             <span className="text-warning">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

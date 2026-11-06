@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {Flag, Tag, User} from "lucide-react";
+import {IconFlag, IconTag, IconUser} from "@tabler/icons-react";
 import type {ListingFlag} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/listingFlag.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ListingFlagSheetView from "@eCommerceModule/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx";
@@ -98,7 +98,7 @@ function ListingFlagCard({
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow
-                            icon={Tag}
+                            icon={IconTag}
                             label={resolveLanguageKey("status")}
                             tooltip={resolveLanguageKey("status")}
                             path="status"
@@ -107,7 +107,7 @@ function ListingFlagCard({
                             value={row.status}
                         />
                         <EntityCardRow
-                            icon={Flag}
+                            icon={IconFlag}
                             label={resolveLanguageKey("reason")}
                             tooltip={resolveLanguageKey("reason")}
                             path="reason"
@@ -116,7 +116,7 @@ function ListingFlagCard({
                             value={row.reason}
                         />
                         <EntityCardRow
-                            icon={User}
+                            icon={IconUser}
                             label={resolveLanguageKey("reporter")}
                             tooltip={resolveLanguageKey("reporter")}
                             path="user"

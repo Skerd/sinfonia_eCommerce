@@ -6,7 +6,7 @@ import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
-import {AlertTriangle} from "lucide-react";
+import {IconAlertTriangle} from "@tabler/icons-react";
 
 type Props = WithLanguageType & {
     order: Order;
@@ -35,7 +35,7 @@ function RaiseDisputeDropdown({order, onAction, resolveLanguageKey}: Props) {
 
     return (
         <DropdownMenuItem onClick={() => onAction(actionKey)}>
-            <AlertTriangle size={16} className="text-warning" />
+            <IconAlertTriangle size={16} className="text-warning" />
             <span>{resolveLanguageKey("title")}</span>
         </DropdownMenuItem>
     );

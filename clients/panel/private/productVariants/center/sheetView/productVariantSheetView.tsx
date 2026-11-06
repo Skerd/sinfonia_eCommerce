@@ -23,7 +23,7 @@ export type ProductVariantSheetViewOwnProps = {
 function productVariantEditPath(entity: ProductVariant) {
     const params = new URLSearchParams();
     params.set("productVariantId", entity._id);
-    if ((entity as any).sku) params.set("productVariantTitle", encodeURIComponent(String((entity as any).sku)));
+    if (entity.sku) params.set("productVariantTitle", encodeURIComponent(entity.sku));
     return `${LIST_BASE}/edit?${params.toString()}`;
 }
 

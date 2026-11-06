@@ -5,7 +5,7 @@ import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcu
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {CircleX} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 
 type CancelOrderDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -31,7 +31,7 @@ function CancelOrderDropdown({order, onAction, resolveLanguageKey}: CancelOrderD
 
     return (
         <DropdownMenuItem onClick={() => triggerAction()}>
-            <CircleX size={16} className="text-destructive" />
+            <IconCircleX size={16} className="text-destructive" />
             <span className="text-destructive">{resolveLanguageKey("title")}</span>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

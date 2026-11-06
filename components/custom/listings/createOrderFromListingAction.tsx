@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {LoaderCircle, ShoppingCart} from "lucide-react";
+import {IconLoader2, IconShoppingCart} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -117,9 +117,9 @@ function CreateOrderFromListingAction({
                         }}
                     >
                         {loading ? (
-                            <LoaderCircle className="size-4 animate-spin" />
+                            <IconLoader2 className="size-4 animate-spin" />
                         ) : (
-                            <ShoppingCart size={16} className="text-info" />
+                            <IconShoppingCart size={16} className="text-info" />
                         )}
                         {resolveLanguageKey("createOrder.confirm")}
                     </AlertDialogAction>

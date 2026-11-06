@@ -21,7 +21,7 @@ export default createGenericCreatePage<CreatePosPaymentMethodFormType>({
         terminalPort: 8080,
         terminalId: "",
         terminalPath: "/payment",
-    } as unknown as CreatePosPaymentMethodFormType,
+    },
     successPath: "/tenancy/systemSettings/pospaymentmethods",
     submitIcon: <IconPlus />,
 });

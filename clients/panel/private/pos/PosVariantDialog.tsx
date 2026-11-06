@@ -1,6 +1,7 @@
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@coreModule/components/ui/dialog.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {CatalogProduct} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type Props = {
     open: boolean;
@@ -31,15 +32,16 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                         const outOfStock = !!v.trackInventory && v.stockQty != null && v.stockQty <= 0;
                         const disabled = outOfStock && !allowOversell;
                         return (
-                            <button
+                            <Button
                                 key={v._id}
                                 type="button"
+                                variant="bare"
                                 disabled={disabled}
                                 onClick={() => onPick(v._id, price, v.label, v.stockQty, v.trackInventory)}
                                 className={cn(
                                     "flex w-full items-center justify-between gap-3 rounded-lg border border-border bg-card px-3 py-2 text-left transition-colors",
                                     "hover:border-success/40 hover:bg-muted",
-                                    disabled && "cursor-not-allowed opacity-50 hover:border-border hover:bg-card",
+                                    disabled && "cursor-not-allowed opacity-50 hover:border-border hover:bg-card disabled:pointer-events-auto",
                                 )}
                             >
                                 <div className="min-w-0">
@@ -58,7 +60,7 @@ export default function PosVariantDialog({open, product, onClose, onPick, money,
                                 <div className="shrink-0 text-sm font-semibold tabular-nums text-success">
                                     {money(price)}
                                 </div>
-                            </button>
+                            </Button>
                         );
                     })}
                 </div>

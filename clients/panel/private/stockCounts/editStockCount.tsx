@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editStockCountFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockCount/editStockCount.form.validator.ts";
 import type {EditStockCountFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockCount/stockCount.schema-def.ts";
@@ -10,14 +10,14 @@ export default createGenericEditPage<StockCount, EditStockCountFormType>({
     accessModel: "stockCounts",
     apiUrl: "/api/eCommerce/stockCount",
     schema: editStockCountFormSchema,
-    mapEntityData: (data: any) => ({
+    mapEntityData: (data) => ({
         ...data,
         warehouse: data.warehouse?._id ?? data.warehouse,
-        lines: (data.lines ?? []).map((line: any) => ({
+        lines: (data.lines ?? []).map((line) => ({
             product: line.product?._id ?? line.product,
             variant: line.variant?._id ?? line.variant,
             countedQuantity: line.countedQuantity,
         })),
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });
