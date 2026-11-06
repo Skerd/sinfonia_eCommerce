@@ -1,3 +1,4 @@
+import {buttonLike} from "@coreModule/helpers/general/a11y.ts";
 import {Minus, Plus, Trash2} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PosNumpadField from "@eCommerceModule/clients/panel/private/pos/PosNumpad.tsx";
@@ -42,10 +43,10 @@ export default function PosCartLine({
 
     return (
         <div
-            onClick={() => {
+            {...buttonLike(() => {
                 onSelect();
                 if (itemsSplitActive && shareQty <= 0) onBumpSplitQty(1);
-            }}
+            })}
             className={cn(
                 "flex items-center gap-1.5 rounded-lg border px-2 py-1.5 transition-colors",
                 inShare

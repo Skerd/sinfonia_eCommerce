@@ -1,3 +1,4 @@
+import {buttonLike} from "@coreModule/helpers/general/a11y.ts";
 import {Trash2} from "lucide-react";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -105,7 +106,7 @@ export default function PosPaymentSection({
                                 return (
                                     <div
                                         key={p.id}
-                                        onClick={() => onActivePaymentIdChange(p.id)}
+                                        {...buttonLike(() => onActivePaymentIdChange(p.id))}
                                         className={cn(
                                             "rounded-md border px-2 py-1.5 transition-colors",
                                             active
