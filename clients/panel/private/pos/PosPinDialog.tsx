@@ -126,6 +126,8 @@ export default function PosPinDialog({
                             type="password"
                             inputMode="numeric"
                             autoComplete="off"
+                            // Till flow: the field mounts on open or right after the manager is picked, and the PIN is typed at once.
+                            // eslint-disable-next-line jsx-a11y/no-autofocus
                             autoFocus
                             value={pin}
                             onChange={(e) => setPin(e.target.value)}

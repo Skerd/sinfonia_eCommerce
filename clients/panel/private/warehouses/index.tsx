@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type EntityListRefs} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type EntityListRefs} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -39,9 +39,16 @@ function AllWarehouses({resolveLanguageKey}: WithLanguageType) {
             accessModel="warehouses"
             tableConfigKey="warehouses"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath="/tenancy/systemSettings/warehouses/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createWarehouse"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/warehouses/create"
+                        icon={<IconPlus />}
+                        labelKey="createWarehouse"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={warehouseEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx"

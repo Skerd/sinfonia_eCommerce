@@ -3,7 +3,7 @@ import {useMemo} from "react";
 import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -32,9 +32,16 @@ function AllProductReviews({resolveLanguageKey}: WithLanguageType) {
             collectionName="productReviews"
             accessModel="productReviews"
             tableConfigKey="productReviews"
-            createPath="/eCommerce/productreviews/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createProductReview"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerce/productreviews/create"
+                        icon={<IconPlus />}
+                        labelKey="createProductReview"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={productReviewEditPath}
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}

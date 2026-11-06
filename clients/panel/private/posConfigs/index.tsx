@@ -2,7 +2,7 @@ import {useState} from "react";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -40,17 +40,17 @@ function AllPosConfigs({resolveLanguageKey}: WithLanguageType) {
             collectionName="posConfigs"
             accessModel="posConfigs"
             tableConfigKey="posConfigs"
-            createPath="/tenancy/systemSettings/posconfigs/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createPosConfig"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <PosConfigsBulkMenu onChanged={() => setListVersion((v) => v + 1)} />
+                    <EntityListCreateButton ctx={ctx} path="/tenancy/systemSettings/posconfigs/create" icon={<IconPlus />} labelKey="createPosConfig" />
+                </EntityListHeader>
+            )}
             buildEditPath={posConfigEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            headerActions={
-                <PosConfigsBulkMenu onChanged={() => setListVersion((v) => v + 1)} />
-            }
             renderActionMenuChildren={(config, bindRowAction) => (
                 <>
                     <PausePosConfig entity={config} onAction={bindRowAction} />

@@ -35,7 +35,6 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
             collectionName="posOrders"
             accessModel="posOrders"
             tableConfigKey="posOrders"
-            hideCreate
             buildEditPath={() => ""}
             rowActionMenu={{hideEdit: true, hideDelete: true, hideRestore: true, allowMenuForCustomChildren: true}}
             resolveLanguageKey={resolveLanguageKey}

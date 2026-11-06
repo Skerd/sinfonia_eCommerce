@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {StockTransfer} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockTransfer/stockTransfer.dto.ts";
@@ -39,9 +39,16 @@ function AllStockTransfers({resolveLanguageKey}: WithLanguageType) {
             accessModel="stockTransfers"
             tableConfigKey="stockTransfers"
             rowActionMenu={{allowMenuForCustomChildren: true, hideEdit: (row) => row.status !== "draft"}}
-            createPath="/eCommerce/stocktransfers/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createStockTransfer"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerce/stocktransfers/create"
+                        icon={<IconPlus />}
+                        labelKey="createStockTransfer"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={stockTransferEditPath}
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}

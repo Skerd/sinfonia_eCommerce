@@ -42,7 +42,6 @@ function AllInventoryMovements({resolveLanguageKey}: WithLanguageType) {
             collectionName="inventoryMovements"
             accessModel="inventoryMovements"
             tableConfigKey="inventoryMovements"
-            hideCreate
             buildEditPath={() => ""}
             rowActionMenu={{hideEdit: true, hideDelete: true}}
             resolveLanguageKey={resolveLanguageKey}

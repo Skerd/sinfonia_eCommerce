@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {FiscalConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/fiscalConfig/fiscalConfig.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -27,9 +27,16 @@ function AllFiscalConfigs({resolveLanguageKey}: WithLanguageType) {
             accessModel="fiscalConfigs"
             tableConfigKey="fiscalConfigs"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath="/tenancy/systemSettings/fiscalconfigs/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createFiscalConfig"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/fiscalconfigs/create"
+                        icon={<IconPlus />}
+                        labelKey="createFiscalConfig"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={fiscalConfigEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx"

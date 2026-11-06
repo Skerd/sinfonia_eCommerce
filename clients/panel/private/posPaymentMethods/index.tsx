@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -29,9 +29,16 @@ function AllPosPaymentMethods({resolveLanguageKey}: WithLanguageType) {
             accessModel="posPaymentMethods"
             tableConfigKey="posPaymentMethods"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath="/tenancy/systemSettings/pospaymentmethods/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createPosPaymentMethod"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/pospaymentmethods/create"
+                        icon={<IconPlus />}
+                        labelKey="createPosPaymentMethod"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={posPaymentMethodEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx"

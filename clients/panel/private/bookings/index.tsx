@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import { IconPlus } from "@tabler/icons-react";
 import type { Booking } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/booking/booking.dto.ts";
 import type { DeletedData } from "armonia/src/modules/core/types/shared.types.ts";
@@ -14,9 +14,16 @@ function AllBookings({ resolveLanguageKey }: WithLanguageType) {
             collectionName="bookings"
             accessModel="bookings"
             tableConfigKey="bookings"
-            createPath="/eCommerceMarketplace/bookings/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createBooking"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/bookings/create"
+                        icon={<IconPlus />}
+                        labelKey="createBooking"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={() => ""}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx"

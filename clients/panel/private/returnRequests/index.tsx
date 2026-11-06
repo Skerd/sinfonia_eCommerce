@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
@@ -50,9 +50,16 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
             accessModel="returnRequests"
             tableConfigKey="returnRequests"
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath="/eCommerce/returnrequests/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createReturnRequest"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerce/returnrequests/create"
+                        icon={<IconPlus />}
+                        labelKey="createReturnRequest"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={returnRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}

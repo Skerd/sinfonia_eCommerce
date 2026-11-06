@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -22,9 +22,16 @@ function AllBids({resolveLanguageKey}: WithLanguageType) {
             collectionName="marketplacebids"
             accessModel="marketplacebids"
             tableConfigKey="marketplacebids"
-            createPath="/eCommerceMarketplace/bids/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createBid"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/bids/create"
+                        icon={<IconPlus />}
+                        labelKey="createBid"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={() => ""}
             resolveLanguageKey={resolveLanguageKey}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (

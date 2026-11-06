@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -26,9 +26,16 @@ function AllTaskRequests({resolveLanguageKey}: WithLanguageType) {
             collectionName="taskrequests"
             accessModel="taskRequests"
             tableConfigKey="taskrequests"
-            createPath="/eCommerceMarketplace/taskrequests/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createTaskRequest"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/taskrequests/create"
+                        icon={<IconPlus />}
+                        labelKey="createTaskRequest"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={taskRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx"

@@ -2,7 +2,7 @@ import {useState} from "react";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {IconPlus, IconArrowsSort} from "@tabler/icons-react";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
@@ -35,19 +35,19 @@ function AllCmsBlocks({resolveLanguageKey}: WithLanguageType) {
                 accessModel="cmsBlocks"
                 tableConfigKey="cmsBlocks"
                 rowActionMenu={{allowMenuForCustomChildren: true}}
-                createPath="/tenancy/systemSettings/cmsblocks/create"
-                createIcon={<IconPlus />}
-                createLanguageKey="createCmsBlock"
+                header={(ctx) => (
+                    <EntityListHeader ctx={ctx}>
+                        <Button type="button" variant="outline" size="sm" onClick={() => setReorderOpen(true)}>
+                            <IconArrowsSort size={16} className="mr-1" />
+                            {String(resolveLanguageKey("reorderBlocks") ?? "Reorder blocks")}
+                        </Button>
+                        <EntityListCreateButton ctx={ctx} path="/tenancy/systemSettings/cmsblocks/create" icon={<IconPlus />} labelKey="createCmsBlock" />
+                    </EntityListHeader>
+                )}
                 buildEditPath={cmsBlockEditPath}
                 resolveLanguageKey={resolveLanguageKey}
                 sheetLanguagePath="src/modules/eCommerce/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx"
                 cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                headerActions={
-                    <Button type="button" variant="outline" size="sm" onClick={() => setReorderOpen(true)}>
-                        <IconArrowsSort size={16} className="mr-1" />
-                        {String(resolveLanguageKey("reorderBlocks") ?? "Reorder blocks")}
-                    </Button>
-                }
                 renderActionMenuChildren={(_entity, bindRowAction) => (
                     <>
                         <ActivateCmsBlock entity={_entity} onAction={bindRowAction} />

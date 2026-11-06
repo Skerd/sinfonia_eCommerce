@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {ShippingZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/shippingZone.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -26,9 +26,16 @@ function AllShippingZones({resolveLanguageKey}: WithLanguageType) {
             collectionName="shippingZones"
             accessModel="shippingZones"
             tableConfigKey="shippingZones"
-            createPath="/tenancy/systemSettings/shippingzones/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createShippingZone"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/shippingzones/create"
+                        icon={<IconPlus />}
+                        labelKey="createShippingZone"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={shippingZoneEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/shippingZones/center/sheetView/shippingZoneSheetView.tsx"

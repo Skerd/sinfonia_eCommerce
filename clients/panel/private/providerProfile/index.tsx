@@ -2,7 +2,7 @@ import { compose } from "redux";
 import { IconPlus } from "@tabler/icons-react";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import type { ProviderProfile } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import ProviderProfileCard from "./center/cardView/providerProfileCard.tsx";
 import type { DeletedData } from "armonia/src/modules/core/types/shared.types.ts";
@@ -49,9 +49,16 @@ function AllProviderProfiles({ resolveLanguageKey }: WithLanguageType) {
             collectionName="providerProfiles"
             accessModel="providerProfiles"
             tableConfigKey="providerprofiles"
-            createPath={`${PROVIDER_PROFILE_FORM_BASE}/create`}
-            createIcon={<IconPlus />}
-            createLanguageKey="createProviderProfile"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={`${PROVIDER_PROFILE_FORM_BASE}/create`}
+                        icon={<IconPlus />}
+                        labelKey="createProviderProfile"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildProfileEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx"

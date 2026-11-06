@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {ProductAttribute} from "armonia/src/modules/eCommerce/api/eCommerce/private/productAttribute/productAttribute.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,9 +21,16 @@ function AllProductAttributes({resolveLanguageKey}: WithLanguageType) {
             collectionName="productAttributes"
             accessModel="productAttributes"
             tableConfigKey="productAttributes"
-            createPath="/tenancy/systemSettings/productattributes/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createProductAttribute"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/productattributes/create"
+                        icon={<IconPlus />}
+                        labelKey="createProductAttribute"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={productAttributeEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx"

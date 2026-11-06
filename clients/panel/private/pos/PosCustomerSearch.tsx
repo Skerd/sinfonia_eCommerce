@@ -80,6 +80,8 @@ export default function PosCustomerSearch({valueLabel, customerId, rk, onLabelCh
             <Input
                 placeholder={rk("walkIn")}
                 value={valueLabel}
+                // Mounts only when the cashier presses the customer toggle, so the name is typed at once.
+                // eslint-disable-next-line jsx-a11y/no-autofocus
                 autoFocus
                 onChange={(e) => {
                     const next = e.target.value;

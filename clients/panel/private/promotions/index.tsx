@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Promotion} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/promotion/promotion.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -23,9 +23,16 @@ function AllPromotions({resolveLanguageKey}: WithLanguageType) {
             collectionName="promotions"
             accessModel="promotions"
             tableConfigKey="promotions"
-            createPath="/eCommerceMarketplace/promotions/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createPromotion"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/promotions/create"
+                        icon={<IconPlus />}
+                        labelKey="createPromotion"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={noopPromotionEditPath}
             resolveLanguageKey={resolveLanguageKey}
             rowActionMenu={{allowMenuForCustomChildren: true, hideEdit: true}}

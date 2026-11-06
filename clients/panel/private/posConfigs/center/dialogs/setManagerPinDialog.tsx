@@ -1,4 +1,4 @@
-import {useEffect, useImperativeHandle, useState} from "react";
+import {useEffect, useImperativeHandle, useRef, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -42,6 +42,7 @@ function SetManagerPinDialog({
     loading,
 }: Props) {
     const [pin, setPin] = useState("");
+    const firstPinRef = useRef<HTMLInputElement>(null);
     const [confirmPin, setConfirmPin] = useState("");
 
     useEffect(() => {
@@ -79,7 +80,14 @@ function SetManagerPinDialog({
 
     return (
         <Dialog open={open} onOpenChange={(next) => !loading && !next && onClose()}>
-            <DialogContent className="sm:max-w-sm" onOpenAutoFocus={(e) => e.preventDefault()}>
+            <DialogContent
+                className="sm:max-w-sm"
+                onOpenAutoFocus={(e) => {
+                    // Start on the PIN field, not on Radix's first tabbable element.
+                    e.preventDefault();
+                    firstPinRef.current?.focus();
+                }}
+            >
                 <DialogHeader>
                     <DialogTitle>{resolveLanguageKey("title")}</DialogTitle>
                     <DialogDescription>{resolveLanguageKey("description")}</DialogDescription>
@@ -93,7 +101,7 @@ function SetManagerPinDialog({
                             type="password"
                             inputMode="numeric"
                             autoComplete="new-password"
-                            autoFocus
+                            ref={firstPinRef}
                             value={pin}
                             onChange={(e) => setPin(e.target.value)}
                             onKeyDown={(e) => {

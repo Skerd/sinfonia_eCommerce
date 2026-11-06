@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type EntityListRefs} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type EntityListRefs} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -66,12 +66,21 @@ function AllCustomerAddresses({resolveLanguageKey, specificUserId, companyWide}:
             tableConfigKey="customerAddresses"
             selfAccess={!specificUserId}
             extraParams={extraParams}
-            headerTitle={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
-            headerDescription={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
+            header={(ctx) => (
+                <EntityListHeader
+                    ctx={ctx}
+                    title={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
+                    description={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
+                >
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={lockCustomer ? `${CUSTOMER_ADDRESS_FORM_BASE}/create?specificUserId=${ownerId}` : `${CUSTOMER_ADDRESS_FORM_BASE}/create`}
+                        icon={<IconPlus />}
+                        labelKey="createCustomerAddress"
+                    />
+                </EntityListHeader>
+            )}
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            createPath={lockCustomer ? `${CUSTOMER_ADDRESS_FORM_BASE}/create?specificUserId=${ownerId}` : `${CUSTOMER_ADDRESS_FORM_BASE}/create`}
-            createIcon={<IconPlus />}
-            createLanguageKey="createCustomerAddress"
             buildEditPath={(entity) => customerAddressEditPath(entity, lockCustomer)}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx"

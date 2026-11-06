@@ -33,7 +33,6 @@ function AllPosSessions({resolveLanguageKey}: WithLanguageType) {
             collectionName="posSessions"
             accessModel="posSessions"
             tableConfigKey="posSessions"
-            hideCreate
             buildEditPath={() => ""}
             rowActionMenu={{hideEdit: true, hideDelete: true, hideRestore: true}}
             resolveLanguageKey={resolveLanguageKey}

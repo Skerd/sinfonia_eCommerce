@@ -5,7 +5,7 @@ import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {SavedSearch} from "armonia/src/modules/eCommerce/api/eCommerce/private/savedSearch/savedSearch.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -68,15 +68,24 @@ function AllSavedSearches({resolveLanguageKey, specificUserId, companyWide}: All
             tableConfigKey="savedsearches"
             selfAccess={!specificUserId}
             extraParams={extraParams}
-            headerTitle={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
-            headerDescription={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
-            createPath={
-                lockCustomer
-                    ? `${SAVED_SEARCH_FORM_BASE}/create?specificUserId=${ownerId}`
-                    : `${SAVED_SEARCH_FORM_BASE}/create`
-            }
-            createIcon={<IconPlus />}
-            createLanguageKey="createSavedSearch"
+            header={(ctx) => (
+                <EntityListHeader
+                    ctx={ctx}
+                    title={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
+                    description={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
+                >
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={
+                            lockCustomer
+                                ? `${SAVED_SEARCH_FORM_BASE}/create?specificUserId=${ownerId}`
+                                : `${SAVED_SEARCH_FORM_BASE}/create`
+                        }
+                        icon={<IconPlus />}
+                        labelKey="createSavedSearch"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={(entity) => savedSearchEditPath(entity, lockCustomer)}
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}

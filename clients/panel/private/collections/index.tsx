@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,9 +21,16 @@ function AllCollections({resolveLanguageKey}: WithLanguageType) {
             collectionName="productCollections"
             accessModel="productCollections"
             tableConfigKey="productCollections"
-            createPath="/tenancy/systemSettings/collections/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createCollection"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/collections/create"
+                        icon={<IconPlus />}
+                        labelKey="createCollection"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={collectionEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx"

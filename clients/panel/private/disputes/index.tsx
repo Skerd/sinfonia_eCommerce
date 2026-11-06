@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Dispute} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/dispute/dispute.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -28,9 +28,16 @@ function AllDisputes({resolveLanguageKey}: WithLanguageType) {
             collectionName="disputes"
             accessModel="disputes"
             tableConfigKey="disputes"
-            createPath="/eCommerceMarketplace/disputes/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createDispute"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/disputes/create"
+                        icon={<IconPlus />}
+                        labelKey="createDispute"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={noopDisputeEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/disputes/center/sheetView/disputeSheetView.tsx"

@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {Review} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/review/review.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -27,9 +27,16 @@ function AllReviews({resolveLanguageKey}: WithLanguageType) {
             collectionName="reviews"
             accessModel="reviews"
             tableConfigKey="reviews"
-            createPath="/eCommerceMarketplace/reviews/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createReview"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/reviews/create"
+                        icon={<IconPlus />}
+                        labelKey="createReview"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={noopReviewEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/reviews/center/sheetView/reviewSheetView.tsx"

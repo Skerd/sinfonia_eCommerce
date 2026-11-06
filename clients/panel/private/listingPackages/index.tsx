@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import { IconPlus } from "@tabler/icons-react";
 import type { ListingPackage } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingPackage/listingPackage.dto.ts";
 import type { DeletedData } from "armonia/src/modules/core/types/shared.types.ts";
@@ -20,9 +20,16 @@ function AllListingPackages({ resolveLanguageKey }: WithLanguageType) {
             collectionName="listingPackages"
             accessModel="listingPackages"
             tableConfigKey="listingpackages"
-            createPath="/eCommerceMarketplace/listingpackages/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createListingPackage"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/eCommerceMarketplace/listingpackages/create"
+                        icon={<IconPlus />}
+                        labelKey="createListingPackage"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildListingPackageEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx"

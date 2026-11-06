@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconPlus} from "@tabler/icons-react";
 import type {ProductVariant} from "armonia/src/modules/eCommerce/api/eCommerce/private/productVariant/productVariant.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,9 +21,16 @@ function AllProductVariants({resolveLanguageKey}: WithLanguageType) {
             collectionName="productVariants"
             accessModel="productVariants"
             tableConfigKey="productVariants"
-            createPath="/tenancy/systemSettings/productvariants/create"
-            createIcon={<IconPlus />}
-            createLanguageKey="createProductVariant"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/productvariants/create"
+                        icon={<IconPlus />}
+                        labelKey="createProductVariant"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={productVariantEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx"
