@@ -83,5 +83,12 @@
     "paid": "Paid",
     "cancel": "Cancelled",
     "refunded": "Refunded"
+  },
+  "fiscalResolution": "CIS check outcome",
+  "fiscalResolvedBy": "CIS check by",
+  "fiscalResolvedAt": "CIS check at",
+  "fiscalResolutionValues": {
+    "recorded": "Codes recorded from the CIS portal",
+    "resent": "Not registered, sent again"
   }
 }

@@ -9,6 +9,9 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
+import PosOrderFiscalActions from "@eCommerceModule/clients/panel/private/posOrders/center/actions/posOrderFiscalActions.tsx";
+import RecordPosOrderFiscalCodesDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx";
+import ResendPosOrderFiscalDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx";
 
 export type PosOrderSheetViewOwnProps = {
     open: boolean;
@@ -80,7 +83,10 @@ function PosOrderSheetView({
                 hideRestore
                 actionMenuAllowCustomChildren
                 actionMenuChildren={
-                    <ReprintPosOrder entity={asOrder} onAction={(a: string) => setAction(a)} />
+                    <>
+                        <ReprintPosOrder entity={asOrder} onAction={(a: string) => setAction(a)} />
+                        <PosOrderFiscalActions entity={asOrder} onAction={(a: string) => setAction(a)} />
+                    </>
                 }
             />
             {action === "reprintPosOrder" && (
@@ -88,6 +94,22 @@ function PosOrderSheetView({
                     open={true}
                     onClose={() => setAction("")}
                     entity={asOrder}
+                />
+            )}
+            {action === "recordPosOrderFiscalCodes" && (
+                <RecordPosOrderFiscalCodesDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asOrder}
+                    onSuccess={(order: PosOrder) => setSheetData({...order})}
+                />
+            )}
+            {action === "resendPosOrderFiscal" && (
+                <ResendPosOrderFiscalDialog
+                    open={true}
+                    onClose={() => setAction("")}
+                    entity={asOrder}
+                    onSuccess={(order: PosOrder) => setSheetData({...order})}
                 />
             )}
         </>

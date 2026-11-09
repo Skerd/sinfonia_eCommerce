@@ -31,7 +31,8 @@
         "items": [
           "Rimbursoni një shitje të paguar nga arka, plotësisht ose sipas sasisë së rreshtit. Një rimbursim nuk mund të kalojë atë që ka mbetur në çdo rresht.",
           "Ribotimi, nga menyja e rreshtit, e prodhon kuponin sërish.",
-          "Porositë e produkteve të krijuara nga arka nuk mund të rimbursohen ose kthehen nga faqja Porositë e produkteve; kështu sirtari dhe stoku mbeten në përputhje."
+          "Porositë e produkteve të krijuara nga arka nuk mund të rimbursohen ose kthehen nga faqja Porositë e produkteve; kështu sirtari dhe stoku mbeten në përputhje.",
+          "Një shitje, përgjigjja e së cilës nga autoriteti tatimor humbi, pret një kontroll në portalin CIS; nga menyja e rreshtit, regjistroni kodet që shfaqen atje, ose dërgojeni përsëri nëse portali nuk e shfaq."
         ]
       },
       {
@@ -52,6 +53,10 @@
         "paid": "Paguar",
         "cancel": "Anuluar",
         "refunded": "Rimbursuar"
+      },
+      "fiscalResolution": {
+        "recorded": "Kodet u regjistruan nga portali CIS",
+        "resent": "Nuk u regjistrua, u dërgua përsëri"
       }
     },
     "name": "Numri i porosisë",
@@ -98,6 +103,9 @@
     "createdAt": "Krijuar më",
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "fiscalResolution": "Rezultati i kontrollit CIS",
+    "fiscalResolvedBy": "Kontrolli CIS nga",
+    "fiscalResolvedAt": "Kontrolli CIS më"
   }
 }

@@ -534,7 +534,12 @@
       "state": "State",
       "ublXml": "Ubl xml",
       "updatedAt": "Updated at",
-      "payments_currency": "Payments currency"
+      "payments_currency": "Payments currency",
+      "fiscalResolution": "CIS check outcome",
+      "fiscalResolvedBy": "CIS check by",
+      "fiscalResolvedAt": "CIS check at",
+      "recordFiscalCodes": "Record CIS codes",
+      "resendFiscal": "Not registered, send again"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Cash quick amounts",

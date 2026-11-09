@@ -534,7 +534,12 @@
       "state": "Cantone / Stato",
       "ublXml": "Ublxml",
       "updatedAt": "Aggiornato il",
-      "payments_currency": "Valuta dei pagamenti"
+      "payments_currency": "Valuta dei pagamenti",
+      "fiscalResolution": "Esito della verifica CIS",
+      "fiscalResolvedBy": "Verifica CIS di",
+      "fiscalResolvedAt": "Verifica CIS il",
+      "recordFiscalCodes": "Registra i codici CIS",
+      "resendFiscal": "Non registrata, invia di nuovo"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Importi in contanti rapidi",

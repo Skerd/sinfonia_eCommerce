@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx",
+  "title": "Dërgoje përsëri te autoriteti tatimor",
+  "description": "Bëjeni këtë vetëm nëse portali CIS nuk e shfaq këtë shitje. Ajo dërgohet përsëri tani; nëse ishte regjistruar gjithsesi, do të regjistrohet dy herë.",
+  "confirm": "Dërgoje përsëri",
+  "fault": "Autoriteti tatimor e refuzoi shitjen",
+  "axios": {
+    "start": {
+      "title": "Duke dërguar shitjen te autoriteti tatimor…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Shitja u dërgua te autoriteti tatimor",
+      "time": 3000
+    },
+    "error": {
+      "title": "Shitja nuk u dërgua dot",
+      "time": 3000
+    }
+  },
+  "cancel": "Anulo",
+  "busy": "Duke punuar…"
+}

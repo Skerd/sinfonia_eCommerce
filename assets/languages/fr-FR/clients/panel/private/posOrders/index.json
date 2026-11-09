@@ -31,7 +31,8 @@
         "items": [
           "Remboursez une vente payée depuis la caisse, en totalité ou par quantité de ligne. Un remboursement ne peut dépasser ce qui reste sur chaque ligne.",
           "Réimprimer, depuis le menu de ligne, reproduit le ticket.",
-          "Les commandes produits issues de la caisse ne peuvent pas être remboursées ou retournées depuis la page Commandes de produits ; cela garde le tiroir et le stock cohérents."
+          "Les commandes produits issues de la caisse ne peuvent pas être remboursées ou retournées depuis la page Commandes de produits ; cela garde le tiroir et le stock cohérents.",
+          "Une vente dont la réponse de l'administration fiscale a été perdue attend une vérification sur le portail CIS ; depuis le menu de la ligne, saisissez les codes qui y figurent, ou renvoyez-la si le portail ne l'affiche pas."
         ]
       },
       {
@@ -52,6 +53,10 @@
         "paid": "Payée",
         "cancel": "Annulé",
         "refunded": "Remboursé"
+      },
+      "fiscalResolution": {
+        "recorded": "Codes saisis depuis le portail CIS",
+        "resent": "Non enregistrée, renvoyée"
       }
     },
     "name": "Numéro de commande",
@@ -98,6 +103,9 @@
     "createdAt": "Créé le",
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
-    "deletedBy": "Supprimé par"
+    "deletedBy": "Supprimé par",
+    "fiscalResolution": "Résultat de la vérification CIS",
+    "fiscalResolvedBy": "Vérification CIS par",
+    "fiscalResolvedAt": "Vérification CIS le"
   }
 }

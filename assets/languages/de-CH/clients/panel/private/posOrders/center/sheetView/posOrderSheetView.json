@@ -83,5 +83,12 @@
     "paid": "Bezahlt",
     "cancel": "Storniert",
     "refunded": "Refunded"
+  },
+  "fiscalResolution": "Ergebnis der CIS-Prüfung",
+  "fiscalResolvedBy": "CIS-Prüfung durch",
+  "fiscalResolvedAt": "CIS-Prüfung am",
+  "fiscalResolutionValues": {
+    "recorded": "Codes aus dem CIS-Portal erfasst",
+    "resent": "Nicht registriert, erneut gesendet"
   }
 }

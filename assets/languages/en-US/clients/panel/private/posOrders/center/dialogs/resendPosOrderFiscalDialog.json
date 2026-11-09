@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx",
+  "title": "Send to the tax authority again",
+  "description": "Only do this if the CIS portal does not show this sale. It is sent again now; if it was registered after all, it will be registered twice.",
+  "confirm": "Send again",
+  "fault": "The tax authority refused the sale",
+  "axios": {
+    "start": {
+      "title": "Sending the sale to the tax authority…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Sale sent to the tax authority",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not send the sale",
+      "time": 3000
+    }
+  },
+  "cancel": "Cancel",
+  "busy": "Working…"
+}

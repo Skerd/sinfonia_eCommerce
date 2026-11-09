@@ -83,5 +83,12 @@
     "paid": "Paguar",
     "cancel": "Anuluar",
     "refunded": "Rimbursuar"
+  },
+  "fiscalResolution": "Rezultati i kontrollit CIS",
+  "fiscalResolvedBy": "Kontrolli CIS nga",
+  "fiscalResolvedAt": "Kontrolli CIS më",
+  "fiscalResolutionValues": {
+    "recorded": "Kodet u regjistruan nga portali CIS",
+    "resent": "Nuk u regjistrua, u dërgua përsëri"
   }
 }

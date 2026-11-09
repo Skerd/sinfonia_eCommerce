@@ -9,6 +9,9 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import PosOrderCard from "./center/cardView/posOrderCard.tsx";
 import ReprintPosOrder from "./center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "./center/dialogs/reprintPosOrderDialog.tsx";
+import PosOrderFiscalActions from "./center/actions/posOrderFiscalActions.tsx";
+import RecordPosOrderFiscalCodesDialog from "./center/dialogs/recordPosOrderFiscalCodesDialog.tsx";
+import ResendPosOrderFiscalDialog from "./center/dialogs/resendPosOrderFiscalDialog.tsx";
 
 function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
@@ -41,9 +44,19 @@ function AllPosOrders({resolveLanguageKey}: WithLanguageType) {
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx"
             renderActionMenuChildren={(entity, bindRowAction) => (
-                <ReprintPosOrder entity={entity} onAction={bindRowAction} />
+                <>
+                    <ReprintPosOrder entity={entity} onAction={bindRowAction} />
+                    <PosOrderFiscalActions entity={entity} onAction={bindRowAction} />
+                </>
             )}
-            renderFloatingModals={({action, entity, resetAction}) => {
+            renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                const replaceRow = (order: PosOrder) => listRef.current?.updateRow?.(entity._id, order);
+                if (action === "recordPosOrderFiscalCodes") {
+                    return <RecordPosOrderFiscalCodesDialog open onClose={resetAction} entity={entity} onSuccess={replaceRow} />;
+                }
+                if (action === "resendPosOrderFiscal") {
+                    return <ResendPosOrderFiscalDialog open onClose={resetAction} entity={entity} onSuccess={replaceRow} />;
+                }
                 if (action === "reprintPosOrder") {
                     return (
                         <ReprintPosOrderDialog

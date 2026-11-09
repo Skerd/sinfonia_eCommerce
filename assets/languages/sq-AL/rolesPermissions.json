@@ -534,7 +534,12 @@
       "state": "State",
       "ublXml": "Ubl Xml",
       "updatedAt": "Updated At",
-      "payments_currency": "Payments currency"
+      "payments_currency": "Payments currency",
+      "fiscalResolution": "Rezultati i kontrollit CIS",
+      "fiscalResolvedBy": "Kontrolli CIS nga",
+      "fiscalResolvedAt": "Kontrolli CIS më",
+      "recordFiscalCodes": "Regjistro kodet CIS",
+      "resendFiscal": "Nuk u regjistrua, dërgoje përsëri"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Cash Quick Amounts",

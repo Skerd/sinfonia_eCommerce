@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx",
+  "title": "CIS-Codes erfassen",
+  "description": "Dieser Verkauf wurde an die Steuerbehörde gesendet, aber ihre Antwort ging verloren. Zeigt das CIS-Portal ihn als registriert, erfassen Sie die dort angezeigten Codes; sie werden zu den Fiskalcodes des Verkaufs.",
+  "form": {
+    "nslfLabel": "NSLF / IIC",
+    "nivfLabel": "NIVF / FIC",
+    "eicLabel": "EIC (optional)"
+  },
+  "nslfPlaceholder": "0123456789ABCDEF0123456789ABCDEF",
+  "nivfPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "eicPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "nslfHint": "32 Zeichen, Ziffern und Buchstaben A–F.",
+  "nivfHint": "Der FIC der Rechnung, im oben gezeigten Format.",
+  "eicHint": "Nur wenn das Portal für diesen Verkauf auch eine E-Rechnung zeigt.",
+  "confirm": "Codes speichern",
+  "axios": {
+    "start": {
+      "title": "CIS-Codes werden gespeichert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "CIS-Codes erfasst",
+      "time": 3000
+    },
+    "error": {
+      "title": "CIS-Codes konnten nicht erfasst werden",
+      "time": 3000
+    }
+  },
+  "cancel": "Abbrechen",
+  "busy": "Wird ausgeführt…"
+}

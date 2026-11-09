@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx",
+  "title": "Regjistro kodet CIS",
+  "description": "Kjo shitje u dërgua te autoriteti tatimor, por përgjigjja e tij humbi. Nëse portali CIS e shfaq si të regjistruar, vendosni kodet që shfaqen atje; ato bëhen kodet fiskale të shitjes.",
+  "form": {
+    "nslfLabel": "NSLF / IIC",
+    "nivfLabel": "NIVF / FIC",
+    "eicLabel": "EIC (opsional)"
+  },
+  "nslfPlaceholder": "0123456789ABCDEF0123456789ABCDEF",
+  "nivfPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "eicPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "nslfHint": "32 karaktere, shifra dhe shkronjat A–F.",
+  "nivfHint": "FIC i faturës, në formatin e treguar më sipër.",
+  "eicHint": "Vetëm nëse portali shfaq edhe një faturë elektronike për këtë shitje.",
+  "confirm": "Ruaj kodet",
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur kodet CIS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kodet CIS u regjistruan",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kodet CIS nuk u regjistruan dot",
+      "time": 3000
+    }
+  },
+  "cancel": "Anulo",
+  "busy": "Duke punuar…"
+}

@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx",
+  "title": "Record CIS codes",
+  "description": "This sale was sent to the tax authority but its answer was lost. If the CIS portal shows it as registered, enter the codes shown there; they become the sale's fiscal codes.",
+  "form": {
+    "nslfLabel": "NSLF / IIC",
+    "nivfLabel": "NIVF / FIC",
+    "eicLabel": "EIC (optional)"
+  },
+  "nslfPlaceholder": "0123456789ABCDEF0123456789ABCDEF",
+  "nivfPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "eicPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "nslfHint": "32 characters, digits and letters A–F.",
+  "nivfHint": "The invoice's FIC, in the form shown above.",
+  "eicHint": "Only if the portal also shows an e-invoice for this sale.",
+  "confirm": "Save codes",
+  "axios": {
+    "start": {
+      "title": "Saving the CIS codes…",
+      "time": 3000
+    },
+    "success": {
+      "title": "CIS codes recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not record the CIS codes",
+      "time": 3000
+    }
+  },
+  "cancel": "Cancel",
+  "busy": "Working…"
+}

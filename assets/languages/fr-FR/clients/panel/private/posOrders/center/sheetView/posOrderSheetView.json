@@ -83,5 +83,12 @@
     "paid": "Payée",
     "cancel": "Annulé",
     "refunded": "Remboursé"
+  },
+  "fiscalResolution": "Résultat de la vérification CIS",
+  "fiscalResolvedBy": "Vérification CIS par",
+  "fiscalResolvedAt": "Vérification CIS le",
+  "fiscalResolutionValues": {
+    "recorded": "Codes saisis depuis le portail CIS",
+    "resent": "Non enregistrée, renvoyée"
   }
 }

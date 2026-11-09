@@ -1,0 +1,5 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/actions/posOrderFiscalActions.tsx",
+  "recordFiscalCodes": "Registra i codici CIS",
+  "resendFiscal": "Non registrata, invia di nuovo"
+}

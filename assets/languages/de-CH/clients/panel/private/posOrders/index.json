@@ -31,7 +31,8 @@
         "items": [
           "Erstatten Sie einen bezahlten Verkauf an der Kasse, ganz oder nach Zeilenmenge. Eine Erstattung kann nicht mehr betragen, als auf jeder Zeile übrig ist.",
           "Nachdrucken im Zeilenmenü erzeugt den Beleg erneut.",
-          "Von der Kasse erzeugte Produktbestellungen können nicht auf der Seite Produktbestellungen erstattet oder retourniert werden; so bleiben Schublade und Bestand im Einklang."
+          "Von der Kasse erzeugte Produktbestellungen können nicht auf der Seite Produktbestellungen erstattet oder retourniert werden; so bleiben Schublade und Bestand im Einklang.",
+          "Ein Verkauf, dessen Antwort der Steuerbehörde verloren ging, wartet auf eine Prüfung im CIS-Portal; erfassen Sie im Zeilenmenü die dort angezeigten Codes, oder senden Sie ihn erneut, wenn das Portal ihn nicht zeigt."
         ]
       },
       {
@@ -52,6 +53,10 @@
         "paid": "Bezahlt",
         "cancel": "Storniert",
         "refunded": "Refunded"
+      },
+      "fiscalResolution": {
+        "recorded": "Codes aus dem CIS-Portal erfasst",
+        "resent": "Nicht registriert, erneut gesendet"
       }
     },
     "name": "Auftrag nummer",
@@ -98,6 +103,9 @@
     "createdAt": "Erstellt am",
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
-    "deletedBy": "Gelöscht von"
+    "deletedBy": "Gelöscht von",
+    "fiscalResolution": "Ergebnis der CIS-Prüfung",
+    "fiscalResolvedBy": "CIS-Prüfung durch",
+    "fiscalResolvedAt": "CIS-Prüfung am"
   }
 }

@@ -31,7 +31,8 @@
         "items": [
           "Rimborsa una vendita pagata dalla cassa, per intero o per quantità di riga. Un rimborso non può superare quanto resta su ogni riga.",
           "Ristampa, dal menu della riga, riproduce lo scontrino.",
-          "Gli ordini di prodotti generati dalla cassa non si possono rimborsare o rendere dalla pagina Ordini di prodotti; così cassetto e giacenza restano allineati."
+          "Gli ordini di prodotti generati dalla cassa non si possono rimborsare o rendere dalla pagina Ordini di prodotti; così cassetto e giacenza restano allineati.",
+          "Una vendita la cui risposta dell'autorità fiscale è andata persa attende una verifica nel portale CIS; dal menu della riga, registra i codici indicati lì, oppure inviala di nuovo se il portale non la mostra."
         ]
       },
       {
@@ -52,6 +53,10 @@
         "paid": "Pagata",
         "cancel": "Annullato",
         "refunded": "Rimborsato"
+      },
+      "fiscalResolution": {
+        "recorded": "Codici registrati dal portale CIS",
+        "resent": "Non registrata, inviata di nuovo"
       }
     },
     "name": "Numero dell'ordine",
@@ -98,6 +103,9 @@
     "createdAt": "Creato il",
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "fiscalResolution": "Esito della verifica CIS",
+    "fiscalResolvedBy": "Verifica CIS di",
+    "fiscalResolvedAt": "Verifica CIS il"
   }
 }

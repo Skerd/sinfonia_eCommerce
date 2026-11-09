@@ -534,7 +534,12 @@
       "state": "Kanton",
       "ublXml": "Ubl xml",
       "updatedAt": "Aktualisiert am",
-      "payments_currency": "Payments währung"
+      "payments_currency": "Payments währung",
+      "fiscalResolution": "Ergebnis der CIS-Prüfung",
+      "fiscalResolvedBy": "CIS-Prüfung durch",
+      "fiscalResolvedAt": "CIS-Prüfung am",
+      "recordFiscalCodes": "CIS-Codes erfassen",
+      "resendFiscal": "Nicht registriert, erneut senden"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Cash quick amounts",

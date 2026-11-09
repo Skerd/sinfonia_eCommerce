@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx",
+  "title": "Erneut an die Steuerbehörde senden",
+  "description": "Tun Sie dies nur, wenn das CIS-Portal diesen Verkauf nicht zeigt. Er wird jetzt erneut gesendet; war er doch registriert, wird er doppelt registriert.",
+  "confirm": "Erneut senden",
+  "fault": "Die Steuerbehörde hat den Verkauf abgelehnt",
+  "axios": {
+    "start": {
+      "title": "Verkauf wird an die Steuerbehörde gesendet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Verkauf an die Steuerbehörde gesendet",
+      "time": 3000
+    },
+    "error": {
+      "title": "Verkauf konnte nicht gesendet werden",
+      "time": 3000
+    }
+  },
+  "cancel": "Abbrechen",
+  "busy": "Wird ausgeführt…"
+}

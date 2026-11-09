@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx",
+  "title": "Invia di nuovo all'autorità fiscale",
+  "description": "Fallo solo se il portale CIS non mostra questa vendita. Viene inviata di nuovo ora; se era comunque registrata, verrà registrata due volte.",
+  "confirm": "Invia di nuovo",
+  "fault": "L'autorità fiscale ha rifiutato la vendita",
+  "axios": {
+    "start": {
+      "title": "Invio della vendita all'autorità fiscale…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Vendita inviata all'autorità fiscale",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare la vendita",
+      "time": 3000
+    }
+  },
+  "cancel": "Annulla",
+  "busy": "Operazione in corso…"
+}

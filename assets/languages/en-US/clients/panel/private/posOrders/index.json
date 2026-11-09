@@ -31,7 +31,8 @@
         "items": [
           "Refund a paid sale from the till, in full or by line quantity. A refund cannot exceed what is left on each line.",
           "Reprint, from the row menu, produces the receipt again.",
-          "Product orders made by the till cannot be refunded or returned from the Product orders page; that keeps the drawer and the stock in step."
+          "Product orders made by the till cannot be refunded or returned from the Product orders page; that keeps the drawer and the stock in step.",
+          "A sale whose answer from the tax authority was lost waits for a check in the CIS portal; from the row menu, record the codes shown there, or send it again if the portal does not show it."
         ]
       },
       {
@@ -52,6 +53,10 @@
         "paid": "Paid",
         "cancel": "Cancelled",
         "refunded": "Refunded"
+      },
+      "fiscalResolution": {
+        "recorded": "Codes recorded from the CIS portal",
+        "resent": "Not registered, sent again"
       }
     },
     "name": "Order number",
@@ -98,6 +103,9 @@
     "createdAt": "Created at",
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "fiscalResolution": "CIS check outcome",
+    "fiscalResolvedBy": "CIS check by",
+    "fiscalResolvedAt": "CIS check at"
   }
 }

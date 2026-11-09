@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx",
+  "title": "Saisir les codes CIS",
+  "description": "Cette vente a été envoyée à l'administration fiscale, mais sa réponse a été perdue. Si le portail CIS l'affiche comme enregistrée, saisissez les codes qui y figurent ; ils deviennent les codes fiscaux de la vente.",
+  "form": {
+    "nslfLabel": "NSLF / IIC",
+    "nivfLabel": "NIVF / FIC",
+    "eicLabel": "EIC (facultatif)"
+  },
+  "nslfPlaceholder": "0123456789ABCDEF0123456789ABCDEF",
+  "nivfPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "eicPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "nslfHint": "32 caractères, chiffres et lettres A–F.",
+  "nivfHint": "Le FIC de la facture, au format indiqué ci-dessus.",
+  "eicHint": "Seulement si le portail affiche aussi une facture électronique pour cette vente.",
+  "confirm": "Enregistrer les codes",
+  "axios": {
+    "start": {
+      "title": "Enregistrement des codes CIS…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Codes CIS enregistrés",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'enregistrer les codes CIS",
+      "time": 3000
+    }
+  },
+  "cancel": "Annuler",
+  "busy": "En cours…"
+}
