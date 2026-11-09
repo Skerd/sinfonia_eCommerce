@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
+  "title": "Réserver votre séance",
+  "message": "Choisissez le début et la fin de la séance. Les heures sont en {zone}.",
+  "form": {
+    "startAtLabel": "Début",
+    "startAtPlaceholder": "Choisir la date et l'heure de début",
+    "endAtLabel": "Fin",
+    "endAtPlaceholder": "Choisir la date et l'heure de fin"
+  },
+  "submit": "Réserver la séance",
+  "working": "Un instant…",
+  "back": "Retour",
+  "booked": "Séance réservée",
+  "bookError": "La séance n'a pas pu être réservée. Veuillez réessayer."
+}

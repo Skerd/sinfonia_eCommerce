@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
+  "title": "Termin buchen",
+  "message": "Wählen Sie Beginn und Ende des Termins. Die Zeiten gelten in {zone}.",
+  "form": {
+    "startAtLabel": "Beginn",
+    "startAtPlaceholder": "Datum und Uhrzeit für den Beginn wählen",
+    "endAtLabel": "Ende",
+    "endAtPlaceholder": "Datum und Uhrzeit für das Ende wählen"
+  },
+  "submit": "Termin buchen",
+  "working": "Einen Moment…",
+  "back": "Zurück",
+  "booked": "Termin gebucht",
+  "bookError": "Der Termin konnte nicht gebucht werden. Bitte erneut versuchen."
+}

@@ -17,6 +17,7 @@ import {ShopProviderAvatar} from "@eCommerceModule/clients/client/public/shared/
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import {serviceOrderTitle} from "./index.tsx";
+import ServiceOrderBookingForm from "./serviceOrderBookingForm.tsx";
 import type {BuyerServiceOrder} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
 import type {Media} from "armonia/src/modules/core/types/index.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
@@ -31,7 +32,7 @@ const STEPS = ["pending", "accepted", "in_progress", "completed"] as const;
 
 const REVISION_REASON_MIN = 10;
 
-type Panel = "cancel" | "revision" | "dispute" | "review" | null;
+type Panel = "cancel" | "revision" | "dispute" | "review" | "booking" | null;
 
 function EscrowPayForm({
     clientSecret,
@@ -164,6 +165,8 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const revisions = order.revisions ?? [];
     const milestones = order.milestones ?? [];
     const bookings = order.bookings ?? [];
+    // The server's booking rule: one booking per accepted or in-progress order
+    const canBook = (status === "accepted" || status === "in_progress") && bookings.length === 0;
 
     function submitPanel(event: FormEvent) {
         event.preventDefault();
@@ -281,7 +284,18 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         </div>
                     )}
 
-                    {panel && (
+                    {panel === "booking" && (
+                        <ServiceOrderBookingForm
+                            orderId={order._id}
+                            onBooked={() => {
+                                setPanel(null);
+                                load();
+                            }}
+                            onCancel={() => setPanel(null)}
+                        />
+                    )}
+
+                    {panel && panel !== "booking" && (
                         <form onSubmit={submitPanel} className="flex flex-col gap-4 rounded-2xl bg-muted p-5">
                             <p className="font-semibold">{resolveLanguageKey(`panel.${panel}.title`)}</p>
                             <p className="text-sm text-muted-foreground">{resolveLanguageKey(`panel.${panel}.message`)}</p>
@@ -461,8 +475,14 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                             {resolveLanguageKey("viewService")}
                         </Link></Button>
                     )}
-                    {(canCancel || canDispute || canReview) && panel === null && (
+                    {(canBook || canCancel || canDispute || canReview) && panel === null && (
                         <div className="flex flex-col gap-2 border-t border-border pt-5">
+                            {canBook && (
+                                <Button size="lg" type="button" onClick={() => openPanel("booking")}>
+                                    <IconCalendarMonth className="h-4 w-4" aria-hidden />
+                                    {resolveLanguageKey("bookSession")}
+                                </Button>
+                            )}
                             {canReview && (
                                 <Button size="lg" type="button" onClick={() => openPanel("review")} >
                                     {resolveLanguageKey("leaveReview")}

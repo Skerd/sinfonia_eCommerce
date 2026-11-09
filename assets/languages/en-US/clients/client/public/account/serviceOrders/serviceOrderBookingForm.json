@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
+  "title": "Book your session",
+  "message": "Pick when the session starts and ends. Times are in {zone}.",
+  "form": {
+    "startAtLabel": "Starts",
+    "startAtPlaceholder": "Pick a start date and time",
+    "endAtLabel": "Ends",
+    "endAtPlaceholder": "Pick an end date and time"
+  },
+  "submit": "Book session",
+  "working": "Working…",
+  "back": "Back",
+  "booked": "Session booked",
+  "bookError": "The session couldn't be booked. Please try again."
+}

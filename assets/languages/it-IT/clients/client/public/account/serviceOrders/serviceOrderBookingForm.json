@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
+  "title": "Prenota la tua sessione",
+  "message": "Scegli quando inizia e finisce la sessione. Gli orari sono in {zone}.",
+  "form": {
+    "startAtLabel": "Inizio",
+    "startAtPlaceholder": "Scegli data e ora di inizio",
+    "endAtLabel": "Fine",
+    "endAtPlaceholder": "Scegli data e ora di fine"
+  },
+  "submit": "Prenota la sessione",
+  "working": "Attendere…",
+  "back": "Indietro",
+  "booked": "Sessione prenotata",
+  "bookError": "Non è stato possibile prenotare la sessione. Riprova."
+}

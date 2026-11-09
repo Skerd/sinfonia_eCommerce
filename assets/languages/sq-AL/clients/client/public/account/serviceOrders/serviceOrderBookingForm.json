@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
+  "title": "Rezervoni seancën tuaj",
+  "message": "Zgjidhni kur fillon dhe kur mbaron seanca. Oraret janë sipas {zone}.",
+  "form": {
+    "startAtLabel": "Fillon",
+    "startAtPlaceholder": "Zgjidhni datën dhe orën e fillimit",
+    "endAtLabel": "Mbaron",
+    "endAtPlaceholder": "Zgjidhni datën dhe orën e mbarimit"
+  },
+  "submit": "Rezervo seancën",
+  "working": "Duke punuar…",
+  "back": "Mbrapa",
+  "booked": "Seanca u rezervua",
+  "bookError": "Seanca nuk mund të rezervohej. Ju lutem provoni sërish."
+}
