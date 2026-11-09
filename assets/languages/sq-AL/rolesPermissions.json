@@ -201,7 +201,10 @@
       "updatedAt": "Updated At",
       "visibility": "Visibility",
       "visibility_devices": "Visibility Devices",
-      "visibility_regions": "Visibility Regions"
+      "visibility_regions": "Visibility Regions",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo",
+      "reorder": "Rirendit"
     },
     "Customeraddresses": {
       "city": "City",
@@ -245,7 +248,10 @@
       "isDefault": "Is Default",
       "memberCount": "Member Count",
       "name": "Name",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "setDefault": "Cakto si parazgjedhje",
+      "addMember": "Shto anëtar",
+      "removeMember": "Hiq anëtarin"
     },
     "Digitaldeliveries": {
       "createdAt": "Created At",
@@ -286,7 +292,9 @@
       "usageCount": "Usage Count",
       "usageLimit": "Usage Limit",
       "usageLimitPerCustomer": "Usage Limit Per Customer",
-      "value": "Value"
+      "value": "Value",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Fiscalconfigs": {
       "businessUnitCode": "Business Unit Code",
@@ -316,7 +324,9 @@
       "tcrCode": "Tcr Code",
       "tcrIntId": "Tcr Int Id",
       "tcrType": "Tcr Type",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Fulfillments": {
       "carrier": "Carrier",
@@ -336,7 +346,10 @@
       "status": "Status",
       "trackingNumber": "Tracking Number",
       "trackingUrl": "Tracking Url",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "ship": "Dërgo",
+      "markDelivered": "Shëno si të dorëzuar",
+      "markFailed": "Shëno si të dështuar"
     },
     "Inventories": {
       "createdAt": "Created At",
@@ -352,7 +365,9 @@
       "reorderQuantity": "Reorder Quantity",
       "updatedAt": "Updated At",
       "variant": "Variant",
-      "warehouse": "Warehouse"
+      "warehouse": "Warehouse",
+      "restock": "Rimbush stokun",
+      "deduct": "Zbrit stokun"
     },
     "Inventorymovements": {
       "batchLot": "Batch Lot",
@@ -465,7 +480,17 @@
       "managerPinReset_requestedBy": "Manager Pin Reset requested By",
       "paymentMethods_default": "Payment Methods default",
       "paymentMethods_type": "Payment Methods type",
-      "warehouse": "Warehouse"
+      "warehouse": "Warehouse",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo",
+      "pause": "Pezullo",
+      "resume": "Rifillo",
+      "pauseAll": "Pezullo të gjitha arkat",
+      "resumeAll": "Rifillo të gjitha arkat",
+      "companyLockStatus": "Shiko bllokimin e arkave të kompanisë",
+      "setManagerPin": "Cakto PIN-in e menaxherit",
+      "changeManagerPin": "Ndrysho PIN-in e menaxherit",
+      "requestManagerPinReset": "Kërko rivendosjen e PIN-it të menaxherit"
     },
     "Posorders": {
       "amountPaid": "Amount Paid",
@@ -539,7 +564,12 @@
       "fiscalResolvedBy": "Kontrolli CIS nga",
       "fiscalResolvedAt": "Kontrolli CIS më",
       "recordFiscalCodes": "Regjistro kodet CIS",
-      "resendFiscal": "Nuk u regjistrua, dërgoje përsëri"
+      "resendFiscal": "Nuk u regjistrua, dërgoje përsëri",
+      "hold": "Mbaj një shitje në pritje",
+      "pay": "Regjistro një shitje",
+      "refund": "Rimburso një shitje",
+      "reprint": "Ristampo një faturë",
+      "deleteHeld": "Fshi një shitje në pritje"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Cash Quick Amounts",
@@ -559,7 +589,10 @@
       "terminalProtocol": "Terminal Protocol",
       "terminalProvider": "Terminal Provider",
       "type": "Type",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "testConnection": "Testo lidhjen",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Possessions": {
       "cashMoves": "Cash Moves",
@@ -595,7 +628,11 @@
       "cashMoves_by": "Cash Moves by",
       "cashMoves_default": "Cash Moves default",
       "cashMoves_reason": "Cash Moves reason",
-      "cashMoves_type": "Cash Moves type"
+      "cashMoves_type": "Cash Moves type",
+      "open": "Hap seancën",
+      "cashMove": "Fut ose nxirr para",
+      "close": "Mbyll seancën",
+      "reconciliation": "Shiko rakordimin e arkës"
     },
     "Pricingrules": {
       "appliesTo": "Applies To",
@@ -615,7 +652,9 @@
       "targetIds": "Target Ids",
       "type": "Type",
       "updatedAt": "Updated At",
-      "value": "Value"
+      "value": "Value",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Productattributes": {
       "createdAt": "Created At",
@@ -663,7 +702,9 @@
       "seoTitle": "Seo Title",
       "slug": "Slug",
       "type": "Type",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Productorders": {
       "appliedDiscounts": "Applied Discounts",
@@ -737,7 +778,13 @@
       "timeline_note": "Timeline Note",
       "timeline_timestamp": "Timeline Timestamp",
       "timeline_userId": "Timeline User Id",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "confirm": "Konfirmo",
+      "markProcessing": "Shëno si në përpunim",
+      "ship": "Dërgo porosinë",
+      "cancel": "Anulo",
+      "markPaid": "Shëno si të paguar",
+      "refund": "Rimburso porosinë"
     },
     "Productreviews": {
       "comment": "Comment",
@@ -857,7 +904,11 @@
       "volumetricWeight": "Volumetric Weight",
       "warranty": "Warranty",
       "weight": "Weight",
-      "weightUnit": "Weight Unit"
+      "weightUnit": "Weight Unit",
+      "duplicate": "Dyfisho",
+      "publish": "Publiko",
+      "archive": "Arkivo",
+      "revertToDraft": "Kthe në draft"
     },
     "Productvariants": {
       "attributeCombination": "Attribute Combination",
@@ -904,7 +955,11 @@
       "returnrequests": "Return Requests",
       "status": "Status",
       "type": "Type",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "approve": "Mirato",
+      "reject": "Refuzo",
+      "receive": "Prano mallin e kthyer",
+      "complete": "Përfundo"
     },
     "Savedsearches": {
       "createdAt": "CreatedAt",
@@ -954,7 +1009,9 @@
       "rates_type_estimatedDeliveryDays": "Rates type estimated Delivery Days",
       "rates_type_name": "Rates type name",
       "rates_type_price": "Rates type price",
-      "rates_type_type": "Rates type type"
+      "rates_type_type": "Rates type type",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Taxzones": {
       "country": "Country",
@@ -973,7 +1030,9 @@
       "rates_rate": "Rates Rate",
       "states": "States",
       "taxzones": "Tax Zones",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Warehouses": {
       "address": "Address",
@@ -993,7 +1052,10 @@
       "isDefault": "Is Default",
       "name": "Name",
       "updatedAt": "Updated At",
-      "warehouses": "Warehouses"
+      "warehouses": "Warehouses",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo",
+      "setDefault": "Cakto si parazgjedhje"
     },
     "Stocktransfers": {
       "stocktransfers": "Transferimet e stokut",
@@ -1012,7 +1074,9 @@
       "createdAt": "Krijuar më",
       "updatedAt": "Përditësuar më",
       "deletedAt": "Fshirë më",
-      "deletedBy": "Fshirë nga"
+      "deletedBy": "Fshirë nga",
+      "complete": "Përfundo",
+      "cancel": "Anulo"
     },
     "Stockcounts": {
       "stockcounts": "Numërimet e stokut",
@@ -1031,7 +1095,9 @@
       "createdAt": "Krijuar më",
       "updatedAt": "Përditësuar më",
       "deletedAt": "Fshirë më",
-      "deletedBy": "Fshirë nga"
+      "deletedBy": "Fshirë nga",
+      "apply": "Zbato",
+      "cancel": "Anulo"
     },
     "Bookings": {
       "bookings": "Bookings",
@@ -1057,7 +1123,10 @@
       "reason": "Reason",
       "resolution": "Resolution",
       "status": "Status",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "startReview": "Fillo shqyrtimin",
+      "resolve": "Zgjidh",
+      "close": "Mbyll mosmarrëveshjen"
     },
     "Listingaddons": {
       "createdAt": "CreatedAt",
@@ -1096,7 +1165,9 @@
       "resolution": "Resolution",
       "status": "Status",
       "updatedAt": "UpdatedAt",
-      "user": "User"
+      "user": "User",
+      "resolve": "Zgjidh",
+      "dismiss": "Hidh poshtë"
     },
     "Listingpackages": {
       "createdAt": "CreatedAt",
@@ -1148,7 +1219,9 @@
       "tags": "Tags",
       "title": "Title",
       "updatedAt": "UpdatedAt",
-      "videoGallery": "VideoGallery"
+      "videoGallery": "VideoGallery",
+      "activate": "Aktivizo",
+      "deactivate": "Çaktivizo"
     },
     "Marketplacebids": {
       "amount": "Amount",
@@ -1216,7 +1289,12 @@
       "provider": "Provider",
       "status": "Status",
       "taskRequest": "TaskRequest",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "accept": "Prano",
+      "start": "Fillo punën",
+      "extend": "Zgjat",
+      "submitDelivery": "Dorëzo punën",
+      "createMilestone": "Krijo pikë kyçe"
     },
     "Promotions": {
       "createdAt": "CreatedAt",
@@ -1231,7 +1309,10 @@
       "startAt": "StartAt",
       "stopReason": "StopReason",
       "type": "Type",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "pause": "Pezullo",
+      "resume": "Rifillo",
+      "stop": "Ndalo"
     },
     "Providerprofiles": {
       "availability_dayOfWeek": "Dita e javës",
@@ -1252,7 +1333,9 @@
       "stripeAccountSyncedAt": "Stripe Account Synced At",
       "stripeChargesEnabled": "Stripe Charges Enabled",
       "stripeDetailsSubmitted": "Stripe Details Submitted",
-      "stripePayoutsEnabled": "Stripe Payouts Enabled"
+      "stripePayoutsEnabled": "Stripe Payouts Enabled",
+      "createAccountLink": "Krijo lidhjen e llogarisë së pagesave",
+      "refreshAccountStatus": "Rifresko gjendjen e llogarisë së pagesave"
     },
     "Reviews": {
       "comment": "Comment",
@@ -1294,7 +1377,8 @@
       "taskrequests": "Task Requests",
       "title": "Title",
       "updatedAt": "UpdatedAt",
-      "videoGallery": "VideoGallery"
+      "videoGallery": "VideoGallery",
+      "notifyAll": "Njofto të gjithë ofruesit"
     }
   }
 }

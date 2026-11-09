@@ -201,7 +201,10 @@
       "updatedAt": "Aggiornato il",
       "visibility": "Visibilità",
       "visibility_devices": "Dispositivi di visibilità",
-      "visibility_regions": "Regioni di visibilità"
+      "visibility_regions": "Regioni di visibilità",
+      "activate": "Attiva",
+      "deactivate": "Disattiva",
+      "reorder": "Riordina"
     },
     "Customeraddresses": {
       "city": "Città",
@@ -245,7 +248,10 @@
       "isDefault": "È predefinito",
       "memberCount": "Conteggio dei membri",
       "name": "Nome",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "setDefault": "Imposta come predefinito",
+      "addMember": "Aggiungi membro",
+      "removeMember": "Rimuovi membro"
     },
     "Digitaldeliveries": {
       "createdAt": "Creato il",
@@ -286,7 +292,9 @@
       "usageCount": "Conteggio dell'utilizzo",
       "usageLimit": "Limite di utilizzo",
       "usageLimitPerCustomer": "Limite di utilizzo per cliente",
-      "value": "Valore"
+      "value": "Valore",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Fiscalconfigs": {
       "businessUnitCode": "Codice unità aziendale",
@@ -316,7 +324,9 @@
       "tcrCode": "Codice TCR",
       "tcrIntId": "ID int Tcr",
       "tcrType": "Tipo TCR",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Fulfillments": {
       "carrier": "Portatore",
@@ -336,7 +346,10 @@
       "status": "Stato",
       "trackingNumber": "Numero di tracciamento",
       "trackingUrl": "URL di monitoraggio",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "ship": "Spedisci",
+      "markDelivered": "Segna come consegnato",
+      "markFailed": "Segna come non riuscito"
     },
     "Inventories": {
       "createdAt": "Creato il",
@@ -352,7 +365,9 @@
       "reorderQuantity": "Riordina la quantità",
       "updatedAt": "Aggiornato il",
       "variant": "Variante",
-      "warehouse": "Magazzino"
+      "warehouse": "Magazzino",
+      "restock": "Rifornisci",
+      "deduct": "Scarica scorte"
     },
     "Inventorymovements": {
       "batchLot": "Lotto in batch",
@@ -465,7 +480,17 @@
       "managerPinReset_requestedBy": "Reimpostazione del PIN amministratore richiesta da",
       "paymentMethods_default": "Metodi di pagamento predefiniti",
       "paymentMethods_type": "Tipo di metodi di pagamento",
-      "warehouse": "Magazzino"
+      "warehouse": "Magazzino",
+      "activate": "Attiva",
+      "deactivate": "Disattiva",
+      "pause": "Metti in pausa",
+      "resume": "Riprendi",
+      "pauseAll": "Metti in pausa tutte le casse",
+      "resumeAll": "Riprendi tutte le casse",
+      "companyLockStatus": "Vedi il blocco casse dell'azienda",
+      "setManagerPin": "Imposta il PIN del responsabile",
+      "changeManagerPin": "Cambia il PIN del responsabile",
+      "requestManagerPinReset": "Richiedi il ripristino del PIN del responsabile"
     },
     "Posorders": {
       "amountPaid": "Importo pagato",
@@ -539,7 +564,12 @@
       "fiscalResolvedBy": "Verifica CIS di",
       "fiscalResolvedAt": "Verifica CIS il",
       "recordFiscalCodes": "Registra i codici CIS",
-      "resendFiscal": "Non registrata, invia di nuovo"
+      "resendFiscal": "Non registrata, invia di nuovo",
+      "hold": "Metti in attesa una vendita",
+      "pay": "Registra una vendita",
+      "refund": "Rimborsa una vendita",
+      "reprint": "Ristampa uno scontrino",
+      "deleteHeld": "Elimina una vendita in attesa"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Importi in contanti rapidi",
@@ -559,7 +589,10 @@
       "terminalProtocol": "Protocollo terminale",
       "terminalProvider": "Fornitore di terminali",
       "type": "Tipo",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "testConnection": "Verifica la connessione",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Possessions": {
       "cashMoves": "Movimenti di contanti",
@@ -595,7 +628,11 @@
       "cashMoves_by": "Il denaro passa",
       "cashMoves_default": "I movimenti di contanti sono predefiniti",
       "cashMoves_reason": "Il denaro muove la ragione",
-      "cashMoves_type": "Tipo di movimenti di contanti"
+      "cashMoves_type": "Tipo di movimenti di contanti",
+      "open": "Apri la sessione",
+      "cashMove": "Versa o preleva contanti",
+      "close": "Chiudi la sessione",
+      "reconciliation": "Vedi la riconciliazione di cassa"
     },
     "Pricingrules": {
       "appliesTo": "Si applica a",
@@ -615,7 +652,9 @@
       "targetIds": "ID target",
       "type": "Tipo",
       "updatedAt": "Aggiornato il",
-      "value": "Valore"
+      "value": "Valore",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Productattributes": {
       "createdAt": "Creato il",
@@ -663,7 +702,9 @@
       "seoTitle": "Titolo SEO",
       "slug": "Lumaca",
       "type": "Tipo",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Productorders": {
       "appliedDiscounts": "Sconti applicati",
@@ -737,7 +778,13 @@
       "timeline_note": "Nota sulla cronologia",
       "timeline_timestamp": "Timestamp della sequenza temporale",
       "timeline_userId": "ID utente della sequenza temporale",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "confirm": "Conferma",
+      "markProcessing": "Segna in lavorazione",
+      "ship": "Spedisci l'ordine",
+      "cancel": "Annulla",
+      "markPaid": "Segna come pagato",
+      "refund": "Rimborsa l'ordine"
     },
     "Productreviews": {
       "comment": "Commento",
@@ -857,7 +904,11 @@
       "volumetricWeight": "Peso volumetrico",
       "warranty": "Garanzia",
       "weight": "Peso",
-      "weightUnit": "Unità di peso"
+      "weightUnit": "Unità di peso",
+      "duplicate": "Duplica",
+      "publish": "Pubblica",
+      "archive": "Archivia",
+      "revertToDraft": "Riporta in bozza"
     },
     "Productvariants": {
       "attributeCombination": "Combinazione di attributi",
@@ -904,7 +955,11 @@
       "returnrequests": "Richieste di reso",
       "status": "Stato",
       "type": "Tipo",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "approve": "Approva",
+      "reject": "Rifiuta",
+      "receive": "Ricevi la merce resa",
+      "complete": "Completa"
     },
     "Savedsearches": {
       "createdAt": "Creato il",
@@ -954,7 +1009,9 @@
       "rates_type_estimatedDeliveryDays": "Tipo di tariffa giorni di consegna stimati",
       "rates_type_name": "Nome del tipo di tariffa",
       "rates_type_price": "Tariffe tipo prezzo",
-      "rates_type_type": "Tipo di tariffa"
+      "rates_type_type": "Tipo di tariffa",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Taxzones": {
       "country": "Paese",
@@ -973,7 +1030,9 @@
       "rates_rate": "Tasso di tariffe",
       "states": "Stati / cantoni",
       "taxzones": "Zone fiscali",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Warehouses": {
       "address": "Indirizzo",
@@ -993,7 +1052,10 @@
       "isDefault": "È predefinito",
       "name": "Nome",
       "updatedAt": "Aggiornato il",
-      "warehouses": "Magazzini"
+      "warehouses": "Magazzini",
+      "activate": "Attiva",
+      "deactivate": "Disattiva",
+      "setDefault": "Imposta come predefinito"
     },
     "Stocktransfers": {
       "stocktransfers": "Trasferimenti di magazzino",
@@ -1012,7 +1074,9 @@
       "createdAt": "Creato il",
       "updatedAt": "Aggiornato il",
       "deletedAt": "Eliminato il",
-      "deletedBy": "Eliminato da"
+      "deletedBy": "Eliminato da",
+      "complete": "Completa",
+      "cancel": "Annulla"
     },
     "Stockcounts": {
       "stockcounts": "Inventari",
@@ -1031,7 +1095,9 @@
       "createdAt": "Creato il",
       "updatedAt": "Aggiornato il",
       "deletedAt": "Eliminato il",
-      "deletedBy": "Eliminato da"
+      "deletedBy": "Eliminato da",
+      "apply": "Applica",
+      "cancel": "Annulla"
     },
     "Bookings": {
       "bookings": "Prenotazioni",
@@ -1057,7 +1123,10 @@
       "reason": "Motivo",
       "resolution": "Risoluzione",
       "status": "Stato",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "startReview": "Avvia l'esame",
+      "resolve": "Risolvi",
+      "close": "Chiudi la controversia"
     },
     "Listingaddons": {
       "createdAt": "Creato il",
@@ -1096,7 +1165,9 @@
       "resolution": "Risoluzione",
       "status": "Stato",
       "updatedAt": "Aggiornato il",
-      "user": "Utente"
+      "user": "Utente",
+      "resolve": "Risolvi",
+      "dismiss": "Archivia la segnalazione"
     },
     "Listingpackages": {
       "createdAt": "Creato il",
@@ -1148,7 +1219,9 @@
       "tags": "Tag",
       "title": "Modifica tipo di unità",
       "updatedAt": "Aggiornato il",
-      "videoGallery": "Galleria video"
+      "videoGallery": "Galleria video",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
     },
     "Marketplacebids": {
       "amount": "Importo",
@@ -1216,7 +1289,12 @@
       "provider": "Fornitore",
       "status": "Stato",
       "taskRequest": "Richiesta di attività",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "accept": "Accetta",
+      "start": "Inizia il lavoro",
+      "extend": "Proroga",
+      "submitDelivery": "Invia la consegna",
+      "createMilestone": "Crea milestone"
     },
     "Promotions": {
       "createdAt": "Creato il",
@@ -1231,7 +1309,10 @@
       "startAt": "Inizia alle",
       "stopReason": "Smettere di ragionare",
       "type": "Tipo",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "pause": "Metti in pausa",
+      "resume": "Riprendi",
+      "stop": "Interrompi"
     },
     "Providerprofiles": {
       "availability_dayOfWeek": "Giorno della settimana",
@@ -1252,7 +1333,9 @@
       "stripeAccountSyncedAt": "Account Stripe sincronizzato su",
       "stripeChargesEnabled": "Addebiti stripe abilitati",
       "stripeDetailsSubmitted": "Dettagli della striscia inviati",
-      "stripePayoutsEnabled": "Pagamenti con stripe abilitati"
+      "stripePayoutsEnabled": "Pagamenti con stripe abilitati",
+      "createAccountLink": "Crea il link del conto pagamenti",
+      "refreshAccountStatus": "Aggiorna lo stato del conto pagamenti"
     },
     "Reviews": {
       "comment": "Commento",
@@ -1294,7 +1377,8 @@
       "taskrequests": "Richieste di attività",
       "title": "Modifica tipo di unità",
       "updatedAt": "Aggiornato il",
-      "videoGallery": "Galleria video"
+      "videoGallery": "Galleria video",
+      "notifyAll": "Avvisa tutti i fornitori"
     }
   }
 }

@@ -201,7 +201,10 @@
       "updatedAt": "Mis à jour le",
       "visibility": "Visibilité",
       "visibility_devices": "Dispositifs de visibilité",
-      "visibility_regions": "Régions de visibilité"
+      "visibility_regions": "Régions de visibilité",
+      "activate": "Activer",
+      "deactivate": "Désactiver",
+      "reorder": "Réordonner"
     },
     "Customeraddresses": {
       "city": "Ville",
@@ -245,7 +248,10 @@
       "isDefault": "Est par défaut",
       "memberCount": "Nombre de membres",
       "name": "Nom",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "setDefault": "Définir par défaut",
+      "addMember": "Ajouter un membre",
+      "removeMember": "Retirer un membre"
     },
     "Digitaldeliveries": {
       "createdAt": "Créé le",
@@ -286,7 +292,9 @@
       "usageCount": "Nombre d'utilisations",
       "usageLimit": "Limite d'utilisation",
       "usageLimitPerCustomer": "Limite d'utilisation par client",
-      "value": "Valeur"
+      "value": "Valeur",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Fiscalconfigs": {
       "businessUnitCode": "Code de l'unité commerciale",
@@ -316,7 +324,9 @@
       "tcrCode": "Code TCR",
       "tcrIntId": "Identifiant int Tcr",
       "tcrType": "Type TCR",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Fulfillments": {
       "carrier": "Transporteur",
@@ -336,7 +346,10 @@
       "status": "Statut",
       "trackingNumber": "Numéro de suivi",
       "trackingUrl": "URL de suivi",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "ship": "Expédier",
+      "markDelivered": "Marquer comme livré",
+      "markFailed": "Marquer comme échoué"
     },
     "Inventories": {
       "createdAt": "Créé le",
@@ -352,7 +365,9 @@
       "reorderQuantity": "Quantité à commander",
       "updatedAt": "Mis à jour le",
       "variant": "Variante",
-      "warehouse": "Entrepôt"
+      "warehouse": "Entrepôt",
+      "restock": "Réapprovisionner",
+      "deduct": "Déduire du stock"
     },
     "Inventorymovements": {
       "batchLot": "Lot",
@@ -465,7 +480,17 @@
       "managerPinReset_requestedBy": "Réinitialisation du code PIN du gestionnaire demandée par",
       "paymentMethods_default": "Modes de paiement par défaut",
       "paymentMethods_type": "Type de méthodes de paiement",
-      "warehouse": "Entrepôt"
+      "warehouse": "Entrepôt",
+      "activate": "Activer",
+      "deactivate": "Désactiver",
+      "pause": "Mettre en pause",
+      "resume": "Reprendre",
+      "pauseAll": "Mettre toutes les caisses en pause",
+      "resumeAll": "Reprendre toutes les caisses",
+      "companyLockStatus": "Voir le verrouillage des caisses de l'entreprise",
+      "setManagerPin": "Définir le PIN du responsable",
+      "changeManagerPin": "Modifier le PIN du responsable",
+      "requestManagerPinReset": "Demander la réinitialisation du PIN du responsable"
     },
     "Posorders": {
       "amountPaid": "Montant payé",
@@ -539,7 +564,12 @@
       "fiscalResolvedBy": "Vérification CIS par",
       "fiscalResolvedAt": "Vérification CIS le",
       "recordFiscalCodes": "Saisir les codes CIS",
-      "resendFiscal": "Non enregistrée, renvoyer"
+      "resendFiscal": "Non enregistrée, renvoyer",
+      "hold": "Mettre une vente en attente",
+      "pay": "Encaisser une vente",
+      "refund": "Rembourser une vente",
+      "reprint": "Réimprimer un ticket",
+      "deleteHeld": "Supprimer une vente en attente"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Encaisser des montants rapides",
@@ -559,7 +589,10 @@
       "terminalProtocol": "Protocole du terminal",
       "terminalProvider": "Fournisseur de terminaux",
       "type": "Type",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "testConnection": "Tester la connexion",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Possessions": {
       "cashMoves": "Mouvements de trésorerie",
@@ -595,7 +628,11 @@
       "cashMoves_by": "Les mouvements de trésorerie par",
       "cashMoves_default": "Mouvements de trésorerie par défaut",
       "cashMoves_reason": "Raison des mouvements de fonds",
-      "cashMoves_type": "Type de mouvements de fonds"
+      "cashMoves_type": "Type de mouvements de fonds",
+      "open": "Ouvrir la session",
+      "cashMove": "Entrée ou sortie d'espèces",
+      "close": "Clôturer la session",
+      "reconciliation": "Voir le rapprochement de caisse"
     },
     "Pricingrules": {
       "appliesTo": "S'applique à",
@@ -615,7 +652,9 @@
       "targetIds": "Identifiants cibles",
       "type": "Type",
       "updatedAt": "Mis à jour le",
-      "value": "Valeur"
+      "value": "Valeur",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Productattributes": {
       "createdAt": "Créé le",
@@ -663,7 +702,9 @@
       "seoTitle": "Titre SEO",
       "slug": "Identifiant",
       "type": "Type",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Productorders": {
       "appliedDiscounts": "Remises appliquées",
@@ -737,7 +778,13 @@
       "timeline_note": "Remarque sur la chronologie",
       "timeline_timestamp": "Horodatage de la chronologie",
       "timeline_userId": "ID utilisateur de la chronologie",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "confirm": "Confirmer",
+      "markProcessing": "Marquer en traitement",
+      "ship": "Expédier la commande",
+      "cancel": "Annuler",
+      "markPaid": "Marquer comme payé",
+      "refund": "Rembourser la commande"
     },
     "Productreviews": {
       "comment": "Commentaire",
@@ -857,7 +904,11 @@
       "volumetricWeight": "Poids volumétrique",
       "warranty": "Garantie",
       "weight": "Poids",
-      "weightUnit": "Unité de poids"
+      "weightUnit": "Unité de poids",
+      "duplicate": "Dupliquer",
+      "publish": "Publier",
+      "archive": "Archiver",
+      "revertToDraft": "Repasser en brouillon"
     },
     "Productvariants": {
       "attributeCombination": "Combinaison d'attributs",
@@ -904,7 +955,11 @@
       "returnrequests": "Demandes de retour",
       "status": "Statut",
       "type": "Type",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "approve": "Approuver",
+      "reject": "Rejeter",
+      "receive": "Réceptionner le retour",
+      "complete": "Terminer"
     },
     "Savedsearches": {
       "createdAt": "Créé le",
@@ -954,7 +1009,9 @@
       "rates_type_estimatedDeliveryDays": "Type de tarifs jours de livraison estimés",
       "rates_type_name": "Nom du type de tarifs",
       "rates_type_price": "Type de tarifs prix",
-      "rates_type_type": "Type de tarifs"
+      "rates_type_type": "Type de tarifs",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Taxzones": {
       "country": "Pays",
@@ -973,7 +1030,9 @@
       "rates_rate": "Tarifs",
       "states": "États / cantons",
       "taxzones": "Zones fiscales",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Warehouses": {
       "address": "Adresse",
@@ -993,7 +1052,10 @@
       "isDefault": "Est par défaut",
       "name": "Nom",
       "updatedAt": "Mis à jour le",
-      "warehouses": "Entrepôts"
+      "warehouses": "Entrepôts",
+      "activate": "Activer",
+      "deactivate": "Désactiver",
+      "setDefault": "Définir par défaut"
     },
     "Stocktransfers": {
       "stocktransfers": "Transferts de stock",
@@ -1012,7 +1074,9 @@
       "createdAt": "Créé le",
       "updatedAt": "Mis à jour le",
       "deletedAt": "Supprimé le",
-      "deletedBy": "Supprimé par"
+      "deletedBy": "Supprimé par",
+      "complete": "Terminer",
+      "cancel": "Annuler"
     },
     "Stockcounts": {
       "stockcounts": "Inventaires",
@@ -1031,7 +1095,9 @@
       "createdAt": "Créé le",
       "updatedAt": "Mis à jour le",
       "deletedAt": "Supprimé le",
-      "deletedBy": "Supprimé par"
+      "deletedBy": "Supprimé par",
+      "apply": "Appliquer",
+      "cancel": "Annuler"
     },
     "Bookings": {
       "bookings": "Réservations",
@@ -1057,7 +1123,10 @@
       "reason": "Motif",
       "resolution": "Résolution",
       "status": "Statut",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "startReview": "Commencer l'examen",
+      "resolve": "Résoudre",
+      "close": "Clore le litige"
     },
     "Listingaddons": {
       "createdAt": "Créé le",
@@ -1096,7 +1165,9 @@
       "resolution": "Résolution",
       "status": "Statut",
       "updatedAt": "Mis à jour le",
-      "user": "Utilisateur"
+      "user": "Utilisateur",
+      "resolve": "Résoudre",
+      "dismiss": "Classer sans suite"
     },
     "Listingpackages": {
       "createdAt": "Créé le",
@@ -1148,7 +1219,9 @@
       "tags": "Balises",
       "title": "Modifier le type d’unité",
       "updatedAt": "Mis à jour le",
-      "videoGallery": "Galerie vidéo"
+      "videoGallery": "Galerie vidéo",
+      "activate": "Activer",
+      "deactivate": "Désactiver"
     },
     "Marketplacebids": {
       "amount": "Montant",
@@ -1216,7 +1289,12 @@
       "provider": "Fournisseur",
       "status": "Statut",
       "taskRequest": "Demande de tâche",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "accept": "Accepter",
+      "start": "Commencer le travail",
+      "extend": "Prolonger",
+      "submitDelivery": "Soumettre la livraison",
+      "createMilestone": "Créer un jalon"
     },
     "Promotions": {
       "createdAt": "Créé le",
@@ -1231,7 +1309,10 @@
       "startAt": "Commencez à",
       "stopReason": "Arrêter la raison",
       "type": "Type",
-      "updatedAt": "Mis à jour le"
+      "updatedAt": "Mis à jour le",
+      "pause": "Mettre en pause",
+      "resume": "Reprendre",
+      "stop": "Arrêter"
     },
     "Providerprofiles": {
       "availability_dayOfWeek": "Jour de la semaine",
@@ -1252,7 +1333,9 @@
       "stripeAccountSyncedAt": "Compte Stripe synchronisé sur",
       "stripeChargesEnabled": "Frais Stripe activés",
       "stripeDetailsSubmitted": "Détails de la rayure soumis",
-      "stripePayoutsEnabled": "Paiements Stripe activés"
+      "stripePayoutsEnabled": "Paiements Stripe activés",
+      "createAccountLink": "Créer le lien du compte de versement",
+      "refreshAccountStatus": "Actualiser l'état du compte de versement"
     },
     "Reviews": {
       "comment": "Commentaire",
@@ -1294,7 +1377,8 @@
       "taskrequests": "Demandes de tâches",
       "title": "Modifier le type d’unité",
       "updatedAt": "Mis à jour le",
-      "videoGallery": "Galerie vidéo"
+      "videoGallery": "Galerie vidéo",
+      "notifyAll": "Prévenir tous les prestataires"
     }
   }
 }
