@@ -19,6 +19,8 @@
     "bioLabel": "Bio",
     "bioPlaceholder": "Trego klientëve për veten tënde...",
     "portfolioLabel": "Imazhe portofoli",
+    "timezoneLabel": "Zona kohore",
+    "timezonePlaceholder": "p.sh. Europe/Zurich (bosh: zona kohore e kompanisë)",
     "section": {
       "profile": "Profili",
       "profileDescription": "Trego klientëve për veten tënde dhe listo aftësitë që ofron.",
@@ -61,6 +63,7 @@
   },
   "account": {
     "edit": "Modifiko",
-    "empty": "Ende asgjë e shtuar."
+    "empty": "Ende asgjë e shtuar.",
+    "timezoneDefault": "E pavendosur: vlen zona kohore e kompanisë."
   }
 }

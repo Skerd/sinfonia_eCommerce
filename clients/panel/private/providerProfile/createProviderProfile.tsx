@@ -15,6 +15,7 @@ export default createGenericCreatePage<CreateProviderProfileFormType>({
         skills: [],
         portfolio: [],
         availability: [],
+        timezone: "",
     }),
     buildFormExtras: (params) => ({lockUser: !!params.get("specificUserId")}),
     submitIcon: <IconPlus />,

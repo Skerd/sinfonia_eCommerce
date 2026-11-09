@@ -19,6 +19,8 @@
     "bioLabel": "Bio",
     "bioPlaceholder": "Racconta di te ai clienti...",
     "portfolioLabel": "Immagini del portfolio",
+    "timezoneLabel": "Fuso orario",
+    "timezonePlaceholder": "es. Europe/Zurich (vuoto: fuso orario dell'azienda)",
     "section": {
       "profile": "Profilo",
       "availability": "Disponibilità settimanale",
@@ -58,6 +60,7 @@
   },
   "account": {
     "edit": "Modifica",
-    "empty": "Ancora nulla di aggiunto."
+    "empty": "Ancora nulla di aggiunto.",
+    "timezoneDefault": "Non impostato: vale il fuso orario dell'azienda."
   }
 }

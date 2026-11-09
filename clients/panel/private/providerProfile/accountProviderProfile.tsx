@@ -21,7 +21,7 @@ import ProviderProfileSection, {type ProviderProfileSectionField} from "./provid
 
 const PROFILES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerceMarketplace/providerProfile"};
 const CREATE_PROFILE_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerceMarketplace/providerProfile"};
-const SECTIONS: ProviderProfileSectionField[] = ["bio", "skills", "availability", "portfolio"];
+const SECTIONS: ProviderProfileSectionField[] = ["bio", "skills", "timezone", "availability", "portfolio"];
 
 type AccountProviderProfileProps = WithLanguageType & {
     specificUserId?: string;

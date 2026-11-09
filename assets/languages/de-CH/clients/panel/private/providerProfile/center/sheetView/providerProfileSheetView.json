@@ -18,6 +18,7 @@
   "rating": "Bewertung",
   "ratingCount": "Total ratings",
   "completionRate": "Fertigstellung satz",
+  "timezone": "Zeitzone",
   "createdAt": "Erstellt",
   "weekday": {
     "0": "Sunday",

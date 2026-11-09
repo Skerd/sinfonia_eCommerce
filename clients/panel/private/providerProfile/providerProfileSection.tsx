@@ -16,12 +16,13 @@ import {editProviderProfileFormSchema} from "armonia/src/modules/eCommerce/api/e
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import {providerProfileInitialValues, type ProviderProfileFormValues} from "./editProviderProfile.tsx";
 
-export type ProviderProfileSectionField = "bio" | "skills" | "availability" | "portfolio";
+export type ProviderProfileSectionField = "bio" | "skills" | "timezone" | "availability" | "portfolio";
 
 /** Section heading per field — keys from the edit form dictionary this component shares. */
 const SECTION_TITLE_KEYS: Record<ProviderProfileSectionField, string> = {
     bio: "form.bioLabel",
     skills: "form.skillsLabel",
+    timezone: "form.timezoneLabel",
     availability: "form.section.availability",
     portfolio: "form.section.portfolio",
 };
@@ -98,6 +99,10 @@ function ProviderProfileSection({
                 {profile.skills.map((skill) => <Badge key={skill} variant="secondary">{skill}</Badge>)}
             </div>
         ) : empty;
+    } else if (field === "timezone") {
+        display = profile.timezone
+            ? <p className="text-sm">{profile.timezone}</p>
+            : <p className="text-sm text-muted-foreground">{resolveLanguageKey("account.timezoneDefault")}</p>;
     } else if (field === "availability") {
         display = profile.availability?.length ? (
             <div className="flex flex-col divide-y divide-border/50">

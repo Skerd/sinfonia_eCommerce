@@ -23,6 +23,7 @@ export function providerProfileInitialValues(
         _id: data._id,
         skills: writeFields.skills ? (data.skills ?? []) : undefined,
         bio: writeFields.bio ? (data.bio ?? "") : undefined,
+        timezone: writeFields.timezone ? (data.timezone ?? "") : undefined,
         portfolio: writeFields.portfolio ? (data.portfolio?.map((m) => m._id) ?? []) : undefined,
         availability: writeFields.availability
             ? (data.availability ?? []).map((slot) => ({

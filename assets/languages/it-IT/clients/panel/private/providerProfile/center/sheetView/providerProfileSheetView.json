@@ -18,6 +18,7 @@
   "rating": "Valutazione",
   "ratingCount": "Valutazioni totali",
   "completionRate": "Tasso di completamento",
+  "timezone": "Fuso orario",
   "createdAt": "Creato",
   "weekday": {
     "0": "Domenica",

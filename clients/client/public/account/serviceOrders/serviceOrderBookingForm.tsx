@@ -15,6 +15,7 @@ import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {createBookingFormSchema} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/booking/createBooking.form.validator.ts";
+import type {ProviderAvailability} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx";
 
@@ -22,14 +23,19 @@ const BOOK_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerceMarketplac
 /** With a time token, DateInput emits ISO instants for the wall clock picked in `timeZone`. */
 const VALUE_FORMAT = "YYYY-MM-DD[T]HH:mm";
 
+/** Monday first, then by start time. */
+const weekOrder = (dayOfWeek: number) => (dayOfWeek + 6) % 7;
+
 type ServiceOrderBookingFormProps = WithLanguageType & {
     orderId: string;
+    /** The provider's windows; a session must fit inside one (D105). None means any time. */
+    availability?: ProviderAvailability;
     onBooked: () => void;
     onCancel: () => void;
 };
 
-/** The buyer schedules the session of their own active services order; the server checks the order's state. */
-function ServiceOrderBookingForm({orderId, onBooked, onCancel, languageCode, resolveLanguageKey, resolveLanguageValue}: ServiceOrderBookingFormProps) {
+/** The buyer schedules the session of their own active services order; the server checks the order's state and the provider's hours. */
+function ServiceOrderBookingForm({orderId, availability, onBooked, onCancel, languageCode, resolveLanguageKey, resolveLanguageValue}: ServiceOrderBookingFormProps) {
     const profileTimeZone = useSelector((state: RootState) => state.authentication.user?.timezone);
     const timeZone = profileTimeZone || Intl.DateTimeFormat().resolvedOptions().timeZone;
     const formSchema = createBookingFormSchema(languageCode, resolveLanguageValue("form"));
@@ -49,6 +55,9 @@ function ServiceOrderBookingForm({orderId, onBooked, onCancel, languageCode, res
         error: (err) => handleError(err, {context: "ServiceOrderBooking", showToast: true, fallbackMessage: resolveLanguageKey("bookError")}),
     });
 
+    const windows = [...(availability?.windows ?? [])]
+        .sort((a, b) => weekOrder(a.dayOfWeek) - weekOrder(b.dayOfWeek) || a.startTime.localeCompare(b.startTime));
+
     const submit = form.handleSubmit((values) => setSubmission((current) => ({body: values, count: current.count + 1})));
 
     return (
@@ -56,6 +65,22 @@ function ServiceOrderBookingForm({orderId, onBooked, onCancel, languageCode, res
             <form onSubmit={submit} className="flex flex-col gap-4 rounded-2xl bg-muted p-5" aria-labelledby="shop-service-booking">
                 <p id="shop-service-booking" className="font-semibold">{resolveLanguageKey("title")}</p>
                 <p className="text-sm text-muted-foreground">{resolveLanguageKey("message").replace("{zone}", timeZone)}</p>
+                {availability && windows.length > 0 && (
+                    <section className="flex flex-col gap-2 rounded-xl bg-card p-4" aria-labelledby="shop-service-booking-hours">
+                        <p id="shop-service-booking-hours" className="text-sm font-medium">{resolveLanguageKey("availability.title")}</p>
+                        <p className="text-xs text-muted-foreground">
+                            {resolveLanguageKey("availability.zone").replace("{zone}", availability.timeZone)}
+                        </p>
+                        <ul className="flex flex-col divide-y divide-border/50 text-sm">
+                            {windows.map((window) => (
+                                <li key={`${window.dayOfWeek}-${window.startTime}-${window.endTime}`} className="flex justify-between gap-4 py-1.5">
+                                    <span>{resolveLanguageKey(`weekday.${window.dayOfWeek}`)}</span>
+                                    <span className="text-muted-foreground">{window.startTime} – {window.endTime}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
                 <div className="grid gap-4 sm:grid-cols-2">
                     {(["startAt", "endAt"] as const).map((name) => (
                         <FormField

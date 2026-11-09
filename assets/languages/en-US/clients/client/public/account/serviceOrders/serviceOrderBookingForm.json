@@ -2,6 +2,10 @@
   "path": "src/modules/eCommerce/clients/client/public/account/serviceOrders/serviceOrderBookingForm.tsx",
   "title": "Book your session",
   "message": "Pick when the session starts and ends. Times are in {zone}.",
+  "availability": {
+    "title": "When the provider is available",
+    "zone": "The session must fit inside one of these windows. They are in the provider's time zone, {zone}."
+  },
   "form": {
     "startAtLabel": "Starts",
     "startAtPlaceholder": "Pick a start date and time",
@@ -12,5 +16,14 @@
   "working": "Working…",
   "back": "Back",
   "booked": "Session booked",
-  "bookError": "The session couldn't be booked. Please try again."
+  "bookError": "The session couldn't be booked. Please try again.",
+  "weekday": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  }
 }

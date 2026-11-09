@@ -18,6 +18,8 @@
     "bioLabel": "Bio",
     "bioPlaceholder": "Tell clients about yourself...",
     "portfolioLabel": "Portfolio images",
+    "timezoneLabel": "Zeitzone",
+    "timezonePlaceholder": "z. B. Europe/Zurich (leer: Zeitzone der Firma)",
     "section": {
       "profile": "Profil",
       "availability": "Weekly availability",

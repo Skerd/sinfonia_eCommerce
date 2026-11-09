@@ -19,6 +19,8 @@
     "bioLabel": "Bio",
     "bioPlaceholder": "Parlez de vous aux clients...",
     "portfolioLabel": "Images du portefeuille",
+    "timezoneLabel": "Fuseau horaire",
+    "timezonePlaceholder": "p. ex. Europe/Zurich (vide : fuseau de l'entreprise)",
     "section": {
       "profile": "Profil",
       "availability": "Disponibilité hebdomadaire",
@@ -58,6 +60,7 @@
   },
   "account": {
     "edit": "Modifier",
-    "empty": "Rien n'a encore été ajouté."
+    "empty": "Rien n'a encore été ajouté.",
+    "timezoneDefault": "Non défini : le fuseau horaire de l'entreprise s'applique."
   }
 }

@@ -8,7 +8,7 @@ const {http} = vi.hoisted(() => ({
 
 vi.mock("@coreModule/helpers/hocs/withLanguage.tsx", () => ({
     default: () => (Wrapped: ComponentType<Record<string, unknown>>) => (props: Record<string, unknown>) => (
-        <Wrapped {...props} languageCode="en-US" resolveLanguageKey={(key: string) => key} resolveLanguageValue={() => null}/>
+        <Wrapped {...props} languageCode="en-US" resolveLanguageKey={(key: string) => (key === "availability.zone" ? "in {zone}" : key)} resolveLanguageValue={() => null}/>
     ),
 }));
 vi.mock("@coreModule/helpers/hocs/withDebug.tsx", () => ({
@@ -36,8 +36,8 @@ const ORDER_ID = "6a1f0c2b9d3e4f5a6b7c8d9e";
 const START = "2026-12-01T08:00:00.000Z";
 const END = "2026-12-01T09:00:00.000Z";
 
-function renderForm() {
-    render(<ServiceOrderBookingForm orderId={ORDER_ID} onBooked={vi.fn()} onCancel={vi.fn()}/>);
+function renderForm(availability?: {timeZone: string; windows: {dayOfWeek: number; startTime: string; endTime: string}[]}) {
+    render(<ServiceOrderBookingForm orderId={ORDER_ID} availability={availability} onBooked={vi.fn()} onCancel={vi.fn()}/>);
     return {
         start: screen.getByLabelText("form.startAtPlaceholder"),
         end: screen.getByLabelText("form.endAtPlaceholder"),
@@ -86,6 +86,29 @@ describe("service order booking form (TD-B94)", () => {
 
         expect(await screen.findByRole("alert")).toBeInTheDocument();
         expect(sent()).toHaveLength(0);
+    });
+
+    // D105: the session must fit the provider's windows, which are in the provider's zone, not the buyer's.
+    it("lists the provider's windows, Monday first, labelled with the provider's time zone", () => {
+        renderForm({timeZone: "Asia/Tokyo", windows: [
+            {dayOfWeek: 0, startTime: "10:00", endTime: "12:00"},
+            {dayOfWeek: 1, startTime: "14:00", endTime: "18:00"},
+            {dayOfWeek: 1, startTime: "09:00", endTime: "12:00"},
+        ]});
+
+        const hours = screen.getByRole("region", {name: "availability.title"});
+        expect(hours).toHaveTextContent("in Asia/Tokyo");
+        expect(Array.from(hours.querySelectorAll("li"), (row) => row.textContent)).toEqual([
+            "weekday.109:00 – 12:00",
+            "weekday.114:00 – 18:00",
+            "weekday.010:00 – 12:00",
+        ]);
+    });
+
+    it("shows no windows when the provider can be booked any time", () => {
+        renderForm({timeZone: "Europe/Zurich", windows: []});
+
+        expect(screen.queryByRole("region", {name: "availability.title"})).not.toBeInTheDocument();
     });
 
     it("disables the inputs and both buttons while the booking is sent", () => {

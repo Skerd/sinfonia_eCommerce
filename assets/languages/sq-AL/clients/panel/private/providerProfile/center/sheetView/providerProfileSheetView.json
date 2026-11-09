@@ -18,6 +18,7 @@
   "rating": "Vlerësimi",
   "ratingCount": "Totali i vlerësimeve",
   "completionRate": "Shkalla e përfundimit",
+  "timezone": "Zona kohore",
   "createdAt": "Krijuar",
   "weekday": {
     "0": "E diel",

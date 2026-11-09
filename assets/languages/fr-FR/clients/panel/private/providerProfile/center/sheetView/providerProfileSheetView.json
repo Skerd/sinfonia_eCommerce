@@ -18,6 +18,7 @@
   "rating": "Note",
   "ratingCount": "Notes totales",
   "completionRate": "Taux d'achèvement",
+  "timezone": "Fuseau horaire",
   "createdAt": "Créé",
   "weekday": {
     "0": "Dimanche",

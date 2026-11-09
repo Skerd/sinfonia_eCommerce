@@ -287,6 +287,7 @@ function ServiceOrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                     {panel === "booking" && (
                         <ServiceOrderBookingForm
                             orderId={order._id}
+                            availability={order.providerAvailability}
                             onBooked={() => {
                                 setPanel(null);
                                 load();
