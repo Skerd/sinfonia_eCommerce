@@ -8,6 +8,7 @@
   "memberSince": "Membre depuis {date}",
   "skills": "Compétences",
   "availability": "Disponibilités",
+  "availabilityTimeZone": "Horaires dans le fuseau horaire du prestataire, {zone}.",
   "servicesBy": "Services de {name}",
   "portfolio": "Portfolio",
   "notFound": "Prestataire introuvable",

@@ -38,7 +38,7 @@
   "fields": {
     "provider": "Fornitore",
     "bio": "Bio",
-    "skills": "Abilità",
+    "skills": "Competenze",
     "rating": "Valutazione",
     "createdAt": "Creato",
     "deletedAt": "Eliminato",

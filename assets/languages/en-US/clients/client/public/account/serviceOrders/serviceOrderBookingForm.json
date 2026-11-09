@@ -4,7 +4,8 @@
   "message": "Pick when the session starts and ends. Times are in {zone}.",
   "availability": {
     "title": "When the provider is available",
-    "zone": "The session must fit inside one of these windows. They are in the provider's time zone, {zone}."
+    "zone": "The session must fit inside one of these windows. They are in the provider's time zone, {zone}.",
+    "converted": "The session must fit inside one of these windows. They are shown in your time zone, {zone}; where the provider's own hours ({providerZone}) read differently, they follow in brackets."
   },
   "form": {
     "startAtLabel": "Starts",

@@ -17,13 +17,13 @@
     "skillsRemoveTooltip": "Supprimer la compétence",
     "bioLabel": "Bio",
     "bioPlaceholder": "Parlez de vous aux clients...",
-    "portfolioLabel": "Images du portefeuille",
+    "portfolioLabel": "Images du portfolio",
     "timezoneLabel": "Fuseau horaire",
     "timezonePlaceholder": "p. ex. Europe/Zurich (vide : fuseau de l'entreprise)",
     "section": {
       "profile": "Profil",
       "availability": "Disponibilité hebdomadaire",
-      "portfolio": "Portefeuille"
+      "portfolio": "Portfolio"
     },
     "availabilityAddRow": "Ajouter une fenêtre horaire",
     "availabilityRemoveRow": "Retirer",

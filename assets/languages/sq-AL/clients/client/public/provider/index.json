@@ -8,6 +8,7 @@
   "memberSince": "Anëtar që nga {date}",
   "skills": "Aftësitë",
   "availability": "Disponueshmëria",
+  "availabilityTimeZone": "Oraret janë në zonën kohore të ofruesit, {zone}.",
   "servicesBy": "Shërbimet e {name}",
   "portfolio": "Portofoli",
   "notFound": "Ofruesi nuk u gjet",

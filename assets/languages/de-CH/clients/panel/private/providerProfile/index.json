@@ -5,12 +5,12 @@
   "help": {
     "ariaLabel": "Über Anbieterprofile",
     "title": "Über Anbieterprofile",
-    "overview": "Ein Anbieterprofil ist der Verkäufer-Datensatz eines Benutzers auf dem Marktplatz: Bio, Fähigkeiten, Portfolio, wöchentliche Verfügbarkeit, Ruf und das Stripe-Connect-Konto, das Auszahlungen erhält. Jeder Benutzer hat höchstens ein aktives Profil.",
+    "overview": "Ein Anbieterprofil ist der Verkäufer-Datensatz eines Benutzers auf dem Marktplatz: Biografie, Fähigkeiten, Portfolio, wöchentliche Verfügbarkeit, Ruf und das Stripe-Connect-Konto, das Auszahlungen erhält. Jeder Benutzer hat höchstens ein aktives Profil.",
     "sections": [
       {
         "title": "Profilfelder",
         "items": [
-          "Bio, Fähigkeiten und Portfolio beschreiben den Anbieter im Shop.",
+          "Biografie, Fähigkeiten und Portfolio beschreiben den Anbieter im Shop.",
           "Verfügbarkeit ist eine Liste wöchentlicher Zeitfenster: Wochentag, Start- und Endzeit.",
           "Der Ruf wird berechnet, nicht eingetippt: der Bewertungsschnitt aller Bewertungen auf seinen Bestellungen und der Anteil beendeter Bestellungen, die abgeschlossen statt storniert wurden."
         ]
@@ -37,8 +37,8 @@
   "createProviderProfile": "Anbieterprofil erstellen",
   "fields": {
     "provider": "Anbieter",
-    "bio": "Bio",
-    "skills": "Skills",
+    "bio": "Biografie",
+    "skills": "Fähigkeiten",
     "rating": "Bewertung",
     "createdAt": "Erstellt",
     "deletedAt": "Gelöscht",

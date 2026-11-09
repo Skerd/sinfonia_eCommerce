@@ -4,7 +4,8 @@
   "message": "Scegli quando inizia e finisce la sessione. Gli orari sono in {zone}.",
   "availability": {
     "title": "Quando il fornitore è disponibile",
-    "zone": "La sessione deve rientrare interamente in una di queste fasce. Sono nel fuso orario del fornitore, {zone}."
+    "zone": "La sessione deve rientrare interamente in una di queste fasce. Sono nel fuso orario del fornitore, {zone}.",
+    "converted": "La sessione deve rientrare interamente in una di queste fasce. Sono indicate nel tuo fuso orario, {zone}; dove gli orari del fornitore ({providerZone}) sono diversi, seguono tra parentesi."
   },
   "form": {
     "startAtLabel": "Inizio",

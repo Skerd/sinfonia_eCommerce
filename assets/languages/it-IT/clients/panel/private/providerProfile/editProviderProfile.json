@@ -13,9 +13,9 @@
     "submit": "Salva modifiche"
   },
   "form": {
-    "skillsLabel": "Abilità",
+    "skillsLabel": "Competenze",
     "skillsPlaceholder": "ad es. idraulico, elettrico...",
-    "skillsRemoveTooltip": "Rimuovi abilità",
+    "skillsRemoveTooltip": "Rimuovi competenza",
     "bioLabel": "Bio",
     "bioPlaceholder": "Racconta di te ai clienti...",
     "portfolioLabel": "Immagini del portfolio",
@@ -24,7 +24,7 @@
     "section": {
       "profile": "Profilo",
       "availability": "Disponibilità settimanale",
-      "portfolio": "Portafoglio"
+      "portfolio": "Portfolio"
     },
     "availabilityAddRow": "Aggiungi finestra temporale",
     "availabilityRemoveRow": "Rimuovi",
@@ -37,7 +37,7 @@
   },
   "weekday": {
     "0": "Domenica",
-    "1": "Lunedi",
+    "1": "Lunedì",
     "2": "Martedì",
     "3": "Mercoledì",
     "4": "Giovedì",

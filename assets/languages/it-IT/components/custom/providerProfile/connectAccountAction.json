@@ -3,8 +3,8 @@
   "cancel": "Annulla",
   "createAccountLink": {
     "title": "Connetti i pagamenti Stripe",
-    "description": "Verrai reindirizzato a Stripe per impostare (o continuare) i pagamenti Express per questo profilo fornitore. I rilasci di deposito a garanzia possono pagarti solo dopo il completamento dell'onboarding.",
-    "confirm": "Striscia aperta",
+    "description": "Verrai reindirizzato a Stripe per configurare (o completare) i pagamenti Express di questo profilo fornitore. I fondi in garanzia possono esserti versati solo dopo il completamento dell'onboarding.",
+    "confirm": "Apri Stripe",
     "axios": {
       "loading": "Creazione del collegamento Stripe…",
       "success": "Collegamento di onboarding Stripe pronto",
@@ -17,7 +17,7 @@
     "confirm": "Aggiorna stato",
     "axios": {
       "loading": "Aggiornamento dello stato di Stripe…",
-      "success": "Stato della striscia aggiornato",
+      "success": "Stato di Stripe aggiornato",
       "error": "Impossibile aggiornare lo stato di Stripe"
     }
   }

@@ -1,20 +1,26 @@
 import {fireEvent, render, screen, waitFor} from "@testing-library/react";
-import {beforeEach, describe, expect, it, vi} from "vitest";
+import {afterEach, beforeEach, describe, expect, it, vi} from "vitest";
 import type {ComponentType} from "react";
 
-const {http} = vi.hoisted(() => ({
+const {http, buyer} = vi.hoisted(() => ({
     http: {loading: false, calls: [] as {url: string; body: Record<string, unknown>; count: number}[]},
+    buyer: {timeZone: "Europe/Zurich"},
 }));
+
+const LABELS: Record<string, string> = {
+    "availability.zone": "in {zone}",
+    "availability.converted": "yours {zone}, provider {providerZone}",
+};
 
 vi.mock("@coreModule/helpers/hocs/withLanguage.tsx", () => ({
     default: () => (Wrapped: ComponentType<Record<string, unknown>>) => (props: Record<string, unknown>) => (
-        <Wrapped {...props} languageCode="en-US" resolveLanguageKey={(key: string) => (key === "availability.zone" ? "in {zone}" : key)} resolveLanguageValue={() => null}/>
+        <Wrapped {...props} languageCode="en-US" resolveLanguageKey={(key: string) => LABELS[key] ?? key} resolveLanguageValue={() => null}/>
     ),
 }));
 vi.mock("@coreModule/helpers/hocs/withDebug.tsx", () => ({
     default: () => (Wrapped: ComponentType<Record<string, unknown>>) => Wrapped,
 }));
-vi.mock("react-redux", () => ({useSelector: () => "Europe/Zurich"}));
+vi.mock("react-redux", () => ({useSelector: () => buyer.timeZone}));
 vi.mock("@coreModule/helpers/hooks/useHttpRequest.ts", () => ({
     default: (request: {url: string}, body: Record<string, unknown>, count: number) => {
         http.calls.push({url: request.url, body, count});
@@ -46,11 +52,17 @@ function renderForm(availability?: {timeZone: string; windows: {dayOfWeek: numbe
 }
 
 const sent = () => http.calls.filter((call) => call.count > 0);
+const rows = () => Array.from(screen.getByRole("region", {name: "availability.title"}).querySelectorAll("li"), (row) => row.textContent);
 
 describe("service order booking form (TD-B94)", () => {
     beforeEach(() => {
         http.loading = false;
         http.calls = [];
+        buyer.timeZone = "Europe/Zurich";
+    });
+
+    afterEach(() => {
+        vi.useRealTimers();
     });
 
     it("keeps submit disabled until both times are picked", () => {
@@ -89,20 +101,55 @@ describe("service order booking form (TD-B94)", () => {
     });
 
     // D105: the session must fit the provider's windows, which are in the provider's zone, not the buyer's.
-    it("lists the provider's windows, Monday first, labelled with the provider's time zone", () => {
-        renderForm({timeZone: "Asia/Tokyo", windows: [
+    it("lists the provider's windows, Monday first, labelled with the zone they share with the buyer", () => {
+        renderForm({timeZone: "Europe/Zurich", windows: [
             {dayOfWeek: 0, startTime: "10:00", endTime: "12:00"},
             {dayOfWeek: 1, startTime: "14:00", endTime: "18:00"},
             {dayOfWeek: 1, startTime: "09:00", endTime: "12:00"},
         ]});
 
         const hours = screen.getByRole("region", {name: "availability.title"});
-        expect(hours).toHaveTextContent("in Asia/Tokyo");
-        expect(Array.from(hours.querySelectorAll("li"), (row) => row.textContent)).toEqual([
+        expect(hours).toHaveTextContent("in Europe/Zurich");
+        expect(rows()).toEqual([
             "weekday.109:00 – 12:00",
             "weekday.114:00 – 18:00",
             "weekday.010:00 – 12:00",
         ]);
+    });
+
+    // TD-F43: the pickers run on the buyer's clock, so the windows are shown on it, the provider's own in brackets.
+    it("shows a UTC provider's windows on a Berlin buyer's clock, by the offset of the next such day", () => {
+        vi.useFakeTimers({toFake: ["Date"]});
+        vi.setSystemTime(new Date("2026-12-01T12:00:00Z")); // a Tuesday, Berlin on UTC+1
+        buyer.timeZone = "Europe/Berlin";
+        renderForm({timeZone: "UTC", windows: [
+            {dayOfWeek: 1, startTime: "09:00", endTime: "12:00"},
+            {dayOfWeek: 0, startTime: "23:30", endTime: "24:00"},
+            {dayOfWeek: 1, startTime: "18:00", endTime: "24:00"},
+        ]});
+
+        expect(screen.getByRole("region", {name: "availability.title"})).toHaveTextContent("yours Europe/Berlin, provider UTC");
+        expect(rows()).toEqual([
+            "weekday.100:30 – 01:00(weekday.0 23:30 – 24:00)",
+            "weekday.110:00 – 13:00(09:00 – 12:00)",
+            "weekday.119:00 – weekday.2 01:00(18:00 – 24:00)",
+        ]);
+    });
+
+    it("uses the summer offset when the next such day is in summer", () => {
+        vi.useFakeTimers({toFake: ["Date"]});
+        vi.setSystemTime(new Date("2026-07-01T12:00:00Z")); // Berlin on UTC+2
+        buyer.timeZone = "Europe/Berlin";
+        renderForm({timeZone: "UTC", windows: [{dayOfWeek: 1, startTime: "09:00", endTime: "12:00"}]});
+
+        expect(rows()).toEqual(["weekday.111:00 – 14:00(09:00 – 12:00)"]);
+    });
+
+    it("leaves out the brackets where another zone name reads the same", () => {
+        buyer.timeZone = "Europe/Berlin";
+        renderForm({timeZone: "Europe/Zurich", windows: [{dayOfWeek: 1, startTime: "09:00", endTime: "24:00"}]});
+
+        expect(rows()).toEqual(["weekday.109:00 – 24:00"]);
     });
 
     it("shows no windows when the provider can be booked any time", () => {

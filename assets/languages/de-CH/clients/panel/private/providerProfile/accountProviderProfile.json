@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/accountProviderProfile.tsx",
   "title": "Anbieterprofil",
-  "description": "Ihr Verkäuferprofil im Marktplatz: Bio, Fähigkeiten, Portfolio und wöchentliche Verfügbarkeit.",
+  "description": "Ihr Verkäuferprofil im Marktplatz: Biografie, Fähigkeiten, Portfolio und wöchentliche Verfügbarkeit.",
   "failTitle": "Anbieterprofil konnte nicht geladen werden",
   "failDescription": "Klicken Sie, um es erneut zu versuchen.",
   "connect": {

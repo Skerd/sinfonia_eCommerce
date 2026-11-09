@@ -4,11 +4,11 @@
   "failedDescription": "Tocca per riprovare.",
   "provider": "Fornitore",
   "bio": "Bio",
-  "skills": "Abilità",
+  "skills": "Competenze",
   "rating": "Valutazione",
   "connect": {
     "notConnected": "Pagamenti non collegati",
-    "setupIncomplete": "Configurazione dello stripe incompleta",
+    "setupIncomplete": "Configurazione di Stripe incompleta",
     "payoutsEnabled": "Pagamenti abilitati"
   },
   "payouts": "Pagamenti"

@@ -2,23 +2,23 @@
   "path": "src/modules/eCommerce/components/custom/providerProfile/connectAccountAction.tsx",
   "cancel": "Abbrechen",
   "createAccountLink": {
-    "title": "Connect Stripe payouts",
-    "description": "Sie will werden redirected bis Stripe bis set up (oder weiter) Express payouts für diese provider profil. Escrow releases can only pay sie after onboarding ist vollständig.",
-    "confirm": "Offen Stripe",
+    "title": "Stripe-Auszahlungen verbinden",
+    "description": "Sie werden zu Stripe weitergeleitet, um Express-Auszahlungen für dieses Anbieterprofil einzurichten (oder die Einrichtung fortzusetzen). Treuhandfreigaben können erst nach abgeschlossenem Onboarding an Sie ausgezahlt werden.",
+    "confirm": "Stripe öffnen",
     "axios": {
-      "loading": "Stripe link… wird erstellt",
-      "success": "Stripe onboarding link ready",
-      "error": "Konnte nicht erstellen Stripe onboarding link"
+      "loading": "Stripe-Link wird erstellt…",
+      "success": "Stripe-Onboarding-Link bereit",
+      "error": "Stripe-Onboarding-Link konnte nicht erstellt werden"
     }
   },
   "refreshAccountStatus": {
-    "title": "Refresh Stripe status",
-    "description": "Pull die latest Connect konto status von Stripe und aktualisieren charges/payouts eligibility on diese profil.",
-    "confirm": "Refresh status",
+    "title": "Stripe-Status aktualisieren",
+    "description": "Holt den aktuellen Status des Connect-Kontos von Stripe und aktualisiert, ob dieses Profil Zahlungen und Auszahlungen erhalten kann.",
+    "confirm": "Status aktualisieren",
     "axios": {
-      "loading": "Refreshing Stripe status…",
-      "success": "Stripe status aktualisiert",
-      "error": "Konnte nicht refresh Stripe status"
+      "loading": "Stripe-Status wird aktualisiert…",
+      "success": "Stripe-Status aktualisiert",
+      "error": "Stripe-Status konnte nicht aktualisiert werden"
     }
   }
 }

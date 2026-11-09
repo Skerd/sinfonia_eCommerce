@@ -4,7 +4,8 @@
   "message": "Choisissez le début et la fin de la séance. Les heures sont en {zone}.",
   "availability": {
     "title": "Disponibilités du prestataire",
-    "zone": "La séance doit tenir entièrement dans l'une de ces plages. Elles sont dans le fuseau horaire du prestataire, {zone}."
+    "zone": "La séance doit tenir entièrement dans l'une de ces plages. Elles sont dans le fuseau horaire du prestataire, {zone}.",
+    "converted": "La séance doit tenir entièrement dans l'une de ces plages. Elles sont indiquées dans votre fuseau horaire, {zone} ; lorsque les horaires du prestataire ({providerZone}) diffèrent, ils suivent entre parenthèses."
   },
   "form": {
     "startAtLabel": "Début",

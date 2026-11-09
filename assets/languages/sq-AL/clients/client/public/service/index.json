@@ -14,6 +14,7 @@
   "completionRate": "{rate}% e porosive të përfunduara",
   "memberSince": "Anëtar që nga {date}",
   "availability": "Disponueshmëria",
+  "availabilityTimeZone": "Oraret janë në zonën kohore të ofruesit, {zone}.",
   "viewProvider": "Shiko profilin dhe të gjitha shërbimet",
   "availableIn": "I disponueshëm në {place}",
   "choosePackage": "Zgjidh një paketë",

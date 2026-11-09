@@ -303,6 +303,11 @@ function ServicePage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                     <div className="flex flex-col gap-2">
                                         <h3 className="text-sm font-semibold">{resolveLanguageKey("availability")}</h3>
                                         <ShopAvailability slots={provider.availability} languageCode={languageCode} />
+                                        {provider.availabilityTimeZone && (
+                                            <p className="text-xs text-muted-foreground">
+                                                {resolveLanguageKey("availabilityTimeZone").replace("{zone}", provider.availabilityTimeZone)}
+                                            </p>
+                                        )}
                                     </div>
                                 ) : null}
                                 <Button asChild variant="link" className="h-auto p-0 self-start text-sm"><Link to={`${base}/provider?id=${encodeURIComponent(provider._id)}`}>

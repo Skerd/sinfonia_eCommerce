@@ -4,7 +4,8 @@
   "message": "Wählen Sie Beginn und Ende des Termins. Die Zeiten gelten in {zone}.",
   "availability": {
     "title": "Wann der Anbieter verfügbar ist",
-    "zone": "Der Termin muss ganz in eines dieser Fenster passen. Sie gelten in der Zeitzone des Anbieters, {zone}."
+    "zone": "Der Termin muss ganz in eines dieser Fenster passen. Sie gelten in der Zeitzone des Anbieters, {zone}.",
+    "converted": "Der Termin muss ganz in eines dieser Fenster passen. Sie sind in Ihrer Zeitzone angegeben, {zone}; wo die Zeiten des Anbieters ({providerZone}) anders lauten, stehen sie in Klammern dahinter."
   },
   "form": {
     "startAtLabel": "Beginn",

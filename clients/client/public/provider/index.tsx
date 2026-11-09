@@ -105,6 +105,11 @@ function ProviderPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 {resolveLanguageKey("availability")}
                             </h2>
                             <ShopAvailability slots={provider.availability} languageCode={languageCode} />
+                            {provider.availabilityTimeZone && (
+                                <p className="text-xs text-muted-foreground">
+                                    {resolveLanguageKey("availabilityTimeZone").replace("{zone}", provider.availabilityTimeZone)}
+                                </p>
+                            )}
                         </div>
                     ) : null}
                 </section>

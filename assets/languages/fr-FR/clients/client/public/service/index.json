@@ -14,6 +14,7 @@
   "completionRate": "{rate} % de commandes terminées",
   "memberSince": "Membre depuis {date}",
   "availability": "Disponibilités",
+  "availabilityTimeZone": "Horaires dans le fuseau horaire du prestataire, {zone}.",
   "viewProvider": "Voir le profil et tous les services",
   "availableIn": "Disponible à {place}",
   "choosePackage": "Choisissez une formule",

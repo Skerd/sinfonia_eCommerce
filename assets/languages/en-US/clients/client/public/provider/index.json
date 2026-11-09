@@ -8,6 +8,7 @@
   "memberSince": "Member since {date}",
   "skills": "Skills",
   "availability": "Availability",
+  "availabilityTimeZone": "Times are in the provider's time zone, {zone}.",
   "servicesBy": "Services by {name}",
   "portfolio": "Portfolio",
   "notFound": "Provider not found",

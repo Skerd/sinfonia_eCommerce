@@ -14,6 +14,7 @@
   "completionRate": "{rate} % der Aufträge abgeschlossen",
   "memberSince": "Mitglied seit {date}",
   "availability": "Verfügbarkeit",
+  "availabilityTimeZone": "Zeiten in der Zeitzone des Anbieters, {zone}.",
   "viewProvider": "Profil und alle Dienstleistungen ansehen",
   "availableIn": "Verfügbar in {place}",
   "choosePackage": "Paket wählen",
