@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
   "title": "Modifier l'entrepôt",
   "errorTitle": "Échec du chargement de l'entrepôt",
-  "errorDescription": "Impossible de charger cet entrepôt. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cet entrepôt. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
@@ -13,7 +13,7 @@
     "countryLabel": "Pays",
     "countryPlaceholder": "Sélectionner le pays",
     "stateLabel": "État",
-    "statePlaceholder": "Sélectionner le canton",
+    "statePlaceholder": "Sélectionner la région",
     "cityLabel": "Ville",
     "cityPlaceholder": "Sélectionner la ville",
     "streetLabel": "Rue",
@@ -27,7 +27,7 @@
   },
   "axios": {
     "start": {
-      "title": "Entrepôt de sauvegarde",
+      "title": "Enregistrement de l'entrepôt",
       "time": 3000
     },
     "success": {

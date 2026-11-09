@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx",
-  "title": "Désactiver le blocage CMS",
+  "title": "Désactiver le bloc CMS",
   "description": "Ce bloc sera masqué de la vitrine jusqu'à ce qu'il soit à nouveau activé.",
   "cancel": "Annuler",
   "confirm": "Désactiver",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Désactivation du blocage CMS…",
+      "title": "Désactivation du bloc CMS…",
       "time": 3000
     },
     "success": {
-      "title": "Blocage CMS désactivé",
+      "title": "Bloc CMS désactivé",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de désactiver le blocage CMS",
+      "title": "Impossible de désactiver le bloc CMS",
       "time": 3000
     }
   }

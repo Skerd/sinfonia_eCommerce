@@ -29,7 +29,7 @@
   "fields": {
     "order": "Ordine",
     "provider": "Fornitore",
-    "startAt": "Inizia",
+    "startAt": "Inizio",
     "endAt": "Fine",
     "timezone": "Fuso orario",
     "status": "Stato",
@@ -41,7 +41,7 @@
   "status": {
     "scheduled": "Pianificata",
     "in_progress": "In corso",
-    "completed": "Completato",
-    "cancelled": "Annullato"
+    "completed": "Completata",
+    "cancelled": "Annullata"
   }
 }

@@ -8,10 +8,10 @@
     "featured_collection": "Collezione in primo piano",
     "flash_sale": "Vendita lampo",
     "grid": "Griglia",
-    "hero_banner": "Stendardo dell'eroe",
+    "hero_banner": "Banner principale",
     "promotional_section": "Sezione promozionale",
-    "slider": "Dispositivo di scorrimento",
-    "trending": "Tendenza",
+    "slider": "Slider",
+    "trending": "Di tendenza",
     "video": "Video"
   },
   "inactive": "Inattivo",
@@ -19,6 +19,6 @@
   "failedTitle": "Impossibile caricare il blocco CMS",
   "failedDescription": "Tocca per riprovare.",
   "position": "Posizione",
-  "title": "Modifica tipo di unità",
+  "title": "Titolo",
   "type": "Tipo"
 }

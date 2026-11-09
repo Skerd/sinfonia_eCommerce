@@ -2,8 +2,8 @@
   "active": "Attivo",
   "code": "Codice",
   "discountType": {
-    "buy_x_get_y": "Compra X Ottieni Y",
-    "fixed": "Risolto",
+    "buy_x_get_y": "Compra X prendi Y",
+    "fixed": "Fisso",
     "free_shipping": "Spedizione gratuita",
     "percentage": "Percentuale"
   },
@@ -11,7 +11,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
   "failedTitle": "Impossibile caricare lo sconto",
   "failedDescription": "Tocca per riprovare.",
-  "title": "Modifica tipo di unità",
+  "title": "Titolo",
   "type": "Tipo",
   "value": "Valore"
 }

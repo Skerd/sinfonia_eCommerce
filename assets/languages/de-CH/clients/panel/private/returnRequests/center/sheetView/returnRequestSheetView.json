@@ -7,7 +7,7 @@
   "lifecycle": "Lebenszyklus",
   "returnRequestSubtitle": "Details der Rücksendung",
   "failedTitle": "Rücksendung konnte nicht geladen werden",
-  "failedDescription": "Die Rücksendung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Rücksendung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "type": "Typ",
   "status": "Status",

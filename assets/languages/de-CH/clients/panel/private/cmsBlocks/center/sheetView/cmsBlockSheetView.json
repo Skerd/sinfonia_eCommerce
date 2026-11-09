@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx",
   "cmsBlockSubtitle": "CMS-Block-Details",
   "failedTitle": "CMS-Block konnte nicht geladen werden",
-  "failedDescription": "Der Block konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Der Block konnte nicht geladen werden. Klicken Sie, um ihn erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "config": "Konfiguration",

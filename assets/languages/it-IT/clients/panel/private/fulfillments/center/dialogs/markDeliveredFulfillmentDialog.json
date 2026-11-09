@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
-  "title": "Contrassegnare l'adempimento come consegnato",
-  "description": "Conferma che l'adempimento spedito è stato consegnato.",
+  "title": "Contrassegna l'evasione come consegnata",
+  "description": "Conferma che questa evasione spedita è stata consegnata.",
   "notesLabel": "Note",
   "notesPlaceholder": "Note facoltative",
   "cancel": "Annulla",
   "confirm": "Contrassegna come consegnato",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Contrassegnando come consegnato…",
+      "title": "Aggiornamento dello stato…",
       "time": 3000
     },
     "success": {
-      "title": "Adempimento contrassegnato come consegnato",
+      "title": "Evasione contrassegnata come consegnata",
       "time": 3000
     },
     "error": {

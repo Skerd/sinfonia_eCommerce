@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "Rreth produkteve",
     "title": "Rreth produkteve",
-    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani dhe arka e shesin vetëm sa kohë statusi i tij është aktiv. Draft është kopja e punës që askush nuk mund ta blejë, dhe i arkivuar e heq nga shitja pa e humbur. Gjithçka që dyqani tregon për artikullin — çmimi, mediat, stoku, SEO, artikujt e lidhur — ndryshohet këtu.",
+    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani dhe arka e shesin vetëm sa kohë statusi i tij është aktiv. Skica është kopja e punës që askush nuk mund ta blejë, dhe i arkivuar e heq nga shitja pa e humbur. Gjithçka që dyqani tregon për artikullin — çmimi, mediat, stoku, SEO, artikujt e lidhur — ndryshohet këtu.",
     "sections": [
       {
         "title": "Çfarë ndryshon tipi",
@@ -21,13 +21,13 @@
       },
       {
         "title": "Statusi dhe veprimet e rreshtit",
-        "body": "Statusi nuk ndryshon me një modifikim të thjeshtë. Publiko, arkivo dhe kthe në draft janë veprime, dhe secili refuzohet kur produkti nuk është në gjendjen e pritur.",
+        "body": "Statusi nuk ndryshon me një modifikim të thjeshtë. Publiko, arkivo dhe kthe në skicë janë veprime, dhe secili refuzohet kur produkti nuk është në gjendjen e pritur.",
         "items": [
-          "Publiko është i mundur vetëm nga draft. Një produkt pa variante duhet të ketë tashmë një çmim, sepse një produkt aktiv shitet me atë çmim. Publikimi i parë regjistron datën e publikimit.",
-          "Publikimi i planifikuar: një draft me datë publikimi në të kaluarën vihet automatikisht në shitje nga një proces që punon çdo pesë minuta, nëse ka çmim.",
-          "Arkivo është i mundur nga draft ose aktiv dhe e heq produktin nga shitja. Shportat e heqin në llogaritjen e radhës së çmimeve.",
-          "Kthe në draft është i mundur vetëm nga i arkivuar. Fshin datën e publikimit që procesi i planifikuar të mos e kthejë menjëherë në shitje.",
-          "Dyfisho kopjon të dhënat në një draft të ri me titullin plus \" (Copy)\". Variantet, rreshtat e stokut, vlerësimet, notat dhe data e publikimit nuk kopjohen, dhe krijohet një slug i ri.",
+          "Publiko është i mundur vetëm nga skica. Një produkt pa variante duhet të ketë tashmë një çmim, sepse një produkt aktiv shitet me atë çmim. Publikimi i parë regjistron datën e publikimit.",
+          "Publikimi i planifikuar: një skicë me datë publikimi në të kaluarën vihet automatikisht në shitje nga një proces që punon çdo pesë minuta, nëse ka çmim.",
+          "Arkivo është i mundur nga skica ose aktiv dhe e heq produktin nga shitja. Shportat e heqin në llogaritjen e radhës së çmimeve.",
+          "Kthe në skicë është i mundur vetëm nga i arkivuar. Fshin datën e publikimit që procesi i planifikuar të mos e kthejë menjëherë në shitje.",
+          "Dyfisho kopjon të dhënat në një skicë të re me titullin plus \" (Copy)\". Variantet, rreshtat e stokut, vlerësimet, notat dhe data e publikimit nuk kopjohen, dhe krijohet një slug i ri.",
           "Fshirja e një produkti është fshirje e butë dhe mund të rikthehet."
         ]
       },
@@ -46,8 +46,8 @@
         "title": "Stoku",
         "body": "Një produkt fizik ose i ndryshueshëm ndiqet në stok, përveç kur ndjekja e stokut është e çaktivizuar (te produkti ose te varianti).",
         "items": [
-          "Një artikull i ndjekur mund të shitet vetëm nga stok që ekziston. Pa rresht stoku në një magazinë aktive, checkout-i e refuzon rreshtin si jashtë stoku.",
-          "Pragu i stokut të ulët, stoku i sigurisë, porositë e prapambetura dhe porosia paraprake përshkruajnë si doni të trajtohet artikulli; sasitë dhe pikat e rifurnizimit për magazinë janë në faqen Inventari.",
+          "Një artikull i ndjekur mund të shitet vetëm nga stok që ekziston. Pa rresht stoku në një magazinë aktive, pagesa online e refuzon rreshtin si jashtë stoku.",
+          "Pragu i stokut të ulët, stoku i sigurisë, porositë pa stok dhe parashitja përshkruajnë si doni të trajtohet artikulli; sasitë dhe pikat e rifurnizimit për magazinë janë në faqen Inventari.",
           "Një artikull i pandjekur (i çaktivizuar, ose produkt dixhital, shërbim apo kartë dhuratë) shitet pa prekur stokun."
         ]
       },
@@ -56,7 +56,7 @@
         "body": "Këto fusha ndryshojnë vetëm mënyrën si paraqitet dhe gjendet produkti.",
         "items": [
           "Imazhi kryesor, galeria, videot dhe dokumentet janë mediat. Pikat kryesore, specifikimet, FAQ, udhëzimet e kujdesit dhe garancia mbushin faqen e produktit.",
-          "Produktet e lidhura, upsell, cross-sell dhe «blihen shpesh bashkë» janë vendet e rekomandimeve. I theksuar dhe distinktivët e nxjerrin artikullin në pah në lista.",
+          "Produktet e lidhura, shitjet shtesë, shitjet e kryqëzuara dhe «blihen shpesh bashkë» janë vendet e rekomandimeve. I veçuar dhe shenjat e nxjerrin artikullin në pah në lista.",
           "Identifikuesit (SKU, barkodi, GTIN, UPC, EAN, ISBN, MPN, kodi HS, vendi i origjinës) përdoren për kërkimin, skanimin në arkë dhe doganën.",
           "SEO përmban meta titullin dhe përshkrimin, fjalët kyçe, URL kanonike, fushat Open Graph dhe Twitter Card, përfshirjen dhe përparësinë në sitemap, dhe no-index."
         ]
@@ -158,10 +158,10 @@
     "isHazmat": "Material i rrezikshëm",
     "requiresShipping": "Kërkon transport",
     "trackInventory": "Gjurmo inventarin",
-    "allowBackorder": "Lejo porosi mbrapa",
+    "allowBackorder": "Lejo porosi pa stok",
     "lowStockThreshold": "Pragu i stokut të ulët",
     "safetyStock": "Stoku i sigurisë",
-    "backorderLimit": "Limiti i porosive mbrapa",
+    "backorderLimit": "Limiti i porosive pa stok",
     "preorderEnabled": "Parashitja e aktivizuar",
     "preorderAvailableAt": "Parashitja e disponueshme më",
     "availableForSale": "I disponueshëm për shitje",
@@ -186,7 +186,7 @@
     "badges": "Shenjat",
     "ratingAverage": "Vlerësimi",
     "ratingCount": "Numri i vlerësimeve",
-    "reviewCount": "Recensionet",
+    "reviewCount": "Vlerësimet",
     "status": "Statusi",
     "publishedAt": "Publikuar",
     "attributes": {
@@ -207,7 +207,7 @@
       "openGraphImage": "Imazhi Open Graph",
       "twitterCard": "Karta Twitter",
       "structuredDataType": "Lloji i të dhënave të strukturuara",
-      "sitemapInclude": "Përfshij në sitemap",
+      "sitemapInclude": "Përfshi në sitemap",
       "sitemapPriority": "Prioriteti i sitemap",
       "noIndex": "Pa indeksim"
     },

@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "About Product Attributes",
     "title": "About Product Attributes",
-    "overview": "Attributes are shared option lists such as Size or Colour. A variant picks one value from each attribute that defines it, so the attribute is what turns one product into several SKUs.",
+    "overview": "Attributes are shared option lists such as Size or Color. A variant picks one value from each attribute that defines it, so the attribute is what turns one product into several SKUs.",
     "sections": [
       {
         "title": "Fields",

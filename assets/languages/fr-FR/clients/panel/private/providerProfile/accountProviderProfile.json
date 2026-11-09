@@ -1,14 +1,14 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/accountProviderProfile.tsx",
   "title": "Profil de prestataire",
-  "description": "Votre fiche vendeur sur la marketplace : biographie, compétences, portfolio et disponibilités hebdomadaires.",
+  "description": "Votre fiche vendeur sur la place de marché : biographie, compétences, portfolio et disponibilités hebdomadaires.",
   "failTitle": "Impossible de charger le profil de prestataire",
   "failDescription": "Cliquez pour réessayer.",
   "connect": {
-    "notConnected": "Paiements non connectés",
+    "notConnected": "Versements non connectés",
     "setupIncomplete": "Configuration de Stripe incomplète",
-    "payoutsEnabled": "Paiements activés",
-    "start": "Connecter les paiements Stripe",
+    "payoutsEnabled": "Versements activés",
+    "start": "Connecter les versements Stripe",
     "continue": "Continuer la configuration de Stripe",
     "refresh": "Actualiser le statut de Stripe"
   },

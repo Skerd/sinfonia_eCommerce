@@ -4,18 +4,18 @@
   "description": "Ce bloc deviendra visible en vitrine lorsque son planning le permettra.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation du bloc CMS…",
       "time": 3000
     },
     "success": {
-      "title": "Blocage CMS activé",
+      "title": "Bloc CMS activé",
       "time": 3000
     },
     "error": {
-      "title": "Impossible d'activer le blocage CMS",
+      "title": "Impossible d'activer le bloc CMS",
       "time": 3000
     }
   }

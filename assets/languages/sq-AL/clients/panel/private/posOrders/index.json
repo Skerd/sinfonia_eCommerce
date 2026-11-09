@@ -10,8 +10,8 @@
       {
         "title": "Gjendjet",
         "items": [
-          "Draft është një shportë e pezulluar në arkë.",
-          "E paguar është një shitje e përfunduar. E anuluar është një shportë e pezulluar e hedhur, ose e anuluar kur seanca e saj u mbyll me forcë.",
+          "Skicë është një shportë e mbajtur në arkë.",
+          "E paguar është një shitje e përfunduar. E anuluar është një shportë e mbajtur e hedhur, ose e anuluar kur seanca e saj u mbyll me forcë.",
           "E rimbursuar shënon një shitje, të gjitha njësitë e së cilës janë rimbursuar. Çdo rimbursim është gjithashtu porosi më vete, e lidhur me shitjen."
         ]
       },
@@ -26,19 +26,19 @@
         ]
       },
       {
-        "title": "Rimbursimet dhe ribotimet",
+        "title": "Rimbursimet dhe riprintimet",
         "body": "Paratë lëvizin në arkë; kjo faqe shërben për të gjetur shitjen.",
         "items": [
           "Rimbursoni një shitje të paguar nga arka, plotësisht ose sipas sasisë së rreshtit. Një rimbursim nuk mund të kalojë atë që ka mbetur në çdo rresht.",
-          "Ribotimi, nga menyja e rreshtit, e prodhon kuponin sërish.",
+          "Riprintimi, nga menyja e rreshtit, e prodhon kuponin sërish.",
           "Porositë e produkteve të krijuara nga arka nuk mund të rimbursohen ose kthehen nga faqja Porositë e produkteve; kështu sirtari dhe stoku mbeten në përputhje.",
-          "Një shitje, përgjigjja e së cilës nga autoriteti tatimor humbi, pret një kontroll në portalin CIS; nga menyja e rreshtit, regjistroni kodet që shfaqen atje, ose dërgojeni përsëri nëse portali nuk e shfaq."
+          "Një shitje, përgjigja e së cilës nga autoriteti tatimor humbi, pret një kontroll në portalin CIS; nga menyja e rreshtit, regjistroni kodet që shfaqen atje, ose dërgojeni përsëri nëse portali nuk e shfaq."
         ]
       },
       {
         "title": "Faqe të lidhura",
         "items": [
-          "Pika e shitjes për të shitur, pezulluar ose rimbursuar.",
+          "Pika e shitjes për të shitur, mbajtur ose rimbursuar.",
           "Seancat POS për të parë sirtarin të cilit i përkiste një shitje.",
           "Lëvizjet e stokut për hyrjet e shitjes dhe të kthimit të çdo shitjeje në arkë."
         ]
@@ -63,7 +63,7 @@
     "session": "Seanca",
     "config": "Konfigurimi POS",
     "state": "Gjendja",
-    "cashier": "Arkatari",
+    "cashier": "Arkëtari",
     "customer": "Klienti",
     "customerName": "Emri i klientit",
     "lines": "Rreshtat",

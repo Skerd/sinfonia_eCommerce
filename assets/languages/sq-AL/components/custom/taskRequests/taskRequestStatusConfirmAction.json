@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
   "close": {
     "title": "Të mbyllet kjo kërkesë?",
-    "description": "Ofruesit nuk do të mund të parashtrojnë oferta të reja. Mund ta rihapni më vonë për sa kohë kërkesa nuk është shpërblyer.",
+    "description": "Ofruesit nuk do të mund të parashtrojnë oferta të reja. Mund ta rihapni më vonë për sa kohë kërkesa nuk është dhënë.",
     "confirm": "Konfirmo",
     "axios": {
       "start": { "title": "Duke mbyllur kërkesën", "time": 3000 },
@@ -20,5 +20,5 @@
       "error": { "title": "Kërkesa nuk u rihap, provoni përsëri", "time": 3000 }
     }
   },
-  "cancel": "Anullo"
+  "cancel": "Anulo"
 }

@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
   "title": "Modifier la remise",
-  "errorTitle": "Échec du chargement de la réduction",
-  "errorDescription": "Impossible de charger cette réduction. Essayer à nouveau.",
+  "errorTitle": "Échec du chargement de la remise",
+  "errorDescription": "Impossible de charger cette remise. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
-    "titleLabel": "Modifier le type d’unité",
+    "titleLabel": "Titre",
     "titlePlaceholder": "Titre de la remise",
     "codeLabel": "Code",
     "codePlaceholder": "Code promo optionnel",
@@ -16,9 +16,9 @@
     "valueLabel": "Valeur",
     "valuePlaceholder": "0",
     "isActiveLabel": "Actif",
-    "startsAtLabel": "Commence à",
+    "startsAtLabel": "Commence le",
     "startsAtPlaceholder": "Sélectionner le début",
-    "endsAtLabel": "Se termine à",
+    "endsAtLabel": "Se termine le",
     "endsAtPlaceholder": "Sélectionner la fin",
     "minimumOrderAmountLabel": "Montant minimum de commande",
     "minimumOrderAmountPlaceholder": "0",
@@ -29,7 +29,7 @@
     "usageLimitPerCustomerLabel": "Limite d'utilisation par client",
     "usageLimitPerCustomerPlaceholder": "Illimité si vide",
     "generalSectionTitle": "Général",
-    "scheduleSectionTitle": "Calendrier",
+    "scheduleSectionTitle": "Planification",
     "limitsSectionTitle": "Limites",
     "targetsSectionTitle": "Cibles",
     "customerGroupsSectionTitle": "Groupes de clients",
@@ -39,10 +39,10 @@
     "categoriesLabel": "Catégories",
     "customerGroupsLabel": "Groupes de clients",
     "buyXGetYSectionTitle": "Achetez X, obtenez Y",
-    "buyXGetYAnyOfSetHint": "Achetez et obtenez des quantités applicables sur les produits sélectionnés sous forme d'ensemble (n'importe lequel). Les unités éligibles les moins chères sont gratuites.",
-    "buyQuantityLabel": "Acheter la quantité",
+    "buyXGetYAnyOfSetHint": "Les quantités achetées et offertes s'appliquent à l'ensemble des produits sélectionnés (n'importe lequel). Les unités éligibles les moins chères sont offertes.",
+    "buyQuantityLabel": "Quantité achetée",
     "buyQuantityPlaceholder": "1",
-    "getQuantityLabel": "Obtenir la quantité",
+    "getQuantityLabel": "Quantité offerte",
     "getQuantityPlaceholder": "1",
     "getProductIdsLabel": "Produits éligibles",
     "selectProduct": "Sélectionner un produit",
@@ -67,7 +67,7 @@
   },
   "axios": {
     "start": {
-      "title": "Remise d'économie",
+      "title": "Enregistrement de la remise",
       "time": 3000
     },
     "success": {
@@ -75,13 +75,13 @@
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre à jour la réduction",
+      "title": "Impossible de mettre à jour la remise",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Modifier la remise",
-    "description": "Mettez à jour les règles, les limites, les objectifs et le calendrier des remises."
+    "description": "Mettez à jour les règles, les limites, les cibles et le calendrier de la remise."
   },
   "formButtons": {
     "cancel": "Annuler",

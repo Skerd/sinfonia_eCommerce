@@ -3,7 +3,7 @@
   "failedTitle": "Impossibile caricare la categoria",
   "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
-  "slug": "Lumaca",
-  "parentCategory": "Categoria genitore",
+  "slug": "Slug",
+  "parentCategory": "Categoria padre",
   "order": "Ordine"
 }

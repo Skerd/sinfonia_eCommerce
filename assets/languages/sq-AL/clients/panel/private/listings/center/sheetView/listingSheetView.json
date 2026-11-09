@@ -19,13 +19,13 @@
   "deliveryDays": "Dorëzimi (ditë)",
   "address": "Vendndodhja",
   "country": "Shteti",
-  "state": "Rajoni / gjendja",
+  "state": "Rajoni / qarku",
   "city": "Qyteti",
   "tags": "Etiketat",
   "requirements": "Kërkesat",
   "faqs": "Pyetje të shpeshta",
   "question": "Pyetja",
-  "answer": "Përgjigjia",
+  "answer": "Përgjigja",
   "promotions": "Promocione",
   "promotion": "Promocion",
   "listingPackages": "Paketat",
@@ -37,7 +37,7 @@
   "imageGallery": "Galeria e imazheve",
   "videoGallery": "Galeria e videove",
   "avgRating": "Vlerësimi",
-  "reviewCount": "Recensione",
+  "reviewCount": "Vlerësimet",
   "createdBy": "Krijuar nga",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",
@@ -57,7 +57,7 @@
   },
   "listingPricingType": {
     "fixed": "Çmim fiks",
-    "hourly": "Në orë"
+    "hourly": "Tarifë për orë"
   },
   "form": {}
 }

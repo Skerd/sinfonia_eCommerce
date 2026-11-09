@@ -1,14 +1,14 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/cardView/fulfillmentCard.tsx",
-  "failedTitle": "Impossibile caricare l'adempimento",
+  "failedTitle": "Impossibile caricare l'evasione",
   "failedDescription": "Tocca per riprovare.",
   "status": "Stato",
-  "carrier": "Portatore",
+  "carrier": "Corriere",
   "trackingNumber": "Numero di tracciamento",
   "fulfillmentStatus": {
     "pending": "In sospeso",
-    "shipped": "Spedito",
-    "delivered": "Consegnato",
-    "failed": "Non riuscito"
+    "shipped": "Spedita",
+    "delivered": "Consegnata",
+    "failed": "Non riuscita"
   }
 }

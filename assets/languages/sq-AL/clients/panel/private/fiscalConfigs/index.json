@@ -3,9 +3,9 @@
   "title": "Konfigurime fiskale",
   "description": "Cilësimet e fiskalizimit CIS dhe e-faturës (NIPT, TCR, certifikata).",
   "help": {
-    "ariaLabel": "Rreth Konfigurime fiskale",
-    "title": "Rreth Konfigurime fiskale",
-    "overview": "Një konfigurim fiskal është identiteti shqiptar CIS me të cilin një arkë nënshkruan kuponët: NIPT-i i tatimpaguesit, njësia e biznesit, operatori, kodet e softuerit dhe mirëmbajtësit, arka regjistruese (TCR), pikat fundore të CIS dhe certifikata e nënshkrimit. Një arkë tregon një konfigurim fiskal; një arkë pa të nuk fiskalizon.",
+    "ariaLabel": "Rreth konfigurimeve fiskale",
+    "title": "Rreth konfigurimeve fiskale",
+    "overview": "Një konfigurim fiskal është identiteti shqiptar CIS me të cilin një arkë nënshkruan kuponët: NIPT-i i tatimpaguesit, njësia e biznesit, operatori, kodet e softuerit dhe mirëmbajtësit, arka regjistruese (TCR), pikat fundore të CIS dhe certifikata e nënshkrimit. Një arkë lidhet me një konfigurim fiskal; një arkë pa të nuk fiskalizon.",
     "sections": [
       {
         "title": "Çfarë futni",
@@ -13,7 +13,7 @@
           "Emri e identifikon konfigurimin. NIPT-i merr numrin e TVSH-së së kompanisë kur lihet bosh.",
           "Kodi i softuerit, kodi i njësisë së biznesit dhe kodi i operatorit janë të detyrueshëm. Kodi i mirëmbajtësit është opsional.",
           "Kodi TCR, ID-ja e brendshme TCR dhe tipi TCR (i rregullt ose automat) identifikojnë arkën regjistruese. Regjistrimi i TCR plotëson kodin dhe kërkon lejen për të ndryshuar konfigurimet fiskale.",
-          "URL-të e fiskalizimit, e-faturës dhe self-care tregojnë CIS; një URL proxy është opsionale. Mjedisi zgjedh testim ose prodhim.",
+          "URL-të e fiskalizimit, e-faturës dhe vetëshërbimit drejtohen te CIS; një URL proxy është opsionale. Mjedisi zgjedh testim ose produksion.",
           "Emri, adresa, qyteti dhe shteti i shitësit dhe shenja e regjistrimit në TVSH shfaqen në dokumentet fiskale.",
           "Certifikata është skedar PKCS#12. Gjatë ndryshimit, lënia bosh e fjalëkalimit mban atë të ruajtur."
         ]
@@ -43,7 +43,7 @@
     "!enums": {
       "environment": {
         "test": "Testim",
-        "production": "Prodhim"
+        "production": "Produksion"
       },
       "tcrType": {
         "REGULAR": "E rregullt",

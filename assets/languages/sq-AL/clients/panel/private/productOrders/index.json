@@ -5,16 +5,16 @@
   "help": {
     "ariaLabel": "Rreth porosive të produkteve",
     "title": "Rreth porosive të produkteve",
-    "overview": "Një porosi produkti është një blerje e klientit në dyqan, ose një shitje në arkë e dyfishuar për kontabilitetin. Checkout-i e shkruan; kjo faqe nuk krijon kurrë një të tillë. Çdo porosi ka tre statuse që lëvizin veçmas — porosia, pagesa dhe përmbushja — plus një kronologji të çdo hapi dhe kush e bëri.",
+    "overview": "Një porosi produkti është një blerje e klientit në dyqan, ose një shitje në arkë e dyfishuar për kontabilitetin. Pagesa online e krijon; kjo faqe nuk krijon kurrë një të tillë. Çdo porosi ka tre statuse që lëvizin veçmas — porosia, pagesa dhe përmbushja — plus një kronologji të çdo hapi dhe kush e bëri.",
     "sections": [
       {
         "title": "Si krijohet një porosi",
-        "body": "Porosia është fundi i checkout-it, jo fillimi.",
+        "body": "Porosia është fundi i pagesës online, jo fillimi.",
         "items": [
-          "Checkout-i së pari rillogarit shportën nga katalogu aktual, pastaj rezervon stokun për çdo rresht të ndjekur para se të merret ndonjë pagesë. Nëse një rresht nuk mund të mbulohet, checkout-i ndalon dhe asgjë nuk rezervohet.",
+          "Pagesa online së pari rillogarit shportën nga katalogu aktual, pastaj rezervon stokun për çdo rresht të ndjekur para se të merret ndonjë pagesë. Nëse një rresht nuk mund të mbulohet, pagesa ndalon dhe asgjë nuk rezervohet.",
           "Pagesat me kartë krijojnë porosinë kur pagesa ka sukses, me konfirmimin e blerësit ose nga webhook-u i pagesës, cilado që vjen e para. Porosia shkruhet vetëm një herë.",
           "Pagesa në dorëzim dhe transferta bankare krijojnë një porosi në pritje, të papaguar. Stafi e konfirmon dhe e shënon të paguar kur mbërrijnë paratë.",
-          "Një checkout që nuk përfundon kurrë skadon pas afatit të tij; një proces çdo orë liron stokun e rezervuar. Nëse pagesa ka kaluar gjithsesi, procesi krijon porosinë.",
+          "Një pagesë online që nuk përfundon kurrë skadon pas afatit të saj; një proces çdo orë liron stokun e rezervuar. Nëse pagesa ka kaluar gjithsesi, procesi krijon porosinë.",
           "Në dyqanin e platformës, një shportë me disa shitës bëhet një porosi për çdo kompani shitëse."
         ]
       },
@@ -33,7 +33,7 @@
         "body": "Çdo veprim refuzohet jashtë gjendjes së pritur. Veprimet e statusit kërkojnë lejen për të shkruar statusin e porosisë; veprimet me para, lejen për të shkruar statusin e pagesës.",
         "items": [
           "Konfirmo është i mundur vetëm nga në pritje. E konfirmon porosinë dhe njofton klientin.",
-          "Kalo në përpunim është i mundur vetëm nga e konfirmuar. Do të thotë se porosia po përgatitet.",
+          "Shëno si në përpunim është i mundur vetëm nga e konfirmuar. Do të thotë se porosia po përgatitet.",
           "Dërgo është i mundur nga e konfirmuar ose në përpunim. Krijon një dërgesë për të gjitha sasitë ende të padërguara, i heq ato njësi nga stoku dhe regjistron transportuesin, numrin dhe lidhjen e gjurmimit që i dërgohen klientit.",
           "Shëno të paguar regjistron një pagesë jashtë linje me një referencë opsionale, vetëm sa kohë pagesa është e papaguar dhe porosia nuk është e anuluar ose e rimbursuar. Një porosi në pritje konfirmohet njëkohësisht, dhe kartat dhuratë e shkarkimet e blera lëshohen.",
           "Anulo bllokohet sapo porosia është e dërguar, e dorëzuar, e anuluar ose e rimbursuar, dhe një porosi e paguar duhet së pari të rimbursohet. Liron stokun ende të rezervuar dhe kthen kreditin e paguar me kartë dhuratë.",
@@ -46,7 +46,7 @@
         "items": [
           "Kredia e përdorur në porosi kthehet në kartën dhuratë.",
           "Kartat dhuratë të lëshuara nga porosia çaktivizohen, dhe lidhjet e saj të shkarkimit skadojnë.",
-          "Stoku ende i rezervuar për rreshtat e padërguar lirohet. Njësitë e dërguara kthehen vetëm përmes një kërkese kthimi të marrë.",
+          "Stoku ende i rezervuar për rreshtat e padërguar lirohet. Njësitë e dërguara kthehen vetëm përmes një kërkese kthimi të pranuar.",
           "Porosia bëhet e rimbursuar. Një shitje në arkë nuk rimbursohet këtu: rimbursohet në arkë, që sirtari dhe stoku të mbeten në përputhje."
         ]
       },
@@ -115,7 +115,7 @@
       "phone": "Telefoni i dërgimit",
       "street": "Rruga e dërgimit",
       "city": "Qyteti i dërgimit",
-      "state": "Shteti i dërgimit",
+      "state": "Rajoni i dërgimit",
       "postalCode": "Kodi postar i dërgimit",
       "country": "Vendi i dërgimit"
     },
@@ -125,7 +125,7 @@
       "phone": "Telefoni i faturimit",
       "street": "Rruga e faturimit",
       "city": "Qyteti i faturimit",
-      "state": "Shteti i faturimit",
+      "state": "Rajoni i faturimit",
       "postalCode": "Kodi postar i faturimit",
       "country": "Vendi i faturimit"
     },

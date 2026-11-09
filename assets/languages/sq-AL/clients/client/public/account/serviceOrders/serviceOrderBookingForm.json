@@ -5,7 +5,7 @@
   "availability": {
     "title": "Kur është i disponueshëm ofruesi",
     "zone": "Seanca duhet të hyjë plotësisht në një nga këto dritare. Ato janë sipas zonës kohore të ofruesit, {zone}.",
-    "converted": "Seanca duhet të hyjë plotësisht në një nga këto dritare. Ato shfaqen sipas zonës tënde kohore, {zone}; kur oraret e ofruesit ({providerZone}) ndryshojnë, jepen në kllapa."
+    "converted": "Seanca duhet të hyjë plotësisht në një nga këto dritare. Ato shfaqen sipas zonës suaj kohore, {zone}; kur oraret e ofruesit ({providerZone}) ndryshojnë, jepen në kllapa."
   },
   "form": {
     "startAtLabel": "Fillon",

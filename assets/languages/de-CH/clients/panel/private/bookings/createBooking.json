@@ -12,9 +12,9 @@
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "startAtLabel": "Startzeit",
-    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "startAtPlaceholder": "YYYY-MM-DDTHH:mm",
     "endAtLabel": "Endzeit",
-    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "endAtPlaceholder": "YYYY-MM-DDTHH:mm",
     "timezoneLabel": "Zeitzone",
     "timezonePlaceholder": "UTC"
   },

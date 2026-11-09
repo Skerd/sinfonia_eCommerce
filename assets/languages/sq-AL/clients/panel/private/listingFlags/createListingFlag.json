@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
     "title": "Raporto listimin",
-    "description": "Flamuros një listim për shqyrtim nga ekipi i moderimit."
+    "description": "Raporto një listim për shqyrtim nga ekipi i moderimit."
   },
   "formButtons": {
     "cancel": "Anulo",

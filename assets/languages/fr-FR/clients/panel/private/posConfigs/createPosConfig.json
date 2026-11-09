@@ -3,7 +3,7 @@
   "title": "Créer une configuration de point de vente",
   "form": {
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom du registre",
+    "namePlaceholder": "Nom de la caisse",
     "paymentMethodsLabel": "Modes de paiement",
     "managersLabel": "Gestionnaires",
     "warehousesLabel": "Entrepôts",
@@ -18,12 +18,12 @@
     "receiptFooterPlaceholder": "Imprimé au bas du reçu",
     "tillOptionsSectionTitle": "Options de caisse",
     "ifaceBarcodeScannerLabel": "Lecteur de codes à barres",
-    "ifaceCashControlLabel": "Contrôle de trésorerie",
-    "allowDiscountLabel": "Autoriser la réduction",
+    "ifaceCashControlLabel": "Contrôle de caisse",
+    "allowDiscountLabel": "Autoriser les remises",
     "allowQuantityChangeLabel": "Autoriser le changement de quantité",
     "allowOversellLabel": "Autoriser la survente",
-    "pinForDiscountLabel": "Code PIN pour réduction",
-    "pinForCashOutLabel": "Code PIN pour le retrait",
+    "pinForDiscountLabel": "Code PIN pour les remises",
+    "pinForCashOutLabel": "Code PIN pour les sorties d'espèces",
     "pinForRefundLabel": "Code PIN pour le remboursement",
     "selectWarehouse": "Ajouter un entrepôt",
     "removeWarehouse": "Supprimer l'entrepôt",
@@ -49,7 +49,7 @@
   },
   "formHeader": {
     "title": "Créer une configuration de point de vente",
-    "description": "Configurez une caisse de magasin : configuration fiscale, entrepôts, méthodes de paiement, texte du reçu et règles de caisse."
+    "description": "Configurez une caisse de magasin : configuration fiscale, entrepôts, modes de paiement, texte du reçu et règles de caisse."
   },
   "formButtons": {
     "cancel": "Annuler",

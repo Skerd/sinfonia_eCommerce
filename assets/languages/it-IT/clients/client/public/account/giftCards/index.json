@@ -2,9 +2,9 @@
   "path": "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx",
   "copied": "Codice copiato",
   "copyError": "Impossibile copiare il codice",
-  "title": "Gift card",
-  "loading": "Caricamento gift card",
-  "empty": "Ancora nessuna gift card: acquistane una e comparirà qui dopo il pagamento.",
+  "title": "Carte regalo",
+  "loading": "Caricamento carte regalo",
+  "empty": "Ancora nessuna carta regalo: acquistane una nel negozio e comparirà qui dopo il pagamento.",
   "status": {
     "active": "Attiva",
     "depleted": "Esaurita",

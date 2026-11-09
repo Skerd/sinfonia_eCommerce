@@ -6,7 +6,7 @@
   "reasonPlaceholder": "Motivo facoltativo del rifiuto",
   "cancel": "Annulla",
   "confirm": "Rifiuta",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Rifiuto della richiesta di reso…",

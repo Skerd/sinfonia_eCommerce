@@ -8,7 +8,7 @@
   "active": "Actif",
   "inactive": "Inactif",
   "paymentType": {
-    "cash": "Comptant",
+    "cash": "Espèces",
     "card": "Carte"
   }
 }

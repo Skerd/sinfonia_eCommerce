@@ -6,7 +6,7 @@
     },
     "start": {
       "time": 3000,
-      "title": "Soumettre une offre"
+      "title": "Envoi de l'offre"
     },
     "success": {
       "time": 3000,
@@ -14,7 +14,7 @@
     }
   },
   "form": {
-    "amountLabel": "Montant de l'enchère",
+    "amountLabel": "Montant de l'offre",
     "amountPlaceholder": "0.00",
     "currencyIdLabel": "Devise",
     "currencyIdPlaceholder": "Sélectionner une devise",
@@ -31,8 +31,8 @@
   },
   "formHeader": {
     "description": "Soumettez une offre pour une demande de tâche.",
-    "title": "Créer une enchère"
+    "title": "Créer une offre"
   },
   "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

@@ -4,14 +4,14 @@
   "description": "Cette zone d'expédition ne sera plus utilisée pour le calcul des tarifs jusqu'à ce qu'elle soit à nouveau activée.",
   "cancel": "Annuler",
   "confirm": "Désactiver",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Désactivation de la zone d'expédition…",
       "time": 3000
     },
     "success": {
-      "title": "Zone de livraison désactivée",
+      "title": "Zone d'expédition désactivée",
       "time": 3000
     },
     "error": {

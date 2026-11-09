@@ -8,14 +8,14 @@
   "pinTooShort": "Le code PIN doit comporter au moins 4 caractères",
   "cancel": "Annuler",
   "confirm": "Enregistrer le code PIN",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Enregistrement du code PIN du gestionnaire",
       "time": 3000
     },
     "success": {
-      "title": "Code PIN du responsable enregistré",
+      "title": "Code PIN du gestionnaire enregistré",
       "time": 3000
     },
     "error": {

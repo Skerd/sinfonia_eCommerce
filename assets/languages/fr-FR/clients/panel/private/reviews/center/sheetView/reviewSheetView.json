@@ -1,13 +1,13 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/reviews/center/sheetView/reviewSheetView.tsx",
-  "review": "Examen",
+  "review": "Avis",
   "eCommerce": {
-    "review": "Examen"
+    "review": "Avis"
   },
   "overview": "Vue d'ensemble",
   "details": "Détails",
   "order": "Commande",
-  "reviewer": "Réviseur",
+  "reviewer": "Auteur de l'avis",
   "rating": "Note",
   "comment": "Commentaire",
   "listing": "Annonce",

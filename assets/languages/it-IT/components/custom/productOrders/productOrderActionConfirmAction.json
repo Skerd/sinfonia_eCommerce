@@ -3,7 +3,7 @@
   "cancel": "Annulla",
   "confirm": {
     "title": "Conferma ordine",
-    "description": "Riconosci questo ordine e contrassegnalo come confermato.",
+    "description": "Prendi in carico questo ordine e contrassegnalo come confermato.",
     "confirm": "Conferma",
     "axios": {
       "success": "Ordine confermato",
@@ -13,7 +13,7 @@
   "markProcessing": {
     "title": "Contrassegna come in elaborazione",
     "description": "Contrassegna questo ordine come in preparazione per la spedizione.",
-    "confirm": "Segna l'elaborazione",
+    "confirm": "Segna in lavorazione",
     "axios": {
       "success": "Ordine contrassegnato come in elaborazione",
       "error": "Impossibile aggiornare l'ordine"
@@ -30,7 +30,7 @@
   },
   "markPaid": {
     "title": "Segna come pagato",
-    "description": "Registra il pagamento in contrassegno o tramite bonifico come ricevuto. Lo stock riservato diventa una vendita e le gift card o i download dell'ordine vengono emessi.",
+    "description": "Registra il pagamento in contrassegno o tramite bonifico come ricevuto. Le scorte riservate diventano una vendita e le carte regalo o i download dell'ordine vengono emessi.",
     "confirm": "Segna pagato",
     "axios": {
       "success": "Pagamento registrato",

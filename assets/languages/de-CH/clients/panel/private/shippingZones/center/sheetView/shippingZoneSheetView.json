@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/sheetView/shippingZoneSheetView.tsx",
   "shippingZoneSubtitle": "Details der Versandzone",
   "failedTitle": "Versandzone konnte nicht geladen werden",
-  "failedDescription": "Die Versandzone konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Versandzone konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "geography": "Geografie",

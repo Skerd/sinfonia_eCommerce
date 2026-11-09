@@ -1,15 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
-  "failedTitle": "Échec du chargement de la liste",
+  "failedTitle": "Échec du chargement de l'annonce",
   "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
-  "title": "Modifier le type d’unité",
+  "title": "Titre",
   "status": "Statut",
   "price": "Prix",
   "category": "Catégorie",
   "city": "Ville",
   "perHour": "h",
-  "days": "ré",
+  "days": "j",
   "featured": "Mis en avant",
   "sponsored": "Sponsorisé",
   "statuses": {

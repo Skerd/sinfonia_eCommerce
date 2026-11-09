@@ -6,7 +6,7 @@
   "timerDays": "Giorni",
   "timerHours": "Ore",
   "timerMins": "Min",
-  "timerSecs": "Sez",
+  "timerSecs": "Sec",
   "productStatus": {
     "draft": "Bozza",
     "active": "Attivo",

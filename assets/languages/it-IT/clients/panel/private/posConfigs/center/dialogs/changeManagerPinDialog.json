@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/changeManagerPinDialog.tsx",
-  "title": "Cambia PIN gestore",
-  "description": "Immettere il PIN attuale, quindi il nuovo PIN due volte.",
+  "title": "Cambia PIN del responsabile",
+  "description": "Inserisci il PIN attuale, quindi il nuovo PIN due volte.",
   "currentPinLabel": "PIN attuale",
   "pinLabel": "Nuovo PIN",
   "confirmPinLabel": "Conferma il nuovo PIN",
@@ -9,18 +9,18 @@
   "pinTooShort": "Il PIN deve contenere almeno 4 caratteri",
   "cancel": "Annulla",
   "confirm": "Salva PIN",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Modifica PIN amministratore",
+      "title": "Modifica del PIN del responsabile",
       "time": 3000
     },
     "success": {
-      "title": "PIN amministratore cambiato",
+      "title": "PIN del responsabile cambiato",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile modificare il PIN amministratore",
+      "title": "Impossibile modificare il PIN del responsabile",
       "time": 3000
     }
   }

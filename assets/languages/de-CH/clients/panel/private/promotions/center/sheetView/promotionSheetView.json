@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/promotions/center/sheetView/promotionSheetView.tsx",
   "failedTitle": "Promotion konnten nicht geladen werden",
-  "failedDescription": "Die Promotion konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Promotion konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "lifecycle": "Lebenszyklus",

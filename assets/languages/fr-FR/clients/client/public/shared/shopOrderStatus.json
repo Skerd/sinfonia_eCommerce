@@ -41,7 +41,7 @@
     "rejected": "Refusée"
   },
   "deliveryStatus": {
-    "submitted": "En attente de vous",
+    "submitted": "En attente de votre validation",
     "accepted": "Acceptée",
     "revision_requested": "Modifications demandées"
   },

@@ -27,7 +27,7 @@
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde du module complémentaire",
+      "title": "Enregistrement du module complémentaire",
       "time": 3000
     },
     "success": {

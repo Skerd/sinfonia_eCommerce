@@ -3,15 +3,15 @@
   "title": "Blloqet CMS",
   "description": "Menaxhoni blloqet e përmbajtjes së dyqanit dhe renditjen e tyre.",
   "help": {
-    "ariaLabel": "Rreth Blloqet CMS",
-    "title": "Rreth Blloqet CMS",
+    "ariaLabel": "Rreth blloqeve CMS",
+    "title": "Rreth blloqeve CMS",
     "overview": "Blloqet CMS janë seksionet e faqes kryesore të dyqanit, si një banner kryesor, një slider ose një shirit njoftimesh. Dyqani tregon blloqet aktive, datat e të cilëve përfshijnë tani, sipas renditjes së pozicioneve. Tipi dhe titulli janë të detyrueshëm; zgjedhja e një tipi tregon fushat që i duhen.",
     "sections": [
       {
         "title": "Tipet",
         "items": [
           "Banneri kryesor, slider-i dhe seksioni promovues tregojnë imazhe me një titull dhe një lidhje thirrjeje për veprim.",
-          "Koleksioni i theksuar, në trend, më të shiturat, shitja flash, rrjeta dhe vitrina e kategorive tregojnë produkte nga një koleksion ose nga kategori, deri në një kufi.",
+          "Koleksioni i veçuar, në trend, më të shiturat, oferta e shpejtë, rrjeta dhe vitrina e kategorive tregojnë produkte nga një koleksion ose nga kategori, deri në një kufi.",
           "Shiriti i njoftimeve tregon një mesazh të shkurtër me lidhje opsionale. Video përfshin një URL videoje.",
           "HTML i personalizuar tregon markup-in tuaj; pastrohet para se dyqani ta shfaqë."
         ]

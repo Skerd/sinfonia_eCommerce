@@ -4,7 +4,7 @@
   "description": "Questo indirizzo diventerà quello predefinito per il suo tipo (spedizione o fatturazione). Il precedente predefinito dello stesso tipo verrà cancellato; l'altro tipo resta invariato.",
   "cancel": "Annulla",
   "confirm": "Imposta come predefinito",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Impostazione dell'indirizzo predefinito...",

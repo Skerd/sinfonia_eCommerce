@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/products/center/sheetView/productSheetView.tsx",
   "productSubtitle": "Produkt details",
   "failedTitle": "Produkt konnten nicht geladen werden",
-  "failedDescription": "Das Produkt konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Das Produkt konnte nicht geladen werden. Klicken Sie, um es erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "shortDescription": "Kurzbeschreibung",

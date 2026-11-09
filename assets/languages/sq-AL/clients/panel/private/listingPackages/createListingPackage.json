@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
   "formHeader": {
     "title": "Krijo paketë listimi",
-    "description": "Përkufizon një nivel shërbimi që klientët mund ta zgjedhin kur porosin nga një listim."
+    "description": "Përkufizoni një nivel shërbimi që klientët mund ta zgjedhin kur porosisin nga një listim."
   },
   "formButtons": {
     "cancel": "Anulo",

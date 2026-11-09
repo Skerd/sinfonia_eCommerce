@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx",
-  "title": "Marquer l'exécution comme échouée",
-  "description": "Marquez cette réalisation comme échouée. Éventuellement, expliquez pourquoi.",
+  "title": "Marquer l'expédition comme échouée",
+  "description": "Marquez cette expédition comme échouée. Vous pouvez en expliquer la raison.",
   "notesLabel": "Notes",
   "notesPlaceholder": "Raison facultative de l'échec",
   "cancel": "Annuler",
   "confirm": "Marquer comme échec",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Marquage comme échec…",
       "time": 3000
     },
     "success": {
-      "title": "Réalisation marquée comme échouée",
+      "title": "Expédition marquée comme échouée",
       "time": 3000
     },
     "error": {

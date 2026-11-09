@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx",
   "overview": "Panoramica",
   "address": "Indirizzo",
-  "related": "Relativo",
+  "related": "Correlati",
   "customerAddressSubtitle": "Dettagli dell'indirizzo",
   "failedTitle": "Impossibile caricare l'indirizzo",
   "failedDescription": "Qualcosa è andato storto durante il caricamento di questo indirizzo. Fare clic per riprovare.",

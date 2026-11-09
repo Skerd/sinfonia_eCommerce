@@ -4,7 +4,7 @@
   "description": "Cette règle de tarification n’ajustera plus les prix jusqu’à ce qu’elle soit à nouveau activée.",
   "cancel": "Annuler",
   "confirm": "Désactiver",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Désactivation de la règle de tarification…",

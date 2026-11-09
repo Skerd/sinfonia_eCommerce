@@ -11,22 +11,22 @@
     "typePlaceholder": "Seleziona il tipo",
     "sequenceLabel": "Sequenza",
     "sequencePlaceholder": "0",
-    "cashQuickAmountsLabel": "Importi in contanti rapidi",
+    "cashQuickAmountsLabel": "Importi rapidi in contanti",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
     "terminalSectionTitle": "Terminale POS bancario",
-    "terminalEnabledLabel": "Collegare il terminale POS della banca",
+    "terminalEnabledLabel": "Collega il terminale POS bancario",
     "terminalForcesCardHint": "Il collegamento di un terminale POS bancario imposta il tipo su Carta. La disconnessione lo imposta su Contanti.",
-    "terminalProviderLabel": "Fornitore di terminali",
+    "terminalProviderLabel": "Fornitore del terminale",
     "terminalProviderPlaceholder": "Seleziona il fornitore",
     "terminalProtocolLabel": "Protocollo",
     "terminalProtocolPlaceholder": "Seleziona il protocollo",
     "terminalHostLabel": "Host/IP del terminale",
     "terminalHostPlaceholder": "192.168.1.50",
-    "terminalPortLabel": "Porto terminale",
+    "terminalPortLabel": "Porta del terminale",
     "terminalPortPlaceholder": "8080",
     "terminalIdLabel": "Identificativo del terminale",
     "terminalIdPlaceholder": "TID/POIID",
-    "terminalPathLabel": "Percorso terminale",
+    "terminalPathLabel": "Percorso del terminale",
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Contanti",
@@ -34,7 +34,7 @@
     },
     "terminalProvider": {
       "manual": "Manuale (terminale esterno)",
-      "local_http": "Ponte HTTP locale"
+      "local_http": "Bridge HTTP locale"
     },
     "terminalProtocol": {
       "http": "HTTP",
@@ -57,7 +57,7 @@
   },
   "formHeader": {
     "title": "Modifica metodo di pagamento",
-    "description": "Aggiorna fino al tipo di pagamento, gettoni contante e connessione al terminale bancario."
+    "description": "Aggiorna il tipo di pagamento della cassa, i tagli rapidi di contanti e la connessione al terminale bancario."
   },
   "formButtons": {
     "cancel": "Annulla",

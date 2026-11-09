@@ -1,13 +1,13 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/deactivatePricingRuleDialog.tsx",
-  "title": "Disattiva la regola del prezzo",
+  "title": "Disattiva la regola di prezzo",
   "description": "Questa regola di prezzo non modificherà più i prezzi finché non verrà nuovamente attivata.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Disattivazione della regola di determinazione del prezzo…",
+      "title": "Disattivazione della regola di prezzo…",
       "time": 3000
     },
     "success": {
@@ -15,7 +15,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Impossibile disattivare la regola del prezzo",
+      "title": "Impossibile disattivare la regola di prezzo",
       "time": 3000
     }
   }

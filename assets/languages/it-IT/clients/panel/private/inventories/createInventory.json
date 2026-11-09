@@ -10,11 +10,11 @@
     "warehousePlaceholder": "Seleziona magazzino",
     "assignmentSectionTitle": "Assegnazione",
     "stockSectionTitle": "Livelli di scorta",
-    "quantityOnHandLabel": "Quantità a portata di mano",
+    "quantityOnHandLabel": "Quantità in giacenza",
     "quantityOnHandPlaceholder": "Quantità iniziale",
     "reorderPointLabel": "Punto di riordino",
     "reorderPointPlaceholder": "Avviso sotto questa quantità",
-    "reorderQuantityLabel": "Riordina la quantità",
+    "reorderQuantityLabel": "Quantità di riordino",
     "reorderQuantityPlaceholder": "Quantità da riordinare"
   },
   "axios": {

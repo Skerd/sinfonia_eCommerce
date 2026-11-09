@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx",
   "failedTitle": "Anbieterprofil konnte nicht geladen werden",
-  "failedDescription": "Beim Laden dieses Anbieterprofils ist ein Fehler aufgetreten. Klicken, um es erneut zu versuchen.",
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "failedDescription": "Beim Laden dieses Anbieterprofils ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "providerProfileSubtitle": "Anbieterprofil",
   "overview": "Übersicht",
   "user": "Anbieter",

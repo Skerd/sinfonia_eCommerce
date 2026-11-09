@@ -9,7 +9,7 @@
     "confirm": "Soumettre un litige",
     "axios": {
       "start": {
-        "title": "Soumettre un litige",
+        "title": "Envoi du litige",
         "time": 3000
       },
       "success": {

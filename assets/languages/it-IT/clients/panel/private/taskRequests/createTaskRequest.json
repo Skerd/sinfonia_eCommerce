@@ -35,11 +35,11 @@
     "streetLabel": "Via",
     "streetPlaceholder": "Indirizzo stradale",
     "taskRequestStatus": {
-      "awarded": "Premiato",
-      "closed": "Chiuso",
-      "open": "Aperto"
+      "awarded": "Assegnata",
+      "closed": "Chiusa",
+      "open": "Aperta"
     },
-    "titleLabel": "Modifica tipo di unità",
+    "titleLabel": "Titolo",
     "videoGalleryLabel": "Galleria video"
   },
   "formButtons": {
@@ -51,5 +51,5 @@
     "title": "Crea richiesta di attività"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
-  "title": "Modifica tipo di unità"
+  "title": "Titolo"
 }

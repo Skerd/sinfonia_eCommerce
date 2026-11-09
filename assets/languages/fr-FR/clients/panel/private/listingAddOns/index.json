@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
-  "title": "Liste des modules complémentaires",
-  "description": "Gérez les modules complémentaires facultatifs que les fournisseurs attachent à leurs annonces.",
+  "title": "Modules complémentaires d'annonce",
+  "description": "Gérez les modules complémentaires facultatifs que les prestataires ajoutent à leurs annonces.",
   "help": {
-    "ariaLabel": "À propos des extras d'annonce",
-    "title": "À propos des extras d'annonce",
+    "ariaLabel": "À propos des modules complémentaires d'annonce",
+    "title": "À propos des modules complémentaires d'annonce",
     "overview": "Un module complémentaire est un supplément facultatif qu’un acheteur peut ajouter en commandant une annonce, comme une livraison express ou une révision supplémentaire. Il appartient à une annonce et ajoute son propre prix et, éventuellement, des jours de livraison.",
     "sections": [
       {
@@ -30,7 +30,7 @@
   "fields": {
     "name": "Nom",
     "listing": "Annonce",
-    "provider": "Fournisseur",
+    "provider": "Prestataire",
     "price": {
       "amount": "Prix",
       "currency": "Devise"

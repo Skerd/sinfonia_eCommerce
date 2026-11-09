@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "Sessioni POS",
-  "description": "Fino all'apertura e chiusura delle sessioni dal Punto Vendita.",
+  "description": "Sessioni di cassa aperte e chiuse dal Punto vendita.",
   "help": {
     "ariaLabel": "Informazioni sulle sessioni POS",
     "title": "Informazioni sulle sessioni POS",
@@ -50,15 +50,15 @@
     "!enums": {
       "state": {
         "opening_control": "Apertura",
-        "opened": "Aperto",
+        "opened": "Aperta",
         "closing_control": "Chiusura",
-        "closed": "Chiuso"
+        "closed": "Chiusa"
       },
       "cashMoves": {
         "type": {
           "type": {
-            "in": "Incassare",
-            "out": "Incassare"
+            "in": "Versamento",
+            "out": "Prelievo"
           }
         }
       }
@@ -66,11 +66,11 @@
     "name": "Nome",
     "config": "Configurazione POS",
     "currency": "Valuta",
-    "state": "Cantone / Stato",
-    "openedBy": "Aperto da",
-    "closedBy": "Chiuso da",
-    "openedAt": "Inaugurato alle",
-    "closedAt": "Chiuso alle",
+    "state": "Stato",
+    "openedBy": "Aperta da",
+    "closedBy": "Chiusa da",
+    "openedAt": "Aperta il",
+    "closedAt": "Chiusa il",
     "openingBalance": "Saldo di apertura",
     "closingBalance": "Saldo di chiusura",
     "expectedCash": "Contanti attesi",

@@ -14,12 +14,12 @@
   "cardsView": "Schede",
   "toggleReferenceListView": "Attiva/disattiva il layout dell'elenco",
   "name": "Nome",
-  "state": "Cantone / Stato",
+  "state": "Stato",
   "config": "Configurazione POS",
-  "openedBy": "Aperto da",
-  "closedBy": "Chiuso da",
-  "openedAt": "Inaugurato alle",
-  "closedAt": "Chiuso alle",
+  "openedBy": "Aperta da",
+  "closedBy": "Chiusa da",
+  "openedAt": "Aperta il",
+  "closedAt": "Chiusa il",
   "company": "Azienda",
   "createdBy": "Creato da",
   "createdAt": "Creato il",
@@ -37,17 +37,17 @@
   "cashMoveType": "Tipo",
   "cashMoveAmount": "Importo",
   "cashMoveReason": "Motivo",
-  "cashMoveAt": "A",
-  "cashMoveBy": "Da",
+  "cashMoveAt": "Data e ora",
+  "cashMoveBy": "Eseguito da",
   "posSessionState": {
     "opening_control": "Apertura",
-    "opened": "Aperto",
+    "opened": "Aperta",
     "closing_control": "Chiusura",
-    "closed": "Chiuso"
+    "closed": "Chiusa"
   },
   "posCashMoveType": {
-    "in": "Incassare",
-    "out": "Incassare"
+    "in": "Versamento",
+    "out": "Prelievo"
   },
   "posOrders": "Ordini POS",
   "posOrder": "Ordine POS"

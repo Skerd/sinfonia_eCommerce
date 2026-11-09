@@ -12,7 +12,7 @@
         "body": "The type is the frame for pricing, shipping, stock, and what happens after payment. Choose it first; most other fields depend on it.",
         "items": [
           "Physical ships to an address and is stock-tracked. It carries weight, dimensions, shipping class, and a hazmat flag; weight-based shipping rates use the weight.",
-          "Variable is sold through its variants (size, colour, and so on). Each variant is its own SKU with its own stock row. A variant without its own price uses the product price.",
+          "Variable is sold through its variants (size, color, and so on). Each variant is its own SKU with its own stock row. A variant without its own price uses the product price.",
           "Digital is delivered as a download. Payment issues a download entitlement, limited by the download limit and the expiry days. A full refund of the order expires those downloads.",
           "Service is sold without a shipment and without stock.",
           "Bundle is a set of other products with a quantity each. It holds no stock itself: when stock moves, the bundle is opened one level into its components. Each component must be a live product of this company and cannot itself be a bundle.",

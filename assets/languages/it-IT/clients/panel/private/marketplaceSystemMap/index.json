@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/marketplaceSystemMap/index.tsx",
-  "title": "Mappa del sistema del mercato",
-  "description": "Mappa interattiva dei modelli di mercato, flussi di quotazioni/offerte, ponte di deposito a garanzia e funzionalità. Panoramica, zoom e clic sui nodi per i dettagli.",
+  "title": "Mappa di sistema del marketplace",
+  "description": "Mappa interattiva dei modelli del marketplace, dei flussi di annunci/offerte, del ponte di deposito a garanzia e delle funzionalità. Sposta, ingrandisci e fai clic sui nodi per i dettagli.",
   "help": {
-    "ariaLabel": "Informazioni sulla mappa di sistema Marketplace",
-    "title": "Informazioni sulla mappa di sistema Marketplace",
+    "ariaLabel": "Informazioni sulla mappa di sistema del marketplace",
+    "title": "Informazioni sulla mappa di sistema del marketplace",
     "overview": "Questa mappa è un’immagine in sola lettura del marketplace dei servizi: i suoi modelli, come lavoro e denaro si muovono tra cliente e fornitore, e ciò che il modulo offre. Non modifica dati.",
     "sections": [
       {
@@ -32,8 +32,8 @@
     ]
   },
   "tabs": {
-    "models": "Grafico del modello",
+    "models": "Grafo dei modelli",
     "flows": "Come funziona",
-    "capabilities": "Capacità"
+    "capabilities": "Funzionalità"
   }
 }

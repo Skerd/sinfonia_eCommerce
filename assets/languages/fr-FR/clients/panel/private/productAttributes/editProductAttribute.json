@@ -2,12 +2,12 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
   "title": "Modifier l'attribut",
   "errorTitle": "Échec du chargement de l'attribut",
-  "errorDescription": "Impossible de charger cet attribut. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cet attribut. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
     "namePlaceholder": "Couleur, taille, matière",
-    "positionLabel": "Poste",
+    "positionLabel": "Position",
     "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "Visible sur la page produit",
     "isUsedForVariantsLabel": "Utilisé pour les variantes",
@@ -17,7 +17,7 @@
   },
   "axios": {
     "start": {
-      "title": "Attribut d'enregistrement",
+      "title": "Enregistrement de l'attribut",
       "time": 3000
     },
     "success": {

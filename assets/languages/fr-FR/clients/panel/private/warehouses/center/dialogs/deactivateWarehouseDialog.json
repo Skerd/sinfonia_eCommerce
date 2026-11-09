@@ -4,7 +4,7 @@
   "description": "Cet entrepôt ne sera plus utilisé jusqu'à ce qu'il soit à nouveau activé.",
   "cancel": "Annuler",
   "confirm": "Désactiver",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Désactivation de l'entrepôt…",

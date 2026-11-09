@@ -62,7 +62,7 @@
   },
   "formHeader": {
     "title": "Krijo zonë transporti",
-    "description": "Përcakto gjeografinë e destinacionit dhe tarifat e transportit në checkout."
+    "description": "Përcakto gjeografinë e destinacionit dhe tarifat e transportit që ofrohen gjatë pagesës."
   },
   "formButtons": {
     "cancel": "Anulo",

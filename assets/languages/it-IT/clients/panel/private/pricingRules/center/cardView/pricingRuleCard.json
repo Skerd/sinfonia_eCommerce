@@ -3,7 +3,7 @@
   "inactive": "Inattivo",
   "name": "Nome",
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
-  "failedTitle": "Impossibile caricare la regola per la determinazione del prezzo",
+  "failedTitle": "Impossibile caricare la regola di prezzo",
   "failedDescription": "Tocca per riprovare.",
   "pricingRuleType": {
     "fixed_discount": "Sconto fisso",

@@ -2,14 +2,14 @@
   "path": "src/modules/eCommerce/components/custom/orders/requestRevisionAction.tsx",
   "requestRevision": {
     "title": "Demander une révision",
-    "description": "Décrivez ce qui doit être changé. Le fournisseur retravaillera et soumettra à nouveau la livraison.",
+    "description": "Décrivez ce qui doit être modifié. Le prestataire retravaillera et soumettra à nouveau la livraison.",
     "reasonLabel": "Motif de la révision",
     "reasonPlaceholder": "Expliquez ce qui doit être révisé et pourquoi…",
     "minChars": "Minimum 10 caractères requis.",
     "confirm": "Demander une révision",
     "axios": {
       "start": {
-        "title": "Demander une révision",
+        "title": "Demande de révision en cours",
         "time": 3000
       },
       "success": {

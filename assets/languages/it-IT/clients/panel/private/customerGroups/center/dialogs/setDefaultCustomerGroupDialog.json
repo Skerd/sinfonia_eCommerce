@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx",
-  "title": "Crea un gruppo di clienti predefinito",
+  "title": "Imposta come gruppo clienti predefinito",
   "description": "Ciò renderà il gruppo di clienti predefinito e quello predefinito corrente verrà riassegnato.",
   "cancel": "Annulla",
   "confirm": "Rendi predefinito",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Impostazione del gruppo clienti predefinito…",

@@ -3,7 +3,7 @@
   "title": "Modifier la configuration fiscale",
   "formHeader": {
     "title": "Modifier la configuration fiscale",
-    "description": "Mettez à jour les paramètres de fiscalisation et de facturation électronique de la CEI albanaise."
+    "description": "Mettez à jour les paramètres de fiscalisation CIS albanaise et de facturation électronique."
   },
   "formButtons": {
     "cancel": "Annuler",
@@ -11,7 +11,7 @@
   },
   "form": {
     "generalSectionTitle": "Général",
-    "cisCodesSectionTitle": "Codes CEI",
+    "cisCodesSectionTitle": "Codes CIS",
     "endpointsSectionTitle": "Points de terminaison du service",
     "sellerSectionTitle": "Détails du vendeur",
     "certificateSectionTitle": "Certificat",
@@ -21,7 +21,7 @@
     "niptPlaceholder": "K12345678L",
     "softCodeLabel": "Code logiciel (SoftCode)",
     "softCodePlaceholder": "ab123cd456",
-    "maintainerCodeLabel": "Code du responsable",
+    "maintainerCodeLabel": "Code du mainteneur",
     "maintainerCodePlaceholder": "mm123ab456",
     "businessUnitCodeLabel": "Code de l'unité commerciale",
     "businessUnitCodePlaceholder": "bb123bb123",
@@ -31,23 +31,23 @@
     "tcrCodePlaceholder": "tc123tc123",
     "tcrIntIdLabel": "ID interne du TCR",
     "tcrIntIdPlaceholder": "1",
-    "tcrTypeLabel": "Type de RCT",
+    "tcrTypeLabel": "Type de TCR",
     "tcrTypePlaceholder": "Sélectionner le type de TCR",
     "tcrType": {
-      "REGULAR": "Régulier",
-      "VENDING": "Vente automatique"
+      "REGULAR": "Standard",
+      "VENDING": "Distributeur automatique"
     },
     "environmentLabel": "Environnement",
     "environmentPlaceholder": "Sélectionner l'environnement",
     "environment": {
-      "test": "Tester",
-      "production": "Fabrication"
+      "test": "Test",
+      "production": "Production"
     },
     "fiscalizationUrlLabel": "URL SOAP de fiscalisation",
     "fiscalizationUrlPlaceholder": "https://fiscal.example/fiscalize",
     "einvoiceUrlLabel": "URL SOAP de la facture électronique",
     "einvoiceUrlPlaceholder": "https://einvoice.example/ws",
-    "selfcareUrlLabel": "Selfcare / vérifier l'URL",
+    "selfcareUrlLabel": "URL Selfcare / de vérification",
     "selfcareUrlPlaceholder": "https://selfcare.example/verify",
     "proxyUrlLabel": "Proxy HTTPS (facultatif)",
     "proxyUrlPlaceholder": "https://proxy.example",
@@ -65,11 +65,11 @@
     "certificateSelected": "fichier sélectionné",
     "certificatePasswordLabel": "Mot de passe du certificat",
     "certificatePasswordPlaceholder": "Mot de passe du certificat",
-    "isVatRegisteredLabel": "TVA enregistrée"
+    "isVatRegisteredLabel": "Assujetti à la TVA"
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde de la configuration fiscale",
+      "title": "Enregistrement de la configuration fiscale",
       "time": 3000
     },
     "success": {

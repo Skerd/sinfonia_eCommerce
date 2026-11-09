@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
-  "title": "Elenco bandiere",
-  "description": "Esamina le segnalazioni inviate dagli utenti per elenchi inappropriati.",
+  "title": "Segnalazioni degli annunci",
+  "description": "Esamina le segnalazioni inviate dagli utenti per annunci inappropriati.",
   "help": {
     "ariaLabel": "Informazioni sulle segnalazioni degli annunci",
     "title": "Informazioni sulle segnalazioni degli annunci",
@@ -32,7 +32,7 @@
       }
     ]
   },
-  "createListingFlag": "Crea bandiera dell'elenco",
+  "createListingFlag": "Crea segnalazione dell'annuncio",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "listing": "Annuncio",
@@ -50,8 +50,8 @@
     "!enums": {
       "status": {
         "pending": "In sospeso",
-        "reviewed": "Recensito",
-        "dismissed": "Licenziato"
+        "reviewed": "Esaminata",
+        "dismissed": "Respinta"
       },
       "reason": {
         "inappropriate": "Contenuti inappropriati",

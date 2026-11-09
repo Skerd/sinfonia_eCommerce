@@ -3,17 +3,17 @@
   "cancel": "Anulo",
   "createAccountLink": {
     "title": "Lidh pagesat Stripe",
-    "description": "Do të ridrejtoheni te Stripe për të konfiguruar (ose vazhduar) pagesat Express për këtë profil ofruesi. Lëshimet e escrow mund t'ju paguajnë vetëm pasi onboarding të jetë kompletuar.",
+    "description": "Do të ridrejtoheni te Stripe për të konfiguruar (ose vazhduar) pagesat Express për këtë profil ofruesi. Lirimet nga depozita mund t'ju paguajnë vetëm pasi të përfundojë regjistrimi në Stripe.",
     "confirm": "Hap Stripe",
     "axios": {
       "loading": "Duke krijuar lidhjen Stripe…",
-      "success": "Lidhja e onboarding Stripe është gati",
-      "error": "Nuk u krijua lidhja e onboarding Stripe"
+      "success": "Lidhja e regjistrimit në Stripe është gati",
+      "error": "Nuk u krijua lidhja e regjistrimit në Stripe"
     }
   },
   "refreshAccountStatus": {
     "title": "Rifresko statusin Stripe",
-    "description": "Merr statusin e fundit të llogarisë Connect nga Stripe dhe përditëso të drejtën për charges/payouts në këtë profil.",
+    "description": "Merr statusin e fundit të llogarisë Connect nga Stripe dhe përditëso të drejtën për arkëtime/pagesa dalëse në këtë profil.",
     "confirm": "Rifresko statusin",
     "axios": {
       "loading": "Duke rifreskuar statusin Stripe…",

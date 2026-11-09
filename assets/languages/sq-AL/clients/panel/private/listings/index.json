@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Listimet",
-  "description": "Menaxho listimet e produkteve dhe shërbimeve për dyqanin në qiramarrje.",
+  "description": "Menaxho listimet e produkteve dhe shërbimeve për dyqanin e kompanisë suaj.",
   "help": {
     "ariaLabel": "Rreth listimeve",
     "title": "Rreth listimeve",
-    "overview": "Një listim është oferta e shërbimit të një ofruesi në treg: çfarë bën, në cilën kategori dhe vend, me çfarë çmimi, me paketa dhe shtesa opsionale. Blerësit porosisin nga listimet aktive. Statusi është draft, aktiv ose joaktiv dhe ndryshohet vetëm me veprimet aktivizo dhe çaktivizo.",
+    "overview": "Një listim është oferta e shërbimit të një ofruesi në treg: çfarë bën, në cilën kategori dhe vend, me çfarë çmimi, me paketa dhe shtesa opsionale. Blerësit porosisin nga listimet aktive. Statusi është skicë, aktiv ose joaktiv dhe ndryshohet vetëm me veprimet aktivizo dhe çaktivizo.",
     "sections": [
       {
         "title": "Statusi",
         "items": [
-          "Draft është statusi i paracaktuar ndërsa oferta ndërtohet. Askush nuk mund ta porosisë.",
+          "Skicë është statusi i paracaktuar ndërsa oferta ndërtohet. Askush nuk mund ta porosisë.",
           "Aktivizo e bën të porositshëm. Kërkon një çmim dhe një monedhë, sepse një porosi pa paketë llogaritet prej tyre.",
           "Çaktivizo e nxjerr jashtë linje pa e fshirë. Edhe zgjidhja e një raportimi kundër tij mund ta çaktivizojë.",
           "Vetëm ofruesi i listimit, ose një administrator, mund ta aktivizojë ose çaktivizojë."
@@ -38,7 +38,7 @@
       {
         "title": "Dukshmëria dhe reputacioni",
         "items": [
-          "Një promovim në vazhdim (i theksuar ose i sponsorizuar) e vendos listimin në krye të renditjes së rekomanduar të dyqanit gjatë datave të tij.",
+          "Një promovim në vazhdim (i veçuar ose i sponsorizuar) e vendos listimin në krye të renditjes së rekomanduar të dyqanit gjatë datave të tij.",
           "Vlerësimet e porosive të përfunduara i japin listimit notën mesatare dhe numrin e vlerësimeve.",
           "Përdoruesit mund ta raportojnë një listim; administratorët i shqyrtojnë raportimet te Raportimet."
         ]
@@ -63,7 +63,7 @@
       },
       "pricingType": {
         "fixed": "Çmim fiks",
-        "hourly": "Në orë"
+        "hourly": "Tarifë për orë"
       }
     },
     "name": "Emri",
@@ -82,7 +82,7 @@
     "videoGallery": "Galeria e videove",
     "faqs": {
       "question": "Pyetja",
-      "answer": "Përgjigjia"
+      "answer": "Përgjigja"
     },
     "requirements": "Kërkesat",
     "tags": "Etiketat",
@@ -90,7 +90,7 @@
     "listingPackages": "Paketat",
     "listingAddOns": "Shtesat",
     "avgRating": "Vlerësimi",
-    "reviewCount": "Recensione",
+    "reviewCount": "Vlerësimet",
     "company": "Kompania",
     "createdBy": "Krijuar nga",
     "createdAt": "Krijuar më",

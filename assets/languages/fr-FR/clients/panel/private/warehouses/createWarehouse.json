@@ -10,7 +10,7 @@
     "countryLabel": "Pays",
     "countryPlaceholder": "Sélectionner le pays",
     "stateLabel": "État",
-    "statePlaceholder": "Sélectionner le canton",
+    "statePlaceholder": "Sélectionner la région",
     "cityLabel": "Ville",
     "cityPlaceholder": "Sélectionner la ville",
     "streetLabel": "Rue",
@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "Créer un entrepôt",
-    "description": "Ajoutez un emplacement de stock avec une adresse et un code PIN sur la carte."
+    "description": "Ajoutez un emplacement de stock avec une adresse et un repère sur la carte."
   },
   "formButtons": {
     "cancel": "Annuler",

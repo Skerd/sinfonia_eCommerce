@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
-  "failedTitle": "Impossibile caricare il contrassegno dell'elenco",
-  "failedDescription": "Qualcosa è andato storto durante il caricamento del flag dell'elenco. Fare clic per riprovare.",
+  "failedTitle": "Impossibile caricare la segnalazione dell'annuncio",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento della segnalazione dell'annuncio. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
-  "listingFlagSubtitle": "Bandiera dell'elenco",
-  "listingFlag": "Bandiera dell'elenco",
+  "listingFlagSubtitle": "Segnalazione dell'annuncio",
+  "listingFlag": "Segnalazione dell'annuncio",
   "overview": "Panoramica",
   "lifecycle": "Ciclo di vita",
   "details": "Dettagli",
@@ -15,7 +15,7 @@
   "reporter": "Segnalatore",
   "status": "Stato",
   "resolution": "Risoluzione",
-  "listingAction": "Azione di quotazione",
+  "listingAction": "Azione sull'annuncio",
   "createdAt": "Creato il",
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
@@ -23,8 +23,8 @@
   "deletedBy": "Eliminato da",
   "status_values": {
     "pending": "In sospeso",
-    "reviewed": "Recensito",
-    "dismissed": "Licenziato"
+    "reviewed": "Esaminata",
+    "dismissed": "Respinta"
   },
   "reason_values": {
     "inappropriate": "Contenuti inappropriati",

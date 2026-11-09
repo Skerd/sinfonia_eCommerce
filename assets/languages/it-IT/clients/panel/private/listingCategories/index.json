@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Categorie",
-  "description": "Organizza il catalogo marketplace in un albero categorie padre/figlio usato da annunci e richieste di lavoro.",
+  "description": "Organizza il catalogo marketplace in un albero categorie padre/figlio usato da annunci e richieste di attività.",
   "help": {
-    "ariaLabel": "Informazioni sulle categorie di elenchi",
-    "title": "Informazioni sulle categorie di elenchi",
+    "ariaLabel": "Informazioni sulle categorie di annunci",
+    "title": "Informazioni sulle categorie di annunci",
     "overview": "Le categorie di annunci sono l’albero proprio del marketplace, separato dalle categorie di prodotti. Annunci e richieste di attività ne scelgono una ciascuno. Gli acquirenti navigano per categorie, e i fornitori vengono abbinati alle nuove richieste di attività per categoria e città.",
     "sections": [
       {
         "title": "L’albero",
         "items": [
-          "Il nome è obbligatorio. Il genitore è facoltativo; lascialo vuoto per una categoria di primo livello. Una categoria non può stare sotto sé stessa o un suo discendente.",
+          "Il nome è obbligatorio. La categoria padre è facoltativa; lasciala vuota per una categoria di primo livello. Una categoria non può stare sotto sé stessa o un suo discendente.",
           "L’ordine ordina le categorie sorelle, le più piccole prima; gli elenchi ordinano per ordine, poi per nome.",
           "Lo slug viene generato alla creazione ed è unico nella società."
         ]
@@ -29,9 +29,9 @@
   "createCategory": "Crea categoria",
   "fields": {
     "name": "Nome",
-    "slug": "Lumaca",
+    "slug": "Slug",
     "order": "Ordine",
-    "parentListingCategory": "Categoria genitore",
+    "parentListingCategory": "Categoria padre",
     "createdBy": "Creato da",
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da"

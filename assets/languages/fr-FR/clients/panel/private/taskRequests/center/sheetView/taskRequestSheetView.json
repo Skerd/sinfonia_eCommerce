@@ -10,7 +10,7 @@
     "media": "Galerie"
   },
   "name": "Nom",
-  "title": "Modifier le type d’unité",
+  "title": "Titre",
   "status": "Statut",
   "category": "Catégorie",
   "requester": "Demandeur",
@@ -19,7 +19,7 @@
   "currency": "Devise",
   "address": "Adresse",
   "country": "Pays",
-  "state": "Canton / État",
+  "state": "Région / État",
   "city": "Ville",
   "street": "Rue",
   "postalCode": "Code postal",
@@ -38,6 +38,6 @@
   "taskRequestStatus": {
     "open": "Ouvert",
     "closed": "Fermé",
-    "awarded": "Récompensé"
+    "awarded": "Attribuée"
   }
 }

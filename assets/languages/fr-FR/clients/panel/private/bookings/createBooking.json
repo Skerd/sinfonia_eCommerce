@@ -12,9 +12,9 @@
     "orderLabel": "Commande",
     "orderPlaceholder": "Sélectionnez la commande",
     "startAtLabel": "Heure de début",
-    "startAtPlaceholder": "aaaa-MM-jjTHH : mm",
+    "startAtPlaceholder": "aaaa-MM-jjTHH:mm",
     "endAtLabel": "Heure de fin",
-    "endAtPlaceholder": "aaaa-MM-jjTHH : mm",
+    "endAtPlaceholder": "aaaa-MM-jjTHH:mm",
     "timezoneLabel": "Fuseau horaire",
     "timezonePlaceholder": "UTC"
   },

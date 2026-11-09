@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/sheetView/customerGroupSheetView.tsx",
   "customerGroupSubtitle": "Kundengruppendetails",
   "failedTitle": "Kundengruppe konnte nicht geladen werden",
-  "failedDescription": "Die Kundengruppe konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Kundengruppe konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "name": "Name",

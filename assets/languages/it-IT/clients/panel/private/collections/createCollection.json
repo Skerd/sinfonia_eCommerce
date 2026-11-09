@@ -1,24 +1,24 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
-  "title": "Crea raccolta",
+  "title": "Crea collezione",
   "form": {
     "generalSectionTitle": "Generale",
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della raccolta",
-    "slugLabel": "Lumaca",
+    "namePlaceholder": "Nome della collezione",
+    "slugLabel": "Slug",
     "slugPlaceholder": "nome-generato-automaticamente",
-    "typeLabel": "Tipo di raccolta",
+    "typeLabel": "Tipo di collezione",
     "descriptionLabel": "Descrizione",
-    "descriptionPlaceholder": "Descrizione facoltativa per questa raccolta",
+    "descriptionPlaceholder": "Descrizione facoltativa per questa collezione",
     "mainImageLabel": "Immagine di copertina",
     "isVisibleLabel": "Visibile in vetrina",
-    "positionLabel": "Ordina posizione",
+    "positionLabel": "Posizione di ordinamento",
     "positionPlaceholder": "0",
     "mediaSectionTitle": "Media",
-    "manualSectionTitle": "Prodotti manuali",
+    "manualSectionTitle": "Prodotti selezionati manualmente",
     "productsLabel": "Prodotti",
     "selectProduct": "Cerca prodotti...",
-    "removeProduct": "Rimuovere il prodotto",
+    "removeProduct": "Rimuovi prodotto",
     "dynamicSectionTitle": "Regole dinamiche",
     "ruleConditionLabel": "Condizione di corrispondenza",
     "rulesSectionTitle": "Regole",
@@ -37,7 +37,7 @@
     "seoDescriptionPlaceholder": "Descrizione SEO opzionale",
     "collectionType": {
       "manual": "Manuale",
-      "dynamic": "Dinamico"
+      "dynamic": "Dinamica"
     },
     "ruleCondition": {
       "all": "Tutte le regole (AND)",
@@ -64,24 +64,24 @@
   },
   "axios": {
     "start": {
-      "title": "Creazione della raccolta",
+      "title": "Creazione della collezione",
       "time": 3000
     },
     "success": {
-      "title": "Raccolta creata",
+      "title": "Collezione creata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile creare la raccolta",
+      "title": "Impossibile creare la collezione",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Crea raccolta",
+    "title": "Crea collezione",
     "description": "Raggruppa i prodotti manualmente o con regole di corrispondenza dinamiche."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea raccolta"
+    "submit": "Crea collezione"
   }
 }

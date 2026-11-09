@@ -21,15 +21,15 @@
   },
   "start": {
     "title": "Avviare questo ordine?",
-    "description": "L'ordine passerà alla sezione In corso. Solo il fornitore può avviare un ordine accettato.",
+    "description": "L'ordine passerà allo stato In corso. Solo il fornitore può avviare un ordine accettato.",
     "confirm": "Inizia l'ordine",
     "axios": {
       "start": {
-        "title": "Ordine di partenza",
+        "title": "Avvio dell'ordine",
         "time": 3000
       },
       "success": {
-        "title": "L'ordine è iniziato con successo",
+        "title": "Ordine avviato con successo",
         "time": 3000
       },
       "error": {

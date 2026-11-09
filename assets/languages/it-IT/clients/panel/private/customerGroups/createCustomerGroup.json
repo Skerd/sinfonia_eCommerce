@@ -23,7 +23,7 @@
   },
   "formHeader": {
     "title": "Crea gruppo clienti",
-    "description": "Definire un gruppo di clienti per le regole di prezzo e l'appartenenza."
+    "description": "Definisci un gruppo di clienti per le regole di prezzo e l'appartenenza."
   },
   "formButtons": {
     "cancel": "Annulla",

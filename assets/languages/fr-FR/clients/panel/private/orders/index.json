@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Commandes",
-  "description": "Gérer les commandes de services entre clients et fournisseurs.",
+  "description": "Gérez les commandes de services entre clients et prestataires.",
   "help": {
     "ariaLabel": "À propos des commandes",
     "title": "À propos des commandes",
@@ -12,7 +12,7 @@
         "items": [
           "En attente : créée, attend que le prestataire accepte.",
           "Acceptée : le prestataire a pris la mission ; le montant de la commande est conservé en séquestre.",
-          "En cours : le prestataire a commencé ; livraisons, révisions et libérations de jalons ont lieu ici.",
+          "En cours : le prestataire a commencé ; livraisons, révisions et libérations d’étapes ont lieu ici.",
           "Terminée : le travail a été accepté et le reste du séquestre versé.",
           "Annulée : arrêtée avant la fin ; ce qui était encore conservé a été remboursé."
         ]
@@ -32,7 +32,7 @@
           "Accepter la livraison termine la commande et libère au prestataire ce qui est encore conservé, moins les 10 % de frais de plateforme. Bloqué tant qu’un litige est ouvert.",
           "Demander une révision renvoie la livraison en attente avec un motif. Au plus 3 révisions par commande.",
           "Si le client ne répond pas à une livraison pendant 3 jours, une tâche horaire l’accepte pour lui, sauf si un litige est ouvert.",
-          "Les jalons répartissent le montant conservé : le client les crée (jamais plus que le montant de la commande au total) et les libère un par un pendant le travail. Libérer le dernier quand plus rien n’est conservé termine la commande."
+          "Les étapes répartissent le montant conservé : le client les crée (jamais plus que le montant de la commande au total) et les libère une par une pendant le travail. Libérer la dernière quand plus rien n’est conservé termine la commande."
         ]
       },
       {
@@ -45,10 +45,10 @@
       },
       {
         "title": "Argent et fiches",
-        "body": "Libérations et remboursements ne peuvent verser que ce qui est encore conservé, donc jalons, acceptation, litiges et annulation ensemble ne dépassent jamais le blocage.",
+        "body": "Libérations et remboursements ne peuvent verser que ce qui est encore conservé, donc étapes, acceptation, litiges et annulation ensemble ne dépassent jamais le blocage.",
         "items": [
           "Chaque libération est versée sur le compte Stripe connecté du prestataire s’il en a un ; la libération est inscrite au registre dans tous les cas.",
-          "La fiche de commande montre ses livraisons, jalons et révisions. Réservations, litiges et avis sont aussi rattachés à la commande.",
+          "La fiche de commande montre ses livraisons, étapes et révisions. Réservations, litiges et avis sont aussi rattachés à la commande.",
           "Les non-administrateurs ne voient que les commandes auxquelles ils participent. Seul un administrateur peut supprimer une commande, et seulement une fois finale."
         ]
       }
@@ -58,7 +58,7 @@
   "fields": {
     "status": "Statut",
     "customer": "Client",
-    "provider": "Fournisseur",
+    "provider": "Prestataire",
     "amount": "Montant",
     "currency": "Devise",
     "deliveryDueDate": "Date d’échéance",

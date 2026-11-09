@@ -5,23 +5,23 @@
   "failedDescription": "Une erreur s'est produite lors du chargement de cette configuration fiscale. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
   "overview": "Vue d'ensemble",
-  "cisCodes": "Codes CEI",
+  "cisCodes": "Codes CIS",
   "endpoints": "Points de terminaison",
   "seller": "Vendeur",
-  "related": "Connexes",
+  "related": "Associés",
   "deletion": "Suppression",
   "name": "Nom",
   "nipt": "NIPT",
   "softCode": "Code du logiciel",
-  "maintainerCode": "Code du responsable",
+  "maintainerCode": "Code du mainteneur",
   "businessUnitCode": "Code de l'unité commerciale",
   "operatorCode": "Code opérateur",
   "tcrCode": "Code TCR",
   "tcrIntId": "ID interne du TCR",
-  "tcrType": "Type de RCT",
+  "tcrType": "Type de TCR",
   "fiscalizationUrl": "URL de fiscalisation",
   "einvoiceUrl": "URL de la facture électronique",
-  "selfcareUrl": "URL d'auto-assistance",
+  "selfcareUrl": "URL Selfcare",
   "proxyUrl": "URL du proxy",
   "sellerName": "Nom du vendeur",
   "sellerAddress": "Adresse du vendeur",
@@ -31,7 +31,7 @@
   "certificate": "Certificat",
   "certificatePassword": "Mot de passe du certificat",
   "isActive": "Actif",
-  "isVatRegistered": "TVA enregistrée",
+  "isVatRegistered": "Assujetti à la TVA",
   "company": "Entreprise",
   "lifecycle": "Cycle de vie",
   "createdBy": "Créé par",
@@ -42,11 +42,11 @@
   "yes": "Oui",
   "no": "Non",
   "fiscalEnvironment": {
-    "test": "Tester",
-    "production": "Fabrication"
+    "test": "Test",
+    "production": "Production"
   },
   "fiscalTcrType": {
-    "REGULAR": "Régulier",
-    "VENDING": "Vente automatique"
+    "REGULAR": "Standard",
+    "VENDING": "Distributeur automatique"
   }
 }

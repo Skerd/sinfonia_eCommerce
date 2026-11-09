@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Annunci",
-  "description": "Gestisci elenchi di prodotti e servizi per la vetrina del tuo tenant.",
+  "description": "Gestisci gli annunci di prodotti e servizi per la vetrina del tuo tenant.",
   "help": {
     "ariaLabel": "Informazioni sugli annunci",
     "title": "Informazioni sugli annunci",
@@ -40,7 +40,7 @@
         "items": [
           "Una promozione in corso (in evidenza o sponsorizzata) porta l’annuncio in cima all’ordinamento consigliato del negozio per le sue date.",
           "Le recensioni sugli ordini completati danno all’annuncio la valutazione media e il numero di recensioni.",
-          "Gli utenti possono segnalare un annuncio; gli amministratori esaminano le segnalazioni nell’elenco delle segnalazioni."
+          "Gli utenti possono segnalare un annuncio; gli amministratori esaminano le segnalazioni in Segnalazioni degli annunci."
         ]
       },
       {
@@ -52,7 +52,7 @@
       }
     ]
   },
-  "createListing": "Crea inserzione",
+  "createListing": "Crea annuncio",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
@@ -67,7 +67,7 @@
       }
     },
     "name": "Nome",
-    "title": "Modifica tipo di unità",
+    "title": "Titolo",
     "description": "Descrizione",
     "category": "Categoria",
     "provider": "Fornitore",
@@ -82,7 +82,7 @@
     "videoGallery": "Galleria video",
     "faqs": {
       "question": "Domanda",
-      "answer": "Rispondi"
+      "answer": "Risposta"
     },
     "requirements": "Requisiti",
     "tags": "Tag",

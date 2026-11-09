@@ -16,7 +16,7 @@
   "defaultFooter": "Faleminderit për blerjen!",
   "fallbackShop": "POS",
   "totalWithoutVat": "TOTALI PA TVSH",
-  "vatRate": "PA TVSH - {rate}",
+  "vatRate": "TVSH - {rate}",
   "totalVat": "Total TVSH",
   "issueDate": "Data e Lëshimit",
   "fiscalNumber": "Numër Fiskalizimi",

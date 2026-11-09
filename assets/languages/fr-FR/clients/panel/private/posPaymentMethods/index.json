@@ -1,17 +1,17 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
-  "title": "Méthodes de paiement aux points de vente",
-  "description": "Configurez les espèces, les cartes et autres méthodes de paiement de caisse.",
+  "title": "Modes de paiement au point de vente",
+  "description": "Configurez les espèces, les cartes et les autres modes de paiement de caisse.",
   "help": {
-    "ariaLabel": "À propos des méthodes de paiement aux points de vente",
-    "title": "À propos des méthodes de paiement aux points de vente",
+    "ariaLabel": "À propos des modes de paiement du point de vente",
+    "title": "À propos des modes de paiement du point de vente",
     "overview": "Un mode de paiement est un bouton de la caisse : espèces ou carte. Les caisses choisissent les modes qu’elles proposent. Nom et type sont obligatoires ; la séquence est l’ordre d’affichage des boutons.",
     "sections": [
       {
         "title": "Espèces",
         "items": [
           "Les montants rapides sont des valeurs séparées par des virgules, par exemple 0.5, 1, 5, 10, 20, affichées comme puces en un clic. Une liste vide utilise les puces intégrées.",
-          "Paiements en espèces, monnaie rendue, remboursements en espèces et mouvements du tiroir mettent à jour l’espèce attendue de la séance."
+          "Paiements en espèces, monnaie rendue, remboursements en espèces et mouvements du tiroir mettent à jour l’espèce attendue de la session."
         ]
       },
       {
@@ -41,11 +41,11 @@
     "name": "Nom",
     "type": "Type",
     "sequence": "Séquence",
-    "cashQuickAmounts": "Encaisser des montants rapides",
+    "cashQuickAmounts": "Montants rapides en espèces",
     "terminalEnabled": "Terminal activé",
-    "terminalProvider": "Fournisseur de terminaux",
+    "terminalProvider": "Fournisseur du terminal",
     "terminalHost": "Hôte du terminal",
-    "terminalPort": "Port terminal",
+    "terminalPort": "Port du terminal",
     "terminalId": "ID du terminal",
     "terminalPath": "Chemin du terminal",
     "isActive": "Actif",

@@ -2,13 +2,13 @@
   "path": "src/modules/eCommerce/components/custom/promotions/changePromotionLifecycleAction.tsx",
   "cancel": "Anulo",
   "pause": {
-    "title": "Ndërprit promovimin",
-    "description": "Jeni të sigurt që doni të ndërpresni promovimin",
-    "confirm": "Ndërprit",
+    "title": "Pauzo promovimin",
+    "description": "Jeni të sigurt që doni të pauzoni promovimin",
+    "confirm": "Pauzo",
     "axios": {
-      "start": { "title": "Duke ndërpritur promovimin", "time": 3000 },
-      "success": { "title": "Promovimi u ndërpre me sukses", "time": 3000 },
-      "error": { "title": "Nuk mund të ndërprehet promovimi, provoni përsëri", "time": 3000 }
+      "start": { "title": "Duke pauzuar promovimin", "time": 3000 },
+      "success": { "title": "Promovimi u pauzua me sukses", "time": 3000 },
+      "error": { "title": "Nuk mund të pauzohet promovimi, provoni përsëri", "time": 3000 }
     }
   },
   "resume": {

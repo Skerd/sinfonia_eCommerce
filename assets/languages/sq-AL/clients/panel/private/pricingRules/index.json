@@ -3,8 +3,8 @@
   "title": "Rregullat e çmimeve",
   "description": "Automatizoni ndryshimet e çmimeve sipas segmentit ose produktit.",
   "help": {
-    "ariaLabel": "Rreth Rregullat e çmimeve",
-    "title": "Rreth Rregullat e çmimeve",
+    "ariaLabel": "Rreth rregullave të çmimeve",
+    "title": "Rreth rregullave të çmimeve",
     "overview": "Rregullat e çmimeve ndryshojnë automatikisht çmimin për njësi të një rreshti, para çdo kodi zbritjeje. Përdorini për çmime shumice, ulje sipas kategorisë ose shtesa. Çdo rresht i shportës merr të shumtën një rregull. Emri, tipi, vlera dhe fusha e zbatimit janë të detyrueshme.",
     "sections": [
       {

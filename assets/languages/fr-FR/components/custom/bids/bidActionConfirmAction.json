@@ -6,7 +6,7 @@
     "confirm": "Accepter l'offre",
     "axios": {
       "start": {
-        "title": "Accepter l'offre",
+        "title": "Acceptation de l'offre",
         "time": 3000
       },
       "success": {
@@ -25,7 +25,7 @@
     "confirm": "Rejeter l'offre",
     "axios": {
       "start": {
-        "title": "Rejeter l'offre",
+        "title": "Rejet de l'offre",
         "time": 3000
       },
       "success": {

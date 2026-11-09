@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/cardView/listingAddOnCard.tsx",
-  "failedTitle": "Échec du chargement du module complémentaire de liste",
+  "failedTitle": "Échec du chargement du module complémentaire d'annonce",
   "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "listing": "Annonce",
   "priceAmount": "Prix",
   "deliveryDays": "Jours de livraison",
-  "days": "ré",
-  "provider": "Fournisseur"
+  "days": "j",
+  "provider": "Prestataire"
 }

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
   "title": "Shëno kthimin si të pranuar",
-  "description": "Ky kthim i aprovuar do të shënohet si i pranuar.",
+  "description": "Ky kthim i miratuar do të shënohet si i pranuar.",
   "cancel": "Anulo",
   "confirm": "Shëno të pranuar",
   "busy": "Duke punuar…",

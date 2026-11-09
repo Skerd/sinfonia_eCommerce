@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx",
   "warehouseSubtitle": "Lagerdetails",
   "failedTitle": "Lager konnte nicht geladen werden",
-  "failedDescription": "Das Lager konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Das Lager konnte nicht geladen werden. Klicken Sie, um es erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "address": "Adresse",

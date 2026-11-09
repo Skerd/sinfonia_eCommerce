@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/index.tsx",
   "title": "Configurazioni POS",
-  "description": "Punti vendita e allestimenti di cassa.",
+  "description": "Punti vendita e impostazioni di cassa.",
   "help": {
-    "ariaLabel": "Informazioni su Configurazioni POS",
-    "title": "Informazioni su Configurazioni POS",
-    "overview": "Una configurazione POS è una cassa: i suoi pulsanti di pagamento, i magazzini da cui vende, la valuta, gli scontrini, la fiscalizzazione e ciò che il cassiere può fare. Un cassiere vi apre una sessione dalla pagina Punto di vendita.",
+    "ariaLabel": "Informazioni sulle configurazioni POS",
+    "title": "Informazioni sulle configurazioni POS",
+    "overview": "Una configurazione POS è una cassa: i suoi pulsanti di pagamento, i magazzini da cui vende, la valuta, le ricevute, la fiscalizzazione e ciò che il cassiere può fare. Un cassiere vi apre una sessione dalla pagina Punto di vendita.",
     "sections": [
       {
         "title": "Cosa serve a una cassa",
@@ -15,7 +15,7 @@
           "I magazzini sono le fonti di giacenza della cassa, in ordine: una vendita attinge dal primo, poi dal successivo. Si possono assegnare solo magazzini attivi. L’indirizzo del primo magazzino decide anche le aliquote IVA delle vendite in cassa.",
           "Una valuta è necessaria per aprire una sessione e vendere.",
           "La configurazione fiscale collega la cassa alla fiscalizzazione albanese CIS. Senza, la cassa non fiscalizza.",
-          "Intestazione e piè di pagina dello scontrino vengono stampati su ogni scontrino."
+          "Intestazione e piè di pagina della ricevuta vengono stampati su ogni ricevuta."
         ]
       },
       {
@@ -71,9 +71,9 @@
   "fields": {
     "name": "Nome",
     "paymentMethods": "Metodi di pagamento",
-    "managers": "Manager",
+    "managers": "Responsabili",
     "managerPins": {
-      "user": "Direttore",
+      "user": "Responsabile",
       "pinHash": "Hash del PIN",
       "pinReset": {
         "code": "Codice di reimpostazione PIN",
@@ -87,12 +87,12 @@
     "receiptHeader": "Intestazione della ricevuta",
     "receiptFooter": "Piè di pagina della ricevuta",
     "ifaceBarcodeScanner": "Lettore di codici a barre",
-    "ifaceCashControl": "Controllo della liquidità",
+    "ifaceCashControl": "Controllo contanti",
     "allowDiscount": "Consenti sconto",
     "allowQuantityChange": "Consenti cambio quantità",
-    "allowOversell": "Consenti vendite eccessive",
+    "allowOversell": "Consenti vendita oltre la giacenza",
     "pinForDiscount": "PIN per lo sconto",
-    "pinForCashOut": "PIN per incassare",
+    "pinForCashOut": "PIN per i prelievi",
     "pinForRefund": "PIN per il rimborso",
     "isActive": "Attivo",
     "createdBy": "Creato da",

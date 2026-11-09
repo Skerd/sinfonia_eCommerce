@@ -20,7 +20,7 @@
         "title": "Taux",
         "items": [
           "Chaque taux a un nom, un pourcentage et ce à quoi il s’applique : tous les produits, physiques seulement ou numériques seulement.",
-          "Les produits physiques, variables et lots prennent les taux physiques ; les produits numériques, les taux numériques ; chaque produit prend les taux « tous ».",
+          "Les produits physiques, variables et packs prennent les taux physiques ; les produits numériques, les taux numériques ; chaque produit prend les taux « tous ».",
           "Un taux composé est calculé sur la base plus les taxes déjà ajoutées avant lui."
         ]
       },
@@ -40,13 +40,13 @@
   "fields": {
     "name": "Nom",
     "country": "Pays",
-    "states": "États / cantons",
+    "states": "États / régions",
     "postalCodePatterns": "Modèles de codes postaux",
     "rates": {
       "name": "Nom du tarif",
       "rate": "Tarif",
       "isCompound": "Composé",
-      "appliesTo": "Le tarif s'applique à"
+      "appliesTo": "Le taux s'applique à"
     },
     "priority": "Priorité",
     "isActive": "Actif",

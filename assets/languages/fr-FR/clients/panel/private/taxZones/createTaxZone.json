@@ -11,14 +11,14 @@
     "priorityLabel": "Priorité",
     "priorityPlaceholder": "0",
     "statesLabel": "États / régions",
-    "selectState": "Sélectionner le canton",
+    "selectState": "Sélectionner la région",
     "removeState": "Supprimer l'état",
     "postalCodePatternsLabel": "Modèles de codes postaux",
     "postalCodePatternsPlaceholder": "par ex. 1000* ou AL-*",
     "removePostalCodePattern": "Supprimer le motif",
     "ratesSectionTitle": "Taux d'imposition",
     "rateAddRow": "Ajouter un tarif",
-    "rateRemoveRow": "Supprimer le taux",
+    "rateRemoveRow": "Supprimer le tarif",
     "rateRowTitle": "Tarif sans titre",
     "rateNameLabel": "Nom du tarif",
     "rateNamePlaceholder": "Taux standard",
@@ -49,7 +49,7 @@
   },
   "formHeader": {
     "title": "Créer une zone fiscale",
-    "description": "Définissez la géographie de la destination et les taux de taxe appliqués au moment du paiement."
+    "description": "Définissez la zone géographique de destination et les taux de taxe appliqués lors du paiement."
   },
   "formButtons": {
     "cancel": "Annuler",

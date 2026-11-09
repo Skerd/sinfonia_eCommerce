@@ -4,7 +4,7 @@
   "description": "Questo blocco diventerà visibile nella vetrina quando la sua pianificazione lo consentirà.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione del blocco CMS…",

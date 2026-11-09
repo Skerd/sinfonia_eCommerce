@@ -9,9 +9,9 @@
     "orderLabel": "Order",
     "orderPlaceholder": "Select order",
     "startAtLabel": "Start time",
-    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "startAtPlaceholder": "YYYY-MM-DD HH:mm",
     "endAtLabel": "End time",
-    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "endAtPlaceholder": "YYYY-MM-DD HH:mm",
     "timezoneLabel": "Timezone",
     "timezonePlaceholder": "UTC"
   },

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx",
-  "title": "Connexion des bornes de test",
-  "description": "Sondez le pont du terminal de point de vente bancaire sans facturer de paiement.",
+  "title": "Tester la connexion du terminal",
+  "description": "Testez le pont du terminal de paiement bancaire sans débiter de paiement.",
   "cancel": "Annuler",
   "confirm": "Tester la connexion",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Test de connexion du terminal…",

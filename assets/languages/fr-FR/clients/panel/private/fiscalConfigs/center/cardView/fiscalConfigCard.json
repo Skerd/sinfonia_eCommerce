@@ -4,9 +4,9 @@
   "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
   "nipt": "NIPT",
-  "tcrCode": "RCT",
+  "tcrCode": "TCR",
   "certificate": "Certificat",
-  "certificateYes": "Téléchargé",
+  "certificateYes": "Téléversé",
   "certificateNo": "Manquant",
   "active": "Actif",
   "inactive": "Inactif"

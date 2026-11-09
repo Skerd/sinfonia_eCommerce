@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Inventaires",
-  "description": "Compter un entrepôt et corriger son stock.",
+  "description": "Inventoriez un entrepôt et corrigez son stock.",
   "help": {
-    "ariaLabel": "À propos des comptages de stock",
-    "title": "À propos des comptages de stock",
+    "ariaLabel": "À propos des inventaires",
+    "title": "À propos des inventaires",
     "overview": "Un inventaire enregistre ce qui est réellement en rayon dans un entrepôt, puis corrige « en stock » en conséquence. Il reste un brouillon pendant le comptage ; l’appliquer est le moment où les nombres changent.",
     "sections": [
       {
@@ -12,7 +12,7 @@
         "body": "Compter ne change rien. Appliquer, si.",
         "items": [
           "Un inventaire concerne un entrepôt et reste un inventaire de cet entrepôt.",
-          "Chaque ligne est un produit, une variante facultative, la quantité attendue à l’ajout de la ligne et la quantité comptée. Les lignes doivent être des articles différents suivis en stock ; un lot ne peut pas être une ligne.",
+          "Chaque ligne est un produit, une variante facultative, la quantité attendue à l’ajout de la ligne et la quantité comptée. Les lignes doivent être des articles différents suivis en stock ; un pack ne peut pas être une ligne.",
           "Laissez la quantité comptée vide pour un article non compté ; appliquer le laisse tel quel.",
           "Seul un brouillon peut être modifié, appliqué ou annulé."
         ]

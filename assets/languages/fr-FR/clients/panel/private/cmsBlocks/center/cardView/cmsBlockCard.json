@@ -8,9 +8,9 @@
     "featured_collection": "Collection en vedette",
     "flash_sale": "Vente Flash",
     "grid": "Grille",
-    "hero_banner": "Bannière de héros",
+    "hero_banner": "Bannière principale",
     "promotional_section": "Section promotionnelle",
-    "slider": "Curseur",
+    "slider": "Carrousel",
     "trending": "Tendance",
     "video": "Vidéo"
   },
@@ -18,7 +18,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
   "failedTitle": "Échec du chargement du bloc CMS",
   "failedDescription": "Touchez pour réessayer.",
-  "position": "Poste",
-  "title": "Modifier le type d’unité",
+  "position": "Position",
+  "title": "Titre",
   "type": "Type"
 }

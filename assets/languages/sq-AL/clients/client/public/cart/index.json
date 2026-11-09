@@ -21,7 +21,7 @@
   "giftCardWithCode": "Kartë dhuratë ({code})",
   "removeGiftCardError": "Karta dhuratë nuk u hoq",
   "estimatedTotal": "Totali i parashikuar",
-  "shippingNote": "Transporti dhe tatimi llogariten në arkë.",
+  "shippingNote": "Transporti dhe tatimi llogariten gjatë pagesës.",
   "codesToggle": "Kod zbritjeje ose karte dhuratë",
   "discountCode": "Kodi i zbritjes",
   "giftCardCode": "Kodi i kartës dhuratë",

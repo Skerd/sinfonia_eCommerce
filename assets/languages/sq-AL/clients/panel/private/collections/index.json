@@ -70,7 +70,7 @@
         "items": [
           "Manual: koleksioni përmban pikërisht produktet që shtoni.",
           "Dinamik: anëtarësia llogaritet drejtpërdrejt nga rregullat, dhe kualifikohen vetëm produktet aktive. Një koleksion dinamik pa rregulla nuk përmban asgjë.",
-          "Të gjitha kushtet kërkon çdo rregull; të paktën një kërkon vetëm një."
+          "«Të gjitha rregullat» kërkon që të plotësohet çdo rregull; «Çdo rregull» kërkon të paktën një."
         ]
       },
       {

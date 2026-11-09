@@ -23,7 +23,7 @@
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
   "price": "Prezzo",
-  "compareAtPrice": "Confronta il prezzo",
+  "compareAtPrice": "Prezzo di confronto",
   "costPrice": "Prezzo di costo",
   "currency": "Valuta",
   "weight": "Peso",
@@ -37,7 +37,7 @@
   "yes": "Sì",
   "no": "No",
   "variantStatus": {
-    "active": "Attivo",
-    "inactive": "Inattivo"
+    "active": "Attiva",
+    "inactive": "Inattiva"
   }
 }

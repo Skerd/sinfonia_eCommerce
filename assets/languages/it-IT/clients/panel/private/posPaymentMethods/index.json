@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/index.tsx",
   "title": "Metodi di pagamento POS",
-  "description": "Configura contanti, carte e altri metodi di pagamento fino alla cassa.",
+  "description": "Configura contanti, carte e altri metodi di pagamento della cassa.",
   "help": {
-    "ariaLabel": "Informazioni su Metodi di pagamento POS",
-    "title": "Informazioni su Metodi di pagamento POS",
+    "ariaLabel": "Informazioni sui metodi di pagamento POS",
+    "title": "Informazioni sui metodi di pagamento POS",
     "overview": "Un metodo di pagamento è un pulsante della cassa: contanti o carta. Le casse scelgono quali metodi offrire. Nome e tipo sono obbligatori; la sequenza è l’ordine in cui compaiono i pulsanti.",
     "sections": [
       {
@@ -21,7 +21,7 @@
           "Terminale spento: il cassiere passa la carta su un dispositivo separato e registra il pagamento.",
           "Provider manuale: la cassa chiede al cassiere di confermare l’addebito sul terminale esterno.",
           "Provider HTTP locale: la cassa invia l’importo, con l’ID del terminale, a un ponte del terminale su protocollo, host, porta e percorso, e attende approvazione, rifiuto o timeout.",
-          "Prova connessione verifica che il ponte risponda prima di usarlo in cassa."
+          "Testa la connessione verifica che il ponte risponda prima di usarlo in cassa."
         ]
       },
       {
@@ -41,13 +41,13 @@
     "name": "Nome",
     "type": "Tipo",
     "sequence": "Sequenza",
-    "cashQuickAmounts": "Importi in contanti rapidi",
+    "cashQuickAmounts": "Importi rapidi in contanti",
     "terminalEnabled": "Terminale abilitato",
-    "terminalProvider": "Fornitore di terminali",
-    "terminalHost": "Ospite terminale",
-    "terminalPort": "Porto terminale",
+    "terminalProvider": "Fornitore del terminale",
+    "terminalHost": "Host del terminale",
+    "terminalPort": "Porta del terminale",
     "terminalId": "Identificativo del terminale",
-    "terminalPath": "Percorso terminale",
+    "terminalPath": "Percorso del terminale",
     "isActive": "Attivo",
     "createdBy": "Creato da",
     "company": "Azienda",

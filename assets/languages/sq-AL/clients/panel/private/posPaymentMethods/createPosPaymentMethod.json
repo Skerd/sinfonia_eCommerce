@@ -13,7 +13,7 @@
     "terminalSectionTitle": "Terminal bankar POS",
     "terminalEnabledLabel": "Lidh terminalin bankar POS",
     "terminalForcesCardHint": "Lidhja e terminalit bankar POS vendos llojin në Kartë. Shkëputja e vendos në Cash.",
-    "terminalProviderLabel": "Furnizuesi i terminalit",
+    "terminalProviderLabel": "Ofruesi i terminalit",
     "terminalProviderPlaceholder": "Zgjidh ofruesin",
     "terminalProtocolLabel": "Protokoli",
     "terminalProtocolPlaceholder": "Zgjidh protokollin",
@@ -23,7 +23,7 @@
     "terminalPortPlaceholder": "8080",
     "terminalIdLabel": "ID e terminalit",
     "terminalIdPlaceholder": "TID / POIID",
-    "terminalPathLabel": "Rruga e terminalit",
+    "terminalPathLabel": "Shtegu i terminalit",
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Cash",

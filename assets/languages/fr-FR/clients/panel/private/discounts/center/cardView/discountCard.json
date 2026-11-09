@@ -3,15 +3,15 @@
   "code": "Code",
   "discountType": {
     "buy_x_get_y": "Achetez X, obtenez Y",
-    "fixed": "Corrigé",
+    "fixed": "Fixe",
     "free_shipping": "Livraison gratuite",
     "percentage": "Pourcentage"
   },
   "inactive": "Inactif",
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
-  "failedTitle": "Échec du chargement de la réduction",
+  "failedTitle": "Échec du chargement de la remise",
   "failedDescription": "Touchez pour réessayer.",
-  "title": "Modifier le type d’unité",
+  "title": "Titre",
   "type": "Type",
   "value": "Valeur"
 }

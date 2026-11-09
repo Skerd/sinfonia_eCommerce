@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "À propos des commandes produits",
     "title": "À propos des commandes produits",
-    "overview": "Une commande produit est un achat client dans la boutique, ou une vente en caisse dupliquée pour la comptabilité. Le checkout l’écrit ; cette page n’en crée jamais. Chaque commande porte trois statuts qui évoluent séparément — la commande, le paiement et l’exécution — ainsi qu’une chronologie de chaque étape et de qui l’a faite.",
+    "overview": "Une commande produit est un achat client dans la boutique, ou une vente en caisse dupliquée pour la comptabilité. Le checkout l’écrit ; cette page n’en crée jamais. Chaque commande porte trois statuts qui évoluent séparément — la commande, le paiement et l’expédition — ainsi qu’une chronologie de chaque étape et de qui l’a faite.",
     "sections": [
       {
         "title": "Comment une commande est créée",
@@ -20,11 +20,11 @@
       },
       {
         "title": "Les trois statuts",
-        "body": "Lisez-les ensemble. Une commande peut être payée et non exécutée, ou expédiée et partiellement remboursée.",
+        "body": "Lisez-les ensemble. Une commande peut être payée et non expédiée, ou expédiée et partiellement remboursée.",
         "items": [
           "Statut de commande : en attente, confirmée, en préparation, expédiée, livrée, annulée, remboursée.",
           "Statut de paiement : non payé, autorisé, payé, partiellement remboursé, remboursé, annulé (voided).",
-          "Statut d’exécution : non exécutée, partiellement exécutée, exécutée, retournée. Il est déduit des envois de la commande.",
+          "Statut d’expédition : non expédiée, partiellement expédiée, expédiée, retournée. Il est déduit des envois de la commande.",
           "Expédiée et livrée sont aussi déduites : expédiée dès que chaque ligne est partie, livrée dès que chaque envoi non échoué est livré."
         ]
       },
@@ -63,9 +63,9 @@
         "title": "Où se trouve le reste du travail",
         "body": "La commande est l’en-tête. Envois et retours sont des fiches à part.",
         "items": [
-          "Chaque envoi est une ligne sous Réalisations, avec son propre statut en attente, expédié, livré ou échoué.",
+          "Chaque envoi est une ligne sous Expéditions, avec son propre statut en attente, expédié, livré ou échoué.",
           "Une demande de retour, d’échange ou de remboursement est une ligne sous Demandes de retour. La terminer peut rembourser cette commande.",
-          "Les ventes en caisse apparaissent ici déjà livrées et payées, marquées comme ventes POS, avec une adresse de retrait en magasin.",
+          "Les ventes en caisse apparaissent ici déjà livrées et payées, marquées comme ventes PDV, avec une adresse de retrait en magasin.",
           "Supprimer une commande est une suppression douce et elle peut être restaurée."
         ]
       }
@@ -77,7 +77,7 @@
       "status": {
         "pending": "En attente",
         "confirmed": "Confirmé",
-        "processing": "Traitement",
+        "processing": "En préparation",
         "shipped": "Expédié",
         "delivered": "Livré",
         "cancelled": "Annulé",
@@ -92,9 +92,9 @@
         "voided": "Annulée"
       },
       "fulfillmentStatus": {
-        "unfulfilled": "Insatisfait",
-        "partially_fulfilled": "Partiellement réalisé",
-        "fulfilled": "Réalisé",
+        "unfulfilled": "Non expédiée",
+        "partially_fulfilled": "Partiellement expédiée",
+        "fulfilled": "Expédiée",
         "returned": "Retourné"
       }
     },
@@ -110,14 +110,14 @@
     "grandTotal": "Total",
     "currency": "Devise",
     "shippingAddress": {
-      "firstName": "Prénom d'expédition",
-      "lastName": "Nom de famille d'expédition",
-      "phone": "Téléphone d'expédition",
-      "street": "Rue maritime",
-      "city": "Ville d'expédition",
-      "state": "État d'expédition",
-      "postalCode": "Code postal d'expédition",
-      "country": "Pays d'expédition"
+      "firstName": "Prénom de livraison",
+      "lastName": "Nom de famille de livraison",
+      "phone": "Téléphone de livraison",
+      "street": "Rue de livraison",
+      "city": "Ville de livraison",
+      "state": "État de livraison",
+      "postalCode": "Code postal de livraison",
+      "country": "Pays de livraison"
     },
     "billingAddress": {
       "firstName": "Prénom de facturation",
@@ -130,7 +130,7 @@
       "country": "Pays de facturation"
     },
     "paymentStatus": "Paiement",
-    "fulfillmentStatus": "Accomplissement",
+    "fulfillmentStatus": "Expédition",
     "status": "Statut",
     "appliedDiscounts": {
       "discount": "Remise appliquée",
@@ -144,7 +144,7 @@
     },
     "shippingRate": {
       "name": "Tarif d'expédition",
-      "carrier": "Transporteur maritime",
+      "carrier": "Transporteur",
       "price": "Prix d'expédition"
     },
     "notes": "Notes",

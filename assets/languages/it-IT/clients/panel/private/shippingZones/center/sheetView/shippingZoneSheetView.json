@@ -18,13 +18,13 @@
   "deletedBy": "Eliminato da",
   "countries": "Paesi",
   "states": "Stati/regioni",
-  "postalCodePatterns": "Modelli di codici postali",
+  "postalCodePatterns": "Schemi di codici postali",
   "country": "Paese",
   "state": "Cantone / Stato",
   "rateName": "Nome",
   "rateType": "Tipo",
   "ratePrice": "Prezzo",
-  "carrier": "Portatore",
+  "carrier": "Corriere",
   "estimatedDeliveryDays": "Stima giorni di consegna",
   "minWeight": "Peso minimo",
   "maxWeight": "Peso massimo",
@@ -35,10 +35,10 @@
   "yes": "Sì",
   "no": "No",
   "shippingRateType": {
-    "flat": "Piatto",
-    "weight": "Basato sul peso",
+    "flat": "Forfettaria",
+    "weight": "In base al peso",
     "price": "Importo dell'ordine",
     "quantity": "Quantità",
-    "free": "Libero"
+    "free": "Gratuita"
   }
 }

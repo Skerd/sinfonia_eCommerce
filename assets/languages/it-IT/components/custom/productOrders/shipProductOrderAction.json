@@ -3,11 +3,11 @@
   "cancel": "Annulla",
   "ship": {
     "title": "Spedisci l'ordine",
-    "description": "Crea un evasione con i dettagli di tracciabilità e contrassegna l'ordine come spedito.",
-    "carrierLabel": "Portatore",
+    "description": "Crea un'evasione con i dettagli di tracciamento e contrassegna l'ordine come spedito.",
+    "carrierLabel": "Corriere",
     "trackingNumberLabel": "Numero di tracciamento",
-    "trackingUrlLabel": "URL di monitoraggio",
-    "confirm": "Nave",
+    "trackingUrlLabel": "URL di tracciamento",
+    "confirm": "Spedisci",
     "axios": {
       "success": "Ordine spedito",
       "error": "Impossibile spedire l'ordine"

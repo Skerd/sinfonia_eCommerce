@@ -8,8 +8,8 @@
     "_idLabel": "ID record",
     "nameLabel": "Nome",
     "namePlaceholder": "Nome della categoria",
-    "parentCategoryLabel": "Categoria genitore",
-    "parentCategoryPlaceholder": "Genitore facoltativo",
+    "parentCategoryLabel": "Categoria padre",
+    "parentCategoryPlaceholder": "Categoria padre facoltativa",
     "orderLabel": "Ordine di visualizzazione",
     "orderPlaceholder": "0",
     "editCategoryTitle": "Modifica categoria",
@@ -17,7 +17,7 @@
   },
   "axios": {
     "start": {
-      "title": "Categoria di salvataggio",
+      "title": "Salvataggio della categoria",
       "time": 3000
     },
     "success": {

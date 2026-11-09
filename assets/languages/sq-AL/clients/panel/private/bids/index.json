@@ -19,7 +19,7 @@
         "title": "Statuset dhe veprimet",
         "body": "Vetëm një ofertë në pritje mund të pranohet ose refuzohet.",
         "items": [
-          "Prano (vetëm kërkuesi): kjo ofertë bëhet e pranuar, çdo ofertë tjetër në pritje për kërkesën refuzohet, kërkesa caktohet dhe hapet një porosi në pritje me shumën e ofertës dhe një afat nga ditët e saj të dorëzimit. Ofertuesit njoftohen.",
+          "Prano (vetëm kërkuesi): kjo ofertë bëhet e pranuar, çdo ofertë tjetër në pritje për kërkesën refuzohet, kërkesa shënohet si e dhënë dhe hapet një porosi në pritje me shumën e ofertës dhe një afat nga ditët e saj të dorëzimit. Ofertuesit njoftohen.",
           "Refuzo: kërkuesi e refuzon, ose ofertuesi e tërheq. Njoftohet vetëm një ofertues i refuzuar."
         ]
       },

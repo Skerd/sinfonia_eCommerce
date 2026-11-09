@@ -2,7 +2,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Impossibile inviare un'offerta"
+      "title": "Impossibile inviare l'offerta"
     },
     "start": {
       "time": 3000,
@@ -27,12 +27,12 @@
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Invia un'offerta"
+    "submit": "Invia offerta"
   },
   "formHeader": {
     "description": "Invia un'offerta per una richiesta di attività.",
     "title": "Crea offerta"
   },
   "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",
-  "title": "Modifica tipo di unità"
+  "title": "Titolo"
 }

@@ -12,7 +12,7 @@
         "body": "Tant que c’est un brouillon, rien n’a quitté l’entrepôt source et le document peut encore changer.",
         "items": [
           "Source et destination sont obligatoires et doivent être deux entrepôts différents de cette société.",
-          "Chaque ligne est un produit, une variante facultative et une quantité. Chaque ligne doit être un article différent suivi en stock ; un lot ne peut pas être une ligne, déplacez plutôt ses composants.",
+          "Chaque ligne est un produit, une variante facultative et une quantité. Chaque ligne doit être un article différent suivi en stock ; un pack ne peut pas être une ligne, déplacez plutôt ses composants.",
           "Seul un brouillon peut être modifié, terminé ou annulé."
         ]
       },

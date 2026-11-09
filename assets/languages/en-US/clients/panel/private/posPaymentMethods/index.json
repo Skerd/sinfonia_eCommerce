@@ -20,7 +20,7 @@
         "items": [
           "Terminal off: the cashier takes the card on a separate device and records the payment.",
           "Manual provider: the till asks the cashier to confirm the charge on the external terminal.",
-          "Local HTTP provider: the till sends the amount to a terminal bridge at protocol, host, port, and path, with the terminal id, and waits for approval, decline, or timeout.",
+          "Local HTTP provider: the till sends the amount to a terminal bridge at protocol, host, port, and path, with the terminal ID, and waits for approval, decline, or timeout.",
           "Test connection checks that the bridge answers before you use it at the till."
         ]
       },

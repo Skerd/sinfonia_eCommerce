@@ -6,7 +6,7 @@
     },
     "start": {
       "time": 3000,
-      "title": "Litige d'ouverture"
+      "title": "Ouverture du litige"
     },
     "success": {
       "time": 3000,
@@ -21,12 +21,12 @@
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Litige ouvert"
+    "submit": "Ouvrir un litige"
   },
   "formHeader": {
     "description": "Soumettez un litige pour une commande qui présente un problème.",
-    "title": "Litige ouvert"
+    "title": "Ouvrir un litige"
   },
   "path": "src/modules/eCommerce/clients/panel/private/disputes/createDispute.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

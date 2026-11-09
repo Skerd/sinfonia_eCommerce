@@ -33,7 +33,7 @@
         "items": [
           "The payments must cover the total. Cash given beyond the total is returned as change and only the net cash enters the drawer.",
           "A card method with a terminal charges the terminal first: manual means the cashier confirms on an external device; local HTTP sends the amount to the terminal bridge and waits for approval, decline, or timeout.",
-          "Paying writes the POS order as paid, the stock movements, and the mirrored product order. A repeated payment request for the same sale is recognised and not charged twice.",
+          "Paying writes the POS order as paid, the stock movements, and the mirrored product order. A repeated payment request for the same sale is recognized and not charged twice.",
           "If the till has an active fiscal configuration with a certificate, the sale is fiscalized with CIS and an e-invoice is registered. The sale still completes if CIS returns an error; the result is stored on the order."
         ]
       },

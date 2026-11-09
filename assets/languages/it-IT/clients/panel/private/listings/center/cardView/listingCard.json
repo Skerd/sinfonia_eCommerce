@@ -1,9 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/center/cardView/listingCard.tsx",
-  "failedTitle": "Impossibile caricare l'elenco",
+  "failedTitle": "Impossibile caricare l'annuncio",
   "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
-  "title": "Modifica tipo di unità",
+  "title": "Titolo",
   "status": "Stato",
   "price": "Prezzo",
   "category": "Categoria",

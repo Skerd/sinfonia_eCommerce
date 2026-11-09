@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/editCustomerGroup.tsx",
   "title": "Modifier le groupe de clients",
   "errorTitle": "Échec du chargement du groupe de clients",
-  "errorDescription": "Impossible de charger ce groupe de clients. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger ce groupe de clients. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
@@ -12,7 +12,7 @@
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde du groupe de clients",
+      "title": "Enregistrement du groupe de clients",
       "time": 3000
     },
     "success": {

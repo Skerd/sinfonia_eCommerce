@@ -41,14 +41,14 @@
   "fields": {
     "name": "Nom",
     "countries": "Pays",
-    "states": "États / cantons",
+    "states": "États / régions",
     "postalCodePatterns": "Modèles de codes postaux",
     "rates": {
       "name": "Nom du tarif",
       "type": "Type de tarif",
       "price": "Prix du tarif",
       "carrier": "Transporteur",
-      "estimatedDeliveryDays": "Est. jours de livraison",
+      "estimatedDeliveryDays": "Jours de livraison estimés",
       "conditions": {
         "minWeight": "Poids minimum",
         "maxWeight": "Poids maximum",

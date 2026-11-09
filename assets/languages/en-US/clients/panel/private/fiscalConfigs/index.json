@@ -12,7 +12,7 @@
         "items": [
           "Name labels the config. NIPT falls back to the company VAT number when left empty.",
           "Software code, business unit code, and operator code are required. Maintainer code is optional.",
-          "TCR code, TCR internal id, and TCR type (regular or vending) identify the cash register. Registering the TCR fills in the code, and needs permission to edit fiscal configs.",
+          "TCR code, TCR internal ID, and TCR type (regular or vending) identify the cash register. Registering the TCR fills in the code, and needs permission to edit fiscal configs.",
           "Fiscalization, e-invoice, and self-care URLs point at CIS; a proxy URL is optional. Environment chooses test or production.",
           "Seller name, address, town, and country and the VAT-registered flag are printed on fiscal documents.",
           "Certificate is a PKCS#12 file. On edit, leaving the password blank keeps the stored one."

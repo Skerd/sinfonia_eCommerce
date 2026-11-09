@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "À propos de l'import Odoo",
     "title": "À propos de l'import Odoo",
-    "overview": "L’import Odoo copie des données de catalogue, de stock et d’utilisateurs depuis Odoo vers cette société, avec la connexion Odoo enregistrée. Vous choisissez les jeux de données à reprendre, et pouvez d’abord faire un essai à blanc.",
+    "overview": "L’import Odoo copie des données de catalogue, de stock et d’utilisateurs depuis Odoo vers cette société, avec la connexion Odoo enregistrée. Vous choisissez les jeux de données à reprendre, et pouvez d’abord faire une simulation.",
     "sections": [
       {
         "title": "Jeux de données",
@@ -22,9 +22,9 @@
         ]
       },
       {
-        "title": "Essai à blanc et résultats",
+        "title": "Simulation et résultats",
         "items": [
-          "Un essai à blanc se connecte à Odoo et compte seulement ce que chaque jeu lirait ; rien n’est écrit.",
+          "Une simulation se connecte à Odoo et compte seulement ce que chaque jeu lirait ; rien n’est écrit.",
           "Une vraie exécution indique les nombres créés, mis à jour et ignorés par jeu. Les lignes qui ne peuvent être associées (par exemple un mouvement pour un produit non importé) sont ignorées.",
           "Importez les produits avant l’inventaire et les changements de stock, et les entrepôts avant l’inventaire, pour que les références soient trouvées."
         ]
@@ -54,13 +54,13 @@
     "actions": "Transferts internes",
     "users": "Utilisateurs"
   },
-  "dryRunLabel": "Essai",
+  "dryRunLabel": "Simulation",
   "dryRunDescription": "Authentifier et compter les enregistrements sans écrire.",
   "submit": "Importer",
   "loadError": "Impossible de charger la connexion Odoo",
   "result": {
     "title": "Import terminé",
-    "dryRunTitle": "Essai terminé",
+    "dryRunTitle": "Simulation terminée",
     "created": "Créés",
     "updated": "Mis à jour",
     "skipped": "Ignorés"
@@ -68,7 +68,7 @@
   "axios": {
     "success": {
       "title": "Import Odoo terminé",
-      "dryRun": "Essai Odoo terminé"
+      "dryRun": "Simulation Odoo terminée"
     },
     "error": {
       "title": "L'import Odoo a échoué"

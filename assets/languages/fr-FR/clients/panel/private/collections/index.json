@@ -16,12 +16,12 @@
       },
       "rules": {
         "field": {
-          "tag": "Étiqueter",
+          "tag": "Étiquette",
           "brand": "Marque",
           "category": "Catégorie",
           "price": "Prix",
           "vendor": "Fournisseur",
-          "inventory_level": "Niveau d'inventaire",
+          "inventory_level": "Niveau de stock",
           "product_type": "Type de produit"
         },
         "operator": {
@@ -41,7 +41,7 @@
     "description": "Description",
     "mainImage": "Image de couverture",
     "isVisible": "Visible",
-    "position": "Poste",
+    "position": "Position",
     "products": "Produits",
     "productCount": "Produits",
     "ruleCondition": "Condition de correspondance",

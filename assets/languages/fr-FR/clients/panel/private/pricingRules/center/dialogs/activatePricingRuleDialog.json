@@ -4,7 +4,7 @@
   "description": "Cette règle de tarification commencera à s’appliquer aux prix catalogue correspondants.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation de la règle de tarification…",

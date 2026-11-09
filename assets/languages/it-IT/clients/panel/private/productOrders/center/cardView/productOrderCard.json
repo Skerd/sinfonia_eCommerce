@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
-  "failedTitle": "Impossibile caricare l'ordine del prodotto",
+  "failedTitle": "Impossibile caricare l'ordine di prodotti",
   "failedDescription": "Tocca per riprovare.",
   "orderStatus": {
     "pending": "In sospeso",
@@ -11,7 +11,7 @@
     "cancelled": "Annullato",
     "refunded": "Rimborsato"
   },
-  "items": "elementi",
+  "items": "articoli",
   "paymentStatus": {
     "unpaid": "Non pagato",
     "authorized": "Autorizzato",

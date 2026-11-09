@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/editListingAddOn.tsx",
-  "editTitle": "Modifica componente aggiuntivo dell'elenco",
+  "editTitle": "Modifica componente aggiuntivo dell'annuncio",
   "editDescription": "Aggiorna il nome, il prezzo o i tempi di consegna per questo componente aggiuntivo.",
   "errorTitle": "Impossibile caricare il componente aggiuntivo",
   "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
   "formHeader": {
-    "title": "Modifica componente aggiuntivo dell'elenco",
+    "title": "Modifica componente aggiuntivo dell'annuncio",
     "description": "Modifica i dettagli del componente aggiuntivo."
   },
   "formButtons": {
@@ -15,8 +15,8 @@
   "form": {
     "idLabel": "ID record",
     "listingIdLabel": "Annuncio",
-    "listingIdPlaceholder": "Seleziona l'elenco",
-    "nameLabel": "Nome aggiuntivo",
+    "listingIdPlaceholder": "Seleziona l'annuncio",
+    "nameLabel": "Nome del componente aggiuntivo",
     "namePlaceholder": "ad es. Consegna espressa",
     "priceAmountLabel": "Prezzo",
     "priceAmountPlaceholder": "0.00",

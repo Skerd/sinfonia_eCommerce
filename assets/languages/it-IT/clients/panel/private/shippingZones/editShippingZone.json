@@ -14,11 +14,11 @@
     "selectState": "Seleziona il cantone",
     "removeCountry": "Rimuovi paese",
     "removeState": "Rimuovi stato",
-    "postalCodePatternsLabel": "Modelli di codici postali",
+    "postalCodePatternsLabel": "Schemi di codici postali",
     "postalCodePatternsPlaceholder": "ad es. 1000* o AL-*",
-    "removePostalCodePattern": "Rimuovi motivo",
+    "removePostalCodePattern": "Rimuovi schema",
     "ratesSectionTitle": "Tariffe di spedizione",
-    "rateAddRow": "Aggiungi tasso",
+    "rateAddRow": "Aggiungi tariffa",
     "rateRemoveRow": "Rimuovi tariffa",
     "rateRowTitle": "Tariffa senza titolo",
     "rateNameLabel": "Nome della tariffa",
@@ -27,7 +27,7 @@
     "rateTypePlaceholder": "Seleziona il tipo di tariffa",
     "ratePriceLabel": "Prezzo",
     "ratePricePlaceholder": "0.00",
-    "carrierLabel": "Portatore",
+    "carrierLabel": "Corriere",
     "carrierPlaceholder": "Nome del corriere",
     "estimatedDeliveryDaysLabel": "Giorni di consegna stimati",
     "estimatedDeliveryDaysPlaceholder": "3",
@@ -41,11 +41,11 @@
     "maxOrderAmountLabel": "Importo massimo dell'ordine",
     "maxOrderAmountPlaceholder": "0",
     "shippingRateType": {
-      "flat": "Piatto",
-      "weight": "Basato sul peso",
+      "flat": "Forfettaria",
+      "weight": "In base al peso",
       "price": "Importo dell'ordine",
       "quantity": "Quantità",
-      "free": "Libero"
+      "free": "Gratuita"
     }
   },
   "axios": {

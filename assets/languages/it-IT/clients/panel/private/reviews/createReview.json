@@ -30,5 +30,5 @@
     "title": "Crea recensione"
   },
   "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
-  "title": "Modifica tipo di unità"
+  "title": "Titolo"
 }

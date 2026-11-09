@@ -8,7 +8,7 @@
     "overview": "Harta e sistemit është një pamje vetëm për lexim e modulit eCommerce të katalogut: çdo model dhe si i referohen njëri-tjetrit, rrjedhat kryesore hap pas hapi dhe çfarë ofron moduli. Nuk ndryshon të dhëna. Tregu ka hartën e vet.",
     "sections": [
       {
-        "title": "Grafi i modeleve",
+        "title": "Grafiku i modeleve",
         "body": "Skeda e paracaktuar: modeli i të dhënave, i grupuar në katalog, porosi, pagesa, pikë shitjeje, depozitë garancie dhe të përbashkëta.",
         "items": [
           "Lëvizni dhe zmadhoni, ose përdorni kontrollet e zmadhimit dhe përshtatjes. Filtroni sipas grupit kur harta e plotë është shumë.",
@@ -20,8 +20,8 @@
         "title": "Si funksionon",
         "body": "Rrjedhat e tregojnë historinë me radhë, jo si listë modelesh.",
         "items": [
-          "Katalogu dhe merchandising-u, stoku, shporta → checkout → porosia, operacionet pas blerjes, pika e shitjes dhe importi nga Odoo kanë secila rrjedhën e vet.",
-          "Hapat me vija të ndërprera janë rruga e kthimit, si një dërgesë e dështuar ose një checkout i skaduar."
+          "Katalogu dhe promovimi, stoku, shporta → pagesa → porosia, operacionet pas blerjes, pika e shitjes dhe importi nga Odoo kanë secila rrjedhën e vet.",
+          "Hapat me vija të ndërprera janë rruga e kthimit, si një dërgesë e dështuar ose një pagesë e skaduar."
         ]
       },
       {

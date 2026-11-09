@@ -41,16 +41,16 @@
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "empty": "Aucun bloc à réorganiser.",
   "cancel": "Annuler",
-  "save": "Enregistrer la commande",
+  "save": "Enregistrer l'ordre",
   "saving": "Enregistrement...",
-  "saveSuccess": "Ordre de blocage enregistré.",
-  "saveError": "Échec de l'enregistrement de l'ordre de blocage.",
+  "saveSuccess": "Ordre des blocs enregistré.",
+  "saveError": "Échec de l'enregistrement de l'ordre des blocs.",
   "loadError": "Échec du chargement des blocs.",
   "fields": {
     "!enums": {
       "type": {
-        "hero_banner": "Bannière de héros",
-        "slider": "Curseur",
+        "hero_banner": "Bannière principale",
+        "slider": "Carrousel",
         "featured_collection": "Collection en vedette",
         "trending": "Tendance",
         "best_sellers": "Meilleures ventes",
@@ -63,13 +63,13 @@
         "promotional_section": "Section promotionnelle"
       }
     },
-    "title": "Modifier le type d’unité",
+    "title": "Titre",
     "type": "Type",
-    "position": "Poste",
+    "position": "Position",
     "isActive": "Actif",
     "config": "Configuration",
-    "startsAt": "Commence à",
-    "endsAt": "Se termine à",
+    "startsAt": "Commence le",
+    "endsAt": "Se termine le",
     "visibility": {
       "devices": "Appareils",
       "regions": "Régions"

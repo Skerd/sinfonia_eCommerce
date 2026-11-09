@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
   "title": "Carte du système de commerce électronique",
-  "description": "Carte interactive des modèles de commerce électronique de catalogue, du flux de paiement et des capacités des modules. Effectuez un panoramique, un zoom et cliquez sur les nœuds pour plus de détails.",
+  "description": "Carte interactive des modèles du catalogue e-commerce, du parcours de paiement et des capacités du module. Déplacez, zoomez et cliquez sur les nœuds pour plus de détails.",
   "help": {
     "ariaLabel": "À propos de la carte système eCommerce",
     "title": "À propos de la carte système eCommerce",
@@ -35,7 +35,7 @@
     ]
   },
   "tabs": {
-    "models": "Graphique du modèle",
+    "models": "Graphe des modèles",
     "flows": "Comment ça marche",
     "capabilities": "Capacités"
   }

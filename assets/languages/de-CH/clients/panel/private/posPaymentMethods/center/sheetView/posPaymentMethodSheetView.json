@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx",
   "posPaymentMethodSubtitle": "POS-Zahlungsart",
   "failedTitle": "Zahlungsart konnten nicht geladen werden",
-  "failedDescription": "Die Zahlungsart konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Zahlungsart konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "terminal": "Bank-Kartenterminal",

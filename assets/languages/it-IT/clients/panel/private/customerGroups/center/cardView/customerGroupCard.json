@@ -1,7 +1,7 @@
 {
   "default": "Predefinito",
   "description": "Descrizione",
-  "memberCount": "Conteggio dei membri",
+  "memberCount": "Numero di membri",
   "members": "Membri",
   "name": "Nome",
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx",

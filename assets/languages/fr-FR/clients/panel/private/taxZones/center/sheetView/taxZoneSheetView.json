@@ -20,7 +20,7 @@
   "country": "Pays",
   "states": "États / régions",
   "postalCodePatterns": "Modèles de codes postaux",
-  "state": "Canton / État",
+  "state": "Région / État",
   "rateValue": "Taux (%)",
   "rateAppliesTo": "S'applique à",
   "isCompound": "Composé",

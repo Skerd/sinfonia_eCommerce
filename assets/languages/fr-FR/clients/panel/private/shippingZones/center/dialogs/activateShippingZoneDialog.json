@@ -4,14 +4,14 @@
   "description": "Cette zone d'expédition sera utilisée lors du calcul des tarifs d'expédition.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation de la zone d'expédition…",
       "time": 3000
     },
     "success": {
-      "title": "Zone de livraison activée",
+      "title": "Zone d'expédition activée",
       "time": 3000
     },
     "error": {

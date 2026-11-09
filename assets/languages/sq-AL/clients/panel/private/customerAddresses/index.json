@@ -45,7 +45,7 @@
         "items": [
           "Klienti dhe tipi (faturim ose dërgesë) janë të detyrueshëm.",
           "Emri dhe mbiemri, rruga, qyteti, shteti dhe koordinatat në hartë janë të detyrueshme; email-i, telefoni, rajoni, kodi postar dhe një etiketë janë opsionale.",
-          "Shteti, rajoni dhe kodi postar janë ato me të cilat përputhen zonat tatimore dhe të transportit në checkout."
+          "Shteti, rajoni dhe kodi postar janë ato me të cilat përputhen zonat tatimore dhe të transportit gjatë pagesës."
         ]
       },
       {
@@ -53,7 +53,7 @@
         "body": "Çdo klient ka të shumtën një adresë të paracaktuar për tip.",
         "items": [
           "Cakto si të paracaktuar, ose ruajtja e një adrese si të paracaktuar, heq të paracaktuarën e mëparshme të të njëjtit tip për atë klient.",
-          "Checkout-i dhe llogaria e klientit ofrojnë së pari të paracaktuarën."
+          "Pagesa online dhe llogaria e klientit ofrojnë së pari të paracaktuarën."
         ]
       },
       {

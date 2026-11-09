@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
-  "title": "Reprendre ce point de vente jusqu'à ?",
-  "description": "Efface la pause sur ce jusqu'à seulement. Un verrou à l’échelle de l’entreprise (s’il est actif) n’est pas effacé. Les caissiers doivent ouvrir une nouvelle session pour revendre.",
+  "title": "Reprendre cette caisse ?",
+  "description": "Efface la pause de cette caisse uniquement. Un verrou à l’échelle de l’entreprise (s’il est actif) n’est pas effacé. Les caissiers doivent ouvrir une nouvelle session pour vendre à nouveau.",
   "cancel": "Annuler",
-  "confirm": "Reprendre jusqu'à",
-  "busy": "Travailler…",
+  "confirm": "Reprendre la caisse",
+  "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Reprise des points de vente jusqu'à…",
+      "title": "Reprise de la caisse…",
       "time": 3000
     },
     "success": {
-      "title": "PLV jusqu'à la reprise",
+      "title": "Caisse reprise",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de reprendre le PDV avant",
+      "title": "Impossible de reprendre la caisse",
       "time": 3000
     }
   }

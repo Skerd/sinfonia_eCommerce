@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/editListingPackage.tsx",
-  "editTitle": "Modifica pacchetto di inserzioni",
+  "editTitle": "Modifica pacchetto dell'annuncio",
   "editDescription": "Aggiorna i dettagli di questo pacchetto di servizi.",
   "errorTitle": "Impossibile caricare il pacchetto",
   "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
   "formHeader": {
-    "title": "Modifica pacchetto di inserzioni",
+    "title": "Modifica pacchetto dell'annuncio",
     "description": "Modifica il nome del pacchetto, il prezzo o i tempi di consegna."
   },
   "formButtons": {
@@ -15,7 +15,7 @@
   "form": {
     "idLabel": "ID record",
     "listingIdLabel": "Annuncio",
-    "listingIdPlaceholder": "Seleziona l'elenco",
+    "listingIdPlaceholder": "Seleziona l'annuncio",
     "nameLabel": "Nome del pacchetto",
     "namePlaceholder": "ad es. Base, Standard, Premium",
     "descriptionLabel": "Descrizione",
@@ -31,7 +31,7 @@
   },
   "axios": {
     "start": {
-      "title": "Pacchetto di risparmio",
+      "title": "Salvataggio del pacchetto",
       "time": 3000
     },
     "success": {

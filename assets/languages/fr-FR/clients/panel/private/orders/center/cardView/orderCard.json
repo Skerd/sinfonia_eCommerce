@@ -3,7 +3,7 @@
   "failedTitle": "Échec du chargement de la commande",
   "failedDescription": "Touchez pour réessayer.",
   "listing": "Annonce",
-  "provider": "Fournisseur",
+  "provider": "Prestataire",
   "amount": "Montant",
   "dueDate": "Échéance",
   "status": "Statut",

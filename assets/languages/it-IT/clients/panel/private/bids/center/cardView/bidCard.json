@@ -12,7 +12,7 @@
   "offer": "Offerta",
   "statuses": {
     "pending": "In sospeso",
-    "accepted": "Accettato",
-    "rejected": "Rifiutato"
+    "accepted": "Accettata",
+    "rejected": "Rifiutata"
   }
 }

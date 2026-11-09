@@ -18,9 +18,9 @@
     "return": "Reso",
     "adjustment": "Rettifica",
     "damage": "Danno",
-    "transfer_in": "Trasferimento in",
-    "transfer_out": "Trasferimento out",
+    "transfer_in": "Trasferimento in entrata",
+    "transfer_out": "Trasferimento in uscita",
     "initial": "Iniziale",
-    "write_off": "Svalutazione"
+    "write_off": "Storno"
   }
 }

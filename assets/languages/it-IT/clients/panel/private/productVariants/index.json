@@ -3,8 +3,8 @@
   "title": "Varianti del prodotto",
   "description": "Gestisci le varianti dei prodotti a livello di SKU.",
   "help": {
-    "ariaLabel": "Informazioni su Varianti del prodotto",
-    "title": "Informazioni su Varianti del prodotto",
+    "ariaLabel": "Informazioni sulle varianti del prodotto",
+    "title": "Informazioni sulle varianti del prodotto",
     "overview": "Una variante è uno SKU vendibile di un prodotto variabile, definito dalla sua combinazione di valori di attributo (ad esempio Rosso / XL). Carrello e cassa addebitano il prezzo proprio della variante quando ne ha uno. Solo una variante attiva può essere venduta.",
     "sections": [
       {
@@ -50,7 +50,7 @@
       "value": "Valore"
     },
     "price": "Prezzo",
-    "compareAtPrice": "Confronta il prezzo",
+    "compareAtPrice": "Prezzo di confronto",
     "costPrice": "Prezzo di costo",
     "currency": "Valuta",
     "weight": "Peso",

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Movimenti di inventario",
-  "description": "Registro completo dei rifornimenti, delle cancellazioni, delle vendite e di altre variazioni delle scorte.",
+  "description": "Registro completo di rifornimenti, storni, vendite e altre variazioni delle scorte.",
   "help": {
     "ariaLabel": "Informazioni sui movimenti di inventario",
     "title": "Informazioni sui movimenti di inventario",
@@ -53,13 +53,13 @@
       "reason": {
         "restock": "Rifornimento",
         "sale": "Vendita",
-        "return": "Ritorno",
-        "adjustment": "Regolazione",
+        "return": "Reso",
+        "adjustment": "Rettifica",
         "damage": "Danno",
-        "transfer_in": "Trasferimento",
-        "transfer_out": "Trasferimento fuori",
+        "transfer_in": "Trasferimento in entrata",
+        "transfer_out": "Trasferimento in uscita",
         "initial": "Iniziale",
-        "write_off": "Cancellazione"
+        "write_off": "Storno"
       }
     },
     "inventory": "Inventario",
@@ -74,9 +74,9 @@
     "manufacturer": "Produttore",
     "receiptNumber": "Ricevuta n.",
     "receipts": "Ricevute",
-    "occurredAt": "Si è verificato a",
-    "unitCost": "Costo unità",
-    "batchLot": "Lotto/lotto",
+    "occurredAt": "Avvenuto il",
+    "unitCost": "Costo unitario",
+    "batchLot": "Lotto",
     "expiryDate": "Scadenza",
     "performedBy": "Eseguito da",
     "referenceType": "Riferimento",

@@ -4,7 +4,7 @@
     "title": "Richiedi revisione",
     "description": "Descrivi cosa deve essere cambiato. Il fornitore rielaborerà e invierà nuovamente la consegna.",
     "reasonLabel": "Motivo della revisione",
-    "reasonPlaceholder": "Spiegare cosa deve essere rivisto e perché...",
+    "reasonPlaceholder": "Spiega cosa deve essere rivisto e perché...",
     "minChars": "Sono richiesti minimo 10 caratteri.",
     "confirm": "Richiedi revisione",
     "axios": {

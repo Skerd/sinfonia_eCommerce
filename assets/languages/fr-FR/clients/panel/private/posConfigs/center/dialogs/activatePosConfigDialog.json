@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/activatePosConfigDialog.tsx",
   "title": "Activer la configuration du point de vente",
-  "description": "Cette configuration de caisse sera disponible pour l'ouverture du POS.",
+  "description": "Cette configuration de caisse sera disponible pour l'ouverture du point de vente.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation de la configuration du point de vente…",

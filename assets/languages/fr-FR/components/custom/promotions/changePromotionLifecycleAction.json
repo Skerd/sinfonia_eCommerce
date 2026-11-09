@@ -3,11 +3,11 @@
   "cancel": "Annuler",
   "pause": {
     "title": "Suspendre la promotion",
-    "description": "Êtes-vous sûr de vouloir faire une pause",
+    "description": "Êtes-vous sûr de vouloir mettre en pause",
     "confirm": "Suspendre",
     "axios": {
       "start": {
-        "title": "Suspendre la promotion",
+        "title": "Suspension de la promotion",
         "time": 3000
       },
       "success": {
@@ -22,15 +22,15 @@
   },
   "resume": {
     "title": "Reprendre la promotion",
-    "description": "Etes-vous sûr de vouloir reprendre",
-    "confirm": "CV",
+    "description": "Êtes-vous sûr de vouloir reprendre",
+    "confirm": "Reprendre",
     "axios": {
       "start": {
-        "title": "Reprise des promotions",
+        "title": "Reprise de la promotion",
         "time": 3000
       },
       "success": {
-        "title": "La promotion a repris avec succès",
+        "title": "Promotion reprise avec succès",
         "time": 3000
       },
       "error": {
@@ -48,7 +48,7 @@
     "reasonHint": "Nécessaire pour l’audit et l’examen. 1 à 2 000 caractères.",
     "axios": {
       "start": {
-        "title": "Arrêter la promotion",
+        "title": "Arrêt de la promotion",
         "time": 3000
       },
       "success": {

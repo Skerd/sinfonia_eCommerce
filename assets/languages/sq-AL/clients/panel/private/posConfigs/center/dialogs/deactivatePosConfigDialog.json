@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
   "title": "Çaktivizo konfigurimin e POS",
-  "description": "Ky arkë nuk do të jetë i disponueshëm për hapjen e POS-it. Çdo seancë e hapur do të mbyllet me forcë (karroca e mbajtur anulohet, cash vendoset te shuma e pritur). Anulimi i terminalit është sipas mundësisë.",
+  "description": "Kjo arkë nuk do të jetë e disponueshme për hapjen e POS-it. Çdo seancë e hapur në këtë arkë do të mbyllet me forcë (shportat e mbajtura anulohen, cash-i vendoset te shuma e pritur). Ngarkimet në terminal anulohen sipas mundësisë.",
   "cancel": "Anulo",
   "confirm": "Çaktivizo",
   "busy": "Duke punuar…",

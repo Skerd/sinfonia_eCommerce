@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
   "formHeader": {
-    "title": "Créer un package d'annonces",
-    "description": "Définissez un niveau de service que les clients peuvent sélectionner lors d'une commande à partir d'une liste."
+    "title": "Créer un package d'annonce",
+    "description": "Définissez un niveau de service que les clients peuvent sélectionner lorsqu'ils commandent depuis une annonce."
   },
   "formButtons": {
     "cancel": "Annuler",
@@ -14,7 +14,7 @@
     "nameLabel": "Nom du package",
     "namePlaceholder": "par ex. Basique, Standard, Premium",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Ce qui est inclus dans ce forfait...",
+    "descriptionPlaceholder": "Ce qui est inclus dans ce package...",
     "priceAmountLabel": "Prix",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Devise",

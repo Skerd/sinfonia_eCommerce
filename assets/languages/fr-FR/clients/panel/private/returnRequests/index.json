@@ -30,7 +30,7 @@
         "title": "Recevoir : la marchandise revient",
         "body": "Recevoir n’est possible que pour une demande approuvée.",
         "items": [
-          "Pour un retour ou un échange, les unités réclamées reviennent en stock dans l’entrepôt d’où chaque ligne est partie, et un mouvement de retour est écrit pour chacune. Un lot revient sous forme de ses composants.",
+          "Pour un retour ou un échange, les unités réclamées reviennent en stock dans l’entrepôt d’où chaque ligne est partie, et un mouvement de retour est écrit pour chacune. Un pack revient sous forme de ses composants.",
           "Une ligne dont la vente n’a jamais pris de stock (produit non suivi) ou dont la ligne de stock a disparu est notée dans la chronologie de la commande au lieu d’être remise en stock.",
           "Une demande de remboursement seul n’a rien à recevoir ; la recevoir fait seulement avancer le statut."
         ]
@@ -40,7 +40,7 @@
         "body": "Terminer n’est possible qu’après réception de la demande.",
         "items": [
           "Pour un retour ou un remboursement avec montant, terminer lance le remboursement de la commande pour ce montant, via la passerelle pour les paiements par carte. Cela exige aussi le droit d’écrire le statut de paiement de la commande.",
-          "Un échange ne rembourse rien ; le remplacement est traité comme un nouveau travail d’exécution.",
+          "Un échange ne rembourse rien ; le remplacement est traité comme un nouvel envoi.",
           "Si le remboursement couvre tout le reste de la commande, les règles du remboursement complet s’appliquent aussi."
         ]
       },
@@ -75,7 +75,7 @@
     "type": "Type",
     "status": "Statut",
     "items": {
-      "orderItemId": "Identifiant de l'article de la commande",
+      "orderItemId": "Identifiant de la ligne de commande",
       "quantity": "Quantité",
       "reason": "Motif"
     },

@@ -63,7 +63,7 @@
         "title": "Dove sta il resto del lavoro",
         "body": "L’ordine è l’intestazione. Spedizioni e resi sono schede a sé.",
         "items": [
-          "Ogni spedizione è una riga sotto Adempimenti, con il proprio stato in attesa, spedita, consegnata o fallita.",
+          "Ogni spedizione è una riga sotto Evasioni, con il proprio stato in attesa, spedita, consegnata o fallita.",
           "Una richiesta di reso, cambio o rimborso è una riga sotto Richieste di reso. Completarla può rimborsare questo ordine.",
           "Le vendite in cassa compaiono qui già consegnate e pagate, segnate come vendite POS, con un indirizzo di ritiro in negozio.",
           "Eliminare un ordine è un’eliminazione logica e può essere ripristinato."
@@ -86,15 +86,15 @@
       "paymentStatus": {
         "unpaid": "Non pagato",
         "authorized": "Autorizzato",
-        "paid": "Pagata",
+        "paid": "Pagato",
         "partially_refunded": "Parzialmente rimborsato",
         "refunded": "Rimborsato",
-        "voided": "Annullata"
+        "voided": "Annullato"
       },
       "fulfillmentStatus": {
-        "unfulfilled": "Insoddisfatto",
-        "partially_fulfilled": "Parzialmente soddisfatto",
-        "fulfilled": "Soddisfatto",
+        "unfulfilled": "Non evaso",
+        "partially_fulfilled": "Parzialmente evaso",
+        "fulfilled": "Evaso",
         "returned": "Restituito"
       }
     },
@@ -113,24 +113,24 @@
       "firstName": "Nome di spedizione",
       "lastName": "Cognome di spedizione",
       "phone": "Telefono per la spedizione",
-      "street": "Strada di spedizione",
+      "street": "Via di spedizione",
       "city": "Città di spedizione",
       "state": "Stato di spedizione",
-      "postalCode": "Codice postale di spedizione",
+      "postalCode": "CAP di spedizione",
       "country": "Paese di spedizione"
     },
     "billingAddress": {
       "firstName": "Nome di fatturazione",
       "lastName": "Cognome di fatturazione",
       "phone": "Telefono per la fatturazione",
-      "street": "Strada della fatturazione",
+      "street": "Via di fatturazione",
       "city": "Città di fatturazione",
       "state": "Stato di fatturazione",
-      "postalCode": "Codice postale di fatturazione",
+      "postalCode": "CAP di fatturazione",
       "country": "Paese di fatturazione"
     },
     "paymentStatus": "Pagamento",
-    "fulfillmentStatus": "Compimento",
+    "fulfillmentStatus": "Evasione",
     "status": "Stato",
     "appliedDiscounts": {
       "discount": "Sconto applicato",
@@ -138,9 +138,9 @@
       "amount": "Importo dello sconto"
     },
     "taxBreakdown": {
-      "name": "Nome fiscale",
-      "rate": "Aliquota fiscale",
-      "amount": "Importo fiscale"
+      "name": "Nome dell'imposta",
+      "rate": "Aliquota d'imposta",
+      "amount": "Importo dell'imposta"
     },
     "shippingRate": {
       "name": "Tariffa di spedizione",
@@ -149,8 +149,8 @@
     },
     "notes": "Note",
     "internalNotes": "Note interne",
-    "stripePaymentIntentId": "Intento di pagamento stripe",
-    "idempotencyKey": "Chiave di idepotenza",
+    "stripePaymentIntentId": "Payment intent Stripe",
+    "idempotencyKey": "Chiave di idempotenza",
     "giftCard": {
       "giftCard": "Carta regalo",
       "code": "Codice della carta regalo",

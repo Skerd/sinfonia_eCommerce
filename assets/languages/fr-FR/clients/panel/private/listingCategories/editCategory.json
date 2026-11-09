@@ -3,7 +3,7 @@
   "editTitle": "Modifier la catégorie",
   "editDescription": "Mettre à jour les détails de la catégorie.",
   "errorTitle": "Échec du chargement de la catégorie",
-  "errorDescription": "Impossible de charger cette catégorie. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette catégorie. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
@@ -17,7 +17,7 @@
   },
   "axios": {
     "start": {
-      "title": "Catégorie d'enregistrement",
+      "title": "Enregistrement de la catégorie",
       "time": 3000
     },
     "success": {

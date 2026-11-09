@@ -38,7 +38,7 @@
     "removeTarget": "Hiq objektivin",
     "removeCustomerGroup": "Hiq grupin e klientëve",
     "pricingRuleType": {
-      "percentage_discount": "Zbritje përqindje",
+      "percentage_discount": "Zbritje në përqindje",
       "fixed_discount": "Zbritje fikse",
       "fixed_price": "Çmim fiks",
       "surcharge": "Shtesë"

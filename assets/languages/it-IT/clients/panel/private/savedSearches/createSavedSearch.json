@@ -32,7 +32,7 @@
   },
   "formHeader": {
     "title": "Crea ricerca salvata",
-    "description": "Dai un nome alla ricerca e ai filtri che devono eseguirsi con essa. Scegli il cliente a cui appartiene."
+    "description": "Dai un nome a una ricerca di catalogo e ai filtri da applicare con essa. Scegli il cliente a cui appartiene."
   },
   "formButtons": {
     "cancel": "Annulla",

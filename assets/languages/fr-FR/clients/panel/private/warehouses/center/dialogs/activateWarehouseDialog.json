@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/activateWarehouseDialog.tsx",
   "title": "Activer l'entrepôt",
-  "description": "Cet entrepôt deviendra disponible pour l'inventaire et l'exécution.",
+  "description": "Cet entrepôt deviendra disponible pour le stock et l'expédition.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation de l'entrepôt…",

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/public/auth/resetPosManagerPin.form.tsx",
   "title": "Rivendos PIN-in e menaxherit",
-  "description": "Zgjidhni një PIN të ri menaxheri për këtë arke.",
+  "description": "Zgjidhni një PIN të ri menaxheri për këtë arkë.",
   "verifyingTitle": "Duke verifikuar lidhjen",
   "verifyingDescription": "Ju lutemi prisni ndërsa verifikojmë lidhjen e rivendosjes.",
   "invalidTitle": "Lidhje e pavlefshme ose e skaduar",

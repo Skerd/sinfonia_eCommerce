@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
-  "title": "Liste des packages",
-  "description": "Gérez les packages de services proposés par les fournisseurs pour leurs annonces.",
+  "title": "Packages d'annonce",
+  "description": "Gérez les packages de services proposés par les prestataires pour leurs annonces.",
   "help": {
     "ariaLabel": "À propos des packages d'annonce",
     "title": "À propos des packages d'annonce",

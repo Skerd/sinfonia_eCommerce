@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/dialogs/activateFiscalConfigDialog.tsx",
   "title": "Activer la configuration fiscale",
-  "description": "Cette configuration fiscale sera disponible pour la fiscalisation POS et la facture électronique.",
+  "description": "Cette configuration fiscale sera disponible pour la fiscalisation du point de vente et la facture électronique.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation de la configuration fiscale…",

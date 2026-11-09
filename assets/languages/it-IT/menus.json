@@ -56,7 +56,7 @@
       "title": "Inventario"
     },
     "inventorymovements": {
-      "title": "Movimenti di borsa"
+      "title": "Movimenti di magazzino"
     },
     "stocktransfers": {
       "title": "Trasferimenti di magazzino"
@@ -86,13 +86,13 @@
       "title": "Gruppi di clienti"
     },
     "pricingrules": {
-      "title": "Regole sui prezzi"
+      "title": "Regole di prezzo"
     },
     "analytics": {
       "title": "Analisi"
     },
     "fulfillments": {
-      "title": "Adempimenti"
+      "title": "Evasioni"
     },
     "returnrequests": {
       "title": "Richieste di reso"
@@ -140,7 +140,7 @@
         "title": "Sconti"
       },
       "pricingrules": {
-        "title": "Regole sui prezzi"
+        "title": "Regole di prezzo"
       },
       "taxzones": {
         "title": "Zone fiscali"
@@ -191,10 +191,10 @@
         "title": "Analisi"
       },
       "eCommerceMarketplace": {
-        "title": "Mercato elettronico"
+        "title": "Marketplace eCommerce"
       },
       "listingcategories": {
-        "title": "Categorie di elenchi"
+        "title": "Categorie di annunci"
       },
       "listings": {
         "title": "Annunci"
@@ -221,16 +221,16 @@
         "title": "Promozioni"
       },
       "listingflags": {
-        "title": "Elenco bandiere"
+        "title": "Segnalazioni degli annunci"
       },
       "providerprofile": {
         "title": "Profili dei fornitori"
       },
       "listingaddons": {
-        "title": "Componenti aggiuntivi dell'elenco"
+        "title": "Componenti aggiuntivi degli annunci"
       },
       "listingpackages": {
-        "title": "Elenco dei pacchetti"
+        "title": "Pacchetti degli annunci"
       }
     }
   },
@@ -261,19 +261,19 @@
       "title": "Promozioni"
     },
     "listingflags": {
-      "title": "Elenco bandiere"
+      "title": "Segnalazioni degli annunci"
     },
     "listingaddons": {
-      "title": "Componenti aggiuntivi dell'elenco"
+      "title": "Componenti aggiuntivi degli annunci"
     },
     "listingpackages": {
-      "title": "Elenco dei pacchetti"
+      "title": "Pacchetti degli annunci"
     },
     "marketplacesystemmap": {
       "title": "Mappa di sistema"
     },
     "listingcategories": {
-      "title": "Categorie di elenchi"
+      "title": "Categorie di annunci"
     }
   }
 }

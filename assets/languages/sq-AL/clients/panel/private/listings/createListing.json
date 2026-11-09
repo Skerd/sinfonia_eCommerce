@@ -20,9 +20,9 @@
     "addressCountryIdLabel": "Shteti",
     "addressCountryLabel": "Shteti",
     "addressCountryPlaceholder": "Shteti",
-    "addressStateIdLabel": "Rajoni / gjendja",
-    "addressStateLabel": "Rajoni / gjendja",
-    "addressStatePlaceholder": "Rajoni ose gjendja",
+    "addressStateIdLabel": "Rajoni / qarku",
+    "addressStateLabel": "Rajoni / qarku",
+    "addressStatePlaceholder": "Rajoni ose qarku",
     "categoryLabel": "Kategoria",
     "categoryPlaceholder": "Zgjidhni një kategori",
     "deliveryDaysLabel": "Koha e dorëzimit (ditë)",
@@ -50,10 +50,10 @@
     "priceCurrencyPlaceholder": "Monedha",
     "priceLabel": "Çmimi",
     "providerLabel": "Ofruesi",
-    "providerPlaceholder": "Zgjidh përdoruesin që ofron këtë listing",
+    "providerPlaceholder": "Zgjidh përdoruesin që ofron këtë listim",
     "pricingType": {
       "fixed": "Çmim fiks",
-      "hourly": "Në orë"
+      "hourly": "Tarifë për orë"
     },
     "pricingTypeLabel": "Lloji i çmimit",
     "pricingTypePlaceholder": "Zgjidh llojin e çmimit",

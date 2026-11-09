@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "Informazioni sull'importazione Odoo",
     "title": "Informazioni sull'importazione Odoo",
-    "overview": "L’importazione Odoo copia dati di catalogo, giacenza e utenti da Odoo in questa società, usando la connessione Odoo salvata. Scegli quali insiemi di dati importare e puoi prima fare una prova a vuoto.",
+    "overview": "L’importazione Odoo copia dati di catalogo, giacenza e utenti da Odoo in questa società, usando la connessione Odoo salvata. Scegli quali insiemi di dati importare e puoi prima fare una simulazione.",
     "sections": [
       {
         "title": "Insiemi di dati",
@@ -22,9 +22,9 @@
         ]
       },
       {
-        "title": "Prova a vuoto e risultati",
+        "title": "Simulazione e risultati",
         "items": [
-          "Una prova a vuoto accede a Odoo e conta solo ciò che ogni insieme leggerebbe; non viene scritto nulla.",
+          "Una simulazione accede a Odoo e conta solo ciò che ogni insieme leggerebbe; non viene scritto nulla.",
           "Un’esecuzione reale riporta per ogni insieme i conteggi di creati, aggiornati e saltati. Le righe che non si possono associare (ad esempio un movimento per un prodotto non importato) vengono saltate.",
           "Importa i prodotti prima dell’inventario e delle variazioni di giacenza, e i magazzini prima dell’inventario, così i riferimenti vengono trovati."
         ]
@@ -54,13 +54,13 @@
     "actions": "Trasferimenti interni",
     "users": "Utenti"
   },
-  "dryRunLabel": "Prova",
+  "dryRunLabel": "Simulazione",
   "dryRunDescription": "Autentica e conta i record senza scrivere.",
   "submit": "Importa",
   "loadError": "Impossibile caricare la connessione Odoo",
   "result": {
     "title": "Importazione completata",
-    "dryRunTitle": "Prova completata",
+    "dryRunTitle": "Simulazione completata",
     "created": "Creati",
     "updated": "Aggiornati",
     "skipped": "Saltati"
@@ -68,7 +68,7 @@
   "axios": {
     "success": {
       "title": "Importazione Odoo completata",
-      "dryRun": "Prova Odoo completata"
+      "dryRun": "Simulazione Odoo completata"
     },
     "error": {
       "title": "Importazione Odoo non riuscita"

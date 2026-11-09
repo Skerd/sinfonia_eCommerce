@@ -19,7 +19,7 @@
     "trackInventoryLabel": "Suivre l'inventaire",
     "priceLabel": "Prix",
     "pricePlaceholder": "0.00",
-    "compareAtPriceLabel": "Comparer au prix",
+    "compareAtPriceLabel": "Prix barré",
     "compareAtPricePlaceholder": "0.00",
     "costPriceLabel": "Prix de revient",
     "costPricePlaceholder": "0.00",

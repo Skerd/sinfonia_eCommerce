@@ -11,9 +11,9 @@
     "return": "Retour",
     "adjustment": "Ajustement",
     "damage": "Dommages",
-    "transfer_in": "Transfert dans",
-    "transfer_out": "Transfert",
+    "transfer_in": "Transfert entrant",
+    "transfer_out": "Transfert sortant",
     "initial": "Initiale",
-    "write_off": "Radiation"
+    "write_off": "Mise au rebut"
   }
 }

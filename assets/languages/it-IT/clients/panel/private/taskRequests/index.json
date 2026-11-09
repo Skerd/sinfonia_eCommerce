@@ -3,8 +3,8 @@
   "title": "Richieste di attività",
   "description": "Pubblica e gestisci le richieste degli acquirenti per preventivi, lavori personalizzati o appalti.",
   "help": {
-    "ariaLabel": "Informazioni sulle richieste di lavoro",
-    "title": "Informazioni sulle richieste di lavoro",
+    "ariaLabel": "Informazioni sulle richieste di attività",
+    "title": "Informazioni sulle richieste di attività",
     "overview": "Una richiesta di attività è il brief di un acquirente che chiede preventivi ai fornitori: cosa gli serve, in quale categoria e dove, con quale budget. Resta aperta alle offerte per 30 giorni. Accettare un’offerta la assegna e apre un ordine.",
     "sections": [
       {
@@ -45,7 +45,7 @@
   "createTaskRequest": "Crea richiesta di attività",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
-    "title": "Modifica tipo di unità",
+    "title": "Titolo",
     "description": "Descrizione",
     "requester": "Richiedente",
     "category": "Categoria",
@@ -66,9 +66,9 @@
     "deletedBy": "Eliminato da",
     "!enums": {
       "status": {
-        "open": "Aperto",
-        "closed": "Chiuso",
-        "awarded": "Premiato"
+        "open": "Aperta",
+        "closed": "Chiusa",
+        "awarded": "Assegnata"
       }
     }
   }

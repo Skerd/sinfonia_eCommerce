@@ -40,7 +40,7 @@
         "body": "Complete is only after the request has been received.",
         "items": [
           "For a return or a refund with a refund amount, completing runs the order's refund for that amount, through the gateway for card payments. This also needs permission to write the order's payment status.",
-          "An exchange pays nothing back; the replacement is handled as new fulfilment work.",
+          "An exchange pays nothing back; the replacement is handled as new fulfillment work.",
           "If the refund covers everything left on the order, the order's full-refund rules apply too."
         ]
       },

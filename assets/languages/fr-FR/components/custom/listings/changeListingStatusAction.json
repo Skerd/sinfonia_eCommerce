@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/components/custom/listings/changeListingStatusAction.tsx",
   "activate": {
-    "title": "Activer la fiche",
-    "description": "Etes-vous sûr de vouloir activer",
+    "title": "Activer l'annonce",
+    "description": "Êtes-vous sûr de vouloir activer",
     "confirm": "Activer",
     "axios": {
       "start": {
-        "title": "Activation de la liste",
+        "title": "Activation de l'annonce",
         "time": 3000
       },
       "success": {
@@ -14,18 +14,18 @@
         "time": 3000
       },
       "error": {
-        "title": "Impossible d'activer la fiche, veuillez réessayer",
+        "title": "Impossible d'activer l'annonce, veuillez réessayer",
         "time": 3000
       }
     }
   },
   "deactivate": {
     "title": "Désactiver l'annonce",
-    "description": "Etes-vous sûr de vouloir désactiver",
+    "description": "Êtes-vous sûr de vouloir désactiver",
     "confirm": "Désactiver",
     "axios": {
       "start": {
-        "title": "Désactiver l'annonce",
+        "title": "Désactivation de l'annonce",
         "time": 3000
       },
       "success": {
@@ -33,7 +33,7 @@
         "time": 3000
       },
       "error": {
-        "title": "Impossible de désactiver la fiche, veuillez réessayer",
+        "title": "Impossible de désactiver l'annonce, veuillez réessayer",
         "time": 3000
       }
     }

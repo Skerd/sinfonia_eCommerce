@@ -11,7 +11,7 @@
     "urlPlaceholder": "https://your-company.odoo.com",
     "dbLabel": "Database",
     "dbPlaceholder": "odoo",
-    "usernameLabel": "Utente",
+    "usernameLabel": "Accesso utente",
     "usernamePlaceholder": "admin",
     "apiKeyLabel": "Chiave API",
     "apiKeyPlaceholder": "Chiave API Odoo",
@@ -19,12 +19,12 @@
     "warehousePlaceholder": "Seleziona un magazzino",
     "posOnlyLabel": "Solo prodotti POS",
     "posOnlyDescription": "Importa i prodotti disponibili nel POS.",
-    "dryRunLabel": "Prova a vuoto",
+    "dryRunLabel": "Simulazione",
     "dryRunDescription": "Autentica e conta i record senza scrivere."
   },
   "result": {
     "title": "Importazione completata",
-    "dryRunTitle": "Prova a vuoto completata",
+    "dryRunTitle": "Simulazione completata",
     "templates": "Modelli",
     "categories": "Categorie",
     "attributes": "Attributi",

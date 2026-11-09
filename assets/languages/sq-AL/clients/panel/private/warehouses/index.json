@@ -3,15 +3,15 @@
   "title": "Magazinat",
   "description": "Menaxho vendndodhjet që mbajnë stokun tënd.",
   "help": {
-    "ariaLabel": "Rreth Magazinat",
-    "title": "Rreth Magazinat",
-    "overview": "Një magazinë është një vend stoku. Rreshtat e inventarit, transferimet, numërimet, rezervimet e porosive dhe arkat tregojnë të gjitha magazina. Emri dhe kodi janë të detyrueshëm; adresa është opsionale por përcakton TVSH-në e shitjeve në arkë.",
+    "ariaLabel": "Rreth magazinave",
+    "title": "Rreth magazinave",
+    "overview": "Një magazinë është një vend stoku. Rreshtat e inventarit, transferimet, numërimet, rezervimet e porosive dhe arkat lidhen të gjitha me magazina. Emri dhe kodi janë të detyrueshëm; adresa është opsionale por përcakton TVSH-në e shitjeve në arkë.",
     "sections": [
       {
         "title": "E paracaktuar dhe aktive",
         "items": [
-          "Cakto si të paracaktuar e bën këtë magazinë të paracaktuarën e kompanisë dhe heq të mëparshmen. Checkout-i provon së pari magazinën e paracaktuar.",
-          "Vetëm magazinat aktive mbajnë stok për checkout-in dhe mund t’u caktohen arkave.",
+          "Cakto si të paracaktuar e bën këtë magazinë të paracaktuarën e kompanisë dhe heq të mëparshmen. Pagesa online provon së pari magazinën e paracaktuar.",
+          "Vetëm magazinat aktive mbajnë stok për pagesën online dhe mund t’u caktohen arkave.",
           "Çaktivizimi i një magazine që është e vetmja e një arke refuzohet; përndryshe hiqet nga arkat që kanë ende një magazinë tjetër."
         ]
       },
@@ -19,7 +19,7 @@
         "title": "Fshirja",
         "body": "Stoku nuk mund të zhduket bashkë me magazinën e vet.",
         "items": [
-          "Një magazinë, rreshtat e së cilës kanë ende stok ose rezervime, nuk mund të fshihet. Transferoni ose zbritni stokun më parë.",
+          "Një magazinë, rreshtat e së cilës kanë ende stok ose rezervime, nuk mund të fshihet. Transferoni ose çregjistroni stokun më parë.",
           "Fshirja është e butë dhe magazina mund të rikthehet, përveç kur një magazinë tjetër aktive përdor ndërkohë të njëjtin kod."
         ]
       },

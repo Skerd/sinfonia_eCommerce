@@ -1,27 +1,27 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
-  "title": "Modifica raccolta",
-  "errorTitle": "Impossibile caricare la raccolta",
-  "errorDescription": "Impossibile caricare questa raccolta. Riprova.",
+  "title": "Modifica collezione",
+  "errorTitle": "Impossibile caricare la collezione",
+  "errorDescription": "Impossibile caricare questa collezione. Riprova.",
   "form": {
     "_idLabel": "ID record",
     "generalSectionTitle": "Generale",
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della raccolta",
-    "slugLabel": "Lumaca",
+    "namePlaceholder": "Nome della collezione",
+    "slugLabel": "Slug",
     "slugPlaceholder": "nome-generato-automaticamente",
-    "typeLabel": "Tipo di raccolta",
+    "typeLabel": "Tipo di collezione",
     "descriptionLabel": "Descrizione",
-    "descriptionPlaceholder": "Descrizione facoltativa per questa raccolta",
+    "descriptionPlaceholder": "Descrizione facoltativa per questa collezione",
     "mainImageLabel": "Immagine di copertina",
     "isVisibleLabel": "Visibile in vetrina",
-    "positionLabel": "Ordina posizione",
+    "positionLabel": "Posizione di ordinamento",
     "positionPlaceholder": "0",
     "mediaSectionTitle": "Media",
-    "manualSectionTitle": "Prodotti manuali",
+    "manualSectionTitle": "Prodotti selezionati manualmente",
     "productsLabel": "Prodotti",
     "selectProduct": "Cerca prodotti...",
-    "removeProduct": "Rimuovere il prodotto",
+    "removeProduct": "Rimuovi prodotto",
     "dynamicSectionTitle": "Regole dinamiche",
     "ruleConditionLabel": "Condizione di corrispondenza",
     "rulesSectionTitle": "Regole",
@@ -40,7 +40,7 @@
     "seoDescriptionPlaceholder": "Descrizione SEO opzionale",
     "collectionType": {
       "manual": "Manuale",
-      "dynamic": "Dinamico"
+      "dynamic": "Dinamica"
     },
     "ruleCondition": {
       "all": "Tutte le regole (AND)",
@@ -67,7 +67,7 @@
   },
   "axios": {
     "start": {
-      "title": "Salvataggio della raccolta",
+      "title": "Salvataggio della collezione",
       "time": 3000
     },
     "success": {
@@ -75,12 +75,12 @@
       "time": 3000
     },
     "error": {
-      "title": "Impossibile aggiornare la raccolta",
+      "title": "Impossibile aggiornare la collezione",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Modifica raccolta",
+    "title": "Modifica collezione",
     "description": "Aggiorna i dettagli della collezione, i prodotti o le regole dinamiche."
   },
   "formButtons": {

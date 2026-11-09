@@ -4,7 +4,7 @@
   "description": "Questo metodo di pagamento verrà rimosso dalle configurazioni POS e non sarà più disponibile sulle casse fino alla nuova attivazione.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Disattivazione del metodo di pagamento…",

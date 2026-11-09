@@ -4,7 +4,7 @@
   "description": "Cette adresse deviendra l'adresse par défaut pour son type (livraison ou facturation). La précédente adresse par défaut du même type sera effacée ; l'autre type reste inchangé.",
   "cancel": "Annuler",
   "confirm": "Définir par défaut",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Définition de l'adresse par défaut…",

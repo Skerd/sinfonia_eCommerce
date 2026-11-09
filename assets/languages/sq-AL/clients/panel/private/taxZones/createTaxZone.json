@@ -49,7 +49,7 @@
   },
   "formHeader": {
     "title": "Krijo zonë tatimore",
-    "description": "Përcakto gjeografinë e destinacionit dhe tarifat tatimore në checkout."
+    "description": "Përcakto gjeografinë e destinacionit dhe tarifat tatimore që aplikohen gjatë pagesës."
   },
   "formButtons": {
     "cancel": "Anulo",

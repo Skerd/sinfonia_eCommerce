@@ -37,7 +37,7 @@
         "items": [
           "Prezzo è il prezzo unitario da cui parte il carrello, prima delle regole di prezzo e dei codici sconto.",
           "Prezzo di confronto è il prezzo barrato che il negozio può mostrare. MSRP è il prezzo consigliato dal produttore. Prezzo di costo serve alle analisi di margine e non viene mai mostrato agli acquirenti.",
-          "Inizio e fine saldi delimitano il periodo di saldo mostrato nel negozio.",
+          "Inizio e fine offerta delimitano il periodo dell’offerta mostrato nel negozio.",
           "Quantità minima, massima e passo sono le regole di quantità ordinabile; il carrello le applica e il negozio conta le quantità allo stesso modo.",
           "Tassabile e classe fiscale descrivono l’articolo a fini fiscali. L’imposta stessa deriva dalle zone fiscali dell’indirizzo di spedizione."
         ]
@@ -57,7 +57,7 @@
         "items": [
           "Immagine principale, galleria, video e documenti sono i media. Punti salienti, specifiche, FAQ, istruzioni di cura e garanzia riempiono la pagina prodotto.",
           "Prodotti correlati, upsell, cross-sell e «spesso acquistati insieme» sono gli spazi di raccomandazione. In evidenza e badge mettono in risalto l’articolo negli elenchi.",
-          "Gli identificativi (SKU, codice a barre, GTIN, UPC, EAN, ISBN, MPN, codice SA, paese di origine) servono per la ricerca, la scansione in cassa e la dogana.",
+          "Gli identificativi (SKU, codice a barre, GTIN, UPC, EAN, ISBN, MPN, codice HS, paese di origine) servono per la ricerca, la scansione in cassa e la dogana.",
           "SEO contiene meta titolo e descrizione, parole chiave, URL canonico, campi Open Graph e Twitter Card, inclusione e priorità nella sitemap e no-index."
         ]
       },
@@ -92,24 +92,24 @@
       },
       "weightUnit": {
         "kg": "kg",
-        "lb": "libbra",
+        "lb": "lb",
         "g": "g",
         "oz": "oz"
       },
       "dimensionUnit": {
         "cm": "cm",
-        "in": "dentro"
+        "in": "in"
       },
       "seo": {
         "twitterCard": {
           "summary": "Riepilogo",
-          "summary_large_image": "Riepilogo immagine grande"
+          "summary_large_image": "Riepilogo con immagine grande"
         }
       }
     },
     "type": "Tipo",
-    "title": "Modifica tipo di unità",
-    "slug": "Lumaca",
+    "title": "Titolo",
+    "slug": "Slug",
     "description": "Descrizione",
     "shortDescription": "Breve descrizione",
     "highlights": "Punti salienti",
@@ -117,7 +117,7 @@
     "warranty": "Garanzia",
     "faqs": {
       "question": "Domanda",
-      "answer": "Rispondi"
+      "answer": "Risposta"
     },
     "sku": "SKU",
     "barcode": "Codice a barre",
@@ -126,7 +126,7 @@
     "ean": "EAN",
     "isbn": "ISBN",
     "mpn": "MPN",
-    "hsCode": "Codice SA",
+    "hsCode": "Codice HS",
     "countryOfOrigin": "Paese d'origine",
     "brand": "Marchio",
     "vendor": "Fornitore",
@@ -134,16 +134,16 @@
     "categories": "Categorie",
     "collections": "Collezioni",
     "price": "Prezzo",
-    "compareAtPrice": "Confronta il prezzo",
+    "compareAtPrice": "Prezzo di confronto",
     "costPrice": "Prezzo di costo",
     "msrp": "Prezzo consigliato",
-    "saleStartsAt": "Iniziano i saldi",
-    "saleEndsAt": "La vendita termina",
+    "saleStartsAt": "Inizio offerta",
+    "saleEndsAt": "Fine offerta",
     "taxable": "Imponibile",
     "taxClass": "Classe fiscale",
-    "minOrderQty": "minimo quantità dell'ordine",
-    "maxOrderQty": "Massimo. quantità dell'ordine",
-    "stepQty": "Quantità del passaggio dell'ordine",
+    "minOrderQty": "Qtà min. per ordine",
+    "maxOrderQty": "Qtà max. per ordine",
+    "stepQty": "Multiplo di quantità",
     "currency": "Valuta",
     "weight": "Peso",
     "weightUnit": "Unità di peso",
@@ -159,11 +159,11 @@
     "requiresShipping": "Richiede la spedizione",
     "trackInventory": "Tieni traccia dell'inventario",
     "allowBackorder": "Consenti ordine arretrato",
-    "lowStockThreshold": "Soglia di stock bassa",
+    "lowStockThreshold": "Soglia scorte basse",
     "safetyStock": "Scorta di sicurezza",
     "backorderLimit": "Limite degli ordini arretrati",
     "preorderEnabled": "Preordine abilitato",
-    "preorderAvailableAt": "Preordine disponibile su",
+    "preorderAvailableAt": "Preordine disponibile dal",
     "availableForSale": "Disponibile alla vendita",
     "mainImage": "Immagine principale",
     "gallery": "Galleria",
@@ -183,9 +183,9 @@
     "crossSells": "Vendite incrociate",
     "frequentlyBoughtTogether": "Acquistati spesso insieme",
     "featured": "In evidenza",
-    "badges": "Distintivi",
+    "badges": "Badge",
     "ratingAverage": "Valutazione",
-    "ratingCount": "Conteggio della valutazione",
+    "ratingCount": "Numero di valutazioni",
     "reviewCount": "Recensioni",
     "status": "Stato",
     "publishedAt": "Pubblicato",
@@ -202,14 +202,14 @@
       "metaDescription": "Meta descrizione",
       "metaKeywords": "Meta parole chiave",
       "canonicalUrl": "URL canonico",
-      "openGraphTitle": "Apri il titolo del grafico",
-      "openGraphDescription": "Apri la descrizione del grafico",
-      "openGraphImage": "Apri l'immagine del grafico",
+      "openGraphTitle": "Titolo Open Graph",
+      "openGraphDescription": "Descrizione Open Graph",
+      "openGraphImage": "Immagine Open Graph",
       "twitterCard": "Scheda Twitter",
       "structuredDataType": "Tipo di dati strutturati",
       "sitemapInclude": "Includi nella mappa del sito",
       "sitemapPriority": "Priorità della mappa del sito",
-      "noIndex": "Nessun indice"
+      "noIndex": "Noindex"
     },
     "createdBy": "Creato da",
     "company": "Azienda",

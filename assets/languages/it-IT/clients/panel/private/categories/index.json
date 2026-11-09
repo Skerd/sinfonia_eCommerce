@@ -3,15 +3,15 @@
   "title": "Categorie",
   "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
   "help": {
-    "ariaLabel": "Informazioni su Categorie",
-    "title": "Informazioni su Categorie",
+    "ariaLabel": "Informazioni sulle categorie",
+    "title": "Informazioni sulle categorie",
     "overview": "Le categorie sono l’albero del catalogo prodotti. Raggruppano i prodotti nel negozio, nei filtri, negli sconti e nelle regole di prezzo. Un prodotto può stare in più categorie. Gli annunci del marketplace usano le proprie categorie di annunci.",
     "sections": [
       {
         "title": "L’albero",
         "items": [
           "Il nome è obbligatorio. Lo slug ne deriva, è mantenuto unico nella società e ricostruito quando il nome cambia.",
-          "Genitore annida la categoria sotto un’altra; lascialo vuoto per una categoria di primo livello. Una categoria non può essere posta sotto sé stessa o un suo discendente.",
+          "Padre annida la categoria sotto un’altra; lascialo vuoto per una categoria di primo livello. Una categoria non può essere posta sotto sé stessa o un suo discendente.",
           "L’ordine ordina le categorie sorelle, le più piccole prima."
         ]
       },
@@ -36,9 +36,9 @@
   "createCategory": "Crea categoria",
   "fields": {
     "name": "Nome",
-    "slug": "Lumaca",
+    "slug": "Slug",
     "order": "Ordine",
-    "parent": "Categoria genitore",
+    "parent": "Categoria padre",
     "createdBy": "Creato da",
     "company": "Azienda",
     "createdAt": "Creato il",

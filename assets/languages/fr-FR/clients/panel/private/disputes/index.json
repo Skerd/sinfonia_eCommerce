@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Litiges",
-  "description": "Examiner et résoudre les litiges entre clients et fournisseurs.",
+  "description": "Examinez et résolvez les litiges entre clients et prestataires.",
   "help": {
     "ariaLabel": "À propos des litiges",
     "title": "À propos des litiges",
-    "overview": "Un litige est un désaccord sur une commande de la place de marché, tranché par un administrateur. Tant qu’il est ouvert, l’argent de la commande est gelé : pas d’acceptation de livraison, de libération de jalon, d’acceptation automatique ni d’annulation. La décision dit qui reçoit ce qui est encore conservé.",
+    "overview": "Un litige est un désaccord sur une commande de la place de marché, tranché par un administrateur. Tant qu’il est ouvert, l’argent de la commande est gelé : pas d’acceptation de livraison, de libération d’étape, d’acceptation automatique ni d’annulation. La décision dit qui reçoit ce qui est encore conservé.",
     "sections": [
       {
         "title": "Ouvrir un litige",
@@ -46,7 +46,7 @@
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "status": {
     "open": "Ouvert",
-    "under_review": "En cours de révision",
+    "under_review": "En cours d'examen",
     "resolved": "Résolu",
     "closed": "Fermé"
   }

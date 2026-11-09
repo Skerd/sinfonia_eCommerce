@@ -2,12 +2,12 @@
   "path": "src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx",
   "cancel": "Annuler",
   "ship": {
-    "title": "Commande d'expédition",
-    "description": "Crée un traitement avec les détails de suivi et marque la commande comme expédiée.",
+    "title": "Expédier la commande",
+    "description": "Crée une expédition avec les informations de suivi et marque la commande comme expédiée.",
     "carrierLabel": "Transporteur",
     "trackingNumberLabel": "Numéro de suivi",
     "trackingUrlLabel": "URL de suivi",
-    "confirm": "Navire",
+    "confirm": "Expédier",
     "axios": {
       "success": "Commande expédiée",
       "error": "Impossible d'expédier la commande"

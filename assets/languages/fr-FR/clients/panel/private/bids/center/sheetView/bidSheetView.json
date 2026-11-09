@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
-  "bid": "Enchérir",
+  "bid": "Offre",
   "name": "Nom",
   "overview": "Vue d'ensemble",
   "amount": "Montant",
@@ -8,7 +8,7 @@
   "deliveryDays": "Jours de livraison",
   "proposal": "Proposition",
   "status": "Statut",
-  "bidder": "Enchérisseur",
+  "bidder": "Soumissionnaire",
   "taskRequest": "Demande de tâche",
   "failedTitle": "Échec du chargement de l'offre",
   "failedDescription": "Une erreur s'est produite lors du chargement de cette offre. Cliquez pour réessayer.",

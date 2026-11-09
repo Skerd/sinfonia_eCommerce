@@ -4,7 +4,7 @@
   "description": "Questa zona di spedizione verrà utilizzata per calcolare le tariffe di spedizione.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione della zona di spedizione…",

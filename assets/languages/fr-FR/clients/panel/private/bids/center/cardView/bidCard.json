@@ -8,7 +8,7 @@
   "amount": "Montant",
   "deliveryDays": "Livraison",
   "days": "jours",
-  "bidder": "Enchérisseur",
+  "bidder": "Soumissionnaire",
   "offer": "Offre",
   "statuses": {
     "pending": "En attente",

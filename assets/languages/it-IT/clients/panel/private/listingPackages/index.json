@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
-  "title": "Elenco dei pacchetti",
-  "description": "Gestisci i pacchetti di servizi offerti dai fornitori per le loro inserzioni.",
+  "title": "Pacchetti degli annunci",
+  "description": "Gestisci i pacchetti di servizi offerti dai fornitori per i loro annunci.",
   "help": {
-    "ariaLabel": "Informazioni sui package degli annunci",
-    "title": "Informazioni sui package degli annunci",
+    "ariaLabel": "Informazioni sui pacchetti degli annunci",
+    "title": "Informazioni sui pacchetti degli annunci",
     "overview": "Un pacchetto è un livello di prezzo di un annuncio, come Base, Standard o Premium. Quando un acquirente ordina con un pacchetto, prezzo e giorni di consegna del pacchetto sostituiscono quelli base dell’annuncio.",
     "sections": [
       {

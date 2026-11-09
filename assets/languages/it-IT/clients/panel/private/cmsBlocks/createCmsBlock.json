@@ -13,15 +13,15 @@
     "generalSectionTitle": "Generale",
     "configSectionTitle": "Configurazione",
     "visibilitySectionTitle": "Visibilità",
-    "titleLabel": "Modifica tipo di unità",
-    "titlePlaceholder": "Hero della home",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Banner della home",
     "typeLabel": "Tipo",
     "typePlaceholder": "Seleziona il tipo di blocco",
     "positionLabel": "Posizione",
     "positionPlaceholder": "0",
-    "startsAtLabel": "Inizia alle",
+    "startsAtLabel": "Inizio",
     "startsAtPlaceholder": "Seleziona l'inizio",
-    "endsAtLabel": "Termina alle",
+    "endsAtLabel": "Fine",
     "endsAtPlaceholder": "Seleziona la fine",
     "headlineLabel": "Titolo",
     "headlinePlaceholder": "Benvenuto",
@@ -63,13 +63,13 @@
     "visibilityDevicesLabel": "Dispositivi",
     "visibilityDevicesPlaceholder": "Seleziona i dispositivi",
     "visibilityRegionsLabel": "Regioni",
-    "visibilityRegionsPlaceholder": "Aggiungi il codice regionale",
+    "visibilityRegionsPlaceholder": "Aggiungi codice regione",
     "removeRegion": "Rimuovi regione",
     "cmsBlockType": {
-      "hero_banner": "Stendardo dell'eroe",
-      "slider": "Dispositivo di scorrimento",
+      "hero_banner": "Banner principale",
+      "slider": "Slider",
       "featured_collection": "Collezione in primo piano",
-      "trending": "Tendenza",
+      "trending": "Di tendenza",
       "best_sellers": "I più venduti",
       "flash_sale": "Vendita lampo",
       "announcement_bar": "Barra degli annunci",
@@ -81,8 +81,8 @@
     },
     "visibilityDevice": {
       "desktop": "Desktop",
-      "mobile": "Cellulare",
-      "tablet": "Tavoletta"
+      "mobile": "Mobile",
+      "tablet": "Tablet"
     }
   },
   "axios": {

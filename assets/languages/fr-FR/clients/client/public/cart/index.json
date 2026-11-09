@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/cart/index.tsx",
   "discountApplied": "Réduction appliquée",
-  "discountError": "Impossible d'appliquer la réduction",
+  "discountError": "Impossible d'appliquer le code de réduction",
   "giftCardApplied": "Carte cadeau appliquée",
   "giftCardError": "Impossible d'appliquer la carte cadeau",
   "loading": "Chargement du panier",
@@ -17,7 +17,7 @@
   "discountWithCode": "Réduction ({code})",
   "discount": "Réduction",
   "remove": "Retirer",
-  "removeDiscountError": "Impossible de retirer la réduction",
+  "removeDiscountError": "Impossible de retirer le code de réduction",
   "giftCardWithCode": "Carte cadeau ({code})",
   "removeGiftCardError": "Impossible de retirer la carte cadeau",
   "estimatedTotal": "Total estimé",

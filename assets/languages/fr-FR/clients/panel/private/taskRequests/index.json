@@ -45,7 +45,7 @@
   "createTaskRequest": "Créer une demande de tâche",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
-    "title": "Modifier le type d’unité",
+    "title": "Titre",
     "description": "Description",
     "requester": "Demandeur",
     "category": "Catégorie",
@@ -68,7 +68,7 @@
       "status": {
         "open": "Ouvert",
         "closed": "Fermé",
-        "awarded": "Récompensé"
+        "awarded": "Attribuée"
       }
     }
   }

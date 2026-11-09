@@ -1,9 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx",
-  "failedTitle": "Impossibile caricare il pacchetto di elenchi",
-  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo pacchetto di inserzioni. Fare clic per riprovare.",
+  "failedTitle": "Impossibile caricare il pacchetto dell'annuncio",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questo pacchetto dell'annuncio. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
-  "listingPackageSubtitle": "Pacchetto di elenchi",
+  "listingPackageSubtitle": "Pacchetto dell'annuncio",
   "overview": "Panoramica",
   "lifecycle": "Ciclo di vita",
   "description": "Descrizione",

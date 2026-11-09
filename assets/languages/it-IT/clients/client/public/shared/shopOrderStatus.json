@@ -41,13 +41,13 @@
     "rejected": "Rifiutata"
   },
   "deliveryStatus": {
-    "submitted": "In attesa di te",
+    "submitted": "In attesa di una tua azione",
     "accepted": "Accettata",
     "revision_requested": "Modifiche richieste"
   },
   "milestoneStatus": {
     "pending": "In attesa",
-    "released": "Rilasciato",
-    "delivered": "Consegnato"
+    "released": "Rilasciata",
+    "delivered": "Consegnata"
   }
 }

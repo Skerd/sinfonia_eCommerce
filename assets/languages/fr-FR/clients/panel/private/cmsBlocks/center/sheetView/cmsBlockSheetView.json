@@ -15,14 +15,14 @@
   "visibility": "Visibilité",
   "devices": "Appareils",
   "regions": "Régions",
-  "related": "Connexes",
+  "related": "Associés",
   "deletion": "Suppression",
-  "title": "Modifier le type d’unité",
+  "title": "Titre",
   "type": "Type",
   "isActive": "Actif",
-  "position": "Poste",
-  "startsAt": "Commence à",
-  "endsAt": "Se termine à",
+  "position": "Position",
+  "startsAt": "Commence le",
+  "endsAt": "Se termine le",
   "headline": "Titre",
   "subheadline": "Sous-titre",
   "imageUrl": "URL de l'image",
@@ -46,8 +46,8 @@
   "yes": "Oui",
   "no": "Non",
   "cmsBlockType": {
-    "hero_banner": "Bannière de héros",
-    "slider": "Curseur",
+    "hero_banner": "Bannière principale",
+    "slider": "Carrousel",
     "featured_collection": "Collection en vedette",
     "trending": "Tendance",
     "best_sellers": "Meilleures ventes",
@@ -60,7 +60,7 @@
     "promotional_section": "Section promotionnelle"
   },
   "visibilityDevice": {
-    "desktop": "Bureau",
+    "desktop": "Ordinateur",
     "mobile": "Mobile",
     "tablet": "Tablette"
   }

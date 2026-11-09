@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
   "title": "Kategoritë",
-  "description": "Organizoni katalogun e marketplace në një pemë kategori prind/fëmijë që përdoret nga listimet dhe kërkesat e detyrave.",
+  "description": "Organizoni katalogun e tregut në një pemë kategorish prind/fëmijë që përdoret nga listimet dhe kërkesat për detyra.",
   "help": {
     "ariaLabel": "Rreth kategorive të listimeve",
     "title": "Rreth kategorive të listimeve",
@@ -31,7 +31,7 @@
     "name": "Emri",
     "slug": "Slug",
     "order": "Rendi",
-    "parentListingCategory": "Kategori kryesore",
+    "parentListingCategory": "Kategoria prind",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga"

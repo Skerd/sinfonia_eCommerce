@@ -43,7 +43,7 @@
   "no": "Jo",
   "fiscalEnvironment": {
     "test": "Testim",
-    "production": "Prodhim"
+    "production": "Produksion"
   },
   "fiscalTcrType": {
     "REGULAR": "E rregullt",

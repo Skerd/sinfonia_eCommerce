@@ -31,7 +31,7 @@
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
-    "position": "Poste",
+    "position": "Position",
     "isVisibleOnProductPage": "Visible sur la page produit",
     "isUsedForVariants": "Utilisé pour les variantes",
     "values": "Valeurs",

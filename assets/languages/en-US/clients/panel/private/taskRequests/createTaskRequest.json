@@ -13,7 +13,7 @@
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Description",
     "expiresAtLabel": "Expires",
-    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "expiresAtPlaceholder": "YYYY-MM-DD",
     "imageGalleryLabel": "Image gallery",
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",

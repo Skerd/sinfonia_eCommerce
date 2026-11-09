@@ -11,7 +11,7 @@
   "bidder": "Bieter",
   "taskRequest": "Ausschreibung",
   "failedTitle": "Offerte konnten nicht geladen werden",
-  "failedDescription": "Die Offerte konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Offerte konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "bidStatus": {
     "pending": "Ausstehend",

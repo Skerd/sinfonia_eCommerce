@@ -3,8 +3,8 @@
   "title": "Blocchi CMS",
   "description": "Gestisci i blocchi di contenuti della vetrina e il loro ordine di visualizzazione.",
   "help": {
-    "ariaLabel": "Informazioni su Blocchi CMS",
-    "title": "Informazioni su Blocchi CMS",
+    "ariaLabel": "Informazioni sui blocchi CMS",
+    "title": "Informazioni sui blocchi CMS",
     "overview": "I blocchi CMS sono le sezioni della home page del negozio, come un banner principale, uno slider o una barra di annunci. Il negozio mostra i blocchi attivi le cui date includono adesso, nell’ordine delle posizioni. Tipo e titolo sono obbligatori; scegliere un tipo mostra i campi che richiede.",
     "sections": [
       {
@@ -43,16 +43,16 @@
   "cancel": "Annulla",
   "save": "Salva ordine",
   "saving": "Salvataggio...",
-  "saveSuccess": "Ordine di blocco salvato.",
-  "saveError": "Impossibile salvare l'ordine di blocco.",
+  "saveSuccess": "Ordine dei blocchi salvato.",
+  "saveError": "Impossibile salvare l'ordine dei blocchi.",
   "loadError": "Impossibile caricare i blocchi.",
   "fields": {
     "!enums": {
       "type": {
-        "hero_banner": "Stendardo dell'eroe",
-        "slider": "Dispositivo di scorrimento",
+        "hero_banner": "Banner principale",
+        "slider": "Slider",
         "featured_collection": "Collezione in primo piano",
-        "trending": "Tendenza",
+        "trending": "Di tendenza",
         "best_sellers": "I più venduti",
         "flash_sale": "Vendita lampo",
         "announcement_bar": "Barra degli annunci",
@@ -63,13 +63,13 @@
         "promotional_section": "Sezione promozionale"
       }
     },
-    "title": "Modifica tipo di unità",
+    "title": "Titolo",
     "type": "Tipo",
     "position": "Posizione",
     "isActive": "Attivo",
     "config": "Configurazione",
-    "startsAt": "Inizia alle",
-    "endsAt": "Termina alle",
+    "startsAt": "Inizio",
+    "endsAt": "Fine",
     "visibility": {
       "devices": "Dispositivi",
       "regions": "Regioni"

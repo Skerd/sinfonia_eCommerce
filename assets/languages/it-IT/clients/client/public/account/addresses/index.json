@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx",
   "title": "Indirizzi",
-  "subtitle": "Salva indirizzi di spedizione e fatturazione per la cassa.",
+  "subtitle": "Salva indirizzi di spedizione e fatturazione per il checkout.",
   "add": "Aggiungi indirizzo",
   "empty": "Nessun indirizzo salvato.",
   "default": "Predefinito",

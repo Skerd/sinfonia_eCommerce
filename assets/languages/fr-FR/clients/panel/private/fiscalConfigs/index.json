@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
   "title": "Configurations fiscales",
-  "description": "Fiscalité albanaise CIS et paramètres de facture électronique (NIPT, TCR, certificats).",
+  "description": "Fiscalisation CIS albanaise et paramètres de facturation électronique (NIPT, TCR, certificats).",
   "help": {
     "ariaLabel": "À propos des configurations fiscales",
     "title": "À propos des configurations fiscales",
@@ -42,32 +42,32 @@
   "fields": {
     "!enums": {
       "environment": {
-        "test": "Tester",
-        "production": "Fabrication"
+        "test": "Test",
+        "production": "Production"
       },
       "tcrType": {
-        "REGULAR": "Régulier",
-        "VENDING": "Vente automatique"
+        "REGULAR": "Standard",
+        "VENDING": "Distributeur automatique"
       }
     },
     "name": "Nom",
     "nipt": "NIPT",
     "softCode": "Code du logiciel",
-    "maintainerCode": "Code du responsable",
+    "maintainerCode": "Code du mainteneur",
     "businessUnitCode": "Code de l'unité commerciale",
     "operatorCode": "Code opérateur",
     "tcrCode": "Code TCR",
     "tcrIntId": "ID interne du TCR",
-    "tcrType": "Type de RCT",
+    "tcrType": "Type de TCR",
     "fiscalizationUrl": "URL de fiscalisation",
     "einvoiceUrl": "URL de la facture électronique",
-    "selfcareUrl": "URL d'auto-assistance",
+    "selfcareUrl": "URL Selfcare",
     "proxyUrl": "URL du proxy",
     "sellerName": "Nom du vendeur",
     "sellerAddress": "Adresse du vendeur",
     "sellerTown": "Ville du vendeur",
     "sellerCountry": "Pays du vendeur",
-    "isVatRegistered": "TVA enregistrée",
+    "isVatRegistered": "Assujetti à la TVA",
     "environment": "Environnement",
     "certificate": "Certificat",
     "certificatePassword": "Mot de passe du certificat",

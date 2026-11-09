@@ -3,8 +3,8 @@
   "title": "Zone fiscali",
   "description": "Configura le aliquote fiscali per paese e regione.",
   "help": {
-    "ariaLabel": "Informazioni su Zone fiscali",
-    "title": "Informazioni su Zone fiscali",
+    "ariaLabel": "Informazioni sulle zone fiscali",
+    "title": "Informazioni sulle zone fiscali",
     "overview": "Le zone fiscali decidono l’imposta addebitata al checkout e la quota IVA nei prezzi di cassa. Una zona copre un paese, eventualmente ristretto a province e codici postali, e contiene una o più aliquote con nome.",
     "sections": [
       {
@@ -41,12 +41,12 @@
     "name": "Nome",
     "country": "Paese",
     "states": "Stati / cantoni",
-    "postalCodePatterns": "Modelli di codici postali",
+    "postalCodePatterns": "Schemi di codici postali",
     "rates": {
       "name": "Nome della tariffa",
-      "rate": "Vota",
-      "isCompound": "Composto",
-      "appliesTo": "La tariffa si applica a"
+      "rate": "Aliquota",
+      "isCompound": "Composta",
+      "appliesTo": "L'aliquota si applica a"
     },
     "priority": "Priorità",
     "isActive": "Attivo",

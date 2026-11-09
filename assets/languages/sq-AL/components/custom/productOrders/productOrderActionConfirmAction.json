@@ -13,7 +13,7 @@
   "markProcessing": {
     "title": "Shëno si në përpunim",
     "description": "Shëno porosinë si në përgatitje për dërgesë.",
-    "confirm": "Në përpunim",
+    "confirm": "Shëno në përpunim",
     "axios": {
       "success": "Porosia u shënua në përpunim",
       "error": "Porosia nuk u përditësua dot"

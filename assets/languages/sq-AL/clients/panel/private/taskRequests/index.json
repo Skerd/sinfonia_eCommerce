@@ -19,7 +19,7 @@
         "items": [
           "E hapur: pranon oferta deri në skadim.",
           "E mbyllur: nuk pranon më oferta, me zgjedhjen e kërkuesit ose sepse kaluan 30 ditë. Një proces çdo orë mbyll kërkesat e skaduara.",
-          "E caktuar: një ofertë u pranua; statusi nuk mund të ndryshojë më."
+          "E dhënë: një ofertë u pranua; statusi nuk mund të ndryshojë më."
         ]
       },
       {
@@ -35,7 +35,7 @@
         "title": "Ofertat dhe caktimi",
         "items": [
           "Ofruesit bëjnë oferta sa kohë është e hapur dhe e paskaduar; askush nuk mund të bëjë ofertë për kërkesën e vet.",
-          "Pranimi i një oferte refuzon të tjerat, e shënon kërkesën si të caktuar dhe hap një porosi në pritje mes kërkuesit dhe ofertuesit.",
+          "Pranimi i një oferte refuzon të tjerat, e shënon kërkesën si të dhënë dhe hap një porosi në pritje mes kërkuesit dhe ofertuesit.",
           "Çdo rresht tregon sa oferta aktive ka. Joadministratorët shohin kërkesat e veta.",
           "Fshirja është e butë dhe kërkesa mund të rikthehet."
         ]
@@ -68,7 +68,7 @@
       "status": {
         "open": "Hapur",
         "closed": "Mbyllur",
-        "awarded": "Dhuruar"
+        "awarded": "E dhënë"
       }
     }
   }

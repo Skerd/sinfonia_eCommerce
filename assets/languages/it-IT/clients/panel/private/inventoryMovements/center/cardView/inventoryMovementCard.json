@@ -8,12 +8,12 @@
   "reasons": {
     "restock": "Rifornimento",
     "sale": "Vendita",
-    "return": "Ritorno",
-    "adjustment": "Regolazione",
+    "return": "Reso",
+    "adjustment": "Rettifica",
     "damage": "Danno",
-    "transfer_in": "Trasferimento",
-    "transfer_out": "Trasferimento fuori",
+    "transfer_in": "Trasferimento in entrata",
+    "transfer_out": "Trasferimento in uscita",
     "initial": "Iniziale",
-    "write_off": "Cancellazione"
+    "write_off": "Storno"
   }
 }

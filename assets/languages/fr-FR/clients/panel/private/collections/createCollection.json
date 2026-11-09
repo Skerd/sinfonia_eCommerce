@@ -7,7 +7,7 @@
     "namePlaceholder": "Nom de la collection",
     "slugLabel": "Identifiant",
     "slugPlaceholder": "généré automatiquement à partir du nom",
-    "typeLabel": "Type de collecte",
+    "typeLabel": "Type de collection",
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Description facultative pour cette collection",
     "mainImageLabel": "Image de couverture",
@@ -44,12 +44,12 @@
       "any": "N'importe quelle règle (OU)"
     },
     "ruleField": {
-      "tag": "Étiqueter",
+      "tag": "Étiquette",
       "brand": "Marque",
       "category": "Catégorie",
       "price": "Prix",
       "vendor": "Fournisseur",
-      "inventory_level": "Niveau d'inventaire",
+      "inventory_level": "Niveau de stock",
       "product_type": "Type de produit"
     },
     "ruleOperator": {

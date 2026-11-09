@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
-  "title": "Adempimenti",
+  "title": "Evasioni",
   "description": "Tieni traccia delle spedizioni e della consegna degli ordini di prodotti.",
   "help": {
     "ariaLabel": "Informazioni sulle evasioni",
     "title": "Informazioni sulle evasioni",
-    "overview": "Un adempimento è una spedizione di un ordine di prodotti: quali righe e quante unità sono partite, con quale corriere e quale tracciamento. Spedire un ordine ne crea uno automaticamente; puoi anche crearne uno qui per dividere un ordine in più colli. Il suo stato — in attesa, spedito, consegnato o fallito — determina lo stato spedito e consegnato dell’ordine.",
+    "overview": "Un'evasione è una spedizione di un ordine di prodotti: quali righe e quante unità sono partite, con quale corriere e quale tracciamento. Spedire un ordine ne crea una automaticamente; puoi anche crearne una qui per dividere un ordine in più colli. Il suo stato — in attesa, spedita, consegnata o non riuscita — determina lo stato spedito e consegnato dell’ordine.",
     "sections": [
       {
         "title": "Creare una spedizione",
@@ -54,15 +54,15 @@
       }
     ]
   },
-  "createFulfillment": "Creare soddisfazione",
+  "createFulfillment": "Crea evasione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "status": {
         "pending": "In sospeso",
-        "shipped": "Spedito",
-        "delivered": "Consegnato",
-        "failed": "Non riuscito"
+        "shipped": "Spedita",
+        "delivered": "Consegnata",
+        "failed": "Non riuscita"
       }
     },
     "order": "Ordine",
@@ -71,12 +71,12 @@
       "orderItemId": "ID articolo dell'ordine",
       "quantity": "Quantità"
     },
-    "carrier": "Portatore",
+    "carrier": "Corriere",
     "trackingNumber": "Numero di tracciamento",
-    "trackingUrl": "URL di monitoraggio",
-    "shippedAt": "Spedito a",
+    "trackingUrl": "URL di tracciamento",
+    "shippedAt": "Spedito il",
     "estimatedDeliveryAt": "Consegna stimata",
-    "deliveredAt": "Consegnato a",
+    "deliveredAt": "Consegnato il",
     "notes": "Note",
     "createdBy": "Creato da",
     "company": "Azienda",

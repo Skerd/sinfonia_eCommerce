@@ -2,11 +2,11 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Impossible de mettre à jour la liste"
+      "title": "Impossible de mettre à jour l'annonce"
     },
     "start": {
       "time": 3000,
-      "title": "Enregistrement de la liste"
+      "title": "Enregistrement de l'annonce"
     },
     "success": {
       "time": 3000,
@@ -14,9 +14,9 @@
     }
   },
   "editDescription": "Mettre à jour les détails de l'annonce.",
-  "editTitle": "Modifier la fiche",
-  "errorDescription": "Impossible de charger cette liste. Essayer à nouveau.",
-  "errorTitle": "Échec du chargement de la liste",
+  "editTitle": "Modifier l'annonce",
+  "errorDescription": "Impossible de charger cette annonce. Réessayez.",
+  "errorTitle": "Échec du chargement de l'annonce",
   "form": {
     "_idLabel": "Identifiant",
     "addressCityIdLabel": "Ville",
@@ -43,7 +43,7 @@
     "faqsSectionTitle": "FAQ",
     "imageGalleryLabel": "Galerie d’images",
     "listingEditDescription": "Mettez à jour les informations de l'annonce visibles pour les acheteurs.",
-    "listingEditTitle": "Modifier la fiche",
+    "listingEditTitle": "Modifier l'annonce",
     "listingStatus": {
       "active": "Actif",
       "draft": "Brouillon",
@@ -55,7 +55,7 @@
     "priceCurrencyPlaceholder": "Devise",
     "priceLabel": "Prix",
     "providerLabel": "Prestataire",
-    "providerPlaceholder": "Sélectionner l'utilisateur qui fournit ce listing",
+    "providerPlaceholder": "Sélectionnez l'utilisateur qui propose cette annonce",
     "pricingType": {
       "fixed": "Prix fixe",
       "hourly": "Tarif horaire"
@@ -73,11 +73,11 @@
     },
     "statusLabel": "Statut",
     "statusPlaceholder": "Sélectionner le statut",
-    "tagsLabel": "Balises",
-    "tagsPlaceholder": "Tapez une balise et appuyez sur Entrée",
-    "tagsRemoveTooltip": "Supprimer la balise",
-    "tagsSectionTitle": "Balises",
-    "titleLabel": "Modifier le type d’unité",
+    "tagsLabel": "Étiquettes",
+    "tagsPlaceholder": "Saisissez une étiquette et appuyez sur Entrée",
+    "tagsRemoveTooltip": "Supprimer l'étiquette",
+    "tagsSectionTitle": "Étiquettes",
+    "titleLabel": "Titre",
     "titlePlaceholder": "Titre de l'annonce",
     "videoGalleryLabel": "Galerie vidéo"
   },
@@ -87,8 +87,8 @@
   },
   "formHeader": {
     "description": "Mettre à jour les détails de l'annonce.",
-    "title": "Modifier la fiche"
+    "title": "Modifier l'annonce"
   },
   "path": "src/modules/eCommerce/clients/panel/private/listings/editListing.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

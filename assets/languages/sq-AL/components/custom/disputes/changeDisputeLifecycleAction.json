@@ -6,7 +6,7 @@
   "resolutionHint": "E detyrueshme. 1–2000 karaktere.",
   "startReview": {
     "title": "Shëno në shqyrtim",
-    "description": "Mosmarrëveshja mbetet e hapur ndërsa shqyrtoni. Palët nuk mund të pranojnë dorëzimin derisa mosmarrëveshja të përfundohet o të mbyllet.",
+    "description": "Mosmarrëveshja mbetet e hapur ndërsa shqyrtoni. Palët nuk mund të pranojnë dorëzimin derisa mosmarrëveshja të zgjidhet ose të mbyllet.",
     "confirm": "Fillo shqyrtimin",
     "axios": {
       "start": { "title": "Përditësohet mosmarrëveshja", "time": 3000 },
@@ -16,7 +16,7 @@
   },
   "resolve": {
     "title": "Zgjidh mosmarrëveshjen",
-    "description": "E shënon mosmarrëveshjen e zgjidhur dhe e përfundon porositë e lidhura duke përdorur të njëjtën logjikë escrow si pranimi i dorëzimit.",
+    "description": "E shënon mosmarrëveshjen si të zgjidhur dhe e përfundon porosinë e lidhur duke përdorur të njëjtën logjikë depozite si pranimi i dorëzimit.",
     "confirm": "Zgjidh",
     "axios": {
       "start": { "title": "Po zgjidhet mosmarrëveshja", "time": 3000 },
@@ -25,8 +25,8 @@
     }
   },
   "close": {
-    "title": "Mbyll mosmarrëveshjen (anulo porosi)",
-    "description": "Mbyll mosmarrëveshjen dhe anulon porosinë e lidhur me rregulla rimbursimi escrow si një anulim normal.",
+    "title": "Mbyll mosmarrëveshjen (anulo porosinë)",
+    "description": "Mbyll mosmarrëveshjen dhe anulon porosinë e lidhur me rregullat e rimbursimit të depozitës si në një anulim normal.",
     "confirm": "Mbyll mosmarrëveshjen",
     "axios": {
       "start": { "title": "Po mbyllet mosmarrëveshja", "time": 3000 },

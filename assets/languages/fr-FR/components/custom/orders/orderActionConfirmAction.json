@@ -6,7 +6,7 @@
     "confirm": "Accepter la commande",
     "axios": {
       "start": {
-        "title": "Accepter la commande",
+        "title": "Acceptation de la commande",
         "time": 3000
       },
       "success": {
@@ -21,11 +21,11 @@
   },
   "start": {
     "title": "Démarrer cette commande ?",
-    "description": "La commande passera à en cours. Seul le fournisseur peut lancer une commande acceptée.",
+    "description": "La commande passera en cours. Seul le prestataire peut démarrer une commande acceptée.",
     "confirm": "Démarrer la commande",
     "axios": {
       "start": {
-        "title": "Ordre de départ",
+        "title": "Démarrage de la commande",
         "time": 3000
       },
       "success": {
@@ -59,8 +59,8 @@
   },
   "acceptDelivery": {
     "title": "Accepter la livraison et finaliser la commande ?",
-    "description": "La livraison du fournisseur sera acceptée, les fonds bloqués seront débloqués et la commande marquée comme terminée.",
-    "confirm": "Commande complète",
+    "description": "La livraison du prestataire sera acceptée, les fonds en séquestre libérés et la commande marquée comme terminée.",
+    "confirm": "Terminer la commande",
     "axios": {
       "start": {
         "title": "Finalisation de la commande",

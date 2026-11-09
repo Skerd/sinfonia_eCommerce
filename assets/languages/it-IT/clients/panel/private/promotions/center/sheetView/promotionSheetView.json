@@ -17,16 +17,16 @@
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
-  "stopReasonSection": "Smettere di ragionare",
+  "stopReasonSection": "Motivo dell'interruzione",
   "stopReason": "Motivo",
   "type_values": {
     "featured": "In evidenza",
     "sponsored": "Sponsorizzato"
   },
   "lifecycleStatuses": {
-    "active": "Attivo",
+    "active": "Attiva",
     "paused": "In pausa",
-    "stopped": "Fermato"
+    "stopped": "Interrotta"
   },
   "listingStatus": {
     "draft": "Bozza",

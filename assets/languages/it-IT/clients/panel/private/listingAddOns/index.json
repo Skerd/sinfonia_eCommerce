@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
-  "title": "Componenti aggiuntivi dell'elenco",
-  "description": "Gestisci i componenti aggiuntivi opzionali che i fornitori allegano ai loro elenchi.",
+  "title": "Componenti aggiuntivi degli annunci",
+  "description": "Gestisci i componenti aggiuntivi opzionali che i fornitori associano ai loro annunci.",
   "help": {
-    "ariaLabel": "Informazioni sugli extra degli annunci",
-    "title": "Informazioni sugli extra degli annunci",
+    "ariaLabel": "Informazioni sui componenti aggiuntivi degli annunci",
+    "title": "Informazioni sui componenti aggiuntivi degli annunci",
     "overview": "Un componente aggiuntivo è un extra facoltativo che un acquirente può aggiungere ordinando un annuncio, come consegna espressa o una revisione in più. Appartiene a un annuncio e aggiunge il proprio prezzo e, facoltativamente, giorni di consegna.",
     "sections": [
       {

@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
   "formHeader": {
-    "title": "Crea pacchetto di inserzioni",
-    "description": "Definire un livello di servizio che i clienti possono selezionare quando ordinano da un'inserzione."
+    "title": "Crea pacchetto dell'annuncio",
+    "description": "Definisci un livello di servizio che i clienti possono selezionare quando ordinano da un annuncio."
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -10,7 +10,7 @@
   },
   "form": {
     "listingIdLabel": "Annuncio",
-    "listingIdPlaceholder": "Seleziona l'elenco",
+    "listingIdPlaceholder": "Seleziona l'annuncio",
     "nameLabel": "Nome del pacchetto",
     "namePlaceholder": "ad es. Base, Standard, Premium",
     "descriptionLabel": "Descrizione",

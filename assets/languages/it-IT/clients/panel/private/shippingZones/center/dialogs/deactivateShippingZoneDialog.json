@@ -4,7 +4,7 @@
   "description": "Questa zona di spedizione non verrà più utilizzata per il calcolo della tariffa finché non verrà nuovamente attivata.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Disattivazione della zona di spedizione…",

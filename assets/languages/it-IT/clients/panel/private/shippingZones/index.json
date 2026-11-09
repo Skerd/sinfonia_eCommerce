@@ -3,8 +3,8 @@
   "title": "Zone di spedizione",
   "description": "Definisci le tariffe di spedizione in base all'area geografica.",
   "help": {
-    "ariaLabel": "Informazioni su Zone di spedizione",
-    "title": "Informazioni su Zone di spedizione",
+    "ariaLabel": "Informazioni sulle zone di spedizione",
+    "title": "Informazioni sulle zone di spedizione",
     "overview": "Le zone di spedizione decidono quali opzioni di consegna vengono offerte all’acquirente al checkout e quanto costano. Una zona elenca paesi, eventualmente province e codici postali, e una o più tariffe. Il checkout offre ogni tariffa di ogni zona attiva corrispondente; l’acquirente ne sceglie una.",
     "sections": [
       {
@@ -42,12 +42,12 @@
     "name": "Nome",
     "countries": "Paesi",
     "states": "Stati / cantoni",
-    "postalCodePatterns": "Modelli di codici postali",
+    "postalCodePatterns": "Schemi di codici postali",
     "rates": {
       "name": "Nome della tariffa",
       "type": "Tipo di tariffa",
-      "price": "Valuta il prezzo",
-      "carrier": "Portatore",
+      "price": "Prezzo della tariffa",
+      "carrier": "Corriere",
       "estimatedDeliveryDays": "Stima giorni di consegna",
       "conditions": {
         "minWeight": "Peso minimo",

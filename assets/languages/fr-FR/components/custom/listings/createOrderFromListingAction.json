@@ -2,13 +2,13 @@
   "path": "src/modules/eCommerce/components/custom/listings/createOrderFromListingAction.tsx",
   "createOrder": {
     "title": "Commandez ce service",
-    "description": "Passez une commande directement à partir de cette annonce. Le fournisseur recevra une notification et pourra accepter ou refuser.",
+    "description": "Passez une commande directement depuis cette annonce. Le prestataire recevra une notification et pourra accepter ou refuser.",
     "noteLabel": "Note complémentaire (facultatif)",
-    "notePlaceholder": "Toute instruction ou détail particulier pour le fournisseur…",
+    "notePlaceholder": "Toute instruction ou précision particulière pour le prestataire…",
     "confirm": "Passer la commande",
     "axios": {
       "start": {
-        "title": "Passer la commande",
+        "title": "Envoi de la commande",
         "time": 3000
       },
       "success": {

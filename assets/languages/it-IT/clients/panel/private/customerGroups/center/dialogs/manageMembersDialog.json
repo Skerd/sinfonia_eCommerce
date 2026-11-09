@@ -10,7 +10,7 @@
   "noMembers": "Nessun membro ancora in questo gruppo.",
   "close": "Chiudi",
   "addSuccess": "Membro aggiunto.",
-  "addError": "Impossibile aggiungere membro.",
+  "addError": "Impossibile aggiungere il membro.",
   "removeSuccess": "Membro rimosso.",
   "removeError": "Impossibile rimuovere il membro.",
   "loadError": "Impossibile caricare i membri.",

@@ -27,7 +27,7 @@
   },
   "axios": {
     "start": {
-      "title": "Magazzino in risparmio",
+      "title": "Salvataggio del magazzino",
       "time": 3000
     },
     "success": {

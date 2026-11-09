@@ -4,18 +4,18 @@
   "description": "Cancella solo il blocco a livello aziendale. Le casse in pausa singolarmente restano in pausa. I cassieri delle casse sbloccate devono aprire una nuova sessione per vendere di nuovo.",
   "cancel": "Annulla",
   "confirm": "Riprendi tutto",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Riavvio di tutte le casse POS...",
+      "title": "Ripresa di tutte le casse POS…",
       "time": 3000
     },
     "success": {
-      "title": "Sono riprese tutte le casse POS",
+      "title": "Tutte le casse POS sono state riprese",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile ripristinare tutte le casse POS",
+      "title": "Impossibile riprendere tutte le casse POS",
       "time": 3000
     }
   }

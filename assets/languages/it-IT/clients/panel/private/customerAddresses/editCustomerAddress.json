@@ -41,7 +41,7 @@
   },
   "axios": {
     "start": {
-      "title": "Indirizzo di salvataggio",
+      "title": "Salvataggio dell'indirizzo",
       "time": 3000
     },
     "success": {

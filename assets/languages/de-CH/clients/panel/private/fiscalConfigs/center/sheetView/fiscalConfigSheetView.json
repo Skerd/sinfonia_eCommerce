@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx",
   "fiscalConfigSubtitle": "Fiskalisierungskonfiguration",
   "failedTitle": "Fiskalkonfiguration konnte nicht geladen werden",
-  "failedDescription": "Die Fiskalkonfiguration konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Fiskalkonfiguration konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "cisCodes": "CIS-Codes",

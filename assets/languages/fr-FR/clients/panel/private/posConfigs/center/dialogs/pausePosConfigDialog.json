@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
-  "title": "Suspendre ce point de vente jusqu'à ?",
-  "description": "Les sessions ouvertes sur cette caisse seront fermées de force : les chariots retenus sont annulés et l'argent liquide est réglé au montant prévu du tiroir-caisse. Les frais terminaux sont annulés au mieux. La vente reste bloquée jusqu'à votre reprise.",
+  "title": "Mettre cette caisse en pause ?",
+  "description": "Les sessions ouvertes sur cette caisse seront clôturées d'office : les paniers en attente sont annulés et les espèces sont fixées au montant attendu du tiroir-caisse. Les débits en cours sur le terminal sont annulés dans la mesure du possible. La vente reste bloquée jusqu'à la reprise.",
   "reasonLabel": "Motif (facultatif)",
   "reasonPlaceholder": "par ex. Prix erronés / fraude présumée",
   "cancel": "Annuler",
-  "confirm": "Pause jusqu'à",
-  "busy": "Travailler…",
+  "confirm": "Mettre la caisse en pause",
+  "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Suspendre le PDV jusqu'à…",
+      "title": "Mise en pause de la caisse…",
       "time": 3000
     },
     "success": {
-      "title": "PDV jusqu'à la pause",
+      "title": "Caisse mise en pause",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de suspendre le PDV avant",
+      "title": "Impossible de mettre la caisse en pause",
       "time": 3000
     }
   }

@@ -8,7 +8,7 @@
   "section2Title": "Ordini e pagamento",
   "section2Body": "Un ordine è un'offerta di acquisto. Lo accettiamo quando il pagamento è confermato o quando confermiamo un ordine in contrassegno o bonifico. I prezzi sono nella valuta del negozio.",
   "section3Title": "Consegna",
-  "section3Body": "I beni fisici sono spediti all'indirizzo indicato in cassa. I prodotti digitali sono consegnati al tuo account. I tempi di consegna sono indicativi.",
+  "section3Body": "I beni fisici sono spediti all'indirizzo indicato al checkout. I prodotti digitali sono consegnati al tuo account. I tempi di consegna sono indicativi.",
   "section4Title": "Resi",
   "section4Body": "Le richieste di reso sono gestite dallo staff. Contatta {email} con il numero d'ordine se devi restituire un articolo.",
   "section5Title": "Contatti",

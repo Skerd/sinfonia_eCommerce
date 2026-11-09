@@ -2,7 +2,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Impossible de créer la liste"
+      "title": "Impossible de créer l'annonce"
     },
     "start": {
       "time": 3000,
@@ -50,7 +50,7 @@
     "priceCurrencyPlaceholder": "Devise",
     "priceLabel": "Prix",
     "providerLabel": "Prestataire",
-    "providerPlaceholder": "Sélectionner l'utilisateur qui fournit ce listing",
+    "providerPlaceholder": "Sélectionnez l'utilisateur qui propose cette annonce",
     "pricingType": {
       "fixed": "Prix fixe",
       "hourly": "Tarif horaire"
@@ -68,11 +68,11 @@
     },
     "statusLabel": "Statut",
     "statusPlaceholder": "Sélectionner le statut",
-    "tagsLabel": "Balises",
-    "tagsPlaceholder": "Tapez une balise et appuyez sur Entrée",
-    "tagsRemoveTooltip": "Supprimer la balise",
-    "tagsSectionTitle": "Balises",
-    "titleLabel": "Modifier le type d’unité",
+    "tagsLabel": "Étiquettes",
+    "tagsPlaceholder": "Saisissez une étiquette et appuyez sur Entrée",
+    "tagsRemoveTooltip": "Supprimer l'étiquette",
+    "tagsSectionTitle": "Étiquettes",
+    "titleLabel": "Titre",
     "titlePlaceholder": "Titre de l'annonce",
     "videoGalleryLabel": "Galerie vidéo"
   },
@@ -85,5 +85,5 @@
     "title": "Créer une annonce"
   },
   "path": "src/modules/eCommerce/clients/panel/private/listings/createListing.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

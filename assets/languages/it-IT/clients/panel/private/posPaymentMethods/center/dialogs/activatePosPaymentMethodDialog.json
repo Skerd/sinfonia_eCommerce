@@ -4,7 +4,7 @@
   "description": "Questo metodo di pagamento sarà disponibile sulle casse che lo utilizzano.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione del metodo di pagamento…",

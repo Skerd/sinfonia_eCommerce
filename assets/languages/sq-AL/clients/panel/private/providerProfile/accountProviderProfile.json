@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/accountProviderProfile.tsx",
   "title": "Profili i ofruesit",
-  "description": "Profili juaj i shitësit në marketplace: bio, aftësitë, portofoli dhe disponueshmëria javore.",
+  "description": "Profili juaj i shitësit në treg: bio, aftësitë, portofoli dhe disponueshmëria javore.",
   "failTitle": "Profili i ofruesit nuk u ngarkua",
   "failDescription": "Kliko për të provuar përsëri.",
   "connect": {

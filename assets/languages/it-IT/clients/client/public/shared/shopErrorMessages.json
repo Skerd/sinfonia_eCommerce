@@ -11,11 +11,11 @@
     "minimum_order_amount_not_met": "Il carrello non raggiunge l'importo minimo per questo codice.",
     "minimum_quantity_not_met": "Il carrello non contiene abbastanza articoli per questo codice.",
     "buy_x_get_y_misconfigured": "Questo codice non può essere usato al momento.",
-    "gift_card_not_redeemable": "Questa gift card non è valida o non ha più saldo."
+    "gift_card_not_redeemable": "Questa carta regalo non è valida o non ha più saldo."
   },
   "fallbacks": {
     "discount": "Questo codice sconto non può essere usato.",
     "discountRemoved": "non si applica più a questo carrello",
-    "giftCard": "Questa gift card non può essere usata."
+    "giftCard": "Questa carta regalo non può essere usata."
   }
 }

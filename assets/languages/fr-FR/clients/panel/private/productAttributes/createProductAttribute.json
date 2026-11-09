@@ -4,7 +4,7 @@
   "form": {
     "nameLabel": "Nom",
     "namePlaceholder": "Couleur, taille, matière",
-    "positionLabel": "Poste",
+    "positionLabel": "Position",
     "positionPlaceholder": "0",
     "isVisibleOnProductPageLabel": "Visible sur la page produit",
     "isUsedForVariantsLabel": "Utilisé pour les variantes",

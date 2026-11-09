@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
-  "title": "Raportimet e Listimeve",
-  "description": "Shqyrtoni raportimet e dërguara nga përdoruesit për listim të papërshtatshëm.",
+  "title": "Raportimet e listimeve",
+  "description": "Shqyrtoni raportimet e dërguara nga përdoruesit për listime të papërshtatshme.",
   "help": {
-    "ariaLabel": "Rreth flag të listimeve",
-    "title": "Rreth flag të listimeve",
+    "ariaLabel": "Rreth raportimeve të listimeve",
+    "title": "Rreth raportimeve të listimeve",
     "overview": "Një raportim listimi është një njoftim moderimi: një përdorues e shënon një listim si të papërshtatshëm, spam, mashtrues ose tjetër, me koment opsional. Administratorët i shqyrtojnë dhe vendosin raportimet.",
     "sections": [
       {

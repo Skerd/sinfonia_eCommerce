@@ -21,9 +21,9 @@
     "ifaceCashControlLabel": "Kontroll cash",
     "allowDiscountLabel": "Lejo zbritje",
     "allowQuantityChangeLabel": "Lejo ndryshim sasie",
-    "allowOversellLabel": "Lejo oversell",
+    "allowOversellLabel": "Lejo shitje mbi stok",
     "pinForDiscountLabel": "PIN për zbritje",
-    "pinForCashOutLabel": "PIN për cash out",
+    "pinForCashOutLabel": "PIN për dalje cash",
     "pinForRefundLabel": "PIN për rimbursim",
     "selectWarehouse": "Shto magazinë",
     "removeWarehouse": "Hiq magazinën",
@@ -49,7 +49,7 @@
   },
   "formHeader": {
     "title": "Krijo konfigurim POS",
-    "description": "Konfiguroni një arke: konfigurimin fiskal, magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
+    "description": "Konfiguroni një arkë dyqani: konfigurimin fiskal, magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
   },
   "formButtons": {
     "cancel": "Anulo",

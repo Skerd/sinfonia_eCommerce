@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
-  "title": "Modifica la regola del prezzo",
-  "errorTitle": "Impossibile caricare la regola per la determinazione del prezzo",
+  "title": "Modifica regola di prezzo",
+  "errorTitle": "Impossibile caricare la regola di prezzo",
   "errorDescription": "Impossibile caricare questa regola di prezzo. Riprova.",
   "form": {
     "_idLabel": "ID record",
@@ -15,16 +15,16 @@
     "valuePlaceholder": "0",
     "priorityLabel": "Priorità",
     "priorityPlaceholder": "0",
-    "startsAtLabel": "Inizia alle",
+    "startsAtLabel": "Inizio",
     "startsAtPlaceholder": "Seleziona l'inizio",
-    "endsAtLabel": "Termina alle",
+    "endsAtLabel": "Fine",
     "endsAtPlaceholder": "Seleziona la fine",
     "minimumOrderAmountLabel": "Importo minimo dell'ordine",
     "minimumOrderAmountPlaceholder": "0",
     "minimumQuantityLabel": "Quantità minima",
     "minimumQuantityPlaceholder": "0",
     "generalSectionTitle": "Generale",
-    "scheduleSectionTitle": "Calendario",
+    "scheduleSectionTitle": "Pianificazione",
     "limitsSectionTitle": "Limiti",
     "customerGroupsSectionTitle": "Gruppi di clienti",
     "productsLabel": "Prodotti",
@@ -35,7 +35,7 @@
     "selectCollection": "Seleziona collezione",
     "selectCategory": "Seleziona categoria",
     "selectCustomerGroup": "Seleziona il gruppo di clienti",
-    "removeTarget": "Rimuovi bersaglio",
+    "removeTarget": "Rimuovi destinazione",
     "removeCustomerGroup": "Rimuovi gruppo clienti",
     "pricingRuleType": {
       "percentage_discount": "Sconto percentuale",
@@ -57,17 +57,17 @@
       "time": 3000
     },
     "success": {
-      "title": "Regola dei prezzi aggiornata",
+      "title": "Regola di prezzo aggiornata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile aggiornare la regola del prezzo",
+      "title": "Impossibile aggiornare la regola di prezzo",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Modifica la regola del prezzo",
-    "description": "Aggiorna gli aggiustamenti dei prezzi del catalogo, gli obiettivi, i limiti e la pianificazione."
+    "title": "Modifica regola di prezzo",
+    "description": "Aggiorna le rettifiche dei prezzi del catalogo, le destinazioni, i limiti e la pianificazione."
   },
   "formButtons": {
     "cancel": "Annulla",

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
   "title": "Modifier la règle de tarification",
   "errorTitle": "Échec du chargement de la règle de tarification",
-  "errorDescription": "Impossible de charger cette règle de tarification. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette règle de tarification. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
@@ -15,16 +15,16 @@
     "valuePlaceholder": "0",
     "priorityLabel": "Priorité",
     "priorityPlaceholder": "0",
-    "startsAtLabel": "Commence à",
+    "startsAtLabel": "Commence le",
     "startsAtPlaceholder": "Sélectionner le début",
-    "endsAtLabel": "Se termine à",
+    "endsAtLabel": "Se termine le",
     "endsAtPlaceholder": "Sélectionner la fin",
     "minimumOrderAmountLabel": "Montant minimum de commande",
     "minimumOrderAmountPlaceholder": "0",
     "minimumQuantityLabel": "Quantité minimale",
     "minimumQuantityPlaceholder": "0",
     "generalSectionTitle": "Général",
-    "scheduleSectionTitle": "Calendrier",
+    "scheduleSectionTitle": "Planification",
     "limitsSectionTitle": "Limites",
     "customerGroupsSectionTitle": "Groupes de clients",
     "productsLabel": "Produits",
@@ -53,7 +53,7 @@
   },
   "axios": {
     "start": {
-      "title": "Règle de tarification sauvegardée",
+      "title": "Enregistrement de la règle de tarification",
       "time": 3000
     },
     "success": {
@@ -67,7 +67,7 @@
   },
   "formHeader": {
     "title": "Modifier la règle de tarification",
-    "description": "Mettez à jour les ajustements de prix, les objectifs, les limites et le calendrier du catalogue."
+    "description": "Mettez à jour les ajustements de prix du catalogue, les cibles, les limites et le calendrier."
   },
   "formButtons": {
     "cancel": "Annuler",

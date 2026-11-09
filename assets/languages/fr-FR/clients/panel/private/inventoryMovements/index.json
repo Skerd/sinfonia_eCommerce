@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/index.tsx",
   "title": "Mouvements de stocks",
-  "description": "Grand livre complet des réapprovisionnements, des radiations, des ventes et autres variations de stocks.",
+  "description": "Journal complet des réapprovisionnements, mises au rebut, ventes et autres variations de stock.",
   "help": {
-    "ariaLabel": "À propos des mouvements d'inventaire",
-    "title": "À propos des mouvements d'inventaire",
+    "ariaLabel": "À propos des mouvements de stock",
+    "title": "À propos des mouvements de stock",
     "overview": "C’est le journal de stock. Chaque changement d’une quantité en stock écrit une ligne ici, et les lignes ne sont jamais modifiées ni supprimées. Il répond à « pourquoi cet entrepôt en a-t-il autant ? » — chaque ligne montre le changement, la quantité avant et après, le motif, qui l’a fait et ce qui l’a causé.",
     "sections": [
       {
@@ -56,10 +56,10 @@
         "return": "Retour",
         "adjustment": "Ajustement",
         "damage": "Dommages",
-        "transfer_in": "Transfert dans",
-        "transfer_out": "Transfert",
+        "transfer_in": "Transfert entrant",
+        "transfer_out": "Transfert sortant",
         "initial": "Initiale",
-        "write_off": "Radiation"
+        "write_off": "Mise au rebut"
       }
     },
     "inventory": "Inventaire",
@@ -74,11 +74,11 @@
     "manufacturer": "Fabricant",
     "receiptNumber": "Numéro de reçu",
     "receipts": "Reçus",
-    "occurredAt": "Survenu à",
-    "unitCost": "Coût d'unité",
-    "batchLot": "Lot/lot",
+    "occurredAt": "Survenu le",
+    "unitCost": "Coût unitaire",
+    "batchLot": "Lot",
     "expiryDate": "Expiration",
-    "performedBy": "Interprété par",
+    "performedBy": "Effectué par",
     "referenceType": "Référence",
     "referenceId": "ID de référence",
     "createdBy": "Créé par",

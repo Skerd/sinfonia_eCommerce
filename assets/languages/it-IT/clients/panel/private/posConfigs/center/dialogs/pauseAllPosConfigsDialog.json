@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
   "title": "Mettere in pausa tutte le casse POS?",
-  "description": "Applica un blocco a livello aziendale. Le sessioni aperte vengono chiuse forzatamente (sospensioni annullate, contante impostato su previsto). Anche le nuove casse create durante il blocco non possono vendere finché non Riprendi tutto. Le casse in pausa singolarmente restano in pausa. L'annullamento dei terminali è best-effort.",
+  "description": "Applica un blocco a livello aziendale. Le sessioni aperte vengono chiuse forzatamente (ordini sospesi annullati, contanti impostati al valore previsto). Anche le nuove casse create durante il blocco non possono vendere fino a Riprendi tutto. Le casse in pausa singolarmente restano in pausa. Gli storni sui terminali vengono eseguiti per quanto possibile.",
   "reasonLabel": "Motivo (facoltativo)",
-  "reasonPlaceholder": "ad es. Interruzione fiscale/di rete",
+  "reasonPlaceholder": "ad es. Interruzione del servizio fiscale / di rete",
   "cancel": "Annulla",
   "confirm": "Metti tutto in pausa",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Messa in pausa di tutte le casse POS…",
       "time": 3000
     },
     "success": {
-      "title": "Tutte le casse POS sospese",
+      "title": "Tutte le casse POS in pausa",
       "time": 3000
     },
     "error": {

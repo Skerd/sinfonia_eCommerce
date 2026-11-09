@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx",
   "failedTitle": "Buchung konnten nicht geladen werden",
-  "failedDescription": "Die Buchung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Buchung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "bookingSubtitle": "Buchung",
   "overview": "Übersicht",

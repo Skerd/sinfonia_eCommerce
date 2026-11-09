@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
   "title": "Modifier la zone fiscale",
   "errorTitle": "Échec du chargement de la zone fiscale",
-  "errorDescription": "Impossible de charger cette zone fiscale. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette zone fiscale. Réessayez.",
   "form": {
     "generalSectionTitle": "Général",
     "geographySectionTitle": "Géographie",
@@ -13,14 +13,14 @@
     "priorityLabel": "Priorité",
     "priorityPlaceholder": "0",
     "statesLabel": "États / régions",
-    "selectState": "Sélectionner le canton",
+    "selectState": "Sélectionner la région",
     "removeState": "Supprimer l'état",
     "postalCodePatternsLabel": "Modèles de codes postaux",
     "postalCodePatternsPlaceholder": "par ex. 1000* ou AL-*",
     "removePostalCodePattern": "Supprimer le motif",
     "ratesSectionTitle": "Taux d'imposition",
     "rateAddRow": "Ajouter un tarif",
-    "rateRemoveRow": "Supprimer le taux",
+    "rateRemoveRow": "Supprimer le tarif",
     "rateRowTitle": "Tarif sans titre",
     "rateNameLabel": "Nom du tarif",
     "rateNamePlaceholder": "Taux standard",
@@ -37,7 +37,7 @@
   },
   "axios": {
     "start": {
-      "title": "Zone d'épargne fiscale",
+      "title": "Enregistrement de la zone fiscale",
       "time": 3000
     },
     "success": {

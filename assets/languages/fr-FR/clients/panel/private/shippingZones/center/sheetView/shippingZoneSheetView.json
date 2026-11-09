@@ -20,12 +20,12 @@
   "states": "États / régions",
   "postalCodePatterns": "Modèles de codes postaux",
   "country": "Pays",
-  "state": "Canton / État",
+  "state": "Région / État",
   "rateName": "Nom",
   "rateType": "Type",
   "ratePrice": "Prix",
   "carrier": "Transporteur",
-  "estimatedDeliveryDays": "Est. jours de livraison",
+  "estimatedDeliveryDays": "Jours de livraison estimés",
   "minWeight": "Poids minimum",
   "maxWeight": "Poids maximum",
   "minOrderAmount": "Montant minimum de la commande",
@@ -35,10 +35,10 @@
   "yes": "Oui",
   "no": "Non",
   "shippingRateType": {
-    "flat": "Plat",
+    "flat": "Forfaitaire",
     "weight": "Basé sur le poids",
     "price": "Montant de la commande",
     "quantity": "Quantité",
-    "free": "Libre"
+    "free": "Gratuit"
   }
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/createPricingRule.tsx",
-  "title": "Crea una regola di prezzo",
+  "title": "Crea regola di prezzo",
   "form": {
     "nameLabel": "Nome",
     "namePlaceholder": "Nome della regola di prezzo",
@@ -12,16 +12,16 @@
     "valuePlaceholder": "0",
     "priorityLabel": "Priorità",
     "priorityPlaceholder": "0",
-    "startsAtLabel": "Inizia alle",
+    "startsAtLabel": "Inizio",
     "startsAtPlaceholder": "Seleziona l'inizio",
-    "endsAtLabel": "Termina alle",
+    "endsAtLabel": "Fine",
     "endsAtPlaceholder": "Seleziona la fine",
     "minimumOrderAmountLabel": "Importo minimo dell'ordine",
     "minimumOrderAmountPlaceholder": "0",
     "minimumQuantityLabel": "Quantità minima",
     "minimumQuantityPlaceholder": "0",
     "generalSectionTitle": "Generale",
-    "scheduleSectionTitle": "Calendario",
+    "scheduleSectionTitle": "Pianificazione",
     "limitsSectionTitle": "Limiti",
     "customerGroupsSectionTitle": "Gruppi di clienti",
     "productsLabel": "Prodotti",
@@ -32,7 +32,7 @@
     "selectCollection": "Seleziona collezione",
     "selectCategory": "Seleziona categoria",
     "selectCustomerGroup": "Seleziona il gruppo di clienti",
-    "removeTarget": "Rimuovi bersaglio",
+    "removeTarget": "Rimuovi destinazione",
     "removeCustomerGroup": "Rimuovi gruppo clienti",
     "pricingRuleType": {
       "percentage_discount": "Sconto percentuale",
@@ -50,7 +50,7 @@
   },
   "axios": {
     "start": {
-      "title": "Creazione della regola dei prezzi",
+      "title": "Creazione della regola di prezzo",
       "time": 3000
     },
     "success": {
@@ -58,16 +58,16 @@
       "time": 3000
     },
     "error": {
-      "title": "Impossibile creare una regola di prezzo",
+      "title": "Impossibile creare la regola di prezzo",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Crea una regola di prezzo",
+    "title": "Crea regola di prezzo",
     "description": "Imposta le modifiche dei prezzi del catalogo per prodotto, categoria, collezione o gruppo di clienti."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea una regola di prezzo"
+    "submit": "Crea regola di prezzo"
   }
 }

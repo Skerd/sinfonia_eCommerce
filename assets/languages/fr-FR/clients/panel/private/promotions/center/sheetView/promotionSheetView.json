@@ -17,7 +17,7 @@
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
-  "stopReasonSection": "Arrêter la raison",
+  "stopReasonSection": "Motif de l'arrêt",
   "stopReason": "Motif",
   "type_values": {
     "featured": "Mis en avant",

@@ -21,7 +21,7 @@
     "trackInventoryLabel": "Tieni traccia dell'inventario",
     "priceLabel": "Prezzo",
     "pricePlaceholder": "0.00",
-    "compareAtPriceLabel": "Confronta il prezzo",
+    "compareAtPriceLabel": "Prezzo di confronto",
     "compareAtPricePlaceholder": "0.00",
     "costPriceLabel": "Prezzo di costo",
     "costPricePlaceholder": "0.00",
@@ -45,13 +45,13 @@
     "valueLabel": "Valore",
     "valuePlaceholder": "Valore dell'attributo",
     "variantStatus": {
-      "active": "Attivo",
-      "inactive": "Inattivo"
+      "active": "Attiva",
+      "inactive": "Inattiva"
     }
   },
   "axios": {
     "start": {
-      "title": "Variante di salvataggio",
+      "title": "Salvataggio della variante",
       "time": 3000
     },
     "success": {

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx",
   "posOrderSubtitle": "Auftrag details",
   "failedTitle": "POS-Bestellung konnte nicht geladen werden",
-  "failedDescription": "Die POS-Bestellung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die POS-Bestellung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "products": "Produkte",

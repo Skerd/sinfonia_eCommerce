@@ -4,7 +4,7 @@
   "description": "Questa configurazione fiscale non verrà utilizzata per la fiscalizzazione finché non verrà nuovamente attivata.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Disattivazione configurazione fiscale…",

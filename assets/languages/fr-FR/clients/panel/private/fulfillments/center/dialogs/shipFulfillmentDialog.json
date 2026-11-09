@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
-  "title": "Marquer l'exécution comme expédiée",
-  "description": "Définissez les détails de suivi et marquez cette exécution en attente comme expédiée.",
+  "title": "Marquer l'expédition comme expédiée",
+  "description": "Renseignez les informations de suivi et marquez cette expédition en attente comme expédiée.",
   "carrierLabel": "Transporteur",
   "carrierPlaceholder": "Nom du transporteur",
   "trackingNumberLabel": "Numéro de suivi",
@@ -12,14 +12,14 @@
   "notesPlaceholder": "Notes facultatives",
   "cancel": "Annuler",
   "confirm": "Marquer comme expédié",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Marquage comme expédié…",
       "time": 3000
     },
     "success": {
-      "title": "Réalisation marquée comme expédiée",
+      "title": "Expédition marquée comme expédiée",
       "time": 3000
     },
     "error": {

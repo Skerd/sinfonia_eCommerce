@@ -9,9 +9,9 @@
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
     "startAtLabel": "Ora e fillimit",
-    "startAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "startAtPlaceholder": "YYYY-MM-DDTHH:mm",
     "endAtLabel": "Ora e mbarimit",
-    "endAtPlaceholder": "yyyy-MM-ddTHH:mm",
+    "endAtPlaceholder": "YYYY-MM-DDTHH:mm",
     "timezoneLabel": "Zona orare",
     "timezonePlaceholder": "UTC"
   },

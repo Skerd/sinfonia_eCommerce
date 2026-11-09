@@ -4,38 +4,38 @@
   "addFile": "Aggiungi file",
   "filesSelected": "selezionati",
   "restock": {
-    "title": "Rifornire l'inventario",
-    "description": "Aggiungi lo stock ricevuto da un fornitore o produttore. Questo movimento viene registrato con i dettagli della ricevuta.",
+    "title": "Rifornisci l'inventario",
+    "description": "Aggiungi le scorte ricevute da un fornitore o produttore. Questo movimento viene registrato con i dettagli della ricevuta.",
     "quantityLabel": "Quantità da aggiungere",
     "manufacturerLabel": "Produttore/fornitore",
     "receiptNumberLabel": "Ricevuta/nota di consegna n.",
     "occurredAtLabel": "Data di ricezione",
-    "unitCostLabel": "Costo unità",
-    "batchLotLabel": "Lotto/lotto",
+    "unitCostLabel": "Costo unitario",
+    "batchLotLabel": "Lotto",
     "expiryDateLabel": "Data di scadenza",
     "receiptsLabel": "Allegati ricevuta",
     "noteLabel": "Nota",
-    "confirm": "Rifornimento",
+    "confirm": "Rifornisci",
     "axios": {
       "start": {"title": "Rifornimento in corso", "time": 3000},
-      "success": {"title": "Stock rifornito con successo", "time": 3000},
+      "success": {"title": "Scorte rifornite con successo", "time": 3000},
       "error": {"title": "Impossibile rifornire l'inventario", "time": 3000}
     }
   },
   "deduct": {
-    "title": "Detrarre/stornare",
-    "description": "Rimuovere le scorte (danni, perdite o cancellazioni). Costo e scadenza sono presi dall'ultimo movimento in ingresso.",
+    "title": "Detrai / storna",
+    "description": "Rimuovi scorte per danni, perdite o storni. Costo e scadenza sono presi dall'ultimo movimento in ingresso.",
     "quantityLabel": "Quantità da rimuovere",
     "reasonLabel": "Motivo",
-    "reasons": {"write_off": "Svalutazione", "damage": "Danno", "adjustment": "Rettifica"},
-    "batchLotLabel": "Lotto/lotto",
+    "reasons": {"write_off": "Storno", "damage": "Danno", "adjustment": "Rettifica"},
+    "batchLotLabel": "Lotto",
     "receiptsLabel": "Allegati",
     "noteLabel": "Nota",
-    "confirm": "Detrarre",
+    "confirm": "Detrai",
     "axios": {
       "start": {"title": "Detrazione in corso", "time": 3000},
-      "success": {"title": "Stock detratto con successo", "time": 3000},
-      "error": {"title": "Impossibile detrarre l'inventario", "time": 3000}
+      "success": {"title": "Scorte detratte con successo", "time": 3000},
+      "error": {"title": "Impossibile detrarre le scorte", "time": 3000}
     }
   }
 }

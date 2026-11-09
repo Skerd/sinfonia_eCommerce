@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/portal/shopAccountLinks.tsx",
   "orders": "I miei ordini",
-  "services": "I miei servizi",
+  "services": "I miei ordini di servizi",
   "addresses": "Indirizzi"
 }

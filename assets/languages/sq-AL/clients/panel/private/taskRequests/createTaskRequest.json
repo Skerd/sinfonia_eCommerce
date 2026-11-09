@@ -13,7 +13,7 @@
     "descriptionLabel": "Përshkrimi",
     "descriptionPlaceholder": "Përshkrimi",
     "expiresAtLabel": "Skadon",
-    "expiresAtPlaceholder": "yyyy-MM-dd",
+    "expiresAtPlaceholder": "YYYY-MM-DD",
     "imageGalleryLabel": "Galeria e imazheve",
     "latitudeLabel": "Gjerësia gjeografike",
     "latitudePlaceholder": "Gjerësia",
@@ -30,12 +30,12 @@
       "images": "Imazhet",
       "video": "Video"
     },
-    "stateLabel": "Rajoni / gjendja",
+    "stateLabel": "Rajoni",
     "statePlaceholder": "Zgjidh rajonin",
     "streetLabel": "Rruga",
     "streetPlaceholder": "Adresa",
     "taskRequestStatus": {
-      "awarded": "Dhuruar",
+      "awarded": "E dhënë",
       "closed": "Mbyllur",
       "open": "Hapur"
     },
@@ -43,7 +43,7 @@
     "videoGalleryLabel": "Galeria e videove"
   },
   "formButtons": {
-    "cancel": "Anullo",
+    "cancel": "Anulo",
     "submit": "Krijo"
   },
   "formHeader": {

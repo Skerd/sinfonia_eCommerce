@@ -27,7 +27,7 @@
         "body": "Pagesat kërkojnë portën e pagesës dhe adresat e kthimit dhe rifreskimit të Connect të konfiguruara.",
         "items": [
           "Krijo lidhjen e llogarisë nis ose vazhdon regjistrimin në Stripe Express për profilin e përdoruesit të identifikuar dhe kthen faqen që duhet hapur.",
-          "Rifresko statusin e llogarisë sjell nga Stripe në profil shenjat pagesat aktive, pagesat jashtë aktive dhe të dhënat e dorëzuara.",
+          "Rifresko statusin e llogarisë sjell nga Stripe në profil shenjat «arkëtimet aktive», «pagesat dalëse aktive» dhe «të dhënat e dorëzuara».",
           "Kur lirohet depozita e një porosie, pjesa e ofruesit transferohet në këtë llogari nëse ekziston.",
           "Fshirja e një profili është fshirje e butë dhe mund të rikthehet; një profil i fshirë nuk përdoret për Connect."
         ]

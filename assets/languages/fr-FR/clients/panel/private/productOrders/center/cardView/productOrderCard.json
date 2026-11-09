@@ -5,7 +5,7 @@
   "orderStatus": {
     "pending": "En attente",
     "confirmed": "Confirmé",
-    "processing": "Traitement",
+    "processing": "En préparation",
     "shipped": "Expédié",
     "delivered": "Livré",
     "cancelled": "Annulé",

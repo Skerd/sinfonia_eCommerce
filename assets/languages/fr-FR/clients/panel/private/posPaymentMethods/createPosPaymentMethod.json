@@ -8,25 +8,25 @@
     "typePlaceholder": "Sélectionner le type",
     "sequenceLabel": "Séquence",
     "sequencePlaceholder": "0",
-    "cashQuickAmountsLabel": "Encaisser des montants rapides",
+    "cashQuickAmountsLabel": "Montants rapides en espèces",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
     "terminalSectionTitle": "Terminal de paiement bancaire",
-    "terminalEnabledLabel": "Connecter le terminal POS bancaire",
-    "terminalForcesCardHint": "La connexion d’un terminal POS bancaire définit le type sur Carte. La déconnexion le définit sur Cash.",
-    "terminalProviderLabel": "Fournisseur de terminaux",
+    "terminalEnabledLabel": "Connecter le terminal de paiement bancaire",
+    "terminalForcesCardHint": "La connexion d’un terminal de paiement bancaire définit le type sur Carte. La déconnexion le définit sur Espèces.",
+    "terminalProviderLabel": "Fournisseur du terminal",
     "terminalProviderPlaceholder": "Sélectionner le fournisseur",
     "terminalProtocolLabel": "Protocole",
     "terminalProtocolPlaceholder": "Sélectionner le protocole",
     "terminalHostLabel": "Hôte du terminal / IP",
     "terminalHostPlaceholder": "192.168.1.50",
-    "terminalPortLabel": "Port terminal",
+    "terminalPortLabel": "Port du terminal",
     "terminalPortPlaceholder": "8080",
     "terminalIdLabel": "ID du terminal",
     "terminalIdPlaceholder": "TID/POIID",
     "terminalPathLabel": "Chemin du terminal",
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
-      "cash": "Comptant",
+      "cash": "Espèces",
       "card": "Carte"
     },
     "terminalProvider": {
@@ -54,7 +54,7 @@
   },
   "formHeader": {
     "title": "Créer un mode de paiement",
-    "description": "Définissez un mode de paiement de caisse, des jetons de trésorerie en option et une connexion au terminal bancaire."
+    "description": "Définissez un mode de paiement de caisse, des montants rapides en espèces facultatifs et la connexion à un terminal bancaire."
   },
   "formButtons": {
     "cancel": "Annuler",

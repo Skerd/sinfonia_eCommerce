@@ -6,9 +6,9 @@
     "title": "Annonce"
   },
   "taskRequest": "Demande de tâche",
-  "bid": "Enchérir",
+  "bid": "Offre",
   "customer": "Client",
-  "provider": "Fournisseur",
+  "provider": "Prestataire",
   "amount": "Montant",
   "currency": "Devise",
   "deliveryDueDate": "Date d’échéance",

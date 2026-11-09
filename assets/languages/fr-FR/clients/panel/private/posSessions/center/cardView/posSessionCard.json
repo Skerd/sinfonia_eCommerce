@@ -3,7 +3,7 @@
   "failedTitle": "Échec du chargement de la session PDV",
   "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
-  "state": "Canton / État",
+  "state": "État",
   "orderCount": "Commandes",
   "totalSales": "Ventes totales",
   "sessionState": {

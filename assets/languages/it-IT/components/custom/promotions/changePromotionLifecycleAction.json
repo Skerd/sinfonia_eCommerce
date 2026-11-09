@@ -3,15 +3,15 @@
   "cancel": "Annulla",
   "pause": {
     "title": "Metti in pausa la promozione",
-    "description": "Sei sicuro di voler mettere in pausa?",
+    "description": "Vuoi davvero mettere in pausa",
     "confirm": "Pausa",
     "axios": {
       "start": {
-        "title": "Sospensione della promozione",
+        "title": "Messa in pausa della promozione",
         "time": 3000
       },
       "success": {
-        "title": "Promozione sospesa correttamente",
+        "title": "Promozione messa in pausa correttamente",
         "time": 3000
       },
       "error": {
@@ -21,8 +21,8 @@
     }
   },
   "resume": {
-    "title": "Riprendere la promozione",
-    "description": "Sei sicuro di voler riprendere?",
+    "title": "Riprendi la promozione",
+    "description": "Vuoi davvero riprendere",
     "confirm": "Riprendi",
     "axios": {
       "start": {
@@ -42,7 +42,7 @@
   "stop": {
     "title": "Interrompi definitivamente la promozione",
     "description": "Questa operazione non può essere annullata. La promozione rimarrà registrata con il motivo fornito",
-    "confirm": "Smettere definitivamente",
+    "confirm": "Interrompi definitivamente",
     "reasonLabel": "Motivo dell'arresto",
     "reasonPlaceholder": "ad es. Fine della campagna, modifica del budget, conformità...",
     "reasonHint": "Necessario per audit e revisione. 1–2000 caratteri.",

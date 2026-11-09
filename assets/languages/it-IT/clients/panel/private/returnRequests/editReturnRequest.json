@@ -25,16 +25,16 @@
     "reasonLabel": "Motivo",
     "reasonPlaceholder": "Perché questo articolo viene restituito?",
     "returnType": {
-      "return": "Ritorno",
+      "return": "Reso",
       "exchange": "Scambio",
       "refund": "Rimborso"
     },
     "returnStatus": {
       "pending": "In sospeso",
       "approved": "Approvata",
-      "rejected": "Rifiutato",
-      "received": "Ricevuto",
-      "completed": "Completato"
+      "rejected": "Rifiutata",
+      "received": "Ricevuta",
+      "completed": "Completata"
     }
   },
   "axios": {

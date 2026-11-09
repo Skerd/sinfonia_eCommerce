@@ -5,8 +5,8 @@
   "byAuthor": "Par {name}",
   "verifiedPurchase": "Achat vérifié",
   "rating": "Note",
-  "title": "Modifier le type d’unité",
+  "title": "Titre",
   "product": "Produit",
   "order": "Commande",
-  "reviewer": "Réviseur"
+  "reviewer": "Auteur de l'avis"
 }

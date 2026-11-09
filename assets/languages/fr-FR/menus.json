@@ -11,7 +11,7 @@
       "title": "Configurations de point de vente"
     },
     "possessions": {
-      "title": "Séances PLV"
+      "title": "Sessions PDV"
     },
     "posorders": {
       "title": "Commandes au point de vente"
@@ -77,7 +77,7 @@
       "title": "Zones fiscales"
     },
     "shippingzones": {
-      "title": "Zones de livraison"
+      "title": "Zones d'expédition"
     },
     "cmsblocks": {
       "title": "Blocs CMS"
@@ -92,7 +92,7 @@
       "title": "Analyses"
     },
     "fulfillments": {
-      "title": "Réalisations"
+      "title": "Expéditions"
     },
     "returnrequests": {
       "title": "Demandes de retour"
@@ -146,7 +146,7 @@
         "title": "Zones fiscales"
       },
       "shippingzones": {
-        "title": "Zones de livraison"
+        "title": "Zones d'expédition"
       },
       "warehouses": {
         "title": "Entrepôts"
@@ -191,7 +191,7 @@
         "title": "Analyses"
       },
       "eCommerceMarketplace": {
-        "title": "Marché de commerce électronique"
+        "title": "Place de marché e-commerce"
       },
       "listingcategories": {
         "title": "Catégories d'annonces"
@@ -221,16 +221,16 @@
         "title": "Promotions"
       },
       "listingflags": {
-        "title": "Liste des drapeaux"
+        "title": "Signalements d'annonce"
       },
       "providerprofile": {
         "title": "Profils de prestataires"
       },
       "listingaddons": {
-        "title": "Liste des modules complémentaires"
+        "title": "Modules complémentaires d'annonce"
       },
       "listingpackages": {
-        "title": "Liste des packages"
+        "title": "Packages d'annonce"
       }
     }
   },
@@ -261,13 +261,13 @@
       "title": "Promotions"
     },
     "listingflags": {
-      "title": "Liste des drapeaux"
+      "title": "Signalements d'annonce"
     },
     "listingaddons": {
-      "title": "Liste des modules complémentaires"
+      "title": "Modules complémentaires d'annonce"
     },
     "listingpackages": {
-      "title": "Liste des packages"
+      "title": "Packages d'annonce"
     },
     "marketplacesystemmap": {
       "title": "Carte système"

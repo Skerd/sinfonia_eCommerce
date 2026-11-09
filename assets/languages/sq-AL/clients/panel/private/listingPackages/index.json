@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
-  "title": "Paketat e Listimeve",
+  "title": "Paketat e listimeve",
   "description": "Menaxhoni paketat e shërbimeve që ofruesit ofrojnë për listimet e tyre.",
   "help": {
     "ariaLabel": "Rreth paketave të listimeve",

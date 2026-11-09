@@ -12,9 +12,9 @@
     "stockSectionTitle": "Niveaux de stock",
     "quantityOnHandLabel": "Quantité disponible",
     "quantityOnHandPlaceholder": "Quantité de départ",
-    "reorderPointLabel": "Point de commande",
+    "reorderPointLabel": "Seuil de réapprovisionnement",
     "reorderPointPlaceholder": "Alerte sous cette quantité",
-    "reorderQuantityLabel": "Quantité à commander",
+    "reorderQuantityLabel": "Quantité de réapprovisionnement",
     "reorderQuantityPlaceholder": "Quantité à recommander"
   },
   "axios": {

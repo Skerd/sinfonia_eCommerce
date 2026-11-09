@@ -4,7 +4,7 @@
   "description": "Ce moyen de paiement sera disponible sur les caisses qui l'utilisent.",
   "cancel": "Annuler",
   "confirm": "Activer",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Activation du mode de paiement…",

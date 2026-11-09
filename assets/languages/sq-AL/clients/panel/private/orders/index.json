@@ -12,7 +12,7 @@
         "items": [
           "Në pritje: e krijuar, pret që ofruesi ta pranojë.",
           "E pranuar: ofruesi e mori punën; shuma e porosisë mbahet në depozitë.",
-          "Në vazhdim: ofruesi nisi; dorëzimet, rishikimet dhe lirimet e pikave kryesore ndodhin këtu.",
+          "Në vazhdim: ofruesi nisi; dorëzimet, rishikimet dhe lirimet e fazave ndodhin këtu.",
           "E përfunduar: puna u pranua dhe pjesa e mbetur e depozitës u pagua.",
           "E anuluar: u ndal para përfundimit; ajo që mbahej ende u rimbursua."
         ]
@@ -29,26 +29,26 @@
       {
         "title": "Veprimet e klientit",
         "items": [
-          "Prano dorëzimin e përfundon porosinë dhe i liron ofruesit atë që mbahet ende, minus tarifën 10% të platformës. E bllokuar sa kohë ka ankesë të hapur.",
+          "Prano dorëzimin e përfundon porosinë dhe i liron ofruesit atë që mbahet ende, minus tarifën 10% të platformës. E bllokuar sa kohë ka mosmarrëveshje të hapur.",
           "Kërko rishikim e kthen dorëzimin në pritje me një arsye. Të shumtën 3 rishikime për porosi.",
-          "Nëse klienti nuk i përgjigjet një dorëzimi për 3 ditë, një proces çdo orë e pranon për të, përveç kur ka ankesë të hapur.",
-          "Pikat kryesore e ndajnë shumën e mbajtur: klienti i krijon (gjithsej kurrë më shumë se shuma e porosisë) dhe i liron një nga një gjatë punës. Lirimi i të fundit kur nuk mbahet më asgjë e përfundon porosinë."
+          "Nëse klienti nuk i përgjigjet një dorëzimi për 3 ditë, një proces çdo orë e pranon për të, përveç kur ka mosmarrëveshje të hapur.",
+          "Fazat e ndajnë shumën e mbajtur: klienti i krijon (gjithsej kurrë më shumë se shuma e porosisë) dhe i liron një nga një gjatë punës. Lirimi i të fundit kur nuk mbahet më asgjë e përfundon porosinë."
         ]
       },
       {
-        "title": "Anulimi dhe ankesat",
+        "title": "Anulimi dhe mosmarrëveshjet",
         "items": [
-          "Ofruesi mund të anulojë në çdo kohë para se porosia të jetë përfundimtare; klienti vetëm para se të nisë puna. Pas kësaj, një mosmarrëveshje kalon përmes një ankese.",
-          "Askush nuk mund të anulojë sa kohë ka ankesë të hapur. Anulimi rimburson gjithçka që mbahet ende.",
-          "Një ankesë e vendosur në favor të ofruesit e përfundon porosinë dhe paguan; në favor të klientit e anulon dhe rimburson."
+          "Ofruesi mund të anulojë në çdo kohë para se porosia të jetë përfundimtare; klienti vetëm para se të nisë puna. Pas kësaj, një kundërshti kalon përmes një mosmarrëveshjeje.",
+          "Askush nuk mund të anulojë sa kohë ka mosmarrëveshje të hapur. Anulimi rimburson gjithçka që mbahet ende.",
+          "Një mosmarrëveshje e vendosur në favor të ofruesit e përfundon porosinë dhe paguan; në favor të klientit e anulon dhe rimburson."
         ]
       },
       {
         "title": "Paratë dhe të dhënat",
-        "body": "Lirimet dhe rimbursimet mund të paguajnë vetëm atë që mbahet ende, ndaj pikat kryesore, pranimi, ankesat dhe anulimi bashkë nuk e kalojnë kurrë bllokimin.",
+        "body": "Lirimet dhe rimbursimet mund të paguajnë vetëm atë që mbahet ende, ndaj fazat, pranimi, mosmarrëveshjet dhe anulimi bashkë nuk e kalojnë kurrë bllokimin.",
         "items": [
           "Çdo lirim paguhet në llogarinë Stripe të lidhur të ofruesit nëse ka; lirimi regjistrohet në regjistër në çdo rast.",
-          "Kartela e porosisë tregon dorëzimet, pikat kryesore dhe rishikimet. Rezervimet, ankesat dhe vlerësimet varen gjithashtu nga porosia.",
+          "Kartela e porosisë tregon dorëzimet, fazat dhe rishikimet. Rezervimet, mosmarrëveshjet dhe vlerësimet varen gjithashtu nga porosia.",
           "Joadministratorët shohin vetëm porositë ku janë palë. Vetëm një administrator mund ta fshijë një porosi, dhe vetëm kur është përfundimtare."
         ]
       }

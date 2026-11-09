@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
-    "title": "Liste des rapports",
+    "title": "Signaler l'annonce",
     "description": "Signalez une annonce pour examen par l’équipe de modération."
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Soumettre le rapport"
+    "submit": "Envoyer le signalement"
   },
   "form": {
     "listingLabel": "Annonce",
@@ -24,15 +24,15 @@
   },
   "axios": {
     "start": {
-      "title": "Soumission du rapport",
+      "title": "Envoi du signalement",
       "time": 3000
     },
     "success": {
-      "title": "Rapport soumis",
+      "title": "Signalement envoyé",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de soumettre le rapport",
+      "title": "Impossible d'envoyer le signalement",
       "time": 3000
     }
   }

@@ -5,7 +5,7 @@
   "related": "Zugehörig",
   "customerAddressSubtitle": "Adresse details",
   "failedTitle": "Adresse konnten nicht geladen werden",
-  "failedDescription": "Die Adresse konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Adresse konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "type": "Typ",
   "addressType": {

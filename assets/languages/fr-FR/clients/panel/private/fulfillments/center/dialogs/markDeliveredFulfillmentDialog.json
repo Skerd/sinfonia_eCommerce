@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
-  "title": "Marquer l'exécution comme livrée",
-  "description": "Confirmez que ce traitement expédié a été livré.",
+  "title": "Marquer l'expédition comme livrée",
+  "description": "Confirmez que cette expédition a bien été livrée.",
   "notesLabel": "Notes",
   "notesPlaceholder": "Notes facultatives",
   "cancel": "Annuler",
   "confirm": "Marquer comme livré",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Marquage comme livré…",
       "time": 3000
     },
     "success": {
-      "title": "Réalisation marquée comme livrée",
+      "title": "Expédition marquée comme livrée",
       "time": 3000
     },
     "error": {

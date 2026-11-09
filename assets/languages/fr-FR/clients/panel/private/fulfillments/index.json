@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
-  "title": "Réalisations",
+  "title": "Expéditions",
   "description": "Suivre les expéditions et la livraison des commandes de produits.",
   "help": {
     "ariaLabel": "À propos des expéditions",
     "title": "À propos des expéditions",
-    "overview": "Une exécution est un envoi d’une commande produit : quelles lignes et combien d’unités sont parties, avec quel transporteur et quel suivi. Expédier une commande en crée une automatiquement ; vous pouvez aussi en créer une ici pour répartir une commande en plusieurs colis. Son statut — en attente, expédié, livré ou échoué — détermine le statut expédié et livré de la commande.",
+    "overview": "Une expédition est un envoi d’une commande produit : quelles lignes et combien d’unités sont parties, avec quel transporteur et quel suivi. Expédier une commande en crée une automatiquement ; vous pouvez aussi en créer une ici pour répartir une commande en plusieurs colis. Son statut — en attente, expédiée, livrée ou échouée — détermine le statut d’expédition et de livraison de la commande.",
     "sections": [
       {
         "title": "Créer un envoi",
@@ -28,9 +28,9 @@
       },
       {
         "title": "Ce que voit la commande",
-        "body": "Le statut d’exécution de la commande est recalculé depuis ses envois à chaque changement.",
+        "body": "Le statut d’expédition de la commande est recalculé depuis ses envois à chaque changement.",
         "items": [
-          "Toutes les lignes entièrement expédiées rendent la commande exécutée ; certaines lignes expédiées la rendent partiellement exécutée.",
+          "Toutes les lignes entièrement expédiées rendent la commande expédiée ; certaines lignes expédiées la rendent partiellement expédiée.",
           "Toutes les lignes expédiées passent la commande à expédiée. Une commande entièrement expédiée dont l’envoi échoue revient en préparation.",
           "Chaque changement ajoute une entrée à la chronologie de la commande."
         ]
@@ -54,7 +54,7 @@
       }
     ]
   },
-  "createFulfillment": "Créer un épanouissement",
+  "createFulfillment": "Créer une expédition",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {
@@ -68,13 +68,13 @@
     "order": "Commande",
     "status": "Statut",
     "items": {
-      "orderItemId": "Identifiant de l'article de la commande",
+      "orderItemId": "Identifiant de la ligne de commande",
       "quantity": "Quantité"
     },
     "carrier": "Transporteur",
     "trackingNumber": "Numéro de suivi",
     "trackingUrl": "URL de suivi",
-    "shippedAt": "Expédié à",
+    "shippedAt": "Expédiée le",
     "estimatedDeliveryAt": "Livraison estimée",
     "deliveredAt": "Livré à",
     "notes": "Notes",

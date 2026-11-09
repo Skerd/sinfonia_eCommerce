@@ -3,15 +3,15 @@
   "title": "Commandes au point de vente",
   "description": "Commandes finalisées au point de vente.",
   "help": {
-    "ariaLabel": "À propos des commandes PDV",
-    "title": "À propos des commandes PDV",
+    "ariaLabel": "À propos des commandes au point de vente",
+    "title": "À propos des commandes au point de vente",
     "overview": "Une commande au point de vente est une vente enregistrée sur une caisse, ou son remboursement. Cette page est le registre de ces ventes ; les lignes sont créées par la caisse et ne sont ni créées, ni modifiées, ni supprimées ici.",
     "sections": [
       {
         "title": "Les états",
         "items": [
           "Brouillon est un panier mis en attente sur la caisse.",
-          "Payé est une vente conclue. Annulé est un panier en attente abandonné, ou annulé lors de la clôture forcée de sa séance.",
+          "Payé est une vente conclue. Annulé est un panier en attente abandonné, ou annulé lors de la clôture forcée de sa session.",
           "Remboursé marque une vente dont toutes les unités ont été remboursées. Chaque remboursement est aussi sa propre commande, liée à la vente."
         ]
       },
@@ -19,7 +19,7 @@
         "title": "Ce que garde une ligne",
         "body": "La commande est écrite quand la caisse encaisse.",
         "items": [
-          "Séance, caisse, caissier et le client s’il a été associé.",
+          "Session, caisse, caissier et le client s’il a été associé.",
           "Lignes avec produit, variante, quantité, prix unitaire, remise, part de taxe et ce qui a déjà été remboursé sur chaque ligne.",
           "Paiements par mode, monnaie rendue et résultat fiscal (codes fiscaux et statut de la facture électronique) quand la caisse fiscalise.",
           "Un lien vers la commande produit dupliquée qui garde la vente dans les registres de commandes et le chiffre d’affaires."
@@ -39,7 +39,7 @@
         "title": "Pages liées",
         "items": [
           "Point de vente pour vendre, mettre en attente ou rembourser.",
-          "Séances PLV pour voir le tiroir auquel une vente appartenait.",
+          "Sessions PDV pour voir le tiroir auquel une vente appartenait.",
           "Mouvements de stocks pour les entrées de vente et de retour de chaque vente en caisse."
         ]
       }
@@ -60,9 +60,9 @@
       }
     },
     "name": "Numéro de commande",
-    "session": "Séance",
+    "session": "Session",
     "config": "Configuration du point de vente",
-    "state": "Canton / État",
+    "state": "État",
     "cashier": "Caissier",
     "customer": "Client",
     "customerName": "Nom du client",
@@ -71,7 +71,7 @@
     "amountTax": "Taxe",
     "amountTotal": "Total",
     "amountPaid": "Payée",
-    "amountReturn": "Changement",
+    "amountReturn": "Monnaie",
     "discountTotal": "Remise",
     "amountRefunded": "Remboursé",
     "note": "Remarque",
@@ -79,25 +79,25 @@
     "clientRequestId": "Identifiant de la demande du client",
     "productOrder": "Commande de produits",
     "refundOf": "Remboursement de",
-    "isRefund": "Est-ce un remboursement",
+    "isRefund": "Remboursement",
     "nslf": "NSLF / IIC",
-    "iicSignature": "Signature CII",
-    "nivf": "FIV / FIC",
-    "eic": "CEI",
+    "iicSignature": "Signature IIC",
+    "nivf": "NIVF / FIC",
+    "eic": "EIC",
     "qrVerifyUrl": "URL de vérification QR",
-    "fiscalIssueDateTime": "L’heure des questions fiscales",
+    "fiscalIssueDateTime": "Heure d'émission fiscale",
     "fiscalInvNum": "Numéro de facture fiscale",
-    "fiscalInvOrdNum": "Ord. facture fiscale.",
+    "fiscalInvOrdNum": "N° d'ordre de facture fiscale",
     "fiscalTcrCode": "Code caisse TCR",
     "fiscalOperatorCode": "Code opérateur",
-    "fiscalBusinessUnitCode": "Code de l'unité d'activité",
+    "fiscalBusinessUnitCode": "Code de l'unité commerciale",
     "fiscalTypeOfInv": "Type de facture",
     "fiscalConfig": "Configuration fiscale",
-    "fiscalizedAt": "Fiscalisé à",
-    "einvoiceAt": "Facture électronique à",
+    "fiscalizedAt": "Fiscalisée le",
+    "einvoiceAt": "Facture électronique le",
     "fiscalError": "Erreur fiscale",
     "fiscalRequestXml": "Demande fiscale XML",
-    "ublXml": "UBL-XML",
+    "ublXml": "XML UBL",
     "company": "Entreprise",
     "createdBy": "Créé par",
     "createdAt": "Créé le",

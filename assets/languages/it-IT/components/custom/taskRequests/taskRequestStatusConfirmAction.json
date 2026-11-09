@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
   "close": {
     "title": "Chiudere questa richiesta di attività?",
-    "description": "I fornitori non potranno più fare nuove offerte. Potrai riaprirlo in seguito a meno che la richiesta non sia stata accolta.",
+    "description": "I fornitori non potranno più fare nuove offerte. Potrai riaprirla in seguito, a meno che la richiesta non sia stata assegnata.",
     "confirm": "Conferma",
     "axios": {
       "start": {

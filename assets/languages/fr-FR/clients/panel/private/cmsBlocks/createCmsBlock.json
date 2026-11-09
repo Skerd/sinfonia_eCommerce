@@ -13,15 +13,15 @@
     "generalSectionTitle": "Général",
     "configSectionTitle": "Configuration",
     "visibilitySectionTitle": "Visibilité",
-    "titleLabel": "Modifier le type d’unité",
+    "titleLabel": "Titre",
     "titlePlaceholder": "Bannière d'accueil",
     "typeLabel": "Type",
     "typePlaceholder": "Sélectionner le type de bloc",
-    "positionLabel": "Poste",
+    "positionLabel": "Position",
     "positionPlaceholder": "0",
-    "startsAtLabel": "Commence à",
+    "startsAtLabel": "Commence le",
     "startsAtPlaceholder": "Sélectionner le début",
-    "endsAtLabel": "Se termine à",
+    "endsAtLabel": "Se termine le",
     "endsAtPlaceholder": "Sélectionner la fin",
     "headlineLabel": "Titre",
     "headlinePlaceholder": "Bienvenue",
@@ -66,8 +66,8 @@
     "visibilityRegionsPlaceholder": "Ajouter le code de région",
     "removeRegion": "Supprimer la région",
     "cmsBlockType": {
-      "hero_banner": "Bannière de héros",
-      "slider": "Curseur",
+      "hero_banner": "Bannière principale",
+      "slider": "Carrousel",
       "featured_collection": "Collection en vedette",
       "trending": "Tendance",
       "best_sellers": "Meilleures ventes",
@@ -80,7 +80,7 @@
       "promotional_section": "Section promotionnelle"
     },
     "visibilityDevice": {
-      "desktop": "Bureau",
+      "desktop": "Ordinateur",
       "mobile": "Mobile",
       "tablet": "Tablette"
     }

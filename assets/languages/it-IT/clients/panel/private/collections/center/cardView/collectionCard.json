@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/center/cardView/collectionCard.tsx",
-  "failedTitle": "Impossibile caricare la raccolta",
+  "failedTitle": "Impossibile caricare la collezione",
   "failedDescription": "Tocca per riprovare.",
   "collectionType": {
     "manual": "Manuale",
-    "dynamic": "Dinamico"
+    "dynamic": "Dinamica"
   },
   "type": "Tipo",
   "slug": "Slug",

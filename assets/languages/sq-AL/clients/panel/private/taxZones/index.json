@@ -3,16 +3,16 @@
   "title": "Zonat tatimore",
   "description": "Konfiguroni normat tatimore sipas vendit dhe rajonit.",
   "help": {
-    "ariaLabel": "Rreth Zonat tatimore",
-    "title": "Rreth Zonat tatimore",
-    "overview": "Zonat tatimore vendosin tatimin e tarifuar në checkout dhe pjesën e TVSH-së brenda çmimeve në arkë. Një zonë mbulon një shtet, opsionalisht të kufizuar në rajone dhe kode postare, dhe ka një ose më shumë norma me emër.",
+    "ariaLabel": "Rreth zonave tatimore",
+    "title": "Rreth zonave tatimore",
+    "overview": "Zonat tatimore vendosin tatimin e tarifuar gjatë pagesës dhe pjesën e TVSH-së brenda çmimeve në arkë. Një zonë mbulon një shtet, opsionalisht të kufizuar në rajone dhe kode postare, dhe ka një ose më shumë norma me emër.",
     "sections": [
       {
         "title": "Përputhja e një adrese",
-        "body": "Checkout-i përdor adresën e dërgesës; arka adresën e magazinës së saj të parë.",
+        "body": "Pagesa online përdor adresën e dërgesës; arka adresën e magazinës së saj të parë.",
         "items": [
           "Shteti duhet të përputhet. Rajonet e listuara kufizojnë; pa rajone mbulohet gjithë shteti.",
-          "Modelet e kodit postar janë opsionale; * është i vetmi shenjë e lirë, për shembull 10*.",
+          "Modelet e kodit postar janë opsionale; * është e vetmja shenjë e lirë, për shembull 10*.",
           "Çdo zonë aktive që përputhet zbatohet, me përparësinë më të lartë së pari. Një adresë pa zonë që përputhet nuk paguan tatim."
         ]
       },
@@ -40,7 +40,7 @@
   "fields": {
     "name": "Emri",
     "country": "Shteti",
-    "states": "Shtetet",
+    "states": "Rajonet",
     "postalCodePatterns": "Modelet e kodit postar",
     "rates": {
       "name": "Emri i tarifës",

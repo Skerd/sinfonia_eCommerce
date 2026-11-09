@@ -3,8 +3,8 @@
   "title": "Metodat e Pagesës POS",
   "description": "Konfiguroni metodat e pagesës në arkë: cash, kartë dhe të tjera.",
   "help": {
-    "ariaLabel": "Rreth Metodat e Pagesës POS",
-    "title": "Rreth Metodat e Pagesës POS",
+    "ariaLabel": "Rreth metodave të pagesës POS",
+    "title": "Rreth metodave të pagesës POS",
     "overview": "Një metodë pagese është një buton i arkës: para në dorë ose kartë. Arkat zgjedhin cilat metoda ofrojnë. Emri dhe tipi janë të detyrueshëm; renditja është rendi në të cilin shfaqen butonat.",
     "sections": [
       {
@@ -47,7 +47,7 @@
     "terminalHost": "Host i terminalit",
     "terminalPort": "Porta e terminalit",
     "terminalId": "ID e terminalit",
-    "terminalPath": "Path i terminalit",
+    "terminalPath": "Shtegu i terminalit",
     "isActive": "Aktive",
     "createdBy": "Krijuar nga",
     "company": "Kompania",

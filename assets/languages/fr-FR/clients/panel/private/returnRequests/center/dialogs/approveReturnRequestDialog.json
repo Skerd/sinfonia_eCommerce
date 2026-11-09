@@ -8,7 +8,7 @@
   "notesPlaceholder": "Note facultative pour cette approbation",
   "cancel": "Annuler",
   "confirm": "Approuver",
-  "busy": "Travailler…",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Approbation de la demande de retour…",

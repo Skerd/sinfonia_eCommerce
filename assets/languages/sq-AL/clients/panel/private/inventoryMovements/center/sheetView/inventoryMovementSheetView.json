@@ -3,7 +3,7 @@
   "inventoryMovementSubtitle": "Lëvizje stoku",
   "failedTitle": "Ngarkimi i lëvizjes së inventarit dështoi",
   "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj lëvizjeje. Kliko për të riprovuar.",
-  "failedTooltipDescription": "Kliko për të riprovar marrjen e të dhënave.",
+  "failedTooltipDescription": "Kliko për të riprovuar marrjen e të dhënave.",
   "overview": "Përmbledhje",
   "note": "Shënim",
   "receipts": "Faturat",

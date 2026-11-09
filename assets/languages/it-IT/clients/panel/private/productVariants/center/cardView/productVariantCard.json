@@ -6,7 +6,7 @@
   "price": "Prezzo",
   "status": "Stato",
   "variantStatus": {
-    "active": "Attivo",
-    "inactive": "Inattivo"
+    "active": "Attiva",
+    "inactive": "Inattiva"
   }
 }

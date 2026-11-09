@@ -14,7 +14,7 @@
   "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
   "status_values": {
     "open": "Ouvert",
-    "under_review": "En cours de révision",
+    "under_review": "En cours d'examen",
     "resolved": "Résolu",
     "closed": "Fermé"
   },

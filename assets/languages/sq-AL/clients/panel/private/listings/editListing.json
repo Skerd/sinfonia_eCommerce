@@ -2,7 +2,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Nuk mund të përditesohej listimi"
+      "title": "Nuk mund të përditësohej listimi"
     },
     "start": {
       "time": 3000,
@@ -18,16 +18,16 @@
   "errorDescription": "Nuk u ngarkua ky listim. Provoni përsëri.",
   "errorTitle": "Dështoi ngarkimi i listimit",
   "form": {
-    "_idLabel": "ID regjistër",
+    "_idLabel": "ID e regjistrimit",
     "addressCityIdLabel": "Qyteti",
     "addressCityLabel": "Qyteti",
     "addressCityPlaceholder": "Qyteti",
     "addressCountryIdLabel": "Shteti",
     "addressCountryLabel": "Shteti",
     "addressCountryPlaceholder": "Shteti",
-    "addressStateIdLabel": "Rajoni / gjendja",
-    "addressStateLabel": "Rajoni / gjendja",
-    "addressStatePlaceholder": "Rajoni ose gjendja",
+    "addressStateIdLabel": "Rajoni / qarku",
+    "addressStateLabel": "Rajoni / qarku",
+    "addressStatePlaceholder": "Rajoni ose qarku",
     "categoryLabel": "Kategoria",
     "categoryPlaceholder": "Zgjidhni një kategori",
     "deliveryDaysLabel": "Koha e dorëzimit (ditë)",
@@ -55,10 +55,10 @@
     "priceCurrencyPlaceholder": "Monedha",
     "priceLabel": "Çmimi",
     "providerLabel": "Ofruesi",
-    "providerPlaceholder": "Zgjidh përdoruesin që ofron këtë listing",
+    "providerPlaceholder": "Zgjidh përdoruesin që ofron këtë listim",
     "pricingType": {
       "fixed": "Çmim fiks",
-      "hourly": "Në orë"
+      "hourly": "Tarifë për orë"
     },
     "pricingTypeLabel": "Lloji i çmimit",
     "pricingTypePlaceholder": "Zgjidh llojin e çmimit",

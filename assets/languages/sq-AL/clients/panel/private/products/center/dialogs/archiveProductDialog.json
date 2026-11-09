@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/center/dialogs/archiveProductDialog.tsx",
   "title": "Arkivo produktin",
-  "description": "Ky produkt do të largohet nga dyqani derisa të kthehet në draft.",
+  "description": "Ky produkt do të largohet nga dyqani derisa të kthehet në skicë.",
   "cancel": "Anulo",
   "confirm": "Arkivo",
   "busy": "Duke punuar…",

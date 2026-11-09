@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
   "title": "Modifier l'inventaire",
   "errorTitle": "Échec du chargement de l'inventaire",
-  "errorDescription": "Impossible de charger cet inventaire. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cet inventaire. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "assignmentSectionTitle": "Affectation",
@@ -13,14 +13,14 @@
     "variantPlaceholder": "Sélectionnez une variante (facultatif)",
     "warehouseLabel": "Entrepôt",
     "warehousePlaceholder": "Sélectionnez un entrepôt",
-    "reorderPointLabel": "Point de commande",
+    "reorderPointLabel": "Seuil de réapprovisionnement",
     "reorderPointPlaceholder": "Alerte sous cette quantité",
-    "reorderQuantityLabel": "Quantité à commander",
+    "reorderQuantityLabel": "Quantité de réapprovisionnement",
     "reorderQuantityPlaceholder": "Quantité à recommander"
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde de l'inventaire",
+      "title": "Enregistrement du stock",
       "time": 3000
     },
     "success": {

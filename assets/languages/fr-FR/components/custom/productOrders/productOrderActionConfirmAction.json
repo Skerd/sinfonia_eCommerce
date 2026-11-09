@@ -11,9 +11,9 @@
     }
   },
   "markProcessing": {
-    "title": "Marquer comme traitement",
+    "title": "Marquer en préparation",
     "description": "Marquez cette commande comme étant en préparation pour l'expédition.",
-    "confirm": "Traitement des marques",
+    "confirm": "Marquer en préparation",
     "axios": {
       "success": "Commande marquée comme en cours de traitement",
       "error": "Impossible de mettre à jour la commande"

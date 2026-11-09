@@ -17,7 +17,7 @@
   },
   "axios": {
     "start": {
-      "title": "Attributo di salvataggio",
+      "title": "Salvataggio dell'attributo",
       "time": 3000
     },
     "success": {

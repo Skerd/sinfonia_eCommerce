@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/categories/center/sheetView/categorySheetView.tsx",
   "failedTitle": "Nuk u ngarkua kategoria",
   "failedDescription": "Gabim gjatë ngarkimit. Klikoni për të provuar përsëri.",
-  "failedTooltipDescription": "Klikoni për të rifituar të dhënat.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
   "categorySubtitle": "Kategori",
   "overview": "Përmbledhje",
   "lifecycle": "Cikli i jetës",

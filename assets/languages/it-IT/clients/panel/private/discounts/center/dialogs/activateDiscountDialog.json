@@ -4,7 +4,7 @@
   "description": "Questo sconto sarà disponibile per i carrelli e il checkout.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione dello sconto…",

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/components/custom/providerProfile/connectAccountAction.tsx",
   "cancel": "Annulla",
   "createAccountLink": {
-    "title": "Connetti i pagamenti Stripe",
+    "title": "Collega i pagamenti Stripe",
     "description": "Verrai reindirizzato a Stripe per configurare (o completare) i pagamenti Express di questo profilo fornitore. I fondi in garanzia possono esserti versati solo dopo il completamento dell'onboarding.",
     "confirm": "Apri Stripe",
     "axios": {

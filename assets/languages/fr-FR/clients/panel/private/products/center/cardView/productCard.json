@@ -6,7 +6,7 @@
   "timerDays": "Jours",
   "timerHours": "Heures",
   "timerMins": "Minutes",
-  "timerSecs": "Seconde",
+  "timerSecs": "Secondes",
   "productStatus": {
     "draft": "Brouillon",
     "active": "Actif",
@@ -17,7 +17,7 @@
     "digital": "Numérique",
     "service": "Service",
     "variable": "Variable",
-    "bundle": "Fagot",
+    "bundle": "Pack",
     "gift_card": "Carte cadeau"
   }
 }

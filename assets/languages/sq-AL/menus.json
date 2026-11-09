@@ -212,7 +212,7 @@
         "title": "Rezervimet"
       },
       "disputes": {
-        "title": "Ankesat"
+        "title": "Mosmarrëveshjet"
       },
       "reviews": {
         "title": "Vlerësimet"
@@ -227,10 +227,10 @@
         "title": "Profilet e ofruesve"
       },
       "listingaddons": {
-        "title": "Shtesa të Listimeve"
+        "title": "Shtesat e listimeve"
       },
       "listingpackages": {
-        "title": "Paketat e Listimeve"
+        "title": "Paketat e listimeve"
       }
     }
   },
@@ -252,7 +252,7 @@
       "title": "Rezervimet"
     },
     "disputes": {
-      "title": "Ankesat"
+      "title": "Mosmarrëveshjet"
     },
     "reviews": {
       "title": "Vlerësimet"
@@ -264,10 +264,10 @@
       "title": "Raportimet"
     },
     "listingaddons": {
-      "title": "Shtesa të Listimeve"
+      "title": "Shtesat e listimeve"
     },
     "listingpackages": {
-      "title": "Paketat e Listimeve"
+      "title": "Paketat e listimeve"
     },
     "marketplacesystemmap": {
       "title": "Harta e sistemit"

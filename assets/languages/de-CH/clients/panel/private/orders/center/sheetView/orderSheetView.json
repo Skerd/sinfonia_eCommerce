@@ -17,7 +17,7 @@
   "overview": "Übersicht",
   "references": "Referenzen",
   "failedTitle": "Bestellung konnten nicht geladen werden",
-  "failedDescription": "Der Auftrag konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Der Auftrag konnte nicht geladen werden. Klicken Sie, um ihn erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "orderStatus": {
     "pending": "Ausstehend",

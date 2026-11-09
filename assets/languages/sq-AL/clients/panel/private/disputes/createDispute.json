@@ -24,7 +24,7 @@
     "submit": "Hap mosmarrëveshjen"
   },
   "formHeader": {
-    "description": "Ngriti një mosmarrëveshje për një porosi me probleme.",
+    "description": "Hapni një mosmarrëveshje për një porosi me probleme.",
     "title": "Hap mosmarrëveshje"
   },
   "path": "src/modules/eCommerce/clients/panel/private/disputes/createDispute.tsx",

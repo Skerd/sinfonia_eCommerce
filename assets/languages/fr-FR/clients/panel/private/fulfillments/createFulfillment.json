@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
-  "title": "Créer un épanouissement",
+  "title": "Créer une expédition",
   "form": {
     "orderLabel": "Commande",
     "orderPlaceholder": "Sélectionnez la commande",
@@ -11,7 +11,7 @@
     "trackingNumberPlaceholder": "Numéro de suivi",
     "trackingUrlLabel": "URL de suivi",
     "trackingUrlPlaceholder": "https://…",
-    "shippedAtLabel": "Expédié à",
+    "shippedAtLabel": "Expédiée le",
     "estimatedDeliveryAtLabel": "Livraison estimée",
     "deliveredAtLabel": "Livré à",
     "notesLabel": "Notes",
@@ -32,24 +32,24 @@
   },
   "axios": {
     "start": {
-      "title": "Créer l'épanouissement",
+      "title": "Création de l'expédition",
       "time": 3000
     },
     "success": {
-      "title": "Réalisation créée",
+      "title": "Expédition créée",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de créer l'épanouissement",
+      "title": "Impossible de créer l'expédition",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Créer un épanouissement",
+    "title": "Créer une expédition",
     "description": "Créez un envoi pour une commande avec suivi et articles."
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Créer un épanouissement"
+    "submit": "Créer une expédition"
   }
 }

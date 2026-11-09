@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx",
   "failedTitle": "Inserat-Zusatzleistung konnte nicht geladen werden",
-  "failedDescription": "Die Zusatzleistung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Zusatzleistung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "listingAddOnSubtitle": "Inserat Hinzufügen-On",
   "overview": "Übersicht",

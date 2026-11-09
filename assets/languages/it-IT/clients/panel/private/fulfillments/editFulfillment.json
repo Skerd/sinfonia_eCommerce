@@ -1,22 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
-  "title": "Modifica adempimento",
-  "errorTitle": "Impossibile caricare l'adempimento",
-  "errorDescription": "Impossibile caricare questo adempimento. Riprova.",
+  "title": "Modifica evasione",
+  "errorTitle": "Impossibile caricare l'evasione",
+  "errorDescription": "Impossibile caricare questa evasione. Riprova.",
   "form": {
     "_idLabel": "ID record",
     "orderLabel": "Ordine",
     "orderPlaceholder": "Seleziona l'ordine",
     "statusLabel": "Stato",
-    "carrierLabel": "Portatore",
+    "carrierLabel": "Corriere",
     "carrierPlaceholder": "Nome del corriere",
     "trackingNumberLabel": "Numero di tracciamento",
     "trackingNumberPlaceholder": "Numero di tracciamento",
-    "trackingUrlLabel": "URL di monitoraggio",
+    "trackingUrlLabel": "URL di tracciamento",
     "trackingUrlPlaceholder": "https://…",
-    "shippedAtLabel": "Spedito a",
+    "shippedAtLabel": "Spedito il",
     "estimatedDeliveryAtLabel": "Consegna stimata",
-    "deliveredAtLabel": "Consegnato a",
+    "deliveredAtLabel": "Consegnato il",
     "notesLabel": "Note",
     "notesPlaceholder": "Note facoltative",
     "itemsSectionTitle": "Elementi",
@@ -28,27 +28,27 @@
     "quantityLabel": "Quantità",
     "fulfillmentStatus": {
       "pending": "In sospeso",
-      "shipped": "Spedito",
-      "delivered": "Consegnato",
-      "failed": "Non riuscito"
+      "shipped": "Spedita",
+      "delivered": "Consegnata",
+      "failed": "Non riuscita"
     }
   },
   "axios": {
     "start": {
-      "title": "Salvataggio dell'adempimento",
+      "title": "Salvataggio dell'evasione",
       "time": 3000
     },
     "success": {
-      "title": "Adempimento aggiornato",
+      "title": "Evasione aggiornata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile aggiornare l'adempimento",
+      "title": "Impossibile aggiornare l'evasione",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Modifica adempimento",
+    "title": "Modifica evasione",
     "description": "Aggiorna lo stato della spedizione, il tracciamento, le date, le note e gli articoli."
   },
   "formButtons": {

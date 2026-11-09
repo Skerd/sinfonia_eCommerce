@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/components/custom/orders/orderExtendAction.tsx",
   "extend": {
     "title": "Prolonger la date de livraison",
-    "description": "Ajoutez des jours supplémentaires à la date d'échéance de livraison. Seul le fournisseur peut prolonger une commande active.",
+    "description": "Ajoutez des jours supplémentaires à la date d'échéance de livraison. Seul le prestataire peut prolonger une commande active.",
     "additionalDaysLabel": "Jours supplémentaires",
     "additionalDaysHint": "Saisissez une valeur comprise entre 1 et 90 jours.",
     "confirm": "Prolonger la livraison",

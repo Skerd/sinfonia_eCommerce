@@ -28,8 +28,8 @@
   "createBooking": "Créer une réservation",
   "fields": {
     "order": "Commande",
-    "provider": "Fournisseur",
-    "startAt": "Commencer",
+    "provider": "Prestataire",
+    "startAt": "Début",
     "endAt": "Fin",
     "timezone": "Fuseau horaire",
     "status": "Statut",

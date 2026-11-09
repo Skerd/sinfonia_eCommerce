@@ -25,11 +25,11 @@
   },
   "resolve": {
     "title": "Résoudre le litige",
-    "description": "Marque le litige résolu et termine la commande liée en utilisant la même logique de dépôt fiduciaire que pour l'acceptation de la livraison.",
+    "description": "Marque le litige comme résolu et termine la commande liée avec la même logique de séquestre que l'acceptation de la livraison.",
     "confirm": "Résoudre",
     "axios": {
       "start": {
-        "title": "Résoudre le litige",
+        "title": "Résolution du litige",
         "time": 3000
       },
       "success": {

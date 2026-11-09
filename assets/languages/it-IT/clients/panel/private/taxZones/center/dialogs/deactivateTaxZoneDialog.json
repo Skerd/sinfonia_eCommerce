@@ -4,7 +4,7 @@
   "description": "Questa zona fiscale non verrà più utilizzata per il calcolo delle imposte finché non verrà nuovamente attivata.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Disattivazione della zona fiscale…",

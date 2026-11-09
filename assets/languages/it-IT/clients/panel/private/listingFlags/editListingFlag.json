@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
-  "editTitle": "Modifica il flag dell'elenco",
+  "editTitle": "Modifica segnalazione dell'annuncio",
   "editDescription": "Aggiorna il motivo e i dettagli di questa segnalazione.",
-  "errorTitle": "Impossibile caricare il rapporto",
+  "errorTitle": "Impossibile caricare la segnalazione",
   "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
   "formHeader": {
-    "title": "Modifica il flag dell'elenco",
-    "description": "Aggiorna il motivo e i dettagli aggiuntivi. L'elenco non può essere modificato."
+    "title": "Modifica segnalazione dell'annuncio",
+    "description": "Aggiorna il motivo e i dettagli aggiuntivi. L'annuncio non può essere modificato."
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -26,15 +26,15 @@
   },
   "axios": {
     "start": {
-      "title": "Salvataggio del rapporto",
+      "title": "Salvataggio della segnalazione",
       "time": 3000
     },
     "success": {
-      "title": "Rapporto aggiornato",
+      "title": "Segnalazione aggiornata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile aggiornare il rapporto",
+      "title": "Impossibile aggiornare la segnalazione",
       "time": 3000
     }
   }

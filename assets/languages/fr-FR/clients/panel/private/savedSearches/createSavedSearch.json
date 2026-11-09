@@ -27,7 +27,7 @@
   },
   "axios": {
     "start": {"title": "Création de la recherche", "time": 3000},
-    "success": {"title": "Recherche enregistrée", "time": 3000},
+    "success": {"title": "Recherche enregistrée créée", "time": 3000},
     "error": {"title": "Impossible de créer la recherche", "time": 3000}
   },
   "formHeader": {

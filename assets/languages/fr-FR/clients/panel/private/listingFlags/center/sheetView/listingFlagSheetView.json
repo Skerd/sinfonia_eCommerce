@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
-  "failedTitle": "Échec du chargement de l'indicateur de liste",
-  "failedDescription": "Une erreur s'est produite lors du chargement de cet indicateur de liste. Cliquez pour réessayer.",
+  "failedTitle": "Échec du chargement du signalement d'annonce",
+  "failedDescription": "Une erreur s'est produite lors du chargement de ce signalement d'annonce. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
-  "listingFlagSubtitle": "Indicateur de liste",
-  "listingFlag": "Indicateur de liste",
+  "listingFlagSubtitle": "Signalement d'annonce",
+  "listingFlag": "Signalement d'annonce",
   "overview": "Vue d'ensemble",
   "lifecycle": "Cycle de vie",
   "details": "Détails",
@@ -15,7 +15,7 @@
   "reporter": "Signaleur",
   "status": "Statut",
   "resolution": "Résolution",
-  "listingAction": "Action de référencement",
+  "listingAction": "Action sur l'annonce",
   "createdAt": "Créé le",
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
@@ -23,7 +23,7 @@
   "deletedBy": "Supprimé par",
   "status_values": {
     "pending": "En attente",
-    "reviewed": "Révisé",
+    "reviewed": "Examiné",
     "dismissed": "Rejeté"
   },
   "reason_values": {

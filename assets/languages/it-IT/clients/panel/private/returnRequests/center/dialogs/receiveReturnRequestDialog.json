@@ -7,7 +7,7 @@
   "busy": "In corso…",
   "axios": {
     "start": {
-      "title": "Segnatura del reso come ricevuto…",
+      "title": "Aggiornamento dello stato…",
       "time": 3000
     },
     "success": {

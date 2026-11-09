@@ -3,8 +3,8 @@
   "title": "Konfigurimet POS",
   "description": "Dyqanet dhe cilësimet e arkës.",
   "help": {
-    "ariaLabel": "Rreth Konfigurimet POS",
-    "title": "Rreth Konfigurimet POS",
+    "ariaLabel": "Rreth konfigurimeve POS",
+    "title": "Rreth konfigurimeve POS",
     "overview": "Një konfigurim POS është një arkë: butonat e saj të pagesës, magazinat nga shet, monedha, kuponët, fiskalizimi dhe çfarë mund të bëjë arkëtari. Një arkëtar hap një seancë në të nga faqja Pika e shitjes.",
     "sections": [
       {
@@ -24,7 +24,7 @@
         "items": [
           "Lejo zbritjen dhe lejo ndryshimin e sasisë zhbllokojnë këto ndryshime në arkë.",
           "Lejo shitjen mbi stok lejon një shitje edhe kur magazinat nuk kanë stok të mjaftueshëm; mungesa merret nga magazina e fundit.",
-          "PIN për zbritje, PIN për nxjerrje parash dhe PIN për rimbursim kërkojnë PIN-in e menaxherit për atë veprim.",
+          "PIN për zbritje, PIN për dalje cash dhe PIN për rimbursim kërkojnë PIN-in e menaxherit për atë veprim.",
           "Kontrolli i parave ndjek sirtarin; lexuesi i barkodit aktivizon skanimin."
         ]
       },
@@ -42,8 +42,8 @@
         "body": "Tre çelësa ndalojnë një arkë të marrë pagesa.",
         "items": [
           "Çaktivizo e fik arkën dhe ia mbyll me forcë seancat e hapura; nuk mund të hapet sërish derisa të aktivizohet.",
-          "Pauza ndal shitjet e një arke me arsye opsionale dhe ia mbyll me forcë seancat e hapura: shportat e pezulluara anulohen dhe pagesat në terminal që janë në proces anulohen kur është e mundur. Vazhdo e heq pauzën.",
-          "Vër në pauzë të gjitha arkat vendos një kyçje për gjithë kompaninë dhe mbyll me forcë çdo seancë të hapur. Sa kohë është aktive, asnjë arkë nuk mund të vazhdojë. Vazhdo të gjitha heq vetëm kyçjen e kompanisë; arkat e vëna në pauzë një nga një mbeten në pauzë."
+          "Pauza ndal shitjet e një arke me arsye opsionale dhe ia mbyll me forcë seancat e hapura: shportat e mbajtura anulohen dhe pagesat në terminal që janë në proces anulohen kur është e mundur. Rifillo e heq pauzën.",
+          "Pauzo të gjitha arkat vendos një kyçje për gjithë kompaninë dhe mbyll me forcë çdo seancë të hapur. Sa kohë është aktive, asnjë arkë nuk mund të rifillohet. Rifillo të gjitha heq vetëm kyçjen e kompanisë; arkat e vëna në pauzë një nga një mbeten në pauzë."
         ]
       },
       {
@@ -84,7 +84,7 @@
     "warehouse": "Magazina",
     "warehouses": "Magazinat",
     "currency": "Monedha",
-    "receiptHeader": "Kreu i faturës",
+    "receiptHeader": "Koka e faturës",
     "receiptFooter": "Fundi i faturës",
     "ifaceBarcodeScanner": "Skener barkodi",
     "ifaceCashControl": "Kontrolli i cash-it",
@@ -92,7 +92,7 @@
     "allowQuantityChange": "Lejo ndryshim sasie",
     "allowOversell": "Lejo shitje mbi stok",
     "pinForDiscount": "PIN për zbritje",
-    "pinForCashOut": "PIN për cash out",
+    "pinForCashOut": "PIN për dalje cash",
     "pinForRefund": "PIN për rimbursim",
     "isActive": "Aktive",
     "createdBy": "Krijuar nga",

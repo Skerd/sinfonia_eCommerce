@@ -12,12 +12,12 @@
   "isActive": "Actif",
   "yes": "Oui",
   "no": "Non",
-  "cashQuickAmounts": "Encaisser des montants rapides",
+  "cashQuickAmounts": "Montants rapides en espèces",
   "terminalEnabled": "Terminal de paiement bancaire",
-  "terminalProviderLabel": "Fournisseur de terminaux",
+  "terminalProviderLabel": "Fournisseur du terminal",
   "terminalProtocolLabel": "Protocole",
   "terminalHost": "Hôte du terminal",
-  "terminalPort": "Port terminal",
+  "terminalPort": "Port du terminal",
   "terminalId": "ID du terminal",
   "terminalPath": "Chemin du terminal",
   "lifecycle": "Cycle de vie",
@@ -27,7 +27,7 @@
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
   "paymentType": {
-    "cash": "Comptant",
+    "cash": "Espèces",
     "card": "Carte"
   },
   "terminalProvider": {

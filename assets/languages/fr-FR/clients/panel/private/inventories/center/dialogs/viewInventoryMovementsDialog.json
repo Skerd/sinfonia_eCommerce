@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/dialogs/viewInventoryMovementsDialog.tsx",
   "title": "Mouvements de stock",
-  "description": "Historique de stock pour cette ligne d'inventaire",
+  "description": "Historique du stock de cette ligne de stock",
   "empty": "Aucun mouvement pour le moment.",
   "close": "Fermer",
   "failTitle": "Échec du chargement des mouvements",
@@ -21,6 +21,6 @@
     "transfer_in": "Transfert entrant",
     "transfer_out": "Transfert sortant",
     "initial": "Initial",
-    "write_off": "Radiation"
+    "write_off": "Mise au rebut"
   }
 }

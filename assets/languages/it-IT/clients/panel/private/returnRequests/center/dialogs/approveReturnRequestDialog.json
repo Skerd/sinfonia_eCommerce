@@ -8,7 +8,7 @@
   "notesPlaceholder": "Nota facoltativa per questa approvazione",
   "cancel": "Annulla",
   "confirm": "Approva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Approvazione della richiesta di reso…",

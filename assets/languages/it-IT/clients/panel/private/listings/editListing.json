@@ -2,21 +2,21 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Impossibile aggiornare l'elenco"
+      "title": "Impossibile aggiornare l'annuncio"
     },
     "start": {
       "time": 3000,
-      "title": "Salvataggio dell'elenco"
+      "title": "Salvataggio dell'annuncio"
     },
     "success": {
       "time": 3000,
-      "title": "Elenco aggiornato"
+      "title": "Annuncio aggiornato"
     }
   },
-  "editDescription": "Aggiorna i dettagli dell'elenco.",
-  "editTitle": "Modifica elenco",
-  "errorDescription": "Impossibile caricare questa inserzione. Riprova.",
-  "errorTitle": "Impossibile caricare l'elenco",
+  "editDescription": "Aggiorna i dettagli dell'annuncio.",
+  "editTitle": "Modifica annuncio",
+  "errorDescription": "Impossibile caricare questo annuncio. Riprova.",
+  "errorTitle": "Impossibile caricare l'annuncio",
   "form": {
     "_idLabel": "ID record",
     "addressCityIdLabel": "Città",
@@ -33,17 +33,17 @@
     "deliveryDaysLabel": "Tempi di consegna (giorni)",
     "deliveryDaysPlaceholder": "ad es. 3",
     "descriptionLabel": "Descrizione",
-    "faqAddRow": "Aggiungi domande frequenti",
-    "faqAnswerLabel": "Rispondi",
-    "faqAnswerPlaceholder": "Rispondi",
+    "faqAddRow": "Aggiungi domanda frequente",
+    "faqAnswerLabel": "Risposta",
+    "faqAnswerPlaceholder": "Risposta",
     "faqQuestionLabel": "Domanda",
     "faqQuestionPlaceholder": "Domanda",
-    "faqRemoveRow": "Rimuovi le domande frequenti",
+    "faqRemoveRow": "Rimuovi domanda frequente",
     "faqRowTitle": "Domande frequenti",
     "faqsSectionTitle": "Domande frequenti",
     "imageGalleryLabel": "Galleria immagini",
-    "listingEditDescription": "Aggiorna le informazioni dell'inserzione visibili agli acquirenti.",
-    "listingEditTitle": "Modifica elenco",
+    "listingEditDescription": "Aggiorna le informazioni dell'annuncio visibili agli acquirenti.",
+    "listingEditTitle": "Modifica annuncio",
     "listingStatus": {
       "active": "Attivo",
       "draft": "Bozza",
@@ -55,7 +55,7 @@
     "priceCurrencyPlaceholder": "Valuta",
     "priceLabel": "Prezzo",
     "providerLabel": "Fornitore",
-    "providerPlaceholder": "Seleziona l'utente che fornisce questo listing",
+    "providerPlaceholder": "Seleziona l'utente che offre questo annuncio",
     "pricingType": {
       "fixed": "Prezzo fisso",
       "hourly": "Tariffa oraria"
@@ -64,7 +64,7 @@
     "pricingTypePlaceholder": "Seleziona il tipo di prezzo",
     "requirementsLabel": "Requisiti",
     "requirementsPlaceholder": "Aggiungi un requisito e premi Invio",
-    "requirementsRemoveTooltip": "Rimuovere il requisito",
+    "requirementsRemoveTooltip": "Rimuovi requisito",
     "section": {
       "general": "Generale",
       "images": "Immagini",
@@ -75,10 +75,10 @@
     "statusPlaceholder": "Seleziona lo stato",
     "tagsLabel": "Tag",
     "tagsPlaceholder": "Digita un tag e premi Invio",
-    "tagsRemoveTooltip": "Rimuovi l'etichetta",
+    "tagsRemoveTooltip": "Rimuovi tag",
     "tagsSectionTitle": "Tag",
-    "titleLabel": "Modifica tipo di unità",
-    "titlePlaceholder": "Titolo dell'elenco",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo dell'annuncio",
     "videoGalleryLabel": "Galleria video"
   },
   "formButtons": {
@@ -86,9 +86,9 @@
     "submit": "Salva modifiche"
   },
   "formHeader": {
-    "description": "Aggiorna i dettagli dell'elenco.",
-    "title": "Modifica elenco"
+    "description": "Aggiorna i dettagli dell'annuncio.",
+    "title": "Modifica annuncio"
   },
   "path": "src/modules/eCommerce/clients/panel/private/listings/editListing.tsx",
-  "title": "Modifica tipo di unità"
+  "title": "Titolo"
 }

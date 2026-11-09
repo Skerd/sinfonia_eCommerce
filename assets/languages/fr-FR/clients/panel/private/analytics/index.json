@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
   "title": "Analyses",
-  "description": "Suivez les revenus, les commandes, l’inventaire et l’activité du panier.",
+  "description": "Suivez le chiffre d’affaires, les commandes, le stock et l’activité des paniers.",
   "help": {
     "ariaLabel": "À propos des analyses",
     "title": "À propos des analyses",
@@ -48,10 +48,10 @@
   "currency": "Devise",
   "errorTitle": "Échec du chargement des analyses",
   "errorDescription": "Une erreur s'est produite lors de la récupération des données du tableau de bord.",
-  "revenueChartTitle": "Revenus et commandes",
+  "revenueChartTitle": "Chiffre d’affaires et commandes",
   "orderStatusChartTitle": "Commandes par statut",
   "productStatusChartTitle": "Produits par statut",
-  "topProductsChartTitle": "Meilleurs produits par revenu",
+  "topProductsChartTitle": "Meilleurs produits par chiffre d’affaires",
   "topProductsTableTitle": "Meilleurs produits",
   "noChartData": "Aucune donnée pour cette période.",
   "noStatusData": "Aucun décompte de statut pour cette période.",
@@ -64,7 +64,7 @@
   "table": {
     "product": "Produit",
     "sold": "Unités vendues",
-    "revenue": "Revenu"
+    "revenue": "Chiffre d’affaires"
   },
   "period": {
     "7d": "7 jours",
@@ -75,7 +75,7 @@
   "orderStatus": {
     "pending": "En attente",
     "confirmed": "Confirmée",
-    "processing": "En traitement",
+    "processing": "En préparation",
     "shipped": "Expédiée",
     "delivered": "Livrée",
     "cancelled": "Annulée",
@@ -87,12 +87,12 @@
     "archived": "Archivé"
   },
   "kpi": {
-    "totalRevenue": "Revenu total",
+    "totalRevenue": "Chiffre d’affaires total",
     "totalRevenueDesc": "Commandes payées dans la période",
     "orderCount": "Commandes",
     "orderCountDesc": "Commandes payées dans la période",
     "averageOrderValue": "Panier moyen",
-    "averageOrderValueDesc": "Revenu par commande payée",
+    "averageOrderValueDesc": "Chiffre d’affaires par commande payée",
     "totalTax": "Taxe",
     "totalTaxDesc": "Taxe sur les commandes payées",
     "totalShipping": "Livraison",
@@ -104,7 +104,7 @@
     "averageCartValue": "Valeur moyenne du panier",
     "averageCartValueDesc": "Sous-total moyen des paniers avec articles",
     "lowStock": "Stock faible",
-    "lowStockDesc": "SKU en dessous du point de commande",
+    "lowStockDesc": "SKU sous le seuil de réapprovisionnement",
     "outOfStock": "Rupture de stock",
     "outOfStockDesc": "SKU sans quantité disponible",
     "totalOnHand": "Unités disponibles",

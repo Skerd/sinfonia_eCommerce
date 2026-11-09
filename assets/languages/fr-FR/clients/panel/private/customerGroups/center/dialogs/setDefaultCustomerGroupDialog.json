@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx",
-  "title": "Créer un groupe de clients par défaut",
+  "title": "Définir comme groupe de clients par défaut",
   "description": "Cela rendra le groupe de clients par défaut et celui par défaut actuel sera réaffecté.",
   "cancel": "Annuler",
-  "confirm": "Par défaut",
-  "busy": "Travailler…",
+  "confirm": "Définir par défaut",
+  "busy": "En cours…",
   "axios": {
     "start": {
       "title": "Définition du groupe de clients par défaut…",

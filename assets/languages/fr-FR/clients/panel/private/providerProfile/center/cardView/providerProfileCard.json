@@ -7,9 +7,9 @@
   "skills": "Compétences",
   "rating": "Note",
   "connect": {
-    "notConnected": "Paiements non connectés",
+    "notConnected": "Versements non connectés",
     "setupIncomplete": "Configuration de Stripe incomplète",
-    "payoutsEnabled": "Paiements activés"
+    "payoutsEnabled": "Versements activés"
   },
   "payouts": "Versements"
 }

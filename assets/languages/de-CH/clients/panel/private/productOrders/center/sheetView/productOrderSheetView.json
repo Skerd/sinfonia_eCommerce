@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx",
   "productOrderSubtitle": "Auftrag details",
   "failedTitle": "Produktbestellung konnte nicht geladen werden",
-  "failedDescription": "Die Produktbestellung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Produktbestellung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "products": "Produkte",

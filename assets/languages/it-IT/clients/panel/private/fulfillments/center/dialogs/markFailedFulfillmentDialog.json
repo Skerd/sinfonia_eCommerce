@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx",
-  "title": "Contrassegna l'adempimento come non riuscito",
-  "description": "Contrassegna questo adempimento come non riuscito. Facoltativamente, spiega perché.",
+  "title": "Contrassegna l'evasione come non riuscita",
+  "description": "Contrassegna questa evasione come non riuscita. Facoltativamente, spiega perché.",
   "notesLabel": "Note",
-  "notesPlaceholder": "Motivo facoltativo del fallimento",
+  "notesPlaceholder": "Motivo dell'errore (facoltativo)",
   "cancel": "Annulla",
   "confirm": "Contrassegna come non riuscito",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Contrassegnamento come non riuscito…",
+      "title": "Aggiornamento dello stato…",
       "time": 3000
     },
     "success": {
-      "title": "Adempimento contrassegnato come non riuscito",
+      "title": "Evasione contrassegnata come non riuscita",
       "time": 3000
     },
     "error": {

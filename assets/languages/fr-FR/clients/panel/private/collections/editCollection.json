@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/collections/editCollection.tsx",
   "title": "Modifier la collection",
   "errorTitle": "Échec du chargement de la collection",
-  "errorDescription": "Impossible de charger cette collection. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette collection. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "generalSectionTitle": "Général",
@@ -10,7 +10,7 @@
     "namePlaceholder": "Nom de la collection",
     "slugLabel": "Identifiant",
     "slugPlaceholder": "généré automatiquement à partir du nom",
-    "typeLabel": "Type de collecte",
+    "typeLabel": "Type de collection",
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Description facultative pour cette collection",
     "mainImageLabel": "Image de couverture",
@@ -47,12 +47,12 @@
       "any": "N'importe quelle règle (OU)"
     },
     "ruleField": {
-      "tag": "Étiqueter",
+      "tag": "Étiquette",
       "brand": "Marque",
       "category": "Catégorie",
       "price": "Prix",
       "vendor": "Fournisseur",
-      "inventory_level": "Niveau d'inventaire",
+      "inventory_level": "Niveau de stock",
       "product_type": "Type de produit"
     },
     "ruleOperator": {
@@ -67,7 +67,7 @@
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde de la collection",
+      "title": "Enregistrement de la collection",
       "time": 3000
     },
     "success": {

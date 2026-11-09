@@ -5,7 +5,7 @@
   "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
   "errorTitle": "Impossible de charger la demande de tâche",
   "form": {
-    "addressPrivacyAlert": "Les fournisseurs ne peuvent pas voir votre adresse exacte tant que vous n'avez pas accepté une offre. Votre adresse complète est partagée uniquement avec le prestataire que vous choisissez, après que vous ayez accepté les travaux.",
+    "addressPrivacyAlert": "Les prestataires ne peuvent pas voir votre adresse exacte tant que vous n'avez pas accepté une offre. Votre adresse complète n'est communiquée qu'au prestataire choisi, une fois que vous vous êtes mis d'accord sur les travaux.",
     "budgetMaxLabel": "Budget (maximum)",
     "budgetMinLabel": "Budget (min)",
     "categoryLabel": "Catégorie",
@@ -15,7 +15,7 @@
     "countryPlaceholder": "Sélectionner le pays",
     "currencyLabel": "Devise",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Description Espace réservé",
+    "descriptionPlaceholder": "Description",
     "editStatusSection": "Statut",
     "expiresAtLabel": "Expire",
     "expiresAtPlaceholder": "aaaa-MM-jj",
@@ -35,17 +35,17 @@
       "images": "Images",
       "video": "Vidéo"
     },
-    "stateLabel": "Canton / État",
-    "statePlaceholder": "Sélectionner le canton",
+    "stateLabel": "Région / État",
+    "statePlaceholder": "Sélectionner la région",
     "statusLabel": "Statut",
     "streetLabel": "Rue",
     "streetPlaceholder": "Adresse postale",
     "taskRequestStatus": {
-      "awarded": "Récompensé",
+      "awarded": "Attribuée",
       "closed": "Fermé",
       "open": "Ouvert"
     },
-    "titleLabel": "Modifier le type d’unité",
+    "titleLabel": "Titre",
     "videoGalleryLabel": "Galerie vidéo"
   },
   "formButtons": {
@@ -57,5 +57,5 @@
     "title": "Modifier la demande de tâche"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

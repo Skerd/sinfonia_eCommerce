@@ -9,7 +9,7 @@
     "sections": [
       {
         "title": "Datasets",
-        "body": "Each record is matched to its Odoo id, so running the import again updates what it created instead of duplicating it.",
+        "body": "Each record is matched to its Odoo ID, so running the import again updates what it created instead of duplicating it.",
         "items": [
           "Currencies: active Odoo currencies, matched by ISO code (EUR, USD, …). A currency that already exists here is reused as it is; a missing one is created.",
           "Categories: Odoo product categories.",

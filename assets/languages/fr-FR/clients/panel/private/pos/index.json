@@ -4,13 +4,13 @@
   "help": {
     "ariaLabel": "À propos du point de vente",
     "title": "À propos du point de vente",
-    "overview": "Le point de vente est la caisse du magasin. Cette page est la caisse elle-même, pas une liste. Choisissez une caisse, ouvrez une séance avec l’argent déjà présent dans le tiroir, puis vendez. Chaque vente payée devient une commande au point de vente, prend le stock directement dans les entrepôts de la caisse et est dupliquée en commande produit livrée et payée pour la comptabilité.",
+    "overview": "Le point de vente est la caisse du magasin. Cette page est la caisse elle-même, pas une liste. Choisissez une caisse, ouvrez une session avec les espèces déjà présentes dans le tiroir, puis vendez. Chaque vente payée devient une commande au point de vente, prend le stock directement dans les entrepôts de la caisse et est dupliquée en commande produit livrée et payée pour la comptabilité.",
     "sections": [
       {
         "title": "Ouvrir la caisse",
         "body": "Une caisse est une configuration de point de vente créée sous Configurations. Cet écran n’ouvre qu’une caisse existante, active et non en pause.",
         "items": [
-          "Choisissez la caisse, puis ouvrez une séance avec le comptage du fonds de caisse. Une seule séance par caisse peut être ouverte à la fois.",
+          "Choisissez la caisse, puis ouvrez une session avec le comptage du fonds de caisse. Une seule session par caisse peut être ouverte à la fois.",
           "La caisse a besoin d’une devise et d’au moins un entrepôt pour ouvrir et vendre.",
           "Une fois ouverte, la caisse affiche son propre guide des raccourcis clavier."
         ]
@@ -23,7 +23,7 @@
           "Recherchez, ou scannez un code-barres ; un code-barres de variante ajoute directement cette variante. Un produit variable demande d’abord sa variante.",
           "Les prix en caisse incluent la TVA. La part de taxe de chaque ligne est calculée depuis les zones fiscales de l’adresse du premier entrepôt de la caisse, après la part de la ligne dans une éventuelle remise de commande.",
           "Une ligne prend le stock dans les entrepôts de la caisse dans l’ordre, en puisant dans chacun jusqu’à atteindre la quantité. S’ils n’en ont pas assez, la vente est refusée, sauf si la caisse autorise la survente.",
-          "Les remises de ligne et de commande et les changements de quantité ne sont permis que si la caisse les autorise. Avec le PIN pour remise activé, une vente remisée exige un PIN de responsable.",
+          "Les remises de ligne et de commande et les changements de quantité ne sont permis que si la caisse les autorise. Avec le PIN pour remise activé, une vente remisée exige un PIN de gestionnaire.",
           "Associez un client pour mettre la vente à son nom."
         ]
       },
@@ -42,7 +42,7 @@
         "body": "Mettre en attente range le panier actuel en commande brouillon au point de vente pour servir quelqu’un d’autre.",
         "items": [
           "Un panier en attente peut être repris plus tard sur la même caisse, ou abandonné.",
-          "Une séance ne peut pas être clôturée tant qu’elle a des paniers en attente ; reprenez-les ou abandonnez-les d’abord."
+          "Une session ne peut pas être clôturée tant qu’elle a des paniers en attente ; reprenez-les ou abandonnez-les d’abord."
         ]
       },
       {
@@ -52,41 +52,41 @@
           "Remboursez en sélectionnant des quantités de ligne, ou remboursez tout le reste de la vente. Un montant partiel sans lignes est refusé, car la caisse ne saurait pas quoi remettre en stock.",
           "Chaque ligne de vente retient ce qui a déjà été remboursé, pour que les mêmes unités ne soient pas remboursées deux fois. La remise de commande est répartie sur les lignes remboursées.",
           "Les unités remboursées retournent dans les entrepôts d’où la vente les a prises ; le surplus va dans le premier entrepôt de la caisse.",
-          "Un remboursement en espèces sort du tiroir. Avec le PIN pour remboursement activé, un PIN de responsable est requis."
+          "Un remboursement en espèces sort du tiroir. Avec le PIN pour remboursement activé, un PIN de gestionnaire est requis."
         ]
       },
       {
         "title": "Le tiroir et la clôture",
         "items": [
-          "Entrée et sortie d’espèces enregistrent des mouvements du tiroir avec un motif ; ce ne sont pas des ventes. Une sortie ne peut pas prendre plus que le tiroir ne contient et, avec le PIN pour sortie d’espèces activé, exige un PIN de responsable.",
-          "La clôture demande l’espèce comptée. Si elle diffère du montant attendu d’un centime ou plus, un motif est requis et l’écart est inscrit sur la séance.",
-          "Mettre une caisse en pause l’empêche d’encaisser et clôture de force sa séance ouverte, en annulant les paniers en attente. Mettre toutes les caisses en pause fait de même pour chaque caisse de la société."
+          "Entrée et sortie d’espèces enregistrent des mouvements du tiroir avec un motif ; ce ne sont pas des ventes. Une sortie ne peut pas prendre plus que le tiroir ne contient et, avec le PIN pour sortie d’espèces activé, exige un PIN de gestionnaire.",
+          "La clôture demande l’espèce comptée. Si elle diffère du montant attendu d’un centime ou plus, un motif est requis et l’écart est inscrit sur la session.",
+          "Mettre une caisse en pause l’empêche d’encaisser et clôture de force sa session ouverte, en annulant les paniers en attente. Mettre toutes les caisses en pause fait de même pour chaque caisse de la société."
         ]
       }
     ]
   },
   "backToConfigs": "Retour aux configurations",
   "back": "Quitter",
-  "cashIn": "Encaisser",
-  "cashOut": "Encaissement",
-  "closeSession": "Fermer la session",
-  "closeSessionDescription": "Comptez le tiroir et fermez cette session jusqu'à.",
+  "cashIn": "Entrée d'espèces",
+  "cashOut": "Sortie d'espèces",
+  "closeSession": "Clôturer la session",
+  "closeSessionDescription": "Comptez le tiroir-caisse et clôturez cette session de caisse.",
   "paused": {
-    "banner": "PDV suspendu par l'administrateur – la vente est bloquée. Vous pouvez jeter les chariots retenus et fermer la caisse.",
-    "companyBanner": "Toutes les caisses de l'entreprise sont mises en pause ; il ne s'agit pas d'une pause unique. La vente est bloquée. Vous pouvez jeter les chariots retenus et fermer la caisse.",
+    "banner": "Point de vente suspendu par l'administrateur : la vente est bloquée. Vous pouvez abandonner les paniers en attente et fermer la caisse.",
+    "companyBanner": "Toutes les caisses de l'entreprise sont en pause : il ne s'agit pas de la pause d'une seule caisse. La vente est bloquée. Vous pouvez abandonner les paniers en attente et fermer la caisse.",
     "badge": "En pause",
-    "companyBadge": "L'entreprise a fait une pause",
-    "forceClosedToast": "Cette session de caisse a été fermée de force par une pause administrative."
+    "companyBadge": "En pause (entreprise)",
+    "forceClosedToast": "Cette session de caisse a été clôturée d'office par une pause administrateur."
   },
   "fiscalization": {
     "inactive": "Aucune fiscalisation n'est active pour ce point de vente. Les ventes de cette caisse ne seront pas fiscalisées."
   },
   "inactive": {
-    "banner": "Cette caisse POS est inactive et ne peut pas être ouverte."
+    "banner": "Cette caisse est inactive et ne peut pas être ouverte."
   },
-  "cash": "Comptant",
+  "cash": "Espèces",
   "orders": "Commandes",
-  "sessionSales": "Ventes de séances",
+  "sessionSales": "Ventes de la session",
   "cart": "Commande",
   "items": "articles",
   "searchPlaceholder": "Rechercher des produits…",
@@ -100,7 +100,7 @@
   },
   "cartEmpty": "Appuyez sur un produit pour lancer la commande.",
   "customerName": "Client",
-  "walkIn": "Client sans rendez-vous",
+  "walkIn": "Client de passage",
   "orderDiscount": "Remise sur la commande",
   "lineDiscount": "Remise de ligne",
   "subtotal": "Sous-total",
@@ -109,22 +109,22 @@
   "paymentMethods": "Paiement",
   "splitPayments": "paiements",
   "split": {
-    "title": "Facture fractionnée",
+    "title": "Partager l'addition",
     "description": "Divisez la commande également (alla romana) ou par articles, comme dans les restaurants italiens.",
     "equal": "Égal (alla romana)",
-    "equalHint": "Même montant par invité. Attribuez de l'argent liquide/une carte à chaque partage.",
+    "equalHint": "Même montant par convive. Attribuez espèces ou carte à chaque part.",
     "items": "Par articles",
-    "itemsHint": "Choisissez ce que paie cet invité, facturez sa part, puis continuez avec le reste.",
-    "guests": "Invités",
+    "itemsHint": "Choisissez ce que paie ce convive, encaissez sa part, puis continuez avec le reste.",
+    "guests": "Convives",
     "perPerson": "Par personne",
     "apply": "Appliquer une répartition égale",
-    "startItems": "Sélectionner des éléments",
-    "shareTotal": "Ce partage",
-    "payShare": "Partage payant",
+    "startItems": "Sélectionner des articles",
+    "shareTotal": "Cette part",
+    "payShare": "Payer la part",
     "cancel": "Annuler le partage",
-    "guest": "Invité",
-    "selectItems": "Attribuer des éléments à cet invité",
-    "shareNote": "Part de partage de facture"
+    "guest": "Convive",
+    "selectItems": "Attribuer des articles à ce convive",
+    "shareNote": "Part de l'addition"
   },
   "numpad": {
     "clear": "C",
@@ -133,23 +133,23 @@
   },
   "noPaymentMethods": "Aucun mode de paiement sur cette configuration.",
   "remaining": "Restant",
-  "change": "Changement",
+  "change": "Monnaie",
   "exact": "Exact",
   "newOrder": "Effacer",
-  "hold": "Tenir",
+  "hold": "Mettre en attente",
   "pay": "Payer",
   "payConfirm": "Confirmer le paiement",
-  "payConfirmHint": "Appuyez à nouveau pour confirmer - annule dans {n}s",
+  "payConfirmHint": "Appuyez à nouveau pour confirmer (annulation dans {n} s)",
   "remove": "Retirer",
   "amount": "Montant",
   "held": {
-    "title": "Commandes retenues",
-    "description": "Chariots garés pour cette session. Reprendre pour continuer à vendre.",
-    "empty": "Aucune commande retenue.",
-    "resume": "CV"
+    "title": "Commandes en attente",
+    "description": "Paniers en attente de cette session. Reprenez-en un pour continuer la vente.",
+    "empty": "Aucune commande en attente.",
+    "resume": "Reprendre"
   },
   "customerSearch": {
-    "placeholder": "Rechercher un client ou un nom de visite…",
+    "placeholder": "Rechercher un client ou le nom d'un client de passage…",
     "clear": "Effacer",
     "searching": "Recherche…",
     "empty": "Aucun client correspondant"
@@ -158,21 +158,21 @@
     "title": "Choisir une variante",
     "description": "Sélectionnez une variante à ajouter au panier.",
     "empty": "Aucune variante disponible.",
-    "stock": "Actions"
+    "stock": "Stock"
   },
   "refundDialog": {
-    "title": "Commande de remboursement",
+    "title": "Rembourser la commande",
     "description": "Choisissez les quantités à rembourser",
     "empty": "Aucune ligne sur cette commande.",
     "pinLabel": "Code PIN du gestionnaire",
     "pinRequired": "Le code PIN du gestionnaire est requis",
-    "pinHint": "Vous sélectionnerez un responsable et saisirez son code PIN lors de la confirmation.",
+    "pinHint": "Vous sélectionnerez un gestionnaire et saisirez son code PIN lors de la confirmation.",
     "total": "Total du remboursement",
     "submit": "Remboursement",
     "selectAll": "Rembourser tout le reste",
     "success": "Commande remboursée",
     "failed": "Le remboursement a échoué",
-    "remaining": "Gauche",
+    "remaining": "Restant",
     "alreadyRefunded": "Remboursé",
     "fullyRefunded": "Entièrement remboursé",
     "nothingLeft": "Il ne reste plus rien à rembourser sur cette commande."
@@ -180,18 +180,18 @@
   "pinDialog": {
     "pinLabel": "Code PIN du gestionnaire",
     "selectManager": "Sélectionner le gestionnaire",
-    "changeManager": "Changement"
+    "changeManager": "Monnaie"
   },
   "sessionOrders": {
-    "title": "Ordres de séances",
+    "title": "Commandes de la session",
     "description": "Commandes payées et remboursées lors de cette session de caisse.",
     "empty": "Aucune commande pour l'instant.",
-    "reprint": "Réimpression",
+    "reprint": "Réimprimer",
     "refund": "Remboursement"
   },
   "refund": {
-    "title": "Commande de remboursement",
-    "description": "Remboursement intégral ou certaines quantités de lignes.",
+    "title": "Rembourser la commande",
+    "description": "Remboursez en totalité ou sélectionnez des quantités par ligne.",
     "full": "Remboursement intégral",
     "lines": "Par lignes",
     "selectedTotal": "Total du remboursement",
@@ -203,61 +203,61 @@
     "badge": "variantes"
   },
   "stock": {
-    "qty": "Actions",
+    "qty": "Stock",
     "out": "Sortie"
   },
   "pin": {
     "title": "Approbation du gestionnaire",
     "description": "Saisissez le code PIN du gestionnaire pour continuer.",
-    "selectThenEnter": "Sélectionnez le responsable approbateur, puis saisissez son code PIN.",
-    "label": "NIP",
-    "discount": "Code PIN du responsable requis pour les réductions",
-    "cashOut": "Code PIN du gestionnaire requis pour le retrait",
-    "refund": "Code PIN du responsable requis pour les remboursements"
+    "selectThenEnter": "Sélectionnez le gestionnaire approbateur, puis saisissez son code PIN.",
+    "label": "Code PIN",
+    "discount": "Code PIN du gestionnaire requis pour les remises",
+    "cashOut": "Code PIN du gestionnaire requis pour les sorties d'espèces",
+    "refund": "Code PIN du gestionnaire requis pour les remboursements"
   },
   "recon": {
     "opening": "Solde d'ouverture",
     "card": "Carte",
-    "difference": "Différence de trésorerie",
-    "differenceReason": "Raison de la différence",
-    "differenceReasonPlaceholder": "Obligatoire lorsque comptant en espèces ≠ attendu",
-    "heldWarning": "{count} les commandes en attente doivent être reprises ou rejetées avant la clôture."
+    "difference": "Écart de caisse",
+    "differenceReason": "Motif de l'écart",
+    "differenceReasonPlaceholder": "Obligatoire lorsque les espèces comptées ≠ montant attendu",
+    "heldWarning": "{count} commande(s) en attente à reprendre ou à abandonner avant la clôture."
   },
   "shortcuts": {
-    "hint": "Aide F1 · F2 payer · F4 en attente · F3 en attente · F6 commandes · Esc effacer"
+    "hint": "F1 aide · F2 payer · F4 mettre en attente · F3 en attente · F6 commandes · Échap effacer"
   },
   "info": {
-    "title": "Jusqu'à ce que j'aide",
+    "title": "Aide de la caisse",
     "description": "Raccourcis clavier et fonctionnement des principaux outils de caisse.",
     "shortcutsTitle": "Raccourcis clavier",
-    "featuresTitle": "Caractéristiques",
+    "featuresTitle": "Fonctionnalités",
     "keys": {
       "f1": "Ouvrir cette aide",
       "f2": "Payer la commande en cours (appuyer deux fois pour confirmer)",
-      "f3": "Ordres en attente ouverts",
-      "f4": "Maintenir/garer le chariot actuel",
-      "f6": "Ordres de séances et réimpression",
-      "f8": "Champ de code-barres de focus",
+      "f3": "Ouvrir les commandes en attente",
+      "f4": "Mettre en attente le panier en cours",
+      "f6": "Commandes de la session et réimpression",
+      "f8": "Placer le curseur dans le champ code-barres",
       "f9": "Basculer le panneau de paiement",
       "esc": "Effacer le panier (quand aucune boîte de dialogue n'est ouverte)",
       "qty": "Augmenter/diminuer la quantité de ligne sélectionnée",
       "delete": "Supprimer la ligne de panier sélectionnée"
     },
     "features": {
-      "holdTitle": "Chariots retenus",
-      "holdBody": "Garez une commande inachevée avec Hold (F4). Reprenez-le ou supprimez-le plus tard à partir des ordres retenus (F3). Le paiement d'une reprise de retenue conserve le même numéro de commande.",
-      "ordersTitle": "Ordres de séances",
-      "ordersBody": "Ouvrez les commandes (F6) pour voir les billets payés/remboursés pour cette session et réimprimer un reçu.",
+      "holdTitle": "Paniers en attente",
+      "holdBody": "Mettez de côté une commande inachevée avec Mettre en attente (F4). Reprenez-la ou abandonnez-la plus tard depuis Commandes en attente (F3). Le paiement d'une commande reprise conserve le même numéro de commande.",
+      "ordersTitle": "Commandes de la session",
+      "ordersBody": "Ouvrez Commandes (F6) pour voir les tickets payés ou remboursés de cette session et réimprimer un reçu.",
       "reconTitle": "Fermer le rapprochement",
-      "reconBody": "La clôture montre les liquidités attendues, les ventes par appel d'offres et la différence par rapport aux liquidités comptabilisées. Une raison est requise lorsqu’ils diffèrent. Les traites retenues doivent d’abord être effacées.",
+      "reconBody": "La clôture affiche les espèces attendues, les ventes par moyen de paiement et l'écart avec les espèces comptées. Un motif est requis en cas d'écart. Les commandes en attente doivent d'abord être soldées.",
       "payTitle": "Paiements sécurisés",
-      "payBody": "Payer doit être appuyé deux fois (ou deux fois sur F2) pour confirmer et éviter les erreurs de clic. Chaque paie envoie également une clé d'idempotence afin qu'une nouvelle tentative ne soit pas facturée deux fois. Les paiements fractionnés et les frais de terminal bancaire sont pris en charge.",
-      "splitTitle": "Facture partagée",
-      "splitBody": "Utilisez l’icône des ciseaux pour les répartitions égales (alla romana) ou par article. Payez la part d’un invité, puis continuez avec le reste.",
+      "payBody": "« Payer » doit être pressé deux fois (ou F2 deux fois) pour confirmer et éviter les clics accidentels. Chaque paiement envoie aussi une clé d'idempotence afin qu'une nouvelle tentative ne débite pas deux fois. Les paiements fractionnés et le débit sur terminal bancaire sont pris en charge.",
+      "splitTitle": "Partage de l'addition",
+      "splitBody": "Utilisez l’icône des ciseaux pour un partage égal (alla romana) ou par article. Payez la part d’un convive, puis continuez avec le reste.",
       "customerTitle": "Client CRM",
-      "customerBody": "Recherchez les utilisateurs de l’entreprise liés à partir du champ client. Les noms sans rendez-vous fonctionnent toujours lorsqu’aucun compte n’est sélectionné.",
+      "customerBody": "Recherchez les utilisateurs liés de l’entreprise depuis le champ client. Le nom d'un client de passage reste possible lorsqu’aucun compte n’est sélectionné.",
       "refundTitle": "Remboursements",
-      "refundBody": "Depuis les commandes de sessions, remboursez un billet payé en totalité ou par quantité de ligne. Le stock se réapprovisionne pour les lignes retournées lorsque l'inventaire est suivi.",
+      "refundBody": "Depuis les commandes de la session, remboursez un ticket payé en totalité ou par quantité de ligne. Le stock est réintégré pour les lignes retournées lorsque le stock est suivi.",
       "stockTitle": "Stocks et variantes",
       "stockBody": "Les tuiles indiquent la quantité disponible. La survente peut être autorisée par configuration. Les produits à variantes multiples ouvrent un sélecteur ; les codes-barres peuvent résoudre une variante spécifique.",
       "pinTitle": "Code PIN du gestionnaire",
@@ -267,33 +267,33 @@
   "terminal": {
     "ready": "Terminal de paiement bancaire",
     "connected": "Connecté",
-    "localHttpHint": "Pay enverra le montant au pont terminal de la banque locale.",
-    "manualHint": "Confirmez le montant sur le terminal bancaire, puis terminez Payer.",
-    "notConfigured": "La méthode par carte n’a pas de terminal configuré – le paiement enregistre uniquement la vente.",
-    "charge": "Borne de recharge",
+    "localHttpHint": "« Payer » enverra le montant au pont local du terminal bancaire.",
+    "manualHint": "Confirmez le débit sur le terminal bancaire, puis validez « Payer ».",
+    "notConfigured": "Le mode de paiement par carte n’a pas de terminal configuré : l'encaissement enregistre uniquement la vente.",
+    "charge": "Encaisser sur le terminal",
     "charging": "En attente du terminal…"
   },
   "reason": "Motif",
   "notes": "Notes",
   "cancel": "Annuler",
   "confirm": "Confirmer",
-  "busy": "Travailler…",
-  "expectedCash": "Trésorerie attendue",
+  "busy": "En cours…",
+  "expectedCash": "Espèces attendues",
   "cashRegister": "Caisse enregistreuse",
   "closingBalance": "Solde de clôture",
   "picker": {
-    "title": "Sélectionnez un registre",
-    "description": "Choisissez quel magasin ouvrir.",
-    "empty": "Aucune configuration de point de vente active. Créez-en un sous Configurations → eCommerce → POS d'abord.",
-    "open": "Ouvert jusqu'à"
+    "title": "Sélectionnez une caisse",
+    "description": "Choisissez la caisse à ouvrir.",
+    "empty": "Aucune configuration de point de vente active. Créez-en une d'abord dans Configurations → eCommerce → POS.",
+    "open": "Ouvrir la caisse"
   },
   "openSession": {
-    "title": "Séance ouverte",
+    "title": "Ouvrir la session",
     "description": "Ouvrez une nouvelle session de caisse pour commencer à vendre.",
-    "for": "Séance ouverte pour",
+    "for": "Ouvrir la session pour",
     "openingBalance": "Solde d'ouverture",
     "notes": "Notes",
-    "submit": "Séance ouverte"
+    "submit": "Ouvrir la session"
   },
   "receipt": {
     "title": "Paiement réussi",
@@ -301,7 +301,7 @@
     "order": "Commande",
     "ref": "Réf",
     "date": "Date",
-    "defaultFooter": "Merci pour votre achat!",
+    "defaultFooter": "Merci pour votre achat !",
     "fiscalQr": "Code QR fiscal",
     "nslf": "NSLF",
     "nivf": "NIVF",
@@ -314,7 +314,7 @@
     "tcrCode": "Code caisse TCR",
     "invoiceType": "Type de facture",
     "operatorCode": "Code opérateur",
-    "businessUnitCode": "Code de l'unité d'activité",
+    "businessUnitCode": "Code de l'unité commerciale",
     "notFiscalized": "NON FISCALISÉ"
   },
   "sessionState": {
@@ -324,44 +324,44 @@
     "closed": "Fermé"
   },
   "toast": {
-    "sessionOpened": "Séance ouverte",
-    "sessionClosed": "Séance close",
-    "cashIn": "Argent ajouté",
+    "sessionOpened": "Session ouverte",
+    "sessionClosed": "Session clôturée",
+    "cashIn": "Espèces ajoutées",
     "cashOut": "Espèces retirées",
     "productAdded": "Produit ajouté",
     "paid": "Commande payée",
-    "splitApplied": "Facture divisée en parts égales",
-    "sharePaid": "Part payée – continuer avec les éléments restants",
-    "held": "Commande retenue",
-    "resumed": "Ordre retenu repris",
-    "heldDiscarded": "Commande retenue rejetée",
+    "splitApplied": "Addition partagée en parts égales",
+    "sharePaid": "Part payée : continuez avec les articles restants",
+    "held": "Commande mise en attente",
+    "resumed": "Commande en attente reprise",
+    "heldDiscarded": "Commande en attente abandonnée",
     "refunded": "Commande remboursée"
   },
   "errors": {
     "catalogFailed": "Impossible de charger le catalogue",
     "categoriesFailed": "Impossible de charger les catégories",
     "sessionFailed": "Impossible de charger la session",
-    "configsFailed": "Impossible de charger les configurations POS",
+    "configsFailed": "Impossible de charger les configurations du point de vente",
     "openSessionFailed": "Impossible d'ouvrir la session",
-    "cashMoveFailed": "Échec du transfert de fonds",
-    "closeSessionFailed": "Impossible de fermer la session",
-    "barcodeNotFound": "Code barre introuvable",
+    "cashMoveFailed": "Échec du mouvement d'espèces",
+    "closeSessionFailed": "Impossible de clôturer la session",
+    "barcodeNotFound": "Code-barres introuvable",
     "invalidAmount": "Entrez un montant valide",
     "payFailed": "Échec du paiement",
-    "terminalFailed": "Échec du paiement final",
-    "splitFailed": "Impossible de partager la facture",
-    "holdFailed": "Impossible de conserver la commande",
+    "terminalFailed": "Échec du paiement sur le terminal",
+    "splitFailed": "Impossible de partager l'addition",
+    "holdFailed": "Impossible de mettre la commande en attente",
     "heldLoadFailed": "Impossible de charger les commandes en attente",
     "heldDeleteFailed": "Impossible d'annuler la commande en attente",
-    "ordersLoadFailed": "Impossible de charger les commandes de session",
+    "ordersLoadFailed": "Impossible de charger les commandes de la session",
     "reprintFailed": "Impossible de réimprimer le reçu",
-    "differenceReasonRequired": "Expliquez la différence de trésorerie avant la clôture",
-    "heldOrdersBlockClose": "Reprendre ou supprimer les ordres en attente avant la clôture",
+    "differenceReasonRequired": "Expliquez l'écart de caisse avant la clôture",
+    "heldOrdersBlockClose": "Reprenez ou abandonnez les commandes en attente avant la clôture",
     "customerSearchFailed": "Impossible de rechercher des clients",
     "insufficientStock": "Pas assez de stock pour cette quantité",
     "outOfStock": "Le produit est en rupture de stock",
     "pinInvalid": "Code PIN du gestionnaire invalide",
-    "noManagersWithPin": "Aucun manager avec un code PIN n'y est affecté jusqu'à",
+    "noManagersWithPin": "Aucun gestionnaire avec un code PIN n'est affecté à cette caisse",
     "refundFailed": "Le remboursement a échoué"
   }
 }

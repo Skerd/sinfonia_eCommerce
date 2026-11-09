@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Controversie",
-  "description": "Esaminare e risolvere le controversie tra clienti e fornitori.",
+  "description": "Esamina e risolvi le controversie tra clienti e fornitori.",
   "help": {
     "ariaLabel": "Informazioni sulle controversie",
     "title": "Informazioni sulle controversie",
@@ -39,15 +39,15 @@
     "reason": "Motivo",
     "resolution": "Risoluzione",
     "initiator": "Iniziatore",
-    "createdAt": "Aperto",
+    "createdAt": "Aperta il",
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {
-    "open": "Aperto",
+    "open": "Aperta",
     "under_review": "In fase di revisione",
-    "resolved": "Risolto",
-    "closed": "Chiuso"
+    "resolved": "Risolta",
+    "closed": "Chiusa"
   }
 }

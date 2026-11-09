@@ -2,8 +2,8 @@
   "path": "src/modules/eCommerce/components/custom/providerProfile/connectAccountAction.tsx",
   "cancel": "Annuler",
   "createAccountLink": {
-    "title": "Connecter les paiements Stripe",
-    "description": "Vous serez redirigé vers Stripe pour configurer (ou poursuivre) les paiements Express de ce profil de prestataire. Les fonds en séquestre ne peuvent vous être versés qu'une fois l'intégration terminée.",
+    "title": "Connecter les versements Stripe",
+    "description": "Vous serez redirigé vers Stripe pour configurer (ou poursuivre) les versements Express de ce profil de prestataire. Les fonds en séquestre ne peuvent vous être versés qu'une fois l'intégration terminée.",
     "confirm": "Ouvrir Stripe",
     "axios": {
       "loading": "Création du lien Stripe…",
@@ -13,7 +13,7 @@
   },
   "refreshAccountStatus": {
     "title": "Actualiser le statut de Stripe",
-    "description": "Obtenez le dernier statut du compte Connect de Stripe et mettez à jour l’éligibilité aux frais/paiements sur ce profil.",
+    "description": "Récupère le dernier statut du compte Connect depuis Stripe et met à jour l’éligibilité aux paiements et aux versements de ce profil.",
     "confirm": "Actualiser l'état",
     "axios": {
       "loading": "Actualisation du statut Stripe…",

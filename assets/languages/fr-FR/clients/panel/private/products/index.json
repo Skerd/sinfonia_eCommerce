@@ -15,7 +15,7 @@
           "Variable est vendu via ses variantes (taille, couleur, etc.). Chaque variante est son propre SKU avec sa propre ligne de stock. Une variante sans prix propre utilise le prix du produit.",
           "Numérique est livré en téléchargement. Le paiement émet un droit de téléchargement, limité par la limite de téléchargements et les jours d’expiration. Un remboursement complet de la commande fait expirer ces téléchargements.",
           "Service est vendu sans expédition et sans stock.",
-          "Lot est un ensemble d’autres produits avec chacun une quantité. Il n’a pas de stock propre : quand le stock bouge, le lot est ouvert d’un niveau en ses composants. Chaque composant doit être un produit actif non supprimé de cette société et ne peut pas être lui-même un lot.",
+          "Pack est un ensemble d’autres produits avec chacun une quantité. Il n’a pas de stock propre : quand le stock bouge, le pack est ouvert d’un niveau en ses composants. Chaque composant doit être un produit actif non supprimé de cette société et ne peut pas être lui-même un pack.",
           "Carte cadeau est vendue comme avoir. Le paiement émet une carte par unité, avec un solde égal au prix unitaire. Les lignes de carte cadeau ne sont jamais remisées et ne comptent jamais pour les minimums de remise."
         ]
       },
@@ -82,7 +82,7 @@
         "digital": "Numérique",
         "service": "Service",
         "variable": "Variable",
-        "bundle": "Fagot",
+        "bundle": "Pack",
         "gift_card": "Carte cadeau"
       },
       "status": {
@@ -91,14 +91,14 @@
         "archived": "Archivé"
       },
       "weightUnit": {
-        "kg": "kilos",
-        "lb": "livre",
+        "kg": "kg",
+        "lb": "lb",
         "g": "g",
-        "oz": "once"
+        "oz": "oz"
       },
       "dimensionUnit": {
         "cm": "cm",
-        "in": "dans"
+        "in": "po"
       },
       "seo": {
         "twitterCard": {
@@ -108,7 +108,7 @@
       }
     },
     "type": "Type",
-    "title": "Modifier le type d’unité",
+    "title": "Titre",
     "slug": "Identifiant",
     "description": "Description",
     "shortDescription": "Brève description",
@@ -122,7 +122,7 @@
     "sku": "SKU",
     "barcode": "Code à barres",
     "gtin": "GTIN",
-    "upc": "CUP",
+    "upc": "UPC",
     "ean": "EAN",
     "isbn": "ISBN",
     "mpn": "Numéro de pièce fabricant",
@@ -130,20 +130,20 @@
     "countryOfOrigin": "Pays d'origine",
     "brand": "Marque",
     "vendor": "Fournisseur",
-    "tags": "Balises",
+    "tags": "Étiquettes",
     "categories": "Catégories",
     "collections": "Collections",
     "price": "Prix",
-    "compareAtPrice": "Comparer au prix",
+    "compareAtPrice": "Prix barré",
     "costPrice": "Prix de revient",
-    "msrp": "PDSF",
-    "saleStartsAt": "Début des ventes",
-    "saleEndsAt": "La vente se termine",
+    "msrp": "PVC",
+    "saleStartsAt": "Début de la vente",
+    "saleEndsAt": "Fin de la vente",
     "taxable": "Imposable",
     "taxClass": "Classe fiscale",
-    "minOrderQty": "Min. quantité commandée",
-    "maxOrderQty": "Max. quantité commandée",
-    "stepQty": "Quantité par étape de commande",
+    "minOrderQty": "Quantité min. par commande",
+    "maxOrderQty": "Quantité max. par commande",
+    "stepQty": "Incrément de quantité",
     "currency": "Devise",
     "weight": "Poids",
     "weightUnit": "Unité de poids",
@@ -156,14 +156,14 @@
     "volumetricWeight": "Poids volumétrique",
     "shippingClass": "Classe d'expédition",
     "isHazmat": "Matière dangereuse",
-    "requiresShipping": "Nécessite l'expédition",
+    "requiresShipping": "Expédition requise",
     "trackInventory": "Suivre l'inventaire",
     "allowBackorder": "Autoriser les commandes en souffrance",
     "lowStockThreshold": "Seuil de stock bas",
     "safetyStock": "Stock de sécurité",
     "backorderLimit": "Limite de commande en souffrance",
     "preorderEnabled": "Précommande activée",
-    "preorderAvailableAt": "Précommande disponible sur",
+    "preorderAvailableAt": "Précommande disponible le",
     "availableForSale": "Disponible à la vente",
     "mainImage": "Image principale",
     "gallery": "Galerie",
@@ -173,7 +173,7 @@
     "hasVariants": "A des variantes",
     "defaultVariant": "Variante par défaut",
     "bundleComponents": {
-      "product": "Produit groupé",
+      "product": "Produit du pack",
       "quantity": "Quantité"
     },
     "downloadLimit": "Limite de téléchargement",
@@ -183,7 +183,7 @@
     "crossSells": "Ventes croisées",
     "frequentlyBoughtTogether": "Fréquemment achetés ensemble",
     "featured": "Mis en avant",
-    "badges": "Insignes",
+    "badges": "Badges",
     "ratingAverage": "Note",
     "ratingCount": "Nombre de notes",
     "reviewCount": "Avis",
@@ -194,7 +194,7 @@
       "values": "Valeurs d'attribut"
     },
     "specifications": {
-      "label": "Étiquette de spécification",
+      "label": "Libellé de la spécification",
       "value": "Valeur de spécification"
     },
     "seo": {
@@ -202,14 +202,14 @@
       "metaDescription": "Méta description",
       "metaKeywords": "Méta-mots-clés",
       "canonicalUrl": "URL canonique",
-      "openGraphTitle": "Titre du graphique ouvert",
-      "openGraphDescription": "Description du graphique ouvert",
-      "openGraphImage": "Ouvrir l'image du graphique",
+      "openGraphTitle": "Titre Open Graph",
+      "openGraphDescription": "Description Open Graph",
+      "openGraphImage": "Image Open Graph",
       "twitterCard": "Carte Twitter",
       "structuredDataType": "Type de données structurées",
       "sitemapInclude": "Inclure dans le plan du site",
       "sitemapPriority": "Priorité du plan du site",
-      "noIndex": "Pas d'index"
+      "noIndex": "Ne pas indexer"
     },
     "createdBy": "Créé par",
     "company": "Entreprise",

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockTransfers/index.tsx",
   "title": "Trasferimenti di magazzino",
-  "description": "Spostare la merce tra magazzini.",
+  "description": "Sposta la merce tra magazzini.",
   "help": {
-    "ariaLabel": "Informazioni sui trasferimenti di stock",
-    "title": "Informazioni sui trasferimenti di stock",
+    "ariaLabel": "Informazioni sui trasferimenti di magazzino",
+    "title": "Informazioni sui trasferimenti di magazzino",
     "overview": "Un trasferimento di magazzino sposta giacenza libera da un magazzino a un altro. È una bozza finché non viene completato o annullato; completarlo è il momento in cui le quantità si spostano davvero, tutte le righe insieme.",
     "sections": [
       {

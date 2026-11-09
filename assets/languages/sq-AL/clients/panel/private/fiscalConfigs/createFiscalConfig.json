@@ -41,7 +41,7 @@
     "environmentPlaceholder": "Zgjidh mjedisin",
     "environment": {
       "test": "Testim",
-      "production": "Prodhim"
+      "production": "Produksion"
     },
     "fiscalizationUrlLabel": "URL SOAP fiskalizimi",
     "fiscalizationUrlPlaceholder": "https://fiscal.example/fiscalize",

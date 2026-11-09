@@ -47,7 +47,7 @@
   "createDiscount": "Créer une remise",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
-    "title": "Modifier le type d’unité",
+    "title": "Titre",
     "code": "Code",
     "type": "Type",
     "value": "Valeur",
@@ -60,11 +60,11 @@
     "usageCount": "Nombre d'utilisations",
     "customerGroups": "Groupes de clients",
     "isActive": "Actif",
-    "startsAt": "Commence à",
-    "endsAt": "Se termine à",
+    "startsAt": "Commence le",
+    "endsAt": "Se termine le",
     "buyXGetY": {
-      "buyQuantity": "Acheter la quantité",
-      "getQuantity": "Obtenir la quantité",
+      "buyQuantity": "Quantité achetée",
+      "getQuantity": "Quantité offerte",
       "getProductIds": "Produits gratuits"
     },
     "createdBy": "Créé par",

@@ -17,8 +17,8 @@
     "sortPlaceholder": "Rendit produktet",
     "sort": {
       "newest": "Më të rejat",
-      "priceAsc": "Çmimi: nga i ulëti",
-      "priceDesc": "Çmimi: nga i larti",
+      "priceAsc": "Çmimi: nga më i ulëti",
+      "priceDesc": "Çmimi: nga më i larti",
       "featured": "Të veçuara"
     },
     "categoryIdsLabel": "Kategoritë",

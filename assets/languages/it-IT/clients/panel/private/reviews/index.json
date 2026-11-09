@@ -35,7 +35,7 @@
   "fields": {
     "rating": "Valutazione",
     "comment": "Commento",
-    "reviewer": "Revisore",
+    "reviewer": "Autore della recensione",
     "order": "Ordine",
     "listing": "Annuncio",
     "listingId": "Annuncio",

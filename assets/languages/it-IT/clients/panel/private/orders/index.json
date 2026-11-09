@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Ordini",
-  "description": "Gestire gli ordini di servizio tra clienti e fornitori.",
+  "description": "Gestisci gli ordini di servizio tra clienti e fornitori.",
   "help": {
     "ariaLabel": "Informazioni sugli ordini",
     "title": "Informazioni sugli ordini",
@@ -73,6 +73,6 @@
     "submitted": "Inviato",
     "completed": "Completato",
     "cancelled": "Annullato",
-    "disputed": "Contestato"
+    "disputed": "In controversia"
   }
 }

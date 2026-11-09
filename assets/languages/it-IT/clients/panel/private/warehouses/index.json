@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
   "title": "Magazzini",
-  "description": "Gestisci le sedi che detengono le tue scorte.",
+  "description": "Gestisci i luoghi in cui sono conservate le tue scorte.",
   "help": {
-    "ariaLabel": "Informazioni su Magazzini",
-    "title": "Informazioni su Magazzini",
+    "ariaLabel": "Informazioni sui magazzini",
+    "title": "Informazioni sui magazzini",
     "overview": "Un magazzino è un luogo di stoccaggio. Righe di inventario, trasferimenti, inventari, riserve degli ordini e casse puntano tutti a magazzini. Nome e codice sono obbligatori; l’indirizzo è facoltativo ma decide l’IVA delle vendite in cassa.",
     "sections": [
       {

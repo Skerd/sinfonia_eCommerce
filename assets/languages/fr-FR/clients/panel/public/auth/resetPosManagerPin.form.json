@@ -9,13 +9,13 @@
   "successTitle": "Code PIN mis à jour",
   "successDescription": "Le code PIN du gestionnaire a été réinitialisé avec succès. Vous pouvez vous connecter et utiliser la caisse.",
   "errorTitle": "Impossible de réinitialiser le code PIN",
-  "errorDescription": "Une erreur s'est produite lors de l'enregistrement du nouveau code PIN. Essayer à nouveau.",
+  "errorDescription": "Une erreur s'est produite lors de l'enregistrement du nouveau code PIN. Réessayez.",
   "tryAgain": "Réessayer",
   "submit": "Enregistrer le nouveau code PIN",
   "form": {
     "pinLabel": "Nouveau code PIN",
     "confirmPinLabel": "Confirmer le code PIN",
-    "resetCodeLabel": "Réinitialiser le code",
+    "resetCodeLabel": "Code de réinitialisation",
     "pinMismatch": "La confirmation du code PIN ne correspond pas"
   }
 }

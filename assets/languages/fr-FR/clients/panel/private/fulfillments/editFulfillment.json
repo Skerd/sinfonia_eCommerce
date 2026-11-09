@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
-  "title": "Modifier l'exécution",
-  "errorTitle": "Échec du chargement du traitement",
-  "errorDescription": "Impossible de charger cette réalisation. Essayer à nouveau.",
+  "title": "Modifier l'expédition",
+  "errorTitle": "Échec du chargement de l'expédition",
+  "errorDescription": "Impossible de charger cette expédition. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "orderLabel": "Commande",
@@ -14,7 +14,7 @@
     "trackingNumberPlaceholder": "Numéro de suivi",
     "trackingUrlLabel": "URL de suivi",
     "trackingUrlPlaceholder": "https://…",
-    "shippedAtLabel": "Expédié à",
+    "shippedAtLabel": "Expédiée le",
     "estimatedDeliveryAtLabel": "Livraison estimée",
     "deliveredAtLabel": "Livré à",
     "notesLabel": "Notes",
@@ -35,20 +35,20 @@
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde de l'accomplissement",
+      "title": "Enregistrement de l'expédition",
       "time": 3000
     },
     "success": {
-      "title": "Exécution mise à jour",
+      "title": "Expédition mise à jour",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre à jour le traitement",
+      "title": "Impossible de mettre à jour l'expédition",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Modifier l'exécution",
+    "title": "Modifier l'expédition",
     "description": "Mettez à jour le statut de l'expédition, le suivi, les dates, les notes et les articles."
   },
   "formButtons": {

@@ -47,8 +47,8 @@
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {
     "pending": "In sospeso",
-    "accepted": "Accettato",
-    "rejected": "Rifiutato"
+    "accepted": "Accettata",
+    "rejected": "Rifiutata"
   },
   "accept": "Accetta",
   "reject": "Rifiuta/Ritira"

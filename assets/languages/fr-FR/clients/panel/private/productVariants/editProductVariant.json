@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/editProductVariant.tsx",
   "title": "Modifier la variante",
   "errorTitle": "Échec du chargement de la variante",
-  "errorDescription": "Impossible de charger cette variante de produit. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette variante de produit. Réessayez.",
   "form": {
     "generalSectionTitle": "Général",
     "pricingSectionTitle": "Tarification",
@@ -21,7 +21,7 @@
     "trackInventoryLabel": "Suivre l'inventaire",
     "priceLabel": "Prix",
     "pricePlaceholder": "0.00",
-    "compareAtPriceLabel": "Comparer au prix",
+    "compareAtPriceLabel": "Prix barré",
     "compareAtPricePlaceholder": "0.00",
     "costPriceLabel": "Prix de revient",
     "costPricePlaceholder": "0.00",
@@ -51,7 +51,7 @@
   },
   "axios": {
     "start": {
-      "title": "Variante d'enregistrement",
+      "title": "Enregistrement de la variante",
       "time": 3000
     },
     "success": {

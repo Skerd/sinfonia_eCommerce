@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx",
   "discountSubtitle": "Rabatt details",
   "failedTitle": "Rabatt konnten nicht geladen werden",
-  "failedDescription": "Der Rabatt konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Der Rabatt konnte nicht geladen werden. Klicken Sie, um ihn erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "offer": "Angebot",

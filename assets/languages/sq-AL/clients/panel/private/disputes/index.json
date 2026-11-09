@@ -5,12 +5,12 @@
   "help": {
     "ariaLabel": "Rreth mosmarrëveshjeve",
     "title": "Rreth mosmarrëveshjeve",
-    "overview": "Një ankesë është një mosmarrëveshje për një porosi tregu që e vendos një administrator. Sa kohë është e hapur, paratë e porosisë janë të ngrira: pa pranim dorëzimi, lirim pikash kryesore, pranim automatik apo anulim. Vendimi thotë kush merr atë që mbahet ende.",
+    "overview": "Një mosmarrëveshje është një kundërshti për një porosi tregu që e vendos një administrator. Sa kohë është e hapur, paratë e porosisë janë të ngrira: pa pranim dorëzimi, lirim faze, pranim automatik apo anulim. Vendimi thotë kush merr atë që mbahet ende.",
     "sections": [
       {
-        "title": "Hapja e një ankese",
+        "title": "Hapja e një mosmarrëveshjeje",
         "items": [
-          "Secila palë e porosisë mund të hapë një, për një porosi që nuk është as e përfunduar as e anuluar. Një ankesë për porosi.",
+          "Secila palë e porosisë mund të hapë një, për një porosi që nuk është as e përfunduar as e anuluar. Një mosmarrëveshje për porosi.",
           "Thirrësi është nismëtari; pala tjetër njoftohet.",
           "Klientët mund të hapin një edhe nga llogaria e tyre në dyqan."
         ]
@@ -28,7 +28,7 @@
       {
         "title": "Fshirja",
         "items": [
-          "Vetëm një administrator mund ta fshijë një ankesë, sepse një e hapur bllokon pagesën. Mbi një ankesë të fshirë nuk mund të veprohet derisa të rikthehet."
+          "Vetëm një administrator mund ta fshijë një mosmarrëveshje, sepse një e hapur bllokon pagesën. Mbi një mosmarrëveshje të fshirë nuk mund të veprohet derisa të rikthehet."
         ]
       }
     ]

@@ -2,11 +2,11 @@
   "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
   "close": {
     "title": "Fermer cette demande de tâche ?",
-    "description": "Les fournisseurs ne pourront plus faire de nouvelles offres. Vous pouvez le rouvrir plus tard, sauf si la demande a été acceptée.",
+    "description": "Les prestataires ne pourront plus faire de nouvelles offres. Vous pourrez la rouvrir plus tard, sauf si la demande a été attribuée.",
     "confirm": "Confirmer",
     "axios": {
       "start": {
-        "title": "Demande de tâche de clôture",
+        "title": "Clôture de la demande de tâche",
         "time": 3000
       },
       "success": {
@@ -21,11 +21,11 @@
   },
   "reopen": {
     "title": "Rouvrir cette demande de tâche ?",
-    "description": "La demande sera à nouveau ouverte afin que les fournisseurs puissent soumettre des offres.",
+    "description": "La demande sera à nouveau ouverte afin que les prestataires puissent soumettre des offres.",
     "confirm": "Confirmer",
     "axios": {
       "start": {
-        "title": "Demande de tâche de réouverture",
+        "title": "Réouverture de la demande de tâche",
         "time": 3000
       },
       "success": {

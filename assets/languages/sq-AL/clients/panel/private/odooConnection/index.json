@@ -35,7 +35,7 @@
     "apiKeyLabel": "Çelësi API ose fjalëkalimi",
     "apiKeyPlaceholder": "Çelësi API i Odoo ose fjalëkalimi i llogarisë",
     "apiKeyHint": "JSON-RPC e Odoo pranon një çelës API ose fjalëkalimin e llogarisë për këtë hyrje.",
-    "apiKeySetPlaceholder": "Lëre bosh për të mbajtur sekretet e ruajtura",
+    "apiKeySetPlaceholder": "Lëre bosh për të mbajtur sekretin e ruajtur",
     "apiKeySetHint": "Një sekret është tashmë i ruajtur. Vendos një çelës API ose fjalëkalim të ri vetëm për ta zëvendësuar."
   },
   "save": "Ruaj",

@@ -40,7 +40,7 @@
   },
   "save": "Enregistrer",
   "saved": "Connexion Odoo enregistrée",
-  "test": "Tester",
+  "test": "Test",
   "testOk": "Odoo a accepté l'identifiant",
   "testError": "Le test de connexion Odoo a échoué",
   "saveError": "Impossible d'enregistrer la connexion Odoo",

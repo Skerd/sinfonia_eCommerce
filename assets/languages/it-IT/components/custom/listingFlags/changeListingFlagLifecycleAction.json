@@ -4,19 +4,19 @@
   "resolutionLabel": "Note sulla risoluzione",
   "resolutionPlaceholder": "Descrivi come è stata gestita questa segnalazione (obbligatorio).",
   "resolutionHint": "Obbligatorio. 1–2000 caratteri.",
-  "listingActionLabel": "Azione di quotazione",
+  "listingActionLabel": "Azione sull'annuncio",
   "listingActionPlaceholder": "Seleziona l'azione",
   "listingAction_values": {
     "none": "Nessuna azione",
-    "deactivate": "Disattiva l'elenco"
+    "deactivate": "Disattiva l'annuncio"
   },
   "resolve": {
-    "title": "Risolvi il flag dell'elenco",
-    "description": "Contrassegna il report come revisionato. Facoltativamente disattivare l'elenco.",
+    "title": "Risolvi la segnalazione dell'annuncio",
+    "description": "Contrassegna la segnalazione come esaminata. Facoltativamente, disattiva l'annuncio.",
     "confirm": "Risolvi",
     "axios": {
       "start": {
-        "title": "Risoluzione della bandiera",
+        "title": "Risoluzione della segnalazione",
         "time": 3000
       },
       "success": {
@@ -24,26 +24,26 @@
         "time": 3000
       },
       "error": {
-        "title": "Impossibile risolvere il flag",
+        "title": "Impossibile risolvere la segnalazione",
         "time": 3000
       }
     }
   },
   "dismiss": {
-    "title": "Ignora il flag dell'elenco",
-    "description": "Contrassegna la segnalazione come ignorata senza ulteriori azioni nell'elenco.",
+    "title": "Ignora la segnalazione dell'annuncio",
+    "description": "Contrassegna la segnalazione come ignorata senza ulteriori azioni sull'annuncio.",
     "confirm": "Ignora",
     "axios": {
       "start": {
-        "title": "Bandiera di esclusione",
+        "title": "Archiviazione della segnalazione",
         "time": 3000
       },
       "success": {
-        "title": "Bandiera respinta",
+        "title": "Segnalazione ignorata",
         "time": 3000
       },
       "error": {
-        "title": "Impossibile eliminare la segnalazione",
+        "title": "Impossibile ignorare la segnalazione",
         "time": 3000
       }
     }

@@ -3,8 +3,8 @@
   "title": "Analitika",
   "description": "Ndiqni të ardhurat, porositë, inventarin dhe aktivitetin e shportave.",
   "help": {
-    "ariaLabel": "Rreth analizave",
-    "title": "Rreth analizave",
+    "ariaLabel": "Rreth analitikës",
+    "title": "Rreth analitikës",
     "overview": "Analitika përmbledh të ardhurat, porositë, produktet, stokun dhe shportat e kësaj kompanie. Vetëm lexon të dhënat ekzistuese; asgjë këtu nuk ndryshon një porosi, një produkt ose stokun. Çdo kartë kërkon qasje leximi te të dhënat pas saj.",
     "sections": [
       {
@@ -13,7 +13,7 @@
         "items": [
           "Të ardhurat, numri i porosive, vlera mesatare e porosisë, tatimi, transporti dhe produktet kryesore ndjekin periudhën.",
           "Grafiku tregon të ardhurat e paguara dhe porositë e paguara për ditë për 7 dhe 30 ditë, për javë për 90 ditë dhe për muaj për një vit.",
-          "Distinktivët e prirjes e krahasojnë periudhën me dritaren me të njëjtën gjatësi menjëherë para saj.",
+          "Shenjat e prirjes e krahasojnë periudhën me dritaren me të njëjtën gjatësi menjëherë para saj.",
           "Kartat e stokut dhe shportave tregojnë gjendjen aktuale dhe nuk ndryshojnë me periudhën."
         ]
       },
@@ -31,7 +31,7 @@
         "items": [
           "Statusi i porosive numëron çdo porosi të pafshirë të bërë në periudhë, të paguar apo jo.",
           "Produktet kryesore renditen sipas të ardhurave të rreshtit në monedhën dhe periudhën e zgjedhur, me titullin e ruajtur në rreshtin e porosisë.",
-          "Statusi i produkteve është katalogu aktual i ndarë në draft, aktiv dhe i arkivuar."
+          "Statusi i produkteve është katalogu aktual i ndarë në skicë, aktiv dhe i arkivuar."
         ]
       },
       {
@@ -107,7 +107,7 @@
     "lowStockDesc": "SKU nën pikën e riporosisë",
     "outOfStock": "Pa stok",
     "outOfStockDesc": "SKU pa sasi të disponueshme",
-    "totalOnHand": "Njësi në dorë",
+    "totalOnHand": "Njësi në gjendje",
     "totalOnHandDesc": "Sasia totale e inventarit",
     "activeProducts": "Produktet",
     "activeProductsDesc": "Produktet sipas statusit",

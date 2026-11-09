@@ -3,7 +3,7 @@
   "form": {
     "nameLabel": "Nome",
     "namePlaceholder": "Nome della categoria",
-    "parentListingCategoryLabel": "Categoria genitore",
+    "parentListingCategoryLabel": "Categoria padre",
     "parentListingCategoryPlaceholder": "Categoria radice facoltativa",
     "orderLabel": "Ordine di visualizzazione",
     "orderPlaceholder": "0",

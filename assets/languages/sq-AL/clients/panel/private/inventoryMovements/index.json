@@ -23,9 +23,9 @@
         "items": [
           "Fillestar është sasia e nisjes së një rreshti të ri inventari. Rifurnizim është mall i marrë.",
           "Shitje është mall që del me një porosi të dërguar ose një shitje në arkë.",
-          "Kthim është mall i rikthyer nga një kërkesë kthimi e marrë ose një rimbursim në arkë.",
+          "Kthim është mall i rikthyer nga një kërkesë kthimi e pranuar ose një rimbursim në arkë.",
           "Transferim dalës dhe transferim hyrës janë dy anët e një transferimi stoku të përfunduar.",
-          "Rregullim është një numërim stoku ose një korrigjim manual. Dëmtim dhe humbje heqin mall pa shitje."
+          "Rregullim është një numërim stoku ose një korrigjim manual. Dëmtim dhe çregjistrim heqin mall pa shitje."
         ]
       },
       {
@@ -33,12 +33,12 @@
         "body": "Rreshtat hyrës mbajnë koston; dalësit e trashëgojnë.",
         "items": [
           "Një rifurnizim regjistron koston për njësi, lotin dhe skadimin e futur.",
-          "Një zbritje manuale kopjon koston për njësi dhe skadimin e rreshtit të fundit hyrës të të njëjtit lot (ose të rreshtit të fundit hyrës fare), që humbjet të jenë të vlerësuara."
+          "Një zbritje manuale kopjon koston për njësi dhe skadimin e rreshtit të fundit hyrës të të njëjtit lot (ose të rreshtit të fundit hyrës fare), që çregjistrimet të jenë të vlerësuara."
         ]
       },
       {
         "title": "Pse nuk mund ta ndryshoni",
-        "body": "Regjistri është historiku. Ndryshimi i një rreshti do ta bënte të rremë para-në dhe pas-in.",
+        "body": "Regjistri është historiku. Ndryshimi i një rreshti do t'i bënte të pavërteta sasitë para dhe pas.",
         "items": [
           "Askush nuk mund të krijojë, ndryshojë ose fshijë rreshta këtu.",
           "Për të ndryshuar stokun, përdorni Inventarin (rifurnizo, zbrit), një transferim, një numërim, një dërgim porosie ose një kthim.",

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/inventories/center/sheetView/inventorySheetView.tsx",
   "inventorySubtitle": "Bestandseintrag",
   "failedTitle": "Lagerbestand konnte nicht geladen werden",
-  "failedDescription": "Der Lagerbestand konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Der Lagerbestand konnte nicht geladen werden. Klicken Sie, um ihn erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "overview": "Übersicht",
   "related": "Zugehörig",

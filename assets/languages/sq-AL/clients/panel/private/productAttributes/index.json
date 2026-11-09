@@ -3,8 +3,8 @@
   "title": "Atributet e produktit",
   "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
   "help": {
-    "ariaLabel": "Rreth Atributet e produktit",
-    "title": "Rreth Atributet e produktit",
+    "ariaLabel": "Rreth atributeve të produktit",
+    "title": "Rreth atributeve të produktit",
     "overview": "Atributet janë lista opsionesh të përbashkëta si Madhësia ose Ngjyra. Një variant zgjedh një vlerë nga çdo atribut që e përcakton, ndaj atributi është ai që e kthen një produkt në disa SKU.",
     "sections": [
       {

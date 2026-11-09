@@ -5,14 +5,14 @@
   "help": {
     "ariaLabel": "Rreth inventarit",
     "title": "Rreth inventarit",
-    "overview": "Një rresht inventari është stoku i një produkti, ose i një varianti, në një magazinë. Ka tre numra: në gjendje, i rezervuar dhe i disponueshëm (në gjendje minus i rezervuar). I disponueshëm është ajo që checkout-i dhe arka mund të shesin ende. Çdo ndryshim i sasisë në gjendje lë një lëvizje në regjistrin e stokut.",
+    "overview": "Një rresht inventari është stoku i një produkti, ose i një varianti, në një magazinë. Ka tre numra: në gjendje, i rezervuar dhe i disponueshëm (në gjendje minus i rezervuar). I disponueshëm është ajo që pagesa online dhe arka mund të shesin ende. Çdo ndryshim i sasisë në gjendje lë një lëvizje në regjistrin e stokut.",
     "sections": [
       {
         "title": "Në gjendje, i rezervuar, i disponueshëm",
         "body": "Nuk janë tre stoqe. I rezervuari është një mbajtje brenda sasisë në gjendje.",
         "items": [
           "Në gjendje është ajo që ndodhet fizikisht në magazinë.",
-          "I rezervuar është ajo që checkout-et e hapura dhe porositë e padërguara kanë zënë. Rezervohet në hapin e pagesës dhe lirohet nëse checkout-i skadon, porosia anulohet ose rimbursohet plotësisht.",
+          "I rezervuar është ajo që pagesat online të hapura dhe porositë e padërguara kanë zënë. Rezervohet në hapin e pagesës dhe lirohet nëse pagesa skadon, porosia anulohet ose rimbursohet plotësisht.",
           "I disponueshëm është në gjendje minus i rezervuar. Një numërim që gjen më pak se sa është rezervuar mund ta bëjë negativ."
         ]
       },
@@ -20,8 +20,8 @@
         "title": "Cilët artikuj kanë nevojë për rresht",
         "body": "Një produkt fizik ose i ndryshueshëm ndiqet në stok, përveç kur ndjekja është e çaktivizuar te produkti ose varianti.",
         "items": [
-          "Një artikull i ndjekur mund të shitet vetëm nga rreshta në magazina aktive. Pa rresht, ose pa mjaftueshëm të disponueshëm, checkout-i e refuzon rreshtin si jashtë stoku.",
-          "Checkout-i preferon një magazinë që mbulon gjithë rreshtin, së pari atë të paracaktuar; përndryshe e ndan rreshtin në disa magazina, së pari atë të paracaktuar.",
+          "Një artikull i ndjekur mund të shitet vetëm nga rreshta në magazina aktive. Pa rresht, ose pa mjaftueshëm të disponueshëm, pagesa online e refuzon rreshtin si jashtë stoku.",
+          "Pagesa online preferon një magazinë që mbulon gjithë rreshtin, së pari atë të paracaktuar; përndryshe e ndan rreshtin në disa magazina, së pari atë të paracaktuar.",
           "Produktet dixhitale, shërbimet dhe kartat dhuratë, si dhe artikujt pa ndjekje, nuk kanë nevojë për rresht. Një paketë produktesh nuk ka kurrë rresht; përbërësit e saj kanë.",
           "Ka një rresht aktiv për çdo produkt, variant dhe magazinë."
         ]
@@ -40,7 +40,7 @@
         "body": "Këto janë veprimet manuale të stokut. Të dyja kërkojnë lejen për të shkruar sasinë në gjendje.",
         "items": [
           "Rifurnizo shton njësi dhe mund të regjistrojë furnitorin, numrin e faturës, skedarët e faturës, datën, koston për njësi, lotin dhe datën e skadimit.",
-          "Zbrit heq njësi si humbje, dëmtim ose rregullim. Merr koston për njësi dhe skadimin e furnizimit të fundit të të njëjtit lot, që humbja të jetë e vlerësuar.",
+          "Zbrit heq njësi si çregjistrim, dëmtim ose rregullim. Merr koston për njësi dhe skadimin e furnizimit të fundit të të njëjtit lot, që humbja të jetë e vlerësuar.",
           "Një zbritje që do të linte më pak në gjendje se sa është rezervuar refuzohet."
         ]
       },
@@ -58,7 +58,7 @@
         "items": [
           "Dërgimi i një porosie konsumon rezervimet e saj; një dërgesë e dështuar i kthen njësitë.",
           "Një transferim stoku lëviz stok të lirë mes magazinave; një numërim stoku vendos sasinë në gjendje sa sasia e numëruar.",
-          "Një kthim i marrë e kthen mallin; një shitje dhe një rimbursim në arkë marrin dhe kthejnë stokun drejtpërdrejt.",
+          "Një kthim i pranuar e kthen mallin; një shitje dhe një rimbursim në arkë marrin dhe kthejnë stokun drejtpërdrejt.",
           "Një rresht që ka ende stok ose rezervime nuk mund të fshihet. Fshirja e një rreshti bosh është fshirje e butë dhe mund të rikthehet, përveç kur ndërkohë ekziston një rresht aktiv për të njëjtin artikull."
         ]
       }

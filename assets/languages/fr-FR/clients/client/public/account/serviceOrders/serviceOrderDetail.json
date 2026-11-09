@@ -58,7 +58,7 @@
     "pending": "Ouverte",
     "completed": "Traitée"
   },
-  "milestonesTitle": "Jalons",
+  "milestonesTitle": "Étapes",
   "releaseMilestone": "Libérer le paiement",
   "bookingsTitle": "Séances planifiées",
   "provider": "Prestataire",
@@ -76,7 +76,7 @@
   "disputeOpened": "Litige ouvert. Nous vous recontacterons.",
   "reviewThanks": "Merci pour votre avis !",
   "cancelled": "Commande annulée",
-  "milestoneReleased": "Paiement du jalon libéré",
+  "milestoneReleased": "Paiement de l'étape libéré",
   "payEscrowTitle": "Payer cette commande",
   "payEscrowHint": "Votre prestataire a accepté la commande. Effectuez le paiement pour alimenter le séquestre.",
   "payEscrowButton": "Payer maintenant",

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx",
   "title": "Attiva la zona fiscale",
-  "description": "Questa zona fiscale verrà utilizzata per calcolare l'imposta al momento del pagamento.",
+  "description": "Questa zona fiscale verrà utilizzata per calcolare l'imposta al checkout.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione della zona fiscale…",

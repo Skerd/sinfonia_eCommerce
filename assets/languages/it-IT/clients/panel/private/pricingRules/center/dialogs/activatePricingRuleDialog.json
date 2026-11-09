@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx",
-  "title": "Attiva la regola del prezzo",
+  "title": "Attiva la regola di prezzo",
   "description": "Questa regola di prezzo inizierà ad applicarsi ai prezzi di catalogo corrispondenti.",
   "cancel": "Annulla",
   "confirm": "Attiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Attivazione della regola di prezzo…",
@@ -15,7 +15,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Impossibile attivare la regola del prezzo",
+      "title": "Impossibile attivare la regola di prezzo",
       "time": 3000
     }
   }

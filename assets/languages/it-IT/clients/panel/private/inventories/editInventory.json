@@ -15,7 +15,7 @@
     "warehousePlaceholder": "Seleziona magazzino",
     "reorderPointLabel": "Punto di riordino",
     "reorderPointPlaceholder": "Avviso sotto questa quantità",
-    "reorderQuantityLabel": "Riordina la quantità",
+    "reorderQuantityLabel": "Quantità di riordino",
     "reorderQuantityPlaceholder": "Quantità da riordinare"
   },
   "axios": {
@@ -34,7 +34,7 @@
   },
   "formHeader": {
     "title": "Modifica inventario",
-    "description": "Aggiorna le soglie di riordino per questa riga di stock."
+    "description": "Aggiorna le soglie di riordino per questa riga di giacenza."
   },
   "formButtons": {
     "cancel": "Annulla",

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Annonces",
-  "description": "Gérez les listes de produits et de services pour la vitrine de votre locataire.",
+  "description": "Gérez les annonces de produits et de services de la vitrine de votre espace.",
   "help": {
     "ariaLabel": "À propos des annonces",
     "title": "À propos des annonces",
@@ -40,7 +40,7 @@
         "items": [
           "Une promotion en cours (mise en avant ou sponsorisée) place l’annonce en tête du tri recommandé de la boutique pendant ses dates.",
           "Les avis sur les commandes terminées donnent à l’annonce sa note moyenne et son nombre d’avis.",
-          "Les utilisateurs peuvent signaler une annonce ; les administrateurs examinent les signalements dans la liste des signalements."
+          "Les utilisateurs peuvent signaler une annonce ; les administrateurs examinent les signalements sous Signalements d'annonce."
         ]
       },
       {
@@ -67,10 +67,10 @@
       }
     },
     "name": "Nom",
-    "title": "Modifier le type d’unité",
+    "title": "Titre",
     "description": "Description",
     "category": "Catégorie",
-    "provider": "Fournisseur",
+    "provider": "Prestataire",
     "price": "Prix",
     "priceCurrency": "Devise",
     "status": "Statut",
@@ -85,9 +85,9 @@
       "answer": "Réponse"
     },
     "requirements": "Exigences",
-    "tags": "Balises",
+    "tags": "Étiquettes",
     "promotions": "Promotions",
-    "listingPackages": "Forfaits",
+    "listingPackages": "Packages",
     "listingAddOns": "Modules complémentaires",
     "avgRating": "Note",
     "reviewCount": "Avis",

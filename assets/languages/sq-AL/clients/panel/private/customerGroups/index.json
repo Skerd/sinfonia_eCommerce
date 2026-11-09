@@ -3,8 +3,8 @@
   "title": "Grupet e klientëve",
   "description": "Segmentoni klientët për çmime dhe promocione.",
   "help": {
-    "ariaLabel": "Rreth Grupet e klientëve",
-    "title": "Rreth Grupet e klientëve",
+    "ariaLabel": "Rreth grupeve të klientëve",
+    "title": "Rreth grupeve të klientëve",
     "overview": "Grupet e klientëve i ndajnë blerësit, për shembull pakicë dhe shumicë, që rregullat e çmimeve t’i japin çdo grupi çmimet e veta. Një klient mund t’u përkasë disa grupeve.",
     "sections": [
       {

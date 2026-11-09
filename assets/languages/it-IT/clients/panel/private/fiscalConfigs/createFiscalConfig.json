@@ -3,7 +3,7 @@
   "title": "Crea configurazione fiscale",
   "formHeader": {
     "title": "Crea configurazione fiscale",
-    "description": "Configura la fiscalità CIS albanese e le credenziali della fattura elettronica."
+    "description": "Configura la fiscalizzazione CIS albanese e le credenziali della fattura elettronica."
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -23,11 +23,11 @@
     "softCodePlaceholder": "ab123cd456",
     "maintainerCodeLabel": "Codice manutentore",
     "maintainerCodePlaceholder": "mm123ab456",
-    "businessUnitCodeLabel": "Codice unità aziendale",
+    "businessUnitCodeLabel": "Codice unità operativa",
     "businessUnitCodePlaceholder": "bb123bb123",
     "operatorCodeLabel": "Codice operatore",
     "operatorCodePlaceholder": "oo123oo123",
-    "tcrCodeLabel": "Codice TCR (dalla CSI)",
+    "tcrCodeLabel": "Codice TCR (dal CIS)",
     "tcrCodePlaceholder": "tc123tc123",
     "tcrIntIdLabel": "ID interno del TCR",
     "tcrIntIdPlaceholder": "1",
@@ -40,21 +40,21 @@
     "environmentLabel": "Ambiente",
     "environmentPlaceholder": "Seleziona l'ambiente",
     "environment": {
-      "test": "Prova",
+      "test": "Test",
       "production": "Produzione"
     },
     "fiscalizationUrlLabel": "URL SOAP di fiscalizzazione",
     "fiscalizationUrlPlaceholder": "https://fiscal.example/fiscalize",
     "einvoiceUrlLabel": "URL SOAP della fattura elettronica",
     "einvoiceUrlPlaceholder": "https://einvoice.example/ws",
-    "selfcareUrlLabel": "Cura personale/verifica URL",
+    "selfcareUrlLabel": "URL Selfcare / verifica",
     "selfcareUrlPlaceholder": "https://selfcare.example/verify",
     "proxyUrlLabel": "Proxy HTTPS (facoltativo)",
     "proxyUrlPlaceholder": "https://proxy.example",
     "sellerNameLabel": "Nome del venditore",
     "sellerNamePlaceholder": "Ragione sociale",
     "sellerAddressLabel": "Indirizzo del venditore",
-    "sellerAddressPlaceholder": "Via e edificio",
+    "sellerAddressPlaceholder": "Via e numero civico",
     "sellerTownLabel": "Città del venditore",
     "sellerTownPlaceholder": "Metro City",
     "sellerCountryLabel": "Codice paese del venditore (ALB)",
@@ -65,7 +65,7 @@
     "certificateSelected": "file selezionato",
     "certificatePasswordLabel": "Password del certificato",
     "certificatePasswordPlaceholder": "Password del certificato",
-    "isVatRegisteredLabel": "partita IVA registrata"
+    "isVatRegisteredLabel": "Soggetto IVA"
   },
   "axios": {
     "start": {

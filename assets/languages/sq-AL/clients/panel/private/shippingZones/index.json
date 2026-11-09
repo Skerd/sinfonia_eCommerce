@@ -3,9 +3,9 @@
   "title": "Zonat e transportit",
   "description": "Përcaktoni tarifat e transportit sipas gjeografisë.",
   "help": {
-    "ariaLabel": "Rreth Zonat e transportit",
-    "title": "Rreth Zonat e transportit",
-    "overview": "Zonat e transportit vendosin cilat mundësi dorëzimi i ofrohen blerësit në checkout dhe sa kushtojnë. Një zonë liston shtete, opsionalisht rajone dhe kode postare, dhe një ose më shumë tarifa. Checkout-i ofron çdo tarifë të çdo zone aktive që përputhet; blerësi zgjedh njërën.",
+    "ariaLabel": "Rreth zonave të transportit",
+    "title": "Rreth zonave të transportit",
+    "overview": "Zonat e transportit vendosin cilat mundësi dorëzimi i ofrohen blerësit gjatë pagesës dhe sa kushtojnë. Një zonë liston shtete, opsionalisht rajone dhe kode postare, dhe një ose më shumë tarifa. Pagesa ofron çdo tarifë të çdo zone aktive që përputhet; blerësi zgjedh njërën.",
     "sections": [
       {
         "title": "Përputhja e një destinacioni",
@@ -41,7 +41,7 @@
   "fields": {
     "name": "Emri",
     "countries": "Vendet",
-    "states": "Shtetet",
+    "states": "Rajonet",
     "postalCodePatterns": "Modelet e kodit postar",
     "rates": {
       "name": "Emri i tarifës",

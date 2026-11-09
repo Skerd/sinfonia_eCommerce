@@ -23,7 +23,7 @@
   },
   "axios": {
     "start": {
-      "title": "Créer une promotion",
+      "title": "Création d'une promotion",
       "time": 3000
     },
     "success": {

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/promotions/createPromotion.tsx",
   "formHeader": {
     "title": "Crea promozione",
-    "description": "Aumenta la visibilità di un'inserzione con una promozione in primo piano o sponsorizzata."
+    "description": "Aumenta la visibilità di un annuncio con una promozione in primo piano o sponsorizzata."
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -10,7 +10,7 @@
   },
   "form": {
     "listingLabel": "Annuncio",
-    "listingPlaceholder": "Seleziona l'elenco",
+    "listingPlaceholder": "Seleziona l'annuncio",
     "typeLabel": "Tipo di promozione",
     "promotionTypeLabel": "Tipo di promozione",
     "promotionTypePlaceholder": "Seleziona il tipo di promozione",
@@ -23,7 +23,7 @@
   },
   "axios": {
     "start": {
-      "title": "Creazione di promozione",
+      "title": "Creazione della promozione",
       "time": 3000
     },
     "success": {

@@ -6,7 +6,7 @@
     },
     "start": {
       "time": 3000,
-      "title": "Soumettre un avis"
+      "title": "Envoi de l'avis"
     },
     "success": {
       "time": 3000,
@@ -30,5 +30,5 @@
     "title": "Créer un avis"
   },
   "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",
-  "title": "Modifier le type d’unité"
+  "title": "Titre"
 }

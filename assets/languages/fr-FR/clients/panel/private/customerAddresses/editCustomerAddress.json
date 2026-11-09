@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/editCustomerAddress.tsx",
   "title": "Modifier l'adresse",
   "errorTitle": "Échec du chargement de l'adresse",
-  "errorDescription": "Impossible de charger cette adresse. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette adresse. Réessayez.",
   "form": {
     "recipientSectionTitle": "Destinataire",
     "addressSectionTitle": "Adresse",
@@ -22,8 +22,8 @@
     "streetPlaceholder": "Adresse postale",
     "cityLabel": "Ville",
     "cityPlaceholder": "Sélectionner la ville",
-    "stateLabel": "Canton / État",
-    "statePlaceholder": "Sélectionner le canton",
+    "stateLabel": "Région / État",
+    "statePlaceholder": "Sélectionner la région",
     "postalCodeLabel": "Code postal",
     "postalCodePlaceholder": "Code postal",
     "emailLabel": "E-mail",
@@ -41,7 +41,7 @@
   },
   "axios": {
     "start": {
-      "title": "Enregistrer l'adresse",
+      "title": "Enregistrement de l'adresse",
       "time": 3000
     },
     "success": {
@@ -55,7 +55,7 @@
   },
   "formHeader": {
     "title": "Modifier l'adresse",
-    "description": "Mettez à jour le client, le destinataire, l’emplacement et l’épingle de la carte."
+    "description": "Mettez à jour le client, le destinataire, l’emplacement et le repère sur la carte."
   },
   "formButtons": {
     "cancel": "Annuler",

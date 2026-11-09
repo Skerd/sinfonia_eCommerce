@@ -10,7 +10,7 @@
   "status": "Status",
   "createdAt": "Eröffnet",
   "failedTitle": "Streitfall konnten nicht geladen werden",
-  "failedDescription": "Der Streitfall konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Der Streitfall konnte nicht geladen werden. Klicken Sie, um ihn erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "status_values": {
     "open": "Offen",

@@ -3,8 +3,8 @@
   "title": "Zbritjet",
   "description": "Menaxhoni kodet promocionale dhe zbritjet automatike.",
   "help": {
-    "ariaLabel": "Rreth Zbritjet",
-    "title": "Rreth Zbritjet",
+    "ariaLabel": "Rreth zbritjeve",
+    "title": "Rreth zbritjeve",
     "overview": "Një zbritje është një kod që blerësi fut në shportë. Shporta mban një kod njëherësh. Rikontrollohet sa herë rillogaritet shporta dhe hiqet nëse nuk vlen më. Titulli, tipi, vlera, fusha e zbatimit dhe data e fillimit janë të detyrueshme; kodi ruhet me shkronja të mëdha.",
     "sections": [
       {
@@ -12,7 +12,7 @@
         "body": "Rendi i veprimeve në shportë: çmimi i katalogut → një rregull çmimi për rresht → kodi i zbritjes → transporti → tatimi.",
         "items": [
           "Përqindje heq atë përqindje nga rreshtat brenda fushës. Fikse heq një shumë fikse, kurrë më shumë se vlera e atyre rreshtave.",
-          "Transport falas nuk e ul mallin; checkout-i nuk tarifon transport sa kohë zbatohet.",
+          "Transport falas nuk e ul mallin; pagesa nuk tarifon transport sa kohë zbatohet.",
           "Bli X merr Y numëron njësitë e kualifikuara, i grupon si sasi blerjeje plus dhuratë dhe i bën falas njësitë më të lira në çdo grup të plotë. Kërkon sasinë e blerjes, sasinë dhuratë dhe produktet e kualifikuara.",
           "Rreshtat e kartave dhuratë nuk zbriten kurrë dhe nuk numërohen për minimumet."
         ]

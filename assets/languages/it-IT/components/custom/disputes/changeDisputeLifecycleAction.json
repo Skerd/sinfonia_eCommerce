@@ -2,10 +2,10 @@
   "path": "src/modules/eCommerce/components/custom/disputes/changeDisputeLifecycleAction.tsx",
   "cancel": "Annulla",
   "resolutionLabel": "Note sulla risoluzione",
-  "resolutionPlaceholder": "Descrivere come è stata gestita la controversia (richiesto per l'audit).",
+  "resolutionPlaceholder": "Descrivi come è stata gestita la controversia (obbligatorio per l'audit).",
   "resolutionHint": "Obbligatorio. 1–2000 caratteri.",
   "startReview": {
-    "title": "Contrassegna la controversia in fase di revisione",
+    "title": "Contrassegna la controversia come in revisione",
     "description": "La controversia rimane aperta mentre indaghi. Le parti non possono accettare la consegna finché la controversia non sarà risolta o chiusa.",
     "confirm": "Inizia la revisione",
     "axios": {
@@ -24,12 +24,12 @@
     }
   },
   "resolve": {
-    "title": "Risolvere la controversia",
+    "title": "Risolvi controversia",
     "description": "Contrassegna la controversia risolta e completa l'ordine collegato utilizzando la stessa logica di deposito a garanzia dell'accettazione della consegna.",
     "confirm": "Risolvi",
     "axios": {
       "start": {
-        "title": "Risoluzione delle controversie",
+        "title": "Risoluzione della controversia",
         "time": 3000
       },
       "success": {
@@ -48,7 +48,7 @@
     "confirm": "Chiudi controversia",
     "axios": {
       "start": {
-        "title": "Chiusura del contenzioso",
+        "title": "Chiusura della controversia",
         "time": 3000
       },
       "success": {

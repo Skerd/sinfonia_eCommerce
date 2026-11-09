@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/stockCounts/index.tsx",
   "title": "Inventari",
-  "description": "Contare un magazzino e correggerne le giacenze.",
+  "description": "Conta un magazzino e correggine le giacenze.",
   "help": {
-    "ariaLabel": "Informazioni sui conteggi di stock",
-    "title": "Informazioni sui conteggi di stock",
+    "ariaLabel": "Informazioni sugli inventari",
+    "title": "Informazioni sugli inventari",
     "overview": "Un inventario registra ciò che c’è davvero sugli scaffali di un magazzino, poi corregge la giacenza fisica di conseguenza. Resta una bozza mentre si conta; applicarlo è il momento in cui i numeri cambiano.",
     "sections": [
       {

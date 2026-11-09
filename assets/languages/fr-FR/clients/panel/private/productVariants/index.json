@@ -50,7 +50,7 @@
       "value": "Valeur"
     },
     "price": "Prix",
-    "compareAtPrice": "Comparer au prix",
+    "compareAtPrice": "Prix barré",
     "costPrice": "Prix de revient",
     "currency": "Devise",
     "weight": "Poids",

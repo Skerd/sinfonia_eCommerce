@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
-    "title": "Elenco dei rapporti",
-    "description": "Contrassegna un elenco per la revisione da parte del team di moderazione."
+    "title": "Segnala annuncio",
+    "description": "Segnala un annuncio per la revisione da parte del team di moderazione."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Invia rapporto"
+    "submit": "Invia segnalazione"
   },
   "form": {
     "listingLabel": "Annuncio",
-    "listingPlaceholder": "Seleziona l'elenco",
+    "listingPlaceholder": "Seleziona l'annuncio",
     "reasonLabel": "Motivo",
     "reasonPlaceholder": "Seleziona il motivo",
     "commentLabel": "Ulteriori dettagli",
@@ -24,15 +24,15 @@
   },
   "axios": {
     "start": {
-      "title": "Invio rapporto",
+      "title": "Invio della segnalazione",
       "time": 3000
     },
     "success": {
-      "title": "Rapporto inviato",
+      "title": "Segnalazione inviata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile inviare il rapporto",
+      "title": "Impossibile inviare la segnalazione",
       "time": 3000
     }
   }

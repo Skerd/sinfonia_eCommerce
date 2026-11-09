@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/client/public/shared/shopCartLine.tsx",
   "sku": "SKU {sku}",
-  "each": "{price} copa",
+  "each": "{price} për copë",
   "remove": "Hiq",
   "removeLabel": "Hiq {item} nga shporta",
   "updateError": "Sasia nuk u përditësua",

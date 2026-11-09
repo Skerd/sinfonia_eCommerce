@@ -1,5 +1,5 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/center/actions/createAccountLinkDropdown.tsx",
-  "title": "Connecter les paiements Stripe",
+  "title": "Connecter les versements Stripe",
   "continueTitle": "Continuer la configuration de Stripe"
 }

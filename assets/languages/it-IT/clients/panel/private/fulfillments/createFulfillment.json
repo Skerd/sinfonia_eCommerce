@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/createFulfillment.tsx",
-  "title": "Creare soddisfazione",
+  "title": "Crea evasione",
   "form": {
     "orderLabel": "Ordine",
     "orderPlaceholder": "Seleziona l'ordine",
     "statusLabel": "Stato",
-    "carrierLabel": "Portatore",
+    "carrierLabel": "Corriere",
     "carrierPlaceholder": "Nome del corriere",
     "trackingNumberLabel": "Numero di tracciamento",
     "trackingNumberPlaceholder": "Numero di tracciamento",
-    "trackingUrlLabel": "URL di monitoraggio",
+    "trackingUrlLabel": "URL di tracciamento",
     "trackingUrlPlaceholder": "https://…",
-    "shippedAtLabel": "Spedito a",
+    "shippedAtLabel": "Spedito il",
     "estimatedDeliveryAtLabel": "Consegna stimata",
-    "deliveredAtLabel": "Consegnato a",
+    "deliveredAtLabel": "Consegnato il",
     "notesLabel": "Note",
     "notesPlaceholder": "Note facoltative",
     "itemsSectionTitle": "Elementi",
@@ -25,31 +25,31 @@
     "quantityLabel": "Quantità",
     "fulfillmentStatus": {
       "pending": "In sospeso",
-      "shipped": "Spedito",
-      "delivered": "Consegnato",
-      "failed": "Non riuscito"
+      "shipped": "Spedita",
+      "delivered": "Consegnata",
+      "failed": "Non riuscita"
     }
   },
   "axios": {
     "start": {
-      "title": "Creare realizzazione",
+      "title": "Creazione dell'evasione",
       "time": 3000
     },
     "success": {
-      "title": "Compimento creato",
+      "title": "Evasione creata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile creare soddisfazione",
+      "title": "Impossibile creare l'evasione",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Creare soddisfazione",
+    "title": "Crea evasione",
     "description": "Crea una spedizione per un ordine con tracciabilità e articoli."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Creare soddisfazione"
+    "submit": "Crea evasione"
   }
 }

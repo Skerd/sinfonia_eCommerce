@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
-  "editTitle": "Modifier l'indicateur de liste",
-  "editDescription": "Mettre à jour la raison et les détails de ce rapport.",
-  "errorTitle": "Impossible de charger le rapport",
+  "editTitle": "Modifier le signalement d'annonce",
+  "editDescription": "Mettez à jour le motif et les détails de ce signalement.",
+  "errorTitle": "Impossible de charger le signalement",
   "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
   "formHeader": {
-    "title": "Modifier l'indicateur de liste",
-    "description": "Mettez à jour la raison et les détails supplémentaires. La liste ne peut pas être modifiée."
+    "title": "Modifier le signalement d'annonce",
+    "description": "Mettez à jour le motif et les détails supplémentaires. L'annonce ne peut pas être modifiée."
   },
   "formButtons": {
     "cancel": "Annuler",
@@ -26,15 +26,15 @@
   },
   "axios": {
     "start": {
-      "title": "Enregistrement du rapport",
+      "title": "Enregistrement du signalement",
       "time": 3000
     },
     "success": {
-      "title": "Rapport mis à jour",
+      "title": "Signalement mis à jour",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre à jour le rapport",
+      "title": "Impossible de mettre à jour le signalement",
       "time": 3000
     }
   }

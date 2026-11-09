@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/editReturnRequest.tsx",
   "title": "Modifier la demande de retour",
   "errorTitle": "Échec du chargement de la demande de retour",
-  "errorDescription": "Impossible de charger cette demande de retour. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette demande de retour. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "orderLabel": "Commande",
@@ -39,7 +39,7 @@
   },
   "axios": {
     "start": {
-      "title": "Sauvegarde de la demande de retour",
+      "title": "Enregistrement de la demande de retour",
       "time": 3000
     },
     "success": {

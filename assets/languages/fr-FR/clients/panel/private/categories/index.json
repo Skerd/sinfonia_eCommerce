@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Catégories",
-  "description": "Configurez les catégories de produits pour les catalogues dans votre locataire.",
+  "description": "Configurez les catégories de produits des catalogues de votre espace.",
   "help": {
     "ariaLabel": "À propos des catégories",
     "title": "À propos des catégories",

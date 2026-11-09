@@ -38,11 +38,11 @@
         ]
       },
       {
-        "title": "Shportat e pezulluara",
-        "body": "Pezullo e vendos shportën aktuale si porosi POS në draft, që të shërbeni dikë tjetër.",
+        "title": "Shportat e mbajtura",
+        "body": "Mbaj e vendos shportën aktuale si porosi POS në skicë, që të shërbeni dikë tjetër.",
         "items": [
-          "Një shportë e pezulluar mund të rimerret më vonë në të njëjtën arkë, ose të hidhet.",
-          "Një seancë nuk mund të mbyllet sa kohë ka shporta të pezulluara; rimerrini ose hidhini më parë."
+          "Një shportë e mbajtur mund të rifillohet më vonë në të njëjtën arkë, ose të hidhet.",
+          "Një seancë nuk mund të mbyllet sa kohë ka shporta të mbajtura; rifillojini ose hidhini më parë."
         ]
       },
       {
@@ -52,28 +52,28 @@
           "Rimburso duke zgjedhur sasi rreshtash, ose rimburso gjithë pjesën e mbetur të shitjes. Një shumë e pjesshme pa rreshta refuzohet, sepse arka nuk do ta dinte çfarë të kthejë në stok.",
           "Çdo rresht shitjeje mban mend çfarë është rimbursuar tashmë, që të njëjtat njësi të mos rimbursohen dy herë. Zbritja e porosisë ndahet në rreshtat e rimbursuar.",
           "Njësitë e rimbursuara kthehen në magazinat nga i mori shitja; pjesa tepër shkon te magazina e parë e arkës.",
-          "Një rimbursim në para dalë nga sirtari. Me PIN për rimbursim aktiv, kërkohet PIN-i i menaxherit."
+          "Një rimbursim në para del nga sirtari. Me PIN për rimbursim aktiv, kërkohet PIN-i i menaxherit."
         ]
       },
       {
         "title": "Sirtari dhe mbyllja",
         "items": [
-          "Futja dhe nxjerrja e parave regjistrojnë lëvizje sirtari me arsye; nuk janë shitje. Një nxjerrje nuk mund të marrë më shumë se ç’ka sirtari dhe, me PIN për nxjerrje parash aktiv, kërkon PIN-in e menaxherit.",
+          "Hyrjet cash dhe daljet cash regjistrojnë lëvizje sirtari me arsye; nuk janë shitje. Një dalje cash nuk mund të marrë më shumë se ç’ka sirtari dhe, me PIN për dalje cash aktiv, kërkon PIN-in e menaxherit.",
           "Mbyllja kërkon paratë e numëruara. Nëse ndryshojnë nga shuma e pritur me një qindarkë ose më shumë, kërkohet një arsye dhe diferenca shkruhet në seancë.",
-          "Vënia e një arke në pauzë e ndalon të marrë pagesa dhe ia mbyll me forcë seancën e hapur, duke anuluar shportat e pezulluara. Vënia e të gjitha arkave në pauzë bën të njëjtën gjë për çdo arkë të kompanisë."
+          "Vënia e një arke në pauzë e ndalon të marrë pagesa dhe ia mbyll me forcë seancën e hapur, duke anuluar shportat e mbajtura. Vënia e të gjitha arkave në pauzë bën të njëjtën gjë për çdo arkë të kompanisë."
         ]
       }
     ]
   },
   "backToConfigs": "Kthehu te konfigurimet",
   "back": "Dil",
-  "cashIn": "Cash Hyrje",
-  "cashOut": "Cash Dalje",
-  "closeSession": "Mbyll Seancën",
+  "cashIn": "Hyrje cash",
+  "cashOut": "Dalje cash",
+  "closeSession": "Mbyll seancën",
   "closeSessionDescription": "Numëroni arkën dhe mbyllni këtë seancë.",
   "paused": {
-    "banner": "POS i pauzuar nga admin — shitjet janë të bllokuara. Mund të hidhni karrocat e mbajtura dhe të mbyllni arkën.",
-    "companyBanner": "Të gjitha arkat POS të kompanisë janë në pauzë — kjo nuk është pauzë e një arke. Shitjet janë të bllokuara. Mund të hidhni karrocat e mbajtura dhe të mbyllni arkën.",
+    "banner": "POS i pauzuar nga admin — shitjet janë të bllokuara. Mund të hidhni shportat e mbajtura dhe të mbyllni arkën.",
+    "companyBanner": "Të gjitha arkat POS të kompanisë janë në pauzë — kjo nuk është pauzë e një arke. Shitjet janë të bllokuara. Mund të hidhni shportat e mbajtura dhe të mbyllni arkën.",
     "badge": "Në pauzë",
     "companyBadge": "Kompania në pauzë",
     "forceClosedToast": "Kjo seancë arke u mbyll me forcë nga pauza e adminit."
@@ -144,24 +144,24 @@
   "amount": "Shuma",
   "held": {
     "title": "Porosi të mbajtura",
-    "description": "Karroca të parkuara për këtë seancë. Rifilloni për të vazhduar shitjen.",
+    "description": "Shporta të parkuara për këtë seancë. Rifilloni për të vazhduar shitjen.",
     "empty": "Nuk ka porosi të mbajtura.",
     "resume": "Rifillo"
   },
   "customerSearch": {
-    "placeholder": "Kërko klient ose emër walk-in…",
+    "placeholder": "Kërko klient ose emër klienti të rastit…",
     "clear": "Pastro",
     "searching": "Duke kërkuar…",
     "empty": "Nuk u gjetën klientë"
   },
   "variantDialog": {
     "title": "Zgjidh variantin",
-    "description": "Zgjidhni një variant për ta shtuar në karrocë.",
+    "description": "Zgjidhni një variant për ta shtuar në shportë.",
     "empty": "Nuk ka variante.",
     "stock": "Stok"
   },
   "refundDialog": {
-    "title": "Rimbursim",
+    "title": "Rimburso porosinë",
     "description": "Zgjidhni sasitë për rimbursim",
     "empty": "Nuk ka rreshta në këtë porosi.",
     "pinLabel": "PIN i menaxherit",
@@ -190,7 +190,7 @@
     "refund": "Rimburso"
   },
   "refund": {
-    "title": "Rimbursim",
+    "title": "Rimburso porosinë",
     "description": "Rimburso plotësisht ose sipas sasive të rreshtave.",
     "full": "Rimbursim i plotë",
     "lines": "Sipas rreshtave",
@@ -212,7 +212,7 @@
     "selectThenEnter": "Zgjidhni menaxherin që miraton, pastaj vendosni PIN-in e tij/saj.",
     "label": "PIN",
     "discount": "PIN i menaxherit kërkohet për zbritje",
-    "cashOut": "PIN i menaxherit kërkohet për cash out",
+    "cashOut": "PIN i menaxherit kërkohet për dalje cash",
     "refund": "PIN i menaxherit kërkohet për rimbursime"
   },
   "recon": {
@@ -235,11 +235,11 @@
       "f1": "Hap këtë ndihmë",
       "f2": "Paguaj porosinë aktuale (shtyp dy herë për konfirmim)",
       "f3": "Hap porositë e mbajtura",
-      "f4": "Mbaj / parko karrocën aktuale",
+      "f4": "Mbaj / parko shportën aktuale",
       "f6": "Porositë e seancës & riprintimi",
       "f8": "Fokus te fusha e barkodit",
       "f9": "Shfaq/fshih panelin e pagesës",
-      "esc": "Pastro karrocën (kur nuk ka dialog të hapur)",
+      "esc": "Pastro shportën (kur nuk ka dialog të hapur)",
       "qty": "Rrit / ul sasinë e rreshtit të zgjedhur",
       "delete": "Hiq rreshtin e zgjedhur"
     },
@@ -255,13 +255,13 @@
       "splitTitle": "Ndarja e faturës",
       "splitBody": "Përdorni ikonën e gërshërëve për ndarje të barabartë (alla romana) ose sipas artikujve. Paguani pjesën e një personi, pastaj vazhdoni me të mbeturat.",
       "customerTitle": "Klient CRM",
-      "customerBody": "Kërkoni përdoruesit e kompanisë nga fusha e klientit. Emrat walk-in funksionojnë edhe pa llogari.",
+      "customerBody": "Kërkoni përdoruesit e kompanisë nga fusha e klientit. Emrat e klientëve të rastit funksionojnë edhe pa llogari.",
       "refundTitle": "Rimbursimet",
-      "refundBody": "Nga Porositë e seancës, rimbursoni një faturë të paguar plotësisht ose sipas sasive. Stoku restokohet për rreshtat e kthyera kur inventari ndiqet.",
+      "refundBody": "Nga Porositë e seancës, rimbursoni një faturë të paguar plotësisht ose sipas sasive. Stoku rimbushet për rreshtat e kthyera kur inventari ndiqet.",
       "stockTitle": "Stoku & variantet",
-      "stockBody": "Pllakat tregojnë sasinë në dorë. Oversell mund të lejohet për konfigurim. Produktet me shumë variante hapin zgjedhës; barkodet mund të gjejnë një variant specifik.",
+      "stockBody": "Pllakat tregojnë sasinë në gjendje. Shitja mbi stok mund të lejohet sipas konfigurimit. Produktet me shumë variante hapin zgjedhës; barkodet mund të gjejnë një variant specifik.",
       "pinTitle": "PIN i menaxherit",
-      "pinBody": "Konfigurimet mund të kërkojnë PIN menaxheri për zbritje, cash-out dhe rimbursime. Vendoseni PIN-in te konfigurimi POS."
+      "pinBody": "Konfigurimet mund të kërkojnë PIN menaxheri për zbritje, dalje cash dhe rimbursime. Vendoseni PIN-in te konfigurimi POS."
     }
   },
   "terminal": {
@@ -283,7 +283,7 @@
   "closingBalance": "Bilanci përfundimtar",
   "picker": {
     "title": "Zgjidhni arkën",
-    "description": "Zgjidhni cilën dyqan / arke të hapni.",
+    "description": "Zgjidhni cilën arkë të dyqanit të hapni.",
     "empty": "Nuk ka konfigurime POS aktive. Krijoni një te Konfigurimet → E-tregtia → POS.",
     "open": "Hap arkën"
   },
@@ -307,7 +307,7 @@
     "nivf": "NIVF",
     "fiscalDemo": "Verifikim fiskal (demo)",
     "totalWithoutVat": "TOTALI PA TVSH",
-    "vatRate": "PA TVSH - {rate}",
+    "vatRate": "TVSH - {rate}",
     "totalVat": "Total TVSH",
     "issueDate": "Data e Lëshimit",
     "fiscalNumber": "Numër Fiskalizimi",
@@ -361,7 +361,7 @@
     "insufficientStock": "Nuk ka stok të mjaftueshëm për këtë sasi",
     "outOfStock": "Produkti është pa stok",
     "pinInvalid": "PIN i menaxherit është i pavlefshëm",
-    "noManagersWithPin": "Nuk ka menaxherë me PIN të caktuar në këtë kasë",
+    "noManagersWithPin": "Nuk ka menaxherë me PIN të caktuar në këtë arkë",
     "refundFailed": "Rimbursimi dështoi"
   }
 }

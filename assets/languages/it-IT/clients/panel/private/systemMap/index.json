@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
-  "title": "Mappa del sistema di e-commerce",
-  "description": "Mappa interattiva dei modelli di eCommerce del catalogo, del flusso di pagamento e delle funzionalità dei moduli. Panoramica, zoom e clic sui nodi per i dettagli.",
+  "title": "Mappa di sistema eCommerce",
+  "description": "Mappa interattiva dei modelli eCommerce del catalogo, del flusso di checkout e delle funzionalità del modulo. Sposta, ingrandisci e fai clic sui nodi per i dettagli.",
   "help": {
     "ariaLabel": "Informazioni sulla mappa di sistema eCommerce",
     "title": "Informazioni sulla mappa di sistema eCommerce",
@@ -35,8 +35,8 @@
     ]
   },
   "tabs": {
-    "models": "Grafico del modello",
+    "models": "Grafo dei modelli",
     "flows": "Come funziona",
-    "capabilities": "Capacità"
+    "capabilities": "Funzionalità"
   }
 }

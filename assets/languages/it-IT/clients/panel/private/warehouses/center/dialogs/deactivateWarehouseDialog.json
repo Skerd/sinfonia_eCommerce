@@ -4,7 +4,7 @@
   "description": "Questo magazzino non sarà più utilizzato finché non verrà nuovamente attivato.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
-  "busy": "Lavorando…",
+  "busy": "Attendere…",
   "axios": {
     "start": {
       "title": "Disattivazione magazzino…",

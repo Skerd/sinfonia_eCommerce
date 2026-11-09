@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
-  "title": "Shtesat e Listimeve",
+  "title": "Shtesat e listimeve",
   "description": "Menaxhoni shtesat opsionale që ofruesit i bashkangjisin listimeve të tyre.",
   "help": {
-    "ariaLabel": "Rreth add-on të listimeve",
-    "title": "Rreth add-on të listimeve",
+    "ariaLabel": "Rreth shtesave të listimeve",
+    "title": "Rreth shtesave të listimeve",
     "overview": "Një shtesë është një ekstra opsionale që blerësi mund t’ia bashkëngjisë porosisë së një listimi, si dorëzim ekspres ose një rishikim shtesë. I përket një listimi dhe shton çmimin e vet dhe, opsionalisht, ditë dorëzimi.",
     "sections": [
       {

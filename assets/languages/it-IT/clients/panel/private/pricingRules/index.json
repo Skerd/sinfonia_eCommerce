@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
-  "title": "Regole sui prezzi",
+  "title": "Regole di prezzo",
   "description": "Automatizza gli adeguamenti dei prezzi per segmento o prodotto.",
   "help": {
-    "ariaLabel": "Informazioni su Regole sui prezzi",
-    "title": "Informazioni su Regole sui prezzi",
+    "ariaLabel": "Informazioni sulle regole di prezzo",
+    "title": "Informazioni sulle regole di prezzo",
     "overview": "Le regole di prezzo cambiano automaticamente il prezzo unitario di una riga, prima di qualsiasi codice sconto. Usale per prezzi all’ingrosso, saldi per categoria o maggiorazioni. Ogni riga del carrello riceve al massimo una regola. Nome, tipo, valore e ambito sono obbligatori.",
     "sections": [
       {
@@ -41,21 +41,21 @@
       }
     ]
   },
-  "createPricingRule": "Crea una regola di prezzo",
+  "createPricingRule": "Crea regola di prezzo",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "name": "Nome",
     "type": "Tipo",
     "value": "Valore",
     "appliesTo": "Si applica a",
-    "targetIds": "Obiettivi",
+    "targetIds": "Destinazioni",
     "customerGroups": "Gruppi di clienti",
     "minimumOrderAmount": "Importo minimo dell'ordine",
     "minimumQuantity": "Quantità minima",
     "priority": "Priorità",
     "isActive": "Attivo",
-    "startsAt": "Inizia alle",
-    "endsAt": "Termina alle",
+    "startsAt": "Inizio",
+    "endsAt": "Fine",
     "createdBy": "Creato da",
     "company": "Azienda",
     "createdAt": "Creato il",

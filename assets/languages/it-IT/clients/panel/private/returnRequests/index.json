@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
   "title": "Richieste di reso",
-  "description": "Gestire resi, cambi e richieste di rimborso.",
+  "description": "Gestisci resi, cambi e richieste di rimborso.",
   "help": {
     "ariaLabel": "Informazioni sulle richieste di reso",
     "title": "Informazioni sulle richieste di reso",
@@ -59,16 +59,16 @@
   "fields": {
     "!enums": {
       "type": {
-        "return": "Ritorno",
+        "return": "Reso",
         "exchange": "Scambio",
         "refund": "Rimborso"
       },
       "status": {
         "pending": "In sospeso",
         "approved": "Approvata",
-        "rejected": "Rifiutato",
-        "received": "Ricevuto",
-        "completed": "Completato"
+        "rejected": "Rifiutata",
+        "received": "Ricevuta",
+        "completed": "Completata"
       }
     },
     "order": "Ordine",
@@ -82,8 +82,8 @@
     "refundAmount": "Importo del rimborso",
     "customerNote": "Nota del cliente",
     "adminNote": "Nota dell'amministratore",
-    "resolvedBy": "Risolto da",
-    "resolvedAt": "Risolto il",
+    "resolvedBy": "Gestita da",
+    "resolvedAt": "Gestita il",
     "createdBy": "Creato da",
     "company": "Azienda",
     "createdAt": "Creato il",

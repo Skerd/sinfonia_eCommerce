@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
-  "title": "Liste des drapeaux",
-  "description": "Examinez les rapports soumis par les utilisateurs pour détecter les listes inappropriées.",
+  "title": "Signalements d'annonce",
+  "description": "Examinez les signalements envoyés par les utilisateurs concernant des annonces inappropriées.",
   "help": {
     "ariaLabel": "À propos des signalements d'annonce",
     "title": "À propos des signalements d'annonce",
@@ -32,7 +32,7 @@
       }
     ]
   },
-  "createListingFlag": "Créer un indicateur de liste",
+  "createListingFlag": "Créer un signalement d'annonce",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "listing": "Annonce",
@@ -50,7 +50,7 @@
     "!enums": {
       "status": {
         "pending": "En attente",
-        "reviewed": "Révisé",
+        "reviewed": "Examiné",
         "dismissed": "Rejeté"
       },
       "reason": {

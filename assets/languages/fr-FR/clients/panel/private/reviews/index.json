@@ -35,7 +35,7 @@
   "fields": {
     "rating": "Note",
     "comment": "Commentaire",
-    "reviewer": "Réviseur",
+    "reviewer": "Auteur de l'avis",
     "order": "Commande",
     "listing": "Annonce",
     "listingId": "Annonce",

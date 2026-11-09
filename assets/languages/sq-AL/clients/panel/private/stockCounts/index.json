@@ -5,16 +5,16 @@
   "help": {
     "ariaLabel": "Rreth numërimeve të stokut",
     "title": "Rreth numërimeve të stokut",
-    "overview": "Një numërim stoku regjistron atë që është realisht në raft në një magazinë, pastaj korrigjon sasinë në gjendje sipas saj. Mbetet draft ndërsa numëroni; zbatimi është momenti kur ndryshojnë numrat.",
+    "overview": "Një numërim stoku regjistron atë që është realisht në raft në një magazinë, pastaj korrigjon sasinë në gjendje sipas saj. Mbetet skicë ndërsa numëroni; zbatimi është momenti kur ndryshojnë numrat.",
     "sections": [
       {
-        "title": "Drafti",
+        "title": "Skica",
         "body": "Numërimi nuk ndryshon asgjë. Zbatimi po.",
         "items": [
           "Një numërim është për një magazinë dhe mbetet numërim i asaj magazine.",
           "Çdo rresht është një produkt, një variant opsional, sasia e pritur kur u shtua rreshti dhe sasia e numëruar. Rreshtat duhet të jenë artikuj të ndryshëm të ndjekur në stok; një paketë produktesh nuk mund të jetë rresht.",
           "Lëreni bosh sasinë e numëruar për një artikull që nuk e numëruat; zbatimi e lë siç është.",
-          "Vetëm një draft mund të ndryshohet, zbatohet ose anulohet."
+          "Vetëm një skicë mund të ndryshohet, zbatohet ose anulohet."
         ]
       },
       {
@@ -32,8 +32,8 @@
         "title": "Pas zbatimit",
         "body": "Numërimi mbetet si dëshmi e asaj që u gjet.",
         "items": [
-          "Anulo është i mundur vetëm nga draft. Një numërim i zbatuar nuk zhbëhet këtu; numëroni sërish.",
-          "Një numërim i zbatuar nuk mund të fshihet. Një draft ose një i anuluar fshihet butë dhe mund të rikthehet.",
+          "Anulo është i mundur vetëm nga skica. Një numërim i zbatuar nuk zhbëhet këtu; numëroni sërish.",
+          "Një numërim i zbatuar nuk mund të fshihet. Një skicë ose një i anuluar fshihet butë dhe mund të rikthehet.",
           "Shihni Inventarin për sasinë e re në gjendje dhe Lëvizjet e stokut për rregullimet."
         ]
       }

@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx",
   "productVariantSubtitle": "Detajet e variantit",
   "failedTitle": "Dështoi ngarkimi i variantit",
-  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij variant produkti. Kliko për të riprovuar.",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij varianti produkti. Kliko për të riprovuar.",
   "failedTooltipDescription": "Kliko për të riprovuar marrjen e të dhënave.",
   "overview": "Përmbledhje",
   "pricing": "Çmimet",

@@ -2,11 +2,11 @@
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/editPosConfig.tsx",
   "title": "Modifier la configuration du point de vente",
   "errorTitle": "Échec du chargement de la configuration du point de vente",
-  "errorDescription": "Impossible de charger cette configuration POS. Essayer à nouveau.",
+  "errorDescription": "Impossible de charger cette configuration du point de vente. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom du registre",
+    "namePlaceholder": "Nom de la caisse",
     "paymentMethodsLabel": "Modes de paiement",
     "managersLabel": "Gestionnaires",
     "warehousesLabel": "Entrepôts",
@@ -21,12 +21,12 @@
     "receiptFooterPlaceholder": "Imprimé au bas du reçu",
     "tillOptionsSectionTitle": "Options de caisse",
     "ifaceBarcodeScannerLabel": "Lecteur de codes à barres",
-    "ifaceCashControlLabel": "Contrôle de trésorerie",
-    "allowDiscountLabel": "Autoriser la réduction",
+    "ifaceCashControlLabel": "Contrôle de caisse",
+    "allowDiscountLabel": "Autoriser les remises",
     "allowQuantityChangeLabel": "Autoriser le changement de quantité",
     "allowOversellLabel": "Autoriser la survente",
-    "pinForDiscountLabel": "Code PIN pour réduction",
-    "pinForCashOutLabel": "Code PIN pour le retrait",
+    "pinForDiscountLabel": "Code PIN pour les remises",
+    "pinForCashOutLabel": "Code PIN pour les sorties d'espèces",
     "pinForRefundLabel": "Code PIN pour le remboursement",
     "selectWarehouse": "Ajouter un entrepôt",
     "removeWarehouse": "Supprimer l'entrepôt",
@@ -38,7 +38,7 @@
   },
   "axios": {
     "start": {
-      "title": "Enregistrer la configuration du point de vente",
+      "title": "Enregistrement de la configuration du point de vente",
       "time": 3000
     },
     "success": {
@@ -52,7 +52,7 @@
   },
   "formHeader": {
     "title": "Modifier la configuration du point de vente",
-    "description": "Mettez à jour la configuration fiscale, les entrepôts, les méthodes de paiement, le texte du reçu et les règles de caisse."
+    "description": "Mettez à jour la configuration fiscale, les entrepôts, les modes de paiement, le texte du reçu et les règles de caisse."
   },
   "formButtons": {
     "cancel": "Annuler",

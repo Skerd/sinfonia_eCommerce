@@ -42,7 +42,7 @@
   "fields": {
     "!enums": {
       "environment": {
-        "test": "Prova",
+        "test": "Test",
         "production": "Produzione"
       },
       "tcrType": {
@@ -54,20 +54,20 @@
     "nipt": "NIPT",
     "softCode": "Codice software",
     "maintainerCode": "Codice manutentore",
-    "businessUnitCode": "Codice unità aziendale",
+    "businessUnitCode": "Codice unità operativa",
     "operatorCode": "Codice operatore",
     "tcrCode": "Codice TCR",
     "tcrIntId": "ID interno del TCR",
     "tcrType": "Tipo TCR",
     "fiscalizationUrl": "URL di fiscalizzazione",
     "einvoiceUrl": "URL della fattura elettronica",
-    "selfcareUrl": "URL di cura personale",
+    "selfcareUrl": "URL Selfcare",
     "proxyUrl": "URL proxy",
     "sellerName": "Nome del venditore",
     "sellerAddress": "Indirizzo del venditore",
     "sellerTown": "Città del venditore",
     "sellerCountry": "Paese del venditore",
-    "isVatRegistered": "partita IVA registrata",
+    "isVatRegistered": "Soggetto IVA",
     "environment": "Ambiente",
     "certificate": "Certificato",
     "certificatePassword": "Password del certificato",

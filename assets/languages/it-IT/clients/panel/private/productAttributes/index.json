@@ -3,8 +3,8 @@
   "title": "Attributi del prodotto",
   "description": "Definisci le opzioni del prodotto come dimensioni, colore e materiale.",
   "help": {
-    "ariaLabel": "Informazioni su Attributi del prodotto",
-    "title": "Informazioni su Attributi del prodotto",
+    "ariaLabel": "Informazioni sugli attributi del prodotto",
+    "title": "Informazioni sugli attributi del prodotto",
     "overview": "Gli attributi sono elenchi di opzioni condivisi come Taglia o Colore. Una variante sceglie un valore da ogni attributo che la definisce, quindi è l’attributo a trasformare un prodotto in più SKU.",
     "sections": [
       {

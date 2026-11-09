@@ -8,15 +8,15 @@
   "reason": "Motivo",
   "resolution": "Risoluzione",
   "status": "Stato",
-  "createdAt": "Aperto",
+  "createdAt": "Aperta il",
   "failedTitle": "Impossibile caricare la controversia",
   "failedDescription": "Qualcosa è andato storto durante il caricamento di questa controversia. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "status_values": {
-    "open": "Aperto",
+    "open": "Aperta",
     "under_review": "In fase di revisione",
-    "resolved": "Risolto",
-    "closed": "Chiuso"
+    "resolved": "Risolta",
+    "closed": "Chiusa"
   },
   "lifecycle": "Ciclo di vita",
   "updatedAt": "Aggiornato il",

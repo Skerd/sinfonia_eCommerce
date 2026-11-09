@@ -7,7 +7,7 @@
   "lifecycle": "Lebenszyklus",
   "fulfillmentSubtitle": "Lieferdetails",
   "failedTitle": "Lieferung konnte nicht geladen werden",
-  "failedDescription": "Die Lieferung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedDescription": "Die Lieferung konnte nicht geladen werden. Klicken Sie, um sie erneut zu laden.",
   "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "status": "Status",
   "carrier": "Transporteur",

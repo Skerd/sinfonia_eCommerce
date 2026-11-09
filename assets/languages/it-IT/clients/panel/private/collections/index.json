@@ -2,13 +2,13 @@
   "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
   "title": "Collezioni",
   "description": "Raggruppa i prodotti in collezioni curate.",
-  "createCollection": "Crea raccolta",
+  "createCollection": "Crea collezione",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "type": {
         "manual": "Manuale",
-        "dynamic": "Dinamico"
+        "dynamic": "Dinamica"
       },
       "ruleCondition": {
         "all": "Tutte le regole (AND)",
@@ -37,7 +37,7 @@
     },
     "type": "Tipo",
     "name": "Nome",
-    "slug": "Lumaca",
+    "slug": "Slug",
     "description": "Descrizione",
     "mainImage": "Immagine di copertina",
     "isVisible": "Visibile",
@@ -47,7 +47,7 @@
     "ruleCondition": "Condizione di corrispondenza",
     "rules": {
       "field": "Campo regola",
-      "operator": "Operatore di regole",
+      "operator": "Operatore della regola",
       "value": "Valore della regola"
     },
     "seoTitle": "Titolo SEO",

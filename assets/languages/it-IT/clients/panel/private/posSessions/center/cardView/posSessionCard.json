@@ -3,13 +3,13 @@
   "failedTitle": "Impossibile caricare la sessione POS",
   "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
-  "state": "Cantone / Stato",
+  "state": "Stato",
   "orderCount": "Ordini",
   "totalSales": "Vendite totali",
   "sessionState": {
     "opening_control": "Apertura",
-    "opened": "Aperto",
+    "opened": "Aperta",
     "closing_control": "Chiusura",
-    "closed": "Chiuso"
+    "closed": "Chiusa"
   }
 }

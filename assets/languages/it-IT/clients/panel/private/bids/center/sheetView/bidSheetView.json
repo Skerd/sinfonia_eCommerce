@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
-  "bid": "Fai un'offerta",
+  "bid": "Offerta",
   "name": "Nome",
   "overview": "Panoramica",
   "amount": "Importo",
@@ -15,8 +15,8 @@
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "bidStatus": {
     "pending": "In sospeso",
-    "accepted": "Accettato",
-    "rejected": "Rifiutato"
+    "accepted": "Accettata",
+    "rejected": "Rifiutata"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",

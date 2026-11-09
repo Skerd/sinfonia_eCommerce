@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "Rreth kërkesave të kthimit",
     "title": "Rreth kërkesave të kthimit",
-    "overview": "Një kërkesë kthimi kërkon të kthehet malli, të këmbehet ose të rimbursohet për një porosi produkti. Tipi i saj është kthim, këmbim ose rimbursim, dhe statusi kalon në pritje → e miratuar ose e refuzuar → e marrë → e përfunduar. Klientët e bëjnë nga llogaria e tyre; stafi mund ta krijojë edhe këtu.",
+    "overview": "Një kërkesë kthimi kërkon të kthehet malli, të këmbehet ose të rimbursohet për një porosi produkti. Tipi i saj është kthim, këmbim ose rimbursim, dhe statusi kalon në pritje → e miratuar ose e refuzuar → e pranuar → e përfunduar. Klientët e bëjnë nga llogaria e tyre; stafi mund ta krijojë edhe këtu.",
     "sections": [
       {
         "title": "Çfarë përmban një kërkesë",
@@ -27,17 +27,17 @@
         ]
       },
       {
-        "title": "Marrja: malli kthehet",
-        "body": "Merr është i mundur vetëm për një kërkesë të miratuar.",
+        "title": "Pranimi: malli kthehet",
+        "body": "Pranimi është i mundur vetëm për një kërkesë të miratuar.",
         "items": [
           "Për një kthim ose këmbim, njësitë e kërkuara kthehen në stok në magazinën nga u nis çdo rresht, dhe për secilën shkruhet një lëvizje kthimi. Një paketë produktesh kthehet si përbërësit e saj.",
           "Një rresht, shitja e të cilit nuk mori kurrë stok (produkt i pandjekur) ose rreshti i stokut i të cilit nuk ekziston më, shënohet në kronologjinë e porosisë në vend që të rikthehet në stok.",
-          "Një kërkesë vetëm për rimbursim nuk ka çfarë të marrë; marrja vetëm e çon statusin përpara."
+          "Një kërkesë vetëm për rimbursim nuk ka çfarë të pranojë; pranimi vetëm e çon statusin përpara."
         ]
       },
       {
         "title": "Përfundimi: paratë kthehen",
-        "body": "Përfundo është i mundur vetëm pasi kërkesa është marrë.",
+        "body": "Përfundo është i mundur vetëm pasi kërkesa është pranuar.",
         "items": [
           "Për një kthim ose rimbursim me shumë, përfundimi ekzekuton rimbursimin e porosisë për atë shumë, përmes portës së pagesës për pagesat me kartë. Kërkon edhe lejen për të shkruar statusin e pagesës së porosisë.",
           "Një këmbim nuk rimburson asgjë; zëvendësimi trajtohet si punë e re përmbushjeje.",

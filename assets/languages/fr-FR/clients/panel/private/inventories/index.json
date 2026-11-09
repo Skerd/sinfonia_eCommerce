@@ -22,7 +22,7 @@
         "items": [
           "Un article suivi ne peut être vendu que depuis des lignes d’entrepôts actifs. Sans ligne, ou sans assez de disponible, le checkout refuse la ligne comme en rupture.",
           "Le checkout préfère un entrepôt qui couvre toute la ligne, l’entrepôt par défaut d’abord ; sinon il répartit la ligne sur plusieurs entrepôts, celui par défaut d’abord.",
-          "Les produits numériques, services et cartes cadeaux, et les articles sans suivi, n’ont pas besoin de ligne. Un lot n’a jamais de ligne ; ses composants en ont.",
+          "Les produits numériques, services et cartes cadeaux, et les articles sans suivi, n’ont pas besoin de ligne. Un pack n’a jamais de ligne ; ses composants en ont.",
           "Il y a une ligne active par produit, variante et entrepôt."
         ]
       },
@@ -70,11 +70,11 @@
     "product": "Produit",
     "variant": "Variante",
     "warehouse": "Entrepôt",
-    "quantityOnHand": "À portée de main",
+    "quantityOnHand": "En stock",
     "quantityReserved": "Réservé",
     "quantityAvailable": "Disponible",
-    "reorderPoint": "Point de commande",
-    "reorderQuantity": "Quantité à commander",
+    "reorderPoint": "Seuil de réapprovisionnement",
+    "reorderQuantity": "Quantité de réapprovisionnement",
     "lowStockAlertSent": "Alerte de stock bas envoyée",
     "createdAt": "Créé le",
     "updatedAt": "Mis à jour le",
