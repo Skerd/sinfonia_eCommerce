@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
-  "title": "Categories",
-  "description": "Configure produkt categories für catalogs across ihr tenant.",
+  "title": "Kategorien",
+  "description": "Produktkategorien für die Kataloge Ihres Mandanten konfigurieren.",
   "help": {
     "ariaLabel": "Über Kategorien",
     "title": "Über Kategorien",
@@ -38,7 +38,7 @@
     "name": "Name",
     "slug": "Slug",
     "order": "Auftrag",
-    "parent": "Parent kategorie",
+    "parent": "Übergeordnete Kategorie",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

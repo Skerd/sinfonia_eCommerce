@@ -1,57 +1,57 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/editTaxZone.tsx",
-  "title": "Steuer zone bearbeiten",
-  "errorTitle": "Steuer zone konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese steuer zone. Versuchen erneut.",
+  "title": "Steuerzone bearbeiten",
+  "errorTitle": "Steuerzone konnte nicht geladen werden",
+  "errorDescription": "Die Steuerzone konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "generalSectionTitle": "Allgemein",
-    "geographySectionTitle": "Geography",
+    "geographySectionTitle": "Geografie",
     "nameLabel": "Name",
     "namePlaceholder": "Inland MWST",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
-    "priorityLabel": "Priority",
+    "priorityLabel": "Priorität",
     "priorityPlaceholder": "0",
-    "statesLabel": "States / regions",
+    "statesLabel": "Kantone / Regionen",
     "selectState": "Kanton auswählen",
     "removeState": "Entfernen kanton",
-    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsLabel": "Postleitzahl-Muster",
     "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
-    "removePostalCodePattern": "Entfernen pattern",
-    "ratesSectionTitle": "Steuer rates",
+    "removePostalCodePattern": "Muster entfernen",
+    "ratesSectionTitle": "Steuersätze",
     "rateAddRow": "Satz hinzufügen",
     "rateRemoveRow": "Entfernen satz",
-    "rateRowTitle": "Untitled satz",
+    "rateRowTitle": "Unbenannter Tarif",
     "rateNameLabel": "Satz name",
     "rateNamePlaceholder": "Normalsatz",
     "rateValueLabel": "Satz (%)",
     "rateValuePlaceholder": "20",
-    "rateAppliesToLabel": "Applies bis",
+    "rateAppliesToLabel": "Gilt für",
     "rateAppliesToPlaceholder": "Produkte auswählen",
-    "isCompoundLabel": "Compound satz",
+    "isCompoundLabel": "Kumulativer Satz",
     "taxRateAppliesTo": {
-      "all": "Alle produkte",
-      "physical": "Physical",
+      "all": "Alle Produkte",
+      "physical": "Physisch",
       "digital": "Digital"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving steuer zone",
+      "title": "Steuerzone wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Steuer zone aktualisiert",
+      "title": "Steuerzone aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren steuer zone",
+      "title": "Steuerzone konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Steuer zone bearbeiten",
-    "description": "Aktualisieren destination geography und steuer rates für diese zone."
+    "title": "Steuerzone bearbeiten",
+    "description": "Zielgebiete und Steuersätze dieser Zone aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

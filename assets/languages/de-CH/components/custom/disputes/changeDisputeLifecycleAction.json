@@ -1,54 +1,54 @@
 {
   "path": "src/modules/eCommerce/components/custom/disputes/changeDisputeLifecycleAction.tsx",
   "cancel": "Abbrechen",
-  "resolutionLabel": "Resolution notizen",
-  "resolutionPlaceholder": "Describe how die streitfall was handled (erforderlich für audit).",
-  "resolutionHint": "Erforderlich. 1–2000 characters.",
+  "resolutionLabel": "Notizen zur Lösung",
+  "resolutionPlaceholder": "Beschreiben Sie, wie der Streitfall behandelt wurde (für die Prüfspur erforderlich).",
+  "resolutionHint": "Erforderlich. 1–2000 Zeichen.",
   "startReview": {
-    "title": "Mark streitfall unter prüfung",
-    "description": "Die streitfall stays offen während sie investigate. Parties kann nicht accept delivery until die streitfall ist resolved oder geschlossen.",
-    "confirm": "Start prüfung",
+    "title": "Streitfall als in Prüfung markieren",
+    "description": "Der Streitfall bleibt offen, während Sie ihn untersuchen. Die Parteien können die Lieferung erst annehmen, wenn der Streitfall entschieden oder geschlossen ist.",
+    "confirm": "Prüfung starten",
     "axios": {
       "start": {
         "title": "Streitfall wird aktualisiert",
         "time": 3000
       },
       "success": {
-        "title": "Streitfall marked unter prüfung",
+        "title": "Streitfall als in Prüfung markiert",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht aktualisieren streitfall",
+        "title": "Streitfall konnte nicht aktualisiert werden",
         "time": 3000
       }
     }
   },
   "resolve": {
-    "title": "Resolve streitfall",
-    "description": "Marks die streitfall resolved und completes die verknüpft auftrag using die same escrow logic as accepting delivery.",
-    "confirm": "Resolve",
+    "title": "Streitfall entscheiden",
+    "description": "Markiert den Streitfall als entschieden und schliesst den verknüpften Auftrag mit derselben Treuhandlogik ab wie bei der Annahme einer Lieferung.",
+    "confirm": "Erledigen",
     "axios": {
       "start": {
-        "title": "Resolving streitfall",
+        "title": "Streitfall wird entschieden",
         "time": 3000
       },
       "success": {
-        "title": "Streitfall resolved",
+        "title": "Streitfall entschieden",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht resolve streitfall",
+        "title": "Streitfall konnte nicht entschieden werden",
         "time": 3000
       }
     }
   },
   "close": {
-    "title": "Close streitfall (abbrechen auftrag)",
-    "description": "Closes die streitfall und cancels die verknüpft auftrag mit escrow rückerstattung rules matching a normal annullierung.",
-    "confirm": "Close streitfall",
+    "title": "Streitfall schliessen (Auftrag stornieren)",
+    "description": "Schliesst den Streitfall und storniert den verknüpften Auftrag mit denselben Treuhand-Rückerstattungsregeln wie bei einer normalen Stornierung.",
+    "confirm": "Streitfall schliessen",
     "axios": {
       "start": {
-        "title": "Closing streitfall",
+        "title": "Streitfall wird geschlossen",
         "time": 3000
       },
       "success": {
@@ -56,7 +56,7 @@
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht close streitfall",
+        "title": "Streitfall konnte nicht geschlossen werden",
         "time": 3000
       }
     }

@@ -2,30 +2,30 @@
   "path": "src/modules/eCommerce/components/custom/productOrders/productOrderActionConfirmAction.tsx",
   "cancel": "Abbrechen",
   "confirm": {
-    "title": "Confirm auftrag",
-    "description": "Acknowledge diese auftrag und mark it as confirmed.",
+    "title": "Bestellung bestätigen",
+    "description": "Bestätigen Sie den Eingang dieser Bestellung und markieren Sie sie als bestätigt.",
     "confirm": "Bestätigen",
     "axios": {
-      "success": "Auftrag confirmed",
-      "error": "Konnte nicht confirm auftrag"
+      "success": "Bestellung bestätigt",
+      "error": "Bestellung konnte nicht bestätigt werden"
     }
   },
   "markProcessing": {
-    "title": "Mark as processing",
-    "description": "Mark diese auftrag as being prepared für shipment.",
-    "confirm": "Mark processing",
+    "title": "Als in Bearbeitung markieren",
+    "description": "Markieren Sie diese Bestellung als in Vorbereitung für den Versand.",
+    "confirm": "In Bearbeitung setzen",
     "axios": {
-      "success": "Auftrag marked as processing",
-      "error": "Konnte nicht aktualisieren auftrag"
+      "success": "Bestellung als in Bearbeitung markiert",
+      "error": "Bestellung konnte nicht aktualisiert werden"
     }
   },
   "cancelOrder": {
-    "title": "Abbrechen auftrag",
-    "description": "Cancels diese auftrag und releases any reserviert stock. Bezahlt aufträge must werden refunded vor.",
-    "confirm": "Abbrechen auftrag",
+    "title": "Auftrag stornieren",
+    "description": "Storniert diese Bestellung und gibt reservierten Bestand frei. Bezahlte Bestellungen müssen zuerst erstattet werden.",
+    "confirm": "Auftrag stornieren",
     "axios": {
       "success": "Auftrag annulliert",
-      "error": "Konnte nicht abbrechen auftrag"
+      "error": "Bestellung konnte nicht storniert werden"
     }
   },
   "markPaid": {

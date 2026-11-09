@@ -4,37 +4,37 @@
   "addFile": "Dateien hinzufügen",
   "filesSelected": "ausgewählt",
   "restock": {
-    "title": "Restock inventory",
-    "description": "Stock empfangen von a lieferant oder hersteller. Diese movement ist logged mit receipt details. hinzufügen",
-    "quantityLabel": "Menge bis hinzufügen",
+    "title": "Bestand auffüllen",
+    "description": "Fügen Sie von einem Lieferanten oder Hersteller erhaltenen Bestand hinzu. Diese Bewegung wird mit den Belegdetails protokolliert.",
+    "quantityLabel": "Hinzuzufügende Menge",
     "manufacturerLabel": "Hersteller / lieferant",
-    "receiptNumberLabel": "Receipt / delivery note #",
+    "receiptNumberLabel": "Beleg- / Lieferschein-Nr.",
     "occurredAtLabel": "Datum empfangen",
     "unitCostLabel": "Einheitskosten",
-    "batchLotLabel": "Batch / lot",
-    "expiryDateLabel": "Expiry datum",
-    "receiptsLabel": "Receipt attachments",
+    "batchLotLabel": "Charge / Los",
+    "expiryDateLabel": "Ablaufdatum",
+    "receiptsLabel": "Beleganhänge",
     "noteLabel": "Notiz",
-    "confirm": "Restock",
+    "confirm": "Auffüllen",
     "axios": {
       "start": {"title": "Bestand wird aufgefüllt", "time": 3000},
-      "success": {"title": "Stock restocked erfolgreich", "time": 3000},
-      "error": {"title": "Fehlgeschlagen bis restock inventory", "time": 3000}
+      "success": {"title": "Bestand erfolgreich aufgefüllt", "time": 3000},
+      "error": {"title": "Bestand konnte nicht aufgefüllt werden", "time": 3000}
     }
   },
   "deduct": {
-    "title": "Deduct / write-off",
-    "description": "Stock entfernen (Beschädigung, Verlust oder Abschreibung). Kosten und Ablaufdatum stammen aus der letzten Wareneingangsbewegung.",
-    "quantityLabel": "Menge bis entfernen",
+    "title": "Abbuchen / abschreiben",
+    "description": "Bestand entfernen (Beschädigung, Verlust oder Abschreibung). Kosten und Ablaufdatum stammen aus der letzten Wareneingangsbewegung.",
+    "quantityLabel": "Zu entfernende Menge",
     "reasonLabel": "Grund",
     "reasons": {"write_off": "Abschreibung", "damage": "Beschädigung", "adjustment": "Korrektur"},
-    "batchLotLabel": "Batch / lot",
-    "receiptsLabel": "Attachments",
+    "batchLotLabel": "Charge / Los",
+    "receiptsLabel": "Anhänge",
     "noteLabel": "Notiz",
-    "confirm": "Deduct",
+    "confirm": "Abbuchen",
     "axios": {
       "start": {"title": "Bestand wird abgeschrieben", "time": 3000},
-      "success": {"title": "Stock deducted erfolgreich", "time": 3000},
+      "success": {"title": "Bestand erfolgreich abgebucht", "time": 3000},
       "error": {"title": "Abschreibung fehlgeschlagen", "time": 3000}
     }
   }

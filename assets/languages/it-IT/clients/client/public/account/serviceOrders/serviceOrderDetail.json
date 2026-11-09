@@ -77,9 +77,9 @@
   "reviewThanks": "Grazie per la recensione!",
   "cancelled": "Ordine annullato",
   "milestoneReleased": "Pagamento della milestone rilasciato",
-  "payEscrowTitle": "Pay for this order",
-  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
-  "payEscrowButton": "Pay now",
-  "payEscrowSuccess": "Payment submitted",
-  "payEscrowError": "Payment failed"
+  "payEscrowTitle": "Paga questo ordine",
+  "payEscrowHint": "Il fornitore ha accettato l'ordine. Completa il pagamento per depositare l'importo in garanzia.",
+  "payEscrowButton": "Paga ora",
+  "payEscrowSuccess": "Pagamento inviato",
+  "payEscrowError": "Pagamento non riuscito"
 }

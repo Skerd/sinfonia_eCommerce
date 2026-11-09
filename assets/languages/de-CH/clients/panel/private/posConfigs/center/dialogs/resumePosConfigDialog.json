@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
-  "title": "Resume diese POS till?",
-  "description": "Clears die pause on diese till only. A firma-wide lock (if aktiv) ist nicht cleared. Cashiers must offen a neu sitzung bis sell erneut.",
+  "title": "Diese POS-Kasse fortsetzen?",
+  "description": "Hebt nur die Pause dieser Kasse auf. Eine firmenweite Sperre (falls aktiv) bleibt bestehen. Kassierende müssen eine neue Sitzung öffnen, um wieder zu verkaufen.",
   "cancel": "Abbrechen",
-  "confirm": "Resume till",
-  "busy": "Working…",
+  "confirm": "Kasse fortsetzen",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Resuming POS till…",
+      "title": "POS-Kasse wird fortgesetzt…",
       "time": 3000
     },
     "success": {
-      "title": "POS till resumed",
+      "title": "POS-Kasse fortgesetzt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht resume POS till",
+      "title": "POS-Kasse konnte nicht fortgesetzt werden",
       "time": 3000
     }
   }

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/index.tsx",
-  "title": "Fulfillments",
-  "description": "Track shipments und delivery von produkt aufträge.",
+  "title": "Lieferungen",
+  "description": "Sendungen und Lieferung von Produktbestellungen verfolgen.",
   "help": {
-    "ariaLabel": "Über Fulfillments",
-    "title": "Über Fulfillments",
+    "ariaLabel": "Über Lieferungen",
+    "title": "Über Lieferungen",
     "overview": "Eine Erfüllung ist eine Sendung einer Produktbestellung: welche Bestellzeilen und wie viele Einheiten mit welchem Versanddienst und welcher Sendungsverfolgung unterwegs sind. Das Versenden einer Bestellung erstellt sie automatisch; Sie können sie auch hier anlegen, um eine Bestellung auf mehrere Pakete aufzuteilen. Ihr Status — ausstehend, versendet, zugestellt oder gescheitert — bestimmt den Versand- und Zustellstatus der Bestellung.",
     "sections": [
       {
@@ -54,29 +54,29 @@
       }
     ]
   },
-  "createFulfillment": "Fulfillment erstellen",
+  "createFulfillment": "Lieferung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "status": {
         "pending": "Ausstehend",
-        "shipped": "Shipped",
-        "delivered": "Delivered",
+        "shipped": "Versandt",
+        "delivered": "Zugestellt",
         "failed": "Fehlgeschlagen"
       }
     },
     "order": "Auftrag",
     "status": "Status",
     "items": {
-      "orderItemId": "Auftrag position id",
+      "orderItemId": "ID der Bestellposition",
       "quantity": "Menge"
     },
-    "carrier": "Carrier",
-    "trackingNumber": "Tracking nummer",
-    "trackingUrl": "Tracking URL",
-    "shippedAt": "Shipped am",
-    "estimatedDeliveryAt": "Estimated delivery",
-    "deliveredAt": "Delivered am",
+    "carrier": "Transporteur",
+    "trackingNumber": "Sendungsnummer",
+    "trackingUrl": "Sendungsverfolgungs-URL",
+    "shippedAt": "Versandt am",
+    "estimatedDeliveryAt": "Voraussichtliche Lieferung",
+    "deliveredAt": "Zugestellt am",
     "notes": "Notizen",
     "createdBy": "Erstellt von",
     "company": "Firma",

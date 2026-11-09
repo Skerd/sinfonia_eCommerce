@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Angebote",
-  "description": "Und verwalten bids on aufgabe requests. anzeigen",
+  "description": "Offerten auf Ausschreibungen anzeigen und verwalten.",
   "help": {
     "ariaLabel": "Über Gebote",
     "title": "Über Gebote",
@@ -38,18 +38,18 @@
     "amount": "Betrag",
     "currency": "Währung",
     "proposal": "Angebot",
-    "deliveryDays": "Delivery tage",
+    "deliveryDays": "Liefertage",
     "status": "Status",
-    "bidder": "Bidder",
+    "bidder": "Bieter",
     "taskRequest": "Aufgabe Antrag",
     "createdAt": "Erstellt"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "status": {
     "pending": "Ausstehend",
-    "accepted": "Accepted",
+    "accepted": "Angenommen",
     "rejected": "Abgelehnt"
   },
-  "accept": "Accept",
-  "reject": "Ablehnen / Withdraw"
+  "accept": "Annehmen",
+  "reject": "Ablehnen / Zurückziehen"
 }

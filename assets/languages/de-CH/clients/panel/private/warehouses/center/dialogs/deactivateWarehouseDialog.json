@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/deactivateWarehouseDialog.tsx",
-  "title": "Deaktivieren warehouse",
-  "description": "Diese warehouse will keine longer werden used until it ist activated erneut.",
+  "title": "Lager deaktivieren",
+  "description": "Dieses Lager wird nicht mehr verwendet, bis es wieder aktiviert wird.",
   "cancel": "Abbrechen",
   "confirm": "Deaktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Deactivating warehouse…",
+      "title": "Lager wird deaktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Warehouse deactivated",
+      "title": "Lager deaktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht deaktivieren warehouse",
+      "title": "Lager konnte nicht deaktiviert werden",
       "time": 3000
     }
   }

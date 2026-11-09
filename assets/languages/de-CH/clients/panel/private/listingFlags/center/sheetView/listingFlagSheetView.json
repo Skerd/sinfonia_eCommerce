@@ -1,20 +1,20 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
-  "failedTitle": "Inserat flag konnten nicht geladen werden",
-  "failedDescription": "Something went wrong während laden diese inserat flag. Click bis retry.",
-  "failedTooltipDescription": "Click bis retry fetching daten.",
-  "listingFlagSubtitle": "Inserat Flag",
-  "listingFlag": "Inserat Flag",
+  "failedTitle": "Inserat-Meldung konnte nicht geladen werden",
+  "failedDescription": "Die Inserat-Meldung konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
+  "listingFlagSubtitle": "Inserat-Meldung",
+  "listingFlag": "Inserat-Meldung",
   "overview": "Übersicht",
   "lifecycle": "Lebenszyklus",
   "details": "Details",
   "listing": "Inserat",
   "reason": "Grund",
   "comment": "Kommentar",
-  "user": "Reporter",
-  "reporter": "Reporter",
+  "user": "Meldende Person",
+  "reporter": "Meldende Person",
   "status": "Status",
-  "resolution": "Resolution",
+  "resolution": "Lösung",
   "listingAction": "Inserat aktion",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",
@@ -23,13 +23,13 @@
   "deletedBy": "Gelöscht von",
   "status_values": {
     "pending": "Ausstehend",
-    "reviewed": "Reviewed",
-    "dismissed": "Dismissed"
+    "reviewed": "Geprüft",
+    "dismissed": "Verworfen"
   },
   "reason_values": {
-    "inappropriate": "Inappropriate content",
+    "inappropriate": "Unangemessener Inhalt",
     "spam": "Spam",
-    "misleading": "Misleading",
+    "misleading": "Irreführend",
     "other": "Andere"
   }
 }

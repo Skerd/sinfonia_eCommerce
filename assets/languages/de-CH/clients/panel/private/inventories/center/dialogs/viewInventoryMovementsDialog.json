@@ -18,9 +18,9 @@
     "return": "Rückgabe",
     "adjustment": "Korrektur",
     "damage": "Beschädigung",
-    "transfer_in": "Transfer ein",
-    "transfer_out": "Transfer aus",
-    "initial": "Initial",
+    "transfer_in": "Umlagerung ein",
+    "transfer_out": "Umlagerung aus",
+    "initial": "Anfangsbestand",
     "write_off": "Abschreibung"
   }
 }

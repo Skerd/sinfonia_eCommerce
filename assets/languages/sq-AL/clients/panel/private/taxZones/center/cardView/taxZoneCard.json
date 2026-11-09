@@ -1,11 +1,11 @@
 {
-  "active": "Active",
-  "country": "Country",
-  "inactive": "Inactive",
-  "name": "Name",
+  "active": "Aktive",
+  "country": "Shteti",
+  "inactive": "Joaktive",
+  "name": "Emri",
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/cardView/taxZoneCard.tsx",
   "failedTitle": "Dështoi ngarkimi i zonës tatimore",
   "failedDescription": "Prekni për të provuar përsëri.",
-  "priority": "Priority",
-  "rates": "Rates"
+  "priority": "Prioriteti",
+  "rates": "Tarifat"
 }

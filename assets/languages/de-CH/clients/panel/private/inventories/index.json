@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/index.tsx",
-  "title": "Inventory",
-  "description": "Stock levels across ihr warehouses.",
+  "title": "Lagerbestand",
+  "description": "Bestände in Ihren Lagern.",
   "help": {
     "ariaLabel": "Über Lagerbestand",
     "title": "Über Lagerbestand",
@@ -64,17 +64,17 @@
       }
     ]
   },
-  "createInventory": "Inventory erstellen",
+  "createInventory": "Lagerbestand erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "product": "Produkt",
     "variant": "Variante",
-    "warehouse": "Warehouse",
-    "quantityOnHand": "On hand",
+    "warehouse": "Lager",
+    "quantityOnHand": "An Lager",
     "quantityReserved": "Reserviert",
     "quantityAvailable": "Verfügbar",
-    "reorderPoint": "Reorder point",
-    "reorderQuantity": "Reorder menge",
+    "reorderPoint": "Meldebestand",
+    "reorderQuantity": "Nachbestellmenge",
     "lowStockAlertSent": "Niedrigbestand-Alarm gesendet",
     "createdAt": "Erstellt am",
     "updatedAt": "Aktualisiert am",

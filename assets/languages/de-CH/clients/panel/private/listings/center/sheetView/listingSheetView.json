@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/center/sheetView/listingSheetView.tsx",
   "failedTitle": "Inserat konnten nicht geladen werden",
-  "failedDescription": "Something went wrong während laden diese inserat. Click bis retry.",
-  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "failedDescription": "Das Inserat konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "listingSubtitle": "Inserat",
   "name": "Name",
   "title": "Bezeichnung",
@@ -15,25 +15,25 @@
   "company": "Firma",
   "price": "Preis",
   "priceCurrency": "Währung",
-  "pricingType": "Pricing",
-  "deliveryDays": "Delivery (tage)",
+  "pricingType": "Preise",
+  "deliveryDays": "Lieferzeit (Tage)",
   "address": "Standort",
   "country": "Land",
   "state": "Region / kanton",
   "city": "Ort",
-  "tags": "Tags",
-  "requirements": "Requirements",
-  "faqs": "FAQs",
+  "tags": "Schlagwörter",
+  "requirements": "Anforderungen",
+  "faqs": "FAQ",
   "question": "Frage",
   "answer": "Antwort",
-  "promotions": "Promotions",
+  "promotions": "Promotionen",
   "promotion": "Promotion",
-  "listingPackages": "Packages",
+  "listingPackages": "Pakete",
   "listingPackage": "Paket",
-  "listingAddOns": "Hinzufügen-ons",
-  "listingAddOn": "Hinzufügen-on",
+  "listingAddOns": "Zusatzleistungen",
+  "listingAddOn": "Zusatzleistung",
   "gallery": "Galerie",
-  "mainImage": "Haupt bild",
+  "mainImage": "Hauptbild",
   "imageGallery": "Bild galerie",
   "videoGallery": "Video galerie",
   "avgRating": "Bewertung",
@@ -44,10 +44,10 @@
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
   "promotionType": {
-    "featured": "Featured",
-    "sponsored": "Sponsored"
+    "featured": "Hervorgehoben",
+    "sponsored": "Gesponsert"
   },
-  "toggleReferenceListView": "Toggle anzeigen",
+  "toggleReferenceListView": "Ansicht umschalten",
   "compactView": "Kompakt",
   "cardsView": "Karten",
   "listingStatus": {
@@ -56,8 +56,8 @@
     "inactive": "Inaktiv"
   },
   "listingPricingType": {
-    "fixed": "Fixed preis",
-    "hourly": "Hourly satz"
+    "fixed": "Festpreis",
+    "hourly": "Stundensatz"
   },
   "form": {}
 }

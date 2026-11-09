@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx",
-  "title": "Reprint receipt",
-  "description": "Preview und print die receipt für diese POS auftrag.",
-  "loading": "Laden receipt…",
+  "title": "Beleg nachdrucken",
+  "description": "Vorschau und Druck des Belegs dieser POS-Bestellung.",
+  "loading": "Beleg wird geladen…",
   "cancel": "Abbrechen",
   "confirm": "Drucken",
   "order": "Auftrag",
-  "ref": "Ref",
+  "ref": "Ref.",
   "date": "Datum",
   "customer": "Kunde",
-  "walkIn": "Walk-in Customer",
+  "walkIn": "Laufkunde",
   "discount": "Rabatt",
   "total": "Total",
-  "change": "Change",
-  "defaultFooter": "Thank sie für ihr kauf!",
+  "change": "Rückgeld",
+  "defaultFooter": "Vielen Dank für Ihren Einkauf!",
   "fallbackShop": "POS",
   "totalWithoutVat": "Total ohne MwSt",
   "vatRate": "MwSt - {rate}",
@@ -27,21 +27,21 @@
   "operatorCode": "Operator-Code",
   "businessUnitCode": "Geschäftseinheitscode",
   "notFiscalized": "NICHT FISKALISIERT",
-  "fiscalQr": "Fiscal QR code",
+  "fiscalQr": "Fiskal-QR-Code",
   "errors": {
-    "loadFailed": "Konnte nicht laden receipt für diese auftrag."
+    "loadFailed": "Der Beleg dieser Bestellung konnte nicht geladen werden."
   },
   "axios": {
     "start": {
-      "title": "Laden receipt…",
+      "title": "Beleg wird geladen…",
       "time": 3000
     },
     "success": {
-      "title": "Receipt ready",
+      "title": "Beleg bereit",
       "time": 2000
     },
     "error": {
-      "title": "Konnte nicht laden receipt",
+      "title": "Beleg konnte nicht geladen werden",
       "time": 3000
     }
   }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/center/cardView/productVariantCard.tsx",
-  "failedTitle": "Variant konnten nicht geladen werden",
+  "failedTitle": "Variante konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "sku": "SKU",
   "price": "Preis",

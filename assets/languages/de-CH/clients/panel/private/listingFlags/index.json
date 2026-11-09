@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
-  "title": "Inserat Flags",
-  "description": "Prüfung reports eingereicht von users für inappropriate inserate.",
+  "title": "Inserat-Meldungen",
+  "description": "Von Benutzern eingereichte Meldungen zu unangemessenen Inseraten prüfen.",
   "help": {
     "ariaLabel": "Über Inserat-Meldungen",
     "title": "Über Inserat-Meldungen",
@@ -32,15 +32,15 @@
       }
     ]
   },
-  "createListingFlag": "Inserat flag erstellen",
+  "createListingFlag": "Inserat-Meldung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "listing": "Inserat",
     "reason": "Grund",
     "status": "Status",
-    "user": "Reporter",
+    "user": "Meldende Person",
     "comment": "Kommentar",
-    "resolution": "Resolution",
+    "resolution": "Lösung",
     "company": "Firma",
     "createdBy": "Erstellt von",
     "createdAt": "Erstellt am",
@@ -50,13 +50,13 @@
     "!enums": {
       "status": {
         "pending": "Ausstehend",
-        "reviewed": "Reviewed",
-        "dismissed": "Dismissed"
+        "reviewed": "Geprüft",
+        "dismissed": "Verworfen"
       },
       "reason": {
-        "inappropriate": "Inappropriate content",
+        "inappropriate": "Unangemessener Inhalt",
         "spam": "Spam",
-        "misleading": "Misleading",
+        "misleading": "Irreführend",
         "other": "Andere"
       }
     }

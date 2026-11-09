@@ -1,73 +1,73 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
-  "title": "Pricing rule bearbeiten",
-  "errorTitle": "Pricing rule konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese pricing rule. Versuchen erneut.",
+  "title": "Preisregel bearbeiten",
+  "errorTitle": "Preisregel konnte nicht geladen werden",
+  "errorDescription": "Die Preisregel konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Pricing rule name",
+    "namePlaceholder": "Name der Preisregel",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
-    "appliesToLabel": "Applies bis",
+    "appliesToLabel": "Gilt für",
     "appliesToPlaceholder": "Anwendungsbereich auswählen",
     "valueLabel": "Wert",
     "valuePlaceholder": "0",
-    "priorityLabel": "Priority",
+    "priorityLabel": "Priorität",
     "priorityPlaceholder": "0",
-    "startsAtLabel": "Starts am",
+    "startsAtLabel": "Beginnt am",
     "startsAtPlaceholder": "Start auswählen",
-    "endsAtLabel": "Ends am",
+    "endsAtLabel": "Endet am",
     "endsAtPlaceholder": "Ende auswählen",
-    "minimumOrderAmountLabel": "Minimum auftrag betrag",
+    "minimumOrderAmountLabel": "Mindestbestellwert",
     "minimumOrderAmountPlaceholder": "0",
-    "minimumQuantityLabel": "Minimum menge",
+    "minimumQuantityLabel": "Mindestmenge",
     "minimumQuantityPlaceholder": "0",
     "generalSectionTitle": "Allgemein",
     "scheduleSectionTitle": "Terminplan",
-    "limitsSectionTitle": "Limits",
-    "customerGroupsSectionTitle": "Customer groups",
+    "limitsSectionTitle": "Limiten",
+    "customerGroupsSectionTitle": "Kundengruppen",
     "productsLabel": "Produkte",
-    "collectionsLabel": "Collections",
-    "categoriesLabel": "Categories",
-    "customerGroupsLabel": "Customer groups",
+    "collectionsLabel": "Kollektionen",
+    "categoriesLabel": "Kategorien",
+    "customerGroupsLabel": "Kundengruppen",
     "selectProduct": "Produkt auswählen",
-    "selectCollection": "Collection auswählen",
+    "selectCollection": "Kollektion auswählen",
     "selectCategory": "Kategorie auswählen",
-    "selectCustomerGroup": "Customer group auswählen",
+    "selectCustomerGroup": "Kundengruppe auswählen",
     "removeTarget": "Entfernen ziel",
-    "removeCustomerGroup": "Entfernen customer group",
+    "removeCustomerGroup": "Kundengruppe entfernen",
     "pricingRuleType": {
-      "percentage_discount": "Percentage rabatt",
-      "fixed_discount": "Fixed rabatt",
-      "fixed_price": "Fixed preis",
-      "surcharge": "Surcharge"
+      "percentage_discount": "Prozentualer Rabatt",
+      "fixed_discount": "Fester Rabatt",
+      "fixed_price": "Festpreis",
+      "surcharge": "Zuschlag"
     },
     "pricingRuleAppliesTo": {
       "all": "Alle",
       "product": "Produkte",
-      "collection": "Collections",
-      "category": "Categories",
-      "customer_group": "Customer groups"
+      "collection": "Kollektionen",
+      "category": "Kategorien",
+      "customer_group": "Kundengruppen"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving pricing rule",
+      "title": "Preisregel wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Pricing rule aktualisiert",
+      "title": "Preisregel aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren pricing rule",
+      "title": "Preisregel konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Pricing rule bearbeiten",
-    "description": "Aktualisieren catalog pricing adjustments, targets, limits, und terminplan."
+    "title": "Preisregel bearbeiten",
+    "description": "Katalogpreisanpassungen, Ziele, Limiten und Zeitplan aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

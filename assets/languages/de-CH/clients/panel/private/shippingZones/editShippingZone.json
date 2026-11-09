@@ -1,70 +1,70 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/editShippingZone.tsx",
-  "title": "Versand zone bearbeiten",
-  "errorTitle": "Versand zone konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese versand zone. Versuchen erneut.",
+  "title": "Versandzone bearbeiten",
+  "errorTitle": "Versandzone konnte nicht geladen werden",
+  "errorDescription": "Die Versandzone konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "generalSectionTitle": "Allgemein",
-    "geographySectionTitle": "Geography",
+    "geographySectionTitle": "Geografie",
     "nameLabel": "Name",
     "namePlaceholder": "Inland",
-    "countriesLabel": "Countries",
-    "statesLabel": "States / regions",
+    "countriesLabel": "Länder",
+    "statesLabel": "Kantone / Regionen",
     "selectCountry": "Land auswählen",
     "selectState": "Kanton auswählen",
-    "removeCountry": "Entfernen land",
+    "removeCountry": "Land entfernen",
     "removeState": "Entfernen kanton",
-    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsLabel": "Postleitzahl-Muster",
     "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
-    "removePostalCodePattern": "Entfernen pattern",
-    "ratesSectionTitle": "Versand rates",
+    "removePostalCodePattern": "Muster entfernen",
+    "ratesSectionTitle": "Versandtarife",
     "rateAddRow": "Satz hinzufügen",
     "rateRemoveRow": "Entfernen satz",
-    "rateRowTitle": "Untitled satz",
+    "rateRowTitle": "Unbenannter Tarif",
     "rateNameLabel": "Satz name",
     "rateNamePlaceholder": "Standardversand",
-    "rateTypeLabel": "Satz typ",
+    "rateTypeLabel": "Tarifart",
     "rateTypePlaceholder": "Tarifart auswählen",
     "ratePriceLabel": "Preis",
     "ratePricePlaceholder": "0.00",
-    "carrierLabel": "Carrier",
+    "carrierLabel": "Transporteur",
     "carrierPlaceholder": "Name des Transporteurs",
-    "estimatedDeliveryDaysLabel": "Estimated delivery tage",
+    "estimatedDeliveryDaysLabel": "Voraussichtliche Liefertage",
     "estimatedDeliveryDaysPlaceholder": "3",
-    "rateConditionsSectionTitle": "Conditions",
-    "minWeightLabel": "Min weight",
+    "rateConditionsSectionTitle": "Bedingungen",
+    "minWeightLabel": "Min. Gewicht",
     "minWeightPlaceholder": "0",
-    "maxWeightLabel": "Max weight",
+    "maxWeightLabel": "Max. Gewicht",
     "maxWeightPlaceholder": "0",
-    "minOrderAmountLabel": "Min auftrag betrag",
+    "minOrderAmountLabel": "Min. Bestellwert",
     "minOrderAmountPlaceholder": "0",
-    "maxOrderAmountLabel": "Max auftrag betrag",
+    "maxOrderAmountLabel": "Max. Bestellwert",
     "maxOrderAmountPlaceholder": "0",
     "shippingRateType": {
-      "flat": "Flat",
-      "weight": "Weight-based",
-      "price": "Auftrag betrag",
+      "flat": "Pauschal",
+      "weight": "Gewichtsbasiert",
+      "price": "Bestellwert",
       "quantity": "Menge",
-      "free": "Free"
+      "free": "Kostenlos"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving versand zone",
+      "title": "Versandzone wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Versand zone aktualisiert",
+      "title": "Versandzone aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren versand zone",
+      "title": "Versandzone konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Versand zone bearbeiten",
-    "description": "Aktualisieren destination geography und versand rates für diese zone."
+    "title": "Versandzone bearbeiten",
+    "description": "Zielgebiete und Versandtarife dieser Zone aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

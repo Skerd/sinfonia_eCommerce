@@ -1,39 +1,39 @@
 {
   "path": "src/modules/eCommerce/components/custom/taskRequests/taskRequestStatusConfirmAction.tsx",
   "close": {
-    "title": "Close diese aufgabe antrag?",
-    "description": "Providers will keine longer werden able bis place neu bids. Sie can reopen it later unless die antrag has been zuschlag.",
+    "title": "Diese Ausschreibung schliessen?",
+    "description": "Anbieter können keine neuen Offerten mehr abgeben. Sie können die Ausschreibung später wieder öffnen, sofern sie nicht vergeben wurde.",
     "confirm": "Bestätigen",
     "axios": {
       "start": {
-        "title": "Closing aufgabe antrag",
+        "title": "Ausschreibung wird geschlossen",
         "time": 3000
       },
       "success": {
-        "title": "Aufgabe antrag geschlossen erfolgreich",
+        "title": "Ausschreibung erfolgreich geschlossen",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht close aufgabe antrag, bitte versuchen erneut",
+        "title": "Ausschreibung konnte nicht geschlossen werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "reopen": {
-    "title": "Reopen diese aufgabe antrag?",
-    "description": "Die antrag will werden offen erneut so providers can submit bids.",
+    "title": "Diese Ausschreibung wieder öffnen?",
+    "description": "Die Ausschreibung wird wieder geöffnet, damit Anbieter Offerten einreichen können.",
     "confirm": "Bestätigen",
     "axios": {
       "start": {
-        "title": "Reopening aufgabe antrag",
+        "title": "Ausschreibung wird wieder geöffnet",
         "time": 3000
       },
       "success": {
-        "title": "Aufgabe antrag reopened erfolgreich",
+        "title": "Ausschreibung erfolgreich wieder geöffnet",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht reopen aufgabe antrag, bitte versuchen erneut",
+        "title": "Ausschreibung konnte nicht wieder geöffnet werden, bitte erneut versuchen",
         "time": 3000
       }
     }

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fiscalConfigs/index.tsx",
-  "title": "Fiscal configs",
-  "description": "Albanian CIS fiscalization und e-rechnung einstellungen (NIPT, TCR, certificates).",
+  "title": "Fiskalkonfigurationen",
+  "description": "Einstellungen für die albanische CIS-Fiskalisierung und E-Rechnung (NIPT, TCR, Zertifikate).",
   "help": {
     "ariaLabel": "Über Fiskalkonfigurationen",
     "title": "Über Fiskalkonfigurationen",
@@ -37,40 +37,40 @@
       }
     ]
   },
-  "createFiscalConfig": "Fiscal config erstellen",
+  "createFiscalConfig": "Fiskalkonfiguration erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "environment": {
         "test": "Test",
-        "production": "Production"
+        "production": "Produktion"
       },
       "tcrType": {
-        "REGULAR": "Regular",
-        "VENDING": "Vending"
+        "REGULAR": "Regulär",
+        "VENDING": "Verkaufsautomat"
       }
     },
     "name": "Name",
     "nipt": "NIPT",
-    "softCode": "Software code",
-    "maintainerCode": "Maintainer code",
-    "businessUnitCode": "Business einheit code",
-    "operatorCode": "Operator code",
-    "tcrCode": "TCR code",
-    "tcrIntId": "TCR internal ID",
-    "tcrType": "TCR typ",
-    "fiscalizationUrl": "Fiscalization URL",
-    "einvoiceUrl": "E-rechnung URL",
-    "selfcareUrl": "Selfcare URL",
-    "proxyUrl": "Proxy URL",
+    "softCode": "Software-Code",
+    "maintainerCode": "Wartungscode",
+    "businessUnitCode": "Code der Geschäftseinheit",
+    "operatorCode": "Operator-Code",
+    "tcrCode": "TCR-Code",
+    "tcrIntId": "Interne TCR-ID",
+    "tcrType": "TCR-Typ",
+    "fiscalizationUrl": "Fiskalisierungs-URL",
+    "einvoiceUrl": "E-Rechnungs-URL",
+    "selfcareUrl": "Selfcare-URL",
+    "proxyUrl": "Proxy-URL",
     "sellerName": "Verkäufer name",
-    "sellerAddress": "Verkäufer adresse",
-    "sellerTown": "Verkäufer town",
-    "sellerCountry": "Verkäufer land",
-    "isVatRegistered": "MWST registered",
-    "environment": "Environment",
-    "certificate": "Certificate",
-    "certificatePassword": "Certificate Passwort",
+    "sellerAddress": "Verkäuferadresse",
+    "sellerTown": "Ort des Verkäufers",
+    "sellerCountry": "Land des Verkäufers",
+    "isVatRegistered": "MWST-pflichtig",
+    "environment": "Umgebung",
+    "certificate": "Zertifikat",
+    "certificatePassword": "Zertifikatspasswort",
     "isActive": "Aktiv",
     "company": "Firma",
     "createdBy": "Erstellt von",

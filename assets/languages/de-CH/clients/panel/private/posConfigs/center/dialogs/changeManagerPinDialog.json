@@ -1,26 +1,26 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/changeManagerPinDialog.tsx",
-  "title": "Change manager PIN",
-  "description": "Die current PIN, then die neu PIN twice. eingeben",
-  "currentPinLabel": "Current PIN",
+  "title": "Manager-PIN ändern",
+  "description": "Geben Sie die aktuelle PIN und dann zweimal die neue PIN ein.",
+  "currentPinLabel": "Aktuelle PIN",
   "pinLabel": "Neu PIN",
-  "confirmPinLabel": "Confirm neu PIN",
-  "pinMismatch": "PIN confirmation does nicht match",
-  "pinTooShort": "PIN must werden am least 4 characters",
+  "confirmPinLabel": "Neue PIN bestätigen",
+  "pinMismatch": "PIN-Bestätigung stimmt nicht überein",
+  "pinTooShort": "Die PIN muss mindestens 4 Zeichen lang sein",
   "cancel": "Abbrechen",
   "confirm": "Speichern PIN",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Changing manager PIN",
+      "title": "Manager-PIN wird geändert",
       "time": 3000
     },
     "success": {
-      "title": "Manager PIN changed",
+      "title": "Manager-PIN geändert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht change manager PIN",
+      "title": "Manager-PIN konnte nicht geändert werden",
       "time": 3000
     }
   }

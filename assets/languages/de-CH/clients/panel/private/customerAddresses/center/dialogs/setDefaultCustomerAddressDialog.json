@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx",
-  "title": "Set as default adresse",
+  "title": "Als Standardadresse festlegen",
   "description": "Diese Adresse wird die Standardadresse für ihren Typ (Versand oder Rechnung). Die bisherige Standardadresse desselben Typs wird ersetzt; der andere Typ bleibt unverändert.",
   "cancel": "Abbrechen",
-  "confirm": "Set as default",
-  "busy": "Working…",
+  "confirm": "Als Standard festlegen",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Setting default adresse…",
+      "title": "Standardadresse wird festgelegt…",
       "time": 3000
     },
     "success": {
-      "title": "Default adresse aktualisiert",
+      "title": "Standardadresse aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht set default adresse",
+      "title": "Standardadresse konnte nicht festgelegt werden",
       "time": 3000
     }
   }

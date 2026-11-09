@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/cardView/warehouseCard.tsx",
-  "failedTitle": "Warehouse konnten nicht geladen werden",
+  "failedTitle": "Lager konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "code": "Code",
   "location": "Standort",
-  "default": "Default",
+  "default": "Standard",
   "active": "Aktiv",
   "inactive": "Inaktiv"
 }

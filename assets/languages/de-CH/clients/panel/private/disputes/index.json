@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/disputes/index.tsx",
   "title": "Streitfälle",
-  "description": "Prüfung und resolve streitfälle between customers und providers.",
+  "description": "Streitfälle zwischen Kunden und Anbietern prüfen und entscheiden.",
   "help": {
-    "ariaLabel": "Über Disputes",
-    "title": "Über Disputes",
+    "ariaLabel": "Über Streitfälle",
+    "title": "Über Streitfälle",
     "overview": "Ein Streitfall ist eine Uneinigkeit über eine Marktplatz-Bestellung, die ein Administrator entscheidet. Solange er offen ist, ist das Geld der Bestellung eingefroren: keine Lieferabnahme, keine Meilenstein-Freigabe, keine automatische Abnahme und keine Stornierung. Der Entscheid legt fest, wer erhält, was noch gehalten wird.",
     "sections": [
       {
@@ -37,9 +37,9 @@
   "fields": {
     "status": "Status",
     "reason": "Grund",
-    "resolution": "Resolution",
+    "resolution": "Lösung",
     "initiator": "Initiator",
-    "createdAt": "Opened",
+    "createdAt": "Eröffnet",
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von"
   },
@@ -47,7 +47,7 @@
   "status": {
     "open": "Offen",
     "under_review": "In Prüfung",
-    "resolved": "Resolved",
+    "resolved": "Erledigt",
     "closed": "Geschlossen"
   }
 }

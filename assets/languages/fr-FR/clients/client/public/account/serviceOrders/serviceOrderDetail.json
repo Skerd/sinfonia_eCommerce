@@ -77,9 +77,9 @@
   "reviewThanks": "Merci pour votre avis !",
   "cancelled": "Commande annulée",
   "milestoneReleased": "Paiement du jalon libéré",
-  "payEscrowTitle": "Pay for this order",
-  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
-  "payEscrowButton": "Pay now",
-  "payEscrowSuccess": "Payment submitted",
-  "payEscrowError": "Payment failed"
+  "payEscrowTitle": "Payer cette commande",
+  "payEscrowHint": "Votre prestataire a accepté la commande. Effectuez le paiement pour alimenter le séquestre.",
+  "payEscrowButton": "Payer maintenant",
+  "payEscrowSuccess": "Paiement envoyé",
+  "payEscrowError": "Échec du paiement"
 }

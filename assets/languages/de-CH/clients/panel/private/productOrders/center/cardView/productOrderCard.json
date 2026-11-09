@@ -1,15 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/center/cardView/productOrderCard.tsx",
-  "failedTitle": "Produkt auftrag konnten nicht geladen werden",
+  "failedTitle": "Produktbestellung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "orderStatus": {
     "pending": "Ausstehend",
-    "confirmed": "Confirmed",
-    "processing": "Processing",
-    "shipped": "Shipped",
-    "delivered": "Delivered",
+    "confirmed": "Bestätigt",
+    "processing": "In Bearbeitung",
+    "shipped": "Versandt",
+    "delivered": "Zugestellt",
     "cancelled": "Storniert",
-    "refunded": "Refunded"
+    "refunded": "Erstattet"
   },
   "items": "positionen",
   "paymentStatus": {

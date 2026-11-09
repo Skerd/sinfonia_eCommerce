@@ -10,7 +10,7 @@
   "status_values": {
     "open": "Offen",
     "under_review": "In Prüfung",
-    "resolved": "Resolved",
+    "resolved": "Erledigt",
     "closed": "Geschlossen"
   }
 }

@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/activatePosPaymentMethodDialog.tsx",
-  "title": "Aktivieren zahlung methode",
-  "description": "Diese zahlung methode will werden verfügbar on tills that use it.",
+  "title": "Zahlungsart aktivieren",
+  "description": "Diese Zahlungsart wird an den Kassen verfügbar, die sie verwenden.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating zahlung methode…",
+      "title": "Zahlungsart wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Zahlung methode activated",
+      "title": "Zahlungsart aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren zahlung methode",
+      "title": "Zahlungsart konnte nicht aktiviert werden",
       "time": 3000
     }
   }

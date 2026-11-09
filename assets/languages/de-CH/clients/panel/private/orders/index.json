@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/orders/index.tsx",
   "title": "Bestellungen",
-  "description": "Service aufträge between customers und providers. verwalten",
+  "description": "Dienstleistungsaufträge zwischen Kunden und Anbietern verwalten.",
   "help": {
     "ariaLabel": "Über Bestellungen",
     "title": "Über Bestellungen",

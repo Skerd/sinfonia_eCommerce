@@ -3,7 +3,7 @@
   "title": "Gespeicherte Suche erstellen",
   "form": {
     "customerLabel": "Kunde",
-    "customerPlaceholder": "Customer auswählen",
+    "customerPlaceholder": "Kunde auswählen",
     "nameLabel": "Name",
     "namePlaceholder": "Diese Suche benennen",
     "filtersSectionTitle": "Filter",

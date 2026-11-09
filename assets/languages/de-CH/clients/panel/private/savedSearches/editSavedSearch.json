@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Datensatz-ID",
     "customerLabel": "Kunde",
-    "customerPlaceholder": "Customer auswählen",
+    "customerPlaceholder": "Kunde auswählen",
     "nameLabel": "Name",
     "namePlaceholder": "Diese Suche benennen",
     "filtersSectionTitle": "Filter",

@@ -27,5 +27,5 @@
   "giftCardCode": "Code de carte cadeau",
   "apply": "Appliquer",
   "checkout": "Passer au paiement",
-  "soldBy": "Sold by {name}"
+  "soldBy": "Vendu par {name}"
 }

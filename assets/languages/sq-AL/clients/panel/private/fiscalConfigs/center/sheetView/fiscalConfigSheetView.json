@@ -42,7 +42,7 @@
   "yes": "Po",
   "no": "Jo",
   "fiscalEnvironment": {
-    "test": "Test",
+    "test": "Testim",
     "production": "Prodhim"
   },
   "fiscalTcrType": {

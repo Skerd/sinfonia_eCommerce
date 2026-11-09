@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
-  "title": "Categories",
+  "title": "Kategorien",
   "description": "Organisieren Sie den Marktplatz-Katalog in einer Eltern-/Kind-Kategoriestruktur für Inserate und Auftragsanfragen.",
   "help": {
     "ariaLabel": "Über Inserat-Kategorien",
@@ -31,7 +31,7 @@
     "name": "Name",
     "slug": "Slug",
     "order": "Auftrag",
-    "parentListingCategory": "Parent kategorie",
+    "parentListingCategory": "Übergeordnete Kategorie",
     "createdBy": "Erstellt von",
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von"

@@ -1,77 +1,77 @@
 {
   "path": "src/modules/eCommerce/components/custom/orders/orderActionConfirmAction.tsx",
   "accept": {
-    "title": "Accept diese auftrag?",
-    "description": "Die auftrag will werden marked accepted und funds will werden gehalten in escrow.",
-    "confirm": "Accept auftrag",
+    "title": "Diesen Auftrag annehmen?",
+    "description": "Der Auftrag wird als angenommen markiert und das Geld treuhänderisch gehalten.",
+    "confirm": "Auftrag annehmen",
     "axios": {
       "start": {
-        "title": "Accepting auftrag",
+        "title": "Auftrag wird angenommen",
         "time": 3000
       },
       "success": {
-        "title": "Auftrag accepted erfolgreich",
+        "title": "Auftrag erfolgreich angenommen",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht accept auftrag, bitte versuchen erneut",
+        "title": "Auftrag konnte nicht angenommen werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "start": {
-    "title": "Start diese auftrag?",
-    "description": "Die auftrag will move bis in fortschritt. Only die provider can start ein accepted auftrag.",
-    "confirm": "Start auftrag",
+    "title": "Diesen Auftrag starten?",
+    "description": "Der Auftrag wechselt zu «In Bearbeitung». Nur der Anbieter kann einen angenommenen Auftrag starten.",
+    "confirm": "Auftrag starten",
     "axios": {
       "start": {
-        "title": "Starting auftrag",
+        "title": "Auftrag wird gestartet",
         "time": 3000
       },
       "success": {
-        "title": "Auftrag started erfolgreich",
+        "title": "Auftrag erfolgreich gestartet",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht start auftrag, bitte versuchen erneut",
+        "title": "Auftrag konnte nicht gestartet werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "cancelOrder": {
-    "title": "Abbrechen diese auftrag?",
-    "description": "Die auftrag will werden marked annulliert. Escrow funds may werden refunded if already gehalten.",
-    "confirm": "Abbrechen auftrag",
+    "title": "Diesen Auftrag stornieren?",
+    "description": "Der Auftrag wird als storniert markiert. Bereits treuhänderisch gehaltenes Geld kann erstattet werden.",
+    "confirm": "Auftrag stornieren",
     "axios": {
       "start": {
-        "title": "Cancelling auftrag",
+        "title": "Auftrag wird storniert",
         "time": 3000
       },
       "success": {
-        "title": "Auftrag annulliert erfolgreich",
+        "title": "Auftrag erfolgreich storniert",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht abbrechen auftrag, bitte versuchen erneut",
+        "title": "Auftrag konnte nicht storniert werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "acceptDelivery": {
-    "title": "Accept delivery und vollständig auftrag?",
-    "description": "Die provider's delivery will werden accepted, escrow funds released, und die auftrag marked abgeschlossen.",
-    "confirm": "Vollständig auftrag",
+    "title": "Lieferung annehmen und Auftrag abschliessen?",
+    "description": "Die Lieferung des Anbieters wird angenommen, das Treuhandgeld freigegeben und der Auftrag als abgeschlossen markiert.",
+    "confirm": "Auftrag abschliessen",
     "axios": {
       "start": {
-        "title": "Completing auftrag",
+        "title": "Auftrag wird abgeschlossen",
         "time": 3000
       },
       "success": {
-        "title": "Auftrag abgeschlossen erfolgreich",
+        "title": "Auftrag erfolgreich abgeschlossen",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht vollständig auftrag, bitte versuchen erneut",
+        "title": "Auftrag konnte nicht abgeschlossen werden, bitte erneut versuchen",
         "time": 3000
       }
     }

@@ -39,6 +39,6 @@
   "tax": "Tatimi",
   "giftCard": "Kartë dhuratë",
   "total": "Totali",
-  "siblingsNotice": "Your payment also created {count} more order(s) from other sellers. View all orders in your account.",
-  "viewAllOrders": "View all orders"
+  "siblingsNotice": "Pagesa juaj krijoi edhe {count} porosi të tjera nga shitës të tjerë. Shikoni të gjitha porositë në llogarinë tuaj.",
+  "viewAllOrders": "Shiko të gjitha porositë"
 }

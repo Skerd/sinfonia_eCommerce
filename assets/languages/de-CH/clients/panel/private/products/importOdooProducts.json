@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/products/importOdooProducts.tsx",
   "title": "Produkte aus Odoo importieren",
-  "description": "Den POS-Katalog in die Ecommerce-Produkte dieser Firma übernehmen. Ein erneuter Lauf aktualisiert dieselben Datensätze.",
-  "durationWarning": "Ein großer Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
+  "description": "Den POS-Katalog in die eCommerce-Produkte dieser Firma übernehmen. Ein erneuter Lauf aktualisiert dieselben Datensätze.",
+  "durationWarning": "Ein grosser Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
   "stockOverwriteWarning": "Ein erneuter Lauf ersetzt die Lagerbestandmenge durch die Menge aus Odoo. Verkäufe seit dem letzten Import werden überschrieben.",
   "submit": "Importieren",
   "backToProducts": "Zurück zu Produkten",

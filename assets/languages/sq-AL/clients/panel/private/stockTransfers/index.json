@@ -43,7 +43,7 @@
   "fields": {
     "!enums": {
       "status": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "done": "Përfunduar",
         "cancelled": "Anuluar"
       }

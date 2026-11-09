@@ -1,71 +1,71 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/createShippingZone.tsx",
-  "title": "Versand zone erstellen",
+  "title": "Versandzone erstellen",
   "form": {
     "generalSectionTitle": "Allgemein",
-    "geographySectionTitle": "Geography",
+    "geographySectionTitle": "Geografie",
     "nameLabel": "Name",
     "namePlaceholder": "Inland",
-    "countriesLabel": "Countries",
-    "statesLabel": "States / regions",
+    "countriesLabel": "Länder",
+    "statesLabel": "Kantone / Regionen",
     "selectCountry": "Land auswählen",
     "selectState": "Kanton auswählen",
-    "removeCountry": "Entfernen land",
+    "removeCountry": "Land entfernen",
     "removeState": "Entfernen kanton",
-    "postalCodePatternsLabel": "Post code patterns",
+    "postalCodePatternsLabel": "Postleitzahl-Muster",
     "postalCodePatternsPlaceholder": "E.g. 1000* oder AL-*",
-    "removePostalCodePattern": "Entfernen pattern",
-    "ratesSectionTitle": "Versand rates",
+    "removePostalCodePattern": "Muster entfernen",
+    "ratesSectionTitle": "Versandtarife",
     "rateAddRow": "Satz hinzufügen",
     "rateRemoveRow": "Entfernen satz",
-    "rateRowTitle": "Untitled satz",
+    "rateRowTitle": "Unbenannter Tarif",
     "rateNameLabel": "Satz name",
     "rateNamePlaceholder": "Standardversand",
-    "rateTypeLabel": "Satz typ",
+    "rateTypeLabel": "Tarifart",
     "rateTypePlaceholder": "Tarifart auswählen",
     "ratePriceLabel": "Preis",
     "ratePricePlaceholder": "0.00",
-    "carrierLabel": "Carrier",
+    "carrierLabel": "Transporteur",
     "carrierPlaceholder": "Name des Transporteurs",
-    "estimatedDeliveryDaysLabel": "Estimated delivery tage",
+    "estimatedDeliveryDaysLabel": "Voraussichtliche Liefertage",
     "estimatedDeliveryDaysPlaceholder": "3",
-    "rateConditionsSectionTitle": "Conditions",
-    "minWeightLabel": "Min weight",
+    "rateConditionsSectionTitle": "Bedingungen",
+    "minWeightLabel": "Min. Gewicht",
     "minWeightPlaceholder": "0",
-    "maxWeightLabel": "Max weight",
+    "maxWeightLabel": "Max. Gewicht",
     "maxWeightPlaceholder": "0",
-    "minOrderAmountLabel": "Min auftrag betrag",
+    "minOrderAmountLabel": "Min. Bestellwert",
     "minOrderAmountPlaceholder": "0",
-    "maxOrderAmountLabel": "Max auftrag betrag",
+    "maxOrderAmountLabel": "Max. Bestellwert",
     "maxOrderAmountPlaceholder": "0",
     "shippingRateType": {
-      "flat": "Flat",
-      "weight": "Weight-based",
-      "price": "Auftrag betrag",
+      "flat": "Pauschal",
+      "weight": "Gewichtsbasiert",
+      "price": "Bestellwert",
       "quantity": "Menge",
-      "free": "Free"
+      "free": "Kostenlos"
     }
   },
   "axios": {
     "start": {
-      "title": "Versand zone wird erstellt",
+      "title": "Versandzone wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Versand zone erstellt",
+      "title": "Versandzone erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen versand zone",
+      "title": "Versandzone konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Versand zone erstellen",
-    "description": "Define destination geography und die versand rates offered am kasse."
+    "title": "Versandzone erstellen",
+    "description": "Definieren Sie die Zielgebiete und die im Checkout angebotenen Versandtarife."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Versand zone erstellen"
+    "submit": "Versandzone erstellen"
   }
 }

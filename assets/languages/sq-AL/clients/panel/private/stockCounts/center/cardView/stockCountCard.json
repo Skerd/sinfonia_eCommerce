@@ -5,7 +5,7 @@
   "status": "Statusi",
   "lines": "Rreshtat",
   "stockCountStatus": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "applied": "Aplikuar",
     "cancelled": "Anuluar"
   }

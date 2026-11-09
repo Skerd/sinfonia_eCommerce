@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx",
-  "title": "Deaktivieren steuer zone",
-  "description": "Diese steuer zone will keine longer werden used für steuer berechnung until it ist activated erneut.",
+  "title": "Steuerzone deaktivieren",
+  "description": "Diese Steuerzone wird nicht mehr zur Steuerberechnung verwendet, bis sie wieder aktiviert wird.",
   "cancel": "Abbrechen",
   "confirm": "Deaktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Deactivating steuer zone…",
+      "title": "Steuerzone wird deaktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Steuer zone deactivated",
+      "title": "Steuerzone deaktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht deaktivieren steuer zone",
+      "title": "Steuerzone konnte nicht deaktiviert werden",
       "time": 3000
     }
   }

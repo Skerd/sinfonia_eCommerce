@@ -1,14 +1,14 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/editWarehouse.tsx",
-  "title": "Warehouse bearbeiten",
-  "errorTitle": "Warehouse konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese warehouse. Versuchen erneut.",
+  "title": "Lager bearbeiten",
+  "errorTitle": "Lager konnte nicht geladen werden",
+  "errorDescription": "Das Lager konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Warehouse name",
+    "namePlaceholder": "Lagername",
     "codeLabel": "Code",
-    "codePlaceholder": "Warehouse code",
+    "codePlaceholder": "Lagercode",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
@@ -17,7 +17,7 @@
     "cityLabel": "Ort",
     "cityPlaceholder": "Ort auswählen",
     "streetLabel": "Strasse",
-    "streetPlaceholder": "Strasse adresse",
+    "streetPlaceholder": "Strasse und Hausnummer",
     "postalCodeLabel": "Postleitzahl",
     "postalCodePlaceholder": "Postleitzahl",
     "latitudeLabel": "Breitengrad",
@@ -27,21 +27,21 @@
   },
   "axios": {
     "start": {
-      "title": "Saving warehouse",
+      "title": "Lager wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Warehouse aktualisiert",
+      "title": "Lager aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren warehouse",
+      "title": "Lager konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Warehouse bearbeiten",
-    "description": "Aktualisieren die name und adresse."
+    "title": "Lager bearbeiten",
+    "description": "Name und Adresse aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,14 +1,14 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/center/cardView/posSessionCard.tsx",
-  "failedTitle": "POS session konnten nicht geladen werden",
+  "failedTitle": "POS-Sitzung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "state": "Kanton",
   "orderCount": "Bestellungen",
-  "totalSales": "Total sales",
+  "totalSales": "Total Verkäufe",
   "sessionState": {
     "opening_control": "Eröffnung",
-    "opened": "Opened",
+    "opened": "Geöffnet",
     "closing_control": "Wird geschlossen",
     "closed": "Geschlossen"
   }

@@ -4,6 +4,6 @@
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "slug": "Slug",
-  "parentCategory": "Parent kategorie",
+  "parentCategory": "Übergeordnete Kategorie",
   "order": "Auftrag"
 }

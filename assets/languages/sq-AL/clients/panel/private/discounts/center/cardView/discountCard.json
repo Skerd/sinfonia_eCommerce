@@ -1,17 +1,17 @@
 {
-  "active": "Active",
+  "active": "Aktive",
   "code": "Code",
   "discountType": {
-    "buy_x_get_y": "Buy X Get Y",
-    "fixed": "Fixed",
-    "free_shipping": "Free Shipping",
-    "percentage": "Percentage"
+    "buy_x_get_y": "Bli X merr Y",
+    "fixed": "Shumë fikse",
+    "free_shipping": "Transport falas",
+    "percentage": "Përqindje"
   },
-  "inactive": "Inactive",
+  "inactive": "Joaktive",
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/cardView/discountCard.tsx",
   "failedTitle": "Nuk u ngarkua zbritja",
   "failedDescription": "Prekni për të provuar përsëri.",
-  "title": "Title",
-  "type": "Type",
-  "value": "Value"
+  "title": "Titulli",
+  "type": "Lloji",
+  "value": "Vlera"
 }

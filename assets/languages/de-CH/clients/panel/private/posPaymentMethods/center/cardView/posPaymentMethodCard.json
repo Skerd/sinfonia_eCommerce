@@ -4,7 +4,7 @@
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
   "type": "Typ",
-  "sequence": "Sequence",
+  "sequence": "Reihenfolge",
   "active": "Aktiv",
   "inactive": "Inaktiv",
   "paymentType": {

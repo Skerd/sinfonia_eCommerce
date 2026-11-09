@@ -12,6 +12,6 @@
   "street": "Strasse",
   "city": "Ort",
   "phone": "Telefon",
-  "defaultAddress": "Default",
-  "notDefault": "Nicht default"
+  "defaultAddress": "Standard",
+  "notDefault": "Nicht Standard"
 }

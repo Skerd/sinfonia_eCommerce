@@ -1,14 +1,14 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/cardView/fulfillmentCard.tsx",
-  "failedTitle": "Fulfillment konnten nicht geladen werden",
+  "failedTitle": "Lieferung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "status": "Status",
-  "carrier": "Carrier",
-  "trackingNumber": "Tracking nummer",
+  "carrier": "Transporteur",
+  "trackingNumber": "Sendungsnummer",
   "fulfillmentStatus": {
     "pending": "Ausstehend",
-    "shipped": "Shipped",
-    "delivered": "Delivered",
+    "shipped": "Versandt",
+    "delivered": "Zugestellt",
     "failed": "Fehlgeschlagen"
   }
 }

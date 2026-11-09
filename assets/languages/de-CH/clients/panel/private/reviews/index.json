@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/reviews/index.tsx",
   "title": "Bewertungen",
-  "description": "Ratings und bewertungen left von customers. anzeigen",
+  "description": "Von Kunden abgegebene Bewertungen anzeigen.",
   "help": {
     "ariaLabel": "Über Bewertungen",
     "title": "Über Bewertungen",
@@ -35,7 +35,7 @@
   "fields": {
     "rating": "Bewertung",
     "comment": "Kommentar",
-    "reviewer": "Reviewer",
+    "reviewer": "Bewerter/in",
     "order": "Auftrag",
     "listing": "Inserat",
     "listingId": "Inserat",

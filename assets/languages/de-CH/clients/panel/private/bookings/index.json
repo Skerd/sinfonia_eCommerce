@@ -29,7 +29,7 @@
   "fields": {
     "order": "Auftrag",
     "provider": "Anbieter",
-    "startAt": "Start",
+    "startAt": "Beginn",
     "endAt": "Ende",
     "timezone": "Zeitzone",
     "status": "Status",
@@ -39,7 +39,7 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "status": {
-    "scheduled": "Scheduled",
+    "scheduled": "Geplant",
     "in_progress": "In Bearbeitung",
     "completed": "Abgeschlossen",
     "cancelled": "Storniert"

@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/deactivateCmsBlockDialog.tsx",
-  "title": "Deaktivieren CMS block",
-  "description": "Diese block will werden hidden von die storefront until it ist activated erneut.",
+  "title": "CMS-Block deaktivieren",
+  "description": "Dieser Block wird im Shop ausgeblendet, bis er wieder aktiviert wird.",
   "cancel": "Abbrechen",
   "confirm": "Deaktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Deactivating CMS block…",
+      "title": "CMS-Block wird deaktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "CMS block deactivated",
+      "title": "CMS-Block deaktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht deaktivieren CMS block",
+      "title": "CMS-Block konnte nicht deaktiviert werden",
       "time": 3000
     }
   }

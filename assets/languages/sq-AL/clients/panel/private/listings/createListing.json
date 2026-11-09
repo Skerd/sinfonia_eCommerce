@@ -41,7 +41,7 @@
     "listingCreateTitle": "Krijo listim",
     "listingStatus": {
       "active": "Aktiv",
-      "draft": "Draft",
+      "draft": "Skicë",
       "inactive": "Joaktiv"
     },
     "mainImageLabel": "Imazhi kryesor",
@@ -85,5 +85,5 @@
     "title": "Krijo listim"
   },
   "path": "src/modules/eCommerce/clients/panel/private/listings/createListing.tsx",
-  "title": "Title"
+  "title": "Titulli"
 }

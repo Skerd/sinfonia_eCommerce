@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productVariants/index.tsx",
-  "title": "Produkt variants",
-  "description": "SKU-level variants von produkte. verwalten",
+  "title": "Produktvarianten",
+  "description": "Produktvarianten auf SKU-Ebene verwalten.",
   "help": {
     "ariaLabel": "Über Produktvarianten",
     "title": "Über Produktvarianten",
@@ -39,30 +39,30 @@
       }
     ]
   },
-  "createProductVariant": "Variant erstellen",
+  "createProductVariant": "Variante erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "product": "Produkt",
     "sku": "SKU",
-    "barcode": "Barcode",
+    "barcode": "Strichcode",
     "attributeCombination": {
-      "attribute": "Attribute",
+      "attribute": "Attribut",
       "value": "Wert"
     },
     "price": "Preis",
-    "compareAtPrice": "Compare-am preis",
-    "costPrice": "Kosten preis",
+    "compareAtPrice": "Vergleichspreis",
+    "costPrice": "Einstandspreis",
     "currency": "Währung",
-    "weight": "Weight",
+    "weight": "Gewicht",
     "dimensions": {
-      "length": "Length",
+      "length": "Länge",
       "width": "Breite",
       "height": "Höhe"
     },
-    "mainImage": "Haupt bild",
+    "mainImage": "Hauptbild",
     "order": "Auftrag",
     "status": "Status",
-    "trackInventory": "Track inventory",
+    "trackInventory": "Lagerbestand verfolgen",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

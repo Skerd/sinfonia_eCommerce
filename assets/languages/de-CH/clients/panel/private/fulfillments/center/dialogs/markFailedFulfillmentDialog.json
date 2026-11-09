@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markFailedFulfillmentDialog.tsx",
-  "title": "Mark fulfillment as fehlgeschlagen",
-  "description": "Mark diese fulfillment as fehlgeschlagen. Optionally explain why.",
+  "title": "Lieferung als fehlgeschlagen markieren",
+  "description": "Markieren Sie diese Lieferung als fehlgeschlagen. Optional mit Begründung.",
   "notesLabel": "Notizen",
-  "notesPlaceholder": "Optional grund für failure",
+  "notesPlaceholder": "Optionaler Grund für das Fehlschlagen",
   "cancel": "Abbrechen",
-  "confirm": "Mark as fehlgeschlagen",
-  "busy": "Working…",
+  "confirm": "Als fehlgeschlagen markieren",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Marking as fehlgeschlagen…",
+      "title": "Wird als fehlgeschlagen markiert…",
       "time": 3000
     },
     "success": {
-      "title": "Fulfillment marked as fehlgeschlagen",
+      "title": "Lieferung als fehlgeschlagen markiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht mark as fehlgeschlagen",
+      "title": "Konnte nicht als fehlgeschlagen markiert werden",
       "time": 3000
     }
   }

@@ -1,32 +1,32 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/editReturnRequest.tsx",
-  "title": "Return antrag bearbeiten",
-  "errorTitle": "Return antrag konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese return antrag. Versuchen erneut.",
+  "title": "Rücksendung bearbeiten",
+  "errorTitle": "Rücksendung konnte nicht geladen werden",
+  "errorDescription": "Die Rücksendung konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "typeLabel": "Typ",
     "statusLabel": "Status",
-    "refundAmountLabel": "Rückerstattung betrag",
+    "refundAmountLabel": "Rückerstattungsbetrag",
     "refundAmountPlaceholder": "0",
-    "customerNoteLabel": "Customer note",
-    "customerNotePlaceholder": "Optional note von die customer",
-    "adminNoteLabel": "Admin note",
-    "adminNotePlaceholder": "Optional internal note",
+    "customerNoteLabel": "Kundennotiz",
+    "customerNotePlaceholder": "Optionale Notiz des Kunden",
+    "adminNoteLabel": "Admin-Notiz",
+    "adminNotePlaceholder": "Optionale interne Notiz",
     "itemsSectionTitle": "Positionen",
     "itemAddRow": "Position hinzufügen",
-    "itemRemoveRow": "Entfernen position",
+    "itemRemoveRow": "Position entfernen",
     "itemRowTitle": "Position",
     "orderItemIdLabel": "Bestellposition",
     "orderItemIdPlaceholder": "Bestellposition wählen",
     "quantityLabel": "Menge",
     "reasonLabel": "Grund",
-    "reasonPlaceholder": "Why ist diese position being returned?",
+    "reasonPlaceholder": "Warum wird dieser Artikel zurückgegeben?",
     "returnType": {
-      "return": "Return",
-      "exchange": "Exchange",
+      "return": "Rückgabe",
+      "exchange": "Umtausch",
       "refund": "Rückerstattung"
     },
     "returnStatus": {
@@ -39,21 +39,21 @@
   },
   "axios": {
     "start": {
-      "title": "Saving return antrag",
+      "title": "Rücksendung wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Return antrag aktualisiert",
+      "title": "Rücksendung aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren return antrag",
+      "title": "Rücksendung konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Return antrag bearbeiten",
-    "description": "Aktualisieren return typ, status, notizen, rückerstattung betrag, und positionen."
+    "title": "Rücksendung bearbeiten",
+    "description": "Rückgabeart, Status, Notizen, Rückerstattungsbetrag und Positionen aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

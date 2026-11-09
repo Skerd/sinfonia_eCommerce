@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/deactivateDiscountDialog.tsx",
-  "title": "Deaktivieren rabatt",
-  "description": "Diese rabatt will keine longer anwenden until it ist activated erneut.",
+  "title": "Rabatt deaktivieren",
+  "description": "Dieser Rabatt gilt nicht mehr, bis er wieder aktiviert wird.",
   "cancel": "Abbrechen",
   "confirm": "Deaktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Deactivating rabatt…",
+      "title": "Rabatt wird deaktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Rabatt deactivated",
+      "title": "Rabatt deaktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht deaktivieren rabatt",
+      "title": "Rabatt konnte nicht deaktiviert werden",
       "time": 3000
     }
   }

@@ -2,11 +2,11 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Konnte nicht submit prüfung"
+      "title": "Bewertung konnte nicht gesendet werden"
     },
     "start": {
       "time": 3000,
-      "title": "Submitting prüfung"
+      "title": "Bewertung wird gesendet"
     },
     "success": {
       "time": 3000,
@@ -15,7 +15,7 @@
   },
   "form": {
     "commentLabel": "Kommentar",
-    "commentPlaceholder": "Share ihr experience...",
+    "commentPlaceholder": "Teilen Sie Ihre Erfahrung...",
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "ratingLabel": "Bewertung",
@@ -23,10 +23,10 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Submit prüfung"
+    "submit": "Bewertung senden"
   },
   "formHeader": {
-    "description": "Submit a bewertung und feedback für a abgeschlossen auftrag.",
+    "description": "Geben Sie eine Bewertung und Feedback zu einem abgeschlossenen Auftrag ab.",
     "title": "Bewertung erstellen"
   },
   "path": "src/modules/eCommerce/clients/panel/private/reviews/createReview.tsx",

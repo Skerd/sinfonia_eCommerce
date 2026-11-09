@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/createWarehouse.tsx",
-  "title": "Warehouse erstellen",
+  "title": "Lager erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Warehouse name",
+    "namePlaceholder": "Lagername",
     "codeLabel": "Code",
-    "codePlaceholder": "Warehouse code",
+    "codePlaceholder": "Lagercode",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
@@ -14,7 +14,7 @@
     "cityLabel": "Ort",
     "cityPlaceholder": "Ort auswählen",
     "streetLabel": "Strasse",
-    "streetPlaceholder": "Strasse adresse",
+    "streetPlaceholder": "Strasse und Hausnummer",
     "postalCodeLabel": "Postleitzahl",
     "postalCodePlaceholder": "Postleitzahl",
     "latitudeLabel": "Breitengrad",
@@ -24,24 +24,24 @@
   },
   "axios": {
     "start": {
-      "title": "Warehouse wird erstellt",
+      "title": "Lager wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Warehouse erstellt",
+      "title": "Lager erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen warehouse",
+      "title": "Lager konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Warehouse erstellen",
-    "description": "A stock standort mit adresse und map pin. hinzufügen"
+    "title": "Lager erstellen",
+    "description": "Fügen Sie einen Lagerstandort mit Adresse und Kartenmarkierung hinzu."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Warehouse erstellen"
+    "submit": "Lager erstellen"
   }
 }

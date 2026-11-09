@@ -2,11 +2,11 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Konnte nicht submit offerte"
+      "title": "Offerte konnte nicht eingereicht werden"
     },
     "start": {
       "time": 3000,
-      "title": "Submitting offerte"
+      "title": "Offerte wird eingereicht"
     },
     "success": {
       "time": 3000,
@@ -14,23 +14,23 @@
     }
   },
   "form": {
-    "amountLabel": "Offerte betrag",
+    "amountLabel": "Offertbetrag",
     "amountPlaceholder": "0.00",
     "currencyIdLabel": "Währung",
     "currencyIdPlaceholder": "Währung auswählen",
-    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysLabel": "Liefertage",
     "deliveryDaysPlaceholder": "1",
     "proposalLabel": "Angebot",
-    "proposalPlaceholder": "Describe ihr approach...",
-    "taskRequestIdLabel": "Aufgabe antrag",
-    "taskRequestIdPlaceholder": "Aufgabe antrag auswählen"
+    "proposalPlaceholder": "Beschreiben Sie Ihr Vorgehen...",
+    "taskRequestIdLabel": "Ausschreibung",
+    "taskRequestIdPlaceholder": "Ausschreibung auswählen"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Submit offerte"
+    "submit": "Offerte einreichen"
   },
   "formHeader": {
-    "description": "Submit a offerte für a aufgabe antrag.",
+    "description": "Reichen Sie eine Offerte für eine Ausschreibung ein.",
     "title": "Offerte erstellen"
   },
   "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",

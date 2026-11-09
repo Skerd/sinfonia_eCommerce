@@ -3,12 +3,12 @@
   "failedTitle": "POS manager konnten nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
-  "warehouses": "Warehouses",
+  "warehouses": "Lager",
   "fiscalConfig": "Fiskalkonfiguration",
-  "paymentMethods": "Zahlung methods",
+  "paymentMethods": "Zahlungsarten",
   "active": "Aktiv",
   "inactive": "Inaktiv",
-  "paused": "Paused",
-  "companyPaused": "Firma paused",
+  "paused": "Pausiert",
+  "companyPaused": "Firma pausiert",
   "openPos": "Offen POS"
 }

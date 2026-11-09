@@ -37,7 +37,7 @@
   "createProviderProfile": "Crea profilo fornitore",
   "fields": {
     "provider": "Fornitore",
-    "bio": "Bio",
+    "bio": "Biografia",
     "skills": "Competenze",
     "rating": "Valutazione",
     "createdAt": "Creato",

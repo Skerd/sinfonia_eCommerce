@@ -2,39 +2,39 @@
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx",
   "title": "Zahlungsart bearbeiten",
   "errorTitle": "Zahlungsart konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese zahlung methode. Versuchen erneut.",
+  "errorDescription": "Die Zahlungsart konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Zahlung methode name",
+    "namePlaceholder": "Name der Zahlungsart",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
-    "sequenceLabel": "Sequence",
+    "sequenceLabel": "Reihenfolge",
     "sequencePlaceholder": "0",
-    "cashQuickAmountsLabel": "Cash quick amounts",
+    "cashQuickAmountsLabel": "Bargeld-Schnellbeträge",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
-    "terminalSectionTitle": "Bank POS terminal",
-    "terminalEnabledLabel": "Connect bank POS terminal",
-    "terminalForcesCardHint": "Connecting a bank POS terminal sets die typ bis Karte. Disconnecting sets it bis Cash.",
-    "terminalProviderLabel": "Terminal provider",
+    "terminalSectionTitle": "Bank-Kartenterminal",
+    "terminalEnabledLabel": "Bank-Kartenterminal verbinden",
+    "terminalForcesCardHint": "Das Verbinden eines Bank-Kartenterminals setzt den Typ auf Karte. Das Trennen setzt ihn auf Bar.",
+    "terminalProviderLabel": "Terminal-Anbieter",
     "terminalProviderPlaceholder": "Anbieter auswählen",
-    "terminalProtocolLabel": "Protocol",
+    "terminalProtocolLabel": "Protokoll",
     "terminalProtocolPlaceholder": "Protokoll auswählen",
-    "terminalHostLabel": "Terminal host / IP",
+    "terminalHostLabel": "Terminal-Host / IP",
     "terminalHostPlaceholder": "192.168.1.50",
-    "terminalPortLabel": "Terminal port",
+    "terminalPortLabel": "Terminal-Port",
     "terminalPortPlaceholder": "8080",
-    "terminalIdLabel": "Terminal ID",
+    "terminalIdLabel": "Terminal-ID",
     "terminalIdPlaceholder": "TID / POIID",
-    "terminalPathLabel": "Terminal path",
+    "terminalPathLabel": "Terminal-Pfad",
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Bar",
       "card": "Karte"
     },
     "terminalProvider": {
-      "manual": "Manuell (external terminal)",
-      "local_http": "Local HTTP bridge"
+      "manual": "Manuell (externes Terminal)",
+      "local_http": "Lokale HTTP-Brücke"
     },
     "terminalProtocol": {
       "http": "HTTP",
@@ -43,21 +43,21 @@
   },
   "axios": {
     "start": {
-      "title": "Saving zahlung methode",
+      "title": "Zahlungsart wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Zahlung methode aktualisiert",
+      "title": "Zahlungsart aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren zahlung methode",
+      "title": "Zahlungsart konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Zahlungsart bearbeiten",
-    "description": "Aktualisieren till zahlung typ, cash chips, und bank terminal connection."
+    "description": "Zahlungstyp der Kasse, Bargeld-Schnellbeträge und Verbindung zum Bankterminal aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

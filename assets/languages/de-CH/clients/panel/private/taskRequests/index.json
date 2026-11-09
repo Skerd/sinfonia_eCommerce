@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
-  "title": "Aufgabe requests",
-  "description": "Post und verwalten käufer requests für quotes, custom arbeit, oder procurement.",
+  "title": "Ausschreibungen",
+  "description": "Käuferanfragen für Offerten, Auftragsarbeiten oder Beschaffung veröffentlichen und verwalten.",
   "help": {
     "ariaLabel": "Über Auftragsanfragen",
     "title": "Über Auftragsanfragen",
@@ -42,20 +42,20 @@
       }
     ]
   },
-  "createTaskRequest": "Aufgabe antrag erstellen",
+  "createTaskRequest": "Ausschreibung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "title": "Bezeichnung",
     "description": "Beschreibung",
-    "requester": "Requester",
+    "requester": "Auftraggeber",
     "category": "Kategorie",
-    "budgetMin": "Budget (min)",
-    "budgetMax": "Budget (max)",
+    "budgetMin": "Budget (min.)",
+    "budgetMax": "Budget (max.)",
     "currency": "Währung",
     "address": "Adresse",
-    "expiresAt": "Expires",
+    "expiresAt": "Läuft ab",
     "status": "Status",
-    "mainImage": "Haupt bild",
+    "mainImage": "Hauptbild",
     "imageGallery": "Bild galerie",
     "videoGallery": "Video galerie",
     "company": "Firma",

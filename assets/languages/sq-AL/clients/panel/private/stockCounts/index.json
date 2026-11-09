@@ -44,7 +44,7 @@
   "fields": {
     "!enums": {
       "status": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "applied": "Aplikuar",
         "cancelled": "Anuluar"
       }

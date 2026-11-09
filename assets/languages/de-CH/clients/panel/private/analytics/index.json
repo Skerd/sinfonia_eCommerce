@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/analytics/index.tsx",
-  "title": "Analytics",
+  "title": "Analysen",
   "description": "Umsatz, Bestellungen, Lager und Warenkorb-Aktivität verfolgen.",
   "help": {
     "ariaLabel": "Über Analysen",

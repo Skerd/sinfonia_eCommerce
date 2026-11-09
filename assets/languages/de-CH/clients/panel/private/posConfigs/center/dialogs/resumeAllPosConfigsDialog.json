@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
-  "title": "Resume alle POS tills?",
+  "title": "Alle POS-Kassen fortsetzen?",
   "description": "Hebt nur die firmenweite Sperre auf. Einzeln pausierte Kassen bleiben pausiert. Kassierer an entsperrten Kassen müssen eine neue Sitzung öffnen, um wieder zu verkaufen.",
   "cancel": "Abbrechen",
-  "confirm": "Resume alle",
-  "busy": "Working…",
+  "confirm": "Alle fortsetzen",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Resuming alle POS tills…",
+      "title": "Alle POS-Kassen werden fortgesetzt…",
       "time": 3000
     },
     "success": {
-      "title": "Alle POS tills resumed",
+      "title": "Alle POS-Kassen fortgesetzt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht resume alle POS tills",
+      "title": "POS-Kassen konnten nicht fortgesetzt werden",
       "time": 3000
     }
   }

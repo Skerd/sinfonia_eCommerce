@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posSessions/index.tsx",
   "title": "POS Sitzungen",
-  "description": "Till sitzungen opened und geschlossen von die Point von Verkauf.",
+  "description": "Am Point of Sale geöffnete und geschlossene Kassensitzungen.",
   "help": {
     "ariaLabel": "Über POS-Sitzungen",
     "title": "Über POS-Sitzungen",
@@ -50,34 +50,34 @@
     "!enums": {
       "state": {
         "opening_control": "Eröffnung",
-        "opened": "Opened",
+        "opened": "Geöffnet",
         "closing_control": "Wird geschlossen",
         "closed": "Geschlossen"
       },
       "cashMoves": {
         "type": {
           "type": {
-            "in": "Cash in",
-            "out": "Cash out"
+            "in": "Bareinlage",
+            "out": "Barentnahme"
           }
         }
       }
     },
     "name": "Name",
-    "config": "POS config",
+    "config": "POS-Konfiguration",
     "currency": "Währung",
     "state": "Kanton",
-    "openedBy": "Opened von",
+    "openedBy": "Geöffnet von",
     "closedBy": "Geschlossen von",
-    "openedAt": "Opened am",
+    "openedAt": "Geöffnet am",
     "closedAt": "Geschlossen am",
     "openingBalance": "Eröffnung saldo",
-    "closingBalance": "Closing saldo",
-    "expectedCash": "Erwartet cash",
-    "cashRegisterBalance": "Cash register",
-    "cashMoves": "Cash moves",
+    "closingBalance": "Schlusssaldo",
+    "expectedCash": "Soll-Bargeld",
+    "cashRegisterBalance": "Kasse",
+    "cashMoves": "Bargeldbewegungen",
     "orderCount": "Bestellungen",
-    "totalSales": "Total sales",
+    "totalSales": "Total Verkäufe",
     "totalCash": "Bar",
     "totalCard": "Karte",
     "notes": "Notizen",

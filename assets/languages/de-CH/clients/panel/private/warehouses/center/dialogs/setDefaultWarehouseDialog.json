@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/center/dialogs/setDefaultWarehouseDialog.tsx",
-  "title": "Make default warehouse",
-  "description": "Diese will make diese warehouse die default, und die current default one will werden reassigned.",
+  "title": "Als Standardlager festlegen",
+  "description": "Dieses Lager wird zum Standard; das bisherige Standardlager wird neu zugewiesen.",
   "cancel": "Abbrechen",
-  "confirm": "Make default",
-  "busy": "Working…",
+  "confirm": "Als Standard festlegen",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Setting default warehouse…",
+      "title": "Standardlager wird festgelegt…",
       "time": 3000
     },
     "success": {
-      "title": "Default warehouse aktualisiert",
+      "title": "Standardlager aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht set default warehouse",
+      "title": "Standardlager konnte nicht festgelegt werden",
       "time": 3000
     }
   }

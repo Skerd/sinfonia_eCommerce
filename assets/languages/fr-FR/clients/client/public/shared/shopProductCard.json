@@ -4,5 +4,5 @@
   "noImage": "Pas d'image",
   "discount": "−{percent} %",
   "rating": "Noté {average} sur 5 ({count} avis)",
-  "soldBy": "Sold by {name}"
+  "soldBy": "Vendu par {name}"
 }

@@ -1,25 +1,25 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx",
-  "title": "Genehmigen return antrag",
-  "description": "Genehmigen diese ausstehend return antrag. Sie can set a rückerstattung betrag und ein admin note.",
-  "refundAmountLabel": "Rückerstattung betrag",
+  "title": "Rücksendung genehmigen",
+  "description": "Genehmigen Sie diese ausstehende Rücksendung. Sie können einen Rückerstattungsbetrag und eine Admin-Notiz erfassen.",
+  "refundAmountLabel": "Rückerstattungsbetrag",
   "refundAmountPlaceholder": "0",
-  "notesLabel": "Admin note",
-  "notesPlaceholder": "Optional note für diese freigabe",
+  "notesLabel": "Admin-Notiz",
+  "notesPlaceholder": "Optionale Notiz zu dieser Genehmigung",
   "cancel": "Abbrechen",
   "confirm": "Genehmigen",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Approving return antrag…",
+      "title": "Rücksendung wird genehmigt…",
       "time": 3000
     },
     "success": {
-      "title": "Return antrag genehmigt",
+      "title": "Rücksendung genehmigt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht genehmigen return antrag",
+      "title": "Rücksendung konnte nicht genehmigt werden",
       "time": 3000
     }
   }

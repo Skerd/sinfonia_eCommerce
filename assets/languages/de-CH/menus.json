@@ -2,22 +2,22 @@
   "eCommerce": {
     "title": "E-Commerce",
     "pos": {
-      "title": "Point von Verkauf"
+      "title": "Point of Sale"
     },
     "pospaymentmethods": {
-      "title": "POS zahlung methods"
+      "title": "POS-Zahlungsarten"
     },
     "posconfigs": {
-      "title": "POS configs"
+      "title": "POS-Konfigurationen"
     },
     "possessions": {
-      "title": "POS sitzungen"
+      "title": "POS-Sitzungen"
     },
     "posorders": {
-      "title": "POS aufträge"
+      "title": "POS-Bestellungen"
     },
     "fiscalconfigs": {
-      "title": "Fiscal / E-Rechnung"
+      "title": "Fiskal / E-Rechnung"
     },
     "systemMap": {
       "title": "Systemkarte"
@@ -47,16 +47,16 @@
       "title": "Aus Odoo importieren"
     },
     "collections": {
-      "title": "Collections"
+      "title": "Kollektionen"
     },
     "productorders": {
-      "title": "Produkt aufträge"
+      "title": "Produktbestellungen"
     },
     "inventories": {
-      "title": "Inventory"
+      "title": "Lagerbestand"
     },
     "inventorymovements": {
-      "title": "Stock movements"
+      "title": "Lagerbewegungen"
     },
     "stocktransfers": {
       "title": "Umlagerungen"
@@ -65,40 +65,40 @@
       "title": "Inventuren"
     },
     "warehouses": {
-      "title": "Warehouses"
+      "title": "Lager"
     },
     "productattributes": {
-      "title": "Produkt attributes"
+      "title": "Produktattribute"
     },
     "discounts": {
-      "title": "Discounts"
+      "title": "Rabatte"
     },
     "taxzones": {
-      "title": "Steuer zones"
+      "title": "Steuerzonen"
     },
     "shippingzones": {
-      "title": "Versand zones"
+      "title": "Versandzonen"
     },
     "cmsblocks": {
-      "title": "CMS blocks"
+      "title": "CMS-Blöcke"
     },
     "customergroups": {
-      "title": "Customer groups"
+      "title": "Kundengruppen"
     },
     "pricingrules": {
-      "title": "Pricing rules"
+      "title": "Preisregeln"
     },
     "analytics": {
-      "title": "Analytics"
+      "title": "Analysen"
     },
     "fulfillments": {
-      "title": "Fulfillments"
+      "title": "Lieferungen"
     },
     "returnrequests": {
-      "title": "Return requests"
+      "title": "Rücksendungen"
     },
     "productvariants": {
-      "title": "Produkt variants"
+      "title": "Produktvarianten"
     },
     "customeraddresses": {
       "title": "Adressen"
@@ -119,52 +119,52 @@
         "title": "E-Commerce"
       },
       "categories": {
-        "title": "Produkt categories"
+        "title": "Produktkategorien"
       },
       "pos": {
         "title": "POS"
       },
       "posconfigs": {
-        "title": "POS configs"
+        "title": "POS-Konfigurationen"
       },
       "pospaymentmethods": {
-        "title": "Zahlung methods"
+        "title": "Zahlungsarten"
       },
       "customergroups": {
-        "title": "Customer groups"
+        "title": "Kundengruppen"
       },
       "customeraddresses": {
         "title": "Kundenadressen"
       },
       "discounts": {
-        "title": "Discounts"
+        "title": "Rabatte"
       },
       "pricingrules": {
-        "title": "Pricing rules"
+        "title": "Preisregeln"
       },
       "taxzones": {
-        "title": "Steuer zones"
+        "title": "Steuerzonen"
       },
       "shippingzones": {
-        "title": "Versand zones"
+        "title": "Versandzonen"
       },
       "warehouses": {
-        "title": "Warehouses"
+        "title": "Lager"
       },
       "productattributes": {
-        "title": "Produkt attributes"
+        "title": "Produktattribute"
       },
       "productvariants": {
-        "title": "Produkt variants"
+        "title": "Produktvarianten"
       },
       "fiscalconfigs": {
-        "title": "Fiscal / E-Rechnung"
+        "title": "Fiskal / E-Rechnung"
       },
       "albanianFiscalization": {
         "title": "Albanische Fiskalisierung"
       },
       "cmsblocks": {
-        "title": "CMS blocks"
+        "title": "CMS-Blöcke"
       },
       "externalImports": {
         "title": "Externe Importe"
@@ -179,28 +179,28 @@
         "title": "Produkte"
       },
       "collections": {
-        "title": "Collections"
+        "title": "Kollektionen"
       },
       "productorders": {
-        "title": "Produkt aufträge"
+        "title": "Produktbestellungen"
       },
       "inventories": {
-        "title": "Inventory"
+        "title": "Lagerbestand"
       },
       "analytics": {
-        "title": "Analytics"
+        "title": "Analysen"
       },
       "eCommerceMarketplace": {
-        "title": "ECommerce Marktplatz"
+        "title": "eCommerce-Marktplatz"
       },
       "listingcategories": {
-        "title": "Inserat categories"
+        "title": "Inseratkategorien"
       },
       "listings": {
         "title": "Inserate"
       },
       "taskrequests": {
-        "title": "Aufgabe requests"
+        "title": "Ausschreibungen"
       },
       "orders": {
         "title": "Bestellungen"
@@ -218,19 +218,19 @@
         "title": "Bewertungen"
       },
       "promotions": {
-        "title": "Promotions"
+        "title": "Promotionen"
       },
       "listingflags": {
-        "title": "Inserat flags"
+        "title": "Inserat-Meldungen"
       },
       "providerprofile": {
         "title": "Anbieterprofile"
       },
       "listingaddons": {
-        "title": "Inserat hinzufügen-ons"
+        "title": "Inserat-Zusatzleistungen"
       },
       "listingpackages": {
-        "title": "Inserat packages"
+        "title": "Inseratpakete"
       }
     }
   },
@@ -240,7 +240,7 @@
       "title": "Inserate"
     },
     "taskrequests": {
-      "title": "Aufgabe requests"
+      "title": "Ausschreibungen"
     },
     "orders": {
       "title": "Bestellungen"
@@ -258,22 +258,22 @@
       "title": "Bewertungen"
     },
     "promotions": {
-      "title": "Promotions"
+      "title": "Promotionen"
     },
     "listingflags": {
-      "title": "Inserat flags"
+      "title": "Inserat-Meldungen"
     },
     "listingaddons": {
-      "title": "Inserat hinzufügen-ons"
+      "title": "Inserat-Zusatzleistungen"
     },
     "listingpackages": {
-      "title": "Inserat packages"
+      "title": "Inseratpakete"
     },
     "marketplacesystemmap": {
       "title": "Systemkarte"
     },
     "listingcategories": {
-      "title": "Inserat categories"
+      "title": "Inseratkategorien"
     }
   }
 }

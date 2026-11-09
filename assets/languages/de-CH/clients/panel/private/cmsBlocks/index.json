@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
-  "title": "CMS Blocks",
-  "description": "Storefront content blocks und their display auftrag. verwalten",
+  "title": "CMS-Blöcke",
+  "description": "Inhaltsblöcke des Shops und ihre Anzeigereihenfolge verwalten.",
   "help": {
     "ariaLabel": "Über CMS-Blöcke",
     "title": "Über CMS-Blöcke",
@@ -34,33 +34,33 @@
       }
     ]
   },
-  "createCmsBlock": "CMS block erstellen",
-  "reorderBlocks": "Reorder blocks",
-  "reorderTitle": "Reorder CMS blocks",
-  "reorderDescription": "Drag blocks bis change their display auftrag on die storefront.",
+  "createCmsBlock": "CMS-Block erstellen",
+  "reorderBlocks": "Blöcke neu anordnen",
+  "reorderTitle": "CMS-Blöcke neu anordnen",
+  "reorderDescription": "Ziehen Sie die Blöcke, um ihre Anzeigereihenfolge im Shop zu ändern.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
-  "empty": "Keine blocks bis reorder.",
+  "empty": "Keine Blöcke zum Neuordnen.",
   "cancel": "Abbrechen",
-  "save": "Speichern auftrag",
+  "save": "Reihenfolge speichern",
   "saving": "Wird gespeichert...",
-  "saveSuccess": "Block auftrag gespeichert.",
-  "saveError": "Fehlgeschlagen bis speichern block auftrag.",
-  "loadError": "Blocks. konnten nicht geladen werden",
+  "saveSuccess": "Blockreihenfolge gespeichert.",
+  "saveError": "Blockreihenfolge konnte nicht gespeichert werden.",
+  "loadError": "Blöcke konnten nicht geladen werden.",
   "fields": {
     "!enums": {
       "type": {
-        "hero_banner": "Hero banner",
+        "hero_banner": "Hero-Banner",
         "slider": "Slider",
-        "featured_collection": "Featured collection",
-        "trending": "Trending",
-        "best_sellers": "Best sellers",
-        "flash_sale": "Flash verkauf",
-        "announcement_bar": "Announcement bar",
-        "custom_html": "Custom HTML",
+        "featured_collection": "Hervorgehobene Kollektion",
+        "trending": "Im Trend",
+        "best_sellers": "Bestseller",
+        "flash_sale": "Flash Sale",
+        "announcement_bar": "Ankündigungsleiste",
+        "custom_html": "Eigenes HTML",
         "video": "Video",
-        "grid": "Grid",
-        "category_showcase": "Kategorie showcase",
-        "promotional_section": "Promotional section"
+        "grid": "Raster",
+        "category_showcase": "Kategorie-Schaufenster",
+        "promotional_section": "Werbebereich"
       }
     },
     "title": "Bezeichnung",
@@ -68,11 +68,11 @@
     "position": "Position",
     "isActive": "Aktiv",
     "config": "Konfiguration",
-    "startsAt": "Starts am",
-    "endsAt": "Ends am",
+    "startsAt": "Beginnt am",
+    "endsAt": "Endet am",
     "visibility": {
       "devices": "Geräte",
-      "regions": "Regions"
+      "regions": "Regionen"
     },
     "company": "Firma",
     "createdBy": "Erstellt von",

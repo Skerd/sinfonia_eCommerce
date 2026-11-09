@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posPaymentMethods/center/dialogs/testPosTerminalConnectionDialog.tsx",
-  "title": "Test terminal connection",
-  "description": "Probe die bank POS terminal bridge ohne charging a zahlung.",
+  "title": "Terminalverbindung testen",
+  "description": "Die Brücke des Bank-Kartenterminals prüfen, ohne eine Zahlung zu belasten.",
   "cancel": "Abbrechen",
-  "confirm": "Test connection",
-  "busy": "Working…",
+  "confirm": "Verbindung testen",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Testing terminal connection…",
+      "title": "Terminalverbindung wird getestet…",
       "time": 3000
     },
     "success": {
-      "title": "Terminal connection test succeeded.",
+      "title": "Verbindungstest zum Terminal erfolgreich.",
       "time": 3000
     },
     "error": {
-      "title": "Terminal connection test fehlgeschlagen",
+      "title": "Verbindungstest zum Terminal fehlgeschlagen",
       "time": 3000
     }
   }

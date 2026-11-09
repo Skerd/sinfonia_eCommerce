@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/index.tsx",
-  "title": "Return requests",
-  "description": "Handle returns, exchanges und rückerstattung requests.",
+  "title": "Rücksendungen",
+  "description": "Rückgaben, Umtausch und Rückerstattungsanfragen bearbeiten.",
   "help": {
     "ariaLabel": "Über Rückgabeanfragen",
     "title": "Über Rückgabeanfragen",
@@ -54,13 +54,13 @@
       }
     ]
   },
-  "createReturnRequest": "Return antrag erstellen",
+  "createReturnRequest": "Rücksendung erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "type": {
-        "return": "Return",
-        "exchange": "Exchange",
+        "return": "Rückgabe",
+        "exchange": "Umtausch",
         "refund": "Rückerstattung"
       },
       "status": {
@@ -75,15 +75,15 @@
     "type": "Typ",
     "status": "Status",
     "items": {
-      "orderItemId": "Auftrag position id",
+      "orderItemId": "ID der Bestellposition",
       "quantity": "Menge",
       "reason": "Grund"
     },
-    "refundAmount": "Rückerstattung betrag",
-    "customerNote": "Customer note",
-    "adminNote": "Admin note",
-    "resolvedBy": "Resolved von",
-    "resolvedAt": "Resolved am",
+    "refundAmount": "Rückerstattungsbetrag",
+    "customerNote": "Kundennotiz",
+    "adminNote": "Admin-Notiz",
+    "resolvedBy": "Erledigt von",
+    "resolvedAt": "Erledigt am",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

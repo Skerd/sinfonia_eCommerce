@@ -79,7 +79,7 @@
   "terminalReference": "Referenca e terminalit",
   "terminalId": "ID e terminalit",
   "posOrderState": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "paid": "Paguar",
     "cancel": "Anuluar",
     "refunded": "Rimbursuar"

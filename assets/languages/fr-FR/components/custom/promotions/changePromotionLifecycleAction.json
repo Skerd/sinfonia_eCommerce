@@ -4,7 +4,7 @@
   "pause": {
     "title": "Suspendre la promotion",
     "description": "Êtes-vous sûr de vouloir faire une pause",
-    "confirm": "Pause",
+    "confirm": "Suspendre",
     "axios": {
       "start": {
         "title": "Suspendre la promotion",

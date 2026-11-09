@@ -5,7 +5,7 @@
   "status": "Statusi",
   "toWarehouse": "Te magazina",
   "stockTransferStatus": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "done": "Përfunduar",
     "cancelled": "Anuluar"
   }

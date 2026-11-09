@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx",
-  "title": "Aktivieren rabatt",
-  "description": "Diese rabatt will become verfügbar für carts und kasse.",
+  "title": "Rabatt aktivieren",
+  "description": "Dieser Rabatt wird für Warenkörbe und den Checkout verfügbar.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating rabatt…",
+      "title": "Rabatt wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Rabatt activated",
+      "title": "Rabatt aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren rabatt",
+      "title": "Rabatt konnte nicht aktiviert werden",
       "time": 3000
     }
   }

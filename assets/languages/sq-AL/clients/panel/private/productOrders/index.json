@@ -149,7 +149,7 @@
     },
     "notes": "Shënime",
     "internalNotes": "Shënime të brendshme",
-    "stripePaymentIntentId": "Stripe payment intent",
+    "stripePaymentIntentId": "Qëllimi i pagesës Stripe",
     "idempotencyKey": "Çelësi i idempotencës",
     "giftCard": {
       "giftCard": "Karta dhuratë",

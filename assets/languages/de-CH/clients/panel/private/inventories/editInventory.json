@@ -1,40 +1,40 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/editInventory.tsx",
-  "title": "Inventory bearbeiten",
-  "errorTitle": "Inventory konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese inventory. Versuchen erneut.",
+  "title": "Lagerbestand bearbeiten",
+  "errorTitle": "Lagerbestand konnte nicht geladen werden",
+  "errorDescription": "Der Lagerbestand konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "assignmentSectionTitle": "Zuordnung",
     "stockSectionTitle": "Bestand",
     "productLabel": "Produkt",
     "productPlaceholder": "Produkt auswählen",
-    "variantLabel": "Variant",
-    "variantPlaceholder": "Variant (optional) auswählen",
-    "warehouseLabel": "Warehouse",
-    "warehousePlaceholder": "Warehouse auswählen",
-    "reorderPointLabel": "Reorder point",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante auswählen (optional)",
+    "warehouseLabel": "Lager",
+    "warehousePlaceholder": "Lager auswählen",
+    "reorderPointLabel": "Meldebestand",
     "reorderPointPlaceholder": "Alarm unter dieser Menge",
-    "reorderQuantityLabel": "Reorder menge",
+    "reorderQuantityLabel": "Nachbestellmenge",
     "reorderQuantityPlaceholder": "Nachbestellmenge"
   },
   "axios": {
     "start": {
-      "title": "Saving inventory",
+      "title": "Lagerbestand wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Inventory aktualisiert",
+      "title": "Lagerbestand aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren inventory",
+      "title": "Lagerbestand konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Inventory bearbeiten",
-    "description": "Aktualisieren reorder thresholds für diese stock zeile."
+    "title": "Lagerbestand bearbeiten",
+    "description": "Nachbestell-Schwellenwerte für diese Bestandszeile aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

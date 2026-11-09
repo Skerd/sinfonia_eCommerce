@@ -25,7 +25,7 @@
   "compactView": "Kompakt",
   "cardsView": "Karta",
   "stockCountStatus": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "applied": "Aplikuar",
     "cancelled": "Anuluar"
   }

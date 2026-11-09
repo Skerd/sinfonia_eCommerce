@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx",
-  "title": "Ablehnen return antrag",
-  "description": "Ablehnen diese ausstehend return antrag. Optionally explain why.",
-  "reasonLabel": "Rejection grund",
-  "reasonPlaceholder": "Optional grund für rejection",
+  "title": "Rücksendung ablehnen",
+  "description": "Lehnen Sie diese ausstehende Rücksendung ab. Optional mit Begründung.",
+  "reasonLabel": "Ablehnungsgrund",
+  "reasonPlaceholder": "Optionaler Ablehnungsgrund",
   "cancel": "Abbrechen",
   "confirm": "Ablehnen",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Rejecting return antrag…",
+      "title": "Rücksendung wird abgelehnt…",
       "time": 3000
     },
     "success": {
-      "title": "Return antrag abgelehnt",
+      "title": "Rücksendung abgelehnt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht ablehnen return antrag",
+      "title": "Rücksendung konnte nicht abgelehnt werden",
       "time": 3000
     }
   }

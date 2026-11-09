@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/editListingPackage.tsx",
-  "editTitle": "Inserat paket bearbeiten",
-  "editDescription": "Aktualisieren die details von diese service paket.",
-  "errorTitle": "Konnte nicht laden paket",
-  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "editTitle": "Inseratpaket bearbeiten",
+  "editDescription": "Details dieses Leistungspakets aktualisieren.",
+  "errorTitle": "Paket konnte nicht geladen werden",
+  "errorDescription": "Prüfen Sie den Link oder kehren Sie zur Liste zurück und versuchen Sie es erneut.",
   "formHeader": {
-    "title": "Inserat paket bearbeiten",
-    "description": "Modify die paket name, preis, oder delivery time."
+    "title": "Inseratpaket bearbeiten",
+    "description": "Name, Preis oder Lieferzeit des Pakets ändern."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -17,21 +17,21 @@
     "listingIdLabel": "Inserat",
     "listingIdPlaceholder": "Inserat auswählen",
     "nameLabel": "Paket name",
-    "namePlaceholder": "E.g. Basic, Standard, Premium",
+    "namePlaceholder": "z. B. Basic, Standard, Premium",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "What's included in diese paket...",
+    "descriptionPlaceholder": "Was in diesem Paket enthalten ist...",
     "priceAmountLabel": "Preis",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
-    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysLabel": "Liefertage",
     "deliveryDaysPlaceholder": "E.g. 3",
-    "sortOrderLabel": "Display auftrag",
+    "sortOrderLabel": "Anzeigereihenfolge",
     "sortOrderPlaceholder": "E.g. 1"
   },
   "axios": {
     "start": {
-      "title": "Saving paket",
+      "title": "Paket wird gespeichert",
       "time": 3000
     },
     "success": {
@@ -39,7 +39,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren paket",
+      "title": "Paket konnte nicht aktualisiert werden",
       "time": 3000
     }
   }

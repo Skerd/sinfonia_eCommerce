@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
-  "editTitle": "Inserat flag bearbeiten",
-  "editDescription": "Aktualisieren die grund und details von diese bericht.",
-  "errorTitle": "Konnte nicht laden bericht",
-  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "editTitle": "Inserat-Meldung bearbeiten",
+  "editDescription": "Grund und Details dieser Meldung aktualisieren.",
+  "errorTitle": "Meldung konnte nicht geladen werden",
+  "errorDescription": "Prüfen Sie den Link oder kehren Sie zur Liste zurück und versuchen Sie es erneut.",
   "formHeader": {
-    "title": "Inserat flag bearbeiten",
-    "description": "Aktualisieren die grund und zusätzlich details. Inserat kann nicht werden changed."
+    "title": "Inserat-Meldung bearbeiten",
+    "description": "Grund und zusätzliche Details aktualisieren. Das Inserat kann nicht geändert werden."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -16,17 +16,17 @@
     "reasonLabel": "Grund",
     "reasonPlaceholder": "Grund auswählen",
     "commentLabel": "Zusätzlich details",
-    "commentPlaceholder": "Optional details...",
+    "commentPlaceholder": "Optionale Details...",
     "reason_values": {
-      "inappropriate": "Inappropriate content",
+      "inappropriate": "Unangemessener Inhalt",
       "spam": "Spam",
-      "misleading": "Misleading",
+      "misleading": "Irreführend",
       "other": "Andere"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving bericht",
+      "title": "Meldung wird gespeichert",
       "time": 3000
     },
     "success": {
@@ -34,7 +34,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren bericht",
+      "title": "Meldung konnte nicht aktualisiert werden",
       "time": 3000
     }
   }

@@ -1,42 +1,42 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventories/createInventory.tsx",
-  "title": "Inventory erstellen",
+  "title": "Lagerbestand erstellen",
   "form": {
     "productLabel": "Produkt",
     "productPlaceholder": "Produkt auswählen",
-    "variantLabel": "Variant",
-    "variantPlaceholder": "Variant (optional) auswählen",
-    "warehouseLabel": "Warehouse",
-    "warehousePlaceholder": "Warehouse auswählen",
+    "variantLabel": "Variante",
+    "variantPlaceholder": "Variante auswählen (optional)",
+    "warehouseLabel": "Lager",
+    "warehousePlaceholder": "Lager auswählen",
     "assignmentSectionTitle": "Zuordnung",
     "stockSectionTitle": "Bestand",
-    "quantityOnHandLabel": "Menge on hand",
+    "quantityOnHandLabel": "Menge an Lager",
     "quantityOnHandPlaceholder": "Startmenge",
-    "reorderPointLabel": "Reorder point",
+    "reorderPointLabel": "Meldebestand",
     "reorderPointPlaceholder": "Alarm unter dieser Menge",
-    "reorderQuantityLabel": "Reorder menge",
+    "reorderQuantityLabel": "Nachbestellmenge",
     "reorderQuantityPlaceholder": "Nachbestellmenge"
   },
   "axios": {
     "start": {
-      "title": "Inventory wird erstellt",
+      "title": "Lagerbestand wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Inventory erstellt",
+      "title": "Lagerbestand erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen inventory",
+      "title": "Lagerbestand konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Inventory erstellen",
-    "description": "Link a produkt bis a warehouse und set starting stock levels."
+    "title": "Lagerbestand erstellen",
+    "description": "Verknüpfen Sie ein Produkt mit einem Lager und legen Sie den Anfangsbestand fest."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Inventory erstellen"
+    "submit": "Lagerbestand erstellen"
   }
 }

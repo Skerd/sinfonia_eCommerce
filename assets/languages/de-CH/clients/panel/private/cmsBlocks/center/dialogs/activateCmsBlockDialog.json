@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx",
-  "title": "Aktivieren CMS block",
-  "description": "Diese block will become visible on die storefront when its terminplan allows.",
+  "title": "CMS-Block aktivieren",
+  "description": "Dieser Block wird im Shop sichtbar, sobald sein Zeitplan es zulässt.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating CMS block…",
+      "title": "CMS-Block wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "CMS block activated",
+      "title": "CMS-Block aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren CMS block",
+      "title": "CMS-Block konnte nicht aktiviert werden",
       "time": 3000
     }
   }

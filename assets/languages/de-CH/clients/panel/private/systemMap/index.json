@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/systemMap/index.tsx",
-  "title": "ECommerce System Map",
-  "description": "Interactive map von catalog eCommerce models, kasse flow, und modul capabilities. Pan, zoom, und click nodes für details.",
+  "title": "eCommerce-Systemkarte",
+  "description": "Interaktive Karte der eCommerce-Katalogmodelle, des Checkout-Ablaufs und der Modulfunktionen. Verschieben, zoomen und Knoten für Details anklicken.",
   "help": {
     "ariaLabel": "Über die eCommerce-Systemkarte",
     "title": "Über die eCommerce-Systemkarte",
@@ -36,7 +36,7 @@
   },
   "tabs": {
     "models": "Modell graph",
-    "flows": "How it works",
-    "capabilities": "Capabilities"
+    "flows": "So funktioniert es",
+    "capabilities": "Funktionen"
   }
 }

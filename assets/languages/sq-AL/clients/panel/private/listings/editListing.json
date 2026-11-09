@@ -46,7 +46,7 @@
     "listingEditTitle": "Ndrysho listimin",
     "listingStatus": {
       "active": "Aktiv",
-      "draft": "Draft",
+      "draft": "Skicë",
       "inactive": "Joaktiv"
     },
     "mainImageLabel": "Imazhi kryesor",
@@ -90,5 +90,5 @@
     "title": "Ndrysho listimin"
   },
   "path": "src/modules/eCommerce/clients/panel/private/listings/editListing.tsx",
-  "title": "Title"
+  "title": "Titulli"
 }

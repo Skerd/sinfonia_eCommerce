@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listings/index.tsx",
   "title": "Inserate",
-  "description": "Produkt und service inserate für ihr tenant storefront. verwalten",
+  "description": "Produkt- und Dienstleistungsinserate für den Shop Ihres Mandanten verwalten.",
   "help": {
     "ariaLabel": "Über Inserate",
     "title": "Über Inserate",
@@ -62,8 +62,8 @@
         "inactive": "Inaktiv"
       },
       "pricingType": {
-        "fixed": "Fixed preis",
-        "hourly": "Hourly satz"
+        "fixed": "Festpreis",
+        "hourly": "Stundensatz"
       }
     },
     "name": "Name",
@@ -74,21 +74,21 @@
     "price": "Preis",
     "priceCurrency": "Währung",
     "status": "Status",
-    "pricingType": "Pricing typ",
-    "deliveryDays": "Delivery tage",
+    "pricingType": "Preismodell",
+    "deliveryDays": "Liefertage",
     "address": "Standort",
-    "mainImage": "Haupt bild",
+    "mainImage": "Hauptbild",
     "imageGallery": "Bild galerie",
     "videoGallery": "Video galerie",
     "faqs": {
       "question": "Frage",
       "answer": "Antwort"
     },
-    "requirements": "Requirements",
-    "tags": "Tags",
-    "promotions": "Promotions",
-    "listingPackages": "Packages",
-    "listingAddOns": "Hinzufügen-ons",
+    "requirements": "Anforderungen",
+    "tags": "Schlagwörter",
+    "promotions": "Promotionen",
+    "listingPackages": "Pakete",
+    "listingAddOns": "Zusatzleistungen",
     "avgRating": "Bewertung",
     "reviewCount": "Bewertungen",
     "company": "Firma",

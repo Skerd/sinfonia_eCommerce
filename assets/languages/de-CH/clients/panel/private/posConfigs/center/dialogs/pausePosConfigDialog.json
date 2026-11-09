@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
-  "title": "Pause diese POS till?",
-  "description": "Offen sitzungen on diese till will werden force-geschlossen: gehalten carts sind annulliert und cash ist set bis die erwartet drawer betrag. Terminal charges sind annulliert best-effort. Selling stays blocked until sie resume.",
+  "title": "Diese POS-Kasse pausieren?",
+  "description": "Offene Sitzungen dieser Kasse werden zwangsweise geschlossen: Geparkte Warenkörbe werden storniert und das Bargeld wird auf den Sollbestand der Schublade gesetzt. Terminalbelastungen werden nach Möglichkeit storniert. Der Verkauf bleibt gesperrt, bis Sie fortsetzen.",
   "reasonLabel": "Grund (optional)",
-  "reasonPlaceholder": "E.g. Wrong prices / suspected fraud",
+  "reasonPlaceholder": "z. B. falsche Preise / Betrugsverdacht",
   "cancel": "Abbrechen",
-  "confirm": "Pause till",
-  "busy": "Working…",
+  "confirm": "Kasse pausieren",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Pausing POS till…",
+      "title": "POS-Kasse wird pausiert…",
       "time": 3000
     },
     "success": {
-      "title": "POS till paused",
+      "title": "POS-Kasse pausiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht pause POS till",
+      "title": "POS-Kasse konnte nicht pausiert werden",
       "time": 3000
     }
   }

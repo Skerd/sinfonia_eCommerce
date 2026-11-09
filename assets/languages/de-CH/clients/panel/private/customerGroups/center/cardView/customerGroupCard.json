@@ -1,10 +1,10 @@
 {
-  "default": "Default",
+  "default": "Standard",
   "description": "Beschreibung",
   "memberCount": "Mitglied Anzahl",
   "members": "Mitglieder",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/center/cardView/customerGroupCard.tsx",
-  "failedTitle": "Customer group konnten nicht geladen werden",
+  "failedTitle": "Kundengruppe konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen."
 }

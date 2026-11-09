@@ -40,7 +40,7 @@
     "environmentLabel": "Mjedisi",
     "environmentPlaceholder": "Zgjidh mjedisin",
     "environment": {
-      "test": "Test",
+      "test": "Testim",
       "production": "Prodhim"
     },
     "fiscalizationUrlLabel": "URL SOAP fiskalizimi",

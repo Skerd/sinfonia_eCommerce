@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/createListingPackage.tsx",
   "formHeader": {
-    "title": "Inserat paket erstellen",
-    "description": "Define a service tier that customers can auswählen when ordering von a inserat."
+    "title": "Inseratpaket erstellen",
+    "description": "Definieren Sie eine Leistungsstufe, die Kunden bei der Bestellung aus einem Inserat wählen können."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -12,16 +12,16 @@
     "listingIdLabel": "Inserat",
     "listingIdPlaceholder": "Inserat auswählen",
     "nameLabel": "Paket name",
-    "namePlaceholder": "E.g. Basic, Standard, Premium",
+    "namePlaceholder": "z. B. Basic, Standard, Premium",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "What's included in diese paket...",
+    "descriptionPlaceholder": "Was in diesem Paket enthalten ist...",
     "priceAmountLabel": "Preis",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
-    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysLabel": "Liefertage",
     "deliveryDaysPlaceholder": "E.g. 3",
-    "sortOrderLabel": "Display auftrag",
+    "sortOrderLabel": "Anzeigereihenfolge",
     "sortOrderPlaceholder": "E.g. 1"
   },
   "axios": {
@@ -34,7 +34,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen paket",
+      "title": "Paket konnte nicht erstellt werden",
       "time": 3000
     }
   }

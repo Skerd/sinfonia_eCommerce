@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
-  "title": "Pause alle POS tills?",
-  "description": "Setzt eine firmenweite Sperre. Offene Sitzungen werden zwangsweise geschlossen (Holds storniert, Kasse auf Soll gesetzt). Neue Kassen während der Sperre können bis Resume alle nicht verkaufen. Einzeln pausierte Kassen bleiben pausiert. Terminal-Voids sind best-effort.",
+  "title": "Alle POS-Kassen pausieren?",
+  "description": "Setzt eine firmenweite Sperre. Offene Sitzungen werden zwangsweise geschlossen (geparkte Warenkörbe storniert, Bargeld auf Sollbestand gesetzt). Neue Kassen, die während der Sperre erstellt werden, können bis «Alle fortsetzen» ebenfalls nicht verkaufen. Einzeln pausierte Kassen bleiben pausiert. Terminal-Stornierungen erfolgen nach Möglichkeit.",
   "reasonLabel": "Grund (optional)",
-  "reasonPlaceholder": "E.g. Fiscal / network outage",
+  "reasonPlaceholder": "z. B. Fiskal- / Netzwerkausfall",
   "cancel": "Abbrechen",
-  "confirm": "Pause alle",
-  "busy": "Working…",
+  "confirm": "Alle pausieren",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Pausing alle POS tills…",
+      "title": "Alle POS-Kassen werden pausiert…",
       "time": 3000
     },
     "success": {
-      "title": "Alle POS tills paused",
+      "title": "Alle POS-Kassen pausiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht pause alle POS tills",
+      "title": "POS-Kassen konnten nicht pausiert werden",
       "time": 3000
     }
   }

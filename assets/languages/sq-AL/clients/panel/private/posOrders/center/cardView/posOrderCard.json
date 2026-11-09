@@ -4,7 +4,7 @@
   "failedDescription": "Prekni për të provuar përsëri.",
   "items": "artikuj",
   "orderState": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "paid": "Paguar",
     "cancel": "Anuluar",
     "refunded": "Rimbursuar"

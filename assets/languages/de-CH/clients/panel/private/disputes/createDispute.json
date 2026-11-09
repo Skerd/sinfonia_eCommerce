@@ -2,30 +2,30 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Konnte nicht offen streitfall"
+      "title": "Streitfall konnte nicht eröffnet werden"
     },
     "start": {
       "time": 3000,
-      "title": "Eröffnung streitfall"
+      "title": "Streitfall wird eröffnet"
     },
     "success": {
       "time": 3000,
-      "title": "Streitfall opened"
+      "title": "Streitfall eröffnet"
     }
   },
   "form": {
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "reasonLabel": "Grund",
-    "reasonPlaceholder": "Describe die issue..."
+    "reasonPlaceholder": "Beschreiben Sie das Problem..."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Offen streitfall"
+    "submit": "Streitfall eröffnen"
   },
   "formHeader": {
-    "description": "Raise a streitfall für ein auftrag that has ein issue.",
-    "title": "Offen streitfall"
+    "description": "Eröffnen Sie einen Streitfall für einen Auftrag mit einem Problem.",
+    "title": "Streitfall eröffnen"
   },
   "path": "src/modules/eCommerce/clients/panel/private/disputes/createDispute.tsx",
   "title": "Bezeichnung"

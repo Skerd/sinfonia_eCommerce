@@ -10,8 +10,8 @@
   "city": "Ort",
   "perHour": "h",
   "days": "d",
-  "featured": "Featured",
-  "sponsored": "Sponsored",
+  "featured": "Hervorgehoben",
+  "sponsored": "Gesponsert",
   "statuses": {
     "active": "Aktiv",
     "draft": "Entwurf",

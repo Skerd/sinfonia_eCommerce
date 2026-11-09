@@ -1,37 +1,37 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/editProductAttribute.tsx",
-  "title": "Attribute bearbeiten",
-  "errorTitle": "Attribute konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese attribute. Versuchen erneut.",
+  "title": "Attribut bearbeiten",
+  "errorTitle": "Attribut konnte nicht geladen werden",
+  "errorDescription": "Das Attribut konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
     "namePlaceholder": "Farbe, Grösse, Material",
     "positionLabel": "Position",
     "positionPlaceholder": "0",
-    "isVisibleOnProductPageLabel": "Visible on produkt seite",
-    "isUsedForVariantsLabel": "Used für variants",
-    "valuesLabel": "Values",
-    "valuesPlaceholder": "A wert und press Eingeben hinzufügen",
-    "removeValue": "Entfernen wert"
+    "isVisibleOnProductPageLabel": "Auf der Produktseite sichtbar",
+    "isUsedForVariantsLabel": "Für Varianten verwendet",
+    "valuesLabel": "Werte",
+    "valuesPlaceholder": "Wert eingeben und Enter drücken",
+    "removeValue": "Wert entfernen"
   },
   "axios": {
     "start": {
-      "title": "Saving attribute",
+      "title": "Attribut wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Attribute aktualisiert",
+      "title": "Attribut aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren attribute",
+      "title": "Attribut konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Attribute bearbeiten",
-    "description": "Aktualisieren die name, values, visibility, und variant einstellungen."
+    "title": "Attribut bearbeiten",
+    "description": "Name, Werte, Sichtbarkeit und Varianteneinstellungen aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

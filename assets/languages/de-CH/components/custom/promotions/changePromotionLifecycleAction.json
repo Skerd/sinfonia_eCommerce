@@ -2,61 +2,61 @@
   "path": "src/modules/eCommerce/components/custom/promotions/changePromotionLifecycleAction.tsx",
   "cancel": "Abbrechen",
   "pause": {
-    "title": "Pause promotion",
-    "description": "Sind sie sicher sie want bis pause",
-    "confirm": "Pause",
+    "title": "Promotion pausieren",
+    "description": "Möchten Sie wirklich pausieren",
+    "confirm": "Pausieren",
     "axios": {
       "start": {
-        "title": "Pausing promotion",
+        "title": "Promotion wird pausiert",
         "time": 3000
       },
       "success": {
-        "title": "Promotion paused erfolgreich",
+        "title": "Promotion erfolgreich pausiert",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht pause promotion, bitte versuchen erneut",
+        "title": "Promotion konnte nicht pausiert werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "resume": {
-    "title": "Resume promotion",
-    "description": "Sind sie sicher sie want bis resume",
-    "confirm": "Resume",
+    "title": "Promotion fortsetzen",
+    "description": "Möchten Sie wirklich fortsetzen",
+    "confirm": "Fortsetzen",
     "axios": {
       "start": {
-        "title": "Resuming promotion",
+        "title": "Promotion wird fortgesetzt",
         "time": 3000
       },
       "success": {
-        "title": "Promotion resumed erfolgreich",
+        "title": "Promotion erfolgreich fortgesetzt",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht resume promotion, bitte versuchen erneut",
+        "title": "Promotion konnte nicht fortgesetzt werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "stop": {
-    "title": "Stop promotion permanently",
-    "description": "Diese kann nicht werden rückgängig. Die promotion will stay on protokoll mit die grund sie provide",
-    "confirm": "Stop permanently",
-    "reasonLabel": "Grund für stopping",
-    "reasonPlaceholder": "E.g. End von kampagne, budget change, compliance…",
-    "reasonHint": "Erforderlich für audit und prüfung. 1–2000 characters.",
+    "title": "Promotion endgültig beenden",
+    "description": "Dies kann nicht rückgängig gemacht werden. Die Promotion bleibt mit dem angegebenen Grund gespeichert",
+    "confirm": "Endgültig beenden",
+    "reasonLabel": "Grund für das Beenden",
+    "reasonPlaceholder": "z. B. Kampagnenende, Budgetänderung, Compliance…",
+    "reasonHint": "Erforderlich für Prüfspur und Kontrolle. 1–2000 Zeichen.",
     "axios": {
       "start": {
-        "title": "Stopping promotion",
+        "title": "Promotion wird beendet",
         "time": 3000
       },
       "success": {
-        "title": "Promotion stopped erfolgreich",
+        "title": "Promotion erfolgreich beendet",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht stop promotion, bitte versuchen erneut",
+        "title": "Promotion konnte nicht beendet werden, bitte erneut versuchen",
         "time": 3000
       }
     }

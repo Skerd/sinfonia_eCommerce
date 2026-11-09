@@ -1,37 +1,37 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/index.tsx",
-  "title": "Collections",
-  "description": "Group produkte into curated collections.",
-  "createCollection": "Collection erstellen",
+  "title": "Kollektionen",
+  "description": "Produkte in kuratierten Kollektionen gruppieren.",
+  "createCollection": "Kollektion erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "type": {
         "manual": "Manuell",
-        "dynamic": "Dynamic"
+        "dynamic": "Dynamisch"
       },
       "ruleCondition": {
-        "all": "Alle rules (UND)",
-        "any": "Any rule (ODER)"
+        "all": "Alle Regeln (UND)",
+        "any": "Eine beliebige Regel (ODER)"
       },
       "rules": {
         "field": {
-          "tag": "Tag",
-          "brand": "Brand",
+          "tag": "Schlagwort",
+          "brand": "Marke",
           "category": "Kategorie",
           "price": "Preis",
           "vendor": "Lieferant",
-          "inventory_level": "Inventory level",
-          "product_type": "Produkt typ"
+          "inventory_level": "Lagerbestand",
+          "product_type": "Produkttyp"
         },
         "operator": {
-          "equals": "Equals",
-          "not_equals": "Nicht equals",
-          "contains": "Contains",
-          "not_contains": "Does nicht contain",
-          "greater_than": "Greater than",
-          "less_than": "Less than",
-          "starts_with": "Starts mit"
+          "equals": "Ist gleich",
+          "not_equals": "Ist ungleich",
+          "contains": "Enthält",
+          "not_contains": "Enthält nicht",
+          "greater_than": "Grösser als",
+          "less_than": "Kleiner als",
+          "starts_with": "Beginnt mit"
         }
       }
     },
@@ -39,19 +39,19 @@
     "name": "Name",
     "slug": "Slug",
     "description": "Beschreibung",
-    "mainImage": "Cover bild",
-    "isVisible": "Visible",
+    "mainImage": "Titelbild",
+    "isVisible": "Sichtbar",
     "position": "Position",
     "products": "Produkte",
     "productCount": "Produkte",
-    "ruleCondition": "Match condition",
+    "ruleCondition": "Übereinstimmungsbedingung",
     "rules": {
-      "field": "Rule field",
-      "operator": "Rule operator",
-      "value": "Rule wert"
+      "field": "Regelfeld",
+      "operator": "Regeloperator",
+      "value": "Regelwert"
     },
-    "seoTitle": "SEO bezeichnung",
-    "seoDescription": "SEO beschreibung",
+    "seoTitle": "SEO-Titel",
+    "seoDescription": "SEO-Beschreibung",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

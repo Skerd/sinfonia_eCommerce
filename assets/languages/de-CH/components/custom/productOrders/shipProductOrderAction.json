@@ -2,15 +2,15 @@
   "path": "src/modules/eCommerce/components/custom/productOrders/shipProductOrderAction.tsx",
   "cancel": "Abbrechen",
   "ship": {
-    "title": "Ship auftrag",
-    "description": "Creates a fulfillment mit die tracking details und marks die auftrag as shipped.",
-    "carrierLabel": "Carrier",
-    "trackingNumberLabel": "Tracking nummer",
-    "trackingUrlLabel": "Tracking URL",
-    "confirm": "Ship",
+    "title": "Bestellung versenden",
+    "description": "Erstellt eine Lieferung mit den Sendungsdetails und markiert die Bestellung als versandt.",
+    "carrierLabel": "Transporteur",
+    "trackingNumberLabel": "Sendungsnummer",
+    "trackingUrlLabel": "Sendungsverfolgungs-URL",
+    "confirm": "Versenden",
     "axios": {
-      "success": "Auftrag shipped",
-      "error": "Konnte nicht ship auftrag"
+      "success": "Bestellung versandt",
+      "error": "Bestellung konnte nicht versandt werden"
     }
   }
 }

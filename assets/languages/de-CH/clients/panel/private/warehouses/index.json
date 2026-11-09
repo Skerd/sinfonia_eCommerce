@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/warehouses/index.tsx",
-  "title": "Warehouses",
-  "description": "Die locations that hold ihr stock. verwalten",
+  "title": "Lager",
+  "description": "Die Standorte verwalten, an denen Ihr Bestand liegt.",
   "help": {
     "ariaLabel": "Über Lager",
     "title": "Über Lager",
@@ -32,7 +32,7 @@
       }
     ]
   },
-  "createWarehouse": "Warehouse erstellen",
+  "createWarehouse": "Lager erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
@@ -46,7 +46,7 @@
       "latitude": "Breitengrad",
       "longitude": "Längengrad"
     },
-    "isDefault": "Default",
+    "isDefault": "Standard",
     "isActive": "Aktiv",
     "createdBy": "Erstellt von",
     "company": "Firma",

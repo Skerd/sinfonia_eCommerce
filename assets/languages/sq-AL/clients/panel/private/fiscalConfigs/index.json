@@ -42,7 +42,7 @@
   "fields": {
     "!enums": {
       "environment": {
-        "test": "Test",
+        "test": "Testim",
         "production": "Prodhim"
       },
       "tcrType": {

@@ -1,9 +1,9 @@
 {
   "address": "Adresse",
   "form": {
-    "addressPrivacyAlert": "Providers kann nicht see ihr exact adresse until sie accept a offerte. Ihr full adresse ist shared only mit die provider sie choose, after sie have agreed on die arbeit.",
-    "budgetMaxLabel": "Budget (max)",
-    "budgetMinLabel": "Budget (min)",
+    "addressPrivacyAlert": "Anbieter sehen Ihre genaue Adresse erst, wenn Sie eine Offerte annehmen. Ihre vollständige Adresse wird nur mit dem gewählten Anbieter geteilt, nachdem Sie sich über die Arbeit geeinigt haben.",
+    "budgetMaxLabel": "Budget (max.)",
+    "budgetMinLabel": "Budget (min.)",
     "categoryLabel": "Kategorie",
     "cityLabel": "Ort",
     "cityPlaceholder": "Ort auswählen",
@@ -12,28 +12,28 @@
     "currencyLabel": "Währung",
     "descriptionLabel": "Beschreibung",
     "descriptionPlaceholder": "Beschreibung",
-    "expiresAtLabel": "Expires",
+    "expiresAtLabel": "Läuft ab",
     "expiresAtPlaceholder": "yyyy-MM-dd",
     "imageGalleryLabel": "Bild galerie",
     "latitudeLabel": "Breitengrad",
     "latitudePlaceholder": "Breitengrad",
     "longitudeLabel": "Längengrad",
     "longitudePlaceholder": "Längengrad",
-    "mainImageLabel": "Haupt bild",
+    "mainImageLabel": "Hauptbild",
     "postalCodeLabel": "Postleitzahl",
     "postalCodePlaceholder": "Postleitzahl",
     "section": {
       "budget": "Kostenvoranschlag",
-      "currencyExpires": "Währung und expiry",
+      "currencyExpires": "Währung und Ablauf",
       "description": "Details",
       "general": "Allgemein",
-      "images": "Images",
+      "images": "Bilder",
       "video": "Video"
     },
     "stateLabel": "Kanton",
     "statePlaceholder": "Kanton auswählen",
     "streetLabel": "Strasse",
-    "streetPlaceholder": "Strasse adresse",
+    "streetPlaceholder": "Strasse und Hausnummer",
     "taskRequestStatus": {
       "awarded": "Zuschlag",
       "closed": "Geschlossen",
@@ -47,8 +47,8 @@
     "submit": "Absenden"
   },
   "formHeader": {
-    "description": "Describe what sie need. Providers can respond mit bids.",
-    "title": "Aufgabe antrag erstellen"
+    "description": "Beschreiben Sie, was Sie brauchen. Anbieter können mit Offerten antworten.",
+    "title": "Ausschreibung erstellen"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
   "title": "Bezeichnung"

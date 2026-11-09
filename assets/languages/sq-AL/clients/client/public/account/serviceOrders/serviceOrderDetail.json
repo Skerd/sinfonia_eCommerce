@@ -77,9 +77,9 @@
   "reviewThanks": "Faleminderit për vlerësimin!",
   "cancelled": "Porosia u anulua",
   "milestoneReleased": "Pagesa e fazës u lirua",
-  "payEscrowTitle": "Pay for this order",
-  "payEscrowHint": "Your provider accepted the order. Complete payment to fund escrow.",
-  "payEscrowButton": "Pay now",
-  "payEscrowSuccess": "Payment submitted",
-  "payEscrowError": "Payment failed"
+  "payEscrowTitle": "Paguani këtë porosi",
+  "payEscrowHint": "Ofruesi e pranoi porosinë. Përfundoni pagesën për të financuar depozitën.",
+  "payEscrowButton": "Paguaj tani",
+  "payEscrowSuccess": "Pagesa u dërgua",
+  "payEscrowError": "Pagesa dështoi"
 }

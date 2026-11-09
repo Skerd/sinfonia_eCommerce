@@ -3,7 +3,7 @@
   "failedTitle": "Buchung konnten nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "provider": "Anbieter",
-  "startAt": "Start",
+  "startAt": "Beginn",
   "endAt": "Ende",
   "timezone": "Zeitzone",
   "order": "Auftrag",

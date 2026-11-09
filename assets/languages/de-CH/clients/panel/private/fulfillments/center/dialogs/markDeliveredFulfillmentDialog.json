@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/markDeliveredFulfillmentDialog.tsx",
-  "title": "Mark fulfillment as delivered",
-  "description": "Confirm that diese shipped fulfillment has been delivered.",
+  "title": "Lieferung als zugestellt markieren",
+  "description": "Bestätigen Sie, dass diese versandte Lieferung zugestellt wurde.",
   "notesLabel": "Notizen",
-  "notesPlaceholder": "Optional notizen",
+  "notesPlaceholder": "Optionale Notizen",
   "cancel": "Abbrechen",
-  "confirm": "Mark as delivered",
-  "busy": "Working…",
+  "confirm": "Als zugestellt markieren",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Marking as delivered…",
+      "title": "Wird als zugestellt markiert…",
       "time": 3000
     },
     "success": {
-      "title": "Fulfillment marked as delivered",
+      "title": "Lieferung als zugestellt markiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht mark as delivered",
+      "title": "Konnte nicht als zugestellt markiert werden",
       "time": 3000
     }
   }

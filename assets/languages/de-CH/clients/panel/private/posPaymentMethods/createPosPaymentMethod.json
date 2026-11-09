@@ -3,35 +3,35 @@
   "title": "Zahlungsart erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Zahlung methode name",
+    "namePlaceholder": "Name der Zahlungsart",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
-    "sequenceLabel": "Sequence",
+    "sequenceLabel": "Reihenfolge",
     "sequencePlaceholder": "0",
-    "cashQuickAmountsLabel": "Cash quick amounts",
+    "cashQuickAmountsLabel": "Bargeld-Schnellbeträge",
     "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
-    "terminalSectionTitle": "Bank POS terminal",
-    "terminalEnabledLabel": "Connect bank POS terminal",
-    "terminalForcesCardHint": "Connecting a bank POS terminal sets die typ bis Karte. Disconnecting sets it bis Cash.",
-    "terminalProviderLabel": "Terminal provider",
+    "terminalSectionTitle": "Bank-Kartenterminal",
+    "terminalEnabledLabel": "Bank-Kartenterminal verbinden",
+    "terminalForcesCardHint": "Das Verbinden eines Bank-Kartenterminals setzt den Typ auf Karte. Das Trennen setzt ihn auf Bar.",
+    "terminalProviderLabel": "Terminal-Anbieter",
     "terminalProviderPlaceholder": "Anbieter auswählen",
-    "terminalProtocolLabel": "Protocol",
+    "terminalProtocolLabel": "Protokoll",
     "terminalProtocolPlaceholder": "Protokoll auswählen",
-    "terminalHostLabel": "Terminal host / IP",
+    "terminalHostLabel": "Terminal-Host / IP",
     "terminalHostPlaceholder": "192.168.1.50",
-    "terminalPortLabel": "Terminal port",
+    "terminalPortLabel": "Terminal-Port",
     "terminalPortPlaceholder": "8080",
-    "terminalIdLabel": "Terminal ID",
+    "terminalIdLabel": "Terminal-ID",
     "terminalIdPlaceholder": "TID / POIID",
-    "terminalPathLabel": "Terminal path",
+    "terminalPathLabel": "Terminal-Pfad",
     "terminalPathPlaceholder": "/payment",
     "paymentType": {
       "cash": "Bar",
       "card": "Karte"
     },
     "terminalProvider": {
-      "manual": "Manuell (external terminal)",
-      "local_http": "Local HTTP bridge"
+      "manual": "Manuell (externes Terminal)",
+      "local_http": "Lokale HTTP-Brücke"
     },
     "terminalProtocol": {
       "http": "HTTP",
@@ -44,17 +44,17 @@
       "time": 3000
     },
     "success": {
-      "title": "Zahlung methode erstellt",
+      "title": "Zahlungsart erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen zahlung methode",
+      "title": "Zahlungsart konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Zahlungsart erstellen",
-    "description": "Define a till zahlung methode, optional cash chips, und bank terminal connection."
+    "description": "Definieren Sie eine Kassen-Zahlungsart, optionale Bargeld-Schnellbeträge und die Verbindung zum Bankterminal."
   },
   "formButtons": {
     "cancel": "Abbrechen",

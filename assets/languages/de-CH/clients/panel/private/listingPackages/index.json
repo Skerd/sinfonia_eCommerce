@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
-  "title": "Inserat Packages",
-  "description": "Service packages that providers offer für their inserate. verwalten",
+  "title": "Inseratpakete",
+  "description": "Leistungspakete verwalten, die Anbieter für ihre Inserate anbieten.",
   "help": {
     "ariaLabel": "Über Inserat-Pakete",
     "title": "Über Inserat-Pakete",
@@ -35,8 +35,8 @@
       "amount": "Preis",
       "currency": "Währung"
     },
-    "deliveryDays": "Delivery tage",
-    "order": "Display auftrag",
+    "deliveryDays": "Liefertage",
+    "order": "Anzeigereihenfolge",
     "company": "Firma",
     "createdBy": "Erstellt von",
     "createdAt": "Erstellt am",

@@ -1,20 +1,20 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx",
-  "failedTitle": "Inserat flag konnten nicht geladen werden",
+  "failedTitle": "Inserat-Meldung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "listing": "Inserat",
   "reason": "Grund",
-  "reporter": "Reporter",
+  "reporter": "Meldende Person",
   "status": "Status",
   "status_values": {
     "pending": "Ausstehend",
-    "reviewed": "Reviewed",
-    "dismissed": "Dismissed"
+    "reviewed": "Geprüft",
+    "dismissed": "Verworfen"
   },
   "reason_values": {
-    "inappropriate": "Inappropriate content",
+    "inappropriate": "Unangemessener Inhalt",
     "spam": "Spam",
-    "misleading": "Misleading",
+    "misleading": "Irreführend",
     "other": "Andere"
   }
 }

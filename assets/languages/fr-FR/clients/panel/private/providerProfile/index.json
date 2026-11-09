@@ -37,7 +37,7 @@
   "createProviderProfile": "Créer un profil de prestataire",
   "fields": {
     "provider": "Prestataire",
-    "bio": "Bio",
+    "bio": "Biographie",
     "skills": "Compétences",
     "rating": "Note",
     "createdAt": "Créé",

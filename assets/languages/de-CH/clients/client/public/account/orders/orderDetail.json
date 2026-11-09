@@ -39,6 +39,6 @@
   "tax": "Steuern",
   "giftCard": "Geschenkkarte",
   "total": "Gesamt",
-  "siblingsNotice": "Your payment also created {count} more order(s) from other sellers. View all orders in your account.",
-  "viewAllOrders": "View all orders"
+  "siblingsNotice": "Ihre Zahlung hat zudem {count} weitere Bestellung(en) bei anderen Verkäufern erstellt. Alle Bestellungen sehen Sie in Ihrem Konto.",
+  "viewAllOrders": "Alle Bestellungen anzeigen"
 }

@@ -57,7 +57,7 @@
   "fields": {
     "!enums": {
       "status": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "active": "Aktiv",
         "inactive": "Joaktiv"
       },

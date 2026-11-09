@@ -1,13 +1,13 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx",
-  "failedTitle": "Return antrag konnten nicht geladen werden",
+  "failedTitle": "Rücksendung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "type": "Typ",
   "status": "Status",
-  "refundAmount": "Rückerstattung betrag",
+  "refundAmount": "Rückerstattungsbetrag",
   "returnType": {
-    "return": "Return",
-    "exchange": "Exchange",
+    "return": "Rückgabe",
+    "exchange": "Umtausch",
     "refund": "Rückerstattung"
   },
   "returnStatus": {

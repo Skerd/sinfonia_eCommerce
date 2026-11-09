@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productOrders/index.tsx",
-  "title": "Produkt aufträge",
-  "description": "Track und verwalten customer aufträge.",
+  "title": "Produktbestellungen",
+  "description": "Kundenbestellungen verfolgen und verwalten.",
   "help": {
     "ariaLabel": "Über Produktbestellungen",
     "title": "Über Produktbestellungen",
@@ -76,29 +76,29 @@
     "!enums": {
       "status": {
         "pending": "Ausstehend",
-        "confirmed": "Confirmed",
-        "processing": "Processing",
-        "shipped": "Shipped",
-        "delivered": "Delivered",
+        "confirmed": "Bestätigt",
+        "processing": "In Bearbeitung",
+        "shipped": "Versandt",
+        "delivered": "Zugestellt",
         "cancelled": "Storniert",
-        "refunded": "Refunded"
+        "refunded": "Erstattet"
       },
       "paymentStatus": {
         "unpaid": "Unbezahlt",
-        "authorized": "Authorized",
+        "authorized": "Autorisiert",
         "paid": "Bezahlt",
-        "partially_refunded": "Partially refunded",
-        "refunded": "Refunded",
-        "voided": "Voided"
+        "partially_refunded": "Teilweise erstattet",
+        "refunded": "Erstattet",
+        "voided": "Storniert"
       },
       "fulfillmentStatus": {
-        "unfulfilled": "Unfulfilled",
-        "partially_fulfilled": "Partially fulfilled",
-        "fulfilled": "Fulfilled",
-        "returned": "Returned"
+        "unfulfilled": "Nicht erfüllt",
+        "partially_fulfilled": "Teilweise erfüllt",
+        "fulfilled": "Erfüllt",
+        "returned": "Zurückgesendet"
       }
     },
-    "orderNumber": "Auftrag nummer",
+    "orderNumber": "Bestellnummer",
     "customer": "Kunde",
     "email": "E-Mail",
     "phone": "Telefon",
@@ -112,49 +112,49 @@
     "shippingAddress": {
       "firstName": "Versand vor name",
       "lastName": "Versand nach name",
-      "phone": "Versand telefon",
+      "phone": "Telefon (Lieferung)",
       "street": "Versand strasse",
-      "city": "Versand ort",
+      "city": "Ort (Lieferung)",
       "state": "Versand kanton",
       "postalCode": "Versand post code",
-      "country": "Versand land"
+      "country": "Land (Lieferung)"
     },
     "billingAddress": {
       "firstName": "Abrechnung vor name",
       "lastName": "Abrechnung nach name",
-      "phone": "Abrechnung telefon",
+      "phone": "Telefon (Rechnung)",
       "street": "Abrechnung strasse",
-      "city": "Abrechnung ort",
+      "city": "Ort (Rechnung)",
       "state": "Abrechnung kanton",
       "postalCode": "Abrechnung post code",
-      "country": "Abrechnung land"
+      "country": "Land (Rechnung)"
     },
     "paymentStatus": "Zahlung",
-    "fulfillmentStatus": "Fulfillment",
+    "fulfillmentStatus": "Lieferung",
     "status": "Status",
     "appliedDiscounts": {
-      "discount": "Applied rabatt",
+      "discount": "Angewendeter Rabatt",
       "code": "Rabatt code",
-      "amount": "Rabatt betrag"
+      "amount": "Rabattbetrag"
     },
     "taxBreakdown": {
       "name": "Steuer name",
       "rate": "Steuer satz",
-      "amount": "Steuer betrag"
+      "amount": "Steuerbetrag"
     },
     "shippingRate": {
       "name": "Versand satz",
-      "carrier": "Versand carrier",
-      "price": "Versand preis"
+      "carrier": "Versanddienstleister",
+      "price": "Versandpreis"
     },
     "notes": "Notizen",
-    "internalNotes": "Internal notizen",
-    "stripePaymentIntentId": "Stripe zahlung intent",
-    "idempotencyKey": "Idempotency key",
+    "internalNotes": "Interne Notizen",
+    "stripePaymentIntentId": "Stripe-Zahlungsabsicht (ID)",
+    "idempotencyKey": "Idempotenzschlüssel",
     "giftCard": {
-      "giftCard": "Gift karte",
+      "giftCard": "Geschenkkarte",
       "code": "Gift karte code",
-      "amount": "Gift karte betrag"
+      "amount": "Geschenkkartenbetrag"
     },
     "company": "Firma",
     "createdBy": "Erstellt von",

@@ -27,5 +27,5 @@
   "giftCardCode": "Geschenkkartencode",
   "apply": "Anwenden",
   "checkout": "Zur Kasse",
-  "soldBy": "Sold by {name}"
+  "soldBy": "Verkauft von {name}"
 }

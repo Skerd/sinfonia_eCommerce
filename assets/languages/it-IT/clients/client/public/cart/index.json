@@ -27,5 +27,5 @@
   "giftCardCode": "Codice gift card",
   "apply": "Applica",
   "checkout": "Vai al checkout",
-  "soldBy": "Sold by {name}"
+  "soldBy": "Venduto da {name}"
 }

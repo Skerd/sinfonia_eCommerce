@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/dialogs/activateShippingZoneDialog.tsx",
-  "title": "Aktivieren versand zone",
-  "description": "Diese versand zone will werden used when calculating versand rates.",
+  "title": "Versandzone aktivieren",
+  "description": "Diese Versandzone wird bei der Berechnung der Versandtarife verwendet.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating versand zone…",
+      "title": "Versandzone wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Versand zone activated",
+      "title": "Versandzone aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren versand zone",
+      "title": "Versandzone konnte nicht aktiviert werden",
       "time": 3000
     }
   }

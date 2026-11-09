@@ -1,19 +1,19 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/inventoryMovements/center/cardView/inventoryMovementCard.tsx",
-  "failedTitle": "Inventory movement konnten nicht geladen werden",
+  "failedTitle": "Lagerbewegung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "quantity": "Menge",
-  "beforeAfter": "Before → after",
-  "receipt": "Receipt",
+  "beforeAfter": "Vorher → nachher",
+  "receipt": "Beleg",
   "reasons": {
-    "restock": "Restock",
+    "restock": "Auffüllen",
     "sale": "Verkauf",
-    "return": "Return",
+    "return": "Rückgabe",
     "adjustment": "Anpassung",
-    "damage": "Damage",
-    "transfer_in": "Transfer in",
-    "transfer_out": "Transfer out",
-    "initial": "Initial",
-    "write_off": "Write-off"
+    "damage": "Beschädigung",
+    "transfer_in": "Umlagerung ein",
+    "transfer_out": "Umlagerung aus",
+    "initial": "Anfangsbestand",
+    "write_off": "Abschreibung"
   }
 }

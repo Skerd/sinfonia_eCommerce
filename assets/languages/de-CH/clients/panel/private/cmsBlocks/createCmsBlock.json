@@ -1,9 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/createCmsBlock.tsx",
-  "title": "CMS block erstellen",
+  "title": "CMS-Block erstellen",
   "formHeader": {
-    "title": "CMS block erstellen",
-    "description": "A storefront content block mit terminplan und visibility rules. hinzufügen"
+    "title": "CMS-Block erstellen",
+    "description": "Fügen Sie einen Inhaltsblock für den Shop mit Zeitplan und Sichtbarkeitsregeln hinzu."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -12,16 +12,16 @@
   "form": {
     "generalSectionTitle": "Allgemein",
     "configSectionTitle": "Konfiguration",
-    "visibilitySectionTitle": "Visibility",
+    "visibilitySectionTitle": "Sichtbarkeit",
     "titleLabel": "Bezeichnung",
     "titlePlaceholder": "Startseiten-Hero",
     "typeLabel": "Typ",
     "typePlaceholder": "Blocktyp auswählen",
     "positionLabel": "Position",
     "positionPlaceholder": "0",
-    "startsAtLabel": "Starts am",
+    "startsAtLabel": "Beginnt am",
     "startsAtPlaceholder": "Start auswählen",
-    "endsAtLabel": "Ends am",
+    "endsAtLabel": "Endet am",
     "endsAtPlaceholder": "Ende auswählen",
     "headlineLabel": "Überschrift",
     "headlinePlaceholder": "Willkommen",
@@ -62,40 +62,40 @@
     "itemHrefPlaceholder": "/products",
     "visibilityDevicesLabel": "Geräte",
     "visibilityDevicesPlaceholder": "Geräte auswählen",
-    "visibilityRegionsLabel": "Regions",
+    "visibilityRegionsLabel": "Regionen",
     "visibilityRegionsPlaceholder": "Region code hinzufügen",
     "removeRegion": "Entfernen region",
     "cmsBlockType": {
-      "hero_banner": "Hero banner",
+      "hero_banner": "Hero-Banner",
       "slider": "Slider",
-      "featured_collection": "Featured collection",
-      "trending": "Trending",
-      "best_sellers": "Best sellers",
-      "flash_sale": "Flash verkauf",
-      "announcement_bar": "Announcement bar",
-      "custom_html": "Custom HTML",
+      "featured_collection": "Hervorgehobene Kollektion",
+      "trending": "Im Trend",
+      "best_sellers": "Bestseller",
+      "flash_sale": "Flash Sale",
+      "announcement_bar": "Ankündigungsleiste",
+      "custom_html": "Eigenes HTML",
       "video": "Video",
-      "grid": "Grid",
-      "category_showcase": "Kategorie showcase",
-      "promotional_section": "Promotional section"
+      "grid": "Raster",
+      "category_showcase": "Kategorie-Schaufenster",
+      "promotional_section": "Werbebereich"
     },
     "visibilityDevice": {
       "desktop": "Desktop",
-      "mobile": "Mobile",
+      "mobile": "Mobil",
       "tablet": "Tablet"
     }
   },
   "axios": {
     "start": {
-      "title": "CMS block wird erstellt",
+      "title": "CMS-Block wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "CMS block erstellt",
+      "title": "CMS-Block erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen CMS block",
+      "title": "CMS-Block konnte nicht erstellt werden",
       "time": 3000
     }
   }

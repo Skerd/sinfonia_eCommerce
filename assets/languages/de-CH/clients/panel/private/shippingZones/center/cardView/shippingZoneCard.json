@@ -1,10 +1,10 @@
 {
   "active": "Aktiv",
-  "countries": "Countries",
+  "countries": "Länder",
   "inactive": "Inaktiv",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/center/cardView/shippingZoneCard.tsx",
-  "failedTitle": "Versand zone konnten nicht geladen werden",
+  "failedTitle": "Versandzone konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
-  "rates": "Rates"
+  "rates": "Tarife"
 }

@@ -1,58 +1,58 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/createPosConfig.tsx",
-  "title": "POS config erstellen",
+  "title": "POS-Konfiguration erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Register name",
-    "paymentMethodsLabel": "Zahlung methods",
-    "managersLabel": "Managers",
-    "warehousesLabel": "Warehouses",
-    "warehousePlaceholder": "Warehouse auswählen",
+    "namePlaceholder": "Kassenname",
+    "paymentMethodsLabel": "Zahlungsarten",
+    "managersLabel": "Manager",
+    "warehousesLabel": "Lager",
+    "warehousePlaceholder": "Lager auswählen",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
     "fiscalConfigLabel": "Fiskalkonfiguration",
     "fiscalConfigPlaceholder": "Fiskalkonfiguration auswählen",
-    "receiptHeaderLabel": "Receipt header",
-    "receiptHeaderPlaceholder": "Printed am die top von die receipt",
-    "receiptFooterLabel": "Receipt footer",
-    "receiptFooterPlaceholder": "Printed am die bottom von die receipt",
-    "tillOptionsSectionTitle": "Till options",
-    "ifaceBarcodeScannerLabel": "Barcode scanner",
-    "ifaceCashControlLabel": "Cash control",
-    "allowDiscountLabel": "Allow rabatt",
-    "allowQuantityChangeLabel": "Allow menge change",
-    "allowOversellLabel": "Allow oversell",
-    "pinForDiscountLabel": "PIN für rabatt",
-    "pinForCashOutLabel": "PIN für cash out",
+    "receiptHeaderLabel": "Belegkopfzeile",
+    "receiptHeaderPlaceholder": "Wird oben auf dem Beleg gedruckt",
+    "receiptFooterLabel": "Belegfusszeile",
+    "receiptFooterPlaceholder": "Wird unten auf dem Beleg gedruckt",
+    "tillOptionsSectionTitle": "Kassenoptionen",
+    "ifaceBarcodeScannerLabel": "Strichcode-Scanner",
+    "ifaceCashControlLabel": "Bargeldkontrolle",
+    "allowDiscountLabel": "Rabatt erlauben",
+    "allowQuantityChangeLabel": "Mengenänderung erlauben",
+    "allowOversellLabel": "Überverkauf erlauben",
+    "pinForDiscountLabel": "PIN für Rabatt",
+    "pinForCashOutLabel": "PIN für Barentnahme",
     "pinForRefundLabel": "PIN für rückerstattung",
-    "selectWarehouse": "Warehouse hinzufügen",
-    "removeWarehouse": "Entfernen warehouse",
+    "selectWarehouse": "Lager hinzufügen",
+    "removeWarehouse": "Lager entfernen",
     "selectCurrency": "Währung auswählen",
     "selectPaymentMethod": "Zahlungsart auswählen",
-    "removePaymentMethod": "Entfernen zahlung methode",
+    "removePaymentMethod": "Zahlungsart entfernen",
     "selectManager": "Manager auswählen",
     "removeManager": "Entfernen manager"
   },
   "axios": {
     "start": {
-      "title": "POS config wird erstellt",
+      "title": "POS-Konfiguration wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "POS config erstellt",
+      "title": "POS-Konfiguration erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen POS config",
+      "title": "POS-Konfiguration konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "POS config erstellen",
-    "description": "Set up a shop till: Fiskalkonfiguration, warehouses, zahlung methods, receipt text, und till rules."
+    "title": "POS-Konfiguration erstellen",
+    "description": "Richten Sie eine Ladenkasse ein: Fiskalkonfiguration, Lager, Zahlungsarten, Belegtext und Kassenregeln."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "POS config erstellen"
+    "submit": "POS-Konfiguration erstellen"
   }
 }

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
-  "title": "Produkt Attributes",
-  "description": "Define produkt options such as grösse, color, und material.",
+  "title": "Produktattribute",
+  "description": "Produktoptionen wie Grösse, Farbe und Material definieren.",
   "help": {
     "ariaLabel": "Über Produktattribute",
     "title": "Über Produktattribute",
@@ -27,14 +27,14 @@
       }
     ]
   },
-  "createProductAttribute": "Attribute erstellen",
+  "createProductAttribute": "Attribut erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "position": "Position",
-    "isVisibleOnProductPage": "Visible on produkt seite",
-    "isUsedForVariants": "Used für variants",
-    "values": "Values",
+    "isVisibleOnProductPage": "Auf der Produktseite sichtbar",
+    "isUsedForVariants": "Für Varianten verwendet",
+    "values": "Werte",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

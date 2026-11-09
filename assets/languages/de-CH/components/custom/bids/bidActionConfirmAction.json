@@ -1,39 +1,39 @@
 {
   "path": "src/modules/eCommerce/components/custom/bids/bidActionConfirmAction.tsx",
   "accept": {
-    "title": "Accept diese offerte?",
-    "description": "Die offerte will werden marked accepted, die aufgabe antrag zuschlag, und ein auftrag will werden erstellt. Diese kann nicht werden rückgängig von here.",
-    "confirm": "Accept offerte",
+    "title": "Diese Offerte annehmen?",
+    "description": "Die Offerte wird als angenommen markiert, die Ausschreibung vergeben und ein Auftrag erstellt. Dies kann hier nicht rückgängig gemacht werden.",
+    "confirm": "Offerte annehmen",
     "axios": {
       "start": {
-        "title": "Accepting offerte",
+        "title": "Offerte wird angenommen",
         "time": 3000
       },
       "success": {
-        "title": "Offerte accepted erfolgreich",
+        "title": "Offerte erfolgreich angenommen",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht accept offerte, bitte versuchen erneut",
+        "title": "Offerte konnte nicht angenommen werden, bitte erneut versuchen",
         "time": 3000
       }
     }
   },
   "reject": {
-    "title": "Ablehnen diese offerte?",
-    "description": "Die offerte will werden marked abgelehnt. Die aufgabe requester oder bidder can ablehnen a ausstehend offerte.",
-    "confirm": "Ablehnen offerte",
+    "title": "Diese Offerte ablehnen?",
+    "description": "Die Offerte wird als abgelehnt markiert. Auftraggeber oder Bieter können eine ausstehende Offerte ablehnen.",
+    "confirm": "Offerte ablehnen",
     "axios": {
       "start": {
-        "title": "Rejecting offerte",
+        "title": "Offerte wird abgelehnt",
         "time": 3000
       },
       "success": {
-        "title": "Offerte abgelehnt erfolgreich",
+        "title": "Offerte erfolgreich abgelehnt",
         "time": 3000
       },
       "error": {
-        "title": "Konnte nicht ablehnen offerte, bitte versuchen erneut",
+        "title": "Offerte konnte nicht abgelehnt werden, bitte erneut versuchen",
         "time": 3000
       }
     }

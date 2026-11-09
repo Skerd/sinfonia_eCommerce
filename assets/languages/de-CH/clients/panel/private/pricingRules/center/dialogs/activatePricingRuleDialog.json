@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/dialogs/activatePricingRuleDialog.tsx",
-  "title": "Aktivieren pricing rule",
-  "description": "Diese pricing rule will start applying bis matching catalog prices.",
+  "title": "Preisregel aktivieren",
+  "description": "Diese Preisregel wird auf passende Katalogpreise angewendet.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating pricing rule…",
+      "title": "Preisregel wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Pricing rule activated",
+      "title": "Preisregel aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren pricing rule",
+      "title": "Preisregel konnte nicht aktiviert werden",
       "time": 3000
     }
   }

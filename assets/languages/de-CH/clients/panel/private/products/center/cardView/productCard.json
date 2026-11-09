@@ -4,20 +4,20 @@
   "failedDescription": "Zum erneuten Versuch tippen.",
   "salePercentOff": "{{percent}}% Off",
   "timerDays": "Tage",
-  "timerHours": "Hours",
-  "timerMins": "Mins",
-  "timerSecs": "Sec",
+  "timerHours": "Std.",
+  "timerMins": "Min.",
+  "timerSecs": "Sek.",
   "productStatus": {
     "draft": "Entwurf",
     "active": "Aktiv",
     "archived": "Archiviert"
   },
   "productType": {
-    "physical": "Physical",
+    "physical": "Physisch",
     "digital": "Digital",
     "service": "Dienstleistung",
-    "variable": "Variable",
+    "variable": "Variabel",
     "bundle": "Bundle",
-    "gift_card": "Gift karte"
+    "gift_card": "Geschenkkarte"
   }
 }

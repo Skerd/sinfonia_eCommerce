@@ -1,29 +1,29 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
-  "title": "Return antrag erstellen",
+  "title": "Rücksendung erstellen",
   "form": {
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "typeLabel": "Typ",
     "statusLabel": "Status",
-    "refundAmountLabel": "Rückerstattung betrag",
+    "refundAmountLabel": "Rückerstattungsbetrag",
     "refundAmountPlaceholder": "0",
-    "customerNoteLabel": "Customer note",
-    "customerNotePlaceholder": "Optional note von die customer",
-    "adminNoteLabel": "Admin note",
-    "adminNotePlaceholder": "Optional internal note",
+    "customerNoteLabel": "Kundennotiz",
+    "customerNotePlaceholder": "Optionale Notiz des Kunden",
+    "adminNoteLabel": "Admin-Notiz",
+    "adminNotePlaceholder": "Optionale interne Notiz",
     "itemsSectionTitle": "Positionen",
     "itemAddRow": "Position hinzufügen",
-    "itemRemoveRow": "Entfernen position",
+    "itemRemoveRow": "Position entfernen",
     "itemRowTitle": "Position",
     "orderItemIdLabel": "Bestellposition",
     "orderItemIdPlaceholder": "Bestellposition wählen",
     "quantityLabel": "Menge",
     "reasonLabel": "Grund",
-    "reasonPlaceholder": "Why ist diese position being returned?",
+    "reasonPlaceholder": "Warum wird dieser Artikel zurückgegeben?",
     "returnType": {
-      "return": "Return",
-      "exchange": "Exchange",
+      "return": "Rückgabe",
+      "exchange": "Umtausch",
       "refund": "Rückerstattung"
     },
     "returnStatus": {
@@ -36,24 +36,24 @@
   },
   "axios": {
     "start": {
-      "title": "Return antrag wird erstellt",
+      "title": "Rücksendung wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Return antrag erstellt",
+      "title": "Rücksendung erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen return antrag",
+      "title": "Rücksendung konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Return antrag erstellen",
-    "description": "Antrag a return, exchange, oder rückerstattung für ein auftrag."
+    "title": "Rücksendung erstellen",
+    "description": "Beantragen Sie eine Rückgabe, einen Umtausch oder eine Rückerstattung für eine Bestellung."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Return antrag erstellen"
+    "submit": "Rücksendung erstellen"
   }
 }

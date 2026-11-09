@@ -60,7 +60,7 @@
   "giftCardCode": "Kodi",
   "giftCardAmount": "Shuma e aplikuar",
   "internalNotes": "Shënime të brendshme",
-  "stripePaymentIntentId": "Stripe payment intent",
+  "stripePaymentIntentId": "Qëllimi i pagesës Stripe",
   "idempotencyKey": "Çelësi i idempotencës",
   "itemProduct": "Produkti",
   "itemVariant": "Varianti",

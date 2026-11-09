@@ -5,18 +5,18 @@
     "recipientSectionTitle": "Empfänger",
     "addressSectionTitle": "Adresse",
     "customerLabel": "Kunde",
-    "customerPlaceholder": "Customer auswählen",
+    "customerPlaceholder": "Kunde auswählen",
     "typeLabel": "Typ",
     "addressType": {
       "billing": "Rechnung",
       "shipping": "Versand"
     },
-    "firstNameLabel": "Recipient vor name",
-    "firstNamePlaceholder": "Vor name on die paket",
-    "lastNameLabel": "Recipient nach name",
-    "lastNamePlaceholder": "Nach name on die paket",
+    "firstNameLabel": "Vorname des Empfängers",
+    "firstNamePlaceholder": "Vorname auf dem Paket",
+    "lastNameLabel": "Nachname des Empfängers",
+    "lastNamePlaceholder": "Nachname auf dem Paket",
     "streetLabel": "Strasse",
-    "streetPlaceholder": "Strasse adresse",
+    "streetPlaceholder": "Strasse und Hausnummer",
     "cityLabel": "Ort",
     "cityPlaceholder": "Ort auswählen",
     "stateLabel": "Kanton",
@@ -26,14 +26,14 @@
     "emailLabel": "E-Mail",
     "emailPlaceholder": "name@example.com",
     "phoneLabel": "Telefon",
-    "phonePlaceholder": "Telefon nummer",
+    "phonePlaceholder": "Telefonnummer",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
     "latitudeLabel": "Breitengrad",
     "latitudePlaceholder": "41.3275",
     "longitudeLabel": "Längengrad",
     "longitudePlaceholder": "19.8189",
-    "labelLabel": "Label",
+    "labelLabel": "Bezeichnung",
     "labelPlaceholder": "Startseite, arbeit, …"
   },
   "axios": {
@@ -46,13 +46,13 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen adresse",
+      "title": "Adresse konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Adresse erstellen",
-    "description": "Link ein adresse bis a customer, set die recipient, standort, und map pin."
+    "description": "Verknüpfen Sie eine Adresse mit einem Kunden und legen Sie Empfänger, Standort und Kartenmarkierung fest."
   },
   "formButtons": {
     "cancel": "Abbrechen",

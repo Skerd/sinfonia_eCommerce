@@ -3,15 +3,15 @@
   "inactive": "Inaktiv",
   "name": "Name",
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/center/cardView/pricingRuleCard.tsx",
-  "failedTitle": "Pricing rule konnten nicht geladen werden",
+  "failedTitle": "Preisregel konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "pricingRuleType": {
-    "fixed_discount": "Fixed rabatt",
-    "fixed_price": "Fixed preis",
-    "percentage_discount": "Percentage rabatt",
-    "surcharge": "Surcharge"
+    "fixed_discount": "Fester Rabatt",
+    "fixed_price": "Festpreis",
+    "percentage_discount": "Prozentualer Rabatt",
+    "surcharge": "Zuschlag"
   },
-  "priority": "Priority",
+  "priority": "Priorität",
   "type": "Typ",
   "value": "Wert"
 }

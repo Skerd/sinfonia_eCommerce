@@ -1,55 +1,55 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/editFulfillment.tsx",
-  "title": "Fulfillment bearbeiten",
-  "errorTitle": "Fulfillment konnten nicht geladen werden",
-  "errorDescription": "Konnte nicht laden diese fulfillment. Versuchen erneut.",
+  "title": "Lieferung bearbeiten",
+  "errorTitle": "Lieferung konnte nicht geladen werden",
+  "errorDescription": "Die Lieferung konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "statusLabel": "Status",
-    "carrierLabel": "Carrier",
-    "carrierPlaceholder": "Carrier name",
-    "trackingNumberLabel": "Tracking nummer",
-    "trackingNumberPlaceholder": "Tracking nummer",
-    "trackingUrlLabel": "Tracking URL",
+    "carrierLabel": "Transporteur",
+    "carrierPlaceholder": "Name des Transporteurs",
+    "trackingNumberLabel": "Sendungsnummer",
+    "trackingNumberPlaceholder": "Sendungsnummer",
+    "trackingUrlLabel": "Sendungsverfolgungs-URL",
     "trackingUrlPlaceholder": "https://…",
-    "shippedAtLabel": "Shipped am",
-    "estimatedDeliveryAtLabel": "Estimated delivery",
-    "deliveredAtLabel": "Delivered am",
+    "shippedAtLabel": "Versandt am",
+    "estimatedDeliveryAtLabel": "Voraussichtliche Lieferung",
+    "deliveredAtLabel": "Zugestellt am",
     "notesLabel": "Notizen",
-    "notesPlaceholder": "Optional notizen",
+    "notesPlaceholder": "Optionale Notizen",
     "itemsSectionTitle": "Positionen",
     "itemAddRow": "Position hinzufügen",
-    "itemRemoveRow": "Entfernen position",
+    "itemRemoveRow": "Position entfernen",
     "itemRowTitle": "Position",
     "orderItemIdLabel": "Bestellposition",
     "orderItemIdPlaceholder": "Bestellposition wählen",
     "quantityLabel": "Menge",
     "fulfillmentStatus": {
       "pending": "Ausstehend",
-      "shipped": "Shipped",
-      "delivered": "Delivered",
+      "shipped": "Versandt",
+      "delivered": "Zugestellt",
       "failed": "Fehlgeschlagen"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving fulfillment",
+      "title": "Lieferung wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Fulfillment aktualisiert",
+      "title": "Lieferung aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren fulfillment",
+      "title": "Lieferung konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Fulfillment bearbeiten",
-    "description": "Aktualisieren shipment status, tracking, dates, notizen, und positionen."
+    "title": "Lieferung bearbeiten",
+    "description": "Sendungsstatus, Sendungsverfolgung, Daten, Notizen und Positionen aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

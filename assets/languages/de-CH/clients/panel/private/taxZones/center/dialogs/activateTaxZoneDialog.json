@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx",
-  "title": "Aktivieren steuer zone",
-  "description": "Diese steuer zone will werden used when calculating steuer am kasse.",
+  "title": "Steuerzone aktivieren",
+  "description": "Diese Steuerzone wird bei der Steuerberechnung im Checkout verwendet.",
   "cancel": "Abbrechen",
   "confirm": "Aktivieren",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Activating steuer zone…",
+      "title": "Steuerzone wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Steuer zone activated",
+      "title": "Steuerzone aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktivieren steuer zone",
+      "title": "Steuerzone konnte nicht aktiviert werden",
       "time": 3000
     }
   }

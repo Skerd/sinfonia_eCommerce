@@ -1,87 +1,87 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/collections/createCollection.tsx",
-  "title": "Collection erstellen",
+  "title": "Kollektion erstellen",
   "form": {
     "generalSectionTitle": "Allgemein",
     "nameLabel": "Name",
-    "namePlaceholder": "Collection name",
+    "namePlaceholder": "Kollektionsname",
     "slugLabel": "Slug",
-    "slugPlaceholder": "auto-generated-von-name",
-    "typeLabel": "Collection typ",
+    "slugPlaceholder": "automatisch-aus-dem-namen",
+    "typeLabel": "Kollektionstyp",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Optional beschreibung für diese collection",
-    "mainImageLabel": "Cover bild",
-    "isVisibleLabel": "Visible on storefront",
-    "positionLabel": "Sortieren position",
+    "descriptionPlaceholder": "Optionale Beschreibung dieser Kollektion",
+    "mainImageLabel": "Titelbild",
+    "isVisibleLabel": "Im Shop sichtbar",
+    "positionLabel": "Sortierposition",
     "positionPlaceholder": "0",
     "mediaSectionTitle": "Medien",
-    "manualSectionTitle": "Manuell produkte",
+    "manualSectionTitle": "Manuelle Produkte",
     "productsLabel": "Produkte",
-    "selectProduct": "Suchen produkte…",
-    "removeProduct": "Entfernen produkt",
-    "dynamicSectionTitle": "Dynamic rules",
-    "ruleConditionLabel": "Match condition",
-    "rulesSectionTitle": "Rules",
-    "rulesLabel": "Rules",
-    "ruleAddRow": "Rule hinzufügen",
-    "ruleRemoveRow": "Entfernen rule",
-    "ruleRowTitle": "Neu rule",
-    "ruleFieldLabel": "Field",
+    "selectProduct": "Produkte suchen…",
+    "removeProduct": "Produkt entfernen",
+    "dynamicSectionTitle": "Dynamische Regeln",
+    "ruleConditionLabel": "Übereinstimmungsbedingung",
+    "rulesSectionTitle": "Regeln",
+    "rulesLabel": "Regeln",
+    "ruleAddRow": "Regel hinzufügen",
+    "ruleRemoveRow": "Regel entfernen",
+    "ruleRowTitle": "Neue Regel",
+    "ruleFieldLabel": "Feld",
     "ruleOperatorLabel": "Operator",
     "ruleValueLabel": "Wert",
-    "ruleValuePlaceholder": "Rule wert",
+    "ruleValuePlaceholder": "Regelwert",
     "seoSectionTitle": "SEO",
-    "seoTitleLabel": "SEO bezeichnung",
-    "seoTitlePlaceholder": "Optional SEO bezeichnung",
-    "seoDescriptionLabel": "SEO beschreibung",
-    "seoDescriptionPlaceholder": "Optional SEO beschreibung",
+    "seoTitleLabel": "SEO-Titel",
+    "seoTitlePlaceholder": "Optionaler SEO-Titel",
+    "seoDescriptionLabel": "SEO-Beschreibung",
+    "seoDescriptionPlaceholder": "Optionale SEO-Beschreibung",
     "collectionType": {
       "manual": "Manuell",
-      "dynamic": "Dynamic"
+      "dynamic": "Dynamisch"
     },
     "ruleCondition": {
-      "all": "Alle rules (UND)",
-      "any": "Any rule (ODER)"
+      "all": "Alle Regeln (UND)",
+      "any": "Eine beliebige Regel (ODER)"
     },
     "ruleField": {
-      "tag": "Tag",
-      "brand": "Brand",
+      "tag": "Schlagwort",
+      "brand": "Marke",
       "category": "Kategorie",
       "price": "Preis",
       "vendor": "Lieferant",
-      "inventory_level": "Inventory level",
-      "product_type": "Produkt typ"
+      "inventory_level": "Lagerbestand",
+      "product_type": "Produkttyp"
     },
     "ruleOperator": {
-      "equals": "Equals",
-      "not_equals": "Nicht equals",
-      "contains": "Contains",
-      "not_contains": "Does nicht contain",
-      "greater_than": "Greater than",
-      "less_than": "Less than",
-      "starts_with": "Starts mit"
+      "equals": "Ist gleich",
+      "not_equals": "Ist ungleich",
+      "contains": "Enthält",
+      "not_contains": "Enthält nicht",
+      "greater_than": "Grösser als",
+      "less_than": "Kleiner als",
+      "starts_with": "Beginnt mit"
     }
   },
   "axios": {
     "start": {
-      "title": "Collection wird erstellt",
+      "title": "Kollektion wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Collection erstellt",
+      "title": "Kollektion erstellt",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen collection",
+      "title": "Kollektion konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Collection erstellen",
-    "description": "Group produkte manually oder mit dynamic matching rules."
+    "title": "Kollektion erstellen",
+    "description": "Produkte manuell oder mit dynamischen Übereinstimmungsregeln gruppieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Collection erstellen"
+    "submit": "Kollektion erstellen"
   }
 }

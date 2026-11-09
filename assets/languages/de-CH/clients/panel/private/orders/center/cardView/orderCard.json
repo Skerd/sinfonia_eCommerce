@@ -10,7 +10,7 @@
   "total": "Total",
   "statuses": {
     "pending": "Ausstehend",
-    "accepted": "Accepted",
+    "accepted": "Angenommen",
     "in_progress": "In Bearbeitung",
     "completed": "Abgeschlossen",
     "cancelled": "Storniert"

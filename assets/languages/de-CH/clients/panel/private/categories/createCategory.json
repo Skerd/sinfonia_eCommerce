@@ -3,12 +3,12 @@
   "form": {
     "nameLabel": "Name",
     "namePlaceholder": "Kategorie name",
-    "parentCategoryLabel": "Parent kategorie",
-    "parentCategoryPlaceholder": "Optional root kategorie",
+    "parentCategoryLabel": "Übergeordnete Kategorie",
+    "parentCategoryPlaceholder": "Optionale Hauptkategorie",
     "orderLabel": "Sortierreihenfolge",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Kategorie erstellen",
-    "createCategoryDescription": "A kategorie bis organize produkte in ihr catalog. hinzufügen"
+    "createCategoryDescription": "Fügen Sie eine Kategorie hinzu, um die Produkte in Ihrem Katalog zu ordnen."
   },
   "axios": {
     "start": {
@@ -20,13 +20,13 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht erstellen kategorie",
+      "title": "Kategorie konnte nicht erstellt werden",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Kategorie erstellen",
-    "description": "A kategorie bis organize produkte in ihr catalog. hinzufügen"
+    "description": "Fügen Sie eine Kategorie hinzu, um die Produkte in Ihrem Katalog zu ordnen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

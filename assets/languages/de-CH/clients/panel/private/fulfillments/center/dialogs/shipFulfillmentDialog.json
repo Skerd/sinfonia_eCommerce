@@ -1,29 +1,29 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/fulfillments/center/dialogs/shipFulfillmentDialog.tsx",
-  "title": "Mark fulfillment as shipped",
-  "description": "Set tracking details und mark diese ausstehend fulfillment as shipped.",
-  "carrierLabel": "Carrier",
-  "carrierPlaceholder": "Carrier name",
-  "trackingNumberLabel": "Tracking nummer",
-  "trackingNumberPlaceholder": "Tracking nummer",
-  "trackingUrlLabel": "Tracking URL",
+  "title": "Lieferung als versandt markieren",
+  "description": "Sendungsdetails erfassen und diese ausstehende Lieferung als versandt markieren.",
+  "carrierLabel": "Transporteur",
+  "carrierPlaceholder": "Name des Transporteurs",
+  "trackingNumberLabel": "Sendungsnummer",
+  "trackingNumberPlaceholder": "Sendungsnummer",
+  "trackingUrlLabel": "Sendungsverfolgungs-URL",
   "trackingUrlPlaceholder": "https://…",
   "notesLabel": "Notizen",
-  "notesPlaceholder": "Optional notizen",
+  "notesPlaceholder": "Optionale Notizen",
   "cancel": "Abbrechen",
-  "confirm": "Mark as shipped",
-  "busy": "Working…",
+  "confirm": "Als versandt markieren",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Marking as shipped…",
+      "title": "Wird als versandt markiert…",
       "time": 3000
     },
     "success": {
-      "title": "Fulfillment marked as shipped",
+      "title": "Lieferung als versandt markiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht mark as shipped",
+      "title": "Konnte nicht als versandt markiert werden",
       "time": 3000
     }
   }

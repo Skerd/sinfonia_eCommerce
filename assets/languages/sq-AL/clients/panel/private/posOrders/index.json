@@ -49,7 +49,7 @@
   "fields": {
     "!enums": {
       "state": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "paid": "Paguar",
         "cancel": "Anuluar",
         "refunded": "Rimbursuar"

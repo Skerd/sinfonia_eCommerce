@@ -1,9 +1,9 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/editCmsBlock.tsx",
-  "title": "CMS block bearbeiten",
+  "title": "CMS-Block bearbeiten",
   "formHeader": {
-    "title": "CMS block bearbeiten",
-    "description": "Aktualisieren storefront content, terminplan, und visibility."
+    "title": "CMS-Block bearbeiten",
+    "description": "Shop-Inhalt, Zeitplan und Sichtbarkeit aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -12,16 +12,16 @@
   "form": {
     "generalSectionTitle": "Allgemein",
     "configSectionTitle": "Konfiguration",
-    "visibilitySectionTitle": "Visibility",
+    "visibilitySectionTitle": "Sichtbarkeit",
     "titleLabel": "Bezeichnung",
     "titlePlaceholder": "Startseiten-Hero",
     "typeLabel": "Typ",
     "typePlaceholder": "Blocktyp auswählen",
     "positionLabel": "Position",
     "positionPlaceholder": "0",
-    "startsAtLabel": "Starts am",
+    "startsAtLabel": "Beginnt am",
     "startsAtPlaceholder": "Start auswählen",
-    "endsAtLabel": "Ends am",
+    "endsAtLabel": "Endet am",
     "endsAtPlaceholder": "Ende auswählen",
     "headlineLabel": "Überschrift",
     "headlinePlaceholder": "Willkommen",
@@ -62,40 +62,40 @@
     "itemHrefPlaceholder": "/products",
     "visibilityDevicesLabel": "Geräte",
     "visibilityDevicesPlaceholder": "Geräte auswählen",
-    "visibilityRegionsLabel": "Regions",
+    "visibilityRegionsLabel": "Regionen",
     "visibilityRegionsPlaceholder": "Region code hinzufügen",
     "removeRegion": "Entfernen region",
     "cmsBlockType": {
-      "hero_banner": "Hero banner",
+      "hero_banner": "Hero-Banner",
       "slider": "Slider",
-      "featured_collection": "Featured collection",
-      "trending": "Trending",
-      "best_sellers": "Best sellers",
-      "flash_sale": "Flash verkauf",
-      "announcement_bar": "Announcement bar",
-      "custom_html": "Custom HTML",
+      "featured_collection": "Hervorgehobene Kollektion",
+      "trending": "Im Trend",
+      "best_sellers": "Bestseller",
+      "flash_sale": "Flash Sale",
+      "announcement_bar": "Ankündigungsleiste",
+      "custom_html": "Eigenes HTML",
       "video": "Video",
-      "grid": "Grid",
-      "category_showcase": "Kategorie showcase",
-      "promotional_section": "Promotional section"
+      "grid": "Raster",
+      "category_showcase": "Kategorie-Schaufenster",
+      "promotional_section": "Werbebereich"
     },
     "visibilityDevice": {
       "desktop": "Desktop",
-      "mobile": "Mobile",
+      "mobile": "Mobil",
       "tablet": "Tablet"
     }
   },
   "axios": {
     "start": {
-      "title": "Saving CMS block",
+      "title": "CMS-Block wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "CMS block aktualisiert",
+      "title": "CMS-Block aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren CMS block",
+      "title": "CMS-Block konnte nicht aktualisiert werden",
       "time": 3000
     }
   }

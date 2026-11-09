@@ -4,5 +4,5 @@
   "noImage": "Pa imazh",
   "discount": "−{percent}%",
   "rating": "Vlerësuar {average} nga 5 ({count} vlerësime)",
-  "soldBy": "Sold by {name}"
+  "soldBy": "Shitet nga {name}"
 }

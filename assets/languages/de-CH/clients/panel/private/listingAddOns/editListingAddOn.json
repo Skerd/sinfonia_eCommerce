@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/editListingAddOn.tsx",
-  "editTitle": "Inserat hinzufügen-on bearbeiten",
-  "editDescription": "Aktualisieren die name, preis, oder delivery time für diese hinzufügen-on.",
-  "errorTitle": "Konnte nicht laden hinzufügen-on",
-  "errorDescription": "Check die link oder return bis die liste und versuchen erneut.",
+  "editTitle": "Inserat-Zusatzleistung bearbeiten",
+  "editDescription": "Name, Preis oder Lieferzeit dieser Zusatzleistung aktualisieren.",
+  "errorTitle": "Zusatzleistung konnte nicht geladen werden",
+  "errorDescription": "Prüfen Sie den Link oder kehren Sie zur Liste zurück und versuchen Sie es erneut.",
   "formHeader": {
-    "title": "Inserat hinzufügen-on bearbeiten",
-    "description": "Modify die hinzufügen-on details."
+    "title": "Inserat-Zusatzleistung bearbeiten",
+    "description": "Details der Zusatzleistung ändern."
   },
   "formButtons": {
     "cancel": "Abbrechen",
@@ -16,26 +16,26 @@
     "idLabel": "Protokoll ID",
     "listingIdLabel": "Inserat",
     "listingIdPlaceholder": "Inserat auswählen",
-    "nameLabel": "Hinzufügen-on name",
-    "namePlaceholder": "E.g. Express delivery",
+    "nameLabel": "Name der Zusatzleistung",
+    "namePlaceholder": "z. B. Expresslieferung",
     "priceAmountLabel": "Preis",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
-    "deliveryDaysLabel": "Delivery tage",
+    "deliveryDaysLabel": "Liefertage",
     "deliveryDaysPlaceholder": "E.g. 2"
   },
   "axios": {
     "start": {
-      "title": "Saving hinzufügen-on",
+      "title": "Zusatzleistung wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Hinzufügen-on aktualisiert",
+      "title": "Zusatzleistung aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren hinzufügen-on",
+      "title": "Zusatzleistung konnte nicht aktualisiert werden",
       "time": 3000
     }
   }

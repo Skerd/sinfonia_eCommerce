@@ -1,12 +1,12 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posOrders/center/cardView/posOrderCard.tsx",
-  "failedTitle": "POS auftrag konnten nicht geladen werden",
+  "failedTitle": "POS-Bestellung konnte nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "items": "positionen",
   "orderState": {
     "draft": "Entwurf",
     "paid": "Bezahlt",
     "cancel": "Storniert",
-    "refunded": "Refunded"
+    "refunded": "Erstattet"
   }
 }

@@ -15,7 +15,7 @@
     "countryPlaceholder": "Zgjidh shtetin",
     "currencyLabel": "Monedha",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Description Placeholder",
+    "descriptionPlaceholder": "Përshkrimi",
     "editStatusSection": "Statusi",
     "expiresAtLabel": "Skadon",
     "expiresAtPlaceholder": "yyyy-MM-dd",
@@ -57,5 +57,5 @@
     "title": "Ndrysho kërkesën"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
-  "title": "Title"
+  "title": "Titulli"
 }

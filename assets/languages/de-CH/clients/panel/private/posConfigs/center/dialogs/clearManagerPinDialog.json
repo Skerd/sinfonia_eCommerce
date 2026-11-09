@@ -1,24 +1,24 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/clearManagerPinDialog.tsx",
   "title": "Leeren manager PIN",
-  "description": "Die current PIN twice bis confirm clearing it. PIN-erforderlich till options will werden turned off. eingeben",
-  "pinLabel": "Current PIN",
-  "confirmPinLabel": "Confirm PIN",
-  "pinMismatch": "PIN confirmation does nicht match",
+  "description": "Geben Sie die aktuelle PIN zweimal ein, um das Löschen zu bestätigen. Kassenoptionen, die eine PIN erfordern, werden ausgeschaltet.",
+  "pinLabel": "Aktuelle PIN",
+  "confirmPinLabel": "PIN bestätigen",
+  "pinMismatch": "PIN-Bestätigung stimmt nicht überein",
   "cancel": "Abbrechen",
   "confirm": "Leeren PIN",
-  "busy": "Working…",
+  "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "Clearing manager PIN",
+      "title": "Manager-PIN wird gelöscht",
       "time": 3000
     },
     "success": {
-      "title": "Manager PIN cleared",
+      "title": "Manager-PIN gelöscht",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht leeren manager PIN",
+      "title": "Manager-PIN konnte nicht gelöscht werden",
       "time": 3000
     }
   }

@@ -38,7 +38,7 @@
       }
     ]
   },
-  "durationWarning": "Ein großer Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
+  "durationWarning": "Ein grosser Katalog kann mehrere Minuten dauern. Lassen Sie diese Seite geöffnet, bis der Import fertig ist.",
   "stockOverwriteWarning": "Ein erneuter Lauf ersetzt die Lagerbestände durch die Mengen aus Odoo. Verkäufe seit dem letzten Import werden überschrieben.",
   "missingConnectionTitle": "Keine Odoo-Verbindung",
   "missingConnection": "Speichern Sie den Odoo-Server für diese Firma, bevor Sie importieren.",
@@ -51,7 +51,7 @@
     "warehouses": "Lager",
     "inventory": "Bestand",
     "stockChanges": "Lagerbewegungen",
-    "actions": "Interne Transfers",
+    "actions": "Interne Umlagerungen",
     "users": "Benutzer"
   },
   "dryRunLabel": "Testlauf",

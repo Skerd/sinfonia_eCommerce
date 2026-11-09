@@ -37,7 +37,7 @@
   "createProviderProfile": "Krijo profil ofruesi",
   "fields": {
     "provider": "Ofruesi",
-    "bio": "Bio",
+    "bio": "Biografia",
     "skills": "Aftësi",
     "rating": "Vlerësimi",
     "createdAt": "Krijuar",

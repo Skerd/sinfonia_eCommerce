@@ -5,7 +5,7 @@
   "listing": {
     "title": "Inserat"
   },
-  "taskRequest": "Aufgabe antrag",
+  "taskRequest": "Ausschreibung",
   "bid": "Angebot",
   "customer": "Kunde",
   "provider": "Anbieter",
@@ -15,13 +15,13 @@
   "status": "Status",
   "createdAt": "Erstellt",
   "overview": "Übersicht",
-  "references": "References",
+  "references": "Referenzen",
   "failedTitle": "Bestellung konnten nicht geladen werden",
-  "failedDescription": "Something went wrong während laden diese auftrag. Click bis retry.",
-  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "failedDescription": "Der Auftrag konnte nicht geladen werden. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden.",
   "orderStatus": {
     "pending": "Ausstehend",
-    "accepted": "Accepted",
+    "accepted": "Angenommen",
     "in_progress": "In Bearbeitung",
     "completed": "Abgeschlossen",
     "cancelled": "Storniert"
