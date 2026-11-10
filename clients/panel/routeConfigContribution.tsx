@@ -77,9 +77,6 @@ const EditPosConfig = lazy(() => import("@eCommerceModule/clients/panel/private/
 const AllPosSessions = lazy(() => import("@eCommerceModule/clients/panel/private/posSessions/index.tsx"));
 const AllPosOrders = lazy(() => import("@eCommerceModule/clients/panel/private/posOrders/index.tsx"));
 const PosTill = lazy(() => import("@eCommerceModule/clients/panel/private/pos/index.tsx"));
-const AllFiscalConfigs = lazy(() => import("@eCommerceModule/clients/panel/private/fiscalConfigs/index.tsx"));
-const CreateFiscalConfig = lazy(() => import("@eCommerceModule/clients/panel/private/fiscalConfigs/createFiscalConfig.tsx"));
-const EditFiscalConfig = lazy(() => import("@eCommerceModule/clients/panel/private/fiscalConfigs/editFiscalConfig.tsx"));
 const AllListings = lazy(() => import("@eCommerceModule/clients/panel/private/listings"));
 const CreateListing = lazy(() => import("@eCommerceModule/clients/panel/private/listings/createListing.tsx"));
 const EditListing = lazy(() => import("@eCommerceModule/clients/panel/private/listings/editListing.tsx"));
@@ -228,12 +225,6 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                     return <EditCollection entityId={collectionId} entityName={collectionName} />;
                 }
                 return <AllCollections />;
-            }
-            if (resource === "fiscalconfigs") {
-                const fiscalConfigId = searchParams.get("fiscalConfigId") || undefined;
-                if (action === "create") return <CreateFiscalConfig />;
-                if (action === "edit" && fiscalConfigId) return <EditFiscalConfig entityId={fiscalConfigId} />;
-                return <AllFiscalConfigs />;
             }
             if (resource === "cmsblocks") {
                 const cmsBlockId = searchParams.get("cmsBlockId") || undefined;

@@ -8,7 +8,6 @@
     "Customergroups": "Groupes de clients",
     "Digitaldeliveries": "Livraisons numériques",
     "Discounts": "Remises",
-    "Fiscalconfigs": "Configurations fiscales",
     "Fulfillments": "Expéditions",
     "Inventories": "Inventaires",
     "Inventorymovements": "Mouvements de stocks",
@@ -293,38 +292,6 @@
       "usageLimit": "Limite d'utilisation",
       "usageLimitPerCustomer": "Limite d'utilisation par client",
       "value": "Valeur",
-      "activate": "Activer",
-      "deactivate": "Désactiver"
-    },
-    "Fiscalconfigs": {
-      "businessUnitCode": "Code de l'unité commerciale",
-      "certificate": "Certificat",
-      "certificatePassword": "Mot de passe du certificat",
-      "createdAt": "Créé le",
-      "createdBy": "Créé par",
-      "deletedAt": "Supprimé le",
-      "deletedBy": "Supprimé par",
-      "einvoiceUrl": "URL de la facture électronique",
-      "environment": "Environnement",
-      "fiscalconfigs": "Configurations fiscales",
-      "fiscalizationUrl": "URL de fiscalisation",
-      "isActive": "Est actif",
-      "isVatRegistered": "Assujetti à la TVA",
-      "maintainerCode": "Code du mainteneur",
-      "name": "Nom",
-      "nipt": "NIPT",
-      "operatorCode": "Code opérateur",
-      "proxyUrl": "URL du proxy",
-      "selfcareUrl": "URL Selfcare",
-      "sellerAddress": "Adresse du vendeur",
-      "sellerCountry": "Pays du vendeur",
-      "sellerName": "Nom du vendeur",
-      "sellerTown": "Ville du vendeur",
-      "softCode": "Code logiciel",
-      "tcrCode": "Code TCR",
-      "tcrIntId": "ID interne TCR",
-      "tcrType": "Type TCR",
-      "updatedAt": "Mis à jour le",
       "activate": "Activer",
       "deactivate": "Désactiver"
     },
@@ -1379,6 +1346,48 @@
       "updatedAt": "Mis à jour le",
       "videoGallery": "Galerie vidéo",
       "notifyAll": "Prévenir tous les prestataires"
+    }
+  },
+  "roles": {
+    "ecom_store_manager": {
+      "name": "Gérant de boutique",
+      "description": "Dirige la boutique : catalogue, prix, commandes, expéditions, retours, stock, caisses et la place de marché."
+    },
+    "ecom_warehouse_operator": {
+      "name": "Opérateur d'entrepôt",
+      "description": "Expédie les commandes, déplace et compte le stock. Peut consulter les commandes et le catalogue mais ne peut ni modifier les prix ni rembourser."
+    },
+    "ecom_cashier": {
+      "name": "Caissier",
+      "description": "Vend et rembourse en caisse et gère la session de caisse. Peut consulter le catalogue et le stock."
+    },
+    "ecom_catalog_editor": {
+      "name": "Éditeur du catalogue",
+      "description": "Gère les produits, variantes, catégories, collections, le contenu de la vitrine et les avis. Ne peut pas modifier les prix, remises, commandes ni le stock."
+    },
+    "ecom_pricing_officer": {
+      "name": "Responsable des prix",
+      "description": "Définit les règles de prix, les remises, les groupes de clients et les zones fiscales. Peut consulter le catalogue et les zones d'expédition sans pouvoir les modifier."
+    },
+    "ecom_order_manager": {
+      "name": "Gestionnaire des commandes",
+      "description": "Mène les commandes web jusqu'à l'expédition et au retour. Peut consulter le catalogue, le stock et l'historique acheteur mais ne peut pas modifier les prix ni les lignes de stock."
+    },
+    "ecom_customer_support": {
+      "name": "Service client",
+      "description": "Traite les demandes de retour et les avis. Peut consulter les commandes, expéditions, le catalogue et l'historique acheteur mais ne peut ni rembourser une commande ni modifier le catalogue."
+    },
+    "ecom_pos_supervisor": {
+      "name": "Superviseur de caisse",
+      "description": "Configure les caisses, les moyens de paiement et les dispositifs fiscaux, et peut vendre en caisse. Peut consulter le catalogue et le stock."
+    },
+    "ecom_analyst": {
+      "name": "Analyste boutique",
+      "description": "Accès en lecture seule au catalogue, aux commandes, au stock, aux caisses, à la place de marché et aux données acheteurs. Ne peut rien modifier."
+    },
+    "ecom_marketplace_operator": {
+      "name": "Opérateur de la place de marché",
+      "description": "Dirige la place de marché de services : annonces, demandes de mission, offres, commandes sous séquestre, litiges, avis et profils de prestataires."
     }
   }
 }

@@ -1,0 +1,139 @@
+{
+  "eCommerce": {
+    "title": "Boutique et place de marché",
+    "codes": {
+      "PRODUCT_ORDER_PLACED": {
+        "title": "Commande passée",
+        "message": "La commande {order} a été passée"
+      },
+      "PRODUCT_ORDER_PAID": {
+        "title": "Paiement reçu",
+        "message": "Paiement reçu pour la commande {order}"
+      },
+      "PRODUCT_ORDER_PAYMENT_FAILED": {
+        "title": "Échec du paiement",
+        "message": "Le paiement de la commande {order} a échoué"
+      },
+      "PRODUCT_ORDER_CONFIRMED": {
+        "title": "Commande confirmée",
+        "message": "La commande {order} a été confirmée"
+      },
+      "PRODUCT_ORDER_SHIPPED": {
+        "title": "Commande expédiée",
+        "message": "La commande {order} a été expédiée"
+      },
+      "PRODUCT_ORDER_DELIVERED": {
+        "title": "Commande livrée",
+        "message": "La commande {order} a été livrée"
+      },
+      "PRODUCT_ORDER_CANCELLED": {
+        "title": "Commande annulée",
+        "message": "La commande {order} a été annulée"
+      },
+      "PRODUCT_ORDER_REFUNDED": {
+        "title": "Commande remboursée",
+        "message": "La commande {order} a été remboursée"
+      },
+      "PRODUCT_ORDER_NEW_MERCHANT": {
+        "title": "Nouvelle commande (équipe de la boutique)",
+        "message": "Nouvelle commande {order} reçue"
+      },
+      "ABANDONED_CART": {
+        "title": "Articles laissés dans le panier",
+        "message": "Vous avez laissé {count} articles dans votre panier — finalisez votre commande",
+        "variants": {
+          "one": "Vous avez laissé 1 article dans votre panier — finalisez votre commande",
+          "other": "Vous avez laissé {count} articles dans votre panier — finalisez votre commande"
+        }
+      },
+      "RETURN_REQUEST_CREATED": {
+        "title": "Retour demandé",
+        "message": "Demande de retour pour la commande {order}"
+      },
+      "RETURN_REQUEST_APPROVED": {
+        "title": "Retour approuvé",
+        "message": "Retour approuvé pour la commande {order}"
+      },
+      "RETURN_REQUEST_REJECTED": {
+        "title": "Retour refusé",
+        "message": "Retour refusé pour la commande {order}"
+      },
+      "INVENTORY_LOW_STOCK": {
+        "title": "Stock bas",
+        "message": "Stock bas : {product} @ {warehouse} ({quantity} restants)"
+      },
+      "GIFT_CARD_ISSUED": {
+        "title": "Carte cadeau émise",
+        "message": "Carte cadeau émise pour la commande {order}"
+      },
+      "DIGITAL_DELIVERY_READY": {
+        "title": "Téléchargements numériques prêts",
+        "message": "Téléchargements numériques prêts pour la commande {order}"
+      },
+      "TASK_REQUEST_CREATED": {
+        "title": "Nouvelle demande de mission correspondante",
+        "message": "Une nouvelle demande de mission correspondant à votre annonce a été publiée : {task}"
+      },
+      "TASK_REQUEST_CLOSED": {
+        "title": "Demande de mission clôturée",
+        "message": "La demande de mission a été clôturée : {task}"
+      },
+      "BID_ACCEPTED": {
+        "title": "Offre acceptée",
+        "message": "Votre offre a été acceptée pour : {task}"
+      },
+      "BID_REJECTED": {
+        "title": "Offre refusée",
+        "message": "Votre offre a été refusée pour : {task}"
+      },
+      "ORDER_CREATED_FROM_LISTING": {
+        "title": "Nouvelle commande pour votre annonce",
+        "message": "Nouvelle commande reçue pour votre annonce : {listing}"
+      },
+      "ORDER_ACCEPTED": {
+        "title": "Commande de service acceptée",
+        "message": "Votre commande a été acceptée : {order}"
+      },
+      "ORDER_STARTED": {
+        "title": "Travail commencé",
+        "message": "Le travail sur votre commande a commencé : {order}"
+      },
+      "ORDER_CANCELLED": {
+        "title": "Commande de service annulée",
+        "message": "La commande a été annulée : {order}"
+      },
+      "ORDER_EXTENDED": {
+        "title": "Délai de livraison prolongé",
+        "message": "Délai de livraison prolongé de {days} jours pour la commande : {order}"
+      },
+      "ORDER_DELIVERY_SUBMITTED": {
+        "title": "Livraison soumise",
+        "message": "Livraison soumise pour votre commande : {order}. Veuillez la vérifier et l'accepter ou demander une révision."
+      },
+      "ORDER_DELIVERY_ACCEPTED": {
+        "title": "Livraison acceptée",
+        "message": "Livraison acceptée ! Commande terminée : {order}"
+      },
+      "ORDER_REVISION_REQUESTED": {
+        "title": "Révision demandée",
+        "message": "Révision demandée pour la commande : {order}"
+      },
+      "ORDER_MILESTONE_RELEASED": {
+        "title": "Jalon libéré",
+        "message": "Jalon « {milestone} » libéré pour la commande : {order}"
+      },
+      "DISPUTE_OPENED": {
+        "title": "Litige ouvert",
+        "message": "Un litige a été ouvert sur la commande : {order}"
+      },
+      "DISPUTE_RESOLVED": {
+        "title": "Litige résolu",
+        "message": "Le litige sur la commande {order} a été résolu ; la commande est terminée"
+      },
+      "DISPUTE_CLOSED": {
+        "title": "Litige clos",
+        "message": "Le litige sur la commande {order} a été clos ; la commande est annulée"
+      }
+    }
+  }
+}

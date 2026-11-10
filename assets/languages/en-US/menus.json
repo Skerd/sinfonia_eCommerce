@@ -16,9 +16,6 @@
     "posorders": {
       "title": "POS orders"
     },
-    "fiscalconfigs": {
-      "title": "Fiscal / E-Invoice"
-    },
     "systemMap": {
       "title": "System map"
     },
@@ -156,12 +153,6 @@
       },
       "productvariants": {
         "title": "Product variants"
-      },
-      "fiscalconfigs": {
-        "title": "Fiscal / E-Invoice"
-      },
-      "albanianFiscalization": {
-        "title": "Albanian Fiscalization"
       },
       "cmsblocks": {
         "title": "CMS blocks"

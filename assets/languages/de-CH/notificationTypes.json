@@ -1,0 +1,139 @@
+{
+  "eCommerce": {
+    "title": "Shop und Marktplatz",
+    "codes": {
+      "PRODUCT_ORDER_PLACED": {
+        "title": "Bestellung aufgegeben",
+        "message": "Bestellung {order} wurde aufgegeben"
+      },
+      "PRODUCT_ORDER_PAID": {
+        "title": "Zahlung erhalten",
+        "message": "Zahlung für Bestellung {order} erhalten"
+      },
+      "PRODUCT_ORDER_PAYMENT_FAILED": {
+        "title": "Zahlung fehlgeschlagen",
+        "message": "Zahlung für Bestellung {order} fehlgeschlagen"
+      },
+      "PRODUCT_ORDER_CONFIRMED": {
+        "title": "Bestellung bestätigt",
+        "message": "Bestellung {order} wurde bestätigt"
+      },
+      "PRODUCT_ORDER_SHIPPED": {
+        "title": "Bestellung versandt",
+        "message": "Bestellung {order} wurde versandt"
+      },
+      "PRODUCT_ORDER_DELIVERED": {
+        "title": "Bestellung zugestellt",
+        "message": "Bestellung {order} wurde zugestellt"
+      },
+      "PRODUCT_ORDER_CANCELLED": {
+        "title": "Bestellung storniert",
+        "message": "Bestellung {order} wurde storniert"
+      },
+      "PRODUCT_ORDER_REFUNDED": {
+        "title": "Bestellung erstattet",
+        "message": "Bestellung {order} wurde erstattet"
+      },
+      "PRODUCT_ORDER_NEW_MERCHANT": {
+        "title": "Neue Bestellung (Shop-Team)",
+        "message": "Neue Bestellung {order} eingegangen"
+      },
+      "ABANDONED_CART": {
+        "title": "Artikel im Warenkorb",
+        "message": "Sie haben {count} Artikel in Ihrem Warenkorb — schliessen Sie Ihre Bestellung ab",
+        "variants": {
+          "one": "Sie haben 1 Artikel in Ihrem Warenkorb — schliessen Sie Ihre Bestellung ab",
+          "other": "Sie haben {count} Artikel in Ihrem Warenkorb — schliessen Sie Ihre Bestellung ab"
+        }
+      },
+      "RETURN_REQUEST_CREATED": {
+        "title": "Rücksendung angefragt",
+        "message": "Rücksendeanfrage für Bestellung {order}"
+      },
+      "RETURN_REQUEST_APPROVED": {
+        "title": "Rücksendung genehmigt",
+        "message": "Rücksendung für Bestellung {order} genehmigt"
+      },
+      "RETURN_REQUEST_REJECTED": {
+        "title": "Rücksendung abgelehnt",
+        "message": "Rücksendung für Bestellung {order} abgelehnt"
+      },
+      "INVENTORY_LOW_STOCK": {
+        "title": "Niedriger Lagerbestand",
+        "message": "Niedriger Lagerbestand: {product} @ {warehouse} (noch {quantity})"
+      },
+      "GIFT_CARD_ISSUED": {
+        "title": "Geschenkkarte ausgestellt",
+        "message": "Geschenkkarte für Bestellung {order} ausgestellt"
+      },
+      "DIGITAL_DELIVERY_READY": {
+        "title": "Digitale Downloads bereit",
+        "message": "Digitale Downloads für Bestellung {order} bereit"
+      },
+      "TASK_REQUEST_CREATED": {
+        "title": "Neue passende Auftragsanfrage",
+        "message": "Eine neue Auftragsanfrage passend zu Ihrem Angebot wurde veröffentlicht: {task}"
+      },
+      "TASK_REQUEST_CLOSED": {
+        "title": "Auftragsanfrage geschlossen",
+        "message": "Auftragsanfrage wurde geschlossen: {task}"
+      },
+      "BID_ACCEPTED": {
+        "title": "Angebot angenommen",
+        "message": "Ihr Angebot wurde angenommen für: {task}"
+      },
+      "BID_REJECTED": {
+        "title": "Angebot abgelehnt",
+        "message": "Ihr Angebot wurde abgelehnt für: {task}"
+      },
+      "ORDER_CREATED_FROM_LISTING": {
+        "title": "Neuer Auftrag für Ihr Angebot",
+        "message": "Neuer Auftrag für Ihr Angebot eingegangen: {listing}"
+      },
+      "ORDER_ACCEPTED": {
+        "title": "Dienstleistungsauftrag angenommen",
+        "message": "Ihr Auftrag wurde angenommen: {order}"
+      },
+      "ORDER_STARTED": {
+        "title": "Arbeit begonnen",
+        "message": "Die Arbeit an Ihrem Auftrag hat begonnen: {order}"
+      },
+      "ORDER_CANCELLED": {
+        "title": "Dienstleistungsauftrag storniert",
+        "message": "Auftrag wurde storniert: {order}"
+      },
+      "ORDER_EXTENDED": {
+        "title": "Liefertermin verlängert",
+        "message": "Liefertermin um {days} Tage verlängert für Auftrag: {order}"
+      },
+      "ORDER_DELIVERY_SUBMITTED": {
+        "title": "Lieferung eingereicht",
+        "message": "Lieferung für Ihren Auftrag eingereicht: {order}. Bitte prüfen und annehmen oder eine Überarbeitung anfordern."
+      },
+      "ORDER_DELIVERY_ACCEPTED": {
+        "title": "Lieferung angenommen",
+        "message": "Lieferung angenommen! Auftrag abgeschlossen: {order}"
+      },
+      "ORDER_REVISION_REQUESTED": {
+        "title": "Überarbeitung angefordert",
+        "message": "Überarbeitung angefordert für Auftrag: {order}"
+      },
+      "ORDER_MILESTONE_RELEASED": {
+        "title": "Meilenstein freigegeben",
+        "message": "Meilenstein «{milestone}» freigegeben für Auftrag: {order}"
+      },
+      "DISPUTE_OPENED": {
+        "title": "Streitfall eröffnet",
+        "message": "Für den Auftrag wurde ein Streitfall eröffnet: {order}"
+      },
+      "DISPUTE_RESOLVED": {
+        "title": "Streitfall gelöst",
+        "message": "Der Streitfall zum Auftrag {order} wurde gelöst; der Auftrag ist abgeschlossen"
+      },
+      "DISPUTE_CLOSED": {
+        "title": "Streitfall geschlossen",
+        "message": "Der Streitfall zum Auftrag {order} wurde geschlossen; der Auftrag ist storniert"
+      }
+    }
+  }
+}

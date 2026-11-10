@@ -16,9 +16,6 @@
     "posorders": {
       "title": "Porositë POS"
     },
-    "fiscalconfigs": {
-      "title": "Fiskalizimi / E-Fatura"
-    },
     "systemMap": {
       "title": "Harta e sistemit"
     },
@@ -156,12 +153,6 @@
       },
       "productvariants": {
         "title": "Variantet e produkteve"
-      },
-      "fiscalconfigs": {
-        "title": "Fiskale / E-faturë"
-      },
-      "albanianFiscalization": {
-        "title": "Fiskalizimi shqiptar"
       },
       "cmsblocks": {
         "title": "Blloqet CMS"

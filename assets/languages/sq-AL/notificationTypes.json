@@ -1,0 +1,139 @@
+{
+  "eCommerce": {
+    "title": "Dyqani dhe tregu",
+    "codes": {
+      "PRODUCT_ORDER_PLACED": {
+        "title": "Porosia u bë",
+        "message": "Porosia {order} u bë"
+      },
+      "PRODUCT_ORDER_PAID": {
+        "title": "Pagesa u mor",
+        "message": "Pagesa u mor për porosinë {order}"
+      },
+      "PRODUCT_ORDER_PAYMENT_FAILED": {
+        "title": "Pagesa dështoi",
+        "message": "Pagesa për porosinë {order} dështoi"
+      },
+      "PRODUCT_ORDER_CONFIRMED": {
+        "title": "Porosia u konfirmua",
+        "message": "Porosia {order} u konfirmua"
+      },
+      "PRODUCT_ORDER_SHIPPED": {
+        "title": "Porosia u dërgua",
+        "message": "Porosia {order} u dërgua"
+      },
+      "PRODUCT_ORDER_DELIVERED": {
+        "title": "Porosia u dorëzua",
+        "message": "Porosia {order} u dorëzua"
+      },
+      "PRODUCT_ORDER_CANCELLED": {
+        "title": "Porosia u anulua",
+        "message": "Porosia {order} u anulua"
+      },
+      "PRODUCT_ORDER_REFUNDED": {
+        "title": "Porosia u rimbursua",
+        "message": "Porosia {order} u rimbursua"
+      },
+      "PRODUCT_ORDER_NEW_MERCHANT": {
+        "title": "Porosi e re (stafi i dyqanit)",
+        "message": "U mor porosia e re {order}"
+      },
+      "ABANDONED_CART": {
+        "title": "Artikuj të lënë në shportë",
+        "message": "Keni lënë {count} artikuj në shportë — përfundoni porosinë",
+        "variants": {
+          "one": "Keni lënë 1 artikull në shportë — përfundoni porosinë",
+          "other": "Keni lënë {count} artikuj në shportë — përfundoni porosinë"
+        }
+      },
+      "RETURN_REQUEST_CREATED": {
+        "title": "U kërkua kthim",
+        "message": "Kërkesë për kthim për porosinë {order}"
+      },
+      "RETURN_REQUEST_APPROVED": {
+        "title": "Kthimi u miratua",
+        "message": "Kthimi u miratua për porosinë {order}"
+      },
+      "RETURN_REQUEST_REJECTED": {
+        "title": "Kthimi u refuzua",
+        "message": "Kthimi u refuzua për porosinë {order}"
+      },
+      "INVENTORY_LOW_STOCK": {
+        "title": "Stok i ulët",
+        "message": "Stok i ulët: {product} @ {warehouse} (kanë mbetur {quantity})"
+      },
+      "GIFT_CARD_ISSUED": {
+        "title": "Karta dhuratë u lëshua",
+        "message": "Karta dhuratë u lëshua për porosinë {order}"
+      },
+      "DIGITAL_DELIVERY_READY": {
+        "title": "Shkarkimet dixhitale janë gati",
+        "message": "Shkarkimet dixhitale janë gati për porosinë {order}"
+      },
+      "TASK_REQUEST_CREATED": {
+        "title": "Kërkesë e re pune që përputhet",
+        "message": "U publikua një kërkesë e re pune që përputhet me shpalljen tuaj: {task}"
+      },
+      "TASK_REQUEST_CLOSED": {
+        "title": "Kërkesa e punës u mbyll",
+        "message": "Kërkesa e punës u mbyll: {task}"
+      },
+      "BID_ACCEPTED": {
+        "title": "Oferta u pranua",
+        "message": "Oferta juaj u pranua për: {task}"
+      },
+      "BID_REJECTED": {
+        "title": "Oferta u refuzua",
+        "message": "Oferta juaj u refuzua për: {task}"
+      },
+      "ORDER_CREATED_FROM_LISTING": {
+        "title": "Porosi e re për shpalljen tuaj",
+        "message": "U mor një porosi e re për shpalljen tuaj: {listing}"
+      },
+      "ORDER_ACCEPTED": {
+        "title": "Porosia e shërbimit u pranua",
+        "message": "Porosia juaj u pranua: {order}"
+      },
+      "ORDER_STARTED": {
+        "title": "Puna filloi",
+        "message": "Puna për porosinë tuaj filloi: {order}"
+      },
+      "ORDER_CANCELLED": {
+        "title": "Porosia e shërbimit u anulua",
+        "message": "Porosia u anulua: {order}"
+      },
+      "ORDER_EXTENDED": {
+        "title": "Afati i dorëzimit u zgjat",
+        "message": "Afati i dorëzimit u zgjat me {days} ditë për porosinë: {order}"
+      },
+      "ORDER_DELIVERY_SUBMITTED": {
+        "title": "Dorëzimi u paraqit",
+        "message": "Dorëzimi u paraqit për porosinë tuaj: {order}. Ju lutemi rishikojeni dhe pranojeni ose kërkoni një rishikim."
+      },
+      "ORDER_DELIVERY_ACCEPTED": {
+        "title": "Dorëzimi u pranua",
+        "message": "Dorëzimi u pranua! Porosia përfundoi: {order}"
+      },
+      "ORDER_REVISION_REQUESTED": {
+        "title": "U kërkua rishikim",
+        "message": "U kërkua rishikim për porosinë: {order}"
+      },
+      "ORDER_MILESTONE_RELEASED": {
+        "title": "Faza u lirua",
+        "message": "Faza \"{milestone}\" u lirua për porosinë: {order}"
+      },
+      "DISPUTE_OPENED": {
+        "title": "Mosmarrëveshja u hap",
+        "message": "U hap një mosmarrëveshje për porosinë: {order}"
+      },
+      "DISPUTE_RESOLVED": {
+        "title": "Mosmarrëveshja u zgjidh",
+        "message": "Mosmarrëveshja për porosinë {order} u zgjidh; porosia përfundoi"
+      },
+      "DISPUTE_CLOSED": {
+        "title": "Mosmarrëveshja u mbyll",
+        "message": "Mosmarrëveshja për porosinë {order} u mbyll; porosia u anulua"
+      }
+    }
+  }
+}

@@ -95,12 +95,6 @@ const PosSessionSheetViewLazy = lazy(
 const PosConfigSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx"),
 );
-const FiscalConfigSheetViewLazy = lazy(
-    () => import("@eCommerceModule/clients/panel/private/fiscalConfigs/center/sheetView/fiscalConfigSheetView.tsx"),
-);
-const FiscalConfigCardLazy = lazy(
-    () => import("@eCommerceModule/clients/panel/private/fiscalConfigs/center/cardView/fiscalConfigCard.tsx"),
-);
 const SavedSearchSheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx"),
 );
@@ -212,8 +206,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#PosOrderCard": PosOrderCardLazy,
         "#PosSessionSheetView": PosSessionSheetViewLazy,
         "#PosConfigSheetView": PosConfigSheetViewLazy,
-        "#FiscalConfigSheetView": FiscalConfigSheetViewLazy,
-        "#FiscalConfigCard": FiscalConfigCardLazy,
         "#ProductReviewSheetView": ProductReviewSheetViewLazy,
         "#ProductReviewCard": ProductReviewCardLazy,
         "#SavedSearchSheetView": SavedSearchSheetViewLazy,
@@ -259,7 +251,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#CategoryCard": "category",
         "#CustomerGroupCard": "customerGroup",
         "#WarehouseCard": "warehouse",
-        "#FiscalConfigCard": "entity",
         "#DiscountCard": "discount",
         "#ProductOrderCard": "order",
         "#PosOrderCard": "entity",
@@ -311,10 +302,6 @@ const eCommerceWidgetContribution: WidgetContribution = {
         },
         "#PosConfigSheetView": {
             url: "/api/eCommerce/posConfig/single",
-            labelFields: ["name"],
-        },
-        "#FiscalConfigSheetView": {
-            url: "/api/eCommerce/fiscalConfig/single",
             labelFields: ["name"],
         },
         "#ProductReviewSheetView": {

@@ -8,7 +8,6 @@
     "Customergroups": "Kundengruppen",
     "Digitaldeliveries": "Digitale Lieferungen",
     "Discounts": "Rabatte",
-    "Fiscalconfigs": "Fiskalkonfigurationen",
     "Fulfillments": "Lieferungen",
     "Inventories": "Lagerbestände",
     "Inventorymovements": "Lagerbewegungen",
@@ -293,38 +292,6 @@
       "usageLimit": "Nutzungslimit",
       "usageLimitPerCustomer": "Nutzungslimit pro Kunde",
       "value": "Wert",
-      "activate": "Aktivieren",
-      "deactivate": "Deaktivieren"
-    },
-    "Fiscalconfigs": {
-      "businessUnitCode": "Code der Geschäftseinheit",
-      "certificate": "Zertifikat",
-      "certificatePassword": "Zertifikatspasswort",
-      "createdAt": "Erstellt am",
-      "createdBy": "Erstellt von",
-      "deletedAt": "Gelöscht am",
-      "deletedBy": "Gelöscht von",
-      "einvoiceUrl": "E-Rechnungs-URL",
-      "environment": "Umgebung",
-      "fiscalconfigs": "Fiskalkonfigurationen",
-      "fiscalizationUrl": "Fiskalisierungs-URL",
-      "isActive": "Aktiv",
-      "isVatRegistered": "Ist MWST-pflichtig",
-      "maintainerCode": "Wartungscode",
-      "name": "Name",
-      "nipt": "NIPT",
-      "operatorCode": "Operator-Code",
-      "proxyUrl": "Proxy-URL",
-      "selfcareUrl": "Selfcare-URL",
-      "sellerAddress": "Verkäuferadresse",
-      "sellerCountry": "Land des Verkäufers",
-      "sellerName": "Verkäufer name",
-      "sellerTown": "Ort des Verkäufers",
-      "softCode": "Weich code",
-      "tcrCode": "TCR-Code",
-      "tcrIntId": "Interne TCR-ID",
-      "tcrType": "TCR-Typ",
-      "updatedAt": "Aktualisiert am",
       "activate": "Aktivieren",
       "deactivate": "Deaktivieren"
     },
@@ -1379,6 +1346,48 @@
       "updatedAt": "Aktualisiert am",
       "videoGallery": "Video galerie",
       "notifyAll": "Alle Anbieter benachrichtigen"
+    }
+  },
+  "roles": {
+    "ecom_store_manager": {
+      "name": "Shopleitung",
+      "description": "Führt den Shop: Katalog, Preise, Bestellungen, Sendungen, Retouren, Lagerbestand, Kassen und den Marktplatz."
+    },
+    "ecom_warehouse_operator": {
+      "name": "Lagermitarbeiter",
+      "description": "Versendet Bestellungen, bewegt und zählt den Lagerbestand. Kann Bestellungen und den Katalog einsehen, aber keine Preise ändern oder Rückerstattungen vornehmen."
+    },
+    "ecom_cashier": {
+      "name": "Kassierer",
+      "description": "Verkauft und erstattet an der Kasse und führt die Kassensitzung. Kann Katalog und Lagerbestand einsehen."
+    },
+    "ecom_catalog_editor": {
+      "name": "Katalogredaktion",
+      "description": "Pflegt Produkte, Varianten, Kategorien, Kollektionen, Shop-Inhalte und Bewertungen. Kann keine Preise, Rabatte, Bestellungen oder Lagerbestände ändern."
+    },
+    "ecom_pricing_officer": {
+      "name": "Preisverantwortlicher",
+      "description": "Legt Preisregeln, Rabatte, Kundengruppen und Steuerzonen fest. Kann den Katalog und die Versandzonen einsehen, aber nicht ändern."
+    },
+    "ecom_order_manager": {
+      "name": "Bestellverwaltung",
+      "description": "Führt Webbestellungen bis zum Versand und zur Retoure. Kann Katalog, Lagerbestand und die Käuferspur einsehen, aber keine Preise oder Lagerzeilen ändern."
+    },
+    "ecom_customer_support": {
+      "name": "Kundendienst",
+      "description": "Bearbeitet Retourenanfragen und Bewertungen. Kann Bestellungen, Sendungen, den Katalog und die Käuferspur einsehen, aber keine Bestellung erstatten oder den Katalog ändern."
+    },
+    "ecom_pos_supervisor": {
+      "name": "Kassenleitung",
+      "description": "Richtet Kassen, Zahlungsarten und Fiskalgeräte ein und kann an der Kasse verkaufen. Kann Katalog und Lagerbestand einsehen."
+    },
+    "ecom_analyst": {
+      "name": "Shop-Analyst",
+      "description": "Nur-Lese-Zugriff auf Katalog, Bestellungen, Lagerbestand, Kassen, Marktplatz und Käuferdaten. Kann nichts ändern."
+    },
+    "ecom_marketplace_operator": {
+      "name": "Marktplatzbetreiber",
+      "description": "Führt den Dienstleistungsmarktplatz: Angebote, Auftragsanfragen, Gebote, treuhänderische Bestellungen, Streitfälle, Bewertungen und Anbieterprofile."
     }
   }
 }

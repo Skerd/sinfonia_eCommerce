@@ -1,0 +1,139 @@
+{
+  "eCommerce": {
+    "title": "Shop and marketplace",
+    "codes": {
+      "PRODUCT_ORDER_PLACED": {
+        "title": "Order placed",
+        "message": "Order {order} has been placed"
+      },
+      "PRODUCT_ORDER_PAID": {
+        "title": "Payment received",
+        "message": "Payment received for order {order}"
+      },
+      "PRODUCT_ORDER_PAYMENT_FAILED": {
+        "title": "Payment failed",
+        "message": "Payment failed for order {order}"
+      },
+      "PRODUCT_ORDER_CONFIRMED": {
+        "title": "Order confirmed",
+        "message": "Order {order} has been confirmed"
+      },
+      "PRODUCT_ORDER_SHIPPED": {
+        "title": "Order shipped",
+        "message": "Order {order} has been shipped"
+      },
+      "PRODUCT_ORDER_DELIVERED": {
+        "title": "Order delivered",
+        "message": "Order {order} has been delivered"
+      },
+      "PRODUCT_ORDER_CANCELLED": {
+        "title": "Order cancelled",
+        "message": "Order {order} has been cancelled"
+      },
+      "PRODUCT_ORDER_REFUNDED": {
+        "title": "Order refunded",
+        "message": "Order {order} has been refunded"
+      },
+      "PRODUCT_ORDER_NEW_MERCHANT": {
+        "title": "New order (shop staff)",
+        "message": "New order {order} received"
+      },
+      "ABANDONED_CART": {
+        "title": "Items left in the cart",
+        "message": "You left {count} items in your cart — complete your order",
+        "variants": {
+          "one": "You left 1 item in your cart — complete your order",
+          "other": "You left {count} items in your cart — complete your order"
+        }
+      },
+      "RETURN_REQUEST_CREATED": {
+        "title": "Return requested",
+        "message": "Return request for order {order}"
+      },
+      "RETURN_REQUEST_APPROVED": {
+        "title": "Return approved",
+        "message": "Return approved for order {order}"
+      },
+      "RETURN_REQUEST_REJECTED": {
+        "title": "Return rejected",
+        "message": "Return rejected for order {order}"
+      },
+      "INVENTORY_LOW_STOCK": {
+        "title": "Low stock",
+        "message": "Low stock: {product} @ {warehouse} ({quantity} left)"
+      },
+      "GIFT_CARD_ISSUED": {
+        "title": "Gift card issued",
+        "message": "Gift card issued for order {order}"
+      },
+      "DIGITAL_DELIVERY_READY": {
+        "title": "Digital downloads ready",
+        "message": "Digital downloads ready for order {order}"
+      },
+      "TASK_REQUEST_CREATED": {
+        "title": "New matching task request",
+        "message": "A new task request matching your listing has been posted: {task}"
+      },
+      "TASK_REQUEST_CLOSED": {
+        "title": "Task request closed",
+        "message": "Task request has been closed: {task}"
+      },
+      "BID_ACCEPTED": {
+        "title": "Bid accepted",
+        "message": "Your bid has been accepted for: {task}"
+      },
+      "BID_REJECTED": {
+        "title": "Bid rejected",
+        "message": "Your bid has been rejected for: {task}"
+      },
+      "ORDER_CREATED_FROM_LISTING": {
+        "title": "New order for your listing",
+        "message": "New order received for your listing: {listing}"
+      },
+      "ORDER_ACCEPTED": {
+        "title": "Service order accepted",
+        "message": "Your order has been accepted: {order}"
+      },
+      "ORDER_STARTED": {
+        "title": "Work started",
+        "message": "Work has started on your order: {order}"
+      },
+      "ORDER_CANCELLED": {
+        "title": "Service order cancelled",
+        "message": "Order has been cancelled: {order}"
+      },
+      "ORDER_EXTENDED": {
+        "title": "Delivery deadline extended",
+        "message": "Delivery deadline extended by {days} days for order: {order}"
+      },
+      "ORDER_DELIVERY_SUBMITTED": {
+        "title": "Delivery submitted",
+        "message": "Delivery submitted for your order: {order}. Please review and accept or request a revision."
+      },
+      "ORDER_DELIVERY_ACCEPTED": {
+        "title": "Delivery accepted",
+        "message": "Delivery accepted! Order completed: {order}"
+      },
+      "ORDER_REVISION_REQUESTED": {
+        "title": "Revision requested",
+        "message": "Revision requested for order: {order}"
+      },
+      "ORDER_MILESTONE_RELEASED": {
+        "title": "Milestone released",
+        "message": "Milestone \"{milestone}\" released for order: {order}"
+      },
+      "DISPUTE_OPENED": {
+        "title": "Dispute opened",
+        "message": "A dispute has been opened on order: {order}"
+      },
+      "DISPUTE_RESOLVED": {
+        "title": "Dispute resolved",
+        "message": "The dispute on order {order} was resolved; the order is completed"
+      },
+      "DISPUTE_CLOSED": {
+        "title": "Dispute closed",
+        "message": "The dispute on order {order} was closed; the order is cancelled"
+      }
+    }
+  }
+}

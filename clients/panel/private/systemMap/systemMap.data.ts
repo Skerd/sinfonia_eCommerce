@@ -422,13 +422,13 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             id: "FiscalConfig",
             label: "FiscalConfig",
             cluster: "pos",
-            module: "eCommerce",
+            module: "finance",
             description:
-                "Albanian CIS identity (NIPT, business unit, operator, TCR, certificate). Paid till sales are fiscalized and e-invoiced when it is active.",
+                "Albanian CIS identity (NIPT, business unit, operator, TCR, certificate), owned by finance. Paid till sales and finance invoices are fiscalized when it is active; till sales are also e-invoiced.",
             keyFields: ["nipt", "businessUnitCode", "operatorCode", "tcrCode", "environment", "certificate", "isActive"],
-            apiPath: "/api/eCommerce/fiscalConfig",
+            apiPath: "/api/finance/fiscalConfig",
             panelRoute: "/tenancy/systemSettings/fiscalconfigs",
-            actions: ["activate", "deactivate", "registerTcr (fiscal API)", "fiscalizePosOrder (fiscal API)"],
+            actions: ["activate", "deactivate", "registerTcr (/api/finance/fiscal)", "fiscalizePosOrder (/api/eCommerce/fiscal)"],
             position: {x: 1560, y: 400},
         },
         {

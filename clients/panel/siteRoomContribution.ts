@@ -17,7 +17,6 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         collections: "productCollections_configurations",
         posconfigs: "posConfigs_configurations",
         pospaymentmethods: "posPaymentMethods_configurations",
-        fiscalconfigs: "fiscalConfigs_configurations",
         cmsblocks: "cmsBlocks_configurations",
         odooconnection: "odooConnection_configurations",
         odooimport: "odooimport_configurations",

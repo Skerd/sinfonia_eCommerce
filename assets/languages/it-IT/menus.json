@@ -16,9 +16,6 @@
     "posorders": {
       "title": "Ordini POS"
     },
-    "fiscalconfigs": {
-      "title": "Fiscale/Fattura elettronica"
-    },
     "systemMap": {
       "title": "Mappa di sistema"
     },
@@ -156,12 +153,6 @@
       },
       "productvariants": {
         "title": "Varianti del prodotto"
-      },
-      "fiscalconfigs": {
-        "title": "Fiscale/Fattura elettronica"
-      },
-      "albanianFiscalization": {
-        "title": "Fiscalizzazione albanese"
       },
       "cmsblocks": {
         "title": "Blocchi CMS"

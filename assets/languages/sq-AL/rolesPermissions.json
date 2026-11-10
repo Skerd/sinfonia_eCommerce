@@ -8,7 +8,6 @@
     "Customergroups": "Grupet e klientëve",
     "Digitaldeliveries": "Dorëzimet dixhitale",
     "Discounts": "Zbritjet",
-    "Fiscalconfigs": "Konfigurimet fiskale",
     "Fulfillments": "Përmbushjet",
     "Inventories": "Inventarët",
     "Inventorymovements": "Lëvizjet e inventarit",
@@ -293,38 +292,6 @@
       "usageLimit": "Kufiri i përdorimit",
       "usageLimitPerCustomer": "Kufiri i përdorimit për klient",
       "value": "Vlera",
-      "activate": "Aktivizo",
-      "deactivate": "Çaktivizo"
-    },
-    "Fiscalconfigs": {
-      "businessUnitCode": "Kodi i njësisë së biznesit",
-      "certificate": "Certifikata",
-      "certificatePassword": "Fjalëkalimi i certifikatës",
-      "createdAt": "Krijuar më",
-      "createdBy": "Krijuar nga",
-      "deletedAt": "Fshirë më",
-      "deletedBy": "Fshirë nga",
-      "einvoiceUrl": "URL e e-faturës",
-      "environment": "Mjedisi",
-      "fiscalconfigs": "Konfigurimet fiskale",
-      "fiscalizationUrl": "URL e fiskalizimit",
-      "isActive": "Aktiv",
-      "isVatRegistered": "I regjistruar për TVSH",
-      "maintainerCode": "Kodi i mirëmbajtësit",
-      "name": "Emri",
-      "nipt": "Nipt",
-      "operatorCode": "Kodi i operatorit",
-      "proxyUrl": "URL e proxy-t",
-      "selfcareUrl": "URL e vetëshërbimit",
-      "sellerAddress": "Adresa e shitësit",
-      "sellerCountry": "Shteti i shitësit",
-      "sellerName": "Emri i shitësit",
-      "sellerTown": "Qyteti i shitësit",
-      "softCode": "Kodi i softuerit",
-      "tcrCode": "Kodi TCR",
-      "tcrIntId": "ID e brendshme TCR",
-      "tcrType": "Lloji TCR",
-      "updatedAt": "Përditësuar më",
       "activate": "Aktivizo",
       "deactivate": "Çaktivizo"
     },
@@ -1379,6 +1346,48 @@
       "updatedAt": "Përditësuar më",
       "videoGallery": "Galeria e videove",
       "notifyAll": "Njofto të gjithë ofruesit"
+    }
+  },
+  "roles": {
+    "ecom_store_manager": {
+      "name": "Menaxher i dyqanit",
+      "description": "Drejton dyqanin: katalogun, çmimet, porositë, dërgesat, kthimet, stokun, arkat dhe tregun."
+    },
+    "ecom_warehouse_operator": {
+      "name": "Operator magazine",
+      "description": "Dërgon porositë, lëviz dhe numëron stokun. Mund të shohë porositë dhe katalogun, por nuk mund të ndryshojë çmimet ose të rimbursojë."
+    },
+    "ecom_cashier": {
+      "name": "Arkëtar",
+      "description": "Shet dhe rimburson në arkë dhe drejton seancën e arkës. Mund të shohë katalogun dhe stokun."
+    },
+    "ecom_catalog_editor": {
+      "name": "Redaktor i katalogut",
+      "description": "Mirëmban produktet, variantet, kategoritë, koleksionet, përmbajtjen e vitrinës dhe vlerësimet. Nuk mund të ndryshojë çmimet, zbritjet, porositë ose stokun."
+    },
+    "ecom_pricing_officer": {
+      "name": "Përgjegjës i çmimeve",
+      "description": "Cakton rregullat e çmimeve, zbritjet, grupet e klientëve dhe zonat tatimore. Mund të shohë katalogun dhe zonat e dërgesës, por nuk mund t'i ndryshojë."
+    },
+    "ecom_order_manager": {
+      "name": "Menaxher porosish",
+      "description": "Çon porositë në ueb deri te dërgesa dhe kthimi. Mund të shohë katalogun, stokun dhe gjurmën e blerësit, por nuk mund të ndryshojë çmimet ose rreshtat e stokut."
+    },
+    "ecom_customer_support": {
+      "name": "Mbështetja e klientit",
+      "description": "Trajton kërkesat për kthim dhe vlerësimet. Mund të shohë porositë, dërgesat, katalogun dhe gjurmën e blerësit, por nuk mund të rimbursojë një porosi ose të ndryshojë katalogun."
+    },
+    "ecom_pos_supervisor": {
+      "name": "Mbikëqyrës i arkës",
+      "description": "Konfiguron arkat, mënyrat e pagesës dhe pajisjet fiskale dhe mund të shesë në arkë. Mund të shohë katalogun dhe stokun."
+    },
+    "ecom_analyst": {
+      "name": "Analist i dyqanit",
+      "description": "Qasje vetëm për lexim në katalog, porosi, stok, arka, treg dhe të dhënat e blerësve. Nuk mund të ndryshojë asgjë."
+    },
+    "ecom_marketplace_operator": {
+      "name": "Operator i tregut",
+      "description": "Drejton tregun e shërbimeve: listimet, kërkesat për punë, ofertat, porositë me garanci, mosmarrëveshjet, vlerësimet dhe profilet e ofruesve."
     }
   }
 }
