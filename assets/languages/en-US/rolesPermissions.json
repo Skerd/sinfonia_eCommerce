@@ -1347,47 +1347,5 @@
       "videoGallery": "Video gallery",
       "notifyAll": "Notify all providers"
     }
-  },
-  "roles": {
-    "ecom_store_manager": {
-      "name": "Store Manager",
-      "description": "Runs the store: catalog, pricing, orders, shipments, returns, stock, tills, and the marketplace."
-    },
-    "ecom_warehouse_operator": {
-      "name": "Warehouse Operator",
-      "description": "Ships orders, moves and counts stock. Can look up orders and the catalog but cannot change prices or refund."
-    },
-    "ecom_cashier": {
-      "name": "Cashier",
-      "description": "Sells and refunds at the till and runs the till session. Can look up the catalog and stock."
-    },
-    "ecom_catalog_editor": {
-      "name": "Catalog Editor",
-      "description": "Maintains products, variants, categories, collections, storefront content, and reviews. Cannot change prices, discounts, orders, or stock."
-    },
-    "ecom_pricing_officer": {
-      "name": "Pricing Officer",
-      "description": "Sets pricing rules, discounts, customer groups, and tax zones. Can look up the catalog and shipping zones but cannot change them."
-    },
-    "ecom_order_manager": {
-      "name": "Order Manager",
-      "description": "Runs web orders through shipment and return. Can look up the catalog, stock, and the buyer trail but cannot change prices or stock rows."
-    },
-    "ecom_customer_support": {
-      "name": "Customer Support",
-      "description": "Handles return requests and reviews. Can look up orders, shipments, the catalog, and the buyer trail but cannot refund an order or change the catalog."
-    },
-    "ecom_pos_supervisor": {
-      "name": "POS Supervisor",
-      "description": "Configures tills, payment methods, and fiscal devices, and can sell at the till. Can look up the catalog and stock."
-    },
-    "ecom_analyst": {
-      "name": "Store Analyst",
-      "description": "Read-only access across the catalog, orders, stock, tills, marketplace, and buyer records. Cannot change anything."
-    },
-    "ecom_marketplace_operator": {
-      "name": "Marketplace Operator",
-      "description": "Runs the services marketplace: listings, task requests, bids, escrowed orders, disputes, reviews, and provider profiles."
-    }
   }
 }

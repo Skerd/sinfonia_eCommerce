@@ -1347,47 +1347,5 @@
       "videoGallery": "Galleria video",
       "notifyAll": "Avvisa tutti i fornitori"
     }
-  },
-  "roles": {
-    "ecom_store_manager": {
-      "name": "Responsabile del negozio",
-      "description": "Gestisce il negozio: catalogo, prezzi, ordini, spedizioni, resi, magazzino, casse e il marketplace."
-    },
-    "ecom_warehouse_operator": {
-      "name": "Operatore di magazzino",
-      "description": "Spedisce gli ordini, sposta e conta le scorte. Può consultare gli ordini e il catalogo ma non può modificare i prezzi né rimborsare."
-    },
-    "ecom_cashier": {
-      "name": "Cassiere",
-      "description": "Vende e rimborsa in cassa e gestisce la sessione di cassa. Può consultare il catalogo e le scorte."
-    },
-    "ecom_catalog_editor": {
-      "name": "Redattore del catalogo",
-      "description": "Cura prodotti, varianti, categorie, collezioni, contenuti della vetrina e recensioni. Non può modificare prezzi, sconti, ordini o scorte."
-    },
-    "ecom_pricing_officer": {
-      "name": "Responsabile prezzi",
-      "description": "Imposta regole di prezzo, sconti, gruppi di clienti e zone fiscali. Può consultare il catalogo e le zone di spedizione ma non modificarli."
-    },
-    "ecom_order_manager": {
-      "name": "Gestore ordini",
-      "description": "Porta gli ordini web fino alla spedizione e al reso. Può consultare il catalogo, le scorte e lo storico acquirente ma non può modificare prezzi o righe di magazzino."
-    },
-    "ecom_customer_support": {
-      "name": "Assistenza clienti",
-      "description": "Gestisce richieste di reso e recensioni. Può consultare ordini, spedizioni, il catalogo e lo storico acquirente ma non può rimborsare un ordine né modificare il catalogo."
-    },
-    "ecom_pos_supervisor": {
-      "name": "Supervisore cassa",
-      "description": "Configura casse, metodi di pagamento e dispositivi fiscali, e può vendere in cassa. Può consultare il catalogo e le scorte."
-    },
-    "ecom_analyst": {
-      "name": "Analista del negozio",
-      "description": "Accesso in sola lettura a catalogo, ordini, scorte, casse, marketplace e dati degli acquirenti. Non può modificare nulla."
-    },
-    "ecom_marketplace_operator": {
-      "name": "Operatore del marketplace",
-      "description": "Gestisce il marketplace dei servizi: annunci, richieste di incarico, offerte, ordini in deposito a garanzia, controversie, recensioni e profili dei fornitori."
-    }
   }
 }
