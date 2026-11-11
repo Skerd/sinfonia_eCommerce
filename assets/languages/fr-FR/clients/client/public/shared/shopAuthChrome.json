@@ -3,8 +3,6 @@
   "cartTitle": "Votre panier",
   "checkoutTitle": "Paiement",
   "message": "Connectez-vous ou créez un compte pour continuer.",
-  "inlineMessage": "Connectez-vous pour ajouter ce produit au panier.",
   "logIn": "Connexion",
-  "signUp": "Créer un compte",
-  "inlineOrderMessage": "Connectez-vous pour commander ce service."
+  "signUp": "Créer un compte"
 }

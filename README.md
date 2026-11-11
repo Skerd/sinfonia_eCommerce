@@ -1,10 +1,10 @@
 # eCommerce Module (Sinfonia)
 
-Client-side UI for the Arpeggio eCommerce domain: product commerce and the services marketplace. Admin panel pages, custom components, sidebar navigation, and dashboard widgets.
+Client-side UI for Arpeggio product commerce: shop, inventory, till and storefront. Admin panel pages, custom components, sidebar navigation, and dashboard widgets. The services marketplace is its own module, `sinfonia/src/modules/marketplace` (D142).
 
-Types and validators come from **armonia**; API calls target **maestro** routes under `/api/eCommerce/` and `/api/eCommerceMarketplace/`.
+Types and validators come from **armonia**; API calls target **maestro** routes under `/api/eCommerce/`.
 
-Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present modules). Marketplace panel routes stay under `/eCommerceMarketplace/...`.
+Enable via `VITE_ENABLED_MODULES=eCommerce` (or leave unset to load all present modules).
 
 ## Directory layout
 
@@ -19,7 +19,7 @@ eCommerce/
 │   └── tenancySettingsContribution.tsx
 ├── clients/client/public/      # Storefront pages (rendered by the portal under /shop)
 │   ├── shared/                 # cart/config contexts, mini cart, cards, shopSiteRoutes
-│   ├── product/ service/ provider/ blog/ cart/ checkout/ legal/ account/
+│   ├── product/ blog/ cart/ checkout/ legal/ account/
 ├── clients/portal/             # Portal contribution: catalogs, home block, filters, provider
 └── components/
     └── cms/                    # CMS-specific UI
@@ -29,14 +29,14 @@ eCommerce/
 
 The storefront has no app of its own: the core `portal` app renders it under `/shop` on every host
 (every listed seller on the apex, one company on its own site), inside the portal's shell (navbar,
-footer, chat). The contribution in `clients/portal/portalContribution.tsx` adds the product and
-service catalogs to the portal home (with `shopProductFilters` / `shopServiceFilters`), the company's
-CMS blocks and categories (`shopHome`), the cart in the navbar (`shopMiniCart`) and its state
-(`shopSiteProvider`). `/shop/products` and `/shop/services` open that catalog.
+footer, chat). The contribution in `clients/portal/portalContribution.tsx` adds the product
+catalog to the portal home (with `shopProductFilters`), the company's CMS blocks and categories
+(`shopHome`), the cart in the navbar (`shopMiniCart`) and its state (`shopSiteProvider`).
+`/shop/products` opens that catalog. Services are the marketplace module's own `services` section.
 
 Pages are hand-built React (no ViewConfig) on the core shadcn components, hitting the public maestro
-routes `shopProducts`, `shopProduct`, `shopTaxonomy`, `shopConfig`, `shopCountries`, `shopStates`,
-`shopCities`, `cmsBlock/public`, plus the authenticated cart/checkout routers and the buyer order routes
+routes `shopProducts`, `shopProduct`, `shopTaxonomy`, `shopConfig`, the core place lists
+`/api/portal/places/{countries,states,cities}`, `cmsBlock/public`, plus the authenticated cart/checkout routers and the buyer order routes
 `productOrder/{my,mySingle}` (which return the buyer DTO, without staff fields). Links start at the
 section base (`useSectionBase()`). Copy is translated with `withLanguage` (dictionaries under
 `assets/languages/<locale>/clients/client/public/`). A placed order is confirmed on its own page,
@@ -75,10 +75,10 @@ Each resource folder typically contains `index.tsx` (list), `create*.tsx`, and `
 
 ## Contributions
 
-- **Sidebar** (`order: 35`) — "Product Commerce" and "Marketplace" nav groups
-- **Routes** (`order: 40`) — maps `/eCommerce/*` and `/eCommerceMarketplace/*` menu segments to page components
-- **Widgets** — sheet/card widgets for catalog and marketplace entities
-- **Tenancy settings** — product commerce config plus listing categories
+- **Sidebar** (`order: 35`) — the "Product Commerce" nav group
+- **Routes** (`order: 40`) — maps `/eCommerce/*` menu segments to page components
+- **Widgets** — sheet/card widgets for catalog, order, stock and till entities
+- **Tenancy settings** — product commerce config
 
 ## Path alias
 

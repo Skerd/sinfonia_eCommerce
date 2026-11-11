@@ -6,9 +6,9 @@ import {IconArrowLeft, IconChevronRight, IconLink} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import ShopBlogCard, {blogMetaLine} from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
-import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
+import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import type {
     PublicBlogFormResponseType,
     PublicBlogPostItem,
@@ -82,8 +82,8 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
         );
     }
 
-    const cover = resolveShopMediaUrl(post.mainImage);
-    const gallery = (post.imageGallery ?? []).map(resolveShopMediaUrl).filter((url): url is string => Boolean(url));
+    const cover = resolvePublicMediaUrl(post.mainImage);
+    const gallery = (post.imageGallery ?? []).map(resolvePublicMediaUrl).filter((url): url is string => Boolean(url));
 
     return (
         <div className="flex flex-col gap-16 sm:gap-20">
@@ -111,7 +111,7 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                             {post.authorName && <span className="font-semibold">{post.authorName}</span>}
                             <span className="text-muted-foreground">{blogMetaLine(resolveLanguageKey, post)}</span>
                             {post.seller ? (
-                                <ShopSellerCard seller={post.seller} kind="blog" size="compact" />
+                                <PortalSellerCard sectionPath="shop" seller={post.seller} kind="blog" size="compact" />
                             ) : null}
                         </div>
                         <Button variant="outline" size="lg" type="button" onClick={copyLink} >

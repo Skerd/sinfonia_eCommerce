@@ -7,12 +7,12 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import ShopProductCard, {ShopPrice} from "@eCommerceModule/clients/client/public/shared/shopProductCard.tsx";
 import ShopQuantityStepper from "@eCommerceModule/clients/client/public/shared/shopQuantityStepper.tsx";
-import {ShopInlineSignIn} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
-import ShopSellerCard from "@eCommerceModule/clients/client/public/shared/shopSellerCard.tsx";
+import {PortalInlineSignIn} from "@coreModule/clients/portal/shared/portalInlineSignIn.tsx";
+import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import ReviewsSection from "./reviewsSection.tsx";
 import {shopProductHref} from "@eCommerceModule/clients/client/public/shared/shopProductHref.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
@@ -81,7 +81,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
             setSelection(selectionOf(initial));
             setSelectedVariantId(initial?._id ?? "");
             setQuantity(Math.max(1, next.minOrderQty ?? 1));
-            setActiveImage(resolveShopMediaUrl(initial?.mainImage ?? next.mainImage));
+            setActiveImage(resolvePublicMediaUrl(initial?.mainImage ?? next.mainImage));
         },
     });
     const product: ShopProductDetail | null = productRequest.loading || productRequest.error ? null : productRequest.data?.data ?? null;
@@ -92,7 +92,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
     const selectedVariant = product?.variants.find(variant => variant._id === selectedVariantId);
     const galleryImages = useMemo(() => {
         return [product?.mainImage, ...(product?.gallery ?? []), ...(product?.variants.map(variant => variant.mainImage) ?? [])]
-            .map(resolveShopMediaUrl)
+            .map(resolvePublicMediaUrl)
             .filter((value): value is string => Boolean(value));
     }, [product]);
 
@@ -100,7 +100,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
     function chooseVariant(variant: ShopProductVariant) {
         setSelectedVariantId(variant._id);
         setSelection(selectionOf(variant));
-        if (variant.mainImage) setActiveImage(resolveShopMediaUrl(variant.mainImage));
+        if (variant.mainImage) setActiveImage(resolvePublicMediaUrl(variant.mainImage));
     }
 
     /** The variant matching `selection` with `name` set to `value`, if that combination exists. */
@@ -193,7 +193,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                     </a>
                 ) : null}
                 <ShopPrice price={price} compareAtPrice={compareAt} currency={product.currency} size="lg" />
-                <ShopSellerCard seller={product.seller} kind="product" size="card" className="mt-1" />
+                <PortalSellerCard sectionPath="shop" seller={product.seller} kind="product" size="card" className="mt-1" />
             </DetailHeading>
 
             {groups.map(group => (
@@ -277,7 +277,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                     </p>
                 ) : null}
                 {signInRequired && product && (
-                    <ShopInlineSignIn next={shopProductHref(base, product)} />
+                    <PortalInlineSignIn next={shopProductHref(base, product)} message={String(resolveLanguageKey("signInToBuy"))} />
                 )}
             </div>
 

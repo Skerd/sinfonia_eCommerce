@@ -1,12 +1,11 @@
 import {createContext, useContext, useMemo, type ReactNode} from "react";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatRecordMoney, type PortalMoneyCurrency} from "@coreModule/clients/portal/shared/portalMoney.ts";
 import type {ShopConfigResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
-import type {PortalCurrency} from "armonia/src/modules/core/api/portal/public/portal/portal.dto.ts";
 
 type ShopConfig = ShopConfigResponse["data"];
 
-export type ShopMoneyCurrency = Pick<PortalCurrency, "symbol" | "abbreviation" | "decimalPlaces">;
+export type ShopMoneyCurrency = PortalMoneyCurrency;
 
 type ShopConfigContextValue = {
     config: ShopConfig | null;
@@ -30,16 +29,8 @@ export function ShopConfigProvider({children}: {children: ReactNode}) {
     const value = useMemo<ShopConfigContextValue>(() => ({
         config,
         loading,
-        // Locale-aware via the ISO code ("1.234,50 €" / "€1,234.50"); the bare symbol only when there is no code.
         // Never falls back to the shop currency: a price without a currency must not borrow one.
-        formatMoney: (amount, currency) => {
-            if (amount == null || Number.isNaN(amount)) return "";
-            const decimals = currency?.decimalPlaces ?? 2;
-            const digits = {minimumFractionDigits: decimals, maximumFractionDigits: decimals};
-            if (currency?.abbreviation) return formatCurrency(amount, currency.abbreviation, digits);
-            if (currency?.symbol) return `${currency.symbol}${amount.toFixed(decimals)}`;
-            return formatNumber(amount, digits);
-        },
+        formatMoney: formatRecordMoney,
     }), [config, loading]);
 
     return <ShopConfigContext.Provider value={value}>{children}</ShopConfigContext.Provider>;

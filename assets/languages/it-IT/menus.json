@@ -105,9 +105,6 @@
     },
     "savedsearches": {
       "title": "Ricerche salvate"
-    },
-    "providerprofile": {
-      "title": "Profilo fornitore"
     }
   },
   "tenancy": {
@@ -181,12 +178,6 @@
       "analytics": {
         "title": "Analisi"
       },
-      "eCommerceMarketplace": {
-        "title": "Marketplace eCommerce"
-      },
-      "listingcategories": {
-        "title": "Categorie di annunci"
-      },
       "listings": {
         "title": "Annunci"
       },
@@ -214,57 +205,12 @@
       "listingflags": {
         "title": "Segnalazioni degli annunci"
       },
-      "providerprofile": {
-        "title": "Profili dei fornitori"
-      },
       "listingaddons": {
         "title": "Componenti aggiuntivi degli annunci"
       },
       "listingpackages": {
         "title": "Pacchetti degli annunci"
       }
-    }
-  },
-  "eCommerceMarketplace": {
-    "title": "Marketplace",
-    "listings": {
-      "title": "Annunci"
-    },
-    "taskrequests": {
-      "title": "Richieste di preventivo"
-    },
-    "orders": {
-      "title": "Ordini"
-    },
-    "bids": {
-      "title": "Offerte"
-    },
-    "bookings": {
-      "title": "Prenotazioni"
-    },
-    "disputes": {
-      "title": "Controversie"
-    },
-    "reviews": {
-      "title": "Recensioni"
-    },
-    "promotions": {
-      "title": "Promozioni"
-    },
-    "listingflags": {
-      "title": "Segnalazioni degli annunci"
-    },
-    "listingaddons": {
-      "title": "Componenti aggiuntivi degli annunci"
-    },
-    "listingpackages": {
-      "title": "Pacchetti degli annunci"
-    },
-    "marketplacesystemmap": {
-      "title": "Mappa di sistema"
-    },
-    "listingcategories": {
-      "title": "Categorie di annunci"
     }
   }
 }

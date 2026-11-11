@@ -105,9 +105,6 @@
     },
     "savedsearches": {
       "title": "Saved searches"
-    },
-    "providerprofile": {
-      "title": "Provider profile"
     }
   },
   "tenancy": {
@@ -181,12 +178,6 @@
       "analytics": {
         "title": "Analytics"
       },
-      "eCommerceMarketplace": {
-        "title": "eCommerce Marketplace"
-      },
-      "listingcategories": {
-        "title": "Listing categories"
-      },
       "listings": {
         "title": "Listings"
       },
@@ -214,57 +205,12 @@
       "listingflags": {
         "title": "Listing reports"
       },
-      "providerprofile": {
-        "title": "Provider profiles"
-      },
       "listingaddons": {
         "title": "Listing add-ons"
       },
       "listingpackages": {
         "title": "Listing packages"
       }
-    }
-  },
-  "eCommerceMarketplace": {
-    "title": "Marketplace",
-    "listings": {
-      "title": "Listings"
-    },
-    "taskrequests": {
-      "title": "Task requests"
-    },
-    "orders": {
-      "title": "Orders"
-    },
-    "bids": {
-      "title": "Bids"
-    },
-    "bookings": {
-      "title": "Bookings"
-    },
-    "disputes": {
-      "title": "Disputes"
-    },
-    "reviews": {
-      "title": "Reviews"
-    },
-    "promotions": {
-      "title": "Promotions"
-    },
-    "listingflags": {
-      "title": "Listing reports"
-    },
-    "listingaddons": {
-      "title": "Listing add-ons"
-    },
-    "listingpackages": {
-      "title": "Listing packages"
-    },
-    "marketplacesystemmap": {
-      "title": "System map"
-    },
-    "listingcategories": {
-      "title": "Listing categories"
     }
   }
 }

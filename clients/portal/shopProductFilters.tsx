@@ -1,8 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
-import {CatalogFilterSelect} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
-import {uniqueBySlug} from "./shopCategories.ts";
+import {CatalogFilterSelect, uniqueBySlug} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
 import type {
     ShopCategory,
     ShopFacetOption,

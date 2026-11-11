@@ -7,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import type {DigitalDelivery} from "armonia/src/modules/eCommerce/api/eCommerce/private/digitalDelivery/digitalDelivery.dto.ts";
@@ -98,7 +98,7 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                         <h2 id="shop-order-items" className="mb-2 font-semibold">{resolveLanguageKey("itemsTitle")}</h2>
                         <ul className="divide-y divide-border border-y border-border">
                             {(order.items ?? []).map(item => {
-                                const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                                const imageUrl = resolvePublicMediaUrl(item.snapshot?.imageUrl);
                                 return (
                                     <li key={item._id} className="flex items-center gap-4 py-4">
                                         <div className="h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-muted">

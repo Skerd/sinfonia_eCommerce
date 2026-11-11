@@ -19,7 +19,7 @@ import {
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
 import {shopErrorCode} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {ShopSignInPrompt} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
 import type {Checkout, CheckoutAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkout.dto.ts";
@@ -272,7 +272,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await requestFromApi<{data: ShopCountry[]}>({method: "get", url: "/api/eCommerce/shopCountries", silent: true});
+                const res = await requestFromApi<{data: ShopCountry[]}>({method: "get", url: "/api/portal/places/countries", silent: true});
                 if (!cancelled) setCountries(res.data ?? []);
             } catch {
                 if (!cancelled) setCountries([]);
@@ -293,7 +293,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await requestFromApi<{data: ShopState[]}>({method: "post", url: "/api/eCommerce/shopStates", data: {countryId}, silent: true});
+                const res = await requestFromApi<{data: ShopState[]}>({method: "post", url: "/api/portal/places/states", data: {countryId}, silent: true});
                 if (!cancelled) setStates(res.data ?? []);
             } catch {
                 if (!cancelled) setStates([]);
@@ -447,7 +447,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         <div className="flex flex-col gap-4">
             <ul className="flex flex-col gap-4">
                 {(checkout?.items ?? []).map((item, index) => {
-                    const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                    const imageUrl = resolvePublicMediaUrl(item.snapshot?.imageUrl);
                     return (
                         <li key={`${item.product}-${index}`} className="flex items-center gap-3 text-sm">
                             <div className="relative h-16 w-14 shrink-0">

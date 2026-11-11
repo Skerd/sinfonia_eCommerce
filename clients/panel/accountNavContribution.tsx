@@ -1,4 +1,4 @@
-import {IconBookmark, IconBriefcase, IconMapPin} from "@tabler/icons-react";
+import {IconBookmark, IconMapPin} from "@tabler/icons-react";
 import type {AccountNavContribution} from "@coreModule/helpers/types/accountNavContribution.types.ts";
 
 const eCommerceAccountNavContribution: AccountNavContribution = {
@@ -19,14 +19,6 @@ const eCommerceAccountNavContribution: AccountNavContribution = {
                 url: "/account/savedsearches",
                 icon: IconBookmark,
                 permissions: ["savedsearches"],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-            },
-            {
-                title: resolveLanguageKey("menus.eCommerce.providerprofile.title"),
-                url: "/account/providerprofile",
-                icon: IconBriefcase,
-                permissions: ["providerprofiles"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },

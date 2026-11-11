@@ -29,27 +29,3 @@ export const ShopSignInPrompt = compose(
     withLanguage("src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx"),
     withDebug(true, true),
 )(ShopSignInPromptInner) as ComponentType<{titleKey: string; next: string}>;
-
-type ShopInlineSignInProps = WithLanguageType & {
-    next: string;
-    /** What signing in unlocks; the default speaks of the cart. */
-    messageKey?: "inlineMessage" | "inlineOrderMessage";
-};
-
-/** One line asking a signed-out visitor to sign in, next to the action that needs it. */
-function ShopInlineSignInInner({resolveLanguageKey, next, messageKey = "inlineMessage"}: ShopInlineSignInProps) {
-    const loginTo = `/login?next=${encodeURIComponent(next)}`;
-    return (
-        <p className="text-xs text-muted-foreground">
-            {resolveLanguageKey(messageKey)}{" "}
-            <Button asChild variant="link" className="h-auto p-0 text-xs"><Link to={loginTo}>{resolveLanguageKey("logIn")}</Link></Button>
-            {" · "}
-            <Button asChild variant="link" className="h-auto p-0 text-xs"><Link to="/signup">{resolveLanguageKey("signUp")}</Link></Button>
-        </p>
-    );
-}
-
-export const ShopInlineSignIn = compose(
-    withLanguage("src/modules/eCommerce/clients/client/public/shared/shopAuthChrome.tsx"),
-    withDebug(true, true),
-)(ShopInlineSignInInner) as ComponentType<{next: string; messageKey?: ShopInlineSignInProps["messageKey"]}>;

@@ -6,7 +6,7 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {useCmsBlocks} from "@eCommerceModule/components/cms/useCmsBlocks.ts";
 import CmsBlockRenderer from "@eCommerceModule/components/cms/CmsBlockRenderer.tsx";
 import type {ShopCategory, ShopTaxonomyResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
-import {uniqueBySlug} from "./shopCategories.ts";
+import {uniqueBySlug} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
 
 const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy"};
 

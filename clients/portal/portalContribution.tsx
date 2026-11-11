@@ -5,7 +5,6 @@ import ShopSiteProvider from "./shopSiteProvider.tsx";
 import ShopAccountLinks from "./shopAccountLinks.tsx";
 import ShopHome from "./shopHome.tsx";
 import ShopProductFilters from "./shopProductFilters.tsx";
-import ShopServiceFilters from "./shopServiceFilters.tsx";
 
 /** The shop on the portal: every listed seller's products on the apex, one company's on its own site; one cart and checkout. */
 const contribution: PortalContribution = {
@@ -14,7 +13,7 @@ const contribution: PortalContribution = {
     section: "shop",
     path: "shop",
     SectionSite: ShopSiteRoutes,
-    catalogs: [{kind: "product", Filters: ShopProductFilters}, {kind: "service", Filters: ShopServiceFilters}],
+    catalogs: [{kind: "product", Filters: ShopProductFilters}],
     Home: ShopHome,
     Provider: ShopSiteProvider,
     NavAction: ShopMiniCart,

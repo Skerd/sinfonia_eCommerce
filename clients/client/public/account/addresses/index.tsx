@@ -44,8 +44,8 @@ const ADDRESSES_REQUEST: HttpRequest = {method: "POST", url: MY_ADDRESSES_URL};
 const CREATE_ADDRESS_REQUEST: HttpRequest = {method: "PUT", url: MY_ADDRESSES_URL};
 const EDIT_ADDRESS_REQUEST: HttpRequest = {method: "PATCH", url: MY_ADDRESSES_URL};
 const DELETE_ADDRESS_REQUEST: HttpRequest = {method: "DELETE", url: MY_ADDRESSES_URL};
-const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopCountries"};
-const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopCities"};
+const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/portal/places/countries"};
+const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/portal/places/cities"};
 
 function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [editingId, setEditingId] = useState<string | null>(null);

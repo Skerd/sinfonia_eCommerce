@@ -105,9 +105,6 @@
     },
     "savedsearches": {
       "title": "Kërkimet e ruajtura"
-    },
-    "providerprofile": {
-      "title": "Profili i ofruesit"
     }
   },
   "tenancy": {
@@ -181,12 +178,6 @@
       "analytics": {
         "title": "Analitika"
       },
-      "eCommerceMarketplace": {
-        "title": "Tregu i shërbimeve"
-      },
-      "listingcategories": {
-        "title": "Kategoritë e listimeve"
-      },
       "listings": {
         "title": "Listimet"
       },
@@ -214,57 +205,12 @@
       "listingflags": {
         "title": "Raportimet e listimeve"
       },
-      "providerprofile": {
-        "title": "Profilet e ofruesve"
-      },
       "listingaddons": {
         "title": "Shtesat e listimeve"
       },
       "listingpackages": {
         "title": "Paketat e listimeve"
       }
-    }
-  },
-  "eCommerceMarketplace": {
-    "title": "Tregu",
-    "listings": {
-      "title": "Listimet"
-    },
-    "taskrequests": {
-      "title": "Kërkesat për ofertë"
-    },
-    "orders": {
-      "title": "Porositë"
-    },
-    "bids": {
-      "title": "Ofertat"
-    },
-    "bookings": {
-      "title": "Rezervimet"
-    },
-    "disputes": {
-      "title": "Mosmarrëveshjet"
-    },
-    "reviews": {
-      "title": "Vlerësimet"
-    },
-    "promotions": {
-      "title": "Promovimet"
-    },
-    "listingflags": {
-      "title": "Raportimet e listimeve"
-    },
-    "listingaddons": {
-      "title": "Shtesat e listimeve"
-    },
-    "listingpackages": {
-      "title": "Paketat e listimeve"
-    },
-    "marketplacesystemmap": {
-      "title": "Harta e sistemit"
-    },
-    "listingcategories": {
-      "title": "Kategoritë e listimeve"
     }
   }
 }

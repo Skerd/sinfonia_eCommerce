@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {CartItem} from "armonia/src/modules/eCommerce/api/eCommerce/private/cart/cart.dto.ts";
-import {resolveShopMediaUrl} from "./shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {useShopCart} from "./shopCartContext.tsx";
 import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
@@ -34,7 +34,7 @@ function ShopCartLineInner({resolveLanguageKey, item, currency, compact = false,
     const itemId = item._id ?? "";
     const pending = pendingItemIds.has(itemId);
     const title = item.snapshot?.title ?? item.product.title ?? "";
-    const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+    const imageUrl = resolvePublicMediaUrl(item.snapshot?.imageUrl);
     const rules = item.quantityRules ?? {min: 1, step: 1};
     const productHref = item.product._id
         ? shopProductHref(base, {_id: item.product._id, slug: item.product.slug, seller: item.seller})

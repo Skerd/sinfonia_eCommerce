@@ -7,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
-import {resolveShopMediaUrl} from "@eCommerceModule/clients/client/public/shared/shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
@@ -64,7 +64,7 @@ function OrdersPage({resolveLanguageKey}: WithLanguageType) {
                                 >
                                     <div className="hidden shrink-0 -space-x-3 sm:flex" aria-hidden>
                                         {items.slice(0, 3).map((item, index) => {
-                                            const imageUrl = resolveShopMediaUrl(item.snapshot?.imageUrl);
+                                            const imageUrl = resolvePublicMediaUrl(item.snapshot?.imageUrl);
                                             return (
                                                 <div key={index} className="h-14 w-12 overflow-hidden rounded-lg bg-muted ring-2 ring-white">
                                                     {imageUrl && <img src={imageUrl} alt="" className="h-full w-full object-cover" />}

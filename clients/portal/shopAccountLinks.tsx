@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
-const LINKS = ["orders", "services", "addresses"] as const;
+const LINKS = ["orders", "addresses"] as const;
 
 /** Orders live in the shop's own account pages; the portal account links there. */
 function ShopAccountLinks({resolveLanguageKey}: WithLanguageType) {

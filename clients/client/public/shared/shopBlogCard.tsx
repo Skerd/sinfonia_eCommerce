@@ -5,8 +5,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {resolveShopMediaUrl} from "./shopMedia.ts";
-import ShopSellerCard from "./shopSellerCard.tsx";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
+import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import type {PublicBlogPostItem} from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
@@ -37,7 +37,7 @@ type ShopBlogCardProps = WithLanguageType & {
 
 function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlogCardProps) {
     const base = useSectionBase();
-    const imageUrl = resolveShopMediaUrl(post.mainImage);
+    const imageUrl = resolvePublicMediaUrl(post.mainImage);
     const TitleTag = featured ? "h2" : "h3";
 
     return (
@@ -93,7 +93,7 @@ function ShopBlogCardInner({resolveLanguageKey, post, featured = false}: ShopBlo
                     <span className="text-xs text-muted-foreground">{resolveLanguageKey("byAuthor").replace("{author}", post.authorName)}</span>
                 )}
                 {post.seller ? (
-                    <ShopSellerCard seller={post.seller} kind="blog" size="compact" nestedInLink />
+                    <PortalSellerCard sectionPath="shop" seller={post.seller} kind="blog" size="compact" nestedInLink />
                 ) : null}
             </div>
         </Link>

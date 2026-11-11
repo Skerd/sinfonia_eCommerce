@@ -5,10 +5,10 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ShopProductCard as ShopProductCardType} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
-import {resolveShopMediaUrl} from "./shopMedia.ts";
+import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {useShopConfig, type ShopMoneyCurrency} from "./shopConfigContext.tsx";
 import {shopProductHref} from "./shopProductHref.ts";
-import ShopSellerCard from "./shopSellerCard.tsx";
+import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopProductCard.tsx";
@@ -53,7 +53,7 @@ type ShopProductCardProps = WithLanguageType & {
 
 function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProps) {
     const base = useSectionBase();
-    const imageUrl = resolveShopMediaUrl(product.mainImage);
+    const imageUrl = resolvePublicMediaUrl(product.mainImage);
     const discount = shopDiscountPercent(product.price, product.compareAtPrice);
     // The computed saving already covers a merchant "sale" badge
     const badge = product.badges?.find(item => !(discount != null && item.toLowerCase() === "sale"));
@@ -88,7 +88,7 @@ function ShopProductCardInner({resolveLanguageKey, product}: ShopProductCardProp
                 </div>
             </div>
             <div className="flex flex-col gap-1.5 px-0.5">
-                <ShopSellerCard seller={product.seller} kind="product" size="compact" nestedInLink />
+                <PortalSellerCard sectionPath="shop" seller={product.seller} kind="product" size="compact" nestedInLink />
                 <h3 className="line-clamp-2 text-[15px] font-medium leading-snug underline-offset-4 group-hover:underline">{product.title}</h3>
                 <div className="flex items-center justify-between gap-2">
                     <ShopPrice price={product.price} compareAtPrice={product.compareAtPrice} currency={product.currency} />

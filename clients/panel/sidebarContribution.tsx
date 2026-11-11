@@ -1,4 +1,4 @@
-import {IconListDetails, IconShoppingBag, IconBoxMultiple, IconBuildingWarehouse, IconChartBar, IconPackageImport, IconArrowBackUp, IconStar, IconDeviceDesktop, IconReceipt, IconClock, IconArrowsLeftRight, IconBookmark, IconTruck, IconClipboardList, IconAlertTriangle, IconGavel, IconTag, IconFlag, IconCalendar, IconPackage} from "@tabler/icons-react";
+import {IconShoppingBag, IconBoxMultiple, IconBuildingWarehouse, IconChartBar, IconPackageImport, IconArrowBackUp, IconStar, IconDeviceDesktop, IconReceipt, IconClock, IconArrowsLeftRight, IconBookmark, IconTruck, IconClipboardList} from "@tabler/icons-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -64,20 +64,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
             },
         ];
 
-        const marketplaceItems: NavItem[] = [
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.listings.title"), url: "/eCommerceMarketplace/listings", icon: IconListDetails, permissions: ["listings"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.listingaddons.title"), url: "/eCommerceMarketplace/listingaddons", icon: IconPackage, permissions: ["listingaddons"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.listingpackages.title"), url: "/eCommerceMarketplace/listingpackages", icon: IconPackage, permissions: ["listingpackages"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.listingflags.title"), url: "/eCommerceMarketplace/listingflags", icon: IconFlag, permissions: ["listingflags"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.promotions.title"), url: "/eCommerceMarketplace/promotions", icon: IconTag, permissions: ["promotions"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.taskrequests.title"), url: "/eCommerceMarketplace/taskrequests", icon: IconClipboardList, permissions: ["taskRequests"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.bids.title"), url: "/eCommerceMarketplace/bids", icon: IconGavel, permissions: ["marketplacebids"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.orders.title"), url: "/eCommerceMarketplace/orders", icon: IconShoppingBag, permissions: ["orders"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.disputes.title"), url: "/eCommerceMarketplace/disputes", icon: IconAlertTriangle, permissions: ["disputes"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.reviews.title"), url: "/eCommerceMarketplace/reviews", icon: IconStar, permissions: ["reviews"], usersPermissions: [], atLeastOnePermission: true},
-            {title: resolveLanguageKey("menus.eCommerceMarketplace.bookings.title"), url: "/eCommerceMarketplace/bookings", icon: IconCalendar, permissions: ["bookings"], usersPermissions: [], atLeastOnePermission: true},
-        ];
-
         return [
             {
                 title: resolveLanguageKey("menus.eCommerce.productCommerce.title"),
@@ -85,13 +71,6 @@ const eCommerceSidebarContribution: SidebarContribution = {
                 usersPermissions: [],
                 atLeastOnePermission: true,
                 items: productCommerceItems,
-            },
-            {
-                title: resolveLanguageKey("menus.eCommerceMarketplace.title"),
-                permissions: [],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-                items: marketplaceItems,
             },
         ];
     },

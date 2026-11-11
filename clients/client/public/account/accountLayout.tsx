@@ -8,8 +8,6 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/accou
 
 const NAV = [
     {path: "/orders", end: false, labelKey: "navOrders"},
-    {path: "/services", end: false, labelKey: "navServiceOrders"},
-    {path: "/jobs", end: false, labelKey: "navJobs"},
     {path: "/giftcards", end: true, labelKey: "navGiftCards"},
     {path: "/addresses", end: true, labelKey: "navAddresses"},
 ] as const;

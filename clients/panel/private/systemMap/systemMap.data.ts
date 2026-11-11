@@ -2,11 +2,10 @@ import type {SystemMapDataset} from "@coreModule/components/customUnchecked/syst
 
 /**
  * Hand-curated System Map for the eCommerce (catalog) module only.
- * Marketplace lives at /eCommerce/marketplacesystemmap.
  */
 
 export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
-    clusters: ["catalog", "ordering", "payments", "pos", "escrow", "shared"],
+    clusters: ["catalog", "ordering", "payments", "pos", "shared"],
     nodes: [
         {
             id: "CmsBlock",
@@ -27,7 +26,7 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             cluster: "catalog",
             module: "eCommerce",
             description:
-                "Product category tree. Discounts match any category of a product; pricing rules use the first one. Marketplace listings use their own ListingCategory.",
+                "Product category tree. Discounts match any category of a product; pricing rules use the first one.",
             keyFields: ["name", "slug", "parent", "order"],
             apiPath: "/api/eCommerce/category",
             panelRoute: "/tenancy/systemSettings/categories",
@@ -453,48 +452,6 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
             panelRoute: "/tenancy/systemSettings/odooimport",
             position: {x: 1560, y: 680},
         },
-        {
-            id: "EscrowTransaction",
-            label: "EscrowTransaction",
-            cluster: "escrow",
-            module: "finance",
-            description:
-                "Finance ledger of hold / release / platform fee / refund. Used by marketplace orders (see the Marketplace System Map).",
-            keyFields: ["order", "type", "amount", "gatewayStatus", "status"],
-            apiPath: "/api/finance/escrowTransaction",
-            panelRoute: "/finance/escrowdashboard",
-            position: {x: 560, y: 760},
-        },
-        {
-            id: "OrderMilestone",
-            label: "OrderMilestone",
-            cluster: "escrow",
-            module: "eCommerce",
-            description: "Part of a marketplace order's held amount, released one by one by the customer.",
-            keyFields: ["order", "name", "amount", "status"],
-            apiPath: "/api/eCommerceMarketplace/orderMilestone",
-            position: {x: 800, y: 820},
-        },
-        {
-            id: "OrderDelivery",
-            label: "OrderDelivery",
-            cluster: "escrow",
-            module: "eCommerce",
-            description: "Provider's delivery (message + files) on a marketplace order; accepting it releases the escrow.",
-            keyFields: ["order", "message", "attachments", "status"],
-            apiPath: "/api/eCommerceMarketplace/orderDelivery",
-            position: {x: 560, y: 900},
-        },
-        {
-            id: "OrderRevision",
-            label: "OrderRevision",
-            cluster: "escrow",
-            module: "eCommerce",
-            description: "Customer's revision request (max 3 per order) answered by the next delivery.",
-            keyFields: ["order", "delivery", "reason", "status"],
-            apiPath: "/api/eCommerceMarketplace/orderRevision",
-            position: {x: 800, y: 960},
-        },
     ],
     edges: [
         {id: "e-pv-p", source: "ProductVariant", target: "Product", label: "belongs to"},
@@ -546,9 +503,6 @@ export const ECOMMERCE_SYSTEM_MAP: SystemMapDataset = {
         {id: "e-pos-im", source: "PosOrder", target: "InventoryMovement", label: "sale / return"},
         {id: "e-ol-oc", source: "OdooLink", target: "OdooConnection", label: "imported via"},
         {id: "e-ol-p", source: "OdooLink", target: "Product", label: "maps"},
-        {id: "e-ms-esc", source: "OrderMilestone", target: "EscrowTransaction", label: "releases", bridge: true},
-        {id: "e-od-esc", source: "OrderDelivery", target: "EscrowTransaction", label: "accept → release", bridge: true},
-        {id: "e-or-od", source: "OrderRevision", target: "OrderDelivery", label: "answers"},
     ],
     flows: [
         {

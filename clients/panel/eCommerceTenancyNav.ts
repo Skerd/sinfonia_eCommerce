@@ -1,4 +1,4 @@
-import {IconCategory2, IconBriefcase, IconPlug, IconCreditCard, IconCurrencyDollar, IconDownload, IconWorld, IconStack2, IconLayoutGrid, IconBooks, IconMapPin, IconDeviceDesktop, IconPercentage, IconAdjustments, IconShoppingBag, IconTag, IconTruck, IconUsers, IconBuildingWarehouse} from "@tabler/icons-react";
+import {IconCategory2, IconPlug, IconCreditCard, IconCurrencyDollar, IconDownload, IconWorld, IconStack2, IconLayoutGrid, IconBooks, IconMapPin, IconDeviceDesktop, IconPercentage, IconAdjustments, IconShoppingBag, IconTag, IconTruck, IconUsers, IconBuildingWarehouse} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
 
@@ -18,14 +18,6 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 url: "/tenancy/systemSettings/categories",
                 icon: IconCategory2,
                 permissions: ["productcategories"],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-            },
-            {
-                title: resolveLanguageKey("menus.tenancy.systemSettings.listingcategories.title"),
-                url: "/tenancy/systemSettings/listingcategories",
-                icon: IconCategory2,
-                permissions: ["listingcategories"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },
@@ -66,14 +58,6 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 url: "/tenancy/systemSettings/customeraddresses",
                 icon: IconMapPin,
                 permissions: ["customerAddresses"],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-            },
-            {
-                title: resolveLanguageKey("menus.tenancy.systemSettings.providerprofile.title"),
-                url: "/tenancy/systemSettings/providerprofiles",
-                icon: IconBriefcase,
-                permissions: ["providerprofiles"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },

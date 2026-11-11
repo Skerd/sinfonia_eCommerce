@@ -9,6 +9,7 @@ import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHtt
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
+import {StarRow} from "@coreModule/clients/portal/shared/starRow.tsx";
 import type {
     ShopProductReview,
     ShopProductReviewsResponse,
@@ -25,16 +26,6 @@ const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";
 
 const REVIEWABLE_PAYMENT_STATUSES = new Set(["paid", "partially_refunded"]);
-
-export function StarRow({value, className}: {value: number; className?: string}) {
-    return (
-        <span className={cn("inline-flex items-center gap-0.5", className)} aria-hidden>
-            {[1, 2, 3, 4, 5].map(n => (
-                <IconStar key={n} className={cn("h-4 w-4", n <= value ? "fill-foreground text-foreground" : "text-foreground/25")} />
-            ))}
-        </span>
-    );
-}
 
 type ReviewsSectionProps = WithLanguageType & {
     productId: string;
