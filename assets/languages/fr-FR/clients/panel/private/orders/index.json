@@ -64,7 +64,16 @@
     "deliveryDueDate": "Date d’échéance",
     "createdAt": "Créé",
     "deletedAt": "Supprimé",
-    "deletedBy": "Supprimé par"
+    "deletedBy": "Supprimé par",
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "accepted": "Accepté",
+        "in_progress": "En cours",
+        "completed": "Terminé",
+        "cancelled": "Annulé"
+      }
+    }
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "status": {

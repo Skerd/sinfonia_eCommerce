@@ -6,9 +6,9 @@
     "orderPlaceholder": "Sélectionnez la commande",
     "statusLabel": "Statut",
     "carrierLabel": "Transporteur",
-    "carrierPlaceholder": "Nom du transporteur",
+    "carrierPlaceholder": "p. ex. Colissimo",
     "trackingNumberLabel": "Numéro de suivi",
-    "trackingNumberPlaceholder": "Numéro de suivi",
+    "trackingNumberPlaceholder": "p. ex. 6A12345678901",
     "trackingUrlLabel": "URL de suivi",
     "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Expédiée le",
@@ -28,7 +28,9 @@
       "shipped": "Expédié",
       "delivered": "Livré",
       "failed": "Échoué"
-    }
+    },
+    "shipmentSectionTitle": "Envoi",
+    "notesSectionTitle": "Notes"
   },
   "axios": {
     "start": {

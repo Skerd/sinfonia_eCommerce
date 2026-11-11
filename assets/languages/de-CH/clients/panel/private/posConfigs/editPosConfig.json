@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Kassenname",
+    "namePlaceholder": "z. B. Hauptkasse",
     "paymentMethodsLabel": "Zahlungsarten",
     "managersLabel": "Manager",
     "warehousesLabel": "Lager",
@@ -34,7 +34,11 @@
     "selectPaymentMethod": "Zahlungsart auswählen",
     "removePaymentMethod": "Zahlungsart entfernen",
     "selectManager": "Manager auswählen",
-    "removeManager": "Entfernen manager"
+    "removeManager": "Entfernen manager",
+    "basicsSectionTitle": "Grunddaten",
+    "sellingSectionTitle": "Lager und Zahlungsarten",
+    "managersSectionTitle": "Manager",
+    "receiptSectionTitle": "Beleg"
   },
   "axios": {
     "start": {

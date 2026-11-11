@@ -61,6 +61,11 @@
             "out": "Prelievo"
           }
         }
+      },
+      "when": {
+        "today": "Oggi",
+        "thisWeek": "Questa settimana",
+        "older": "Precedenti"
       }
     },
     "name": "Nome",
@@ -86,6 +91,7 @@
     "createdAt": "Creato il",
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "when": "Quando"
   }
 }

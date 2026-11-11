@@ -13,7 +13,9 @@
     "orderLabel": "Sort order",
     "orderPlaceholder": "0",
     "editCategoryTitle": "Edit category",
-    "editCategoryDescription": "Update category information."
+    "editCategoryDescription": "Update category information.",
+    "generalSectionTitle": "General",
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {

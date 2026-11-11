@@ -23,12 +23,22 @@
     },
     "categoryIdsLabel": "Kategorien",
     "selectCategory": "Kategorie wählen",
-    "removeCategory": "Kategorie entfernen"
+    "removeCategory": "Kategorie entfernen",
+    "basicsSectionTitle": "Grunddaten"
   },
   "axios": {
-    "start": {"title": "Suche wird erstellt", "time": 3000},
-    "success": {"title": "Suche gespeichert", "time": 3000},
-    "error": {"title": "Suche konnte nicht erstellt werden", "time": 3000}
+    "start": {
+      "title": "Suche wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Suche gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Suche konnte nicht erstellt werden",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Gespeicherte Suche erstellen",
@@ -36,6 +46,6 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Suche speichern"
+    "submit": "Gespeicherte Suche erstellen"
   }
 }

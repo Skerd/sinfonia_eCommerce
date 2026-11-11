@@ -10,14 +10,12 @@
   "items": "Righe dell'ordine",
   "shippingAddress": "Indirizzo di spedizione",
   "billingAddress": "Indirizzo di fatturazione",
-  "totals": "Totali",
   "shippingRate": "Tariffa di spedizione",
   "appliedDiscounts": "Sconti applicati",
   "taxBreakdown": "Ripartizione delle imposte",
   "giftCard": "Carta regalo",
   "notes": "Note",
   "timeline": "Cronologia",
-  "payment": "Pagamento",
   "lifecycle": "Ciclo di vita",
   "paymentTransactions": "Transazioni di pagamento",
   "paymentTransaction": "Transazione",
@@ -32,7 +30,6 @@
   "company": "Azienda",
   "email": "E-mail",
   "phone": "Telefono",
-  "currency": "Valuta",
   "createdAt": "Creato il",
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
@@ -57,16 +54,9 @@
   "discount": "Sconto",
   "discountAmount": "Importo",
   "giftCardRef": "Carta regalo",
-  "giftCardCode": "Codice",
   "giftCardAmount": "Importo applicato",
   "internalNotes": "Note interne",
-  "stripePaymentIntentId": "Payment intent Stripe",
-  "idempotencyKey": "Chiave di idempotenza",
   "itemProduct": "Prodotto",
-  "itemVariant": "Variante",
-  "itemSnapshotTitle": "Titolo dell'istantanea",
-  "itemSnapshotSku": "SKU dell'istantanea",
-  "itemSnapshotVariantLabel": "Opzioni",
   "itemQuantity": "Quantità",
   "itemUnitPrice": "Prezzo unitario",
   "itemTotalPrice": "Totale riga",
@@ -152,5 +142,23 @@
   "fulfillment": "Evasione",
   "returnRequests": "Richieste di reso",
   "returnRequest": "Richiesta di reso",
-  "typeLabel": "Ordine"
+  "typeLabel": "Ordine di prodotti",
+  "fulfillmentStatusValues": {
+    "pending": "In sospeso",
+    "shipped": "Spedita",
+    "delivered": "Consegnata",
+    "failed": "Non riuscita"
+  },
+  "returnRequestStatusValues": {
+    "pending": "In sospeso",
+    "approved": "Approvata",
+    "rejected": "Rifiutata",
+    "received": "Ricevuta",
+    "completed": "Completata"
+  },
+  "returnRequestTypeValues": {
+    "return": "Reso",
+    "exchange": "Scambio",
+    "refund": "Rimborso"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx",
-  "posConfigSubtitle": "Configuration du point de vente",
+  "posConfigSubtitle": "Configuration de point de vente",
   "failedTitle": "Échec du chargement de la configuration du point de vente",
   "failedDescription": "Une erreur s'est produite lors du chargement de cette configuration du point de vente. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
@@ -22,7 +22,7 @@
   "isPaused": "En pause",
   "isCompanyPaused": "Pause à l'échelle de l'entreprise",
   "companyPauseReason": "Raison de la pause de l'entreprise",
-  "pauseReason": "Motif de la pause de la caisse",
+  "pauseReason": "Motif de la pause",
   "yes": "Oui",
   "no": "Non",
   "currency": "Devise",
@@ -46,5 +46,9 @@
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
   "typeLabel": "Configuration de point de vente",
-  "inactive": "Inactif"
+  "inactive": "Inactif",
+  "paymentType": {
+    "cash": "Espèces",
+    "card": "Carte"
+  }
 }

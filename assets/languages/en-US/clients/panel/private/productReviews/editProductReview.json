@@ -6,11 +6,12 @@
   "form": {
     "_idLabel": "Record ID",
     "ratingLabel": "Rating",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Select a rating",
     "titleLabel": "Title",
     "titlePlaceholder": "Optional headline",
     "commentLabel": "Comment",
-    "commentPlaceholder": "What should shoppers know?"
+    "commentPlaceholder": "What should shoppers know?",
+    "reviewSectionTitle": "Review"
   },
   "axios": {
     "start": {

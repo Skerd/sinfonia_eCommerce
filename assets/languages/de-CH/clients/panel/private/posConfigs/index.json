@@ -60,12 +60,12 @@
   "bulkMenu": {
     "triggerAria": "POS-Steuerung der Firma",
     "label": "Firmensteuerung",
-    "hint": "Notstopp für alle Kassen",
+    "hint": "Notstopp für alle POS-Konfigurationen",
     "lockedReasonPrefix": "Grund der Firmenpause",
-    "pauseAll": "Alle Kassen pausieren",
+    "pauseAll": "Alle POS-Konfigurationen pausieren",
     "pauseAllHint": "Firma sperren und offene Sitzungen zwangsweise schliessen",
-    "resumeAll": "Alle Kassen fortsetzen",
-    "resumeAllHint": "Hebt nur die Firmen-Sperre auf. Einzeln pausierte Kassen bleiben pausiert"
+    "resumeAll": "Alle POS-Konfigurationen fortsetzen",
+    "resumeAllHint": "Hebt nur die Firmen-Sperre auf. Einzeln pausierte POS-Konfigurationen bleiben pausiert"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {

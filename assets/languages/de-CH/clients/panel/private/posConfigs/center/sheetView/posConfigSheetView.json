@@ -22,7 +22,7 @@
   "isPaused": "Pausiert",
   "isCompanyPaused": "Firmenweite Pause",
   "companyPauseReason": "Grund der Firmenpause",
-  "pauseReason": "Grund der Kassenpause",
+  "pauseReason": "Grund der Pause",
   "yes": "Ja",
   "no": "Nein",
   "currency": "Währung",
@@ -46,5 +46,9 @@
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
   "typeLabel": "POS-Konfiguration",
-  "inactive": "Inaktiv"
+  "inactive": "Inaktiv",
+  "paymentType": {
+    "cash": "Bar",
+    "card": "Karte"
+  }
 }

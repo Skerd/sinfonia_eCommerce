@@ -96,6 +96,12 @@
         "partially_fulfilled": "Pjesërisht e përmbushur",
         "fulfilled": "E përmbushur",
         "returned": "E kthyer"
+      },
+      "when": {
+        "today": "Sot",
+        "thisWeek": "Këtë javë",
+        "thisMonth": "Këtë muaj",
+        "older": "Më të vjetra"
       }
     },
     "orderNumber": "Numri i porosisë",
@@ -161,6 +167,7 @@
     "createdAt": "Krijuar më",
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "when": "Kur"
   }
 }

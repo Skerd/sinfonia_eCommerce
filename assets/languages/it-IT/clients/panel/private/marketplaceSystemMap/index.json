@@ -35,5 +35,24 @@
     "models": "Grafo dei modelli",
     "flows": "Come funziona",
     "capabilities": "Funzionalità"
+  },
+  "nodes": {
+    "ListingCategory": "Categoria di annunci",
+    "ProviderProfile": "Profilo fornitore",
+    "Listing": "Annuncio",
+    "ListingPackage": "Pacchetto dell'annuncio",
+    "ListingAddOn": "Componente aggiuntivo dell'annuncio",
+    "ListingFlag": "Segnalazione dell'annuncio",
+    "Promotion": "Promozione",
+    "TaskRequest": "Richiesta di attività",
+    "Bid": "Offerta",
+    "MarketplaceOrder": "Ordine",
+    "Booking": "Prenotazione",
+    "Dispute": "Controversia",
+    "Review": "Recensione",
+    "EscrowTransaction": "Transazione di deposito a garanzia",
+    "OrderMilestone": "Traguardo dell'ordine",
+    "OrderDelivery": "Consegna dell'ordine",
+    "OrderRevision": "Revisione dell'ordine"
   }
 }

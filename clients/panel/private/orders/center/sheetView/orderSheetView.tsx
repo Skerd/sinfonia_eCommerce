@@ -167,6 +167,7 @@ function OrderSheetView({
                     orderId={String(asOrder._id)}
                     displayName={displayLabel}
                     currentDueDate={asOrder.deliveryDueDate}
+                    orderCreatedAt={asOrder.createdAt}
                     openAlert
                     url="/api/eCommerceMarketplace/order/extend"
                     onSuccess={(newDueDate: string) => {
@@ -193,6 +194,7 @@ function OrderSheetView({
                 <CreateMilestoneAction
                     orderId={String(asOrder._id)}
                     displayName={displayLabel}
+                    currency={asOrder.currency}
                     onSuccess={() => {
                         reloadOrder();
                         setAction("");

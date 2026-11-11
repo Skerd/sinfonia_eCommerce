@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
-  "title": "Kategoritë",
+  "title": "Kategoritë e listimeve",
   "description": "Organizoni katalogun e tregut në një pemë kategorish prind/fëmijë që përdoret nga listimet dhe kërkesat për detyra.",
   "help": {
     "ariaLabel": "Rreth kategorive të listimeve",
@@ -26,7 +26,7 @@
       }
     ]
   },
-  "createCategory": "Krijo kategori",
+  "createCategory": "Krijo kategori listimi",
   "fields": {
     "name": "Emri",
     "slug": "Slug",

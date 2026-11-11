@@ -61,7 +61,7 @@
     },
     "name": "Numéro de commande",
     "session": "Session",
-    "config": "Configuration du point de vente",
+    "config": "Configuration de point de vente",
     "state": "État",
     "cashier": "Caissier",
     "customer": "Client",

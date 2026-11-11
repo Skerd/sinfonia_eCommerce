@@ -60,6 +60,11 @@
         "transfer_out": "Transfer out",
         "initial": "Initial",
         "write_off": "Write-off"
+      },
+      "when": {
+        "today": "Today",
+        "thisWeek": "This week",
+        "older": "Older"
       }
     },
     "inventory": "Inventory",
@@ -85,6 +90,7 @@
     "createdAt": "Created at",
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "when": "When"
   }
 }

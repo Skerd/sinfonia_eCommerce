@@ -12,11 +12,12 @@
     "orderLabel": "Ordine",
     "orderPlaceholder": "Seleziona l'ordine",
     "startAtLabel": "Ora di inizio",
-    "startAtPlaceholder": "aaaa-MM-ggTHH:mm",
     "endAtLabel": "Ora di fine",
-    "endAtPlaceholder": "aaaa-MM-ggTHH:mm",
-    "timezoneLabel": "Fuso orario",
-    "timezonePlaceholder": "UTC"
+    "section": {
+      "order": "Ordine",
+      "schedule": "Quando"
+    },
+    "providerHoursHint": "Gli orari sono nel tuo fuso orario. La prenotazione deve cadere negli orari di lavoro del fornitore."
   },
   "axios": {
     "start": {

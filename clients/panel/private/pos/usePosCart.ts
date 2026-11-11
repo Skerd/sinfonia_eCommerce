@@ -7,7 +7,7 @@ import type {
     CatalogProduct,
     CatalogVariant,
 } from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
-import {lineTotal} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {lineTotal, withServerReason} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
@@ -275,7 +275,7 @@ export function usePosCart({
             clearOrder();
             toast.success(rk("toast.held"));
         },
-        error: () => toast.error(rk("errors.holdFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.holdFailed"), requestError)),
     });
     const holdCart = () => {
         if (!session || !cart.length) return;
@@ -298,8 +298,8 @@ export function usePosCart({
     const [heldListCall, setHeldListCall] = useState<Call>(NO_CALL);
     const {loading: heldBusy} = useHttpRequest<{data: PosOrder[]}>(HELD_LIST_REQUEST, heldListCall.payload, heldListCall.count, true, {
         success: (response) => setHeldOrders(response.data ?? []),
-        error: () => {
-            toast.error(rk("errors.heldLoadFailed"));
+        error: (requestError) => {
+            toast.error(withServerReason(rk("errors.heldLoadFailed"), requestError));
             setHeldOrders([]);
         },
     });
@@ -347,7 +347,7 @@ export function usePosCart({
             if (heldOrderId === id) setHeldOrderId(null);
             toast.success(rk("toast.heldDiscarded"));
         },
-        error: () => toast.error(rk("errors.heldDeleteFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.heldDeleteFailed"), requestError)),
     });
     const discardHeld = (id: string) => setDiscardCall(call({_id: id}));
 

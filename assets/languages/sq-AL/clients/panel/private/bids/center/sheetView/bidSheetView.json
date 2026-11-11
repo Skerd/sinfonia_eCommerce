@@ -9,7 +9,7 @@
   "proposal": "Propozimi",
   "status": "Statusi",
   "bidder": "Ofertuesi",
-  "taskRequest": "Kërkesë detyre",
+  "taskRequest": "Kërkesë për ofertë",
   "failedTitle": "Dështoi ngarkimi i ofertës",
   "failedDescription": "Diçka shkoi keq gjatë ngarkimit të ofertës. Klikoni për të provuar përsëri.",
   "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",

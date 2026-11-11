@@ -10,14 +10,12 @@
   "items": "Artikujt",
   "shippingAddress": "Adresa e dërgimit",
   "billingAddress": "Adresa e faturimit",
-  "totals": "Totalet",
   "shippingRate": "Tarifa e transportit",
   "appliedDiscounts": "Zbritjet e aplikuar",
   "taxBreakdown": "Ndarja e taksave",
   "giftCard": "Karta dhuratë",
   "notes": "Shënime",
   "timeline": "Kronologjia",
-  "payment": "Pagesa",
   "lifecycle": "Cikli i jetës",
   "paymentTransactions": "Transaksionet e pagesës",
   "paymentTransaction": "Transaksioni",
@@ -32,7 +30,6 @@
   "company": "Kompania",
   "email": "Email",
   "phone": "Telefoni",
-  "currency": "Monedha",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
@@ -57,16 +54,9 @@
   "discount": "Zbritja",
   "discountAmount": "Shuma",
   "giftCardRef": "Karta dhuratë",
-  "giftCardCode": "Kodi",
   "giftCardAmount": "Shuma e aplikuar",
   "internalNotes": "Shënime të brendshme",
-  "stripePaymentIntentId": "Qëllimi i pagesës Stripe",
-  "idempotencyKey": "Çelësi i idempotencës",
   "itemProduct": "Produkti",
-  "itemVariant": "Varianti",
-  "itemSnapshotTitle": "Titulli i ruajtur",
-  "itemSnapshotSku": "SKU e ruajtur",
-  "itemSnapshotVariantLabel": "Opsionet",
   "itemQuantity": "Sasia",
   "itemUnitPrice": "Çmimi njësi",
   "itemTotalPrice": "Totali i rreshtit",
@@ -152,5 +142,23 @@
   "fulfillment": "Dërgesa",
   "returnRequests": "Kthimet",
   "returnRequest": "Kthim",
-  "typeLabel": "Porosi"
+  "typeLabel": "Porosi produkti",
+  "fulfillmentStatusValues": {
+    "pending": "Në pritje",
+    "shipped": "Dërguar",
+    "delivered": "Dorëzuar",
+    "failed": "Dështoi"
+  },
+  "returnRequestStatusValues": {
+    "pending": "Në pritje",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "received": "Pranuar",
+    "completed": "Përfunduar"
+  },
+  "returnRequestTypeValues": {
+    "return": "Kthim",
+    "exchange": "Këmbim",
+    "refund": "Rimbursim"
+  }
 }

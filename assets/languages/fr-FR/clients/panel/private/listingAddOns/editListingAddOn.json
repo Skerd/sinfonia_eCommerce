@@ -23,7 +23,9 @@
     "currencyLabel": "Devise",
     "currencyPlaceholder": "Devise de l'annonce si vide",
     "deliveryDaysLabel": "Jours de livraison",
-    "deliveryDaysPlaceholder": "par ex. 2"
+    "deliveryDaysPlaceholder": "par ex. 2",
+    "basicsSectionTitle": "Informations de base",
+    "pricingSectionTitle": "Prix"
   },
   "axios": {
     "start": {

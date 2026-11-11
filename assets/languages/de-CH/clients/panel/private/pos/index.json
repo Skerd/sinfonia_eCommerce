@@ -363,5 +363,11 @@
     "pinInvalid": "Ungültige Manager-PIN",
     "noManagersWithPin": "Dieser Kasse sind keine Manager mit PIN zugewiesen",
     "refundFailed": "Rückerstattung fehlgeschlagen"
+  },
+  "orderState": {
+    "draft": "Entwurf",
+    "paid": "Bezahlt",
+    "cancel": "Storniert",
+    "refunded": "Erstattet"
   }
 }

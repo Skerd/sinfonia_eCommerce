@@ -9,6 +9,7 @@ import {useViewConfigState} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import {hasAccessPath} from "@coreModule/components/viewEngine/engine/access.ts";
 import EditFormViewRenderer from "@coreModule/components/viewEngine/editFormViewRenderer.tsx";
 import SheetMediaFilesStrip from "@coreModule/components/viewEngine/sheet/widgets/sheetMediaFilesStrip.tsx";
+import WeeklyHours from "@coreModule/components/viewEngine/sheet/widgets/weeklyHours.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import type {ViewNode} from "armonia/src/modules/core/api/auxiliary/private/viewConfig";
@@ -104,15 +105,9 @@ function ProviderProfileSection({
             ? <p className="text-sm">{profile.timezone}</p>
             : <p className="text-sm text-muted-foreground">{resolveLanguageKey("account.timezoneDefault")}</p>;
     } else if (field === "availability") {
+        // The same compact week as the sheet (UX-08).
         display = profile.availability?.length ? (
-            <div className="flex flex-col divide-y divide-border/50">
-                {profile.availability.map((slot, index) => (
-                    <div key={index} className="flex items-center justify-between py-1.5 text-sm">
-                        <span>{resolveLanguageKey(`weekday.${slot.dayOfWeek}`)}</span>
-                        <span className="text-muted-foreground">{slot.startTime} – {slot.endTime}</span>
-                    </div>
-                ))}
-            </div>
+            <WeeklyHours rows={profile.availability} closedLabel={String(resolveLanguageKey("account.notAvailable"))} />
         ) : empty;
     } else {
         display = profile.portfolio?.length ? (

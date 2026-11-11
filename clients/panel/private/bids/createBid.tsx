@@ -9,6 +9,6 @@ export default createGenericCreatePage<CreateBidFormType>({
     accessModel: "marketplacebids",
     apiUrl: "/api/eCommerceMarketplace/bid",
     schema: createBidFormSchema,
-    defaultValues: {taskRequest: "", amount: 1, proposal: "", deliveryDays: 1},
+    defaultValues: {taskRequest: "", proposal: ""},
     submitIcon: <IconPlus />,
 });

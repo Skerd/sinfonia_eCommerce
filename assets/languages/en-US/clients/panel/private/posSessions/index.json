@@ -61,6 +61,11 @@
             "out": "Cash out"
           }
         }
+      },
+      "when": {
+        "today": "Today",
+        "thisWeek": "This week",
+        "older": "Older"
       }
     },
     "name": "Name",
@@ -86,6 +91,7 @@
     "createdAt": "Created at",
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "when": "When"
   }
 }

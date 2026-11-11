@@ -36,7 +36,10 @@
       "received": "Ricevuta",
       "completed": "Completata"
     },
-    "orderAmountDescription": "Nella valuta dell'ordine."
+    "orderAmountDescription": "Nella valuta dell'ordine.",
+    "requestSectionTitle": "Richiesta",
+    "notesSectionTitle": "Note",
+    "typePlaceholder": "Reso, scambio o rimborso"
   },
   "axios": {
     "start": {

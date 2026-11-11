@@ -23,12 +23,22 @@
     },
     "categoryIdsLabel": "Categorie",
     "selectCategory": "Seleziona una categoria",
-    "removeCategory": "Rimuovi categoria"
+    "removeCategory": "Rimuovi categoria",
+    "basicsSectionTitle": "Dati principali"
   },
   "axios": {
-    "start": {"title": "Creazione della ricerca salvata", "time": 3000},
-    "success": {"title": "Ricerca salvata creata", "time": 3000},
-    "error": {"title": "Impossibile creare la ricerca salvata", "time": 3000}
+    "start": {
+      "title": "Creazione della ricerca salvata",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ricerca salvata creata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la ricerca salvata",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Crea ricerca salvata",

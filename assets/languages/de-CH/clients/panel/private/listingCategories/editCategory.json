@@ -1,40 +1,42 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/editCategory.tsx",
-  "editTitle": "Kategorie bearbeiten",
-  "editDescription": "Kategoriedetails aktualisieren.",
+  "editTitle": "Inseratkategorie bearbeiten",
+  "editDescription": "Diese Inseratkategorie aktualisieren.",
   "errorTitle": "Kategorie konnten nicht geladen werden",
   "errorDescription": "Die Kategorie konnte nicht geladen werden. Bitte erneut versuchen.",
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Kategorie name",
+    "namePlaceholder": "z. B. Hausreinigung",
     "parentListingCategoryLabel": "Übergeordnete Kategorie",
-    "parentListingCategoryPlaceholder": "Optionales übergeordnetes Element",
+    "parentListingCategoryPlaceholder": "Oberste Ebene, wenn leer",
     "orderLabel": "Sortierreihenfolge",
     "orderPlaceholder": "0",
-    "editCategoryTitle": "Kategorie bearbeiten",
-    "editCategoryDescription": "Kategorieinformationen aktualisieren."
+    "editCategoryTitle": "Inseratkategorie bearbeiten",
+    "editCategoryDescription": "Diese Inseratkategorie aktualisieren.",
+    "basicsSectionTitle": "Grunddaten",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {
-      "title": "Kategorie wird gespeichert",
+      "title": "Inseratkategorie wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Kategorie aktualisiert",
+      "title": "Inseratkategorie aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Kategorie konnte nicht aktualisiert werden",
+      "title": "Inseratkategorie konnte nicht aktualisiert werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Kategorie bearbeiten",
-    "description": "Kategoriedetails aktualisieren."
+    "title": "Inseratkategorie bearbeiten",
+    "description": "Diese Inseratkategorie aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern änderungen"
+    "submit": "Änderungen speichern"
   }
 }

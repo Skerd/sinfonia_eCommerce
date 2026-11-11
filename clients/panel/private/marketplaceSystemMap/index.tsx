@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useMemo, useState} from "react";
 import {compose} from "redux";
 import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -13,6 +13,14 @@ import {MARKETPLACE_SYSTEM_MAP} from "./systemMap.data.ts";
 function MarketplaceSystemMap({resolveLanguageKey}: WithLanguageType) {
     const rk = (key: string) => String(resolveLanguageKey(key) ?? key);
     const [tab, setTab] = useState("models");
+    // Nodes read as the panel's nouns in the user's language (UX-11), not as model class names.
+    const dataset = useMemo(
+        () => ({
+            ...MARKETPLACE_SYSTEM_MAP,
+            nodes: MARKETPLACE_SYSTEM_MAP.nodes.map((node) => ({...node, label: String(resolveLanguageKey(`nodes.${node.id}`) ?? node.label)})),
+        }),
+        [resolveLanguageKey],
+    );
 
     return (
         <div className="flex h-full min-h-0 flex-col gap-4 p-6">
@@ -30,7 +38,7 @@ function MarketplaceSystemMap({resolveLanguageKey}: WithLanguageType) {
                 </TabsList>
 
                 <TabsContent value="models" className="mt-0 flex-1 min-h-0 data-[state=inactive]:hidden">
-                    <ModelGraph dataset={MARKETPLACE_SYSTEM_MAP} />
+                    <ModelGraph dataset={dataset} />
                 </TabsContent>
 
                 <TabsContent value="flows" className="mt-0 flex-1 min-h-0 data-[state=inactive]:hidden">

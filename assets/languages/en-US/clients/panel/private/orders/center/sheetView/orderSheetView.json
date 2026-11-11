@@ -34,5 +34,22 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "milestone": "Milestone",
+  "delivery": "Delivery",
+  "revision": "Revision request",
+  "orderMilestoneStatus": {
+    "pending": "Pending",
+    "released": "Released",
+    "delivered": "Delivered"
+  },
+  "orderDeliveryStatus": {
+    "submitted": "Submitted",
+    "accepted": "Accepted",
+    "revision_requested": "Revision requested"
+  },
+  "orderRevisionStatus": {
+    "pending": "Pending",
+    "completed": "Answered"
+  }
 }

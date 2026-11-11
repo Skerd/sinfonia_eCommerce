@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de l'entrepôt",
+    "namePlaceholder": "p. ex. Entrepôt principal",
     "codeLabel": "Code",
-    "codePlaceholder": "Code entrepôt",
+    "codePlaceholder": "p. ex. WH-MAIN",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Pays",
     "countryPlaceholder": "Sélectionner le pays",
@@ -23,7 +23,8 @@
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "Longitude"
+    "longitudePlaceholder": "Longitude",
+    "basicsSectionTitle": "Informations de base"
   },
   "axios": {
     "start": {

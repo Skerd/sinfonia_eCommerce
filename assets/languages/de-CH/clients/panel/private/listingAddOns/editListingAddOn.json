@@ -10,7 +10,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern änderungen"
+    "submit": "Änderungen speichern"
   },
   "form": {
     "idLabel": "Protokoll ID",
@@ -23,7 +23,9 @@
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung des Inserats, wenn leer",
     "deliveryDaysLabel": "Liefertage",
-    "deliveryDaysPlaceholder": "E.g. 2"
+    "deliveryDaysPlaceholder": "z. B. 2",
+    "basicsSectionTitle": "Grunddaten",
+    "pricingSectionTitle": "Preise"
   },
   "axios": {
     "start": {

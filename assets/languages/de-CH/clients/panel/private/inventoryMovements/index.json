@@ -60,6 +60,11 @@
         "transfer_out": "Umlagerung aus",
         "initial": "Anfangsbestand",
         "write_off": "Abschreibung"
+      },
+      "when": {
+        "today": "Heute",
+        "thisWeek": "Diese Woche",
+        "older": "Älter"
       }
     },
     "inventory": "Inventar",
@@ -85,6 +90,7 @@
     "createdAt": "Erstellt am",
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
-    "deletedBy": "Gelöscht von"
+    "deletedBy": "Gelöscht von",
+    "when": "Wann"
   }
 }

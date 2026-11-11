@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
-  "title": "Diese POS-Kasse fortsetzen?",
-  "description": "Hebt nur die Pause dieser Kasse auf. Eine firmenweite Sperre (falls aktiv) bleibt bestehen. Kassierende müssen eine neue Sitzung öffnen, um wieder zu verkaufen.",
+  "title": "Diese POS-Konfiguration fortsetzen?",
+  "description": "Hebt nur die Pause dieser POS-Konfiguration auf. Eine firmenweite Sperre (falls aktiv) bleibt bestehen. Kassierende müssen eine neue Sitzung öffnen, um wieder zu verkaufen.",
   "cancel": "Abbrechen",
-  "confirm": "Kasse fortsetzen",
+  "confirm": "POS-Konfiguration fortsetzen",
   "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "POS-Kasse wird fortgesetzt…",
+      "title": "POS-Konfiguration wird fortgesetzt…",
       "time": 3000
     },
     "success": {
-      "title": "POS-Kasse fortgesetzt",
+      "title": "POS-Konfiguration fortgesetzt",
       "time": 3000
     },
     "error": {
-      "title": "POS-Kasse konnte nicht fortgesetzt werden",
+      "title": "POS-Konfiguration konnte nicht fortgesetzt werden",
       "time": 3000
     }
   }

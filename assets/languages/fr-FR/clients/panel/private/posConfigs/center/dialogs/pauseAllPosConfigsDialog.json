@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
-  "title": "Mettre toutes les caisses en pause ?",
-  "description": "Applique un verrou à l'échelle de l'entreprise. Les sessions ouvertes sont clôturées d'office (paniers en attente annulés, espèces fixées au montant attendu). Les nouvelles caisses créées pendant le verrouillage ne peuvent pas non plus vendre avant « Tout reprendre ». Les caisses mises en pause individuellement restent en pause. Les annulations sur le terminal sont effectuées au mieux.",
+  "title": "Suspendre toutes les configurations de point de vente ?",
+  "description": "Applique un verrou à l'échelle de l'entreprise. Les sessions ouvertes sont fermées de force (paniers en attente annulés, espèces fixées au montant attendu). Les nouvelles configurations de point de vente créées pendant le verrou ne peuvent pas non plus vendre avant « Tout reprendre ». Les configurations suspendues individuellement restent suspendues. Les annulations sur le terminal se font dans la mesure du possible.",
   "reasonLabel": "Motif (facultatif)",
   "reasonPlaceholder": "par ex. Panne fiscale/réseau",
   "cancel": "Annuler",
@@ -9,15 +9,15 @@
   "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Mise en pause de toutes les caisses…",
+      "title": "Suspension de toutes les configurations de point de vente…",
       "time": 3000
     },
     "success": {
-      "title": "Toutes les caisses en pause",
+      "title": "Toutes les configurations de point de vente suspendues",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre en pause toutes les caisses",
+      "title": "Impossible de suspendre toutes les configurations de point de vente",
       "time": 3000
     }
   }

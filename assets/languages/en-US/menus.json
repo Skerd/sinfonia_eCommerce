@@ -98,7 +98,7 @@
       "title": "Product variants"
     },
     "customeraddresses": {
-      "title": "Addresses"
+      "title": "Customer addresses"
     },
     "productreviews": {
       "title": "Product reviews"
@@ -161,7 +161,7 @@
         "title": "External Imports"
       },
       "odooconnection": {
-        "title": "Odoo"
+        "title": "Odoo connection"
       },
       "odooimport": {
         "title": "Import from Odoo"
@@ -212,7 +212,7 @@
         "title": "Promotions"
       },
       "listingflags": {
-        "title": "Listing flags"
+        "title": "Listing reports"
       },
       "providerprofile": {
         "title": "Provider profiles"
@@ -252,7 +252,7 @@
       "title": "Promotions"
     },
     "listingflags": {
-      "title": "Listing flags"
+      "title": "Listing reports"
     },
     "listingaddons": {
       "title": "Listing add-ons"

@@ -44,5 +44,6 @@
     "PosOrder": "POS order",
     "Checkout": "Checkout"
   },
-  "typeLabel": "Stock movement"
+  "typeLabel": "Stock movement",
+  "receiving": "Receiving"
 }

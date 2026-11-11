@@ -19,18 +19,23 @@
     "currencyIdLabel": "Devise",
     "currencyIdPlaceholder": "Sélectionner une devise",
     "deliveryDaysLabel": "Jours de livraison",
-    "deliveryDaysPlaceholder": "1",
+    "deliveryDaysPlaceholder": "ex. 7",
     "proposalLabel": "Proposition",
     "proposalPlaceholder": "Décrivez votre approche...",
-    "taskRequestIdLabel": "Demande de tâche",
-    "taskRequestIdPlaceholder": "Sélectionner une demande de tâche"
+    "taskRequestIdLabel": "Demande de devis",
+    "taskRequestIdPlaceholder": "Sélectionner une demande de devis",
+    "section": {
+      "taskRequest": "Demande de devis",
+      "offer": "Votre offre"
+    },
+    "amountCurrencyDescription": "Dans la devise de la demande de devis."
   },
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Soumettre une offre"
   },
   "formHeader": {
-    "description": "Soumettez une offre pour une demande de tâche.",
+    "description": "Soumettez une offre pour une demande de devis.",
     "title": "Créer une offre"
   },
   "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",

@@ -44,5 +44,6 @@
     "PosOrder": "POS-Auftrag",
     "Checkout": "Checkout"
   },
-  "typeLabel": "Lagerbewegung"
+  "typeLabel": "Lagerbewegung",
+  "receiving": "Wareneingang"
 }

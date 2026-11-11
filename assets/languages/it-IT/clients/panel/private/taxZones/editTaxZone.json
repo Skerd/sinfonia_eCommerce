@@ -33,7 +33,9 @@
       "all": "Tutti i prodotti",
       "physical": "Fisico",
       "digital": "Digitale"
-    }
+    },
+    "visibilitySectionTitle": "Visibilità",
+    "priorityDescription": "Se le zone si sovrappongono, vale quella con la priorità più alta."
   },
   "axios": {
     "start": {

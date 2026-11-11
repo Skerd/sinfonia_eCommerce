@@ -3,13 +3,13 @@
   "title": "Créer un mode de paiement",
   "form": {
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom du mode de paiement",
+    "namePlaceholder": "p. ex. Espèces",
     "typeLabel": "Type",
     "typePlaceholder": "Sélectionner le type",
     "sequenceLabel": "Séquence",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Montants rapides en espèces",
-    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "cashQuickAmountsPlaceholder": "p. ex. 5,10,20,50 ; vide = montants par défaut de la caisse",
     "terminalSectionTitle": "Terminal de paiement bancaire",
     "terminalEnabledLabel": "Connecter le terminal de paiement bancaire",
     "terminalForcesCardHint": "La connexion d’un terminal de paiement bancaire définit le type sur Carte. La déconnexion le définit sur Espèces.",
@@ -36,7 +36,10 @@
     "terminalProtocol": {
       "http": "HTTP",
       "https": "HTTPS"
-    }
+    },
+    "basicsSectionTitle": "Informations de base",
+    "cashSectionTitle": "Espèces",
+    "visibilitySectionTitle": "Ordre à la caisse"
   },
   "axios": {
     "start": {

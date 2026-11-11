@@ -15,7 +15,8 @@
     "variantLabel": "Variante",
     "variantPlaceholder": "Optionale Variante",
     "countedQuantityLabel": "Gezählt",
-    "countedQuantityPlaceholder": "Leer lassen, wenn nicht gezählt"
+    "countedQuantityPlaceholder": "Leer lassen, wenn nicht gezählt",
+    "countSectionTitle": "Zählung"
   },
   "axios": {
     "start": {

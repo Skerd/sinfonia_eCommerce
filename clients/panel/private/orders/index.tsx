@@ -1,10 +1,12 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import type {OrderStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.schema-def.ts";
+import {orderStatuses, type OrderStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.schema-def.ts";
 import OrderCard from "./center/cardView/orderCard.tsx";
 import AcceptOrderDropdown from "./center/actions/acceptOrderDropdown.tsx";
 import StartOrderDropdown from "./center/actions/startOrderDropdown.tsx";
@@ -29,6 +31,18 @@ function orderDisplayLabel(order: Order): string {
 }
 
 function AllOrders({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: orderStatuses.map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<Order>
             apiUrl="/api/eCommerceMarketplace/order"
@@ -37,6 +51,7 @@ function AllOrders({resolveLanguageKey}: WithLanguageType) {
             tableConfigKey="orders"
             buildEditPath={() => ""}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             sheetLanguagePath="src/modules/eCommerce/clients/panel/private/orders/center/sheetView/orderSheetView.tsx"
             rowActionMenu={{hideEdit: true, allowMenuForCustomChildren: true}}
             renderActionMenuChildren={(order, bindRowAction) => (
@@ -55,7 +70,7 @@ function AllOrders({resolveLanguageKey}: WithLanguageType) {
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
                 if (action === "createMilestone") {
-                    return <CreateMilestoneAction orderId={entity._id} displayName={orderDisplayLabel(entity)} onSuccess={resetAction} onCancel={resetAction} />;
+                    return <CreateMilestoneAction orderId={entity._id} displayName={orderDisplayLabel(entity)} currency={entity.currency} onSuccess={resetAction} onCancel={resetAction} />;
                 }
                 if (action === "releaseMilestone") {
                     return (
@@ -90,6 +105,7 @@ function AllOrders({resolveLanguageKey}: WithLanguageType) {
                             orderId={entity._id}
                             displayName={orderDisplayLabel(entity)}
                             currentDueDate={entity.deliveryDueDate}
+                            orderCreatedAt={entity.createdAt}
                             openAlert
                             url="/api/eCommerceMarketplace/order/extend"
                             onSuccess={(newDueDate: string) => {

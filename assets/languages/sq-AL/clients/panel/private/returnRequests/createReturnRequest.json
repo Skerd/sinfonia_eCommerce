@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/createReturnRequest.tsx",
-  "title": "Krijo kërkesë kthimi",
+  "title": "Krijo kërkesë për kthim",
   "form": {
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
@@ -33,7 +33,10 @@
       "received": "Pranuar",
       "completed": "Përfunduar"
     },
-    "orderAmountDescription": "Në monedhën e porosisë."
+    "orderAmountDescription": "Në monedhën e porosisë.",
+    "requestSectionTitle": "Kërkesa",
+    "notesSectionTitle": "Shënime",
+    "typePlaceholder": "Kthim, këmbim ose rimbursim"
   },
   "axios": {
     "start": {
@@ -50,11 +53,11 @@
     }
   },
   "formHeader": {
-    "title": "Krijo kërkesë kthimi",
+    "title": "Krijo kërkesë për kthim",
     "description": "Kërko kthim, këmbim ose rimbursim për një porosi."
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo kërkesë kthimi"
+    "submit": "Krijo kërkesë për kthim"
   }
 }

@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea"
+    "submit": "Crea un blocco CMS"
   },
   "form": {
     "generalSectionTitle": "Generale",
@@ -34,7 +34,7 @@
     "ctaHrefLabel": "Link pulsante",
     "ctaHrefPlaceholder": "/products",
     "messageLabel": "Messaggio",
-    "messagePlaceholder": "Spedizione gratuita oltre €60",
+    "messagePlaceholder": "Spedizione gratuita questo weekend",
     "linkHrefLabel": "Link",
     "linkHrefPlaceholder": "/products",
     "htmlLabel": "HTML",

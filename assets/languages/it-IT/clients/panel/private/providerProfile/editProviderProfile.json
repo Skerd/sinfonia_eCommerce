@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx",
-  "editTitle": "Modifica il profilo del fornitore",
+  "editTitle": "Modifica profilo fornitore",
   "editDescription": "Aggiorna competenze, biografia, portfolio e disponibilità settimanale per questo fornitore.",
   "errorTitle": "Impossibile caricare il profilo del fornitore",
   "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
   "formHeader": {
-    "title": "Modifica il profilo del fornitore",
+    "title": "Modifica profilo fornitore",
     "description": "Aggiorna competenze, biografia, portfolio e disponibilità."
   },
   "formButtons": {
@@ -20,7 +20,7 @@
     "bioPlaceholder": "Racconta di te ai clienti...",
     "portfolioLabel": "Immagini del portfolio",
     "timezoneLabel": "Fuso orario",
-    "timezonePlaceholder": "es. Europe/Zurich (vuoto: fuso orario dell'azienda)",
+    "timezonePlaceholder": "Fuso orario dell'azienda se vuoto",
     "section": {
       "profile": "Profilo",
       "availability": "Disponibilità settimanale",
@@ -61,6 +61,7 @@
   "account": {
     "edit": "Modifica",
     "empty": "Ancora nulla di aggiunto.",
-    "timezoneDefault": "Non impostato: vale il fuso orario dell'azienda."
+    "timezoneDefault": "Non impostato: vale il fuso orario dell'azienda.",
+    "notAvailable": "Non disponibile"
   }
 }

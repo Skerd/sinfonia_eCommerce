@@ -23,12 +23,22 @@
     },
     "categoryIdsLabel": "Catégories",
     "selectCategory": "Sélectionner une catégorie",
-    "removeCategory": "Retirer la catégorie"
+    "removeCategory": "Retirer la catégorie",
+    "basicsSectionTitle": "Informations de base"
   },
   "axios": {
-    "start": {"title": "Création de la recherche", "time": 3000},
-    "success": {"title": "Recherche enregistrée créée", "time": 3000},
-    "error": {"title": "Impossible de créer la recherche", "time": 3000}
+    "start": {
+      "title": "Création de la recherche",
+      "time": 3000
+    },
+    "success": {
+      "title": "Recherche enregistrée créée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer la recherche",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Créer une recherche enregistrée",
@@ -36,6 +46,6 @@
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Créer la recherche"
+    "submit": "Créer une recherche enregistrée"
   }
 }

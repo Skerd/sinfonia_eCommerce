@@ -21,15 +21,6 @@ function fillLabelMap(
     }
 }
 
-/** Match discount form DateInput `valueFormat: "YYYY-MM-DD HH:mm"` (local time). */
-function toFormDateTime(value: string | Date | undefined | null): string | undefined {
-    if (!value) return undefined;
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return undefined;
-    const pad = (n: number) => String(n).padStart(2, "0");
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
-}
-
 export default createGenericEditPage<Discount, EditDiscountFormType>({
     languagePath: "src/modules/eCommerce/clients/panel/private/discounts/editDiscount.tsx",
     collectionName: "discounts",
@@ -50,8 +41,6 @@ export default createGenericEditPage<Discount, EditDiscountFormType>({
                       getProductIds: data.buyXGetY.getProductIds ?? data.buyXGetY.getProducts?.map((p) => p._id) ?? [],
                   }
                 : undefined,
-            startsAt: toFormDateTime(data.startsAt),
-            endsAt: toFormDateTime(data.endsAt),
         };
     },
     buildFormExtras: (_entityId, _params, entity) => {

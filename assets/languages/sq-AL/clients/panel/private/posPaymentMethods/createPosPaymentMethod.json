@@ -3,13 +3,13 @@
   "title": "Krijo metodë pagese",
   "form": {
     "nameLabel": "Emri",
-    "namePlaceholder": "Emri i metodës së pagesës",
+    "namePlaceholder": "p.sh. Para në dorë",
     "typeLabel": "Lloji",
     "typePlaceholder": "Zgjidh llojin",
     "sequenceLabel": "Renditja",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Shumat e shpejta (cash)",
-    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "cashQuickAmountsPlaceholder": "p.sh. 5,10,20,50; bosh = shumat e paracaktuara të arkës",
     "terminalSectionTitle": "Terminal bankar POS",
     "terminalEnabledLabel": "Lidh terminalin bankar POS",
     "terminalForcesCardHint": "Lidhja e terminalit bankar POS vendos llojin në Kartë. Shkëputja e vendos në Cash.",
@@ -36,7 +36,10 @@
     "terminalProtocol": {
       "http": "HTTP",
       "https": "HTTPS"
-    }
+    },
+    "basicsSectionTitle": "Të dhënat bazë",
+    "cashSectionTitle": "Para në dorë",
+    "visibilitySectionTitle": "Renditja në arkë"
   },
   "axios": {
     "start": {

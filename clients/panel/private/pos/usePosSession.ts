@@ -7,7 +7,7 @@ import type {PosConfigChoice, SessionBundle} from "@eCommerceModule/clients/pane
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import {posFiscalizationActive, type ReceiptPayload} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {posFiscalizationActive, type ReceiptPayload, withServerReason} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import {bindPosKillSwitchSocket, subscribePosKillSwitch} from "@eCommerceModule/clients/panel/private/pos/posKillSwitchEvents.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
@@ -123,8 +123,8 @@ export function usePosSession({
             setConfigs((response.data ?? []).filter((c) => c.isActive !== false && !c.isPaused));
             setBootLoading(false);
         },
-        error: () => {
-            toast.error(String(resolveLanguageKey("errors.configsFailed") ?? "errors.configsFailed"));
+        error: (requestError) => {
+            toast.error(withServerReason(String(resolveLanguageKey("errors.configsFailed") ?? "errors.configsFailed"), requestError));
             setBootLoading(false);
         },
     });
@@ -150,8 +150,8 @@ export function usePosSession({
                 setConfigSingleCount((count) => count + 1);
             }
         },
-        error: () => {
-            toast.error(String(resolveLanguageKey("errors.sessionFailed") ?? "errors.sessionFailed"));
+        error: (requestError) => {
+            toast.error(withServerReason(String(resolveLanguageKey("errors.sessionFailed") ?? "errors.sessionFailed"), requestError));
             setBootLoading(false);
         },
     });
@@ -273,7 +273,7 @@ export function usePosSession({
                 toast.warning(rk("fiscalization.inactive"));
             }
         },
-        error: () => toast.error(rk("errors.openSessionFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.openSessionFailed"), requestError)),
     });
     const openSession = () => {
         if (!configId) return;
@@ -289,7 +289,7 @@ export function usePosSession({
             setCashMoveReason("");
             toast.success(rk(cashMoveCall.payload.type === "in" ? "toast.cashIn" : "toast.cashOut"));
         },
-        error: () => toast.error(rk("errors.cashMoveFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.cashMoveFailed"), requestError)),
     });
     const submitCashMove = async () => {
         if (!session || !cashMoveOpen) return;
@@ -330,7 +330,7 @@ export function usePosSession({
             onSessionClosedRef.current?.();
             navigate("/tenancy/systemSettings/posconfigs");
         },
-        error: () => toast.error(rk("errors.closeSessionFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.closeSessionFailed"), requestError)),
     });
     const closeSession = () => {
         if (!session) return;
@@ -369,8 +369,8 @@ export function usePosSession({
     const [ordersCall, setOrdersCall] = useState<Call<Record<string, unknown>>>({payload: {}, count: 0});
     const {loading: ordersBusy} = useHttpRequest<{data: PosOrder[]}>(SESSION_ORDERS_REQUEST, ordersCall.payload, ordersCall.count, true, {
         success: (response) => setSessionOrders(response.data ?? []),
-        error: () => {
-            toast.error(rk("errors.ordersLoadFailed"));
+        error: (requestError) => {
+            toast.error(withServerReason(rk("errors.ordersLoadFailed"), requestError));
             setSessionOrders([]);
         },
     });
@@ -387,7 +387,7 @@ export function usePosSession({
             setReceiptOpen(true);
             setOrdersOpen(false);
         },
-        error: () => toast.error(rk("errors.reprintFailed")),
+        error: (requestError) => toast.error(withServerReason(rk("errors.reprintFailed"), requestError)),
     });
     const reprintOrder = (id: string) => setReprintCall(call({_id: id}));
 

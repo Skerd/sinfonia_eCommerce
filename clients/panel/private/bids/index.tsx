@@ -1,7 +1,10 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
+import type {BidStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -15,7 +18,21 @@ function bidDisplayLabel(bid: Bid): string | undefined {
     return bid.name || bid.taskRequest?.title;
 }
 
+const BID_STATUSES: readonly BidStatus[] = ["pending", "accepted", "rejected"];
+
 function AllBids({resolveLanguageKey}: WithLanguageType) {
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "status",
+            label: String(resolveLanguageKey("fields.status")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: BID_STATUSES.map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.status.${value}`)),
+            })),
+        },
+    ], [resolveLanguageKey]);
+
     return (
         <EntityListPage<Bid>
             apiUrl="/api/eCommerceMarketplace/bid"
@@ -34,6 +51,7 @@ function AllBids({resolveLanguageKey}: WithLanguageType) {
             )}
             buildEditPath={() => ""}
             resolveLanguageKey={resolveLanguageKey}
+            quickFilters={quickFilters}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
                 <BidSheetView
                     open={open}

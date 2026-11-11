@@ -2,7 +2,7 @@
   "path": "src/modules/eCommerce/components/custom/bids/bidActionConfirmAction.tsx",
   "accept": {
     "title": "Accepter cette offre ?",
-    "description": "L'offre sera marquée comme acceptée, la demande de tâche attribuée et une commande sera créée. Cela ne peut pas être annulé à partir d’ici.",
+    "description": "L'offre sera marquée comme acceptée, la demande de devis attribuée et une commande sera créée. Cela ne peut pas être annulé à partir d’ici.",
     "confirm": "Accepter l'offre",
     "axios": {
       "start": {

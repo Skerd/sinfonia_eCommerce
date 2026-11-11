@@ -6,11 +6,12 @@
   "form": {
     "_idLabel": "Identifiant",
     "ratingLabel": "Note",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Choisir une note",
     "titleLabel": "Titre",
     "titlePlaceholder": "Titre facultatif",
     "commentLabel": "Commentaire",
-    "commentPlaceholder": "Que doivent savoir les acheteurs ?"
+    "commentPlaceholder": "Que doivent savoir les acheteurs ?",
+    "reviewSectionTitle": "Avis"
   },
   "axios": {
     "start": {

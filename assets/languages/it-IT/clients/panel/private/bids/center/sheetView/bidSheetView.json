@@ -9,7 +9,7 @@
   "proposal": "Proposta",
   "status": "Stato",
   "bidder": "Offerente",
-  "taskRequest": "Richiesta di attività",
+  "taskRequest": "Richiesta di preventivo",
   "failedTitle": "Impossibile caricare l'offerta",
   "failedDescription": "Qualcosa è andato storto durante il caricamento di questa offerta. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",

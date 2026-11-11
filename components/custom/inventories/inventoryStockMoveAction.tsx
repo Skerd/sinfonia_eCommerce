@@ -25,6 +25,8 @@ import {INVENTORY_MOVEMENT_RECEIPT_MAX} from "armonia/src/modules/eCommerce/api/
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 import {inventoryDeductReasons, type DeductInventoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/deductInventory.form.validator.ts";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 
 function bindAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey, prefix: "restock" | "deduct"): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -64,6 +66,7 @@ function InventoryStockMoveAction({
     error,
 }: InventoryStockMoveActionProps) {
     const {write} = useAccess("inventories");
+    const companyZone = useCompanyTimeZone();
     const [open, setOpen] = useState<boolean>(!!openAlert);
     const [quantity, setQuantity] = useState("");
     const [manufacturer, setManufacturer] = useState("");
@@ -97,7 +100,8 @@ function InventoryStockMoveAction({
             setQuantity("");
             setManufacturer("");
             setReceiptNumber("");
-            setOccurredAt(new Date().toISOString().slice(0, 16));
+            // Now, shown on the company's clock (GLB-09); the picker keeps it as an instant.
+            setOccurredAt(new Date().toISOString());
             setUnitCost("");
             setBatchLot("");
             setExpiryDate("");
@@ -169,11 +173,12 @@ function InventoryStockMoveAction({
                             <div className="grid grid-cols-2 gap-3">
                                 <div className="flex flex-col gap-y-1.5">
                                     <Label htmlFor="stockOccurredAt">{resolveLanguageKey(`${prefix}.occurredAtLabel`)}</Label>
-                                    <Input
+                                    <DateInput
                                         id="stockOccurredAt"
-                                        type="datetime-local"
+                                        valueFormat="YYYY-MM-DD HH:mm"
+                                        timeZone={companyZone}
                                         value={occurredAt}
-                                        onChange={(e) => setOccurredAt(e.target.value)}
+                                        onChange={setOccurredAt}
                                         disabled={loading}
                                     />
                                 </div>
@@ -188,6 +193,7 @@ function InventoryStockMoveAction({
                                         onChange={(e) => setUnitCost(e.target.value)}
                                         disabled={loading}
                                     />
+                                    <p className="text-xs text-muted-foreground">{resolveLanguageKey(`${prefix}.unitCostHint`)}</p>
                                 </div>
                             </div>
                             <div className="grid grid-cols-2 gap-3">
@@ -202,11 +208,11 @@ function InventoryStockMoveAction({
                                 </div>
                                 <div className="flex flex-col gap-y-1.5">
                                     <Label htmlFor="stockExpiry">{resolveLanguageKey(`${prefix}.expiryDateLabel`)}</Label>
-                                    <Input
+                                    <DateInput
                                         id="stockExpiry"
-                                        type="date"
+                                        valueFormat="YYYY-MM-DD"
                                         value={expiryDate}
-                                        onChange={(e) => setExpiryDate(e.target.value)}
+                                        onChange={setExpiryDate}
                                         disabled={loading}
                                     />
                                 </div>
@@ -287,7 +293,7 @@ function InventoryStockMoveAction({
                                     quantity: Number(quantity),
                                     manufacturer: manufacturer || undefined,
                                     receiptNumber: receiptNumber || undefined,
-                                    occurredAt: occurredAt ? new Date(occurredAt).toISOString() : undefined,
+                                    occurredAt: occurredAt || undefined,
                                     unitCost: unitCost !== "" ? Number(unitCost) : undefined,
                                     batchLot: batchLot || undefined,
                                     expiryDate: expiryDate || undefined,

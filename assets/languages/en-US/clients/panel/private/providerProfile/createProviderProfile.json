@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Cancel",
-    "submit": "Create profile"
+    "submit": "Create provider profile"
   },
   "form": {
     "userLabel": "User",
@@ -19,7 +19,7 @@
     "bioPlaceholder": "Tell clients about yourself...",
     "portfolioLabel": "Portfolio images",
     "timezoneLabel": "Time zone",
-    "timezonePlaceholder": "e.g. Europe/Zurich (empty: the company's time zone)",
+    "timezonePlaceholder": "The company's time zone if left empty",
     "section": {
       "profile": "Profile",
       "availability": "Weekly availability",

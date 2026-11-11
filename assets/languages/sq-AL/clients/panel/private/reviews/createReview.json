@@ -19,7 +19,15 @@
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
     "ratingLabel": "Vlerësimi",
-    "ratingPlaceholder": "1–5"
+    "ratingPlaceholder": "Zgjidh vlerësimin",
+    "reviewSectionTitle": "Vlerësimi",
+    "ratingValues": {
+      "1": "1 – Shumë dobët",
+      "2": "2 – Dobët",
+      "3": "3 – Mesatar",
+      "4": "4 – Mirë",
+      "5": "5 – Shkëlqyeshëm"
+    }
   },
   "formButtons": {
     "cancel": "Anulo",

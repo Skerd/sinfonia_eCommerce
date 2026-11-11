@@ -3,7 +3,7 @@
   "title": "Krijo rregull çmimi",
   "form": {
     "nameLabel": "Emri",
-    "namePlaceholder": "Emri i rregullit të çmimit",
+    "namePlaceholder": "p.sh. Çmimet me shumicë",
     "typeLabel": "Lloji",
     "typePlaceholder": "Zgjidh llojin",
     "appliesToLabel": "Aplikohet te",
@@ -48,7 +48,9 @@
       "customer_group": "Grupet e klientëve"
     },
     "valueDescription": "Një përqindje, ose një shumë në monedhën e dyqanit për një zbritje fikse.",
-    "shopAmountDescription": "Në monedhën e dyqanit (monedha e parë e kompanisë)."
+    "shopAmountDescription": "Në monedhën e dyqanit (monedha e parë e kompanisë).",
+    "visibilitySectionTitle": "Dukshmëria",
+    "priorityDescription": "Kur disa rregulla përputhen me një rresht, provohet i pari ai me përparësi më të lartë."
   },
   "axios": {
     "start": {

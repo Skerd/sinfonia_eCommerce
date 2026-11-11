@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/center/sheetView/categorySheetView.tsx",
-  "failedTitle": "Failed to load category",
+  "failedTitle": "Failed to load listing category",
   "failedDescription": "Something went wrong while loading this category. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
   "categorySubtitle": "Category",

@@ -96,6 +96,12 @@
         "partially_fulfilled": "Partially fulfilled",
         "fulfilled": "Fulfilled",
         "returned": "Returned"
+      },
+      "when": {
+        "today": "Today",
+        "thisWeek": "This week",
+        "thisMonth": "This month",
+        "older": "Older"
       }
     },
     "orderNumber": "Order number",
@@ -161,6 +167,7 @@
     "createdAt": "Created at",
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "when": "When"
   }
 }

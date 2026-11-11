@@ -18,7 +18,8 @@
     "variantLabel": "Variant",
     "variantPlaceholder": "Optional variant",
     "countedQuantityLabel": "Counted",
-    "countedQuantityPlaceholder": "Leave empty if not counted"
+    "countedQuantityPlaceholder": "Leave empty if not counted",
+    "noteSectionTitle": "Note"
   },
   "axios": {
     "start": {

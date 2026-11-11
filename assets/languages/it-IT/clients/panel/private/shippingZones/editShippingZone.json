@@ -28,7 +28,7 @@
     "ratePriceLabel": "Prezzo",
     "ratePricePlaceholder": "0.00",
     "carrierLabel": "Corriere",
-    "carrierPlaceholder": "Nome del corriere",
+    "carrierPlaceholder": "es. DHL Express",
     "estimatedDeliveryDaysLabel": "Giorni di consegna stimati",
     "estimatedDeliveryDaysPlaceholder": "3",
     "rateConditionsSectionTitle": "Condizioni",

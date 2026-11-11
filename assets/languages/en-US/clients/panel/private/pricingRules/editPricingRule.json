@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Record ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Pricing rule name",
+    "namePlaceholder": "e.g. Wholesale prices",
     "typeLabel": "Type",
     "typePlaceholder": "Select type",
     "appliesToLabel": "Applies to",
@@ -51,7 +51,9 @@
       "customer_group": "Customer groups"
     },
     "valueDescription": "A percentage, or an amount in the shop currency for a fixed discount.",
-    "shopAmountDescription": "In the shop currency (the company's first currency)."
+    "shopAmountDescription": "In the shop currency (the company's first currency).",
+    "visibilitySectionTitle": "Visibility",
+    "priorityDescription": "Higher priority is tried first when several rules match a line."
   },
   "axios": {
     "start": {

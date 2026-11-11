@@ -31,7 +31,9 @@
       "all": "Alle Produkte",
       "physical": "Physisch",
       "digital": "Digital"
-    }
+    },
+    "visibilitySectionTitle": "Sichtbarkeit",
+    "priorityDescription": "Überschneiden sich Zonen, gilt die mit der höheren Priorität."
   },
   "axios": {
     "start": {

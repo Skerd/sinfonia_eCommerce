@@ -60,6 +60,11 @@
         "transfer_out": "Transferim dalës",
         "initial": "Fillestar",
         "write_off": "Çregjistrim"
+      },
+      "when": {
+        "today": "Sot",
+        "thisWeek": "Këtë javë",
+        "older": "Më të vjetra"
       }
     },
     "inventory": "Inventari",
@@ -85,6 +90,7 @@
     "createdAt": "Krijuar më",
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "when": "Kur"
   }
 }

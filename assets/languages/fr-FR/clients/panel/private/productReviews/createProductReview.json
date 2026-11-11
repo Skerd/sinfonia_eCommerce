@@ -7,11 +7,13 @@
     "productLabel": "Produit",
     "productPlaceholder": "Choisir un produit de la commande",
     "ratingLabel": "Note",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Choisir une note",
     "titleLabel": "Titre",
     "titlePlaceholder": "Titre facultatif",
     "commentLabel": "Commentaire",
-    "commentPlaceholder": "Que doivent savoir les acheteurs ?"
+    "commentPlaceholder": "Que doivent savoir les acheteurs ?",
+    "purchaseSectionTitle": "Achat",
+    "reviewSectionTitle": "Avis"
   },
   "axios": {
     "start": {

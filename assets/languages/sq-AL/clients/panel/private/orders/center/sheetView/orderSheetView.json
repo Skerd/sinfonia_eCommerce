@@ -5,7 +5,7 @@
   "listing": {
     "title": "Listimi"
   },
-  "taskRequest": "Kërkesë detyre",
+  "taskRequest": "Kërkesë për ofertë",
   "bid": "Oferta",
   "customer": "Klienti",
   "provider": "Ofruesi",
@@ -34,5 +34,22 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "milestone": "Faza",
+  "delivery": "Dorëzimi",
+  "revision": "Kërkesë rishikimi",
+  "orderMilestoneStatus": {
+    "pending": "Në pritje",
+    "released": "Liruar",
+    "delivered": "Dorëzuar"
+  },
+  "orderDeliveryStatus": {
+    "submitted": "Dorëzuar",
+    "accepted": "Pranuar",
+    "revision_requested": "Rishikim i kërkuar"
+  },
+  "orderRevisionStatus": {
+    "pending": "Në pritje",
+    "completed": "Trajtuar"
+  }
 }

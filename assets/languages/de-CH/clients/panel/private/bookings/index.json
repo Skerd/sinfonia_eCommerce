@@ -5,13 +5,13 @@
   "help": {
     "ariaLabel": "Über Buchungen",
     "title": "Über Buchungen",
-    "overview": "Eine Buchung setzt eine Marktplatz-Bestellung in den Kalender: Start- und Endzeit mit der Zeitzone, in der sie vereinbart wurde. Nutzen Sie sie, wenn die Arbeit zu einem Termin stattfindet, nicht nur bis zu einem Fälligkeitsdatum.",
+    "overview": "Eine Buchung setzt einen Marktplatz-Auftrag in den Kalender: Start- und Endzeit in der Zeitzone des Anbieters. Nutzen Sie sie, wenn die Arbeit zu einem Termin stattfindet, nicht nur bis zu einem Fälligkeitsdatum.",
     "sections": [
       {
         "title": "Anlegen",
         "items": [
-          "Jede Partei der Bestellung kann sie buchen, solange die Bestellung angenommen oder in Arbeit ist.",
-          "Eine Buchung pro Bestellung. Der Anbieter wird aus der Bestellung übernommen.",
+          "Jede Partei des Auftrags kann ihn buchen, solange der Auftrag angenommen oder in Arbeit ist.",
+          "Eine Buchung pro Auftrag. Der Anbieter wird aus dem Auftrag übernommen.",
           "Das Ende muss nach dem Start liegen."
         ]
       },
@@ -20,7 +20,7 @@
         "items": [
           "Nur der Anbieter oder ein Administrator verschiebt.",
           "Löschen ist ein Soft Delete und kann wiederhergestellt werden.",
-          "Nicht-Administratoren sehen nur die Buchungen ihrer eigenen Bestellungen."
+          "Nicht-Administratoren sehen nur die Buchungen ihrer eigenen Aufträge."
         ]
       }
     ]
@@ -35,7 +35,15 @@
     "status": "Status",
     "createdAt": "Erstellt",
     "deletedAt": "Gelöscht",
-    "deletedBy": "Gelöscht von"
+    "deletedBy": "Gelöscht von",
+    "when": "Wann",
+    "!enums": {
+      "when": {
+        "upcoming": "Bevorstehend",
+        "today": "Heute",
+        "past": "Vergangen"
+      }
+    }
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "status": {

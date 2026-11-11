@@ -60,7 +60,8 @@
       "greater_than": "Maggiore di",
       "less_than": "Minore di",
       "starts_with": "Inizia con"
-    }
+    },
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {

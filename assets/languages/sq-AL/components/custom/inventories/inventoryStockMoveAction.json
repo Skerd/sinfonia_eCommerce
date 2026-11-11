@@ -11,6 +11,7 @@
     "receiptNumberLabel": "Nr. i faturës / dërgesës",
     "occurredAtLabel": "Data e marrjes",
     "unitCostLabel": "Kosto për njësi",
+    "unitCostHint": "Në monedhën e dyqanit (monedha e parë e kompanisë).",
     "batchLotLabel": "Partia / loti",
     "expiryDateLabel": "Data e skadencës",
     "receiptsLabel": "Bashkëngjitjet e faturës",

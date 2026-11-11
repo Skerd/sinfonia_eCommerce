@@ -6,13 +6,13 @@
   "form": {
     "_idLabel": "Record ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Payment method name",
+    "namePlaceholder": "e.g. Cash",
     "typeLabel": "Type",
     "typePlaceholder": "Select type",
     "sequenceLabel": "Sequence",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Cash quick amounts",
-    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "cashQuickAmountsPlaceholder": "e.g. 5,10,20,50; empty uses the till's defaults",
     "terminalSectionTitle": "Bank POS terminal",
     "terminalEnabledLabel": "Connect bank POS terminal",
     "terminalForcesCardHint": "Connecting a bank POS terminal sets the type to Card. Disconnecting sets it to Cash.",
@@ -39,7 +39,10 @@
     "terminalProtocol": {
       "http": "HTTP",
       "https": "HTTPS"
-    }
+    },
+    "basicsSectionTitle": "Basics",
+    "cashSectionTitle": "Cash",
+    "visibilitySectionTitle": "Order on the till"
   },
   "axios": {
     "start": {

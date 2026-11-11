@@ -19,7 +19,10 @@
         "title": "Impossible de prolonger la commande, veuillez réessayer",
         "time": 3000
       }
-    }
+    },
+    "currentDueDateLabel": "Échéance actuelle",
+    "newDueDateLabel": "Nouvelle échéance",
+    "noDueDate": "Non définie"
   },
   "cancel": "Annuler"
 }

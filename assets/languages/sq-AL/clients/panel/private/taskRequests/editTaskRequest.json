@@ -15,7 +15,7 @@
     "countryPlaceholder": "Zgjidh shtetin",
     "currencyLabel": "Monedha",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Përshkrimi",
+    "descriptionPlaceholder": "Çfarë duhet bërë, sa i madh është punimi dhe afati.",
     "editStatusSection": "Statusi",
     "expiresAtLabel": "Skadon",
     "expiresAtPlaceholder": "YYYY-MM-DD",
@@ -33,7 +33,8 @@
       "description": "Detajet",
       "general": "Të përgjithshme",
       "images": "Imazhet",
-      "video": "Video"
+      "video": "Video",
+      "address": "Adresa"
     },
     "stateLabel": "Rajoni",
     "statePlaceholder": "Zgjidh rajonin",
@@ -46,7 +47,13 @@
       "open": "Hapur"
     },
     "titleLabel": "Titulli",
-    "videoGalleryLabel": "Galeria e videove"
+    "videoGalleryLabel": "Galeria e videove",
+    "titlePlaceholder": "p.sh. Lyerja e një apartamenti 2+1",
+    "categoryPlaceholder": "Zgjidh kategorinë",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "currencyDescription": "Ofertat për këtë kërkesë vijnë në këtë monedhë.",
+    "budgetMinPlaceholder": "p.sh. 500",
+    "budgetMaxPlaceholder": "p.sh. 900"
   },
   "formButtons": {
     "cancel": "Anulo",

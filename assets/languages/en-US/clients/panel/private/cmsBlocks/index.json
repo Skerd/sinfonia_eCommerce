@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/index.tsx",
-  "title": "CMS Blocks",
+  "title": "CMS blocks",
   "description": "Manage storefront content blocks and their display order.",
   "help": {
     "ariaLabel": "About CMS Blocks",

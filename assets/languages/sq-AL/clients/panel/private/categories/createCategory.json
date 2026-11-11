@@ -8,7 +8,9 @@
     "orderLabel": "Rendi",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Krijo kategori",
-    "createCategoryDescription": "Shtoni një kategori për të organizuar produktet në katalog."
+    "createCategoryDescription": "Shtoni një kategori për të organizuar produktet në katalog.",
+    "generalSectionTitle": "Të përgjithshme",
+    "visibilitySectionTitle": "Shfaqja"
   },
   "axios": {
     "start": {

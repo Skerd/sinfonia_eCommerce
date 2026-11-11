@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingAddOn": "Crea componente aggiuntivo",
+  "createListingAddOn": "Crea componente aggiuntivo dell'annuncio",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "name": "Nome",

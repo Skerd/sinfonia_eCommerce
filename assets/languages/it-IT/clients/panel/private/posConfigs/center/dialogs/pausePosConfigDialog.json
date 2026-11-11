@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
-  "title": "Mettere in pausa questa cassa POS?",
-  "description": "Le sessioni aperte su questa cassa verranno chiuse forzatamente: i carrelli sospesi vengono annullati e i contanti vengono impostati sull'importo previsto nel cassetto. Gli addebiti sul terminale vengono annullati per quanto possibile. La vendita rimane bloccata finché non riprendi.",
+  "title": "Mettere in pausa questa configurazione POS?",
+  "description": "Le sessioni aperte su questa configurazione POS verranno chiuse forzatamente: i carrelli in sospeso vengono annullati e il contante viene impostato all'importo atteso del cassetto. Gli addebiti sul terminale vengono annullati se possibile. La vendita resta bloccata finché non riprendi.",
   "reasonLabel": "Motivo (facoltativo)",
   "reasonPlaceholder": "ad es. Prezzi errati/sospetta frode",
   "cancel": "Annulla",
-  "confirm": "Metti in pausa la cassa",
+  "confirm": "Metti in pausa la configurazione POS",
   "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Messa in pausa della cassa POS…",
+      "title": "Messa in pausa della configurazione POS…",
       "time": 3000
     },
     "success": {
-      "title": "Cassa POS in pausa",
+      "title": "Configurazione POS in pausa",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile mettere in pausa la cassa POS",
+      "title": "Impossibile mettere in pausa la configurazione POS",
       "time": 3000
     }
   }

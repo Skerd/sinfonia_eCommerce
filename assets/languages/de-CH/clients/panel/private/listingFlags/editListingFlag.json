@@ -10,7 +10,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern änderungen"
+    "submit": "Änderungen speichern"
   },
   "form": {
     "reasonLabel": "Grund",
@@ -22,7 +22,8 @@
       "spam": "Spam",
       "misleading": "Irreführend",
       "other": "Andere"
-    }
+    },
+    "reportSectionTitle": "Meldung"
   },
   "axios": {
     "start": {
@@ -30,7 +31,7 @@
       "time": 3000
     },
     "success": {
-      "title": "Bericht aktualisiert",
+      "title": "Meldung aktualisiert",
       "time": 3000
     },
     "error": {

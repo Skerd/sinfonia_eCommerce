@@ -96,6 +96,12 @@
         "partially_fulfilled": "Partiellement expédiée",
         "fulfilled": "Expédiée",
         "returned": "Retourné"
+      },
+      "when": {
+        "today": "Aujourd'hui",
+        "thisWeek": "Cette semaine",
+        "thisMonth": "Ce mois-ci",
+        "older": "Plus anciennes"
       }
     },
     "orderNumber": "Numéro de commande",
@@ -161,6 +167,7 @@
     "createdAt": "Créé le",
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
-    "deletedBy": "Supprimé par"
+    "deletedBy": "Supprimé par",
+    "when": "Quand"
   }
 }

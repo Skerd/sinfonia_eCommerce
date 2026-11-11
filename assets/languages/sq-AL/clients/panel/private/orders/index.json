@@ -64,7 +64,16 @@
     "deliveryDueDate": "Data e dorëzimit",
     "createdAt": "Krijuar",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "accepted": "Pranuar",
+        "in_progress": "Në progres",
+        "completed": "Përfunduar",
+        "cancelled": "Anuluar"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "status": {

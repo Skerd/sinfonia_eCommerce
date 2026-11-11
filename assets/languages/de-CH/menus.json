@@ -98,10 +98,10 @@
       "title": "Produktvarianten"
     },
     "customeraddresses": {
-      "title": "Adressen"
+      "title": "Kundenadressen"
     },
     "productreviews": {
-      "title": "Produkt bewertungen"
+      "title": "Produktbewertungen"
     },
     "savedsearches": {
       "title": "Gespeicherte Suchen"
@@ -161,7 +161,7 @@
         "title": "Externe Importe"
       },
       "odooconnection": {
-        "title": "Odoo"
+        "title": "Odoo-Verbindung"
       },
       "odooimport": {
         "title": "Aus Odoo importieren"
@@ -194,10 +194,10 @@
         "title": "Ausschreibungen"
       },
       "orders": {
-        "title": "Bestellungen"
+        "title": "Aufträge"
       },
       "bids": {
-        "title": "Angebote"
+        "title": "Offerten"
       },
       "bookings": {
         "title": "Buchungen"
@@ -234,10 +234,10 @@
       "title": "Ausschreibungen"
     },
     "orders": {
-      "title": "Bestellungen"
+      "title": "Aufträge"
     },
     "bids": {
-      "title": "Angebote"
+      "title": "Offerten"
     },
     "bookings": {
       "title": "Buchungen"

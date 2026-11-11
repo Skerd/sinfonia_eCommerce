@@ -17,7 +17,11 @@
     "orderLabel": "Porosia",
     "orderPlaceholder": "Zgjidh porosinë",
     "reasonLabel": "Arsyeja",
-    "reasonPlaceholder": "Përshkruaj problemin..."
+    "reasonPlaceholder": "Përshkruaj problemin...",
+    "section": {
+      "order": "Porosia",
+      "issue": "Çfarë shkoi keq"
+    }
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -98,7 +98,7 @@
       "title": "Variantet e produkteve"
     },
     "customeraddresses": {
-      "title": "Adresat"
+      "title": "Adresat e klientëve"
     },
     "productreviews": {
       "title": "Vlerësimet e produkteve"
@@ -161,7 +161,7 @@
         "title": "Importet e jashtme"
       },
       "odooconnection": {
-        "title": "Odoo"
+        "title": "Lidhja me Odoo"
       },
       "odooimport": {
         "title": "Importo nga Odoo"
@@ -191,7 +191,7 @@
         "title": "Listimet"
       },
       "taskrequests": {
-        "title": "Kërkesat për detyra"
+        "title": "Kërkesat për ofertë"
       },
       "orders": {
         "title": "Porositë"
@@ -212,7 +212,7 @@
         "title": "Promovimet"
       },
       "listingflags": {
-        "title": "Raportimet"
+        "title": "Raportimet e listimeve"
       },
       "providerprofile": {
         "title": "Profilet e ofruesve"
@@ -231,7 +231,7 @@
       "title": "Listimet"
     },
     "taskrequests": {
-      "title": "Kërkesat për detyra"
+      "title": "Kërkesat për ofertë"
     },
     "orders": {
       "title": "Porositë"
@@ -252,7 +252,7 @@
       "title": "Promovimet"
     },
     "listingflags": {
-      "title": "Raportimet"
+      "title": "Raportimet e listimeve"
     },
     "listingaddons": {
       "title": "Shtesat e listimeve"

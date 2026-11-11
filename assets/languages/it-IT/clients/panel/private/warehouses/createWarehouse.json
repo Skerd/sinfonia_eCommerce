@@ -3,9 +3,9 @@
   "title": "Crea magazzino",
   "form": {
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome del magazzino",
+    "namePlaceholder": "es. Magazzino principale",
     "codeLabel": "Codice",
-    "codePlaceholder": "Codice magazzino",
+    "codePlaceholder": "es. WH-MAIN",
     "addressSectionTitle": "Indirizzo",
     "countryLabel": "Paese",
     "countryPlaceholder": "Seleziona il paese",
@@ -20,7 +20,8 @@
     "latitudeLabel": "Latitudine",
     "latitudePlaceholder": "Latitudine",
     "longitudeLabel": "Longitudine",
-    "longitudePlaceholder": "Longitudine"
+    "longitudePlaceholder": "Longitudine",
+    "basicsSectionTitle": "Dati di base"
   },
   "axios": {
     "start": {
@@ -38,7 +39,7 @@
   },
   "formHeader": {
     "title": "Crea magazzino",
-    "description": "Aggiungi una posizione di magazzino con indirizzo e segnaposto sulla mappa."
+    "description": "Aggiungi un luogo di stoccaggio con il suo indirizzo; posiziona il segnaposto sulla mappa se lo conosci."
   },
   "formButtons": {
     "cancel": "Annulla",

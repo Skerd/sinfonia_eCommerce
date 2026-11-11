@@ -9,6 +9,7 @@ export default createGenericCreatePage<CreateListingFlagFormType>({
     accessModel: "listingflags",
     apiUrl: "/api/eCommerceMarketplace/listingFlag",
     schema: createListingFlagFormSchema,
-    defaultValues: {listing: "", reason: "other", comment: ""},
+    // The reporter picks the reason; no reason is preselected (UX-06).
+    defaultValues: {listing: "", comment: ""},
     submitIcon: <IconPlus />,
 });

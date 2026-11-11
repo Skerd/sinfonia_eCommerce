@@ -19,7 +19,9 @@
     "productPlaceholder": "Select a product",
     "variantLabel": "Variant",
     "variantPlaceholder": "Optional variant",
-    "quantityLabel": "Quantity"
+    "quantityLabel": "Quantity",
+    "noteSectionTitle": "Note",
+    "routeSectionTitle": "From and to"
   },
   "axios": {
     "start": {

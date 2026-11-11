@@ -22,5 +22,11 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "sortValues": {
+    "newest": "Plus récents",
+    "priceAsc": "Prix : croissant",
+    "priceDesc": "Prix : décroissant",
+    "featured": "En vedette"
+  }
 }

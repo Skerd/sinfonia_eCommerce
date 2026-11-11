@@ -9,7 +9,8 @@ export default createGenericCreatePage<CreateReviewFormType>({
     accessModel: "reviews",
     apiUrl: "/api/eCommerceMarketplace/review",
     schema: createReviewFormSchema,
-    defaultValues: {order: "", rating: 5, comment: ""},
+    // The reviewer picks the rating; none is preselected (UX-06).
+    defaultValues: {order: "", comment: ""},
     submitIcon: <IconPlus />,
     successPath: "/eCommerceMarketplace/reviews",
 });

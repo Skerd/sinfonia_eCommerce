@@ -10,6 +10,7 @@ export default createGenericEditPage<Warehouse, EditWarehouseFormType>({
     accessModel: "warehouses",
     apiUrl: "/api/eCommerce/warehouse",
     schema: editWarehouseFormSchema,
+    // A warehouse without a pin keeps none; the map only centres on a default (UX-06).
     mapEntityData: (data) => ({
         ...data,
         address: data.address
@@ -18,13 +19,8 @@ export default createGenericEditPage<Warehouse, EditWarehouseFormType>({
                 country: data.address.country?._id,
                 state: data.address.state?._id,
                 city: data.address.city?._id,
-                latitude: data.address.latitude ?? 41.3275,
-                longitude: data.address.longitude ?? 19.8189,
             }
-            : {
-                latitude: 41.3275,
-                longitude: 19.8189,
-            },
+            : undefined,
     }),
     submitIcon: <IconDeviceFloppy />,
 });

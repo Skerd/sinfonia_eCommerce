@@ -17,7 +17,11 @@
     "orderLabel": "Commande",
     "orderPlaceholder": "Sélectionnez la commande",
     "reasonLabel": "Motif",
-    "reasonPlaceholder": "Décrivez le problème..."
+    "reasonPlaceholder": "Décrivez le problème...",
+    "section": {
+      "order": "Commande",
+      "issue": "Le problème"
+    }
   },
   "formButtons": {
     "cancel": "Annuler",

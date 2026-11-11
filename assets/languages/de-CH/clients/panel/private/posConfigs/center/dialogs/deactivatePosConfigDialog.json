@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
   "title": "POS-Konfiguration deaktivieren",
-  "description": "Diese Kasse steht zum Öffnen des POS nicht mehr zur Verfügung. Eine offene Sitzung dieser Kasse wird zwangsweise geschlossen (geparkte Warenkörbe storniert, Bargeld auf Sollbestand gesetzt). Terminalbelastungen werden nach Möglichkeit storniert.",
+  "description": "Diese POS-Konfiguration kann im Point of Sale nicht mehr geöffnet werden. Offene Sitzungen darauf werden zwangsweise geschlossen (geparkte Warenkörbe storniert, Bargeld auf Sollbestand gesetzt). Terminalbelastungen werden nach Möglichkeit storniert.",
   "cancel": "Abbrechen",
   "confirm": "Deaktivieren",
   "busy": "Wird ausgeführt…",

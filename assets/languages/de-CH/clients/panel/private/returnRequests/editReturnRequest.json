@@ -36,7 +36,10 @@
       "received": "Erhalten",
       "completed": "Abgeschlossen"
     },
-    "orderAmountDescription": "In der Währung der Bestellung."
+    "orderAmountDescription": "In der Währung der Bestellung.",
+    "requestSectionTitle": "Anfrage",
+    "notesSectionTitle": "Notizen",
+    "typePlaceholder": "Rückgabe, Umtausch oder Rückerstattung"
   },
   "axios": {
     "start": {

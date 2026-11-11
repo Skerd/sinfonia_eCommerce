@@ -10,7 +10,9 @@
     "isUsedForVariantsLabel": "Utilisé pour les variantes",
     "valuesLabel": "Valeurs",
     "valuesPlaceholder": "Ajoutez une valeur et appuyez sur Entrée",
-    "removeValue": "Supprimer la valeur"
+    "removeValue": "Supprimer la valeur",
+    "generalSectionTitle": "Général",
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {

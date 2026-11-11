@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
-  "title": "Mettre cette caisse en pause ?",
-  "description": "Les sessions ouvertes sur cette caisse seront clôturées d'office : les paniers en attente sont annulés et les espèces sont fixées au montant attendu du tiroir-caisse. Les débits en cours sur le terminal sont annulés dans la mesure du possible. La vente reste bloquée jusqu'à la reprise.",
+  "title": "Suspendre cette configuration de point de vente ?",
+  "description": "Les sessions ouvertes sur cette configuration de point de vente seront fermées de force : les paniers en attente sont annulés et les espèces sont fixées au montant attendu du tiroir. Les débits du terminal sont annulés dans la mesure du possible. La vente reste bloquée jusqu'à la reprise.",
   "reasonLabel": "Motif (facultatif)",
   "reasonPlaceholder": "par ex. Prix erronés / fraude présumée",
   "cancel": "Annuler",
-  "confirm": "Mettre la caisse en pause",
+  "confirm": "Suspendre la configuration de point de vente",
   "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Mise en pause de la caisse…",
+      "title": "Suspension de la configuration de point de vente…",
       "time": 3000
     },
     "success": {
-      "title": "Caisse mise en pause",
+      "title": "Configuration de point de vente suspendue",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre la caisse en pause",
+      "title": "Impossible de suspendre la configuration de point de vente",
       "time": 3000
     }
   }

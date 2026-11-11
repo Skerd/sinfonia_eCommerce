@@ -13,7 +13,9 @@
     "isUsedForVariantsLabel": "Für Varianten verwendet",
     "valuesLabel": "Werte",
     "valuesPlaceholder": "Wert eingeben und Enter drücken",
-    "removeValue": "Wert entfernen"
+    "removeValue": "Wert entfernen",
+    "generalSectionTitle": "Allgemein",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Name der Preisregel",
+    "namePlaceholder": "z. B. Grosshandelspreise",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
     "appliesToLabel": "Gilt für",
@@ -51,7 +51,9 @@
       "customer_group": "Kundengruppen"
     },
     "valueDescription": "Ein Prozentsatz oder, bei festem Rabatt, ein Betrag in der Shopwährung.",
-    "shopAmountDescription": "In der Shopwährung (der ersten Währung des Unternehmens)."
+    "shopAmountDescription": "In der Shopwährung (der ersten Währung des Unternehmens).",
+    "visibilitySectionTitle": "Sichtbarkeit",
+    "priorityDescription": "Treffen mehrere Regeln auf eine Zeile zu, wird die mit der höheren Priorität zuerst geprüft."
   },
   "axios": {
     "start": {

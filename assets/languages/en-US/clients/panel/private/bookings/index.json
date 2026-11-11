@@ -35,7 +35,15 @@
     "status": "Status",
     "createdAt": "Created",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "when": "When",
+    "!enums": {
+      "when": {
+        "upcoming": "Upcoming",
+        "today": "Today",
+        "past": "Past"
+      }
+    }
   },
   "searchPlaceholder": "Search or add filters...",
   "status": {

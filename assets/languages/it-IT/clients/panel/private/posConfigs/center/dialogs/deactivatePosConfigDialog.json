@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
   "title": "Disattiva configurazione POS",
-  "description": "Questa cassa non sarà più disponibile per l'apertura del POS. Qualsiasi sessione aperta su questa cassa verrà chiusa forzatamente (carrelli sospesi annullati, contanti impostati al valore previsto). Gli addebiti sul terminale vengono annullati per quanto possibile.",
+  "description": "Questa configurazione POS non potrà più essere aperta nel punto vendita. Ogni sessione aperta su di essa viene chiusa forzatamente (carrelli in sospeso annullati, contante impostato all'atteso). Gli addebiti sul terminale vengono annullati se possibile.",
   "cancel": "Annulla",
   "confirm": "Disattiva",
   "busy": "Attendere…",

@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
-  "title": "Riprendere tutte le casse POS?",
-  "description": "Cancella solo il blocco a livello aziendale. Le casse in pausa singolarmente restano in pausa. I cassieri delle casse sbloccate devono aprire una nuova sessione per vendere di nuovo.",
+  "title": "Riprendere tutte le configurazioni POS?",
+  "description": "Rimuove solo il blocco aziendale. Le configurazioni POS in pausa singolarmente restano in pausa. I cassieri delle configurazioni sbloccate devono aprire una nuova sessione per vendere di nuovo.",
   "cancel": "Annulla",
   "confirm": "Riprendi tutto",
   "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Ripresa di tutte le casse POS…",
+      "title": "Ripresa di tutte le configurazioni POS…",
       "time": 3000
     },
     "success": {
-      "title": "Tutte le casse POS sono state riprese",
+      "title": "Tutte le configurazioni POS riprese",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile riprendere tutte le casse POS",
+      "title": "Impossibile riprendere tutte le configurazioni POS",
       "time": 3000
     }
   }

@@ -42,7 +42,14 @@
     "status": "Status",
     "bidder": "Bieter",
     "taskRequest": "Ausschreibung",
-    "createdAt": "Erstellt"
+    "createdAt": "Erstellt",
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "accepted": "Angenommen",
+        "rejected": "Abgelehnt"
+      }
+    }
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "status": {

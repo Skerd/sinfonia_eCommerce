@@ -19,7 +19,9 @@
     "productPlaceholder": "Scegli un prodotto",
     "variantLabel": "Variante",
     "variantPlaceholder": "Variante facoltativa",
-    "quantityLabel": "Quantità"
+    "quantityLabel": "Quantità",
+    "noteSectionTitle": "Nota",
+    "routeSectionTitle": "Da e verso"
   },
   "axios": {
     "start": {

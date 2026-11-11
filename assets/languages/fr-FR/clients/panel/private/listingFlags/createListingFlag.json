@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
-    "title": "Signaler l'annonce",
+    "title": "Créer un signalement d'annonce",
     "description": "Signalez une annonce pour examen par l’équipe de modération."
   },
   "formButtons": {
@@ -20,7 +20,8 @@
       "spam": "Spam",
       "misleading": "Trompeur",
       "other": "Autre"
-    }
+    },
+    "reportSectionTitle": "Signalement"
   },
   "axios": {
     "start": {

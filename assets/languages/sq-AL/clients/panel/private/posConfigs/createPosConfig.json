@@ -3,7 +3,7 @@
   "title": "Krijo konfigurim POS",
   "form": {
     "nameLabel": "Emri",
-    "namePlaceholder": "Emri i arkës",
+    "namePlaceholder": "p.sh. Arka kryesore",
     "paymentMethodsLabel": "Metodat e pagesës",
     "managersLabel": "Menaxherët",
     "warehousesLabel": "Magazinat",
@@ -31,7 +31,11 @@
     "selectPaymentMethod": "Zgjidh metodën e pagesës",
     "removePaymentMethod": "Hiq metodën e pagesës",
     "selectManager": "Zgjidh menaxherin",
-    "removeManager": "Hiq menaxherin"
+    "removeManager": "Hiq menaxherin",
+    "basicsSectionTitle": "Të dhënat bazë",
+    "sellingSectionTitle": "Stoku dhe pagesat",
+    "managersSectionTitle": "Menaxherët",
+    "receiptSectionTitle": "Fatura"
   },
   "axios": {
     "start": {
@@ -49,7 +53,7 @@
   },
   "formHeader": {
     "title": "Krijo konfigurim POS",
-    "description": "Konfiguroni një arkë dyqani: konfigurimin fiskal, magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
+    "description": "Krijoni një konfigurim POS: konfigurimin fiskal, magazinat, metodat e pagesës, tekstin e faturës dhe rregullat e arkës."
   },
   "formButtons": {
     "cancel": "Anulo",

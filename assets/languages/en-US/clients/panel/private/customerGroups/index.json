@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerGroups/index.tsx",
-  "title": "Customer Groups",
+  "title": "Customer groups",
   "description": "Segment customers for pricing and promotions.",
   "help": {
     "ariaLabel": "About Customer Groups",

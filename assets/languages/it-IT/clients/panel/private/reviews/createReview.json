@@ -19,7 +19,15 @@
     "orderLabel": "Ordine",
     "orderPlaceholder": "Seleziona l'ordine",
     "ratingLabel": "Valutazione",
-    "ratingPlaceholder": "1–5"
+    "ratingPlaceholder": "Scegli una valutazione",
+    "reviewSectionTitle": "Recensione",
+    "ratingValues": {
+      "1": "1 – Pessimo",
+      "2": "2 – Scarso",
+      "3": "3 – Nella media",
+      "4": "4 – Buono",
+      "5": "5 – Eccellente"
+    }
   },
   "formButtons": {
     "cancel": "Annulla",

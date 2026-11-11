@@ -3,9 +3,9 @@
   "title": "Créer un entrepôt",
   "form": {
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de l'entrepôt",
+    "namePlaceholder": "p. ex. Entrepôt principal",
     "codeLabel": "Code",
-    "codePlaceholder": "Code entrepôt",
+    "codePlaceholder": "p. ex. WH-MAIN",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Pays",
     "countryPlaceholder": "Sélectionner le pays",
@@ -20,7 +20,8 @@
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "Longitude"
+    "longitudePlaceholder": "Longitude",
+    "basicsSectionTitle": "Informations de base"
   },
   "axios": {
     "start": {
@@ -38,7 +39,7 @@
   },
   "formHeader": {
     "title": "Créer un entrepôt",
-    "description": "Ajoutez un emplacement de stock avec une adresse et un repère sur la carte."
+    "description": "Ajoutez un lieu de stockage avec son adresse ; placez l'épingle sur la carte si vous la connaissez."
   },
   "formButtons": {
     "cancel": "Annuler",

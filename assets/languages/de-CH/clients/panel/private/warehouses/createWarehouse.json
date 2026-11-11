@@ -3,9 +3,9 @@
   "title": "Lager erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Lagername",
+    "namePlaceholder": "z. B. Hauptlager",
     "codeLabel": "Code",
-    "codePlaceholder": "Lagercode",
+    "codePlaceholder": "z. B. WH-MAIN",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
@@ -20,7 +20,8 @@
     "latitudeLabel": "Breitengrad",
     "latitudePlaceholder": "Breitengrad",
     "longitudeLabel": "Längengrad",
-    "longitudePlaceholder": "Längengrad"
+    "longitudePlaceholder": "Längengrad",
+    "basicsSectionTitle": "Grunddaten"
   },
   "axios": {
     "start": {
@@ -38,7 +39,7 @@
   },
   "formHeader": {
     "title": "Lager erstellen",
-    "description": "Fügen Sie einen Lagerstandort mit Adresse und Kartenmarkierung hinzu."
+    "description": "Fügen Sie einen Lagerort mit Adresse hinzu; setzen Sie die Stecknadel auf der Karte, wenn Sie sie kennen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

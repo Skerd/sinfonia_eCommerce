@@ -6,7 +6,7 @@
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea pacchetto"
+    "submit": "Crea pacchetto dell'annuncio"
   },
   "form": {
     "listingIdLabel": "Annuncio",
@@ -22,7 +22,10 @@
     "deliveryDaysLabel": "Giorni di consegna",
     "deliveryDaysPlaceholder": "ad es. 3",
     "sortOrderLabel": "Ordine di visualizzazione",
-    "sortOrderPlaceholder": "ad es. 1"
+    "sortOrderPlaceholder": "ad es. 1",
+    "basicsSectionTitle": "Dati principali",
+    "pricingSectionTitle": "Prezzi",
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {

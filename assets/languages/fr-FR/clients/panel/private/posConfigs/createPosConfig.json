@@ -3,7 +3,7 @@
   "title": "Créer une configuration de point de vente",
   "form": {
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de la caisse",
+    "namePlaceholder": "p. ex. Caisse principale",
     "paymentMethodsLabel": "Modes de paiement",
     "managersLabel": "Gestionnaires",
     "warehousesLabel": "Entrepôts",
@@ -31,7 +31,11 @@
     "selectPaymentMethod": "Sélectionnez le mode de paiement",
     "removePaymentMethod": "Supprimer le mode de paiement",
     "selectManager": "Sélectionner le gestionnaire",
-    "removeManager": "Supprimer le gestionnaire"
+    "removeManager": "Supprimer le gestionnaire",
+    "basicsSectionTitle": "Informations de base",
+    "sellingSectionTitle": "Stock et paiements",
+    "managersSectionTitle": "Gestionnaires",
+    "receiptSectionTitle": "Reçu"
   },
   "axios": {
     "start": {
@@ -49,7 +53,7 @@
   },
   "formHeader": {
     "title": "Créer une configuration de point de vente",
-    "description": "Configurez une caisse de magasin : configuration fiscale, entrepôts, modes de paiement, texte du reçu et règles de caisse."
+    "description": "Créez une configuration de point de vente : configuration fiscale, entrepôts, modes de paiement, texte du reçu et règles de caisse."
   },
   "formButtons": {
     "cancel": "Annuler",

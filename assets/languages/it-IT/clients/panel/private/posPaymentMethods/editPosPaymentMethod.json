@@ -6,13 +6,13 @@
   "form": {
     "_idLabel": "ID record",
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome del metodo di pagamento",
+    "namePlaceholder": "es. Contanti",
     "typeLabel": "Tipo",
     "typePlaceholder": "Seleziona il tipo",
     "sequenceLabel": "Sequenza",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Importi rapidi in contanti",
-    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "cashQuickAmountsPlaceholder": "es. 5,10,20,50; vuoto = importi predefiniti della cassa",
     "terminalSectionTitle": "Terminale POS bancario",
     "terminalEnabledLabel": "Collega il terminale POS bancario",
     "terminalForcesCardHint": "Il collegamento di un terminale POS bancario imposta il tipo su Carta. La disconnessione lo imposta su Contanti.",
@@ -39,7 +39,10 @@
     "terminalProtocol": {
       "http": "HTTP",
       "https": "HTTPS"
-    }
+    },
+    "basicsSectionTitle": "Dati di base",
+    "cashSectionTitle": "Contanti",
+    "visibilitySectionTitle": "Ordine in cassa"
   },
   "axios": {
     "start": {

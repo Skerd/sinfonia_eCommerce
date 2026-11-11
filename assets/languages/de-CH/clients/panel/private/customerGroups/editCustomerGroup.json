@@ -8,7 +8,8 @@
     "nameLabel": "Name",
     "namePlaceholder": "Gruppenname",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Optionale Beschreibung"
+    "descriptionPlaceholder": "Optionale Beschreibung",
+    "generalSectionTitle": "Allgemein"
   },
   "axios": {
     "start": {

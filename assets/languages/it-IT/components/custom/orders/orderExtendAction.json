@@ -19,7 +19,10 @@
         "title": "Impossibile prorogare l'ordine, riprova",
         "time": 3000
       }
-    }
+    },
+    "currentDueDateLabel": "Scadenza attuale",
+    "newDueDateLabel": "Nuova scadenza",
+    "noDueDate": "Non impostata"
   },
   "cancel": "Annulla"
 }

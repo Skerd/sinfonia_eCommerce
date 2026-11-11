@@ -22,7 +22,8 @@
       "spam": "Spam",
       "misleading": "Fuorviante",
       "other": "Altro"
-    }
+    },
+    "reportSectionTitle": "Segnalazione"
   },
   "axios": {
     "start": {

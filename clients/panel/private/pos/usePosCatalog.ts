@@ -7,6 +7,7 @@ import type {
     CatalogProduct,
     CatalogVariant,
 } from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
+import {withServerReason} from "@eCommerceModule/clients/panel/private/pos/posTypes.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -75,8 +76,8 @@ export function usePosCatalog({
                     .filter((row) => row._id && row.name);
                 setCategoryPage({data: rows, total: response.total ?? rows.length});
             },
-            error: () => {
-                toast.error(String(resolveLanguageKey("errors.categoriesFailed") ?? "errors.categoriesFailed"));
+            error: (requestError) => {
+                toast.error(withServerReason(String(resolveLanguageKey("errors.categoriesFailed") ?? "errors.categoriesFailed"), requestError));
                 if (categoryCall.offset === 0) setCategoryPage({data: [], total: 0});
             },
         },
@@ -132,8 +133,8 @@ export function usePosCatalog({
     const [catalogCall, setCatalogCall] = useState<PageCall>(EMPTY_CALL);
     const {loading: catalogLoading} = useHttpRequest<CatalogResponse>(CATALOG_REQUEST, catalogCall.body, catalogCall.count, true, {
         success: (response) => setCatalogPage({data: response.data ?? [], total: response.total ?? 0}),
-        error: () => {
-            toast.error(String(resolveLanguageKey("errors.catalogFailed") ?? "errors.catalogFailed"));
+        error: (requestError) => {
+            toast.error(withServerReason(String(resolveLanguageKey("errors.catalogFailed") ?? "errors.catalogFailed"), requestError));
             if (catalogCall.offset === 0) setCatalogPage({data: [], total: 0});
         },
     });
@@ -225,8 +226,8 @@ export function usePosCatalog({
             else pickProduct(rows[0], 1);
             barcodeRef.current?.focus();
         },
-        error: () => {
-            toast.error(rk("errors.barcodeNotFound"));
+        error: (requestError) => {
+            toast.error(withServerReason(rk("errors.barcodeNotFound"), requestError));
             barcodeRef.current?.focus();
         },
     });

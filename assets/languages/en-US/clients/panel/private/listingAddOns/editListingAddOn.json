@@ -23,7 +23,9 @@
     "currencyLabel": "Currency",
     "currencyPlaceholder": "The listing's currency if left empty",
     "deliveryDaysLabel": "Delivery days",
-    "deliveryDaysPlaceholder": "e.g. 2"
+    "deliveryDaysPlaceholder": "e.g. 2",
+    "basicsSectionTitle": "Basics",
+    "pricingSectionTitle": "Prices"
   },
   "axios": {
     "start": {

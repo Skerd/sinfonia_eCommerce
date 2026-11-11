@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
-  "title": "Mark return received",
+  "title": "Mark return request received",
   "description": "This approved return will be marked as received.",
   "cancel": "Cancel",
   "confirm": "Mark received",

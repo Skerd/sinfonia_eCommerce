@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx",
-  "title": "Marquer le retour comme reçu",
+  "title": "Marquer la demande de retour comme reçue",
   "description": "Ce retour approuvé sera marqué comme reçu.",
   "cancel": "Annuler",
   "confirm": "Marquer reçu",

@@ -9,13 +9,10 @@ export default createGenericCreatePage<CreateWarehouseFormType>({
     accessModel: "warehouses",
     apiUrl: "/api/eCommerce/warehouse",
     schema: createWarehouseFormSchema,
+    // No pin until one is placed: a made-up location would be saved as the warehouse's address (UX-06).
     defaultValues: {
         name: "",
         code: "",
-        address: {
-            latitude: 41.3275,
-            longitude: 19.8189,
-        },
     },
     successPath: "/tenancy/systemSettings/warehouses",
     submitIcon: <IconPlus />,

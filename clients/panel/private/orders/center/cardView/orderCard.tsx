@@ -140,6 +140,7 @@ function OrderCard({
                                 orderId={row._id}
                                 displayName={title}
                                 currentDueDate={row.deliveryDueDate}
+                                orderCreatedAt={row.createdAt}
                                 openAlert
                                 url="/api/eCommerceMarketplace/order/extend"
                                 onSuccess={(newDueDate: string) => {
@@ -163,7 +164,7 @@ function OrderCard({
                             />
                         )}
                         {action === "createMilestone" && (
-                            <CreateMilestoneAction orderId={row._id} displayName={title} onSuccess={() => setAction("")} onCancel={() => setAction("")} />
+                            <CreateMilestoneAction orderId={row._id} displayName={title} currency={row.currency} onSuccess={() => setAction("")} onCancel={() => setAction("")} />
                         )}
                         {action === "releaseMilestone" && (
                             <ReleaseMilestoneAction

@@ -3,9 +3,9 @@
   "title": "Create discount",
   "form": {
     "titleLabel": "Title",
-    "titlePlaceholder": "Discount title",
+    "titlePlaceholder": "e.g. Summer sale",
     "codeLabel": "Code",
-    "codePlaceholder": "Optional promo code",
+    "codePlaceholder": "e.g. SUMMER10",
     "typeLabel": "Type",
     "typePlaceholder": "Select type",
     "appliesToLabel": "Applies to",

@@ -12,7 +12,8 @@ export default createGenericCreatePage<CreateShippingZoneFormType>({
     defaultValues: {
         name: "",
         countries: [],
-        rates: [{name: "Default", type: "flat", price: 0}],
+        // No prefilled rate: its name and how it is charged are the shop's choice (UX-06); "Add rate" opens an empty row.
+        rates: [],
     },
     successPath: "/tenancy/systemSettings/shippingzones",
     submitIcon: <IconPlus />,

@@ -9,7 +9,8 @@ export default createGenericCreatePage<CreatePromotionFormType>({
     accessModel: "promotions",
     apiUrl: "/api/eCommerceMarketplace/promotion",
     schema: createPromotionFormSchema,
-    defaultValues: {listing: "", type: "featured", startAt: "", endAt: ""},
+    // No promotion type is preselected: featured and sponsored cost and place differently (UX-06).
+    defaultValues: {listing: "", startAt: "", endAt: ""},
     submitIcon: <IconPlus />,
     successPath: "/eCommerceMarketplace/promotions",
 });

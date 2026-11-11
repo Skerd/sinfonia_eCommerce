@@ -17,12 +17,15 @@ import {
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
+import type {CurrencySimple} from "armonia/src/modules/core/dto/currency.dto.ts";
 import type {CreateOrderMilestoneFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.schema-def.ts";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type CreateMilestoneActionProps = WithLanguageType & WithAxiosType<ActionMessage, CreateOrderMilestoneFormType> & {
     orderId: string;
     displayName?: string;
+    /** The order's currency: a milestone is always in it (UX-07). */
+    currency?: CurrencySimple;
     onSuccess: () => void;
     onCancel: () => void;
 };
@@ -31,6 +34,7 @@ type CreateMilestoneActionProps = WithLanguageType & WithAxiosType<ActionMessage
 function CreateMilestoneAction({
     orderId,
     displayName,
+    currency,
     resolveLanguageKey,
     innerRef,
     onPost,
@@ -73,7 +77,10 @@ function CreateMilestoneAction({
                         <Input id="milestoneName" value={name} maxLength={200} onChange={(e) => setName(e.target.value)} disabled={loading} />
                     </div>
                     <div className="flex flex-col gap-y-2">
-                        <Label htmlFor="milestoneAmount">{resolveLanguageKey("amountLabel")}</Label>
+                        <Label htmlFor="milestoneAmount">
+                            {resolveLanguageKey("amountLabel")}
+                            {currency ? ` (${currency.abbreviation || currency.symbol})` : ""}
+                        </Label>
                         <Input id="milestoneAmount" type="number" min={0} step="any" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={loading} />
                         <p className="text-xs text-muted-foreground">{resolveLanguageKey("amountHint")}</p>
                     </div>

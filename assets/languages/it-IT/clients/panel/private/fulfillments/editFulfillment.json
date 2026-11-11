@@ -9,9 +9,9 @@
     "orderPlaceholder": "Seleziona l'ordine",
     "statusLabel": "Stato",
     "carrierLabel": "Corriere",
-    "carrierPlaceholder": "Nome del corriere",
+    "carrierPlaceholder": "es. BRT",
     "trackingNumberLabel": "Numero di tracciamento",
-    "trackingNumberPlaceholder": "Numero di tracciamento",
+    "trackingNumberPlaceholder": "es. 0123456789012",
     "trackingUrlLabel": "URL di tracciamento",
     "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Spedito il",
@@ -31,7 +31,9 @@
       "shipped": "Spedita",
       "delivered": "Consegnata",
       "failed": "Non riuscita"
-    }
+    },
+    "shipmentSectionTitle": "Spedizione",
+    "notesSectionTitle": "Note"
   },
   "axios": {
     "start": {

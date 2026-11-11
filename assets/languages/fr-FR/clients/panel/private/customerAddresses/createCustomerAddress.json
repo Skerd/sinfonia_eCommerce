@@ -30,9 +30,9 @@
     "countryLabel": "Pays",
     "countryPlaceholder": "Sélectionner le pays",
     "latitudeLabel": "Latitude",
-    "latitudePlaceholder": "41.3275",
+    "latitudePlaceholder": "Choisir sur la carte",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "19.8189",
+    "longitudePlaceholder": "Choisir sur la carte",
     "labelLabel": "Étiquette",
     "labelPlaceholder": "Maison, travail,…"
   },

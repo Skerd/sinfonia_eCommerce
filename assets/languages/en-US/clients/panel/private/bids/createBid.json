@@ -19,11 +19,16 @@
     "currencyIdLabel": "Currency",
     "currencyIdPlaceholder": "Select currency",
     "deliveryDaysLabel": "Delivery days",
-    "deliveryDaysPlaceholder": "1",
+    "deliveryDaysPlaceholder": "e.g. 7",
     "proposalLabel": "Proposal",
     "proposalPlaceholder": "Describe your approach...",
     "taskRequestIdLabel": "Task request",
-    "taskRequestIdPlaceholder": "Select task request"
+    "taskRequestIdPlaceholder": "Select task request",
+    "section": {
+      "taskRequest": "Task request",
+      "offer": "Your offer"
+    },
+    "amountCurrencyDescription": "In the task request's currency."
   },
   "formButtons": {
     "cancel": "Cancel",

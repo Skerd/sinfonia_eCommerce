@@ -1,11 +1,13 @@
 import {IconPlus} from "@tabler/icons-react";
 import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
+import {companyToday, fromZonedWallClock} from "@coreModule/helpers/general/dateTime.ts";
 import {createDiscountFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/createDiscount.form.validator.ts";
 import type {CreateDiscountFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.schema-def.ts";
 
-function toFormDateTime(d: Date): string {
-    const pad = (n: number) => String(n).padStart(2, "0");
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+/** The start of the company's today (GLB-09), as the instant the form's DateInput holds. */
+function startOfCompanyToday(timeZone: string): string | undefined {
+    const [year, month, day] = companyToday(timeZone).split("-").map(Number);
+    return fromZonedWallClock(timeZone, year, month, day, 0, 0)?.toISOString();
 }
 
 export default createGenericCreatePage<CreateDiscountFormType>({
@@ -14,15 +16,15 @@ export default createGenericCreatePage<CreateDiscountFormType>({
     accessModel: "discounts",
     apiUrl: "/api/eCommerce/discount",
     schema: createDiscountFormSchema,
-    defaultValues: {
+    // No type is preselected: the kind of discount is the first choice (UX-06). The whole order is the common scope.
+    defaultValues: (_params, {timeZone}) => ({
         title: "",
-        type: "percentage",
         value: 0,
         appliesTo: "order",
-        startsAt: toFormDateTime(new Date()),
+        startsAt: startOfCompanyToday(timeZone),
         customerGroups: [],
         targetIds: [],
-    },
+    }),
     successPath: "/tenancy/systemSettings/discounts",
     submitIcon: <IconPlus />,
 });

@@ -15,8 +15,6 @@ export default createGenericCreatePage<CreateCustomerAddressFormType>({
         firstName: "",
         lastName: "",
         street: "",
-        latitude: 41.3275,
-        longitude: 19.8189,
     }),
     buildFormExtras: (params) => ({lockCustomer: !!params.get("specificUserId")}),
     submitIcon: <IconPlus />,

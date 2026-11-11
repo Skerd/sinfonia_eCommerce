@@ -6,7 +6,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Paket erstellen"
+    "submit": "Inseratpaket erstellen"
   },
   "form": {
     "listingIdLabel": "Inserat",
@@ -20,9 +20,12 @@
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung des Inserats, wenn leer",
     "deliveryDaysLabel": "Liefertage",
-    "deliveryDaysPlaceholder": "E.g. 3",
+    "deliveryDaysPlaceholder": "z. B. 3",
     "sortOrderLabel": "Anzeigereihenfolge",
-    "sortOrderPlaceholder": "E.g. 1"
+    "sortOrderPlaceholder": "z. B. 1",
+    "basicsSectionTitle": "Grunddaten",
+    "pricingSectionTitle": "Preise",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

@@ -1,37 +1,39 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/editCategory.tsx",
-  "editTitle": "Modifier la catégorie",
-  "editDescription": "Mettre à jour les détails de la catégorie.",
+  "editTitle": "Modifier la catégorie d'annonce",
+  "editDescription": "Mettre à jour cette catégorie d'annonce.",
   "errorTitle": "Échec du chargement de la catégorie",
   "errorDescription": "Impossible de charger cette catégorie. Réessayez.",
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de la catégorie",
+    "namePlaceholder": "ex. Ménage à domicile",
     "parentListingCategoryLabel": "Catégorie parente",
-    "parentListingCategoryPlaceholder": "Parent facultatif",
+    "parentListingCategoryPlaceholder": "Niveau supérieur si vide",
     "orderLabel": "Ordre de tri",
     "orderPlaceholder": "0",
-    "editCategoryTitle": "Modifier la catégorie",
-    "editCategoryDescription": "Mettre à jour les informations sur la catégorie."
+    "editCategoryTitle": "Modifier la catégorie d'annonce",
+    "editCategoryDescription": "Mettre à jour cette catégorie d'annonce.",
+    "basicsSectionTitle": "Informations de base",
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {
-      "title": "Enregistrement de la catégorie",
+      "title": "Enregistrement de la catégorie d'annonce",
       "time": 3000
     },
     "success": {
-      "title": "Catégorie mise à jour",
+      "title": "Catégorie d'annonce mise à jour",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de mettre à jour la catégorie",
+      "title": "Impossible de mettre à jour la catégorie d'annonce",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Modifier la catégorie",
-    "description": "Mettre à jour les détails de la catégorie."
+    "title": "Modifier la catégorie d'annonce",
+    "description": "Mettre à jour cette catégorie d'annonce."
   },
   "formButtons": {
     "cancel": "Annuler",

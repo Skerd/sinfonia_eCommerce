@@ -2,34 +2,36 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/createCategory.tsx",
   "form": {
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della categoria",
+    "namePlaceholder": "es. Pulizie di casa",
     "parentListingCategoryLabel": "Categoria padre",
-    "parentListingCategoryPlaceholder": "Categoria radice facoltativa",
+    "parentListingCategoryPlaceholder": "Livello principale se vuoto",
     "orderLabel": "Ordine di visualizzazione",
     "orderPlaceholder": "0",
-    "createCategoryTitle": "Crea categoria",
-    "createCategoryDescription": "Aggiungi una categoria per organizzare i prodotti nel tuo catalogo."
+    "createCategoryTitle": "Crea categoria di annunci",
+    "createCategoryDescription": "Aggiungi una categoria che raggruppa gli annunci e le richieste di attività del marketplace.",
+    "basicsSectionTitle": "Dati principali",
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {
-      "title": "Creazione categoria",
+      "title": "Creazione della categoria di annunci",
       "time": 3000
     },
     "success": {
-      "title": "Categoria creata",
+      "title": "Categoria di annunci creata",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile creare la categoria",
+      "title": "Impossibile creare la categoria di annunci",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Crea categoria",
-    "description": "Aggiungi una categoria per organizzare i prodotti nel tuo catalogo."
+    "title": "Crea categoria di annunci",
+    "description": "Aggiungi una categoria che raggruppa gli annunci e le richieste di attività del marketplace."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea categoria"
+    "submit": "Crea categoria di annunci"
   }
 }

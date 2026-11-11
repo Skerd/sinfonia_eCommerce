@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx",
-  "taskRequest": "Demande de tâche",
+  "taskRequest": "Demande de devis",
   "overview": "Vue d'ensemble",
   "lifecycle": "Cycle de vie",
   "description": "Description",
@@ -32,8 +32,8 @@
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
-  "failedTitle": "Échec du chargement de la demande de tâche",
-  "failedDescription": "Une erreur s'est produite lors du chargement de cette demande de tâche. Cliquez pour réessayer.",
+  "failedTitle": "Échec du chargement de la demande de devis",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette demande de devis. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
   "taskRequestStatus": {
     "open": "Ouvert",

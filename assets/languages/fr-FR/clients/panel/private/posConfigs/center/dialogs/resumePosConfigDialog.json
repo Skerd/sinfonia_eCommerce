@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
-  "title": "Reprendre cette caisse ?",
-  "description": "Efface la pause de cette caisse uniquement. Un verrou à l’échelle de l’entreprise (s’il est actif) n’est pas effacé. Les caissiers doivent ouvrir une nouvelle session pour vendre à nouveau.",
+  "title": "Reprendre cette configuration de point de vente ?",
+  "description": "Lève uniquement la pause de cette configuration de point de vente. Un verrou à l'échelle de l'entreprise (s'il est actif) n'est pas levé. Les caissiers doivent ouvrir une nouvelle session pour vendre à nouveau.",
   "cancel": "Annuler",
-  "confirm": "Reprendre la caisse",
+  "confirm": "Reprendre la configuration de point de vente",
   "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Reprise de la caisse…",
+      "title": "Reprise de la configuration de point de vente…",
       "time": 3000
     },
     "success": {
-      "title": "Caisse reprise",
+      "title": "Configuration de point de vente reprise",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de reprendre la caisse",
+      "title": "Impossible de reprendre la configuration de point de vente",
       "time": 3000
     }
   }

@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Ofertat",
-  "description": "Shiko dhe menaxho ofertat për kërkesat e detyrave.",
+  "description": "Shiko dhe menaxho ofertat për kërkesat për ofertë.",
   "help": {
     "ariaLabel": "Rreth ofertave",
     "title": "Rreth ofertave",
-    "overview": "Një ofertë është propozimi i çmimit i një ofruesi për një kërkesë për detyrë: shuma, ditët e dorëzimit dhe një propozim me shkrim. Kërkuesi pranon një ofertë, që e cakton detyrën dhe hap një porosi.",
+    "overview": "Një ofertë është propozimi i çmimit i një ofruesi për një kërkesë për ofertë: shuma, ditët e dorëzimit dhe një propozim me shkrim. Kërkuesi pranon një ofertë, që e cakton detyrën dhe hap një porosi.",
     "sections": [
       {
         "title": "Bërja e një oferte",
         "items": [
-          "Kërkesa për detyrë duhet të jetë e hapur, e paskaduar dhe e dikujt tjetër.",
+          "Kërkesa për ofertë duhet të jetë e hapur, e paskaduar dhe e dikujt tjetër.",
           "Një ofertë aktive për ofertues dhe kërkesë. Ofertuesi dhe monedha vendosen nga serveri, nga thirrësi dhe kërkesa.",
           "Ofertat nuk ndryshohen pas dërgimit; tërhiqeni dhe bëni një të re."
         ]
@@ -41,8 +41,15 @@
     "deliveryDays": "Ditë dorëzimi",
     "status": "Statusi",
     "bidder": "Ofertues",
-    "taskRequest": "Kërkesë detyre",
-    "createdAt": "Krijuar"
+    "taskRequest": "Kërkesë për ofertë",
+    "createdAt": "Krijuar",
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "accepted": "Pranuar",
+        "rejected": "Refuzuar"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "status": {

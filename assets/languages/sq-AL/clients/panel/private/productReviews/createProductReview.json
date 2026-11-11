@@ -7,11 +7,13 @@
     "productLabel": "Produkti",
     "productPlaceholder": "Zgjidh një produkt të porosisë",
     "ratingLabel": "Vlerësimi",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Zgjidhni vlerësimin",
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titull opsional",
     "commentLabel": "Komenti",
-    "commentPlaceholder": "Çfarë duhet të dinë blerësit?"
+    "commentPlaceholder": "Çfarë duhet të dinë blerësit?",
+    "purchaseSectionTitle": "Blerja",
+    "reviewSectionTitle": "Vlerësimi"
   },
   "axios": {
     "start": {

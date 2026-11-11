@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/activatePosConfigDialog.tsx",
   "title": "Attiva configurazione POS",
-  "description": "Questa configurazione di cassa sarà disponibile per l'apertura del POS.",
+  "description": "Questa configurazione POS potrà di nuovo essere aperta nel punto vendita.",
   "cancel": "Annulla",
   "confirm": "Attiva",
   "busy": "Attendere…",

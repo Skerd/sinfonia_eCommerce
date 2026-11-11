@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx",
-  "title": "Riprendere questa cassa POS?",
-  "description": "Rimuove la pausa solo da questa cassa. Un blocco a livello aziendale (se attivo) non viene rimosso. I cassieri devono aprire una nuova sessione per vendere di nuovo.",
+  "title": "Riprendere questa configurazione POS?",
+  "description": "Rimuove solo la pausa di questa configurazione POS. Un blocco aziendale (se attivo) non viene rimosso. I cassieri devono aprire una nuova sessione per vendere di nuovo.",
   "cancel": "Annulla",
-  "confirm": "Riprendi la cassa",
+  "confirm": "Riprendi la configurazione POS",
   "busy": "Attendere…",
   "axios": {
     "start": {
-      "title": "Ripresa della cassa POS…",
+      "title": "Ripresa della configurazione POS…",
       "time": 3000
     },
     "success": {
-      "title": "Cassa POS ripresa",
+      "title": "Configurazione POS ripresa",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile riprendere la cassa POS",
+      "title": "Impossibile riprendere la configurazione POS",
       "time": 3000
     }
   }

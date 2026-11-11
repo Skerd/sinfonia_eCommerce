@@ -36,7 +36,10 @@
       "received": "Reçu",
       "completed": "Terminé"
     },
-    "orderAmountDescription": "Dans la devise de la commande."
+    "orderAmountDescription": "Dans la devise de la commande.",
+    "requestSectionTitle": "Demande",
+    "notesSectionTitle": "Notes",
+    "typePlaceholder": "Retour, échange ou remboursement"
   },
   "axios": {
     "start": {

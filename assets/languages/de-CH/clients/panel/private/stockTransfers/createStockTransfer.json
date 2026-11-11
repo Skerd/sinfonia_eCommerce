@@ -16,7 +16,9 @@
     "productPlaceholder": "Produkt wählen",
     "variantLabel": "Variante",
     "variantPlaceholder": "Optionale Variante",
-    "quantityLabel": "Menge"
+    "quantityLabel": "Menge",
+    "noteSectionTitle": "Notiz",
+    "routeSectionTitle": "Von und nach"
   },
   "axios": {
     "start": {

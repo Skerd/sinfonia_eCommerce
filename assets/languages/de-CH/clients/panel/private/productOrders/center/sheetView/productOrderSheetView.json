@@ -10,14 +10,12 @@
   "items": "Positionen",
   "shippingAddress": "Lieferadresse",
   "billingAddress": "Rechnungsadresse",
-  "totals": "Summen",
   "shippingRate": "Versand satz",
   "appliedDiscounts": "Angewendete Rabatte",
   "taxBreakdown": "Steueraufschlüsselung",
   "giftCard": "Geschenkkarte",
   "notes": "Notizen",
   "timeline": "Verlauf",
-  "payment": "Zahlung",
   "lifecycle": "Lebenszyklus",
   "paymentTransactions": "Zahlung transaktionen",
   "paymentTransaction": "Transaktion",
@@ -32,7 +30,6 @@
   "company": "Firma",
   "email": "E-Mail",
   "phone": "Telefon",
-  "currency": "Währung",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
@@ -57,16 +54,9 @@
   "discount": "Rabatt",
   "discountAmount": "Betrag",
   "giftCardRef": "Geschenkkarte",
-  "giftCardCode": "Code",
   "giftCardAmount": "Angewendeter Betrag",
   "internalNotes": "Interne Notizen",
-  "stripePaymentIntentId": "Stripe-Zahlungsabsicht (ID)",
-  "idempotencyKey": "Idempotenzschlüssel",
   "itemProduct": "Produkt",
-  "itemVariant": "Variante",
-  "itemSnapshotTitle": "Titel (Momentaufnahme)",
-  "itemSnapshotSku": "SKU (Momentaufnahme)",
-  "itemSnapshotVariantLabel": "Optionen",
   "itemQuantity": "Menge",
   "itemUnitPrice": "Stückpreis",
   "itemTotalPrice": "Total der Position",
@@ -152,5 +142,23 @@
   "fulfillment": "Lieferung",
   "returnRequests": "Rücksendungen",
   "returnRequest": "Rücksendung",
-  "typeLabel": "Bestellung"
+  "typeLabel": "Produktbestellung",
+  "fulfillmentStatusValues": {
+    "pending": "Ausstehend",
+    "shipped": "Versandt",
+    "delivered": "Zugestellt",
+    "failed": "Fehlgeschlagen"
+  },
+  "returnRequestStatusValues": {
+    "pending": "Ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "received": "Erhalten",
+    "completed": "Abgeschlossen"
+  },
+  "returnRequestTypeValues": {
+    "return": "Rückgabe",
+    "exchange": "Umtausch",
+    "refund": "Rückerstattung"
+  }
 }

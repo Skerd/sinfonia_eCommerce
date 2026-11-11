@@ -41,7 +41,15 @@
     "initiator": "Iniciatori",
     "createdAt": "Hapur",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "open": "Hapur",
+        "under_review": "Nën shqyrtim",
+        "resolved": "Zgjidhur",
+        "closed": "Mbyllur"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "status": {

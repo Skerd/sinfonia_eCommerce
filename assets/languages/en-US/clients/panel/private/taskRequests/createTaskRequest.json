@@ -11,7 +11,7 @@
     "countryPlaceholder": "Select country",
     "currencyLabel": "Currency",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Description",
+    "descriptionPlaceholder": "What needs doing, how big the job is and any deadline.",
     "expiresAtLabel": "Expires",
     "expiresAtPlaceholder": "YYYY-MM-DD",
     "imageGalleryLabel": "Image gallery",
@@ -28,7 +28,8 @@
       "description": "Details",
       "general": "General",
       "images": "Images",
-      "video": "Video"
+      "video": "Video",
+      "address": "Address"
     },
     "stateLabel": "State",
     "statePlaceholder": "Select state",
@@ -40,7 +41,13 @@
       "open": "Open"
     },
     "titleLabel": "Title",
-    "videoGalleryLabel": "Video gallery"
+    "videoGalleryLabel": "Video gallery",
+    "titlePlaceholder": "e.g. Paint a two-bedroom flat",
+    "categoryPlaceholder": "Select category",
+    "currencyPlaceholder": "Select currency",
+    "currencyDescription": "Bids on this request come in this currency.",
+    "budgetMinPlaceholder": "e.g. 500",
+    "budgetMaxPlaceholder": "e.g. 900"
   },
   "formButtons": {
     "cancel": "Cancel",

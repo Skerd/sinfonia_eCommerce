@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/index.tsx",
-  "title": "Listing Flags",
+  "title": "Listing reports",
   "description": "Review reports submitted by users for inappropriate listings.",
   "help": {
-    "ariaLabel": "About Listing flags",
-    "title": "About Listing flags",
-    "overview": "A listing flag is a moderation report: a user marks a listing as inappropriate, spam, misleading, or other, with an optional comment. Administrators review reports and decide them.",
+    "ariaLabel": "About listing reports",
+    "title": "About listing reports",
+    "overview": "A listing report is a user's moderation report on a listing: inappropriate, spam, misleading, or other, with an optional comment. Administrators review reports and decide them.",
     "sections": [
       {
         "title": "Reporting",
         "items": [
-          "The reporter is whoever creates the flag. One live report per user and listing.",
+          "The reporter is whoever creates the report. One live report per user and listing.",
           "While pending, the reporter can still edit the reason and comment; the listing is fixed.",
           "Reports are private: administrators see them all, everyone else only their own."
         ]
@@ -32,7 +32,7 @@
       }
     ]
   },
-  "createListingFlag": "Create listing flag",
+  "createListingFlag": "Create listing report",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "listing": "Listing",

@@ -5,6 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
+import {PRODUCT_ORDER_WHEN} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrderList.form.validator.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProductOrderCard from "./center/cardView/productOrderCard.tsx";
 import ConfirmOrderDropdown from "./center/actions/confirmOrderDropdown.tsx";
@@ -19,6 +20,16 @@ import RefundProductOrderAction from "@eCommerceModule/components/custom/product
 
 function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "when",
+            label: String(resolveLanguageKey("fields.when")),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: PRODUCT_ORDER_WHEN.map((value) => ({
+                value,
+                label: String(resolveLanguageKey(`fields.!enums.when.${value}`)),
+            })),
+            asExtraParam: true,
+        },
         {
             field: "status",
             label: String(resolveLanguageKey("fields.status")),

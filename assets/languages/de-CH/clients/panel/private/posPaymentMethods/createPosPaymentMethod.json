@@ -3,13 +3,13 @@
   "title": "Zahlungsart erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Name der Zahlungsart",
+    "namePlaceholder": "z. B. Bargeld",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
     "sequenceLabel": "Reihenfolge",
     "sequencePlaceholder": "0",
     "cashQuickAmountsLabel": "Bargeld-Schnellbeträge",
-    "cashQuickAmountsPlaceholder": "0.1,0.2,0.5,1,5,10,20,50,100",
+    "cashQuickAmountsPlaceholder": "z. B. 5,10,20,50; leer = Standardbeträge der Kasse",
     "terminalSectionTitle": "Bank-Kartenterminal",
     "terminalEnabledLabel": "Bank-Kartenterminal verbinden",
     "terminalForcesCardHint": "Das Verbinden eines Bank-Kartenterminals setzt den Typ auf Karte. Das Trennen setzt ihn auf Bar.",
@@ -36,7 +36,10 @@
     "terminalProtocol": {
       "http": "HTTP",
       "https": "HTTPS"
-    }
+    },
+    "basicsSectionTitle": "Grunddaten",
+    "cashSectionTitle": "Bargeld",
+    "visibilitySectionTitle": "Reihenfolge an der Kasse"
   },
   "axios": {
     "start": {

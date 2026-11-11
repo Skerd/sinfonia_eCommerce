@@ -13,7 +13,9 @@
     "orderLabel": "Rendi",
     "orderPlaceholder": "0",
     "editCategoryTitle": "Redakto kategorinë",
-    "editCategoryDescription": "Përditësoni të dhënat e kategorisë."
+    "editCategoryDescription": "Përditësoni të dhënat e kategorisë.",
+    "generalSectionTitle": "Të përgjithshme",
+    "visibilitySectionTitle": "Shfaqja"
   },
   "axios": {
     "start": {

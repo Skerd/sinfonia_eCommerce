@@ -3,6 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {type ComponentType, useEffect, useImperativeHandle, useMemo, useState} from "react";
+import dayjs from "dayjs";
 import {IconCalendarPlus, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
@@ -21,6 +22,14 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ExtendOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/extendOrder.form.validator.ts";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+
+/** The server extends from the current due date, or from when the order was placed when it has none. */
+function extendedDueDate(base: Date | string | undefined, days: number): Date | undefined {
+    if (!base || !Number.isFinite(days)) return undefined;
+    const from = dayjs(base);
+    return from.isValid() ? from.add(days, "day").toDate() : undefined;
+}
 
 function bindExtendAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -35,6 +44,8 @@ type OrderExtendActionPublicProps = {
     orderId: string;
     displayName?: string;
     currentDueDate?: Date | string;
+    /** When the order was placed: the base the server extends from when there is no due date yet. */
+    orderCreatedAt?: Date | string;
     openAlert?: boolean;
     url?: string;
     resolveLanguageKey: ResolveLanguageKey;
@@ -48,6 +59,7 @@ function OrderExtendAction({
     orderId,
     displayName,
     currentDueDate,
+    orderCreatedAt,
     openAlert,
     resolveLanguageKey,
     innerRef,
@@ -64,11 +76,8 @@ function OrderExtendAction({
     useImperativeHandle(innerRef, () => ({
         success: () => {
             setOpen(false);
-            const days = Number(additionalDays);
-            const base = currentDueDate ? new Date(currentDueDate) : new Date();
-            const newDue = new Date(base);
-            newDue.setDate(newDue.getDate() + days);
-            onSuccess(newDue.toISOString());
+            const newDue = extendedDueDate(currentDueDate ?? orderCreatedAt, Number(additionalDays));
+            if (newDue) onSuccess(newDue.toISOString());
         },
     }));
 
@@ -88,7 +97,9 @@ function OrderExtendAction({
     if (!write) return <HiddenElement />;
 
     const daysNum = Number(additionalDays);
-    const canSubmit = Number.isFinite(daysNum) && daysNum >= 1 && daysNum <= 90;
+    const canSubmit = Number.isInteger(daysNum) && daysNum >= 1 && daysNum <= 90;
+    // The due date as it is and as it will be, updated as the day count changes (UX-08).
+    const newDueDate = canSubmit ? extendedDueDate(currentDueDate ?? orderCreatedAt, daysNum) : undefined;
 
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>
@@ -117,6 +128,12 @@ function OrderExtendAction({
                     <p className="text-xs text-muted-foreground">
                         {resolveLanguageKey("extend.additionalDaysHint")}
                     </p>
+                    <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                        <dt className="text-muted-foreground">{resolveLanguageKey("extend.currentDueDateLabel")}</dt>
+                        <dd>{currentDueDate ? formatDate(currentDueDate, {format: DATE_FORMATS.mediumDate}) : resolveLanguageKey("extend.noDueDate")}</dd>
+                        <dt className="text-muted-foreground">{resolveLanguageKey("extend.newDueDateLabel")}</dt>
+                        <dd className="font-medium">{newDueDate ? formatDate(newDueDate, {format: DATE_FORMATS.mediumDate}) : "—"}</dd>
+                    </dl>
                 </div>
                 {error ? (
                     <Alert variant="destructive">

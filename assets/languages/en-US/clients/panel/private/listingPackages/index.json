@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingPackages/index.tsx",
-  "title": "Listing Packages",
+  "title": "Listing packages",
   "description": "Manage service packages that providers offer for their listings.",
   "help": {
     "ariaLabel": "About Listing packages",
@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingPackage": "Create package",
+  "createListingPackage": "Create listing package",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",

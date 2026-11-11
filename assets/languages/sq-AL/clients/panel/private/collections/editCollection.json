@@ -63,7 +63,8 @@
       "greater_than": "Më i madh se",
       "less_than": "Më i vogël se",
       "starts_with": "Fillon me"
-    }
+    },
+    "visibilitySectionTitle": "Shfaqja"
   },
   "axios": {
     "start": {

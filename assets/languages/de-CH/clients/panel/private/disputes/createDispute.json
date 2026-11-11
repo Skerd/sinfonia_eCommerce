@@ -15,9 +15,13 @@
   },
   "form": {
     "orderLabel": "Auftrag",
-    "orderPlaceholder": "Bestellung auswählen",
+    "orderPlaceholder": "Auftrag auswählen",
     "reasonLabel": "Grund",
-    "reasonPlaceholder": "Beschreiben Sie das Problem..."
+    "reasonPlaceholder": "Beschreiben Sie das Problem...",
+    "section": {
+      "order": "Auftrag",
+      "issue": "Was ist schiefgelaufen"
+    }
   },
   "formButtons": {
     "cancel": "Abbrechen",

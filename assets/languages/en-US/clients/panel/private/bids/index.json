@@ -42,7 +42,14 @@
     "status": "Status",
     "bidder": "Bidder",
     "taskRequest": "Task Request",
-    "createdAt": "Created"
+    "createdAt": "Created",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "accepted": "Accepted",
+        "rejected": "Rejected"
+      }
+    }
   },
   "searchPlaceholder": "Search or add filters...",
   "status": {

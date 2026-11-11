@@ -59,5 +59,6 @@
     "fixed": "Prix fixe",
     "hourly": "Tarif horaire"
   },
-  "form": {}
+  "form": {},
+  "details": "Détails"
 }

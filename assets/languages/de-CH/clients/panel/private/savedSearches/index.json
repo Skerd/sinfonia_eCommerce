@@ -38,7 +38,7 @@
   },
   "catalogTitle": "Gespeicherte Suchen",
   "catalogDescription": "Alle Katalogsuchen, die von Kunden gespeichert wurden.",
-  "createSavedSearch": "Suche speichern",
+  "createSavedSearch": "Gespeicherte Suche erstellen",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",

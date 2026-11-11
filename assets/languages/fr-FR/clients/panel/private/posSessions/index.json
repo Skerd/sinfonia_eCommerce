@@ -61,10 +61,15 @@
             "out": "Sortie d'espèces"
           }
         }
+      },
+      "when": {
+        "today": "Aujourd'hui",
+        "thisWeek": "Cette semaine",
+        "older": "Plus ancien"
       }
     },
     "name": "Nom",
-    "config": "Configuration du point de vente",
+    "config": "Configuration de point de vente",
     "currency": "Devise",
     "state": "État",
     "openedBy": "Ouverte par",
@@ -86,6 +91,7 @@
     "createdAt": "Créé le",
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
-    "deletedBy": "Supprimé par"
+    "deletedBy": "Supprimé par",
+    "when": "Quand"
   }
 }

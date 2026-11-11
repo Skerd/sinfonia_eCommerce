@@ -8,7 +8,9 @@
     "orderLabel": "Sort order",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Create category",
-    "createCategoryDescription": "Add a category to organize products in your catalog."
+    "createCategoryDescription": "Add a category to organize products in your catalog.",
+    "generalSectionTitle": "General",
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {

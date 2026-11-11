@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx",
-  "taskRequest": "Richiesta di attività",
+  "taskRequest": "Richiesta di preventivo",
   "overview": "Panoramica",
   "lifecycle": "Ciclo di vita",
   "description": "Descrizione",
@@ -32,8 +32,8 @@
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
-  "failedTitle": "Impossibile caricare la richiesta di attività",
-  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa richiesta di attività. Fare clic per riprovare.",
+  "failedTitle": "Impossibile caricare la richiesta di preventivo",
+  "failedDescription": "Qualcosa è andato storto durante il caricamento di questa richiesta di preventivo. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
   "taskRequestStatus": {
     "open": "Aperta",

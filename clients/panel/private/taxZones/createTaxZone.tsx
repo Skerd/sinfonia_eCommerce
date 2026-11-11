@@ -13,7 +13,8 @@ export default createGenericCreatePage<CreateTaxZoneFormType>({
         name: "",
         country: "",
         priority: 0,
-        rates: [{name: "Default", rate: 0, isCompound: false, appliesTo: "all"}],
+        // One empty rate row to fill in (a zone needs at least one rate); every product is the usual scope.
+        rates: [{name: "", rate: 0, isCompound: false, appliesTo: "all"}],
     },
     successPath: "/tenancy/systemSettings/taxzones",
     submitIcon: <IconPlus />,

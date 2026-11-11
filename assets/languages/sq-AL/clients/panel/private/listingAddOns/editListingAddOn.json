@@ -21,9 +21,11 @@
     "priceAmountLabel": "Çmimi",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Valuta",
-    "currencyPlaceholder": "Monedha e shpalljes nëse lihet bosh",
+    "currencyPlaceholder": "Monedha e listimit nëse lihet bosh",
     "deliveryDaysLabel": "Ditë dorëzimi",
-    "deliveryDaysPlaceholder": "p.sh. 2"
+    "deliveryDaysPlaceholder": "p.sh. 2",
+    "basicsSectionTitle": "Të dhënat bazë",
+    "pricingSectionTitle": "Çmimet"
   },
   "axios": {
     "start": {

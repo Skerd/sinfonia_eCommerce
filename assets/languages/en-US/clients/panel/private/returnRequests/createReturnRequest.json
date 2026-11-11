@@ -33,7 +33,10 @@
       "received": "Received",
       "completed": "Completed"
     },
-    "orderAmountDescription": "In the order's currency."
+    "orderAmountDescription": "In the order's currency.",
+    "requestSectionTitle": "Request",
+    "notesSectionTitle": "Notes",
+    "typePlaceholder": "Return, exchange or refund"
   },
   "axios": {
     "start": {

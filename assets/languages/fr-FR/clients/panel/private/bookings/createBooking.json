@@ -12,11 +12,12 @@
     "orderLabel": "Commande",
     "orderPlaceholder": "Sélectionnez la commande",
     "startAtLabel": "Heure de début",
-    "startAtPlaceholder": "aaaa-MM-jjTHH:mm",
     "endAtLabel": "Heure de fin",
-    "endAtPlaceholder": "aaaa-MM-jjTHH:mm",
-    "timezoneLabel": "Fuseau horaire",
-    "timezonePlaceholder": "UTC"
+    "section": {
+      "order": "Commande",
+      "schedule": "Quand"
+    },
+    "providerHoursHint": "Les heures sont dans votre propre fuseau horaire. La réservation doit tomber dans les heures de travail du prestataire."
   },
   "axios": {
     "start": {

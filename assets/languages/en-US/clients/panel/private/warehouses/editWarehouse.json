@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "Record ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Warehouse name",
+    "namePlaceholder": "e.g. Main warehouse",
     "codeLabel": "Code",
-    "codePlaceholder": "Warehouse code",
+    "codePlaceholder": "e.g. WH-MAIN",
     "addressSectionTitle": "Address",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
@@ -23,7 +23,8 @@
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "Longitude"
+    "longitudePlaceholder": "Longitude",
+    "basicsSectionTitle": "Basics"
   },
   "axios": {
     "start": {

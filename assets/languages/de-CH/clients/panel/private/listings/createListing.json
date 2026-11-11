@@ -26,7 +26,7 @@
     "categoryLabel": "Kategorie",
     "categoryPlaceholder": "Kategorie wählen",
     "deliveryDaysLabel": "Lieferzeit (Tage)",
-    "deliveryDaysPlaceholder": "E.g. 3",
+    "deliveryDaysPlaceholder": "z. B. 3",
     "descriptionLabel": "Beschreibung",
     "faqAddRow": "FAQ hinzufügen",
     "faqAnswerLabel": "Antwort",
@@ -64,7 +64,9 @@
       "general": "Allgemein",
       "images": "Bilder",
       "location": "Standort",
-      "video": "Video"
+      "video": "Video",
+      "pricing": "Preise",
+      "details": "Details"
     },
     "statusLabel": "Status",
     "statusPlaceholder": "Status auswählen",
@@ -74,7 +76,9 @@
     "tagsSectionTitle": "Schlagwörter",
     "titleLabel": "Bezeichnung",
     "titlePlaceholder": "Inserattitel",
-    "videoGalleryLabel": "Video galerie"
+    "videoGalleryLabel": "Video galerie",
+    "pricePlaceholder": "z. B. 150",
+    "descriptionPlaceholder": "Was der Käufer erhält, wie und wann"
   },
   "formButtons": {
     "cancel": "Abbrechen",

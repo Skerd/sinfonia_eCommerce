@@ -36,7 +36,10 @@
       "received": "Pranuar",
       "completed": "Përfunduar"
     },
-    "orderAmountDescription": "Në monedhën e porosisë."
+    "orderAmountDescription": "Në monedhën e porosisë.",
+    "requestSectionTitle": "Kërkesa",
+    "notesSectionTitle": "Shënime",
+    "typePlaceholder": "Kthim, këmbim ose rimbursim"
   },
   "axios": {
     "start": {

@@ -8,7 +8,8 @@
     "nameLabel": "Emri",
     "namePlaceholder": "Emri i grupit",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Përshkrim opsional"
+    "descriptionPlaceholder": "Përshkrim opsional",
+    "generalSectionTitle": "Të përgjithshme"
   },
   "axios": {
     "start": {

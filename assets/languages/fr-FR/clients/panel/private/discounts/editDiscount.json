@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "Identifiant",
     "titleLabel": "Titre",
-    "titlePlaceholder": "Titre de la remise",
+    "titlePlaceholder": "ex. Soldes d'été",
     "codeLabel": "Code",
-    "codePlaceholder": "Code promo optionnel",
+    "codePlaceholder": "ex. ETE10",
     "typeLabel": "Type",
     "typePlaceholder": "Sélectionner le type",
     "appliesToLabel": "S'applique à",

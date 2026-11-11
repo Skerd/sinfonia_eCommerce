@@ -10,7 +10,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern änderungen"
+    "submit": "Änderungen speichern"
   },
   "form": {
     "idLabel": "Protokoll ID",
@@ -25,9 +25,12 @@
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung des Inserats, wenn leer",
     "deliveryDaysLabel": "Liefertage",
-    "deliveryDaysPlaceholder": "E.g. 3",
+    "deliveryDaysPlaceholder": "z. B. 3",
     "sortOrderLabel": "Anzeigereihenfolge",
-    "sortOrderPlaceholder": "E.g. 1"
+    "sortOrderPlaceholder": "z. B. 1",
+    "basicsSectionTitle": "Grunddaten",
+    "pricingSectionTitle": "Preise",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

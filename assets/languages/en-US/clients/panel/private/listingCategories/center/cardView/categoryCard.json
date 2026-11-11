@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/center/cardView/categoryCard.tsx",
-  "failedTitle": "Failed to load category",
+  "failedTitle": "Failed to load listing category",
   "failedDescription": "Tap to retry.",
   "name": "Name",
   "slug": "Slug",

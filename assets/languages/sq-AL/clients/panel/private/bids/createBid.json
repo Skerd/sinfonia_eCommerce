@@ -19,18 +19,23 @@
     "currencyIdLabel": "Valuta",
     "currencyIdPlaceholder": "Zgjidh valutën",
     "deliveryDaysLabel": "Ditë dorëzimi",
-    "deliveryDaysPlaceholder": "1",
+    "deliveryDaysPlaceholder": "p.sh. 7",
     "proposalLabel": "Propozimi",
     "proposalPlaceholder": "Përshkruani qasjen tuaj...",
-    "taskRequestIdLabel": "Kërkesë detyre",
-    "taskRequestIdPlaceholder": "Zgjidh kërkesën"
+    "taskRequestIdLabel": "Kërkesë për ofertë",
+    "taskRequestIdPlaceholder": "Zgjidh kërkesën",
+    "section": {
+      "taskRequest": "Kërkesë për ofertë",
+      "offer": "Oferta juaj"
+    },
+    "amountCurrencyDescription": "Në monedhën e kërkesës për ofertë."
   },
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Dërgo ofertën"
   },
   "formHeader": {
-    "description": "Dërgo ofertë për një kërkesë detyre.",
+    "description": "Dërgo ofertë për një kërkesë për ofertë.",
     "title": "Krijo ofertë"
   },
   "path": "src/modules/eCommerce/clients/panel/private/bids/createBid.tsx",

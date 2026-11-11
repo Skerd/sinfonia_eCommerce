@@ -60,6 +60,11 @@
         "transfer_out": "Trasferimento in uscita",
         "initial": "Iniziale",
         "write_off": "Storno"
+      },
+      "when": {
+        "today": "Oggi",
+        "thisWeek": "Questa settimana",
+        "older": "Precedenti"
       }
     },
     "inventory": "Inventario",
@@ -85,6 +90,7 @@
     "createdAt": "Creato il",
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "when": "Quando"
   }
 }

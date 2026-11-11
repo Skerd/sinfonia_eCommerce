@@ -3,7 +3,7 @@
   "title": "Create POS config",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Register name",
+    "namePlaceholder": "e.g. Front counter",
     "paymentMethodsLabel": "Payment methods",
     "managersLabel": "Managers",
     "warehousesLabel": "Warehouses",
@@ -31,7 +31,11 @@
     "selectPaymentMethod": "Select payment method",
     "removePaymentMethod": "Remove payment method",
     "selectManager": "Select manager",
-    "removeManager": "Remove manager"
+    "removeManager": "Remove manager",
+    "basicsSectionTitle": "Basics",
+    "sellingSectionTitle": "Stock and payments",
+    "managersSectionTitle": "Managers",
+    "receiptSectionTitle": "Receipt"
   },
   "axios": {
     "start": {
@@ -49,7 +53,7 @@
   },
   "formHeader": {
     "title": "Create POS config",
-    "description": "Set up a shop till: fiscal config, warehouses, payment methods, receipt text, and till rules."
+    "description": "Set up a POS config: fiscal config, warehouses, payment methods, receipt text, and till rules."
   },
   "formButtons": {
     "cancel": "Cancel",

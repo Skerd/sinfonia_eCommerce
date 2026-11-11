@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingAddOn": "Krijo shtesë",
+  "createListingAddOn": "Krijo shtesë listimi",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",

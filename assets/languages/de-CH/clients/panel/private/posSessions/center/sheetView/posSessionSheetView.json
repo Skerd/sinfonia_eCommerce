@@ -51,5 +51,11 @@
   },
   "posOrders": "POS-Bestellungen",
   "posOrder": "POS-Bestellung",
-  "typeLabel": "Kassensitzung"
+  "typeLabel": "Kassensitzung",
+  "posOrderState": {
+    "draft": "Entwurf",
+    "paid": "Bezahlt",
+    "cancel": "Storniert",
+    "refunded": "Erstattet"
+  }
 }

@@ -6,7 +6,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Zusatzleistung erstellen"
+    "submit": "Inserat-Zusatzleistung erstellen"
   },
   "form": {
     "listingIdLabel": "Inserat",
@@ -18,7 +18,9 @@
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung des Inserats, wenn leer",
     "deliveryDaysLabel": "Liefertage",
-    "deliveryDaysPlaceholder": "E.g. 2"
+    "deliveryDaysPlaceholder": "z. B. 2",
+    "basicsSectionTitle": "Grunddaten",
+    "pricingSectionTitle": "Preise"
   },
   "axios": {
     "start": {

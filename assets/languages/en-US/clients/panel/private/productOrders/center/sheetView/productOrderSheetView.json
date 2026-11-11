@@ -10,14 +10,12 @@
   "items": "Line items",
   "shippingAddress": "Shipping address",
   "billingAddress": "Billing address",
-  "totals": "Totals",
   "shippingRate": "Shipping rate",
   "appliedDiscounts": "Applied discounts",
   "taxBreakdown": "Tax breakdown",
   "giftCard": "Gift card",
   "notes": "Notes",
   "timeline": "Timeline",
-  "payment": "Payment",
   "lifecycle": "Lifecycle",
   "paymentTransactions": "Payment transactions",
   "paymentTransaction": "Transaction",
@@ -32,7 +30,6 @@
   "company": "Company",
   "email": "Email",
   "phone": "Phone",
-  "currency": "Currency",
   "createdAt": "Created at",
   "updatedAt": "Updated at",
   "createdBy": "Created by",
@@ -57,16 +54,9 @@
   "discount": "Discount",
   "discountAmount": "Amount",
   "giftCardRef": "Gift card",
-  "giftCardCode": "Code",
   "giftCardAmount": "Amount applied",
   "internalNotes": "Internal notes",
-  "stripePaymentIntentId": "Stripe payment intent",
-  "idempotencyKey": "Idempotency key",
   "itemProduct": "Product",
-  "itemVariant": "Variant",
-  "itemSnapshotTitle": "Snapshot title",
-  "itemSnapshotSku": "Snapshot SKU",
-  "itemSnapshotVariantLabel": "Options",
   "itemQuantity": "Quantity",
   "itemUnitPrice": "Unit price",
   "itemTotalPrice": "Line total",
@@ -152,5 +142,23 @@
   "fulfillment": "Fulfillment",
   "returnRequests": "Return requests",
   "returnRequest": "Return request",
-  "typeLabel": "Order"
+  "typeLabel": "Product order",
+  "fulfillmentStatusValues": {
+    "pending": "Pending",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "failed": "Failed"
+  },
+  "returnRequestStatusValues": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "received": "Received",
+    "completed": "Completed"
+  },
+  "returnRequestTypeValues": {
+    "return": "Return",
+    "exchange": "Exchange",
+    "refund": "Refund"
+  }
 }

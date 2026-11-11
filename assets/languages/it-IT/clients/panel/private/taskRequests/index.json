@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
-  "title": "Richieste di attività",
+  "title": "Richieste di preventivo",
   "description": "Pubblica e gestisci le richieste degli acquirenti per preventivi, lavori personalizzati o appalti.",
   "help": {
-    "ariaLabel": "Informazioni sulle richieste di attività",
-    "title": "Informazioni sulle richieste di attività",
-    "overview": "Una richiesta di attività è il brief di un acquirente che chiede preventivi ai fornitori: cosa gli serve, in quale categoria e dove, con quale budget. Resta aperta alle offerte per 30 giorni. Accettare un’offerta la assegna e apre un ordine.",
+    "ariaLabel": "Informazioni sulle richieste di preventivo",
+    "title": "Informazioni sulle richieste di preventivo",
+    "overview": "Una richiesta di preventivo è il brief di un acquirente che chiede preventivi ai fornitori: cosa gli serve, in quale categoria e dove, con quale budget. Resta aperta alle offerte per 30 giorni. Accettare un’offerta la assegna e apre un ordine.",
     "sections": [
       {
         "title": "Campi",
@@ -42,7 +42,7 @@
       }
     ]
   },
-  "createTaskRequest": "Crea richiesta di attività",
+  "createTaskRequest": "Crea richiesta di preventivo",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "title": "Titolo",

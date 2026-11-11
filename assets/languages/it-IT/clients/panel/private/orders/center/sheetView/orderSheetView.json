@@ -5,7 +5,7 @@
   "listing": {
     "title": "Annuncio"
   },
-  "taskRequest": "Richiesta di attività",
+  "taskRequest": "Richiesta di preventivo",
   "bid": "Offerta",
   "customer": "Cliente",
   "provider": "Fornitore",
@@ -34,5 +34,22 @@
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "milestone": "Milestone",
+  "delivery": "Consegna",
+  "revision": "Richiesta di revisione",
+  "orderMilestoneStatus": {
+    "pending": "In sospeso",
+    "released": "Rilasciata",
+    "delivered": "Consegnata"
+  },
+  "orderDeliveryStatus": {
+    "submitted": "Inviata",
+    "accepted": "Accettata",
+    "revision_requested": "Revisione richiesta"
+  },
+  "orderRevisionStatus": {
+    "pending": "In sospeso",
+    "completed": "Gestita"
+  }
 }

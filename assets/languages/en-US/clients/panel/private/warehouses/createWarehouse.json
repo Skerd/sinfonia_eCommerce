@@ -3,9 +3,9 @@
   "title": "Create warehouse",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Warehouse name",
+    "namePlaceholder": "e.g. Main warehouse",
     "codeLabel": "Code",
-    "codePlaceholder": "Warehouse code",
+    "codePlaceholder": "e.g. WH-MAIN",
     "addressSectionTitle": "Address",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
@@ -20,7 +20,8 @@
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "Longitude"
+    "longitudePlaceholder": "Longitude",
+    "basicsSectionTitle": "Basics"
   },
   "axios": {
     "start": {
@@ -38,7 +39,7 @@
   },
   "formHeader": {
     "title": "Create warehouse",
-    "description": "Add a stock location with address and map pin."
+    "description": "Add a stock location with its address; place the pin on the map if you know it."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -54,7 +54,7 @@ export default function PosSessionOrdersDialog({
                                 <div className="min-w-0 flex-1">
                                     <div className="truncate text-sm font-semibold">{order.name}</div>
                                     <div className="text-2xs tabular-nums text-muted-foreground">
-                                        {order.state} · {money(order.amountTotal ?? 0)}
+                                        {rk(`orderState.${order.state}`)} · {money(order.amountTotal ?? 0)}
                                         {Number(order.amountRefunded ?? 0) > 0
                                             ? ` · −${money(order.amountRefunded ?? 0)}`
                                             : ""}

@@ -2,34 +2,36 @@
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/createCategory.tsx",
   "form": {
     "nameLabel": "Emri",
-    "namePlaceholder": "Emri i kategorisë",
+    "namePlaceholder": "p.sh. Pastrim shtëpie",
     "parentListingCategoryLabel": "Kategoria prind",
-    "parentListingCategoryPlaceholder": "Opsionale",
+    "parentListingCategoryPlaceholder": "Nivel kryesor nëse lihet bosh",
     "orderLabel": "Rendi",
     "orderPlaceholder": "0",
-    "createCategoryTitle": "Krijo kategori",
-    "createCategoryDescription": "Shtoni një kategori për të organizuar produktet në katalog."
+    "createCategoryTitle": "Krijo kategori listimi",
+    "createCategoryDescription": "Shtoni një kategori që grupon listimet dhe kërkesat për detyra të tregut.",
+    "basicsSectionTitle": "Të dhënat bazë",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {
-      "title": "Duke krijuar kategorinë",
+      "title": "Duke krijuar kategorinë e listimit",
       "time": 3000
     },
     "success": {
-      "title": "Kategoria u krijua",
+      "title": "Kategoria e listimit u krijua",
       "time": 3000
     },
     "error": {
-      "title": "Nuk u krijua dot kategoria",
+      "title": "Kategoria e listimit nuk u krijua dot",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Krijo kategori",
-    "description": "Shtoni një kategori për të organizuar produktet në katalog."
+    "title": "Krijo kategori listimi",
+    "description": "Shtoni një kategori që grupon listimet dhe kërkesat për detyra të tregut."
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo kategori"
+    "submit": "Krijo kategori listimi"
   }
 }

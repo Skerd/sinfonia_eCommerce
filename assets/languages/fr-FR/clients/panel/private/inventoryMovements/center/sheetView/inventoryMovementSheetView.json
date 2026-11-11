@@ -44,5 +44,6 @@
     "PosOrder": "Commande PDV",
     "Checkout": "Paiement"
   },
-  "typeLabel": "Mouvement de stock"
+  "typeLabel": "Mouvement de stock",
+  "receiving": "Réception"
 }

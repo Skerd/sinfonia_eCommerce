@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
-  "title": "Demandes de tâches",
+  "title": "Demandes de devis",
   "description": "Publiez et gérez les demandes des acheteurs pour des devis, des travaux personnalisés ou des achats.",
   "help": {
-    "ariaLabel": "À propos des demandes de tâches",
-    "title": "À propos des demandes de tâches",
-    "overview": "Une demande de tâche est le brief d’un acheteur qui demande des devis aux prestataires : ce dont il a besoin, dans quelle catégorie et à quel endroit, pour quel budget. Elle reste ouverte aux offres pendant 30 jours. Accepter une offre l’attribue et ouvre une commande.",
+    "ariaLabel": "À propos des demandes de devis",
+    "title": "À propos des demandes de devis",
+    "overview": "Une demande de devis est le brief d’un acheteur qui demande des devis aux prestataires : ce dont il a besoin, dans quelle catégorie et à quel endroit, pour quel budget. Elle reste ouverte aux offres pendant 30 jours. Accepter une offre l’attribue et ouvre une commande.",
     "sections": [
       {
         "title": "Champs",
@@ -42,7 +42,7 @@
       }
     ]
   },
-  "createTaskRequest": "Créer une demande de tâche",
+  "createTaskRequest": "Créer une demande de devis",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "title": "Titre",

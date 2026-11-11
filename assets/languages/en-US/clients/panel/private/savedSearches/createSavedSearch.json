@@ -23,12 +23,22 @@
     },
     "categoryIdsLabel": "Categories",
     "selectCategory": "Select a category",
-    "removeCategory": "Remove category"
+    "removeCategory": "Remove category",
+    "basicsSectionTitle": "Basics"
   },
   "axios": {
-    "start": {"title": "Creating saved search", "time": 3000},
-    "success": {"title": "Saved search created", "time": 3000},
-    "error": {"title": "Could not create saved search", "time": 3000}
+    "start": {
+      "title": "Creating saved search",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved search created",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create saved search",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Create saved search",

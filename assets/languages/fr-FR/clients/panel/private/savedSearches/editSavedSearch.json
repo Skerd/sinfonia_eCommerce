@@ -26,12 +26,22 @@
     },
     "categoryIdsLabel": "Catégories",
     "selectCategory": "Sélectionner une catégorie",
-    "removeCategory": "Retirer la catégorie"
+    "removeCategory": "Retirer la catégorie",
+    "basicsSectionTitle": "Informations de base"
   },
   "axios": {
-    "start": {"title": "Enregistrement de la recherche", "time": 3000},
-    "success": {"title": "Recherche mise à jour", "time": 3000},
-    "error": {"title": "Impossible de mettre à jour la recherche", "time": 3000}
+    "start": {
+      "title": "Enregistrement de la recherche",
+      "time": 3000
+    },
+    "success": {
+      "title": "Recherche mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la recherche",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Modifier la recherche enregistrée",

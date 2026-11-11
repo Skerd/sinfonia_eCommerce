@@ -35,5 +35,24 @@
     "models": "Graphe des modèles",
     "flows": "Comment ça marche",
     "capabilities": "Capacités"
+  },
+  "nodes": {
+    "ListingCategory": "Catégorie d'annonce",
+    "ProviderProfile": "Profil de prestataire",
+    "Listing": "Annonce",
+    "ListingPackage": "Package d'annonce",
+    "ListingAddOn": "Module complémentaire d'annonce",
+    "ListingFlag": "Signalement d'annonce",
+    "Promotion": "Promotion",
+    "TaskRequest": "Demande de tâche",
+    "Bid": "Offre",
+    "MarketplaceOrder": "Commande",
+    "Booking": "Réservation",
+    "Dispute": "Litige",
+    "Review": "Avis",
+    "EscrowTransaction": "Transaction séquestre",
+    "OrderMilestone": "Jalon de commande",
+    "OrderDelivery": "Livraison de commande",
+    "OrderRevision": "Révision de commande"
   }
 }

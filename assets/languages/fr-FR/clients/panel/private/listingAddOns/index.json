@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingAddOn": "Créer un module complémentaire",
+  "createListingAddOn": "Créer un module complémentaire d'annonce",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",

@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "Protokoll ID",
     "titleLabel": "Bezeichnung",
-    "titlePlaceholder": "Rabattbezeichnung",
+    "titlePlaceholder": "z. B. Sommerschlussverkauf",
     "codeLabel": "Code",
-    "codePlaceholder": "Optionaler Promo-Code",
+    "codePlaceholder": "z. B. SOMMER10",
     "typeLabel": "Typ",
     "typePlaceholder": "Typ auswählen",
     "appliesToLabel": "Gilt für",

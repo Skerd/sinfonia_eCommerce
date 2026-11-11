@@ -3,9 +3,9 @@
   "title": "Crea sconto",
   "form": {
     "titleLabel": "Titolo",
-    "titlePlaceholder": "Titolo dello sconto",
+    "titlePlaceholder": "es. Saldi estivi",
     "codeLabel": "Codice",
-    "codePlaceholder": "Codice promozionale opzionale",
+    "codePlaceholder": "es. ESTATE10",
     "typeLabel": "Tipo",
     "typePlaceholder": "Seleziona il tipo",
     "appliesToLabel": "Si applica a",

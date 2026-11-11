@@ -64,7 +64,16 @@
     "deliveryDueDate": "Data di scadenza",
     "createdAt": "Creato",
     "deletedAt": "Eliminato",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "accepted": "Accettato",
+        "in_progress": "In corso",
+        "completed": "Completato",
+        "cancelled": "Annullato"
+      }
+    }
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {

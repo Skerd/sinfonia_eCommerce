@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/promotions/center/cardView/promotionCard.tsx",
-  "failedTitle": "Dështoi ngarkimi i promocionit",
-  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të promocionit. Klikoni për të provuar përsëri.",
+  "failedTitle": "Dështoi ngarkimi i promovimit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të promovimit. Klikoni për të provuar përsëri.",
   "activePeriod": "Aktive",
   "listing": "Listimi",
   "type": "Lloji",

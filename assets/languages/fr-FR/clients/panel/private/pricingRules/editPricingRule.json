@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de la règle de tarification",
+    "namePlaceholder": "ex. Prix de gros",
     "typeLabel": "Type",
     "typePlaceholder": "Sélectionner le type",
     "appliesToLabel": "S'applique à",
@@ -51,7 +51,9 @@
       "customer_group": "Groupes de clients"
     },
     "valueDescription": "Un pourcentage, ou un montant dans la devise de la boutique pour une remise fixe.",
-    "shopAmountDescription": "Dans la devise de la boutique (la première devise de l'entreprise)."
+    "shopAmountDescription": "Dans la devise de la boutique (la première devise de l'entreprise).",
+    "visibilitySectionTitle": "Visibilité",
+    "priorityDescription": "Quand plusieurs règles s'appliquent à une ligne, la priorité la plus élevée est testée en premier."
   },
   "axios": {
     "start": {

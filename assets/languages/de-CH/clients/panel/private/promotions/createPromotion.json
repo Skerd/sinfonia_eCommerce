@@ -19,7 +19,9 @@
     "startAtLabel": "Startdatum & -zeit",
     "startAtPlaceholder": "Beginn der Promotion",
     "endAtLabel": "Enddatum & -zeit",
-    "endAtPlaceholder": "Ende der Promotion"
+    "endAtPlaceholder": "Ende der Promotion",
+    "promotionSectionTitle": "Promotion",
+    "scheduleSectionTitle": "Zeitraum"
   },
   "axios": {
     "start": {

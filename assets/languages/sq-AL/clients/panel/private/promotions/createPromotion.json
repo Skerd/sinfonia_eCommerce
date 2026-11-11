@@ -1,37 +1,39 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/promotions/createPromotion.tsx",
   "formHeader": {
-    "title": "Krijo promocion",
+    "title": "Krijo promovim",
     "description": "Rrit dukshmërinë e një listimi me promovim të veçuar ose të sponsorizuar."
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo promocionin"
+    "submit": "Krijo promovimin"
   },
   "form": {
     "listingLabel": "Listimi",
     "listingPlaceholder": "Zgjidh listimin",
-    "typeLabel": "Lloji i promocionit",
-    "promotionTypeLabel": "Lloji i promocionit",
-    "promotionTypePlaceholder": "Zgjidh llojin e promocionit",
+    "typeLabel": "Lloji i promovimit",
+    "promotionTypeLabel": "Lloji i promovimit",
+    "promotionTypePlaceholder": "Zgjidh llojin e promovimit",
     "promotionTypeFeatured": "I veçuar",
     "promotionTypeSponsored": "I sponsorizuar",
     "startAtLabel": "Data dhe ora e fillimit",
-    "startAtPlaceholder": "Fillimi i promocionit",
+    "startAtPlaceholder": "Fillimi i promovimit",
     "endAtLabel": "Data dhe ora e mbarimit",
-    "endAtPlaceholder": "Mbarimi i promocionit"
+    "endAtPlaceholder": "Mbarimi i promovimit",
+    "promotionSectionTitle": "Promovimi",
+    "scheduleSectionTitle": "Periudha"
   },
   "axios": {
     "start": {
-      "title": "Duke krijuar promocionin",
+      "title": "Duke krijuar promovimin",
       "time": 3000
     },
     "success": {
-      "title": "Promocioni u krijua",
+      "title": "Promovimi u krijua",
       "time": 3000
     },
     "error": {
-      "title": "Nuk u krijua promocioni",
+      "title": "Nuk u krijua promovimi",
       "time": 3000
     }
   }

@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Créer le profil"
+    "submit": "Créer un profil de prestataire"
   },
   "form": {
     "userLabel": "Utilisateur",
@@ -19,7 +19,7 @@
     "bioPlaceholder": "Parlez de vous aux clients...",
     "portfolioLabel": "Images du portfolio",
     "timezoneLabel": "Fuseau horaire",
-    "timezonePlaceholder": "p. ex. Europe/Zurich (vide : fuseau de l'entreprise)",
+    "timezonePlaceholder": "Fuseau horaire de l'entreprise si vide",
     "section": {
       "profile": "Profil",
       "availability": "Disponibilité hebdomadaire",

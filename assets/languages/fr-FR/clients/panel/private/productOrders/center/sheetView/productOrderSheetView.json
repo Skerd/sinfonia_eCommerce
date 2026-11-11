@@ -10,14 +10,12 @@
   "items": "Lignes de commande",
   "shippingAddress": "Adresse de livraison",
   "billingAddress": "Adresse de facturation",
-  "totals": "Totaux",
   "shippingRate": "Tarif d'expédition",
   "appliedDiscounts": "Remises appliquées",
   "taxBreakdown": "Détail des taxes",
   "giftCard": "Carte cadeau",
   "notes": "Notes",
   "timeline": "Chronologie",
-  "payment": "Paiement",
   "lifecycle": "Cycle de vie",
   "paymentTransactions": "Opérations de paiement",
   "paymentTransaction": "Opération",
@@ -32,7 +30,6 @@
   "company": "Entreprise",
   "email": "E-mail",
   "phone": "Téléphone",
-  "currency": "Devise",
   "createdAt": "Créé le",
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
@@ -57,16 +54,9 @@
   "discount": "Remise",
   "discountAmount": "Montant",
   "giftCardRef": "Carte cadeau",
-  "giftCardCode": "Code",
   "giftCardAmount": "Montant appliqué",
   "internalNotes": "Notes internes",
-  "stripePaymentIntentId": "Intention de paiement Stripe",
-  "idempotencyKey": "Clé d'idempotence",
   "itemProduct": "Produit",
-  "itemVariant": "Variante",
-  "itemSnapshotTitle": "Titre de l'instantané",
-  "itemSnapshotSku": "SKU de l'instantané",
-  "itemSnapshotVariantLabel": "Options",
   "itemQuantity": "Quantité",
   "itemUnitPrice": "Prix unitaire",
   "itemTotalPrice": "Total de la ligne",
@@ -152,5 +142,23 @@
   "fulfillment": "Expédition",
   "returnRequests": "Retours",
   "returnRequest": "Retour",
-  "typeLabel": "Commande"
+  "typeLabel": "Commande de produits",
+  "fulfillmentStatusValues": {
+    "pending": "En attente",
+    "shipped": "Expédié",
+    "delivered": "Livré",
+    "failed": "Échoué"
+  },
+  "returnRequestStatusValues": {
+    "pending": "En attente",
+    "approved": "Approuvée",
+    "rejected": "Rejeté",
+    "received": "Reçu",
+    "completed": "Terminé"
+  },
+  "returnRequestTypeValues": {
+    "return": "Retour",
+    "exchange": "Échange",
+    "refund": "Remboursement"
+  }
 }

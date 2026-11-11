@@ -11,6 +11,7 @@
     "receiptNumberLabel": "Receipt / delivery note #",
     "occurredAtLabel": "Date received",
     "unitCostLabel": "Unit cost",
+    "unitCostHint": "In the shop currency (the company's first currency).",
     "batchLotLabel": "Batch / lot",
     "expiryDateLabel": "Expiry date",
     "receiptsLabel": "Receipt attachments",

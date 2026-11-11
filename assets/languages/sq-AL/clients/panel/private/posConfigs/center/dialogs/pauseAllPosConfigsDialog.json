@@ -1,15 +1,15 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pauseAllPosConfigsDialog.tsx",
-  "title": "Të pauzohen të gjitha arkat POS?",
-  "description": "Aplikon një kyç në nivel kompanie. Seancat e hapura mbyllen me forcë (porositë e mbajtura anulohen, cash-i vendoset te shuma e pritur). Arkat e reja të krijuara gjatë kyçit nuk mund të shesin derisa të zgjidhet «Rifillo të gjitha». Arkat e pauzuara individualisht mbeten në pauzë. Anulimet në terminal bëhen sipas mundësisë.",
+  "title": "Të pauzohen të gjitha konfigurimet POS?",
+  "description": "Vendos një kyç për gjithë kompaninë. Seancat e hapura mbyllen me forcë (shportat e pezulluara anulohen, paratë vendosen në shumën e pritur). Edhe konfigurimet e reja POS të krijuara gjatë kyçit nuk mund të shesin deri te «Rifillo të gjitha». Konfigurimet POS të pauzuara individualisht mbeten në pauzë. Anulimet në terminal bëhen sipas mundësisë.",
   "reasonLabel": "Arsyeja (opsionale)",
   "reasonPlaceholder": "p.sh. Ndërprerje fiskale / rrjeti",
   "cancel": "Anulo",
   "confirm": "Pauzo të gjitha",
   "busy": "Duke punuar…",
   "axios": {
-    "start": {"title": "Duke pauzuar të gjitha arkat…", "time": 3000},
-    "success": {"title": "Të gjitha arkat u pauzuan", "time": 3000},
-    "error": {"title": "Nuk u pauzuan të gjitha arkat", "time": 3000}
+    "start": {"title": "Të gjitha konfigurimet POS po pauzohen…", "time": 3000},
+    "success": {"title": "Të gjitha konfigurimet POS u pauzuan", "time": 3000},
+    "error": {"title": "Konfigurimet POS nuk mund të pauzoheshin", "time": 3000}
   }
 }

@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/index.tsx",
-  "title": "Kërkesat për detyra",
+  "title": "Kërkesat për ofertë",
   "description": "Publikoni dhe menaxhoni kërkesat e blerësit për oferta, punë me porosi ose prokurim.",
   "help": {
-    "ariaLabel": "Rreth kërkesave të detyrave",
-    "title": "Rreth kërkesave të detyrave",
-    "overview": "Një kërkesë për detyrë është përshkrimi i një blerësi që u kërkon oferta ofruesve: çfarë i duhet, në cilën kategori dhe vend, me çfarë buxheti. Mbetet e hapur për oferta 30 ditë. Pranimi i një oferte e cakton dhe hap një porosi.",
+    "ariaLabel": "Rreth kërkesave për ofertë",
+    "title": "Rreth kërkesave për ofertë",
+    "overview": "Një kërkesë për ofertë është përshkrimi i një blerësi që u kërkon oferta ofruesve: çfarë i duhet, në cilën kategori dhe vend, me çfarë buxheti. Mbetet e hapur për oferta 30 ditë. Pranimi i një oferte e cakton dhe hap një porosi.",
     "sections": [
       {
         "title": "Fushat",
@@ -42,7 +42,7 @@
       }
     ]
   },
-  "createTaskRequest": "Krijo kërkesë detyre",
+  "createTaskRequest": "Krijo kërkesë për ofertë",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "title": "Titulli",

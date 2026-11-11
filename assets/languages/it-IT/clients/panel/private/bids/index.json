@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Offerte",
-  "description": "Visualizza e gestisci le offerte sulle richieste di attività.",
+  "description": "Visualizza e gestisci le offerte sulle richieste di preventivo.",
   "help": {
     "ariaLabel": "Informazioni sulle offerte",
     "title": "Informazioni sulle offerte",
-    "overview": "Un’offerta è il preventivo di un fornitore su una richiesta di attività: importo, giorni di consegna e una proposta scritta. Il richiedente accetta un’offerta, che assegna l’attività e apre un ordine.",
+    "overview": "Un’offerta è il preventivo di un fornitore su una richiesta di preventivo: importo, giorni di consegna e una proposta scritta. Il richiedente accetta un’offerta, che assegna l’attività e apre un ordine.",
     "sections": [
       {
         "title": "Fare un’offerta",
         "items": [
-          "La richiesta di attività deve essere aperta, non scaduta e di qualcun altro.",
+          "La richiesta di preventivo deve essere aperta, non scaduta e di qualcun altro.",
           "Un’offerta attiva per offerente e richiesta. Offerente e valuta sono impostati dal server, dal chiamante e dalla richiesta.",
           "Le offerte non si modificano dopo l’invio; ritirala e fanne una nuova."
         ]
@@ -41,8 +41,15 @@
     "deliveryDays": "Giorni di consegna",
     "status": "Stato",
     "bidder": "Offerente",
-    "taskRequest": "Richiesta di attività",
-    "createdAt": "Creato"
+    "taskRequest": "Richiesta di preventivo",
+    "createdAt": "Creato",
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "accepted": "Accettata",
+        "rejected": "Rifiutata"
+      }
+    }
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {

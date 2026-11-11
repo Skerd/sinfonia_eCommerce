@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/taxZones/index.tsx",
-  "title": "Tax Zones",
+  "title": "Tax zones",
   "description": "Configure tax rates by country and region.",
   "help": {
-    "ariaLabel": "About Tax Zones",
-    "title": "About Tax Zones",
+    "ariaLabel": "About tax zones",
+    "title": "About tax zones",
     "overview": "Tax zones decide the tax charged at checkout and the VAT share inside till prices. A zone covers one country, optionally narrowed to states and postal codes, and holds one or more named rates.",
     "sections": [
       {

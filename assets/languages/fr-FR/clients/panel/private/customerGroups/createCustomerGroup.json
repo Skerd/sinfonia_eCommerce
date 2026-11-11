@@ -5,7 +5,8 @@
     "nameLabel": "Nom",
     "namePlaceholder": "Nom du groupe",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Description facultative"
+    "descriptionPlaceholder": "Description facultative",
+    "generalSectionTitle": "Général"
   },
   "axios": {
     "start": {

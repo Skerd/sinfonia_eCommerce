@@ -11,7 +11,6 @@ export default createGenericCreatePage<CreatePricingRuleFormType>({
     schema: createPricingRuleFormSchema,
     defaultValues: {
         name: "",
-        type: "percentage_discount",
         value: 0,
         appliesTo: "all",
         priority: 0,

@@ -19,11 +19,16 @@
     "currencyIdLabel": "Währung",
     "currencyIdPlaceholder": "Währung auswählen",
     "deliveryDaysLabel": "Liefertage",
-    "deliveryDaysPlaceholder": "1",
+    "deliveryDaysPlaceholder": "z. B. 7",
     "proposalLabel": "Vorschlag",
     "proposalPlaceholder": "Beschreiben Sie Ihr Vorgehen...",
     "taskRequestIdLabel": "Ausschreibung",
-    "taskRequestIdPlaceholder": "Ausschreibung auswählen"
+    "taskRequestIdPlaceholder": "Ausschreibung auswählen",
+    "section": {
+      "taskRequest": "Ausschreibung",
+      "offer": "Ihre Offerte"
+    },
+    "amountCurrencyDescription": "In der Währung der Ausschreibung."
   },
   "formButtons": {
     "cancel": "Abbrechen",

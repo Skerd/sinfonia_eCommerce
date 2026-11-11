@@ -1,13 +1,13 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
-  "title": "Resume all POS tills?",
-  "description": "Clears the company-wide lock only. Tills paused individually stay paused. Cashiers on unlocked tills must open a new session to sell again.",
+  "title": "Resume all POS configs?",
+  "description": "Clears the company-wide lock only. POS configs paused individually stay paused. Cashiers on unlocked POS configs must open a new session to sell again.",
   "cancel": "Cancel",
   "confirm": "Resume all",
   "busy": "Working…",
   "axios": {
-    "start": {"title": "Resuming all POS tills…", "time": 3000},
-    "success": {"title": "All POS tills resumed", "time": 3000},
-    "error": {"title": "Could not resume all POS tills", "time": 3000}
+    "start": {"title": "Resuming all POS configs…", "time": 3000},
+    "success": {"title": "All POS configs resumed", "time": 3000},
+    "error": {"title": "Could not resume all POS configs", "time": 3000}
   }
 }

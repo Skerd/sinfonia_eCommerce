@@ -5,7 +5,7 @@
   "listing": {
     "title": "Annonce"
   },
-  "taskRequest": "Demande de tâche",
+  "taskRequest": "Demande de devis",
   "bid": "Offre",
   "customer": "Client",
   "provider": "Prestataire",
@@ -34,5 +34,22 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "milestone": "Étape",
+  "delivery": "Livraison",
+  "revision": "Demande de révision",
+  "orderMilestoneStatus": {
+    "pending": "En attente",
+    "released": "Libérée",
+    "delivered": "Livrée"
+  },
+  "orderDeliveryStatus": {
+    "submitted": "Soumise",
+    "accepted": "Acceptée",
+    "revision_requested": "Révision demandée"
+  },
+  "orderRevisionStatus": {
+    "pending": "En attente",
+    "completed": "Traitée"
+  }
 }

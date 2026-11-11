@@ -3,9 +3,9 @@
   "title": "Krijo zbritje",
   "form": {
     "titleLabel": "Titulli",
-    "titlePlaceholder": "Titulli i zbritjes",
+    "titlePlaceholder": "p.sh. Ulje vere",
     "codeLabel": "Kodi",
-    "codePlaceholder": "Kod promocional opsional",
+    "codePlaceholder": "p.sh. VERA10",
     "typeLabel": "Lloji",
     "typePlaceholder": "Zgjidh llojin",
     "appliesToLabel": "Aplikohet te",

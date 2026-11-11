@@ -44,5 +44,6 @@
     "PosOrder": "Porosia POS",
     "Checkout": "Pagesa"
   },
-  "typeLabel": "Lëvizje stoku"
+  "typeLabel": "Lëvizje stoku",
+  "receiving": "Pranimi"
 }

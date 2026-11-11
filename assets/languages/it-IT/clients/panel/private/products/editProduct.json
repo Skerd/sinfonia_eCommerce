@@ -247,7 +247,9 @@
     "bundleComponentProductPlaceholder": "Seleziona il prodotto",
     "bundleComponentQuantityPlaceholder": "1",
     "downloadLimitPlaceholder": "ad es. 3",
-    "downloadExpiryDaysPlaceholder": "ad es. 30"
+    "downloadExpiryDaysPlaceholder": "ad es. 30",
+    "visibilitySectionTitle": "Visibilità",
+    "digitalDeliverySectionTitle": "Consegna digitale"
   },
   "axios": {
     "start": {

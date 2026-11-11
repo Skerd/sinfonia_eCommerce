@@ -35,7 +35,15 @@
     "status": "Statusi",
     "createdAt": "Krijuar",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "when": "Kur",
+    "!enums": {
+      "when": {
+        "upcoming": "Të ardhshme",
+        "today": "Sot",
+        "past": "Të kaluara"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "status": {

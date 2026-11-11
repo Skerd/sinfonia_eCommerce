@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Profil erstellen"
+    "submit": "Anbieterprofil erstellen"
   },
   "form": {
     "userLabel": "Benutzer",
@@ -19,7 +19,7 @@
     "bioPlaceholder": "Erzählen Sie Ihren Kunden etwas über sich...",
     "portfolioLabel": "Portfoliobilder",
     "timezoneLabel": "Zeitzone",
-    "timezonePlaceholder": "z. B. Europe/Zurich (leer: Zeitzone der Firma)",
+    "timezonePlaceholder": "Zeitzone der Firma, wenn leer",
     "section": {
       "profile": "Profil",
       "availability": "Wöchentliche Verfügbarkeit",

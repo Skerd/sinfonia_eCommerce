@@ -69,7 +69,9 @@
       "general": "Të përgjithshme",
       "images": "Imazhet",
       "location": "Vendndodhja",
-      "video": "Video"
+      "video": "Video",
+      "pricing": "Çmimet",
+      "details": "Detajet"
     },
     "statusLabel": "Statusi",
     "statusPlaceholder": "Zgjidh statusin",
@@ -79,7 +81,9 @@
     "tagsSectionTitle": "Etiketat",
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titulli i listimit",
-    "videoGalleryLabel": "Galeria e videove"
+    "videoGalleryLabel": "Galeria e videove",
+    "pricePlaceholder": "p.sh. 150",
+    "descriptionPlaceholder": "Çfarë merr blerësi, si dhe kur"
   },
   "formButtons": {
     "cancel": "Anulo",

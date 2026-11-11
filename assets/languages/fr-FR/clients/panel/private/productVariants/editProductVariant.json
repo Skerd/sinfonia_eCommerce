@@ -47,7 +47,8 @@
     "variantStatus": {
       "active": "Actif",
       "inactive": "Inactif"
-    }
+    },
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {

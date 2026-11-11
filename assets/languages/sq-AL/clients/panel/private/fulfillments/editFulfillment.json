@@ -9,9 +9,9 @@
     "orderPlaceholder": "Zgjidh porosinë",
     "statusLabel": "Statusi",
     "carrierLabel": "Transportuesi",
-    "carrierPlaceholder": "Emri i transportuesit",
+    "carrierPlaceholder": "p.sh. Posta Shqiptare",
     "trackingNumberLabel": "Numri i gjurmimit",
-    "trackingNumberPlaceholder": "Numri i gjurmimit",
+    "trackingNumberPlaceholder": "p.sh. RR123456789AL",
     "trackingUrlLabel": "URL e gjurmimit",
     "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Dërguar më",
@@ -31,7 +31,9 @@
       "shipped": "Dërguar",
       "delivered": "Dorëzuar",
       "failed": "Dështoi"
-    }
+    },
+    "shipmentSectionTitle": "Dërgesa",
+    "notesSectionTitle": "Shënime"
   },
   "axios": {
     "start": {

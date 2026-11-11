@@ -8,7 +8,9 @@
     "orderLabel": "Ordine di visualizzazione",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Crea categoria",
-    "createCategoryDescription": "Aggiungi una categoria per organizzare i prodotti nel tuo catalogo."
+    "createCategoryDescription": "Aggiungi una categoria per organizzare i prodotti nel tuo catalogo.",
+    "generalSectionTitle": "Generale",
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {

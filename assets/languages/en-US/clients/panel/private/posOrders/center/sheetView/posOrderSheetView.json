@@ -92,5 +92,6 @@
     "resent": "Not registered, sent again"
   },
   "typeLabel": "POS order",
-  "walkIn": "Walk-in customer"
+  "walkIn": "Walk-in customer",
+  "fiscalProblem": "Not registered with the tax authority"
 }

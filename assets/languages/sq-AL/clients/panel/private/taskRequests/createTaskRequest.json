@@ -11,7 +11,7 @@
     "countryPlaceholder": "Zgjidh shtetin",
     "currencyLabel": "Monedha",
     "descriptionLabel": "Përshkrimi",
-    "descriptionPlaceholder": "Përshkrimi",
+    "descriptionPlaceholder": "Çfarë duhet bërë, sa i madh është punimi dhe afati.",
     "expiresAtLabel": "Skadon",
     "expiresAtPlaceholder": "YYYY-MM-DD",
     "imageGalleryLabel": "Galeria e imazheve",
@@ -28,7 +28,8 @@
       "description": "Detajet",
       "general": "Të përgjithshme",
       "images": "Imazhet",
-      "video": "Video"
+      "video": "Video",
+      "address": "Adresa"
     },
     "stateLabel": "Rajoni",
     "statePlaceholder": "Zgjidh rajonin",
@@ -40,7 +41,13 @@
       "open": "Hapur"
     },
     "titleLabel": "Titulli",
-    "videoGalleryLabel": "Galeria e videove"
+    "videoGalleryLabel": "Galeria e videove",
+    "titlePlaceholder": "p.sh. Lyerja e një apartamenti 2+1",
+    "categoryPlaceholder": "Zgjidh kategorinë",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "currencyDescription": "Ofertat për këtë kërkesë vijnë në këtë monedhë.",
+    "budgetMinPlaceholder": "p.sh. 500",
+    "budgetMaxPlaceholder": "p.sh. 900"
   },
   "formButtons": {
     "cancel": "Anulo",
@@ -48,7 +55,7 @@
   },
   "formHeader": {
     "description": "Përshkruani çfarë ju nevojitet. Ofruesit mund të përgjigjen me oferta.",
-    "title": "Krijo kërkesë detyre"
+    "title": "Krijo kërkesë për ofertë"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
   "title": "Titulli"

@@ -41,7 +41,15 @@
     "initiator": "Iniziatore",
     "createdAt": "Aperta il",
     "deletedAt": "Eliminato",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "!enums": {
+      "status": {
+        "open": "Aperta",
+        "under_review": "In fase di revisione",
+        "resolved": "Risolta",
+        "closed": "Chiusa"
+      }
+    }
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {

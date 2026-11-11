@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/center/sheetView/categorySheetView.tsx",
-  "failedTitle": "Nuk u ngarkua kategoria",
+  "failedTitle": "Kategoria e listimit nuk u ngarkua",
   "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj kategorie. Klikoni për të riprovuar.",
   "failedTooltipDescription": "Klikoni për të riprovuar marrjen e të dhënave.",
   "categorySubtitle": "Kategori",

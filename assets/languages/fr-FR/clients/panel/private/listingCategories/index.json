@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
-  "title": "Catégories",
+  "title": "Catégories d'annonces",
   "description": "Organisez le catalogue marketplace en une arborescence parent/enfant utilisée par les annonces et les demandes de tâches.",
   "help": {
     "ariaLabel": "À propos des catégories d'annonces",
@@ -26,7 +26,7 @@
       }
     ]
   },
-  "createCategory": "Créer une catégorie",
+  "createCategory": "Créer une catégorie d'annonce",
   "fields": {
     "name": "Nom",
     "slug": "Identifiant",

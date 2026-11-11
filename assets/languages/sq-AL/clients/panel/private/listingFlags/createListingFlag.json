@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
-    "title": "Raporto listimin",
+    "title": "Krijo raportim listimi",
     "description": "Raporto një listim për shqyrtim nga ekipi i moderimit."
   },
   "formButtons": {
@@ -20,7 +20,8 @@
       "spam": "Spam",
       "misleading": "Mashtruese",
       "other": "Tjetër"
-    }
+    },
+    "reportSectionTitle": "Raportimi"
   },
   "axios": {
     "start": {

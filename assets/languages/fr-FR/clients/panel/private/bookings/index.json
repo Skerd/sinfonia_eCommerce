@@ -35,7 +35,15 @@
     "status": "Statut",
     "createdAt": "Créé",
     "deletedAt": "Supprimé",
-    "deletedBy": "Supprimé par"
+    "deletedBy": "Supprimé par",
+    "when": "Quand",
+    "!enums": {
+      "when": {
+        "upcoming": "À venir",
+        "today": "Aujourd'hui",
+        "past": "Passées"
+      }
+    }
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "status": {

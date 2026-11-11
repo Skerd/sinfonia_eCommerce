@@ -18,7 +18,8 @@
     "variantLabel": "Variante",
     "variantPlaceholder": "Variante facoltativa",
     "countedQuantityLabel": "Contata",
-    "countedQuantityPlaceholder": "Lascia vuoto se non contato"
+    "countedQuantityPlaceholder": "Lascia vuoto se non contato",
+    "noteSectionTitle": "Nota"
   },
   "axios": {
     "start": {

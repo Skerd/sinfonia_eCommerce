@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo profilin"
+    "submit": "Krijo profil ofruesi"
   },
   "form": {
     "userLabel": "Përdoruesi",
@@ -19,7 +19,7 @@
     "bioPlaceholder": "Trego klientëve për veten tënde...",
     "portfolioLabel": "Imazhe portofoli",
     "timezoneLabel": "Zona kohore",
-    "timezonePlaceholder": "p.sh. Europe/Zurich (bosh: zona kohore e kompanisë)",
+    "timezonePlaceholder": "Zona kohore e kompanisë nëse lihet bosh",
     "section": {
       "profile": "Profili",
       "profileDescription": "Trego klientëve për veten tënde dhe listo aftësitë që ofron.",

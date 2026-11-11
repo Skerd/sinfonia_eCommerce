@@ -19,7 +19,15 @@
     "orderLabel": "Auftrag",
     "orderPlaceholder": "Bestellung auswählen",
     "ratingLabel": "Bewertung",
-    "ratingPlaceholder": "1–5"
+    "ratingPlaceholder": "Bewertung wählen",
+    "reviewSectionTitle": "Bewertung",
+    "ratingValues": {
+      "1": "1 – Sehr schlecht",
+      "2": "2 – Schlecht",
+      "3": "3 – Durchschnittlich",
+      "4": "4 – Gut",
+      "5": "5 – Ausgezeichnet"
+    }
   },
   "formButtons": {
     "cancel": "Abbrechen",

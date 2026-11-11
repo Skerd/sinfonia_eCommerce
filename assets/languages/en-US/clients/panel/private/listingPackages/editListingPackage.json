@@ -27,7 +27,10 @@
     "deliveryDaysLabel": "Delivery days",
     "deliveryDaysPlaceholder": "e.g. 3",
     "sortOrderLabel": "Display order",
-    "sortOrderPlaceholder": "e.g. 1"
+    "sortOrderPlaceholder": "e.g. 1",
+    "basicsSectionTitle": "Basics",
+    "pricingSectionTitle": "Prices",
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {

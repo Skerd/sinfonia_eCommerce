@@ -98,7 +98,7 @@
       "title": "Varianti del prodotto"
     },
     "customeraddresses": {
-      "title": "Indirizzi"
+      "title": "Indirizzi dei clienti"
     },
     "productreviews": {
       "title": "Recensioni di prodotti"
@@ -161,7 +161,7 @@
         "title": "Importazioni esterne"
       },
       "odooconnection": {
-        "title": "Odoo"
+        "title": "Connessione Odoo"
       },
       "odooimport": {
         "title": "Importa da Odoo"
@@ -191,7 +191,7 @@
         "title": "Annunci"
       },
       "taskrequests": {
-        "title": "Richieste di attività"
+        "title": "Richieste di preventivo"
       },
       "orders": {
         "title": "Ordini"
@@ -231,7 +231,7 @@
       "title": "Annunci"
     },
     "taskrequests": {
-      "title": "Richieste di attività"
+      "title": "Richieste di preventivo"
     },
     "orders": {
       "title": "Ordini"

@@ -9,11 +9,11 @@ export default createGenericCreatePage<CreatePosPaymentMethodFormType>({
     accessModel: "posPaymentMethods",
     apiUrl: "/api/eCommerce/posPaymentMethod",
     schema: createPosPaymentMethodFormSchema,
+    // No type until one is picked, and no tender chips: an empty list means the till's own defaults (UX-06).
     defaultValues: {
         name: "",
-        type: "cash",
         sequence: 0,
-        cashQuickAmounts: "0.1,0.2,0.5,1,5,10,20,50,100",
+        cashQuickAmounts: "",
         terminalEnabled: false,
         terminalProvider: "manual",
         terminalProtocol: "http",

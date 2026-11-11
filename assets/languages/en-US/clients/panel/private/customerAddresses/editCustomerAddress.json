@@ -33,9 +33,9 @@
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
     "latitudeLabel": "Latitude",
-    "latitudePlaceholder": "41.3275",
+    "latitudePlaceholder": "Pick on the map",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "19.8189",
+    "longitudePlaceholder": "Pick on the map",
     "labelLabel": "Label",
     "labelPlaceholder": "Home, work, …"
   },

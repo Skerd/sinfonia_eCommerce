@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
-  "title": "Categorie",
+  "title": "Categorie di annunci",
   "description": "Organizza il catalogo marketplace in un albero categorie padre/figlio usato da annunci e richieste di attività.",
   "help": {
     "ariaLabel": "Informazioni sulle categorie di annunci",
@@ -26,7 +26,7 @@
       }
     ]
   },
-  "createCategory": "Crea categoria",
+  "createCategory": "Crea categoria di annunci",
   "fields": {
     "name": "Nome",
     "slug": "Slug",

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/promotions/index.tsx",
-  "title": "Promocionet",
-  "description": "Menaxho promocionet e listimeve të veçuara dhe të sponsorizuara.",
+  "title": "Promovimet",
+  "description": "Menaxho promovimet e listimeve të veçuara dhe të sponsorizuara.",
   "help": {
-    "ariaLabel": "Rreth promocioneve",
-    "title": "Rreth promocioneve",
+    "ariaLabel": "Rreth promovimeve",
+    "title": "Rreth promovimeve",
     "overview": "Një promovim e nxjerr në pah një listim, si të veçuar ose të sponsorizuar, për një dritare nga fillimi deri në mbarim. Është në vazhdim sa kohë cikli i jetës është aktiv dhe dita e sotme bie brenda datave. Cikli i jetës është aktiv, në pauzë ose i ndaluar dhe ndryshohet vetëm me veprime.",
     "sections": [
       {
@@ -32,7 +32,7 @@
       }
     ]
   },
-  "createPromotion": "Krijo promocion",
+  "createPromotion": "Krijo promovim",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",

@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Créer"
+    "submit": "Créer un bloc CMS"
   },
   "form": {
     "generalSectionTitle": "Général",
@@ -34,7 +34,7 @@
     "ctaHrefLabel": "Lien du bouton",
     "ctaHrefPlaceholder": "/products",
     "messageLabel": "Message",
-    "messagePlaceholder": "Livraison gratuite dès 60 €",
+    "messagePlaceholder": "Livraison gratuite ce week-end",
     "linkHrefLabel": "Lien",
     "linkHrefPlaceholder": "/products",
     "htmlLabel": "HTML",

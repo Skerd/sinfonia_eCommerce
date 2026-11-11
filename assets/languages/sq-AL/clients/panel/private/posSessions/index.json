@@ -61,6 +61,11 @@
             "out": "Dalje cash"
           }
         }
+      },
+      "when": {
+        "today": "Sot",
+        "thisWeek": "Këtë javë",
+        "older": "Më të vjetra"
       }
     },
     "name": "Emri",
@@ -86,6 +91,7 @@
     "createdAt": "Krijuar më",
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "when": "Kur"
   }
 }

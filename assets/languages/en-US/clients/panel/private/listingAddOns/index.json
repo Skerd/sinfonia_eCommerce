@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingAddOns/index.tsx",
-  "title": "Listing Add-Ons",
+  "title": "Listing add-ons",
   "description": "Manage optional add-ons that providers attach to their listings.",
   "help": {
     "ariaLabel": "About Listing add-ons",
@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingAddOn": "Create add-on",
+  "createListingAddOn": "Create listing add-on",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",

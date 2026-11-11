@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "ID record",
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della cassa",
+    "namePlaceholder": "es. Cassa principale",
     "paymentMethodsLabel": "Metodi di pagamento",
     "managersLabel": "Responsabili",
     "warehousesLabel": "Magazzini",
@@ -34,7 +34,11 @@
     "selectPaymentMethod": "Seleziona il metodo di pagamento",
     "removePaymentMethod": "Rimuovi il metodo di pagamento",
     "selectManager": "Seleziona responsabile",
-    "removeManager": "Rimuovi responsabile"
+    "removeManager": "Rimuovi responsabile",
+    "basicsSectionTitle": "Dati di base",
+    "sellingSectionTitle": "Magazzino e pagamenti",
+    "managersSectionTitle": "Responsabili",
+    "receiptSectionTitle": "Ricevuta"
   },
   "axios": {
     "start": {

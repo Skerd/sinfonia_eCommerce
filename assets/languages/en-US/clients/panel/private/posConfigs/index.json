@@ -60,12 +60,12 @@
   "bulkMenu": {
     "triggerAria": "Company POS controls",
     "label": "Company controls",
-    "hint": "Emergency stop for every till",
+    "hint": "Emergency stop for every POS config",
     "lockedReasonPrefix": "Company pause reason",
-    "pauseAll": "Pause all tills",
+    "pauseAll": "Pause all POS configs",
     "pauseAllHint": "Lock the company and force-close open sessions",
-    "resumeAll": "Resume all tills",
-    "resumeAllHint": "Clear the company lock only. Individually paused tills stay paused"
+    "resumeAll": "Resume all POS configs",
+    "resumeAllHint": "Clear the company lock only. Individually paused POS configs stay paused"
   },
   "searchPlaceholder": "Search or add filters...",
   "fields": {

@@ -24,6 +24,7 @@ export default createGenericEditPage<Listing, EditListingFormType>({
             title: writeFields.title ? data.title : undefined,
             description: writeFields.description ? data.description : undefined,
             category: writeFields.category ? data.category?._id : undefined,
+            provider: writeFields.provider ? data.provider?._id : undefined,
             price: writeFields.price ? data.price : undefined,
             priceCurrency: writeFields.priceCurrency ? data.priceCurrency?._id : undefined,
             pricingType: writeFields.pricingType ? data.pricingType : undefined,

@@ -7,11 +7,13 @@
     "productLabel": "Produkt",
     "productPlaceholder": "Produkt aus dem Auftrag wählen",
     "ratingLabel": "Bewertung",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Bewertung wählen",
     "titleLabel": "Titel",
     "titlePlaceholder": "Optionale Überschrift",
     "commentLabel": "Kommentar",
-    "commentPlaceholder": "Was sollen Käufer wissen?"
+    "commentPlaceholder": "Was sollen Käufer wissen?",
+    "purchaseSectionTitle": "Kauf",
+    "reviewSectionTitle": "Bewertung"
   },
   "axios": {
     "start": {

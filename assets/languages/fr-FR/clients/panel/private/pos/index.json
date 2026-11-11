@@ -363,5 +363,11 @@
     "pinInvalid": "Code PIN du gestionnaire invalide",
     "noManagersWithPin": "Aucun gestionnaire avec un code PIN n'est affecté à cette caisse",
     "refundFailed": "Le remboursement a échoué"
+  },
+  "orderState": {
+    "draft": "Brouillon",
+    "paid": "Payée",
+    "cancel": "Annulée",
+    "refunded": "Remboursée"
   }
 }

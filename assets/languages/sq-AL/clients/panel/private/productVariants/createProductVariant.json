@@ -45,7 +45,8 @@
     "variantStatus": {
       "active": "Aktiv",
       "inactive": "Joaktiv"
-    }
+    },
+    "visibilitySectionTitle": "Shfaqja"
   },
   "axios": {
     "start": {

@@ -35,7 +35,15 @@
     "status": "Stato",
     "createdAt": "Creato",
     "deletedAt": "Eliminato",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "when": "Quando",
+    "!enums": {
+      "when": {
+        "upcoming": "In arrivo",
+        "today": "Oggi",
+        "past": "Passate"
+      }
+    }
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "status": {

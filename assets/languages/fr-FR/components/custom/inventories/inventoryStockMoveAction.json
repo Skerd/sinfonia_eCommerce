@@ -11,6 +11,7 @@
     "receiptNumberLabel": "N° de bon de réception / de livraison",
     "occurredAtLabel": "Date de réception",
     "unitCostLabel": "Coût unitaire",
+    "unitCostHint": "Dans la devise de la boutique (la première devise de l'entreprise).",
     "batchLotLabel": "Lot",
     "expiryDateLabel": "Date d'expiration",
     "receiptsLabel": "Pièces jointes au reçu",

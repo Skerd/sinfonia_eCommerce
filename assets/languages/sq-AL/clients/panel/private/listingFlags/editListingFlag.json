@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/editListingFlag.tsx",
-  "editTitle": "Ndrysho raportimin",
+  "editTitle": "Ndrysho raportimin e listimit",
   "editDescription": "Përditëso arsyen dhe detajet e këtij raportimi.",
   "errorTitle": "Nuk u ngarkua raportimi",
   "errorDescription": "Kontrollo lidhjen ose kthehu te lista dhe provo përsëri.",
   "formHeader": {
-    "title": "Ndrysho raportimin",
+    "title": "Ndrysho raportimin e listimit",
     "description": "Përditëso arsyen dhe detajet shtesë. Listimi nuk mund të ndryshohet."
   },
   "formButtons": {
@@ -22,7 +22,8 @@
       "spam": "Spam",
       "misleading": "Mashtruese",
       "other": "Tjetër"
-    }
+    },
+    "reportSectionTitle": "Raportimi"
   },
   "axios": {
     "start": {

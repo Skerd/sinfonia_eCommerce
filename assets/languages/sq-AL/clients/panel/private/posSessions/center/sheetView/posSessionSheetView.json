@@ -51,5 +51,11 @@
   },
   "posOrders": "Porositë POS",
   "posOrder": "Porosia POS",
-  "typeLabel": "Seancë arke"
+  "typeLabel": "Seancë arke",
+  "posOrderState": {
+    "draft": "Skicë",
+    "paid": "Paguar",
+    "cancel": "Anuluar",
+    "refunded": "Rimbursuar"
+  }
 }

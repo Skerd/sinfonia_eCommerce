@@ -6,7 +6,7 @@
   "form": {
     "_idLabel": "Identifiant",
     "nameLabel": "Nom",
-    "namePlaceholder": "Nom de la caisse",
+    "namePlaceholder": "p. ex. Caisse principale",
     "paymentMethodsLabel": "Modes de paiement",
     "managersLabel": "Gestionnaires",
     "warehousesLabel": "Entrepôts",
@@ -34,7 +34,11 @@
     "selectPaymentMethod": "Sélectionnez le mode de paiement",
     "removePaymentMethod": "Supprimer le mode de paiement",
     "selectManager": "Sélectionner le gestionnaire",
-    "removeManager": "Supprimer le gestionnaire"
+    "removeManager": "Supprimer le gestionnaire",
+    "basicsSectionTitle": "Informations de base",
+    "sellingSectionTitle": "Stock et paiements",
+    "managersSectionTitle": "Gestionnaires",
+    "receiptSectionTitle": "Reçu"
   },
   "axios": {
     "start": {

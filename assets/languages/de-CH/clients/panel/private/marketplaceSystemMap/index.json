@@ -35,5 +35,24 @@
     "models": "Modell graph",
     "flows": "So funktioniert es",
     "capabilities": "Funktionen"
+  },
+  "nodes": {
+    "ListingCategory": "Inseratkategorie",
+    "ProviderProfile": "Anbieterprofil",
+    "Listing": "Inserat",
+    "ListingPackage": "Inseratpaket",
+    "ListingAddOn": "Inserat-Zusatzleistung",
+    "ListingFlag": "Inserat-Meldung",
+    "Promotion": "Promotion",
+    "TaskRequest": "Ausschreibung",
+    "Bid": "Angebot",
+    "MarketplaceOrder": "Bestellung",
+    "Booking": "Buchung",
+    "Dispute": "Streitfall",
+    "Review": "Bewertung",
+    "EscrowTransaction": "Treuhandbuchung",
+    "OrderMilestone": "Bestell-Meilenstein",
+    "OrderDelivery": "Bestell-Lieferung",
+    "OrderRevision": "Bestell-Überarbeitung"
   }
 }

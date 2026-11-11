@@ -60,12 +60,12 @@
   "bulkMenu": {
     "triggerAria": "Contrôles des points de vente de l'entreprise",
     "label": "Contrôles de l'entreprise",
-    "hint": "Arrêt d'urgence pour chaque caisse",
+    "hint": "Arrêt d'urgence pour toutes les configurations de point de vente",
     "lockedReasonPrefix": "Raison de la pause de l'entreprise",
-    "pauseAll": "Suspendre toutes les caisses",
+    "pauseAll": "Suspendre toutes les configurations de point de vente",
     "pauseAllHint": "Verrouiller l'entreprise et forcer la fermeture des sessions ouvertes",
-    "resumeAll": "Reprendre toutes les caisses",
-    "resumeAllHint": "Efface uniquement le verrou de l'entreprise. Les caisses mises en pause individuellement restent en pause"
+    "resumeAll": "Reprendre toutes les configurations de point de vente",
+    "resumeAllHint": "Efface uniquement le verrou de l'entreprise. Les configurations suspendues individuellement restent suspendues"
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {

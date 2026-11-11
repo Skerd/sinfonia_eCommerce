@@ -13,7 +13,9 @@
     "orderLabel": "Ordre de tri",
     "orderPlaceholder": "0",
     "editCategoryTitle": "Modifier la catégorie",
-    "editCategoryDescription": "Mettre à jour les informations sur la catégorie."
+    "editCategoryDescription": "Mettre à jour les informations sur la catégorie.",
+    "generalSectionTitle": "Général",
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {

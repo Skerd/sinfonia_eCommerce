@@ -64,7 +64,16 @@
     "deliveryDueDate": "Due date",
     "createdAt": "Created",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted by"
+    "deletedBy": "Deleted by",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "accepted": "Accepted",
+        "in_progress": "In Progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      }
+    }
   },
   "searchPlaceholder": "Search or add filters...",
   "status": {

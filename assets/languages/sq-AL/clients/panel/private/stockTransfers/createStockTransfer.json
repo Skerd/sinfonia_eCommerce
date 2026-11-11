@@ -16,7 +16,9 @@
     "productPlaceholder": "Zgjidh një produkt",
     "variantLabel": "Varianti",
     "variantPlaceholder": "Variant opsional",
-    "quantityLabel": "Sasia"
+    "quantityLabel": "Sasia",
+    "noteSectionTitle": "Shënim",
+    "routeSectionTitle": "Nga dhe për"
   },
   "axios": {
     "start": {

@@ -31,7 +31,9 @@
       "all": "All products",
       "physical": "Physical",
       "digital": "Digital"
-    }
+    },
+    "visibilitySectionTitle": "Visibility",
+    "priorityDescription": "When zones overlap, the one with the higher priority applies."
   },
   "axios": {
     "start": {

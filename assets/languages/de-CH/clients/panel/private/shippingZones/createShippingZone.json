@@ -26,7 +26,7 @@
     "ratePriceLabel": "Preis",
     "ratePricePlaceholder": "0.00",
     "carrierLabel": "Transporteur",
-    "carrierPlaceholder": "Name des Transporteurs",
+    "carrierPlaceholder": "z. B. DHL Express",
     "estimatedDeliveryDaysLabel": "Voraussichtliche Liefertage",
     "estimatedDeliveryDaysPlaceholder": "3",
     "rateConditionsSectionTitle": "Bedingungen",

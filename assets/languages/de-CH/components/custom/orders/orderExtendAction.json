@@ -19,7 +19,10 @@
         "title": "Auftrag konnte nicht verlängert werden, bitte erneut versuchen",
         "time": 3000
       }
-    }
+    },
+    "currentDueDateLabel": "Aktuelles Fälligkeitsdatum",
+    "newDueDateLabel": "Neues Fälligkeitsdatum",
+    "noDueDate": "Nicht gesetzt"
   },
   "cancel": "Abbrechen"
 }

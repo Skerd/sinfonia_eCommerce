@@ -92,5 +92,6 @@
     "resent": "Nicht registriert, erneut gesendet"
   },
   "typeLabel": "POS-Bestellung",
-  "walkIn": "Laufkunde"
+  "walkIn": "Laufkunde",
+  "fiscalProblem": "Nicht bei der Steuerbehörde registriert"
 }

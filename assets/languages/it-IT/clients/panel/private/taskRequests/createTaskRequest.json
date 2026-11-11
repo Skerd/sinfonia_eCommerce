@@ -11,7 +11,7 @@
     "countryPlaceholder": "Seleziona il paese",
     "currencyLabel": "Valuta",
     "descriptionLabel": "Descrizione",
-    "descriptionPlaceholder": "Descrizione",
+    "descriptionPlaceholder": "Cosa c’è da fare, quanto è grande il lavoro ed entro quando.",
     "expiresAtLabel": "Scade",
     "expiresAtPlaceholder": "aaaa-MM-gg",
     "imageGalleryLabel": "Galleria immagini",
@@ -28,7 +28,8 @@
       "description": "Dettagli",
       "general": "Generale",
       "images": "Immagini",
-      "video": "Video"
+      "video": "Video",
+      "address": "Indirizzo"
     },
     "stateLabel": "Cantone / Stato",
     "statePlaceholder": "Seleziona il cantone",
@@ -40,7 +41,13 @@
       "open": "Aperta"
     },
     "titleLabel": "Titolo",
-    "videoGalleryLabel": "Galleria video"
+    "videoGalleryLabel": "Galleria video",
+    "titlePlaceholder": "es. Tinteggiare un trilocale",
+    "categoryPlaceholder": "Seleziona categoria",
+    "currencyPlaceholder": "Seleziona valuta",
+    "currencyDescription": "Le offerte su questa richiesta sono in questa valuta.",
+    "budgetMinPlaceholder": "es. 500",
+    "budgetMaxPlaceholder": "es. 900"
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -48,7 +55,7 @@
   },
   "formHeader": {
     "description": "Descrivi ciò di cui hai bisogno. I fornitori possono rispondere con offerte.",
-    "title": "Crea richiesta di attività"
+    "title": "Crea richiesta di preventivo"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
   "title": "Titolo"

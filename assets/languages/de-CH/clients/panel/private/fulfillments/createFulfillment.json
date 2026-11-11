@@ -6,9 +6,9 @@
     "orderPlaceholder": "Bestellung auswählen",
     "statusLabel": "Status",
     "carrierLabel": "Transporteur",
-    "carrierPlaceholder": "Name des Transporteurs",
+    "carrierPlaceholder": "z. B. Post CH",
     "trackingNumberLabel": "Sendungsnummer",
-    "trackingNumberPlaceholder": "Sendungsnummer",
+    "trackingNumberPlaceholder": "z. B. 99.00.123456.12345678",
     "trackingUrlLabel": "Sendungsverfolgungs-URL",
     "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Versandt am",
@@ -28,7 +28,9 @@
       "shipped": "Versandt",
       "delivered": "Zugestellt",
       "failed": "Fehlgeschlagen"
-    }
+    },
+    "shipmentSectionTitle": "Sendung",
+    "notesSectionTitle": "Notizen"
   },
   "axios": {
     "start": {

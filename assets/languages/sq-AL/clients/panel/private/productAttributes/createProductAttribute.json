@@ -10,7 +10,9 @@
     "isUsedForVariantsLabel": "Përdoret për variantet",
     "valuesLabel": "Vlerat",
     "valuesPlaceholder": "Shto një vlerë dhe shtyp Enter",
-    "removeValue": "Hiq vlerën"
+    "removeValue": "Hiq vlerën",
+    "generalSectionTitle": "Të përgjithshme",
+    "visibilitySectionTitle": "Shfaqja"
   },
   "axios": {
     "start": {

@@ -6,9 +6,9 @@
     "orderPlaceholder": "Select order",
     "statusLabel": "Status",
     "carrierLabel": "Carrier",
-    "carrierPlaceholder": "Carrier name",
+    "carrierPlaceholder": "e.g. DHL Express",
     "trackingNumberLabel": "Tracking number",
-    "trackingNumberPlaceholder": "Tracking number",
+    "trackingNumberPlaceholder": "e.g. JJD000390007",
     "trackingUrlLabel": "Tracking URL",
     "trackingUrlPlaceholder": "https://…",
     "shippedAtLabel": "Shipped at",
@@ -28,7 +28,9 @@
       "shipped": "Shipped",
       "delivered": "Delivered",
       "failed": "Failed"
-    }
+    },
+    "shipmentSectionTitle": "Shipment",
+    "notesSectionTitle": "Notes"
   },
   "axios": {
     "start": {

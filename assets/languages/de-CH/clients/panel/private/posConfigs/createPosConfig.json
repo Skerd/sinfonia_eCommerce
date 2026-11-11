@@ -3,7 +3,7 @@
   "title": "POS-Konfiguration erstellen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Kassenname",
+    "namePlaceholder": "z. B. Hauptkasse",
     "paymentMethodsLabel": "Zahlungsarten",
     "managersLabel": "Manager",
     "warehousesLabel": "Lager",
@@ -31,7 +31,11 @@
     "selectPaymentMethod": "Zahlungsart auswählen",
     "removePaymentMethod": "Zahlungsart entfernen",
     "selectManager": "Manager auswählen",
-    "removeManager": "Entfernen manager"
+    "removeManager": "Entfernen manager",
+    "basicsSectionTitle": "Grunddaten",
+    "sellingSectionTitle": "Lager und Zahlungsarten",
+    "managersSectionTitle": "Manager",
+    "receiptSectionTitle": "Beleg"
   },
   "axios": {
     "start": {
@@ -49,7 +53,7 @@
   },
   "formHeader": {
     "title": "POS-Konfiguration erstellen",
-    "description": "Richten Sie eine Ladenkasse ein: Fiskalkonfiguration, Lager, Zahlungsarten, Belegtext und Kassenregeln."
+    "description": "Richten Sie eine POS-Konfiguration ein: Fiskalkonfiguration, Lager, Zahlungsarten, Belegtext und Kassenregeln."
   },
   "formButtons": {
     "cancel": "Abbrechen",

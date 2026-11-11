@@ -26,12 +26,22 @@
     },
     "categoryIdsLabel": "Kategorien",
     "selectCategory": "Kategorie wählen",
-    "removeCategory": "Kategorie entfernen"
+    "removeCategory": "Kategorie entfernen",
+    "basicsSectionTitle": "Grunddaten"
   },
   "axios": {
-    "start": {"title": "Suche wird gespeichert", "time": 3000},
-    "success": {"title": "Suche aktualisiert", "time": 3000},
-    "error": {"title": "Suche konnte nicht aktualisiert werden", "time": 3000}
+    "start": {
+      "title": "Suche wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Suche aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Suche konnte nicht aktualisiert werden",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Gespeicherte Suche bearbeiten",

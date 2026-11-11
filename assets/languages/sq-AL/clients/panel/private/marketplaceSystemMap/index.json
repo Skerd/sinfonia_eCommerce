@@ -35,5 +35,24 @@
     "models": "Grafiku i modeleve",
     "flows": "Si funksionon",
     "capabilities": "Aftësitë"
+  },
+  "nodes": {
+    "ListingCategory": "Kategori listimi",
+    "ProviderProfile": "Profili i ofruesit",
+    "Listing": "Listim",
+    "ListingPackage": "Paketë listimi",
+    "ListingAddOn": "Shtesë listimi",
+    "ListingFlag": "Raportim listimi",
+    "Promotion": "Promovim",
+    "TaskRequest": "Kërkesë për detyrë",
+    "Bid": "Ofertë",
+    "MarketplaceOrder": "Porosi",
+    "Booking": "Rezervim",
+    "Dispute": "Mosmarrëveshje",
+    "Review": "Vlerësim",
+    "EscrowTransaction": "Transaksion garancie",
+    "OrderMilestone": "Fazë e porosisë",
+    "OrderDelivery": "Dorëzim i porosisë",
+    "OrderRevision": "Rishikim i porosisë"
   }
 }

@@ -8,7 +8,9 @@
     "orderLabel": "Sortierreihenfolge",
     "orderPlaceholder": "0",
     "createCategoryTitle": "Kategorie erstellen",
-    "createCategoryDescription": "Fügen Sie eine Kategorie hinzu, um die Produkte in Ihrem Katalog zu ordnen."
+    "createCategoryDescription": "Fügen Sie eine Kategorie hinzu, um die Produkte in Ihrem Katalog zu ordnen.",
+    "generalSectionTitle": "Allgemein",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

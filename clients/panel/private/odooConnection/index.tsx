@@ -86,7 +86,8 @@ function OdooConnectionPage({resolveLanguageKey}: WithLanguageType) {
             <Header title={rk("title")} description={rk("description")} help={readPageHelp(resolveLanguageKey)} />
             <form onSubmit={onSave}>
                 <Card>
-                    <CardContent className="flex flex-col gap-4 pt-4">
+                    {/* Two columns: where Odoo is, then who logs in; the secret and its hint take the full width (UX-04). */}
+                    <CardContent className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
                         <div className="flex flex-col gap-1.5">
                             <Label htmlFor="odoo-url">{rk("form.urlLabel")}</Label>
                             <Input
@@ -117,7 +118,7 @@ function OdooConnectionPage({resolveLanguageKey}: WithLanguageType) {
                                 autoComplete="off"
                             />
                         </div>
-                        <div className="flex flex-col gap-1.5">
+                        <div className="flex flex-col gap-1.5 md:col-span-2">
                             <Label htmlFor="odoo-key">{rk("form.apiKeyLabel")}</Label>
                             <Input
                                 id="odoo-key"

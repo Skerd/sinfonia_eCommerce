@@ -25,7 +25,7 @@
       }
     ]
   },
-  "createListingPackage": "Créer un package",
+  "createListingPackage": "Créer un package d'annonce",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",

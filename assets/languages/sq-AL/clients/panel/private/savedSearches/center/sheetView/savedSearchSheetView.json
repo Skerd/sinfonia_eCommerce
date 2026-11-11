@@ -22,5 +22,11 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "sortValues": {
+    "newest": "Më të rejat",
+    "priceAsc": "Çmimi: nga më i ulëti",
+    "priceDesc": "Çmimi: nga më i larti",
+    "featured": "Të veçuara"
+  }
 }

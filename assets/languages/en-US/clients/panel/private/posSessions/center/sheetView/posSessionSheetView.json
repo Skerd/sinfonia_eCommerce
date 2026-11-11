@@ -51,5 +51,11 @@
   },
   "posOrders": "POS orders",
   "posOrder": "POS order",
-  "typeLabel": "POS session"
+  "typeLabel": "POS session",
+  "posOrderState": {
+    "draft": "Draft",
+    "paid": "Paid",
+    "cancel": "Cancelled",
+    "refunded": "Refunded"
+  }
 }

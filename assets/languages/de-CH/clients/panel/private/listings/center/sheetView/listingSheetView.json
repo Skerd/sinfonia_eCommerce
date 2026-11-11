@@ -59,5 +59,6 @@
     "fixed": "Festpreis",
     "hourly": "Stundensatz"
   },
-  "form": {}
+  "form": {},
+  "details": "Details"
 }

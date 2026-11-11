@@ -19,7 +19,15 @@
     "orderLabel": "Commande",
     "orderPlaceholder": "Sélectionnez la commande",
     "ratingLabel": "Note",
-    "ratingPlaceholder": "1–5"
+    "ratingPlaceholder": "Choisissez une note",
+    "reviewSectionTitle": "Avis",
+    "ratingValues": {
+      "1": "1 – Très mauvais",
+      "2": "2 – Médiocre",
+      "3": "3 – Moyen",
+      "4": "4 – Bien",
+      "5": "5 – Excellent"
+    }
   },
   "formButtons": {
     "cancel": "Annuler",

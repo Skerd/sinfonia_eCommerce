@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingCategories/index.tsx",
-  "title": "Categories",
+  "title": "Listing categories",
   "description": "Organize the marketplace catalog into a parent/child category tree used by listings and task requests.",
   "help": {
     "ariaLabel": "About Listing categories",
@@ -26,7 +26,7 @@
       }
     ]
   },
-  "createCategory": "Create category",
+  "createCategory": "Create listing category",
   "fields": {
     "name": "Name",
     "slug": "Slug",

@@ -363,5 +363,11 @@
     "pinInvalid": "PIN del responsabile non valido",
     "noManagersWithPin": "A questa cassa non è assegnato alcun responsabile con PIN",
     "refundFailed": "Rimborso non riuscito"
+  },
+  "orderState": {
+    "draft": "Bozza",
+    "paid": "Pagato",
+    "cancel": "Annullato",
+    "refunded": "Rimborsato"
   }
 }

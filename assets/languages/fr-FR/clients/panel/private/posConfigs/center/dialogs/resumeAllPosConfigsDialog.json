@@ -1,21 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/resumeAllPosConfigsDialog.tsx",
-  "title": "Reprendre toutes les caisses ?",
-  "description": "Efface uniquement le verrou à l’échelle de l’entreprise. Les caisses mises en pause individuellement restent en pause. Les caissiers des caisses déverrouillées doivent ouvrir une nouvelle session pour vendre à nouveau.",
+  "title": "Reprendre toutes les configurations de point de vente ?",
+  "description": "Lève uniquement le verrou de l'entreprise. Les configurations de point de vente suspendues individuellement restent suspendues. Les caissiers des configurations déverrouillées doivent ouvrir une nouvelle session pour vendre à nouveau.",
   "cancel": "Annuler",
   "confirm": "Reprendre tout",
   "busy": "En cours…",
   "axios": {
     "start": {
-      "title": "Reprise de toutes les caisses…",
+      "title": "Reprise de toutes les configurations de point de vente…",
       "time": 3000
     },
     "success": {
-      "title": "Toutes les caisses ont repris",
+      "title": "Toutes les configurations de point de vente reprises",
       "time": 3000
     },
     "error": {
-      "title": "Impossible de reprendre toutes les caisses",
+      "title": "Impossible de reprendre toutes les configurations de point de vente",
       "time": 3000
     }
   }

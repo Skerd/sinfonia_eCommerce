@@ -3,7 +3,7 @@
   "failedTitle": "Impossibile caricare il profilo del fornitore",
   "failedDescription": "Qualcosa è andato storto durante il caricamento del profilo di questo fornitore. Fare clic per riprovare.",
   "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
-  "providerProfileSubtitle": "Profilo del fornitore",
+  "providerProfileSubtitle": "Profilo fornitore",
   "overview": "Panoramica",
   "user": "Fornitore",
   "bio": "Biografia",
@@ -33,5 +33,6 @@
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "notAvailable": "Non disponibile"
 }

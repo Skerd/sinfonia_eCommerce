@@ -10,13 +10,14 @@
   },
   "form": {
     "orderLabel": "Auftrag",
-    "orderPlaceholder": "Bestellung auswählen",
+    "orderPlaceholder": "Auftrag auswählen",
     "startAtLabel": "Startzeit",
-    "startAtPlaceholder": "YYYY-MM-DDTHH:mm",
     "endAtLabel": "Endzeit",
-    "endAtPlaceholder": "YYYY-MM-DDTHH:mm",
-    "timezoneLabel": "Zeitzone",
-    "timezonePlaceholder": "UTC"
+    "section": {
+      "order": "Auftrag",
+      "schedule": "Wann"
+    },
+    "providerHoursHint": "Die Zeiten gelten in Ihrer eigenen Zeitzone. Die Buchung muss in die Arbeitszeiten des Anbieters fallen."
   },
   "axios": {
     "start": {

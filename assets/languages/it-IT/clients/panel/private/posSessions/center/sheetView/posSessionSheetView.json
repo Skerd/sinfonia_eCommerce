@@ -51,5 +51,11 @@
   },
   "posOrders": "Ordini POS",
   "posOrder": "Ordine POS",
-  "typeLabel": "Sessione di cassa"
+  "typeLabel": "Sessione di cassa",
+  "posOrderState": {
+    "draft": "Bozza",
+    "paid": "Pagato",
+    "cancel": "Annullato",
+    "refunded": "Rimborsato"
+  }
 }

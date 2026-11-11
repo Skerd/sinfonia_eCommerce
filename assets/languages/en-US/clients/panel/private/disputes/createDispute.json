@@ -17,7 +17,11 @@
     "orderLabel": "Order",
     "orderPlaceholder": "Select order",
     "reasonLabel": "Reason",
-    "reasonPlaceholder": "Describe the issue..."
+    "reasonPlaceholder": "Describe the issue...",
+    "section": {
+      "order": "Order",
+      "issue": "What went wrong"
+    }
   },
   "formButtons": {
     "cancel": "Cancel",

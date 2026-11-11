@@ -26,12 +26,22 @@
     },
     "categoryIdsLabel": "Kategoritë",
     "selectCategory": "Zgjidh një kategori",
-    "removeCategory": "Hiq kategorinë"
+    "removeCategory": "Hiq kategorinë",
+    "basicsSectionTitle": "Të dhënat bazë"
   },
   "axios": {
-    "start": {"title": "Po ruhet kërkimi", "time": 3000},
-    "success": {"title": "Kërkimi u përditësua", "time": 3000},
-    "error": {"title": "Kërkimi nuk u përditësua", "time": 3000}
+    "start": {
+      "title": "Po ruhet kërkimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkimi u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkimi nuk u përditësua",
+      "time": 3000
+    }
   },
   "formHeader": {
     "title": "Ndrysho kërkimin e ruajtur",

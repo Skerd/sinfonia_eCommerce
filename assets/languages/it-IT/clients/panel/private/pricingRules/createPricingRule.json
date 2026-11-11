@@ -3,7 +3,7 @@
   "title": "Crea regola di prezzo",
   "form": {
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della regola di prezzo",
+    "namePlaceholder": "es. Prezzi all'ingrosso",
     "typeLabel": "Tipo",
     "typePlaceholder": "Seleziona il tipo",
     "appliesToLabel": "Si applica a",
@@ -48,7 +48,9 @@
       "customer_group": "Gruppi di clienti"
     },
     "valueDescription": "Una percentuale, o un importo nella valuta del negozio per uno sconto fisso.",
-    "shopAmountDescription": "Nella valuta del negozio (la prima valuta dell'azienda)."
+    "shopAmountDescription": "Nella valuta del negozio (la prima valuta dell'azienda).",
+    "visibilitySectionTitle": "Visibilità",
+    "priorityDescription": "Quando più regole valgono per una riga, viene provata per prima quella con priorità più alta."
   },
   "axios": {
     "start": {

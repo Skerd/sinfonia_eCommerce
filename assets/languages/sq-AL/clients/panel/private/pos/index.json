@@ -363,5 +363,11 @@
     "pinInvalid": "PIN i menaxherit është i pavlefshëm",
     "noManagersWithPin": "Nuk ka menaxherë me PIN të caktuar në këtë arkë",
     "refundFailed": "Rimbursimi dështoi"
+  },
+  "orderState": {
+    "draft": "Skicë",
+    "paid": "E paguar",
+    "cancel": "E anuluar",
+    "refunded": "E rimbursuar"
   }
 }

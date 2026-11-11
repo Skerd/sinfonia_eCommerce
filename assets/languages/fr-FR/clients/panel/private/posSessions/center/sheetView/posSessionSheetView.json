@@ -15,7 +15,7 @@
   "toggleReferenceListView": "Basculer la disposition de la liste",
   "name": "Nom",
   "state": "État",
-  "config": "Configuration du point de vente",
+  "config": "Configuration de point de vente",
   "openedBy": "Ouverte par",
   "closedBy": "Clôturée par",
   "openedAt": "Ouverte le",
@@ -51,5 +51,11 @@
   },
   "posOrders": "Commandes PDV",
   "posOrder": "Commande PDV",
-  "typeLabel": "Session de caisse"
+  "typeLabel": "Session de caisse",
+  "posOrderState": {
+    "draft": "Brouillon",
+    "paid": "Payée",
+    "cancel": "Annulé",
+    "refunded": "Remboursé"
+  }
 }

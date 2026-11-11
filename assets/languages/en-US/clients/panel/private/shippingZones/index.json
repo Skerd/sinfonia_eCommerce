@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/shippingZones/index.tsx",
-  "title": "Shipping Zones",
+  "title": "Shipping zones",
   "description": "Define shipping rates by geography.",
   "help": {
-    "ariaLabel": "About Shipping Zones",
-    "title": "About Shipping Zones",
+    "ariaLabel": "About shipping zones",
+    "title": "About shipping zones",
     "overview": "Shipping zones decide which delivery options the buyer is offered at checkout and what they cost. A zone lists countries, optionally states and postal codes, and one or more rates. Checkout offers every rate of every active zone that matches; the buyer picks one.",
     "sections": [
       {

@@ -1,23 +1,23 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx",
-  "title": "Diese POS-Kasse pausieren?",
-  "description": "Offene Sitzungen dieser Kasse werden zwangsweise geschlossen: Geparkte Warenkörbe werden storniert und das Bargeld wird auf den Sollbestand der Schublade gesetzt. Terminalbelastungen werden nach Möglichkeit storniert. Der Verkauf bleibt gesperrt, bis Sie fortsetzen.",
+  "title": "Diese POS-Konfiguration pausieren?",
+  "description": "Offene Sitzungen dieser POS-Konfiguration werden zwangsweise geschlossen: Geparkte Warenkörbe werden storniert und das Bargeld wird auf den Sollbestand der Schublade gesetzt. Terminalbelastungen werden nach Möglichkeit storniert. Der Verkauf bleibt gesperrt, bis Sie fortsetzen.",
   "reasonLabel": "Grund (optional)",
   "reasonPlaceholder": "z. B. falsche Preise / Betrugsverdacht",
   "cancel": "Abbrechen",
-  "confirm": "Kasse pausieren",
+  "confirm": "POS-Konfiguration pausieren",
   "busy": "Wird ausgeführt…",
   "axios": {
     "start": {
-      "title": "POS-Kasse wird pausiert…",
+      "title": "POS-Konfiguration wird pausiert…",
       "time": 3000
     },
     "success": {
-      "title": "POS-Kasse pausiert",
+      "title": "POS-Konfiguration pausiert",
       "time": 3000
     },
     "error": {
-      "title": "POS-Kasse konnte nicht pausiert werden",
+      "title": "POS-Konfiguration konnte nicht pausiert werden",
       "time": 3000
     }
   }

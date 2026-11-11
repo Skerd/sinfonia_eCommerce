@@ -13,7 +13,9 @@
     "orderLabel": "Sortierreihenfolge",
     "orderPlaceholder": "0",
     "editCategoryTitle": "Kategorie bearbeiten",
-    "editCategoryDescription": "Kategorieinformationen aktualisieren."
+    "editCategoryDescription": "Kategorieinformationen aktualisieren.",
+    "generalSectionTitle": "Allgemein",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

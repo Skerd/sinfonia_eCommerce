@@ -22,7 +22,7 @@
   "isPaused": "Paused",
   "isCompanyPaused": "Company-wide pause",
   "companyPauseReason": "Company pause reason",
-  "pauseReason": "Till pause reason",
+  "pauseReason": "Pause reason",
   "yes": "Yes",
   "no": "No",
   "currency": "Currency",
@@ -45,6 +45,10 @@
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
-  "typeLabel": "POS configuration",
-  "inactive": "Inactive"
+  "typeLabel": "POS config",
+  "inactive": "Inactive",
+  "paymentType": {
+    "cash": "Cash",
+    "card": "Card"
+  }
 }

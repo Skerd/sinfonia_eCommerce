@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "ID record",
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome del magazzino",
+    "namePlaceholder": "es. Magazzino principale",
     "codeLabel": "Codice",
-    "codePlaceholder": "Codice magazzino",
+    "codePlaceholder": "es. WH-MAIN",
     "addressSectionTitle": "Indirizzo",
     "countryLabel": "Paese",
     "countryPlaceholder": "Seleziona il paese",
@@ -23,7 +23,8 @@
     "latitudeLabel": "Latitudine",
     "latitudePlaceholder": "Latitudine",
     "longitudeLabel": "Longitudine",
-    "longitudePlaceholder": "Longitudine"
+    "longitudePlaceholder": "Longitudine",
+    "basicsSectionTitle": "Dati di base"
   },
   "axios": {
     "start": {

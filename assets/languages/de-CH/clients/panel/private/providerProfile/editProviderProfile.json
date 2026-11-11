@@ -20,7 +20,7 @@
     "bioPlaceholder": "Erzählen Sie Ihren Kunden etwas über sich...",
     "portfolioLabel": "Portfoliobilder",
     "timezoneLabel": "Zeitzone",
-    "timezonePlaceholder": "z. B. Europe/Zurich (leer: Zeitzone der Firma)",
+    "timezonePlaceholder": "Zeitzone der Firma, wenn leer",
     "section": {
       "profile": "Profil",
       "availability": "Wöchentliche Verfügbarkeit",
@@ -61,6 +61,7 @@
   "account": {
     "edit": "Bearbeiten",
     "empty": "Noch nichts erfasst.",
-    "timezoneDefault": "Nicht gesetzt: Es gilt die Zeitzone der Firma."
+    "timezoneDefault": "Nicht gesetzt: Es gilt die Zeitzone der Firma.",
+    "notAvailable": "Nicht verfügbar"
   }
 }

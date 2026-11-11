@@ -60,12 +60,12 @@
   "bulkMenu": {
     "triggerAria": "Controlli POS aziendali",
     "label": "Controlli aziendali",
-    "hint": "Arresto di emergenza per ogni cassa",
+    "hint": "Arresto di emergenza per tutte le configurazioni POS",
     "lockedReasonPrefix": "Motivo della pausa aziendale",
-    "pauseAll": "Metti in pausa tutte le casse",
+    "pauseAll": "Metti in pausa tutte le configurazioni POS",
     "pauseAllHint": "Blocca l'azienda e chiudi forzatamente le sessioni aperte",
-    "resumeAll": "Riprendi tutte le casse",
-    "resumeAllHint": "Cancella solo il blocco aziendale. Le casse in pausa singolarmente restano in pausa"
+    "resumeAll": "Riprendi tutte le configurazioni POS",
+    "resumeAllHint": "Cancella solo il blocco aziendale. Le configurazioni POS in pausa singolarmente restano in pausa"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

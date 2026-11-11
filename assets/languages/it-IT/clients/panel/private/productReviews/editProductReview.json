@@ -6,11 +6,12 @@
   "form": {
     "_idLabel": "ID record",
     "ratingLabel": "Valutazione",
-    "ratingPlaceholder": "1–5",
+    "ratingPlaceholder": "Scegli un voto",
     "titleLabel": "Titolo",
     "titlePlaceholder": "Titolo facoltativo",
     "commentLabel": "Commento",
-    "commentPlaceholder": "Cosa devono sapere gli acquirenti?"
+    "commentPlaceholder": "Cosa devono sapere gli acquirenti?",
+    "reviewSectionTitle": "Recensione"
   },
   "axios": {
     "start": {

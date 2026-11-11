@@ -22,7 +22,8 @@
       "spam": "Spam",
       "misleading": "Trompeur",
       "other": "Autre"
-    }
+    },
+    "reportSectionTitle": "Signalement"
   },
   "axios": {
     "start": {

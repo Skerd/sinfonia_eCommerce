@@ -1,8 +1,8 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/createListingFlag.tsx",
   "formHeader": {
-    "title": "Report listing",
-    "description": "Flag a listing for review by the moderation team."
+    "title": "Create listing report",
+    "description": "Report a listing for review by the moderation team."
   },
   "formButtons": {
     "cancel": "Cancel",
@@ -20,7 +20,8 @@
       "spam": "Spam",
       "misleading": "Misleading",
       "other": "Other"
-    }
+    },
+    "reportSectionTitle": "Report"
   },
   "axios": {
     "start": {

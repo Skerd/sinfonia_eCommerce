@@ -7,7 +7,7 @@
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Crea profilo"
+    "submit": "Crea profilo fornitore"
   },
   "form": {
     "userLabel": "Utente",
@@ -19,7 +19,7 @@
     "bioPlaceholder": "Racconta di te ai clienti...",
     "portfolioLabel": "Immagini del portfolio",
     "timezoneLabel": "Fuso orario",
-    "timezonePlaceholder": "es. Europe/Zurich (vuoto: fuso orario dell'azienda)",
+    "timezonePlaceholder": "Fuso orario dell'azienda se vuoto",
     "section": {
       "profile": "Profilo",
       "availability": "Disponibilità settimanale",

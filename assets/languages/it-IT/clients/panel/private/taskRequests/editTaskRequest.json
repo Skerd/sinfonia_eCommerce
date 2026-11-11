@@ -1,9 +1,9 @@
 {
   "address": "Indirizzo",
   "editDescription": "Aggiorna i campi che puoi modificare.",
-  "editTitle": "Modifica richiesta di attività",
+  "editTitle": "Modifica richiesta di preventivo",
   "errorDescription": "Controlla il collegamento o torna all'elenco e riprova.",
-  "errorTitle": "Impossibile caricare la richiesta di attività",
+  "errorTitle": "Impossibile caricare la richiesta di preventivo",
   "form": {
     "addressPrivacyAlert": "I fornitori non possono vedere il tuo indirizzo esatto finché non accetti un'offerta. Il tuo indirizzo completo viene condiviso solo con il fornitore che scegli, dopo aver concordato il lavoro.",
     "budgetMaxLabel": "Budget (massimo)",
@@ -15,7 +15,7 @@
     "countryPlaceholder": "Seleziona il paese",
     "currencyLabel": "Valuta",
     "descriptionLabel": "Descrizione",
-    "descriptionPlaceholder": "Descrizione Segnaposto",
+    "descriptionPlaceholder": "Cosa c’è da fare, quanto è grande il lavoro ed entro quando.",
     "editStatusSection": "Stato",
     "expiresAtLabel": "Scade",
     "expiresAtPlaceholder": "aaaa-MM-gg",
@@ -33,7 +33,8 @@
       "description": "Dettagli",
       "general": "Generale",
       "images": "Immagini",
-      "video": "Video"
+      "video": "Video",
+      "address": "Indirizzo"
     },
     "stateLabel": "Cantone / Stato",
     "statePlaceholder": "Seleziona il cantone",
@@ -46,7 +47,13 @@
       "open": "Aperta"
     },
     "titleLabel": "Titolo",
-    "videoGalleryLabel": "Galleria video"
+    "videoGalleryLabel": "Galleria video",
+    "titlePlaceholder": "es. Tinteggiare un trilocale",
+    "categoryPlaceholder": "Seleziona categoria",
+    "currencyPlaceholder": "Seleziona valuta",
+    "currencyDescription": "Le offerte su questa richiesta sono in questa valuta.",
+    "budgetMinPlaceholder": "es. 500",
+    "budgetMaxPlaceholder": "es. 900"
   },
   "formButtons": {
     "cancel": "Annulla",
@@ -54,7 +61,7 @@
   },
   "formHeader": {
     "description": "Aggiorna i dettagli della tua richiesta.",
-    "title": "Modifica richiesta di attività"
+    "title": "Modifica richiesta di preventivo"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
   "title": "Titolo"

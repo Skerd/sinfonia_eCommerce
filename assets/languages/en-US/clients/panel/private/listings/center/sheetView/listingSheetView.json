@@ -59,5 +59,6 @@
     "fixed": "Fixed price",
     "hourly": "Hourly rate"
   },
-  "form": {}
+  "form": {},
+  "details": "Details"
 }

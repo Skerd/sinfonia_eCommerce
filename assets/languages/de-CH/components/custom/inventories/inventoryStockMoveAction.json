@@ -11,6 +11,7 @@
     "receiptNumberLabel": "Beleg- / Lieferschein-Nr.",
     "occurredAtLabel": "Datum empfangen",
     "unitCostLabel": "Einheitskosten",
+    "unitCostHint": "In der Shopwährung (der ersten Währung der Firma).",
     "batchLotLabel": "Charge / Los",
     "expiryDateLabel": "Ablaufdatum",
     "receiptsLabel": "Beleganhänge",

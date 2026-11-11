@@ -96,6 +96,12 @@
         "partially_fulfilled": "Parzialmente evaso",
         "fulfilled": "Evaso",
         "returned": "Restituito"
+      },
+      "when": {
+        "today": "Oggi",
+        "thisWeek": "Questa settimana",
+        "thisMonth": "Questo mese",
+        "older": "Precedenti"
       }
     },
     "orderNumber": "Numero dell'ordine",
@@ -161,6 +167,7 @@
     "createdAt": "Creato il",
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
-    "deletedBy": "Eliminato da"
+    "deletedBy": "Eliminato da",
+    "when": "Quando"
   }
 }

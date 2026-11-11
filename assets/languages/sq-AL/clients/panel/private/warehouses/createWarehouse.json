@@ -3,9 +3,9 @@
   "title": "Krijo magazinë",
   "form": {
     "nameLabel": "Emri",
-    "namePlaceholder": "Emri i magazinës",
+    "namePlaceholder": "p.sh. Magazina kryesore",
     "codeLabel": "Kodi",
-    "codePlaceholder": "Kodi i magazinës",
+    "codePlaceholder": "p.sh. WH-MAIN",
     "addressSectionTitle": "Adresa",
     "countryLabel": "Shteti",
     "countryPlaceholder": "Zgjidh shtetin",
@@ -20,7 +20,8 @@
     "latitudeLabel": "Gjerësia gjeografike",
     "latitudePlaceholder": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike",
-    "longitudePlaceholder": "Gjatësia gjeografike"
+    "longitudePlaceholder": "Gjatësia gjeografike",
+    "basicsSectionTitle": "Të dhënat bazë"
   },
   "axios": {
     "start": {
@@ -38,7 +39,7 @@
   },
   "formHeader": {
     "title": "Krijo magazinë",
-    "description": "Shto një vendndodhje stoku me adresë dhe pin në hartë."
+    "description": "Shtoni një vend magazinimi me adresën e tij; vendosni kunjin në hartë nëse e dini."
   },
   "formButtons": {
     "cancel": "Anulo",

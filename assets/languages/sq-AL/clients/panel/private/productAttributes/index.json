@@ -1,6 +1,6 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/index.tsx",
-  "title": "Atributet e produktit",
+  "title": "Atributet e produkteve",
   "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
   "help": {
     "ariaLabel": "Rreth atributeve të produktit",

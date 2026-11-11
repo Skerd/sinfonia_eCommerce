@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/pricingRules/index.tsx",
-  "title": "Pricing Rules",
+  "title": "Pricing rules",
   "description": "Automate price adjustments by segment or product.",
   "help": {
-    "ariaLabel": "About Pricing Rules",
-    "title": "About Pricing Rules",
+    "ariaLabel": "About pricing rules",
+    "title": "About pricing rules",
     "overview": "Pricing rules change a line's unit price automatically, before any discount code. Use them for wholesale prices, category sales, or surcharges. Each cart line receives at most one rule. Name, type, value, and scope are required.",
     "sections": [
       {

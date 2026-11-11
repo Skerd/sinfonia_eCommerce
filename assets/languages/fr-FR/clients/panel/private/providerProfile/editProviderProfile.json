@@ -1,11 +1,11 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/providerProfile/editProviderProfile.tsx",
-  "editTitle": "Modifier le profil du prestataire",
+  "editTitle": "Modifier le profil de prestataire",
   "editDescription": "Mettez à jour les compétences, la biographie, le portfolio et la disponibilité hebdomadaire de ce prestataire.",
   "errorTitle": "Impossible de charger le profil du prestataire",
   "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
   "formHeader": {
-    "title": "Modifier le profil du prestataire",
+    "title": "Modifier le profil de prestataire",
     "description": "Mettre à jour les compétences, la biographie, le portfolio et la disponibilité."
   },
   "formButtons": {
@@ -20,7 +20,7 @@
     "bioPlaceholder": "Parlez de vous aux clients...",
     "portfolioLabel": "Images du portfolio",
     "timezoneLabel": "Fuseau horaire",
-    "timezonePlaceholder": "p. ex. Europe/Zurich (vide : fuseau de l'entreprise)",
+    "timezonePlaceholder": "Fuseau horaire de l'entreprise si vide",
     "section": {
       "profile": "Profil",
       "availability": "Disponibilité hebdomadaire",
@@ -61,6 +61,7 @@
   "account": {
     "edit": "Modifier",
     "empty": "Rien n'a encore été ajouté.",
-    "timezoneDefault": "Non défini : le fuseau horaire de l'entreprise s'applique."
+    "timezoneDefault": "Non défini : le fuseau horaire de l'entreprise s'applique.",
+    "notAvailable": "Indisponible"
   }
 }

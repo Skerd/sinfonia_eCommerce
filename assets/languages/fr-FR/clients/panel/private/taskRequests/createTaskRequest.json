@@ -11,7 +11,7 @@
     "countryPlaceholder": "Sélectionner le pays",
     "currencyLabel": "Devise",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Description",
+    "descriptionPlaceholder": "Ce qu’il faut faire, l’ampleur du travail et l’échéance.",
     "expiresAtLabel": "Expire",
     "expiresAtPlaceholder": "aaaa-MM-jj",
     "imageGalleryLabel": "Galerie d’images",
@@ -28,7 +28,8 @@
       "description": "Détails",
       "general": "Général",
       "images": "Images",
-      "video": "Vidéo"
+      "video": "Vidéo",
+      "address": "Adresse"
     },
     "stateLabel": "Région / État",
     "statePlaceholder": "Sélectionner la région",
@@ -40,7 +41,13 @@
       "open": "Ouvert"
     },
     "titleLabel": "Titre",
-    "videoGalleryLabel": "Galerie vidéo"
+    "videoGalleryLabel": "Galerie vidéo",
+    "titlePlaceholder": "ex. Peindre un appartement de trois pièces",
+    "categoryPlaceholder": "Sélectionner une catégorie",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "currencyDescription": "Les offres sur cette demande sont dans cette devise.",
+    "budgetMinPlaceholder": "ex. 500",
+    "budgetMaxPlaceholder": "ex. 900"
   },
   "formButtons": {
     "cancel": "Annuler",
@@ -48,7 +55,7 @@
   },
   "formHeader": {
     "description": "Décrivez ce dont vous avez besoin. Les prestataires peuvent répondre par des offres.",
-    "title": "Créer une demande de tâche"
+    "title": "Créer une demande de devis"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/createTaskRequest.tsx",
   "title": "Titre"

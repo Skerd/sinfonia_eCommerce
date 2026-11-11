@@ -23,7 +23,9 @@
     "currencyLabel": "Valuta",
     "currencyPlaceholder": "Valuta dell'annuncio se vuoto",
     "deliveryDaysLabel": "Giorni di consegna",
-    "deliveryDaysPlaceholder": "ad es. 2"
+    "deliveryDaysPlaceholder": "ad es. 2",
+    "basicsSectionTitle": "Dati principali",
+    "pricingSectionTitle": "Prezzi"
   },
   "axios": {
     "start": {

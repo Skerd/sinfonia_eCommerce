@@ -6,9 +6,9 @@
   "form": {
     "_idLabel": "Protokoll ID",
     "nameLabel": "Name",
-    "namePlaceholder": "Lagername",
+    "namePlaceholder": "z. B. Hauptlager",
     "codeLabel": "Code",
-    "codePlaceholder": "Lagercode",
+    "codePlaceholder": "z. B. WH-MAIN",
     "addressSectionTitle": "Adresse",
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
@@ -23,7 +23,8 @@
     "latitudeLabel": "Breitengrad",
     "latitudePlaceholder": "Breitengrad",
     "longitudeLabel": "Längengrad",
-    "longitudePlaceholder": "Längengrad"
+    "longitudePlaceholder": "Längengrad",
+    "basicsSectionTitle": "Grunddaten"
   },
   "axios": {
     "start": {

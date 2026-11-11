@@ -11,7 +11,7 @@
     "countryPlaceholder": "Land auswählen",
     "currencyLabel": "Währung",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Beschreibung",
+    "descriptionPlaceholder": "Was zu tun ist, wie gross der Auftrag ist und bis wann.",
     "expiresAtLabel": "Läuft ab",
     "expiresAtPlaceholder": "YYYY-MM-DD",
     "imageGalleryLabel": "Bild galerie",
@@ -23,12 +23,13 @@
     "postalCodeLabel": "Postleitzahl",
     "postalCodePlaceholder": "Postleitzahl",
     "section": {
-      "budget": "Kostenvoranschlag",
+      "budget": "Budget",
       "currencyExpires": "Währung und Ablauf",
       "description": "Details",
       "general": "Allgemein",
       "images": "Bilder",
-      "video": "Video"
+      "video": "Video",
+      "address": "Adresse"
     },
     "stateLabel": "Kanton",
     "statePlaceholder": "Kanton auswählen",
@@ -40,7 +41,13 @@
       "open": "Offen"
     },
     "titleLabel": "Bezeichnung",
-    "videoGalleryLabel": "Video galerie"
+    "videoGalleryLabel": "Video galerie",
+    "titlePlaceholder": "z. B. 3½-Zimmer-Wohnung streichen",
+    "categoryPlaceholder": "Kategorie wählen",
+    "currencyPlaceholder": "Währung wählen",
+    "currencyDescription": "Offerten auf diese Ausschreibung kommen in dieser Währung.",
+    "budgetMinPlaceholder": "z. B. 500",
+    "budgetMaxPlaceholder": "z. B. 900"
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -64,7 +64,9 @@
       "general": "Général",
       "images": "Images",
       "location": "Emplacement",
-      "video": "Vidéo"
+      "video": "Vidéo",
+      "pricing": "Prix",
+      "details": "Détails"
     },
     "statusLabel": "Statut",
     "statusPlaceholder": "Sélectionner le statut",
@@ -74,7 +76,9 @@
     "tagsSectionTitle": "Étiquettes",
     "titleLabel": "Titre",
     "titlePlaceholder": "Titre de l'annonce",
-    "videoGalleryLabel": "Galerie vidéo"
+    "videoGalleryLabel": "Galerie vidéo",
+    "pricePlaceholder": "ex. 150",
+    "descriptionPlaceholder": "Ce que l'acheteur obtient, comment et quand"
   },
   "formButtons": {
     "cancel": "Annuler",

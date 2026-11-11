@@ -1,16 +1,16 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
   "title": "Offres",
-  "description": "Affichez et gérez les offres sur les demandes de tâches.",
+  "description": "Affichez et gérez les offres sur les demandes de devis.",
   "help": {
     "ariaLabel": "À propos des offres",
     "title": "À propos des offres",
-    "overview": "Une offre est le devis d’un prestataire sur une demande de tâche : montant, jours de livraison et une proposition écrite. Le demandeur accepte une offre, ce qui attribue la tâche et ouvre une commande.",
+    "overview": "Une offre est le devis d’un prestataire sur une demande de devis : montant, jours de livraison et une proposition écrite. Le demandeur accepte une offre, ce qui attribue la tâche et ouvre une commande.",
     "sections": [
       {
         "title": "Faire une offre",
         "items": [
-          "La demande de tâche doit être ouverte, non expirée et appartenir à quelqu’un d’autre.",
+          "La demande de devis doit être ouverte, non expirée et appartenir à quelqu’un d’autre.",
           "Une offre active par prestataire et par demande. L’auteur et la devise sont fixés par le serveur, à partir de l’appelant et de la demande.",
           "Une offre n’est pas modifiée après envoi ; retirez-la et faites-en une nouvelle."
         ]
@@ -41,8 +41,15 @@
     "deliveryDays": "Jours de livraison",
     "status": "Statut",
     "bidder": "Soumissionnaire",
-    "taskRequest": "Demande de tâche",
-    "createdAt": "Créé"
+    "taskRequest": "Demande de devis",
+    "createdAt": "Créé",
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "accepted": "Accepté",
+        "rejected": "Rejeté"
+      }
+    }
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "status": {

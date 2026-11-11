@@ -1,9 +1,9 @@
 {
   "address": "Adresse",
   "editDescription": "Mettez à jour les champs que vous êtes autorisé à modifier.",
-  "editTitle": "Modifier la demande de tâche",
+  "editTitle": "Modifier la demande de devis",
   "errorDescription": "Vérifiez le lien ou revenez à la liste et réessayez.",
-  "errorTitle": "Impossible de charger la demande de tâche",
+  "errorTitle": "Impossible de charger la demande de devis",
   "form": {
     "addressPrivacyAlert": "Les prestataires ne peuvent pas voir votre adresse exacte tant que vous n'avez pas accepté une offre. Votre adresse complète n'est communiquée qu'au prestataire choisi, une fois que vous vous êtes mis d'accord sur les travaux.",
     "budgetMaxLabel": "Budget (maximum)",
@@ -15,7 +15,7 @@
     "countryPlaceholder": "Sélectionner le pays",
     "currencyLabel": "Devise",
     "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Description",
+    "descriptionPlaceholder": "Ce qu’il faut faire, l’ampleur du travail et l’échéance.",
     "editStatusSection": "Statut",
     "expiresAtLabel": "Expire",
     "expiresAtPlaceholder": "aaaa-MM-jj",
@@ -33,7 +33,8 @@
       "description": "Détails",
       "general": "Général",
       "images": "Images",
-      "video": "Vidéo"
+      "video": "Vidéo",
+      "address": "Adresse"
     },
     "stateLabel": "Région / État",
     "statePlaceholder": "Sélectionner la région",
@@ -46,7 +47,13 @@
       "open": "Ouvert"
     },
     "titleLabel": "Titre",
-    "videoGalleryLabel": "Galerie vidéo"
+    "videoGalleryLabel": "Galerie vidéo",
+    "titlePlaceholder": "ex. Peindre un appartement de trois pièces",
+    "categoryPlaceholder": "Sélectionner une catégorie",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "currencyDescription": "Les offres sur cette demande sont dans cette devise.",
+    "budgetMinPlaceholder": "ex. 500",
+    "budgetMaxPlaceholder": "ex. 900"
   },
   "formButtons": {
     "cancel": "Annuler",
@@ -54,7 +61,7 @@
   },
   "formHeader": {
     "description": "Mettez à jour les détails de votre demande.",
-    "title": "Modifier la demande de tâche"
+    "title": "Modifier la demande de devis"
   },
   "path": "src/modules/eCommerce/clients/panel/private/taskRequests/editTaskRequest.tsx",
   "title": "Titre"

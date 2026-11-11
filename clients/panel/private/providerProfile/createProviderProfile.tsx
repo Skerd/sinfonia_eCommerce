@@ -9,13 +9,14 @@ export default createGenericCreatePage<CreateProviderProfileFormType>({
     accessModel: "providerProfiles",
     apiUrl: "/api/eCommerceMarketplace/providerProfile",
     schema: createProviderProfileFormSchema,
-    defaultValues: (params) => ({
+    // A new profile's hours start in the company's time zone (UX-06, GLB-09).
+    defaultValues: (params, {timeZone}) => ({
         userId: params.get("specificUserId") ?? "",
         bio: "",
         skills: [],
         portfolio: [],
         availability: [],
-        timezone: "",
+        timezone: timeZone,
     }),
     buildFormExtras: (params) => ({lockUser: !!params.get("specificUserId")}),
     submitIcon: <IconPlus />,

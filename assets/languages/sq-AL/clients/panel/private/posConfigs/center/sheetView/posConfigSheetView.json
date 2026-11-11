@@ -22,7 +22,7 @@
   "isPaused": "Në pauzë",
   "isCompanyPaused": "Pauzë e kompanisë",
   "companyPauseReason": "Arsyeja e pauzës së kompanisë",
-  "pauseReason": "Arsyeja e pauzës së arkës",
+  "pauseReason": "Arsyeja e pauzës",
   "yes": "Po",
   "no": "Jo",
   "currency": "Monedha",
@@ -46,5 +46,9 @@
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
   "typeLabel": "Konfigurim POS",
-  "inactive": "Joaktive"
+  "inactive": "Joaktive",
+  "paymentType": {
+    "cash": "Cash",
+    "card": "Kartë"
+  }
 }

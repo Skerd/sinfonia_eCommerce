@@ -173,3 +173,9 @@ export function lineTotal(line: CartLine): number {
     const discount = percentOfMoney(gross, Math.min(100, Math.max(0, line.discountPercent)));
     return Math.max(0, subtractMoney(gross, discount));
 }
+
+/** A till error toast that keeps the server's reason ("Could not close session: Explain the cash difference"). */
+export function withServerReason(title: string, error: unknown): string {
+    const reason = error && typeof error === "object" && "message" in error && typeof error.message === "string" ? error.message : "";
+    return reason && reason !== title ? `${title}: ${reason}` : title;
+}

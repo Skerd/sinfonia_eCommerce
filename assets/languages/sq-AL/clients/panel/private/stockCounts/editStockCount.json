@@ -18,7 +18,8 @@
     "variantLabel": "Varianti",
     "variantPlaceholder": "Variant opsional",
     "countedQuantityLabel": "E numëruar",
-    "countedQuantityPlaceholder": "Lëre bosh nëse nuk u numërua"
+    "countedQuantityPlaceholder": "Lëre bosh nëse nuk u numërua",
+    "noteSectionTitle": "Shënim"
   },
   "axios": {
     "start": {

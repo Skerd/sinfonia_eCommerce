@@ -44,5 +44,6 @@
     "PosOrder": "Ordine POS",
     "Checkout": "Checkout"
   },
-  "typeLabel": "Movimento di magazzino"
+  "typeLabel": "Movimento di magazzino",
+  "receiving": "Ricevimento"
 }

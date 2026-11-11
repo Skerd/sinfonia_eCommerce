@@ -92,5 +92,6 @@
     "resent": "Nuk u regjistrua, u dërgua përsëri"
   },
   "typeLabel": "Porosi POS",
-  "walkIn": "Klient i rastit"
+  "walkIn": "Klient i rastit",
+  "fiscalProblem": "E paregjistruar në autoritetin tatimor"
 }

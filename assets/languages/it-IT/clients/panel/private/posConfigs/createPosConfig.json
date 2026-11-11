@@ -3,7 +3,7 @@
   "title": "Crea configurazione POS",
   "form": {
     "nameLabel": "Nome",
-    "namePlaceholder": "Nome della cassa",
+    "namePlaceholder": "es. Cassa principale",
     "paymentMethodsLabel": "Metodi di pagamento",
     "managersLabel": "Responsabili",
     "warehousesLabel": "Magazzini",
@@ -31,7 +31,11 @@
     "selectPaymentMethod": "Seleziona il metodo di pagamento",
     "removePaymentMethod": "Rimuovi il metodo di pagamento",
     "selectManager": "Seleziona responsabile",
-    "removeManager": "Rimuovi responsabile"
+    "removeManager": "Rimuovi responsabile",
+    "basicsSectionTitle": "Dati di base",
+    "sellingSectionTitle": "Magazzino e pagamenti",
+    "managersSectionTitle": "Responsabili",
+    "receiptSectionTitle": "Ricevuta"
   },
   "axios": {
     "start": {
@@ -49,7 +53,7 @@
   },
   "formHeader": {
     "title": "Crea configurazione POS",
-    "description": "Configura una cassa del negozio: configurazione fiscale, magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
+    "description": "Imposta una configurazione POS: configurazione fiscale, magazzini, metodi di pagamento, testo della ricevuta e regole di cassa."
   },
   "formButtons": {
     "cancel": "Annulla",

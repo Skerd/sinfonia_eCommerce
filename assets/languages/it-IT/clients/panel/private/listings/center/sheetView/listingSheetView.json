@@ -59,5 +59,6 @@
     "fixed": "Prezzo fisso",
     "hourly": "Tariffa oraria"
   },
-  "form": {}
+  "form": {},
+  "details": "Dettagli"
 }

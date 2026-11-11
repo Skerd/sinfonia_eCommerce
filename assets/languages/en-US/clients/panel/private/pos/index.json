@@ -363,5 +363,11 @@
     "pinInvalid": "Invalid manager PIN",
     "noManagersWithPin": "No managers with a PIN are assigned to this till",
     "refundFailed": "Refund failed"
+  },
+  "orderState": {
+    "draft": "Draft",
+    "paid": "Paid",
+    "cancel": "Cancelled",
+    "refunded": "Refunded"
   }
 }

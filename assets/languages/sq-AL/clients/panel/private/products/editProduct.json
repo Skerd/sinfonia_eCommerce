@@ -247,7 +247,9 @@
     "bundleComponentProductPlaceholder": "Zgjidh produktin",
     "bundleComponentQuantityPlaceholder": "1",
     "downloadLimitPlaceholder": "p.sh. 3",
-    "downloadExpiryDaysPlaceholder": "p.sh. 30"
+    "downloadExpiryDaysPlaceholder": "p.sh. 30",
+    "visibilitySectionTitle": "Shfaqja",
+    "digitalDeliverySectionTitle": "Dorëzimi dixhital"
   },
   "axios": {
     "start": {

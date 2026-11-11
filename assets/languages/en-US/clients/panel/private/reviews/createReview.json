@@ -19,7 +19,15 @@
     "orderLabel": "Order",
     "orderPlaceholder": "Select order",
     "ratingLabel": "Rating",
-    "ratingPlaceholder": "1–5"
+    "ratingPlaceholder": "Choose a rating",
+    "reviewSectionTitle": "Review",
+    "ratingValues": {
+      "1": "1 – Very poor",
+      "2": "2 – Poor",
+      "3": "3 – Average",
+      "4": "4 – Good",
+      "5": "5 – Excellent"
+    }
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx",
-  "failedTitle": "Dështoi ngarkimi i raportimit",
+  "failedTitle": "Raportimi i listimit nuk u ngarkua",
   "failedDescription": "Diçka shkoi keq gjatë ngarkimit të raportimit. Klikoni për të provuar përsëri.",
   "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
   "listingFlagSubtitle": "Raportim listimi",
-  "listingFlag": "Raportimi i Listimit",
+  "listingFlag": "Raportim listimi",
   "overview": "Përmbledhje",
   "lifecycle": "Cikli i jetës",
   "details": "Detaje",

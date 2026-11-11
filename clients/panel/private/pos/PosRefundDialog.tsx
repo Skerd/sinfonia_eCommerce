@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useState} from "react";
+import {withServerReason} from "./posTypes.ts";
 import {IconMinus, IconPlus} from "@tabler/icons-react";
 import {toast} from "sonner";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
@@ -65,7 +66,7 @@ export default function PosRefundDialog({
             onOpenChange(false);
             onRefunded();
         },
-        error: () => toast.error(rk("refundDialog.failed")),
+        error: (requestError) => toast.error(withServerReason(rk("refundDialog.failed"), requestError)),
     });
 
     useEffect(() => {

@@ -92,5 +92,6 @@
     "resent": "Non registrata, inviata di nuovo"
   },
   "typeLabel": "Ordine POS",
-  "walkIn": "Cliente occasionale"
+  "walkIn": "Cliente occasionale",
+  "fiscalProblem": "Non registrato presso l'autorità fiscale"
 }

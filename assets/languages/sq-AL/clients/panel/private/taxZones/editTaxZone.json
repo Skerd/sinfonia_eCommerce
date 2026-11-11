@@ -33,7 +33,9 @@
       "all": "Të gjitha produktet",
       "physical": "Fizike",
       "digital": "Dixhitale"
-    }
+    },
+    "visibilitySectionTitle": "Dukshmëria",
+    "priorityDescription": "Kur zonat mbivendosen, zbatohet ajo me përparësinë më të lartë."
   },
   "axios": {
     "start": {

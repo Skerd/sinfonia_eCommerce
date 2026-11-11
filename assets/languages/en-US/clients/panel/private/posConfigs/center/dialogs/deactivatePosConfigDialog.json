@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
   "title": "Deactivate POS config",
-  "description": "This till will no longer be available for opening the POS. Any open session on this till will be force-closed (held carts cancelled, cash set to expected). Terminal charges are cancelled best-effort.",
+  "description": "This POS config can no longer be opened on the Point of Sale. Any open session on it is force-closed (held carts cancelled, cash set to expected). Terminal charges are cancelled best-effort.",
   "cancel": "Cancel",
   "confirm": "Deactivate",
   "busy": "Working…",

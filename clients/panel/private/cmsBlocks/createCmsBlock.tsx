@@ -11,7 +11,6 @@ export default createGenericCreatePage<CreateCmsBlockFormType>({
     schema: createCmsBlockFormSchema,
     defaultValues: {
         title: "",
-        type: "hero_banner",
         config: {},
         position: 0,
         visibility: {devices: ["desktop", "mobile", "tablet"], regions: []},

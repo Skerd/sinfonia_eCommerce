@@ -7,10 +7,22 @@
     "additionalDaysHint": "Enter a value between 1 and 90 days.",
     "confirm": "Extend delivery",
     "axios": {
-      "start": { "title": "Extending order", "time": 3000 },
-      "success": { "title": "Order extended successfully", "time": 3000 },
-      "error": { "title": "Could not extend order, please try again", "time": 3000 }
-    }
+      "start": {
+        "title": "Extending order",
+        "time": 3000
+      },
+      "success": {
+        "title": "Order extended successfully",
+        "time": 3000
+      },
+      "error": {
+        "title": "Could not extend order, please try again",
+        "time": 3000
+      }
+    },
+    "currentDueDateLabel": "Current due date",
+    "newDueDateLabel": "New due date",
+    "noDueDate": "Not set"
   },
   "cancel": "Cancel"
 }

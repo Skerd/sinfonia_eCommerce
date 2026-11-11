@@ -11,6 +11,7 @@
     "receiptNumberLabel": "Ricevuta/nota di consegna n.",
     "occurredAtLabel": "Data di ricezione",
     "unitCostLabel": "Costo unitario",
+    "unitCostHint": "Nella valuta del negozio (la prima valuta dell'azienda).",
     "batchLotLabel": "Lotto",
     "expiryDateLabel": "Data di scadenza",
     "receiptsLabel": "Allegati ricevuta",

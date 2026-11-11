@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/posConfigs/center/dialogs/deactivatePosConfigDialog.tsx",
   "title": "Désactiver la configuration du point de vente",
-  "description": "Cette caisse ne sera plus disponible pour l'ouverture du point de vente. Toute session ouverte sur cette caisse sera clôturée d'office (paniers en attente annulés, espèces fixées au montant attendu). Les débits en cours sur le terminal sont annulés dans la mesure du possible.",
+  "description": "Cette configuration de point de vente ne pourra plus être ouverte au point de vente. Toute session ouverte dessus est fermée de force (paniers en attente annulés, espèces fixées au montant attendu). Les débits du terminal sont annulés dans la mesure du possible.",
   "cancel": "Annuler",
   "confirm": "Désactiver",
   "busy": "En cours…",

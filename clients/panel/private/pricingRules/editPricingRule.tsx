@@ -20,15 +20,6 @@ function fillLabelMap(
     }
 }
 
-/** Match pricing rule form DateInput `valueFormat: "YYYY-MM-DD HH:mm"` (local time). */
-function toFormDateTime(value: string | Date | undefined | null): string | undefined {
-    if (!value) return undefined;
-    const d = new Date(value);
-    if (Number.isNaN(d.getTime())) return undefined;
-    const pad = (n: number) => String(n).padStart(2, "0");
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
-}
-
 export default createGenericEditPage<PricingRule, EditPricingRuleFormType>({
     languagePath: "src/modules/eCommerce/clients/panel/private/pricingRules/editPricingRule.tsx",
     collectionName: "pricingRules",
@@ -39,8 +30,6 @@ export default createGenericEditPage<PricingRule, EditPricingRuleFormType>({
         ...data,
         targetIds: data.targetIds ?? data.targets?.map((t) => t._id),
         customerGroups: data.customerGroups ?? data.customerGroupRefs?.map((g) => g._id),
-        startsAt: toFormDateTime(data.startsAt),
-        endsAt: toFormDateTime(data.endsAt),
     }),
     buildFormExtras: (_entityId, _params, entity) => {
         if (entity) {
