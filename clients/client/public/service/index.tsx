@@ -30,8 +30,8 @@ import {Item} from "@coreModule/components/ui/item.tsx";
 import type {
     ShopListingDetail,
     ShopListingResponse,
-    ShopMarketplaceCurrency,
 } from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/public/shopMarketplace/shopMarketplace.types.ts";
+import type {PortalCurrency} from "armonia/src/modules/core/api/portal/public/portal/portal.dto.ts";
 import {addMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/service/index.tsx";
@@ -44,7 +44,7 @@ type ServiceOption = {
     name: string;
     description?: string;
     price: number;
-    currency?: ShopMarketplaceCurrency;
+    currency?: PortalCurrency;
     deliveryDays: number;
 };
 

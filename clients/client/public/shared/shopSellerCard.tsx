@@ -4,7 +4,7 @@ import {IconBuildingStore} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import type {ShopSeller} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
+import type {PortalSeller} from "armonia/src/modules/core/api/portal/public/portal/portal.dto.ts";
 import type {PublicBlogSeller} from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
 import {companySiteOrigin} from "@coreModule/clients/portal/shared/portalZone.ts";
 import {useShopConfig} from "./shopConfigContext.tsx";
@@ -14,7 +14,7 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/shared/shopSellerCard.tsx";
 
-type SellerRef = ShopSeller | PublicBlogSeller;
+type SellerRef = PortalSeller | PublicBlogSeller;
 
 /**
  * The seller's own shop, the same way car rental and dental open "Visit site":

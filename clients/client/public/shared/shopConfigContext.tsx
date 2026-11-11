@@ -1,11 +1,12 @@
 import {createContext, useContext, useMemo, type ReactNode} from "react";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
-import type {ShopConfigResponse, ShopCurrency} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
+import type {ShopConfigResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
+import type {PortalCurrency} from "armonia/src/modules/core/api/portal/public/portal/portal.dto.ts";
 
 type ShopConfig = ShopConfigResponse["data"];
 
-export type ShopMoneyCurrency = Pick<ShopCurrency, "symbol" | "abbreviation" | "decimalPlaces">;
+export type ShopMoneyCurrency = Pick<PortalCurrency, "symbol" | "abbreviation" | "decimalPlaces">;
 
 type ShopConfigContextValue = {
     config: ShopConfig | null;
