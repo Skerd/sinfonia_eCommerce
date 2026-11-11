@@ -63,7 +63,9 @@
       "product": "Produits",
       "collection": "Collections",
       "category": "Catégories"
-    }
+    },
+    "valueDescription": "Un pourcentage, ou un montant dans la devise de la boutique pour une remise fixe.",
+    "shopAmountDescription": "Dans la devise de la boutique (la première devise de l'entreprise)."
   },
   "axios": {
     "start": {

@@ -63,7 +63,9 @@
       "product": "Produkte",
       "collection": "Kollektionen",
       "category": "Kategorien"
-    }
+    },
+    "valueDescription": "Ein Prozentsatz oder, bei festem Rabatt, ein Betrag in der Shopwährung.",
+    "shopAmountDescription": "In der Shopwährung (der ersten Währung des Unternehmens)."
   },
   "axios": {
     "start": {

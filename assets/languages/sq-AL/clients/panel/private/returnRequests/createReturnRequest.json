@@ -32,7 +32,8 @@
       "rejected": "Refuzuar",
       "received": "Pranuar",
       "completed": "Përfunduar"
-    }
+    },
+    "orderAmountDescription": "Në monedhën e porosisë."
   },
   "axios": {
     "start": {

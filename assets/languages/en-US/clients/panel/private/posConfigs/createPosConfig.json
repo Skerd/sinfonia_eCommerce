@@ -9,7 +9,7 @@
     "warehousesLabel": "Warehouses",
     "warehousePlaceholder": "Select warehouse",
     "currencyLabel": "Currency",
-    "currencyPlaceholder": "Select currency",
+    "currencyPlaceholder": "Shop currency if left empty",
     "fiscalConfigLabel": "Fiscal config",
     "fiscalConfigPlaceholder": "Select fiscal config",
     "receiptHeaderLabel": "Receipt header",

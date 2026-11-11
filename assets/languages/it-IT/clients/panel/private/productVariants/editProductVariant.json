@@ -26,7 +26,7 @@
     "costPriceLabel": "Prezzo di costo",
     "costPricePlaceholder": "0.00",
     "currencyLabel": "Valuta",
-    "currencyPlaceholder": "Seleziona valuta",
+    "currencyPlaceholder": "Valuta del prodotto se vuoto",
     "weightLabel": "Peso",
     "weightPlaceholder": "0",
     "dimensionLengthLabel": "Lunghezza",

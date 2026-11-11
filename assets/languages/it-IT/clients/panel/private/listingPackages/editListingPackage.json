@@ -23,7 +23,7 @@
     "priceAmountLabel": "Prezzo",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Valuta",
-    "currencyPlaceholder": "Seleziona valuta",
+    "currencyPlaceholder": "Valuta dell'annuncio se vuoto",
     "deliveryDaysLabel": "Giorni di consegna",
     "deliveryDaysPlaceholder": "ad es. 3",
     "sortOrderLabel": "Ordine di visualizzazione",

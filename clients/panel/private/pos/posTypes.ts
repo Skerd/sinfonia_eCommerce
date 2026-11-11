@@ -1,6 +1,6 @@
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {multiplyMoney, percentOfMoney, subtractMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 export type CatalogVariant = {
@@ -153,11 +153,17 @@ export function posFiscalizationActive(config: PosConfig | null | undefined): bo
     return config?.fiscalConfig?.isActive === true;
 }
 
-export function formatMoney(value: number, currencyCode = "EUR"): string {
+/**
+ * Money at the till: in the till's currency at that currency's decimals (GLB-08, UX-07). A till with no currency set
+ * shows plain amounts rather than pretending they are euros.
+ */
+export function formatMoney(value: number, currencyCode?: string, decimalPlaces = 2): string {
+    const digits = {minimumFractionDigits: decimalPlaces, maximumFractionDigits: decimalPlaces};
+    if (!currencyCode) return formatNumber(value, digits);
     try {
-        return formatCurrency(value, currencyCode, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        return formatCurrency(value, currencyCode, digits);
     } catch {
-        return `${value.toFixed(2)} ${currencyCode}`;
+        return `${formatNumber(value, digits)} ${currencyCode}`;
     }
 }
 

@@ -60,7 +60,9 @@
       "product": "Products",
       "collection": "Collections",
       "category": "Categories"
-    }
+    },
+    "valueDescription": "A percentage, or an amount in the shop currency for a fixed discount.",
+    "shopAmountDescription": "In the shop currency (the company's first currency)."
   },
   "axios": {
     "start": {

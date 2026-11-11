@@ -203,7 +203,7 @@
     "compareAtPricePlaceholder": "0.00",
     "costPricePlaceholder": "0.00",
     "msrpPlaceholder": "0.00",
-    "currencyPlaceholder": "Seleziona valuta",
+    "currencyPlaceholder": "Valuta del negozio se vuoto",
     "taxClassPlaceholder": "ad es. standard, ridotto, zero",
     "saleStartsAtPlaceholder": "Data di inizio offerta",
     "saleEndsAtPlaceholder": "Data di fine offerta",

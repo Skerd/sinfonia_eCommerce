@@ -26,7 +26,7 @@
     "costPriceLabel": "Prix de revient",
     "costPricePlaceholder": "0.00",
     "currencyLabel": "Devise",
-    "currencyPlaceholder": "Sélectionner une devise",
+    "currencyPlaceholder": "Devise du produit si vide",
     "weightLabel": "Poids",
     "weightPlaceholder": "0",
     "dimensionLengthLabel": "Longueur",

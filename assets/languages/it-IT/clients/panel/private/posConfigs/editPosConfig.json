@@ -12,7 +12,7 @@
     "warehousesLabel": "Magazzini",
     "warehousePlaceholder": "Seleziona magazzino",
     "currencyLabel": "Valuta",
-    "currencyPlaceholder": "Seleziona valuta",
+    "currencyPlaceholder": "Valuta del negozio se vuoto",
     "fiscalConfigLabel": "Configurazione fiscale",
     "fiscalConfigPlaceholder": "Seleziona configurazione fiscale",
     "receiptHeaderLabel": "Intestazione della ricevuta",

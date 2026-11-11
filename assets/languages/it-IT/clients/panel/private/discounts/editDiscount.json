@@ -63,7 +63,9 @@
       "product": "Prodotti",
       "collection": "Collezioni",
       "category": "Categorie"
-    }
+    },
+    "valueDescription": "Una percentuale, o un importo nella valuta del negozio per uno sconto fisso.",
+    "shopAmountDescription": "Nella valuta del negozio (la prima valuta dell'azienda)."
   },
   "axios": {
     "start": {

@@ -24,7 +24,7 @@
     "costPriceLabel": "Einstandspreis",
     "costPricePlaceholder": "0.00",
     "currencyLabel": "Währung",
-    "currencyPlaceholder": "Währung auswählen",
+    "currencyPlaceholder": "Währung des Produkts, wenn leer",
     "weightLabel": "Gewicht",
     "weightPlaceholder": "0",
     "dimensionLengthLabel": "Länge",

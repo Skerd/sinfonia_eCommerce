@@ -32,7 +32,8 @@
       "rejected": "Rejected",
       "received": "Received",
       "completed": "Completed"
-    }
+    },
+    "orderAmountDescription": "In the order's currency."
   },
   "axios": {
     "start": {

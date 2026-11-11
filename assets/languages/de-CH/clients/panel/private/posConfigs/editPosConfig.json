@@ -12,7 +12,7 @@
     "warehousesLabel": "Lager",
     "warehousePlaceholder": "Lager auswählen",
     "currencyLabel": "Währung",
-    "currencyPlaceholder": "Währung auswählen",
+    "currencyPlaceholder": "Shopwährung, wenn leer",
     "fiscalConfigLabel": "Fiskalkonfiguration",
     "fiscalConfigPlaceholder": "Fiskalkonfiguration auswählen",
     "receiptHeaderLabel": "Belegkopfzeile",

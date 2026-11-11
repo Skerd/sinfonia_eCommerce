@@ -46,7 +46,7 @@ type Args = {
     customerName: string;
     showCustomer: boolean;
     heldOrderId: string | null;
-    currencyCode: string;
+    currencyCode?: string;
     resolveLanguageKey: ResolveLanguageKey;
     resolveManagerPin: ResolveManagerPin;
     clearOrder: () => void;

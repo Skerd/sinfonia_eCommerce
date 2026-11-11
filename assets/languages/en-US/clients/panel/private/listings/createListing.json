@@ -47,7 +47,7 @@
     "mainImageLabel": "Main image",
     "priceCurrencyIdLabel": "Currency",
     "priceCurrencyLabel": "Currency",
-    "priceCurrencyPlaceholder": "Currency",
+    "priceCurrencyPlaceholder": "Shop currency if left empty",
     "priceLabel": "Price",
     "providerLabel": "Provider",
     "providerPlaceholder": "Select the user who provides this listing",

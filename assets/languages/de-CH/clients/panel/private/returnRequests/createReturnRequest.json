@@ -32,7 +32,8 @@
       "rejected": "Abgelehnt",
       "received": "Erhalten",
       "completed": "Abgeschlossen"
-    }
+    },
+    "orderAmountDescription": "In der Währung der Bestellung."
   },
   "axios": {
     "start": {

@@ -12,7 +12,7 @@
     "warehousesLabel": "Entrepôts",
     "warehousePlaceholder": "Sélectionnez un entrepôt",
     "currencyLabel": "Devise",
-    "currencyPlaceholder": "Sélectionner une devise",
+    "currencyPlaceholder": "Devise de la boutique si vide",
     "fiscalConfigLabel": "Configuration fiscale",
     "fiscalConfigPlaceholder": "Sélectionner une configuration fiscale",
     "receiptHeaderLabel": "En-tête du reçu",

@@ -47,7 +47,7 @@
     "mainImageLabel": "Hauptbild",
     "priceCurrencyIdLabel": "Währung",
     "priceCurrencyLabel": "Währung",
-    "priceCurrencyPlaceholder": "Währung",
+    "priceCurrencyPlaceholder": "Shopwährung, wenn leer",
     "priceLabel": "Preis",
     "providerLabel": "Anbieter",
     "providerPlaceholder": "Benutzer wählen, der die Leistung dieses Inserats erbringt",

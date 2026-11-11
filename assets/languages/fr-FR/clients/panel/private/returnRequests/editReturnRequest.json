@@ -35,7 +35,8 @@
       "rejected": "Rejeté",
       "received": "Reçu",
       "completed": "Terminé"
-    }
+    },
+    "orderAmountDescription": "Dans la devise de la commande."
   },
   "axios": {
     "start": {

@@ -206,7 +206,7 @@
     "compareAtPricePlaceholder": "0.00",
     "costPricePlaceholder": "0.00",
     "msrpPlaceholder": "0.00",
-    "currencyPlaceholder": "Select currency",
+    "currencyPlaceholder": "Shop currency if left empty",
     "taxClassPlaceholder": "e.g. standard, reduced, zero",
     "saleStartsAtPlaceholder": "Sale start date",
     "saleEndsAtPlaceholder": "Sale end date",

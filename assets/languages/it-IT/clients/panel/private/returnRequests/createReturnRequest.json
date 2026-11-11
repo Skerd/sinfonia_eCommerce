@@ -32,7 +32,8 @@
       "rejected": "Rifiutata",
       "received": "Ricevuta",
       "completed": "Completata"
-    }
+    },
+    "orderAmountDescription": "Nella valuta dell'ordine."
   },
   "axios": {
     "start": {

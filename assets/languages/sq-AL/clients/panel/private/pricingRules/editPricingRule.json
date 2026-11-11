@@ -49,7 +49,9 @@
       "collection": "Koleksionet",
       "category": "Kategoritë",
       "customer_group": "Grupet e klientëve"
-    }
+    },
+    "valueDescription": "Një përqindje, ose një shumë në monedhën e dyqanit për një zbritje fikse.",
+    "shopAmountDescription": "Në monedhën e dyqanit (monedha e parë e kompanisë)."
   },
   "axios": {
     "start": {

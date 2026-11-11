@@ -21,7 +21,7 @@
     "priceAmountLabel": "Preis",
     "priceAmountPlaceholder": "0.00",
     "currencyLabel": "Währung",
-    "currencyPlaceholder": "Währung auswählen",
+    "currencyPlaceholder": "Währung des Inserats, wenn leer",
     "deliveryDaysLabel": "Liefertage",
     "deliveryDaysPlaceholder": "E.g. 2"
   },

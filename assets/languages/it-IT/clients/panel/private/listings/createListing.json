@@ -47,7 +47,7 @@
     "mainImageLabel": "Immagine principale",
     "priceCurrencyIdLabel": "Valuta",
     "priceCurrencyLabel": "Valuta",
-    "priceCurrencyPlaceholder": "Valuta",
+    "priceCurrencyPlaceholder": "Valuta del negozio se vuoto",
     "priceLabel": "Prezzo",
     "providerLabel": "Fornitore",
     "providerPlaceholder": "Seleziona l'utente che offre questo annuncio",

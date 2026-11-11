@@ -68,8 +68,9 @@ function PosTill({resolveLanguageKey}: WithLanguageType) {
         onAddCartLine: cartApi.addCartLine,
     });
 
-    const currencyCode = sessionApi.config?.currency?.abbreviation || "EUR";
-    const money = useMemo(() => (n: number) => formatMoney(n, currencyCode), [currencyCode]);
+    const currencyCode = sessionApi.config?.currency?.abbreviation;
+    const currencyDecimals = sessionApi.config?.currency?.decimalPlaces ?? 2;
+    const money = useMemo(() => (n: number) => formatMoney(n, currencyCode, currencyDecimals), [currencyCode, currencyDecimals]);
 
     const paymentsApi = usePosPayments({
         session: sessionApi.session,

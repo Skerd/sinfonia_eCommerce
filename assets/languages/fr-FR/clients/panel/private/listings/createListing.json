@@ -47,7 +47,7 @@
     "mainImageLabel": "Image principale",
     "priceCurrencyIdLabel": "Devise",
     "priceCurrencyLabel": "Devise",
-    "priceCurrencyPlaceholder": "Devise",
+    "priceCurrencyPlaceholder": "Devise de la boutique si vide",
     "priceLabel": "Prix",
     "providerLabel": "Prestataire",
     "providerPlaceholder": "Sélectionnez l'utilisateur qui propose cette annonce",
