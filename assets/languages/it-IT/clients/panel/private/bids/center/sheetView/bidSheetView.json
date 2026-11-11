@@ -5,7 +5,7 @@
   "overview": "Panoramica",
   "amount": "Importo",
   "currency": "Valuta",
-  "deliveryDays": "Giorni di consegna",
+  "deliveryDays": "Tempi di consegna",
   "proposal": "Proposta",
   "status": "Stato",
   "bidder": "Offerente",
@@ -23,5 +23,9 @@
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "deliveryDaysValue": {
+    "one": "{value} giorno",
+    "other": "{value} giorni"
+  }
 }

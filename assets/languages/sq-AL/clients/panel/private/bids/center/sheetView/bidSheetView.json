@@ -5,7 +5,7 @@
   "overview": "Përmbledhje",
   "amount": "Shuma",
   "currency": "Valuta",
-  "deliveryDays": "Ditë dorëzimi",
+  "deliveryDays": "Koha e dorëzimit",
   "proposal": "Propozimi",
   "status": "Statusi",
   "bidder": "Ofertuesi",
@@ -23,5 +23,9 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "deliveryDaysValue": {
+    "one": "{value} ditë",
+    "other": "{value} ditë"
+  }
 }

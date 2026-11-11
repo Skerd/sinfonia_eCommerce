@@ -16,7 +16,7 @@
   "price": "Preis",
   "priceCurrency": "Währung",
   "pricingType": "Preise",
-  "deliveryDays": "Lieferzeit (Tage)",
+  "deliveryDays": "Lieferzeit",
   "address": "Standort",
   "country": "Land",
   "state": "Region / kanton",
@@ -86,5 +86,9 @@
     "spam": "Spam",
     "misleading": "Irreführend",
     "other": "Andere"
+  },
+  "deliveryDaysValue": {
+    "one": "{value} Tag",
+    "other": "{value} Tage"
   }
 }

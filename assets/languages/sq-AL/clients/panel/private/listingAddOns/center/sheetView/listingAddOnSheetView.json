@@ -11,10 +11,14 @@
   "provider": "Ofruesi",
   "priceAmount": "Çmimi",
   "currency": "Valuta",
-  "deliveryDays": "Dorëzimi (ditë)",
+  "deliveryDays": "Koha e dorëzimit",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "deliveryDaysValue": {
+    "one": "{value} ditë",
+    "other": "{value} ditë"
+  }
 }

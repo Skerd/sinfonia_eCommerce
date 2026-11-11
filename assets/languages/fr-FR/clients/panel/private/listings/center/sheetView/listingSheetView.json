@@ -16,7 +16,7 @@
   "price": "Prix",
   "priceCurrency": "Devise",
   "pricingType": "Tarification",
-  "deliveryDays": "Livraison (jours)",
+  "deliveryDays": "Délai de livraison",
   "address": "Emplacement",
   "country": "Pays",
   "state": "Région / état",
@@ -86,5 +86,9 @@
     "spam": "Spam",
     "misleading": "Trompeur",
     "other": "Autre"
+  },
+  "deliveryDaysValue": {
+    "one": "{value} jour",
+    "other": "{value} jours"
   }
 }

@@ -11,10 +11,14 @@
   "provider": "Prestataire",
   "priceAmount": "Prix",
   "currency": "Devise",
-  "deliveryDays": "Livraison (jours)",
+  "deliveryDays": "Délai de livraison",
   "createdAt": "Créé le",
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "deliveryDaysValue": {
+    "one": "{value} jour",
+    "other": "{value} jours"
+  }
 }

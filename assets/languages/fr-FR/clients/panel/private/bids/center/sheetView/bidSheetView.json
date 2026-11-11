@@ -5,7 +5,7 @@
   "overview": "Vue d'ensemble",
   "amount": "Montant",
   "currency": "Devise",
-  "deliveryDays": "Jours de livraison",
+  "deliveryDays": "Délai de livraison",
   "proposal": "Proposition",
   "status": "Statut",
   "bidder": "Soumissionnaire",
@@ -23,5 +23,9 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "deliveryDaysValue": {
+    "one": "{value} jour",
+    "other": "{value} jours"
+  }
 }

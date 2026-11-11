@@ -16,7 +16,7 @@
   "price": "Çmimi",
   "priceCurrency": "Valuta",
   "pricingType": "Lloji i çmimit",
-  "deliveryDays": "Dorëzimi (ditë)",
+  "deliveryDays": "Koha e dorëzimit",
   "address": "Vendndodhja",
   "country": "Shteti",
   "state": "Rajoni / qarku",
@@ -86,5 +86,9 @@
     "spam": "Spam",
     "misleading": "Mashtruese",
     "other": "Tjetër"
+  },
+  "deliveryDaysValue": {
+    "one": "{value} ditë",
+    "other": "{value} ditë"
   }
 }

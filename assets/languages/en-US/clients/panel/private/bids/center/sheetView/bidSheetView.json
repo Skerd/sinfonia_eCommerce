@@ -5,7 +5,7 @@
   "overview": "Overview",
   "amount": "Amount",
   "currency": "Currency",
-  "deliveryDays": "Delivery days",
+  "deliveryDays": "Delivery time",
   "proposal": "Proposal",
   "status": "Status",
   "bidder": "Bidder",
@@ -23,5 +23,9 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "deliveryDaysValue": {
+    "one": "{value} day",
+    "other": "{value} days"
+  }
 }

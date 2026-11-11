@@ -11,10 +11,14 @@
   "provider": "Fornitore",
   "priceAmount": "Prezzo",
   "currency": "Valuta",
-  "deliveryDays": "Consegna (giorni)",
+  "deliveryDays": "Tempi di consegna",
   "createdAt": "Creato il",
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "deliveryDaysValue": {
+    "one": "{value} giorno",
+    "other": "{value} giorni"
+  }
 }
