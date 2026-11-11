@@ -122,6 +122,10 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
     const revenue = data.revenue;
     const selectedCurrency = currencyId || revenue?.currency?._id || "";
     const currencies = revenue?.currencies ?? [];
+    // Figures are in the currency the server reports for them; without one they stay plain numbers, never EUR.
+    const revenueCurrency = revenue?.currency?.abbreviation;
+    const productsCurrency = data.products?.currency?.abbreviation;
+    const money = (value: number) => (revenueCurrency ? formatCurrency(value, revenueCurrency) : formatNumber(value));
 
     const labelOrderStatus = useCallback(
         (status: string) => {
@@ -194,7 +198,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.totalRevenue")}
-                            value={formatCurrency(revenue?.totalRevenue ?? 0)}
+                            value={money(revenue?.totalRevenue ?? 0)}
                             subtitle={rk("kpi.totalRevenueDesc")}
                             icon={IconCoin}
                             variant="primary"
@@ -223,7 +227,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.averageOrderValue")}
-                            value={formatCurrency(revenue?.averageOrderValue ?? 0)}
+                            value={money(revenue?.averageOrderValue ?? 0)}
                             subtitle={rk("kpi.averageOrderValueDesc")}
                             icon={IconTrendingUp}
                             variant="success"
@@ -236,14 +240,14 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.totalTax")}
-                            value={formatCurrency(revenue?.totalTax ?? 0)}
+                            value={money(revenue?.totalTax ?? 0)}
                             subtitle={rk("kpi.totalTaxDesc")}
                             icon={IconReceiptTax}
                         />
                         <KpiCard
                             compact
                             title={rk("kpi.totalShipping")}
-                            value={formatCurrency(revenue?.totalShipping ?? 0)}
+                            value={money(revenue?.totalShipping ?? 0)}
                             subtitle={rk("kpi.totalShippingDesc")}
                             icon={IconTruckDelivery}
                         />
@@ -268,7 +272,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                         <KpiCard
                             compact
                             title={rk("kpi.averageCartValue")}
-                            value={formatCurrency(data.carts?.averageCartValue ?? 0)}
+                            value={money(data.carts?.averageCartValue ?? 0)}
                             subtitle={rk("kpi.averageCartValueDesc")}
                             icon={IconCoin}
                         />
@@ -316,6 +320,7 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
                     </div>
 
                     <RevenueOrdersChart
+                        currencyCode={revenueCurrency}
                         series={revenue?.daily ?? []}
                         title={rk("revenueChartTitle")}
                         emptyMessage={rk("noChartData")}
@@ -342,12 +347,14 @@ function ECommerceAnalytics({resolveLanguageKey}: WithLanguageType) {
 
                     <div className="grid gap-4 lg:grid-cols-2">
                         <TopProductsChart
+                            currencyCode={productsCurrency}
                             products={data.products?.topProducts ?? []}
                             title={rk("topProductsChartTitle")}
                             emptyMessage={rk("noTopProducts")}
                             revenueLabel={rk("chart.revenue")}
                         />
                         <TopProductsTable
+                            currencyCode={productsCurrency}
                             products={data.products?.topProducts ?? []}
                             title={rk("topProductsTableTitle")}
                             emptyMessage={rk("noTopProducts")}

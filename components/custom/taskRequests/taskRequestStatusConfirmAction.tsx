@@ -18,6 +18,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {TaskRequestStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindActionAxiosLanguageKey(actionKey: "close" | "reopen", resolveLanguageKey: ResolveLanguageKey,): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -53,6 +54,7 @@ function TaskRequestStatusConfirmAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: TaskRequestStatusConfirmActionProps) {
     const {write} = useAccess("taskRequests");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -89,6 +91,11 @@ function TaskRequestStatusConfirmAction({
                         {resolveLanguageKey(`${actionKey}.description`)}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

@@ -28,6 +28,7 @@ export default createGenericCreatePage<CreateListingFormType>({
     mapSubmitPayload: (data) => {
         const postBody: Record<string, unknown> = {
             title: data.title,
+            provider: data.provider,
             description: data.description,
             category: data.category,
             price: data.price,

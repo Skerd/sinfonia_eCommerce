@@ -20,6 +20,7 @@ import DisplayValue from "@coreModule/components/viewEngine/widgets/display/disp
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {OrderMilestone} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.dto.ts";
 import type {ReleaseOrderMilestoneFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type ReleaseMilestoneActionProps = WithLanguageType & WithAxiosType<ActionMessage, ReleaseOrderMilestoneFormType> & {
     /** The order's pending milestones, from the order sheet. */
@@ -39,6 +40,7 @@ function ReleaseMilestoneAction({
     onSuccess,
     onCancel,
     loading,
+    error,
 }: ReleaseMilestoneActionProps) {
     const [open, setOpen] = useState(true);
     const [milestoneId, setMilestoneId] = useState(milestones[0]?._id ?? "");
@@ -84,6 +86,11 @@ function ReleaseMilestoneAction({
                         </span>
                     ) : null}
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

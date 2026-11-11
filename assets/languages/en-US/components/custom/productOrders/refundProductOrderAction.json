@@ -9,8 +9,15 @@
     "reasonLabel": "Reason",
     "confirm": "Refund",
     "axios": {
-      "success": "Order refunded",
-      "error": "Could not refund order"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Order refunded"
+      },
+      "error": {
+        "title": "Could not refund order"
+      }
     }
   }
 }

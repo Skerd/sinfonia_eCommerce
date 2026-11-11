@@ -9,8 +9,15 @@
     "trackingUrlLabel": "URL di tracciamento",
     "confirm": "Spedisci",
     "axios": {
-      "success": "Ordine spedito",
-      "error": "Impossibile spedire l'ordine"
+      "start": {
+        "title": "Attendere…"
+      },
+      "success": {
+        "title": "Ordine spedito"
+      },
+      "error": {
+        "title": "Impossibile spedire l'ordine"
+      }
     }
   }
 }

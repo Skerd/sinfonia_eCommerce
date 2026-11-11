@@ -13,6 +13,10 @@ import ApproveReturnRequest from "./center/actions/approveReturnRequest.tsx";
 import RejectReturnRequest from "./center/actions/rejectReturnRequest.tsx";
 import ApproveReturnRequestDialog from "./center/dialogs/approveReturnRequestDialog.tsx";
 import RejectReturnRequestDialog from "./center/dialogs/rejectReturnRequestDialog.tsx";
+import ReceiveReturnRequest from "./center/actions/receiveReturnRequest.tsx";
+import CompleteReturnRequest from "./center/actions/completeReturnRequest.tsx";
+import ReceiveReturnRequestDialog from "./center/dialogs/receiveReturnRequestDialog.tsx";
+import CompleteReturnRequestDialog from "./center/dialogs/completeReturnRequestDialog.tsx";
 
 export function returnRequestEditPath(entity: {_id: string; type?: string}) {
     const params = new URLSearchParams();
@@ -69,12 +73,16 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
                 <>
                     <ApproveReturnRequest entity={_entity} onAction={bindRowAction} />
                     <RejectReturnRequest entity={_entity} onAction={bindRowAction} />
+                    <ReceiveReturnRequest entity={_entity} onAction={bindRowAction} />
+                    <CompleteReturnRequest entity={_entity} onAction={bindRowAction} />
                 </>
             )}
             renderSheetActionMenuChildren={(_entity, bindRowAction) => (
                 <>
                     <ApproveReturnRequest entity={_entity} onAction={bindRowAction} />
                     <RejectReturnRequest entity={_entity} onAction={bindRowAction} />
+                    <ReceiveReturnRequest entity={_entity} onAction={bindRowAction} />
+                    <CompleteReturnRequest entity={_entity} onAction={bindRowAction} />
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
@@ -91,6 +99,17 @@ function AllReturnRequests({resolveLanguageKey}: WithLanguageType) {
                 if (action === "rejectReturnRequest") {
                     return (
                         <RejectReturnRequestDialog
+                            open={true}
+                            onClose={resetAction}
+                            entity={entity}
+                            onSuccess={(patch: Partial<ReturnRequest>) => listRef.current?.updateRow?.(entity._id, patch)}
+                        />
+                    );
+                }
+                if (action === "receiveReturnRequest" || action === "completeReturnRequest") {
+                    const Dialog = action === "receiveReturnRequest" ? ReceiveReturnRequestDialog : CompleteReturnRequestDialog;
+                    return (
+                        <Dialog
                             open={true}
                             onClose={resetAction}
                             entity={entity}

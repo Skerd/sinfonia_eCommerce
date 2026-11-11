@@ -6,9 +6,15 @@
     "description": "Vous serez redirigé vers Stripe pour configurer (ou poursuivre) les versements Express de ce profil de prestataire. Les fonds en séquestre ne peuvent vous être versés qu'une fois l'intégration terminée.",
     "confirm": "Ouvrir Stripe",
     "axios": {
-      "loading": "Création du lien Stripe…",
-      "success": "Lien d'intégration Stripe prêt",
-      "error": "Impossible de créer le lien d'intégration Stripe"
+      "start": {
+        "title": "Création du lien Stripe…"
+      },
+      "success": {
+        "title": "Lien d'intégration Stripe prêt"
+      },
+      "error": {
+        "title": "Impossible de créer le lien d'intégration Stripe"
+      }
     }
   },
   "refreshAccountStatus": {
@@ -16,9 +22,15 @@
     "description": "Récupère le dernier statut du compte Connect depuis Stripe et met à jour l’éligibilité aux paiements et aux versements de ce profil.",
     "confirm": "Actualiser l'état",
     "axios": {
-      "loading": "Actualisation du statut Stripe…",
-      "success": "Statut Stripe mis à jour",
-      "error": "Impossible d'actualiser le statut de Stripe"
+      "start": {
+        "title": "Actualisation du statut Stripe…"
+      },
+      "success": {
+        "title": "Statut Stripe mis à jour"
+      },
+      "error": {
+        "title": "Impossible d'actualiser le statut de Stripe"
+      }
     }
   }
 }

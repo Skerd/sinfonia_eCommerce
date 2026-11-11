@@ -12,6 +12,10 @@ import SubmitOrderDeliveryDropdown from "@eCommerceModule/clients/panel/private/
 import AcceptOrderDeliveryDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/acceptOrderDeliveryDropdown.tsx";
 import RequestRevisionDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/requestRevisionDropdown.tsx";
 import RaiseDisputeDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/raiseDisputeDropdown.tsx";
+import CreateMilestoneDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/createMilestoneDropdown.tsx";
+import ReleaseMilestoneDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/releaseMilestoneDropdown.tsx";
+import CreateMilestoneAction from "@eCommerceModule/components/custom/orders/createMilestoneAction.tsx";
+import ReleaseMilestoneAction from "@eCommerceModule/components/custom/orders/releaseMilestoneAction.tsx";
 import OrderActionConfirmAction from "@eCommerceModule/components/custom/orders/orderActionConfirmAction.tsx";
 import OrderExtendAction from "@eCommerceModule/components/custom/orders/orderExtendAction.tsx";
 import SubmitOrderDeliveryAction from "@eCommerceModule/components/custom/orders/submitOrderDeliveryAction.tsx";
@@ -156,6 +160,17 @@ function OrderCard({
                                 onCancel={() => setAction("")}
                             />
                         )}
+                        {action === "createMilestone" && (
+                            <CreateMilestoneAction orderId={row._id} displayName={title} onSuccess={() => setAction("")} onCancel={() => setAction("")} />
+                        )}
+                        {action === "releaseMilestone" && (
+                            <ReleaseMilestoneAction
+                                milestones={(row.milestones ?? []).filter((milestone) => milestone.status === "pending")}
+                                displayName={title}
+                                onSuccess={() => setAction("")}
+                                onCancel={() => setAction("")}
+                            />
+                        )}
                         {action === "raiseDispute" && (
                             <RaiseDisputeAction
                                 orderId={row._id}
@@ -184,6 +199,8 @@ function OrderCard({
                         <AcceptOrderDeliveryDropdown order={row} onAction={setAction} />
                         <RequestRevisionDropdown order={row} onAction={setAction} />
                         <RaiseDisputeDropdown order={row} onAction={setAction} />
+                        <CreateMilestoneDropdown order={row} onAction={setAction} />
+                        <ReleaseMilestoneDropdown order={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow

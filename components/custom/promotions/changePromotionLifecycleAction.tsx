@@ -21,6 +21,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Promotion} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/promotion/promotion.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 export type PromotionLifecycleVerb = "pause" | "resume" | "stop";
 
@@ -72,6 +73,7 @@ function ChangePromotionLifecycleAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ChangePromotionLifecycleActionProps) {
     const {write} = useAccess("promotions");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -139,6 +141,11 @@ function ChangePromotionLifecycleAction({
                         <p className="text-xs text-muted-foreground">{resolveLanguageKey("stop.reasonHint")}</p>
                     </div>
                 )}
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

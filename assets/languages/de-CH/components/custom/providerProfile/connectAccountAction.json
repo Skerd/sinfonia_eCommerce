@@ -6,9 +6,15 @@
     "description": "Sie werden zu Stripe weitergeleitet, um Express-Auszahlungen für dieses Anbieterprofil einzurichten (oder die Einrichtung fortzusetzen). Treuhandfreigaben können erst nach abgeschlossenem Onboarding an Sie ausgezahlt werden.",
     "confirm": "Stripe öffnen",
     "axios": {
-      "loading": "Stripe-Link wird erstellt…",
-      "success": "Stripe-Onboarding-Link bereit",
-      "error": "Stripe-Onboarding-Link konnte nicht erstellt werden"
+      "start": {
+        "title": "Stripe-Link wird erstellt…"
+      },
+      "success": {
+        "title": "Stripe-Onboarding-Link bereit"
+      },
+      "error": {
+        "title": "Stripe-Onboarding-Link konnte nicht erstellt werden"
+      }
     }
   },
   "refreshAccountStatus": {
@@ -16,9 +22,15 @@
     "description": "Holt den aktuellen Status des Connect-Kontos von Stripe und aktualisiert, ob dieses Profil Zahlungen und Auszahlungen erhalten kann.",
     "confirm": "Status aktualisieren",
     "axios": {
-      "loading": "Stripe-Status wird aktualisiert…",
-      "success": "Stripe-Status aktualisiert",
-      "error": "Stripe-Status konnte nicht aktualisiert werden"
+      "start": {
+        "title": "Stripe-Status wird aktualisiert…"
+      },
+      "success": {
+        "title": "Stripe-Status aktualisiert"
+      },
+      "error": {
+        "title": "Stripe-Status konnte nicht aktualisiert werden"
+      }
     }
   }
 }

@@ -14,6 +14,7 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {_id: string};
 /** The manual CIS send's answer: CIS's own fault, when it refused the sale, comes back as `fault`. */
@@ -30,14 +31,11 @@ type Props = WithLanguageType &
     };
 
 /** "Not registered, send again" (D98): confirms, then clears the mark and sends the sale to CIS. */
-function ResendPosOrderFiscalDialog({open, onClose, entity, resolveLanguageKey, onFilterChange, innerRef, loading, onSuccess}: Props) {
+function ResendPosOrderFiscalDialog({open, onClose, entity, resolveLanguageKey, onFilterChange, innerRef, loading, onSuccess, error}: Props) {
     useImperativeHandle(innerRef, () => ({
         success: ({data}: ResendAxiosBody) => {
             if (data.fault) toast.error(String(resolveLanguageKey("fault")), {description: data.fault});
             onSuccess?.(data.order);
-            onClose();
-        },
-        error: () => {
             onClose();
         },
     }));
@@ -52,6 +50,11 @@ function ResendPosOrderFiscalDialog({open, onClose, entity, resolveLanguageKey, 
                     </DialogTitle>
                     <DialogDescription>{resolveLanguageKey("description")}</DialogDescription>
                 </DialogHeader>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

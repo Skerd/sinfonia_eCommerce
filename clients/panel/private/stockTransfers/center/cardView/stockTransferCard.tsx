@@ -33,6 +33,7 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
             hideActions={hideActions}
             sheetOnly={sheetOnly}
             editPath={stockTransferEditPath}
+            hideEdit={(row) => row.status !== "draft"}
             Sheet={StockTransferSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/stockTransfer"

@@ -30,8 +30,9 @@ export default createGenericEditPage<CmsBlock, EditCmsBlockFormType>({
             collectionId: data.config?.collectionId?._id,
             categoryIds: data.config?.categoryIds?.map((category) => category._id),
         },
-        startsAt: data.startsAt ? new Date(data.startsAt).toISOString().slice(0, 16).replace("T", " ") : undefined,
-        endsAt: data.endsAt ? new Date(data.endsAt).toISOString().slice(0, 16).replace("T", " ") : undefined,
+        // DateInput shows a stored ISO instant in local wall-clock time; slicing it would show UTC.
+        startsAt: data.startsAt ?? undefined,
+        endsAt: data.endsAt ?? undefined,
     }),
     buildFormExtras: (_entityId, _params, entity) => {
         if (entity) {

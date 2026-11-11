@@ -15,6 +15,7 @@ import {
     DialogTitle,
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {pauseReason?: string};
 type Response = ActionMessage & {isPaused?: boolean};
@@ -34,15 +35,13 @@ function PauseAllPosConfigsDialog({
     innerRef,
     loading,
     onSuccess,
+    error,
 }: Props) {
     const [pauseReason, setPauseReason] = useState("");
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
             onSuccess?.();
-            onClose();
-        },
-        error: () => {
             onClose();
         },
     }));
@@ -65,6 +64,11 @@ function PauseAllPosConfigsDialog({
                         onChange={(e) => setPauseReason(e.target.value)}
                     />
                 </div>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

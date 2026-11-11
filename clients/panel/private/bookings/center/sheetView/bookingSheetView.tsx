@@ -57,6 +57,7 @@ function BookingSheetView({
             hideActions={hideActions}
             onDelete={onDelete}
             onRestore={onRestore}
+            hideEdit
             editPath=""
             headerTitle={getName((sheetData as Booking).provider) || undefined}
             onSheetRowPatched={(row) => {

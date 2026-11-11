@@ -18,6 +18,7 @@ import {
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
 import {RETURN_REQUEST_NOTE_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {
     _id: string;
@@ -42,6 +43,7 @@ function ApproveReturnRequestDialog({
     innerRef,
     loading,
     onSuccess,
+    error,
 }: Props) {
     const [refundAmount, setRefundAmount] = useState(
         entity.refundAmount != null ? String(entity.refundAmount) : "",
@@ -57,9 +59,6 @@ function ApproveReturnRequestDialog({
                 adminNote: notes.trim() || entity.adminNote,
                 resolvedAt: new Date().toISOString(),
             });
-            onClose();
-        },
-        error: () => {
             onClose();
         },
     }));
@@ -107,6 +106,11 @@ function ApproveReturnRequestDialog({
                         />
                     </div>
                 </div>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

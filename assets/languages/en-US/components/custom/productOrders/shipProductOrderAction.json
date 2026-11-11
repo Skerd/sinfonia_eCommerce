@@ -9,8 +9,15 @@
     "trackingUrlLabel": "Tracking URL",
     "confirm": "Ship",
     "axios": {
-      "success": "Order shipped",
-      "error": "Could not ship order"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Order shipped"
+      },
+      "error": {
+        "title": "Could not ship order"
+      }
     }
   }
 }

@@ -9,6 +9,10 @@ import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnR
 import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
 import ApproveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/approveReturnRequestDialog.tsx";
 import RejectReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/rejectReturnRequestDialog.tsx";
+import ReceiveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/receiveReturnRequest.tsx";
+import CompleteReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/completeReturnRequest.tsx";
+import ReceiveReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/receiveReturnRequestDialog.tsx";
+import CompleteReturnRequestDialog from "@eCommerceModule/clients/panel/private/returnRequests/center/dialogs/completeReturnRequestDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -78,6 +82,22 @@ function ReturnRequestCard({
                             onSuccess={(patch: Partial<ReturnRequest>) => setEntity({...row, ...patch})}
                         />
                     )}
+                    {action === "receiveReturnRequest" && (
+                        <ReceiveReturnRequestDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={row}
+                            onSuccess={(patch: Partial<ReturnRequest>) => setEntity({...row, ...patch})}
+                        />
+                    )}
+                    {action === "completeReturnRequest" && (
+                        <CompleteReturnRequestDialog
+                            open
+                            onClose={() => setAction("")}
+                            entity={row}
+                            onSuccess={(patch: Partial<ReturnRequest>) => setEntity({...row, ...patch})}
+                        />
+                    )}
                     {action === "rejectReturnRequest" && (
                         <RejectReturnRequestDialog
                             open
@@ -101,6 +121,8 @@ function ReturnRequestCard({
                     >
                         <ApproveReturnRequest entity={row} onAction={setAction} />
                         <RejectReturnRequest entity={row} onAction={setAction} />
+                        <ReceiveReturnRequest entity={row} onAction={setAction} />
+                        <CompleteReturnRequest entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow

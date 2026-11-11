@@ -4,6 +4,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import ConfirmDialog from "@coreModule/components/custom/confirmDialog.tsx";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import {STOCK_DOCUMENT_ACTIONS, type StockDocumentEntity, type StockDocumentResource} from "./stockDocumentActions.ts";
 
@@ -17,7 +18,7 @@ type OwnProps = {
 
 type Props = OwnProps & WithLanguageType & WithAxiosType<ActionMessage> & {api: string};
 
-function StockDocumentActionDialogInner({resource, action, entity, onClose, onSuccess, resolveLanguageKey, innerRef, onFilterChange, loading}: Props) {
+function StockDocumentActionDialogInner({resource, action, entity, onClose, onSuccess, resolveLanguageKey, innerRef, onFilterChange, loading, error}: Props) {
     const statuses: Record<string, string> = STOCK_DOCUMENT_ACTIONS[resource].actions;
 
     useImperativeHandle(innerRef, () => ({
@@ -25,7 +26,6 @@ function StockDocumentActionDialogInner({resource, action, entity, onClose, onSu
             onSuccess?.({status: statuses[action]});
             onClose();
         },
-        error: () => onClose(),
     }));
 
     return (
@@ -37,7 +37,13 @@ function StockDocumentActionDialogInner({resource, action, entity, onClose, onSu
             handleConfirm={() => onFilterChange({_id: entity._id})}
             isLoading={loading}
             destructive={action === "cancel"}
-        />
+        >
+            {error ? (
+                <Alert variant="destructive">
+                    <AlertDescription>{error.message}</AlertDescription>
+                </Alert>
+            ) : null}
+        </ConfirmDialog>
     );
 }
 

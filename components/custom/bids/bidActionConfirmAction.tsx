@@ -17,6 +17,7 @@ import {
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/bid/bid.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindActionAxiosLanguageKey(
     actionKey: "accept" | "reject",
@@ -54,6 +55,7 @@ function BidActionConfirmAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: BidActionConfirmActionProps) {
     const {write} = useAccess("marketplacebids");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -94,6 +96,11 @@ function BidActionConfirmAction({
                         {resolveLanguageKey(`${actionKey}.description`)}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

@@ -18,6 +18,7 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {CreateOrderMilestoneFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type CreateMilestoneActionProps = WithLanguageType & WithAxiosType<ActionMessage, CreateOrderMilestoneFormType> & {
     orderId: string;
@@ -36,6 +37,7 @@ function CreateMilestoneAction({
     onSuccess,
     onCancel,
     loading,
+    error,
 }: CreateMilestoneActionProps) {
     const [open, setOpen] = useState(true);
     const [name, setName] = useState("");
@@ -76,6 +78,11 @@ function CreateMilestoneAction({
                         <p className="text-xs text-muted-foreground">{resolveLanguageKey("amountHint")}</p>
                     </div>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

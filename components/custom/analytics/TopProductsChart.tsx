@@ -8,9 +8,11 @@ import {
     type ChartConfig,
 } from "@coreModule/components/ui/chart.tsx";
 import {DashboardWidgetCard, DashboardWidgetEmpty} from "@coreModule/components/custom/dashboardWidgetCard.tsx";
-import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type TopProductsChartProps = {
+    /** ISO code of the currency the amounts are in; without one they show as plain numbers. */
+    currencyCode?: string;
     products: AnalyticsTopProduct[];
     title: string;
     emptyMessage: string;
@@ -18,11 +20,14 @@ export type TopProductsChartProps = {
 };
 
 export function TopProductsChart({
+    currencyCode,
     products,
     title,
     emptyMessage,
     revenueLabel,
 }: TopProductsChartProps) {
+    const money = (value: number, options: {compact?: boolean} = {}) =>
+        currencyCode ? formatCurrency(value, currencyCode, options) : formatNumber(value, options);
     const chartData = useMemo(
         () =>
             products.map((product) => ({
@@ -56,7 +61,7 @@ export function TopProductsChart({
                         <XAxis
                             type="number"
                             tick={{fontSize: 11}}
-                            tickFormatter={(v) => formatCurrency(Number(v), undefined, {compact: true})}
+                            tickFormatter={(v) => money(Number(v), {compact: true})}
                         />
                         <YAxis
                             type="category"
@@ -70,7 +75,7 @@ export function TopProductsChart({
                         />
                         <ChartTooltip
                             cursor={{fill: "var(--muted)", fillOpacity: 0.4}}
-                            content={<ChartTooltipContent valueFormatter={(v) => formatCurrency(Number(v))} />}
+                            content={<ChartTooltipContent valueFormatter={(v) => money(Number(v))} />}
                         />
                         <Bar dataKey="revenue" fill="var(--color-revenue)" radius={[0, 4, 4, 0]} />
                     </BarChart>

@@ -23,6 +23,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {SubmitOrderDeliveryFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/submitOrderDelivery.form.validator.ts";
 import {Input} from "@coreModule/components/ui/input.tsx";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindSubmitDeliveryAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -59,6 +60,7 @@ function SubmitOrderDeliveryAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: SubmitOrderDeliveryActionProps) {
     const {write} = useAccess("orders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -151,6 +153,11 @@ function SubmitOrderDeliveryAction({
                         </div>
                     )}
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

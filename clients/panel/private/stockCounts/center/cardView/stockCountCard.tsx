@@ -32,6 +32,7 @@ function StockCountCard({entity, resolveLanguageKey, fetchId, hideActions = fals
             hideActions={hideActions}
             sheetOnly={sheetOnly}
             editPath={stockCountEditPath}
+            hideEdit={(row) => row.status !== "draft"}
             Sheet={StockCountSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/stockCount"

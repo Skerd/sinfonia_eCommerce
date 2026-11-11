@@ -6,9 +6,15 @@
     "description": "You will be redirected to Stripe to set up (or continue) Express payouts for this provider profile. Escrow releases can only pay you after onboarding is complete.",
     "confirm": "Open Stripe",
     "axios": {
-      "loading": "Creating Stripe link…",
-      "success": "Stripe onboarding link ready",
-      "error": "Could not create Stripe onboarding link"
+      "start": {
+        "title": "Creating Stripe link…"
+      },
+      "success": {
+        "title": "Stripe onboarding link ready"
+      },
+      "error": {
+        "title": "Could not create Stripe onboarding link"
+      }
     }
   },
   "refreshAccountStatus": {
@@ -16,9 +22,15 @@
     "description": "Pull the latest Connect account status from Stripe and update charges/payouts eligibility on this profile.",
     "confirm": "Refresh status",
     "axios": {
-      "loading": "Refreshing Stripe status…",
-      "success": "Stripe status updated",
-      "error": "Could not refresh Stripe status"
+      "start": {
+        "title": "Refreshing Stripe status…"
+      },
+      "success": {
+        "title": "Stripe status updated"
+      },
+      "error": {
+        "title": "Could not refresh Stripe status"
+      }
     }
   }
 }

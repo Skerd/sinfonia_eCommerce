@@ -21,6 +21,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Dispute} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/dispute/dispute.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 export type DisputeLifecycleVerb = "startReview" | "resolve" | "close";
 
@@ -76,6 +77,7 @@ function ChangeDisputeLifecycleAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ChangeDisputeLifecycleActionProps) {
     const {write} = useAccess("disputes");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -143,6 +145,11 @@ function ChangeDisputeLifecycleAction({
                         <p className="text-muted-foreground text-xs">{resolveLanguageKey("resolutionHint")}</p>
                     </div>
                 )}
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

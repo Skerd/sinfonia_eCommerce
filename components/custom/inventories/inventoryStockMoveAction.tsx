@@ -24,6 +24,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {INVENTORY_MOVEMENT_RECEIPT_MAX} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.schema-def.ts";
 import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/inventory.dto.ts";
 import {inventoryDeductReasons, type DeductInventoryFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventory/deductInventory.form.validator.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey, prefix: "restock" | "deduct"): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -60,6 +61,7 @@ function InventoryStockMoveAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: InventoryStockMoveActionProps) {
     const {write} = useAccess("inventories");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -267,6 +269,11 @@ function InventoryStockMoveAction({
                         />
                     </div>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

@@ -16,6 +16,7 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {_id: string; pauseReason?: string};
 type Response = ActionMessage & {isPaused?: boolean};
@@ -37,6 +38,7 @@ function PausePosConfigDialog({
     innerRef,
     loading,
     onSuccess,
+    error,
 }: Props) {
     const [pauseReason, setPauseReason] = useState("");
 
@@ -47,9 +49,6 @@ function PausePosConfigDialog({
                 pausedAt: new Date().toISOString(),
                 pauseReason: pauseReason.trim() || null,
             });
-            onClose();
-        },
-        error: () => {
             onClose();
         },
     }));
@@ -72,6 +71,11 @@ function PausePosConfigDialog({
                         onChange={(e) => setPauseReason(e.target.value)}
                     />
                 </div>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

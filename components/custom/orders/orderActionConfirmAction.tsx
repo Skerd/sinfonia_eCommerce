@@ -18,6 +18,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {OrderStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 const STATUS_BY_ACTION: Record<"accept" | "start" | "cancel" | "acceptDelivery", OrderStatus> = {
     accept: "accepted",
@@ -69,6 +70,7 @@ function OrderActionConfirmAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: OrderActionConfirmActionProps) {
     const {write} = useAccess("orders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -118,6 +120,11 @@ function OrderActionConfirmAction({
                         {resolveLanguageKey("description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

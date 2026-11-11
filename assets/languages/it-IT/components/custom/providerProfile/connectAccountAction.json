@@ -6,9 +6,15 @@
     "description": "Verrai reindirizzato a Stripe per configurare (o completare) i pagamenti Express di questo profilo fornitore. I fondi in garanzia possono esserti versati solo dopo il completamento dell'onboarding.",
     "confirm": "Apri Stripe",
     "axios": {
-      "loading": "Creazione del collegamento Stripe…",
-      "success": "Collegamento di onboarding Stripe pronto",
-      "error": "Impossibile creare il collegamento di onboarding Stripe"
+      "start": {
+        "title": "Creazione del collegamento Stripe…"
+      },
+      "success": {
+        "title": "Collegamento di onboarding Stripe pronto"
+      },
+      "error": {
+        "title": "Impossibile creare il collegamento di onboarding Stripe"
+      }
     }
   },
   "refreshAccountStatus": {
@@ -16,9 +22,15 @@
     "description": "Ottieni lo stato più recente dell'account Connect da Stripe e aggiorna l'idoneità ad addebiti/pagamenti su questo profilo.",
     "confirm": "Aggiorna stato",
     "axios": {
-      "loading": "Aggiornamento dello stato di Stripe…",
-      "success": "Stato di Stripe aggiornato",
-      "error": "Impossibile aggiornare lo stato di Stripe"
+      "start": {
+        "title": "Aggiornamento dello stato di Stripe…"
+      },
+      "success": {
+        "title": "Stato di Stripe aggiornato"
+      },
+      "error": {
+        "title": "Impossibile aggiornare lo stato di Stripe"
+      }
     }
   }
 }

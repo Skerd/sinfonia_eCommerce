@@ -20,6 +20,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {RefundProductOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/refundProductOrder.form.validator.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindRefundAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -52,6 +53,7 @@ function RefundProductOrderAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: RefundProductOrderActionProps) {
     const {write} = useAccess("productOrders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -117,6 +119,11 @@ function RefundProductOrderAction({
                         <Input id="refundReason" value={reason} onChange={(e) => setReason(e.target.value)} disabled={loading} />
                     </div>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

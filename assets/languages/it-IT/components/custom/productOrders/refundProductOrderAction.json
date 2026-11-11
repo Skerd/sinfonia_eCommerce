@@ -9,8 +9,15 @@
     "reasonLabel": "Motivo",
     "confirm": "Rimborso",
     "axios": {
-      "success": "Ordine rimborsato",
-      "error": "Impossibile rimborsare l'ordine"
+      "start": {
+        "title": "Attendere…"
+      },
+      "success": {
+        "title": "Ordine rimborsato"
+      },
+      "error": {
+        "title": "Impossibile rimborsare l'ordine"
+      }
     }
   }
 }

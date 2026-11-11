@@ -21,6 +21,7 @@ import {
     recordPosOrderFiscalCodesFormSchema,
     type RecordPosOrderFiscalCodesFormType,
 } from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/resolvePosOrderFiscal.form.validator.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 /** Maestro wraps the action's return as `{ data: { order } }`. */
 type RecordAxiosBody = {data: {order: PosOrder}};
@@ -46,6 +47,7 @@ function RecordPosOrderFiscalCodesDialog({
     innerRef,
     loading,
     onSuccess,
+    error,
 }: Props) {
     const form = useForm({
         resolver: zodResolver(recordPosOrderFiscalCodesFormSchema(languageCode, resolveLanguageKey("form"))),
@@ -106,6 +108,11 @@ function RecordPosOrderFiscalCodesDialog({
                         ))}
                     </form>
                 </Form>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

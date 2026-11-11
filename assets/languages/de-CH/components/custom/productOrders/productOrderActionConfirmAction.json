@@ -6,8 +6,15 @@
     "description": "Bestätigen Sie den Eingang dieser Bestellung und markieren Sie sie als bestätigt.",
     "confirm": "Bestätigen",
     "axios": {
-      "success": "Bestellung bestätigt",
-      "error": "Bestellung konnte nicht bestätigt werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Bestellung bestätigt"
+      },
+      "error": {
+        "title": "Bestellung konnte nicht bestätigt werden"
+      }
     }
   },
   "markProcessing": {
@@ -15,8 +22,15 @@
     "description": "Markieren Sie diese Bestellung als in Vorbereitung für den Versand.",
     "confirm": "In Bearbeitung setzen",
     "axios": {
-      "success": "Bestellung als in Bearbeitung markiert",
-      "error": "Bestellung konnte nicht aktualisiert werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Bestellung als in Bearbeitung markiert"
+      },
+      "error": {
+        "title": "Bestellung konnte nicht aktualisiert werden"
+      }
     }
   },
   "cancelOrder": {
@@ -24,8 +38,15 @@
     "description": "Storniert diese Bestellung und gibt reservierten Bestand frei. Bezahlte Bestellungen müssen zuerst erstattet werden.",
     "confirm": "Auftrag stornieren",
     "axios": {
-      "success": "Auftrag annulliert",
-      "error": "Bestellung konnte nicht storniert werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Auftrag annulliert"
+      },
+      "error": {
+        "title": "Bestellung konnte nicht storniert werden"
+      }
     }
   },
   "markPaid": {
@@ -33,8 +54,15 @@
     "description": "Die Zahlung per Nachnahme oder Banküberweisung als eingegangen erfassen. Reservierter Bestand wird zum Verkauf, und Geschenkkarten oder Downloads der Bestellung werden ausgestellt.",
     "confirm": "Als bezahlt markieren",
     "axios": {
-      "success": "Zahlung erfasst",
-      "error": "Zahlung konnte nicht erfasst werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Zahlung erfasst"
+      },
+      "error": {
+        "title": "Zahlung konnte nicht erfasst werden"
+      }
     }
   }
 }

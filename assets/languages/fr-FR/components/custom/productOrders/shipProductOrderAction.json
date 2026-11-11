@@ -9,8 +9,15 @@
     "trackingUrlLabel": "URL de suivi",
     "confirm": "Expédier",
     "axios": {
-      "success": "Commande expédiée",
-      "error": "Impossible d'expédier la commande"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Commande expédiée"
+      },
+      "error": {
+        "title": "Impossible d'expédier la commande"
+      }
     }
   }
 }

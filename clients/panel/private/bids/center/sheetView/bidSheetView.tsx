@@ -78,6 +78,7 @@ function BidSheetView({
                 hideActions={hideActions}
                 onDelete={onDelete}
                 onRestore={onRestore}
+                hideEdit
                 editPath=""
                 deleteRestoreConfirmLabel={displayLabel}
                 actionMenuAllowCustomChildren

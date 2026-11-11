@@ -18,6 +18,8 @@ import {DashboardWidgetCard, DashboardWidgetEmpty} from "@coreModule/components/
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type RevenueOrdersChartProps = {
+    /** ISO code of the currency the amounts are in; without one they show as plain numbers. */
+    currencyCode?: string;
     series: AnalyticsRevenueDaily[];
     title: string;
     emptyMessage: string;
@@ -26,12 +28,15 @@ export type RevenueOrdersChartProps = {
 };
 
 export function RevenueOrdersChart({
+    currencyCode,
     series,
     title,
     emptyMessage,
     revenueLabel,
     ordersLabel,
 }: RevenueOrdersChartProps) {
+    const money = (value: number, options: {compact?: boolean} = {}) =>
+        currencyCode ? formatCurrency(value, currencyCode, options) : formatNumber(value, options);
     const chartData = useMemo(
         () =>
             series.map((day) => ({
@@ -65,7 +70,7 @@ export function RevenueOrdersChart({
                         <YAxis
                             yAxisId="revenue"
                             tick={{fontSize: 11}}
-                            tickFormatter={(v) => formatCurrency(Number(v), undefined, {compact: true})}
+                            tickFormatter={(v) => money(Number(v), {compact: true})}
                         />
                         <YAxis
                             yAxisId="orders"

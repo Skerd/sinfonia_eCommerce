@@ -14,6 +14,7 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {
     _id: string;
@@ -34,6 +35,7 @@ function RequestManagerPinResetDialog({
     onFilterChange,
     innerRef,
     loading,
+    error,
 }: Props) {
     const [sent, setSent] = useState(false);
 
@@ -58,6 +60,11 @@ function RequestManagerPinResetDialog({
                         {resolveLanguageKey(sent ? "sentDescription" : "description")}
                     </DialogDescription>
                 </DialogHeader>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     {sent ? (
                         <Button type="button" onClick={onClose}>

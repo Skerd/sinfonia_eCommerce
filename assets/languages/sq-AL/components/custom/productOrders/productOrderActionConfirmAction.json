@@ -6,8 +6,15 @@
     "description": "Prano këtë porosi dhe shënoje si të konfirmuar.",
     "confirm": "Konfirmo",
     "axios": {
-      "success": "Porosia u konfirmua",
-      "error": "Porosia nuk u konfirmua dot"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Porosia u konfirmua"
+      },
+      "error": {
+        "title": "Porosia nuk u konfirmua dot"
+      }
     }
   },
   "markProcessing": {
@@ -15,8 +22,15 @@
     "description": "Shëno porosinë si në përgatitje për dërgesë.",
     "confirm": "Shëno në përpunim",
     "axios": {
-      "success": "Porosia u shënua në përpunim",
-      "error": "Porosia nuk u përditësua dot"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Porosia u shënua në përpunim"
+      },
+      "error": {
+        "title": "Porosia nuk u përditësua dot"
+      }
     }
   },
   "cancelOrder": {
@@ -24,8 +38,15 @@
     "description": "Anulon këtë porosi dhe liron stokun e rezervuar. Porositë e paguara duhen rimbursuar më parë.",
     "confirm": "Anulo porosinë",
     "axios": {
-      "success": "Porosia u anulua",
-      "error": "Porosia nuk u anulua dot"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Porosia u anulua"
+      },
+      "error": {
+        "title": "Porosia nuk u anulua dot"
+      }
     }
   },
   "markPaid": {
@@ -33,8 +54,15 @@
     "description": "Regjistro pagesën me para në dorëzim ose me transfertë bankare si të marrë. Stoku i rezervuar kthehet në shitje dhe kartat dhuratë ose shkarkimet e porosisë lëshohen.",
     "confirm": "Shëno të paguar",
     "axios": {
-      "success": "Pagesa u regjistrua",
-      "error": "Pagesa nuk mund të regjistrohej"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Pagesa u regjistrua"
+      },
+      "error": {
+        "title": "Pagesa nuk mund të regjistrohej"
+      }
     }
   }
 }

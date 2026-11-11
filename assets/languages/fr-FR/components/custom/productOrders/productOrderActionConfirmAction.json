@@ -6,8 +6,15 @@
     "description": "Accusez réception de cette commande et marquez-la comme confirmée.",
     "confirm": "Confirmer",
     "axios": {
-      "success": "Commande confirmée",
-      "error": "Impossible de confirmer la commande"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Commande confirmée"
+      },
+      "error": {
+        "title": "Impossible de confirmer la commande"
+      }
     }
   },
   "markProcessing": {
@@ -15,8 +22,15 @@
     "description": "Marquez cette commande comme étant en préparation pour l'expédition.",
     "confirm": "Marquer en préparation",
     "axios": {
-      "success": "Commande marquée comme en cours de traitement",
-      "error": "Impossible de mettre à jour la commande"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Commande marquée comme en cours de traitement"
+      },
+      "error": {
+        "title": "Impossible de mettre à jour la commande"
+      }
     }
   },
   "cancelOrder": {
@@ -24,8 +38,15 @@
     "description": "Annule cette commande et libère tout stock réservé. Les commandes payées doivent d’abord être remboursées.",
     "confirm": "Annuler la commande",
     "axios": {
-      "success": "Commande annulée",
-      "error": "Impossible d'annuler la commande"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Commande annulée"
+      },
+      "error": {
+        "title": "Impossible d'annuler la commande"
+      }
     }
   },
   "markPaid": {
@@ -33,8 +54,15 @@
     "description": "Enregistrer le paiement à la livraison ou par virement comme reçu. Le stock réservé devient une vente et les cartes-cadeaux ou téléchargements de la commande sont émis.",
     "confirm": "Marquer payé",
     "axios": {
-      "success": "Paiement enregistré",
-      "error": "Impossible d'enregistrer le paiement"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Paiement enregistré"
+      },
+      "error": {
+        "title": "Impossible d'enregistrer le paiement"
+      }
     }
   }
 }

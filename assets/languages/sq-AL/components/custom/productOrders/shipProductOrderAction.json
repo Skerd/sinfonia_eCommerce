@@ -9,8 +9,15 @@
     "trackingUrlLabel": "URL e gjurmimit",
     "confirm": "Dërgo",
     "axios": {
-      "success": "Porosia u dërgua",
-      "error": "Porosia nuk u dërgua dot"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Porosia u dërgua"
+      },
+      "error": {
+        "title": "Porosia nuk u dërgua dot"
+      }
     }
   }
 }

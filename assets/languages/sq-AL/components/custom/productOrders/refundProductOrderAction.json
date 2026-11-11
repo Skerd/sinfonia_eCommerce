@@ -9,8 +9,15 @@
     "reasonLabel": "Arsyeja",
     "confirm": "Rimburso",
     "axios": {
-      "success": "Porosia u rimbursua",
-      "error": "Porosia nuk u rimbursua dot"
+      "start": {
+        "title": "Ju lutem prisni…"
+      },
+      "success": {
+        "title": "Porosia u rimbursua"
+      },
+      "error": {
+        "title": "Porosia nuk u rimbursua dot"
+      }
     }
   }
 }

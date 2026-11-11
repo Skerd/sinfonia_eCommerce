@@ -17,6 +17,7 @@ import {
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindActionAxiosLanguageKey(
     actionKey: "activate" | "deactivate",
@@ -51,6 +52,7 @@ function ChangeListingStatusAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ChangeListingStatusActionProps) {
     const {write} = useAccess("listings");
     /**
@@ -104,6 +106,11 @@ function ChangeListingStatusAction({
                         {listingTitle ? ` '${listingTitle}'` : ""}?
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>
                         {resolveLanguageKey("cancel")}

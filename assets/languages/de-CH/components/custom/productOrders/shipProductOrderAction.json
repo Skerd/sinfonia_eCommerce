@@ -9,8 +9,15 @@
     "trackingUrlLabel": "Sendungsverfolgungs-URL",
     "confirm": "Versenden",
     "axios": {
-      "success": "Bestellung versandt",
-      "error": "Bestellung konnte nicht versandt werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Bestellung versandt"
+      },
+      "error": {
+        "title": "Bestellung konnte nicht versandt werden"
+      }
     }
   }
 }

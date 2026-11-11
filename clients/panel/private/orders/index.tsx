@@ -14,6 +14,10 @@ import SubmitOrderDeliveryDropdown from "./center/actions/submitOrderDeliveryDro
 import AcceptOrderDeliveryDropdown from "./center/actions/acceptOrderDeliveryDropdown.tsx";
 import RequestRevisionDropdown from "./center/actions/requestRevisionDropdown.tsx";
 import RaiseDisputeDropdown from "@eCommerceModule/clients/panel/private/orders/center/actions/raiseDisputeDropdown.tsx";
+import CreateMilestoneDropdown from "./center/actions/createMilestoneDropdown.tsx";
+import ReleaseMilestoneDropdown from "./center/actions/releaseMilestoneDropdown.tsx";
+import CreateMilestoneAction from "@eCommerceModule/components/custom/orders/createMilestoneAction.tsx";
+import ReleaseMilestoneAction from "@eCommerceModule/components/custom/orders/releaseMilestoneAction.tsx";
 import OrderActionConfirmAction from "@eCommerceModule/components/custom/orders/orderActionConfirmAction.tsx";
 import OrderExtendAction from "@eCommerceModule/components/custom/orders/orderExtendAction.tsx";
 import SubmitOrderDeliveryAction from "@eCommerceModule/components/custom/orders/submitOrderDeliveryAction.tsx";
@@ -45,9 +49,24 @@ function AllOrders({resolveLanguageKey}: WithLanguageType) {
                     <AcceptOrderDeliveryDropdown order={order} onAction={bindRowAction} />
                     <RequestRevisionDropdown order={order} onAction={bindRowAction} />
                     <RaiseDisputeDropdown order={order} onAction={bindRowAction} />
+                    <CreateMilestoneDropdown order={order} onAction={bindRowAction} />
+                    <ReleaseMilestoneDropdown order={order} onAction={bindRowAction} />
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                if (action === "createMilestone") {
+                    return <CreateMilestoneAction orderId={entity._id} displayName={orderDisplayLabel(entity)} onSuccess={resetAction} onCancel={resetAction} />;
+                }
+                if (action === "releaseMilestone") {
+                    return (
+                        <ReleaseMilestoneAction
+                            milestones={(entity.milestones ?? []).filter((milestone) => milestone.status === "pending")}
+                            displayName={orderDisplayLabel(entity)}
+                            onSuccess={resetAction}
+                            onCancel={resetAction}
+                        />
+                    );
+                }
                 if (action === "submitDelivery") {
                     return (
                         <SubmitOrderDeliveryAction

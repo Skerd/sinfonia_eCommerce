@@ -18,6 +18,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type ProductOrderStatus = ProductOrder["status"];
 
@@ -76,6 +77,7 @@ function ProductOrderActionConfirmAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ProductOrderActionConfirmActionProps) {
     const {write} = useAccess("productOrders");
     const canWrite = actionKey === "markPaid" ? !!write?.paymentStatus : !!write?.status;
@@ -117,6 +119,11 @@ function ProductOrderActionConfirmAction({
                         {resolveLanguageKey("description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

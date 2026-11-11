@@ -25,6 +25,7 @@ import {
     FULFILLMENT_TRACKING_NUMBER_MAX,
     FULFILLMENT_TRACKING_URL_MAX,
 } from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.schema-def.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindShipAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -57,6 +58,7 @@ function ShipProductOrderAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ShipProductOrderActionProps) {
     const {write} = useAccess("productOrders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -116,6 +118,11 @@ function ShipProductOrderAction({
                         <Input id="shipTrackingUrl" value={trackingUrl} maxLength={FULFILLMENT_TRACKING_URL_MAX} onChange={(e) => setTrackingUrl(e.target.value)} disabled={loading} />
                     </div>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

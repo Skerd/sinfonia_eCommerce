@@ -9,8 +9,15 @@
     "reasonLabel": "Grund",
     "confirm": "Rückerstattung",
     "axios": {
-      "success": "Bestellung erstattet",
-      "error": "Bestellung konnte nicht erstattet werden"
+      "start": {
+        "title": "Bitte warten…"
+      },
+      "success": {
+        "title": "Bestellung erstattet"
+      },
+      "error": {
+        "title": "Bestellung konnte nicht erstattet werden"
+      }
     }
   }
 }

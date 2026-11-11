@@ -18,6 +18,7 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindRaiseDisputeLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -55,6 +56,7 @@ function RaiseDisputeAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: RaiseDisputeActionProps) {
     const {create} = useAccess("disputes");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -108,6 +110,11 @@ function RaiseDisputeAction({
                         maxLength={2000}
                     />
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

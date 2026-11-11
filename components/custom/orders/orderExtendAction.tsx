@@ -20,6 +20,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ExtendOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/extendOrder.form.validator.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindExtendAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -54,6 +55,7 @@ function OrderExtendAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: OrderExtendActionProps) {
     const {write} = useAccess("orders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -116,6 +118,11 @@ function OrderExtendAction({
                         {resolveLanguageKey("extend.additionalDaysHint")}
                     </p>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

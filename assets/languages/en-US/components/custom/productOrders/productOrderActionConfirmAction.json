@@ -6,8 +6,15 @@
     "description": "Acknowledge this order and mark it as confirmed.",
     "confirm": "Confirm",
     "axios": {
-      "success": "Order confirmed",
-      "error": "Could not confirm order"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Order confirmed"
+      },
+      "error": {
+        "title": "Could not confirm order"
+      }
     }
   },
   "markProcessing": {
@@ -15,8 +22,15 @@
     "description": "Mark this order as being prepared for shipment.",
     "confirm": "Mark processing",
     "axios": {
-      "success": "Order marked as processing",
-      "error": "Could not update order"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Order marked as processing"
+      },
+      "error": {
+        "title": "Could not update order"
+      }
     }
   },
   "cancelOrder": {
@@ -24,8 +38,15 @@
     "description": "Cancels this order and releases any reserved stock. Paid orders must be refunded first.",
     "confirm": "Cancel order",
     "axios": {
-      "success": "Order cancelled",
-      "error": "Could not cancel order"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Order cancelled"
+      },
+      "error": {
+        "title": "Could not cancel order"
+      }
     }
   },
   "markPaid": {
@@ -33,8 +54,15 @@
     "description": "Record the cash-on-delivery or bank-transfer payment as received. Reserved stock becomes a sale and any gift cards or downloads in the order are issued.",
     "confirm": "Mark paid",
     "axios": {
-      "success": "Payment recorded",
-      "error": "Could not record payment"
+      "start": {
+        "title": "Please wait…"
+      },
+      "success": {
+        "title": "Payment recorded"
+      },
+      "error": {
+        "title": "Could not record payment"
+      }
     }
   }
 }

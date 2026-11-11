@@ -10,6 +10,8 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import ActivateListingDropdown from "@eCommerceModule/clients/panel/private/listings/center/actions/activateListingDropdown.tsx";
 import DeactivateListingDropdown from "@eCommerceModule/clients/panel/private/listings/center/actions/deactivateListingDropdown.tsx";
 import ChangeListingStatusAction from "@eCommerceModule/components/custom/listings/changeListingStatusAction.tsx";
+import CreateOrderFromListingDropdown from "@eCommerceModule/clients/panel/private/listings/center/actions/createOrderFromListingDropdown.tsx";
+import CreateOrderFromListingAction from "@eCommerceModule/components/custom/listings/createOrderFromListingAction.tsx";
 
 export type ListingSheetViewOwnProps = {
     open: boolean;
@@ -89,6 +91,7 @@ function ListingSheetView({
                         {asListing.status !== "inactive" && !asListing.deletedAt && (
                             <DeactivateListingDropdown onAction={setAction} />
                         )}
+                        <CreateOrderFromListingDropdown listing={asListing} onAction={setAction} />
                     </>
                 }
             />
@@ -105,6 +108,16 @@ function ListingSheetView({
                         onSheetRowPatched?.(patch);
                         setAction("");
                     }}
+                    onCancel={() => setAction("")}
+                />
+            )}
+            {action === "createOrderFromListing" && (
+                <CreateOrderFromListingAction
+                    listingId={asListing._id}
+                    displayName={asListing.title}
+                    openAlert
+                    url="/api/eCommerceMarketplace/order/createFromListing"
+                    onSuccess={() => setAction("")}
                     onCancel={() => setAction("")}
                 />
             )}

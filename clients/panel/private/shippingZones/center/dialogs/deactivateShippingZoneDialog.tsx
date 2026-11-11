@@ -14,6 +14,7 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {ShippingZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/shippingZone.dto.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {_id: string};
 
@@ -34,13 +35,11 @@ function DeactivateShippingZoneDialog({
     innerRef,
     loading,
     onSuccess,
+    error,
 }: Props) {
     useImperativeHandle(innerRef, () => ({
         success: () => {
             onSuccess?.();
-            onClose();
-        },
-        error: () => {
             onClose();
         },
     }));
@@ -52,6 +51,11 @@ function DeactivateShippingZoneDialog({
                     <DialogTitle>{resolveLanguageKey("title")}</DialogTitle>
                     <DialogDescription>{resolveLanguageKey("description")}</DialogDescription>
                 </DialogHeader>
+                {error ? (
+                    <Alert variant="destructive" className="mx-4 w-auto">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                     <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                         {resolveLanguageKey("cancel")}

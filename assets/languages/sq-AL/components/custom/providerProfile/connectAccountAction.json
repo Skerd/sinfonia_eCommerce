@@ -6,9 +6,15 @@
     "description": "Do të ridrejtoheni te Stripe për të konfiguruar (ose vazhduar) pagesat Express për këtë profil ofruesi. Lirimet nga depozita mund t'ju paguajnë vetëm pasi të përfundojë regjistrimi në Stripe.",
     "confirm": "Hap Stripe",
     "axios": {
-      "loading": "Duke krijuar lidhjen Stripe…",
-      "success": "Lidhja e regjistrimit në Stripe është gati",
-      "error": "Nuk u krijua lidhja e regjistrimit në Stripe"
+      "start": {
+        "title": "Duke krijuar lidhjen Stripe…"
+      },
+      "success": {
+        "title": "Lidhja e regjistrimit në Stripe është gati"
+      },
+      "error": {
+        "title": "Nuk u krijua lidhja e regjistrimit në Stripe"
+      }
     }
   },
   "refreshAccountStatus": {
@@ -16,9 +22,15 @@
     "description": "Merr statusin e fundit të llogarisë Connect nga Stripe dhe përditëso të drejtën për arkëtime/pagesa dalëse në këtë profil.",
     "confirm": "Rifresko statusin",
     "axios": {
-      "loading": "Duke rifreskuar statusin Stripe…",
-      "success": "Statusi Stripe u përditësua",
-      "error": "Nuk u rifreskua statusi Stripe"
+      "start": {
+        "title": "Duke rifreskuar statusin Stripe…"
+      },
+      "success": {
+        "title": "Statusi Stripe u përditësua"
+      },
+      "error": {
+        "title": "Nuk u rifreskua statusi Stripe"
+      }
     }
   }
 }

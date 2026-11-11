@@ -20,6 +20,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {RequestRevisionFormType} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/requestRevision.form.validator.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 function bindRequestRevisionAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -53,6 +54,7 @@ function RequestRevisionAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: RequestRevisionActionProps) {
     const {write} = useAccess("orders");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -108,6 +110,11 @@ function RequestRevisionAction({
                         {resolveLanguageKey("requestRevision.minChars")}
                     </p>
                 </div>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

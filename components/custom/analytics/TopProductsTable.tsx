@@ -4,6 +4,8 @@ import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.
 import {Table} from "@coreModule/components/ui/table/table.tsx";
 
 export type TopProductsTableProps = {
+    /** ISO code of the currency the amounts are in; without one they show as plain numbers. */
+    currencyCode?: string;
     products: AnalyticsTopProduct[];
     title: string;
     emptyMessage: string;
@@ -13,6 +15,7 @@ export type TopProductsTableProps = {
 };
 
 export function TopProductsTable({
+    currencyCode,
     products,
     title,
     emptyMessage,
@@ -20,6 +23,8 @@ export function TopProductsTable({
     soldLabel,
     revenueLabel,
 }: TopProductsTableProps) {
+    const money = (value: number, options: {compact?: boolean} = {}) =>
+        currencyCode ? formatCurrency(value, currencyCode, options) : formatNumber(value, options);
     return (
         <DashboardWidgetCard title={title} contentClassName="px-0">
             {products.length === 0 ? (
@@ -50,7 +55,7 @@ export function TopProductsTable({
                                         {formatNumber(product.totalSold ?? 0)}
                                     </td>
                                     <td className="px-6 py-2.5 text-right tabular-nums">
-                                        {formatCurrency(product.totalRevenue ?? 0)}
+                                        {money(product.totalRevenue ?? 0)}
                                     </td>
                                 </tr>
                             ))}

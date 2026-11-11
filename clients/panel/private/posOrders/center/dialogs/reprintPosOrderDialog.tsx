@@ -20,6 +20,7 @@ import {
     PosReceiptPreview,
     PosReceiptPrintRoot,
 } from "@eCommerceModule/clients/panel/private/pos/PosReceiptTicket.tsx";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 type PostPayload = {_id: string};
 type ReprintResponse = {order: PosOrder; receipt: ReceiptPayload};
@@ -129,6 +130,11 @@ function ReprintPosOrderDialog({
                         ) : null}
                     </div>
 
+                    {error ? (
+                        <Alert variant="destructive" className="mx-4 w-auto">
+                            <AlertDescription>{error.message}</AlertDescription>
+                        </Alert>
+                    ) : null}
                     <DialogFooter className="gap-2 px-4 py-4 sm:gap-2">
                         <Button type="button" variant="outline" onClick={onClose} disabled={loading}>
                             {rk("cancel")}

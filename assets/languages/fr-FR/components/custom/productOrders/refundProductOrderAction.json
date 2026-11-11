@@ -9,8 +9,15 @@
     "reasonLabel": "Motif",
     "confirm": "Remboursement",
     "axios": {
-      "success": "Commande remboursée",
-      "error": "Impossible de rembourser la commande"
+      "start": {
+        "title": "Veuillez patienter…"
+      },
+      "success": {
+        "title": "Commande remboursée"
+      },
+      "error": {
+        "title": "Impossible de rembourser la commande"
+      }
     }
   }
 }

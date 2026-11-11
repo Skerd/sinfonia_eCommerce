@@ -17,6 +17,7 @@ import {
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
+import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 
 export type ConnectActionKey = "createAccountLink" | "refreshAccountStatus";
 
@@ -65,6 +66,7 @@ function ConnectAccountAction({
     onSuccess = () => {},
     onCancel = () => {},
     loading,
+    error,
 }: ConnectAccountActionProps) {
     const {write} = useAccess("providerProfiles");
     const [open, setOpen] = useState<boolean>(!!openAlert);
@@ -105,6 +107,11 @@ function ConnectAccountAction({
                         {resolveLanguageKey("description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
+                {error ? (
+                    <Alert variant="destructive">
+                        <AlertDescription>{error.message}</AlertDescription>
+                    </Alert>
+                ) : null}
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                     <AlertDialogAction

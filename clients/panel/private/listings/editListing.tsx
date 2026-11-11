@@ -52,6 +52,7 @@ export default createGenericEditPage<Listing, EditListingFormType>({
         const postBody: Record<string, unknown> = {_id: data._id};
 
         if (wf.title) postBody.title = data.title;
+        if (wf.provider && data.provider) postBody.provider = data.provider;
         if (wf.description) postBody.description = data.description ?? "";
         if (wf.category && data.category !== undefined) postBody.category = data.category;
         if (wf.price) postBody.price = data.price;
