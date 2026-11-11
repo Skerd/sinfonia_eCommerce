@@ -172,6 +172,18 @@ const ListingPackageCardLazy = lazy(() => import("@eCommerceModule/clients/panel
 const ListingPackageSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx"));
 const BookingSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx"));
 const ProviderProfileSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx"));
+// Cards and sheets the record hubs list (P10.7): a listing's, provider's, order's and task request's related records.
+const ListingCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listings/center/cardView/listingCard.tsx"));
+const OrderCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/orders/center/cardView/orderCard.tsx"));
+const BookingCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/bookings/center/cardView/bookingCard.tsx"));
+const BidCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/bids/center/cardView/bidCard.tsx"));
+const BidSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/bids/center/sheetView/bidSheetView.tsx"));
+const DisputeCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/disputes/center/cardView/disputeCard.tsx"));
+const DisputeSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/disputes/center/sheetView/disputeSheetView.tsx"));
+const ReviewCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/reviews/center/cardView/reviewCard.tsx"));
+const ReviewSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/reviews/center/sheetView/reviewSheetView.tsx"));
+const ListingFlagCardLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listingFlags/center/cardView/listingFlagCard.tsx"));
+const ListingFlagSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx"));
 const ListingCategorySheetViewLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/listingCategories/center/sheetView/categorySheetView.tsx"),
 );
@@ -240,6 +252,17 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#ListingPackageSheetView": ListingPackageSheetViewLazy,
         "#BookingSheetView": BookingSheetViewLazy,
         "#ProviderProfileSheetView": ProviderProfileSheetViewLazy,
+        "#ListingCard": ListingCardLazy,
+        "#OrderCard": OrderCardLazy,
+        "#BookingCard": BookingCardLazy,
+        "#BidCard": BidCardLazy,
+        "#BidSheetView": BidSheetViewLazy,
+        "#DisputeCard": DisputeCardLazy,
+        "#DisputeSheetView": DisputeSheetViewLazy,
+        "#ReviewCard": ReviewCardLazy,
+        "#ReviewSheetView": ReviewSheetViewLazy,
+        "#ListingFlagCard": ListingFlagCardLazy,
+        "#ListingFlagSheetView": ListingFlagSheetViewLazy,
     },
     referencesDefaultItemProps: {
         "#PosPaymentMethodCard": "entity",
@@ -268,6 +291,13 @@ const eCommerceWidgetContribution: WidgetContribution = {
         "#OrderDeliveryCard": "delivery",
         "#OrderMilestoneCard": "milestone",
         "#OrderRevisionCard": "revision",
+        "#ListingCard": "listing",
+        "#OrderCard": "order",
+        "#BookingCard": "booking",
+        "#BidCard": "bid",
+        "#DisputeCard": "dispute",
+        "#ReviewCard": "review",
+        "#ListingFlagCard": "listingFlag",
     },
     auditSinglePostHints: {
         "#WarehouseSheetView": {url: "/api/eCommerce/warehouse/single", labelFields: ["name", "code"]},

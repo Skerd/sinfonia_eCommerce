@@ -51,5 +51,20 @@
   "orderRevisionStatus": {
     "pending": "En attente",
     "completed": "Traitée"
-  }
+  },
+  "disputesGroup": "Litiges",
+  "bookingsGroup": "Réservations",
+  "reviewsGroup": "Avis",
+  "disputeRow": "Litige",
+  "bookingRow": "Réservation",
+  "reviewRow": "Avis",
+  "disputeStatus": {
+    "open": "Ouvert",
+    "under_review": "En cours d'examen",
+    "resolved": "Résolu",
+    "closed": "Fermé"
+  },
+  "compactView": "Compacte",
+  "cardsView": "Cartes",
+  "toggleReferenceListView": "Basculer l'affichage"
 }

@@ -39,5 +39,24 @@
     "open": "Aperta",
     "closed": "Chiusa",
     "awarded": "Assegnata"
-  }
+  },
+  "bidsGroup": "Offerte",
+  "ordersGroup": "Ordine",
+  "bidRow": "Offerta",
+  "orderRow": "Ordine",
+  "bidStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettata",
+    "rejected": "Rifiutata"
+  },
+  "orderStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  },
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "toggleReferenceListView": "Cambia visualizzazione"
 }

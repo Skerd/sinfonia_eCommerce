@@ -60,5 +60,31 @@
     "hourly": "Stundensatz"
   },
   "form": {},
-  "details": "Details"
+  "details": "Details",
+  "ordersGroup": "Aufträge",
+  "bookingsGroup": "Buchungen",
+  "reviewsGroup": "Bewertungen",
+  "flagsGroup": "Meldungen",
+  "orderRow": "Auftrag",
+  "bookingRow": "Buchung",
+  "reviewRow": "Bewertung",
+  "flagRow": "Meldung",
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "listingFlagStatus": {
+    "pending": "Ausstehend",
+    "reviewed": "Geprüft",
+    "dismissed": "Verworfen"
+  },
+  "listingFlagReason": {
+    "inappropriate": "Unangemessener Inhalt",
+    "spam": "Spam",
+    "misleading": "Irreführend",
+    "other": "Andere"
+  }
 }

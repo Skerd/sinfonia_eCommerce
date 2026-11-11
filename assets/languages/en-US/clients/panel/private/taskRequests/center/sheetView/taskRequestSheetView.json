@@ -39,5 +39,24 @@
     "open": "Open",
     "closed": "Closed",
     "awarded": "Awarded"
-  }
+  },
+  "bidsGroup": "Bids",
+  "ordersGroup": "Order",
+  "bidRow": "Bid",
+  "orderRow": "Order",
+  "bidStatus": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "rejected": "Rejected"
+  },
+  "orderStatus": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "toggleReferenceListView": "Toggle view"
 }

@@ -34,5 +34,31 @@
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
-  "notAvailable": "Indisponible"
+  "notAvailable": "Indisponible",
+  "listingsGroup": "Annonces",
+  "ordersGroup": "Commandes",
+  "bidsGroup": "Offres",
+  "reviewsGroup": "Avis",
+  "listingRow": "Annonce",
+  "orderRow": "Commande",
+  "bidRow": "Offre",
+  "reviewRow": "Avis",
+  "listingStatus": {
+    "draft": "Brouillon",
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "orderStatus": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "in_progress": "En cours",
+    "completed": "Terminé",
+    "cancelled": "Annulé"
+  },
+  "bidStatus": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "rejected": "Rejeté"
+  },
+  "toggleReferenceListView": "Basculer l'affichage"
 }

@@ -60,5 +60,31 @@
     "hourly": "Tariffa oraria"
   },
   "form": {},
-  "details": "Dettagli"
+  "details": "Dettagli",
+  "ordersGroup": "Ordini",
+  "bookingsGroup": "Prenotazioni",
+  "reviewsGroup": "Recensioni",
+  "flagsGroup": "Segnalazioni",
+  "orderRow": "Ordine",
+  "bookingRow": "Prenotazione",
+  "reviewRow": "Recensione",
+  "flagRow": "Segnalazione",
+  "orderStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  },
+  "listingFlagStatus": {
+    "pending": "In sospeso",
+    "reviewed": "Esaminata",
+    "dismissed": "Respinta"
+  },
+  "listingFlagReason": {
+    "inappropriate": "Contenuti inappropriati",
+    "spam": "Spam",
+    "misleading": "Fuorviante",
+    "other": "Altro"
+  }
 }

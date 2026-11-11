@@ -160,5 +160,16 @@
   "inventoryRow": "Lagerbestand",
   "reviews": "Bewertungen",
   "productReview": "Bewertung",
-  "sheetTypeLabel": "Produkt"
+  "sheetTypeLabel": "Produkt",
+  "ordersGroup": "Bestellungen",
+  "orderRow": "Bestellung",
+  "productOrderStatus": {
+    "cancelled": "Storniert",
+    "confirmed": "Bestätigt",
+    "delivered": "Zugestellt",
+    "pending": "Ausstehend",
+    "processing": "In Bearbeitung",
+    "refunded": "Erstattet",
+    "shipped": "Versandt"
+  }
 }

@@ -34,5 +34,31 @@
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
-  "notAvailable": "Nicht verfügbar"
+  "notAvailable": "Nicht verfügbar",
+  "listingsGroup": "Inserate",
+  "ordersGroup": "Aufträge",
+  "bidsGroup": "Offerten",
+  "reviewsGroup": "Bewertungen",
+  "listingRow": "Inserat",
+  "orderRow": "Auftrag",
+  "bidRow": "Offerte",
+  "reviewRow": "Bewertung",
+  "listingStatus": {
+    "draft": "Entwurf",
+    "active": "Aktiv",
+    "inactive": "Inaktiv"
+  },
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "bidStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "rejected": "Abgelehnt"
+  },
+  "toggleReferenceListView": "Ansicht umschalten"
 }

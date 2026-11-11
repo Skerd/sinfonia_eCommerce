@@ -160,5 +160,16 @@
   "inventoryRow": "Stock",
   "reviews": "Avis",
   "productReview": "Avis",
-  "sheetTypeLabel": "Produit"
+  "sheetTypeLabel": "Produit",
+  "ordersGroup": "Commandes",
+  "orderRow": "Commande",
+  "productOrderStatus": {
+    "cancelled": "Annulé",
+    "confirmed": "Confirmé",
+    "delivered": "Livré",
+    "pending": "En attente",
+    "processing": "En préparation",
+    "refunded": "Remboursé",
+    "shipped": "Expédié"
+  }
 }

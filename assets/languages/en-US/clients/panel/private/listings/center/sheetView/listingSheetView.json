@@ -60,5 +60,31 @@
     "hourly": "Hourly rate"
   },
   "form": {},
-  "details": "Details"
+  "details": "Details",
+  "ordersGroup": "Orders",
+  "bookingsGroup": "Bookings",
+  "reviewsGroup": "Reviews",
+  "flagsGroup": "Reports",
+  "orderRow": "Order",
+  "bookingRow": "Booking",
+  "reviewRow": "Review",
+  "flagRow": "Report",
+  "orderStatus": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "listingFlagStatus": {
+    "pending": "Pending",
+    "reviewed": "Reviewed",
+    "dismissed": "Dismissed"
+  },
+  "listingFlagReason": {
+    "inappropriate": "Inappropriate content",
+    "spam": "Spam",
+    "misleading": "Misleading",
+    "other": "Other"
+  }
 }

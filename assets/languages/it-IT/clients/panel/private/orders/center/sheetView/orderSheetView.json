@@ -51,5 +51,20 @@
   "orderRevisionStatus": {
     "pending": "In sospeso",
     "completed": "Gestita"
-  }
+  },
+  "disputesGroup": "Controversie",
+  "bookingsGroup": "Prenotazioni",
+  "reviewsGroup": "Recensioni",
+  "disputeRow": "Controversia",
+  "bookingRow": "Prenotazione",
+  "reviewRow": "Recensione",
+  "disputeStatus": {
+    "open": "Aperta",
+    "under_review": "In fase di revisione",
+    "resolved": "Risolta",
+    "closed": "Chiusa"
+  },
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "toggleReferenceListView": "Cambia visualizzazione"
 }

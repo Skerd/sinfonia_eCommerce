@@ -160,5 +160,16 @@
   "inventoryRow": "Inventory",
   "reviews": "Reviews",
   "productReview": "Review",
-  "sheetTypeLabel": "Product"
+  "sheetTypeLabel": "Product",
+  "ordersGroup": "Orders",
+  "orderRow": "Order",
+  "productOrderStatus": {
+    "cancelled": "Cancelled",
+    "confirmed": "Confirmed",
+    "delivered": "Delivered",
+    "pending": "Pending",
+    "processing": "Processing",
+    "refunded": "Refunded",
+    "shipped": "Shipped"
+  }
 }

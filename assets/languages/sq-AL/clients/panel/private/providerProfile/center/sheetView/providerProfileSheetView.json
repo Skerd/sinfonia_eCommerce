@@ -34,5 +34,31 @@
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
-  "notAvailable": "I padisponueshëm"
+  "notAvailable": "I padisponueshëm",
+  "listingsGroup": "Listimet",
+  "ordersGroup": "Porositë",
+  "bidsGroup": "Ofertat",
+  "reviewsGroup": "Vlerësimet",
+  "listingRow": "Listimi",
+  "orderRow": "Porosia",
+  "bidRow": "Oferta",
+  "reviewRow": "Vlerësimi",
+  "listingStatus": {
+    "draft": "Skicë",
+    "active": "Aktiv",
+    "inactive": "Joaktiv"
+  },
+  "orderStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  },
+  "bidStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "rejected": "Refuzuar"
+  },
+  "toggleReferenceListView": "Ndrysho pamjen"
 }

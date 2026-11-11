@@ -160,5 +160,16 @@
   "inventoryRow": "Scorte",
   "reviews": "Recensioni",
   "productReview": "Recensione",
-  "sheetTypeLabel": "Prodotto"
+  "sheetTypeLabel": "Prodotto",
+  "ordersGroup": "Ordini",
+  "orderRow": "Ordine",
+  "productOrderStatus": {
+    "cancelled": "Annullato",
+    "confirmed": "Confermato",
+    "delivered": "Consegnato",
+    "pending": "In sospeso",
+    "processing": "Elaborazione",
+    "refunded": "Rimborsato",
+    "shipped": "Spedito"
+  }
 }

@@ -60,5 +60,31 @@
     "hourly": "Tarifë për orë"
   },
   "form": {},
-  "details": "Detajet"
+  "details": "Detajet",
+  "ordersGroup": "Porositë",
+  "bookingsGroup": "Rezervimet",
+  "reviewsGroup": "Vlerësimet",
+  "flagsGroup": "Raportimet",
+  "orderRow": "Porosia",
+  "bookingRow": "Rezervimi",
+  "reviewRow": "Vlerësimi",
+  "flagRow": "Raportimi",
+  "orderStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  },
+  "listingFlagStatus": {
+    "pending": "Në pritje",
+    "reviewed": "Shqyrtuar",
+    "dismissed": "Hedhur poshtë"
+  },
+  "listingFlagReason": {
+    "inappropriate": "Përmbajtje e papërshtatshme",
+    "spam": "Spam",
+    "misleading": "Mashtruese",
+    "other": "Tjetër"
+  }
 }

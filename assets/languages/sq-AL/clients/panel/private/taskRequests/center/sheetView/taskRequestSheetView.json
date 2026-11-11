@@ -39,5 +39,24 @@
     "open": "Hapur",
     "closed": "Mbyllur",
     "awarded": "E dhënë"
-  }
+  },
+  "bidsGroup": "Ofertat",
+  "ordersGroup": "Porosia",
+  "bidRow": "Oferta",
+  "orderRow": "Porosia",
+  "bidStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "rejected": "Refuzuar"
+  },
+  "orderStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  },
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndrysho pamjen"
 }

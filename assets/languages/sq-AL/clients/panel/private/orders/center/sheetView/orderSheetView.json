@@ -51,5 +51,20 @@
   "orderRevisionStatus": {
     "pending": "Në pritje",
     "completed": "Trajtuar"
-  }
+  },
+  "disputesGroup": "Mosmarrëveshjet",
+  "bookingsGroup": "Rezervimet",
+  "reviewsGroup": "Vlerësimet",
+  "disputeRow": "Mosmarrëveshja",
+  "bookingRow": "Rezervimi",
+  "reviewRow": "Vlerësimi",
+  "disputeStatus": {
+    "open": "Hapur",
+    "under_review": "Nën shqyrtim",
+    "resolved": "Zgjidhur",
+    "closed": "Mbyllur"
+  },
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndrysho pamjen"
 }

@@ -39,5 +39,24 @@
     "open": "Offen",
     "closed": "Geschlossen",
     "awarded": "Zuschlag"
-  }
+  },
+  "bidsGroup": "Offerten",
+  "ordersGroup": "Auftrag",
+  "bidRow": "Offerte",
+  "orderRow": "Auftrag",
+  "bidStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "rejected": "Abgelehnt"
+  },
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "compactView": "Kompakt",
+  "cardsView": "Karten",
+  "toggleReferenceListView": "Ansicht umschalten"
 }

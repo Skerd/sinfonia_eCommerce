@@ -160,5 +160,16 @@
   "inventoryRow": "Inventari",
   "reviews": "Vlerësimet",
   "productReview": "Vlerësim",
-  "sheetTypeLabel": "Produkt"
+  "sheetTypeLabel": "Produkt",
+  "ordersGroup": "Porositë",
+  "orderRow": "Porosia",
+  "productOrderStatus": {
+    "cancelled": "Anuluar",
+    "confirmed": "Konfirmuar",
+    "delivered": "Dorëzuar",
+    "pending": "Në pritje",
+    "processing": "Në përpunim",
+    "refunded": "Rimbursuar",
+    "shipped": "Dërguar"
+  }
 }
