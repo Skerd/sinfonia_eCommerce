@@ -151,5 +151,6 @@
   "fulfillments": "Expéditions",
   "fulfillment": "Expédition",
   "returnRequests": "Retours",
-  "returnRequest": "Retour"
+  "returnRequest": "Retour",
+  "typeLabel": "Commande"
 }

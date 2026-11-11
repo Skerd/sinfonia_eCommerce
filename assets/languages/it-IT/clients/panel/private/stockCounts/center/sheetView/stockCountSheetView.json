@@ -28,5 +28,6 @@
     "draft": "Bozza",
     "applied": "Applicato",
     "cancelled": "Annullato"
-  }
+  },
+  "typeLabel": "Inventario"
 }

@@ -1,5 +1,4 @@
 {
-  "active": "Actif",
   "blockType": {
     "announcement_bar": "Barre d'annonce",
     "best_sellers": "Meilleures ventes",
@@ -18,7 +17,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
   "failedTitle": "Échec du chargement du bloc CMS",
   "failedDescription": "Touchez pour réessayer.",
-  "position": "Position",
   "title": "Titre",
   "type": "Type"
 }

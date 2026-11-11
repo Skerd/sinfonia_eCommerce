@@ -16,5 +16,7 @@
     "rejected": "Abgelehnt",
     "received": "Erhalten",
     "completed": "Abgeschlossen"
-  }
+  },
+  "items": "Artikel",
+  "requestedAt": "Angefragt"
 }

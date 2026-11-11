@@ -4,6 +4,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import type {Review} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/review/review.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -23,6 +24,11 @@ function reviewRowLabel(review: Review): string {
     const name = getName(review.reviewer);
     if (name) return `${review.rating}/5 — ${name}`;
     return `${review.rating}/5`;
+}
+
+/** The reviewed listing, else the task request of the reviewed order (task-request orders have no listing). */
+function reviewSubject(review: Review): string {
+    return review.listing?.title ?? review.order?.listing?.title ?? review.order?.taskRequest?.title ?? "";
 }
 
 function ReviewSheetView({
@@ -78,6 +84,8 @@ function ReviewSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by what was reviewed and its stars, not by the comment text (UX-01).
+            headerTitle={<SheetNameTitle name={[reviewSubject(asReview), asReview.rating ? `★ ${asReview.rating}` : ""].filter(Boolean).join(" · ")} typeLabel={String(resolveLanguageKey("review"))} />}
             access={access}
             hideActions={hideActions}
             onDelete={handleDelete}

@@ -11,5 +11,8 @@
   "newest": "Neueste",
   "priceAsc": "Preis: aufsteigend",
   "priceDesc": "Preis: absteigend",
-  "featured": "Hervorgehoben"
+  "featured": "Hervorgehoben",
+  "priceRange": "Preis",
+  "priceFrom": "ab",
+  "priceUpTo": "bis"
 }

@@ -3,7 +3,5 @@
   "failedTitle": "Nuk u ngarkua kategoria",
   "failedDescription": "Prekni për të provuar përsëri.",
   "name": "Emri",
-  "slug": "Slug",
-  "parentCategory": "Kategoria prind",
-  "order": "Rendi"
+  "parentCategory": "Kategoria prind"
 }

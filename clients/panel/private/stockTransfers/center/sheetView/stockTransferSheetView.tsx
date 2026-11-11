@@ -7,6 +7,8 @@ import type {StockTransfer} from "armonia/src/modules/eCommerce/api/eCommerce/pr
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import StockDocumentActionItems from "@eCommerceModule/components/custom/stockDocuments/stockDocumentActionItems.tsx";
 import StockDocumentActionDialog from "@eCommerceModule/components/custom/stockDocuments/stockDocumentActionDialog.tsx";
 import {isStockDocumentAction} from "@eCommerceModule/components/custom/stockDocuments/stockDocumentActions.ts";
@@ -71,6 +73,9 @@ function StockTransferSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // "Main warehouse → Shop floor", status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asEntity.fromWarehouse?.name, asEntity.toWarehouse?.name].filter(Boolean).join(" → ")} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={<StatusBadge tableConfigKey="stockTransfers" field="status" value={asEntity.status} label={String(resolveLanguageKey(`stockTransferStatus.${asEntity.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -101,7 +101,10 @@ function InventoryCard({
                 const isLowStock = canReadAvailable && canReadReorder && row.reorderPoint != null && available <= row.reorderPoint;
                 return (
                     <>
-                        <EntityCard.Header titlePath="product.title" title={row.product.title}>
+                        <EntityCard.Header
+                            titlePath="product.title"
+                            title={[row.product.title, row.variant?.attributeCombination?.map((option) => option.value).join(" / ")].filter(Boolean).join(" · ")}
+                        >
                             <RestockInventoryDropdown inventory={row} onAction={setAction} />
                             <DeductInventoryDropdown inventory={row} onAction={setAction} />
                             <ViewInventoryMovementsDropdown inventory={row} onAction={setAction} />
@@ -110,7 +113,6 @@ function InventoryCard({
                             <div className="flex items-center gap-1 text-xs text-muted-foreground">
                                 <IconBuildingWarehouse className="h-3.5 w-3.5 shrink-0" />
                                 <DisplayValue path="warehouse.name" value={row.warehouse.name} />
-                                <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
                             </div>
                             <div className="mt-1 grid grid-cols-3 gap-2 text-center">
                                 <div>

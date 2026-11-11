@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/private/warehouse/warehouse.dto.ts";
-import {IconHash, IconMapPin, IconPower, IconStar} from "@tabler/icons-react";
+import {IconMapPin, IconStar} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import WarehouseSheetView from "@eCommerceModule/clients/panel/private/warehouses/center/sheetView/warehouseSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
@@ -119,62 +120,51 @@ function WarehouseCard({
                 </>
             )}
         >
-            {({entity, read, setAction}) => (
-                <>
-                    <EntityCard.Header
-                        titlePath="name"
-                        title={entity.name}
-                        badgesBesideTitle
-                        badges={
-                            accessFieldPathExists(read, "isDefault") && entity.isDefault ? (
-                                <DisplayValue path="isDefault" value={resolveLanguageKey("default")}>
-                                    {(formatted: ReactNode) => (
-                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
-                                            <IconStar className="w-3 h-3" />
-                                            {formatted}
-                                        </span>
-                                    )}
-                                </DisplayValue>
-                            ) : undefined
-                        }
-                    >
-                        <SetDefaultWarehouse entity={entity} onAction={setAction} />
-                        <ActivateWarehouse entity={entity} onAction={setAction} />
-                        <DeactivateWarehouse entity={entity} onAction={setAction} />
-                    </EntityCard.Header>
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("code")}
-                            tooltip={resolveLanguageKey("code")}
-                            path="code"
-                            value={entity.code}
-                        />
-                        <EntityCardRow
-                            icon={IconMapPin}
-                            label={resolveLanguageKey("location")}
-                            tooltip={resolveLanguageKey("location")}
-                            path="address"
-                            value={
-                                entity.address ? (
-                                    <span className="flex items-center gap-x-1.5">
-                                        <DisplayValue path="address.city.name" value={entity.address.city?.name} />
-                                        <DisplayValue path="address.country.name" value={entity.address.country?.name} />
-                                    </span>
-                                ) : null
+            {({entity, read, setAction}) => {
+                const location = [entity.address?.city?.name, entity.address?.country?.name].filter(Boolean).join(", ");
+                return (
+                    <>
+                        <EntityCard.Header
+                            titlePath="name"
+                            title={entity.name}
+                            subtitlePath="code"
+                            subtitle={entity.code}
+                            badgesBesideTitle
+                            badges={
+                                <>
+                                    {entity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                                    {accessFieldPathExists(read, "isDefault") && entity.isDefault ? (
+                                        <DisplayValue path="isDefault" value={resolveLanguageKey("default")}>
+                                            {(formatted: ReactNode) => (
+                                                <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
+                                                    <IconStar className="w-3 h-3" />
+                                                    {formatted}
+                                                </span>
+                                            )}
+                                        </DisplayValue>
+                                    ) : null}
+                                </>
                             }
-                        />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
-                    </EntityCard.Body>
-                </>
-            )}
+                        >
+                            <SetDefaultWarehouse entity={entity} onAction={setAction} />
+                            <ActivateWarehouse entity={entity} onAction={setAction} />
+                            <DeactivateWarehouse entity={entity} onAction={setAction} />
+                        </EntityCard.Header>
+                        <EntityCard.Body>
+                            {/* "Tirana, Albania"; a warehouse without an address shows no row (UX-02). */}
+                            {location ? (
+                                <EntityCardRow
+                                    icon={IconMapPin}
+                                    label={resolveLanguageKey("location")}
+                                    tooltip={resolveLanguageKey("location")}
+                                    path="address"
+                                    value={location}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

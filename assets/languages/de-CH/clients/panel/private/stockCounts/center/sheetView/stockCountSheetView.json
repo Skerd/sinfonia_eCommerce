@@ -28,5 +28,6 @@
     "draft": "Entwurf",
     "applied": "Gebucht",
     "cancelled": "Storniert"
-  }
+  },
+  "typeLabel": "Inventur"
 }

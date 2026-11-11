@@ -63,5 +63,7 @@
     "desktop": "Desktop",
     "mobile": "Mobil",
     "tablet": "Tablet"
-  }
+  },
+  "sheetTypeLabel": "CMS-Block",
+  "inactive": "Inaktiv"
 }

@@ -40,5 +40,7 @@
     "price": "Bestellwert",
     "quantity": "Menge",
     "free": "Kostenlos"
-  }
+  },
+  "typeLabel": "Versandzone",
+  "inactive": "Inaktiv"
 }

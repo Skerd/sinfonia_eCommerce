@@ -2,7 +2,10 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {StockCount} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockCount/stockCount.dto.ts";
-import {IconListNumbers, IconTag} from "@tabler/icons-react";
+import {IconListNumbers} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
@@ -21,6 +24,7 @@ type StockCountCardProps = WithLanguageType & {
 };
 
 function StockCountCard({entity, resolveLanguageKey, fetchId, hideActions = false, onDelete, onRestore, sheetOnly = false}: StockCountCardProps) {
+    const companyZone = useCompanyTimeZone();
     return (
         <EntityCard
             resource="stockCounts"
@@ -56,26 +60,24 @@ function StockCountCard({entity, resolveLanguageKey, fetchId, hideActions = fals
         >
             {({entity: row, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="warehouse.name" title={row.warehouse?.name}>
+                    <EntityCard.Header
+                        titlePath="warehouse.name"
+                        title={[row.warehouse?.name, formatDate(row.appliedAt ?? row.createdAt, {timeZone: companyZone, format: DATE_FORMATS.mediumDate})].filter(Boolean).join(" · ")}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="stockCounts" field="status" value={row.status} label={String(resolveLanguageKey(`stockCountStatus.${row.status}`))} />}
+                    >
                         <StockDocumentActionItems resource="stockCounts" entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="stockCountStatus"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconListNumbers}
-                            label={resolveLanguageKey("lines")}
-                            tooltip={resolveLanguageKey("lines")}
-                            path="lines"
-                            value={row.lines?.length}
-                        />
+                        {row.lines?.length ? (
+                            <EntityCardRow
+                                icon={IconListNumbers}
+                                label={resolveLanguageKey("lines")}
+                                tooltip={resolveLanguageKey("lines")}
+                                path="lines"
+                                value={row.lines.length}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

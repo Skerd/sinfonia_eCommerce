@@ -7,5 +7,12 @@
   "endAt": "Fin",
   "timezone": "Fuseau horaire",
   "order": "Commande",
-  "time": "Heure"
+  "time": "Heure",
+  "orderStatus": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "in_progress": "En cours",
+    "completed": "Terminé",
+    "cancelled": "Annulé"
+  }
 }

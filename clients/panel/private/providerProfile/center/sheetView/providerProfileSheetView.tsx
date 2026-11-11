@@ -4,6 +4,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -79,7 +80,7 @@ function ProviderProfileSheetView({
                 onDelete={onDelete}
                 onRestore={onRestore}
                 editPath={providerProfileEditPath(asProfile)}
-                headerTitle={displayName}
+                headerTitle={<SheetNameTitle name={displayName ?? ""} typeLabel={String(resolveLanguageKey("providerProfileSubtitle"))} />}
                 actionMenuAllowCustomChildren
                 onActionMenuAction={(a) => {
                     if (a === "createAccountLink" || a === "refreshAccountStatus") {

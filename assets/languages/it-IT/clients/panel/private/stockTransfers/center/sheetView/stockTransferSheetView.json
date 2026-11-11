@@ -28,5 +28,6 @@
     "draft": "Bozza",
     "done": "Completato",
     "cancelled": "Annullato"
-  }
+  },
+  "typeLabel": "Trasferimento di magazzino"
 }

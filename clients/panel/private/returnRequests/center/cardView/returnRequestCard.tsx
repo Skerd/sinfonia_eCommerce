@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/private/returnRequest/returnRequest.dto.ts";
-import {IconCurrencyDollar, IconTag} from "@tabler/icons-react";
+import {IconCalendarEvent, IconCreditCard, IconPackage} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import ReturnRequestSheetView from "@eCommerceModule/clients/panel/private/returnRequests/center/sheetView/returnRequestSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx";
@@ -109,42 +110,56 @@ function ReturnRequestCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => (
-                <>
-                    <EntityCard.Header
-                        titlePath="type"
-                        title={
-                            row.type
-                                ? String(resolveLanguageKey(`returnType.${row.type}`))
-                                : ""
-                        }
-                    >
-                        <ApproveReturnRequest entity={row} onAction={setAction} />
-                        <RejectReturnRequest entity={row} onAction={setAction} />
-                        <ReceiveReturnRequest entity={row} onAction={setAction} />
-                        <CompleteReturnRequest entity={row} onAction={setAction} />
-                    </EntityCard.Header>
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="returnStatus"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("refundAmount")}
-                            tooltip={resolveLanguageKey("refundAmount")}
-                            path="refundAmount"
-                            type="locale"
-                            value={row.refundAmount}
-                        />
-                    </EntityCard.Body>
-                </>
-            )}
+            {({entity: row, setAction}) => {
+                // Its order and what is asked for, not just "Return" (UX-01).
+                const typeText = row.type ? String(resolveLanguageKey(`returnType.${row.type}`)) : "";
+                                const itemCount = row.items?.length ?? 0;
+                return (
+                    <>
+                        <EntityCard.Header
+                            titlePath={["order", "type"]}
+                            title={[row.order?.orderNumber, typeText].filter(Boolean).join(" · ")}
+                            badgesBesideTitle
+                            badges={<StatusBadge tableConfigKey="returnRequests" field="status" value={row.status} label={String(resolveLanguageKey(`returnStatus.${row.status}`))} />}
+                        >
+                            <ApproveReturnRequest entity={row} onAction={setAction} />
+                            <RejectReturnRequest entity={row} onAction={setAction} />
+                            <ReceiveReturnRequest entity={row} onAction={setAction} />
+                            <CompleteReturnRequest entity={row} onAction={setAction} />
+                        </EntityCard.Header>
+                        <EntityCard.Body>
+                            {itemCount ? (
+                                <EntityCardRow
+                                    icon={IconPackage}
+                                    label={resolveLanguageKey("items")}
+                                    tooltip={resolveLanguageKey("items")}
+                                    path="items"
+                                    type="number"
+                                    value={itemCount}
+                                />
+                            ) : null}
+                            <EntityCardRow
+                                icon={IconCalendarEvent}
+                                label={resolveLanguageKey("requestedAt")}
+                                tooltip={resolveLanguageKey("requestedAt")}
+                                path="createdAt"
+                                type="date"
+                                value={row.createdAt}
+                            />
+                            {row.refundAmount != null ? (
+                                <EntityCardRow
+                                    icon={IconCreditCard}
+                                    label={resolveLanguageKey("refundAmount")}
+                                    tooltip={resolveLanguageKey("refundAmount")}
+                                    path="refundAmount"
+                                    type="currency"
+                                    value={{amount: row.refundAmount, currency: row.order?.currency}}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

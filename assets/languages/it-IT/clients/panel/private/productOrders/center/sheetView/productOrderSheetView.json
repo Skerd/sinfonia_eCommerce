@@ -151,5 +151,6 @@
   "fulfillments": "Evasioni",
   "fulfillment": "Evasione",
   "returnRequests": "Richieste di reso",
-  "returnRequest": "Richiesta di reso"
+  "returnRequest": "Richiesta di reso",
+  "typeLabel": "Ordine"
 }

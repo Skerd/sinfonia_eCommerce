@@ -43,5 +43,6 @@
     "ProductOrder": "Commande produit",
     "PosOrder": "Commande PDV",
     "Checkout": "Paiement"
-  }
+  },
+  "typeLabel": "Mouvement de stock"
 }

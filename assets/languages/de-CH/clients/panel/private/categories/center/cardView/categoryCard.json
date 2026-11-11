@@ -3,7 +3,5 @@
   "failedTitle": "Kategorie konnten nicht geladen werden",
   "failedDescription": "Zum erneuten Versuch tippen.",
   "name": "Name",
-  "slug": "Slug",
-  "parentCategory": "Übergeordnete Kategorie",
-  "order": "Auftrag"
+  "parentCategory": "Übergeordnete Kategorie"
 }

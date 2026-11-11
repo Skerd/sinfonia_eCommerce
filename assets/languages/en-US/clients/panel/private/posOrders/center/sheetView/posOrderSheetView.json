@@ -90,5 +90,7 @@
   "fiscalResolutionValues": {
     "recorded": "Codes recorded from the CIS portal",
     "resent": "Not registered, sent again"
-  }
+  },
+  "typeLabel": "POS order",
+  "walkIn": "Walk-in customer"
 }

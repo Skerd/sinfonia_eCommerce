@@ -7,6 +7,8 @@ import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ActivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/activatePosPaymentMethod.tsx";
 import DeactivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/deactivatePosPaymentMethod.tsx";
 import TestPosTerminalConnection from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/testPosTerminalConnection.tsx";
@@ -79,6 +81,9 @@ function PosPaymentMethodSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the method; "Inactive" is the only state worth a badge (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={asEntity.name} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={asEntity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -40,5 +40,7 @@
     "price": "Importo dell'ordine",
     "quantity": "Quantità",
     "free": "Gratuita"
-  }
+  },
+  "typeLabel": "Zona di spedizione",
+  "inactive": "Inattivo"
 }

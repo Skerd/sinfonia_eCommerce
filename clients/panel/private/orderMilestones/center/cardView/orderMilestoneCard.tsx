@@ -3,7 +3,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {OrderMilestone} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderMilestone/orderMilestone.dto.ts";
 import OrderMilestoneSheetView from "@eCommerceModule/clients/panel/private/orderMilestones/center/sheetView/orderMilestoneSheetView.tsx";
-import {IconCurrencyDollar, IconTag} from "@tabler/icons-react";
+import {IconCurrencyDollar} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 
@@ -32,17 +33,13 @@ function OrderMilestoneCard({milestone, resolveLanguageKey}: OrderMilestoneCardP
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name} />
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={row.name}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="ordermilestones" field="status" value={row.status} label={String(resolveLanguageKey(`orderMilestoneStatus.${row.status}`))} />}
+                    />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="orderMilestoneStatus"
-                            value={row.status}
-                        />
                         <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("amount")}

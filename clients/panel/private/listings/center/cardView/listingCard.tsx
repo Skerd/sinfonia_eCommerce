@@ -14,6 +14,7 @@ import ChangeListingStatusAction from "@eCommerceModule/components/custom/listin
 import CreateOrderFromListingAction from "@eCommerceModule/components/custom/listings/createOrderFromListingAction.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -166,7 +167,19 @@ function ListingCard({
                                 ) : null}
                             </div>
                         ) : null}
-                        <EntityCard.Header titlePath="title" title={row.title}>
+                        <EntityCard.Header
+                            titlePath="title"
+                            title={row.title}
+                            badgesBesideTitle
+                            badges={
+                                <StatusBadge
+                                    tableConfigKey="listings"
+                                    field="status"
+                                    value={accessFieldPathExists(read, "status") ? row.status : undefined}
+                                    label={String(resolveLanguageKey(`statuses.${row.status}`))}
+                                />
+                            }
+                        >
                             {row.status !== "active" && !row.deletedAt && (
                                 <ActivateListingDropdown onAction={setAction} />
                             )}
@@ -205,7 +218,7 @@ function ListingCard({
                                     )}
                                 </DisplayValue>
                             ) : null}
-                            <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2">
                                 <div className="flex min-w-0 items-end gap-1">
                                     <span className="text-base font-semibold leading-none">
                                         <DisplayValue
@@ -220,23 +233,6 @@ function ListingCard({
                                         </span>
                                     ) : null}
                                 </div>
-                                <DisplayValue
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="statuses"
-                                    value={row.status}
-                                >
-                                    {(label) =>
-                                        label ? (
-                                            <Badge
-                                                variant={row.status === "active" ? "outline" : "destructive"}
-                                                className="shrink-0 px-1.5 py-0 text-3xs"
-                                            >
-                                                {label}
-                                            </Badge>
-                                        ) : null
-                                    }
-                                </DisplayValue>
                             </div>
                         </div>
                     </>

@@ -43,5 +43,6 @@
     "rejected": "Refuzuar",
     "received": "Pranuar",
     "completed": "Përfunduar"
-  }
+  },
+  "typeLabel": "Kërkesë për kthim"
 }

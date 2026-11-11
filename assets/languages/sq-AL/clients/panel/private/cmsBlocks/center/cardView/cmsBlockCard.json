@@ -1,5 +1,4 @@
 {
-  "active": "Aktiv",
   "blockType": {
     "announcement_bar": "Shirit njoftimi",
     "best_sellers": "Më të shiturat",
@@ -18,7 +17,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/cmsBlocks/center/cardView/cmsBlockCard.tsx",
   "failedTitle": "Ngarkimi i bllokut CMS dështoi",
   "failedDescription": "Prekni për të provuar përsëri.",
-  "position": "Pozicioni",
   "title": "Titulli",
   "type": "Lloji"
 }

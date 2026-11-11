@@ -43,5 +43,6 @@
     "ProductOrder": "Produktauftrag",
     "PosOrder": "POS-Auftrag",
     "Checkout": "Checkout"
-  }
+  },
+  "typeLabel": "Lagerbewegung"
 }

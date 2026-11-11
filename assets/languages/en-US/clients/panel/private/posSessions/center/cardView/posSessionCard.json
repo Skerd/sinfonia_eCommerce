@@ -11,5 +11,6 @@
     "opened": "Opened",
     "closing_control": "Closing",
     "closed": "Closed"
-  }
+  },
+  "openedBy": "Opened by"
 }

@@ -6,5 +6,6 @@
   "comment": "Kommentar",
   "reviewer": "Bewerter/in",
   "order": "Auftrag",
-  "listing": "Inserat"
+  "listing": "Inserat",
+  "reviewedAt": "Bewertet am"
 }

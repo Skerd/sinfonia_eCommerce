@@ -2,7 +2,10 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PosSession} from "armonia/src/modules/eCommerce/api/eCommerce/private/posSession/posSession.dto.ts";
-import {IconActivity, IconCash, IconShoppingCart} from "@tabler/icons-react";
+import {IconCash, IconShoppingCart, IconUser} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import PosSessionSheetView from "@eCommerceModule/clients/panel/private/posSessions/center/sheetView/posSessionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -30,6 +33,7 @@ function PosSessionCard({
     sheetOnly = false,
     innerRef,
 }: PosSessionCardProps) {
+    const companyZone = useCompanyTimeZone();
     return (
         <EntityCard
             resource="posSessions"
@@ -56,17 +60,24 @@ function PosSessionCard({
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name} />
+                    <EntityCard.Header
+                        titlePath="config.name"
+                        title={[row.config?.name, formatDate(row.openedAt, {timeZone: companyZone, format: DATE_FORMATS.mediumDate})].filter(Boolean).join(" · ")}
+                        subtitlePath="name"
+                        subtitle={row.name}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="posSessions" field="state" value={row.state} label={String(resolveLanguageKey(`sessionState.${row.state}`))} />}
+                    />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconActivity}
-                            label={resolveLanguageKey("state")}
-                            tooltip={resolveLanguageKey("state")}
-                            path="state"
-                            type="enum"
-                            languageKeyCategory="sessionState"
-                            value={row.state}
-                        />
+                        {row.openedBy ? (
+                            <EntityCardRow
+                                icon={IconUser}
+                                label={resolveLanguageKey("openedBy")}
+                                tooltip={resolveLanguageKey("openedBy")}
+                                path="openedBy"
+                                value={`${row.openedBy.name} ${row.openedBy.surname}`.trim()}
+                            />
+                        ) : null}
                         <EntityCardRow
                             icon={IconShoppingCart}
                             label={resolveLanguageKey("orderCount")}

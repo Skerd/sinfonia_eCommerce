@@ -7,6 +7,8 @@ import type {Product} from "armonia/src/modules/eCommerce/api/eCommerce/private/
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import PublishProduct from "@eCommerceModule/clients/panel/private/products/center/actions/publishProduct.tsx";
 import ArchiveProduct from "@eCommerceModule/clients/panel/private/products/center/actions/archiveProduct.tsx";
 import RevertToDraftProduct from "@eCommerceModule/clients/panel/private/products/center/actions/revertToDraftProduct.tsx";
@@ -81,6 +83,9 @@ function ProductSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by its title with the SKU as a badge and its status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={sheetData?.title ?? ""} code={sheetData?.sku} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                headerDescription={<StatusBadge tableConfigKey="products" field="status" value={sheetData?.status} label={String(resolveLanguageKey(`productStatus.${sheetData?.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

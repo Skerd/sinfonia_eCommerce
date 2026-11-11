@@ -16,5 +16,7 @@
     "rejected": "Rifiutata",
     "received": "Ricevuta",
     "completed": "Completata"
-  }
+  },
+  "items": "Articoli",
+  "requestedAt": "Richiesta il"
 }

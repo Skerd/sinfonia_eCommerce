@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/private/collection/collection.dto.ts";
-import {IconEye, IconEyeOff, IconHash, IconLayersIntersect, IconPackage, IconTag} from "@tabler/icons-react";
+import {IconEyeOff, IconLayersIntersect, IconPackage} from "@tabler/icons-react";
 import CollectionSheetView from "@eCommerceModule/clients/panel/private/collections/center/sheetView/collectionSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/activateCollection.tsx";
@@ -142,13 +142,6 @@ function CollectionCard({
                             value={entity.type}
                         />
                         <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("slug")}
-                            tooltip={resolveLanguageKey("slug")}
-                            path="slug"
-                            value={entity.slug}
-                        />
-                        <EntityCardRow
                             icon={IconPackage}
                             label={resolveLanguageKey("products")}
                             tooltip={resolveLanguageKey("products")}
@@ -157,26 +150,6 @@ function CollectionCard({
                             type="number"
                             value={entity.productCount ?? 0}
                         />
-                        {entity.position != null ? (
-                            <EntityCardRow
-                                icon={IconHash}
-                                label={resolveLanguageKey("position")}
-                                tooltip={resolveLanguageKey("position")}
-                                path="position"
-                                type="number"
-                                value={entity.position}
-                            />
-                        ) : null}
-                        {entity.isVisible ? (
-                            <EntityCardRow
-                                icon={IconEye}
-                                label={resolveLanguageKey("visible")}
-                                tooltip={resolveLanguageKey("visible")}
-                                path="isVisible"
-                                type="boolean"
-                                value={entity.isVisible}
-                            />
-                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

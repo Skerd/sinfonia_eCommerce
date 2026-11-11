@@ -55,5 +55,7 @@
     "product": "Produits",
     "collection": "Collections",
     "category": "Catégories"
-  }
+  },
+  "typeLabel": "Remise",
+  "inactive": "Inactif"
 }

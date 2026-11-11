@@ -28,5 +28,6 @@
     "draft": "Skicë",
     "done": "Përfunduar",
     "cancelled": "Anuluar"
-  }
+  },
+  "typeLabel": "Transferim stoku"
 }

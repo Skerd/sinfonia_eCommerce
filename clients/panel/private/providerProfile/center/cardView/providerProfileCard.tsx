@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconCode, IconCreditCard, IconFileDescription, IconStar} from "@tabler/icons-react";
+import {IconCode, IconCreditCard, IconStar} from "@tabler/icons-react";
 import type {ProviderProfile} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/providerProfile/providerProfile.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ProviderProfileSheetView from "@eCommerceModule/clients/panel/private/providerProfile/center/sheetView/providerProfileSheetView.tsx";
@@ -137,27 +137,22 @@ function ProviderProfileCard({
                             <RefreshAccountStatusDropdown profile={row} onAction={setAction} />
                         </EntityCard.Header>
                         <EntityCard.Body>
-                            <EntityCardRow
-                                icon={IconCode}
-                                label={resolveLanguageKey("skills")}
-                                tooltip={resolveLanguageKey("skills")}
-                                path="skills"
-                                value={skills.length > 0 ? skills.slice(0, 3).join(", ") : undefined}
-                            >
-                                {(formatted) => (
-                                    <>
-                                        {formatted}
-                                        {skills.length > 3 ? ` +${skills.length - 3}` : null}
-                                    </>
-                                )}
-                            </EntityCardRow>
-                            <EntityCardRow
-                                icon={IconFileDescription}
-                                label={resolveLanguageKey("bio")}
-                                tooltip={resolveLanguageKey("bio")}
-                                path="bio"
-                                value={row.bio}
-                            />
+                            {skills.length > 0 ? (
+                                <EntityCardRow
+                                    icon={IconCode}
+                                    label={resolveLanguageKey("skills")}
+                                    tooltip={resolveLanguageKey("skills")}
+                                    path="skills"
+                                    value={skills.slice(0, 3).join(", ")}
+                                >
+                                    {(formatted) => (
+                                        <>
+                                            {formatted}
+                                            {skills.length > 3 ? ` +${skills.length - 3}` : null}
+                                        </>
+                                    )}
+                                </EntityCardRow>
+                            ) : null}
                             {/* Computed from reviews, not a model field: the backend decides whether it is sent. */}
                             {row.averageRating != null && (
                                 <EntityCardRow

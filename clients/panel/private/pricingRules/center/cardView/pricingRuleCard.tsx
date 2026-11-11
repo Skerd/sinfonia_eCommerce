@@ -2,7 +2,11 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PricingRule} from "armonia/src/modules/eCommerce/api/eCommerce/private/pricingRule/pricingRule.dto.ts";
-import {IconCashBanknote, IconHash, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
+import {IconCalendar, IconCashBanknote, IconPercentage, IconShoppingCart, IconTag} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import PricingRuleSheetView from "@eCommerceModule/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivatePricingRule from "@eCommerceModule/clients/panel/private/pricingRules/center/actions/activatePricingRule.tsx";
@@ -46,6 +50,9 @@ function PricingRuleCard({
     onActiveChanged,
     innerRef,
 }: PricingRuleCardProps) {
+    // Validity is read on the company calendar (GLB-09).
+    const companyZone = useCompanyTimeZone();
+    const day = (value: string) => formatDate(value, {timeZone: companyZone, format: DATE_FORMATS.mediumDate});
     return (
         <EntityCard
             resource="pricingRules"
@@ -105,9 +112,15 @@ function PricingRuleCard({
         >
             {({entity, read, setAction}) => {
                 const percentage = accessFieldPathExists(read, "type") && entity.type === "percentage_discount";
+                const currency = accessFieldPathExists(read, "currency") ? entity.currency : undefined;
                 return (
                 <>
-                    <EntityCard.Header titlePath="name" title={entity.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        badgesBesideTitle
+                        badges={entity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                    >
                         <ActivatePricingRule entity={entity} onAction={setAction} />
                         <DeactivatePricingRule entity={entity} onAction={setAction} />
                     </EntityCard.Header>
@@ -121,40 +134,33 @@ function PricingRuleCard({
                             languageKeyCategory="pricingRuleType"
                             value={entity.type}
                         />
+                        {entity.startsAt ? (
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("valid")}
+                                tooltip={resolveLanguageKey("valid")}
+                                path="startsAt"
+                                value={entity.endsAt ? `${day(entity.startsAt)} – ${day(entity.endsAt)}` : `${day(entity.startsAt)} –`}
+                            />
+                        ) : null}
                         <EntityCardRow
                             icon={percentage ? IconPercentage : IconCashBanknote}
                             label={resolveLanguageKey("value")}
                             tooltip={resolveLanguageKey("value")}
                             path="value"
-                            type="number"
-                            value={entity.value}
-                        >
-                            {(formatted) =>
-                                percentage ? (
-                                    <>
-                                        {formatted}%
-                                    </>
-                                ) : (
-                                    formatted
-                                )
-                            }
-                        </EntityCardRow>
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("priority")}
-                            tooltip={resolveLanguageKey("priority")}
-                            path="priority"
-                            type="number"
-                            value={entity.priority}
+                            type={percentage ? undefined : "currency"}
+                            value={percentage ? `${formatNumber(entity.value)}%` : {amount: entity.value, currency}}
                         />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
+                        {entity.minimumOrderAmount ? (
+                            <EntityCardRow
+                                icon={IconShoppingCart}
+                                label={resolveLanguageKey("minimumOrderAmount")}
+                                tooltip={resolveLanguageKey("minimumOrderAmount")}
+                                path="minimumOrderAmount"
+                                type="currency"
+                                value={{amount: entity.minimumOrderAmount, currency}}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
                 );

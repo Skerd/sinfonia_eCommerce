@@ -7,6 +7,9 @@ import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx";
 import SetDefaultCustomerAddressDialog from "@eCommerceModule/clients/panel/private/customerAddresses/center/dialogs/setDefaultCustomerAddressDialog.tsx";
 
@@ -80,6 +83,14 @@ function CustomerAddressSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the recipient, typed in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asEntity.firstName, asEntity.lastName].filter(Boolean).join(" ")} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                headerDescription={
+                    <>
+                        <StatusBadge tableConfigKey="customerAddresses" field="type" value={asEntity.type} label={String(resolveLanguageKey(`addressType.${asEntity.type}`))} />
+                        {asEntity.isDefault ? <Badge variant="outline">{resolveLanguageKey("defaultAddress")}</Badge> : null}
+                    </>
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -90,5 +90,7 @@
   "fiscalResolutionValues": {
     "recorded": "Codici registrati dal portale CIS",
     "resent": "Non registrata, inviata di nuovo"
-  }
+  },
+  "typeLabel": "Ordine POS",
+  "walkIn": "Cliente occasionale"
 }

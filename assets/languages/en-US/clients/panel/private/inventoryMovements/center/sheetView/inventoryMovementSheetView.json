@@ -43,5 +43,6 @@
     "ProductOrder": "Product order",
     "PosOrder": "POS order",
     "Checkout": "Checkout"
-  }
+  },
+  "typeLabel": "Stock movement"
 }

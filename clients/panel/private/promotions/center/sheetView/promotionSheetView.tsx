@@ -4,6 +4,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import PausePromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/pausePromotionDropdown.tsx";
 import ResumePromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/resumePromotionDropdown.tsx";
@@ -92,6 +94,9 @@ function PromotionSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by its name (else the promoted listing), with its lifecycle in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={asPromotion.name || listingTitle || ""} typeLabel={String(resolveLanguageKey("promotion"))} />}
+                headerDescription={<StatusBadge tableConfigKey="promotions" field="lifecycleStatus" value={lifecycle} label={String(resolveLanguageKey(`lifecycleStatuses.${lifecycle}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={handleDelete}

@@ -17,5 +17,7 @@
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "sheetTypeLabel": "Gruppo clienti",
+  "default": "Predefinito"
 }

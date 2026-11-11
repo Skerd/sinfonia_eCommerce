@@ -2,7 +2,9 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ShippingZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/shippingZone/shippingZone.dto.ts";
-import {IconMapPin, IconPower, IconTruckDelivery} from "@tabler/icons-react";
+import {IconMapPin, IconTruckDelivery} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 import ShippingZoneSheetView from "@eCommerceModule/clients/panel/private/shippingZones/center/sheetView/shippingZoneSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateShippingZone from "@eCommerceModule/clients/panel/private/shippingZones/center/actions/activateShippingZone.tsx";
@@ -100,35 +102,40 @@ function ShippingZoneCard({
         >
             {({entity, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={entity.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        badgesBesideTitle
+                        badges={entity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                    >
                         <ActivateShippingZone entity={entity} onAction={setAction} />
                         <DeactivateShippingZone entity={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconMapPin}
-                            label={resolveLanguageKey("countries")}
-                            tooltip={resolveLanguageKey("countries")}
-                            path="countries"
-                            type="number"
-                            value={entity.countries?.length}
-                        />
-                        <EntityCardRow
-                            icon={IconTruckDelivery}
-                            label={resolveLanguageKey("rates")}
-                            tooltip={resolveLanguageKey("rates")}
-                            path="rates"
-                            type="number"
-                            value={entity.rates?.length}
-                        />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
+                        {/* Where it ships and what it costs, named rather than counted (UX-02, UX-07). */}
+                        {entity.countries?.length ? (
+                            <EntityCardRow
+                                icon={IconMapPin}
+                                label={resolveLanguageKey("countries")}
+                                tooltip={resolveLanguageKey("countries")}
+                                path="countries"
+                                value={entity.countries.map((country) => country.name).join(", ")}
+                            />
+                        ) : null}
+                        {entity.rates?.length ? (
+                            <EntityCardRow
+                                icon={IconTruckDelivery}
+                                label={resolveLanguageKey("rates")}
+                                tooltip={resolveLanguageKey("rates")}
+                                path="rates"
+                                value={entity.rates
+                                    .map((rate) => {
+                                        const price = rate.price == null ? "" : rate.currency ? formatCurrency(rate.price, rate.currency.abbreviation, {minimumFractionDigits: rate.currency.decimalPlaces ?? 2, maximumFractionDigits: rate.currency.decimalPlaces ?? 2}) : String(rate.price);
+                                        return [rate.name, price].filter(Boolean).join(" ");
+                                    })
+                                    .join(", ")}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

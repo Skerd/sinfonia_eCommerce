@@ -159,5 +159,6 @@
   "inventories": "Scorte",
   "inventoryRow": "Scorte",
   "reviews": "Recensioni",
-  "productReview": "Recensione"
+  "productReview": "Recensione",
+  "sheetTypeLabel": "Prodotto"
 }

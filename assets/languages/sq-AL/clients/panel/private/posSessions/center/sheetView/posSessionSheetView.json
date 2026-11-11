@@ -50,5 +50,6 @@
     "out": "Dalje cash"
   },
   "posOrders": "Porositë POS",
-  "posOrder": "Porosia POS"
+  "posOrder": "Porosia POS",
+  "typeLabel": "Seancë arke"
 }

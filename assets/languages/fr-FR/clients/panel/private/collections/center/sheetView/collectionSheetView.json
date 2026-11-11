@@ -62,5 +62,7 @@
   "collectionType": {
     "dynamic": "Dynamique",
     "manual": "Manuel"
-  }
+  },
+  "sheetTypeLabel": "Collection",
+  "hidden": "Caché"
 }

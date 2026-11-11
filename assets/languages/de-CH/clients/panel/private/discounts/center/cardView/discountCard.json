@@ -13,5 +13,7 @@
   "failedDescription": "Zum erneuten Versuch tippen.",
   "title": "Bezeichnung",
   "type": "Typ",
-  "value": "Wert"
+  "value": "Wert",
+  "valid": "Gültig",
+  "minimumOrderAmount": "Mindestbestellwert"
 }

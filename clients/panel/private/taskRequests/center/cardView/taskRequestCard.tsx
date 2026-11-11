@@ -3,7 +3,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/taskRequest/taskRequest.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconCalendar, IconCurrencyDollar, IconFolder, IconMapPin, IconTag, IconUser, IconUsers} from "@tabler/icons-react";
+import {IconCalendar, IconCurrencyDollar, IconUser, IconUsers} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import TaskRequestSheetView from "@eCommerceModule/clients/panel/private/taskRequests/center/sheetView/taskRequestSheetView.tsx";
 import CloseTaskRequestDropdown from "@eCommerceModule/clients/panel/private/taskRequests/center/actions/closeTaskRequestDropdown.tsx";
 import ReopenTaskRequestDropdown from "@eCommerceModule/clients/panel/private/taskRequests/center/actions/reopenTaskRequestDropdown.tsx";
@@ -19,21 +20,20 @@ import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx
 import type {RefObject} from "react";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
-/** The budget range from the bounds the session may read; the currency symbol only when readable too. */
+/** The budget range ("€ 100 – € 300") from the bounds the session may read; each bound carries the currency (UX-07). */
 function formatBudget(entity: TaskRequest, read: unknown): string | undefined {
     const budgetMin = accessFieldPathExists(read, "budgetMin") ? entity.budgetMin : undefined;
     const budgetMax = accessFieldPathExists(read, "budgetMax") ? entity.budgetMax : undefined;
     const currency = accessFieldPathExists(read, "currency") ? entity.currency : undefined;
     const sym = currency?.symbol?.trim() || currency?.abbreviation?.trim();
-    if (budgetMin == null && budgetMax == null) return undefined;
-    const fmt = (n: number) =>
-        formatNumber(n, {minimumFractionDigits: 0, maximumFractionDigits: 2});
-    if (budgetMin != null && budgetMax != null) {
-        const s = `${fmt(budgetMin)} – ${fmt(budgetMax)}`;
-        return sym ? `${sym} ${s}` : s;
-    }
-    const n = budgetMin ?? budgetMax!;
-    return sym ? `${sym} ${fmt(n)}` : fmt(n);
+    const decimals = currency?.decimalPlaces ?? 2;
+    const fmt = (n: number) => {
+        const amount = formatNumber(n, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+        return sym ? `${sym} ${amount}` : amount;
+    };
+    const bounds = [budgetMin, budgetMax].filter((n): n is number => n != null);
+    if (bounds.length === 0) return undefined;
+    return bounds[0] === bounds[1] ? fmt(bounds[0]) : bounds.map(fmt).join(" – ");
 }
 
 type TaskRequestCardProps = WithLanguageType & {
@@ -126,21 +126,20 @@ function TaskRequestCard({
                         allowFullScreen={false}
                         coverAfterFirst
                     />
-                    <EntityCard.Header titlePath="title" title={row.title}>
+                    {/* Title, category as subtitle, status in tone; then who → when → how much → bids (UX-02). */}
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={row.title}
+                        subtitlePath="category.name"
+                        subtitle={row.category?.name}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="taskrequests" field="status" value={row.status} label={String(resolveLanguageKey(`statuses.${row.status}`))} />}
+                    >
                         <NotifyAllTaskRequestDropdown entity={row} onAction={setAction} />
                         <CloseTaskRequestDropdown entity={row} onAction={setAction} />
                         <ReopenTaskRequestDropdown entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="statuses"
-                            value={row.status}
-                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("requester")}
@@ -150,33 +149,19 @@ function TaskRequestCard({
                             value={row.requester}
                         />
                         <EntityCardRow
-                            icon={IconFolder}
-                            label={resolveLanguageKey("category")}
-                            tooltip={resolveLanguageKey("category")}
-                            path="category.name"
-                            value={row.category?.name}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("budget")}
-                            tooltip={resolveLanguageKey("budget")}
-                            show={accessFieldPathExists(read, "budgetMin") || accessFieldPathExists(read, "budgetMax")}
-                            value={formatBudget(row, read)}
-                        />
-                        <EntityCardRow
-                            icon={IconMapPin}
-                            label={resolveLanguageKey("city")}
-                            tooltip={resolveLanguageKey("city")}
-                            path="address.city.name"
-                            value={row.address?.city?.name}
-                        />
-                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("expiresAt")}
                             tooltip={resolveLanguageKey("expiresAt")}
                             path="expiresAt"
                             type="date"
                             value={row.expiresAt}
+                        />
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("budget")}
+                            tooltip={resolveLanguageKey("budget")}
+                            show={!!formatBudget(row, read)}
+                            value={formatBudget(row, read)}
                         />
                         {/* Counted by the API, not a model field: the backend decides whether it is sent. */}
                         {row.bidCount != null && (

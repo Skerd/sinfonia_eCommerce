@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconClock, IconUser, IconWorld} from "@tabler/icons-react";
+import {IconCalendarEvent, IconUser} from "@tabler/icons-react";
 import type {Booking} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/booking/booking.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import BookingSheetView from "@eCommerceModule/clients/panel/private/bookings/center/sheetView/bookingSheetView.tsx";
@@ -10,10 +10,9 @@ import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCar
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
-
-const DAY_FORMAT: Intl.DateTimeFormatOptions = {weekday: "short", month: "short", day: "numeric"};
-const TIME_FORMAT: Intl.DateTimeFormatOptions = {hour: "2-digit", minute: "2-digit"};
+import {formatTimeRange} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 type BookingCardProps = WithLanguageType & {
     booking: Booking;
@@ -53,7 +52,7 @@ function BookingCard({
             restoreUrl="/api/eCommerceMarketplace/booking/restore"
             failedTitle={resolveLanguageKey("failedTitle")}
             failedDescription={resolveLanguageKey("failedDescription")}
-            titlePath="startAt"
+            titlePath="order.listing.title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,
@@ -62,8 +61,24 @@ function BookingCard({
         >
             {({entity: row, read}) => (
                 <>
-                    <EntityCard.Header titlePath="startAt" title={formatDate(row.startAt, {format: DAY_FORMAT})} />
+                    {/* What is booked and for whom; a booking has no status, its order's is shown (UX-01, UX-02). */}
+                    <EntityCard.Header
+                        titlePath={["order.listing.title", "order.taskRequest.title"]}
+                        title={row.order?.listing?.title || row.order?.taskRequest?.title}
+                        subtitlePath="order.customer"
+                        subtitle={getName(row.order?.customer) || undefined}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="orders" field="status" value={row.order?.status} label={String(resolveLanguageKey(`orderStatus.${row.order?.status}`))} />}
+                    />
                     <EntityCard.Body>
+                        {/* The slot as the booking's own time zone reads it (GLB-09, UX-08). */}
+                        <EntityCardRow
+                            icon={IconCalendarEvent}
+                            label={resolveLanguageKey("time")}
+                            tooltip={resolveLanguageKey("time")}
+                            show={accessFieldPathExists(read, "startAt") && accessFieldPathExists(read, "endAt")}
+                            value={formatTimeRange(row.startAt, row.endAt, row.timezone)}
+                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("provider")}
@@ -71,20 +86,6 @@ function BookingCard({
                             path="provider"
                             type="user"
                             value={row.provider}
-                        />
-                        <EntityCardRow
-                            icon={IconClock}
-                            label={resolveLanguageKey("time")}
-                            tooltip={resolveLanguageKey("time")}
-                            show={accessFieldPathExists(read, "startAt") && accessFieldPathExists(read, "endAt")}
-                            value={`${formatDate(row.startAt, {format: TIME_FORMAT})} – ${formatDate(row.endAt, {format: TIME_FORMAT})}`}
-                        />
-                        <EntityCardRow
-                            icon={IconWorld}
-                            label={resolveLanguageKey("timezone")}
-                            tooltip={resolveLanguageKey("timezone")}
-                            path="timezone"
-                            value={row.timezone}
                         />
                     </EntityCard.Body>
                 </>

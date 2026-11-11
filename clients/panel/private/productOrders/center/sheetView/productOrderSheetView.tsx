@@ -7,6 +7,9 @@ import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/pri
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {productOrderCustomerName} from "@eCommerceModule/clients/panel/private/productOrders/center/productOrderCustomerName.ts";
 import ConfirmOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx";
 import MarkProcessingDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/markProcessingDropdown.tsx";
 import ShipOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/shipOrderDropdown.tsx";
@@ -77,6 +80,14 @@ function ProductOrderSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named for the customer, with the order number as a badge and both statuses in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={productOrderCustomerName(asOrder)} code={asOrder.orderNumber} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={
+                    <span className="flex flex-wrap items-center gap-2">
+                        <StatusBadge tableConfigKey="productOrders" field="status" value={asOrder.status} label={String(resolveLanguageKey(`productOrderStatus.${asOrder.status}`))} />
+                        <StatusBadge tableConfigKey="productOrders" field="paymentStatus" value={asOrder.paymentStatus} label={String(resolveLanguageKey(`productOrderPaymentStatus.${asOrder.paymentStatus}`))} />
+                    </span>
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

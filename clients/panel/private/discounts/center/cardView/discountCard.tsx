@@ -2,7 +2,11 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private/discount/discount.dto.ts";
-import {IconCashBanknote, IconPercentage, IconPower, IconTag} from "@tabler/icons-react";
+import {IconCalendar, IconCashBanknote, IconPercentage, IconShoppingCart, IconTag} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import DiscountSheetView from "@eCommerceModule/clients/panel/private/discounts/center/sheetView/discountSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
@@ -46,6 +50,9 @@ function DiscountCard({
     onActiveChanged,
     innerRef,
 }: DiscountCardProps) {
+    // Validity is read on the company calendar (GLB-09).
+    const companyZone = useCompanyTimeZone();
+    const day = (value: string) => formatDate(value, {timeZone: companyZone, format: DATE_FORMATS.mediumDate});
     return (
         <EntityCard
             resource="discounts"
@@ -106,22 +113,24 @@ function DiscountCard({
             {({entity, read, setAction}) => {
                 const canReadType = accessFieldPathExists(read, "type");
                 const percentage = canReadType && entity.type === "percentage";
+                const currency = accessFieldPathExists(read, "currency") ? entity.currency : undefined;
                 return (
                 <>
-                    <EntityCard.Header titlePath="title" title={entity.title}>
+                    {/* The code is what shoppers type and staff know it by; the title is the subtitle (UX-01). */}
+                    <EntityCard.Header
+                        titlePath={entity.code ? "code" : "title"}
+                        title={entity.code || entity.title}
+                        subtitlePath="title"
+                        subtitle={entity.code ? entity.title : undefined}
+                        badgesBesideTitle
+                        badges={entity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                    >
                         <ActivateDiscount entity={entity} onAction={setAction} />
                         <DeactivateDiscount entity={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow
                             icon={IconTag}
-                            label={resolveLanguageKey("code")}
-                            tooltip={resolveLanguageKey("code")}
-                            path="code"
-                            value={entity.code}
-                        />
-                        <EntityCardRow
-                            icon={IconPercentage}
                             label={resolveLanguageKey("type")}
                             tooltip={resolveLanguageKey("type")}
                             path="type"
@@ -129,34 +138,35 @@ function DiscountCard({
                             languageKeyCategory="discountType"
                             value={entity.type}
                         />
-                        {accessFieldPathExists(read, "value") && (!canReadType || entity.type === "percentage" || entity.type === "fixed") ? (
+                        {entity.startsAt ? (
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("valid")}
+                                tooltip={resolveLanguageKey("valid")}
+                                path="startsAt"
+                                value={entity.endsAt ? `${day(entity.startsAt)} – ${day(entity.endsAt)}` : `${day(entity.startsAt)} –`}
+                            />
+                        ) : null}
+                        {!canReadType || entity.type === "percentage" || entity.type === "fixed" ? (
                             <EntityCardRow
                                 icon={percentage ? IconPercentage : IconCashBanknote}
                                 label={resolveLanguageKey("value")}
                                 tooltip={resolveLanguageKey("value")}
                                 path="value"
-                                type="number"
-                                value={entity.value}
-                            >
-                                {(formatted) =>
-                                    percentage ? (
-                                        <>
-                                            {formatted}%
-                                        </>
-                                    ) : (
-                                        formatted
-                                    )
-                                }
-                            </EntityCardRow>
+                                type={percentage ? undefined : "currency"}
+                                value={percentage ? `${formatNumber(entity.value)}%` : {amount: entity.value, currency}}
+                            />
                         ) : null}
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
+                        {entity.minimumOrderAmount ? (
+                            <EntityCardRow
+                                icon={IconShoppingCart}
+                                label={resolveLanguageKey("minimumOrderAmount")}
+                                tooltip={resolveLanguageKey("minimumOrderAmount")}
+                                path="minimumOrderAmount"
+                                type="currency"
+                                value={{amount: entity.minimumOrderAmount, currency}}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
                 );

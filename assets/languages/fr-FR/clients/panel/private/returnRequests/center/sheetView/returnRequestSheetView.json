@@ -43,5 +43,6 @@
     "rejected": "Rejeté",
     "received": "Reçu",
     "completed": "Terminé"
-  }
+  },
+  "typeLabel": "Demande de retour"
 }

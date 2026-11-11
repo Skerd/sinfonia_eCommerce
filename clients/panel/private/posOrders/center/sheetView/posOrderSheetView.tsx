@@ -7,6 +7,11 @@ import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
 import PosOrderFiscalActions from "@eCommerceModule/clients/panel/private/posOrders/center/actions/posOrderFiscalActions.tsx";
@@ -37,6 +42,7 @@ function PosOrderSheetView({
     const [action, setAction] = useState("");
     const access = useAccess("posOrders");
     const viewConfig = useViewConfig("posOrders", "sheet");
+    const companyZone = useCompanyTimeZone();
 
     useEffect(() => {
         if (!open) setAction("");
@@ -60,6 +66,10 @@ function PosOrderSheetView({
     if (!entityId) return null;
 
     const asOrder = sheetData as PosOrder;
+    // "Besa Leka · 5.11.2026, 14:32" (or "Walk-in · …") with the order number as a badge, state in tone (UX-01, UX-02).
+    // Until the order has loaded there is nobody to call "Walk-in".
+    const customerLabel = asOrder.name ? asOrder.customerName || getName(asOrder.customer) || String(resolveLanguageKey("walkIn")) : "";
+    const soldAt = formatDate(asOrder.createdAt, {timeZone: companyZone, format: DATE_FORMATS.dateTime});
 
     return (
         <>
@@ -74,6 +84,8 @@ function PosOrderSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={[customerLabel, soldAt].filter(Boolean).join(" · ")} code={asOrder.name} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={<StatusBadge tableConfigKey="posOrders" field="state" value={asOrder.state} label={String(resolveLanguageKey(`posOrderState.${asOrder.state}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconClock, IconCurrencyDollar, IconLayoutList, IconUser} from "@tabler/icons-react";
+import {IconClock, IconCurrencyDollar, IconUser} from "@tabler/icons-react";
 import type {ListingAddOn} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingAddOn/listingAddOn.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ListingAddOnSheetView from "@eCommerceModule/clients/panel/private/listingAddOns/center/sheetView/listingAddOnSheetView.tsx";
@@ -62,15 +62,9 @@ function ListingAddOnCard({
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name} />
+                    {/* The listing it belongs to is the subtitle, so the body keeps who → when → how much (UX-02). */}
+                    <EntityCard.Header titlePath="name" title={row.name} subtitlePath="listing.title" subtitle={row.listing?.title} />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconLayoutList}
-                            label={resolveLanguageKey("listing")}
-                            tooltip={resolveLanguageKey("listing")}
-                            path="listing.title"
-                            value={row.listing?.title}
-                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("provider")}
@@ -79,6 +73,22 @@ function ListingAddOnCard({
                             type="user"
                             value={row.provider}
                         />
+                        {row.deliveryDays != null ? (
+                            <EntityCardRow
+                                icon={IconClock}
+                                label={resolveLanguageKey("deliveryDays")}
+                                tooltip={resolveLanguageKey("deliveryDays")}
+                                path="deliveryDays"
+                                type="number"
+                                value={row.deliveryDays}
+                            >
+                                {(formatted) => (
+                                    <>
+                                        {formatted} {resolveLanguageKey("days")}
+                                    </>
+                                )}
+                            </EntityCardRow>
+                        ) : null}
                         <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("priceAmount")}
@@ -87,20 +97,6 @@ function ListingAddOnCard({
                             type="currency"
                             value={{amount: row.price?.amount, currency: row.price?.currency}}
                         />
-                        <EntityCardRow
-                            icon={IconClock}
-                            label={resolveLanguageKey("deliveryDays")}
-                            tooltip={resolveLanguageKey("deliveryDays")}
-                            path="deliveryDays"
-                            type="number"
-                            value={row.deliveryDays}
-                        >
-                            {(formatted) => (
-                                <>
-                                    {formatted} {resolveLanguageKey("days")}
-                                </>
-                            )}
-                        </EntityCardRow>
                     </EntityCard.Body>
                 </>
             )}

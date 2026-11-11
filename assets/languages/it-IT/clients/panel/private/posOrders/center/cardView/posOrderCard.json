@@ -8,5 +8,9 @@
     "paid": "Pagato",
     "cancel": "Annullato",
     "refunded": "Rimborsato"
-  }
+  },
+  "walkIn": "Cliente occasionale",
+  "soldAt": "Venduto il",
+  "total": "Totale",
+  "itemCount": "Articoli"
 }

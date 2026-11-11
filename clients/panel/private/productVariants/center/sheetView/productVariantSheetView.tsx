@@ -7,6 +7,8 @@ import type {ProductVariant} from "armonia/src/modules/eCommerce/api/eCommerce/p
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/productvariants";
 
@@ -19,6 +21,12 @@ export type ProductVariantSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
 };
+
+/** How people name a variant: its product and option values ("Linen shirt · M / Blue"), shared with the card (UX-01). */
+export function productVariantName(variant: Pick<ProductVariant, "product" | "attributeCombination">): string {
+    const options = (variant.attributeCombination ?? []).map((combination) => combination.value).filter(Boolean).join(" / ");
+    return [variant.product?.title, options].filter(Boolean).join(" · ");
+}
 
 function productVariantEditPath(entity: ProductVariant) {
     const params = new URLSearchParams();
@@ -50,6 +58,7 @@ function ProductVariantSheetView({
 
     if (!viewConfig) return null;
     if (!entityId) return null;
+    const variant = sheetData as ProductVariant;
 
     return (
         <SheetViewRenderer
@@ -63,11 +72,14 @@ function ProductVariantSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by its product and option values with the SKU as a badge (UX-01, UX-02).
+            headerTitle={<SheetNameTitle name={productVariantName(variant)} code={variant.sku} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+            headerDescription={<StatusBadge tableConfigKey="productVariants" field="status" value={variant.status} label={String(resolveLanguageKey(`variantStatus.${variant.status}`))} />}
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}
             onRestore={onRestore}
-            editPath={productVariantEditPath(sheetData as ProductVariant)}
+            editPath={productVariantEditPath(variant)}
         />
     );
 }

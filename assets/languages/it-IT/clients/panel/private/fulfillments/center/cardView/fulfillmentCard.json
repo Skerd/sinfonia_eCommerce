@@ -10,5 +10,9 @@
     "shipped": "Spedita",
     "delivered": "Consegnata",
     "failed": "Non riuscita"
-  }
+  },
+  "typeLabel": "Evasione",
+  "shippedAt": "Spedito il",
+  "deliveredAt": "Consegnato il",
+  "estimatedDeliveryAt": "Consegna prevista"
 }

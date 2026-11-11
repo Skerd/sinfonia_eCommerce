@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconFlag, IconTag, IconUser} from "@tabler/icons-react";
+import {IconCalendarEvent, IconUser} from "@tabler/icons-react";
 import type {ListingFlag} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingFlag/listingFlag.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ListingFlagSheetView from "@eCommerceModule/clients/panel/private/listingFlags/center/sheetView/listingFlagSheetView.tsx";
@@ -12,8 +12,10 @@ import ChangeListingFlagLifecycleAction, {
 } from "@eCommerceModule/components/custom/listingFlags/changeListingFlagLifecycleAction.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 
 function listingFlagEditPath(flag: ListingFlag) {
     const params = new URLSearchParams();
@@ -90,31 +92,26 @@ function ListingFlagCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => (
+            {({entity: row, read, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="listing.title" title={row.listing?.title}>
+                    {/* Named by the flagged listing and why; the status is the tone badge (UX-01, UX-02). */}
+                    <EntityCard.Header
+                        titlePath="listing.title"
+                        title={[row.listing?.title, accessFieldPathExists(read, "reason") ? String(resolveLanguageKey(`reason_values.${row.reason}`)) : ""].filter(Boolean).join(" · ")}
+                        badgesBesideTitle
+                        badges={
+                            <StatusBadge
+                                tableConfigKey="listingflags"
+                                field="status"
+                                value={accessFieldPathExists(read, "status") ? row.status : undefined}
+                                label={String(resolveLanguageKey(`status_values.${row.status}`))}
+                            />
+                        }
+                    >
                         <ResolveListingFlagDropdown listingFlag={row} onAction={setAction} />
                         <DismissListingFlagDropdown listingFlag={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="status_values"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconFlag}
-                            label={resolveLanguageKey("reason")}
-                            tooltip={resolveLanguageKey("reason")}
-                            path="reason"
-                            type="enum"
-                            languageKeyCategory="reason_values"
-                            value={row.reason}
-                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("reporter")}
@@ -123,6 +120,16 @@ function ListingFlagCard({
                             type="user"
                             value={row.user}
                         />
+                        {row.createdAt ? (
+                            <EntityCardRow
+                                icon={IconCalendarEvent}
+                                label={resolveLanguageKey("reportedAt")}
+                                tooltip={resolveLanguageKey("reportedAt")}
+                                path="createdAt"
+                                type="date"
+                                value={row.createdAt}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

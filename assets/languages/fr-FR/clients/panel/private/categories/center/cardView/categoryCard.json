@@ -3,7 +3,5 @@
   "failedTitle": "Échec du chargement de la catégorie",
   "failedDescription": "Touchez pour réessayer.",
   "name": "Nom",
-  "slug": "Identifiant",
-  "parentCategory": "Catégorie parente",
-  "order": "Commande"
+  "parentCategory": "Catégorie parente"
 }

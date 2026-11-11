@@ -28,5 +28,6 @@
     "draft": "Brouillon",
     "done": "Terminé",
     "cancelled": "Annulé"
-  }
+  },
+  "typeLabel": "Transfert de stock"
 }

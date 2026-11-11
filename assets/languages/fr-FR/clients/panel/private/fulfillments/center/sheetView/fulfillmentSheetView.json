@@ -36,5 +36,6 @@
     "shipped": "Expédié",
     "delivered": "Livré",
     "failed": "Échoué"
-  }
+  },
+  "typeLabel": "Expédition"
 }

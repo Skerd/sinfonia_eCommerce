@@ -7,6 +7,8 @@ import type {Listing} from "armonia/src/modules/eCommerce/api/eCommerceMarketpla
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import ActivateListingDropdown from "@eCommerceModule/clients/panel/private/listings/center/actions/activateListingDropdown.tsx";
 import DeactivateListingDropdown from "@eCommerceModule/clients/panel/private/listings/center/actions/deactivateListingDropdown.tsx";
 import ChangeListingStatusAction from "@eCommerceModule/components/custom/listings/changeListingStatusAction.tsx";
@@ -73,6 +75,9 @@ function ListingSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by its title with the LIST-… code as a badge and its status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={asListing.title ?? ""} code={asListing.name} typeLabel={String(resolveLanguageKey("listingSubtitle"))} />}
+                headerDescription={<StatusBadge tableConfigKey="listings" field="status" value={asListing.status} label={String(resolveLanguageKey(`listingStatus.${asListing.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

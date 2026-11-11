@@ -13,5 +13,7 @@
   },
   "priority": "Priority",
   "type": "Type",
-  "value": "Value"
+  "value": "Value",
+  "valid": "Valid",
+  "minimumOrderAmount": "Minimum order"
 }

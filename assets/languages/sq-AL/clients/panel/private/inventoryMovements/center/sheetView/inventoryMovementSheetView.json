@@ -43,5 +43,6 @@
     "ProductOrder": "Porosia e produktit",
     "PosOrder": "Porosia POS",
     "Checkout": "Pagesa"
-  }
+  },
+  "typeLabel": "Lëvizje stoku"
 }

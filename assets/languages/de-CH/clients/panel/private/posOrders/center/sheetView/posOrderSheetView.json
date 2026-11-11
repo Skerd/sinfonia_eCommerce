@@ -90,5 +90,7 @@
   "fiscalResolutionValues": {
     "recorded": "Codes aus dem CIS-Portal erfasst",
     "resent": "Nicht registriert, erneut gesendet"
-  }
+  },
+  "typeLabel": "POS-Bestellung",
+  "walkIn": "Laufkunde"
 }

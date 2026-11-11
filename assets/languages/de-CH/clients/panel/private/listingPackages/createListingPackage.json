@@ -11,7 +11,7 @@
   "form": {
     "listingIdLabel": "Inserat",
     "listingIdPlaceholder": "Inserat auswählen",
-    "nameLabel": "Paket name",
+    "nameLabel": "Paketname",
     "namePlaceholder": "z. B. Basic, Standard, Premium",
     "descriptionLabel": "Beschreibung",
     "descriptionPlaceholder": "Was in diesem Paket enthalten ist...",

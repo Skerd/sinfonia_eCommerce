@@ -7,6 +7,7 @@ import type {Inventory} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 import RestockInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/restockInventoryDropdown.tsx";
 import DeductInventoryDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/deductInventoryDropdown.tsx";
 import ViewInventoryMovementsDropdown from "@eCommerceModule/clients/panel/private/inventories/center/actions/viewInventoryMovementsDropdown.tsx";
@@ -62,6 +63,10 @@ function InventorySheetView({
     if (!entityId) return null;
 
     const asInventory = sheetData as Inventory;
+    // "Espresso cup · Red / L @ Main warehouse": the product, its variant options, where it is stocked (UX-01).
+    const variantLabel = asInventory.variant?.attributeCombination?.map((option) => option.value).join(" / ");
+    const productLabel = [asInventory.product?.title, variantLabel].filter(Boolean).join(" · ");
+    const title = asInventory.warehouse?.name ? `${productLabel} @ ${asInventory.warehouse.name}` : productLabel;
 
     return (
         <>
@@ -75,6 +80,7 @@ function InventorySheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={title} code={asInventory.variant?.sku || asInventory.product?.sku} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

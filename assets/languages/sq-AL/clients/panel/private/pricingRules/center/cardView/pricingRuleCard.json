@@ -13,5 +13,7 @@
   },
   "priority": "Prioriteti",
   "type": "Lloji",
-  "value": "Vlera"
+  "value": "Vlera",
+  "valid": "E vlefshme",
+  "minimumOrderAmount": "Porosia minimale"
 }

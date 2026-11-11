@@ -8,5 +8,9 @@
     "paid": "Paguar",
     "cancel": "Anuluar",
     "refunded": "Rimbursuar"
-  }
+  },
+  "walkIn": "Klient i rastit",
+  "soldAt": "Shitur më",
+  "total": "Totali",
+  "itemCount": "Artikuj"
 }

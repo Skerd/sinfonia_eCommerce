@@ -28,5 +28,6 @@
     "draft": "Skicë",
     "applied": "Aplikuar",
     "cancelled": "Anuluar"
-  }
+  },
+  "typeLabel": "Numërim stoku"
 }

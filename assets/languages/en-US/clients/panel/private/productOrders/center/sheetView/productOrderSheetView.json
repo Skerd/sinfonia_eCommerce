@@ -151,5 +151,6 @@
   "fulfillments": "Fulfillments",
   "fulfillment": "Fulfillment",
   "returnRequests": "Return requests",
-  "returnRequest": "Return request"
+  "returnRequest": "Return request",
+  "typeLabel": "Order"
 }

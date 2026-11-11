@@ -151,5 +151,6 @@
   "fulfillments": "Dërgesat",
   "fulfillment": "Dërgesa",
   "returnRequests": "Kthimet",
-  "returnRequest": "Kthim"
+  "returnRequest": "Kthim",
+  "typeLabel": "Porosi"
 }

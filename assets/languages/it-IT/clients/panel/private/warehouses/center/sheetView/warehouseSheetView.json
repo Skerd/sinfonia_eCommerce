@@ -34,5 +34,7 @@
     "countryLabel": "Paese",
     "latitudeLabel": "Latitudine",
     "longitudeLabel": "Longitudine"
-  }
+  },
+  "typeLabel": "Magazzino",
+  "inactive": "Inattivo"
 }

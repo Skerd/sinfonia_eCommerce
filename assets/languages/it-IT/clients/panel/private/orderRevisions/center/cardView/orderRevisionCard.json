@@ -8,5 +8,6 @@
   },
   "status": "Stato",
   "reason": "Motivo",
-  "requestedBy": "Richiesto da"
+  "requestedBy": "Richiesto da",
+  "revision": "Richiesta di revisione"
 }

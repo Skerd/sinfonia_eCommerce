@@ -8,5 +8,9 @@
     "paid": "Paid",
     "cancel": "Cancelled",
     "refunded": "Refunded"
-  }
+  },
+  "walkIn": "Walk-in customer",
+  "soldAt": "Sold at",
+  "total": "Total",
+  "itemCount": "Items"
 }

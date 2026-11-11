@@ -11,5 +11,6 @@
     "opened": "Aperta",
     "closing_control": "Chiusura",
     "closed": "Chiusa"
-  }
+  },
+  "openedBy": "Aperta da"
 }

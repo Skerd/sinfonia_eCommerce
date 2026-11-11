@@ -11,5 +11,8 @@
   "newest": "Plus récents",
   "priceAsc": "Prix : croissant",
   "priceDesc": "Prix : décroissant",
-  "featured": "En vedette"
+  "featured": "En vedette",
+  "priceRange": "Prix",
+  "priceFrom": "à partir de",
+  "priceUpTo": "jusqu'à"
 }

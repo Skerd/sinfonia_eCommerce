@@ -49,5 +49,7 @@
     "collection": "Koleksionet",
     "category": "Kategoritë",
     "customer_group": "Grupet e klientëve"
-  }
+  },
+  "typeLabel": "Rregull çmimi",
+  "inactive": "Joaktive"
 }

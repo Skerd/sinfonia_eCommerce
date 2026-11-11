@@ -20,5 +20,6 @@
   "createdAt": "Creato il",
   "updatedAt": "Aggiornato il",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "sheetTypeLabel": "Recensione prodotto"
 }

@@ -13,5 +13,7 @@
   "failedDescription": "Tocca per riprovare.",
   "title": "Titolo",
   "type": "Tipo",
-  "value": "Valore"
+  "value": "Valore",
+  "valid": "Valido",
+  "minimumOrderAmount": "Ordine minimo"
 }

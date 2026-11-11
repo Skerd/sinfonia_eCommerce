@@ -1,9 +1,11 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
-import {IconPackage, IconUser} from "@tabler/icons-react";
+import {IconCalendarEvent, IconCreditCard, IconPackage} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {productOrderCustomerName} from "@eCommerceModule/clients/panel/private/productOrders/center/productOrderCustomerName.ts";
 import ProductOrderSheetView from "@eCommerceModule/clients/panel/private/productOrders/center/sheetView/productOrderSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ConfirmOrderDropdown from "@eCommerceModule/clients/panel/private/productOrders/center/actions/confirmOrderDropdown.tsx";
@@ -16,39 +18,9 @@ import ProductOrderActionConfirmAction from "@eCommerceModule/components/custom/
 import ShipProductOrderAction from "@eCommerceModule/components/custom/productOrders/shipProductOrderAction.tsx";
 import RefundProductOrderAction from "@eCommerceModule/components/custom/productOrders/refundProductOrderAction.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-
-function statusColor(status: string): string {
-    switch (status) {
-        case "delivered":
-            return "text-success bg-success";
-        case "shipped":
-        case "processing":
-        case "confirmed":
-            return "text-info bg-info";
-        case "cancelled":
-        case "refunded":
-            return "text-destructive bg-destructive";
-        default:
-            return "text-warning bg-warning";
-    }
-}
-
-function paymentStatusColor(paymentStatus: string): string {
-    switch (paymentStatus) {
-        case "paid":
-        case "authorized":
-            return "text-success bg-success";
-        case "refunded":
-        case "voided":
-            return "text-destructive bg-destructive";
-        default:
-            return "text-warning bg-warning";
-    }
-}
 
 type ProductOrderCardProps = WithLanguageType & {
     order: ProductOrder;
@@ -151,14 +123,29 @@ function ProductOrderCard({
             }}
         >
             {({entity: row, read, setAction}) => {
-                const canStatus = accessFieldPathExists(read, "status");
-                const canPayment = accessFieldPathExists(read, "paymentStatus");
-                const colors = canStatus ? statusColor(row.status) : "";
-                const paymentColors = canPayment ? paymentStatusColor(row.paymentStatus) : "";
+                const customerName = productOrderCustomerName(row);
                 const currency = accessFieldPathExists(read, "currency") ? row.currency : undefined;
+                const itemCount = row.items?.length ?? 0;
                 return (
                     <>
-                        <EntityCard.Header titlePath="orderNumber" title={row.orderNumber}>
+                        {/* The customer is who the shop looks for; the order number is the subtitle (UX-01). */}
+                        <EntityCard.Header
+                            titlePath={customerName ? ["shippingAddress", "billingAddress", "customer", "email"] : "orderNumber"}
+                            title={customerName || row.orderNumber}
+                            subtitlePath="orderNumber"
+                            subtitle={customerName ? row.orderNumber : undefined}
+                            badgesBesideTitle
+                            badges={
+                                <>
+                                    {accessFieldPathExists(read, "status") ? (
+                                        <StatusBadge tableConfigKey="productOrders" field="status" value={row.status} label={String(resolveLanguageKey(`orderStatus.${row.status}`))} />
+                                    ) : null}
+                                    {accessFieldPathExists(read, "paymentStatus") ? (
+                                        <StatusBadge tableConfigKey="productOrders" field="paymentStatus" value={row.paymentStatus} label={String(resolveLanguageKey(`paymentStatus.${row.paymentStatus}`))} />
+                                    ) : null}
+                                </>
+                            }
+                        >
                             <ConfirmOrderDropdown order={row} onAction={setAction} />
                             <MarkPaidDropdown order={row} onAction={setAction} />
                             <MarkProcessingDropdown order={row} onAction={setAction} />
@@ -166,56 +153,34 @@ function ProductOrderCard({
                             <CancelOrderDropdown order={row} onAction={setAction} />
                             <RefundOrderDropdown order={row} onAction={setAction} />
                         </EntityCard.Header>
-                        <div className="flex flex-col gap-2">
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconUser className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue path="customer" type="user" value={row.customer} />
-                            </div>
-                            <div className="flex items-center justify-between gap-2">
-                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                            colors.split(" ")[0],
-                                        )}
-                                    >
-                                        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors.split(" ")[1])} />
-                                        <DisplayValue
-                                            path="status"
-                                            type="enum"
-                                            languageKeyCategory="orderStatus"
-                                            value={row.status}
-                                        />
-                                    </span>
-                                    <span
-                                        className={cn(
-                                            "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                            paymentColors.split(" ")[0],
-                                        )}
-                                    >
-                                        <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", paymentColors.split(" ")[1])} />
-                                        <DisplayValue
-                                            path="paymentStatus"
-                                            type="enum"
-                                            languageKeyCategory="paymentStatus"
-                                            value={row.paymentStatus}
-                                        />
-                                    </span>
-                                </div>
-                                <span className="ml-auto text-base font-bold leading-none text-foreground">
-                                    <DisplayValue
-                                        path="grandTotal"
-                                        type="currency"
-                                        value={{amount: row.grandTotal, currency}}
-                                    />
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconPackage className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue path="items" type="number" value={row.items?.length} />
-                                <span>{resolveLanguageKey("items")}</span>
-                            </div>
-                        </div>
+                        <EntityCard.Body>
+                            {itemCount ? (
+                                <EntityCardRow
+                                    icon={IconPackage}
+                                    label={resolveLanguageKey("itemsLabel")}
+                                    tooltip={resolveLanguageKey("itemsLabel")}
+                                    path="items"
+                                    type="number"
+                                    value={itemCount}
+                                />
+                            ) : null}
+                            <EntityCardRow
+                                icon={IconCalendarEvent}
+                                label={resolveLanguageKey("placedAt")}
+                                tooltip={resolveLanguageKey("placedAt")}
+                                path="createdAt"
+                                type="dateTime"
+                                value={row.createdAt}
+                            />
+                            <EntityCardRow
+                                icon={IconCreditCard}
+                                label={resolveLanguageKey("total")}
+                                tooltip={resolveLanguageKey("total")}
+                                path="grandTotal"
+                                type="currency"
+                                value={{amount: row.grandTotal, currency}}
+                            />
+                        </EntityCard.Body>
                     </>
                 );
             }}

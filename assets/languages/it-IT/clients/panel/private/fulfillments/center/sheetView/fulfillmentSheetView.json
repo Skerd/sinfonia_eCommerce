@@ -36,5 +36,6 @@
     "shipped": "Spedita",
     "delivered": "Consegnata",
     "failed": "Non riuscita"
-  }
+  },
+  "typeLabel": "Evasione"
 }

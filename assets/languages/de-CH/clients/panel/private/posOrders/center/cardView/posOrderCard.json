@@ -8,5 +8,9 @@
     "paid": "Bezahlt",
     "cancel": "Storniert",
     "refunded": "Erstattet"
-  }
+  },
+  "walkIn": "Laufkunde",
+  "soldAt": "Verkauft am",
+  "total": "Total",
+  "itemCount": "Artikel"
 }

@@ -4,6 +4,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import StartReviewDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/startReviewDisputeDropdown.tsx";
 import ResolveDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/resolveDisputeDropdown.tsx";
@@ -94,6 +96,9 @@ function DisputeSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the disputed order's listing or task, the order number as a badge (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={row.order?.listing?.title || row.order?.taskRequest?.title || (row.reason ? title : "")} code={row.order?.name} typeLabel={String(resolveLanguageKey("dispute"))} />}
+                headerDescription={<StatusBadge tableConfigKey="disputes" field="status" value={row.status} label={String(resolveLanguageKey(`status_values.${row.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={handleDelete}

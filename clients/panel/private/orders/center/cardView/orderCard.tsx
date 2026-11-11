@@ -23,7 +23,9 @@ import RequestRevisionAction from "@eCommerceModule/components/custom/orders/req
 import RaiseDisputeAction from "@eCommerceModule/components/custom/disputes/raiseDisputeAction.tsx";
 import type {OrderConfirmActionKey} from "@eCommerceModule/components/custom/orders/orderActionConfirmAction.tsx";
 import type {OrderStatus} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.schema-def.ts";
-import {IconBriefcase, IconCalendar, IconCurrencyDollar, IconTag, IconUser} from "@tabler/icons-react";
+import {IconBriefcase, IconCalendar, IconCurrencyDollar} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
@@ -190,7 +192,15 @@ function OrderCard({
         >
             {({entity: row, read, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath={["listing.title", "taskRequest.title"]} title={orderCardTitle(row, read)}>
+                    {/* What was ordered, by whom as subtitle, status in tone; then provider → due → total (UX-02). */}
+                    <EntityCard.Header
+                        titlePath={["listing.title", "taskRequest.title"]}
+                        title={orderCardTitle(row, read)}
+                        subtitlePath="customer"
+                        subtitle={getName(row.customer) || undefined}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="orders" field="status" value={row.status} label={String(resolveLanguageKey(`statuses.${row.status}`))} />}
+                    >
                         <AcceptOrderDropdown order={row} onAction={setAction} />
                         <StartOrderDropdown order={row} onAction={setAction} />
                         <CancelOrderDropdown order={row} onAction={setAction} />
@@ -204,23 +214,6 @@ function OrderCard({
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="statuses"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconUser}
-                            label={resolveLanguageKey("customer")}
-                            tooltip={resolveLanguageKey("customer")}
-                            path="customer"
-                            type="user"
-                            value={row.customer}
-                        />
-                        <EntityCardRow
                             icon={IconBriefcase}
                             label={resolveLanguageKey("provider")}
                             tooltip={resolveLanguageKey("provider")}
@@ -228,14 +221,17 @@ function OrderCard({
                             type="user"
                             value={row.provider}
                         />
-                        <EntityCardRow
-                            icon={IconCalendar}
-                            label={resolveLanguageKey("dueDate")}
-                            tooltip={resolveLanguageKey("dueDate")}
-                            path="deliveryDueDate"
-                            type="date"
-                            value={row.deliveryDueDate}
-                        />
+                        {/* An order without a due date leaves the row off rather than showing an empty value (UX-02). */}
+                        {row.deliveryDueDate ? (
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("dueDate")}
+                                tooltip={resolveLanguageKey("dueDate")}
+                                path="deliveryDueDate"
+                                type="date"
+                                value={row.deliveryDueDate}
+                            />
+                        ) : null}
                         <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("total")}

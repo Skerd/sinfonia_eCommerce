@@ -2,14 +2,27 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {SavedSearch} from "armonia/src/modules/eCommerce/api/eCommerce/private/savedSearch/savedSearch.dto.ts";
-import {IconArrowsSort, IconCategory2, IconHash, IconStack2, IconUser} from "@tabler/icons-react";
+import {IconCategory2, IconCurrencyDollar, IconStack2, IconUser} from "@tabler/icons-react";
 import SavedSearchSheetView from "@eCommerceModule/clients/panel/private/savedSearches/center/sheetView/savedSearchSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+
+/** "€10 – €50", "from €10" or "up to €50" in the shop currency the route adds (UX-07). */
+function savedSearchPriceRange(search: SavedSearch, resolveLanguageKey: WithLanguageType["resolveLanguageKey"]): string | undefined {
+    const abbreviation = search.currency?.abbreviation;
+    const money = (amount: number) => (abbreviation ? formatCurrency(amount, abbreviation, {maximumFractionDigits: 2}) : formatNumber(amount));
+    const {priceMin, priceMax} = search;
+    if (priceMin != null && priceMax != null) return `${money(priceMin)} – ${money(priceMax)}`;
+    if (priceMin != null) return `${String(resolveLanguageKey("priceFrom"))} ${money(priceMin)}`;
+    if (priceMax != null) return `${String(resolveLanguageKey("priceUpTo"))} ${money(priceMax)}`;
+    return undefined;
+}
 
 function savedSearchEditPath(search: SavedSearch, lockCustomer: boolean) {
     const params = new URLSearchParams();
@@ -62,10 +75,11 @@ function SavedSearchCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId, lockCustomer})}
         >
-            {({entity: row}) => {
+            {({entity: row, read}) => {
                 const customerName = getName(row.customer);
                 const categoryNames = row.categoryIds?.map((category) => category.name).filter(Boolean).join(", ");
                 const collectionName = row.collectionId?.name;
+                const priceRange = savedSearchPriceRange(row, resolveLanguageKey);
                 return (
                     <>
                         <EntityCard.Header titlePath="name" title={row.name} />
@@ -97,33 +111,13 @@ function SavedSearchCard({
                                     value={collectionName}
                                 />
                             ) : null}
-                            {typeof row.priceMin === "number" ? (
+                            {priceRange ? (
                                 <EntityCardRow
-                                    icon={IconHash}
-                                    label={resolveLanguageKey("priceMin")}
-                                    tooltip={resolveLanguageKey("priceMin")}
-                                    path="priceMin"
-                                    type="number"
-                                    value={row.priceMin}
-                                />
-                            ) : null}
-                            {typeof row.priceMax === "number" ? (
-                                <EntityCardRow
-                                    icon={IconHash}
-                                    label={resolveLanguageKey("priceMax")}
-                                    tooltip={resolveLanguageKey("priceMax")}
-                                    path="priceMax"
-                                    type="number"
-                                    value={row.priceMax}
-                                />
-                            ) : null}
-                            {row.sort ? (
-                                <EntityCardRow
-                                    icon={IconArrowsSort}
-                                    label={resolveLanguageKey("sort")}
-                                    tooltip={resolveLanguageKey("sort")}
-                                    path="sort"
-                                    value={resolveLanguageKey(row.sort)}
+                                    icon={IconCurrencyDollar}
+                                    label={resolveLanguageKey("priceRange")}
+                                    tooltip={resolveLanguageKey("priceRange")}
+                                    show={accessFieldPathExists(read, "priceMin") || accessFieldPathExists(read, "priceMax")}
+                                    value={priceRange}
                                 />
                             ) : null}
                         </EntityCard.Body>

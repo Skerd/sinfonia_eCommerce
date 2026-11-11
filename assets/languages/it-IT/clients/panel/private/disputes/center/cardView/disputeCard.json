@@ -12,5 +12,6 @@
     "under_review": "In fase di revisione",
     "resolved": "Risolta",
     "closed": "Chiusa"
-  }
+  },
+  "createdAt": "Aperta il"
 }

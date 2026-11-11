@@ -55,5 +55,7 @@
     "product": "Prodotti",
     "collection": "Collezioni",
     "category": "Categorie"
-  }
+  },
+  "typeLabel": "Sconto",
+  "inactive": "Inattivo"
 }

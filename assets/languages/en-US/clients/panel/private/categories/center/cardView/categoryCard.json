@@ -3,7 +3,5 @@
   "failedTitle": "Failed to load category",
   "failedDescription": "Tap to retry.",
   "name": "Name",
-  "slug": "Slug",
-  "parentCategory": "Parent category",
-  "order": "Order"
+  "parentCategory": "Parent category"
 }

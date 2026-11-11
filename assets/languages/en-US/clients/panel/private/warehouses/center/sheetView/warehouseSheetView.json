@@ -34,5 +34,7 @@
     "countryLabel": "Country",
     "latitudeLabel": "Latitude",
     "longitudeLabel": "Longitude"
-  }
+  },
+  "typeLabel": "Warehouse",
+  "inactive": "Inactive"
 }

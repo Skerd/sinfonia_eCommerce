@@ -127,13 +127,15 @@ function CustomerGroupCard({
                         <CustomerGroupRowMenuExtras customerGroup={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            label={resolveLanguageKey("description")}
-                            tooltip={resolveLanguageKey("description")}
-                            path="description"
-                            type="longText"
-                            value={entity.description}
-                        />
+                        {entity.description ? (
+                            <EntityCardRow
+                                label={resolveLanguageKey("description")}
+                                tooltip={resolveLanguageKey("description")}
+                                path="description"
+                                type="longText"
+                                value={entity.description}
+                            />
+                        ) : null}
                         <EntityCardRow
                             icon={IconUsers}
                             label={resolveLanguageKey("memberCount")}

@@ -90,5 +90,7 @@
   "fiscalResolutionValues": {
     "recorded": "Codes saisis depuis le portail CIS",
     "resent": "Non enregistrée, renvoyée"
-  }
+  },
+  "typeLabel": "Commande au point de vente",
+  "walkIn": "Client de passage"
 }

@@ -2,16 +2,14 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/center/cardView/customerAddressCard.tsx",
   "failedTitle": "Échec du chargement de l'adresse",
   "failedDescription": "Touchez pour réessayer.",
-  "type": "Type",
   "addressType": {
     "billing": "Facturation",
     "shipping": "Livraison"
   },
   "firstName": "Prénom",
   "email": "E-mail",
-  "street": "Rue",
-  "city": "Ville",
   "phone": "Téléphone",
   "defaultAddress": "Par défaut",
-  "notDefault": "Pas par défaut"
+  "notDefault": "Pas par défaut",
+  "address": "Adresse"
 }

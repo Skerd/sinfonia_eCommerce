@@ -7,6 +7,8 @@ import type {Collection} from "armonia/src/modules/eCommerce/api/eCommerce/priva
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ActivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/activateCollection.tsx";
 import DeactivateCollection from "@eCommerceModule/clients/panel/private/collections/center/actions/deactivateCollection.tsx";
 import ActivateCollectionDialog from "@eCommerceModule/clients/panel/private/collections/center/dialogs/activateCollectionDialog.tsx";
@@ -77,6 +79,9 @@ function CollectionSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={asEntity.name ?? ""} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                // Booleans show only the exception (UX-02).
+                headerDescription={asEntity.isVisible === false ? <Badge variant="outline">{resolveLanguageKey("hidden")}</Badge> : undefined}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

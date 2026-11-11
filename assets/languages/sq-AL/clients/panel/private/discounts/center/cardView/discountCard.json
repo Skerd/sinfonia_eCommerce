@@ -13,5 +13,7 @@
   "failedDescription": "Prekni për të provuar përsëri.",
   "title": "Titulli",
   "type": "Lloji",
-  "value": "Vlera"
+  "value": "Vlera",
+  "valid": "E vlefshme",
+  "minimumOrderAmount": "Porosia minimale"
 }

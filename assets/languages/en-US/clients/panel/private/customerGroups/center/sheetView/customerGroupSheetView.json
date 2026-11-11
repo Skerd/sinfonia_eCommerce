@@ -17,5 +17,7 @@
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "sheetTypeLabel": "Customer group",
+  "default": "Default"
 }

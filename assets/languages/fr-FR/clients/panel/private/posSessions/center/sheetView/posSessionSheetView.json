@@ -50,5 +50,6 @@
     "out": "Sortie d'espèces"
   },
   "posOrders": "Commandes PDV",
-  "posOrder": "Commande PDV"
+  "posOrder": "Commande PDV",
+  "typeLabel": "Session de caisse"
 }

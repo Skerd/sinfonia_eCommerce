@@ -159,5 +159,6 @@
   "inventories": "Lagerbestände",
   "inventoryRow": "Lagerbestand",
   "reviews": "Bewertungen",
-  "productReview": "Bewertung"
+  "productReview": "Bewertung",
+  "sheetTypeLabel": "Produkt"
 }

@@ -7,6 +7,8 @@ import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ActivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/activateCmsBlock.tsx";
 import DeactivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/deactivateCmsBlock.tsx";
 import ActivateCmsBlockDialog from "@eCommerceModule/clients/panel/private/cmsBlocks/center/dialogs/activateCmsBlockDialog.tsx";
@@ -79,6 +81,9 @@ function CmsBlockSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={asEntity.title ?? ""} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                // Booleans show only the exception (UX-02).
+                headerDescription={asEntity.isActive === false ? <Badge variant="outline">{resolveLanguageKey("inactive")}</Badge> : undefined}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

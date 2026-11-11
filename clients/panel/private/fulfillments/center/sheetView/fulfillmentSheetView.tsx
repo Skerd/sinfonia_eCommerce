@@ -7,6 +7,8 @@ import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/priv
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import ShipFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx";
 import MarkDeliveredFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markDeliveredFulfillment.tsx";
 import MarkFailedFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/markFailedFulfillment.tsx";
@@ -79,6 +81,9 @@ function FulfillmentSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the order it ships and the carrier, with the tracking number as a badge (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asEntity.order?.orderNumber, asEntity.carrier].filter(Boolean).join(" · ")} code={asEntity.trackingNumber} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={<StatusBadge tableConfigKey="fulfillments" field="status" value={asEntity.status} label={String(resolveLanguageKey(`fulfillmentStatus.${asEntity.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -7,6 +7,8 @@ import type {Warehouse} from "armonia/src/modules/eCommerce/api/eCommerce/privat
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ActivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/activateWarehouse.tsx";
 import DeactivateWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/deactivateWarehouse.tsx";
 import SetDefaultWarehouse from "@eCommerceModule/clients/panel/private/warehouses/center/actions/setDefaultWarehouse.tsx";
@@ -81,6 +83,16 @@ function WarehouseSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the warehouse, its code as a badge; only the exceptions (inactive, default) show below (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={asEntity.name} code={asEntity.code} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={
+                    asEntity.isActive === false || asEntity.isDefault ? (
+                        <>
+                            {asEntity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                            {asEntity.isDefault ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("isDefault"))}</Badge> : null}
+                        </>
+                    ) : null
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

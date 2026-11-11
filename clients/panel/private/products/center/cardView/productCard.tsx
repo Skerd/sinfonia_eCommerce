@@ -18,6 +18,7 @@ import DuplicateProductDialog from "@eCommerceModule/clients/panel/private/produ
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -276,7 +277,14 @@ function ProductCard({
                                 ) : null}
                             </div>
                         ) : null}
-                        <EntityCard.Header titlePath="title" title={row.title}>
+                        <EntityCard.Header
+                            titlePath="title"
+                            title={row.title}
+                            badgesBesideTitle
+                            badges={accessFieldPathExists(read, "status") ? (
+                                <StatusBadge tableConfigKey="products" field="status" value={row.status} label={String(resolveLanguageKey(`productStatus.${row.status}`))} />
+                            ) : undefined}
+                        >
                             <PublishProduct entity={row} onAction={setAction} />
                             <ArchiveProduct entity={row} onAction={setAction} />
                             <RevertToDraftProduct entity={row} onAction={setAction} />
@@ -312,7 +320,7 @@ function ProductCard({
                                     )}
                                 </DisplayValue>
                             ) : null}
-                            <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2">
                                 <div className="flex min-w-0 items-end gap-1.5">
                                     <span className="text-base font-semibold leading-none">
                                         <DisplayValue
@@ -331,23 +339,6 @@ function ProductCard({
                                         </span>
                                     ) : null}
                                 </div>
-                                <DisplayValue
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="productStatus"
-                                    value={row.status}
-                                >
-                                    {(label) =>
-                                        label ? (
-                                            <Badge
-                                                variant={row.status === "active" ? "outline" : "destructive"}
-                                                className="shrink-0 px-1.5 py-0 text-3xs"
-                                            >
-                                                {label}
-                                            </Badge>
-                                        ) : null
-                                    }
-                                </DisplayValue>
                             </div>
                         </div>
                     </>

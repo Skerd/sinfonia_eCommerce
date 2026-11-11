@@ -7,9 +7,6 @@
     "dynamic": "Dynamique"
   },
   "type": "Type",
-  "slug": "Slug",
   "products": "Produits",
-  "position": "Position",
-  "visible": "Visible",
   "hidden": "Caché"
 }

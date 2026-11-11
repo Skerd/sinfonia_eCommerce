@@ -2,12 +2,13 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ProductAttribute} from "armonia/src/modules/eCommerce/api/eCommerce/private/productAttribute/productAttribute.dto.ts";
-import {IconEye, IconHash, IconList, IconStack} from "@tabler/icons-react";
+import {IconList} from "@tabler/icons-react";
 import ProductAttributeSheetView from "@eCommerceModule/clients/panel/private/productAttributes/center/sheetView/productAttributeSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -81,44 +82,37 @@ function ProductAttributeCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity}) => {
+            {({entity, read}) => {
                 const values = entity.values ?? [];
                 return (
                     <>
-                        <EntityCard.Header titlePath="name" title={entity.name} />
+                        <EntityCard.Header
+                            titlePath="name"
+                            title={entity.name}
+                            badgesBesideTitle
+                            badges={
+                                // Booleans show only the exception (UX-02): hidden from the product page, or used for variants.
+                                <>
+                                    {accessFieldPathExists(read, "isVisibleOnProductPage") && entity.isVisibleOnProductPage === false ? (
+                                        <Badge variant="outline">{resolveLanguageKey("hidden")}</Badge>
+                                    ) : null}
+                                    {accessFieldPathExists(read, "isUsedForVariants") && entity.isUsedForVariants ? (
+                                        <Badge variant="outline">{resolveLanguageKey("usedForVariants")}</Badge>
+                                    ) : null}
+                                </>
+                            }
+                        />
                         <EntityCard.Body>
-                            <EntityCardRow
-                                icon={IconHash}
-                                label={resolveLanguageKey("position")}
-                                tooltip={resolveLanguageKey("position")}
-                                path="position"
-                                type="number"
-                                value={entity.position}
-                            />
-                            <EntityCardRow
-                                icon={IconEye}
-                                label={resolveLanguageKey("visible")}
-                                tooltip={resolveLanguageKey("visible")}
-                                path="isVisibleOnProductPage"
-                                type="boolean"
-                                value={entity.isVisibleOnProductPage}
-                            />
-                            <EntityCardRow
-                                icon={IconStack}
-                                label={resolveLanguageKey("variants")}
-                                tooltip={resolveLanguageKey("variants")}
-                                path="isUsedForVariants"
-                                type="boolean"
-                                value={entity.isUsedForVariants}
-                            />
-                            <EntityCardRow
-                                icon={IconList}
-                                label={resolveLanguageKey("values")}
-                                tooltip={resolveLanguageKey("values")}
-                                path="values"
-                                className="basis-full"
-                                value={values.length > 0 ? valuesPreview(values) : null}
-                            />
+                            {values.length > 0 ? (
+                                <EntityCardRow
+                                    icon={IconList}
+                                    label={resolveLanguageKey("values")}
+                                    tooltip={resolveLanguageKey("values")}
+                                    path="values"
+                                    className="basis-full"
+                                    value={valuesPreview(values)}
+                                />
+                            ) : null}
                         </EntityCard.Body>
                     </>
                 );

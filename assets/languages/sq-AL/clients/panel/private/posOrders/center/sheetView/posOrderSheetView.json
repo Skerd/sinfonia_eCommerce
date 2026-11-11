@@ -90,5 +90,7 @@
   "fiscalResolutionValues": {
     "recorded": "Kodet u regjistruan nga portali CIS",
     "resent": "Nuk u regjistrua, u dërgua përsëri"
-  }
+  },
+  "typeLabel": "Porosi POS",
+  "walkIn": "Klient i rastit"
 }

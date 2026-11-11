@@ -151,5 +151,6 @@
   "fulfillments": "Lieferungen",
   "fulfillment": "Lieferung",
   "returnRequests": "Rücksendungen",
-  "returnRequest": "Rücksendung"
+  "returnRequest": "Rücksendung",
+  "typeLabel": "Bestellung"
 }

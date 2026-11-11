@@ -28,5 +28,6 @@
     "draft": "Draft",
     "applied": "Applied",
     "cancelled": "Cancelled"
-  }
+  },
+  "typeLabel": "Stock count"
 }

@@ -7,5 +7,12 @@
   "endAt": "Fine",
   "timezone": "Fuso orario",
   "order": "Ordine",
-  "time": "Orario"
+  "time": "Orario",
+  "orderStatus": {
+    "pending": "In sospeso",
+    "accepted": "Accettato",
+    "in_progress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato"
+  }
 }

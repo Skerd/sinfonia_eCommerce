@@ -16,5 +16,6 @@
     "spam": "Spam",
     "misleading": "Misleading",
     "other": "Other"
-  }
+  },
+  "reportedAt": "Reported on"
 }

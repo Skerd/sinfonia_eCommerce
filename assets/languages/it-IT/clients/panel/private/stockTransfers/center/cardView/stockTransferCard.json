@@ -8,5 +8,6 @@
     "draft": "Bozza",
     "done": "Completato",
     "cancelled": "Annullato"
-  }
+  },
+  "date": "Data"
 }

@@ -1,34 +1,34 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/bids/index.tsx",
-  "title": "Angebote",
+  "title": "Offerten",
   "description": "Offerten auf Ausschreibungen anzeigen und verwalten.",
   "help": {
-    "ariaLabel": "Über Gebote",
-    "title": "Über Gebote",
-    "overview": "Ein Gebot ist die Offerte eines Anbieters auf einen Auftrag: Betrag, Liefertage und ein schriftlicher Vorschlag. Der Auftraggeber nimmt ein Gebot an, was den Auftrag vergibt und eine Bestellung eröffnet.",
+    "ariaLabel": "Über Offerten",
+    "title": "Über Offerten",
+    "overview": "Eine Offerte ist das Angebot eines Anbieters auf eine Ausschreibung: Betrag, Liefertage und ein schriftlicher Vorschlag. Nimmt der Auftraggeber eine Offerte an, wird die Ausschreibung vergeben und ein Auftrag eröffnet.",
     "sections": [
       {
-        "title": "Ein Gebot abgeben",
+        "title": "Eine Offerte einreichen",
         "items": [
-          "Der Auftrag muss offen, nicht abgelaufen und von jemand anderem sein.",
-          "Ein aktives Gebot pro Bieter und Auftrag. Bieter und Währung setzt der Server, aus dem Aufrufer und dem Auftrag.",
-          "Gebote werden nach der Abgabe nicht bearbeitet; ziehen Sie es zurück und bieten Sie neu."
+          "Die Ausschreibung muss offen, nicht abgelaufen und von jemand anderem sein.",
+          "Eine aktive Offerte pro Bieter und Ausschreibung. Bieter und Währung setzt der Server, aus dem Aufrufer und der Ausschreibung.",
+          "Offerten werden nach dem Einreichen nicht bearbeitet; ziehen Sie sie zurück und reichen Sie eine neue ein."
         ]
       },
       {
         "title": "Status und Aktionen",
-        "body": "Nur ein ausstehendes Gebot kann angenommen oder abgelehnt werden.",
+        "body": "Nur eine ausstehende Offerte kann angenommen oder abgelehnt werden.",
         "items": [
-          "Annehmen (nur Auftraggeber): Dieses Gebot wird angenommen, jedes andere ausstehende Gebot auf den Auftrag abgelehnt, der Auftrag vergeben und eine ausstehende Bestellung mit dem Gebotsbetrag und einem Fälligkeitsdatum aus seinen Liefertagen eröffnet. Die Bieter werden benachrichtigt.",
-          "Ablehnen: Der Auftraggeber lehnt es ab, oder der Bieter zieht es zurück. Nur ein abgelehnter Bieter wird benachrichtigt."
+          "Annehmen (nur Auftraggeber): Diese Offerte wird angenommen, jede andere ausstehende Offerte auf die Ausschreibung abgelehnt, die Ausschreibung vergeben und ein ausstehender Auftrag mit dem Offertbetrag und einem Fälligkeitsdatum aus ihren Liefertagen eröffnet. Die Bieter werden benachrichtigt.",
+          "Ablehnen: Der Auftraggeber lehnt sie ab, oder der Bieter zieht sie zurück. Nur ein abgelehnter Bieter wird benachrichtigt."
         ]
       },
       {
         "title": "Wer was sieht",
-        "body": "Gebote sind privat zwischen Bieter und Auftraggeber.",
+        "body": "Offerten sind privat zwischen Bieter und Auftraggeber.",
         "items": [
-          "Ein Nicht-Administrator sieht seine eigenen Gebote und die Gebote auf seine eigenen Aufträge, nie die eines Mitbewerbers.",
-          "Der Bieter oder ein Administrator kann ein Gebot löschen, solange es ausstehend ist."
+          "Ein Nicht-Administrator sieht seine eigenen Offerten und die Offerten auf seine eigenen Ausschreibungen, nie die eines Mitbewerbers.",
+          "Der Bieter oder ein Administrator kann eine Offerte löschen, solange sie aussteht."
         ]
       }
     ]
@@ -37,11 +37,11 @@
   "fields": {
     "amount": "Betrag",
     "currency": "Währung",
-    "proposal": "Angebot",
+    "proposal": "Vorschlag",
     "deliveryDays": "Liefertage",
     "status": "Status",
     "bidder": "Bieter",
-    "taskRequest": "Aufgabe Antrag",
+    "taskRequest": "Ausschreibung",
     "createdAt": "Erstellt"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",

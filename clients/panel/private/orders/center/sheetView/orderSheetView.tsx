@@ -4,6 +4,9 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import type {Order} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/order/order.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -107,6 +110,9 @@ function OrderSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // What was ordered and by whom, the order number as a badge and the status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asOrder.listing?.title || asOrder.taskRequest?.title, getName(asOrder.customer)].filter(Boolean).join(" · ")} code={asOrder.name} typeLabel={String(resolveLanguageKey("order"))} />}
+                headerDescription={<StatusBadge tableConfigKey="orders" field="status" value={asOrder.status} label={String(resolveLanguageKey(`orderStatus.${asOrder.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

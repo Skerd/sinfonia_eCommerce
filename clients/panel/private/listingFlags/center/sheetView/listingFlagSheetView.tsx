@@ -4,6 +4,8 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import ResolveListingFlagDropdown from "@eCommerceModule/clients/panel/private/listingFlags/center/actions/resolveListingFlagDropdown.tsx";
 import DismissListingFlagDropdown from "@eCommerceModule/clients/panel/private/listingFlags/center/actions/dismissListingFlagDropdown.tsx";
@@ -99,6 +101,9 @@ function ListingFlagSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the flagged listing and why, not by its status, which shows in tone below (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asFlag.listing?.title?.trim(), asFlag.reason ? String(resolveLanguageKey(`reason_values.${asFlag.reason}`)) : ""].filter(Boolean).join(" · ")} typeLabel={String(resolveLanguageKey("listingFlagSubtitle"))} />}
+                headerDescription={<StatusBadge tableConfigKey="listingflags" field="status" value={asFlag.status} label={String(resolveLanguageKey(`status_values.${asFlag.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={handleDelete}

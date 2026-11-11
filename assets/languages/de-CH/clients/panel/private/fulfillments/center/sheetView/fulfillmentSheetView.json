@@ -36,5 +36,6 @@
     "shipped": "Versandt",
     "delivered": "Zugestellt",
     "failed": "Fehlgeschlagen"
-  }
+  },
+  "typeLabel": "Lieferung"
 }

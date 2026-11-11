@@ -7,6 +7,8 @@ import type {ReturnRequest} from "armonia/src/modules/eCommerce/api/eCommerce/pr
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import ApproveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/approveReturnRequest.tsx";
 import RejectReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/rejectReturnRequest.tsx";
 import ReceiveReturnRequest from "@eCommerceModule/clients/panel/private/returnRequests/center/actions/receiveReturnRequest.tsx";
@@ -81,6 +83,9 @@ function ReturnRequestSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by its order and what is asked for, not just "Return", with its status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[asEntity.order?.orderNumber, asEntity.type ? String(resolveLanguageKey(`returnType.${asEntity.type}`)) : ""].filter(Boolean).join(" · ")} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={<StatusBadge tableConfigKey="returnRequests" field="status" value={asEntity.status} label={String(resolveLanguageKey(`returnStatus.${asEntity.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

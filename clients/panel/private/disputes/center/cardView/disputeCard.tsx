@@ -9,7 +9,8 @@ import StartReviewDisputeDropdown from "@eCommerceModule/clients/panel/private/d
 import ResolveDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/resolveDisputeDropdown.tsx";
 import CloseDisputeDropdown from "@eCommerceModule/clients/panel/private/disputes/center/actions/closeDisputeDropdown.tsx";
 import type {DisputeLifecycleVerb} from "@eCommerceModule/components/custom/disputes/changeDisputeLifecycleAction.tsx";
-import {IconCurrencyDollar, IconPackage, IconTag, IconUser} from "@tabler/icons-react";
+import {IconCalendarEvent, IconCurrencyDollar, IconUser} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
@@ -69,7 +70,7 @@ function DisputeCard({
             restoreUrl="/api/eCommerceMarketplace/dispute/restore"
             failedTitle={resolveLanguageKey("failedTitle")}
             failedDescription={resolveLanguageKey("failedDescription")}
-            titlePath="reason"
+            titlePath="order.listing.title"
             innerRef={innerRef}
             sheetProps={({entity: row, setEntity}) => ({
                 fetchId,
@@ -100,21 +101,20 @@ function DisputeCard({
         >
             {({entity: row, read, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="reason" title={row.reason}>
+                    {/* The disputed order names the card; the reason is its subtitle (UX-01, UX-02). */}
+                    <EntityCard.Header
+                        titlePath={["order.listing.title", "order.taskRequest.title", "reason"]}
+                        title={disputeOrderTitle(row, read) || disputeRowTitle(row)}
+                        subtitlePath="reason"
+                        subtitle={disputeOrderTitle(row, read) ? disputeRowTitle(row) : undefined}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="disputes" field="status" value={row.status} label={String(resolveLanguageKey(`status_values.${row.status}`))} />}
+                    >
                         <StartReviewDisputeDropdown dispute={row} onAction={setAction} />
                         <ResolveDisputeDropdown dispute={row} onAction={setAction} />
                         <CloseDisputeDropdown dispute={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="status_values"
-                            value={row.status}
-                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("initiator")}
@@ -124,14 +124,12 @@ function DisputeCard({
                             value={row.initiator}
                         />
                         <EntityCardRow
-                            icon={IconPackage}
-                            label={resolveLanguageKey("order")}
-                            tooltip={resolveLanguageKey("order")}
-                            show={
-                                accessFieldPathExists(read, "order.listing.title") ||
-                                accessFieldPathExists(read, "order.taskRequest.title")
-                            }
-                            value={disputeOrderTitle(row, read)}
+                            icon={IconCalendarEvent}
+                            label={resolveLanguageKey("createdAt")}
+                            tooltip={resolveLanguageKey("createdAt")}
+                            path="createdAt"
+                            type="date"
+                            value={row.createdAt}
                         />
                         <EntityCardRow
                             icon={IconCurrencyDollar}

@@ -7,6 +7,7 @@ import type {ProductReview} from "armonia/src/modules/eCommerce/api/eCommerce/pr
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 
 function productReviewEditPath(review: {_id: string; title?: string}) {
     const params = new URLSearchParams();
@@ -50,6 +51,9 @@ function ProductReviewSheetView({
 
     if (!viewConfig) return null;
     if (!entityId) return null;
+    const review = sheetData as ProductReview;
+    // The review's own title when it has one, else the product it rates and its stars (UX-01).
+    const reviewName = review.title?.trim() || [review.product?.title, typeof review.rating === "number" ? `★ ${review.rating}` : ""].filter(Boolean).join(" · ");
 
     return (
         <SheetViewRenderer
@@ -63,6 +67,7 @@ function ProductReviewSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            headerTitle={<SheetNameTitle name={reviewName} code={review.order?.orderNumber} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
             access={access}
             hideActions={hideActions}
             editPath={productReviewEditPath({

@@ -43,5 +43,7 @@
     "countryLabel": "Paese",
     "latitudeLabel": "Latitudine",
     "longitudeLabel": "Longitudine"
-  }
+  },
+  "sheetTypeLabel": "Indirizzo",
+  "defaultAddress": "Predefinito"
 }

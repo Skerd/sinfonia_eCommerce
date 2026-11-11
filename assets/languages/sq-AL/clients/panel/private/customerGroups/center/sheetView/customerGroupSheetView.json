@@ -17,5 +17,7 @@
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
   "yes": "Po",
-  "no": "Jo"
+  "no": "Jo",
+  "sheetTypeLabel": "Grupi i klientëve",
+  "default": "Parazgjedhur"
 }

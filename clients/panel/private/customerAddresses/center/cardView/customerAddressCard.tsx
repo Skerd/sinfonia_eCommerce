@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
-import {IconMail, IconMapPin, IconPhone, IconStar, IconTruck} from "@tabler/icons-react";
+import {IconMail, IconMapPin, IconPhone, IconStar} from "@tabler/icons-react";
 import CustomerAddressSheetView from "@eCommerceModule/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SetDefaultCustomerAddress from "@eCommerceModule/clients/panel/private/customerAddresses/center/actions/setDefaultCustomerAddress.tsx";
@@ -12,6 +12,7 @@ import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.t
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {ReactNode, RefObject} from "react";
 
 const FORM_BASE = "/tenancy/systemSettings/customeraddresses";
@@ -107,60 +108,55 @@ function CustomerAddressCard({
                         title={addressTitle(row, read)}
                         badgesBesideTitle
                         badges={
-                            accessFieldPathExists(read, "isDefault") && row.isDefault ? (
-                                <DisplayValue path="isDefault" value={resolveLanguageKey("defaultAddress")}>
-                                    {(formatted: ReactNode) => (
-                                        <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
-                                            <IconStar className="w-3 h-3" />
-                                            {formatted}
-                                        </span>
-                                    )}
-                                </DisplayValue>
-                            ) : undefined
+                            <>
+                                {accessFieldPathExists(read, "type") ? (
+                                    <StatusBadge tableConfigKey="customerAddresses" field="type" value={row.type} label={String(resolveLanguageKey(`addressType.${row.type}`))} />
+                                ) : null}
+                                {accessFieldPathExists(read, "isDefault") && row.isDefault ? (
+                                    <DisplayValue path="isDefault" value={resolveLanguageKey("defaultAddress")}>
+                                        {(formatted: ReactNode) => (
+                                            <span className="inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0">
+                                                <IconStar className="w-3 h-3" />
+                                                {formatted}
+                                            </span>
+                                        )}
+                                    </DisplayValue>
+                                ) : null}
+                            </>
                         }
                     >
                         <SetDefaultCustomerAddress entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTruck}
-                            label={resolveLanguageKey("type")}
-                            tooltip={resolveLanguageKey("type")}
-                            path="type"
-                            type="enum"
-                            languageKeyCategory="addressType"
-                            value={row.type}
-                        />
-                        <EntityCardRow
-                            icon={IconMapPin}
-                            label={resolveLanguageKey("street")}
-                            tooltip={resolveLanguageKey("street")}
-                            path="street"
-                            value={row.street}
-                        />
-                        <EntityCardRow
-                            icon={IconMapPin}
-                            label={resolveLanguageKey("city")}
-                            tooltip={resolveLanguageKey("city")}
-                            path="city.name"
-                            value={row.city?.name}
-                        />
-                        <EntityCardRow
-                            icon={IconMail}
-                            label={resolveLanguageKey("email")}
-                            tooltip={resolveLanguageKey("email")}
-                            path="email"
-                            type="email"
-                            value={row.email}
-                        />
-                        <EntityCardRow
-                            icon={IconPhone}
-                            label={resolveLanguageKey("phone")}
-                            tooltip={resolveLanguageKey("phone")}
-                            path="phone"
-                            type="phoneNumber"
-                            value={row.phone}
-                        />
+                        {row.street || row.city?.name ? (
+                            <EntityCardRow
+                                icon={IconMapPin}
+                                label={resolveLanguageKey("address")}
+                                tooltip={resolveLanguageKey("address")}
+                                path="street"
+                                value={[row.street, [row.postalCode, row.city?.name].filter(Boolean).join(" ")].filter(Boolean).join(", ")}
+                            />
+                        ) : null}
+                        {row.email ? (
+                            <EntityCardRow
+                                icon={IconMail}
+                                label={resolveLanguageKey("email")}
+                                tooltip={resolveLanguageKey("email")}
+                                path="email"
+                                type="email"
+                                value={row.email}
+                            />
+                        ) : null}
+                        {row.phone ? (
+                            <EntityCardRow
+                                icon={IconPhone}
+                                label={resolveLanguageKey("phone")}
+                                tooltip={resolveLanguageKey("phone")}
+                                path="phone"
+                                type="phoneNumber"
+                                value={row.phone}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

@@ -11,5 +11,6 @@
     "opened": "Geöffnet",
     "closing_control": "Wird geschlossen",
     "closed": "Geschlossen"
-  }
+  },
+  "openedBy": "Geöffnet von"
 }

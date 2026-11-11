@@ -14,5 +14,6 @@
   "ended": "Beendet",
   "paused": "Pausiert",
   "stopped": "Beendet",
-  "status": "Status"
+  "status": "Status",
+  "period": "Zeitraum"
 }

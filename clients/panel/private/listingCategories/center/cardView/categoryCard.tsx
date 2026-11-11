@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ListingCategory} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingCategory/listingCategory.dto.ts";
-import {IconCategory2, IconHash, IconTag} from "@tabler/icons-react";
+import {IconCategory2} from "@tabler/icons-react";
 import ListingCategorySheetView from "@eCommerceModule/clients/panel/private/listingCategories/center/sheetView/categorySheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -64,28 +64,15 @@ function ListingCategoryCard({
                 <>
                     <EntityCard.Header titlePath="name" title={entity.name} />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("slug")}
-                            tooltip={resolveLanguageKey("slug")}
-                            path="slug"
-                            value={entity.slug}
-                        />
-                        <EntityCardRow
-                            icon={IconCategory2}
-                            label={resolveLanguageKey("parentListingCategory")}
-                            tooltip={resolveLanguageKey("parentListingCategory")}
-                            path="parentListingCategory.name"
-                            value={entity.parentListingCategory?.name}
-                        />
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("order")}
-                            tooltip={resolveLanguageKey("order")}
-                            path="order"
-                            type="number"
-                            value={entity.order}
-                        />
+                        {entity.parentListingCategory?.name ? (
+                            <EntityCardRow
+                                icon={IconCategory2}
+                                label={resolveLanguageKey("parentListingCategory")}
+                                tooltip={resolveLanguageKey("parentListingCategory")}
+                                path="parentListingCategory.name"
+                                value={entity.parentListingCategory.name}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

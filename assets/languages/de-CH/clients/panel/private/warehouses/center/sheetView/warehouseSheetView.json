@@ -34,5 +34,7 @@
     "countryLabel": "Land",
     "latitudeLabel": "Breitengrad",
     "longitudeLabel": "Längengrad"
-  }
+  },
+  "typeLabel": "Lager",
+  "inactive": "Inaktiv"
 }

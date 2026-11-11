@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconClock, IconCurrencyDollar, IconHash, IconLayoutList, IconUser} from "@tabler/icons-react";
+import {IconClock, IconCurrencyDollar, IconUser} from "@tabler/icons-react";
 import type {ListingPackage} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/listingPackage/listingPackage.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ListingPackageSheetView from "@eCommerceModule/clients/panel/private/listingPackages/center/sheetView/listingPackageSheetView.tsx";
@@ -62,15 +62,9 @@ function ListingPackageCard({
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name} />
+                    {/* The listing it belongs to is the subtitle, so the body keeps who → when → how much (UX-02). */}
+                    <EntityCard.Header titlePath="name" title={row.name} subtitlePath="listing.title" subtitle={row.listing?.title} />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconLayoutList}
-                            label={resolveLanguageKey("listing")}
-                            tooltip={resolveLanguageKey("listing")}
-                            path="listing.title"
-                            value={row.listing?.title}
-                        />
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("provider")}
@@ -78,14 +72,6 @@ function ListingPackageCard({
                             path="provider"
                             type="user"
                             value={row.provider}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("priceAmount")}
-                            tooltip={resolveLanguageKey("priceAmount")}
-                            path="price"
-                            type="currency"
-                            value={{amount: row.price?.amount, currency: row.price?.currency}}
                         />
                         <EntityCardRow
                             icon={IconClock}
@@ -102,12 +88,12 @@ function ListingPackageCard({
                             )}
                         </EntityCardRow>
                         <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("displayOrder")}
-                            tooltip={resolveLanguageKey("displayOrder")}
-                            path="order"
-                            type="number"
-                            value={row.order}
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("priceAmount")}
+                            tooltip={resolveLanguageKey("priceAmount")}
+                            path="price"
+                            type="currency"
+                            value={{amount: row.price?.amount, currency: row.price?.currency}}
                         />
                     </EntityCard.Body>
                 </>

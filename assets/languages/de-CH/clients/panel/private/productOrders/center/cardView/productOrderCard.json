@@ -11,7 +11,6 @@
     "cancelled": "Storniert",
     "refunded": "Erstattet"
   },
-  "items": "positionen",
   "paymentStatus": {
     "unpaid": "Unbezahlt",
     "authorized": "Autorisiert",
@@ -19,5 +18,8 @@
     "partially_refunded": "Teilweise erstattet",
     "refunded": "Erstattet",
     "voided": "Storniert"
-  }
+  },
+  "itemsLabel": "Artikel",
+  "placedAt": "Bestellt",
+  "total": "Gesamtbetrag"
 }

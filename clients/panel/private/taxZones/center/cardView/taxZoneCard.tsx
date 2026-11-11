@@ -2,7 +2,9 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {TaxZone} from "armonia/src/modules/eCommerce/api/eCommerce/private/taxZone/taxZone.dto.ts";
-import {IconHash, IconMapPin, IconPower, IconReceiptTax} from "@tabler/icons-react";
+import {IconMapPin, IconReceiptTax} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import TaxZoneSheetView from "@eCommerceModule/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/center/actions/activateTaxZone.tsx";
@@ -10,7 +12,6 @@ import DeactivateTaxZone from "@eCommerceModule/clients/panel/private/taxZones/c
 import ActivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/activateTaxZoneDialog.tsx";
 import DeactivateTaxZoneDialog from "@eCommerceModule/clients/panel/private/taxZones/center/dialogs/deactivateTaxZoneDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
@@ -101,7 +102,12 @@ function TaxZoneCard({
         >
             {({entity, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={entity.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        badgesBesideTitle
+                        badges={entity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                    >
                         <ActivateTaxZone entity={entity} onAction={setAction} />
                         <DeactivateTaxZone entity={entity} onAction={setAction} />
                     </EntityCard.Header>
@@ -111,36 +117,18 @@ function TaxZoneCard({
                             label={resolveLanguageKey("country")}
                             tooltip={resolveLanguageKey("country")}
                             path="country"
-                            value={
-                                entity.country ? (
-                                    <DisplayValue path="country.name" value={entity.country.name} />
-                                ) : null
-                            }
+                            value={entity.country?.name}
                         />
-                        <EntityCardRow
-                            icon={IconReceiptTax}
-                            label={resolveLanguageKey("rates")}
-                            tooltip={resolveLanguageKey("rates")}
-                            path="rates"
-                            type="number"
-                            value={entity.rates?.length}
-                        />
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("priority")}
-                            tooltip={resolveLanguageKey("priority")}
-                            path="priority"
-                            type="number"
-                            value={entity.priority}
-                        />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={entity.isActive}
-                        />
+                        {/* The rates by name, not a count (UX-02). */}
+                        {entity.rates?.length ? (
+                            <EntityCardRow
+                                icon={IconReceiptTax}
+                                label={resolveLanguageKey("rates")}
+                                tooltip={resolveLanguageKey("rates")}
+                                path="rates"
+                                value={entity.rates.map((rate) => `${rate.name} ${formatNumber(rate.rate)}%`).join(", ")}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

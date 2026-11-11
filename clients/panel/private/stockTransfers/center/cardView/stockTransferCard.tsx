@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {StockTransfer} from "armonia/src/modules/eCommerce/api/eCommerce/private/stockTransfer/stockTransfer.dto.ts";
-import {IconBuildingWarehouse, IconTag} from "@tabler/icons-react";
+import {IconCalendarEvent} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -61,25 +62,23 @@ function StockTransferCard({entity, resolveLanguageKey, fetchId, hideActions = f
                 const title = [fromName, toName].filter((part) => part.length > 0).join(" → ");
                 return (
                 <>
-                    <EntityCard.Header titlePath={["fromWarehouse.name", "toWarehouse.name"]} title={title}>
+                    <EntityCard.Header
+                        titlePath={["fromWarehouse.name", "toWarehouse.name"]}
+                        title={title}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="stockTransfers" field="status" value={row.status} label={String(resolveLanguageKey(`stockTransferStatus.${row.status}`))} />}
+                    >
                         <StockDocumentActionItems resource="stockTransfers" entity={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
+                        {/* The destination is already in the title; the card adds when it moved (UX-02). */}
                         <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="stockTransferStatus"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconBuildingWarehouse}
-                            label={resolveLanguageKey("toWarehouse")}
-                            tooltip={resolveLanguageKey("toWarehouse")}
-                            path="toWarehouse.name"
-                            value={row.toWarehouse?.name}
+                            icon={IconCalendarEvent}
+                            label={resolveLanguageKey("date")}
+                            tooltip={resolveLanguageKey("date")}
+                            path={row.doneAt ? "doneAt" : "createdAt"}
+                            type="date"
+                            value={row.doneAt ?? row.createdAt}
                         />
                     </EntityCard.Body>
                 </>

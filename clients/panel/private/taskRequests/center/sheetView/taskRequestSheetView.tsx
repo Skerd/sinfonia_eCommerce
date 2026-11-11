@@ -7,6 +7,8 @@ import type {TaskRequest} from "armonia/src/modules/eCommerce/api/eCommerceMarke
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import CloseTaskRequestDropdown from "@eCommerceModule/clients/panel/private/taskRequests/center/actions/closeTaskRequestDropdown.tsx";
 import ReopenTaskRequestDropdown from "@eCommerceModule/clients/panel/private/taskRequests/center/actions/reopenTaskRequestDropdown.tsx";
 import NotifyAllTaskRequestDropdown from "@eCommerceModule/clients/panel/private/taskRequests/center/actions/notifyAllTaskRequestDropdown.tsx";
@@ -74,6 +76,9 @@ function TaskRequestSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Its title, the request number as a badge and the status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={row.title ?? ""} code={row.name} typeLabel={String(resolveLanguageKey("taskRequest"))} />}
+                headerDescription={<StatusBadge tableConfigKey="taskrequests" field="status" value={row.status} label={String(resolveLanguageKey(`taskRequestStatus.${row.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

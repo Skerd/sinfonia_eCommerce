@@ -63,5 +63,7 @@
     "desktop": "Ordinateur",
     "mobile": "Mobile",
     "tablet": "Tablette"
-  }
+  },
+  "sheetTypeLabel": "Bloc CMS",
+  "inactive": "Inactif"
 }

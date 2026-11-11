@@ -43,5 +43,6 @@
     "rejected": "Rejected",
     "received": "Received",
     "completed": "Completed"
-  }
+  },
+  "typeLabel": "Return request"
 }

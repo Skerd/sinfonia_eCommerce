@@ -3,12 +3,10 @@
   "path": "src/modules/eCommerce/clients/panel/private/productAttributes/center/cardView/productAttributeCard.tsx",
   "failedTitle": "Impossibile caricare l'attributo prodotto",
   "failedDescription": "Tocca per riprovare.",
-  "position": "Posizione",
   "usedForVariants": "Utilizzato per le varianti",
   "values": "Valori",
-  "variants": "Varianti",
-  "visible": "Visibile",
   "visibleOnProductPage": "Visibile sulla pagina del prodotto",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "hidden": "Nascosto"
 }

@@ -4,7 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerce/private/inventoryMovement/inventoryMovement.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconBuildingWarehouse, IconPackage} from "@tabler/icons-react";
+import {IconBuildingWarehouse, IconCalendarEvent} from "@tabler/icons-react";
 import InventoryMovementSheetView from "@eCommerceModule/clients/panel/private/inventoryMovements/center/sheetView/inventoryMovementSheetView.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
@@ -63,29 +63,22 @@ function InventoryMovementCard({
                 return (
                     <>
                         <EntityCard.Header
-                            titlePath="reason"
-                            title={
-                                <DisplayValue
-                                    path="reason"
-                                    type="enum"
-                                    languageKeyCategory="reasons"
-                                    value={row.reason}
-                                />
-                            }
+                            titlePath="product.title"
+                            title={[row.product?.title, String(resolveLanguageKey(`reasons.${row.reason}`))].filter(Boolean).join(" · ")}
                         />
+                        {/* Where → when → how many (UX-02); receipt, manufacturer and lot stay on the sheet. */}
                         <div className="flex flex-col gap-2">
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconPackage className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue path="product.title" value={row.product?.title} />
-                            </div>
                             <div className="flex items-center gap-1 text-xs text-muted-foreground">
                                 <IconBuildingWarehouse className="h-3.5 w-3.5 shrink-0" />
                                 <DisplayValue path="warehouse.name" value={row.warehouse?.name} />
-                                {row.warehouse?.code ? (
-                                    <DisplayValue path="warehouse.code" value={`(${row.warehouse.code})`} />
-                                ) : null}
                             </div>
-                            <div className="mt-1 grid grid-cols-3 gap-2 text-center">
+                            {row.occurredAt ? (
+                                <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                    <IconCalendarEvent className="h-3.5 w-3.5 shrink-0" />
+                                    <DisplayValue path="occurredAt" type="dateTime" value={row.occurredAt} />
+                                </div>
+                            ) : null}
+                            <div className="mt-1 grid grid-cols-2 gap-2 text-center">
                                 <div>
                                     <div className="text-3xs uppercase tracking-wide text-muted-foreground">
                                         {resolveLanguageKey("quantity")}
@@ -104,19 +97,6 @@ function InventoryMovementCard({
                                         <DisplayValue path="quantityAfter" type="number" value={row.quantityAfter ?? 0} />
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="text-3xs uppercase tracking-wide text-muted-foreground">
-                                        {resolveLanguageKey("receipt")}
-                                    </div>
-                                    <div className="truncate text-sm font-bold">
-                                        <DisplayValue path="receiptNumber" value={row.receiptNumber || "—"} />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-1 truncate text-2xs text-muted-foreground">
-                                <DisplayValue path="manufacturer" value={row.manufacturer} />
-                                {row.manufacturer && row.occurredAt ? <span aria-hidden>·</span> : null}
-                                <DisplayValue path="occurredAt" type="dateTime" value={row.occurredAt} />
                             </div>
                         </div>
                     </>

@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PosPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/posPaymentMethod/posPaymentMethod.dto.ts";
-import {IconCreditCard, IconHash, IconPower} from "@tabler/icons-react";
+import {IconCreditCard} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import PosPaymentMethodSheetView from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/sheetView/posPaymentMethodSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivatePosPaymentMethod from "@eCommerceModule/clients/panel/private/posPaymentMethods/center/actions/activatePosPaymentMethod.tsx";
@@ -109,7 +110,12 @@ function PosPaymentMethodCard({
         >
             {({entity: row, setAction}) => (
                 <>
-                    <EntityCard.Header titlePath="name" title={row.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={row.name}
+                        badgesBesideTitle
+                        badges={row.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                    >
                         <TestPosTerminalConnection entity={row} onAction={setAction} />
                         <ActivatePosPaymentMethod entity={row} onAction={setAction} />
                         <DeactivatePosPaymentMethod entity={row} onAction={setAction} />
@@ -123,22 +129,6 @@ function PosPaymentMethodCard({
                             type="enum"
                             languageKeyCategory="paymentType"
                             value={row.type}
-                        />
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("sequence")}
-                            tooltip={resolveLanguageKey("sequence")}
-                            path="sequence"
-                            type="number"
-                            value={row.sequence}
-                        />
-                        <EntityCardRow
-                            icon={IconPower}
-                            label={resolveLanguageKey("active")}
-                            tooltip={resolveLanguageKey("active")}
-                            path="isActive"
-                            type="boolean"
-                            value={row.isActive}
                         />
                     </EntityCard.Body>
                 </>

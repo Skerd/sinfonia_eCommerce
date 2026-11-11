@@ -40,5 +40,7 @@
     "price": "Montant de la commande",
     "quantity": "Quantité",
     "free": "Gratuit"
-  }
+  },
+  "typeLabel": "Zone d'expédition",
+  "inactive": "Inactif"
 }

@@ -2,8 +2,9 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {ProductVariant} from "armonia/src/modules/eCommerce/api/eCommerce/private/productVariant/productVariant.dto.ts";
-import {IconBarcode, IconCurrencyDollar, IconTag} from "@tabler/icons-react";
-import ProductVariantSheetView from "@eCommerceModule/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx";
+import {IconCurrencyDollar} from "@tabler/icons-react";
+import ProductVariantSheetView, {productVariantName} from "@eCommerceModule/clients/panel/private/productVariants/center/sheetView/productVariantSheetView.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
@@ -62,32 +63,25 @@ function ProductVariantCard({
         >
             {({entity: row}) => (
                 <>
-                    <EntityCard.Header titlePath="sku" title={row.sku} />
+                    <EntityCard.Header
+                        titlePath={["product", "sku"]}
+                        title={productVariantName(row) || row.sku}
+                        subtitlePath="sku"
+                        subtitle={row.sku}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="productVariants" field="status" value={row.status} label={String(resolveLanguageKey(`variantStatus.${row.status}`))} />}
+                    />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconBarcode}
-                            label={resolveLanguageKey("sku")}
-                            tooltip={resolveLanguageKey("sku")}
-                            path="sku"
-                            value={row.sku}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("price")}
-                            tooltip={resolveLanguageKey("price")}
-                            path="price"
-                            type="number"
-                            value={row.price}
-                        />
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="variantStatus"
-                            value={row.status}
-                        />
+                        {row.price != null ? (
+                            <EntityCardRow
+                                icon={IconCurrencyDollar}
+                                label={resolveLanguageKey("price")}
+                                tooltip={resolveLanguageKey("price")}
+                                path="price"
+                                type="currency"
+                                value={{amount: row.price, currency: row.currency}}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

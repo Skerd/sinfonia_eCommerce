@@ -3,7 +3,7 @@
   "failedTitle": "Failed to load listing flag",
   "failedDescription": "Something went wrong while loading this listing flag. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
-  "listingFlagSubtitle": "Listing Flag",
+  "listingFlagSubtitle": "Listing flag",
   "listingFlag": "Listing Flag",
   "overview": "Overview",
   "lifecycle": "Lifecycle",

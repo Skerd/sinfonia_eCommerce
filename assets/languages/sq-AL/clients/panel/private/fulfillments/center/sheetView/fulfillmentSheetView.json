@@ -36,5 +36,6 @@
     "shipped": "Dërguar",
     "delivered": "Dorëzuar",
     "failed": "Dështoi"
-  }
+  },
+  "typeLabel": "Përmbushje"
 }

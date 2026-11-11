@@ -13,5 +13,7 @@
   "failedDescription": "Tap to retry.",
   "title": "Title",
   "type": "Type",
-  "value": "Value"
+  "value": "Value",
+  "valid": "Valid",
+  "minimumOrderAmount": "Minimum order"
 }

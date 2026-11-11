@@ -7,6 +7,8 @@ import type {CustomerGroup} from "armonia/src/modules/eCommerce/api/eCommerce/pr
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import CustomerGroupRowMenuExtras from "@eCommerceModule/clients/panel/private/customerGroups/center/actions/customerGroupRowMenuExtras.tsx";
 import ManageMembersDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/manageMembersDialog.tsx";
 import SetDefaultCustomerGroupDialog from "@eCommerceModule/clients/panel/private/customerGroups/center/dialogs/setDefaultCustomerGroupDialog.tsx";
@@ -73,6 +75,8 @@ function CustomerGroupSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={customerGroup.name ?? ""} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                headerDescription={customerGroup.isDefault ? <Badge variant="outline">{resolveLanguageKey("default")}</Badge> : undefined}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

@@ -49,5 +49,7 @@
     "collection": "Collezioni",
     "category": "Categorie",
     "customer_group": "Gruppi di clienti"
-  }
+  },
+  "typeLabel": "Regola di prezzo",
+  "inactive": "Inattivo"
 }

@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {CmsBlock} from "armonia/src/modules/eCommerce/api/eCommerce/private/cmsBlock/cmsBlock.dto.ts";
-import {IconHash, IconLayout, IconPower} from "@tabler/icons-react";
+import {IconLayout, IconPower} from "@tabler/icons-react";
 import CmsBlockSheetView from "@eCommerceModule/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ActivateCmsBlock from "@eCommerceModule/clients/panel/private/cmsBlocks/center/actions/activateCmsBlock.tsx";
@@ -132,24 +132,6 @@ function CmsBlockCard({
                             languageKeyCategory="blockType"
                             value={entity.type}
                         />
-                        <EntityCardRow
-                            icon={IconHash}
-                            label={resolveLanguageKey("position")}
-                            tooltip={resolveLanguageKey("position")}
-                            path="position"
-                            type="number"
-                            value={entity.position}
-                        />
-                        {entity.isActive ? (
-                            <EntityCardRow
-                                icon={IconPower}
-                                label={resolveLanguageKey("active")}
-                                tooltip={resolveLanguageKey("active")}
-                                path="isActive"
-                                type="boolean"
-                                value={entity.isActive}
-                            />
-                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

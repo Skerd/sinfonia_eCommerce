@@ -7,6 +7,7 @@ import type {Category} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/categories";
 
@@ -63,6 +64,7 @@ function CategorySheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            headerTitle={<SheetNameTitle name={typeof sheetData.name === "string" ? sheetData.name : ""} typeLabel={String(resolveLanguageKey("categorySubtitle"))} />}
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

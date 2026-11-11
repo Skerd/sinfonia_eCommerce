@@ -51,9 +51,9 @@ function childReadable(read: unknown, parent: string, field: string): boolean {
 function reviewCardTitle(review: ProductReview, read: unknown): string {
     const title = accessFieldPathExists(read, "title") ? review.title?.trim() : "";
     if (title) return title;
-    if (accessFieldPathExists(read, "product.title") && review.product?.title) return review.product.title;
-    if (accessFieldPathExists(read, "rating") && typeof review.rating === "number") return `${review.rating}/5`;
-    return "";
+    const product = accessFieldPathExists(read, "product.title") ? review.product?.title : "";
+    const stars = accessFieldPathExists(read, "rating") && typeof review.rating === "number" ? `★ ${review.rating}` : "";
+    return [product, stars].filter(Boolean).join(" · ");
 }
 
 type ProductReviewCardProps = WithLanguageType & {

@@ -39,5 +39,6 @@
   "variantStatus": {
     "active": "Aktiv",
     "inactive": "Inaktiv"
-  }
+  },
+  "sheetTypeLabel": "Variante"
 }

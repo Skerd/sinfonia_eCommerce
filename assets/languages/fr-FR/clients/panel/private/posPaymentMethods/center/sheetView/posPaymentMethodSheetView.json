@@ -37,5 +37,7 @@
   "terminalProtocol": {
     "http": "HTTP",
     "https": "HTTPS"
-  }
+  },
+  "typeLabel": "Mode de paiement au point de vente",
+  "inactive": "Inactif"
 }

@@ -37,5 +37,7 @@
   "terminalProtocol": {
     "http": "HTTP",
     "https": "HTTPS"
-  }
+  },
+  "typeLabel": "POS-Zahlungsart",
+  "inactive": "Inaktiv"
 }

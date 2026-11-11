@@ -43,5 +43,6 @@
     "rejected": "Abgelehnt",
     "received": "Erhalten",
     "completed": "Abgeschlossen"
-  }
+  },
+  "typeLabel": "Rücksendung"
 }

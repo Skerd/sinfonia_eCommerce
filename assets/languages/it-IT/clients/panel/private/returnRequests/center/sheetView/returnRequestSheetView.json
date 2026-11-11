@@ -43,5 +43,6 @@
     "rejected": "Rifiutata",
     "received": "Ricevuta",
     "completed": "Completata"
-  }
+  },
+  "typeLabel": "Richiesta di reso"
 }

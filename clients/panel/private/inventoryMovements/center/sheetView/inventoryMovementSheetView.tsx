@@ -7,6 +7,7 @@ import type {InventoryMovement} from "armonia/src/modules/eCommerce/api/eCommerc
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 
 export type InventoryMovementSheetViewOwnProps = {
     open: boolean;
@@ -41,6 +42,7 @@ function InventoryMovementSheetView({
 
     if (!viewConfig) return null;
     if (!entityId) return null;
+    const movement = sheetData as InventoryMovement;
 
     return (
         <SheetViewRenderer
@@ -52,6 +54,8 @@ function InventoryMovementSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // "Espresso cup · Restock": what moved and why (UX-01).
+            headerTitle={<SheetNameTitle name={[movement.product?.title, movement.reason ? String(resolveLanguageKey(`reasons.${movement.reason}`)) : ""].filter(Boolean).join(" · ")} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

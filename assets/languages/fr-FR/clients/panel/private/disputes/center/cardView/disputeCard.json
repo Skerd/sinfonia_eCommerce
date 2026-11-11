@@ -12,5 +12,6 @@
     "under_review": "En cours d'examen",
     "resolved": "Résolu",
     "closed": "Fermé"
-  }
+  },
+  "createdAt": "Ouvert"
 }

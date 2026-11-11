@@ -34,5 +34,7 @@
     "countryLabel": "Shteti",
     "latitudeLabel": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike"
-  }
+  },
+  "typeLabel": "Magazinë",
+  "inactive": "Joaktiv"
 }

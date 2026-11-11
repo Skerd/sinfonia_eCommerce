@@ -12,5 +12,6 @@
     "under_review": "In Prüfung",
     "resolved": "Erledigt",
     "closed": "Geschlossen"
-  }
+  },
+  "createdAt": "Eröffnet"
 }

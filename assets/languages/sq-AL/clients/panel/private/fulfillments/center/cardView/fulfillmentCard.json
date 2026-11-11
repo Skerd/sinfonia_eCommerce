@@ -10,5 +10,9 @@
     "shipped": "Dërguar",
     "delivered": "Dorëzuar",
     "failed": "Dështoi"
-  }
+  },
+  "typeLabel": "Përmbushje",
+  "shippedAt": "Dërguar",
+  "deliveredAt": "Dorëzuar",
+  "estimatedDeliveryAt": "Dorëzimi i pritshëm"
 }

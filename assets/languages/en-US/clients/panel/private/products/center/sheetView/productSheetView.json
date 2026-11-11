@@ -159,5 +159,6 @@
   "inventories": "Inventories",
   "inventoryRow": "Inventory",
   "reviews": "Reviews",
-  "productReview": "Review"
+  "productReview": "Review",
+  "sheetTypeLabel": "Product"
 }

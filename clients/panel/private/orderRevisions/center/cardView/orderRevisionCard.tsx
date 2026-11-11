@@ -3,8 +3,10 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {OrderRevision} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/orderRevision/orderRevision.dto.ts";
 import OrderRevisionSheetView from "@eCommerceModule/clients/panel/private/orderRevisions/center/sheetView/orderRevisionSheetView.tsx";
-import {IconMessage, IconTag, IconUser} from "@tabler/icons-react";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import {IconMessage, IconUser} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 
@@ -14,6 +16,7 @@ type OrderRevisionCardProps = WithLanguageType & {
 
 /** One revision the customer asked for, on the order sheet. */
 function OrderRevisionCard({revision, resolveLanguageKey}: OrderRevisionCardProps) {
+    const companyZone = useCompanyTimeZone();
     return (
         <EntityCard
             resource="orderRevisions"
@@ -33,20 +36,14 @@ function OrderRevisionCard({revision, resolveLanguageKey}: OrderRevisionCardProp
         >
             {({entity: row}) => (
                 <>
+                    {/* "Revision request · 16 Nov 2026" with its status in tone; the card already sits on its order (UX-01, UX-02). */}
                     <EntityCard.Header
                         titlePath="createdAt"
-                        title={<DisplayValue path="createdAt" type="dateTime" value={row.createdAt} />}
+                        title={[String(resolveLanguageKey("revision")), formatDate(row.createdAt, {timeZone: companyZone, format: DATE_FORMATS.mediumDate})].filter(Boolean).join(" · ")}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="orderrevisions" field="status" value={row.status} label={String(resolveLanguageKey(`orderRevisionStatus.${row.status}`))} />}
                     />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="orderRevisionStatus"
-                            value={row.status}
-                        />
                         <EntityCardRow
                             icon={IconMessage}
                             label={resolveLanguageKey("reason")}

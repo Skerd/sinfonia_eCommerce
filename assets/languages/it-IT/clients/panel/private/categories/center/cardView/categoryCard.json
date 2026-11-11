@@ -3,7 +3,5 @@
   "failedTitle": "Impossibile caricare la categoria",
   "failedDescription": "Tocca per riprovare.",
   "name": "Nome",
-  "slug": "Slug",
-  "parentCategory": "Categoria padre",
-  "order": "Ordine"
+  "parentCategory": "Categoria padre"
 }

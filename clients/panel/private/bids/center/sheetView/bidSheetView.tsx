@@ -7,6 +7,9 @@ import type {Bid} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/p
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import AcceptBidDropdown from "@eCommerceModule/clients/panel/private/bids/center/actions/acceptBidDropdown.tsx";
 import RejectBidDropdown from "@eCommerceModule/clients/panel/private/bids/center/actions/rejectBidDropdown.tsx";
 import BidActionConfirmAction from "@eCommerceModule/components/custom/bids/bidActionConfirmAction.tsx";
@@ -74,6 +77,9 @@ function BidSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Who bid on what, with the bid number as a badge and the status in tone (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={[getName(asBid.bidder), asBid.taskRequest?.title].filter(Boolean).join(" · ")} code={asBid.name} typeLabel={String(resolveLanguageKey("bid"))} />}
+                headerDescription={<StatusBadge tableConfigKey="marketplacebids" field="status" value={asBid.status} label={String(resolveLanguageKey(`bidStatus.${asBid.status}`))} />}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

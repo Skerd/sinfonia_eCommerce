@@ -11,7 +11,6 @@
     "cancelled": "Cancelled",
     "refunded": "Refunded"
   },
-  "items": "items",
   "paymentStatus": {
     "unpaid": "Unpaid",
     "authorized": "Authorized",
@@ -19,5 +18,8 @@
     "partially_refunded": "Partially refunded",
     "refunded": "Refunded",
     "voided": "Voided"
-  }
+  },
+  "itemsLabel": "Items",
+  "placedAt": "Placed",
+  "total": "Total"
 }

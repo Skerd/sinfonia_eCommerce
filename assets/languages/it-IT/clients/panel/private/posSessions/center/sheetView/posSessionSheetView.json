@@ -50,5 +50,6 @@
     "out": "Prelievo"
   },
   "posOrders": "Ordini POS",
-  "posOrder": "Ordine POS"
+  "posOrder": "Ordine POS",
+  "typeLabel": "Sessione di cassa"
 }

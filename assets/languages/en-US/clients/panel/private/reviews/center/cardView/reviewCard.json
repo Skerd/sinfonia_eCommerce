@@ -6,5 +6,6 @@
   "comment": "Comment",
   "reviewer": "Reviewer",
   "order": "Order",
-  "listing": "Listing"
+  "listing": "Listing",
+  "reviewedAt": "Reviewed on"
 }

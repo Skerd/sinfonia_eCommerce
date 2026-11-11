@@ -40,5 +40,7 @@
     "price": "Sipas shumës së porosisë",
     "quantity": "Sipas sasisë",
     "free": "Falas"
-  }
+  },
+  "typeLabel": "Zonë transporti",
+  "inactive": "Joaktive"
 }

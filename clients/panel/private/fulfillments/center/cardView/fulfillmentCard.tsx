@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Fulfillment} from "armonia/src/modules/eCommerce/api/eCommerce/private/fulfillment/fulfillment.dto.ts";
-import {IconTag, IconTruck} from "@tabler/icons-react";
+import {IconCalendarEvent, IconTruck} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import FulfillmentSheetView from "@eCommerceModule/clients/panel/private/fulfillments/center/sheetView/fulfillmentSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ShipFulfillment from "@eCommerceModule/clients/panel/private/fulfillments/center/actions/shipFulfillment.tsx";
@@ -99,33 +100,48 @@ function FulfillmentCard({
                 </>
             )}
         >
-            {({entity: row, setAction}) => (
-                <>
-                    <EntityCard.Header titlePath="trackingNumber" title={row.trackingNumber}>
-                        <ShipFulfillment entity={row} onAction={setAction} />
-                        <MarkDeliveredFulfillment entity={row} onAction={setAction} />
-                        <MarkFailedFulfillment entity={row} onAction={setAction} />
-                    </EntityCard.Header>
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="fulfillmentStatus"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconTruck}
-                            label={resolveLanguageKey("carrier")}
-                            tooltip={resolveLanguageKey("carrier")}
-                            path="carrier"
-                            value={row.carrier}
-                        />
-                    </EntityCard.Body>
-                </>
-            )}
+            {({entity: row, setAction}) => {
+                // The order it ships and the carrier; the tracking number is the subtitle (UX-01). Never an empty title.
+                const name = [row.order?.orderNumber, row.carrier].filter(Boolean).join(" · ");
+                const shippedOrDelivered = row.deliveredAt ?? row.shippedAt;
+                return (
+                    <>
+                        <EntityCard.Header
+                            titlePath={name ? ["order", "carrier"] : "trackingNumber"}
+                            title={name || row.trackingNumber || String(resolveLanguageKey("typeLabel"))}
+                            subtitlePath="trackingNumber"
+                            subtitle={name ? row.trackingNumber : undefined}
+                            badgesBesideTitle
+                            badges={<StatusBadge tableConfigKey="fulfillments" field="status" value={row.status} label={String(resolveLanguageKey(`fulfillmentStatus.${row.status}`))} />}
+                        >
+                            <ShipFulfillment entity={row} onAction={setAction} />
+                            <MarkDeliveredFulfillment entity={row} onAction={setAction} />
+                            <MarkFailedFulfillment entity={row} onAction={setAction} />
+                        </EntityCard.Header>
+                        <EntityCard.Body>
+                            {shippedOrDelivered ? (
+                                <EntityCardRow
+                                    icon={IconCalendarEvent}
+                                    label={resolveLanguageKey(row.deliveredAt ? "deliveredAt" : "shippedAt")}
+                                    tooltip={resolveLanguageKey(row.deliveredAt ? "deliveredAt" : "shippedAt")}
+                                    path={row.deliveredAt ? "deliveredAt" : "shippedAt"}
+                                    type="date"
+                                    value={shippedOrDelivered}
+                                />
+                            ) : row.estimatedDeliveryAt ? (
+                                <EntityCardRow
+                                    icon={IconTruck}
+                                    label={resolveLanguageKey("estimatedDeliveryAt")}
+                                    tooltip={resolveLanguageKey("estimatedDeliveryAt")}
+                                    path="estimatedDeliveryAt"
+                                    type="date"
+                                    value={row.estimatedDeliveryAt}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

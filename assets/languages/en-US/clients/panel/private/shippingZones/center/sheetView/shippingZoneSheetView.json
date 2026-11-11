@@ -40,5 +40,7 @@
     "price": "Order amount",
     "quantity": "Quantity",
     "free": "Free"
-  }
+  },
+  "typeLabel": "Shipping zone",
+  "inactive": "Inactive"
 }

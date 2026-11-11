@@ -9,5 +9,6 @@
     "revision_requested": "Revisione richiesta"
   },
   "status": "Stato",
-  "message": "Messaggio"
+  "message": "Messaggio",
+  "delivery": "Consegna"
 }

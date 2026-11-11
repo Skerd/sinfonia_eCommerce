@@ -36,5 +36,6 @@
     "shipped": "Shipped",
     "delivered": "Delivered",
     "failed": "Failed"
-  }
+  },
+  "typeLabel": "Fulfillment"
 }

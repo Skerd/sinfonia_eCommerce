@@ -7,6 +7,8 @@ import type {Discount} from "armonia/src/modules/eCommerce/api/eCommerce/private
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import ActivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/activateDiscount.tsx";
 import DeactivateDiscount from "@eCommerceModule/clients/panel/private/discounts/center/actions/deactivateDiscount.tsx";
 import ActivateDiscountDialog from "@eCommerceModule/clients/panel/private/discounts/center/dialogs/activateDiscountDialog.tsx";
@@ -79,6 +81,9 @@ function DiscountSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the code shoppers type, the way the shop knows it; only the exception shows as a badge (UX-01, UX-02).
+                headerTitle={<SheetNameTitle name={asEntity.code || asEntity.title} typeLabel={String(resolveLanguageKey("typeLabel"))} />}
+                headerDescription={asEntity.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

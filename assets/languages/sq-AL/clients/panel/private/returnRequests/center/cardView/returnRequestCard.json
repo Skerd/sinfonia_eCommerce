@@ -16,5 +16,7 @@
     "rejected": "Refuzuar",
     "received": "Pranuar",
     "completed": "Përfunduar"
-  }
+  },
+  "items": "Artikuj",
+  "requestedAt": "Kërkuar"
 }

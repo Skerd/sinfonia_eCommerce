@@ -12,7 +12,8 @@ import DisplayValue from "@coreModule/components/viewEngine/widgets/display/disp
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
-import {IconClipboardList, IconClock, IconCurrencyDollar, IconTag} from "@tabler/icons-react";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {IconClock, IconCurrencyDollar} from "@tabler/icons-react";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -91,6 +92,10 @@ function BidCard({
                     <EntityCard.Header
                         titlePath="bidder"
                         title={<DisplayValue path="bidder" type="user" value={row.bidder} />}
+                        subtitlePath="taskRequest.title"
+                        subtitle={row.taskRequest?.title}
+                        badgesBesideTitle
+                        badges={<StatusBadge tableConfigKey="marketplacebids" field="status" value={row.status} label={String(resolveLanguageKey(`statuses.${row.status}`))} />}
                         icon={
                             accessFieldPathExists(read, "bidder") && row.bidder?.photo ? (
                                 <TableAvatar mediaId={row.bidder.photo} />
@@ -101,30 +106,6 @@ function BidCard({
                         <RejectBidDropdown bid={row} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="statuses"
-                            value={row.status}
-                        />
-                        <EntityCardRow
-                            icon={IconClipboardList}
-                            label={resolveLanguageKey("taskRequest")}
-                            tooltip={resolveLanguageKey("taskRequest")}
-                            path="taskRequest.title"
-                            value={row.taskRequest?.title}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("amount")}
-                            tooltip={resolveLanguageKey("amount")}
-                            path="amount"
-                            type="currency"
-                            value={{amount: row.amount, currency: row.currency}}
-                        />
                         <EntityCardRow
                             icon={IconClock}
                             label={resolveLanguageKey("deliveryDays")}
@@ -139,6 +120,14 @@ function BidCard({
                                 </>
                             )}
                         </EntityCardRow>
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("amount")}
+                            tooltip={resolveLanguageKey("amount")}
+                            path="amount"
+                            type="currency"
+                            value={{amount: row.amount, currency: row.currency}}
+                        />
                     </EntityCard.Body>
                 </>
             )}

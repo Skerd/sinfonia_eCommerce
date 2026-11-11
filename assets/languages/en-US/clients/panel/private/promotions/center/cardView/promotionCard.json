@@ -14,5 +14,6 @@
   "ended": "Ended",
   "paused": "Paused",
   "stopped": "Stopped",
-  "status": "Status"
+  "status": "Status",
+  "period": "Period"
 }

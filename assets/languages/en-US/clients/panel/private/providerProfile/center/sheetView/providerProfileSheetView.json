@@ -3,7 +3,7 @@
   "failedTitle": "Failed to load provider profile",
   "failedDescription": "Something went wrong while loading this provider profile. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
-  "providerProfileSubtitle": "Provider Profile",
+  "providerProfileSubtitle": "Provider profile",
   "overview": "Overview",
   "user": "Provider",
   "bio": "Bio",

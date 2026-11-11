@@ -7,5 +7,12 @@
   "endAt": "Mbarimi",
   "timezone": "Zona orare",
   "order": "Porosia",
-  "time": "Ora"
+  "time": "Ora",
+  "orderStatus": {
+    "pending": "Në pritje",
+    "accepted": "Pranuar",
+    "in_progress": "Në progres",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
 }

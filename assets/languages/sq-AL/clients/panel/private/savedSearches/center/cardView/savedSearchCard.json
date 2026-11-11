@@ -11,5 +11,8 @@
   "newest": "Më të rejat",
   "priceAsc": "Çmimi: nga më i ulëti",
   "priceDesc": "Çmimi: nga më i larti",
-  "featured": "Të veçuara"
+  "featured": "Të veçuara",
+  "priceRange": "Çmimi",
+  "priceFrom": "nga",
+  "priceUpTo": "deri në"
 }

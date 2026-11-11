@@ -10,5 +10,9 @@
     "shipped": "Expédié",
     "delivered": "Livré",
     "failed": "Échoué"
-  }
+  },
+  "typeLabel": "Expédition",
+  "shippedAt": "Expédiée le",
+  "deliveredAt": "Livrée le",
+  "estimatedDeliveryAt": "Livraison prévue"
 }

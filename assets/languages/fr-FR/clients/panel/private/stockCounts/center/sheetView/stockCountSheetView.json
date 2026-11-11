@@ -28,5 +28,6 @@
     "draft": "Brouillon",
     "applied": "Appliqué",
     "cancelled": "Annulé"
-  }
+  },
+  "typeLabel": "Inventaire"
 }

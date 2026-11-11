@@ -36,5 +36,7 @@
     "all": "Tous les produits",
     "physical": "Physique",
     "digital": "Numérique"
-  }
+  },
+  "typeLabel": "Zone fiscale",
+  "inactive": "Inactif"
 }

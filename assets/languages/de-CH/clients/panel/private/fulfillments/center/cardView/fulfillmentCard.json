@@ -10,5 +10,9 @@
     "shipped": "Versandt",
     "delivered": "Zugestellt",
     "failed": "Fehlgeschlagen"
-  }
+  },
+  "typeLabel": "Lieferung",
+  "shippedAt": "Versandt",
+  "deliveredAt": "Zugestellt",
+  "estimatedDeliveryAt": "Voraussichtliche Lieferung"
 }

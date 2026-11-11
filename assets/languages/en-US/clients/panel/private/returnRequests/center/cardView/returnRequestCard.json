@@ -16,5 +16,7 @@
     "rejected": "Rejected",
     "received": "Received",
     "completed": "Completed"
-  }
+  },
+  "items": "Items",
+  "requestedAt": "Requested"
 }

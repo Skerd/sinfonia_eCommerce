@@ -9,7 +9,10 @@ import PausePromotionDropdown from "@eCommerceModule/clients/panel/private/promo
 import ResumePromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/resumePromotionDropdown.tsx";
 import StopPromotionDropdown from "@eCommerceModule/clients/panel/private/promotions/center/actions/stopPromotionDropdown.tsx";
 import ChangePromotionLifecycleAction from "@eCommerceModule/components/custom/promotions/changePromotionLifecycleAction.tsx";
-import {IconCalendar, IconCalendarOff, IconListDetails, IconSparkles, IconStar, IconTag} from "@tabler/icons-react";
+import {IconCalendar, IconListDetails, IconSparkles, IconStar} from "@tabler/icons-react";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -55,6 +58,9 @@ function PromotionCard({
     resolveLanguageKey,
     innerRef,
 }: PromotionCardProps) {
+    // The run is read on the company calendar (GLB-09).
+    const companyZone = useCompanyTimeZone();
+    const day = (value: Date | string) => formatDate(value, {timeZone: companyZone, format: DATE_FORMATS.mediumDate});
     return (
         <EntityCard
             resource="promotions"
@@ -103,6 +109,7 @@ function PromotionCard({
         >
             {({entity: row, read, setAction}) => {
                 const lifecycle = row.lifecycleStatus ?? "active";
+                const displayStatus = derivePromotionDisplayStatus(row);
                 const endStillFuture =
                     !!row.endAt && !Number.isNaN(new Date(row.endAt).getTime())
                         ? new Date(row.endAt).getTime() > Date.now()
@@ -110,29 +117,35 @@ function PromotionCard({
                 return (
                     <>
                         <EntityCard.Header
-                            titlePath="name"
-                            title={row.name}
+                            titlePath={["name", "listing.title"]}
+                            title={row.name || row.listing?.title}
                             badgesBesideTitle
                             badges={
-                                accessFieldPathExists(read, "type") && row.type ? (
-                                    <DisplayValue path="type" value={resolveLanguageKey(row.type)}>
-                                        {(formatted: ReactNode) => (
-                                            <span
-                                                className={cn(
-                                                    "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full shrink-0",
-                                                    row.type === "featured" ? "bg-warning/20 text-warning" : "bg-info/20 text-info",
-                                                )}
-                                            >
-                                                {row.type === "featured" ? (
-                                                    <IconSparkles className="w-3 h-3" />
-                                                ) : (
-                                                    <IconStar className="w-3 h-3" />
-                                                )}
-                                                {formatted}
-                                            </span>
-                                        )}
-                                    </DisplayValue>
-                                ) : undefined
+                                <>
+                                    {/* Derived from the lifecycle and both dates, so it needs all three; tones come from the lifecycle (UX-02). */}
+                                    {accessFieldPathExists(read, "lifecycleStatus") && accessFieldPathExists(read, "startAt") && accessFieldPathExists(read, "endAt") ? (
+                                        <StatusBadge tableConfigKey="promotions" field="lifecycleStatus" value={displayStatus} label={String(resolveLanguageKey(displayStatus))} />
+                                    ) : null}
+                                    {accessFieldPathExists(read, "type") && row.type ? (
+                                        <DisplayValue path="type" value={resolveLanguageKey(row.type)}>
+                                            {(formatted: ReactNode) => (
+                                                <span
+                                                    className={cn(
+                                                        "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full shrink-0",
+                                                        row.type === "featured" ? "bg-warning/20 text-warning" : "bg-info/20 text-info",
+                                                    )}
+                                                >
+                                                    {row.type === "featured" ? (
+                                                        <IconSparkles className="w-3 h-3" />
+                                                    ) : (
+                                                        <IconStar className="w-3 h-3" />
+                                                    )}
+                                                    {formatted}
+                                                </span>
+                                            )}
+                                        </DisplayValue>
+                                    ) : null}
+                                </>
                             }
                         >
                             {!row.deletedAt && lifecycle === "active" && (
@@ -146,18 +159,6 @@ function PromotionCard({
                             )}
                         </EntityCard.Header>
                         <EntityCard.Body>
-                            {/* Derived from the lifecycle and both dates, so it needs all three. */}
-                            <EntityCardRow
-                                icon={IconTag}
-                                label={resolveLanguageKey("status")}
-                                tooltip={resolveLanguageKey("status")}
-                                show={
-                                    accessFieldPathExists(read, "lifecycleStatus") &&
-                                    accessFieldPathExists(read, "startAt") &&
-                                    accessFieldPathExists(read, "endAt")
-                                }
-                                value={resolveLanguageKey(derivePromotionDisplayStatus(row))}
-                            />
                             <EntityCardRow
                                 icon={IconListDetails}
                                 label={resolveLanguageKey("listing")}
@@ -167,19 +168,10 @@ function PromotionCard({
                             />
                             <EntityCardRow
                                 icon={IconCalendar}
-                                label={resolveLanguageKey("startAt")}
-                                tooltip={resolveLanguageKey("startAt")}
-                                path="startAt"
-                                type="date"
-                                value={row.startAt}
-                            />
-                            <EntityCardRow
-                                icon={IconCalendarOff}
-                                label={resolveLanguageKey("endAt")}
-                                tooltip={resolveLanguageKey("endAt")}
-                                path="endAt"
-                                type="date"
-                                value={row.endAt}
+                                label={resolveLanguageKey("period")}
+                                tooltip={resolveLanguageKey("period")}
+                                show={accessFieldPathExists(read, "startAt") && accessFieldPathExists(read, "endAt")}
+                                value={`${day(row.startAt)} – ${day(row.endAt)}`}
                             />
                         </EntityCard.Body>
                     </>

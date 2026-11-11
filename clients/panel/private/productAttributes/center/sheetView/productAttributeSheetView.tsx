@@ -7,6 +7,8 @@ import type {ProductAttribute} from "armonia/src/modules/eCommerce/api/eCommerce
 import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 
 const LIST_BASE = "/tenancy/systemSettings/productattributes";
 
@@ -50,6 +52,7 @@ function ProductAttributeSheetView({
 
     if (!viewConfig) return null;
     if (!entityId) return null;
+    const attribute = sheetData as ProductAttribute;
 
     return (
         <SheetViewRenderer
@@ -63,11 +66,14 @@ function ProductAttributeSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            headerTitle={<SheetNameTitle name={attribute.name ?? ""} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+            // Booleans show only the exception (UX-02).
+            headerDescription={attribute.isVisibleOnProductPage === false ? <Badge variant="outline">{resolveLanguageKey("hidden")}</Badge> : undefined}
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}
             onRestore={onRestore}
-            editPath={productAttributeEditPath(sheetData as ProductAttribute)}
+            editPath={productAttributeEditPath(attribute)}
         />
     );
 }

@@ -62,5 +62,7 @@
   "collectionType": {
     "dynamic": "Dinamik",
     "manual": "Manual"
-  }
+  },
+  "sheetTypeLabel": "Koleksion",
+  "hidden": "I fshehur"
 }

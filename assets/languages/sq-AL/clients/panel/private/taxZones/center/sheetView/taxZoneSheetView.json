@@ -36,5 +36,7 @@
     "all": "Të gjitha produktet",
     "physical": "Fizike",
     "digital": "Dixhitale"
-  }
+  },
+  "typeLabel": "Zonë tatimore",
+  "inactive": "Joaktive"
 }

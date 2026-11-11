@@ -7,5 +7,12 @@
   "endAt": "End",
   "timezone": "Timezone",
   "order": "Order",
-  "time": "Time"
+  "time": "Time",
+  "orderStatus": {
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
 }

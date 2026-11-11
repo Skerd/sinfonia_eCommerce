@@ -49,5 +49,7 @@
     "collection": "Collections",
     "category": "Categories",
     "customer_group": "Customer groups"
-  }
+  },
+  "typeLabel": "Pricing rule",
+  "inactive": "Inactive"
 }

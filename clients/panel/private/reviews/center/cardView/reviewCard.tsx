@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconLayoutList, IconPackage, IconStar, IconUser} from "@tabler/icons-react";
+import {IconCalendarEvent, IconMessage, IconUser} from "@tabler/icons-react";
 import type {Review} from "armonia/src/modules/eCommerce/api/eCommerceMarketplace/private/review/review.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReviewSheetView from "../sheetView/reviewSheetView.tsx";
@@ -11,21 +11,14 @@ import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.t
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
-/** The comment, else the listing title, each only when the session may read it. */
-function reviewCardTitle(review: Review, read: unknown): string | undefined {
-    const comment = accessFieldPathExists(read, "comment") ? review.comment?.trim() : undefined;
-    if (comment) {
-        return comment.length > 80 ? `${comment.slice(0, 80)}…` : comment;
-    }
-    return accessFieldPathExists(read, "listing.title") ? review.listing?.title : undefined;
-}
-
-/** The reviewed order's listing title, else its task request title, each only when readable. */
-function reviewOrderTitle(review: Review, read: unknown) {
-    if (accessFieldPathExists(read, "order.listing.title") && review.order?.listing?.title) {
-        return review.order.listing.title;
-    }
-    return accessFieldPathExists(read, "order.taskRequest.title") ? review.order?.taskRequest?.title : undefined;
+/** What was reviewed (the listing, else the order's task request) and its stars, each only when readable (UX-01). */
+function reviewCardTitle(review: Review, read: unknown): string {
+    const subject =
+        (accessFieldPathExists(read, "listing.title") ? review.listing?.title : undefined) ??
+        (accessFieldPathExists(read, "order.listing.title") ? review.order?.listing?.title : undefined) ??
+        (accessFieldPathExists(read, "order.taskRequest.title") ? review.order?.taskRequest?.title : undefined);
+    const stars = accessFieldPathExists(read, "rating") && review.rating ? `★ ${review.rating}` : "";
+    return [subject, stars].filter(Boolean).join(" · ");
 }
 
 type ReviewCardProps = WithLanguageType & {
@@ -66,24 +59,14 @@ function ReviewCard({
             restoreUrl="/api/eCommerceMarketplace/review/restore"
             failedTitle={resolveLanguageKey("failedTitle")}
             failedDescription={resolveLanguageKey("failedDescription")}
-            titlePath="comment"
+            titlePath="listing.title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId: fetchId ?? review._id})}
         >
             {({entity: row, read}) => (
                 <>
-                    <EntityCard.Header titlePath={["comment", "listing.title"]} title={reviewCardTitle(row, read)} />
+                    <EntityCard.Header titlePath={["listing.title", "order", "rating"]} title={reviewCardTitle(row, read)} />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconStar}
-                            label={resolveLanguageKey("rating")}
-                            tooltip={resolveLanguageKey("rating")}
-                            path="rating"
-                            type="number"
-                            value={row.rating}
-                        >
-                            {(formatted) => <>{formatted}/5</>}
-                        </EntityCardRow>
                         <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("reviewer")}
@@ -92,23 +75,25 @@ function ReviewCard({
                             type="user"
                             value={row.reviewer}
                         />
-                        <EntityCardRow
-                            icon={IconLayoutList}
-                            label={resolveLanguageKey("listing")}
-                            tooltip={resolveLanguageKey("listing")}
-                            path="listing.title"
-                            value={row.listing?.title}
-                        />
-                        <EntityCardRow
-                            icon={IconPackage}
-                            label={resolveLanguageKey("order")}
-                            tooltip={resolveLanguageKey("order")}
-                            show={
-                                accessFieldPathExists(read, "order.listing.title") ||
-                                accessFieldPathExists(read, "order.taskRequest.title")
-                            }
-                            value={reviewOrderTitle(row, read)}
-                        />
+                        {row.createdAt ? (
+                            <EntityCardRow
+                                icon={IconCalendarEvent}
+                                label={resolveLanguageKey("reviewedAt")}
+                                tooltip={resolveLanguageKey("reviewedAt")}
+                                path="createdAt"
+                                type="date"
+                                value={row.createdAt}
+                            />
+                        ) : null}
+                        {row.comment?.trim() ? (
+                            <EntityCardRow
+                                icon={IconMessage}
+                                label={resolveLanguageKey("comment")}
+                                tooltip={resolveLanguageKey("comment")}
+                                path="comment"
+                                value={row.comment}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

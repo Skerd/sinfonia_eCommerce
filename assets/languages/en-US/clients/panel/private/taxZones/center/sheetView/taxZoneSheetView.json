@@ -36,5 +36,7 @@
     "all": "All products",
     "physical": "Physical",
     "digital": "Digital"
-  }
+  },
+  "typeLabel": "Tax zone",
+  "inactive": "Inactive"
 }

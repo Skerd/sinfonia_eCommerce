@@ -15,5 +15,12 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "orderStatus": {
+    "pending": "En attente",
+    "accepted": "Accepté",
+    "in_progress": "En cours",
+    "completed": "Terminé",
+    "cancelled": "Annulé"
+  }
 }

@@ -6,5 +6,6 @@
   "comment": "Commentaire",
   "reviewer": "Auteur de l'avis",
   "order": "Commande",
-  "listing": "Annonce"
+  "listing": "Annonce",
+  "reviewedAt": "Évalué le"
 }

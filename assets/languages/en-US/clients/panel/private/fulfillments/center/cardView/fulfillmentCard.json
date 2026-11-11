@@ -10,5 +10,9 @@
     "shipped": "Shipped",
     "delivered": "Delivered",
     "failed": "Failed"
-  }
+  },
+  "typeLabel": "Fulfillment",
+  "shippedAt": "Shipped",
+  "deliveredAt": "Delivered",
+  "estimatedDeliveryAt": "Expected delivery"
 }

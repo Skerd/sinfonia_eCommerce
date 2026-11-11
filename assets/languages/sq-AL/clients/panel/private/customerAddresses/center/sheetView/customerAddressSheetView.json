@@ -43,5 +43,7 @@
     "countryLabel": "Shteti",
     "latitudeLabel": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike"
-  }
+  },
+  "sheetTypeLabel": "Adresa",
+  "defaultAddress": "Parazgjedhur"
 }

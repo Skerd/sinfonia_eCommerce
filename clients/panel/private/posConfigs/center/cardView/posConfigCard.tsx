@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {PosConfig} from "armonia/src/modules/eCommerce/api/eCommerce/private/posConfig/posConfig.dto.ts";
-import {IconBuildingWarehouse, IconCashRegister, IconCreditCard, IconPlayerPause, IconPower, IconReceipt} from "@tabler/icons-react";
+import {IconBuildingWarehouse, IconCashRegister, IconCreditCard, IconPlayerPause, IconReceipt} from "@tabler/icons-react";
 import PosConfigSheetView from "@eCommerceModule/clients/panel/private/posConfigs/center/sheetView/posConfigSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import PosConfigRowMenuExtras from "@eCommerceModule/clients/panel/private/posConfigs/center/actions/posConfigRowMenuExtras.tsx";
@@ -20,6 +20,7 @@ import DeactivatePosConfigDialog from "@eCommerceModule/clients/panel/private/po
 import PausePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/pausePosConfigDialog.tsx";
 import ResumePosConfigDialog from "@eCommerceModule/clients/panel/private/posConfigs/center/dialogs/resumePosConfigDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
@@ -202,22 +203,25 @@ function PosConfigCard({
                             title={row.name}
                             badgesBesideTitle
                             badges={
-                                pausedLabel ? (
-                                    <DisplayValue path={pausedPath} value={pausedLabel}>
-                                        {(formatted: ReactNode) => (
-                                            <span
-                                                className={
-                                                    row.isCompanyPaused
-                                                        ? "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0"
-                                                        : "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0"
-                                                }
-                                            >
-                                                <IconPlayerPause className="w-3 h-3" />
-                                                {formatted}
-                                            </span>
-                                        )}
-                                    </DisplayValue>
-                                ) : undefined
+                                <>
+                                    {canReadActive && row.isActive === false ? <Badge variant="outline" className="text-xs">{String(resolveLanguageKey("inactive"))}</Badge> : null}
+                                    {pausedLabel ? (
+                                        <DisplayValue path={pausedPath} value={pausedLabel}>
+                                            {(formatted: ReactNode) => (
+                                                <span
+                                                    className={
+                                                        row.isCompanyPaused
+                                                            ? "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-destructive/20 text-destructive shrink-0"
+                                                            : "inline-flex items-center gap-1 text-3xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-warning/20 text-warning shrink-0"
+                                                    }
+                                                >
+                                                    <IconPlayerPause className="w-3 h-3" />
+                                                    {formatted}
+                                                </span>
+                                            )}
+                                        </DisplayValue>
+                                    ) : null}
+                                </>
                             }
                         >
                             <PausePosConfig entity={row} onAction={setAction} />
@@ -227,13 +231,15 @@ function PosConfigCard({
                             <PosConfigRowMenuExtras config={row} onAction={setAction} />
                         </EntityCard.Header>
                         <EntityCard.Body>
-                            <EntityCardRow
-                                icon={IconReceipt}
-                                label={resolveLanguageKey("fiscalConfig")}
-                                tooltip={resolveLanguageKey("fiscalConfig")}
-                                path="fiscalConfig.name"
-                                value={row.fiscalConfig?.name}
-                            />
+                            {row.fiscalConfig?.name ? (
+                                <EntityCardRow
+                                    icon={IconReceipt}
+                                    label={resolveLanguageKey("fiscalConfig")}
+                                    tooltip={resolveLanguageKey("fiscalConfig")}
+                                    path="fiscalConfig.name"
+                                    value={row.fiscalConfig.name}
+                                />
+                            ) : null}
                             <EntityCardRow
                                 icon={IconBuildingWarehouse}
                                 label={resolveLanguageKey("warehouses")}
@@ -249,14 +255,6 @@ function PosConfigCard({
                                 path="paymentMethods"
                                 type="number"
                                 value={row.paymentMethods?.length}
-                            />
-                            <EntityCardRow
-                                icon={IconPower}
-                                label={resolveLanguageKey("active")}
-                                tooltip={resolveLanguageKey("active")}
-                                path="isActive"
-                                type="boolean"
-                                value={row.isActive}
                             />
                             {canOpenPos ? (
                                 <EntityCardRow

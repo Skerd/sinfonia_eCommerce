@@ -34,5 +34,7 @@
     "countryLabel": "Pays",
     "latitudeLabel": "Latitude",
     "longitudeLabel": "Longitude"
-  }
+  },
+  "typeLabel": "Entrepôt",
+  "inactive": "Inactif"
 }

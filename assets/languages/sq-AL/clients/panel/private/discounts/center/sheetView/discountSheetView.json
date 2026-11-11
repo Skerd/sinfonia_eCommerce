@@ -55,5 +55,7 @@
     "product": "Produktet",
     "collection": "Koleksionet",
     "category": "Kategoritë"
-  }
+  },
+  "typeLabel": "Zbritje",
+  "inactive": "Joaktive"
 }

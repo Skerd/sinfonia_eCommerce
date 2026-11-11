@@ -1,33 +1,18 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import type {PosOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/posOrder/posOrder.dto.ts";
-import {IconCash, IconPackage, IconUser} from "@tabler/icons-react";
+import {IconCalendarEvent, IconCash, IconPackage} from "@tabler/icons-react";
 import PosOrderSheetView from "@eCommerceModule/clients/panel/private/posOrders/center/sheetView/posOrderSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReprintPosOrder from "@eCommerceModule/clients/panel/private/posOrders/center/actions/reprintPosOrder.tsx";
 import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/reprintPosOrderDialog.tsx";
-import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
-import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 import {getName} from "@coreModule/helpers/general/names.ts";
-
-function stateColor(state: string): string {
-    switch (state) {
-        case "paid":
-            return "text-success bg-success";
-        case "draft":
-            return "text-warning bg-warning";
-        case "cancel":
-        case "refunded":
-            return "text-destructive bg-destructive";
-        default:
-            return "text-info bg-info";
-    }
-}
 
 type PosOrderCardProps = WithLanguageType & {
     entity: PosOrder;
@@ -84,51 +69,49 @@ function PosOrderCard({
                 </>
             )}
         >
-            {({entity: row, read, setAction}) => {
-                const canState = accessFieldPathExists(read, "state");
-                const colors = canState ? stateColor(row.state) : "";
-                const customerDisplay = row.customerName
-                    || getName(row.customer);
+            {({entity: row, setAction}) => {
+                const customerLabel = row.customerName || getName(row.customer) || String(resolveLanguageKey("walkIn"));
                 return (
                     <>
-                        <EntityCard.Header titlePath="name" title={row.name}>
+                        <EntityCard.Header
+                            titlePath={row.customerName ? "customerName" : "customer"}
+                            title={customerLabel}
+                            subtitlePath="name"
+                            subtitle={row.name}
+                            badgesBesideTitle
+                            badges={<StatusBadge tableConfigKey="posOrders" field="state" value={row.state} label={String(resolveLanguageKey(`orderState.${row.state}`))} />}
+                        >
                             <ReprintPosOrder entity={row} onAction={setAction} />
                         </EntityCard.Header>
-                        <div className="flex flex-col gap-2">
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconUser className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue
-                                    path={row.customerName ? "customerName" : "customer"}
-                                    type={row.customerName ? undefined : "user"}
-                                    value={row.customerName ? customerDisplay : row.customer}
+                        {/* When → how much → how many items; the state is the badge (UX-02). */}
+                        <EntityCard.Body>
+                            <EntityCardRow
+                                icon={IconCalendarEvent}
+                                label={resolveLanguageKey("soldAt")}
+                                tooltip={resolveLanguageKey("soldAt")}
+                                path="createdAt"
+                                type="dateTime"
+                                value={row.createdAt}
+                            />
+                            <EntityCardRow
+                                icon={IconCash}
+                                label={resolveLanguageKey("total")}
+                                tooltip={resolveLanguageKey("total")}
+                                path="amountTotal"
+                                type="currency"
+                                value={{amount: row.amountTotal, currency: row.currency}}
+                            />
+                            {row.lines?.length ? (
+                                <EntityCardRow
+                                    icon={IconPackage}
+                                    label={resolveLanguageKey("itemCount")}
+                                    tooltip={resolveLanguageKey("itemCount")}
+                                    path="lines"
+                                    type="number"
+                                    value={row.lines.length}
                                 />
-                            </div>
-                            <div className="flex items-center justify-between gap-2">
-                                <span
-                                    className={cn(
-                                        "inline-flex items-center gap-1.5 text-3xs font-semibold uppercase tracking-wide",
-                                        colors.split(" ")[0],
-                                    )}
-                                >
-                                    <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", colors.split(" ")[1])} />
-                                    <DisplayValue
-                                        path="state"
-                                        type="enum"
-                                        languageKeyCategory="orderState"
-                                        value={row.state}
-                                    />
-                                </span>
-                                <span className="ml-auto inline-flex items-center gap-1 text-base font-bold leading-none text-foreground">
-                                    <IconCash className="h-3.5 w-3.5 text-muted-foreground" />
-                                    <DisplayValue path="amountTotal" type="locale" value={row.amountTotal} />
-                                </span>
-                            </div>
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <IconPackage className="h-3.5 w-3.5 shrink-0" />
-                                <DisplayValue path="lines" type="number" value={row.lines?.length} />
-                                <span>{resolveLanguageKey("items")}</span>
-                            </div>
-                        </div>
+                            ) : null}
+                        </EntityCard.Body>
                     </>
                 );
             }}

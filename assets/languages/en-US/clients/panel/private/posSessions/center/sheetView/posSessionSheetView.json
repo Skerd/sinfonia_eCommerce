@@ -50,5 +50,6 @@
     "out": "Cash out"
   },
   "posOrders": "POS orders",
-  "posOrder": "POS order"
+  "posOrder": "POS order",
+  "typeLabel": "POS session"
 }

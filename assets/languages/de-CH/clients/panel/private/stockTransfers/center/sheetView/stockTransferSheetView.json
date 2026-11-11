@@ -28,5 +28,6 @@
     "draft": "Entwurf",
     "done": "Abgeschlossen",
     "cancelled": "Storniert"
-  }
+  },
+  "typeLabel": "Umlagerung"
 }

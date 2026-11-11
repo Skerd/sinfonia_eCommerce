@@ -43,5 +43,6 @@
     "ProductOrder": "Ordine prodotto",
     "PosOrder": "Ordine POS",
     "Checkout": "Checkout"
-  }
+  },
+  "typeLabel": "Movimento di magazzino"
 }

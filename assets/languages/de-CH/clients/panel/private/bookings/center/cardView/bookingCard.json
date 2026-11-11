@@ -7,5 +7,12 @@
   "endAt": "Ende",
   "timezone": "Zeitzone",
   "order": "Auftrag",
-  "time": "Zeit"
+  "time": "Zeit",
+  "orderStatus": {
+    "pending": "Ausstehend",
+    "accepted": "Angenommen",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
 }
