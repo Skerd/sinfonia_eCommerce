@@ -56,6 +56,7 @@
       "items": "Items",
       "items_product": "Items product",
       "items_quantity": "Items quantity",
+      "items_sellerCompany": "Items seller",
       "items_snapshot": "Items snapshot",
       "items_snapshot_imageUrl": "Items snapshot image URL",
       "items_snapshot_sku": "Items snapshot SKU",
@@ -104,6 +105,7 @@
       "items": "Items",
       "items_product": "Items product",
       "items_quantity": "Items quantity",
+      "items_sellerCompany": "Items seller",
       "items_snapshot": "Items snapshot",
       "items_snapshot_imageUrl": "Items snapshot image URL",
       "items_snapshot_sku": "Items snapshot SKU",
@@ -113,6 +115,7 @@
       "items_variant": "Items variant",
       "paymentMethod": "Payment method",
       "reservations": "Reservations",
+      "reservations_fulfillment": "Reservations fulfillment",
       "reservations_product": "Reservations product",
       "reservations_quantity": "Reservations quantity",
       "reservations_state": "Reservations state",
@@ -144,7 +147,18 @@
       "taxBreakdown_rate": "Tax breakdown rate",
       "taxTotal": "Tax total",
       "updatedAt": "Updated at",
-      "user": "User"
+      "user": "User",
+      "paymentAttempt": "Payment attempt",
+      "sellerGroups": "Seller groups",
+      "sellerGroups_selectedShippingRate": "Seller groups selected shipping rate",
+      "sellerGroups_selectedShippingRate_carrier": "Seller groups shipping carrier",
+      "sellerGroups_selectedShippingRate_estimatedDeliveryDays": "Seller groups estimated delivery days",
+      "sellerGroups_selectedShippingRate_name": "Seller groups shipping rate name",
+      "sellerGroups_selectedShippingRate_price": "Seller groups shipping price",
+      "sellerGroups_sellerCompany": "Seller groups seller",
+      "sellerGroups_shippingTotal": "Seller groups shipping total",
+      "sellerGroups_subtotal": "Seller groups subtotal",
+      "sellerGroups_taxTotal": "Seller groups tax total"
     },
     "Cmsblocks": {
       "cmsblocks": "CMS blocks",
@@ -209,7 +223,9 @@
       "state": "State",
       "street": "Street",
       "updatedAt": "Updated at",
-      "user": "User"
+      "user": "User",
+      "email": "Email",
+      "type": "Address type"
     },
     "Customergroupmembers": {
       "createdAt": "Created at",
@@ -441,7 +457,8 @@
       "companyLockStatus": "View the company till lock",
       "setManagerPin": "Set manager PIN",
       "changeManagerPin": "Change manager PIN",
-      "requestManagerPinReset": "Request manager PIN reset"
+      "requestManagerPinReset": "Request manager PIN reset",
+      "fiscalConfig": "Fiscal config"
     },
     "Posorders": {
       "amountPaid": "Amount paid",
@@ -520,7 +537,9 @@
       "pay": "Ring up a sale",
       "refund": "Refund a sale",
       "reprint": "Reprint a receipt",
-      "deleteHeld": "Delete a held sale"
+      "deleteHeld": "Delete a held sale",
+      "currency": "Currency",
+      "fiscalRegisteringAt": "Sending to CIS since"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Cash quick amounts",
@@ -583,7 +602,8 @@
       "open": "Open session",
       "cashMove": "Move cash in or out",
       "close": "Close session",
-      "reconciliation": "View cash reconciliation"
+      "reconciliation": "View cash reconciliation",
+      "currency": "Currency"
     },
     "Pricingrules": {
       "appliesTo": "Applies to",
@@ -655,7 +675,8 @@
       "type": "Type",
       "updatedAt": "Updated at",
       "activate": "Activate",
-      "deactivate": "Deactivate"
+      "deactivate": "Deactivate",
+      "productCount": "Product count"
     },
     "Productorders": {
       "appliedDiscounts": "Applied discounts",
@@ -692,8 +713,10 @@
       "items_quantity": "Items quantity",
       "items_snapshot": "Items snapshot",
       "items_snapshot_imageUrl": "Items snapshot image URL",
+      "items_snapshot_productType": "Items snapshot product type",
       "items_snapshot_sku": "Items snapshot SKU",
       "items_snapshot_title": "Items snapshot title",
+      "items_snapshot_variantLabel": "Items snapshot variant",
       "items_totalPrice": "Items total price",
       "items_unitPrice": "Items unit price",
       "items_variant": "Items variant",
@@ -735,7 +758,15 @@
       "ship": "Ship order",
       "cancel": "Cancel",
       "markPaid": "Mark as paid",
-      "refund": "Refund order"
+      "refund": "Refund order",
+      "currencyCode": "Currency code",
+      "reservations": "Reservations",
+      "reservations_fulfillment": "Reservations fulfillment",
+      "reservations_product": "Reservations product",
+      "reservations_quantity": "Reservations quantity",
+      "reservations_state": "Reservations state",
+      "reservations_variant": "Reservations variant",
+      "reservations_warehouse": "Reservations warehouse"
     },
     "Productreviews": {
       "comment": "Comment",
@@ -859,7 +890,11 @@
       "duplicate": "Duplicate",
       "publish": "Publish",
       "archive": "Archive",
-      "revertToDraft": "Revert to draft"
+      "revertToDraft": "Revert to draft",
+      "inventories": "Inventories",
+      "reviews": "Reviews",
+      "variantCount": "Variant count",
+      "variants": "Variants"
     },
     "Productvariants": {
       "attributeCombination": "Attribute combination",

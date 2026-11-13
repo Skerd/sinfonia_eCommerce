@@ -56,6 +56,7 @@
       "items": "Artikujt",
       "items_product": "Produkti i artikujve",
       "items_quantity": "Sasia e artikujve",
+      "items_sellerCompany": "Shitësi i artikujve",
       "items_snapshot": "Pamja e artikullit",
       "items_snapshot_imageUrl": "URL e imazhit në pamjen e artikullit",
       "items_snapshot_sku": "SKU në pamjen e artikullit",
@@ -104,6 +105,7 @@
       "items": "Artikujt",
       "items_product": "Produkti i artikujve",
       "items_quantity": "Sasia e artikujve",
+      "items_sellerCompany": "Shitësi i artikujve",
       "items_snapshot": "Pamja e artikullit",
       "items_snapshot_imageUrl": "URL e imazhit në pamjen e artikullit",
       "items_snapshot_sku": "SKU në pamjen e artikullit",
@@ -113,6 +115,7 @@
       "items_variant": "Varianti i artikujve",
       "paymentMethod": "Metoda e pagesës",
       "reservations": "Rezervimet",
+      "reservations_fulfillment": "Përmbushja e rezervimeve",
       "reservations_product": "Produkti i rezervimeve",
       "reservations_quantity": "Sasia e rezervimeve",
       "reservations_state": "Gjendja e rezervimeve",
@@ -144,7 +147,18 @@
       "taxBreakdown_rate": "Norma e ndarjes së tatimit",
       "taxTotal": "Totali i tatimit",
       "updatedAt": "Përditësuar më",
-      "user": "Përdoruesi"
+      "user": "Përdoruesi",
+      "paymentAttempt": "Përpjekja për pagesë",
+      "sellerGroups": "Grupet e shitësve",
+      "sellerGroups_selectedShippingRate": "Tarifa e zgjedhur e transportit të grupeve të shitësve",
+      "sellerGroups_selectedShippingRate_carrier": "Transportuesi i tarifës së grupeve të shitësve",
+      "sellerGroups_selectedShippingRate_estimatedDeliveryDays": "Ditët e parashikuara të dorëzimit të grupeve të shitësve",
+      "sellerGroups_selectedShippingRate_name": "Emri i tarifës së grupeve të shitësve",
+      "sellerGroups_selectedShippingRate_price": "Çmimi i transportit të grupeve të shitësve",
+      "sellerGroups_sellerCompany": "Shitësi i grupeve të shitësve",
+      "sellerGroups_shippingTotal": "Totali i transportit të grupeve të shitësve",
+      "sellerGroups_subtotal": "Nëntotali i grupeve të shitësve",
+      "sellerGroups_taxTotal": "Totali i tatimeve të grupeve të shitësve"
     },
     "Cmsblocks": {
       "cmsblocks": "Blloqet CMS",
@@ -209,7 +223,9 @@
       "state": "Rajoni",
       "street": "Rruga",
       "updatedAt": "Përditësuar më",
-      "user": "Përdoruesi"
+      "user": "Përdoruesi",
+      "email": "Emaili",
+      "type": "Lloji i adresës"
     },
     "Customergroupmembers": {
       "createdAt": "Krijuar më",
@@ -441,7 +457,8 @@
       "companyLockStatus": "Shiko bllokimin e arkave të kompanisë",
       "setManagerPin": "Cakto PIN-in e menaxherit",
       "changeManagerPin": "Ndrysho PIN-in e menaxherit",
-      "requestManagerPinReset": "Kërko rivendosjen e PIN-it të menaxherit"
+      "requestManagerPinReset": "Kërko rivendosjen e PIN-it të menaxherit",
+      "fiscalConfig": "Konfigurimi fiskal"
     },
     "Posorders": {
       "amountPaid": "Shuma e paguar",
@@ -520,7 +537,9 @@
       "pay": "Regjistro një shitje",
       "refund": "Rimburso një shitje",
       "reprint": "Riprinto një faturë",
-      "deleteHeld": "Fshi një shitje në pritje"
+      "deleteHeld": "Fshi një shitje në pritje",
+      "currency": "Monedha",
+      "fiscalRegisteringAt": "Duke u dërguar në CIS që nga"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Shumat e shpejta (cash)",
@@ -583,7 +602,8 @@
       "open": "Hap seancën",
       "cashMove": "Fut ose nxirr para",
       "close": "Mbyll seancën",
-      "reconciliation": "Shiko rakordimin e arkës"
+      "reconciliation": "Shiko rakordimin e arkës",
+      "currency": "Monedha"
     },
     "Pricingrules": {
       "appliesTo": "Aplikohet te",
@@ -655,7 +675,8 @@
       "type": "Lloji",
       "updatedAt": "Përditësuar më",
       "activate": "Aktivizo",
-      "deactivate": "Çaktivizo"
+      "deactivate": "Çaktivizo",
+      "productCount": "Numri i produkteve"
     },
     "Productorders": {
       "appliedDiscounts": "Zbritjet e aplikuara",
@@ -692,8 +713,10 @@
       "items_quantity": "Sasia e artikujve",
       "items_snapshot": "Pamja e artikullit",
       "items_snapshot_imageUrl": "URL e imazhit në pamjen e artikullit",
+      "items_snapshot_productType": "Lloji i produktit në pamjen e artikullit",
       "items_snapshot_sku": "SKU në pamjen e artikullit",
       "items_snapshot_title": "Titulli në pamjen e artikullit",
+      "items_snapshot_variantLabel": "Varianti në pamjen e artikullit",
       "items_totalPrice": "Çmimi total i artikujve",
       "items_unitPrice": "Çmimi për njësi i artikujve",
       "items_variant": "Varianti i artikujve",
@@ -735,7 +758,15 @@
       "ship": "Dërgo porosinë",
       "cancel": "Anulo",
       "markPaid": "Shëno si të paguar",
-      "refund": "Rimburso porosinë"
+      "refund": "Rimburso porosinë",
+      "currencyCode": "Kodi i monedhës",
+      "reservations": "Rezervimet",
+      "reservations_fulfillment": "Përmbushja e rezervimeve",
+      "reservations_product": "Produkti i rezervimeve",
+      "reservations_quantity": "Sasia e rezervimeve",
+      "reservations_state": "Gjendja e rezervimeve",
+      "reservations_variant": "Varianti i rezervimeve",
+      "reservations_warehouse": "Magazina e rezervimeve"
     },
     "Productreviews": {
       "comment": "Komenti",
@@ -859,7 +890,11 @@
       "duplicate": "Dyfisho",
       "publish": "Publiko",
       "archive": "Arkivo",
-      "revertToDraft": "Kthe në skicë"
+      "revertToDraft": "Kthe në skicë",
+      "inventories": "Inventarët",
+      "reviews": "Vlerësimet",
+      "variantCount": "Numri i varianteve",
+      "variants": "Variantet"
     },
     "Productvariants": {
       "attributeCombination": "Kombinimi i atributeve",

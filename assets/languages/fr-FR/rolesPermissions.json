@@ -56,6 +56,7 @@
       "items": "Articles",
       "items_product": "Produit des articles",
       "items_quantity": "Quantité d'articles",
+      "items_sellerCompany": "Vendeur des articles",
       "items_snapshot": "Instantané des articles",
       "items_snapshot_imageUrl": "URL de l'image de l'instantané des articles",
       "items_snapshot_sku": "SKU de l'instantané des articles",
@@ -104,6 +105,7 @@
       "items": "Articles",
       "items_product": "Produit des articles",
       "items_quantity": "Quantité d'articles",
+      "items_sellerCompany": "Vendeur des articles",
       "items_snapshot": "Instantané des articles",
       "items_snapshot_imageUrl": "URL de l'image de l'instantané des articles",
       "items_snapshot_sku": "SKU de l'instantané des articles",
@@ -113,6 +115,7 @@
       "items_variant": "Variante des articles",
       "paymentMethod": "Mode de paiement",
       "reservations": "Réservations",
+      "reservations_fulfillment": "Expédition des réservations",
       "reservations_product": "Produit des réservations",
       "reservations_quantity": "Quantité des réservations",
       "reservations_state": "État des réservations",
@@ -144,7 +147,18 @@
       "taxBreakdown_rate": "Taux du détail des taxes",
       "taxTotal": "Total des taxes",
       "updatedAt": "Mis à jour le",
-      "user": "Utilisateur"
+      "user": "Utilisateur",
+      "paymentAttempt": "Tentative de paiement",
+      "sellerGroups": "Groupes de vendeurs",
+      "sellerGroups_selectedShippingRate": "Tarif d'expédition choisi des groupes de vendeurs",
+      "sellerGroups_selectedShippingRate_carrier": "Transporteur du tarif des groupes de vendeurs",
+      "sellerGroups_selectedShippingRate_estimatedDeliveryDays": "Jours de livraison estimés des groupes de vendeurs",
+      "sellerGroups_selectedShippingRate_name": "Nom du tarif des groupes de vendeurs",
+      "sellerGroups_selectedShippingRate_price": "Prix d'expédition des groupes de vendeurs",
+      "sellerGroups_sellerCompany": "Vendeur des groupes de vendeurs",
+      "sellerGroups_shippingTotal": "Total d'expédition des groupes de vendeurs",
+      "sellerGroups_subtotal": "Sous-total des groupes de vendeurs",
+      "sellerGroups_taxTotal": "Total des taxes des groupes de vendeurs"
     },
     "Cmsblocks": {
       "cmsblocks": "Blocs CMS",
@@ -209,7 +223,9 @@
       "state": "Région / État",
       "street": "Rue",
       "updatedAt": "Mis à jour le",
-      "user": "Utilisateur"
+      "user": "Utilisateur",
+      "email": "E-mail",
+      "type": "Type d'adresse"
     },
     "Customergroupmembers": {
       "createdAt": "Créé le",
@@ -441,7 +457,8 @@
       "companyLockStatus": "Voir le verrouillage des caisses de l'entreprise",
       "setManagerPin": "Définir le code PIN du gestionnaire",
       "changeManagerPin": "Modifier le code PIN du gestionnaire",
-      "requestManagerPinReset": "Demander la réinitialisation du code PIN du gestionnaire"
+      "requestManagerPinReset": "Demander la réinitialisation du code PIN du gestionnaire",
+      "fiscalConfig": "Configuration fiscale"
     },
     "Posorders": {
       "amountPaid": "Montant payé",
@@ -520,7 +537,9 @@
       "pay": "Encaisser une vente",
       "refund": "Rembourser une vente",
       "reprint": "Réimprimer un reçu",
-      "deleteHeld": "Supprimer une vente en attente"
+      "deleteHeld": "Supprimer une vente en attente",
+      "currency": "Devise",
+      "fiscalRegisteringAt": "Envoi au CIS depuis"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Montants rapides en espèces",
@@ -583,7 +602,8 @@
       "open": "Ouvrir la session",
       "cashMove": "Entrée ou sortie d'espèces",
       "close": "Clôturer la session",
-      "reconciliation": "Voir le rapprochement de caisse"
+      "reconciliation": "Voir le rapprochement de caisse",
+      "currency": "Devise"
     },
     "Pricingrules": {
       "appliesTo": "S'applique à",
@@ -655,7 +675,8 @@
       "type": "Type",
       "updatedAt": "Mis à jour le",
       "activate": "Activer",
-      "deactivate": "Désactiver"
+      "deactivate": "Désactiver",
+      "productCount": "Nombre de produits"
     },
     "Productorders": {
       "appliedDiscounts": "Remises appliquées",
@@ -692,8 +713,10 @@
       "items_quantity": "Quantité d'articles",
       "items_snapshot": "Instantané des articles",
       "items_snapshot_imageUrl": "URL de l'image de l'instantané des articles",
+      "items_snapshot_productType": "Type de produit de l'instantané des articles",
       "items_snapshot_sku": "SKU de l'instantané des articles",
       "items_snapshot_title": "Titre de l'instantané des articles",
+      "items_snapshot_variantLabel": "Variante de l'instantané des articles",
       "items_totalPrice": "Prix total des articles",
       "items_unitPrice": "Prix unitaire des articles",
       "items_variant": "Variante des articles",
@@ -735,7 +758,15 @@
       "ship": "Expédier la commande",
       "cancel": "Annuler",
       "markPaid": "Marquer comme payé",
-      "refund": "Rembourser la commande"
+      "refund": "Rembourser la commande",
+      "currencyCode": "Code de devise",
+      "reservations": "Réservations",
+      "reservations_fulfillment": "Expédition des réservations",
+      "reservations_product": "Produit des réservations",
+      "reservations_quantity": "Quantité des réservations",
+      "reservations_state": "État des réservations",
+      "reservations_variant": "Variante des réservations",
+      "reservations_warehouse": "Entrepôt des réservations"
     },
     "Productreviews": {
       "comment": "Commentaire",
@@ -859,7 +890,11 @@
       "duplicate": "Dupliquer",
       "publish": "Publier",
       "archive": "Archiver",
-      "revertToDraft": "Repasser en brouillon"
+      "revertToDraft": "Repasser en brouillon",
+      "inventories": "Stocks",
+      "reviews": "Avis",
+      "variantCount": "Nombre de variantes",
+      "variants": "Variantes"
     },
     "Productvariants": {
       "attributeCombination": "Combinaison d'attributs",

@@ -56,6 +56,7 @@
       "items": "Positionen",
       "items_product": "Produkt der Position",
       "items_quantity": "Menge der Position",
+      "items_sellerCompany": "Verkäufer der Position",
       "items_snapshot": "Momentaufnahme der Position",
       "items_snapshot_imageUrl": "Bild-URL (Momentaufnahme der Position)",
       "items_snapshot_sku": "SKU (Momentaufnahme der Position)",
@@ -104,6 +105,7 @@
       "items": "Positionen",
       "items_product": "Produkt der Position",
       "items_quantity": "Menge der Position",
+      "items_sellerCompany": "Verkäufer der Position",
       "items_snapshot": "Momentaufnahme der Position",
       "items_snapshot_imageUrl": "Bild-URL (Momentaufnahme der Position)",
       "items_snapshot_sku": "SKU (Momentaufnahme der Position)",
@@ -113,6 +115,7 @@
       "items_variant": "Variante der Position",
       "paymentMethod": "Zahlungsart",
       "reservations": "Reservationen",
+      "reservations_fulfillment": "Lieferung der Reservierung",
       "reservations_product": "Produkt der Reservierung",
       "reservations_quantity": "Menge der Reservierung",
       "reservations_state": "Status der Reservierung",
@@ -144,7 +147,18 @@
       "taxBreakdown_rate": "Satz der Steueraufschlüsselung",
       "taxTotal": "Total Steuern",
       "updatedAt": "Aktualisiert am",
-      "user": "Benutzer"
+      "user": "Benutzer",
+      "paymentAttempt": "Zahlungsversuch",
+      "sellerGroups": "Verkäufergruppen",
+      "sellerGroups_selectedShippingRate": "Gewählter Versandtarif der Verkäufergruppe",
+      "sellerGroups_selectedShippingRate_carrier": "Transporteur des Versandtarifs der Verkäufergruppe",
+      "sellerGroups_selectedShippingRate_estimatedDeliveryDays": "Voraussichtliche Liefertage der Verkäufergruppe",
+      "sellerGroups_selectedShippingRate_name": "Name des Versandtarifs der Verkäufergruppe",
+      "sellerGroups_selectedShippingRate_price": "Versandpreis der Verkäufergruppe",
+      "sellerGroups_sellerCompany": "Verkäufer der Verkäufergruppe",
+      "sellerGroups_shippingTotal": "Versandtotal der Verkäufergruppe",
+      "sellerGroups_subtotal": "Zwischensumme der Verkäufergruppe",
+      "sellerGroups_taxTotal": "Steuertotal der Verkäufergruppe"
     },
     "Cmsblocks": {
       "cmsblocks": "CMS-Blöcke",
@@ -209,7 +223,9 @@
       "state": "Kanton",
       "street": "Strasse",
       "updatedAt": "Aktualisiert am",
-      "user": "Benutzer"
+      "user": "Benutzer",
+      "email": "E-Mail",
+      "type": "Adressart"
     },
     "Customergroupmembers": {
       "createdAt": "Erstellt am",
@@ -441,7 +457,8 @@
       "companyLockStatus": "Kassensperre der Firma ansehen",
       "setManagerPin": "Manager-PIN festlegen",
       "changeManagerPin": "Manager-PIN ändern",
-      "requestManagerPinReset": "Zurücksetzen des Manager-PINs anfordern"
+      "requestManagerPinReset": "Zurücksetzen des Manager-PINs anfordern",
+      "fiscalConfig": "Fiskalkonfiguration"
     },
     "Posorders": {
       "amountPaid": "Betrag bezahlt",
@@ -520,7 +537,9 @@
       "pay": "Verkauf abschliessen",
       "refund": "Verkauf erstatten",
       "reprint": "Beleg erneut drucken",
-      "deleteHeld": "Parkierten Verkauf löschen"
+      "deleteHeld": "Parkierten Verkauf löschen",
+      "currency": "Währung",
+      "fiscalRegisteringAt": "An CIS gesendet seit"
     },
     "Pospaymentmethods": {
       "cashQuickAmounts": "Bargeld-Schnellbeträge",
@@ -583,7 +602,8 @@
       "open": "Sitzung öffnen",
       "cashMove": "Bargeld ein- oder auszahlen",
       "close": "Sitzung abschliessen",
-      "reconciliation": "Kassenabgleich ansehen"
+      "reconciliation": "Kassenabgleich ansehen",
+      "currency": "Währung"
     },
     "Pricingrules": {
       "appliesTo": "Gilt für",
@@ -655,7 +675,8 @@
       "type": "Typ",
       "updatedAt": "Aktualisiert am",
       "activate": "Aktivieren",
-      "deactivate": "Deaktivieren"
+      "deactivate": "Deaktivieren",
+      "productCount": "Anzahl Produkte"
     },
     "Productorders": {
       "appliedDiscounts": "Angewendete Rabatte",
@@ -692,8 +713,10 @@
       "items_quantity": "Menge der Position",
       "items_snapshot": "Momentaufnahme der Position",
       "items_snapshot_imageUrl": "Bild-URL (Momentaufnahme der Position)",
+      "items_snapshot_productType": "Produkttyp (Momentaufnahme der Position)",
       "items_snapshot_sku": "SKU (Momentaufnahme der Position)",
       "items_snapshot_title": "Titel (Momentaufnahme der Position)",
+      "items_snapshot_variantLabel": "Variante (Momentaufnahme der Position)",
       "items_totalPrice": "Gesamtpreis der Position",
       "items_unitPrice": "Stückpreis der Position",
       "items_variant": "Variante der Position",
@@ -735,7 +758,15 @@
       "ship": "Bestellung versenden",
       "cancel": "Stornieren",
       "markPaid": "Als bezahlt markieren",
-      "refund": "Bestellung erstatten"
+      "refund": "Bestellung erstatten",
+      "currencyCode": "Währungscode",
+      "reservations": "Reservationen",
+      "reservations_fulfillment": "Lieferung der Reservierung",
+      "reservations_product": "Produkt der Reservierung",
+      "reservations_quantity": "Menge der Reservierung",
+      "reservations_state": "Status der Reservierung",
+      "reservations_variant": "Variante der Reservierung",
+      "reservations_warehouse": "Lager der Reservierung"
     },
     "Productreviews": {
       "comment": "Kommentar",
@@ -859,7 +890,11 @@
       "duplicate": "Duplizieren",
       "publish": "Veröffentlichen",
       "archive": "Archivieren",
-      "revertToDraft": "Auf Entwurf zurücksetzen"
+      "revertToDraft": "Auf Entwurf zurücksetzen",
+      "inventories": "Lagerbestände",
+      "reviews": "Bewertungen",
+      "variantCount": "Anzahl Varianten",
+      "variants": "Varianten"
     },
     "Productvariants": {
       "attributeCombination": "Attributkombination",
