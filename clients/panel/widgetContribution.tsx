@@ -155,10 +155,22 @@ const ReturnRequestSheetViewLazy = lazy(
 const ReturnRequestCardLazy = lazy(
     () => import("@eCommerceModule/clients/panel/private/returnRequests/center/cardView/returnRequestCard.tsx"),
 );
+/** Sheets a record shared in chat opens by token, named by each sheet view's `sheetWidget` (D162). */
+const CustomerAddressSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx"));
+const ShippingZoneSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/shippingZones/center/sheetView/shippingZoneSheetView.tsx"));
+const TaxZoneSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/taxZones/center/sheetView/taxZoneSheetView.tsx"));
+const CmsBlockSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/cmsBlocks/center/sheetView/cmsBlockSheetView.tsx"));
+const PricingRuleSheetViewLazy = lazy(() => import("@eCommerceModule/clients/panel/private/pricingRules/center/sheetView/pricingRuleSheetView.tsx"));
+
 const eCommerceWidgetContribution: WidgetContribution = {
     id: "eCommerce",
     order: 35,
     widgets: {
+        "#CustomerAddressSheetView": CustomerAddressSheetViewLazy,
+        "#ShippingZoneSheetView": ShippingZoneSheetViewLazy,
+        "#TaxZoneSheetView": TaxZoneSheetViewLazy,
+        "#CmsBlockSheetView": CmsBlockSheetViewLazy,
+        "#PricingRuleSheetView": PricingRuleSheetViewLazy,
         "#CategorySheetView": CategorySheetViewLazy,
         "#CategoryCard": CategoryCardLazy,
         "#CollectionSheetView": CollectionSheetViewLazy,
