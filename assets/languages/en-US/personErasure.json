@@ -1,5 +1,5 @@
 {
   "modules": {
-    "eCommerce": "Shop: orders stay for accounting without the name, email, phone or street; carts, saved addresses, saved searches and customer-group memberships are deleted."
+    "eCommerce": "Shop: orders stay for accounting without the name, email, phone or street; carts, saved searches and customer-group memberships are deleted."
   }
 }
