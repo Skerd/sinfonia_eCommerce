@@ -3,7 +3,6 @@
     "Carts": "Shportat",
     "Checkouts": "Pagesat",
     "Cmsblocks": "Blloqet CMS",
-    "Customeraddresses": "Adresat e klientëve",
     "Customergroupmembers": "Anëtarët e grupit të klientëve",
     "Customergroups": "Grupet e klientëve",
     "Digitaldeliveries": "Dorëzimet dixhitale",
@@ -202,30 +201,6 @@
       "activate": "Aktivizo",
       "deactivate": "Çaktivizo",
       "reorder": "Rirendit"
-    },
-    "Customeraddresses": {
-      "city": "Qyteti",
-      "country": "Shteti",
-      "createdAt": "Krijuar më",
-      "createdBy": "Krijuar nga",
-      "customer": "Klienti",
-      "customeraddresses": "Adresat e klientëve",
-      "deletedAt": "Fshirë më",
-      "deletedBy": "Fshirë nga",
-      "firstName": "Emri",
-      "isDefault": "Parazgjedhur",
-      "label": "Etiketa",
-      "lastName": "Mbiemri",
-      "latitude": "Gjerësia gjeografike",
-      "longitude": "Gjatësia gjeografike",
-      "phone": "Telefoni",
-      "postalCode": "Kodi postar",
-      "state": "Rajoni",
-      "street": "Rruga",
-      "updatedAt": "Përditësuar më",
-      "user": "Përdoruesi",
-      "email": "Emaili",
-      "type": "Lloji i adresës"
     },
     "Customergroupmembers": {
       "createdAt": "Krijuar më",
@@ -766,7 +741,8 @@
       "reservations_quantity": "Sasia e rezervimeve",
       "reservations_state": "Gjendja e rezervimeve",
       "reservations_variant": "Varianti i rezervimeve",
-      "reservations_warehouse": "Magazina e rezervimeve"
+      "reservations_warehouse": "Magazina e rezervimeve",
+      "customerAddresses": "Shiko adresat e klientëve"
     },
     "Productreviews": {
       "comment": "Komenti",

@@ -66,8 +66,6 @@ const AllProductReviews = lazy(() => import("@eCommerceModule/clients/panel/priv
 const CreateProductReview = lazy(() => import("@eCommerceModule/clients/panel/private/productReviews/createProductReview.tsx"));
 const EditProductReview = lazy(() => import("@eCommerceModule/clients/panel/private/productReviews/editProductReview.tsx"));
 const AllCustomerAddresses = lazy(() => import("@eCommerceModule/clients/panel/private/customerAddresses/index.tsx"));
-const CreateCustomerAddress = lazy(() => import("@eCommerceModule/clients/panel/private/customerAddresses/createCustomerAddress.tsx"));
-const EditCustomerAddress = lazy(() => import("@eCommerceModule/clients/panel/private/customerAddresses/editCustomerAddress.tsx"));
 const AllPosPaymentMethods = lazy(() => import("@eCommerceModule/clients/panel/private/posPaymentMethods/index.tsx"));
 const CreatePosPaymentMethod = lazy(() => import("@eCommerceModule/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx"));
 const EditPosPaymentMethod = lazy(() => import("@eCommerceModule/clients/panel/private/posPaymentMethods/editPosPaymentMethod.tsx"));
@@ -126,12 +124,7 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (action === "edit" && customerGroupId) return <EditCustomerGroup entityId={customerGroupId} />;
                 return <AllCustomerGroups />;
             }
-            if (resource === "customeraddresses") {
-                const customerAddressId = searchParams.get("customerAddressId") || undefined;
-                if (action === "create") return <CreateCustomerAddress />;
-                if (action === "edit" && customerAddressId) return <EditCustomerAddress entityId={customerAddressId} />;
-                return <AllCustomerAddresses companyWide />;
-            }
+            if (resource === "customeraddresses") return <AllCustomerAddresses />;
             if (resource === "discounts") {
                 const discountId = searchParams.get("discountId") || undefined;
                 if (action === "create") return <CreateDiscount />;

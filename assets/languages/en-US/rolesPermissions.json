@@ -3,7 +3,6 @@
     "Carts": "Carts",
     "Checkouts": "Checkouts",
     "Cmsblocks": "CMS blocks",
-    "Customeraddresses": "Customer addresses",
     "Customergroupmembers": "Customer group members",
     "Customergroups": "Customer groups",
     "Digitaldeliveries": "Digital deliveries",
@@ -202,30 +201,6 @@
       "activate": "Activate",
       "deactivate": "Deactivate",
       "reorder": "Reorder"
-    },
-    "Customeraddresses": {
-      "city": "City",
-      "country": "Country",
-      "createdAt": "Created at",
-      "createdBy": "Created by",
-      "customer": "Customer",
-      "customeraddresses": "Customer addresses",
-      "deletedAt": "Deleted at",
-      "deletedBy": "Deleted by",
-      "firstName": "First name",
-      "isDefault": "Is default",
-      "label": "Label",
-      "lastName": "Last name",
-      "latitude": "Latitude",
-      "longitude": "Longitude",
-      "phone": "Phone",
-      "postalCode": "Postal code",
-      "state": "State",
-      "street": "Street",
-      "updatedAt": "Updated at",
-      "user": "User",
-      "email": "Email",
-      "type": "Address type"
     },
     "Customergroupmembers": {
       "createdAt": "Created at",
@@ -766,7 +741,8 @@
       "reservations_quantity": "Reservations quantity",
       "reservations_state": "Reservations state",
       "reservations_variant": "Reservations variant",
-      "reservations_warehouse": "Reservations warehouse"
+      "reservations_warehouse": "Reservations warehouse",
+      "customerAddresses": "See customer addresses"
     },
     "Productreviews": {
       "comment": "Comment",

@@ -1,11 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Kundenadressen",
-  "description": "Versand- und Rechnungsadressen der Kunden verwalten.",
-  "catalogTitle": "Kundenadressen",
-  "catalogDescription": "Alle Versand- und Rechnungsadressen des Unternehmens.",
-  "createCustomerAddress": "Adresse erstellen",
+  "description": "Die gespeicherten Adressen der Personen, die in diesem Shop bestellt haben. Nur lesbar: Jede Person führt ihr eigenes Adressbuch.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "help": {
+    "ariaLabel": "Über Kundenadressen",
+    "title": "Über Kundenadressen",
+    "overview": "Jede Person führt ein Adressbuch, auf jeder Website, auf der sie sich anmeldet. Diese Seite listet die Adressbücher der Personen, die hier bestellt haben, damit das Personal eine Adresse nachschlagen kann. Ändern kann sie nur ihre Besitzerin oder ihr Besitzer; eine Bestellung behält ihre eigene Kopie der Lieferadresse.",
+    "sections": [
+      {
+        "title": "Was aufgeführt ist",
+        "items": [
+          "Jede gespeicherte Adresse jeder Person mit mindestens einer Bestellung in diesem Shop.",
+          "Person, Typ (Rechnung oder Lieferung) und Standardmarkierung werden mit der Adresse angezeigt."
+        ]
+      }
+    ]
+  },
   "fields": {
     "!enums": {
       "type": {
@@ -13,7 +24,7 @@
         "shipping": "Versand"
       }
     },
-    "customer": "Kunde",
+    "user": "Kunde",
     "type": "Typ",
     "firstName": "Vorname des Empfängers",
     "lastName": "Nachname des Empfängers",
@@ -34,36 +45,5 @@
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
     "deletedBy": "Gelöscht von"
-  },
-  "help": {
-    "ariaLabel": "Über Kundenadressen",
-    "title": "Über Kundenadressen",
-    "overview": "Kundenadressen sind die gespeicherten Rechnungs- und Lieferadressen von Shop-Kunden. Käufer verwalten ihre eigenen im Konto; auf dieser Seite sehen und pflegen Mitarbeitende die Adressen aller Kunden.",
-    "sections": [
-      {
-        "title": "Felder",
-        "items": [
-          "Kunde und Typ (Rechnung oder Lieferung) sind Pflicht.",
-          "Vor- und Nachname, Strasse, Ort, Land und Kartenkoordinaten sind Pflicht; E-Mail, Telefon, Kanton bzw. Bundesland, Postleitzahl und eine Bezeichnung sind optional.",
-          "Land, Kanton bzw. Bundesland und Postleitzahl sind das, womit Steuer- und Versandzonen im Checkout abgeglichen werden."
-        ]
-      },
-      {
-        "title": "Standardadressen",
-        "body": "Jeder Kunde hat höchstens eine Standardadresse pro Typ.",
-        "items": [
-          "Als Standard setzen, oder eine Adresse als Standard speichern, hebt den bisherigen Standard desselben Typs für diesen Kunden auf.",
-          "Checkout und Kundenkonto bieten den Standard zuerst an."
-        ]
-      },
-      {
-        "title": "Zwei Ansichten derselben Datensätze",
-        "items": [
-          "Unter Konfigurationen werden die Adressen aller Kunden gelistet, und eine neue fragt, zu welchem Kunden sie gehört.",
-          "Im eigenen Konto des Kunden werden nur seine Adressen gelistet, und neue werden unter ihm abgelegt.",
-          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
-        ]
-      }
-    ]
   }
 }

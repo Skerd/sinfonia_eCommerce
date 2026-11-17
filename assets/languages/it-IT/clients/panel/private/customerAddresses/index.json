@@ -1,11 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Indirizzi dei clienti",
-  "description": "Gestisci gli indirizzi di spedizione e fatturazione dei clienti.",
-  "catalogTitle": "Indirizzi dei clienti",
-  "catalogDescription": "Tutti gli indirizzi di spedizione e fatturazione dell'azienda.",
-  "createCustomerAddress": "Crea indirizzo",
+  "description": "Gli indirizzi salvati delle persone che hanno ordinato in questo negozio. Sola lettura: ogni persona tiene la propria rubrica.",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "help": {
+    "ariaLabel": "Informazioni sugli indirizzi dei clienti",
+    "title": "Informazioni sugli indirizzi dei clienti",
+    "overview": "Ogni persona tiene una rubrica, su ogni sito in cui accede. Questa pagina elenca le rubriche delle persone che hanno ordinato qui, così il personale può cercare un indirizzo. Solo il proprietario può modificarlo; un ordine conserva la propria copia dell'indirizzo di spedizione.",
+    "sections": [
+      {
+        "title": "Cosa è elencato",
+        "items": [
+          "Ogni indirizzo salvato di ogni persona con almeno un ordine in questo negozio.",
+          "La persona, il tipo (fatturazione o spedizione) e l'indicatore predefinito sono mostrati con l'indirizzo."
+        ]
+      }
+    ]
+  },
   "fields": {
     "!enums": {
       "type": {
@@ -13,7 +24,7 @@
         "shipping": "Spedizione"
       }
     },
-    "customer": "Cliente",
+    "user": "Cliente",
     "type": "Tipo",
     "firstName": "Nome del destinatario",
     "lastName": "Cognome del destinatario",
@@ -34,36 +45,5 @@
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
     "deletedBy": "Eliminato da"
-  },
-  "help": {
-    "ariaLabel": "Informazioni sugli indirizzi dei clienti",
-    "title": "Informazioni sugli indirizzi dei clienti",
-    "overview": "Gli indirizzi dei clienti sono gli indirizzi di fatturazione e spedizione salvati dai clienti del negozio. Gli acquirenti gestiscono i propri dal loro account; questa pagina permette al personale di vedere e aggiornare gli indirizzi di tutti i clienti.",
-    "sections": [
-      {
-        "title": "Campi",
-        "items": [
-          "Cliente e tipo (fatturazione o spedizione) sono obbligatori.",
-          "Nome e cognome, via, città, paese e coordinate sulla mappa sono obbligatori; e-mail, telefono, provincia, codice postale e un’etichetta sono facoltativi.",
-          "Paese, provincia e codice postale sono ciò che zone fiscali e di spedizione confrontano al checkout."
-        ]
-      },
-      {
-        "title": "Indirizzi predefiniti",
-        "body": "Ogni cliente ha al massimo un indirizzo predefinito per tipo.",
-        "items": [
-          "Imposta come predefinito, o salvare un indirizzo come predefinito, toglie il precedente predefinito dello stesso tipo per quel cliente.",
-          "Checkout e account del cliente propongono prima il predefinito."
-        ]
-      },
-      {
-        "title": "Due viste degli stessi record",
-        "items": [
-          "Da Configurazioni sono elencati gli indirizzi di tutti i clienti e uno nuovo chiede a quale cliente appartiene.",
-          "Nell’account del cliente sono elencati solo i suoi indirizzi e i nuovi vengono archiviati sotto di lui.",
-          "L’eliminazione è logica e l’indirizzo può essere ripristinato."
-        ]
-      }
-    ]
   }
 }

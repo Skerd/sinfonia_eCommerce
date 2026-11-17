@@ -3,7 +3,6 @@
     "Carts": "Paniers",
     "Checkouts": "Paiements",
     "Cmsblocks": "Blocs CMS",
-    "Customeraddresses": "Adresses des clients",
     "Customergroupmembers": "Membres du groupe de clients",
     "Customergroups": "Groupes de clients",
     "Digitaldeliveries": "Livraisons numériques",
@@ -202,30 +201,6 @@
       "activate": "Activer",
       "deactivate": "Désactiver",
       "reorder": "Réordonner"
-    },
-    "Customeraddresses": {
-      "city": "Ville",
-      "country": "Pays",
-      "createdAt": "Créé le",
-      "createdBy": "Créé par",
-      "customer": "Client",
-      "customeraddresses": "Adresses des clients",
-      "deletedAt": "Supprimé le",
-      "deletedBy": "Supprimé par",
-      "firstName": "Prénom",
-      "isDefault": "Est par défaut",
-      "label": "Étiquette",
-      "lastName": "Nom de famille",
-      "latitude": "Latitude",
-      "longitude": "Longitude",
-      "phone": "Téléphone",
-      "postalCode": "Code postal",
-      "state": "Région / État",
-      "street": "Rue",
-      "updatedAt": "Mis à jour le",
-      "user": "Utilisateur",
-      "email": "E-mail",
-      "type": "Type d'adresse"
     },
     "Customergroupmembers": {
       "createdAt": "Créé le",
@@ -766,7 +741,8 @@
       "reservations_quantity": "Quantité des réservations",
       "reservations_state": "État des réservations",
       "reservations_variant": "Variante des réservations",
-      "reservations_warehouse": "Entrepôt des réservations"
+      "reservations_warehouse": "Entrepôt des réservations",
+      "customerAddresses": "Voir les adresses des clients"
     },
     "Productreviews": {
       "comment": "Commentaire",

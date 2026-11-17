@@ -21,7 +21,7 @@ import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.
 import {shopErrorCode} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
 import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {ShopSignInPrompt} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
-import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
+import type {UserAddress} from "armonia/src/modules/core/api/user/private/userAddress/userAddress.dto.ts";
 import type {Checkout, CheckoutAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkout.dto.ts";
 import {checkoutAddressZod} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutAddress.form.validator.ts";
 import {confirmCheckoutFormSchema} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/confirmCheckout.form.validator.ts";
@@ -94,7 +94,7 @@ function isEmptyAddress(address: CheckoutAddress): boolean {
     return !address.firstName && !address.lastName && !address.street && !address.city;
 }
 
-function savedToCheckoutAddress(address: CustomerAddress): CheckoutAddress {
+function savedToCheckoutAddress(address: UserAddress): CheckoutAddress {
     return {
         firstName: address.firstName,
         lastName: address.lastName,
@@ -184,7 +184,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [step, setStep] = useState<Step>("address");
     const [countries, setCountries] = useState<ShopCountry[]>([]);
     const [states, setStates] = useState<ShopState[]>([]);
-    const [savedAddresses, setSavedAddresses] = useState<CustomerAddress[]>([]);
+    const [savedAddresses, setSavedAddresses] = useState<UserAddress[]>([]);
     const [selectedSavedId, setSelectedSavedId] = useState("");
     const [shippingAddress, setShippingAddress] = useState<CheckoutAddress>(EMPTY_ADDRESS);
     const [email, setEmail] = useState(readStoredEmail);
@@ -309,7 +309,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         let cancelled = false;
         (async () => {
             try {
-                const res = await requestFromApi<{data: CustomerAddress[]}>({method: "post", url: "/api/eCommerce/customerAddress/my", data: {}, silent: true});
+                const res = await requestFromApi<{data: UserAddress[]}>({method: "post", url: "/api/user/userAddress/my", data: {}, silent: true});
                 if (cancelled) return;
                 const addresses = res.data ?? [];
                 setSavedAddresses(addresses);

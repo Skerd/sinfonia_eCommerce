@@ -58,7 +58,7 @@ Routes are registered in `routeConfigContribution.tsx` and appear under the **eC
 | `productOrders` | `/eCommerce/productorders` | Orders (confirm / process / ship / cancel / refund actions) |
 | `fulfillments` | `/eCommerce/fulfillments` | Shipments and tracking |
 | `returnRequests` | `/eCommerce/returnrequests` | Returns, exchanges, refunds |
-| `customerAddresses` | `/eCommerce/customeraddresses` | Customer addresses |
+| `customerAddresses` | `/tenancy/systemSettings/customeraddresses` | Customer addresses: the buyers' address books, read-only (D163; the book itself is core's account tab) |
 | `productReviews` | `/eCommerce/productreviews` | Review moderation (created via storefront, purchase-gated) |
 | `inventories` | `/eCommerce/inventories` | Stock levels |
 | `warehouses` | `/eCommerce/warehouses` | Warehouses |

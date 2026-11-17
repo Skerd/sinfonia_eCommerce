@@ -3,7 +3,6 @@
     "Carts": "Carrelli",
     "Checkouts": "Checkout",
     "Cmsblocks": "Blocchi CMS",
-    "Customeraddresses": "Indirizzi dei clienti",
     "Customergroupmembers": "Membri del gruppo di clienti",
     "Customergroups": "Gruppi di clienti",
     "Digitaldeliveries": "Consegne digitali",
@@ -202,30 +201,6 @@
       "activate": "Attiva",
       "deactivate": "Disattiva",
       "reorder": "Riordina"
-    },
-    "Customeraddresses": {
-      "city": "Città",
-      "country": "Paese",
-      "createdAt": "Creato il",
-      "createdBy": "Creato da",
-      "customer": "Cliente",
-      "customeraddresses": "Indirizzi dei clienti",
-      "deletedAt": "Eliminato il",
-      "deletedBy": "Eliminato da",
-      "firstName": "Nome",
-      "isDefault": "È predefinito",
-      "label": "Etichetta",
-      "lastName": "Cognome",
-      "latitude": "Latitudine",
-      "longitude": "Longitudine",
-      "phone": "Telefono",
-      "postalCode": "CAP",
-      "state": "Cantone / Stato",
-      "street": "Via",
-      "updatedAt": "Aggiornato il",
-      "user": "Utente",
-      "email": "E-mail",
-      "type": "Tipo di indirizzo"
     },
     "Customergroupmembers": {
       "createdAt": "Creato il",
@@ -766,7 +741,8 @@
       "reservations_quantity": "Quantità della prenotazione",
       "reservations_state": "Stato della prenotazione",
       "reservations_variant": "Variante della prenotazione",
-      "reservations_warehouse": "Magazzino della prenotazione"
+      "reservations_warehouse": "Magazzino della prenotazione",
+      "customerAddresses": "Vedere gli indirizzi dei clienti"
     },
     "Productreviews": {
       "comment": "Commento",

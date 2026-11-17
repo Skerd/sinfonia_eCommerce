@@ -5,13 +5,13 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
-import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
+import type {UserAddress} from "armonia/src/modules/core/api/user/private/userAddress/userAddress.dto.ts";
 import {
-    myCustomerAddressCreateFormSchema,
-    myCustomerAddressEditFormSchema,
-    type MyCustomerAddressCreateFormType,
-} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/myCustomerAddress.form.validator.ts";
-import {customerAddressTypes} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.schema-def.ts";
+    myUserAddressCreateFormSchema,
+    myUserAddressEditFormSchema,
+    type MyUserAddressCreateFormType,
+} from "armonia/src/modules/core/api/user/private/userAddress/myUserAddress.form.validator.ts";
+import {userAddressTypes} from "armonia/src/modules/core/api/user/private/userAddress/userAddress.schema-def.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
@@ -23,9 +23,9 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/addre
 
 type ShopCountry = {_id: string; name: string; code: string};
 type ShopCity = {_id: string; name: string};
-type FieldErrors = Partial<Record<keyof MyCustomerAddressCreateFormType, string>>;
+type FieldErrors = Partial<Record<keyof MyUserAddressCreateFormType, string>>;
 
-const EMPTY_FORM: MyCustomerAddressCreateFormType = {
+const EMPTY_FORM: MyUserAddressCreateFormType = {
     type: "shipping",
     firstName: "",
     lastName: "",
@@ -39,7 +39,7 @@ const EMPTY_FORM: MyCustomerAddressCreateFormType = {
     isDefault: false,
 };
 
-const MY_ADDRESSES_URL = "/api/eCommerce/customerAddress/my";
+const MY_ADDRESSES_URL = "/api/user/userAddress/my";
 const ADDRESSES_REQUEST: HttpRequest = {method: "POST", url: MY_ADDRESSES_URL};
 const CREATE_ADDRESS_REQUEST: HttpRequest = {method: "PUT", url: MY_ADDRESSES_URL};
 const EDIT_ADDRESS_REQUEST: HttpRequest = {method: "PATCH", url: MY_ADDRESSES_URL};
@@ -49,7 +49,7 @@ const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/portal/places/ci
 
 function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [editingId, setEditingId] = useState<string | null>(null);
-    const [form, setForm] = useState<MyCustomerAddressCreateFormType>(EMPTY_FORM);
+    const [form, setForm] = useState<MyUserAddressCreateFormType>(EMPTY_FORM);
     const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
     const [showForm, setShowForm] = useState(false);
     const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
@@ -57,9 +57,9 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
     const loadError = (err: unknown) => handleError(err, {context: "Shop addresses", showToast: true, fallbackMessage: resolveLanguageKey("loadError")});
     const [addressesCount, setAddressesCount] = useState(1);
     const loadAddresses = () => setAddressesCount((count) => count + 1);
-    const addressesRequest = useHttpRequest<{data: CustomerAddress[]}>(ADDRESSES_REQUEST, {}, addressesCount, true, {error: loadError});
+    const addressesRequest = useHttpRequest<{data: UserAddress[]}>(ADDRESSES_REQUEST, {}, addressesCount, true, {error: loadError});
     const countriesRequest = useHttpRequest<{data: ShopCountry[]}>(COUNTRIES_REQUEST, {}, 1, true, {error: loadError});
-    const addresses: CustomerAddress[] = addressesRequest.data?.data ?? [];
+    const addresses: UserAddress[] = addressesRequest.data?.data ?? [];
     const countries: ShopCountry[] = countriesRequest.data?.data ?? [];
     // The page skeleton covers the first load only; reloads after a save keep the list on screen.
     const loading = (addressesRequest.loading && !addressesRequest.data) || countriesRequest.loading;
@@ -71,7 +71,7 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
     const citiesRequest = useHttpRequest<{data: ShopCity[]}>(CITIES_REQUEST, {countryId: form.country}, citiesCount);
     const cities: ShopCity[] = form.country && !citiesRequest.error ? citiesRequest.data?.data ?? [] : [];
 
-    const setField = <K extends keyof MyCustomerAddressCreateFormType>(key: K, value: MyCustomerAddressCreateFormType[K]) => {
+    const setField = <K extends keyof MyUserAddressCreateFormType>(key: K, value: MyUserAddressCreateFormType[K]) => {
         setForm((prev) => ({...prev, [key]: value}));
         setFieldErrors((prev) => {
             if (!prev[key]) return prev;
@@ -88,7 +88,7 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
         setShowForm(true);
     };
 
-    const startEdit = (address: CustomerAddress) => {
+    const startEdit = (address: UserAddress) => {
         setEditingId(address._id);
         setForm({
             type: address.type,
@@ -148,14 +148,14 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
         };
 
         const parsed = editingId
-            ? myCustomerAddressEditFormSchema(languageCode, {
+            ? myUserAddressEditFormSchema(languageCode, {
                 firstNameLabel: resolveLanguageKey("form.firstNameLabel"),
                 lastNameLabel: resolveLanguageKey("form.lastNameLabel"),
                 streetLabel: resolveLanguageKey("form.streetLabel"),
                 cityLabel: resolveLanguageKey("form.cityLabel"),
                 countryLabel: resolveLanguageKey("form.countryLabel"),
             }).safeParse({...payload, _id: editingId})
-            : myCustomerAddressCreateFormSchema(languageCode, {
+            : myUserAddressCreateFormSchema(languageCode, {
                 firstNameLabel: resolveLanguageKey("form.firstNameLabel"),
                 lastNameLabel: resolveLanguageKey("form.lastNameLabel"),
                 streetLabel: resolveLanguageKey("form.streetLabel"),
@@ -168,7 +168,7 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
             for (const issue of parsed.error.issues) {
                 const key = issue.path[0];
                 if (typeof key === "string" && key in EMPTY_FORM) {
-                    next[key as keyof MyCustomerAddressCreateFormType] = issue.message;
+                    next[key as keyof MyUserAddressCreateFormType] = issue.message;
                 }
             }
             setFieldErrors(next);
@@ -256,10 +256,10 @@ function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) 
                         {resolveLanguageKey("form.typeLabel")}
                         <NativeSelect
               value={form.type}
-              onChange={(e) => setField("type", e.target.value as (typeof customerAddressTypes)[number])}
+              onChange={(e) => setField("type", e.target.value as (typeof userAddressTypes)[number])}
               className="w-full bg-card"
             >
-                            {customerAddressTypes.map((type) => (
+                            {userAddressTypes.map((type) => (
                                 <option key={type} value={type}>{resolveLanguageKey(`type.${type}`)}</option>
                             ))}
                         </NativeSelect>

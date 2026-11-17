@@ -1,11 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Adresses des clients",
-  "description": "Gérer les adresses de livraison et de facturation des clients.",
-  "catalogTitle": "Adresses des clients",
-  "catalogDescription": "Toutes les adresses de livraison et de facturation de l'entreprise.",
-  "createCustomerAddress": "Créer une adresse",
+  "description": "Les adresses enregistrées des personnes qui ont commandé dans cette boutique. Lecture seule : chaque personne tient son propre carnet d'adresses.",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "help": {
+    "ariaLabel": "À propos des adresses des clients",
+    "title": "À propos des adresses des clients",
+    "overview": "Chaque personne tient un carnet d'adresses, sur chaque site où elle se connecte. Cette page liste les carnets des personnes qui ont commandé ici, pour que l'équipe puisse retrouver une adresse. Seul son propriétaire peut la modifier ; une commande garde sa propre copie de l'adresse de livraison.",
+    "sections": [
+      {
+        "title": "Ce qui est listé",
+        "items": [
+          "Chaque adresse enregistrée de chaque personne ayant au moins une commande dans cette boutique.",
+          "La personne, le type (facturation ou livraison) et la marque par défaut sont affichés avec l'adresse."
+        ]
+      }
+    ]
+  },
   "fields": {
     "!enums": {
       "type": {
@@ -13,7 +24,7 @@
         "shipping": "Livraison"
       }
     },
-    "customer": "Client",
+    "user": "Client",
     "type": "Type",
     "firstName": "Prénom du destinataire",
     "lastName": "Nom du destinataire",
@@ -34,36 +45,5 @@
     "updatedAt": "Mis à jour le",
     "deletedAt": "Supprimé le",
     "deletedBy": "Supprimé par"
-  },
-  "help": {
-    "ariaLabel": "À propos des adresses clients",
-    "title": "À propos des adresses clients",
-    "overview": "Les adresses clients sont les adresses de facturation et de livraison enregistrées par les clients de la boutique. Les acheteurs gèrent les leurs depuis leur compte ; cette page permet au personnel de voir et tenir à jour les adresses de tous les clients.",
-    "sections": [
-      {
-        "title": "Champs",
-        "items": [
-          "Client et type (facturation ou livraison) sont obligatoires.",
-          "Prénom et nom, rue, ville, pays et coordonnées cartographiques sont obligatoires ; e-mail, téléphone, région, code postal et un libellé sont facultatifs.",
-          "Pays, région et code postal sont ce que les zones fiscales et de livraison comparent au checkout."
-        ]
-      },
-      {
-        "title": "Adresses par défaut",
-        "body": "Chaque client a au plus une adresse par défaut par type.",
-        "items": [
-          "Définir par défaut, ou enregistrer une adresse comme par défaut, retire l’ancienne adresse par défaut du même type pour ce client.",
-          "Le checkout et le compte client proposent d’abord l’adresse par défaut."
-        ]
-      },
-      {
-        "title": "Deux vues des mêmes fiches",
-        "items": [
-          "Depuis Configurations, les adresses de tous les clients sont listées et une nouvelle demande à quel client elle appartient.",
-          "Dans le compte du client, seules ses adresses sont listées et les nouvelles sont classées sous lui.",
-          "La suppression est douce et l’adresse peut être restaurée."
-        ]
-      }
-    ]
   }
 }

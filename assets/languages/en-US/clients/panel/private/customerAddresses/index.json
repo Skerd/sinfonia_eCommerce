@@ -1,11 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Customer addresses",
-  "description": "Manage customer shipping and billing addresses.",
-  "catalogTitle": "Customer addresses",
-  "catalogDescription": "Every shipping and billing address in the company.",
-  "createCustomerAddress": "Create address",
+  "description": "The saved addresses of people who have ordered from this shop. Read-only: each person keeps their own address book.",
   "searchPlaceholder": "Search or add filters...",
+  "help": {
+    "ariaLabel": "About Customer addresses",
+    "title": "About Customer addresses",
+    "overview": "Every person keeps one address book, on every site they sign in to. This page lists the books of the people who have ordered here, so staff can look an address up. Changing one is up to its owner; an order keeps its own copy of the address it was shipped to.",
+    "sections": [
+      {
+        "title": "What is listed",
+        "items": [
+          "Every saved address of each person with at least one order in this shop.",
+          "The person, the type (billing or shipping) and the default marker are shown with the address."
+        ]
+      }
+    ]
+  },
   "fields": {
     "!enums": {
       "type": {
@@ -13,7 +24,7 @@
         "shipping": "Shipping"
       }
     },
-    "customer": "Customer",
+    "user": "Customer",
     "type": "Type",
     "firstName": "Recipient first name",
     "lastName": "Recipient last name",
@@ -34,36 +45,5 @@
     "updatedAt": "Updated at",
     "deletedAt": "Deleted at",
     "deletedBy": "Deleted by"
-  },
-  "help": {
-    "ariaLabel": "About Customer addresses",
-    "title": "About Customer addresses",
-    "overview": "Customer addresses are the saved billing and shipping addresses of shop customers. Buyers manage their own from their account; this page lets staff see and maintain every customer's addresses.",
-    "sections": [
-      {
-        "title": "Fields",
-        "items": [
-          "Customer and type (billing or shipping) are required.",
-          "First and last name, street, city, country, and map coordinates are required; email, phone, state, postal code, and a label are optional.",
-          "Country, state, and postal code are what tax zones and shipping zones match against at checkout."
-        ]
-      },
-      {
-        "title": "Default addresses",
-        "body": "Each customer has at most one default address per type.",
-        "items": [
-          "Set default, or saving an address as default, clears the previous default of the same type for that customer.",
-          "Checkout and the customer's account offer the default first."
-        ]
-      },
-      {
-        "title": "Two views of the same records",
-        "items": [
-          "From Configurations, every customer's addresses are listed and a new one asks which customer it belongs to.",
-          "In the customer's own account, only their addresses are listed and new ones are filed under them.",
-          "Deleting is a soft delete and it can be restored."
-        ]
-      }
-    ]
   }
 }

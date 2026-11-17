@@ -3,7 +3,6 @@
     "Carts": "Warenkörbe",
     "Checkouts": "Checkouts",
     "Cmsblocks": "CMS-Blöcke",
-    "Customeraddresses": "Kundenadressen",
     "Customergroupmembers": "Mitglieder der Kundengruppe",
     "Customergroups": "Kundengruppen",
     "Digitaldeliveries": "Digitale Lieferungen",
@@ -202,30 +201,6 @@
       "activate": "Aktivieren",
       "deactivate": "Deaktivieren",
       "reorder": "Neu anordnen"
-    },
-    "Customeraddresses": {
-      "city": "Ort",
-      "country": "Land",
-      "createdAt": "Erstellt am",
-      "createdBy": "Erstellt von",
-      "customer": "Kunde",
-      "customeraddresses": "Kundenadressen",
-      "deletedAt": "Gelöscht am",
-      "deletedBy": "Gelöscht von",
-      "firstName": "Vorname",
-      "isDefault": "Ist Standard",
-      "label": "Bezeichnung",
-      "lastName": "Nachname",
-      "latitude": "Breitengrad",
-      "longitude": "Längengrad",
-      "phone": "Telefon",
-      "postalCode": "Postleitzahl",
-      "state": "Kanton",
-      "street": "Strasse",
-      "updatedAt": "Aktualisiert am",
-      "user": "Benutzer",
-      "email": "E-Mail",
-      "type": "Adressart"
     },
     "Customergroupmembers": {
       "createdAt": "Erstellt am",
@@ -766,7 +741,8 @@
       "reservations_quantity": "Menge der Reservierung",
       "reservations_state": "Status der Reservierung",
       "reservations_variant": "Variante der Reservierung",
-      "reservations_warehouse": "Lager der Reservierung"
+      "reservations_warehouse": "Lager der Reservierung",
+      "customerAddresses": "Kundenadressen ansehen"
     },
     "Productreviews": {
       "comment": "Kommentar",

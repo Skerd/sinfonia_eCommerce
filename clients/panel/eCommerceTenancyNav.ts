@@ -57,9 +57,10 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 title: resolveLanguageKey("menus.tenancy.systemSettings.customeraddresses.title"),
                 url: "/tenancy/systemSettings/customeraddresses",
                 icon: IconMapPin,
-                permissions: ["customerAddresses"],
+                // Buyers' address books (core, D163), read through the orders: both reads are needed.
+                permissions: ["productOrders", "userAddresses"],
                 usersPermissions: [],
-                atLeastOnePermission: true,
+                atLeastOnePermission: false,
             },
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.discounts.title"),

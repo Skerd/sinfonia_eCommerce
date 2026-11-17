@@ -1,11 +1,22 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Adresat e klientëve",
-  "description": "Menaxhoni adresat e dërgesës dhe të faturimit të klientëve.",
-  "catalogTitle": "Adresat e klientëve",
-  "catalogDescription": "Të gjitha adresat e dërgesës dhe të faturimit të kompanisë.",
-  "createCustomerAddress": "Krijo adresë",
+  "description": "Adresat e ruajtura të personave që kanë porositur në këtë dyqan. Vetëm për lexim: çdo person mban librin e vet të adresave.",
   "searchPlaceholder": "Kërko ose shto filtra...",
+  "help": {
+    "ariaLabel": "Rreth adresave të klientëve",
+    "title": "Rreth adresave të klientëve",
+    "overview": "Çdo person mban një libër adresash, në çdo faqe ku hyn. Kjo faqe liston librat e personave që kanë porositur këtu, që stafi të gjejë një adresë. Vetëm pronari mund ta ndryshojë; një porosi mban kopjen e vet të adresës së dërgesës.",
+    "sections": [
+      {
+        "title": "Çfarë listohet",
+        "items": [
+          "Çdo adresë e ruajtur e çdo personi me të paktën një porosi në këtë dyqan.",
+          "Personi, lloji (faturim ose dërgesë) dhe shenja e parazgjedhjes shfaqen me adresën."
+        ]
+      }
+    ]
+  },
   "fields": {
     "!enums": {
       "type": {
@@ -13,7 +24,7 @@
         "shipping": "Dërgesë"
       }
     },
-    "customer": "Klienti",
+    "user": "Klienti",
     "type": "Lloji",
     "firstName": "Emri i marrësit",
     "lastName": "Mbiemri i marrësit",
@@ -34,36 +45,5 @@
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
     "deletedBy": "Fshirë nga"
-  },
-  "help": {
-    "ariaLabel": "Rreth adresave të klientëve",
-    "title": "Rreth adresave të klientëve",
-    "overview": "Adresat e klientëve janë adresat e ruajtura të faturimit dhe të dërgesës së klientëve të dyqanit. Blerësit menaxhojnë të tyret nga llogaria; kjo faqe i lejon stafit të shohë dhe mirëmbajë adresat e të gjithë klientëve.",
-    "sections": [
-      {
-        "title": "Fushat",
-        "items": [
-          "Klienti dhe tipi (faturim ose dërgesë) janë të detyrueshëm.",
-          "Emri dhe mbiemri, rruga, qyteti, shteti dhe koordinatat në hartë janë të detyrueshme; email-i, telefoni, rajoni, kodi postar dhe një etiketë janë opsionale.",
-          "Shteti, rajoni dhe kodi postar janë ato me të cilat përputhen zonat tatimore dhe të transportit gjatë pagesës."
-        ]
-      },
-      {
-        "title": "Adresat e paracaktuara",
-        "body": "Çdo klient ka të shumtën një adresë të paracaktuar për tip.",
-        "items": [
-          "Cakto si të paracaktuar, ose ruajtja e një adrese si të paracaktuar, heq të paracaktuarën e mëparshme të të njëjtit tip për atë klient.",
-          "Pagesa online dhe llogaria e klientit ofrojnë së pari të paracaktuarën."
-        ]
-      },
-      {
-        "title": "Dy pamje të të njëjtave të dhëna",
-        "items": [
-          "Nga Konfigurimet, listohen adresat e të gjithë klientëve dhe një e re pyet cilit klient i përket.",
-          "Në llogarinë e vetë klientit, listohen vetëm adresat e tij dhe të rejat ruhen nën të.",
-          "Fshirja është e butë dhe adresa mund të rikthehet."
-        ]
-      }
-    ]
   }
 }

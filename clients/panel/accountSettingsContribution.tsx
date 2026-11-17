@@ -1,6 +1,5 @@
-import {IconBookmark, IconMapPin} from "@tabler/icons-react";
+import {IconBookmark} from "@tabler/icons-react";
 import type {AccountSettingsContribution} from "@coreModule/helpers/types/accountSettingsContribution.types.ts";
-import AllCustomerAddresses from "@eCommerceModule/clients/panel/private/customerAddresses/index.tsx";
 import AllSavedSearches from "@eCommerceModule/clients/panel/private/savedSearches/index.tsx";
 
 const eCommerceAccountSettingsContribution: AccountSettingsContribution = {
@@ -8,12 +7,6 @@ const eCommerceAccountSettingsContribution: AccountSettingsContribution = {
     order: 30,
     getPages({specificUserId}) {
         return [
-            {
-                id: "addresses",
-                titleKey: "addresses",
-                icon: <IconMapPin size={18} />,
-                render: () => <AllCustomerAddresses specificUserId={specificUserId} />,
-            },
             {
                 id: "savedsearches",
                 titleKey: "savedsearches",

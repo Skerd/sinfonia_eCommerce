@@ -1,132 +1,44 @@
 import {compose} from "redux";
-import {useMemo} from "react";
-import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {EntityListCreateButton, EntityListHeader, type EntityListRefs} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
-import {IconPlus} from "@tabler/icons-react";
-import type {CustomerAddress} from "armonia/src/modules/eCommerce/api/eCommerce/private/customerAddress/customerAddress.dto.ts";
-import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import CustomerAddressCard from "./center/cardView/customerAddressCard.tsx";
-import CustomerAddressSheetView from "./center/sheetView/customerAddressSheetView.tsx";
-import SetDefaultCustomerAddress from "./center/actions/setDefaultCustomerAddress.tsx";
-import SetDefaultCustomerAddressDialog from "./center/dialogs/setDefaultCustomerAddressDialog.tsx";
+import {useActionAccess} from "@coreModule/helpers/hooks/useActionAccess.ts";
+import EntityListPage, {EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import {userAddressEditPath} from "@coreModule/clients/panel/private/accountSettings/addresses/index.tsx";
+import UserAddressCard from "@coreModule/clients/panel/private/accountSettings/addresses/center/cardView/userAddressCard.tsx";
+import UserAddressSheetView from "@coreModule/clients/panel/private/accountSettings/addresses/center/sheetView/userAddressSheetView.tsx";
+import type {UserAddress} from "armonia/src/modules/core/api/user/private/userAddress/userAddress.dto.ts";
 
-export const CUSTOMER_ADDRESS_FORM_BASE = "/tenancy/systemSettings/customeraddresses";
-
-export function customerAddressEditPath(
-    entity: {_id: string; firstName?: string},
-    lockCustomer = false,
-) {
-    const params = new URLSearchParams();
-    params.set("customerAddressId", entity._id);
-    if (entity.firstName) params.set("customerAddressTitle", encodeURIComponent(String(entity.firstName)));
-    if (lockCustomer) params.set("lockCustomer", "1");
-    return `${CUSTOMER_ADDRESS_FORM_BASE}/edit?${params.toString()}`;
-}
-
-function applySetDefaultToList(
-    listRef: EntityListRefs<CustomerAddress> | null | undefined,
-    defaultAddress: CustomerAddress,
-) {
-    const ownerId = defaultAddress.customer?._id;
-    listRef?.current?.mapRows?.((row) => {
-        if (row._id === defaultAddress._id) return {isDefault: true};
-        if (!row.isDefault || row.type !== defaultAddress.type) return;
-        if (ownerId) {
-            if (row.customer?._id === ownerId) return {isDefault: false};
-            return;
-        }
-        return {isDefault: false};
-    });
-}
-
-type AllCustomerAddressesProps = WithLanguageType & {
-    specificUserId?: string;
-    /** Company catalog: every address, with a customer picker on create and edit. */
-    companyWide?: boolean;
-};
-
-function AllCustomerAddresses({resolveLanguageKey, specificUserId, companyWide}: AllCustomerAddressesProps) {
-    const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
-    const ownerId = specificUserId || currentUserId;
-    const lockCustomer = !companyWide;
-    const extraParams = useMemo(
-        () => (companyWide || !ownerId ? undefined : {customerId: ownerId}),
-        [companyWide, ownerId],
-    );
-    if (!companyWide && !ownerId) return null;
-
+/**
+ * The address books of the shop's buyers (D163), read-only: every saved address of a person who has an order here.
+ * The books are the people's own (core); this page only reads them, behind the order action permission
+ * `customerAddresses`, so nothing on it changes an address.
+ */
+function AllCustomerAddresses({resolveLanguageKey}: WithLanguageType) {
+    const canRead = useActionAccess("productorders", "customerAddresses");
+    if (!canRead) return <Forbidden />;
     return (
-        <EntityListPage<CustomerAddress>
-            apiUrl="/api/eCommerce/customerAddress"
-            collectionName="customerAddresses"
-            accessModel="customerAddresses"
-            tableConfigKey="customerAddresses"
-            selfAccess={!specificUserId}
-            extraParams={extraParams}
-            header={(ctx) => (
-                <EntityListHeader
-                    ctx={ctx}
-                    title={companyWide ? resolveLanguageKey("catalogTitle") : undefined}
-                    description={companyWide ? resolveLanguageKey("catalogDescription") : undefined}
-                >
-                    <EntityListCreateButton
-                        ctx={ctx}
-                        path={lockCustomer ? `${CUSTOMER_ADDRESS_FORM_BASE}/create?specificUserId=${ownerId}` : `${CUSTOMER_ADDRESS_FORM_BASE}/create`}
-                        icon={<IconPlus />}
-                        labelKey="createCustomerAddress"
-                    />
-                </EntityListHeader>
-            )}
-            rowActionMenu={{allowMenuForCustomChildren: true}}
-            buildEditPath={(entity) => customerAddressEditPath(entity, lockCustomer)}
+        <EntityListPage<UserAddress>
+            apiUrl="/api/eCommerce/productOrder/customerAddresses"
+            collectionName="userAddresses"
+            accessModel="userAddresses"
+            tableConfigKey="userAddresses"
+            header={(ctx) => <EntityListHeader ctx={ctx} />}
             resolveLanguageKey={resolveLanguageKey}
-            sheetLanguagePath="src/modules/eCommerce/clients/panel/private/customerAddresses/center/sheetView/customerAddressSheetView.tsx"
+            sheetLanguagePath="src/modules/core/clients/panel/private/accountSettings/addresses/center/sheetView/userAddressSheetView.tsx"
             cardViewClassName="grid grid-cols-1 gap-2 sm:grid-cols-2"
-            renderActionMenuChildren={(_entity, bindRowAction) => (
-                <SetDefaultCustomerAddress entity={_entity} onAction={bindRowAction} />
-            )}
-            renderSheetActionMenuChildren={(_entity, bindRowAction) => (
-                <SetDefaultCustomerAddress entity={_entity} onAction={bindRowAction} />
-            )}
-            renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                if (action === "setDefaultCustomerAddress") {
-                    return (
-                        <SetDefaultCustomerAddressDialog
-                            open={true}
-                            onClose={resetAction}
-                            entity={entity}
-                            onSuccess={() => applySetDefaultToList(listRef, entity)}
-                        />
-                    );
-                }
-                return null;
-            }}
-            renderCard={(entity, onDelete, onRestore, listRef) => (
-                <CustomerAddressCard
-                    entity={entity}
-                    lockCustomer={lockCustomer}
-                    onDelete={(row: CustomerAddress | undefined, response?: DeletedData) => onDelete(row, response)}
-                    onRestore={() => onRestore(entity)}
-                    onDefaultChanged={() => applySetDefaultToList(listRef, entity)}
-                />
-            )}
-            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
-                <CustomerAddressSheetView
+            // Read-only: the book is the buyer's own; View opens the sheet, nothing else.
+            rowActionMenu={{hideEdit: true, hideDelete: true, hideRestore: true}}
+            buildEditPath={userAddressEditPath}
+            renderCard={(entity) => <UserAddressCard entity={entity} hideActions showOwner />}
+            renderSheet={({entity, open, onOpenChange}) => (
+                <UserAddressSheetView
                     open={open}
                     onOpenChange={(opened: boolean) => {
                         if (!opened) onOpenChange();
                     }}
                     entity={entity}
-                    lockCustomer={lockCustomer}
-                    onDelete={onDelete}
-                    onRestore={onRestore}
-                    onDefaultChanged={() => applySetDefaultToList(listRef, entity)}
-                    onSheetRowPatched={(row: Record<string, unknown>) => {
-                        listRef.current?.updateRow?.(entity._id, row as Partial<CustomerAddress>);
-                    }}
+                    hideActions
                 />
             )}
         />

@@ -7,7 +7,6 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         categories: "categories_configurations",
         productattributes: "productAttributes_configurations",
         customergroups: "customerGroups_configurations",
-        customeraddresses: "customerAddresses_configurations",
         discounts: "discounts_configurations",
         pricingrules: "pricingRules_configurations",
         warehouses: "warehouses_configurations",
@@ -22,7 +21,6 @@ const eCommerceSiteRoomContribution: SiteRoomContribution = {
         odooimport: "odooimport_configurations",
     },
     pathRoomOverrides: {
-        "account/addresses": "customeraddresses",
         "account/savedsearches": "savedsearches",
     },
 };
