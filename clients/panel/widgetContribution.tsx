@@ -302,6 +302,17 @@ const eCommerceWidgetContribution: WidgetContribution = {
             labelFields: ["type", "status"],
         },
     },
+    /** Create pages an `#ApiSelect` on `<apiUrl>/select` opens in a dialog ("Create new …" below the dropdown). */
+    createPages: {
+        "/api/eCommerce/category": lazy(() => import("@eCommerceModule/clients/panel/private/categories/createCategory.tsx")),
+        "/api/eCommerce/collection": lazy(() => import("@eCommerceModule/clients/panel/private/collections/createCollection.tsx")),
+        "/api/eCommerce/customerGroup": lazy(() => import("@eCommerceModule/clients/panel/private/customerGroups/createCustomerGroup.tsx")),
+        "/api/eCommerce/posPaymentMethod": lazy(() => import("@eCommerceModule/clients/panel/private/posPaymentMethods/createPosPaymentMethod.tsx")),
+        "/api/eCommerce/product": lazy(() => import("@eCommerceModule/clients/panel/private/products/createProduct.tsx")),
+        "/api/eCommerce/productAttribute": lazy(() => import("@eCommerceModule/clients/panel/private/productAttributes/createProductAttribute.tsx")),
+        "/api/eCommerce/productVariant": lazy(() => import("@eCommerceModule/clients/panel/private/productVariants/createProductVariant.tsx")),
+        "/api/eCommerce/warehouse": lazy(() => import("@eCommerceModule/clients/panel/private/warehouses/createWarehouse.tsx")),
+    },
 };
 
 export default eCommerceWidgetContribution;
