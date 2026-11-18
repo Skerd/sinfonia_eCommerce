@@ -16,6 +16,7 @@ import type {
 import type {PublicBlogSingleFormResponseType} from "armonia/src/modules/core/api/auxiliary/public/blog/blogSingle.form.response.type.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
+import {GalleryDialog, type GalleryMediaItem} from "@coreModule/components/viewEngine/widgets/gallery/galleryDialog.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/article.tsx";
 
@@ -51,6 +52,8 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
         ? (relatedRequest.data?.posts ?? []).filter(item => item._id !== post._id).slice(0, MORE_STORIES)
         : [];
     const loading = postCount === 0 || postRequest.loading || relatedRequest.loading;
+    /** The photo open in the gallery dialog, by its place among the post's photos. */
+    const [viewing, setViewing] = useState<number | null>(null);
 
     async function copyLink() {
         try {
@@ -84,6 +87,14 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
 
     const cover = resolvePublicMediaUrl(post.mainImage);
     const gallery = (post.imageGallery ?? []).map(resolvePublicMediaUrl).filter((url): url is string => Boolean(url));
+    const photos: GalleryMediaItem[] = [
+        ...(cover ? [{key: "cover", src: cover, video: false}] : []),
+        ...gallery.map((src, index) => ({key: `gallery-${index}`, src, video: false})),
+    ];
+    const galleryStart = cover ? 1 : 0;
+    const viewLabel = (index: number) => resolveLanguageKey("viewImage")
+        .replace("{number}", String(index + 1))
+        .replace("{total}", String(photos.length));
 
     return (
         <div className="flex flex-col gap-16 sm:gap-20">
@@ -122,7 +133,9 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                 </header>
 
                 {cover && (
-                    <img src={cover} alt="" className="aspect-[16/9] w-full rounded-3xl bg-muted object-cover" />
+                    <Button variant="bare" type="button" onClick={() => setViewing(0)} aria-label={viewLabel(0)} className="block w-full cursor-zoom-in overflow-hidden rounded-3xl">
+                        <img src={cover} alt="" className="block aspect-[16/9] w-full bg-muted object-cover" />
+                    </Button>
                 )}
 
                 <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 text-[17px] leading-[1.75] text-foreground/90">
@@ -133,8 +146,17 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
 
                 {gallery.length > 0 && (
                     <div className="grid gap-4 sm:grid-cols-2">
-                        {gallery.map(url => (
-                            <img key={url} src={url} alt="" loading="lazy" className="aspect-[4/3] w-full rounded-2xl bg-muted object-cover" />
+                        {gallery.map((url, index) => (
+                            <Button
+                                key={url}
+                                variant="bare"
+                                type="button"
+                                onClick={() => setViewing(galleryStart + index)}
+                                aria-label={viewLabel(galleryStart + index)}
+                                className="block w-full cursor-zoom-in overflow-hidden rounded-2xl"
+                            >
+                                <img src={url} alt="" loading="lazy" className="block aspect-[4/3] w-full bg-muted object-cover" />
+                            </Button>
                         ))}
                     </div>
                 )}
@@ -159,6 +181,13 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
                     </div>
                 </section>
             )}
+            <GalleryDialog
+                items={photos}
+                open={viewing !== null}
+                onOpenChange={(open) => !open && setViewing(null)}
+                startIndex={viewing ?? 0}
+                title={post.title}
+            />
         </div>
     );
 }
