@@ -19,8 +19,8 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
+import {REVIEWS_REQUEST, reviewsRequestBody} from "./productRequest.ts";
 
-const REVIEWS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProductReviews", cache: true};
 const MY_ORDERS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/my"};
 const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/productReview"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";
@@ -45,12 +45,7 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
     useEffect(() => {
         load();
     }, [load, productId, slug, sellerCompanyId]);
-    const reviewsRequest = useHttpRequest<ShopProductReviewsResponse>(REVIEWS_REQUEST, {
-        id: productId,
-        slug,
-        ...(sellerCompanyId ? {sellerCompanyId} : {}),
-        limit: 20,
-    }, reviewsCount);
+    const reviewsRequest = useHttpRequest<ShopProductReviewsResponse>(REVIEWS_REQUEST, reviewsRequestBody(productId, slug, sellerCompanyId), reviewsCount);
     const reviews: ShopProductReview[] = reviewsRequest.error ? [] : reviewsRequest.data?.data ?? [];
     const total = reviewsRequest.data?.total ?? 0;
     const average = reviewsRequest.data?.ratingAverage;

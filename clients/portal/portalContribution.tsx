@@ -6,7 +6,12 @@ import ShopSiteProvider from "./shopSiteProvider.tsx";
 import ShopAccountLinks from "./shopAccountLinks.tsx";
 import ShopHome from "./shopHome.tsx";
 import ShopProductFilters from "./shopProductFilters.tsx";
-import {PRODUCT_REQUEST, productRequestBody} from "@eCommerceModule/clients/client/public/product/productRequest.ts";
+import {
+    PRODUCT_REQUEST,
+    REVIEWS_REQUEST,
+    productRequestBody,
+    reviewsRequestBody,
+} from "@eCommerceModule/clients/client/public/product/productRequest.ts";
 import {ORDERS_REQUEST, ordersRequestBody} from "@eCommerceModule/clients/client/public/account/orders/ordersRequest.ts";
 
 /** The buyer's own pages (behind sign-in), by path: their code is loaded ahead of a click. */
@@ -28,11 +33,14 @@ const contribution: PortalContribution = {
     Provider: ShopSiteProvider,
     NavAction: ShopMiniCart,
     AccountSection: ShopAccountLinks,
-    // A link about to be followed: a product's page and product, or one of the buyer's own pages (orders with their first page).
+    // A link about to be followed: a product's page, product and reviews, or one of the buyer's own pages (orders with their first page).
     prefetch: ({path, params}) => {
         if (path === "/product") {
             void import("@eCommerceModule/clients/client/public/product/index.tsx");
             prefetchHttpRequest(PRODUCT_REQUEST, productRequestBody(params));
+            // A catalog link names the product, its slug and its seller: the reviews' own request, asked at the same time.
+            const productId = params.get("id");
+            if (productId) prefetchHttpRequest(REVIEWS_REQUEST, reviewsRequestBody(productId, params.get("slug") ?? undefined, params.get("seller") ?? undefined));
             return;
         }
         const accountPage = ACCOUNT_PAGES[path] ?? (path.startsWith("/account/orders/")
