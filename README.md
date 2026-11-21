@@ -33,6 +33,7 @@ footer, chat). The contribution in `clients/portal/portalContribution.tsx` adds 
 catalog to the portal home (with `shopProductFilters`), the company's CMS blocks and categories
 (`shopHome`), the cart in the navbar (`shopMiniCart`) and its state (`shopSiteProvider`).
 `/shop/products` opens that catalog. Services are the marketplace module's own `services` section.
+Its `prefetch` (D173) loads a pointed-at product link's page code and product (`product/productRequest.ts`), and an account link's page code (with the first page of orders, `account/orders/ordersRequest.ts`), so the page opens at once.
 
 Pages are hand-built React (no ViewConfig) on the core shadcn components, hitting the public maestro
 routes `shopProducts`, `shopProduct`, `shopTaxonomy`, `shopConfig`, the core place lists

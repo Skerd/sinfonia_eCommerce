@@ -21,8 +21,8 @@ import {GalleryDialog, type GalleryMediaItem} from "@coreModule/components/viewE
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/article.tsx";
 
 const MORE_STORIES = 3;
-const POST_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog/single"};
-const RELATED_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog"};
+const POST_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog/single", cache: true};
+const RELATED_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog", cache: true};
 
 /** Post content is plain text: blank lines separate paragraphs, single newlines stay line breaks. */
 function paragraphs(content: string): string[] {

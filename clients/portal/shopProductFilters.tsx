@@ -9,8 +9,8 @@ import type {
     ShopTaxonomyResponse,
 } from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 
-const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy"};
-const FACETS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopFacets"};
+const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy", cache: true};
+const FACETS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopFacets", cache: true};
 
 /** The product catalog's filters: the shop's categories and brands. */
 function ShopProductFilters({resolveLanguageKey}: WithLanguageType) {

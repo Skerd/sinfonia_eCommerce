@@ -20,7 +20,7 @@ const ShopConfigContext = createContext<ShopConfigContextValue>({
     formatMoney: () => "",
 });
 
-const CONFIG_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopConfig"};
+const CONFIG_REQUEST: HttpRequest = {method: "GET", url: "/api/eCommerce/shopConfig", cache: true};
 
 export function ShopConfigProvider({children}: {children: ReactNode}) {
     const {data, loading} = useHttpRequest<ShopConfigResponse>(CONFIG_REQUEST, {}, 1);

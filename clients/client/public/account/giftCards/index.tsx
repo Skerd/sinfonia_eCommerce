@@ -22,7 +22,7 @@ type MyGiftCard = {
     createdAt?: string;
 };
 
-const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/finance/giftCard/my"};
+const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/finance/giftCard/my", cache: true};
 
 function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
     const {formatMoney} = useShopConfig();

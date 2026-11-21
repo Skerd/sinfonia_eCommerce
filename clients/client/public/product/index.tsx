@@ -5,7 +5,7 @@ import {IconStar} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {useShopCart} from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
@@ -15,6 +15,7 @@ import {PortalInlineSignIn} from "@coreModule/clients/portal/shared/portalInline
 import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import ReviewsSection from "./reviewsSection.tsx";
 import {shopProductHref} from "@eCommerceModule/clients/client/public/shared/shopProductHref.ts";
+import {PRODUCT_REQUEST, productRequestBody} from "./productRequest.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import DetailPage, {DetailBelow, DetailHeading, DetailSection, DetailSpecs, DetailText} from "@coreModule/clients/portal/shared/detailPage.tsx";
@@ -29,7 +30,6 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/index
 
 type OptionSelection = Record<string, string>;
 
-const PRODUCT_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProduct"};
 
 function optionValue(variant: ShopProductVariant, name: string): string | undefined {
     return variant.options?.find(option => option.name === name)?.value;
@@ -70,11 +70,7 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
     useEffect(() => {
         if (productId || slug) setProductCount((count) => count + 1);
     }, [productId, slug, sellerCompanyId]);
-    const productRequest = useHttpRequest<ShopProductResponse>(PRODUCT_REQUEST, {
-        ...(productId ? {id: productId} : {}),
-        ...(slug ? {slug} : {}),
-        ...(sellerCompanyId ? {sellerCompanyId} : {}),
-    }, productCount, true, {
+    const productRequest = useHttpRequest<ShopProductResponse>(PRODUCT_REQUEST, productRequestBody(searchParams), productCount, true, {
         success: (response) => {
             const next = response.data;
             const initial = next.variants.find(variant => variant.inStock !== false) ?? next.variants[0];

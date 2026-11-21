@@ -15,7 +15,7 @@ import type {
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/blog/index.tsx";
 
 const PAGE_SIZE = 12;
-const BLOG_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog"};
+const BLOG_REQUEST: HttpRequest = {method: "POST", url: "/api/auxiliary/public/blog", cache: true};
 
 function BlogPage({resolveLanguageKey}: WithLanguageType) {
     const [searchParams, setSearchParams] = useSearchParams();

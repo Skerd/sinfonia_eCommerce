@@ -40,12 +40,12 @@ const EMPTY_FORM: MyUserAddressCreateFormType = {
 };
 
 const MY_ADDRESSES_URL = "/api/user/userAddress/my";
-const ADDRESSES_REQUEST: HttpRequest = {method: "POST", url: MY_ADDRESSES_URL};
+const ADDRESSES_REQUEST: HttpRequest = {method: "POST", url: MY_ADDRESSES_URL, cache: true};
 const CREATE_ADDRESS_REQUEST: HttpRequest = {method: "PUT", url: MY_ADDRESSES_URL};
 const EDIT_ADDRESS_REQUEST: HttpRequest = {method: "PATCH", url: MY_ADDRESSES_URL};
 const DELETE_ADDRESS_REQUEST: HttpRequest = {method: "DELETE", url: MY_ADDRESSES_URL};
-const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/portal/places/countries"};
-const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/portal/places/cities"};
+const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/portal/places/countries", cache: true};
+const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/portal/places/cities", cache: true};
 
 function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [editingId, setEditingId] = useState<string | null>(null);

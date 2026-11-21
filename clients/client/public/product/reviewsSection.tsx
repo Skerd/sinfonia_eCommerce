@@ -20,7 +20,7 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 
-const REVIEWS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProductReviews"};
+const REVIEWS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopProductReviews", cache: true};
 const MY_ORDERS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/my"};
 const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/productReview"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";

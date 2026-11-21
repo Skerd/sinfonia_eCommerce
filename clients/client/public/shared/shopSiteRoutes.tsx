@@ -1,7 +1,6 @@
-import {lazy, Suspense} from "react";
+import {lazy} from "react";
 import {Navigate, Route, Routes, useSearchParams} from "react-router-dom";
 import ErrorBoundary from "@coreModule/components/custom/errors/errorBoundary.tsx";
-import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SitePageLayout from "@coreModule/clients/portal/shared/sitePageLayout.tsx";
 import {RequireSession} from "@coreModule/clients/portal/shared/sessionRoutes.tsx";
 
@@ -39,30 +38,28 @@ function ShopCatalog() {
  */
 export default function ShopSiteRoutes() {
     return (
-        <Suspense fallback={<Loader />}>
-            <Routes>
-                <Route element={<SitePageLayout />}>
-                    <Route index element={<ShopCatalog />} />
-                    <Route path="products" element={<ShopCatalog />} />
-                    <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
-                    <Route path="blog" element={<ErrorBoundary><BlogPage /></ErrorBoundary>} />
-                    <Route path="blog/:slug" element={<ErrorBoundary><BlogArticlePage /></ErrorBoundary>} />
-                    <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
-                    <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
-                    <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
-                    <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
-                    <Route path="account" element={<RequireSession />}>
-                        <Route element={<AccountLayout />}>
-                            <Route index element={<Navigate to="orders" replace />} />
-                            <Route path="orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
-                            <Route path="orders/:orderId" element={<ErrorBoundary><OrderDetailPage /></ErrorBoundary>} />
-                            <Route path="giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
-                            <Route path="addresses" element={<ErrorBoundary><AddressesPage /></ErrorBoundary>} />
-                        </Route>
+        <Routes>
+            <Route element={<SitePageLayout />}>
+                <Route index element={<ShopCatalog />} />
+                <Route path="products" element={<ShopCatalog />} />
+                <Route path="product" element={<ErrorBoundary><ProductPage /></ErrorBoundary>} />
+                <Route path="blog" element={<ErrorBoundary><BlogPage /></ErrorBoundary>} />
+                <Route path="blog/:slug" element={<ErrorBoundary><BlogArticlePage /></ErrorBoundary>} />
+                <Route path="cart" element={<ErrorBoundary><CartPage /></ErrorBoundary>} />
+                <Route path="checkout" element={<ErrorBoundary><CheckoutPage /></ErrorBoundary>} />
+                <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
+                <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
+                <Route path="account" element={<RequireSession />}>
+                    <Route element={<AccountLayout />}>
+                        <Route index element={<Navigate to="orders" replace />} />
+                        <Route path="orders" element={<ErrorBoundary><OrdersPage /></ErrorBoundary>} />
+                        <Route path="orders/:orderId" element={<ErrorBoundary><OrderDetailPage /></ErrorBoundary>} />
+                        <Route path="giftcards" element={<ErrorBoundary><GiftCardsPage /></ErrorBoundary>} />
+                        <Route path="addresses" element={<ErrorBoundary><AddressesPage /></ErrorBoundary>} />
                     </Route>
-                    <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                 </Route>
-            </Routes>
-        </Suspense>
+                <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
+            </Route>
+        </Routes>
     );
 }

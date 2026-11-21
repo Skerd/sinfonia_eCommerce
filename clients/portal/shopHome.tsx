@@ -8,7 +8,7 @@ import CmsBlockRenderer from "@eCommerceModule/components/cms/CmsBlockRenderer.t
 import type {ShopCategory, ShopTaxonomyResponse} from "armonia/src/modules/eCommerce/api/eCommerce/public/shopCatalog/shopCatalog.types.ts";
 import {uniqueBySlug} from "@coreModule/clients/portal/shared/catalogFilters.tsx";
 
-const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy"};
+const TAXONOMY_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/shopTaxonomy", cache: true};
 
 /** The shop's part of the home page: the company's own CMS blocks, then its top categories into the catalog. */
 function ShopHome({resolveLanguageKey}: WithLanguageType) {

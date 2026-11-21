@@ -16,8 +16,8 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/orders/orderDetail.tsx";
 
-const ORDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/mySingle"};
-const DELIVERIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/digitalDelivery/my"};
+const ORDER_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/mySingle", cache: true};
+const DELIVERIES_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/digitalDelivery/my", cache: true};
 
 function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
