@@ -74,7 +74,6 @@
     ]
   },
   "createProduct": "Produkt erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "type": {

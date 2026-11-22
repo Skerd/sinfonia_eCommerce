@@ -33,7 +33,6 @@
     ]
   },
   "createCustomerGroup": "Krijo grup klientësh",
-  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
   "fields": {
     "name": "Emri",
     "description": "Përshkrimi",

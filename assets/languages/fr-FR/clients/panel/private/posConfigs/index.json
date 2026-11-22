@@ -67,7 +67,6 @@
     "resumeAll": "Reprendre toutes les configurations de point de vente",
     "resumeAllHint": "Efface uniquement le verrou de l'entreprise. Les configurations suspendues individuellement restent suspendues"
   },
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "paymentMethods": "Modes de paiement",

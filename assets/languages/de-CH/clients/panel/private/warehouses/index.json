@@ -33,7 +33,6 @@
     ]
   },
   "createWarehouse": "Lager erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "code": "Code",

@@ -40,7 +40,6 @@
     ]
   },
   "createProductVariant": "Créer une variante",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "product": "Produit",
     "sku": "SKU",

@@ -42,7 +42,6 @@
     ]
   },
   "createPricingRule": "Créer une règle de tarification",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "type": "Type",

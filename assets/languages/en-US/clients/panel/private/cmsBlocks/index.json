@@ -38,7 +38,6 @@
   "reorderBlocks": "Reorder blocks",
   "reorderTitle": "Reorder CMS blocks",
   "reorderDescription": "Drag blocks to change their display order on the storefront.",
-  "searchPlaceholder": "Search or add filters...",
   "empty": "No blocks to reorder.",
   "cancel": "Cancel",
   "save": "Save order",

@@ -45,6 +45,5 @@
     "updatedAt": "Aggiornato il",
     "deletedAt": "Eliminato il",
     "deletedBy": "Eliminato da"
-  },
-  "searchPlaceholder": "Cerca o aggiungi filtri..."
+  }
 }

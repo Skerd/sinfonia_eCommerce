@@ -65,7 +65,6 @@
     ]
   },
   "createInventory": "Create inventory",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "product": "Product",
     "variant": "Variant",

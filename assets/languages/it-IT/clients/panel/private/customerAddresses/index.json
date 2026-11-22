@@ -2,7 +2,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Indirizzi dei clienti",
   "description": "Gli indirizzi salvati delle persone che hanno ordinato in questo negozio. Sola lettura: ogni persona tiene la propria rubrica.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "help": {
     "ariaLabel": "Informazioni sugli indirizzi dei clienti",
     "title": "Informazioni sugli indirizzi dei clienti",

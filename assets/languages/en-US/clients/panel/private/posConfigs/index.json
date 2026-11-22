@@ -67,7 +67,6 @@
     "resumeAll": "Resume all POS configs",
     "resumeAllHint": "Clear the company lock only. Individually paused POS configs stay paused"
   },
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "paymentMethods": "Payment methods",

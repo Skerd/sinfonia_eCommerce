@@ -2,7 +2,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Customer addresses",
   "description": "The saved addresses of people who have ordered from this shop. Read-only: each person keeps their own address book.",
-  "searchPlaceholder": "Search or add filters...",
   "help": {
     "ariaLabel": "About Customer addresses",
     "title": "About Customer addresses",

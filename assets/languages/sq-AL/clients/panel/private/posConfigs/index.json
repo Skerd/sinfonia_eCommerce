@@ -67,7 +67,6 @@
     "resumeAll": "Rifillo të gjitha konfigurimet POS",
     "resumeAllHint": "Pastron vetëm kyçin e kompanisë. Konfigurimet POS të pauzuara individualisht mbeten në pauzë"
   },
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "paymentMethods": "Metodat e pagesës",

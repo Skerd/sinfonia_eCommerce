@@ -39,7 +39,6 @@
   "catalogTitle": "Kërkimet e ruajtura",
   "catalogDescription": "Çdo kërkim katalogu i ruajtur nga një klient.",
   "createSavedSearch": "Krijo kërkim të ruajtur",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "customer": "Klienti",

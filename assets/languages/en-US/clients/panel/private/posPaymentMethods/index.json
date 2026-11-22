@@ -36,7 +36,6 @@
     ]
   },
   "createPosPaymentMethod": "Create payment method",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "type": "Type",

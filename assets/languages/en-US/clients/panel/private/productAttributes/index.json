@@ -28,7 +28,6 @@
     ]
   },
   "createProductAttribute": "Create attribute",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "position": "Position",

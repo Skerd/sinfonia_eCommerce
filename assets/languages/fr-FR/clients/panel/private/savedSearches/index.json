@@ -39,7 +39,6 @@
   "catalogTitle": "Recherches enregistrées",
   "catalogDescription": "Toutes les recherches catalogue enregistrées par un client.",
   "createSavedSearch": "Créer une recherche enregistrée",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "customer": "Client",

@@ -33,7 +33,6 @@
     ]
   },
   "createWarehouse": "Créer un entrepôt",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "code": "Code",

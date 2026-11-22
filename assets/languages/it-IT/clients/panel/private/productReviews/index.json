@@ -36,7 +36,6 @@
     ]
   },
   "createProductReview": "Crea recensione",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "order": "Ordine",
     "product": "Prodotto",

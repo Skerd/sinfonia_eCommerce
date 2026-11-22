@@ -40,7 +40,6 @@
     ]
   },
   "createStockCount": "Krijo numërim",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {
       "status": {

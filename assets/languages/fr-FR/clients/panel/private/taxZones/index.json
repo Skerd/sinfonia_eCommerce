@@ -36,7 +36,6 @@
     ]
   },
   "createTaxZone": "Créer une zone fiscale",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "country": "Pays",

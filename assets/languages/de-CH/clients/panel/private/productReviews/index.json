@@ -36,7 +36,6 @@
     ]
   },
   "createProductReview": "Bewertung erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "order": "Auftrag",
     "product": "Produkt",

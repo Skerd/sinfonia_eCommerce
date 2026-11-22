@@ -33,7 +33,6 @@
     ]
   },
   "createWarehouse": "Krijo magazinë",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "code": "Kodi",

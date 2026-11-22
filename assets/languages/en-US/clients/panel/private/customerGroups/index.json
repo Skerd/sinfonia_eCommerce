@@ -33,7 +33,6 @@
     ]
   },
   "createCustomerGroup": "Create customer group",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "description": "Description",

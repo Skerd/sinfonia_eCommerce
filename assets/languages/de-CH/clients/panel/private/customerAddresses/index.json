@@ -2,7 +2,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Kundenadressen",
   "description": "Die gespeicherten Adressen der Personen, die in diesem Shop bestellt haben. Nur lesbar: Jede Person führt ihr eigenes Adressbuch.",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "help": {
     "ariaLabel": "Über Kundenadressen",
     "title": "Über Kundenadressen",

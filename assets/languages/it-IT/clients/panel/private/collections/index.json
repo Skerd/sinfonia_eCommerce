@@ -3,7 +3,6 @@
   "title": "Collezioni",
   "description": "Raggruppa i prodotti in collezioni curate.",
   "createCollection": "Crea collezione",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "type": {

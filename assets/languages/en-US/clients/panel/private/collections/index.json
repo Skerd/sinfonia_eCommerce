@@ -3,7 +3,6 @@
   "title": "Collections",
   "description": "Group products into curated collections.",
   "createCollection": "Create collection",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "!enums": {
       "type": {

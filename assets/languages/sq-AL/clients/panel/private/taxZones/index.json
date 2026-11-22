@@ -36,7 +36,6 @@
     ]
   },
   "createTaxZone": "Krijo zonë tatimore",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "country": "Shteti",

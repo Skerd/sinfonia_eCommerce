@@ -65,7 +65,6 @@
     ]
   },
   "createInventory": "Krijo inventar",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "product": "Produkti",
     "variant": "Varianti",

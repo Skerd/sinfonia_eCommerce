@@ -55,7 +55,6 @@
     ]
   },
   "createReturnRequest": "Créer une demande de retour",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {
       "type": {

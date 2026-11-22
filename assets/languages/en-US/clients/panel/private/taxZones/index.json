@@ -36,7 +36,6 @@
     ]
   },
   "createTaxZone": "Create tax zone",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "country": "Country",

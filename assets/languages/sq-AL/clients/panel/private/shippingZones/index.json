@@ -37,7 +37,6 @@
     ]
   },
   "createShippingZone": "Krijo zonë transporti",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "countries": "Vendet",

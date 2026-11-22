@@ -45,7 +45,6 @@
     ]
   },
   "createDiscount": "Create discount",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "title": "Title",
     "code": "Code",

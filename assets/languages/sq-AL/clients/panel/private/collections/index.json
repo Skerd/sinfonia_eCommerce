@@ -3,7 +3,6 @@
   "title": "Koleksionet",
   "description": "Grupo produktet në koleksione.",
   "createCollection": "Krijo koleksion",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {
       "type": {

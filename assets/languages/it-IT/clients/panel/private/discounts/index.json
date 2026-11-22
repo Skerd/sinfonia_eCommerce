@@ -45,7 +45,6 @@
     ]
   },
   "createDiscount": "Crea sconto",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "title": "Titolo",
     "code": "Codice",

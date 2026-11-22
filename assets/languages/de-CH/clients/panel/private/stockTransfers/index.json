@@ -39,7 +39,6 @@
     ]
   },
   "createStockTransfer": "Umlagerung erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "status": {

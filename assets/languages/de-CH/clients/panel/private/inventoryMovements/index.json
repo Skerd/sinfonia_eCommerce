@@ -47,7 +47,6 @@
       }
     ]
   },
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "reason": {

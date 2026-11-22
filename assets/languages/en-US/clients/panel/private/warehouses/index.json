@@ -33,7 +33,6 @@
     ]
   },
   "createWarehouse": "Create warehouse",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "code": "Code",

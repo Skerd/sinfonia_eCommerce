@@ -28,7 +28,6 @@
     ]
   },
   "createProductAttribute": "Attribut erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "position": "Position",

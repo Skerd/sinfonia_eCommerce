@@ -36,7 +36,6 @@
     ]
   },
   "createProductReview": "Krijo vlerësim",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "order": "Porosia",
     "product": "Produkti",

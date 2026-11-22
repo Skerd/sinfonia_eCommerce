@@ -45,7 +45,6 @@
     ]
   },
   "createDiscount": "Rabatt erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "title": "Bezeichnung",
     "code": "Code",

@@ -74,7 +74,6 @@
     ]
   },
   "createProduct": "Crea prodotto",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "type": {

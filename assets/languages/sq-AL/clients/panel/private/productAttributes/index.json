@@ -28,7 +28,6 @@
     ]
   },
   "createProductAttribute": "Krijo atribut",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "position": "Pozicioni",

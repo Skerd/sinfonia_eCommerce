@@ -55,7 +55,6 @@
     ]
   },
   "createFulfillment": "Lieferung erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "status": {

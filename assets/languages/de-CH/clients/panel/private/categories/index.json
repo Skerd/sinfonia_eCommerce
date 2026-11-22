@@ -45,6 +45,5 @@
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
     "deletedBy": "Gelöscht von"
-  },
-  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+  }
 }

@@ -36,7 +36,6 @@
     ]
   },
   "createPosPaymentMethod": "Krijo metodë pagese",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "type": "Lloji",

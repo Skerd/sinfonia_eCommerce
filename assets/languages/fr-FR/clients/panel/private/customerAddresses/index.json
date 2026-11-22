@@ -2,7 +2,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Adresses des clients",
   "description": "Les adresses enregistrées des personnes qui ont commandé dans cette boutique. Lecture seule : chaque personne tient son propre carnet d'adresses.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "help": {
     "ariaLabel": "À propos des adresses des clients",
     "title": "À propos des adresses des clients",

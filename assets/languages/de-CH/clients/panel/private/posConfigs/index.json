@@ -67,7 +67,6 @@
     "resumeAll": "Alle POS-Konfigurationen fortsetzen",
     "resumeAllHint": "Hebt nur die Firmen-Sperre auf. Einzeln pausierte POS-Konfigurationen bleiben pausiert"
   },
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "paymentMethods": "Zahlungsarten",

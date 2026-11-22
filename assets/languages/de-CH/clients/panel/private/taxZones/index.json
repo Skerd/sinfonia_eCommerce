@@ -36,7 +36,6 @@
     ]
   },
   "createTaxZone": "Steuerzone erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "country": "Land",

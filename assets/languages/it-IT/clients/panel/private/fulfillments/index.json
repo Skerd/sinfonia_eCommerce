@@ -55,7 +55,6 @@
     ]
   },
   "createFulfillment": "Crea evasione",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "status": {

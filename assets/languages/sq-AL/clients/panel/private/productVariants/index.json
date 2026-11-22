@@ -40,7 +40,6 @@
     ]
   },
   "createProductVariant": "Krijo variant",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "product": "Produkti",
     "sku": "SKU",

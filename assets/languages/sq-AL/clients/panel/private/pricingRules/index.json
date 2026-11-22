@@ -42,7 +42,6 @@
     ]
   },
   "createPricingRule": "Krijo rregull çmimi",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "name": "Emri",
     "type": "Lloji",

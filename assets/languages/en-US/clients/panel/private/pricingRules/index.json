@@ -42,7 +42,6 @@
     ]
   },
   "createPricingRule": "Create pricing rule",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "type": "Type",

@@ -37,7 +37,6 @@
     ]
   },
   "createShippingZone": "Créer une zone d'expédition",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "name": "Nom",
     "countries": "Pays",

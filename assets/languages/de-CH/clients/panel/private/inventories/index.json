@@ -65,7 +65,6 @@
     ]
   },
   "createInventory": "Lagerbestand erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "product": "Produkt",
     "variant": "Variante",

@@ -39,7 +39,6 @@
   "catalogTitle": "Saved searches",
   "catalogDescription": "Every catalog search saved by a customer.",
   "createSavedSearch": "Create saved search",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "name": "Name",
     "customer": "Customer",

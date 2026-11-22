@@ -65,7 +65,6 @@
     ]
   },
   "createInventory": "Crea inventario",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "product": "Prodotto",
     "variant": "Variante",

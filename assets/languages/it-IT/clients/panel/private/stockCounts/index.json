@@ -40,7 +40,6 @@
     ]
   },
   "createStockCount": "Crea inventario",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "!enums": {
       "status": {

@@ -3,7 +3,6 @@
   "title": "Kollektionen",
   "description": "Produkte in kuratierten Kollektionen gruppieren.",
   "createCollection": "Kollektion erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "!enums": {
       "type": {

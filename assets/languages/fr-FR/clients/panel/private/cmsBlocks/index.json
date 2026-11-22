@@ -38,7 +38,6 @@
   "reorderBlocks": "Réorganiser les blocs",
   "reorderTitle": "Réorganiser les blocs CMS",
   "reorderDescription": "Faites glisser les blocs pour modifier leur ordre d'affichage sur la vitrine.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "empty": "Aucun bloc à réorganiser.",
   "cancel": "Annuler",
   "save": "Enregistrer l'ordre",

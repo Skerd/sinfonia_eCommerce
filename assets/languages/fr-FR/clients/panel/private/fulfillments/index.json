@@ -55,7 +55,6 @@
     ]
   },
   "createFulfillment": "Créer une expédition",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {
       "status": {

@@ -55,7 +55,6 @@
     ]
   },
   "createReturnRequest": "Krijo kërkesë për kthim",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "!enums": {
       "type": {

@@ -2,7 +2,6 @@
   "path": "src/modules/eCommerce/clients/panel/private/customerAddresses/index.tsx",
   "title": "Adresat e klientëve",
   "description": "Adresat e ruajtura të personave që kanë porositur në këtë dyqan. Vetëm për lexim: çdo person mban librin e vet të adresave.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "help": {
     "ariaLabel": "Rreth adresave të klientëve",
     "title": "Rreth adresave të klientëve",

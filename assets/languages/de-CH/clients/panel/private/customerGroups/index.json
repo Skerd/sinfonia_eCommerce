@@ -33,7 +33,6 @@
     ]
   },
   "createCustomerGroup": "Kundengruppe erstellen",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "name": "Name",
     "description": "Beschreibung",

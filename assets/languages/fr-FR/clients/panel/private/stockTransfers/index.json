@@ -39,7 +39,6 @@
     ]
   },
   "createStockTransfer": "Créer un transfert",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "!enums": {
       "status": {

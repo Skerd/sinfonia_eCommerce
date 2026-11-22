@@ -71,7 +71,6 @@
       }
     ]
   },
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "!enums": {
       "status": {
