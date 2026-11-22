@@ -4,7 +4,7 @@ import ShopSiteRoutes from "@eCommerceModule/clients/client/public/shared/shopSi
 import ShopMiniCart from "@eCommerceModule/clients/client/public/shared/shopMiniCart.tsx";
 import ShopSiteProvider from "./shopSiteProvider.tsx";
 import ShopAccountLinks from "./shopAccountLinks.tsx";
-import ShopHome from "./shopHome.tsx";
+import ShopHome, {ShopCategoriesIntro} from "./shopHome.tsx";
 import ShopProductFilters from "./shopProductFilters.tsx";
 import {
     PRODUCT_REQUEST,
@@ -28,7 +28,8 @@ const contribution: PortalContribution = {
     section: "shop",
     path: "shop",
     SectionSite: ShopSiteRoutes,
-    catalogs: [{kind: "product", Filters: ShopProductFilters}],
+    // The products tab opens with the shop's categories above its filters, as the home page shows them.
+    catalogs: [{kind: "product", Filters: ShopProductFilters, Intro: ShopCategoriesIntro}],
     Home: ShopHome,
     Provider: ShopSiteProvider,
     NavAction: ShopMiniCart,
