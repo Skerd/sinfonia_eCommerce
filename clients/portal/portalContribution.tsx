@@ -13,6 +13,8 @@ import {
     reviewsRequestBody,
 } from "@eCommerceModule/clients/client/public/product/productRequest.ts";
 import {ORDERS_REQUEST, ordersRequestBody} from "@eCommerceModule/clients/client/public/account/orders/ordersRequest.ts";
+import {IconShoppingBag} from "@tabler/icons-react";
+import BusinessTypeSummary from "./businessTypeSummary.tsx";
 
 /** The buyer's own pages (behind sign-in), by path: their code is loaded ahead of a click. */
 const ACCOUNT_PAGES: Record<string, () => Promise<unknown>> = {
@@ -52,6 +54,8 @@ const contribution: PortalContribution = {
         void accountPage();
         if (path === "/account/orders") prefetchHttpRequest(ORDERS_REQUEST, ordersRequestBody(params));
     },
+    // A person may create this kind of business on the portal (D178); the API declares the same key.
+    businessType: {key: "eCommerce", Icon: IconShoppingBag, Summary: BusinessTypeSummary},
 };
 
 export default contribution;
