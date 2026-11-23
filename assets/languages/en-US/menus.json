@@ -1,7 +1,13 @@
 {
   "eCommerce": {
-    "setup": {"product": "Add your first product", "shipping": "Add where you deliver", "shippingHint": "Checkout needs a shipping rate for the buyer's address."},
+    "setup": {"product": "Add your first product", "shipping": "Add where you deliver", "shippingHint": "Checkout needs a shipping rate for the buyer's address.", "warehouse": "Add your warehouse", "warehouseHint": "Stock is kept per warehouse, so you need one before you can stock a product."},
     "guide": {
+      "warehouseNameTitle": "Warehouse name",
+      "warehouseNameText": "Any name your team will recognize, such as “Main store” or “Back room”.",
+      "warehouseCodeTitle": "Short code",
+      "warehouseCodeText": "A short label your team uses for this warehouse, such as “WH-MAIN”.",
+      "warehouseAddressTitle": "Where it is",
+      "warehouseAddressText": "Where the stock actually is. You can add more warehouses later.",
       "productTitleTitle": "Product name",
       "productTitleText": "What customers see in your shop and search for. Keep it short and clear.",
       "productImageTitle": "Main image",

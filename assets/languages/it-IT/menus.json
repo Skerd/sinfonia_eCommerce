@@ -1,7 +1,13 @@
 {
   "eCommerce": {
-    "setup": {"product": "Aggiungi il tuo primo prodotto", "shipping": "Indica dove consegni", "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente."},
+    "setup": {"product": "Aggiungi il tuo primo prodotto", "shipping": "Indica dove consegni", "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente.", "warehouse": "Aggiungi il tuo magazzino", "warehouseHint": "Le scorte sono tenute per magazzino, quindi te ne serve uno prima di dare scorte a un prodotto."},
     "guide": {
+      "warehouseNameTitle": "Nome del magazzino",
+      "warehouseNameText": "Un nome che il tuo team riconosce, come «Negozio principale» o «Retrobottega».",
+      "warehouseCodeTitle": "Codice breve",
+      "warehouseCodeText": "Una breve etichetta che il tuo team usa per questo magazzino, come «WH-MAIN».",
+      "warehouseAddressTitle": "Dove si trova",
+      "warehouseAddressText": "Dove si trovano fisicamente le scorte. Potrai aggiungere altri magazzini più tardi.",
       "productTitleTitle": "Nome del prodotto",
       "productTitleText": "Ciò che i clienti vedono e cercano nel tuo negozio. Tienilo breve e chiaro.",
       "productImageTitle": "Immagine principale",

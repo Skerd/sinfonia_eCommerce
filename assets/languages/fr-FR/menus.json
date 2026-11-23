@@ -1,7 +1,13 @@
 {
   "eCommerce": {
-    "setup": {"product": "Ajoutez votre premier produit", "shipping": "Indiquez où vous livrez", "shippingHint": "Le paiement demande un tarif de livraison pour l'adresse de l'acheteur."},
+    "setup": {"product": "Ajoutez votre premier produit", "shipping": "Indiquez où vous livrez", "shippingHint": "Le paiement demande un tarif de livraison pour l'adresse de l'acheteur.", "warehouse": "Ajoutez votre entrepôt", "warehouseHint": "Le stock est tenu par entrepôt : il vous en faut un avant de pouvoir stocker un produit."},
     "guide": {
+      "warehouseNameTitle": "Nom de l'entrepôt",
+      "warehouseNameText": "Un nom que votre équipe reconnaît, comme « Magasin principal » ou « Réserve ».",
+      "warehouseCodeTitle": "Code court",
+      "warehouseCodeText": "Une courte étiquette que votre équipe utilise pour cet entrepôt, comme « WH-MAIN ».",
+      "warehouseAddressTitle": "Où il se trouve",
+      "warehouseAddressText": "Là où le stock se trouve réellement. Vous pourrez ajouter d'autres entrepôts plus tard.",
       "productTitleTitle": "Nom du produit",
       "productTitleText": "Ce que les clients voient et cherchent dans votre boutique. Restez court et clair.",
       "productImageTitle": "Image principale",

@@ -1,7 +1,13 @@
 {
   "eCommerce": {
-    "setup": {"product": "Erstes Produkt hinzufügen", "shipping": "Liefergebiete erfassen", "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers."},
+    "setup": {"product": "Erstes Produkt hinzufügen", "shipping": "Liefergebiete erfassen", "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers.", "warehouse": "Lager hinzufügen", "warehouseHint": "Der Bestand wird pro Lager geführt. Sie brauchen also eines, bevor Sie einem Produkt Bestand geben können."},
     "guide": {
+      "warehouseNameTitle": "Name des Lagers",
+      "warehouseNameText": "Ein Name, den Ihr Team kennt, etwa «Hauptlager» oder «Hinterzimmer».",
+      "warehouseCodeTitle": "Kurzcode",
+      "warehouseCodeText": "Eine kurze Bezeichnung, die Ihr Team für dieses Lager verwendet, etwa «WH-MAIN».",
+      "warehouseAddressTitle": "Wo es ist",
+      "warehouseAddressText": "Wo der Bestand tatsächlich liegt. Weitere Lager können Sie später hinzufügen.",
       "productTitleTitle": "Produktname",
       "productTitleText": "Was Kunden in Ihrem Shop sehen und suchen. Halten Sie ihn kurz und klar.",
       "productImageTitle": "Hauptbild",

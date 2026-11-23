@@ -1,7 +1,13 @@
 {
   "eCommerce": {
-    "setup": {"product": "Shtoni produktin tuaj të parë", "shipping": "Shtoni ku dërgoni", "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit."},
+    "setup": {"product": "Shtoni produktin tuaj të parë", "shipping": "Shtoni ku dërgoni", "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit.", "warehouse": "Shtoni magazinën tuaj", "warehouseHint": "Stoku mbahet sipas magazinës, ndaj ju duhet një përpara se të shtoni stok për një produkt."},
     "guide": {
+      "warehouseNameTitle": "Emri i magazinës",
+      "warehouseNameText": "Çdo emër që ekipi juaj e njeh, si “Dyqani kryesor” ose “Depoja”.",
+      "warehouseCodeTitle": "Kodi i shkurtër",
+      "warehouseCodeText": "Një etiketë e shkurtër që ekipi juaj përdor për këtë magazinë, si “WH-MAIN”.",
+      "warehouseAddressTitle": "Ku ndodhet",
+      "warehouseAddressText": "Ku ndodhet fizikisht stoku. Mund të shtoni magazina të tjera më vonë.",
       "productTitleTitle": "Emri i produktit",
       "productTitleText": "Çfarë shohin dhe kërkojnë klientët në dyqanin tuaj. Mbajeni të shkurtër dhe të qartë.",
       "productImageTitle": "Imazhi kryesor",

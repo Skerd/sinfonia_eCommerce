@@ -16,6 +16,16 @@ const contribution: HomeContribution = {
         });
         const save = {target: "form.save", title: t("home.guide.saveTitle"), text: t("home.guide.saveText")};
         return [
+            // Stock is kept per warehouse (TD-F150): a new shop needs one before it can stock a tracked product.
+            {
+                key: "eCommerce.warehouse",
+                title: t("menus.eCommerce.setup.warehouse"),
+                description: t("menus.eCommerce.setup.warehouseHint"),
+                to: "/tenancy/systemSettings/warehouses/create",
+                accessModel: "warehouses",
+                doneWhen: {list: {url: "/api/eCommerce/warehouse"}},
+                guide: [tip("field.name", "warehouseName"), tip("field.code", "warehouseCode"), tip("field.address.country", "warehouseAddress"), save],
+            },
             {
                 key: "eCommerce.product",
                 title: t("menus.eCommerce.setup.product"),
