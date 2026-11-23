@@ -3,37 +3,25 @@
   "title": "Aus Odoo importieren",
   "description": "Katalog, Bestand, Lagerbewegungen und Benutzer aus der gespeicherten Odoo-Verbindung übernehmen. Ein erneuter Lauf aktualisiert dieselben Datensätze.",
   "help": {
-    "ariaLabel": "Zum Odoo-Import",
-    "title": "Zum Odoo-Import",
-    "overview": "Der Odoo-Import kopiert Katalog-, Bestands- und Benutzerdaten aus Odoo in diese Firma, über die gespeicherte Odoo-Verbindung. Sie wählen, welche Datensätze übernommen werden, und können zuerst einen Probelauf machen.",
+    "ariaLabel": "Über den Odoo-Import",
+    "title": "Über den Odoo-Import",
+    "overview": "Kopiert Ihren Katalog, Bestand und Ihre Benutzer aus Odoo in diese Firma, über die Odoo-Verbindung. Wählen Sie, was übernommen wird, und machen Sie zuerst einen Testlauf.",
     "sections": [
       {
-        "title": "Datensätze",
-        "body": "Jeder Datensatz wird seiner Odoo-ID zugeordnet, ein erneuter Import aktualisiert also, was er angelegt hat, statt es zu verdoppeln.",
+        "title": "Was Sie übernehmen können",
         "items": [
-          "Währungen: aktive Odoo-Währungen, abgeglichen über den ISO-Code (EUR, USD, …). Eine hier bereits vorhandene Währung wird unverändert übernommen; eine fehlende wird angelegt.",
-          "Kategorien: Odoo-Produktkategorien.",
-          "Produkte: Produktvorlagen mit ihren Varianten und Attributwerten. Archivierte Odoo-Produkte kommen archiviert an; archivierte Varianten inaktiv. Jedes Produkt erhält seine Odoo-Währung; sie wird auch abgeglichen oder angelegt, wenn Währungen nicht ausgewählt ist.",
-          "Lager: Odoo-Lager, aktiv angelegt.",
-          "Bestand: Mengen an Lager pro Produkt und Lager aus dem internen Odoo-Bestand; bestehende Zeilen werden auf die Odoo-Menge gesetzt.",
-          "Bestandsänderungen: erledigte Odoo-Lagerbewegungen, als Lagerbewegungen mit passendem Grund geschrieben.",
-          "Aktionen: erledigte interne Transfers, als abgeschlossene Umlagerungen geschrieben.",
-          "Benutzer: interne Odoo-Benutzer, mit der Registrierungsrolle in die Firma eingeladen. Sie können sich erst anmelden, wenn sie die Einladung annehmen."
+          "Währungen, Kategorien, Produkte und Varianten, und Lager.",
+          "Bestand, Lagerbewegungen und interne Umlagerungen, so wie Odoo sie erfasst hat.",
+          "Benutzer: Die internen Benutzer von Odoo werden in Ihre Firma eingeladen und können sich nach dem Annehmen anmelden.",
+          "Ein erneuter Lauf aktualisiert, was er zuvor übernommen hat, ohne Kopien anzulegen."
         ]
       },
       {
-        "title": "Probelauf und Ergebnisse",
+        "title": "So führen Sie ihn aus",
         "items": [
-          "Ein Probelauf meldet sich bei Odoo an und zählt nur, was jeder Datensatz lesen würde; nichts wird geschrieben.",
-          "Ein echter Lauf meldet pro Datensatz angelegte, aktualisierte und übersprungene Zahlen. Nicht zuordenbare Zeilen (zum Beispiel eine Lagerbewegung für ein nicht importiertes Produkt) werden übersprungen.",
-          "Importieren Sie Produkte vor Bestand und Bestandsänderungen und Lager vor Bestand, damit die Verweise gefunden werden."
-        ]
-      },
-      {
-        "title": "Berechtigungen",
-        "items": [
-          "Sie brauchen die Berechtigung, jede importierte Art von Datensatz anzulegen, plus die Odoo-Verknüpfungen, die sich die Zuordnungen merken.",
-          "Mindestens ein Datensatz muss ausgewählt sein."
+          "Übernehmen Sie Produkte und Lager vor Bestand und Lagerbewegungen, damit sie zugeordnet werden können.",
+          "Der Testlauf zählt nur, was käme; nichts wird gespeichert.",
+          "Das Ergebnis zeigt pro Teil, wie viele erstellt, aktualisiert und übersprungen wurden. Was sich nicht zuordnen lässt, wird übersprungen."
         ]
       }
     ]

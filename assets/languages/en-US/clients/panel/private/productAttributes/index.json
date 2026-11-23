@@ -3,26 +3,18 @@
   "title": "Product attributes",
   "description": "Define product options such as size, color, and material.",
   "help": {
-    "ariaLabel": "About Product Attributes",
-    "title": "About Product Attributes",
-    "overview": "Attributes are shared option lists such as Size or Color. A variant picks one value from each attribute that defines it, so the attribute is what turns one product into several SKUs.",
+    "ariaLabel": "About product attributes",
+    "title": "About product attributes",
+    "overview": "Attributes are the options your products come in, such as Size or Color, with their values (S, M, L). Variants are built from them.",
     "sections": [
       {
-        "title": "Fields",
+        "title": "Each attribute",
         "items": [
-          "Name is required. Values are the choices buyers see, for example S, M, L; up to 50.",
-          "Visible on product page shows the attribute in the product's details. It does not change prices.",
-          "Used for variants marks it as an attribute that splits products into SKUs.",
-          "Position orders attributes on the product page and in the variant picker."
-        ]
-      },
-      {
-        "title": "How variants use it",
-        "items": [
-          "Each variant stores attribute-and-value pairs. Two live variants of the same product cannot have the same combination.",
-          "The cart and the till charge the variant price, or the product price when the variant has none.",
-          "An attribute used by any live variant cannot be deleted. Remove it from those variants first.",
-          "Deleting is a soft delete and it can be restored."
+          "Name is required; add up to 50 values.",
+          "Used for variants: the attribute makes product variants, one for each combination of values.",
+          "Visible on product page shows it in the product's details; it doesn't change prices.",
+          "Position sets its order on the product page and in the variant picker.",
+          "An attribute used by a variant can't be deleted; remove it from those variants first."
         ]
       }
     ]

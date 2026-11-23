@@ -5,33 +5,23 @@
   "help": {
     "ariaLabel": "Informazioni sulle zone di spedizione",
     "title": "Informazioni sulle zone di spedizione",
-    "overview": "Le zone di spedizione decidono quali opzioni di consegna vengono offerte all’acquirente al checkout e quanto costano. Una zona elenca paesi, eventualmente province e codici postali, e una o più tariffe. Il checkout offre ogni tariffa di ogni zona attiva corrispondente; l’acquirente ne sceglie una.",
+    "overview": "Le zone di spedizione decidono quali modalità di consegna vedono i clienti al checkout e quanto costano. Ogni zona elenca paesi, se vuoi stati e codici postali, e una o più tariffe.",
     "sections": [
       {
-        "title": "Associare una destinazione",
+        "title": "Tariffe",
         "items": [
-          "Il paese di destinazione deve essere uno dei paesi della zona; una zona senza paesi non corrisponde a nulla.",
-          "Le province elencate restringono; nessuna provincia copre tutto il paese. I modelli di codice postale sono facoltativi e usano * come unico jolly.",
-          "Senza paese di destinazione non viene offerta alcuna tariffa."
+          "Forfettaria: sempre lo stesso prezzo.",
+          "Gratuita: niente da pagare. Imposta un importo minimo dell'ordine per avere “gratis sopra i 50”.",
+          "In base al peso, Importo dell'ordine o Quantità: la tariffa si offre solo quando peso, totale o numero di articoli del carrello sono tra il suo minimo e massimo. Per Quantità, inserisci il numero di articoli nei campi dell'importo dell'ordine.",
+          "Corriere e giorni stimati si mostrano al cliente; non cambiano il prezzo."
         ]
       },
       {
-        "title": "Tipi di tariffa",
-        "body": "Ogni tariffa mostra nome, prezzo, corriere e giorni stimati. Corriere e giorni non cambiano il prezzo.",
+        "title": "Corrispondenza con un indirizzo",
         "items": [
-          "Forfettaria addebita sempre il suo prezzo.",
-          "Gratuita non addebita nulla ed è nascosta quando l’importo dell’ordine è fuori dal suo minimo o massimo: così si costruisce «gratis oltre 50».",
-          "Peso addebita il suo prezzo quando il peso del carrello è tra il peso minimo e massimo.",
-          "Prezzo addebita il suo prezzo quando il subtotale della merce è tra l’importo d’ordine minimo e massimo.",
-          "Quantità addebita il suo prezzo quando il numero di articoli è tra i campi importo d’ordine minimo e massimo (letti come numero di articoli per questo tipo)."
-        ]
-      },
-      {
-        "title": "Con sconti e ordini",
-        "items": [
-          "Uno sconto spedizione gratuita annulla il costo ma non nasconde le tariffe.",
-          "Nome, corriere e prezzo della tariffa scelta vengono copiati sull’ordine.",
-          "Attiva e disattiva accendono e spengono la zona. L’eliminazione è logica e la zona può essere ripristinata."
+          "Il cliente vede ogni tariffa di ogni zona attiva che corrisponde all'indirizzo, e ne sceglie una.",
+          "Una zona senza paesi non corrisponde a nulla. Stati vuoti coprono tutto il paese; usa * nei codici postali, come 10*.",
+          "Uno sconto con spedizione gratuita toglie il costo ma mostra comunque le tariffe."
         ]
       }
     ]

@@ -5,32 +5,15 @@
   "help": {
     "ariaLabel": "Rreth vlerësimeve të produkteve",
     "title": "Rreth vlerësimeve të produkteve",
-    "overview": "Një vlerësim produkti është nota dhe komenti i një blerësi për një produkt që ka paguar. I përket një porosie të paguar dhe një produkti në të, dhe ushqen notën mesatare, numrin e notave dhe numrin e vlerësimeve të atij produkti. Vlerësimet e tregut janë listë më vete.",
+    "overview": "Notat dhe komentet që klientët lënë për produktet që blenë. Prej tyre dalin yjet dhe numri i vlerësimeve që shfaqen te çdo produkt.",
     "sections": [
       {
-        "title": "Kush mund të vlerësojë çfarë",
-        "body": "Një vlerësim lidhet me një blerje reale, jo me një koment të lirë.",
+        "title": "Çdo vlerësim",
         "items": [
-          "Vetëm klienti i porosisë mund ta krijojë vlerësimin; publikohet me emrin e tij.",
-          "Porosia duhet të jetë e paguar ose pjesërisht e rimbursuar, dhe produkti duhet të jetë në të.",
-          "Një vlerësim për produkt për porosi. Shitjet në arkë nuk krijojnë këtu porosi të vlerësueshme."
-        ]
-      },
-      {
-        "title": "Çfarë mund të ndryshojë më vonë",
-        "body": "Teksti dhe nota mund të ndryshojnë; lidhja me blerjen jo.",
-        "items": [
-          "Nota (1 deri 5), titulli dhe komenti mund të ndryshohen.",
-          "Porosia dhe produkti janë të fiksuar pasi krijohet vlerësimi.",
-          "Nota mesatare e produktit (me një decimal), numri i notave dhe numri i vlerësimeve rillogariten nga vlerësimet aktive në çdo krijim, ndryshim note, fshirje dhe rikthim."
-        ]
-      },
-      {
-        "title": "Moderimi",
-        "items": [
-          "Vetëm një administrator mund ta fshijë një vlerësim. Fshirja është e butë; rikthimi e sjell notën përsëri.",
-          "Një vlerësim i fshirë nuk mund të rikthehet sa kohë ekziston një vlerësim aktiv për të njëjtën porosi dhe produkt.",
-          "Hapni produktin për të parë numrat që tregon dyqani, ose porosinë për të parë blerjen."
+          "Vetëm klienti që pagoi një porosi mund të vlerësojë produktet e saj, një herë për çdo produkt të porosisë. Shitjet në arkë nuk vlerësohen.",
+          "Nota (1 deri në 5), titulli dhe komenti mund të ndryshohen më vonë; porosia dhe produkti jo.",
+          "Vetëm një administrator mund ta fshijë një vlerësim, që atëherë del nga nota e produktit.",
+          "Vlerësimet e shërbimeve tuaja janë një listë më vete, te Vlerësimet e Tregut."
         ]
       }
     ]

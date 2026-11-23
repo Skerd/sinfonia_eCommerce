@@ -5,38 +5,23 @@
   "help": {
     "ariaLabel": "À propos des règles de tarification",
     "title": "À propos des règles de tarification",
-    "overview": "Les règles de tarification changent automatiquement le prix unitaire d’une ligne, avant tout code de remise. Utilisez-les pour des prix de gros, des promotions par catégorie ou des suppléments. Chaque ligne du panier reçoit au plus une règle. Nom, type, valeur et portée sont obligatoires.",
+    "overview": "Les règles de tarification changent les prix toutes seules, avant tout code de remise : prix de gros, promotion sur une catégorie ou supplément. Chaque article du panier reçoit au plus une règle.",
     "sections": [
       {
-        "title": "Quelle règle l’emporte",
-        "body": "Les règles actives sont triées par priorité (la plus haute d’abord), puis de la plus récente à la plus ancienne. Pour chaque ligne, la première règle qui se qualifie et correspond est appliquée ; les autres sont ignorées pour cette ligne.",
+        "title": "Quelle règle s'applique",
         "items": [
-          "Une règle hors de ses dates de début et de fin est ignorée.",
-          "Groupes de clients : une règle sans groupe s’applique à tous ; une règle avec groupes seulement aux clients connectés de l’un d’eux. Les invités ne correspondent qu’aux règles sans groupe.",
-          "Le montant minimum de commande est comparé au sous-total du panier avant toute règle ; la quantité minimum au total des unités du panier."
+          "Les règles sont essayées par priorité, de la plus haute ; la première qui convient à un article est celle qu'il reçoit.",
+          "Une règle ne marche que si elle est active et entre ses dates de début et de fin.",
+          "Une règle avec des groupes de clients ne vaut que pour les clients connectés de ces groupes.",
+          "Le montant minimum de commande et la quantité minimale regardent tout le panier."
         ]
       },
       {
-        "title": "Portée",
+        "title": "Ce qu'elle fait",
         "items": [
-          "Tout et groupe de clients touchent chaque ligne d’un panier qualifié.",
-          "Produit, catégorie et collection ne touchent que les cibles choisies. Catégorie ne regarde que la première catégorie du produit."
-        ]
-      },
-      {
-        "title": "Types",
-        "body": "L’ajustement s’applique au prix unitaire du catalogue, et le résultat n’est jamais inférieur à zéro.",
-        "items": [
-          "Remise en pourcentage réduit le prix de ce pourcentage. Remise fixe soustrait la valeur.",
-          "Prix fixe remplace le prix par la valeur. Supplément ajoute la valeur."
-        ]
-      },
-      {
-        "title": "Où elle s’applique",
-        "items": [
-          "Le panier recalcule chaque fois depuis le prix catalogue, donc une règle n’est jamais appliquée sur un prix déjà ajusté.",
-          "Chaque ligne montre la règle qui l’a modifiée. La caisse utilise les prix catalogue et n’applique pas les règles de tarification.",
-          "Activer et désactiver allument et éteignent la règle. La suppression est douce et la règle peut être restaurée."
+          "Une remise en pourcentage ou fixe, un prix fixe, ou un supplément. Un prix ne descend jamais sous zéro.",
+          "Elle couvre tout, ou seulement des produits, catégories ou collections choisis ; une règle de catégorie ne regarde que la première catégorie du produit.",
+          "La caisse vend aux prix du catalogue et n'utilise pas les règles de tarification."
         ]
       }
     ]

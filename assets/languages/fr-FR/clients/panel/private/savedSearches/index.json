@@ -5,33 +5,14 @@
   "help": {
     "ariaLabel": "À propos des recherches enregistrées",
     "title": "À propos des recherches enregistrées",
-    "overview": "Une recherche enregistrée est un filtre de catalogue qu’un client a nommé pour pouvoir le relancer. Ce n’est ni un produit, ni une commande, ni une collection ; elle se souvient seulement de la façon dont le catalogue a été restreint.",
+    "overview": "Des recherches que vos clients ont enregistrées dans votre boutique, sous un nom, pour les relancer. Une recherche enregistrée ne retient que les filtres ; elle ne change rien à votre catalogue.",
     "sections": [
       {
-        "title": "Ce qui est enregistré",
-        "body": "Le nom est le libellé ; le reste est le filtre.",
+        "title": "Chaque recherche",
         "items": [
-          "Le nom est obligatoire.",
-          "Les catégories peuvent être plusieurs ; la collection est unique.",
-          "Prix minimum, prix maximum et tri sont facultatifs. Un champ vide n’est simplement pas appliqué.",
-          "Le client est le propriétaire de la recherche."
-        ]
-      },
-      {
-        "title": "Les recherches de qui cette page montre",
-        "body": "Les mêmes fiches sont listées de deux façons.",
-        "items": [
-          "Depuis le menu eCommerce, cette page liste chaque recherche enregistrée de la société, et une nouvelle demande à quel client elle appartient.",
-          "Comme liste propre d’un client, elle ne montre que les siennes, et une nouvelle recherche est classée sous ce client.",
-          "Supprimer une recherche enregistrée est une suppression douce et elle peut être restaurée."
-        ]
-      },
-      {
-        "title": "Ce qu’elle ne fait pas",
-        "body": "Enregistrer une recherche ne change rien au catalogue.",
-        "items": [
-          "Elle ne masque pas de produits, ne change pas de prix et ne crée pas de collection.",
-          "Relancée, elle applique le même filtre au catalogue tel qu’il est maintenant, pas tel qu’il était lors de l’enregistrement."
+          "Elle garde les catégories, la collection, la fourchette de prix et le tri choisis par le client.",
+          "La relancer montre le catalogue tel qu'il est maintenant, pas tel qu'il était à l'enregistrement.",
+          "Ici, vous voyez les recherches de tous les clients, et une nouvelle demande à qui elle appartient. Sur un client, vous ne voyez que les siennes."
         ]
       }
     ]

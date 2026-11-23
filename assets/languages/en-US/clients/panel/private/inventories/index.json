@@ -3,63 +3,26 @@
   "title": "Inventory",
   "description": "Stock levels across your warehouses.",
   "help": {
-    "ariaLabel": "About Inventory",
-    "title": "About Inventory",
-    "overview": "An inventory row is the stock of one product, or one variant, in one warehouse. It holds three numbers: on hand, reserved, and available (on hand minus reserved). Available is what checkout and the till can still sell. Every change to on hand leaves a movement in the stock ledger.",
+    "ariaLabel": "About inventory",
+    "title": "About inventory",
+    "overview": "How much of each product you have in each warehouse. On hand is what's on the shelf, Reserved is held for orders not shipped yet, and Available is what you can still sell.",
     "sections": [
       {
-        "title": "On hand, reserved, available",
-        "body": "These are not three stocks. Reserved is a hold inside on hand.",
+        "title": "Adding and changing stock",
         "items": [
-          "On hand is what is physically in the warehouse.",
-          "Reserved is what open checkouts and unshipped orders have claimed. It is held at the payment step and released if the checkout expires, the order is cancelled, or it is fully refunded.",
-          "Available is on hand minus reserved. A stock count that finds less than is reserved can make it negative."
+          "Create inventory to start stocking a product in a warehouse, with its opening quantity. After that, stock changes only through actions, not by editing.",
+          "Restock adds goods you received, with the supplier, receipt, cost, batch and expiry if you have them.",
+          "Deduct / write-off takes out damaged, lost or corrected goods. You can't deduct below what is reserved.",
+          "View movements shows every change, with its reason and who made it."
         ]
       },
       {
-        "title": "Which items need a row",
-        "body": "A physical or variable product is stock-tracked unless track inventory is off on the product or its variant.",
+        "title": "Good to know",
         "items": [
-          "A tracked item can only sell from rows in active warehouses. With no row, or not enough available, checkout refuses the line as out of stock.",
-          "Checkout prefers one warehouse that covers the whole line, the default warehouse first; otherwise it splits the line across warehouses, default first.",
-          "Digital, service, and gift-card products, and items with tracking off, need no row. A bundle never has a row; its components do.",
-          "There is one live row per product, variant, and warehouse."
-        ]
-      },
-      {
-        "title": "Creating and editing a row",
-        "body": "Creating a row is how an item starts being stocked in a warehouse.",
-        "items": [
-          "Product, variant, and warehouse are fixed once the row exists, because reservations and history are keyed on them.",
-          "An opening quantity on create writes an initial movement. After that, on hand is changed only by actions, never by a plain edit.",
-          "Reorder point and reorder quantity drive the low-stock alert."
-        ]
-      },
-      {
-        "title": "Restock and deduct",
-        "body": "These are the manual stock actions. Both need permission to write on hand.",
-        "items": [
-          "Restock adds units and can record the supplier, receipt number, receipt files, date, unit cost, batch or lot, and expiry date.",
-          "Deduct removes units as a write-off, damage, or adjustment. It takes the unit cost and expiry from the latest delivery of the same batch, so the loss is valued.",
-          "A deduction that would leave less on hand than is reserved is refused."
-        ]
-      },
-      {
-        "title": "Low-stock alerts",
-        "body": "An hourly job watches every row with a reorder point.",
-        "items": [
-          "When available drops below the reorder point (and is not negative), staff are notified once.",
-          "The alert re-arms when available climbs back to the reorder point or above."
-        ]
-      },
-      {
-        "title": "What else changes the numbers",
-        "body": "Every change below writes a movement with the quantity before and after.",
-        "items": [
-          "Shipping an order consumes its holds; a failed shipment puts units back.",
-          "A stock transfer moves free stock between warehouses; a stock count sets on hand to what was counted.",
-          "A received return puts goods back; a till sale and a till refund take and return stock directly.",
-          "A row that still has stock or reservations cannot be deleted. Deleting an empty row is a soft delete and it can be restored, unless a live row now exists for the same item."
+          "Products with Track inventory on sell only from available stock in active warehouses. Digital products, services and gift cards need no stock; a bundle uses its parts' stock.",
+          "Checkout takes stock from the default warehouse first.",
+          "When Available drops below the reorder point, your team is told once.",
+          "A row that still has stock or reservations can't be deleted."
         ]
       }
     ]

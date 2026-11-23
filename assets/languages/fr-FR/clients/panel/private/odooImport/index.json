@@ -5,35 +5,23 @@
   "help": {
     "ariaLabel": "À propos de l'import Odoo",
     "title": "À propos de l'import Odoo",
-    "overview": "L’import Odoo copie des données de catalogue, de stock et d’utilisateurs depuis Odoo vers cette société, avec la connexion Odoo enregistrée. Vous choisissez les jeux de données à reprendre, et pouvez d’abord faire une simulation.",
+    "overview": "Copie votre catalogue, votre stock et vos utilisateurs depuis Odoo dans cette entreprise, via la connexion Odoo. Choisissez quoi importer, et faites d'abord une simulation.",
     "sections": [
       {
-        "title": "Jeux de données",
-        "body": "Chaque fiche est associée à son identifiant Odoo, donc relancer l’import met à jour ce qu’il a créé au lieu de le dupliquer.",
+        "title": "Ce que vous pouvez importer",
         "items": [
-          "Devises : devises Odoo actives, rapprochées par code ISO (EUR, USD, …). Une devise qui existe déjà ici est reprise telle quelle ; une devise manquante est créée.",
-          "Catégories : catégories de produits Odoo.",
-          "Produits : modèles de produits avec leurs variantes et valeurs d’attributs. Les produits Odoo archivés arrivent archivés ; les variantes archivées arrivent inactives. Chaque produit reçoit sa devise Odoo, rapprochée ou créée même si Devises n’est pas sélectionné.",
-          "Entrepôts : entrepôts Odoo, créés actifs.",
-          "Inventaire : quantités en stock par produit et entrepôt depuis le stock interne d’Odoo ; les lignes existantes sont fixées à la quantité Odoo.",
-          "Changements de stock : mouvements de stock Odoo terminés, écrits comme mouvements de stock avec un motif correspondant.",
-          "Actions : transferts internes terminés, écrits comme transferts de stock terminés.",
-          "Utilisateurs : utilisateurs internes Odoo, invités dans la société avec le rôle d’inscription. Ils ne peuvent se connecter qu’après avoir accepté l’invitation."
+          "Devises, Catégories, Produits et variantes, et Entrepôts.",
+          "Stock disponible, Mouvements de stock et Transferts internes, tels qu'Odoo les a enregistrés.",
+          "Utilisateurs : les utilisateurs internes d'Odoo sont invités dans votre entreprise et peuvent se connecter après avoir accepté.",
+          "Le relancer met à jour ce qu'il avait importé, sans créer de doublons."
         ]
       },
       {
-        "title": "Simulation et résultats",
+        "title": "Comment le lancer",
         "items": [
-          "Une simulation se connecte à Odoo et compte seulement ce que chaque jeu lirait ; rien n’est écrit.",
-          "Une vraie exécution indique les nombres créés, mis à jour et ignorés par jeu. Les lignes qui ne peuvent être associées (par exemple un mouvement pour un produit non importé) sont ignorées.",
-          "Importez les produits avant l’inventaire et les changements de stock, et les entrepôts avant l’inventaire, pour que les références soient trouvées."
-        ]
-      },
-      {
-        "title": "Droits",
-        "items": [
-          "Il faut le droit de créer chaque type de fiche importée, plus les liens Odoo qui retiennent les correspondances.",
-          "Au moins un jeu de données doit être sélectionné."
+          "Importez les produits et les entrepôts avant le stock et les mouvements, pour qu'ils puissent être rapprochés.",
+          "La simulation compte seulement ce qui arriverait ; rien n'est enregistré.",
+          "Le résultat indique combien ont été créés, mis à jour et ignorés pour chaque partie. Ce qui ne peut pas être rapproché est ignoré."
         ]
       }
     ]

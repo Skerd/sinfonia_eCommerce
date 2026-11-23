@@ -5,41 +5,23 @@
   "help": {
     "ariaLabel": "Über Analysen",
     "title": "Über Analysen",
-    "overview": "Analysen fassen Umsatz, Bestellungen, Produkte, Bestand und Warenkörbe dieser Firma zusammen. Die Seite liest nur bestehende Datensätze; nichts hier ändert eine Bestellung, ein Produkt oder den Bestand. Jede Karte braucht Lesezugriff auf die Daten dahinter.",
+    "overview": "Verkäufe, Produkte, Bestand und Warenkörbe Ihres Shops auf einen Blick. Nichts hier ändert Ihre Daten, und jede Karte zeigt nur, was Sie sehen dürfen.",
     "sections": [
       {
         "title": "Der Zeitraum",
-        "body": "Wählen Sie 7 Tage, 30 Tage, 90 Tage oder 1 Jahr. Nicht jede Karte folgt ihm.",
         "items": [
-          "Umsatz, Bestellanzahl, durchschnittlicher Bestellwert, Steuern, Versand und Top-Produkte folgen dem Zeitraum.",
-          "Das Umsatzdiagramm zeigt bezahlten Umsatz und bezahlte Bestellungen pro Tag bei 7 und 30 Tagen, pro Woche bei 90 Tagen und pro Monat bei einem Jahr.",
-          "Trend-Abzeichen vergleichen den Zeitraum mit dem gleich langen Fenster direkt davor.",
-          "Bestands- und Warenkorbkarten zeigen den aktuellen Stand und ändern sich nicht mit dem Zeitraum."
+          "Wählen Sie 7 Tage, 30 Tage, 90 Tage oder 1 Jahr. Umsatz, Bestellungen, Steuern, Versand und Topprodukte folgen ihm; Bestand und Warenkörbe zeigen immer den heutigen Stand.",
+          "Die Trendanzeigen vergleichen mit dem gleich langen Zeitraum direkt davor."
         ]
       },
       {
-        "title": "Geld und Währung",
-        "body": "Beträge werden nie über Währungen hinweg addiert.",
+        "title": "Wie gezählt wird",
         "items": [
-          "Umsatz sind bezahlte Bestellungen im Zeitraum, abzüglich der darauf erfassten Erstattungen.",
-          "Zahlen gelten für eine Währung: die gewählte oder sonst jene mit den meisten bezahlten Bestellungen im Zeitraum. Die Währungsauswahl listet jede Währung mit Verkäufen.",
-          "Steuern und Versand sind Summen derselben bezahlten Bestellungen."
-        ]
-      },
-      {
-        "title": "Bestellungen und Produkte",
-        "items": [
-          "Der Bestellstatus zählt jede nicht gelöschte Bestellung im Zeitraum, bezahlt oder nicht.",
-          "Top-Produkte werden nach Zeilenumsatz in der gewählten Währung und im Zeitraum gereiht, mit dem auf der Bestellzeile gespeicherten Titel.",
-          "Der Produktstatus ist der aktuelle Katalog, aufgeteilt in Entwurf, aktiv und archiviert."
-        ]
-      },
-      {
-        "title": "Bestand und Warenkörbe",
-        "items": [
-          "Bestand zeigt, wie viele Zeilen knapp sind (verfügbar über null, aber unter dem Meldebestand), wie viele nicht vorrätig sind (nichts verfügbar) und die gesamten Einheiten an Lager.",
-          "Verlassene Warenkörbe haben Artikel und wurden seit über einer Stunde nicht berührt; aktive Warenkörbe änderten sich in der letzten Stunde. Angemeldete Käufer erhalten für einen einen Tag liegen gelassenen Warenkorb eine Erinnerungs-E-Mail.",
-          "Öffnen Sie Produktbestellungen, Produkte oder Bestand über eine Karte, um auf das Gezeigte zu reagieren."
+          "Der Umsatz sind die bezahlten Bestellungen, abzüglich ihrer Erstattungen.",
+          "Beträge erscheinen immer in einer Währung, nie gemischt: in der gewählten, sonst in der mit den meisten bezahlten Bestellungen.",
+          "Wenig Bestand heisst, es ist weniger verfügbar als der Meldebestand; ausverkauft heisst, nichts ist verfügbar.",
+          "Verlassene Warenkörbe enthalten Artikel und wurden über eine Stunde nicht berührt. Angemeldete Kunden erhalten eine Erinnerungs-E-Mail für einen Warenkorb, der einen Tag liegen blieb.",
+          "Öffnen Sie von einer Karte aus Produktbestellungen, Produkte oder Lagerbestand, um zu handeln."
         ]
       }
     ]

@@ -91,6 +91,7 @@ const contribution: HomeContribution = {
             ["/tenancy/systemSettings/customergroups", "customergroups"],
             ["/tenancy/systemSettings/customeraddresses", "productorders"],
             ["/tenancy/systemSettings/discounts", "discounts"],
+            ["/tenancy/systemSettings/giftcards", "giftcards"],
             ["/tenancy/systemSettings/pricingrules", "pricingrules"],
             ["/tenancy/systemSettings/taxzones", "taxzones"],
             ["/tenancy/systemSettings/shippingzones", "shippingzones"],
@@ -98,6 +99,7 @@ const contribution: HomeContribution = {
             ["/tenancy/systemSettings/cmsblocks", "cmsblocks"],
             ["/tenancy/systemSettings/posconfigs", "posconfigs"],
             ["/tenancy/systemSettings/pospaymentmethods", "pospaymentmethods"],
+            ["/tenancy/systemSettings/fiscalconfigs", "fiscalconfigs"],
         ] as const).map(([page, accessModel]) => ({page, accessModel})),
     ],
 };

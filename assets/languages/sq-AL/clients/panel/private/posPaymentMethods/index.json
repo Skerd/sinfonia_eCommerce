@@ -3,34 +3,22 @@
   "title": "Metodat e Pagesës POS",
   "description": "Konfiguroni metodat e pagesës në arkë: cash, kartë dhe të tjera.",
   "help": {
-    "ariaLabel": "Rreth metodave të pagesës POS",
-    "title": "Rreth metodave të pagesës POS",
-    "overview": "Një metodë pagese është një buton i arkës: para në dorë ose kartë. Arkat zgjedhin cilat metoda ofrojnë. Emri dhe tipi janë të detyrueshëm; renditja është rendi në të cilin shfaqen butonat.",
+    "ariaLabel": "Rreth metodave të pagesës",
+    "title": "Rreth metodave të pagesës",
+    "overview": "Çdo metodë pagese është një buton në arkë: cash ose kartë. Çdo arkë zgjedh cilat ofron, dhe renditja përcakton radhën e tyre.",
     "sections": [
       {
-        "title": "Para në dorë",
+        "title": "Cash dhe kartë",
         "items": [
-          "Shumat e shpejta janë vlera të ndara me presje, për shembull 0.5, 1, 5, 10, 20, të shfaqura si butona me një prekje. Një listë bosh përdor ato të paracaktuarat.",
-          "Pagesat në para, kusuri, rimbursimet në para dhe lëvizjet e sirtarit përditësojnë paratë e pritura të seancës."
+          "Cash: shumat e shpejta janë butona me një prekje, si 5, 10, 20, të ndara me presje. Pagesat cash dhe kusuri llogariten në sirtar.",
+          "Kartë pa terminal: arkëtari e merr kartën në një pajisje më vete dhe regjistron pagesën.",
+          "Kartë me terminal: arka i kërkon arkëtarit ta konfirmojë në terminal (manual), ose i dërgon shumën dhe pret përgjigjen (HTTP lokal). Testo lidhjen e terminalit kontrollon që ai përgjigjet."
         ]
       },
       {
-        "title": "Karta dhe terminalet e pagesës",
-        "body": "Një metodë karte mund të drejtojë një terminal bankar.",
+        "title": "Çaktivizimi",
         "items": [
-          "Terminali i fikur: arkëtari e kalon kartën në një pajisje të veçantë dhe regjistron pagesën.",
-          "Ofruesi manual: arka i kërkon arkëtarit të konfirmojë tarifimin në terminalin e jashtëm.",
-          "Ofruesi HTTP lokal: arka ia dërgon shumën, me ID-në e terminalit, një ure terminali sipas protokollit, hostit, portës dhe shtegut, dhe pret miratim, refuzim ose skadim kohe.",
-          "Testo lidhjen kontrollon që ura përgjigjet para se ta përdorni në arkë."
-        ]
-      },
-      {
-        "title": "Aktivizo, çaktivizo, fshi",
-        "body": "Një arkë duhet të mbajë gjithmonë të paktën një metodë pagese.",
-        "items": [
-          "Çaktivizimi e fsheh metodën për pagesat e reja dhe nga lista e caktimit të arkave.",
-          "Çaktivizimi ose fshirja e një metode e heq atë nga çdo arkë; refuzohet nëse një arkë do të mbetej pa metodë.",
-          "Fshirja është e butë dhe metoda mund të rikthehet."
+          "Çaktivizo e heq një metodë nga arka. Një arkë duhet të mbajë të paktën një metodë, ndaj metoda e fundit e një arke nuk mund të çaktivizohet ose të fshihet."
         ]
       }
     ]

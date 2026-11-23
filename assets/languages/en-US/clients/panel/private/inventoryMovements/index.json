@@ -3,46 +3,23 @@
   "title": "Inventory movements",
   "description": "Full ledger of restocks, write-offs, sales, and other stock changes.",
   "help": {
-    "ariaLabel": "About Inventory movements",
-    "title": "About Inventory movements",
-    "overview": "This is the stock ledger. Every change to an on-hand quantity writes one row here, and rows are never edited or removed. It answers \"why does this warehouse have this many?\" — each row shows the change, the quantity before and after, the reason, who did it, and what caused it.",
+    "ariaLabel": "About stock movements",
+    "title": "About stock movements",
+    "overview": "The history of your stock: every change to what's on hand adds a row here, and rows are never changed or removed. Use it to see why a warehouse holds what it holds.",
     "sections": [
       {
-        "title": "What a row records",
-        "body": "The row is the change, not the current stock. Current stock lives on the inventory row.",
+        "title": "Each movement",
         "items": [
-          "Product, variant when there is one, warehouse, and the inventory row it belongs to.",
-          "Quantity is the signed change: positive in, negative out. Quantity before and after are on hand around that change.",
-          "Performed by is the user, and the reference points at what caused it: an order, a shipment, a return request, a stock transfer, a stock count, a till sale, or the inventory row itself.",
-          "Supplier, receipt number, receipt files, batch or lot, expiry, and unit cost appear when the action that wrote the row had them."
+          "Shows the product, the warehouse, the change (plus in, minus out), the quantity before and after, the reason, who did it and what caused it, such as an order or a transfer.",
+          "Reasons: Initial (opening stock), Restock, Sale, Return, Transfer in and out, Adjustment (counts and corrections), Damage and Write-off.",
+          "Restocks keep the cost, batch and expiry you entered; write-offs take the cost of the latest delivery, so losses have a value."
         ]
       },
       {
-        "title": "The reasons",
-        "body": "The reason is set by whatever made the change. You never pick it here.",
+        "title": "Changing stock",
         "items": [
-          "Initial is the opening quantity of a new inventory row. Restock is goods received.",
-          "Sale is goods leaving on a shipped order or a till sale.",
-          "Return is goods put back by a received return request or a till refund.",
-          "Transfer out and transfer in are the two sides of a completed stock transfer.",
-          "Adjustment is a stock count or a manual correction. Damage and write-off take goods out without a sale."
-        ]
-      },
-      {
-        "title": "Valuing stock",
-        "body": "Inbound rows carry the cost; outbound rows inherit it.",
-        "items": [
-          "A restock records the unit cost, batch, and expiry you enter.",
-          "A manual deduction copies the unit cost and expiry of the latest inbound row for the same batch (or the latest inbound row at all), so write-offs are valued."
-        ]
-      },
-      {
-        "title": "Why you cannot edit it",
-        "body": "The ledger is the history. Changing a row would make the before and after untrue.",
-        "items": [
-          "Rows cannot be created, edited, or deleted here, by anyone.",
-          "To change stock, use Inventory (restock, deduct), a transfer, a count, an order shipment, or a return.",
-          "Filter by product, warehouse, reason, or date to audit one item; the inventory row also opens its own history."
+          "Stock changes on Inventory, Stock transfers and Stock counts, when an order ships, and when a return comes back; never here.",
+          "Filter by product, warehouse, reason or date to follow one item."
         ]
       }
     ]

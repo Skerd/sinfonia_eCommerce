@@ -3,38 +3,17 @@
   "title": "Stock counts",
   "description": "Count a warehouse and correct its stock.",
   "help": {
-    "ariaLabel": "About Stock counts",
-    "title": "About Stock counts",
-    "overview": "A stock count records what is actually on the shelf in one warehouse, then corrects on hand to match. It stays a draft while you count; applying it is the moment the numbers change.",
+    "ariaLabel": "About stock counts",
+    "title": "About stock counts",
+    "overview": "Record what is really on the shelf in one warehouse, then correct your stock to match. A count stays a draft while you count; nothing changes until you apply it.",
     "sections": [
       {
-        "title": "The draft",
-        "body": "Counting changes nothing. Applying does.",
+        "title": "Each count",
         "items": [
-          "A count is for one warehouse, and stays a count of that warehouse.",
-          "Each line is a product, an optional variant, the quantity expected when the line was added, and the quantity counted. Lines must be different, stock-tracked items; a bundle cannot be a line.",
-          "Leave the counted quantity blank for an item you did not count; apply leaves it alone.",
-          "Only a draft can be edited, applied, or cancelled."
-        ]
-      },
-      {
-        "title": "What apply does",
-        "body": "The difference is taken against on hand at apply time, not against the expected snapshot.",
-        "items": [
-          "For every counted line, on hand becomes the counted quantity. Sales that shipped while you counted are therefore not undone.",
-          "An item the warehouse never stocked gets a new inventory row.",
-          "Each change writes an adjustment movement pointing at this count. Applied at and applied by are recorded.",
-          "A count below what is reserved for orders is accepted: the shelf is what it is, and available shows the shortfall as negative.",
-          "Applying or cancelling needs permission to write the count status."
-        ]
-      },
-      {
-        "title": "After it is applied",
-        "body": "The count stays as the record of what was found.",
-        "items": [
-          "Cancel is only from draft. An applied count is not reversed here; count again instead.",
-          "An applied count cannot be deleted. A draft or cancelled one is a soft delete and can be restored.",
-          "See Inventory for the new on hand and Stock movements for the adjustments."
+          "Add the products with the quantity you counted. Leave the count empty for an item you didn't count; it's left alone.",
+          "Apply count sets On hand to the counted quantity for each counted item, and records each difference in Stock movements.",
+          "Counting less than is reserved for orders is accepted: Available then shows the shortfall.",
+          "Only a draft can be edited, applied or cancelled. An applied count can't be undone or deleted; count again instead."
         ]
       }
     ]

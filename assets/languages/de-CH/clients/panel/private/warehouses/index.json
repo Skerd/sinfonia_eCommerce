@@ -5,29 +5,15 @@
   "help": {
     "ariaLabel": "Über Lager",
     "title": "Über Lager",
-    "overview": "Ein Lager ist ein Bestandsort. Bestandszeilen, Umlagerungen, Inventuren, Reservierungen von Bestellungen und Kassen zeigen alle auf Lager. Name und Code sind Pflicht; die Adresse ist optional, bestimmt aber die MWST von Kassenverkäufen.",
+    "overview": "Die Orte, an denen Sie Ware lagern. Bestand, Umlagerungen, Inventuren und Kassen gehören alle zu einem Lager. Name und Code sind Pflicht; die Adresse bestimmt die MWST der Kassenverkäufe.",
     "sections": [
       {
-        "title": "Standard und aktiv",
+        "title": "Jedes Lager",
         "items": [
-          "Als Standard setzen macht dieses Lager zum Firmenstandard und hebt den bisherigen auf. Der Checkout versucht zuerst das Standardlager.",
-          "Nur aktive Lager halten Bestand für den Checkout und können Kassen zugewiesen werden.",
-          "Das Deaktivieren eines Lagers, das das einzige Lager einer Kasse ist, wird abgelehnt; sonst wird es von Kassen entfernt, die noch ein anderes Lager haben."
-        ]
-      },
-      {
-        "title": "Löschen",
-        "body": "Bestand kann nicht mit seinem Lager verschwinden.",
-        "items": [
-          "Ein Lager, dessen Zeilen noch Bestand oder Reservierungen haben, kann nicht gelöscht werden. Lagern Sie den Bestand zuerst um oder buchen Sie ihn aus.",
-          "Löschen ist ein Soft Delete und kann wiederhergestellt werden, ausser ein anderes aktives Lager nutzt inzwischen denselben Code."
-        ]
-      },
-      {
-        "title": "Verwandte Seiten",
-        "items": [
-          "Bestand zeigt den Bestand pro Artikel in jedem Lager; Lagerbewegungen zeigen seine Historie.",
-          "Der Odoo-Import kann Lager aus Odoo anlegen."
+          "«Als Standard festlegen» macht es zu Ihrem Hauptlager; der Checkout nimmt den Bestand zuerst von dort.",
+          "Nur aktive Lager können Ware verkaufen oder Kassen zugeteilt werden. Das einzige Lager einer Kasse kann weder deaktiviert noch gelöscht werden.",
+          "Ein Lager mit Bestand oder Reservierungen kann nicht gelöscht werden: Verschieben Sie den Bestand zuerst oder schreiben Sie ihn ab.",
+          "Lagerbestand zeigt seine Ware; Lagerbewegungen zeigt ihre Geschichte."
         ]
       }
     ]

@@ -5,41 +5,24 @@
   "help": {
     "ariaLabel": "Rreth zbritjeve",
     "title": "Rreth zbritjeve",
-    "overview": "Një zbritje është një kod që blerësi fut në shportë. Shporta mban një kod njëherësh. Rikontrollohet sa herë rillogaritet shporta dhe hiqet nëse nuk vlen më. Titulli, tipi, vlera, fusha e zbatimit dhe data e fillimit janë të detyrueshme; kodi ruhet me shkronja të mëdha.",
+    "overview": "Kodet e zbritjes që klientët shkruajnë kur paguajnë. Një shportë merr një kod në një kohë, dhe kodi kontrollohet sërish sa herë ndryshon shporta.",
     "sections": [
       {
-        "title": "Kur llogaritet shuma",
-        "body": "Rendi i veprimeve në shportë: çmimi i katalogut → një rregull çmimi për rresht → kodi i zbritjes → transporti → tatimi.",
+        "title": "Llojet",
         "items": [
-          "Përqindje heq atë përqindje nga rreshtat brenda fushës. Fikse heq një shumë fikse, kurrë më shumë se vlera e atyre rreshtave.",
-          "Transport falas nuk e ul mallin; pagesa nuk tarifon transport sa kohë zbatohet.",
-          "Bli X merr Y numëron njësitë e kualifikuara, i grupon si sasi blerjeje plus dhuratë dhe i bën falas njësitë më të lira në çdo grup të plotë. Kërkon sasinë e blerjes, sasinë dhuratë dhe produktet e kualifikuara.",
-          "Rreshtat e kartave dhuratë nuk zbriten kurrë dhe nuk numërohen për minimumet."
+          "Përqindje ose shumë fikse e zbritur, kurrë më shumë se vlera e artikujve.",
+          "Transport falas: pa tarifë transporti sa kohë përdoret kodi.",
+          "Bli X merr Y: në çdo grup të plotë, artikujt më të lirë janë falas.",
+          "Vlen për gjithë porosinë, ose vetëm për produktet, kategoritë ose koleksionet e zgjedhura. Kartat dhuratë nuk zbriten kurrë."
         ]
       },
       {
-        "title": "Fusha e zbatimit",
+        "title": "Kur një kod nuk funksionon",
         "items": [
-          "Porosi mbulon çdo rresht malli. Produkt, kategori ose koleksion mbulojnë vetëm objektivat e zgjedhur.",
-          "Kategoria vlen për çdo kategori të produktit. Koleksioni përdor të njëjtën anëtarësi që tregon dyqani.",
-          "Në dyqanin e platformës, një shportë me disa shitës nuk mund të përdorë kodin e një shitësi."
-        ]
-      },
-      {
-        "title": "Çfarë e bllokon një kod",
-        "items": [
-          "Duhet të jetë aktiv dhe brenda datave të fillimit dhe mbarimit; pa datë mbarimi nuk skadon kurrë.",
-          "Limiti i përdorimit e ndal pas aq përdorimeve. Limiti për klient numëron porositë e paanuluara të atij klienti me kodin.",
-          "Shuma minimale e porosisë dhe sasia minimale numërojnë vetëm mallin, pas rregullave të çmimeve.",
-          "Grupet e klientëve të ruajtura te zbritja nuk kontrollohen kur zbatohet kodi."
-        ]
-      },
-      {
-        "title": "Numërimi i një përdorimi",
-        "items": [
-          "Një përdorim numërohet kur bëhet porosia, jo kur shkruhet kodi.",
-          "Nëse kodi pushoi së vlejturi ndërsa blerësi paguante me kartë, porosia e mban (refuzimi do t’i ngecte paratë) dhe përdorimi numërohet gjithsesi. Porositë e papaguara refuzohen.",
-          "Aktivizo dhe çaktivizo e ndezin dhe e fikin kodin. Fshirja është e butë dhe zbritja mund të rikthehet."
+          "Jashtë datave të fillimit dhe mbarimit, ose pas Çaktivizo.",
+          "Kur arrihet kufiri i përdorimit, gjithsej ose për klient. Një përdorim llogaritet kur bëhet porosia.",
+          "Nën shumën minimale të porosisë ose nën sasinë minimale.",
+          "Grupet e klientëve të ruajtura në një zbritje nuk kontrollohen."
         ]
       }
     ]

@@ -5,22 +5,15 @@
   "help": {
     "ariaLabel": "About the Odoo connection",
     "title": "About the Odoo connection",
-    "overview": "The Odoo connection stores how this company reaches its Odoo server. There is one connection per company; the Odoo import uses it to read data over JSON-RPC from the API server.",
+    "overview": "How this company reaches your Odoo. The Odoo import uses it to read your data; nothing is ever written back to Odoo.",
     "sections": [
       {
         "title": "What to enter",
-        "body": "Use the same URL, database, and login that work in Odoo.",
         "items": [
-          "URL is the Odoo address, for example https://your-company.odoo.com. Database is the Odoo database name.",
-          "Username is the Odoo login. The secret is an API key (preferred) or that user's password.",
-          "The secret is required the first time and stored encrypted. Leave it blank when saving again to keep the stored one."
-        ]
-      },
-      {
-        "title": "What the connection is used for",
-        "items": [
-          "Only the import reads from Odoo; nothing is ever written back to Odoo.",
-          "The import authenticates first, so a wrong URL, database, or secret shows up as an error there."
+          "Odoo URL: your Odoo address, such as https://your-company.odoo.com. Database: your Odoo database name.",
+          "User login: the Odoo login. API key or password: an Odoo API key is better than the password.",
+          "The key is needed the first time and kept encrypted. Leave it empty when you save again to keep it.",
+          "A wrong address, database or key shows up as an error when you run the import."
         ]
       }
     ]

@@ -5,51 +5,22 @@
   "help": {
     "ariaLabel": "Informazioni sulle evasioni",
     "title": "Informazioni sulle evasioni",
-    "overview": "Un'evasione è una spedizione di un ordine di prodotti: quali righe e quante unità sono partite, con quale corriere e quale tracciamento. Spedire un ordine ne crea una automaticamente; puoi anche crearne una qui per dividere un ordine in più colli. Il suo stato — in attesa, spedita, consegnata o non riuscita — determina lo stato spedito e consegnato dell’ordine.",
+    "overview": "Un'evasione è un pacco di un ordine: quali articoli sono partiti, con quale corriere e numero di tracciamento. Spedisci l'ordine la crea per te; creala qui per spedire un ordine in più pacchi.",
     "sections": [
       {
-        "title": "Creare una spedizione",
-        "body": "Una spedizione può coprire solo ciò che non è ancora stato spedito.",
+        "title": "Crea un pacco",
         "items": [
-          "Scegli l’ordine, poi le righe e la quantità di ciascuna. Ogni riga deve appartenere a quell’ordine, e la quantità non può superare ciò che le spedizioni precedenti hanno lasciato aperto.",
-          "Una spedizione creata qui parte in attesa: non è ancora partito nulla e la giacenza non è toccata.",
-          "Una volta creata, ordine e righe sono fissi. Corriere, tracciamento, date e note restano modificabili."
+          "Scegli l'ordine, poi gli articoli e quanti per ciascuno. Può entrare solo ciò che non è ancora stato spedito.",
+          "Un pacco nuovo è In sospeso: non è partito nulla e la giacenza non cambia. Corriere, tracciamento e date restano modificabili."
         ]
       },
       {
-        "title": "Come si muove una spedizione",
-        "body": "Spedisci, consegna e fallita sono azioni, ciascuna permessa solo dallo stato indicato. Richiedono il permesso di scrivere lo stato della spedizione.",
+        "title": "Seguilo",
         "items": [
-          "Spedisci è possibile solo da in attesa, e solo se l’ordine non è in attesa, annullato o rimborsato. Registra l’ora di spedizione e il tracciamento inserito.",
-          "La spedizione toglie le unità dalla giacenza: le riserve dell’ordine vengono consumate nei magazzini in cui erano state fatte. Le unità mai riservate vengono riservate sul momento; se la giacenza non basta, la spedizione viene rifiutata come esaurita.",
-          "Consegna è possibile solo da spedito. Quando l’ultima spedizione non fallita è consegnata, l’ordine diventa consegnato e il cliente viene avvisato una volta.",
-          "Fallita è possibile da in attesa o spedito. Un collo già partito che fallisce rimette le sue unità in giacenza e le riserva di nuovo per l’ordine, così una nuova spedizione può prenderle. Se nel frattempo l’ordine è annullato o rimborsato, quelle unità vengono invece liberate."
-        ]
-      },
-      {
-        "title": "Cosa vede l’ordine",
-        "body": "Lo stato di evasione dell’ordine viene ricalcolato dalle sue spedizioni a ogni cambiamento.",
-        "items": [
-          "Tutte le righe spedite per intero rendono l’ordine evaso; alcune righe spedite lo rendono parzialmente evaso.",
-          "Tutte le righe spedite portano l’ordine a spedito. Un ordine spedito per intero la cui spedizione fallisce torna in lavorazione.",
-          "Ogni cambiamento aggiunge una voce alla cronologia dell’ordine."
-        ]
-      },
-      {
-        "title": "Cosa vi registri",
-        "body": "È la spedizione, non l’ordine, a contenere il tracciamento.",
-        "items": [
-          "Corriere, numero e link di tracciamento sono ciò che il cliente riceve nel messaggio di spedizione.",
-          "Consegna stimata, spedito il e consegnato il scandiscono la cronologia. Le note sono per il personale.",
-          "Ogni riga mostra il prodotto spedito, con titolo e immagine."
-        ]
-      },
-      {
-        "title": "Pagine collegate",
-        "items": [
-          "Apri l’ordine per pagamento, annullamento o rimborso; restano sull’ordine.",
-          "Una richiesta di reso ricevuta rimette la merce nel magazzino da cui è partita la riga.",
-          "Eliminare una spedizione è un’eliminazione logica e può essere ripristinata."
+          "Contrassegna come spedito richiede un ordine confermato. Toglie gli articoli dal magazzino, o viene rifiutato se la merce non basta, e manda al cliente il corriere e il link di tracciamento.",
+          "Contrassegna come consegnato quando arriva. Quando tutti i pacchi sono arrivati, l'ordine diventa Consegnato e il cliente viene avvisato.",
+          "Contrassegna come non riuscito per un pacco perso o tornato indietro: i suoi articoli tornano in magazzino, riservati all'ordine, così puoi spedire un nuovo pacco.",
+          "Pagamento, annullamento e rimborsi restano sull'ordine, in Ordini di prodotti."
         ]
       }
     ]

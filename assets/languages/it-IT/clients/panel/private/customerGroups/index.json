@@ -3,31 +3,18 @@
   "title": "Gruppi di clienti",
   "description": "Segmenta i clienti per prezzi e promozioni.",
   "help": {
-    "ariaLabel": "Informazioni su Gruppi di clienti",
-    "title": "Informazioni su Gruppi di clienti",
-    "overview": "I gruppi di clienti segmentano gli acquirenti, ad esempio dettaglio e ingrosso, così le regole di prezzo possono dare a ogni gruppo i propri prezzi. Un cliente può appartenere a più gruppi.",
+    "ariaLabel": "Informazioni sui gruppi di clienti",
+    "title": "Informazioni sui gruppi di clienti",
+    "overview": "Gruppi di clienti, come dettaglio e ingrosso, perché le regole di prezzo diano a ogni gruppo i propri prezzi. Un cliente può stare in più gruppi.",
     "sections": [
       {
-        "title": "Appartenenza",
-        "body": "L’appartenenza è gestita solo dal personale, perché cambia quanto pagano i clienti.",
+        "title": "Ogni gruppo",
         "items": [
-          "Aggiungi membro e rimuovi membro gestiscono un record per cliente nel gruppo; un cliente non può essere aggiunto due volte.",
-          "Il numero di membri mostrato sul gruppo segue quei record.",
-          "Imposta come predefinito rende un gruppo il predefinito della società e toglie il precedente. Non aggiunge nessuno da solo."
-        ]
-      },
-      {
-        "title": "Come i prezzi leggono i gruppi",
-        "items": [
-          "Una regola di prezzo senza gruppi vale per ogni carrello. Una regola che elenca gruppi vale solo se il cliente connesso è in uno di essi.",
-          "I carrelli degli ospiti non appartengono a nessun gruppo.",
-          "I codici sconto non controllano i gruppi quando vengono applicati."
-        ]
-      },
-      {
-        "title": "Eliminazione",
-        "items": [
-          "Eliminare un gruppo è un’eliminazione logica che toglie anche le sue appartenenze. Ripristinarlo le riporta, tranne per i clienti aggiunti di nuovo nel frattempo."
+          "Gestisci i membri aggiunge o toglie clienti. Solo il tuo team può cambiare chi è in un gruppo.",
+          "Una regola di prezzo che indica dei gruppi vale solo per i clienti con accesso che ne fanno parte; gli ospiti non sono in nessun gruppo.",
+          "I codici sconto non controllano i gruppi.",
+          "Rendi predefinito segna il gruppo predefinito dell'azienda; da solo non aggiunge nessuno.",
+          "Eliminare un gruppo chiude anche le sue iscrizioni; ripristinarlo le riporta."
         ]
       }
     ]

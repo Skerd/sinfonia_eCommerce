@@ -3,31 +3,17 @@
   "title": "Warehouses",
   "description": "Manage the locations that hold your stock.",
   "help": {
-    "ariaLabel": "About Warehouses",
-    "title": "About Warehouses",
-    "overview": "A warehouse is a stock location. Inventory rows, stock transfers, stock counts, order holds, and tills all point at warehouses. Name and code are required; the address is optional but decides the VAT of till sales.",
+    "ariaLabel": "About warehouses",
+    "title": "About warehouses",
+    "overview": "The places where you keep stock. Stock, transfers, counts and tills all belong to a warehouse. Name and code are required; the address decides the VAT of till sales.",
     "sections": [
       {
-        "title": "Default and active",
+        "title": "Each warehouse",
         "items": [
-          "Set default makes this warehouse the company default and clears the previous one. Checkout tries the default warehouse first.",
-          "Only active warehouses hold stock for checkout and can be assigned to tills.",
-          "Deactivating a warehouse that is the only warehouse of a till is refused; otherwise it is removed from tills that still have another warehouse."
-        ]
-      },
-      {
-        "title": "Deleting",
-        "body": "Stock cannot vanish with its warehouse.",
-        "items": [
-          "A warehouse whose rows still hold stock or reservations cannot be deleted. Transfer or write the stock off first.",
-          "Deleting is a soft delete and it can be restored, unless another live warehouse now uses the same code."
-        ]
-      },
-      {
-        "title": "Related pages",
-        "items": [
-          "Inventory shows the stock per item in each warehouse; Stock movements shows its history.",
-          "The Odoo import can create warehouses from Odoo."
+          "Make default makes this your main warehouse; checkout takes stock from it first.",
+          "Only active warehouses can sell stock or be given to tills. A till's only warehouse can't be deactivated or deleted.",
+          "A warehouse that still holds stock or reservations can't be deleted: move the stock or write it off first.",
+          "Inventory shows its stock; Stock movements shows its history."
         ]
       }
     ]

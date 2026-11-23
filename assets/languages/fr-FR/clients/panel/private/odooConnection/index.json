@@ -5,22 +5,15 @@
   "help": {
     "ariaLabel": "À propos de la connexion Odoo",
     "title": "À propos de la connexion Odoo",
-    "overview": "La connexion Odoo enregistre comment cette société joint son serveur Odoo. Il y a une connexion par société ; l’import Odoo l’utilise pour lire les données en JSON-RPC depuis le serveur d’API.",
+    "overview": "Comment cette entreprise atteint votre Odoo. L'import Odoo s'en sert pour lire vos données ; rien n'est jamais écrit dans Odoo.",
     "sections": [
       {
-        "title": "Quoi saisir",
-        "body": "Utilisez la même URL, la même base et le même identifiant qui fonctionnent dans Odoo.",
+        "title": "Ce qu'il faut saisir",
         "items": [
-          "L’URL est l’adresse Odoo, par exemple https://your-company.odoo.com. La base est le nom de la base de données Odoo.",
-          "Le nom d’utilisateur est l’identifiant Odoo. Le secret est une clé d’API (de préférence) ou le mot de passe de cet utilisateur.",
-          "Le secret est obligatoire la première fois et stocké chiffré. Laissez-le vide lors d’un nouvel enregistrement pour garder celui déjà stocké."
-        ]
-      },
-      {
-        "title": "À quoi sert la connexion",
-        "items": [
-          "Seul l’import lit depuis Odoo ; rien n’est jamais réécrit dans Odoo.",
-          "L’import s’authentifie d’abord, donc une URL, une base ou un secret erronés apparaissent comme une erreur à ce moment-là."
+          "URL Odoo : l'adresse de votre Odoo, comme https://your-company.odoo.com. Base de données : le nom de votre base Odoo.",
+          "Identifiant : votre identifiant Odoo. Clé API ou mot de passe : une clé API Odoo vaut mieux que le mot de passe.",
+          "La clé est demandée la première fois et gardée chiffrée. Laissez-la vide quand vous enregistrez à nouveau pour la conserver.",
+          "Une adresse, une base ou une clé erronée apparaît comme une erreur quand vous lancez l'import."
         ]
       }
     ]

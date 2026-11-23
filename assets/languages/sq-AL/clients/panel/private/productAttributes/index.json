@@ -3,26 +3,18 @@
   "title": "Atributet e produkteve",
   "description": "Përcaktoni opsionet e produktit si madhësia, ngjyra dhe materiali.",
   "help": {
-    "ariaLabel": "Rreth atributeve të produktit",
-    "title": "Rreth atributeve të produktit",
-    "overview": "Atributet janë lista opsionesh të përbashkëta si Madhësia ose Ngjyra. Një variant zgjedh një vlerë nga çdo atribut që e përcakton, ndaj atributi është ai që e kthen një produkt në disa SKU.",
+    "ariaLabel": "Rreth atributeve të produkteve",
+    "title": "Rreth atributeve të produkteve",
+    "overview": "Atributet janë opsionet në të cilat vijnë produktet tuaja, si Masa ose Ngjyra, me vlerat e tyre (S, M, L). Variantet ndërtohen prej tyre.",
     "sections": [
       {
-        "title": "Fushat",
+        "title": "Çdo atribut",
         "items": [
-          "Emri është i detyrueshëm. Vlerat janë zgjedhjet që shohin blerësit, për shembull S, M, L; deri në 50.",
-          "I dukshëm në faqen e produktit e shfaq atributin te detajet e produktit. Nuk ndryshon çmimet.",
-          "I përdorur për variante e shënon si atribut që i ndan produktet në SKU.",
-          "Pozicioni rendit atributet në faqen e produktit dhe në zgjedhësin e varianteve."
-        ]
-      },
-      {
-        "title": "Si e përdorin variantet",
-        "items": [
-          "Çdo variant ruan çifte atribut-vlerë. Dy variante aktive të të njëjtit produkt nuk mund të kenë të njëjtën kombinim.",
-          "Shporta dhe arka tarifojnë çmimin e variantit, ose të produktit kur varianti nuk ka.",
-          "Një atribut i përdorur nga ndonjë variant aktiv nuk mund të fshihet. Hiqeni së pari nga ato variante.",
-          "Fshirja është e butë dhe atributi mund të rikthehet."
+          "Emri është i detyrueshëm; shtoni deri në 50 vlera.",
+          "Përdoret për variantet: atributi krijon variante produkti, një për çdo kombinim vlerash.",
+          "I dukshëm në faqen e produktit e shfaq te detajet e produktit; nuk i ndryshon çmimet.",
+          "Pozicioni përcakton radhën e tij në faqen e produktit dhe në zgjedhësin e varianteve.",
+          "Një atribut që e përdor një variant nuk mund të fshihet; hiqeni më parë nga ato variante."
         ]
       }
     ]

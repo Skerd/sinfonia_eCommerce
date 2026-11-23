@@ -3,33 +3,24 @@
   "title": "Blocchi CMS",
   "description": "Gestisci i blocchi di contenuti della vetrina e il loro ordine di visualizzazione.",
   "help": {
-    "ariaLabel": "Informazioni sui blocchi CMS",
-    "title": "Informazioni sui blocchi CMS",
-    "overview": "I blocchi CMS sono le sezioni della home page del negozio, come un banner principale, uno slider o una barra di annunci. Il negozio mostra i blocchi attivi le cui date includono adesso, nell’ordine delle posizioni. Tipo e titolo sono obbligatori; scegliere un tipo mostra i campi che richiede.",
+    "ariaLabel": "Informazioni sui blocchi della home page",
+    "title": "Informazioni sui blocchi della home page",
+    "overview": "I blocchi CMS sono le sezioni della home page del tuo negozio, come un banner, uno slider o una barra degli annunci. Scegli un tipo, poi compila ciò che chiede.",
     "sections": [
       {
         "title": "Tipi",
         "items": [
-          "Banner principale, slider e sezione promozionale mostrano immagini con un titolo e un link di invito all’azione.",
-          "Collezione in evidenza, tendenze, più venduti, vendita lampo, griglia e vetrina categorie mostrano prodotti di una collezione o di categorie, fino a un limite.",
-          "Barra di annunci mostra un breve messaggio con un link facoltativo. Video incorpora un URL video.",
-          "HTML personalizzato mostra il tuo markup; viene ripulito prima che il negozio lo visualizzi."
+          "Banner, slider e sezioni promozionali mostrano immagini con un titolo e un pulsante con link.",
+          "Collezione in primo piano, di tendenza, i più venduti, vendita lampo, griglia e vetrina di categoria mostrano prodotti di una collezione o di categorie.",
+          "La barra degli annunci mostra un breve messaggio; il video mostra un link video; l'HTML personalizzato mostra il tuo codice, senza nulla di pericoloso."
         ]
       },
       {
         "title": "Quando e dove appare",
         "items": [
-          "Inizio e fine delimitano quando il blocco è mostrato. Fuori da esse resta salvato ma non viene inviato al negozio.",
-          "La posizione è l’ordine nella pagina; Riordina riscrive le posizioni nell’ordine che scegli.",
-          "La visibilità può limitare il blocco a desktop, tablet o mobile, e a regioni. I nuovi blocchi appaiono su tutti i dispositivi.",
-          "Il negozio piattaforma che elenca tutti i venditori non usa i blocchi di nessun venditore."
-        ]
-      },
-      {
-        "title": "Stato",
-        "items": [
-          "Attiva e disattiva mostrano o nascondono il blocco senza eliminarlo.",
-          "L’eliminazione è logica e il blocco può essere ripristinato."
+          "Un blocco appare solo se è attivo e tra le sue date di inizio e fine.",
+          "Posizione ne decide l'ordine nella pagina; Riordina i blocchi ti permette di trascinarli al loro posto.",
+          "La visibilità può limitare un blocco ad alcuni dispositivi o regioni. Disattiva nasconde un blocco senza eliminarlo."
         ]
       }
     ]

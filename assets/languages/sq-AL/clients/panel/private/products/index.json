@@ -5,70 +5,29 @@
   "help": {
     "ariaLabel": "Rreth produkteve",
     "title": "Rreth produkteve",
-    "overview": "Një produkt është një artikull i shitshëm i katalogut të kësaj kompanie. Dyqani dhe arka e shesin vetëm sa kohë statusi i tij është aktiv. Skica është kopja e punës që askush nuk mund ta blejë, dhe i arkivuar e heq nga shitja pa e humbur. Gjithçka që dyqani tregon për artikullin — çmimi, mediat, stoku, SEO, artikujt e lidhur — ndryshohet këtu.",
+    "overview": "Gjithçka që shisni, online dhe në arkë. Klientët mund ta blejnë një produkt vetëm kur është Aktiv; Skicë është kopja juaj e punës, dhe Arkivuar e heq nga shitja pa e humbur.",
     "sections": [
       {
-        "title": "Çfarë ndryshon tipi",
-        "body": "Tipi është korniza për çmimin, transportin, stokun dhe çfarë ndodh pas pagesës. Zgjidheni të parin; shumica e fushave të tjera varen prej tij.",
+        "title": "Zgjidhni fillimisht llojin",
         "items": [
-          "Fizik dërgohet në një adresë dhe ndiqet në stok. Ka peshë, përmasa, klasë transporti dhe një shenjë për mallra të rrezikshme; tarifat e transportit sipas peshës përdorin peshën.",
-          "I ndryshueshëm shitet përmes varianteve të tij (madhësi, ngjyrë etj.). Çdo variant është SKU më vete me rreshtin e vet të stokut. Një variant pa çmim të vetin përdor çmimin e produktit.",
-          "Dixhital dorëzohet si shkarkim. Pagesa jep një të drejtë shkarkimi, të kufizuar nga limiti i shkarkimeve dhe ditët e skadimit. Një rimbursim i plotë i porosisë i bën këto shkarkime të skadojnë.",
-          "Shërbim shitet pa dërgesë dhe pa stok.",
-          "Paketë produktesh është një grup produktesh të tjera, secili me një sasi. Nuk ka stok të vetin: kur stoku lëviz, paketa hapet një nivel në përbërësit e saj. Çdo përbërës duhet të jetë një produkt aktiv, i pafshirë, i kësaj kompanie dhe nuk mund të jetë vetë paketë.",
-          "Kartë dhuratë shitet si kredi. Pagesa lëshon një kartë për njësi, me bilanc të barabartë me çmimin për njësi. Rreshtat e kartave dhuratë nuk zbriten kurrë dhe nuk numërohen kurrë për minimumet e zbritjeve."
+          "Fizik: dërgohet dhe mbahet në stok. I ndryshueshëm: shitet në versione si masa ose ngjyra, secili me stokun e vet dhe, nëse doni, me çmimin e vet (shihni Variantet e produkteve).",
+          "Dixhital: një shkarkim, me kufi shkarkimesh dhe afat. Shërbim: pa dërgesë dhe pa stok. Kartë dhuratë: kredi për t'u shpenzuar në dyqanin tuaj. Paketë: një grup prej produkteve tuaja të tjera; stoku i saj vjen nga pjesët."
         ]
       },
       {
-        "title": "Statusi dhe veprimet e rreshtit",
-        "body": "Statusi nuk ndryshon me një modifikim të thjeshtë. Publiko, arkivo dhe kthe në skicë janë veprime, dhe secili refuzohet kur produkti nuk është në gjendjen e pritur.",
+        "title": "Vënia në shitje",
         "items": [
-          "Publiko është i mundur vetëm nga skica. Një produkt pa variante duhet të ketë tashmë një çmim, sepse një produkt aktiv shitet me atë çmim. Publikimi i parë regjistron datën e publikimit.",
-          "Publikimi i planifikuar: një skicë me datë publikimi në të kaluarën vihet automatikisht në shitje nga një proces që punon çdo pesë minuta, nëse ka çmim.",
-          "Arkivo është i mundur nga skica ose aktiv dhe e heq produktin nga shitja. Shportat e heqin në llogaritjen e radhës së çmimeve.",
-          "Kthe në skicë është i mundur vetëm nga i arkivuar. Fshin datën e publikimit që procesi i planifikuar të mos e kthejë menjëherë në shitje.",
-          "Dyfisho kopjon të dhënat në një skicë të re me titullin plus \" (Copy)\". Variantet, rreshtat e stokut, vlerësimet, notat dhe data e publikimit nuk kopjohen, dhe krijohet një slug i ri.",
-          "Fshirja e një produkti është fshirje e butë dhe mund të rikthehet."
+          "Publiko e vë në shitje një skicë; kërkon çmim, përveç kur produkti ka variante. Një skicë me datë publikimi del vetë në shitje kur vjen ajo datë.",
+          "Arkivo e heq nga shitja; Kthe në skicë e rikthen një produkt të arkivuar. Dupliko e kopjon si skicë të re, pa variantet, stokun dhe vlerësimet."
         ]
       },
       {
-        "title": "Fushat e çmimit",
-        "body": "Faturohet vetëm çmimi. Fushat e tjera monetare e përshkruajnë.",
+        "title": "Çmimi dhe stoku",
         "items": [
-          "Çmimi është çmimi për njësi nga nis shporta, para rregullave të çmimeve dhe kodeve të zbritjes.",
-          "Çmimi i krahasimit është çmimi i vjetër i vizatuar që dyqani mund të tregojë. MSRP është çmimi i rekomanduar nga prodhuesi. Çmimi i kostos shërben për analizat e marzhit dhe nuk u tregohet kurrë blerësve.",
-          "Fillimi dhe mbarimi i uljes kufizojnë periudhën e uljes të treguar në dyqan.",
-          "Sasia minimale, maksimale dhe hapi janë rregullat e sasisë së porosisë; shporta i zbaton dhe dyqani i numëron sasitë në të njëjtën mënyrë.",
-          "I tatueshëm dhe klasa tatimore e përshkruajnë artikullin për tatimin. Vetë tatimi vjen nga zonat tatimore të adresës së dërgesës."
-        ]
-      },
-      {
-        "title": "Stoku",
-        "body": "Një produkt fizik ose i ndryshueshëm ndiqet në stok, përveç kur ndjekja e stokut është e çaktivizuar (te produkti ose te varianti).",
-        "items": [
-          "Një artikull i ndjekur mund të shitet vetëm nga stok që ekziston. Pa rresht stoku në një magazinë aktive, pagesa online e refuzon rreshtin si jashtë stoku.",
-          "Pragu i stokut të ulët, stoku i sigurisë, porositë pa stok dhe parashitja përshkruajnë si doni të trajtohet artikulli; sasitë dhe pikat e rifurnizimit për magazinë janë në faqen Inventari.",
-          "Një artikull i pandjekur (i çaktivizuar, ose produkt dixhital, shërbim apo kartë dhuratë) shitet pa prekur stokun."
-        ]
-      },
-      {
-        "title": "Përmbajtja e dyqanit dhe SEO",
-        "body": "Këto fusha ndryshojnë vetëm mënyrën si paraqitet dhe gjendet produkti.",
-        "items": [
-          "Imazhi kryesor, galeria, videot dhe dokumentet janë mediat. Pikat kryesore, specifikimet, FAQ, udhëzimet e kujdesit dhe garancia mbushin faqen e produktit.",
-          "Produktet e lidhura, shitjet shtesë, shitjet e kryqëzuara dhe «blihen shpesh bashkë» janë vendet e rekomandimeve. I veçuar dhe shenjat e nxjerrin artikullin në pah në lista.",
-          "Identifikuesit (SKU, barkodi, GTIN, UPC, EAN, ISBN, MPN, kodi HS, vendi i origjinës) përdoren për kërkimin, skanimin në arkë dhe doganën.",
-          "SEO përmban meta titullin dhe përshkrimin, fjalët kyçe, URL kanonike, fushat Open Graph dhe Twitter Card, përfshirjen dhe përparësinë në sitemap, dhe no-index."
-        ]
-      },
-      {
-        "title": "Si lidhet",
-        "body": "Produkti është kartela e katalogut; stoku, porositë dhe vlerësimet varen prej tij.",
-        "items": [
-          "Kategoritë dhe koleksionet e grupojnë në dyqan. Mund të jetë në disa kategori, por rregullat e çmimeve që synojnë një kategori shohin vetëm të parën.",
-          "Variantet dhe atributet e tyre janë te Konfigurimet. Stoku për magazinë është te Stoku → Inventari.",
-          "Rreshtat e porosisë ruajnë një pamje të titullit, SKU-së, tipit dhe etiketës së variantit, që ndryshimet e mëvonshme të mos rishkruajnë kurrë porositë e kaluara.",
-          "Një vlerësim mbi një rresht porosie të paguar përditëson notën mesatare, numrin e notave dhe numrin e vlerësimeve të treguara këtu."
+          "Çmimi është ajo që paguan klienti para rregullave të çmimeve dhe kodeve të zbritjes. Çmimi krahasues është çmimi “më parë”, i shfaqur i vijëzuar; kostoja është vetëm për ju.",
+          "Produktet fizike dhe të ndryshueshme shiten vetëm nga stoku i futur te Inventari, përveç kur Gjurmo inventarin është i fikur.",
+          "Porositë e kaluara i ruajnë të dhënat e produktit siç ishin kur u shit, ndaj ndryshimi i produktit nuk i prek kurrë.",
+          "Fushat e tjera plotësojnë faqen e produktit: fotot, videot, detajet, kërkimin dhe shpërndarjen (SEO) dhe produktet e lidhura."
         ]
       }
     ]

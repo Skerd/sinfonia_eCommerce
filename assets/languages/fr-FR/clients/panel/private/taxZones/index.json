@@ -5,32 +5,23 @@
   "help": {
     "ariaLabel": "À propos des zones fiscales",
     "title": "À propos des zones fiscales",
-    "overview": "Les zones fiscales décident de la taxe facturée au checkout et de la part de TVA dans les prix en caisse. Une zone couvre un pays, éventuellement restreint à des régions et des codes postaux, et porte un ou plusieurs taux nommés.",
+    "overview": "Les zones fiscales décident de la taxe ajoutée au paiement et de la TVA comprise dans les prix en caisse. Chaque zone couvre un pays, ou une partie, et contient un ou plusieurs taux.",
     "sections": [
       {
-        "title": "Faire correspondre une adresse",
-        "body": "Le checkout utilise l’adresse de livraison ; la caisse, l’adresse de son premier entrepôt.",
+        "title": "Où une zone s'applique",
         "items": [
-          "Le pays doit correspondre. Les régions listées restreignent ; aucune région couvre tout le pays.",
-          "Les modèles de code postal sont facultatifs ; * est le seul joker, par exemple 10*.",
-          "Chaque zone active correspondante s’applique, la plus prioritaire d’abord. Une adresse sans zone correspondante ne paie pas de taxe."
+          "Le paiement en ligne utilise l'adresse de livraison ; la caisse utilise l'adresse de son premier entrepôt.",
+          "Les régions et les codes postaux restreignent une zone ; laissez-les vides pour tout le pays. Utilisez * dans un code postal, comme 10*.",
+          "Chaque zone active qui correspond s'applique, de la priorité la plus haute. Une adresse qui ne correspond à aucune zone ne paie pas de taxe."
         ]
       },
       {
         "title": "Taux",
         "items": [
-          "Chaque taux a un nom, un pourcentage et ce à quoi il s’applique : tous les produits, physiques seulement ou numériques seulement.",
-          "Les produits physiques, variables et packs prennent les taux physiques ; les produits numériques, les taux numériques ; chaque produit prend les taux « tous ».",
-          "Un taux composé est calculé sur la base plus les taxes déjà ajoutées avant lui."
-        ]
-      },
-      {
-        "title": "Comment le montant est calculé",
-        "items": [
-          "Les lignes sont regroupées en physique, numérique et autres, la remise de commande est répartie entre les groupes selon leur valeur, et chaque groupe est taxé avec ses taux.",
-          "La commande garde un détail par nom de taux et pourcentage.",
-          "Les prix en caisse incluent la TVA : la part de taxe est extraite du prix au lieu d’être ajoutée.",
-          "Activer et désactiver allument et éteignent la zone. La suppression est douce et la zone peut être restaurée."
+          "Chaque taux a un nom, un pourcentage et ce à quoi il s'applique : tous les produits, physiques seulement ou numériques seulement.",
+          "Un taux composé se calcule sur le prix plus les taxes qui le précèdent.",
+          "Les prix en caisse comprennent déjà la TVA : la taxe est extraite du prix, pas ajoutée par-dessus.",
+          "Chaque commande garde sa taxe détaillée par taux."
         ]
       }
     ]

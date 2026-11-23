@@ -5,38 +5,23 @@
   "help": {
     "ariaLabel": "Rreth rregullave të çmimeve",
     "title": "Rreth rregullave të çmimeve",
-    "overview": "Rregullat e çmimeve ndryshojnë automatikisht çmimin për njësi të një rreshti, para çdo kodi zbritjeje. Përdorini për çmime shumice, ulje sipas kategorisë ose shtesa. Çdo rresht i shportës merr të shumtën një rregull. Emri, tipi, vlera dhe fusha e zbatimit janë të detyrueshme.",
+    "overview": "Rregullat e çmimeve i ndryshojnë çmimet vetë, para çdo kodi zbritjeje: çmime shumice, ulje për një kategori ose një shtesë çmimi. Çdo artikull në shportë merr të shumtën një rregull.",
     "sections": [
       {
-        "title": "Cili rregull fiton",
-        "body": "Rregullat aktive renditen sipas përparësisë (më e larta së pari), pastaj nga më i riu. Për çdo rresht zbatohet rregulli i parë që kualifikohet dhe përputhet; të tjerët kapërcehen për atë rresht.",
+        "title": "Cili rregull vlen",
         "items": [
-          "Një rregull jashtë datave të fillimit dhe mbarimit injorohet.",
-          "Grupet e klientëve: një rregull pa grupe vlen për të gjithë; një rregull me grupe vetëm për klientët e identifikuar në njërin prej tyre. Mysafirët përputhen vetëm me rregullat pa grupe.",
-          "Shuma minimale e porosisë krahasohet me nëntotalin e shportës para çdo rregulli; sasia minimale me totalin e njësive në shportë."
+          "Rregullat provohen sipas prioritetit, nga më i larti; rregulli i parë që i përshtatet një artikulli është ai që zbatohet për të.",
+          "Një rregull funksionon vetëm kur është aktiv dhe brenda datave të fillimit dhe mbarimit.",
+          "Një rregull me grupe klientësh vlen vetëm për klientët e identifikuar në ato grupe.",
+          "Shuma minimale e porosisë dhe sasia minimale shikojnë gjithë shportën."
         ]
       },
       {
-        "title": "Fusha e zbatimit",
+        "title": "Çfarë bën",
         "items": [
-          "Të gjitha dhe grupi i klientëve prekin çdo rresht të një shporte që kualifikohet.",
-          "Produkt, kategori dhe koleksion prekin vetëm objektivat e zgjedhur. Kategoria shikon vetëm kategorinë e parë të produktit."
-        ]
-      },
-      {
-        "title": "Tipet",
-        "body": "Rregullimi zbatohet mbi çmimin për njësi të katalogut, dhe rezultati nuk është kurrë nën zero.",
-        "items": [
-          "Zbritje në përqindje e ul çmimin me atë përqindje. Zbritje fikse zbret vlerën.",
-          "Çmim fiks e zëvendëson çmimin me vlerën. Shtesë i shton vlerën."
-        ]
-      },
-      {
-        "title": "Ku zbatohet",
-        "items": [
-          "Shporta rillogarit çdo herë nga çmimi i katalogut, ndaj një rregull nuk zbatohet kurrë mbi një çmim të rregulluar tashmë.",
-          "Çdo rresht tregon rregullin që e ndryshoi. Arka përdor çmimet e katalogut dhe nuk zbaton rregulla çmimesh.",
-          "Aktivizo dhe çaktivizo e ndezin dhe e fikin rregullin. Fshirja është e butë dhe rregulli mund të rikthehet."
+          "Një zbritje në përqindje ose fikse, një çmim fiks, ose një shtesë mbi çmim. Një çmim nuk zbret kurrë nën zero.",
+          "Vlen për gjithçka, ose vetëm për produktet, kategoritë ose koleksionet e zgjedhura; një rregull kategorie shikon vetëm kategorinë e parë të produktit.",
+          "Arka shet me çmimet e katalogut dhe nuk përdor rregullat e çmimeve."
         ]
       }
     ]

@@ -3,33 +3,24 @@
   "title": "CMS-Blöcke",
   "description": "Inhaltsblöcke des Shops und ihre Anzeigereihenfolge verwalten.",
   "help": {
-    "ariaLabel": "Über CMS-Blöcke",
-    "title": "Über CMS-Blöcke",
-    "overview": "CMS-Blöcke sind die Abschnitte der Shop-Startseite, etwa ein Hero-Banner, ein Slider oder eine Ankündigungsleiste. Der Shop zeigt aktive Blöcke, deren Daten jetzt einschliessen, in Positionsreihenfolge. Typ und Titel sind Pflicht; die Wahl eines Typs zeigt die Felder, die er braucht.",
+    "ariaLabel": "Über die Blöcke der Startseite",
+    "title": "Über die Blöcke der Startseite",
+    "overview": "CMS-Blöcke sind die Abschnitte der Startseite Ihres Shops, etwa ein Banner, ein Slider oder eine Ankündigungsleiste. Wählen Sie einen Typ und füllen Sie aus, was er verlangt.",
     "sections": [
       {
         "title": "Typen",
         "items": [
-          "Hero-Banner, Slider und Werbebereich zeigen Bilder mit Überschrift und Call-to-Action-Link.",
-          "Hervorgehobene Kollektion, Trends, Bestseller, Flash-Sale, Raster und Kategorie-Schaufenster zeigen Produkte aus einer Kollektion oder aus Kategorien, bis zu einem Limit.",
-          "Ankündigungsleiste zeigt eine kurze Nachricht mit optionalem Link. Video bettet eine Video-URL ein.",
-          "Eigenes HTML zeigt Ihr eigenes Markup; es wird bereinigt, bevor der Shop es darstellt."
+          "Banner, Slider und Werbebereiche zeigen Bilder mit einer Überschrift und einer Schaltfläche mit Link.",
+          "Hervorgehobene Kollektion, Im Trend, Bestseller, Flash Sale, Raster und Kategorie-Schaufenster zeigen Produkte aus einer Kollektion oder aus Kategorien.",
+          "Die Ankündigungsleiste zeigt eine kurze Nachricht; Video zeigt einen Videolink; eigenes HTML zeigt Ihren eigenen Code, ohne Unsicheres."
         ]
       },
       {
         "title": "Wann und wo er erscheint",
         "items": [
-          "Start und Ende begrenzen, wann der Block gezeigt wird. Ausserhalb bleibt er gespeichert, wird aber nicht an den Shop gesendet.",
-          "Position ist die Reihenfolge auf der Seite; Neu anordnen schreibt die Positionen in der von Ihnen gewählten Reihenfolge.",
-          "Sichtbarkeit kann den Block auf Desktop, Tablet oder Mobil sowie auf Regionen beschränken. Neue Blöcke erscheinen auf allen Geräten.",
-          "Der Plattform-Shop, der alle Verkäufer listet, nutzt keine Blöcke eines Verkäufers."
-        ]
-      },
-      {
-        "title": "Status",
-        "items": [
-          "Aktivieren und Deaktivieren zeigen oder verbergen den Block, ohne ihn zu löschen.",
-          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+          "Ein Block erscheint nur, wenn er aktiv ist und zwischen seinen Start- und Enddaten.",
+          "Die Position bestimmt seine Reihenfolge auf der Seite; mit «Blöcke neu anordnen» ziehen Sie sie an ihren Platz.",
+          "Die Sichtbarkeit kann einen Block auf bestimmte Geräte oder Regionen beschränken. Deaktivieren blendet einen Block aus, ohne ihn zu löschen."
         ]
       }
     ]

@@ -3,44 +3,18 @@
   "title": "Seancat POS",
   "description": "Seancat e arkës të hapura dhe mbyllura nga Pika e Shitjes.",
   "help": {
-    "ariaLabel": "Rreth sesioneve POS",
-    "title": "Rreth sesioneve POS",
-    "overview": "Një seancë është një hapje e arkës, nga numërimi i parave fillestare deri te numërimi i mbylljes. Seancat hapen dhe mbyllen në arkë; kjo faqe i liston që të kontrolloni çdo sirtar.",
+    "ariaLabel": "Rreth seancave POS",
+    "title": "Rreth seancave POS",
+    "overview": "Një seancë është një turn në një arkë, nga paratë e numëruara në hapje deri te paratë e numëruara në mbyllje. Arkat hapen dhe mbyllen te Pika e Shitjes; këtu kontrolloni më pas çdo sirtar.",
     "sections": [
       {
-        "title": "Gjendjet",
-        "body": "Gjendja tregon ku është ajo hapje e sirtarit, jo nëse arka mund të shesë.",
+        "title": "Çdo seancë tregon",
         "items": [
-          "E hapur është dritarja e shitjes: arka e hap seancën drejtpërdrejt në këtë gjendje me paratë fillestare.",
-          "E mbyllur është seancë e përfunduar, e mbyllur nga arkëtari ose e mbyllur me forcë kur arka u vu në pauzë ose u çaktivizua.",
-          "Kontrolli i hapjes dhe kontrolli i mbylljes janë gjendje të rezervuara; arka aktuale nuk ndalet në to."
-        ]
-      },
-      {
-        "title": "Çfarë ndjek seanca",
-        "body": "Seanca është sirtari i parave për atë hapje plus shitjet e regjistruara në të.",
-        "items": [
-          "Paratë fillestare janë paratë e numëruara në fillim.",
-          "Futjet dhe nxjerrjet e parave janë lëvizje sirtari me shumë, arsye, orë dhe kush i bëri.",
-          "Paratë e pritura nisin nga paratë fillestare dhe ndjekin çdo lëvizje parash, shitje në para (neto nga kusuri) dhe rimbursim në para.",
-          "Bilanci i mbylljes janë paratë e numëruara në fund. Diferenca nga paratë e pritura dhe arsyeja e saj shkruhen në shënimet e seancës."
-        ]
-      },
-      {
-        "title": "Rakordimi",
-        "body": "Rakordimi krahason numërimin me atë që priste seanca, të ndarë sipas metodës së pagesës.",
-        "items": [
-          "Liston paratë fillestare, lëvizjet e parave, shitjet dhe rimbursimet sipas metodës, dhe diferencën.",
-          "Një diferencë prej një qindarke ose më shumë nuk mund të mbyllet pa arsye."
-        ]
-      },
-      {
-        "title": "Kush mund ta bëjë",
-        "body": "Butonat janë në arkë; lejet janë te seanca.",
-        "items": [
-          "Hapja, mbyllja dhe rakordimi kërkojnë lejen për të shkruar gjendjen e seancës. Lëvizjet e parave kërkojnë lejen për të shkruar lëvizjet e parave.",
-          "Shitjet e një seance listohen te Porositë POS, të filtruara sipas asaj seance.",
-          "Seancat nuk mund të krijohen, ndryshohen ose fshihen nga kjo listë."
+          "Hapur sa kohë arka shet; Mbyllur kur ka mbaruar, nga arkëtari ose sepse arka u vu në pauzë ose u çaktivizua.",
+          "Paratë në hapje, dhe çdo Hyrje cash e Dalje cash me arsyen e saj dhe kush e bëri.",
+          "Paratë që duhet të ketë sirtari, paratë e numëruara në mbyllje, dhe diferencën me arsyen e saj.",
+          "Shitjet e saj, që shfaqen te Porositë POS.",
+          "Seancat nuk mund të krijohen ose të ndryshohen këtu."
         ]
       }
     ]

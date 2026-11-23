@@ -3,35 +3,16 @@
   "title": "Ihre gespeicherten Suchen",
   "description": "Katalogsuchen, die Sie mit den aktiven Filtern gespeichert haben.",
   "help": {
-    "ariaLabel": "Über Gespeicherte Suchen",
-    "title": "Über Gespeicherte Suchen",
-    "overview": "Eine gespeicherte Suche ist ein Katalogfilter, den ein Kunde benannt hat, um ihn erneut auszuführen. Sie ist kein Produkt, keine Bestellung und keine Kollektion; sie merkt sich nur, wie der Katalog eingegrenzt wurde.",
+    "ariaLabel": "Über gespeicherte Suchen",
+    "title": "Über gespeicherte Suchen",
+    "overview": "Suchen, die Ihre Kunden in Ihrem Shop unter einem Namen gespeichert haben, um sie erneut auszuführen. Eine gespeicherte Suche merkt sich nur die Filter; sie ändert nichts an Ihrem Katalog.",
     "sections": [
       {
-        "title": "Was gespeichert wird",
-        "body": "Der Name ist die Bezeichnung; der Rest ist der Filter.",
+        "title": "Jede Suche",
         "items": [
-          "Name ist Pflicht.",
-          "Kategorien können mehrere sein; Kollektion ist eine.",
-          "Mindestpreis, Höchstpreis und Sortierung sind optional. Ein leerer Wert wird einfach nicht angewendet.",
-          "Der Kunde ist der Besitzer der Suche."
-        ]
-      },
-      {
-        "title": "Wessen Suchen diese Seite zeigt",
-        "body": "Dieselben Datensätze werden auf zwei Arten gelistet.",
-        "items": [
-          "Aus dem eCommerce-Menü listet diese Seite jede gespeicherte Suche der Firma, und eine neue fragt, zu welchem Kunden sie gehört.",
-          "Als eigene Liste eines Kunden zeigt sie nur seine, und eine neue Suche wird unter diesem Kunden abgelegt.",
-          "Das Löschen einer gespeicherten Suche ist ein Soft Delete und kann wiederhergestellt werden."
-        ]
-      },
-      {
-        "title": "Was sie nicht tut",
-        "body": "Das Speichern einer Suche ändert nichts im Katalog.",
-        "items": [
-          "Sie blendet keine Produkte aus, ändert keine Preise und legt keine Kollektion an.",
-          "Erneut ausgeführt, wendet sie denselben Filter auf den Katalog an, wie er jetzt ist, nicht wie er beim Speichern war."
+          "Sie behält die Kategorien, die Kollektion, die Preisspanne und die Sortierung, die der Kunde gewählt hat.",
+          "Erneut ausgeführt zeigt sie den Katalog, wie er jetzt ist, nicht wie beim Speichern.",
+          "Hier sehen Sie die gespeicherten Suchen aller Kunden, und eine neue fragt, wem sie gehört. Bei einem Kunden sehen Sie nur seine."
         ]
       }
     ]

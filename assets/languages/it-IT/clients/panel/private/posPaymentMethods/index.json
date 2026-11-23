@@ -3,34 +3,22 @@
   "title": "Metodi di pagamento POS",
   "description": "Configura contanti, carte e altri metodi di pagamento della cassa.",
   "help": {
-    "ariaLabel": "Informazioni sui metodi di pagamento POS",
-    "title": "Informazioni sui metodi di pagamento POS",
-    "overview": "Un metodo di pagamento è un pulsante della cassa: contanti o carta. Le casse scelgono quali metodi offrire. Nome e tipo sono obbligatori; la sequenza è l’ordine in cui compaiono i pulsanti.",
+    "ariaLabel": "Informazioni sui metodi di pagamento",
+    "title": "Informazioni sui metodi di pagamento",
+    "overview": "Ogni metodo di pagamento è un pulsante sulla cassa: contanti o carta. Ogni cassa sceglie quali offrire, e la sequenza ne decide l'ordine.",
     "sections": [
       {
-        "title": "Contanti",
+        "title": "Contanti e carta",
         "items": [
-          "Gli importi rapidi sono valori separati da virgole, ad esempio 0.5, 1, 5, 10, 20, mostrati come pulsanti a un tocco. Un elenco vuoto usa quelli predefiniti.",
-          "Pagamenti in contanti, resto, rimborsi in contanti e movimenti del cassetto aggiornano il contante atteso della sessione."
+          "Contanti: gli importi rapidi sono pulsanti a un tocco, come 5, 10, 20, separati da virgole. Pagamenti in contanti e resto vengono contati nel cassetto.",
+          "Carta senza terminale: il cassiere prende la carta su un apparecchio separato e registra il pagamento.",
+          "Carta con terminale: la cassa chiede al cassiere di confermare sul terminale (manuale), oppure gli invia l'importo e aspetta la risposta (HTTP locale). Testa il collegamento del terminale verifica che risponda."
         ]
       },
       {
-        "title": "Carta e terminali di pagamento",
-        "body": "Un metodo carta può pilotare un terminale bancario.",
+        "title": "Disattivare",
         "items": [
-          "Terminale spento: il cassiere passa la carta su un dispositivo separato e registra il pagamento.",
-          "Provider manuale: la cassa chiede al cassiere di confermare l’addebito sul terminale esterno.",
-          "Provider HTTP locale: la cassa invia l’importo, con l’ID del terminale, a un ponte del terminale su protocollo, host, porta e percorso, e attende approvazione, rifiuto o timeout.",
-          "Testa la connessione verifica che il ponte risponda prima di usarlo in cassa."
-        ]
-      },
-      {
-        "title": "Attivare, disattivare, eliminare",
-        "body": "Una cassa deve sempre mantenere almeno un metodo di pagamento.",
-        "items": [
-          "Disattivare nasconde il metodo per i nuovi pagamenti e dall’elenco di assegnazione delle casse.",
-          "Disattivare o eliminare un metodo lo stacca da ogni cassa; viene rifiutato se una cassa resterebbe senza metodi.",
-          "L’eliminazione è logica e il metodo può essere ripristinato."
+          "Disattiva toglie un metodo dalla cassa. Una cassa deve tenere almeno un metodo, quindi l'ultimo di una cassa non si può disattivare né eliminare."
         ]
       }
     ]

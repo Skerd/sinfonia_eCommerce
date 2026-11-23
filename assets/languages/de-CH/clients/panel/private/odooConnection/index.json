@@ -3,24 +3,17 @@
   "title": "Odoo-Verbindung",
   "description": "Speichern Sie den Odoo-Server, aus dem diese Firma importiert. API-Schlüssel oder Kontopasswort werden verschlüsselt gespeichert und nie wieder angezeigt.",
   "help": {
-    "ariaLabel": "Zur Odoo-Verbindung",
-    "title": "Zur Odoo-Verbindung",
-    "overview": "Die Odoo-Verbindung speichert, wie diese Firma ihren Odoo-Server erreicht. Es gibt eine Verbindung pro Firma; der Odoo-Import nutzt sie, um Daten über JSON-RPC vom API-Server aus zu lesen.",
+    "ariaLabel": "Über die Odoo-Verbindung",
+    "title": "Über die Odoo-Verbindung",
+    "overview": "Wie diese Firma Ihr Odoo erreicht. Der Odoo-Import liest damit Ihre Daten; in Odoo wird nie etwas geschrieben.",
     "sections": [
       {
-        "title": "Was einzugeben ist",
-        "body": "Verwenden Sie dieselbe URL, Datenbank und Anmeldung, die in Odoo funktionieren.",
+        "title": "Was Sie eingeben",
         "items": [
-          "URL ist die Odoo-Adresse, zum Beispiel https://your-company.odoo.com. Datenbank ist der Name der Odoo-Datenbank.",
-          "Benutzername ist die Odoo-Anmeldung. Das Geheimnis ist ein API-Schlüssel (bevorzugt) oder das Passwort dieses Benutzers.",
-          "Das Geheimnis ist beim ersten Mal Pflicht und wird verschlüsselt gespeichert. Lassen Sie es beim erneuten Speichern leer, um das gespeicherte zu behalten."
-        ]
-      },
-      {
-        "title": "Wofür die Verbindung genutzt wird",
-        "items": [
-          "Nur der Import liest aus Odoo; es wird nie etwas in Odoo zurückgeschrieben.",
-          "Der Import meldet sich zuerst an, sodass eine falsche URL, Datenbank oder ein falsches Geheimnis dort als Fehler erscheint."
+          "Odoo-URL: Ihre Odoo-Adresse, etwa https://your-company.odoo.com. Datenbank: der Name Ihrer Odoo-Datenbank.",
+          "Benutzeranmeldung: das Odoo-Login. API-Schlüssel oder Passwort: Ein Odoo-API-Schlüssel ist besser als das Passwort.",
+          "Der Schlüssel wird beim ersten Mal verlangt und verschlüsselt gespeichert. Lassen Sie ihn beim erneuten Speichern leer, um ihn zu behalten.",
+          "Eine falsche Adresse, Datenbank oder ein falscher Schlüssel zeigt sich als Fehler, wenn Sie den Import ausführen."
         ]
       }
     ]

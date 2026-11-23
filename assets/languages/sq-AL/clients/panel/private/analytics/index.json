@@ -5,40 +5,22 @@
   "help": {
     "ariaLabel": "Rreth analitikës",
     "title": "Rreth analitikës",
-    "overview": "Analitika përmbledh të ardhurat, porositë, produktet, stokun dhe shportat e kësaj kompanie. Vetëm lexon të dhënat ekzistuese; asgjë këtu nuk ndryshon një porosi, një produkt ose stokun. Çdo kartë kërkon qasje leximi te të dhënat pas saj.",
+    "overview": "Shitjet, produktet, stoku dhe shportat e dyqanit tuaj me një shikim. Asgjë këtu nuk i ndryshon të dhënat, dhe çdo kartë tregon vetëm atë që ju lejohet të shihni.",
     "sections": [
       {
         "title": "Periudha",
-        "body": "Zgjidhni 7 ditë, 30 ditë, 90 ditë ose 1 vit. Jo çdo kartë e ndjek.",
         "items": [
-          "Të ardhurat, numri i porosive, vlera mesatare e porosisë, tatimi, transporti dhe produktet kryesore ndjekin periudhën.",
-          "Grafiku tregon të ardhurat e paguara dhe porositë e paguara për ditë për 7 dhe 30 ditë, për javë për 90 ditë dhe për muaj për një vit.",
-          "Shenjat e prirjes e krahasojnë periudhën me dritaren me të njëjtën gjatësi menjëherë para saj.",
-          "Kartat e stokut dhe shportave tregojnë gjendjen aktuale dhe nuk ndryshojnë me periudhën."
+          "Zgjidhni 7 ditë, 30 ditë, 90 ditë ose 1 vit. Të ardhurat, porositë, taksat, transporti dhe produktet kryesore e ndjekin atë; stoku dhe shportat tregojnë gjithmonë sot.",
+          "Shenjat e tendencës krahasojnë me të njëjtën kohëzgjatje menjëherë përpara."
         ]
       },
       {
-        "title": "Paratë dhe monedha",
-        "body": "Shumat nuk mblidhen kurrë mes monedhave.",
+        "title": "Si numëron",
         "items": [
-          "Të ardhurat janë porositë e paguara në periudhë, neto nga rimbursimet e regjistruara mbi to.",
-          "Shifrat janë për një monedhë: atë që zgjidhni, ose përndryshe atë me më shumë porosi të paguara në periudhë. Zgjedhësi i monedhës liston çdo monedhë me shitje.",
-          "Tatimi dhe transporti janë totalet e po atyre porosive të paguara."
-        ]
-      },
-      {
-        "title": "Porositë dhe produktet",
-        "items": [
-          "Statusi i porosive numëron çdo porosi të pafshirë të bërë në periudhë, të paguar apo jo.",
-          "Produktet kryesore renditen sipas të ardhurave të rreshtit në monedhën dhe periudhën e zgjedhur, me titullin e ruajtur në rreshtin e porosisë.",
-          "Statusi i produkteve është katalogu aktual i ndarë në skicë, aktiv dhe i arkivuar."
-        ]
-      },
-      {
-        "title": "Stoku dhe shportat",
-        "items": [
-          "Stoku tregon sa rreshta janë të ulët (të disponueshëm mbi zero por nën pikën e rifurnizimit), sa janë jashtë stoku (asgjë e disponueshme) dhe totalin e njësive në gjendje.",
-          "Shportat e braktisura kanë artikuj dhe nuk janë prekur për më shumë se një orë; shportat aktive kanë ndryshuar brenda orës. Blerësit e identifikuar marrin një email kujtese për një shportë të lënë një ditë.",
+          "Të ardhurat janë porositë e paguara, pa rimbursimet e tyre.",
+          "Shumat shfaqen në një monedhë në një kohë, kurrë të përziera: atë që zgjidhni, ose atë me më shumë porosi të paguara.",
+          "Stok i ulët do të thotë se në dispozicion ka më pak se pika e riporositjes; pa stok do të thotë se nuk ka asgjë në dispozicion.",
+          "Shportat e braktisura kanë artikuj dhe nuk janë prekur për më shumë se një orë. Klientët e identifikuar marrin një email kujtese për një shportë të lënë një ditë.",
           "Hapni Porositë e produkteve, Produktet ose Inventarin nga një kartë për të vepruar mbi atë që tregon."
         ]
       }

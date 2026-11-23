@@ -5,51 +5,22 @@
   "help": {
     "ariaLabel": "Über Lieferungen",
     "title": "Über Lieferungen",
-    "overview": "Eine Erfüllung ist eine Sendung einer Produktbestellung: welche Bestellzeilen und wie viele Einheiten mit welchem Versanddienst und welcher Sendungsverfolgung unterwegs sind. Das Versenden einer Bestellung erstellt sie automatisch; Sie können sie auch hier anlegen, um eine Bestellung auf mehrere Pakete aufzuteilen. Ihr Status — ausstehend, versendet, zugestellt oder gescheitert — bestimmt den Versand- und Zustellstatus der Bestellung.",
+    "overview": "Eine Lieferung ist ein Paket einer Bestellung: welche Artikel mit welchem Spediteur und welcher Sendungsnummer verschickt wurden. «Bestellung versenden» erstellt sie für Sie; erstellen Sie sie hier, um eine Bestellung in mehreren Paketen zu senden.",
     "sections": [
       {
-        "title": "Eine Sendung anlegen",
-        "body": "Eine Sendung kann nur abdecken, was noch nicht versendet ist.",
+        "title": "Ein Paket erstellen",
         "items": [
-          "Wählen Sie die Bestellung, dann die Zeilen und je die Menge. Jede Zeile muss zu dieser Bestellung gehören, und die Menge darf nicht übersteigen, was frühere Sendungen offen gelassen haben.",
-          "Eine hier angelegte Sendung beginnt als ausstehend: Noch ist nichts unterwegs, und der Bestand ist unberührt.",
-          "Nach dem Anlegen sind Bestellung und Zeilen fest. Versanddienst, Tracking, Daten und Notizen bleiben bearbeitbar."
+          "Wählen Sie die Bestellung, dann die Artikel und die Menge von jedem. Nur noch nicht Versandtes kann hinein.",
+          "Ein neues Paket ist Ausstehend: Nichts ist unterwegs und der Bestand bleibt gleich. Spediteur, Sendungsnummer und Daten bleiben änderbar."
         ]
       },
       {
-        "title": "Wie sich eine Sendung bewegt",
-        "body": "Versenden, Zustellen und Scheitern sind Aktionen, jede nur aus dem hier genannten Status erlaubt. Sie brauchen die Berechtigung, den Sendungsstatus zu schreiben.",
+        "title": "Verfolgen",
         "items": [
-          "Versenden geht nur aus ausstehend und nur, wenn die Bestellung nicht ausstehend, storniert oder erstattet ist. Es speichert die Versandzeit und das eingegebene Tracking.",
-          "Das Versenden nimmt die Einheiten aus dem Bestand: Die Reservierungen der Bestellung werden in den Lagern verbraucht, in denen sie reserviert wurden. Nie reservierte Einheiten werden sofort reserviert; reicht der Bestand nicht, wird die Sendung als nicht vorrätig abgelehnt.",
-          "Zustellen geht nur aus versendet. Wird die letzte nicht gescheiterte Sendung zugestellt, wird die Bestellung zugestellt und der Kunde einmal informiert.",
-          "Scheitern geht aus ausstehend oder versendet. Scheitert ein bereits unterwegs befindliches Paket, kommen seine Einheiten zurück an Lager und werden wieder für die Bestellung reserviert, damit eine neue Sendung sie nehmen kann. Ist die Bestellung bis dahin storniert oder erstattet, werden diese Einheiten stattdessen freigegeben."
-        ]
-      },
-      {
-        "title": "Was die Bestellung sieht",
-        "body": "Der Erfüllungsstatus der Bestellung wird bei jeder Änderung einer Sendung aus ihren Sendungen berechnet.",
-        "items": [
-          "Jede Zeile voll versendet macht die Bestellung erfüllt; einige Zeilen versendet machen sie teilweise erfüllt.",
-          "Alle Zeilen versendet setzt die Bestellung auf versendet. Eine voll versendete Bestellung, deren Sendung scheitert, geht zurück auf in Bearbeitung.",
-          "Jede Änderung fügt der Zeitleiste der Bestellung einen Eintrag hinzu."
-        ]
-      },
-      {
-        "title": "Was Sie darauf erfassen",
-        "body": "Das Tracking gehört zur Sendung, nicht zur Bestellung.",
-        "items": [
-          "Versanddienst, Sendungsnummer und Tracking-Link erhält der Kunde in der Versandnachricht.",
-          "Voraussichtliche Zustellung, versendet am und zugestellt am markieren die Zeitleiste. Notizen sind für Mitarbeitende.",
-          "Jede Zeile zeigt das versendete Produkt mit Titel und Bild."
-        ]
-      },
-      {
-        "title": "Verwandte Seiten",
-        "items": [
-          "Öffnen Sie die Bestellung für Zahlung, Stornierung oder Erstattung; diese bleiben bei der Bestellung.",
-          "Eine empfangene Retourenanfrage bringt Ware in das Lager zurück, aus dem die Zeile versendet wurde.",
-          "Das Löschen einer Sendung ist ein Soft Delete und kann wiederhergestellt werden."
+          "«Als versandt markieren» braucht eine bestätigte Bestellung. Es bucht die Artikel aus dem Bestand aus, oder wird abgelehnt, wenn der Bestand nicht reicht, und sendet dem Kunden Spediteur und Sendungslink.",
+          "«Als zugestellt markieren», wenn es ankommt. Sind alle Pakete angekommen, wird die Bestellung Zugestellt und der Kunde informiert.",
+          "«Als fehlgeschlagen markieren» für ein verlorenes oder zurückgekommenes Paket: Seine Artikel kommen in den Bestand zurück, für die Bestellung reserviert, damit Sie ein neues Paket senden können.",
+          "Zahlung, Stornierung und Erstattungen bleiben bei der Bestellung, unter Produktbestellungen."
         ]
       }
     ]

@@ -5,35 +5,16 @@
   "help": {
     "ariaLabel": "Informazioni sui trasferimenti di magazzino",
     "title": "Informazioni sui trasferimenti di magazzino",
-    "overview": "Un trasferimento di magazzino sposta giacenza libera da un magazzino a un altro. È una bozza finché non viene completato o annullato; completarlo è il momento in cui le quantità si spostano davvero, tutte le righe insieme.",
+    "overview": "Sposta merce da un magazzino a un altro. Un trasferimento resta una bozza finché non lo completi; allora tutti gli articoli si spostano insieme.",
     "sections": [
       {
-        "title": "La bozza",
-        "body": "Finché è una bozza, nulla ha lasciato il magazzino di origine e il documento può ancora cambiare.",
+        "title": "Ogni trasferimento",
         "items": [
-          "Origine e destinazione sono obbligatori e devono essere due magazzini diversi di questa società.",
-          "Ogni riga è un prodotto, una variante facoltativa e una quantità. Ogni riga deve essere un articolo diverso gestito a magazzino; un bundle non può essere una riga, sposta invece i suoi componenti.",
-          "Solo una bozza può essere modificata, completata o annullata."
-        ]
-      },
-      {
-        "title": "Cosa fa completare",
-        "body": "Completare è tutto o niente: una riga insufficiente rifiuta l’intero trasferimento e non si sposta nulla.",
-        "items": [
-          "Le righe vengono prima ricontrollate, perché prodotti o magazzini possono essere cambiati dal salvataggio della bozza.",
-          "Ogni riga lascia l’origine e arriva a destinazione. Si sposta solo giacenza libera; le unità riservate per ordini aperti restano dove sono.",
-          "Se la destinazione non ha mai stoccato l’articolo, la sua riga di inventario viene creata.",
-          "Il registro riceve un movimento di trasferimento in uscita sull’origine e uno in entrata sulla destinazione, entrambi riferiti a questo trasferimento. Completato il e da vengono registrati.",
-          "Completare o annullare richiede il permesso di scrivere lo stato del trasferimento."
-        ]
-      },
-      {
-        "title": "Dopo il completamento",
-        "body": "Un trasferimento completato è storico; una bozza annullata non ha mai spostato nulla.",
-        "items": [
-          "Annulla è possibile solo da bozza, quindi un trasferimento completato non si annulla qui. Crea invece un trasferimento in senso opposto.",
-          "Un trasferimento completato non può essere eliminato. Una bozza o un trasferimento annullato è un’eliminazione logica e può essere ripristinato.",
-          "L’importazione Odoo può portare trasferimenti interni da Odoo; arrivano già completati."
+          "Scegli due magazzini diversi, poi i prodotti e le quantità. I pacchetti non si possono spostare; sposta i loro componenti.",
+          "Solo una bozza si può modificare, completare o annullare.",
+          "Completa trasferimento sposta ogni riga, oppure nulla se una riga è scoperta. La merce riservata agli ordini non si sposta mai.",
+          "Se il magazzino di arrivo non ha mai avuto un prodotto, la sua riga di giacenza viene creata.",
+          "Un trasferimento completato non si può annullare né eliminare: fanne uno nel senso opposto. I suoi movimenti compaiono in Movimenti di magazzino."
         ]
       }
     ]

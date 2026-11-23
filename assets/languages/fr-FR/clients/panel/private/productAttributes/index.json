@@ -5,24 +5,16 @@
   "help": {
     "ariaLabel": "À propos des attributs du produit",
     "title": "À propos des attributs du produit",
-    "overview": "Les attributs sont des listes d’options partagées comme Taille ou Couleur. Une variante choisit une valeur dans chaque attribut qui la définit : c’est donc l’attribut qui transforme un produit en plusieurs SKU.",
+    "overview": "Les attributs sont les options dans lesquelles existent vos produits, comme la Taille ou la Couleur, avec leurs valeurs (S, M, L). Les variantes en sont faites.",
     "sections": [
       {
-        "title": "Champs",
+        "title": "Chaque attribut",
         "items": [
-          "Le nom est obligatoire. Les valeurs sont les choix vus par les acheteurs, par exemple S, M, L ; jusqu’à 50.",
-          "Visible sur la page produit affiche l’attribut dans les détails du produit. Cela ne change pas les prix.",
-          "Utilisé pour les variantes en fait un attribut qui découpe les produits en SKU.",
-          "La position ordonne les attributs sur la page produit et dans le sélecteur de variante."
-        ]
-      },
-      {
-        "title": "Comment les variantes l’utilisent",
-        "items": [
-          "Chaque variante enregistre des paires attribut-valeur. Deux variantes actives d’un même produit ne peuvent pas avoir la même combinaison.",
-          "Le panier et la caisse facturent le prix de la variante, ou celui du produit quand la variante n’en a pas.",
-          "Un attribut utilisé par une variante active ne peut pas être supprimé. Retirez-le d’abord de ces variantes.",
-          "La suppression est douce et l’attribut peut être restauré."
+          "Le nom est obligatoire ; ajoutez jusqu'à 50 valeurs.",
+          "Utilisé pour les variantes : l'attribut crée des variantes du produit, une par combinaison de valeurs.",
+          "Visible sur la page produit l'affiche dans les détails du produit ; il ne change pas les prix.",
+          "Position fixe son ordre sur la page produit et dans le choix de la variante.",
+          "Un attribut utilisé par une variante ne peut pas être supprimé ; retirez-le d'abord de ces variantes."
         ]
       }
     ]

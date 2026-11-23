@@ -3,43 +3,25 @@
   "title": "Analytics",
   "description": "Track revenue, orders, inventory, and cart activity.",
   "help": {
-    "ariaLabel": "About Analytics",
-    "title": "About Analytics",
-    "overview": "Analytics summarizes revenue, orders, products, stock, and carts for this company. It only reads existing records; nothing here changes an order, a product, or stock. Each card needs read access to the data behind it.",
+    "ariaLabel": "About analytics",
+    "title": "About analytics",
+    "overview": "Your shop's sales, products, stock and carts at a glance. Nothing here changes your data, and each card shows only what you are allowed to see.",
     "sections": [
       {
         "title": "The period",
-        "body": "Choose 7 days, 30 days, 90 days, or 1 year. Not every card follows it.",
         "items": [
-          "Revenue, order counts, average order value, tax, shipping, and top products follow the period.",
-          "The revenue chart shows paid revenue and paid orders per day for 7 and 30 days, per week for 90 days, and per month for a year.",
-          "Trend badges compare the period with the window of the same length just before it.",
-          "Stock and cart cards are the current picture and do not change with the period."
+          "Pick 7 days, 30 days, 90 days or 1 year. Revenue, orders, tax, shipping and top products follow it; stock and carts always show today.",
+          "The trend badges compare with the same length of time just before."
         ]
       },
       {
-        "title": "Money and currency",
-        "body": "Amounts are never added up across currencies.",
+        "title": "How it counts",
         "items": [
-          "Revenue is paid orders in the period, net of the refunds recorded against them.",
-          "Figures are for one currency: the one you pick, or else the one with the most paid orders in the period. The currency control lists every currency that had sales.",
-          "Tax and shipping are totals of those same paid orders."
-        ]
-      },
-      {
-        "title": "Orders and products",
-        "items": [
-          "Order status counts every non-deleted order placed in the period, paid or not.",
-          "Top products rank by line revenue in the chosen currency and period, using the title kept on the order line.",
-          "Product status is the current catalog split into draft, active, and archived."
-        ]
-      },
-      {
-        "title": "Stock and carts",
-        "items": [
-          "Stock shows how many rows are low (available above zero but under the reorder point), how many are out of stock (nothing available), and the total units on hand.",
-          "Abandoned carts have items and have not been touched for more than an hour; active carts changed within the hour. Signed-in buyers get one reminder email for a cart left for a day.",
-          "Open Product orders, Products, or Inventory from a card to act on what it shows."
+          "Revenue is paid orders, less their refunds.",
+          "Amounts are shown in one currency at a time, never mixed: the one you pick, or the one with the most paid orders.",
+          "Low stock means less is available than the reorder point; out of stock means nothing is available.",
+          "Abandoned carts have items and haven't been touched for over an hour. Signed-in customers get one reminder email for a cart left a day.",
+          "Open Product orders, Products or Inventory from a card to act on what it shows."
         ]
       }
     ]

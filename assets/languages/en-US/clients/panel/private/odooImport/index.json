@@ -3,37 +3,25 @@
   "title": "Import from Odoo",
   "description": "Pull catalog, stock, stock operations, and users from the saved Odoo connection. Re-running updates the same records.",
   "help": {
-    "ariaLabel": "About Odoo import",
-    "title": "About Odoo import",
-    "overview": "The Odoo import copies catalog, stock, and user data from Odoo into this company, using the saved Odoo connection. You choose which datasets to bring in, and can do a dry run first.",
+    "ariaLabel": "About the Odoo import",
+    "title": "About the Odoo import",
+    "overview": "Copies your catalog, stock and users from Odoo into this company, through the Odoo connection. Choose what to bring in, and try a dry run first.",
     "sections": [
       {
-        "title": "Datasets",
-        "body": "Each record is matched to its Odoo ID, so running the import again updates what it created instead of duplicating it.",
+        "title": "What you can bring in",
         "items": [
-          "Currencies: active Odoo currencies, matched by ISO code (EUR, USD, …). A currency that already exists here is reused as it is; a missing one is created.",
-          "Categories: Odoo product categories.",
-          "Products: product templates with their variants and attribute values. Archived Odoo products arrive archived; archived variants arrive inactive. Each product gets its Odoo currency, which is matched or created even when Currencies is not selected.",
-          "Warehouses: Odoo warehouses, created active.",
-          "Inventory: on-hand quantities per product and warehouse from Odoo's internal stock; existing rows are set to the Odoo quantity.",
-          "Stock changes: completed Odoo stock moves, written as stock movements with a matching reason.",
-          "Actions: completed internal transfers, written as done stock transfers.",
-          "Users: internal Odoo users, invited into the company with the sign-up role. They cannot sign in until they accept the invitation."
+          "Currencies, Categories, Products and variants, and Warehouses.",
+          "On-hand inventory, Stock movements and Internal transfers, as Odoo recorded them.",
+          "Users: Odoo's internal users are invited into your company and can sign in once they accept.",
+          "Running it again updates what it brought in before, without making copies."
         ]
       },
       {
-        "title": "Dry run and results",
+        "title": "How to run it",
         "items": [
-          "A dry run signs in to Odoo and only counts what each dataset would read; nothing is written.",
-          "A real run reports created, updated, and skipped counts per dataset. Rows that cannot be matched (for example a stock move for a product that was not imported) are skipped.",
-          "Import products before inventory and stock changes, and warehouses before inventory, so the references can be found."
-        ]
-      },
-      {
-        "title": "Permissions",
-        "items": [
-          "You need permission to create each kind of record you import, plus the Odoo link records that remember the matches.",
-          "At least one dataset must be selected."
+          "Bring in products and warehouses before inventory and stock movements, so they can be matched.",
+          "Dry run only counts what would come in; nothing is saved.",
+          "The result shows how many were created, updated and skipped for each part. Anything that can't be matched is skipped."
         ]
       }
     ]

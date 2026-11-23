@@ -3,43 +3,26 @@
   "title": "Discounts",
   "description": "Manage promotional codes and automatic discounts.",
   "help": {
-    "ariaLabel": "About Discounts",
-    "title": "About Discounts",
-    "overview": "A discount is a code a buyer enters at the cart. The cart holds one code at a time. It is checked again whenever the cart is re-priced and dropped if it no longer qualifies. Title, type, value, scope, and start date are required; the code is stored in uppercase.",
+    "ariaLabel": "About discounts",
+    "title": "About discounts",
+    "overview": "Discount codes customers type in at checkout. A cart takes one code at a time, and the code is checked again whenever the cart changes.",
     "sections": [
       {
-        "title": "When the amount is worked out",
-        "body": "Order of operations in the cart: catalog price → one pricing rule per line → the discount code → shipping → tax.",
+        "title": "Kinds",
         "items": [
-          "Percentage takes that percent off the lines in scope. Fixed takes a flat amount, never more than those lines are worth.",
-          "Free shipping does not reduce merchandise; checkout charges no shipping while it is applied.",
-          "Buy X get Y counts eligible units, groups them as buy plus get quantity, and makes the cheapest units in each complete group free. It needs buy quantity, get quantity, and the eligible products.",
-          "Gift-card lines are never discounted and never count toward minimums."
+          "Percentage or fixed amount off, never more than the items are worth.",
+          "Free shipping: no shipping charge while the code is used.",
+          "Buy X get Y: in each complete set, the cheapest items are free.",
+          "It covers the whole order, or only chosen products, categories or collections. Gift cards are never discounted."
         ]
       },
       {
-        "title": "Scope",
+        "title": "When a code doesn't work",
         "items": [
-          "Order covers every merchandise line. Product, category, or collection covers only the selected targets.",
-          "Category matches any category of the product. Collection uses the same membership the storefront shows.",
-          "On the platform shop, a cart with several sellers cannot use a seller's code."
-        ]
-      },
-      {
-        "title": "What blocks a code",
-        "items": [
-          "It must be active and inside its start and end dates; no end date means it never expires.",
-          "Usage limit stops it after that many uses. Usage limit per customer counts that customer's non-cancelled orders with the code.",
-          "Minimum order amount and minimum quantity count merchandise only, after pricing rules.",
-          "Customer groups saved on the discount are not checked when the code is applied."
-        ]
-      },
-      {
-        "title": "Counting a use",
-        "items": [
-          "A use is counted when the order is placed, not when the code is typed.",
-          "If the code stopped qualifying while the buyer paid by card, the order keeps it (refusing would strand the money) and the use is still counted. Unpaid orders are refused instead.",
-          "Activate and deactivate switch the code on and off. Deleting is a soft delete and it can be restored."
+          "Outside its start and end dates, or after Deactivate.",
+          "Once its usage limit is reached, overall or per customer. A use counts when the order is placed.",
+          "Below the minimum order amount or minimum quantity.",
+          "Customer groups saved on a discount aren't checked."
         ]
       }
     ]

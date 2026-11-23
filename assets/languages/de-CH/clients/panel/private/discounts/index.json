@@ -5,41 +5,24 @@
   "help": {
     "ariaLabel": "Über Rabatte",
     "title": "Über Rabatte",
-    "overview": "Ein Rabatt ist ein Code, den ein Käufer im Warenkorb eingibt. Der Warenkorb hält jeweils einen Code. Er wird bei jeder Neuberechnung des Warenkorbs erneut geprüft und entfernt, wenn er nicht mehr gilt. Titel, Typ, Wert, Geltungsbereich und Startdatum sind Pflicht; der Code wird in Grossbuchstaben gespeichert.",
+    "overview": "Rabattcodes, die Kunden beim Checkout eingeben. Ein Warenkorb nimmt einen Code aufs Mal, und der Code wird bei jeder Änderung des Warenkorbs neu geprüft.",
     "sections": [
       {
-        "title": "Wann der Betrag berechnet wird",
-        "body": "Reihenfolge im Warenkorb: Katalogpreis → eine Preisregel pro Zeile → der Rabattcode → Versand → Steuer.",
+        "title": "Arten",
         "items": [
-          "Prozent zieht diesen Prozentsatz von den Zeilen im Geltungsbereich ab. Fix zieht einen festen Betrag ab, nie mehr, als diese Zeilen wert sind.",
-          "Gratisversand senkt die Ware nicht; der Checkout berechnet keinen Versand, solange er angewendet ist.",
-          "Kaufe X, erhalte Y zählt berechtigte Einheiten, gruppiert sie als Kauf- plus Gratismenge und macht die günstigsten Einheiten jeder vollständigen Gruppe gratis. Er braucht Kaufmenge, Gratismenge und die berechtigten Produkte.",
-          "Geschenkkarten-Zeilen werden nie rabattiert und zählen nie zu Mindestwerten."
+          "Prozent oder fester Betrag weniger, nie mehr als die Artikel wert sind.",
+          "Gratisversand: keine Versandkosten, solange der Code genutzt wird.",
+          "Kaufe X, erhalte Y: In jedem vollständigen Set sind die günstigsten Artikel gratis.",
+          "Er gilt für die ganze Bestellung oder nur für gewählte Produkte, Kategorien oder Kollektionen. Geschenkkarten werden nie rabattiert."
         ]
       },
       {
-        "title": "Geltungsbereich",
+        "title": "Wann ein Code nicht gilt",
         "items": [
-          "Bestellung umfasst jede Warenzeile. Produkt, Kategorie oder Kollektion umfasst nur die ausgewählten Ziele.",
-          "Kategorie greift bei irgendeiner Kategorie des Produkts. Kollektion nutzt dieselbe Mitgliedschaft, die der Shop zeigt.",
-          "Im Plattform-Shop kann ein Warenkorb mit mehreren Verkäufern keinen Code eines Verkäufers nutzen."
-        ]
-      },
-      {
-        "title": "Was einen Code sperrt",
-        "items": [
-          "Er muss aktiv und innerhalb von Start- und Enddatum sein; ohne Enddatum läuft er nie ab.",
-          "Nutzungslimit stoppt ihn nach so vielen Nutzungen. Nutzungslimit pro Kunde zählt die nicht stornierten Bestellungen dieses Kunden mit dem Code.",
-          "Mindestbestellwert und Mindestmenge zählen nur Ware, nach den Preisregeln.",
-          "Auf dem Rabatt gespeicherte Kundengruppen werden beim Anwenden des Codes nicht geprüft."
-        ]
-      },
-      {
-        "title": "Eine Nutzung zählen",
-        "items": [
-          "Eine Nutzung wird gezählt, wenn die Bestellung aufgegeben wird, nicht wenn der Code eingetippt wird.",
-          "Hat der Code aufgehört zu gelten, während der Käufer per Karte bezahlte, behält die Bestellung ihn (eine Ablehnung würde das Geld stranden lassen), und die Nutzung wird trotzdem gezählt. Unbezahlte Bestellungen werden stattdessen abgelehnt.",
-          "Aktivieren und Deaktivieren schalten den Code ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+          "Ausserhalb seiner Start- und Enddaten, oder nach Deaktivieren.",
+          "Wenn sein Nutzungslimit erreicht ist, insgesamt oder pro Kunde. Eine Nutzung zählt, wenn die Bestellung aufgegeben wird.",
+          "Unter dem Mindestbestellwert oder der Mindestmenge.",
+          "Auf einem Rabatt gespeicherte Kundengruppen werden nicht geprüft."
         ]
       }
     ]

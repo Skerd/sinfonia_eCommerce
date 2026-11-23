@@ -5,38 +5,23 @@
   "help": {
     "ariaLabel": "About pricing rules",
     "title": "About pricing rules",
-    "overview": "Pricing rules change a line's unit price automatically, before any discount code. Use them for wholesale prices, category sales, or surcharges. Each cart line receives at most one rule. Name, type, value, and scope are required.",
+    "overview": "Pricing rules change prices automatically, before any discount code: wholesale prices, a sale on a category, or a surcharge. Each item in a cart gets at most one rule.",
     "sections": [
       {
-        "title": "Which rule wins",
-        "body": "Active rules are ordered by priority (highest first), then newest first. For each line, the first rule that qualifies and matches is applied; the rest are skipped for that line.",
+        "title": "Which rule applies",
         "items": [
-          "A rule outside its start and end dates is ignored.",
-          "Customer groups: a rule with none applies to everyone; a rule with groups applies only to signed-in customers in one of them. Guests match only rules with no groups.",
-          "Minimum order amount is checked against the cart subtotal before any rule; minimum quantity against the total units in the cart."
+          "Rules are tried by priority, highest first; the first one that fits an item is the one it gets.",
+          "A rule works only while it's active and between its start and end dates.",
+          "A rule with customer groups applies only to signed-in customers in those groups.",
+          "Minimum order amount and minimum quantity look at the whole cart."
         ]
       },
       {
-        "title": "Scope",
+        "title": "What it does",
         "items": [
-          "All and customer group hit every line of a qualifying cart.",
-          "Product, category, and collection hit only the selected targets. Category looks only at the product's first category."
-        ]
-      },
-      {
-        "title": "Types",
-        "body": "The adjustment is applied to the catalog unit price, and the result is never below zero.",
-        "items": [
-          "Percentage discount reduces the price by that percent. Fixed discount subtracts the value.",
-          "Fixed price replaces the price with the value. Surcharge adds the value."
-        ]
-      },
-      {
-        "title": "Where it applies",
-        "items": [
-          "The cart re-prices from the catalog price every time, so a rule is never applied on top of an already-adjusted price.",
-          "Each line shows the rule that changed it. The till uses catalog prices and does not apply pricing rules.",
-          "Activate and deactivate switch the rule on and off. Deleting is a soft delete and it can be restored."
+          "A percentage or fixed discount, a fixed price, or a surcharge on top. A price never goes below zero.",
+          "It covers everything, or only chosen products, categories or collections; a category rule looks only at the product's first category.",
+          "The till sells at catalog prices and doesn't use pricing rules."
         ]
       }
     ]

@@ -4,63 +4,24 @@
   "help": {
     "ariaLabel": "À propos du point de vente",
     "title": "À propos du point de vente",
-    "overview": "Le point de vente est la caisse du magasin. Cette page est la caisse elle-même, pas une liste. Choisissez une caisse, ouvrez une session avec les espèces déjà présentes dans le tiroir, puis vendez. Chaque vente payée devient une commande au point de vente, prend le stock directement dans les entrepôts de la caisse et est dupliquée en commande produit livrée et payée pour la comptabilité.",
+    "overview": "Cette page est la caisse elle-même. Choisissez une caisse, ouvrez-la avec l'argent du tiroir et vendez. Chaque vente prend les articles dans le stock de la caisse et apparaît aussi dans Commandes de produits.",
     "sections": [
       {
-        "title": "Ouvrir la caisse",
-        "body": "Une caisse est une configuration de point de vente créée sous Configurations. Cet écran n’ouvre qu’une caisse existante, active et non en pause.",
-        "items": [
-          "Choisissez la caisse, puis ouvrez une session avec le comptage du fonds de caisse. Une seule session par caisse peut être ouverte à la fois.",
-          "La caisse a besoin d’une devise et d’au moins un entrepôt pour ouvrir et vendre.",
-          "Une fois ouverte, la caisse affiche son propre guide des raccourcis clavier."
-        ]
-      },
-      {
         "title": "Vendre",
-        "body": "Le catalogue est celui des produits actifs de cette société. Les prix viennent du catalogue ; le caissier ne peut pas saisir de prix.",
         "items": [
-          "Les cartes cadeaux et les téléchargements numériques ne sont pas vendus en caisse ; ils ne sont émis que par les commandes en ligne.",
-          "Recherchez, ou scannez un code-barres ; un code-barres de variante ajoute directement cette variante. Un produit variable demande d’abord sa variante.",
-          "Les prix en caisse incluent la TVA. La part de taxe de chaque ligne est calculée depuis les zones fiscales de l’adresse du premier entrepôt de la caisse, après la part de la ligne dans une éventuelle remise de commande.",
-          "Une ligne prend le stock dans les entrepôts de la caisse dans l’ordre, en puisant dans chacun jusqu’à atteindre la quantité. S’ils n’en ont pas assez, la vente est refusée, sauf si la caisse autorise la survente.",
-          "Les remises de ligne et de commande et les changements de quantité ne sont permis que si la caisse les autorise. Avec le PIN pour remise activé, une vente remisée exige un PIN de gestionnaire.",
-          "Associez un client pour mettre la vente à son nom."
+          "Les caisses se configurent dans Configurations de point de vente. Ouvrez-en une avec l'argent compté dans le tiroir ; une caisse ne peut pas être ouverte deux fois en même temps.",
+          "Cherchez ou scannez les produits. Les prix viennent de votre catalogue et incluent la TVA ; le caissier ne peut pas saisir de prix.",
+          "Les remises et les changements de quantité ne marchent que si la caisse les autorise, et peuvent demander le code PIN d'un gestionnaire. Une vente est refusée quand les entrepôts de la caisse n'ont pas assez de stock, sauf si la caisse autorise la survente.",
+          "Payez une vente avec plusieurs modes, ou utilisez Partager l'addition pour la répartir entre les convives. L'argent au-delà du total est rendu en monnaie."
         ]
       },
       {
-        "title": "Encaisser",
-        "body": "Une vente peut être répartie sur plusieurs modes de paiement.",
+        "title": "Pendant et après",
         "items": [
-          "Les paiements doivent couvrir le total. L’espèce donnée en trop est rendue en monnaie et seule l’espèce nette entre dans le tiroir.",
-          "Un mode carte avec terminal débite d’abord le terminal : manuel signifie que le caissier confirme sur un appareil externe ; HTTP local envoie le montant à la passerelle du terminal et attend l’accord, le refus ou l’expiration.",
-          "Le paiement écrit la commande au point de vente comme payée, les mouvements de stock et la commande produit dupliquée. Une demande de paiement répétée pour la même vente est reconnue et n’est pas débitée deux fois.",
-          "Si la caisse a une configuration fiscale active avec certificat, la vente est fiscalisée auprès du CIS et une facture électronique est enregistrée. La vente est quand même conclue si le CIS renvoie une erreur ; le résultat est enregistré sur la commande."
-        ]
-      },
-      {
-        "title": "Paniers en attente",
-        "body": "Mettre en attente range le panier actuel en commande brouillon au point de vente pour servir quelqu’un d’autre.",
-        "items": [
-          "Un panier en attente peut être repris plus tard sur la même caisse, ou abandonné.",
-          "Une session ne peut pas être clôturée tant qu’elle a des paniers en attente ; reprenez-les ou abandonnez-les d’abord."
-        ]
-      },
-      {
-        "title": "Remboursements",
-        "body": "Un remboursement est sa propre commande au point de vente, liée à la vente qu’il annule.",
-        "items": [
-          "Remboursez en sélectionnant des quantités de ligne, ou remboursez tout le reste de la vente. Un montant partiel sans lignes est refusé, car la caisse ne saurait pas quoi remettre en stock.",
-          "Chaque ligne de vente retient ce qui a déjà été remboursé, pour que les mêmes unités ne soient pas remboursées deux fois. La remise de commande est répartie sur les lignes remboursées.",
-          "Les unités remboursées retournent dans les entrepôts d’où la vente les a prises ; le surplus va dans le premier entrepôt de la caisse.",
-          "Un remboursement en espèces sort du tiroir. Avec le PIN pour remboursement activé, un PIN de gestionnaire est requis."
-        ]
-      },
-      {
-        "title": "Le tiroir et la clôture",
-        "items": [
-          "Entrée et sortie d’espèces enregistrent des mouvements du tiroir avec un motif ; ce ne sont pas des ventes. Une sortie ne peut pas prendre plus que le tiroir ne contient et, avec le PIN pour sortie d’espèces activé, exige un PIN de gestionnaire.",
-          "La clôture demande l’espèce comptée. Si elle diffère du montant attendu d’un centime ou plus, un motif est requis et l’écart est inscrit sur la session.",
-          "Mettre une caisse en pause l’empêche d’encaisser et clôture de force sa session ouverte, en annulant les paniers en attente. Mettre toutes les caisses en pause fait de même pour chaque caisse de la société."
+          "Mettre en attente met un panier de côté pour servir le client suivant. Reprenez ou abandonnez les paniers en attente avant de clôturer.",
+          "Remboursez une vente depuis Commandes de la session, en totalité ou par article ; les articles reviennent en stock.",
+          "Entrée d'espèces et Sortie d'espèces enregistrent l'argent mis dans le tiroir ou retiré. Clôturer la session demande l'argent compté ; un écart demande un motif.",
+          "Si la caisse a des réglages fiscaux, chaque vente est envoyée à l'administration fiscale ; la vente aboutit même si cet envoi échoue."
         ]
       }
     ]

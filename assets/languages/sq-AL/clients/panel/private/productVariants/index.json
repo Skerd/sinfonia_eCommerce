@@ -5,36 +5,17 @@
   "help": {
     "ariaLabel": "Rreth varianteve të produkteve",
     "title": "Rreth varianteve të produkteve",
-    "overview": "Një variant është një SKU i shitshëm i një produkti të ndryshueshëm, i përcaktuar nga kombinimi i vlerave të atributeve (për shembull E kuqe / XL). Shporta dhe arka tarifojnë çmimin e vetë variantit kur ka. Vetëm një variant aktiv mund të shitet.",
+    "overview": "Një variant është një version i një produkti të ndryshueshëm, si E kuqe / XL. Çdo variant ka stokun e vet dhe mund të ketë çmimin e vet.",
     "sections": [
       {
-        "title": "Identiteti",
+        "title": "Çdo variant",
         "items": [
-          "Produkti është i detyrueshëm dhe i përhershëm: rreshtat e stokut dhe rreshtat e porosive varen bashkë nga produkti dhe varianti.",
-          "Kombinimi i atributeve është grupi i çifteve atribut-vlerë. Dy variante aktive të një produkti nuk mund të ndajnë një kombinim.",
-          "SKU dhe barkodi e identifikojnë; një barkod varianti i skanuar shton në arkë pikërisht atë variant."
-        ]
-      },
-      {
-        "title": "Çmimi, pesha, mediat",
-        "items": [
-          "Çmimi, çmimi i krahasimit dhe kostoja funksionojnë si te produkti. Një variant pa çmim shitet me çmimin e produktit.",
-          "Pesha, përmasat, imazhi kryesor dhe rendi i shfaqjes e përshkruajnë variantin në zgjedhësin e dyqanit."
-        ]
-      },
-      {
-        "title": "Stoku",
-        "items": [
-          "Një variant i një produkti të ndjekur ndiqet në stok, përveç kur ndjekja është e çaktivizuar te varianti. Atëherë çdo magazinë ka nevojë për një rresht inventari për këtë variant.",
-          "Pa rresht në një magazinë aktive, pagesa online e refuzon variantin si jashtë stoku."
-        ]
-      },
-      {
-        "title": "Statusi dhe produkti",
-        "items": [
-          "Variantet aktive shiten; një variant joaktiv hiqet nga shportat në llogaritjen e radhës së çmimeve.",
-          "Lista e varianteve të produktit, numri i tyre dhe shenja «ka variante» ndjekin variantet aktive; një produkt me të paktën një variant mund të publikohet pa çmim të vetin.",
-          "Fshirja është e butë dhe varianti mund të rikthehet."
+          "Zgjidhni produktin, pastaj opsionet që e bëjnë variantin, si Ngjyra: E kuqe dhe Masa: XL. Dy variante të një produkti nuk mund të kenë të njëjtat opsione, dhe produkti nuk mund të ndryshohet më pas.",
+          "Pa çmim të vetin, një variant shitet me çmimin e produktit.",
+          "Barkodi i tij, i skanuar në arkë, shton pikërisht këtë variant.",
+          "Stoku i tij mbahet sipas magazinës te Inventari, përveç kur Gjurmo inventarin është i fikur.",
+          "Vetëm variantet aktive mund të blihen; një variant joaktiv hiqet nga shportat.",
+          "Një produkt me të paktën një variant mund të publikohet pa çmim të vetin."
         ]
       }
     ]

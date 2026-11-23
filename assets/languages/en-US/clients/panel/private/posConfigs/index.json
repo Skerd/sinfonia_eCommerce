@@ -3,55 +3,30 @@
   "title": "POS Configs",
   "description": "Point of sale shops and till settings.",
   "help": {
-    "ariaLabel": "About POS Configs",
-    "title": "About POS Configs",
-    "overview": "A POS config is one till: its payment buttons, the warehouses it sells from, its currency, receipts, fiscalization, and what the cashier is allowed to do. A cashier opens a session on it from the Point of Sale page.",
+    "ariaLabel": "About your tills",
+    "title": "About your tills",
+    "overview": "Each POS config is one till: its payment buttons, the warehouses it sells from, its currency, its receipt text and what the cashier may do.",
     "sections": [
       {
-        "title": "What a till needs",
-        "body": "Name, at least one payment method, and at least one warehouse are required.",
+        "title": "Set it up",
         "items": [
-          "Payment methods are the buttons on the till, in their sequence order. Only active methods can be assigned.",
-          "Warehouses are where the till's stock comes from, in order: a sale fills from the first, then the next. Only active warehouses can be assigned. The first warehouse's address also decides the VAT rates of till sales.",
-          "Currency is required to open a session and sell.",
-          "Fiscal config links the till to Albanian CIS fiscalization. Without one, the till does not fiscalize.",
-          "Receipt header and footer are printed on every receipt."
+          "Name, at least one payment method and one warehouse are required; the till also needs a currency to open.",
+          "Warehouses are used in order: a sale takes stock from the first, then the next. The first one's address decides the VAT on till sales.",
+          "Fiscal settings register its sales with the tax authority; without them, the till doesn't register."
         ]
       },
       {
-        "title": "Cashier controls",
-        "body": "These switches decide what the cashier may do without a manager.",
+        "title": "What the cashier may do",
         "items": [
-          "Allow discount and allow quantity change unlock those edits on the till.",
-          "Allow oversell lets a sale go through even when the warehouses do not hold enough stock; the shortfall is taken from the last warehouse.",
-          "PIN for discount, PIN for cash out, and PIN for refund require a manager PIN for that action.",
-          "Cash control tracks the drawer; barcode scanner turns scanning on."
+          "Allow discount, Allow quantity change and Allow oversell unlock those on the till. PINs can require a manager for discounts, cash out and refunds.",
+          "Managers approve with their own PIN. Each sets their PIN; a forgotten one is reset with a link sent by email."
         ]
       },
       {
-        "title": "Managers and PINs",
-        "body": "Managers are the users allowed to approve PIN-protected actions on this till.",
+        "title": "Stopping a till",
         "items": [
-          "Each manager sets their own PIN, can change it with the current PIN, or clear it.",
-          "A forgotten PIN can be reset through an emailed link that is valid for 24 hours and works once.",
-          "Removing a user from managers also removes their PIN from the till."
-        ]
-      },
-      {
-        "title": "Active, paused, and the company lock",
-        "body": "Three switches stop a till from taking money.",
-        "items": [
-          "Deactivate turns the till off and force-closes its open sessions; it cannot be opened again until activated.",
-          "Pause stops sales on one till with an optional reason and force-closes its open sessions: held carts are cancelled and in-flight terminal payments are voided where possible. Resume lifts it.",
-          "Pause all tills sets a company-wide lock and force-closes every open session. While it is on, no till can be resumed. Resume all clears only the company lock; tills paused one by one stay paused."
-        ]
-      },
-      {
-        "title": "Related settings",
-        "items": [
-          "Payment methods and fiscal configs are their own pages under Configurations.",
-          "A warehouse that is the only warehouse of a till cannot be deactivated or deleted; one shared with other warehouses is removed from the till instead.",
-          "Deleting a till is a soft delete and it can be restored."
+          "Deactivate switches the till off; Pause stops it selling for a while, and Resume lifts the pause. Both close its open session and cancel held carts.",
+          "Pause all POS configs stops every till of the company; while it's on, no till can be resumed. Resume all POS configs lifts only that; tills paused one by one stay paused."
         ]
       }
     ]

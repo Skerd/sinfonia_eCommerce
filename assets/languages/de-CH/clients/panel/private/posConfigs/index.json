@@ -3,55 +3,30 @@
   "title": "POS-Konfigurationen",
   "description": "Point-of-Sale-Läden und Kasseneinstellungen.",
   "help": {
-    "ariaLabel": "Über POS-Konfigurationen",
-    "title": "Über POS-Konfigurationen",
-    "overview": "Eine POS-Konfiguration ist eine Kasse: ihre Zahlungsschaltflächen, die Lager, aus denen sie verkauft, ihre Währung, Belege, Fiskalisierung und was die Kassierenden tun dürfen. Kassierende öffnen darauf eine Sitzung von der Seite Point of Sale aus.",
+    "ariaLabel": "Über Ihre Kassen",
+    "title": "Über Ihre Kassen",
+    "overview": "Jede POS-Konfiguration ist eine Kasse: ihre Zahlungsschaltflächen, die Lager, aus denen sie verkauft, ihre Währung, der Belegtext und was Kassierende tun dürfen.",
     "sections": [
       {
-        "title": "Was eine Kasse braucht",
-        "body": "Name, mindestens eine Zahlungsart und mindestens ein Lager sind Pflicht.",
+        "title": "Einrichten",
         "items": [
-          "Zahlungsarten sind die Schaltflächen der Kasse, in ihrer Reihenfolge. Nur aktive Zahlungsarten können zugewiesen werden.",
-          "Lager sind die Bestandsquellen der Kasse, der Reihe nach: Ein Verkauf füllt aus dem ersten, dann aus dem nächsten. Nur aktive Lager können zugewiesen werden. Die Adresse des ersten Lagers bestimmt auch die MWST-Sätze der Kassenverkäufe.",
-          "Eine Währung ist nötig, um eine Sitzung zu öffnen und zu verkaufen.",
-          "Die Fiskalkonfiguration verbindet die Kasse mit der albanischen CIS-Fiskalisierung. Ohne sie fiskalisiert die Kasse nicht.",
-          "Beleg-Kopf- und -Fusszeile werden auf jeden Beleg gedruckt."
+          "Name, mindestens eine Zahlungsart und ein Lager sind Pflicht; zum Öffnen braucht die Kasse ausserdem eine Währung.",
+          "Die Lager werden der Reihe nach genutzt: Ein Verkauf nimmt den Bestand aus dem ersten, dann aus dem nächsten. Die Adresse des ersten bestimmt die MWST der Kassenverkäufe.",
+          "Fiskaleinstellungen melden ihre Verkäufe der Steuerbehörde; ohne sie meldet die Kasse nichts."
         ]
       },
       {
-        "title": "Kassen-Berechtigungen",
-        "body": "Diese Schalter bestimmen, was Kassierende ohne Manager tun dürfen.",
+        "title": "Was Kassierende dürfen",
         "items": [
-          "„Rabatt erlauben“ und „Mengenänderung erlauben“ schalten diese Änderungen an der Kasse frei.",
-          "„Überverkauf erlauben“ lässt einen Verkauf zu, auch wenn die Lager nicht genug Bestand haben; der Fehlbestand wird dem letzten Lager belastet.",
-          "PIN für Rabatt, PIN für Barentnahme und PIN für Erstattung verlangen für diese Aktion eine Manager-PIN.",
-          "Bargeldkontrolle verfolgt die Schublade; Barcode-Scanner schaltet das Scannen ein."
+          "«Rabatt erlauben», «Mengenänderung erlauben» und «Überverkauf erlauben» schalten dies an der Kasse frei. PINs können für Rabatte, Barentnahmen und Erstattungen einen Manager verlangen.",
+          "Manager genehmigen mit ihrer eigenen PIN. Jeder legt seine fest; eine vergessene PIN wird über einen per E-Mail gesendeten Link zurückgesetzt."
         ]
       },
       {
-        "title": "Manager und PINs",
-        "body": "Manager sind die Benutzer, die PIN-geschützte Aktionen an dieser Kasse genehmigen dürfen.",
+        "title": "Eine Kasse stoppen",
         "items": [
-          "Jeder Manager setzt seine eigene PIN, kann sie mit der aktuellen PIN ändern oder löschen.",
-          "Eine vergessene PIN kann über einen per E-Mail gesendeten Link zurückgesetzt werden, der 24 Stunden gilt und einmal funktioniert.",
-          "Wer aus den Managern entfernt wird, verliert auch seine PIN an dieser Kasse."
-        ]
-      },
-      {
-        "title": "Aktiv, pausiert und die Firmensperre",
-        "body": "Drei Schalter hindern eine Kasse daran, Geld anzunehmen.",
-        "items": [
-          "Deaktivieren schaltet die Kasse aus und schliesst ihre offenen Sitzungen zwangsweise; sie kann erst nach dem Aktivieren wieder geöffnet werden.",
-          "Pausieren stoppt die Verkäufe einer Kasse mit optionalem Grund und schliesst ihre offenen Sitzungen zwangsweise: Geparkte Warenkörbe werden storniert, laufende Terminalzahlungen nach Möglichkeit storniert. Fortsetzen hebt es auf.",
-          "„Alle Kassen pausieren“ setzt eine firmenweite Sperre und schliesst jede offene Sitzung zwangsweise. Solange sie gilt, kann keine Kasse fortgesetzt werden. „Alle fortsetzen“ hebt nur die Firmensperre auf; einzeln pausierte Kassen bleiben pausiert."
-        ]
-      },
-      {
-        "title": "Verwandte Einstellungen",
-        "items": [
-          "Zahlungsarten und Fiskalkonfigurationen sind eigene Seiten unter Konfigurationen.",
-          "Ein Lager, das das einzige Lager einer Kasse ist, kann nicht deaktiviert oder gelöscht werden; eines, das mit anderen Lagern geteilt ist, wird stattdessen von der Kasse entfernt.",
-          "Das Löschen einer Kasse ist ein Soft Delete und kann wiederhergestellt werden."
+          "Deaktivieren schaltet die Kasse aus; Pausieren stoppt ihre Verkäufe eine Zeit lang, Fortsetzen hebt die Pause auf. Beides schliesst die offene Sitzung und storniert geparkte Warenkörbe.",
+          "«Alle POS-Konfigurationen pausieren» stoppt jede Kasse der Firma; solange das gilt, kann keine Kasse fortgesetzt werden. «Alle POS-Konfigurationen fortsetzen» hebt nur das auf; einzeln pausierte Kassen bleiben pausiert."
         ]
       }
     ]

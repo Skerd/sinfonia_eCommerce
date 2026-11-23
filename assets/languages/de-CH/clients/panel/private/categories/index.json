@@ -3,32 +3,18 @@
   "title": "Kategorien",
   "description": "Produktkategorien für die Kataloge Ihres Mandanten konfigurieren.",
   "help": {
-    "ariaLabel": "Über Kategorien",
-    "title": "Über Kategorien",
-    "overview": "Kategorien sind der Baum des Produktkatalogs. Sie gruppieren Produkte im Shop, in Filtern, in Rabatten und in Preisregeln. Ein Produkt kann in mehreren Kategorien sein. Marktplatz-Inserate nutzen eigene Inseratkategorien.",
+    "ariaLabel": "Über Produktkategorien",
+    "title": "Über Produktkategorien",
+    "overview": "Kategorien ordnen Ihre Produkte in einem Baum, etwa Kleidung › Hemden. Kunden durchsuchen und filtern Ihren Shop danach, und ein Produkt kann in mehreren sein.",
     "sections": [
       {
-        "title": "Der Baum",
+        "title": "Jede Kategorie",
         "items": [
-          "Name ist Pflicht. Der Slug wird daraus gebildet, innerhalb der Firma eindeutig gehalten und bei Namensänderung neu gebildet.",
-          "Übergeordnet ordnet die Kategorie einer anderen unter; leer lassen für eine oberste Kategorie. Eine Kategorie kann nicht unter sich selbst oder einen ihrer Nachfahren gestellt werden.",
-          "Reihenfolge sortiert Geschwister, kleinere zuerst."
-        ]
-      },
-      {
-        "title": "Wo Kategorien zählen",
-        "body": "Dieselbe Kategorie wird von verschiedenen Funktionen unterschiedlich gelesen.",
-        "items": [
-          "Shop-Navigation, Produktfilter, gespeicherte Suchen und dynamische Kollektionen nutzen jede Kategorie eines Produkts.",
-          "Ein Rabatt für eine Kategorie greift, wenn irgendeine Kategorie des Produkts ausgewählt ist.",
-          "Eine Preisregel für eine Kategorie betrachtet nur die erste Kategorie des Produkts."
-        ]
-      },
-      {
-        "title": "Löschen",
-        "items": [
-          "Löschen ist ein Soft Delete und kann wiederhergestellt werden. Produkte behalten ihre anderen Kategorien.",
-          "Der Odoo-Import kann Kategorien aus Odoo-Produktkategorien anlegen und aktualisieren."
+          "Lassen Sie «Übergeordnete Kategorie» leer für die oberste Ebene. Die Reihenfolge sortiert Kategorien derselben Ebene, die kleinste zuerst.",
+          "Ein Rabatt für eine Kategorie gilt, wenn irgendeine Kategorie des Produkts passt.",
+          "Eine Preisregel für eine Kategorie schaut nur auf die erste Kategorie des Produkts.",
+          "Das Löschen einer Kategorie löscht ihre Produkte nicht; sie behalten ihre anderen Kategorien.",
+          "Ihre Dienstleistungs-Inserate haben eigene Kategorien, unter Inseratkategorien."
         ]
       }
     ]

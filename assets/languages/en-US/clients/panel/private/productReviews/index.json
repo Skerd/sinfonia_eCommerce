@@ -3,34 +3,17 @@
   "title": "Product reviews",
   "description": "Create and edit reviews for paid orders, and moderate them.",
   "help": {
-    "ariaLabel": "About Product reviews",
-    "title": "About Product reviews",
-    "overview": "A product review is a buyer's rating and comment on a product they paid for. It belongs to one paid order and one product on it, and it feeds that product's rating average, rating count, and review count. Marketplace reviews are a separate list.",
+    "ariaLabel": "About product reviews",
+    "title": "About product reviews",
+    "overview": "Ratings and comments customers leave on products they bought. They make up the stars and the review count shown on each product.",
     "sections": [
       {
-        "title": "Who can review what",
-        "body": "A review is tied to a real purchase, not a free-standing comment.",
+        "title": "Each review",
         "items": [
-          "Only the order's customer can create the review; it is published under their name.",
-          "The order must be paid or partially refunded, and the product must be on it.",
-          "One review per product per order. Till sales do not produce reviewable orders here."
-        ]
-      },
-      {
-        "title": "What can change later",
-        "body": "The text and the score can change; the link to the purchase cannot.",
-        "items": [
-          "Rating (1 to 5), title, and comment can be edited.",
-          "Order and product are fixed once the review exists.",
-          "The product's rating average (to one decimal), rating count, and review count are recomputed from live reviews on every create, rating change, delete, and restore."
-        ]
-      },
-      {
-        "title": "Moderation",
-        "items": [
-          "Only an administrator can delete a review. Deleting is a soft delete; restoring brings the rating back.",
-          "A deleted review cannot be restored while a live review exists for the same order and product.",
-          "Open the product to see the numbers the shop shows, or the order to see the purchase."
+          "Only the customer who paid for an order can review its products, once per product per order. Till sales can't be reviewed.",
+          "The rating (1 to 5), title and comment can be edited later; the order and product can't.",
+          "Only an administrator can delete a review, which takes it out of the product's rating.",
+          "Reviews of your services are a separate list, under Reviews in Marketplace."
         ]
       }
     ]

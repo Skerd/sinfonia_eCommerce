@@ -3,32 +3,18 @@
   "title": "Kategoritë",
   "description": "Konfiguroni kategoritë e produkteve për katalogët e kompanisë suaj.",
   "help": {
-    "ariaLabel": "Rreth kategorive",
-    "title": "Rreth kategorive",
-    "overview": "Kategoritë janë pema e katalogut të produkteve. Ato grupojnë produktet në dyqan, në filtra, në zbritje dhe në rregullat e çmimeve. Një produkt mund të jetë në disa kategori. Listimet e tregut përdorin kategoritë e veta të listimeve.",
+    "ariaLabel": "Rreth kategorive të produkteve",
+    "title": "Rreth kategorive të produkteve",
+    "overview": "Kategoritë i rendisin produktet tuaja në një pemë, si Veshje › Këmisha. Klientët e shfletojnë dhe e filtrojnë dyqanin sipas tyre, dhe një produkt mund të jetë në disa.",
     "sections": [
       {
-        "title": "Pema",
+        "title": "Çdo kategori",
         "items": [
-          "Emri është i detyrueshëm. Slug-u ndërtohet prej tij, mbahet unik brenda kompanisë dhe rindërtohet kur ndryshon emri.",
-          "Prindi e vendos kategorinë nën një tjetër; lëreni bosh për një kategori të nivelit të parë. Një kategori nuk mund të vendoset nën veten ose nën një pasardhës të saj.",
-          "Rendi rendit kategoritë motra, më të voglat së pari."
-        ]
-      },
-      {
-        "title": "Ku kanë rëndësi kategoritë",
-        "body": "E njëjta kategori lexohet ndryshe nga funksione të ndryshme.",
-        "items": [
-          "Navigimi i dyqanit, filtrat e produkteve, kërkimet e ruajtura dhe koleksionet dinamike përdorin çdo kategori të një produkti.",
-          "Një zbritje që synon një kategori zbatohet kur është zgjedhur ndonjëra nga kategoritë e produktit.",
-          "Një rregull çmimi që synon një kategori shikon vetëm kategorinë e parë të produktit."
-        ]
-      },
-      {
-        "title": "Fshirja",
-        "items": [
-          "Fshirja është e butë dhe kategoria mund të rikthehet. Produktet mbajnë kategoritë e tjera.",
-          "Importi nga Odoo mund të krijojë dhe përditësojë kategori nga kategoritë e produkteve në Odoo."
+          "Lëreni bosh fushën Kategoria prind për një nivel të parë. Rendi rendit kategoritë e të njëjtit nivel, numri më i vogël i pari.",
+          "Një zbritje që synon një kategori vlen kur përputhet cilado nga kategoritë e produktit.",
+          "Një rregull çmimi që synon një kategori shikon vetëm kategorinë e parë të produktit.",
+          "Fshirja e një kategorie nuk i fshin produktet e saj; ato mbajnë kategoritë e tjera.",
+          "Listimet tuaja të shërbimeve kanë kategoritë e veta, te Kategoritë e listimeve."
         ]
       }
     ]

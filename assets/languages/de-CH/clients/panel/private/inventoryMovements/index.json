@@ -5,44 +5,21 @@
   "help": {
     "ariaLabel": "Über Lagerbewegungen",
     "title": "Über Lagerbewegungen",
-    "overview": "Das ist das Lagerjournal. Jede Änderung einer Menge „an Lager“ schreibt hier eine Zeile, und Zeilen werden nie bearbeitet oder entfernt. Es beantwortet „warum hat dieses Lager so viel?“ — jede Zeile zeigt die Änderung, die Menge vorher und nachher, den Grund, wer sie ausgeführt hat und was sie ausgelöst hat.",
+    "overview": "Die Geschichte Ihres Bestands: Jede Änderung der Menge an Lager fügt hier eine Zeile hinzu, und Zeilen werden nie geändert oder entfernt. So sehen Sie, warum ein Lager hat, was es hat.",
     "sections": [
       {
-        "title": "Was eine Zeile festhält",
-        "body": "Die Zeile ist die Änderung, nicht der aktuelle Bestand. Der aktuelle Bestand steht auf der Bestandszeile.",
+        "title": "Jede Bewegung",
         "items": [
-          "Produkt, Variante falls vorhanden, Lager und die Bestandszeile, zu der sie gehört.",
-          "Menge ist die vorzeichenbehaftete Änderung: positiv rein, negativ raus. Menge vorher und nachher ist „an Lager“ um diese Änderung herum.",
-          "Ausgeführt von ist der Benutzer, und die Referenz zeigt auf den Auslöser: eine Bestellung, eine Sendung, eine Retourenanfrage, eine Umlagerung, eine Inventur, einen Kassenverkauf oder die Bestandszeile selbst.",
-          "Lieferant, Belegnummer, Belegdateien, Charge, Ablaufdatum und Stückkosten erscheinen, wenn die auslösende Aktion sie hatte."
+          "Zeigt Produkt, Lager, die Änderung (plus für Zugang, minus für Abgang), die Menge davor und danach, den Grund, wer sie gemacht hat und was sie ausgelöst hat, etwa eine Bestellung oder eine Umlagerung.",
+          "Gründe: Anfangsbestand, Auffüllen, Verkauf, Rückgabe, Umlagerung ein und aus, Anpassung (Inventuren und Korrekturen), Beschädigung und Abschreibung.",
+          "Auffüllungen behalten die erfassten Kosten, Charge und Ablaufdatum; Abschreibungen übernehmen die Kosten der letzten Lieferung, damit Verluste einen Wert haben."
         ]
       },
       {
-        "title": "Die Gründe",
-        "body": "Der Grund wird von dem gesetzt, was die Änderung ausgelöst hat. Sie wählen ihn hier nie.",
+        "title": "Bestand ändern",
         "items": [
-          "Anfangsbestand ist die Startmenge einer neuen Bestandszeile. Auffüllen ist erhaltene Ware.",
-          "Verkauf ist Ware, die mit einer versendeten Bestellung oder einem Kassenverkauf hinausgeht.",
-          "Rückgabe ist Ware, die durch eine empfangene Retourenanfrage oder eine Kassenerstattung zurückkommt.",
-          "Umlagerung aus und Umlagerung ein sind die beiden Seiten einer abgeschlossenen Umlagerung.",
-          "Korrektur ist eine Inventur oder eine manuelle Korrektur. Schaden und Abschreibung nehmen Ware ohne Verkauf heraus."
-        ]
-      },
-      {
-        "title": "Bestand bewerten",
-        "body": "Eingehende Zeilen tragen die Kosten; ausgehende übernehmen sie.",
-        "items": [
-          "Ein Auffüllen speichert die eingegebenen Stückkosten, Charge und Ablaufdatum.",
-          "Eine manuelle Ausbuchung übernimmt Stückkosten und Ablaufdatum der letzten eingehenden Zeile derselben Charge (oder der letzten eingehenden Zeile überhaupt), damit Abschreibungen bewertet sind."
-        ]
-      },
-      {
-        "title": "Warum Sie es nicht bearbeiten können",
-        "body": "Das Journal ist die Historie. Eine geänderte Zeile würde Vorher und Nachher falsch machen.",
-        "items": [
-          "Zeilen können hier von niemandem angelegt, bearbeitet oder gelöscht werden.",
-          "Um Bestand zu ändern, nutzen Sie Bestand (Auffüllen, Ausbuchen), eine Umlagerung, eine Inventur, eine Bestellsendung oder eine Retoure.",
-          "Filtern Sie nach Produkt, Lager, Grund oder Datum, um einen Artikel zu prüfen; die Bestandszeile öffnet auch ihre eigene Historie."
+          "Der Bestand ändert sich unter Lagerbestand, Umlagerungen und Inventuren, beim Versand einer Bestellung und bei einer Rückgabe; nie hier.",
+          "Filtern Sie nach Produkt, Lager, Grund oder Datum, um einen Artikel zu verfolgen."
         ]
       }
     ]

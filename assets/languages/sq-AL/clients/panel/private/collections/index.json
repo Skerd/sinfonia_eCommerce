@@ -61,34 +61,21 @@
   "help": {
     "ariaLabel": "Rreth koleksioneve",
     "title": "Rreth koleksioneve",
-    "overview": "Një koleksion është një grup tregtar produktesh, si «Ulje vere» ose «Të rejat», i shfaqur në dyqan dhe i përdorshëm si objektiv për zbritje dhe rregulla çmimesh. Është ose manual (ju zgjidhni produktet) ose dinamik (i zgjedhin rregullat).",
+    "overview": "Një koleksion është një grup produktesh që shfaqen bashkë, si “Ulje vere” ose “Të rejat”. Edhe zbritjet dhe rregullat e çmimeve mund ta synojnë.",
     "sections": [
       {
         "title": "Manual ose dinamik",
-        "body": "Tipi vendos nga vjen anëtarësia.",
         "items": [
-          "Manual: koleksioni përmban pikërisht produktet që shtoni.",
-          "Dinamik: anëtarësia llogaritet drejtpërdrejt nga rregullat, dhe kualifikohen vetëm produktet aktive. Një koleksion dinamik pa rregulla nuk përmban asgjë.",
-          "«Të gjitha rregullat» kërkon që të plotësohet çdo rregull; «Çdo rregull» kërkon të paktën një."
+          "Manual: pikërisht produktet që shtoni ju.",
+          "Dinamik: produktet i zgjedhin rregullat, sipas etiketës, markës, shitësit, llojit të produktit, kategorisë ose çmimit; llogariten vetëm produktet aktive. Pa rregulla, është bosh.",
+          "Të gjitha rregullat kërkon që të përputhet çdo rregull; Çdo rregull kërkon vetëm një. Rregullat për nivelin e stokut nuk zbatohen ende."
         ]
       },
       {
-        "title": "Rregullat",
-        "body": "Çdo rregull është një fushë, një operator dhe një vlerë.",
+        "title": "Në dyqanin tuaj",
         "items": [
-          "Etiketa, marka, furnitori dhe tipi i produktit mbështesin e barabartë, jo e barabartë, përmban, nuk përmban dhe fillon me.",
-          "Kategoria mbështet e barabartë (ose përmban) dhe jo e barabartë (ose nuk përmban) ndaj kategorive të produktit.",
-          "Çmimi mbështet e barabartë, jo e barabartë, më i madh se dhe më i vogël se.",
-          "Niveli i stokut pranohet por ende nuk zbatohet; një rregull mbi të injorohet."
-        ]
-      },
-      {
-        "title": "Dyqani dhe çmimet",
-        "items": [
-          "Aktivizo dhe çaktivizo vendosin nëse koleksioni është i dukshëm në dyqan. Një koleksion i fshehur nuk listohet as nuk mund të shfletohet, por ekziston ende për zbritjet dhe rregullat e çmimeve.",
-          "Zbritjet dhe rregullat e çmimeve që synojnë një koleksion përdorin të njëjtën anëtarësi që tregon dyqani.",
-          "Emri, përshkrimi, imazhi kryesor, pozicioni dhe titulli e përshkrimi SEO i japin formë faqes së koleksionit.",
-          "Fshirja është e butë dhe koleksioni mund të rikthehet."
+          "Çaktivizo e fsheh koleksionin nga dyqani; zbritjet dhe rregullat e çmimeve e përdorin ende.",
+          "Emri, përshkrimi, imazhi, pozicioni dhe tekstet SEO formojnë faqen e koleksionit."
         ]
       }
     ]

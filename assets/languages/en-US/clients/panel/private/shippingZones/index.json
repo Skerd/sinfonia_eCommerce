@@ -5,33 +5,23 @@
   "help": {
     "ariaLabel": "About shipping zones",
     "title": "About shipping zones",
-    "overview": "Shipping zones decide which delivery options the buyer is offered at checkout and what they cost. A zone lists countries, optionally states and postal codes, and one or more rates. Checkout offers every rate of every active zone that matches; the buyer picks one.",
+    "overview": "Shipping zones decide which delivery options customers see at checkout and what they cost. Each zone lists countries, if you like states and postal codes, and one or more rates.",
     "sections": [
       {
-        "title": "Matching a destination",
+        "title": "Rates",
         "items": [
-          "The destination country must be one of the zone's countries; a zone with no countries matches nothing.",
-          "Listed states narrow it; empty states cover the whole country. Postal patterns are optional and use * as the only wildcard.",
-          "Without a destination country, no rates are offered."
+          "Flat: always the same price.",
+          "Free: nothing to pay. Set a minimum order amount to make “free over 50”.",
+          "Weight-based, Order amount or Quantity: the rate is offered only when the cart's weight, total or number of items is between its minimum and maximum. For Quantity, enter item counts in the order amount fields.",
+          "Carrier and estimated days are shown to the customer; they don't change the price."
         ]
       },
       {
-        "title": "Rate types",
-        "body": "Each rate shows its name, price, carrier, and estimated days. Carrier and days do not change the price.",
+        "title": "Matching an address",
         "items": [
-          "Flat always charges its price.",
-          "Free charges nothing, and is hidden when the order amount is outside its minimum or maximum, which is how \"free over 50\" is built.",
-          "Weight charges its price when the cart weight is inside its minimum and maximum weight.",
-          "Price charges its price when the merchandise subtotal is inside its minimum and maximum order amount.",
-          "Quantity charges its price when the number of items is inside the minimum and maximum order amount fields (they are read as item counts for this type)."
-        ]
-      },
-      {
-        "title": "Together with discounts and orders",
-        "items": [
-          "A free-shipping discount waives the charge but does not hide the rates.",
-          "The chosen rate's name, carrier, and price are copied onto the order.",
-          "Activate and deactivate switch the zone on and off. Deleting is a soft delete and it can be restored."
+          "The customer sees every rate of every active zone that matches the address, and picks one.",
+          "A zone with no countries matches nothing. Empty states cover the whole country; use * in postal codes, like 10*.",
+          "A free-shipping discount removes the charge but still shows the rates."
         ]
       }
     ]

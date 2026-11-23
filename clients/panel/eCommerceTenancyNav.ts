@@ -1,4 +1,4 @@
-import {IconCategory2, IconPlug, IconCreditCard, IconCurrencyDollar, IconDownload, IconWorld, IconStack2, IconLayoutGrid, IconBooks, IconMapPin, IconDeviceDesktop, IconPercentage, IconAdjustments, IconShoppingBag, IconTag, IconTruck, IconUsers, IconBuildingWarehouse} from "@tabler/icons-react";
+import {IconCategory2, IconPlug, IconCreditCard, IconCurrencyDollar, IconDownload, IconWorld, IconStack2, IconLayoutGrid, IconBooks, IconMapPin, IconDeviceDesktop, IconPercentage, IconAdjustments, IconShoppingBag, IconTag, IconTruck, IconUsers, IconBuildingWarehouse, IconGift, IconFileCertificate} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
 
@@ -70,6 +70,15 @@ export function buildECommerceTenancySettingsSubCollapsible(
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },
+            // Gift cards are issued by shop orders and spent at checkout: a shop's setting, though finance keeps the pages (TD-F153).
+            {
+                title: resolveLanguageKey("menus.tenancy.systemSettings.giftcards.title"),
+                url: "/tenancy/systemSettings/giftcards",
+                icon: IconGift,
+                permissions: ["giftCards"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.pricingrules.title"),
                 url: "/tenancy/systemSettings/pricingrules",
@@ -138,7 +147,8 @@ export function buildECommerceTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.pos.title"),
                 icon: IconDeviceDesktop,
-                permissions: ["posConfigs"],
+                // Shown to whoever may open any page below (TD-F151).
+                permissions: ["posConfigs", "posPaymentMethods", "fiscalConfigs"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
                 items: [
@@ -146,7 +156,7 @@ export function buildECommerceTenancySettingsSubCollapsible(
                         title: resolveLanguageKey("menus.tenancy.systemSettings.posconfigs.title"),
                         url: "/tenancy/systemSettings/posconfigs",
                         icon: IconAdjustments,
-                        permissions: ["posPaymentMethods"],
+                        permissions: ["posConfigs"],
                         usersPermissions: [],
                         atLeastOnePermission: true,
                     },
@@ -154,7 +164,16 @@ export function buildECommerceTenancySettingsSubCollapsible(
                         title: resolveLanguageKey("menus.tenancy.systemSettings.pospaymentmethods.title"),
                         url: "/tenancy/systemSettings/pospaymentmethods",
                         icon: IconCreditCard,
-                        permissions: [],
+                        permissions: ["posPaymentMethods"],
+                        usersPermissions: [],
+                        atLeastOnePermission: true,
+                    },
+                    // The till signs its receipts with it (Albanian fiscalization): the shop's, though finance keeps the page (TD-F153).
+                    {
+                        title: resolveLanguageKey("menus.tenancy.systemSettings.fiscalconfigs.title"),
+                        url: "/tenancy/systemSettings/fiscalconfigs",
+                        icon: IconFileCertificate,
+                        permissions: ["fiscalConfigs"],
                         usersPermissions: [],
                         atLeastOnePermission: true,
                     },

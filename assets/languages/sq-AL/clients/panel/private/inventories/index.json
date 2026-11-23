@@ -5,61 +5,24 @@
   "help": {
     "ariaLabel": "Rreth inventarit",
     "title": "Rreth inventarit",
-    "overview": "Një rresht inventari është stoku i një produkti, ose i një varianti, në një magazinë. Ka tre numra: në gjendje, i rezervuar dhe i disponueshëm (në gjendje minus i rezervuar). I disponueshëm është ajo që pagesa online dhe arka mund të shesin ende. Çdo ndryshim i sasisë në gjendje lë një lëvizje në regjistrin e stokut.",
+    "overview": "Sa keni nga çdo produkt në çdo magazinë. Në gjendje është ajo që është në raft, Rezervuar është e mbajtur për porosi ende të padërguara, dhe Në dispozicion është ajo që mund të shisni ende.",
     "sections": [
       {
-        "title": "Në gjendje, i rezervuar, i disponueshëm",
-        "body": "Nuk janë tre stoqe. I rezervuari është një mbajtje brenda sasisë në gjendje.",
+        "title": "Shtimi dhe ndryshimi i stokut",
         "items": [
-          "Në gjendje është ajo që ndodhet fizikisht në magazinë.",
-          "I rezervuar është ajo që pagesat online të hapura dhe porositë e padërguara kanë zënë. Rezervohet në hapin e pagesës dhe lirohet nëse pagesa skadon, porosia anulohet ose rimbursohet plotësisht.",
-          "I disponueshëm është në gjendje minus i rezervuar. Një numërim që gjen më pak se sa është rezervuar mund ta bëjë negativ."
+          "Krijo inventar për të filluar stokun e një produkti në një magazinë, me sasinë fillestare. Pas kësaj, stoku ndryshon vetëm me veprime, jo duke e redaktuar.",
+          "Rifornizo shton mallrat që morët, me furnitorin, faturën, koston, partinë dhe skadencën nëse i keni.",
+          "Zbrit / çregjistro nxjerr mallra të dëmtuara, të humbura ose të korrigjuara. Nuk mund të zbritni nën atë që është e rezervuar.",
+          "Shiko lëvizjet tregon çdo ndryshim, me arsyen e tij dhe kush e bëri."
         ]
       },
       {
-        "title": "Cilët artikuj kanë nevojë për rresht",
-        "body": "Një produkt fizik ose i ndryshueshëm ndiqet në stok, përveç kur ndjekja është e çaktivizuar te produkti ose varianti.",
+        "title": "Mirë të dini",
         "items": [
-          "Një artikull i ndjekur mund të shitet vetëm nga rreshta në magazina aktive. Pa rresht, ose pa mjaftueshëm të disponueshëm, pagesa online e refuzon rreshtin si jashtë stoku.",
-          "Pagesa online preferon një magazinë që mbulon gjithë rreshtin, së pari atë të paracaktuar; përndryshe e ndan rreshtin në disa magazina, së pari atë të paracaktuar.",
-          "Produktet dixhitale, shërbimet dhe kartat dhuratë, si dhe artikujt pa ndjekje, nuk kanë nevojë për rresht. Një paketë produktesh nuk ka kurrë rresht; përbërësit e saj kanë.",
-          "Ka një rresht aktiv për çdo produkt, variant dhe magazinë."
-        ]
-      },
-      {
-        "title": "Krijimi dhe ndryshimi i një rreshti",
-        "body": "Krijimi i një rreshti është ajo që nis ruajtjen e një artikulli në një magazinë.",
-        "items": [
-          "Produkti, varianti dhe magazina janë të fiksuar pasi krijohet rreshti, sepse rezervimet dhe historiku varen prej tyre.",
-          "Një sasi fillestare gjatë krijimit shkruan një lëvizje fillestare. Pas kësaj, sasia në gjendje ndryshon vetëm me veprime, kurrë me modifikim të thjeshtë.",
-          "Pika e rifurnizimit dhe sasia e rifurnizimit drejtojnë sinjalizimin e stokut të ulët."
-        ]
-      },
-      {
-        "title": "Rifurnizo dhe zbrit",
-        "body": "Këto janë veprimet manuale të stokut. Të dyja kërkojnë lejen për të shkruar sasinë në gjendje.",
-        "items": [
-          "Rifurnizo shton njësi dhe mund të regjistrojë furnitorin, numrin e faturës, skedarët e faturës, datën, koston për njësi, lotin dhe datën e skadimit.",
-          "Zbrit heq njësi si çregjistrim, dëmtim ose rregullim. Merr koston për njësi dhe skadimin e furnizimit të fundit të të njëjtit lot, që humbja të jetë e vlerësuar.",
-          "Një zbritje që do të linte më pak në gjendje se sa është rezervuar refuzohet."
-        ]
-      },
-      {
-        "title": "Sinjalizimet e stokut të ulët",
-        "body": "Një proces çdo orë kontrollon çdo rresht me pikë rifurnizimi.",
-        "items": [
-          "Kur i disponueshmi bie nën pikën e rifurnizimit (pa qenë negativ), stafi njoftohet një herë.",
-          "Sinjalizimi rindizet kur i disponueshmi kthehet në pikën e rifurnizimit ose mbi të."
-        ]
-      },
-      {
-        "title": "Çfarë tjetër i ndryshon numrat",
-        "body": "Çdo ndryshim më poshtë shkruan një lëvizje me sasinë para dhe pas.",
-        "items": [
-          "Dërgimi i një porosie konsumon rezervimet e saj; një dërgesë e dështuar i kthen njësitë.",
-          "Një transferim stoku lëviz stok të lirë mes magazinave; një numërim stoku vendos sasinë në gjendje sa sasia e numëruar.",
-          "Një kthim i pranuar e kthen mallin; një shitje dhe një rimbursim në arkë marrin dhe kthejnë stokun drejtpërdrejt.",
-          "Një rresht që ka ende stok ose rezervime nuk mund të fshihet. Fshirja e një rreshti bosh është fshirje e butë dhe mund të rikthehet, përveç kur ndërkohë ekziston një rresht aktiv për të njëjtin artikull."
+          "Produktet me Gjurmo inventarin të ndezur shiten vetëm nga stoku në dispozicion në magazina aktive. Produktet dixhitale, shërbimet dhe kartat dhuratë nuk kanë nevojë për stok; një paketë përdor stokun e pjesëve të saj.",
+          "Pagesa online merr stok fillimisht nga magazina e parazgjedhur.",
+          "Kur Në dispozicion bie nën pikën e riporositjes, ekipi juaj njoftohet një herë.",
+          "Një rresht që ka ende stok ose rezervime nuk mund të fshihet."
         ]
       }
     ]

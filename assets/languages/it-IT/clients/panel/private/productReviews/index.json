@@ -3,34 +3,17 @@
   "title": "Recensioni di prodotti",
   "description": "Crea e modifica le recensioni degli ordini pagati, poi moderale.",
   "help": {
-    "ariaLabel": "Informazioni sulle recensioni prodotto",
-    "title": "Informazioni sulle recensioni prodotto",
-    "overview": "Una recensione di prodotto è la valutazione e il commento di un acquirente su un prodotto che ha pagato. Appartiene a un ordine pagato e a un prodotto di quell’ordine, e alimenta la valutazione media, il numero di valutazioni e il numero di recensioni di quel prodotto. Le recensioni del marketplace sono un elenco separato.",
+    "ariaLabel": "Informazioni sulle recensioni di prodotti",
+    "title": "Informazioni sulle recensioni di prodotti",
+    "overview": "Voti e commenti che i clienti lasciano sui prodotti acquistati. Da qui nascono le stelle e il numero di recensioni mostrati su ogni prodotto.",
     "sections": [
       {
-        "title": "Chi può recensire cosa",
-        "body": "Una recensione è legata a un acquisto reale, non a un commento libero.",
+        "title": "Ogni recensione",
         "items": [
-          "Solo il cliente dell’ordine può creare la recensione; viene pubblicata con il suo nome.",
-          "L’ordine deve essere pagato o parzialmente rimborsato, e il prodotto deve esserci.",
-          "Una recensione per prodotto per ordine. Le vendite in cassa qui non producono ordini recensibili."
-        ]
-      },
-      {
-        "title": "Cosa può cambiare dopo",
-        "body": "Testo e punteggio possono cambiare; il legame con l’acquisto no.",
-        "items": [
-          "Valutazione (da 1 a 5), titolo e commento si possono modificare.",
-          "Ordine e prodotto sono fissi una volta creata la recensione.",
-          "La valutazione media del prodotto (a un decimale), il numero di valutazioni e il numero di recensioni vengono ricalcolati dalle recensioni attive a ogni creazione, cambio di valutazione, eliminazione e ripristino."
-        ]
-      },
-      {
-        "title": "Moderazione",
-        "items": [
-          "Solo un amministratore può eliminare una recensione. È un’eliminazione logica; il ripristino riporta la valutazione.",
-          "Una recensione eliminata non può essere ripristinata se esiste una recensione attiva per lo stesso ordine e prodotto.",
-          "Apri il prodotto per vedere i numeri mostrati dal negozio, o l’ordine per vedere l’acquisto."
+          "Solo il cliente che ha pagato un ordine può recensirne i prodotti, una volta per prodotto e ordine. Le vendite alla cassa non si recensiscono.",
+          "Il voto (da 1 a 5), il titolo e il commento si possono modificare dopo; l'ordine e il prodotto no.",
+          "Solo un amministratore può eliminare una recensione, che esce così dal voto del prodotto.",
+          "Le recensioni dei tuoi servizi sono un elenco a parte, in Recensioni del Marketplace."
         ]
       }
     ]

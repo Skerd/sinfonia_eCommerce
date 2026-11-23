@@ -5,33 +5,23 @@
   "help": {
     "ariaLabel": "Rreth zonave të transportit",
     "title": "Rreth zonave të transportit",
-    "overview": "Zonat e transportit vendosin cilat mundësi dorëzimi i ofrohen blerësit gjatë pagesës dhe sa kushtojnë. Një zonë liston shtete, opsionalisht rajone dhe kode postare, dhe një ose më shumë tarifa. Pagesa ofron çdo tarifë të çdo zone aktive që përputhet; blerësi zgjedh njërën.",
+    "overview": "Zonat e transportit përcaktojnë cilat mënyra dërgese shohin klientët kur paguajnë dhe sa kushtojnë. Çdo zonë ka shtete, nëse doni rajone dhe kode postare, dhe një ose më shumë tarifa.",
     "sections": [
       {
-        "title": "Përputhja e një destinacioni",
+        "title": "Tarifat",
         "items": [
-          "Shteti i destinacionit duhet të jetë një nga shtetet e zonës; një zonë pa shtete nuk përputhet me asgjë.",
-          "Rajonet e listuara kufizojnë; pa rajone mbulohet gjithë shteti. Modelet e kodit postar janë opsionale dhe përdorin * si të vetmen shenjë të lirë.",
-          "Pa shtet destinacioni nuk ofrohet asnjë tarifë."
+          "Fikse: gjithmonë i njëjti çmim.",
+          "Falas: asgjë për të paguar. Vendosni një shumë minimale porosie për të bërë “falas mbi 50”.",
+          "Sipas peshës, Sipas shumës së porosisë ose Sipas sasisë: tarifa ofrohet vetëm kur pesha, totali ose numri i artikujve të shportës është mes minimumit dhe maksimumit të saj. Për Sipas sasisë, shkruani numrin e artikujve te fushat e shumës së porosisë.",
+          "Transportuesi dhe ditët e parashikuara i shfaqen klientit; nuk e ndryshojnë çmimin."
         ]
       },
       {
-        "title": "Tipet e tarifave",
-        "body": "Çdo tarifë tregon emrin, çmimin, transportuesin dhe ditët e parashikuara. Transportuesi dhe ditët nuk e ndryshojnë çmimin.",
+        "title": "Përputhja e një adrese",
         "items": [
-          "E sheshtë tarifon gjithmonë çmimin e saj.",
-          "Falas nuk tarifon asgjë dhe fshihet kur shuma e porosisë është jashtë minimumit ose maksimumit të saj — kështu ndërtohet «falas mbi 50».",
-          "Peshë tarifon çmimin kur pesha e shportës është brenda peshës minimale dhe maksimale.",
-          "Çmim tarifon çmimin kur nëntotali i mallit është brenda shumës minimale dhe maksimale të porosisë.",
-          "Sasi tarifon çmimin kur numri i artikujve është brenda fushave shuma minimale dhe maksimale e porosisë (për këtë tip lexohen si numër artikujsh)."
-        ]
-      },
-      {
-        "title": "Bashkë me zbritjet dhe porositë",
-        "items": [
-          "Një zbritje me transport falas e heq tarifën por nuk i fsheh tarifat.",
-          "Emri, transportuesi dhe çmimi i tarifës së zgjedhur kopjohen te porosia.",
-          "Aktivizo dhe çaktivizo e ndezin dhe e fikin zonën. Fshirja është e butë dhe zona mund të rikthehet."
+          "Klienti sheh çdo tarifë të çdo zone aktive që përputhet me adresën, dhe zgjedh një.",
+          "Një zonë pa shtete nuk përputhet me asgjë. Rajonet bosh mbulojnë gjithë shtetin; përdorni * te kodet postare, si 10*.",
+          "Një zbritje me transport falas e heq tarifën, por tarifat shfaqen sërish."
         ]
       }
     ]

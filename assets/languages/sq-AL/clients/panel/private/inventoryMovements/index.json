@@ -3,46 +3,23 @@
   "title": "Lëvizjet e inventarit",
   "description": "Regjistri i plotë i rifornizimeve, çregjistrimeve, shitjeve dhe ndryshimeve të tjera.",
   "help": {
-    "ariaLabel": "Rreth lëvizjeve të inventarit",
-    "title": "Rreth lëvizjeve të inventarit",
-    "overview": "Ky është regjistri i stokut. Çdo ndryshim i një sasie në gjendje shkruan këtu një rresht, dhe rreshtat nuk ndryshohen e nuk fshihen kurrë. Ai i përgjigjet pyetjes «pse kjo magazinë ka kaq shumë?» — çdo rresht tregon ndryshimin, sasinë para dhe pas, arsyen, kush e bëri dhe çfarë e shkaktoi.",
+    "ariaLabel": "Rreth lëvizjeve të stokut",
+    "title": "Rreth lëvizjeve të stokut",
+    "overview": "Historiku i stokut tuaj: çdo ndryshim i sasisë në gjendje shton një rresht këtu, dhe rreshtat nuk ndryshohen e nuk hiqen kurrë. Përdoreni për të parë pse një magazinë ka atë që ka.",
     "sections": [
       {
-        "title": "Çfarë regjistron një rresht",
-        "body": "Rreshti është ndryshimi, jo stoku aktual. Stoku aktual është te rreshti i inventarit.",
+        "title": "Çdo lëvizje",
         "items": [
-          "Produkti, varianti nëse ka, magazina dhe rreshti i inventarit të cilit i përket.",
-          "Sasia është ndryshimi me shenjë: pozitiv në hyrje, negativ në dalje. Sasia para dhe pas është sasia në gjendje rreth atij ndryshimi.",
-          "Kryer nga është përdoruesi, dhe referenca tregon shkakun: një porosi, një dërgesë, një kërkesë kthimi, një transferim stoku, një numërim stoku, një shitje në arkë ose vetë rreshti i inventarit.",
-          "Furnitori, numri i faturës, skedarët e faturës, loti, skadimi dhe kostoja për njësi shfaqen kur veprimi që shkroi rreshtin i kishte."
+          "Tregon produktin, magazinën, ndryshimin (plus për hyrje, minus për dalje), sasinë para dhe pas, arsyen, kush e bëri dhe çfarë e shkaktoi, si një porosi ose një transferim.",
+          "Arsyet: Fillestar (stoku i hapjes), Rifornizim, Shitje, Kthim, Transferim hyrës dhe dalës, Rregullim (numërime dhe korrigjime), Dëmtim dhe Çregjistrim.",
+          "Rifornizimet ruajnë koston, partinë dhe skadencën që futët; çregjistrimet marrin koston e furnizimit të fundit, që humbjet të kenë vlerë."
         ]
       },
       {
-        "title": "Arsyet",
-        "body": "Arsyeja vendoset nga ajo që bëri ndryshimin. Këtu nuk e zgjidhni kurrë.",
+        "title": "Ndryshimi i stokut",
         "items": [
-          "Fillestar është sasia e nisjes së një rreshti të ri inventari. Rifurnizim është mall i marrë.",
-          "Shitje është mall që del me një porosi të dërguar ose një shitje në arkë.",
-          "Kthim është mall i rikthyer nga një kërkesë kthimi e pranuar ose një rimbursim në arkë.",
-          "Transferim dalës dhe transferim hyrës janë dy anët e një transferimi stoku të përfunduar.",
-          "Rregullim është një numërim stoku ose një korrigjim manual. Dëmtim dhe çregjistrim heqin mall pa shitje."
-        ]
-      },
-      {
-        "title": "Vlerësimi i stokut",
-        "body": "Rreshtat hyrës mbajnë koston; dalësit e trashëgojnë.",
-        "items": [
-          "Një rifurnizim regjistron koston për njësi, lotin dhe skadimin e futur.",
-          "Një zbritje manuale kopjon koston për njësi dhe skadimin e rreshtit të fundit hyrës të të njëjtit lot (ose të rreshtit të fundit hyrës fare), që çregjistrimet të jenë të vlerësuara."
-        ]
-      },
-      {
-        "title": "Pse nuk mund ta ndryshoni",
-        "body": "Regjistri është historiku. Ndryshimi i një rreshti do t'i bënte të pavërteta sasitë para dhe pas.",
-        "items": [
-          "Askush nuk mund të krijojë, ndryshojë ose fshijë rreshta këtu.",
-          "Për të ndryshuar stokun, përdorni Inventarin (rifurnizo, zbrit), një transferim, një numërim, një dërgim porosie ose një kthim.",
-          "Filtroni sipas produktit, magazinës, arsyes ose datës për të kontrolluar një artikull; edhe rreshti i inventarit hap historikun e vet."
+          "Stoku ndryshon te Inventari, Transferimet e stokut dhe Numërimet e stokut, kur dërgohet një porosi dhe kur kthehet një kthim; kurrë këtu.",
+          "Filtroni sipas produktit, magazinës, arsyes ose datës për të ndjekur një artikull."
         ]
       }
     ]

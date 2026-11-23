@@ -3,38 +3,19 @@
   "title": "Product variants",
   "description": "Manage SKU-level variants of products.",
   "help": {
-    "ariaLabel": "About Product variants",
-    "title": "About Product variants",
-    "overview": "A variant is one sellable SKU of a variable product, defined by its combination of attribute values (for example Red / XL). The cart and the till charge the variant's own price when it has one. Only an active variant can be sold.",
+    "ariaLabel": "About product variants",
+    "title": "About product variants",
+    "overview": "A variant is one version of a Variable product, such as Red / XL. Each variant has its own stock and can have its own price.",
     "sections": [
       {
-        "title": "Identity",
+        "title": "Each variant",
         "items": [
-          "Product is required and fixed for good: stock rows and order lines are keyed on the product and the variant together.",
-          "Attribute combination is the set of attribute-and-value pairs. Two live variants of one product cannot share a combination.",
-          "SKU and barcode identify it; a scanned variant barcode adds that exact variant at the till."
-        ]
-      },
-      {
-        "title": "Price, weight, media",
-        "items": [
-          "Price, compare-at price, and cost work like the product's. A variant without a price sells at the product price.",
-          "Weight, dimensions, main image, and display order describe the variant on the storefront picker."
-        ]
-      },
-      {
-        "title": "Stock",
-        "items": [
-          "A variant of a tracked product is stock-tracked unless track inventory is off on the variant. Then each warehouse needs an inventory row for this variant.",
-          "With no row in an active warehouse, checkout refuses the variant as out of stock."
-        ]
-      },
-      {
-        "title": "Status and the product",
-        "items": [
-          "Active variants are sold; an inactive variant is removed from carts the next time they are priced.",
-          "The product's variant list, variant count, and has-variants flag follow its live variants; a product with at least one variant can be published without its own price.",
-          "Deleting is a soft delete and it can be restored."
+          "Pick the product, then the options that make the variant, such as Color: Red and Size: XL. Two variants of a product can't have the same options, and the product can't be changed later.",
+          "Without its own price, a variant sells at the product's price.",
+          "Its barcode, scanned at the till, adds exactly this variant.",
+          "Its stock is kept per warehouse under Inventory, unless Track inventory is off.",
+          "Only active variants can be bought; an inactive one is taken out of carts.",
+          "A product with at least one variant can be published without a price of its own."
         ]
       }
     ]

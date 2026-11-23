@@ -5,42 +5,22 @@
   "help": {
     "ariaLabel": "Rreth porosive POS",
     "title": "Rreth porosive POS",
-    "overview": "Një porosi POS është një shitje e regjistruar në një arkë, ose rimbursimi i saj. Kjo faqe është regjistri i atyre shitjeve; rreshtat krijohen nga arka dhe këtu as krijohen, as ndryshohen, as fshihen.",
+    "overview": "Çdo shitje e bërë në një arkë, dhe çdo rimbursim i saj. Arka i krijon; kjo faqe shërben për të gjetur një shitje.",
     "sections": [
       {
-        "title": "Gjendjet",
+        "title": "Statuset",
         "items": [
-          "Skicë është një shportë e mbajtur në arkë.",
-          "E paguar është një shitje e përfunduar. E anuluar është një shportë e mbajtur e hedhur, ose e anuluar kur seanca e saj u mbyll me forcë.",
-          "E rimbursuar shënon një shitje, të gjitha njësitë e së cilës janë rimbursuar. Çdo rimbursim është gjithashtu porosi më vete, e lidhur me shitjen."
+          "Skicë: një shportë e mbajtur në arkë. Paguar: një shitje e përfunduar. Anuluar: një shportë e mbajtur që u hodh.",
+          "Rimbursuar: të gjithë artikujt e shitjes u rimbursuan. Çdo rimbursim është edhe rresht më vete, i lidhur me shitjen."
         ]
       },
       {
-        "title": "Çfarë ruan një rresht",
-        "body": "Porosia shkruhet kur arka merr pagesën.",
+        "title": "Çfarë mund të bëni",
         "items": [
-          "Seanca, arka, arkëtari dhe klienti nëse u lidh.",
-          "Rreshtat me produktin, variantin, sasinë, çmimin për njësi, zbritjen, pjesën e tatimit dhe sa nga çdo rresht është rimbursuar deri tani.",
-          "Pagesat sipas metodës, kusuri i dhënë dhe rezultati fiskal (kodet fiskale dhe statusi i e-faturës) kur arka fiskalizon.",
-          "Një lidhje me porosinë e produktit të dyfishuar që e mban shitjen në regjistrat e porosive dhe në të ardhura."
-        ]
-      },
-      {
-        "title": "Rimbursimet dhe riprintimet",
-        "body": "Paratë lëvizin në arkë; kjo faqe shërben për të gjetur shitjen.",
-        "items": [
-          "Rimbursoni një shitje të paguar nga arka, plotësisht ose sipas sasisë së rreshtit. Një rimbursim nuk mund të kalojë atë që ka mbetur në çdo rresht.",
-          "Riprintimi, nga menyja e rreshtit, e prodhon kuponin sërish.",
-          "Porositë e produkteve të krijuara nga arka nuk mund të rimbursohen ose kthehen nga faqja Porositë e produkteve; kështu sirtari dhe stoku mbeten në përputhje.",
-          "Një shitje, përgjigja e së cilës nga autoriteti tatimor humbi, pret një kontroll në portalin CIS; nga menyja e rreshtit, regjistroni kodet që shfaqen atje, ose dërgojeni përsëri nëse portali nuk e shfaq."
-        ]
-      },
-      {
-        "title": "Faqe të lidhura",
-        "items": [
-          "Pika e shitjes për të shitur, mbajtur ose rimbursuar.",
-          "Seancat POS për të parë sirtarin të cilit i përkiste një shitje.",
-          "Lëvizjet e stokut për hyrjet e shitjes dhe të kthimit të çdo shitjeje në arkë."
+          "Hapni një shitje për të parë arkën, arkëtarin, klientin, artikujt dhe pagesat.",
+          "Riprinto faturën nga menuja e rreshtit.",
+          "Rimbursimet bëhen në arkë, të plota ose sipas artikujve, që sirtari dhe stoku të jenë të saktë.",
+          "Nëse përgjigjja e autoritetit tatimor për një shitje humbi, menuja e rreshtit ofron Regjistro kodet CIS, për të shkruar kodet që tregon portali i autoritetit tatimor, ose Dërgoje përsëri te autoriteti tatimor."
         ]
       }
     ]

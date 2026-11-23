@@ -3,37 +3,25 @@
   "title": "Importo nga Odoo",
   "description": "Merr katalogun, stokun, lëvizjet dhe përdoruesit nga lidhja e ruajtur e Odoo. Një rinisje përditëson të njëjtat rekorde.",
   "help": {
-    "ariaLabel": "Rreth importit Odoo",
-    "title": "Rreth importit Odoo",
-    "overview": "Importi nga Odoo kopjon të dhëna katalogu, stoku dhe përdoruesish nga Odoo në këtë kompani, duke përdorur lidhjen e ruajtur me Odoo. Ju zgjidhni cilat grupe të dhënash të sillni dhe mund të bëni së pari një provë pa shkruar.",
+    "ariaLabel": "Rreth importit nga Odoo",
+    "title": "Rreth importit nga Odoo",
+    "overview": "Kopjon katalogun, stokun dhe përdoruesit tuaj nga Odoo në këtë kompani, përmes lidhjes me Odoo. Zgjidhni çfarë të sillni, dhe bëni fillimisht një Provë.",
     "sections": [
       {
-        "title": "Grupet e të dhënave",
-        "body": "Çdo e dhënë lidhet me ID-në e saj në Odoo, ndaj ekzekutimi i sërishëm përditëson atë që krijoi në vend që ta dyfishojë.",
+        "title": "Çfarë mund të sillni",
         "items": [
-          "Monedhat: monedhat aktive në Odoo, të përputhura sipas kodit ISO (EUR, USD, …). Një monedhë që ekziston tashmë këtu ripërdoret ashtu siç është; një që mungon krijohet.",
-          "Kategoritë: kategoritë e produkteve në Odoo.",
-          "Produktet: shabllonet e produkteve me variantet dhe vlerat e atributeve. Produktet e arkivuara në Odoo vijnë të arkivuara; variantet e arkivuara vijnë joaktive. Çdo produkt merr monedhën e vet nga Odoo, e cila përputhet ose krijohet edhe kur Monedhat nuk është zgjedhur.",
-          "Magazinat: magazinat e Odoo, të krijuara aktive.",
-          "Inventari: sasitë në gjendje për produkt dhe magazinë nga stoku i brendshëm i Odoo; rreshtat ekzistues vendosen sa sasia në Odoo.",
-          "Ndryshimet e stokut: lëvizjet e përfunduara të stokut në Odoo, të shkruara si lëvizje stoku me arsyen përkatëse.",
-          "Veprimet: transferimet e brendshme të përfunduara, të shkruara si transferime stoku të përfunduara.",
-          "Përdoruesit: përdoruesit e brendshëm të Odoo, të ftuar në kompani me rolin e regjistrimit. Nuk mund të hyjnë derisa ta pranojnë ftesën."
+          "Monedhat, Kategoritë, Produktet dhe variantet, dhe Magazinat.",
+          "Stokun në gjendje, Lëvizjet e stokut dhe Transferet e brendshme, siç i regjistroi Odoo.",
+          "Përdoruesit: përdoruesit e brendshëm të Odoo ftohen në kompaninë tuaj dhe mund të hyjnë pasi të pranojnë ftesën.",
+          "Kur e nisni sërish, përditëson atë që solli më parë, pa krijuar kopje."
         ]
       },
       {
-        "title": "Prova dhe rezultatet",
+        "title": "Si ta nisni",
         "items": [
-          "Një provë identifikohet në Odoo dhe numëron vetëm atë që do të lexonte çdo grup; asgjë nuk shkruhet.",
-          "Një ekzekutim i vërtetë raporton për çdo grup numrat e të krijuarave, të përditësuarave dhe të kapërcyerave. Rreshtat që nuk mund të lidhen (për shembull një lëvizje stoku për një produkt të paimportuar) kapërcehen.",
-          "Importoni produktet para inventarit dhe ndryshimeve të stokut, dhe magazinat para inventarit, që referencat të gjenden."
-        ]
-      },
-      {
-        "title": "Lejet",
-        "items": [
-          "Ju duhet leja për të krijuar çdo lloj të dhëne që importoni, plus lidhjet me Odoo që mbajnë mend përputhjet.",
-          "Duhet zgjedhur të paktën një grup të dhënash."
+          "Sillni produktet dhe magazinat para stokut dhe lëvizjeve të stokut, që të mund të përputhen.",
+          "Prova vetëm numëron çfarë do të vinte; nuk ruhet asgjë.",
+          "Rezultati tregon sa u krijuan, u përditësuan dhe u kapërcyen për secilën pjesë. Çdo gjë që nuk përputhet kapërcehet."
         ]
       }
     ]

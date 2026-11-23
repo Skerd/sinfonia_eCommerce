@@ -3,31 +3,18 @@
   "title": "Customer groups",
   "description": "Segment customers for pricing and promotions.",
   "help": {
-    "ariaLabel": "About Customer Groups",
-    "title": "About Customer Groups",
-    "overview": "Customer groups segment buyers, for example retail and wholesale, so pricing rules can give each group its own prices. A customer can belong to several groups.",
+    "ariaLabel": "About customer groups",
+    "title": "About customer groups",
+    "overview": "Groups of customers, such as retail and wholesale, so pricing rules can give each group its own prices. A customer can be in several groups.",
     "sections": [
       {
-        "title": "Membership",
-        "body": "Membership is staff-only, because it changes what customers pay.",
+        "title": "Each group",
         "items": [
-          "Add member and remove member manage one record per customer in the group; a customer cannot be added twice.",
-          "The member count shown on the group follows those records.",
-          "Set default marks one group as the company default and clears the previous one. It does not add anyone by itself."
-        ]
-      },
-      {
-        "title": "How pricing reads groups",
-        "items": [
-          "A pricing rule with no groups applies to every cart. A rule that lists groups applies only when the signed-in customer is in one of them.",
-          "Guest carts belong to no group.",
-          "Discount codes do not check groups when they are applied."
-        ]
-      },
-      {
-        "title": "Deleting",
-        "items": [
-          "Deleting a group is a soft delete and removes its memberships with it. Restoring brings those memberships back, except for customers re-added since."
+          "Manage members adds or removes customers. Only your team can change who is in a group.",
+          "A pricing rule that names groups applies only to signed-in customers in them; guests are in no group.",
+          "Discount codes don't check groups.",
+          "Make default marks the company's default group; it doesn't add anyone by itself.",
+          "Deleting a group also ends its memberships; restoring it brings them back."
         ]
       }
     ]

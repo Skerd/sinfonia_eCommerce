@@ -5,32 +5,23 @@
   "help": {
     "ariaLabel": "About tax zones",
     "title": "About tax zones",
-    "overview": "Tax zones decide the tax charged at checkout and the VAT share inside till prices. A zone covers one country, optionally narrowed to states and postal codes, and holds one or more named rates.",
+    "overview": "Tax zones decide the tax added at checkout and the VAT inside till prices. Each zone covers a country, or part of it, and holds one or more rates.",
     "sections": [
       {
-        "title": "Matching an address",
-        "body": "Checkout uses the shipping address; the till uses its first warehouse's address.",
+        "title": "Where a zone applies",
         "items": [
-          "Country must match. Listed states narrow it; empty states cover the whole country.",
-          "Postal patterns are optional; * is the only wildcard, for example 10*.",
+          "Checkout uses the shipping address; the till uses the address of its first warehouse.",
+          "States and postal codes narrow a zone; leave them empty for the whole country. Use * in a postal code, like 10*.",
           "Every active zone that matches applies, highest priority first. An address that matches no zone pays no tax."
         ]
       },
       {
         "title": "Rates",
         "items": [
-          "Each rate has a name, a percentage, and what it applies to: all products, physical only, or digital only.",
-          "Physical, variable, and bundle products take physical rates; digital products take digital rates; every product takes all rates.",
-          "A compound rate is charged on the base plus the taxes already added before it."
-        ]
-      },
-      {
-        "title": "How the amount is calculated",
-        "items": [
-          "Lines are grouped by physical, digital, and other, the order discount is shared across the groups by value, and each group is taxed with its rates.",
-          "The order keeps a breakdown per rate name and percentage.",
-          "Till prices include VAT: the tax share is extracted from the price rather than added on top.",
-          "Activate and deactivate switch the zone on and off. Deleting is a soft delete and it can be restored."
+          "Each rate has a name, a percentage, and what it applies to: all products, physical only or digital only.",
+          "A compound rate is charged on the price plus the taxes before it.",
+          "Till prices already include VAT: the tax is worked out from the price, not added on top.",
+          "Each order keeps its tax broken down by rate."
         ]
       }
     ]

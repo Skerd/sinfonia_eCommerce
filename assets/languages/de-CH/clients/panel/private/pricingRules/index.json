@@ -5,38 +5,23 @@
   "help": {
     "ariaLabel": "Über Preisregeln",
     "title": "Über Preisregeln",
-    "overview": "Preisregeln ändern den Stückpreis einer Zeile automatisch, vor jedem Rabattcode. Nutzen Sie sie für Grosshandelspreise, Kategorie-Aktionen oder Zuschläge. Jede Warenkorbzeile erhält höchstens eine Regel. Name, Typ, Wert und Geltungsbereich sind Pflicht.",
+    "overview": "Preisregeln ändern Preise automatisch, vor jedem Rabattcode: Grosshandelspreise, ein Sale auf eine Kategorie oder ein Aufschlag. Jeder Artikel im Warenkorb erhält höchstens eine Regel.",
     "sections": [
       {
-        "title": "Welche Regel gewinnt",
-        "body": "Aktive Regeln werden nach Priorität (höchste zuerst), dann nach Neuheit geordnet. Für jede Zeile wird die erste Regel angewendet, die sich qualifiziert und passt; die übrigen werden für diese Zeile übersprungen.",
+        "title": "Welche Regel gilt",
         "items": [
-          "Eine Regel ausserhalb ihres Start- und Enddatums wird ignoriert.",
-          "Kundengruppen: Eine Regel ohne Gruppen gilt für alle; eine Regel mit Gruppen nur für angemeldete Kunden in einer davon. Gäste erfüllen nur Regeln ohne Gruppen.",
-          "Mindestbestellwert wird gegen die Warenkorb-Zwischensumme vor jeder Regel geprüft; Mindestmenge gegen die Gesamtzahl der Einheiten im Warenkorb."
+          "Regeln werden nach Priorität geprüft, die höchste zuerst; die erste, die zu einem Artikel passt, erhält er.",
+          "Eine Regel wirkt nur, wenn sie aktiv ist und zwischen ihren Start- und Enddaten.",
+          "Eine Regel mit Kundengruppen gilt nur für angemeldete Kunden dieser Gruppen.",
+          "Mindestbestellwert und Mindestmenge beziehen sich auf den ganzen Warenkorb."
         ]
       },
       {
-        "title": "Geltungsbereich",
+        "title": "Was sie bewirkt",
         "items": [
-          "Alle und Kundengruppe treffen jede Zeile eines qualifizierten Warenkorbs.",
-          "Produkt, Kategorie und Kollektion treffen nur die ausgewählten Ziele. Kategorie betrachtet nur die erste Kategorie des Produkts."
-        ]
-      },
-      {
-        "title": "Typen",
-        "body": "Die Anpassung wird auf den Katalog-Stückpreis angewendet, und das Ergebnis ist nie unter null.",
-        "items": [
-          "Prozentrabatt senkt den Preis um diesen Prozentsatz. Fixrabatt zieht den Wert ab.",
-          "Fixpreis ersetzt den Preis durch den Wert. Zuschlag addiert den Wert."
-        ]
-      },
-      {
-        "title": "Wo sie gilt",
-        "items": [
-          "Der Warenkorb rechnet jedes Mal neu vom Katalogpreis aus, eine Regel wird also nie auf einen bereits angepassten Preis angewendet.",
-          "Jede Zeile zeigt die Regel, die sie geändert hat. Die Kasse nutzt Katalogpreise und wendet keine Preisregeln an.",
-          "Aktivieren und Deaktivieren schalten die Regel ein und aus. Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+          "Ein prozentualer oder fester Rabatt, ein Festpreis oder ein Aufschlag. Ein Preis fällt nie unter null.",
+          "Sie gilt für alles oder nur für gewählte Produkte, Kategorien oder Kollektionen; eine Kategorieregel schaut nur auf die erste Kategorie des Produkts.",
+          "Die Kasse verkauft zu Katalogpreisen und nutzt keine Preisregeln."
         ]
       }
     ]

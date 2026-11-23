@@ -3,44 +3,18 @@
   "title": "Sessions PDV",
   "description": "Sessions de caisse ouvertes et clôturées depuis le point de vente.",
   "help": {
-    "ariaLabel": "À propos des sessions de caisse",
-    "title": "À propos des sessions de caisse",
-    "overview": "Une session est une ouverture de caisse, du comptage du fonds de caisse au comptage de clôture. Les sessions sont ouvertes et clôturées sur la caisse ; cette page les liste pour que vous puissiez contrôler chaque tiroir.",
+    "ariaLabel": "À propos des sessions PDV",
+    "title": "À propos des sessions PDV",
+    "overview": "Une session est un service sur une caisse, de l'argent compté à l'ouverture à celui compté à la clôture. Les caisses s'ouvrent et se clôturent dans Point de vente ; ici, vous vérifiez chaque tiroir après coup.",
     "sections": [
       {
-        "title": "Les états",
-        "body": "L’état indique où en est cette ouverture du tiroir, pas si la caisse peut vendre.",
+        "title": "Chaque session montre",
         "items": [
-          "Ouverte est la période de vente : la caisse ouvre une session directement dans cet état avec son fonds de caisse.",
-          "Clôturée est une session terminée, clôturée par le caissier ou clôturée de force quand la caisse a été mise en pause ou désactivée.",
-          "Contrôle d’ouverture et contrôle de clôture sont des états réservés ; la caisse actuelle ne s’y arrête pas."
-        ]
-      },
-      {
-        "title": "Ce que suit la session",
-        "body": "La session est le tiroir-caisse de cette ouverture plus les ventes qui y ont été enregistrées.",
-        "items": [
-          "Le fonds de caisse est l’espèce comptée au départ.",
-          "Entrée et sortie d’espèces sont des mouvements du tiroir avec un montant, un motif, une heure et leur auteur.",
-          "L’espèce attendue part du fonds de caisse et suit chaque mouvement d’espèces, vente en espèces (nette de la monnaie) et remboursement en espèces.",
-          "Le solde de clôture est l’espèce comptée à la fin. L’écart avec l’espèce attendue, et son motif, sont inscrits dans les notes de la session."
-        ]
-      },
-      {
-        "title": "Rapprochement",
-        "body": "Le rapprochement compare le comptage avec ce que la session attendait, détaillé par mode de paiement.",
-        "items": [
-          "Il liste le fonds de caisse, les mouvements d’espèces, les ventes et remboursements par mode, et l’écart.",
-          "Un écart d’un centime ou plus ne peut pas être clôturé sans motif."
-        ]
-      },
-      {
-        "title": "Qui peut le faire",
-        "body": "Les boutons sont sur la caisse ; les droits sont sur la session.",
-        "items": [
-          "Ouvrir, clôturer et rapprocher exigent le droit d’écrire l’état de la session. Les mouvements d’espèces exigent le droit d’écrire les mouvements d’espèces.",
-          "Les ventes d’une session sont listées sous Commandes au point de vente, filtrées par cette session.",
-          "Les sessions ne peuvent pas être créées, modifiées ou supprimées depuis cette liste."
+          "Ouverte pendant que la caisse vend ; Clôturée une fois terminée, par le caissier ou parce que la caisse a été suspendue ou désactivée.",
+          "L'argent à l'ouverture, et chaque Entrée et Sortie d'espèces avec son motif et qui l'a faite.",
+          "L'argent que le tiroir devrait contenir, celui compté à la clôture, et l'écart avec son motif.",
+          "Ses ventes, listées dans Commandes au point de vente.",
+          "Les sessions ne peuvent pas être créées ni modifiées ici."
         ]
       }
     ]

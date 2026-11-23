@@ -5,42 +5,16 @@
   "help": {
     "ariaLabel": "About POS sessions",
     "title": "About POS sessions",
-    "overview": "A session is one opening of a till, from the opening cash count to the closing count. Sessions are opened and closed on the till; this page lists them so you can audit each drawer.",
+    "overview": "A session is one shift on a till, from the cash counted at opening to the cash counted at closing. Tills are opened and closed on Point of Sale; here you check each drawer afterwards.",
     "sections": [
       {
-        "title": "The states",
-        "body": "The state is where that opening of the drawer is, not whether the till may sell.",
+        "title": "Each session shows",
         "items": [
-          "Opened is the selling window: the till opens a session straight into this state with its opening balance.",
-          "Closed is a finished session, closed by the cashier or force-closed when the till was paused or deactivated.",
-          "Opening control and closing control are reserved states; the current till does not stop in them."
-        ]
-      },
-      {
-        "title": "What the session tracks",
-        "body": "The session is the cash drawer for that opening plus the sales rung on it.",
-        "items": [
-          "Opening balance is the cash counted at the start.",
-          "Cash in and cash out are drawer moves with an amount, a reason, a time, and who did it.",
-          "Expected cash starts at the opening balance and follows every cash move, cash sale (net of change), and cash refund.",
-          "Closing balance is the counted cash at the end. The difference from expected cash, and its reason, are written in the session notes."
-        ]
-      },
-      {
-        "title": "Reconciliation",
-        "body": "Reconcile compares the count with what the session expected, broken down by payment method.",
-        "items": [
-          "It lists the opening balance, cash moves, sales and refunds per method, and the difference.",
-          "A difference of a cent or more cannot be closed without a reason."
-        ]
-      },
-      {
-        "title": "Who can do it",
-        "body": "The buttons live on the till; the permissions live on the session.",
-        "items": [
-          "Opening, closing, and reconciling need permission to write the session state. Cash moves need permission to write cash moves.",
-          "The sales of a session are listed under POS orders, filtered by that session.",
-          "Sessions cannot be created, edited, or deleted from this list."
+          "Opened while the till is selling; Closed once it's done, by the cashier or because the till was paused or switched off.",
+          "The opening cash, and every Cash In and Cash Out with its reason and who made it.",
+          "The cash the drawer should hold, the cash counted at closing, and the difference with its reason.",
+          "Its sales, which are listed under POS orders.",
+          "Sessions can't be created or changed here."
         ]
       }
     ]

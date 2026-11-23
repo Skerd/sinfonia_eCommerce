@@ -3,37 +3,25 @@
   "title": "Importa da Odoo",
   "description": "Importa catalogo, scorte, movimenti e utenti dalla connessione Odoo salvata. Una nuova esecuzione aggiorna gli stessi record.",
   "help": {
-    "ariaLabel": "Informazioni sull'importazione Odoo",
-    "title": "Informazioni sull'importazione Odoo",
-    "overview": "L’importazione Odoo copia dati di catalogo, giacenza e utenti da Odoo in questa società, usando la connessione Odoo salvata. Scegli quali insiemi di dati importare e puoi prima fare una simulazione.",
+    "ariaLabel": "Informazioni sull'importazione da Odoo",
+    "title": "Informazioni sull'importazione da Odoo",
+    "overview": "Copia catalogo, magazzino e utenti da Odoo in questa azienda, tramite la connessione Odoo. Scegli cosa portare, e prova prima una simulazione.",
     "sections": [
       {
-        "title": "Insiemi di dati",
-        "body": "Ogni record è associato al suo ID Odoo, quindi rieseguire l’importazione aggiorna ciò che ha creato invece di duplicarlo.",
+        "title": "Cosa puoi portare",
         "items": [
-          "Valute: valute Odoo attive, abbinate tramite codice ISO (EUR, USD, …). Una valuta già presente qui viene riutilizzata così com’è; una mancante viene creata.",
-          "Categorie: categorie prodotto di Odoo.",
-          "Prodotti: modelli di prodotto con le loro varianti e valori di attributo. I prodotti Odoo archiviati arrivano archiviati; le varianti archiviate arrivano inattive. Ogni prodotto riceve la sua valuta Odoo, abbinata o creata anche quando Valute non è selezionato.",
-          "Magazzini: magazzini Odoo, creati attivi.",
-          "Inventario: quantità fisiche per prodotto e magazzino dalla giacenza interna di Odoo; le righe esistenti vengono impostate sulla quantità Odoo.",
-          "Variazioni di giacenza: movimenti di magazzino Odoo completati, scritti come movimenti di magazzino con un motivo corrispondente.",
-          "Azioni: trasferimenti interni completati, scritti come trasferimenti di magazzino completati.",
-          "Utenti: utenti interni Odoo, invitati nella società con il ruolo di registrazione. Non possono accedere finché non accettano l’invito."
+          "Valute, Categorie, Prodotti e varianti, e Magazzini.",
+          "Scorte disponibili, Movimenti di magazzino e Trasferimenti interni, come li ha registrati Odoo.",
+          "Utenti: gli utenti interni di Odoo vengono invitati nella tua azienda e possono accedere dopo aver accettato.",
+          "Rifarla aggiorna ciò che aveva portato prima, senza creare copie."
         ]
       },
       {
-        "title": "Simulazione e risultati",
+        "title": "Come eseguirla",
         "items": [
-          "Una simulazione accede a Odoo e conta solo ciò che ogni insieme leggerebbe; non viene scritto nulla.",
-          "Un’esecuzione reale riporta per ogni insieme i conteggi di creati, aggiornati e saltati. Le righe che non si possono associare (ad esempio un movimento per un prodotto non importato) vengono saltate.",
-          "Importa i prodotti prima dell’inventario e delle variazioni di giacenza, e i magazzini prima dell’inventario, così i riferimenti vengono trovati."
-        ]
-      },
-      {
-        "title": "Permessi",
-        "items": [
-          "Serve il permesso di creare ogni tipo di record importato, più i collegamenti Odoo che ricordano le associazioni.",
-          "Deve essere selezionato almeno un insieme di dati."
+          "Porta prodotti e magazzini prima delle scorte e dei movimenti, così possono essere abbinati.",
+          "La simulazione conta solo cosa arriverebbe; non salva nulla.",
+          "Il risultato mostra quanti sono stati creati, aggiornati e saltati per ogni parte. Ciò che non si può abbinare viene saltato."
         ]
       }
     ]

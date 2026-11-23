@@ -3,55 +3,30 @@
   "title": "Konfigurimet POS",
   "description": "Dyqanet dhe cilësimet e arkës.",
   "help": {
-    "ariaLabel": "Rreth konfigurimeve POS",
-    "title": "Rreth konfigurimeve POS",
-    "overview": "Një konfigurim POS është një arkë: butonat e saj të pagesës, magazinat nga shet, monedha, kuponët, fiskalizimi dhe çfarë mund të bëjë arkëtari. Një arkëtar hap një seancë në të nga faqja Pika e shitjes.",
+    "ariaLabel": "Rreth arkave tuaja",
+    "title": "Rreth arkave tuaja",
+    "overview": "Çdo konfigurim POS është një arkë: butonat e pagesës, magazinat nga shet, monedha, teksti i faturës dhe çfarë mund të bëjë arkëtari.",
     "sections": [
       {
-        "title": "Çfarë i duhet një arke",
-        "body": "Emri, të paktën një metodë pagese dhe të paktën një magazinë janë të detyrueshme.",
+        "title": "Përgatiteni",
         "items": [
-          "Metodat e pagesës janë butonat e arkës, sipas renditjes së tyre. Mund të caktohen vetëm metoda aktive.",
-          "Magazinat janë burimet e stokut të arkës, me radhë: një shitje merr nga e para, pastaj nga e radhës. Mund të caktohen vetëm magazina aktive. Adresa e magazinës së parë përcakton edhe normat e TVSH-së të shitjeve në arkë.",
-          "Një monedhë kërkohet për të hapur seancë dhe për të shitur.",
-          "Konfigurimi fiskal e lidh arkën me fiskalizimin shqiptar CIS. Pa të, arka nuk fiskalizon.",
-          "Koka dhe fundi i kuponit shtypen në çdo kupon."
+          "Emri, të paktën një metodë pagese dhe një magazinë janë të detyrueshme; arka ka nevojë edhe për një monedhë që të hapet.",
+          "Magazinat përdoren me radhë: një shitje merr stok nga e para, pastaj nga e radhës. Adresa e së parës përcakton TVSH-në e shitjeve në arkë.",
+          "Cilësimet fiskale i regjistrojnë shitjet e saj te autoriteti tatimor; pa to, arka nuk regjistron."
         ]
       },
       {
-        "title": "Kontrollet e arkëtarit",
-        "body": "Këta çelësa vendosin çfarë mund të bëjë arkëtari pa menaxher.",
+        "title": "Çfarë mund të bëjë arkëtari",
         "items": [
-          "Lejo zbritjen dhe lejo ndryshimin e sasisë zhbllokojnë këto ndryshime në arkë.",
-          "Lejo shitjen mbi stok lejon një shitje edhe kur magazinat nuk kanë stok të mjaftueshëm; mungesa merret nga magazina e fundit.",
-          "PIN për zbritje, PIN për dalje cash dhe PIN për rimbursim kërkojnë PIN-in e menaxherit për atë veprim.",
-          "Kontrolli i parave ndjek sirtarin; lexuesi i barkodit aktivizon skanimin."
+          "Lejo zbritje, Lejo ndryshim sasie dhe Lejo shitje mbi stok i hapin këto në arkë. PIN-et mund të kërkojnë një menaxher për zbritjet, daljet cash dhe rimbursimet.",
+          "Menaxherët miratojnë me PIN-in e tyre. Secili vendos PIN-in e vet; një PIN i harruar rivendoset me një lidhje që vjen me email."
         ]
       },
       {
-        "title": "Menaxherët dhe PIN-et",
-        "body": "Menaxherët janë përdoruesit e lejuar të miratojnë veprimet e mbrojtura me PIN në këtë arkë.",
+        "title": "Ndalimi i një arke",
         "items": [
-          "Çdo menaxher vendos PIN-in e vet, mund ta ndryshojë me PIN-in aktual ose ta fshijë.",
-          "Një PIN i harruar mund të rivendoset me një lidhje të dërguar me email, e vlefshme 24 orë dhe e përdorshme një herë.",
-          "Heqja e një përdoruesi nga menaxherët i heq edhe PIN-in nga arka."
-        ]
-      },
-      {
-        "title": "Aktive, në pauzë dhe kyçja e kompanisë",
-        "body": "Tre çelësa ndalojnë një arkë të marrë pagesa.",
-        "items": [
-          "Çaktivizo e fik arkën dhe ia mbyll me forcë seancat e hapura; nuk mund të hapet sërish derisa të aktivizohet.",
-          "Pauza ndal shitjet e një arke me arsye opsionale dhe ia mbyll me forcë seancat e hapura: shportat e mbajtura anulohen dhe pagesat në terminal që janë në proces anulohen kur është e mundur. Rifillo e heq pauzën.",
-          "Pauzo të gjitha arkat vendos një kyçje për gjithë kompaninë dhe mbyll me forcë çdo seancë të hapur. Sa kohë është aktive, asnjë arkë nuk mund të rifillohet. Rifillo të gjitha heq vetëm kyçjen e kompanisë; arkat e vëna në pauzë një nga një mbeten në pauzë."
-        ]
-      },
-      {
-        "title": "Cilësime të lidhura",
-        "items": [
-          "Metodat e pagesës dhe konfigurimet fiskale janë faqe më vete te Konfigurimet.",
-          "Një magazinë që është e vetmja e një arke nuk mund të çaktivizohet ose fshihet; një e ndarë me të tjera hiqet nga arka.",
-          "Fshirja e një arke është fshirje e butë dhe mund të rikthehet."
+          "Çaktivizo e fik arkën; Pauzo e ndal shitjen për një kohë, dhe Rifillo e heq pauzën. Të dyja mbyllin seancën e hapur dhe anulojnë shportat e mbajtura.",
+          "Pauzo të gjitha konfigurimet POS ndal çdo arkë të kompanisë; sa kohë është aktive, asnjë arkë nuk mund të rifillohet. Rifillo të gjitha konfigurimet POS heq vetëm këtë; arkat e pauzuara një nga një mbeten në pauzë."
         ]
       }
     ]

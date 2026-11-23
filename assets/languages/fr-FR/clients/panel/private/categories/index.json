@@ -3,32 +3,18 @@
   "title": "Catégories",
   "description": "Configurez les catégories de produits des catalogues de votre espace.",
   "help": {
-    "ariaLabel": "À propos des catégories",
-    "title": "À propos des catégories",
-    "overview": "Les catégories sont l’arbre du catalogue produits. Elles regroupent les produits en boutique, dans les filtres, les remises et les règles de tarification. Un produit peut être dans plusieurs catégories. Les annonces de la place de marché utilisent leurs propres catégories d’annonces.",
+    "ariaLabel": "À propos des catégories de produits",
+    "title": "À propos des catégories de produits",
+    "overview": "Les catégories rangent vos produits en arbre, comme Vêtements › Chemises. Les clients parcourent et filtrent votre boutique par catégorie, et un produit peut être dans plusieurs.",
     "sections": [
       {
-        "title": "L’arbre",
+        "title": "Chaque catégorie",
         "items": [
-          "Le nom est obligatoire. Le slug en est tiré, maintenu unique dans la société et reconstruit quand le nom change.",
-          "Parent place la catégorie sous une autre ; laissez vide pour une catégorie de premier niveau. Une catégorie ne peut pas être placée sous elle-même ni sous un de ses descendants.",
-          "L’ordre trie les catégories sœurs, les plus petites d’abord."
-        ]
-      },
-      {
-        "title": "Où les catégories comptent",
-        "body": "La même catégorie est lue différemment selon la fonction.",
-        "items": [
-          "Navigation boutique, filtres produits, recherches enregistrées et collections dynamiques utilisent toutes les catégories d’un produit.",
-          "Une remise visant une catégorie s’applique quand l’une quelconque des catégories du produit est sélectionnée.",
-          "Une règle de tarification visant une catégorie ne regarde que la première catégorie du produit."
-        ]
-      },
-      {
-        "title": "Suppression",
-        "items": [
-          "La suppression est douce et la catégorie peut être restaurée. Les produits gardent leurs autres catégories.",
-          "L’import Odoo peut créer et mettre à jour des catégories depuis les catégories de produits Odoo."
+          "Laissez Catégorie parente vide pour un premier niveau. L'ordre trie les catégories d'un même niveau, du plus petit au plus grand.",
+          "Une remise visant une catégorie s'applique quand l'une des catégories du produit correspond.",
+          "Une règle de tarification visant une catégorie ne regarde que la première catégorie du produit.",
+          "Supprimer une catégorie ne supprime pas ses produits ; ils gardent leurs autres catégories.",
+          "Vos annonces de services ont leurs propres catégories, dans Catégories d'annonces."
         ]
       }
     ]

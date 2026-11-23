@@ -2,65 +2,26 @@
   "path": "src/modules/eCommerce/clients/panel/private/pos/index.tsx",
   "title": "Punto di vendita",
   "help": {
-    "ariaLabel": "Informazioni sul punto vendita",
-    "title": "Informazioni sul punto vendita",
-    "overview": "Il punto di vendita è la cassa del negozio. Questa pagina è la cassa stessa, non un elenco. Scegli una cassa, apri una sessione con il contante già nel cassetto, poi vendi. Ogni vendita pagata diventa un ordine POS, prende la giacenza direttamente dai magazzini della cassa ed è duplicata come ordine di prodotti consegnato e pagato per la contabilità.",
+    "ariaLabel": "Informazioni sul Punto di vendita",
+    "title": "Informazioni sul Punto di vendita",
+    "overview": "Questa pagina è la cassa stessa. Scegli una cassa, aprila con il contante nel cassetto e vendi. Ogni vendita prende gli articoli dalla merce della cassa e compare anche in Ordini di prodotti.",
     "sections": [
       {
-        "title": "Aprire la cassa",
-        "body": "Una cassa è una configurazione POS creata sotto Configurazioni. Questa schermata apre solo una cassa esistente, attiva e non in pausa.",
-        "items": [
-          "Scegli la cassa, poi apri una sessione con il conteggio del fondo cassa. Per ogni cassa può essere aperta una sola sessione alla volta.",
-          "La cassa ha bisogno di una valuta e di almeno un magazzino per aprire e vendere.",
-          "Una volta aperta, la cassa mostra la propria guida alle scorciatoie da tastiera."
-        ]
-      },
-      {
         "title": "Vendere",
-        "body": "Il catalogo sono i prodotti attivi di questa società. I prezzi vengono dal catalogo; il cassiere non può digitare un prezzo.",
         "items": [
-          "Carte regalo e download digitali non si vendono in cassa; vengono emessi solo dagli ordini online.",
-          "Cerca, o scansiona un codice a barre; il codice a barre di una variante aggiunge direttamente quella variante. Un prodotto variabile chiede prima la variante.",
-          "I prezzi in cassa includono l’IVA. La quota d’imposta di ogni riga si ricava dalle zone fiscali dell’indirizzo del primo magazzino della cassa, dopo la quota della riga di un eventuale sconto d’ordine.",
-          "Una riga prende la giacenza dai magazzini della cassa in ordine, attingendo da ciascuno fino a raggiungere la quantità. Se non bastano, la vendita viene rifiutata, a meno che la cassa consenta la vendita oltre giacenza.",
-          "Sconti di riga e d’ordine e cambi di quantità sono permessi solo se la cassa li consente. Con il PIN per sconto attivo, una vendita scontata richiede un PIN di responsabile.",
-          "Associa un cliente per intestargli la vendita."
+          "Le casse si configurano in Configurazioni POS. Aprine una con il contante contato nel cassetto; una cassa non può essere aperta due volte contemporaneamente.",
+          "Cerca o scansiona i prodotti. I prezzi vengono dal catalogo e includono l'IVA; il cassiere non può digitare un prezzo.",
+          "Sconti e cambi di quantità funzionano solo se la cassa li consente, e possono richiedere il PIN di un responsabile. Una vendita viene rifiutata se i magazzini della cassa non hanno abbastanza merce, a meno che la cassa consenta di vendere oltre la giacenza.",
+          "Paga una vendita con più metodi, oppure usa Conto diviso per dividerla tra gli ospiti. Il contante oltre il totale viene reso come resto."
         ]
       },
       {
-        "title": "Incassare",
-        "body": "Una vendita può essere divisa su più metodi di pagamento.",
+        "title": "Durante e dopo",
         "items": [
-          "I pagamenti devono coprire il totale. Il contante dato in più viene restituito come resto ed entra nel cassetto solo il contante netto.",
-          "Un metodo carta con terminale addebita prima il terminale: manuale significa che il cassiere conferma su un dispositivo esterno; HTTP locale invia l’importo al ponte del terminale e attende approvazione, rifiuto o timeout.",
-          "Il pagamento scrive l’ordine POS come pagato, i movimenti di magazzino e l’ordine di prodotti duplicato. Una richiesta di pagamento ripetuta per la stessa vendita viene riconosciuta e non addebitata due volte.",
-          "Se la cassa ha una configurazione fiscale attiva con certificato, la vendita viene fiscalizzata presso il CIS e viene registrata una fattura elettronica. La vendita si conclude comunque se il CIS restituisce un errore; il risultato viene salvato sull’ordine."
-        ]
-      },
-      {
-        "title": "Carrelli sospesi",
-        "body": "Sospendi mette da parte il carrello attuale come ordine POS in bozza, per servire qualcun altro.",
-        "items": [
-          "Un carrello sospeso può essere ripreso più tardi sulla stessa cassa, o scartato.",
-          "Una sessione non può essere chiusa finché ha carrelli sospesi; riprendili o scartali prima."
-        ]
-      },
-      {
-        "title": "Rimborsi",
-        "body": "Un rimborso è un ordine POS a sé, collegato alla vendita che storna.",
-        "items": [
-          "Rimborsa selezionando quantità di riga, o rimborsa tutto il resto della vendita. Un importo parziale senza righe viene rifiutato, perché la cassa non saprebbe cosa rimettere a magazzino.",
-          "Ogni riga di vendita ricorda quanto è già stato rimborsato, così le stesse unità non si rimborsano due volte. Lo sconto d’ordine viene ripartito sulle righe rimborsate.",
-          "Le unità rimborsate tornano nei magazzini da cui la vendita le ha prese; l’eccedenza va nel primo magazzino della cassa.",
-          "Un rimborso in contanti esce dal cassetto. Con il PIN per rimborso attivo, serve un PIN di responsabile."
-        ]
-      },
-      {
-        "title": "Il cassetto e la chiusura",
-        "items": [
-          "Versamento e prelievo di contante registrano movimenti del cassetto con un motivo; non sono vendite. Un prelievo non può prendere più di quanto c’è nel cassetto e, con il PIN per prelievo attivo, richiede un PIN di responsabile.",
-          "La chiusura chiede il contante contato. Se differisce dall’importo atteso di un centesimo o più, serve un motivo, e la differenza viene annotata sulla sessione.",
-          "Mettere in pausa una cassa le impedisce di incassare e chiude forzatamente la sua sessione aperta, annullando i carrelli sospesi. Mettere in pausa tutte le casse fa lo stesso per ogni cassa della società."
+          "Sospendi mette da parte un carrello per servire il cliente successivo. Riprendi o scarta i carrelli sospesi prima di chiudere.",
+          "Rimborsa una vendita da Ordini di sessione, per intero o per articolo; gli articoli tornano in magazzino.",
+          "Versamento e Prelievo registrano il denaro messo nel cassetto o tolto. Chiudi sessione chiede il contante contato; una differenza richiede un motivo.",
+          "Se la cassa ha le impostazioni fiscali, ogni vendita viene inviata all'autorità fiscale; la vendita va a buon fine anche se l'invio fallisce."
         ]
       }
     ]

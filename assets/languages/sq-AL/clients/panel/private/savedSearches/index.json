@@ -5,33 +5,14 @@
   "help": {
     "ariaLabel": "Rreth kërkimeve të ruajtura",
     "title": "Rreth kërkimeve të ruajtura",
-    "overview": "Një kërkim i ruajtur është një filtër katalogu që një klient e ka emërtuar për ta ekzekutuar sërish. Nuk është produkt, porosi apo koleksion; mban mend vetëm si u ngushtua katalogu.",
+    "overview": "Kërkime që klientët tuaj ruajtën në dyqan, me një emër, për t'i bërë sërish. Një kërkim i ruajtur mban mend vetëm filtrat; nuk ndryshon asgjë në katalog.",
     "sections": [
       {
-        "title": "Çfarë ruhet",
-        "body": "Emri është etiketa; pjesa tjetër është filtri.",
+        "title": "Çdo kërkim",
         "items": [
-          "Emri është i detyrueshëm.",
-          "Kategoritë mund të jenë disa; koleksioni është një.",
-          "Çmimi minimal, çmimi maksimal dhe renditja janë opsionale. Një fushë bosh thjesht nuk zbatohet.",
-          "Klienti është pronari i kërkimit."
-        ]
-      },
-      {
-        "title": "Kërkimet e kujt tregon kjo faqe",
-        "body": "Të njëjtat të dhëna listohen në dy mënyra.",
-        "items": [
-          "Nga menyja eCommerce, kjo faqe liston çdo kërkim të ruajtur të kompanisë, dhe një i ri pyet cilit klient i përket.",
-          "Si listë e vetë klientit, tregon vetëm të tijat, dhe një kërkim i ri ruhet nën atë klient.",
-          "Fshirja e një kërkimi të ruajtur është fshirje e butë dhe mund të rikthehet."
-        ]
-      },
-      {
-        "title": "Çfarë nuk bën",
-        "body": "Ruajtja e një kërkimi nuk ndryshon asgjë në katalog.",
-        "items": [
-          "Nuk fsheh produkte, nuk ndryshon çmime dhe nuk krijon koleksion.",
-          "Kur ekzekutohet sërish, zbaton të njëjtin filtër mbi katalogun siç është tani, jo siç ishte kur u ruajt."
+          "Ruan kategoritë, koleksionin, intervalin e çmimit dhe renditjen që zgjodhi klienti.",
+          "Kur bëhet sërish, tregon katalogun siç është tani, jo siç ishte kur u ruajt.",
+          "Këtu shihni kërkimet e ruajtura të të gjithë klientëve, dhe një kërkim i ri pyet të kujt është. Te një klient, shihni vetëm kërkimet e tij."
         ]
       }
     ]

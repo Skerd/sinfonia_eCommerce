@@ -5,24 +5,16 @@
   "help": {
     "ariaLabel": "Über Produktattribute",
     "title": "Über Produktattribute",
-    "overview": "Attribute sind gemeinsame Optionslisten wie Grösse oder Farbe. Eine Variante wählt aus jedem sie bestimmenden Attribut einen Wert, also macht das Attribut aus einem Produkt mehrere SKUs.",
+    "overview": "Attribute sind die Optionen, in denen es Ihre Produkte gibt, etwa Grösse oder Farbe, mit ihren Werten (S, M, L). Aus ihnen entstehen die Varianten.",
     "sections": [
       {
-        "title": "Felder",
+        "title": "Jedes Attribut",
         "items": [
-          "Name ist Pflicht. Werte sind die Auswahlmöglichkeiten für Käufer, zum Beispiel S, M, L; bis zu 50.",
-          "Auf Produktseite sichtbar zeigt das Attribut in den Produktdetails. Es ändert keine Preise.",
-          "Für Varianten verwendet markiert es als Attribut, das Produkte in SKUs aufteilt.",
-          "Position ordnet Attribute auf der Produktseite und in der Variantenauswahl."
-        ]
-      },
-      {
-        "title": "Wie Varianten es nutzen",
-        "items": [
-          "Jede Variante speichert Attribut-Wert-Paare. Zwei aktive Varianten desselben Produkts können nicht dieselbe Kombination haben.",
-          "Warenkorb und Kasse berechnen den Variantenpreis oder den Produktpreis, wenn die Variante keinen hat.",
-          "Ein Attribut, das von einer aktiven Variante genutzt wird, kann nicht gelöscht werden. Entfernen Sie es zuerst aus diesen Varianten.",
-          "Löschen ist ein Soft Delete und kann wiederhergestellt werden."
+          "Der Name ist Pflicht; fügen Sie bis zu 50 Werte hinzu.",
+          "Für Varianten verwendet: Das Attribut bildet Produktvarianten, eine pro Kombination von Werten.",
+          "«Auf der Produktseite sichtbar» zeigt es in den Produktdetails; es ändert keine Preise.",
+          "Die Position bestimmt seine Reihenfolge auf der Produktseite und in der Variantenauswahl.",
+          "Ein Attribut, das eine Variante nutzt, kann nicht gelöscht werden; entfernen Sie es zuerst aus diesen Varianten."
         ]
       }
     ]

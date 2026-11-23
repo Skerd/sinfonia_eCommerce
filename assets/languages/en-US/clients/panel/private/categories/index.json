@@ -3,32 +3,18 @@
   "title": "Categories",
   "description": "Configure product categories for catalogs across your tenant.",
   "help": {
-    "ariaLabel": "About Categories",
-    "title": "About Categories",
-    "overview": "Categories are the product catalog's tree. They group products on the storefront, in filters, in discounts, and in pricing rules. A product can sit in several categories. Marketplace listings use their own listing categories.",
+    "ariaLabel": "About product categories",
+    "title": "About product categories",
+    "overview": "Categories sort your products into a tree, such as Clothing › Shirts. Customers browse and filter your shop by them, and a product can be in several.",
     "sections": [
       {
-        "title": "The tree",
+        "title": "Each category",
         "items": [
-          "Name is required. The slug is built from it, kept unique inside the company, and rebuilt when the name changes.",
-          "Parent nests the category under another; leave it empty for a top-level one. A category cannot be placed under itself or one of its descendants.",
-          "Order sorts siblings, lower first."
-        ]
-      },
-      {
-        "title": "Where categories matter",
-        "body": "The same category is read differently by different features.",
-        "items": [
-          "Storefront navigation, product filters, saved searches, and dynamic collections use every category of a product.",
-          "A discount aimed at a category matches when any of the product's categories is selected.",
-          "A pricing rule aimed at a category looks only at the product's first category."
-        ]
-      },
-      {
-        "title": "Deleting",
-        "items": [
-          "Deleting is a soft delete and it can be restored. Products keep their other categories.",
-          "The Odoo import can create and update categories from Odoo product categories."
+          "Leave Parent category empty for a top level. Order sorts categories on the same level, lowest first.",
+          "A discount aimed at a category applies when any of the product's categories matches.",
+          "A pricing rule aimed at a category looks only at the product's first category.",
+          "Deleting a category doesn't delete its products; they keep their other categories.",
+          "Your service listings use their own categories, under Listing categories."
         ]
       }
     ]

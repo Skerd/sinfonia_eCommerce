@@ -3,34 +3,17 @@
   "title": "Avis sur les produits",
   "description": "Créer et modifier les avis des commandes payées, puis les modérer.",
   "help": {
-    "ariaLabel": "À propos des avis produits",
-    "title": "À propos des avis produits",
-    "overview": "Un avis produit est la note et le commentaire d’un acheteur sur un produit qu’il a payé. Il appartient à une commande payée et à un produit de celle-ci, et alimente la note moyenne, le nombre de notes et le nombre d’avis de ce produit. Les avis de la place de marché sont une liste séparée.",
+    "ariaLabel": "À propos des avis sur les produits",
+    "title": "À propos des avis sur les produits",
+    "overview": "Les notes et commentaires que les clients laissent sur les produits achetés. Ils forment les étoiles et le nombre d'avis affichés sur chaque produit.",
     "sections": [
       {
-        "title": "Qui peut évaluer quoi",
-        "body": "Un avis est lié à un achat réel, pas un commentaire libre.",
+        "title": "Chaque avis",
         "items": [
-          "Seul le client de la commande peut créer l’avis ; il est publié sous son nom.",
-          "La commande doit être payée ou partiellement remboursée, et le produit doit y figurer.",
-          "Un avis par produit et par commande. Les ventes en caisse ne produisent pas ici de commandes évaluables."
-        ]
-      },
-      {
-        "title": "Ce qui peut changer ensuite",
-        "body": "Le texte et la note peuvent changer ; le lien avec l’achat non.",
-        "items": [
-          "Note (1 à 5), titre et commentaire peuvent être modifiés.",
-          "Commande et produit sont figés une fois l’avis créé.",
-          "La note moyenne du produit (à une décimale), le nombre de notes et le nombre d’avis sont recalculés depuis les avis actifs à chaque création, changement de note, suppression et restauration."
-        ]
-      },
-      {
-        "title": "Modération",
-        "items": [
-          "Seul un administrateur peut supprimer un avis. La suppression est douce ; restaurer rétablit la note.",
-          "Un avis supprimé ne peut pas être restauré tant qu’un avis actif existe pour la même commande et le même produit.",
-          "Ouvrez le produit pour voir les chiffres affichés par la boutique, ou la commande pour voir l’achat."
+          "Seul le client qui a payé une commande peut noter ses produits, une fois par produit et par commande. Les ventes en caisse ne peuvent pas être notées.",
+          "La note (de 1 à 5), le titre et le commentaire peuvent être modifiés ensuite ; la commande et le produit, non.",
+          "Seul un administrateur peut supprimer un avis, qui sort alors de la note du produit.",
+          "Les avis sur vos services sont une liste à part, dans Avis du Marketplace."
         ]
       }
     ]

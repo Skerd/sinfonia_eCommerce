@@ -5,36 +5,17 @@
   "help": {
     "ariaLabel": "Informazioni sulle varianti del prodotto",
     "title": "Informazioni sulle varianti del prodotto",
-    "overview": "Una variante è uno SKU vendibile di un prodotto variabile, definito dalla sua combinazione di valori di attributo (ad esempio Rosso / XL). Carrello e cassa addebitano il prezzo proprio della variante quando ne ha uno. Solo una variante attiva può essere venduta.",
+    "overview": "Una variante è una versione di un prodotto variabile, come Rosso / XL. Ogni variante ha la sua giacenza e può avere il suo prezzo.",
     "sections": [
       {
-        "title": "Identità",
+        "title": "Ogni variante",
         "items": [
-          "Il prodotto è obbligatorio e definitivo: righe di giacenza e righe d’ordine dipendono insieme da prodotto e variante.",
-          "La combinazione di attributi è l’insieme delle coppie attributo-valore. Due varianti attive di un prodotto non possono condividere una combinazione.",
-          "SKU e codice a barre la identificano; un codice a barre di variante scansionato aggiunge in cassa esattamente quella variante."
-        ]
-      },
-      {
-        "title": "Prezzo, peso, media",
-        "items": [
-          "Prezzo, prezzo di confronto e costo funzionano come quelli del prodotto. Una variante senza prezzo si vende al prezzo del prodotto.",
-          "Peso, dimensioni, immagine principale e ordine di visualizzazione descrivono la variante nel selettore del negozio."
-        ]
-      },
-      {
-        "title": "Giacenza",
-        "items": [
-          "Una variante di un prodotto gestito è gestita a magazzino salvo che la gestione sia disattivata sulla variante. Ogni magazzino ha quindi bisogno di una riga di inventario per questa variante.",
-          "Senza riga in un magazzino attivo, il checkout rifiuta la variante come esaurita."
-        ]
-      },
-      {
-        "title": "Stato e prodotto",
-        "items": [
-          "Le varianti attive si vendono; una variante inattiva viene tolta dai carrelli al successivo ricalcolo dei prezzi.",
-          "L’elenco delle varianti del prodotto, il loro numero e l’indicatore «ha varianti» seguono le sue varianti attive; un prodotto con almeno una variante può essere pubblicato senza prezzo proprio.",
-          "L’eliminazione è logica e la variante può essere ripristinata."
+          "Scegli il prodotto, poi le opzioni che formano la variante, come Colore: Rosso e Taglia: XL. Due varianti dello stesso prodotto non possono avere le stesse opzioni, e il prodotto non si può cambiare dopo.",
+          "Senza un prezzo proprio, una variante si vende al prezzo del prodotto.",
+          "Il suo codice a barre, scansionato alla cassa, aggiunge esattamente questa variante.",
+          "La sua giacenza si tiene per magazzino in Inventario, a meno che Tieni traccia dell'inventario sia spento.",
+          "Si possono comprare solo varianti attive; una variante inattiva viene tolta dai carrelli.",
+          "Un prodotto con almeno una variante si può pubblicare senza un prezzo proprio."
         ]
       }
     ]

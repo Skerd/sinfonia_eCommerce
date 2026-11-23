@@ -3,53 +3,24 @@
   "title": "Fulfillments",
   "description": "Track shipments and delivery of product orders.",
   "help": {
-    "ariaLabel": "About Fulfillments",
-    "title": "About Fulfillments",
-    "overview": "A fulfillment is one shipment of a product order: which order lines and how many units left, with which carrier and tracking. Shipping an order creates one automatically; you can also create one here to split an order into several parcels. Its status — pending, shipped, delivered, or failed — drives the order's shipped and delivered status.",
+    "ariaLabel": "About fulfillments",
+    "title": "About fulfillments",
+    "overview": "A fulfillment is one parcel of an order: which items left, with which carrier and tracking number. Ship order creates one for you; create one here to send an order in several parcels.",
     "sections": [
       {
-        "title": "Creating a shipment",
-        "body": "A shipment can only cover what is still unshipped.",
+        "title": "Create a parcel",
         "items": [
-          "Pick the order, then the lines and the quantity of each. Every line must belong to that order, and the quantity cannot exceed what earlier shipments left open.",
-          "A shipment created here starts as pending: nothing has left yet and stock is untouched.",
-          "Once created, the order and the lines are fixed. Carrier, tracking, dates, and notes stay editable."
+          "Pick the order, then the items and how many of each. Only what hasn't shipped yet can go in.",
+          "A new parcel is Pending: nothing has left and stock is unchanged. Carrier, tracking and dates stay editable."
         ]
       },
       {
-        "title": "How a shipment moves",
-        "body": "Ship, deliver, and fail are actions, each legal only from the status named here. They need permission to write the shipment status.",
+        "title": "Follow it",
         "items": [
-          "Ship is only from pending, and only when the order is not pending, cancelled, or refunded. It records the shipped time and the tracking you enter.",
-          "Shipping takes the units out of stock: the order's holds are consumed in the warehouses they were reserved in. Units that were never held are reserved on the spot; if there is not enough stock, the shipment is refused as out of stock.",
-          "Deliver is only from shipped. When the last shipment that did not fail is delivered, the order becomes delivered and the customer is told once.",
-          "Fail is from pending or shipped. Failing a parcel that already left puts its units back on hand and holds them for the order again, so a new shipment can take them. If the order is cancelled or refunded by then, those units are released instead."
-        ]
-      },
-      {
-        "title": "What the order sees",
-        "body": "The order's fulfillment status is computed from its shipments every time one changes.",
-        "items": [
-          "Every line fully shipped makes the order fulfilled; some lines shipped make it partially fulfilled.",
-          "All lines shipped moves the order to shipped. A fully shipped order whose shipment failed goes back to processing.",
-          "Each change adds an entry to the order timeline."
-        ]
-      },
-      {
-        "title": "What you record on it",
-        "body": "The shipment, not the order, is where tracking lives.",
-        "items": [
-          "Carrier, tracking number, and tracking link are what the customer receives in the shipping message.",
-          "Estimated delivery, shipped at, and delivered at mark the timeline. Notes are for staff.",
-          "Each line shows the product it ships, with its title and image."
-        ]
-      },
-      {
-        "title": "Related pages",
-        "items": [
-          "Open the order for payment, cancel, or refund; those stay on the order.",
-          "A received return request puts goods back in the warehouse the line shipped from.",
-          "Deleting a shipment is a soft delete and it can be restored."
+          "Mark as shipped needs a confirmed order. It takes the items out of stock, or is refused if stock is short, and sends the customer the carrier and tracking link.",
+          "Mark as delivered when it arrives. Once every parcel has arrived, the order becomes Delivered and the customer is told.",
+          "Mark as failed for a parcel that was lost or came back: its items return to stock, kept for the order, so you can send a new parcel.",
+          "Payment, cancelling and refunds stay on the order, under Product orders."
         ]
       }
     ]

@@ -5,29 +5,15 @@
   "help": {
     "ariaLabel": "Informazioni sui magazzini",
     "title": "Informazioni sui magazzini",
-    "overview": "Un magazzino è un luogo di stoccaggio. Righe di inventario, trasferimenti, inventari, riserve degli ordini e casse puntano tutti a magazzini. Nome e codice sono obbligatori; l’indirizzo è facoltativo ma decide l’IVA delle vendite in cassa.",
+    "overview": "I luoghi in cui tieni la merce. Giacenze, trasferimenti, inventari e casse appartengono tutti a un magazzino. Nome e codice sono obbligatori; l'indirizzo decide l'IVA delle vendite alla cassa.",
     "sections": [
       {
-        "title": "Predefinito e attivo",
+        "title": "Ogni magazzino",
         "items": [
-          "Imposta come predefinito rende questo magazzino il predefinito della società e toglie il precedente. Il checkout prova prima il magazzino predefinito.",
-          "Solo i magazzini attivi forniscono giacenza al checkout e possono essere assegnati alle casse.",
-          "Disattivare un magazzino che è l’unico di una cassa viene rifiutato; altrimenti viene tolto dalle casse che hanno ancora un altro magazzino."
-        ]
-      },
-      {
-        "title": "Eliminazione",
-        "body": "La giacenza non può sparire con il suo magazzino.",
-        "items": [
-          "Un magazzino le cui righe hanno ancora giacenza o riserve non può essere eliminato. Trasferisci o scarica prima la giacenza.",
-          "L’eliminazione è logica e il magazzino può essere ripristinato, salvo che un altro magazzino attivo usi nel frattempo lo stesso codice."
-        ]
-      },
-      {
-        "title": "Pagine collegate",
-        "items": [
-          "Inventario mostra la giacenza per articolo in ogni magazzino; i movimenti di magazzino ne mostrano lo storico.",
-          "L’importazione Odoo può creare magazzini da Odoo."
+          "Rendi predefinito lo fa diventare il magazzino principale; il checkout prende la merce prima da lì.",
+          "Solo i magazzini attivi possono vendere merce o essere dati alle casse. L'unico magazzino di una cassa non si può disattivare né eliminare.",
+          "Un magazzino che ha ancora merce o riserve non si può eliminare: sposta la merce o stornala prima.",
+          "Inventario mostra la sua merce; Movimenti di magazzino ne mostra la storia."
         ]
       }
     ]

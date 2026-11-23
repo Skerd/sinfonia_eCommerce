@@ -5,29 +5,16 @@
   "help": {
     "ariaLabel": "Über Kundengruppen",
     "title": "Über Kundengruppen",
-    "overview": "Kundengruppen teilen Käufer ein, zum Beispiel Detailhandel und Grosshandel, damit Preisregeln jeder Gruppe eigene Preise geben können. Ein Kunde kann mehreren Gruppen angehören.",
+    "overview": "Gruppen von Kunden, etwa Detail- und Grosshandel, damit Preisregeln jeder Gruppe eigene Preise geben können. Ein Kunde kann in mehreren Gruppen sein.",
     "sections": [
       {
-        "title": "Mitgliedschaft",
-        "body": "Die Mitgliedschaft verwalten nur Mitarbeitende, weil sie ändert, was Kunden zahlen.",
+        "title": "Jede Gruppe",
         "items": [
-          "Mitglied hinzufügen und Mitglied entfernen verwalten einen Datensatz pro Kunde in der Gruppe; ein Kunde kann nicht zweimal hinzugefügt werden.",
-          "Die auf der Gruppe gezeigte Mitgliederzahl folgt diesen Datensätzen.",
-          "Als Standard setzen markiert eine Gruppe als Firmenstandard und hebt den bisherigen auf. Es fügt selbst niemanden hinzu."
-        ]
-      },
-      {
-        "title": "Wie Preise Gruppen lesen",
-        "items": [
-          "Eine Preisregel ohne Gruppen gilt für jeden Warenkorb. Eine Regel mit Gruppen gilt nur, wenn der angemeldete Kunde in einer davon ist.",
-          "Gast-Warenkörbe gehören zu keiner Gruppe.",
-          "Rabattcodes prüfen beim Anwenden keine Gruppen."
-        ]
-      },
-      {
-        "title": "Löschen",
-        "items": [
-          "Das Löschen einer Gruppe ist ein Soft Delete und entfernt ihre Mitgliedschaften mit. Das Wiederherstellen bringt diese Mitgliedschaften zurück, ausser für inzwischen neu hinzugefügte Kunden."
+          "«Mitglieder verwalten» fügt Kunden hinzu oder entfernt sie. Nur Ihr Team kann ändern, wer in einer Gruppe ist.",
+          "Eine Preisregel, die Gruppen nennt, gilt nur für angemeldete Kunden dieser Gruppen; Gäste sind in keiner Gruppe.",
+          "Rabattcodes prüfen keine Gruppen.",
+          "«Als Standard festlegen» markiert die Standardgruppe der Firma; es fügt niemanden hinzu.",
+          "Das Löschen einer Gruppe beendet auch ihre Mitgliedschaften; das Wiederherstellen bringt sie zurück."
         ]
       }
     ]

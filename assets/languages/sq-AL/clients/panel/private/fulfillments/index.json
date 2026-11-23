@@ -5,51 +5,22 @@
   "help": {
     "ariaLabel": "Rreth përmbushjeve",
     "title": "Rreth përmbushjeve",
-    "overview": "Një përmbushje është një dërgesë e një porosie produkti: cilët rreshta dhe sa njësi u nisën, me cilin transportues dhe çfarë gjurmimi. Dërgimi i një porosie krijon një automatikisht; mund ta krijoni edhe këtu për ta ndarë porosinë në disa pako. Statusi i saj — në pritje, e dërguar, e dorëzuar ose e dështuar — përcakton statusin e dërguar dhe të dorëzuar të porosisë.",
+    "overview": "Një përmbushje është një pako e një porosie: cilët artikuj u nisën, me cilin transportues dhe me cilin numër gjurmimi. Dërgo porosinë e krijon vetë; krijojeni këtu për ta dërguar një porosi në disa pako.",
     "sections": [
       {
-        "title": "Krijimi i një dërgese",
-        "body": "Një dërgesë mund të mbulojë vetëm atë që nuk është dërguar ende.",
+        "title": "Krijoni një pako",
         "items": [
-          "Zgjidhni porosinë, pastaj rreshtat dhe sasinë e secilit. Çdo rresht duhet t’i përkasë asaj porosie, dhe sasia nuk mund të kalojë atë që dërgesat e mëparshme lanë të hapur.",
-          "Një dërgesë e krijuar këtu nis në pritje: ende asgjë nuk është nisur dhe stoku nuk preket.",
-          "Pasi krijohet, porosia dhe rreshtat janë të fiksuar. Transportuesi, gjurmimi, datat dhe shënimet mbeten të ndryshueshme."
+          "Zgjidhni porosinë, pastaj artikujt dhe sa copë nga secili. Mund të futet vetëm ajo që nuk është dërguar ende.",
+          "Një pako e re është Në pritje: asgjë nuk është nisur dhe stoku nuk ndryshon. Transportuesi, gjurmimi dhe datat mbeten të ndryshueshme."
         ]
       },
       {
-        "title": "Si lëviz një dërgesë",
-        "body": "Dërgo, dorëzo dhe dështoi janë veprime, secili i lejuar vetëm nga statusi i përmendur. Kërkojnë lejen për të shkruar statusin e dërgesës.",
+        "title": "Ndiqeni",
         "items": [
-          "Dërgo është i mundur vetëm nga në pritje, dhe vetëm kur porosia nuk është në pritje, e anuluar ose e rimbursuar. Regjistron orën e dërgimit dhe gjurmimin e futur.",
-          "Dërgimi i heq njësitë nga stoku: rezervimet e porosisë konsumohen në magazinat ku u bënë. Njësitë që nuk u rezervuan kurrë rezervohen në çast; nëse stoku nuk mjafton, dërgesa refuzohet si jashtë stoku.",
-          "Dorëzo është i mundur vetëm nga e dërguar. Kur dorëzohet dërgesa e fundit e padështuar, porosia bëhet e dorëzuar dhe klienti njoftohet një herë.",
-          "Dështoi është i mundur nga në pritje ose e dërguar. Një pako e nisur që dështon i kthen njësitë në stok dhe i rezervon sërish për porosinë, që një dërgesë e re t’i marrë. Nëse ndërkohë porosia është anuluar ose rimbursuar, këto njësi lirohen."
-        ]
-      },
-      {
-        "title": "Çfarë sheh porosia",
-        "body": "Statusi i përmbushjes së porosisë rillogaritet nga dërgesat e saj sa herë ndryshon një prej tyre.",
-        "items": [
-          "Të gjithë rreshtat të dërguar plotësisht e bëjnë porosinë të përmbushur; disa rreshta të dërguar e bëjnë pjesërisht të përmbushur.",
-          "Të gjithë rreshtat të dërguar e kalojnë porosinë në të dërguar. Një porosi e dërguar plotësisht, dërgesa e së cilës dështon, kthehet në përpunim.",
-          "Çdo ndryshim shton një hyrje në kronologjinë e porosisë."
-        ]
-      },
-      {
-        "title": "Çfarë regjistroni në të",
-        "body": "Gjurmimi i përket dërgesës, jo porosisë.",
-        "items": [
-          "Transportuesi, numri i gjurmimit dhe lidhja e gjurmimit janë ato që merr klienti në mesazhin e dërgimit.",
-          "Dorëzimi i parashikuar, dërguar më dhe dorëzuar më shënojnë kronologjinë. Shënimet janë për stafin.",
-          "Çdo rresht tregon produktin që dërgon, me titullin dhe imazhin."
-        ]
-      },
-      {
-        "title": "Faqe të lidhura",
-        "items": [
-          "Hapni porosinë për pagesën, anulimin ose rimbursimin; ato mbeten te porosia.",
-          "Një kërkesë kthimi e pranuar e kthen mallin në magazinën nga u nis rreshti.",
-          "Fshirja e një dërgese është fshirje e butë dhe mund të rikthehet."
+          "Shëno si dërguar kërkon një porosi të konfirmuar. I nxjerr artikujt nga stoku, ose refuzohet nëse stoku nuk mjafton, dhe i dërgon klientit transportuesin dhe lidhjen e gjurmimit.",
+          "Shëno si dorëzuar kur pakoja mbërrin. Kur kanë mbërritur të gjitha pakot, porosia bëhet Dorëzuar dhe klienti njoftohet.",
+          "Shëno si dështuar për një pako që humbi ose u kthye: artikujt e saj kthehen në stok, të rezervuar për porosinë, që të mund të dërgoni një pako të re.",
+          "Pagesa, anulimi dhe rimbursimet mbeten te porosia, te Porositë e produkteve."
         ]
       }
     ]

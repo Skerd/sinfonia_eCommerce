@@ -5,41 +5,23 @@
   "help": {
     "ariaLabel": "À propos des analyses",
     "title": "À propos des analyses",
-    "overview": "L’analytique résume chiffre d’affaires, commandes, produits, stock et paniers de cette société. Elle ne fait que lire les fiches existantes ; rien ici ne change une commande, un produit ou le stock. Chaque carte exige l’accès en lecture aux données qui la composent.",
+    "overview": "Les ventes, les produits, le stock et les paniers de votre boutique en un coup d'œil. Rien ici ne modifie vos données, et chaque carte ne montre que ce que vous avez le droit de voir.",
     "sections": [
       {
         "title": "La période",
-        "body": "Choisissez 7 jours, 30 jours, 90 jours ou 1 an. Toutes les cartes ne la suivent pas.",
         "items": [
-          "Chiffre d’affaires, nombre de commandes, panier moyen, taxes, expédition et meilleurs produits suivent la période.",
-          "Le graphique montre le chiffre d’affaires payé et les commandes payées par jour sur 7 et 30 jours, par semaine sur 90 jours et par mois sur un an.",
-          "Les badges de tendance comparent la période à la fenêtre de même durée juste avant.",
-          "Les cartes stock et paniers montrent l’état actuel et ne changent pas avec la période."
+          "Choisissez 7 jours, 30 jours, 90 jours ou 1 an. Le chiffre d'affaires, les commandes, les taxes, la livraison et les meilleurs produits la suivent ; le stock et les paniers montrent toujours aujourd'hui.",
+          "Les badges de tendance comparent avec la même durée juste avant."
         ]
       },
       {
-        "title": "Argent et devise",
-        "body": "Les montants ne sont jamais additionnés entre devises.",
+        "title": "Comment c'est compté",
         "items": [
-          "Le chiffre d’affaires est celui des commandes payées sur la période, net des remboursements enregistrés sur elles.",
-          "Les chiffres concernent une devise : celle choisie, ou à défaut celle ayant le plus de commandes payées sur la période. Le sélecteur de devise liste chaque devise ayant eu des ventes.",
-          "Taxes et expédition sont les totaux de ces mêmes commandes payées."
-        ]
-      },
-      {
-        "title": "Commandes et produits",
-        "items": [
-          "Le statut des commandes compte chaque commande non supprimée passée dans la période, payée ou non.",
-          "Les meilleurs produits sont classés par chiffre d’affaires de ligne dans la devise et la période choisies, avec le titre gardé sur la ligne de commande.",
-          "Le statut des produits est le catalogue actuel réparti en brouillon, actif et archivé."
-        ]
-      },
-      {
-        "title": "Stock et paniers",
-        "items": [
-          "Le stock montre combien de lignes sont basses (disponible au-dessus de zéro mais sous le seuil de réapprovisionnement), combien sont en rupture (rien de disponible) et le total des unités en stock.",
-          "Les paniers abandonnés ont des articles et n’ont pas été touchés depuis plus d’une heure ; les paniers actifs ont changé dans l’heure. Les acheteurs connectés reçoivent un e-mail de rappel pour un panier laissé un jour.",
-          "Ouvrez Commandes de produits, Produits ou Inventaire depuis une carte pour agir sur ce qu’elle montre."
+          "Le chiffre d'affaires, ce sont les commandes payées, moins leurs remboursements.",
+          "Les montants s'affichent dans une seule devise à la fois, jamais mélangées : celle que vous choisissez, ou celle qui a le plus de commandes payées.",
+          "Stock bas veut dire que le disponible est sous le seuil de réapprovisionnement ; rupture veut dire que rien n'est disponible.",
+          "Les paniers abandonnés contiennent des articles et n'ont pas été touchés depuis plus d'une heure. Les clients connectés reçoivent un e-mail de rappel pour un panier laissé un jour.",
+          "Ouvrez Commandes de produits, Produits ou Inventaire depuis une carte pour agir sur ce qu'elle montre."
         ]
       }
     ]

@@ -3,53 +3,24 @@
   "title": "Return requests",
   "description": "Handle returns, exchanges and refund requests.",
   "help": {
-    "ariaLabel": "About Return requests",
-    "title": "About Return requests",
-    "overview": "A return request asks to send goods back, swap them, or get money back for a product order. Its type is return, exchange, or refund, and its status walks pending → approved or rejected → received → completed. Customers raise them from their account; staff can also create them here.",
+    "ariaLabel": "About return requests",
+    "title": "About return requests",
+    "overview": "A customer asks to return goods, exchange them or get money back for an order. Customers ask from their account; you can also create a request here.",
     "sections": [
       {
-        "title": "What a request contains",
-        "body": "A request always points at one order and specific lines of it.",
+        "title": "What can be claimed",
         "items": [
-          "Each line is an order item, a quantity, and a reason. Only shipped quantities can be claimed, and units already claimed by another open request are not available again.",
-          "The refund amount is optional and can never exceed the value of the claimed lines.",
-          "A till sale cannot be returned here; it is refunded on the till.",
-          "Once requested, the lines are fixed. The customer note and admin note stay on the request.",
-          "Staff with access to returns are notified when a new request is saved."
+          "Only items that have shipped and are not in another open request. The refund can't be more than those items are worth.",
+          "Till sales are refunded on the till, not here.",
+          "Your team is told when a new request comes in."
         ]
       },
       {
-        "title": "Decide: approve or reject",
-        "body": "Both are only for a pending request. Both record who decided and when, and the customer is told.",
+        "title": "Step by step",
         "items": [
-          "Approve can set or correct the refund amount, still capped at the value of the claimed lines, and can add an admin note.",
-          "Reject closes the request with an optional reason. It moves no stock and no money."
-        ]
-      },
-      {
-        "title": "Receive: goods come back",
-        "body": "Receive is only for an approved request.",
-        "items": [
-          "For a return or an exchange, the claimed units go back on hand in the warehouse each line shipped from, and a return movement is written for each. A bundle comes back as its components.",
-          "A line whose sale never took stock (an untracked product) or whose stock row is gone is noted on the order timeline instead of restocked.",
-          "A refund-only request has nothing to receive; receiving it only advances the status."
-        ]
-      },
-      {
-        "title": "Complete: money goes back",
-        "body": "Complete is only after the request has been received.",
-        "items": [
-          "For a return or a refund with a refund amount, completing runs the order's refund for that amount, through the gateway for card payments. This also needs permission to write the order's payment status.",
-          "An exchange pays nothing back; the replacement is handled as new fulfillment work.",
-          "If the refund covers everything left on the order, the order's full-refund rules apply too."
-        ]
-      },
-      {
-        "title": "Related pages",
-        "items": [
-          "The order shows the refund, the restocking notes, and the timeline.",
-          "Stock movements show the return entries with this request as their reference.",
-          "Deleting a request is a soft delete and it can be restored."
+          "Approve or Reject. Approving can set the refund amount. The customer is told either way.",
+          "Mark received when the goods are back: returned or exchanged items go back into stock in the warehouse they left from. A refund-only request has nothing to receive; marking it moves it on.",
+          "Complete pays the refund, back to the card for card payments. An exchange pays nothing back: send the replacement separately."
         ]
       }
     ]

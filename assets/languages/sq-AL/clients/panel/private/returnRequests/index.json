@@ -3,53 +3,24 @@
   "title": "Kërkesat për kthim",
   "description": "Menaxhoni kthimet, këmbimet dhe rimbursimet.",
   "help": {
-    "ariaLabel": "Rreth kërkesave të kthimit",
-    "title": "Rreth kërkesave të kthimit",
-    "overview": "Një kërkesë kthimi kërkon të kthehet malli, të këmbehet ose të rimbursohet për një porosi produkti. Tipi i saj është kthim, këmbim ose rimbursim, dhe statusi kalon në pritje → e miratuar ose e refuzuar → e pranuar → e përfunduar. Klientët e bëjnë nga llogaria e tyre; stafi mund ta krijojë edhe këtu.",
+    "ariaLabel": "Rreth kërkesave për kthim",
+    "title": "Rreth kërkesave për kthim",
+    "overview": "Një klient kërkon të kthejë mallra, t'i këmbejë ose të marrë paratë pas për një porosi. Klientët e kërkojnë nga llogaria e tyre; mund të krijoni një kërkesë edhe këtu.",
     "sections": [
       {
-        "title": "Çfarë përmban një kërkesë",
-        "body": "Një kërkesë tregon gjithmonë një porosi dhe rreshta të caktuar të saj.",
+        "title": "Çfarë mund të kërkohet",
         "items": [
-          "Çdo rresht është një artikull porosie, një sasi dhe një arsye. Mund të kërkohen vetëm sasi të dërguara, dhe njësitë e kërkuara tashmë nga një kërkesë tjetër e hapur nuk janë sërish në dispozicion.",
-          "Shuma e rimbursimit është opsionale dhe nuk mund të kalojë kurrë vlerën e rreshtave të kërkuar.",
-          "Një shitje në arkë nuk kthehet këtu; rimbursohet në arkë.",
-          "Pasi kërkohen, rreshtat janë të fiksuar. Shënimi i klientit dhe shënimi i administratorit mbeten te kërkesa.",
-          "Stafi me qasje te kthimet njoftohet kur ruhet një kërkesë e re."
+          "Vetëm artikujt që janë dërguar dhe që nuk janë në një kërkesë tjetër të hapur. Rimbursimi nuk mund të jetë më i madh se vlera e këtyre artikujve.",
+          "Shitjet në arkë rimbursohen në arkë, jo këtu.",
+          "Ekipi juaj njoftohet kur vjen një kërkesë e re."
         ]
       },
       {
-        "title": "Vendimi: mirato ose refuzo",
-        "body": "Të dyja vlejnë vetëm për një kërkesë në pritje. Të dyja regjistrojnë kush vendosi dhe kur, dhe klienti njoftohet.",
+        "title": "Hap pas hapi",
         "items": [
-          "Mirato mund të caktojë ose korrigjojë shumën e rimbursimit, gjithmonë brenda vlerës së rreshtave të kërkuar, dhe të shtojë një shënim administratori.",
-          "Refuzo e mbyll kërkesën me një arsye opsionale. Nuk lëviz as stok as para."
-        ]
-      },
-      {
-        "title": "Pranimi: malli kthehet",
-        "body": "Pranimi është i mundur vetëm për një kërkesë të miratuar.",
-        "items": [
-          "Për një kthim ose këmbim, njësitë e kërkuara kthehen në stok në magazinën nga u nis çdo rresht, dhe për secilën shkruhet një lëvizje kthimi. Një paketë produktesh kthehet si përbërësit e saj.",
-          "Një rresht, shitja e të cilit nuk mori kurrë stok (produkt i pandjekur) ose rreshti i stokut i të cilit nuk ekziston më, shënohet në kronologjinë e porosisë në vend që të rikthehet në stok.",
-          "Një kërkesë vetëm për rimbursim nuk ka çfarë të pranojë; pranimi vetëm e çon statusin përpara."
-        ]
-      },
-      {
-        "title": "Përfundimi: paratë kthehen",
-        "body": "Përfundo është i mundur vetëm pasi kërkesa është pranuar.",
-        "items": [
-          "Për një kthim ose rimbursim me shumë, përfundimi ekzekuton rimbursimin e porosisë për atë shumë, përmes portës së pagesës për pagesat me kartë. Kërkon edhe lejen për të shkruar statusin e pagesës së porosisë.",
-          "Një këmbim nuk rimburson asgjë; zëvendësimi trajtohet si punë e re përmbushjeje.",
-          "Nëse rimbursimi mbulon gjithë pjesën e mbetur të porosisë, zbatohen edhe rregullat e rimbursimit të plotë."
-        ]
-      },
-      {
-        "title": "Faqe të lidhura",
-        "items": [
-          "Porosia tregon rimbursimin, shënimet e rikthimit në stok dhe kronologjinë.",
-          "Lëvizjet e stokut tregojnë hyrjet e kthimit me këtë kërkesë si referencë.",
-          "Fshirja e një kërkese është fshirje e butë dhe mund të rikthehet."
+          "Mirato ose Refuzo. Kur miratoni, mund të caktoni shumën e rimbursimit. Klienti njoftohet në të dyja rastet.",
+          "Shëno si të pranuar kur mallrat janë kthyer: artikujt e kthyer ose të këmbyer rikthehen në stok, në magazinën nga u nisën. Një kërkesë vetëm për rimbursim nuk ka çfarë të pranohet; shënimi e çon përpara.",
+          "Përfundo paguan rimbursimin, në kartë për pagesat me kartë. Një këmbim nuk kthen para: zëvendësimin dërgojeni veçmas."
         ]
       }
     ]

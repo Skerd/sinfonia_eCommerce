@@ -3,32 +3,18 @@
   "title": "Categorie",
   "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
   "help": {
-    "ariaLabel": "Informazioni sulle categorie",
-    "title": "Informazioni sulle categorie",
-    "overview": "Le categorie sono l’albero del catalogo prodotti. Raggruppano i prodotti nel negozio, nei filtri, negli sconti e nelle regole di prezzo. Un prodotto può stare in più categorie. Gli annunci del marketplace usano le proprie categorie di annunci.",
+    "ariaLabel": "Informazioni sulle categorie di prodotti",
+    "title": "Informazioni sulle categorie di prodotti",
+    "overview": "Le categorie ordinano i tuoi prodotti ad albero, come Abbigliamento › Camicie. I clienti sfogliano e filtrano il negozio per categoria, e un prodotto può stare in più categorie.",
     "sections": [
       {
-        "title": "L’albero",
+        "title": "Ogni categoria",
         "items": [
-          "Il nome è obbligatorio. Lo slug ne deriva, è mantenuto unico nella società e ricostruito quando il nome cambia.",
-          "Padre annida la categoria sotto un’altra; lascialo vuoto per una categoria di primo livello. Una categoria non può essere posta sotto sé stessa o un suo discendente.",
-          "L’ordine ordina le categorie sorelle, le più piccole prima."
-        ]
-      },
-      {
-        "title": "Dove contano le categorie",
-        "body": "La stessa categoria viene letta in modo diverso da funzioni diverse.",
-        "items": [
-          "Navigazione del negozio, filtri prodotto, ricerche salvate e collezioni dinamiche usano tutte le categorie di un prodotto.",
-          "Uno sconto rivolto a una categoria si applica quando è selezionata una qualsiasi delle categorie del prodotto.",
-          "Una regola di prezzo rivolta a una categoria guarda solo la prima categoria del prodotto."
-        ]
-      },
-      {
-        "title": "Eliminazione",
-        "items": [
-          "L’eliminazione è logica e la categoria può essere ripristinata. I prodotti mantengono le loro altre categorie.",
-          "L’importazione Odoo può creare e aggiornare categorie dalle categorie prodotto di Odoo."
+          "Lascia vuoto Categoria padre per un primo livello. Ordine ordina le categorie dello stesso livello, dal più basso.",
+          "Uno sconto rivolto a una categoria vale quando una qualsiasi delle categorie del prodotto corrisponde.",
+          "Una regola di prezzo rivolta a una categoria guarda solo la prima categoria del prodotto.",
+          "Eliminare una categoria non elimina i suoi prodotti; restano nelle altre categorie.",
+          "I tuoi annunci di servizi hanno categorie proprie, in Categorie di annunci."
         ]
       }
     ]

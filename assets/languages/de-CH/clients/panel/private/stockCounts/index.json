@@ -5,36 +5,15 @@
   "help": {
     "ariaLabel": "Über Inventuren",
     "title": "Über Inventuren",
-    "overview": "Eine Inventur erfasst, was tatsächlich in einem Lager im Regal liegt, und korrigiert dann „an Lager“ entsprechend. Während Sie zählen, bleibt sie ein Entwurf; das Anwenden ist der Moment, in dem sich die Zahlen ändern.",
+    "overview": "Erfassen Sie, was in einem Lager wirklich im Regal liegt, und korrigieren Sie den Bestand entsprechend. Eine Inventur bleibt ein Entwurf, solange Sie zählen; nichts ändert sich, bis Sie sie buchen.",
     "sections": [
       {
-        "title": "Der Entwurf",
-        "body": "Zählen ändert nichts. Anwenden schon.",
+        "title": "Jede Inventur",
         "items": [
-          "Eine Inventur gilt für ein Lager und bleibt eine Inventur dieses Lagers.",
-          "Jede Zeile ist ein Produkt, eine optionale Variante, die beim Hinzufügen erwartete Menge und die gezählte Menge. Zeilen müssen verschiedene Artikel mit Bestandsführung sein; ein Bundle kann keine Zeile sein.",
-          "Lassen Sie die gezählte Menge für einen nicht gezählten Artikel leer; Anwenden lässt ihn unverändert.",
-          "Nur ein Entwurf kann bearbeitet, angewendet oder storniert werden."
-        ]
-      },
-      {
-        "title": "Was Anwenden tut",
-        "body": "Die Differenz wird gegen „an Lager“ zum Zeitpunkt des Anwendens gerechnet, nicht gegen die erwartete Momentaufnahme.",
-        "items": [
-          "Für jede gezählte Zeile wird „an Lager“ zur gezählten Menge. Während des Zählens versendete Verkäufe werden daher nicht rückgängig gemacht.",
-          "Ein Artikel, den das Lager nie geführt hat, erhält eine neue Bestandszeile.",
-          "Jede Änderung schreibt eine Korrektur-Bewegung mit Verweis auf diese Inventur. Angewendet am und von werden gespeichert.",
-          "Eine Zählung unter der für Bestellungen reservierten Menge wird akzeptiert: Das Regal ist, wie es ist, und „verfügbar“ zeigt den Fehlbestand negativ.",
-          "Anwenden oder Stornieren braucht die Berechtigung, den Status der Inventur zu schreiben."
-        ]
-      },
-      {
-        "title": "Nach dem Anwenden",
-        "body": "Die Inventur bleibt als Nachweis dessen, was gefunden wurde.",
-        "items": [
-          "Stornieren geht nur aus Entwurf. Eine angewendete Inventur wird hier nicht rückgängig gemacht; zählen Sie erneut.",
-          "Eine angewendete Inventur kann nicht gelöscht werden. Ein Entwurf oder eine stornierte ist ein Soft Delete und kann wiederhergestellt werden.",
-          "Unter Bestand sehen Sie das neue „an Lager“, unter Lagerbewegungen die Korrekturen."
+          "Fügen Sie die Produkte mit der gezählten Menge hinzu. Lassen Sie die Zählung für einen nicht gezählten Artikel leer; er bleibt unverändert.",
+          "«Inventur buchen» setzt An Lager für jeden gezählten Artikel auf die gezählte Menge und erfasst jede Differenz unter Lagerbewegungen.",
+          "Weniger zu zählen, als für Bestellungen reserviert ist, wird akzeptiert: Verfügbar zeigt dann den Fehlbestand.",
+          "Nur ein Entwurf kann bearbeitet, gebucht oder storniert werden. Eine gebuchte Inventur lässt sich weder rückgängig machen noch löschen; zählen Sie neu."
         ]
       }
     ]

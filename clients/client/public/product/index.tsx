@@ -162,6 +162,8 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
         <DetailPage
             kind="product"
             title={product.title}
+            // The product as the catalog's card lists it, for its heart (TD-F148).
+            keep={{kind: "product", id: product._id, section: "shop", path: `/product?${new URLSearchParams({id: product._id, slug: product.slug, seller: product.seller?._id ?? sellerCompanyId})}`, title: product.title}}
             crumbs={category ? [{label: category.name, to: `/?${new URLSearchParams({kind: "product", "f.category": category.slug})}`}] : []}
             media={<DetailGallery title={product.title} images={galleryImages} active={activeImage} onActiveChange={setActiveImage} />}
             below={(

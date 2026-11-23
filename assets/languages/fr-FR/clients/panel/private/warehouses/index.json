@@ -5,29 +5,15 @@
   "help": {
     "ariaLabel": "À propos des entrepôts",
     "title": "À propos des entrepôts",
-    "overview": "Un entrepôt est un lieu de stockage. Lignes de stock, transferts, inventaires, réservations de commande et caisses pointent tous vers des entrepôts. Nom et code sont obligatoires ; l’adresse est facultative mais détermine la TVA des ventes en caisse.",
+    "overview": "Les lieux où vous gardez du stock. Le stock, les transferts, les inventaires et les caisses appartiennent tous à un entrepôt. Le nom et le code sont obligatoires ; l'adresse décide de la TVA des ventes en caisse.",
     "sections": [
       {
-        "title": "Par défaut et actif",
+        "title": "Chaque entrepôt",
         "items": [
-          "Définir par défaut fait de cet entrepôt celui par défaut de la société et retire le précédent. Le checkout essaie d’abord l’entrepôt par défaut.",
-          "Seuls les entrepôts actifs fournissent du stock au checkout et peuvent être assignés aux caisses.",
-          "Désactiver un entrepôt qui est le seul d’une caisse est refusé ; sinon il est retiré des caisses qui ont encore un autre entrepôt."
-        ]
-      },
-      {
-        "title": "Suppression",
-        "body": "Le stock ne peut pas disparaître avec son entrepôt.",
-        "items": [
-          "Un entrepôt dont des lignes ont encore du stock ou des réservations ne peut pas être supprimé. Transférez ou sortez d’abord le stock.",
-          "La suppression est douce et l’entrepôt peut être restauré, sauf si un autre entrepôt actif utilise désormais le même code."
-        ]
-      },
-      {
-        "title": "Pages liées",
-        "items": [
-          "Inventaire montre le stock par article dans chaque entrepôt ; Mouvements de stocks montre son historique.",
-          "L’import Odoo peut créer des entrepôts depuis Odoo."
+          "Définir par défaut en fait votre entrepôt principal ; le paiement en ligne y prend le stock en premier.",
+          "Seuls les entrepôts actifs peuvent vendre du stock ou être donnés aux caisses. Le seul entrepôt d'une caisse ne peut être ni désactivé ni supprimé.",
+          "Un entrepôt qui a encore du stock ou des réservations ne peut pas être supprimé : déplacez le stock ou mettez-le au rebut d'abord.",
+          "Inventaire montre son stock ; Mouvements de stocks montre son historique."
         ]
       }
     ]

@@ -5,24 +5,16 @@
   "help": {
     "ariaLabel": "Informazioni sugli attributi del prodotto",
     "title": "Informazioni sugli attributi del prodotto",
-    "overview": "Gli attributi sono elenchi di opzioni condivisi come Taglia o Colore. Una variante sceglie un valore da ogni attributo che la definisce, quindi è l’attributo a trasformare un prodotto in più SKU.",
+    "overview": "Gli attributi sono le opzioni in cui esistono i tuoi prodotti, come Taglia o Colore, con i loro valori (S, M, L). Le varianti nascono da loro.",
     "sections": [
       {
-        "title": "Campi",
+        "title": "Ogni attributo",
         "items": [
-          "Il nome è obbligatorio. I valori sono le scelte viste dagli acquirenti, ad esempio S, M, L; fino a 50.",
-          "Visibile nella pagina prodotto mostra l’attributo nei dettagli del prodotto. Non cambia i prezzi.",
-          "Usato per le varianti lo segna come attributo che divide i prodotti in SKU.",
-          "La posizione ordina gli attributi nella pagina prodotto e nel selettore di varianti."
-        ]
-      },
-      {
-        "title": "Come lo usano le varianti",
-        "items": [
-          "Ogni variante memorizza coppie attributo-valore. Due varianti attive dello stesso prodotto non possono avere la stessa combinazione.",
-          "Carrello e cassa addebitano il prezzo della variante, o quello del prodotto se la variante non ne ha.",
-          "Un attributo usato da una variante attiva non può essere eliminato. Rimuovilo prima da quelle varianti.",
-          "L’eliminazione è logica e l’attributo può essere ripristinato."
+          "Il nome è obbligatorio; aggiungi fino a 50 valori.",
+          "Utilizzato per le varianti: l'attributo crea varianti del prodotto, una per ogni combinazione di valori.",
+          "Visibile sulla pagina del prodotto lo mostra nei dettagli del prodotto; non cambia i prezzi.",
+          "Posizione ne decide l'ordine sulla pagina del prodotto e nella scelta della variante.",
+          "Un attributo usato da una variante non si può eliminare; toglilo prima da quelle varianti."
         ]
       }
     ]

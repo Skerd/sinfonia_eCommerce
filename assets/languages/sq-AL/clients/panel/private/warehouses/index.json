@@ -5,29 +5,15 @@
   "help": {
     "ariaLabel": "Rreth magazinave",
     "title": "Rreth magazinave",
-    "overview": "Një magazinë është një vend stoku. Rreshtat e inventarit, transferimet, numërimet, rezervimet e porosive dhe arkat lidhen të gjitha me magazina. Emri dhe kodi janë të detyrueshëm; adresa është opsionale por përcakton TVSH-në e shitjeve në arkë.",
+    "overview": "Vendet ku mbani stok. Stoku, transferimet, numërimet dhe arkat i përkasin të gjitha një magazine. Emri dhe kodi janë të detyrueshëm; adresa përcakton TVSH-në e shitjeve në arkë.",
     "sections": [
       {
-        "title": "E paracaktuar dhe aktive",
+        "title": "Çdo magazinë",
         "items": [
-          "Cakto si të paracaktuar e bën këtë magazinë të paracaktuarën e kompanisë dhe heq të mëparshmen. Pagesa online provon së pari magazinën e paracaktuar.",
-          "Vetëm magazinat aktive mbajnë stok për pagesën online dhe mund t’u caktohen arkave.",
-          "Çaktivizimi i një magazine që është e vetmja e një arke refuzohet; përndryshe hiqet nga arkat që kanë ende një magazinë tjetër."
-        ]
-      },
-      {
-        "title": "Fshirja",
-        "body": "Stoku nuk mund të zhduket bashkë me magazinën e vet.",
-        "items": [
-          "Një magazinë, rreshtat e së cilës kanë ende stok ose rezervime, nuk mund të fshihet. Transferoni ose çregjistroni stokun më parë.",
-          "Fshirja është e butë dhe magazina mund të rikthehet, përveç kur një magazinë tjetër aktive përdor ndërkohë të njëjtin kod."
-        ]
-      },
-      {
-        "title": "Faqe të lidhura",
-        "items": [
-          "Inventari tregon stokun për artikull në çdo magazinë; Lëvizjet e stokut tregojnë historikun e tij.",
-          "Importi nga Odoo mund të krijojë magazina nga Odoo."
+          "Bëje parazgjedhur e bën këtë magazinën tuaj kryesore; pagesa online merr stok fillimisht prej saj.",
+          "Vetëm magazinat aktive mund të shesin stok ose t'u jepen arkave. Magazina e vetme e një arke nuk mund të çaktivizohet ose të fshihet.",
+          "Një magazinë që ka ende stok ose rezervime nuk mund të fshihet: zhvendoseni stokun ose çregjistrojeni më parë.",
+          "Inventari tregon stokun e saj; Lëvizjet e stokut tregojnë historikun."
         ]
       }
     ]

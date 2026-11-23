@@ -3,46 +3,23 @@
   "title": "Mouvements de stocks",
   "description": "Journal complet des réapprovisionnements, mises au rebut, ventes et autres variations de stock.",
   "help": {
-    "ariaLabel": "À propos des mouvements de stock",
-    "title": "À propos des mouvements de stock",
-    "overview": "C’est le journal de stock. Chaque changement d’une quantité en stock écrit une ligne ici, et les lignes ne sont jamais modifiées ni supprimées. Il répond à « pourquoi cet entrepôt en a-t-il autant ? » — chaque ligne montre le changement, la quantité avant et après, le motif, qui l’a fait et ce qui l’a causé.",
+    "ariaLabel": "À propos des mouvements de stocks",
+    "title": "À propos des mouvements de stocks",
+    "overview": "L'historique de votre stock : chaque changement de la quantité en stock ajoute une ligne ici, et les lignes ne sont jamais modifiées ni supprimées. Servez-vous-en pour voir pourquoi un entrepôt contient ce qu'il contient.",
     "sections": [
       {
-        "title": "Ce qu’enregistre une ligne",
-        "body": "La ligne est le changement, pas le stock actuel. Le stock actuel est sur la ligne de stock.",
+        "title": "Chaque mouvement",
         "items": [
-          "Produit, variante s’il y en a une, entrepôt et la ligne de stock à laquelle elle appartient.",
-          "Quantité est le changement signé : positif en entrée, négatif en sortie. Quantité avant et après est le stock autour de ce changement.",
-          "Effectué par est l’utilisateur, et la référence pointe vers la cause : une commande, un envoi, une demande de retour, un transfert de stock, un inventaire, une vente en caisse ou la ligne de stock elle-même.",
-          "Fournisseur, numéro de reçu, fichiers de reçu, lot, péremption et coût unitaire apparaissent quand l’action qui a écrit la ligne les avait."
+          "Montre le produit, l'entrepôt, la variation (plus en entrée, moins en sortie), la quantité avant et après, le motif, qui l'a fait et ce qui l'a causé, comme une commande ou un transfert.",
+          "Motifs : Initiale (stock de départ), Réapprovisionner, Vente, Retour, Transfert entrant et sortant, Ajustement (inventaires et corrections), Dommages et Mise au rebut.",
+          "Les réapprovisionnements gardent le coût, le lot et la péremption saisis ; les mises au rebut reprennent le coût de la dernière livraison, pour que les pertes aient une valeur."
         ]
       },
       {
-        "title": "Les motifs",
-        "body": "Le motif est fixé par ce qui a fait le changement. Vous ne le choisissez jamais ici.",
+        "title": "Modifier le stock",
         "items": [
-          "Initial est la quantité de départ d’une nouvelle ligne de stock. Réapprovisionnement est de la marchandise reçue.",
-          "Vente est de la marchandise qui part avec une commande expédiée ou une vente en caisse.",
-          "Retour est de la marchandise remise par une demande de retour reçue ou un remboursement en caisse.",
-          "Transfert sortant et transfert entrant sont les deux côtés d’un transfert de stock terminé.",
-          "Ajustement est un inventaire ou une correction manuelle. Casse et perte retirent de la marchandise sans vente."
-        ]
-      },
-      {
-        "title": "Valoriser le stock",
-        "body": "Les lignes entrantes portent le coût ; les sortantes en héritent.",
-        "items": [
-          "Un réapprovisionnement enregistre le coût unitaire, le lot et la péremption saisis.",
-          "Une déduction manuelle copie le coût unitaire et la péremption de la dernière ligne entrante du même lot (ou de la dernière ligne entrante tout court), pour que les pertes soient valorisées."
-        ]
-      },
-      {
-        "title": "Pourquoi vous ne pouvez pas le modifier",
-        "body": "Le journal est l’historique. Modifier une ligne rendrait l’avant et l’après faux.",
-        "items": [
-          "Personne ne peut créer, modifier ou supprimer des lignes ici.",
-          "Pour changer le stock, utilisez Inventaire (réapprovisionner, déduire), un transfert, un inventaire, une expédition de commande ou un retour.",
-          "Filtrez par produit, entrepôt, motif ou date pour contrôler un article ; la ligne de stock ouvre aussi son propre historique."
+          "Le stock change dans Inventaire, Transferts de stock et Inventaires, quand une commande est expédiée et quand un retour revient ; jamais ici.",
+          "Filtrez par produit, entrepôt, motif ou date pour suivre un article."
         ]
       }
     ]

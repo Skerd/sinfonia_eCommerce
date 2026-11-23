@@ -5,38 +5,23 @@
   "help": {
     "ariaLabel": "Informazioni sulle regole di prezzo",
     "title": "Informazioni sulle regole di prezzo",
-    "overview": "Le regole di prezzo cambiano automaticamente il prezzo unitario di una riga, prima di qualsiasi codice sconto. Usale per prezzi all’ingrosso, saldi per categoria o maggiorazioni. Ogni riga del carrello riceve al massimo una regola. Nome, tipo, valore e ambito sono obbligatori.",
+    "overview": "Le regole di prezzo cambiano i prezzi da sole, prima di qualsiasi codice sconto: prezzi all'ingrosso, saldi su una categoria o un sovrapprezzo. Ogni articolo nel carrello riceve al massimo una regola.",
     "sections": [
       {
-        "title": "Quale regola vince",
-        "body": "Le regole attive sono ordinate per priorità (la più alta prima), poi dalla più recente. Per ogni riga si applica la prima regola che si qualifica e corrisponde; le altre vengono saltate per quella riga.",
+        "title": "Quale regola vale",
         "items": [
-          "Una regola fuori dalle sue date di inizio e fine viene ignorata.",
-          "Gruppi di clienti: una regola senza gruppi vale per tutti; una regola con gruppi solo per i clienti connessi in uno di essi. Gli ospiti corrispondono solo alle regole senza gruppi.",
-          "L’importo minimo dell’ordine si confronta con il subtotale del carrello prima di ogni regola; la quantità minima con le unità totali nel carrello."
+          "Le regole si provano per priorità, dalla più alta; la prima adatta a un articolo è quella che riceve.",
+          "Una regola funziona solo se è attiva e tra le sue date di inizio e fine.",
+          "Una regola con gruppi di clienti vale solo per i clienti con accesso che fanno parte di quei gruppi.",
+          "Importo minimo dell'ordine e quantità minima guardano tutto il carrello."
         ]
       },
       {
-        "title": "Ambito",
+        "title": "Cosa fa",
         "items": [
-          "Tutto e gruppo di clienti colpiscono ogni riga di un carrello idoneo.",
-          "Prodotto, categoria e collezione colpiscono solo le destinazioni scelte. Categoria guarda solo la prima categoria del prodotto."
-        ]
-      },
-      {
-        "title": "Tipi",
-        "body": "La modifica si applica al prezzo unitario di catalogo, e il risultato non è mai sotto zero.",
-        "items": [
-          "Sconto percentuale riduce il prezzo di quella percentuale. Sconto fisso sottrae il valore.",
-          "Prezzo fisso sostituisce il prezzo con il valore. Maggiorazione aggiunge il valore."
-        ]
-      },
-      {
-        "title": "Dove si applica",
-        "items": [
-          "Il carrello ricalcola ogni volta dal prezzo di catalogo, quindi una regola non viene mai applicata su un prezzo già modificato.",
-          "Ogni riga mostra la regola che l’ha cambiata. La cassa usa i prezzi di catalogo e non applica regole di prezzo.",
-          "Attiva e disattiva accendono e spengono la regola. L’eliminazione è logica e la regola può essere ripristinata."
+          "Uno sconto in percentuale o fisso, un prezzo fisso, o un sovrapprezzo. Un prezzo non scende mai sotto zero.",
+          "Vale per tutto, o solo per prodotti, categorie o collezioni scelti; una regola di categoria guarda solo la prima categoria del prodotto.",
+          "La cassa vende ai prezzi di catalogo e non usa le regole di prezzo."
         ]
       }
     ]

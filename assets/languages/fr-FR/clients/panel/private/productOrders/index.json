@@ -3,70 +3,31 @@
   "title": "Commandes de produits",
   "description": "Suivre et gérer les commandes des clients.",
   "help": {
-    "ariaLabel": "À propos des commandes produits",
-    "title": "À propos des commandes produits",
-    "overview": "Une commande produit est un achat client dans la boutique, ou une vente en caisse dupliquée pour la comptabilité. Le checkout l’écrit ; cette page n’en crée jamais. Chaque commande porte trois statuts qui évoluent séparément — la commande, le paiement et l’expédition — ainsi qu’une chronologie de chaque étape et de qui l’a faite.",
+    "ariaLabel": "À propos des commandes de produits",
+    "title": "À propos des commandes de produits",
+    "overview": "Chaque achat dans votre boutique en ligne, ainsi que les ventes faites en caisse. Les commandes naissent au paiement du panier ; ici, vous les confirmez, les expédiez et suivez leur paiement.",
     "sections": [
       {
-        "title": "Comment une commande est créée",
-        "body": "La commande est la fin du checkout, pas le début.",
+        "title": "Statuts",
         "items": [
-          "Le checkout recalcule d’abord le panier depuis le catalogue actuel, puis réserve le stock de chaque ligne suivie avant tout encaissement. Si une ligne ne peut être couverte, le checkout s’arrête et rien n’est réservé.",
-          "Les paiements par carte créent la commande quand le paiement réussit, à la confirmation de l’acheteur ou via le webhook de paiement, selon ce qui arrive en premier. La commande n’est écrite qu’une fois.",
-          "Le paiement à la livraison et le virement créent une commande en attente, non payée. Le personnel la confirme et la marque payée quand l’argent arrive.",
-          "Un checkout jamais terminé expire après son délai ; une tâche horaire libère son stock réservé. Si son paiement est quand même passé, la tâche crée la commande à la place.",
-          "Sur la boutique plateforme, un panier avec plusieurs vendeurs devient une commande par société vendeuse."
+          "Chaque commande a trois statuts : celui de la commande, du paiement et de la livraison. Une commande peut être payée mais pas encore expédiée, ou expédiée et remboursée en partie.",
+          "Les paiements par carte arrivent payés. Les commandes en paiement à la livraison ou par virement arrivent impayées : utilisez Marquer comme payé quand l'argent arrive."
         ]
       },
       {
-        "title": "Les trois statuts",
-        "body": "Lisez-les ensemble. Une commande peut être payée et non expédiée, ou expédiée et partiellement remboursée.",
+        "title": "Étape par étape",
         "items": [
-          "Statut de commande : en attente, confirmée, en préparation, expédiée, livrée, annulée, remboursée.",
-          "Statut de paiement : non payé, autorisé, payé, partiellement remboursé, remboursé, annulé (voided).",
-          "Statut d’expédition : non expédiée, partiellement expédiée, expédiée, retournée. Il est déduit des envois de la commande.",
-          "Expédiée et livrée sont aussi déduites : expédiée dès que chaque ligne est partie, livrée dès que chaque envoi non échoué est livré."
+          "Confirmer la commande prévient le client que vous l'avez reçue ; Marquer en préparation indique que vous la préparez.",
+          "Expédier la commande envoie tout ce qui n'est pas encore parti, avec le transporteur et le numéro de suivi que reçoit le client. Pour envoyer plusieurs colis, créez-les dans Expéditions.",
+          "Annuler la commande remet en vente le stock qu'elle avait réservé. Ce n'est plus possible une fois la commande expédiée, et une commande payée doit d'abord être remboursée.",
+          "Rembourser la commande rend tout ou partie de l'argent ; un paiement par carte revient sur la carte. Un remboursement total désactive aussi les cartes cadeaux et les téléchargements donnés par la commande."
         ]
       },
       {
-        "title": "Actions de ligne",
-        "body": "Chaque action est refusée hors de l’état attendu. Les actions de statut exigent le droit d’écrire le statut de commande ; les actions d’argent, le droit d’écrire le statut de paiement.",
+        "title": "Bon à savoir",
         "items": [
-          "Confirmer n’est possible que depuis en attente. Cela accuse réception de la commande et prévient le client.",
-          "Mettre en préparation n’est possible que depuis confirmée. Cela signifie que la commande est en cours de préparation.",
-          "Expédier est possible depuis confirmée ou en préparation. Cela crée un envoi pour toutes les quantités non encore expédiées, retire ces unités du stock et enregistre le transporteur, le numéro et le lien de suivi envoyés au client.",
-          "Marquer payée enregistre un paiement hors ligne avec une référence facultative, seulement tant que le paiement est non payé et que la commande n’est ni annulée ni remboursée. Une commande en attente est confirmée en même temps, et les cartes cadeaux et téléchargements achetés sont émis.",
-          "Annuler est bloqué une fois la commande expédiée, livrée, annulée ou remboursée, et une commande payée doit d’abord être remboursée. Cela libère le stock encore réservé et rend l’avoir payé avec une carte cadeau.",
-          "Rembourser concerne une commande payée ou partiellement remboursée, en totalité ou d’un montant. Un paiement par carte est remboursé via la passerelle ; un paiement hors ligne est enregistré comme remboursement manuel."
-        ]
-      },
-      {
-        "title": "Ce qu’annule un remboursement complet",
-        "body": "Un remboursement partiel ne bouge que de l’argent. Le remboursement de tout le reste défait aussi ce que la commande a émis.",
-        "items": [
-          "L’avoir utilisé sur la commande retourne sur la carte cadeau.",
-          "Les cartes cadeaux émises par la commande sont désactivées, et ses liens de téléchargement expirent.",
-          "Le stock encore réservé pour les lignes non expédiées est libéré. Les unités déjà expédiées ne reviennent que par une demande de retour reçue.",
-          "La commande devient remboursée. Une vente en caisse ne peut pas être remboursée ici : elle l’est à la caisse, ce qui garde le tiroir et le stock cohérents."
-        ]
-      },
-      {
-        "title": "Messages client et chronologie",
-        "body": "L’acheteur est prévenu à chaque étape importante pour lui, une fois le changement enregistré.",
-        "items": [
-          "Confirmation, expédition (avec suivi), livraison, paiement, annulation, remboursement et décisions de retour envoient chacun une notification et un e-mail au client.",
-          "Chaque action ajoute une entrée à la chronologie avec l’heure, le membre du personnel et toute note, référence ou numéro de suivi.",
-          "Les notes sont visibles par le client ; les notes internes sont réservées au personnel."
-        ]
-      },
-      {
-        "title": "Où se trouve le reste du travail",
-        "body": "La commande est l’en-tête. Envois et retours sont des fiches à part.",
-        "items": [
-          "Chaque envoi est une ligne sous Expéditions, avec son propre statut en attente, expédié, livré ou échoué.",
-          "Une demande de retour, d’échange ou de remboursement est une ligne sous Demandes de retour. La terminer peut rembourser cette commande.",
-          "Les ventes en caisse apparaissent ici déjà livrées et payées, marquées comme ventes PDV, avec une adresse de retrait en magasin.",
-          "Supprimer une commande est une suppression douce et elle peut être restaurée."
+          "Les retours passent par Demandes de retour. Les ventes en caisse se remboursent en caisse, pas ici.",
+          "Le client est prévenu à chaque étape, et chaque étape reste dans l'historique de la commande avec la personne qui l'a faite."
         ]
       }
     ]

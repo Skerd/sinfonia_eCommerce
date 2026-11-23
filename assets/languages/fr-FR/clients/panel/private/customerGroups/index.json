@@ -5,29 +5,16 @@
   "help": {
     "ariaLabel": "À propos des groupes de clients",
     "title": "À propos des groupes de clients",
-    "overview": "Les groupes de clients segmentent les acheteurs, par exemple particuliers et grossistes, pour que les règles de tarification donnent à chaque groupe ses propres prix. Un client peut appartenir à plusieurs groupes.",
+    "overview": "Des groupes de clients, comme détail et gros, pour que les règles de tarification donnent à chaque groupe ses propres prix. Un client peut être dans plusieurs groupes.",
     "sections": [
       {
-        "title": "Appartenance",
-        "body": "L’appartenance est gérée uniquement par le personnel, car elle change ce que paient les clients.",
+        "title": "Chaque groupe",
         "items": [
-          "Ajouter un membre et retirer un membre gèrent une fiche par client dans le groupe ; un client ne peut pas être ajouté deux fois.",
-          "Le nombre de membres affiché sur le groupe suit ces fiches.",
-          "Définir par défaut fait d’un groupe le groupe par défaut de la société et retire le précédent. Cela n’ajoute personne en soi."
-        ]
-      },
-      {
-        "title": "Comment les prix lisent les groupes",
-        "items": [
-          "Une règle de tarification sans groupe s’applique à tout panier. Une règle qui liste des groupes ne s’applique que si le client connecté est dans l’un d’eux.",
-          "Les paniers invités n’appartiennent à aucun groupe.",
-          "Les codes de remise ne vérifient pas les groupes quand ils sont appliqués."
-        ]
-      },
-      {
-        "title": "Suppression",
-        "items": [
-          "Supprimer un groupe est une suppression douce qui retire aussi ses appartenances. Le restaurer les rétablit, sauf pour les clients ré-ajoutés entre-temps."
+          "Gérer les membres ajoute ou retire des clients. Seule votre équipe peut changer qui est dans un groupe.",
+          "Une règle de tarification qui nomme des groupes ne vaut que pour les clients connectés qui en font partie ; les visiteurs sans compte ne sont dans aucun groupe.",
+          "Les codes de remise ne vérifient pas les groupes.",
+          "Définir par défaut marque le groupe par défaut de l'entreprise ; cela n'ajoute personne.",
+          "Supprimer un groupe met aussi fin à ses adhésions ; le restaurer les rétablit."
         ]
       }
     ]

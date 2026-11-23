@@ -5,42 +5,16 @@
   "help": {
     "ariaLabel": "Über POS-Sitzungen",
     "title": "Über POS-Sitzungen",
-    "overview": "Eine Sitzung ist eine Öffnung einer Kasse, vom Zählen des Anfangsbargelds bis zum Schlusszählen. Sitzungen werden an der Kasse geöffnet und geschlossen; diese Seite listet sie, damit Sie jede Schublade prüfen können.",
+    "overview": "Eine Sitzung ist eine Schicht an einer Kasse, vom beim Öffnen gezählten Bargeld bis zum beim Schliessen gezählten. Kassen werden im Point of Sale geöffnet und geschlossen; hier prüfen Sie danach jede Schublade.",
     "sections": [
       {
-        "title": "Die Zustände",
-        "body": "Der Zustand zeigt, wo diese Öffnung der Schublade steht, nicht ob die Kasse verkaufen darf.",
+        "title": "Jede Sitzung zeigt",
         "items": [
-          "Geöffnet ist das Verkaufsfenster: Die Kasse öffnet eine Sitzung mit ihrem Anfangsbestand direkt in diesem Zustand.",
-          "Geschlossen ist eine beendete Sitzung, von der Kasse geschlossen oder zwangsweise geschlossen, als die Kasse pausiert oder deaktiviert wurde.",
-          "Eröffnungskontrolle und Schlusskontrolle sind reservierte Zustände; die aktuelle Kasse hält nicht darin an."
-        ]
-      },
-      {
-        "title": "Was die Sitzung verfolgt",
-        "body": "Die Sitzung ist die Bargeldschublade dieser Öffnung plus die darauf erfassten Verkäufe.",
-        "items": [
-          "Anfangsbestand ist das zu Beginn gezählte Bargeld.",
-          "Bareinlage und Barentnahme sind Schubladenbewegungen mit Betrag, Grund, Zeit und wer sie ausgeführt hat.",
-          "Erwartetes Bargeld beginnt beim Anfangsbestand und folgt jeder Bargeldbewegung, jedem Barverkauf (abzüglich Rückgeld) und jeder Bargeld-Erstattung.",
-          "Schlussbestand ist das am Ende gezählte Bargeld. Die Differenz zum erwarteten Bargeld und ihr Grund werden in den Sitzungsnotizen vermerkt."
-        ]
-      },
-      {
-        "title": "Abgleich",
-        "body": "Der Abgleich vergleicht die Zählung mit dem, was die Sitzung erwartet hat, aufgeschlüsselt nach Zahlungsart.",
-        "items": [
-          "Er listet Anfangsbestand, Bargeldbewegungen, Verkäufe und Erstattungen pro Zahlungsart sowie die Differenz.",
-          "Eine Differenz von einem Rappen oder mehr kann nicht ohne Grund geschlossen werden."
-        ]
-      },
-      {
-        "title": "Wer es tun kann",
-        "body": "Die Schaltflächen sind an der Kasse; die Berechtigungen liegen auf der Sitzung.",
-        "items": [
-          "Öffnen, Schliessen und Abgleichen brauchen die Berechtigung, den Sitzungszustand zu schreiben. Bargeldbewegungen brauchen die Berechtigung, Bargeldbewegungen zu schreiben.",
-          "Die Verkäufe einer Sitzung stehen unter POS-Bestellungen, gefiltert nach dieser Sitzung.",
-          "Sitzungen können in dieser Liste weder angelegt, bearbeitet noch gelöscht werden."
+          "Geöffnet, solange die Kasse verkauft; Geschlossen, wenn sie fertig ist, durch die Kassierenden oder weil die Kasse pausiert oder deaktiviert wurde.",
+          "Das Anfangsbargeld, und jede Bareinlage und Barentnahme mit Grund und wer sie gemacht hat.",
+          "Das Bargeld, das in der Schublade sein sollte, das beim Schliessen gezählte, und die Differenz mit ihrem Grund.",
+          "Ihre Verkäufe, die unter POS-Bestellungen stehen.",
+          "Sitzungen können hier weder erstellt noch geändert werden."
         ]
       }
     ]

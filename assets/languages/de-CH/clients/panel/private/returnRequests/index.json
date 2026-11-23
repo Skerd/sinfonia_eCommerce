@@ -3,53 +3,24 @@
   "title": "Rücksendungen",
   "description": "Rückgaben, Umtausch und Rückerstattungsanfragen bearbeiten.",
   "help": {
-    "ariaLabel": "Über Rückgabeanfragen",
-    "title": "Über Rückgabeanfragen",
-    "overview": "Eine Retourenanfrage bittet darum, Ware zurückzusenden, umzutauschen oder Geld für eine Produktbestellung zurückzuerhalten. Ihr Typ ist Rücksendung, Umtausch oder Erstattung, und ihr Status läuft ausstehend → genehmigt oder abgelehnt → empfangen → abgeschlossen. Kunden stellen sie in ihrem Konto; Mitarbeitende können sie auch hier anlegen.",
+    "ariaLabel": "Über Rücksendungen",
+    "title": "Über Rücksendungen",
+    "overview": "Ein Kunde möchte Ware zurückgeben, umtauschen oder Geld für eine Bestellung zurück. Kunden stellen die Anfrage in ihrem Konto; Sie können sie auch hier erstellen.",
     "sections": [
       {
-        "title": "Was eine Anfrage enthält",
-        "body": "Eine Anfrage zeigt immer auf eine Bestellung und bestimmte Zeilen davon.",
+        "title": "Was beansprucht werden kann",
         "items": [
-          "Jede Zeile ist ein Bestellartikel, eine Menge und ein Grund. Nur versendete Mengen können beansprucht werden, und von einer anderen offenen Anfrage beanspruchte Einheiten sind nicht erneut verfügbar.",
-          "Der Erstattungsbetrag ist optional und darf nie den Wert der beanspruchten Zeilen übersteigen.",
-          "Ein Kassenverkauf kann hier nicht retourniert werden; er wird an der Kasse erstattet.",
-          "Nach dem Stellen sind die Zeilen fest. Kundennotiz und Admin-Notiz bleiben auf der Anfrage.",
-          "Mitarbeitende mit Zugriff auf Retouren werden benachrichtigt, wenn eine neue Anfrage gespeichert wird."
+          "Nur bereits versandte Artikel, die nicht in einer anderen offenen Anfrage sind. Die Erstattung kann nicht höher sein als der Wert dieser Artikel.",
+          "Kassenverkäufe werden an der Kasse erstattet, nicht hier.",
+          "Ihr Team wird informiert, wenn eine neue Anfrage eingeht."
         ]
       },
       {
-        "title": "Entscheiden: genehmigen oder ablehnen",
-        "body": "Beides geht nur bei einer ausstehenden Anfrage. Beides speichert, wer wann entschieden hat, und der Kunde wird informiert.",
+        "title": "Schritt für Schritt",
         "items": [
-          "Genehmigen kann den Erstattungsbetrag setzen oder korrigieren, weiterhin begrenzt auf den Wert der beanspruchten Zeilen, und eine Admin-Notiz hinzufügen.",
-          "Ablehnen schliesst die Anfrage mit einem optionalen Grund. Es bewegt weder Bestand noch Geld."
-        ]
-      },
-      {
-        "title": "Empfangen: Ware kommt zurück",
-        "body": "Empfangen geht nur bei einer genehmigten Anfrage.",
-        "items": [
-          "Bei Rücksendung oder Umtausch kommen die beanspruchten Einheiten im Lager, aus dem jede Zeile versendet wurde, zurück an Lager, und für jede wird eine Rückgabe-Bewegung geschrieben. Ein Bundle kommt als seine Komponenten zurück.",
-          "Eine Zeile, deren Verkauf nie Bestand genommen hat (nicht geführtes Produkt) oder deren Bestandszeile fehlt, wird in der Zeitleiste der Bestellung vermerkt statt eingelagert.",
-          "Eine reine Erstattungsanfrage hat nichts zu empfangen; Empfangen setzt nur den Status weiter."
-        ]
-      },
-      {
-        "title": "Abschliessen: Geld geht zurück",
-        "body": "Abschliessen geht erst, nachdem die Anfrage empfangen wurde.",
-        "items": [
-          "Bei Rücksendung oder Erstattung mit Erstattungsbetrag führt der Abschluss die Erstattung der Bestellung um diesen Betrag aus, bei Kartenzahlungen über das Gateway. Dafür ist zusätzlich die Berechtigung nötig, den Zahlungsstatus der Bestellung zu schreiben.",
-          "Ein Umtausch erstattet nichts; der Ersatz wird als neue Erfüllungsarbeit behandelt.",
-          "Deckt die Erstattung den gesamten Rest der Bestellung, gelten auch die Regeln der vollen Erstattung."
-        ]
-      },
-      {
-        "title": "Verwandte Seiten",
-        "items": [
-          "Die Bestellung zeigt die Erstattung, die Einlagerungs-Hinweise und die Zeitleiste.",
-          "Lagerbewegungen zeigen die Rückgabe-Einträge mit dieser Anfrage als Referenz.",
-          "Das Löschen einer Anfrage ist ein Soft Delete und kann wiederhergestellt werden."
+          "Genehmigen oder Ablehnen. Beim Genehmigen können Sie den Erstattungsbetrag festlegen. Der Kunde wird in beiden Fällen informiert.",
+          "«Als erhalten markieren», wenn die Ware zurück ist: Zurückgegebene oder umgetauschte Artikel kommen wieder in den Bestand des Lagers, aus dem sie kamen. Eine reine Erstattung hat nichts zu empfangen; das Markieren bringt sie weiter.",
+          "Abschliessen zahlt die Erstattung aus, bei Kartenzahlung auf die Karte. Ein Umtausch zahlt nichts zurück: Senden Sie den Ersatz separat."
         ]
       }
     ]

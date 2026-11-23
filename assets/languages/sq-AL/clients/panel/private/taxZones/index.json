@@ -5,32 +5,23 @@
   "help": {
     "ariaLabel": "Rreth zonave tatimore",
     "title": "Rreth zonave tatimore",
-    "overview": "Zonat tatimore vendosin tatimin e tarifuar gjatë pagesës dhe pjesën e TVSH-së brenda çmimeve në arkë. Një zonë mbulon një shtet, opsionalisht të kufizuar në rajone dhe kode postare, dhe ka një ose më shumë norma me emër.",
+    "overview": "Zonat tatimore përcaktojnë taksën që shtohet kur klienti paguan dhe TVSH-në brenda çmimeve të arkës. Çdo zonë mbulon një shtet, ose një pjesë të tij, dhe ka një ose më shumë norma.",
     "sections": [
       {
-        "title": "Përputhja e një adrese",
-        "body": "Pagesa online përdor adresën e dërgesës; arka adresën e magazinës së saj të parë.",
+        "title": "Ku vlen një zonë",
         "items": [
-          "Shteti duhet të përputhet. Rajonet e listuara kufizojnë; pa rajone mbulohet gjithë shteti.",
-          "Modelet e kodit postar janë opsionale; * është e vetmja shenjë e lirë, për shembull 10*.",
-          "Çdo zonë aktive që përputhet zbatohet, me përparësinë më të lartë së pari. Një adresë pa zonë që përputhet nuk paguan tatim."
+          "Pagesa online përdor adresën e dërgesës; arka përdor adresën e magazinës së saj të parë.",
+          "Rajonet dhe kodet postare e ngushtojnë një zonë; lërini bosh për gjithë shtetin. Përdorni * në një kod postar, si 10*.",
+          "Vlen çdo zonë aktive që përputhet, nga prioriteti më i lartë. Një adresë që nuk përputhet me asnjë zonë nuk paguan taksë."
         ]
       },
       {
         "title": "Normat",
         "items": [
-          "Çdo normë ka një emër, një përqindje dhe për çfarë vlen: të gjitha produktet, vetëm fizike ose vetëm dixhitale.",
-          "Produktet fizike, të ndryshueshme dhe paketat marrin normat fizike; produktet dixhitale normat dixhitale; çdo produkt merr normat «të gjitha».",
-          "Një normë e përbërë llogaritet mbi bazën plus tatimet e shtuara tashmë para saj."
-        ]
-      },
-      {
-        "title": "Si llogaritet shuma",
-        "items": [
-          "Rreshtat grupohen në fizikë, dixhitalë dhe të tjerë, zbritja e porosisë ndahet mes grupeve sipas vlerës, dhe çdo grup tatohet me normat e veta.",
-          "Porosia mban një zbërthim sipas emrit dhe përqindjes së normës.",
-          "Çmimet në arkë përfshijnë TVSH-në: pjesa e tatimit nxirret nga çmimi në vend që t’i shtohet.",
-          "Aktivizo dhe çaktivizo e ndezin dhe e fikin zonën. Fshirja është e butë dhe zona mund të rikthehet."
+          "Çdo normë ka një emër, një përqindje dhe për çfarë vlen: të gjitha produktet, vetëm ato fizike ose vetëm ato dixhitale.",
+          "Një normë e përbërë llogaritet mbi çmimin plus taksat para saj.",
+          "Çmimet e arkës e përfshijnë tashmë TVSH-në: taksa nxirret nga çmimi, nuk shtohet sipër.",
+          "Çdo porosi e ruan taksën e ndarë sipas normave."
         ]
       }
     ]

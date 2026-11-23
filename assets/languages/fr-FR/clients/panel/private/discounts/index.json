@@ -5,41 +5,24 @@
   "help": {
     "ariaLabel": "À propos des remises",
     "title": "À propos des remises",
-    "overview": "Une remise est un code que l’acheteur saisit dans le panier. Le panier garde un code à la fois. Il est revérifié à chaque recalcul du panier et retiré s’il ne s’applique plus. Titre, type, valeur, portée et date de début sont obligatoires ; le code est enregistré en majuscules.",
+    "overview": "Des codes de remise que les clients saisissent au paiement. Un panier accepte un code à la fois, et le code est revérifié chaque fois que le panier change.",
     "sections": [
       {
-        "title": "Quand le montant est calculé",
-        "body": "Ordre des opérations dans le panier : prix catalogue → une règle de tarification par ligne → le code de remise → livraison → taxe.",
+        "title": "Types",
         "items": [
-          "Pourcentage retire ce pourcentage des lignes dans la portée. Fixe retire un montant fixe, jamais plus que la valeur de ces lignes.",
-          "Livraison gratuite ne réduit pas la marchandise ; le checkout ne facture pas de livraison tant qu’elle est appliquée.",
-          "Achetez X obtenez Y compte les unités éligibles, les groupe par quantité achetée plus offerte, et rend gratuites les unités les moins chères de chaque groupe complet. Il exige quantité achetée, quantité offerte et les produits éligibles.",
-          "Les lignes de carte cadeau ne sont jamais remisées et ne comptent jamais pour les minimums."
+          "Pourcentage ou montant fixe en moins, jamais plus que la valeur des articles.",
+          "Livraison gratuite : pas de frais de livraison tant que le code est utilisé.",
+          "Achetez X, obtenez Y : dans chaque lot complet, les articles les moins chers sont offerts.",
+          "Elle couvre toute la commande, ou seulement des produits, catégories ou collections choisis. Les cartes cadeaux ne sont jamais remisées."
         ]
       },
       {
-        "title": "Portée",
+        "title": "Quand un code ne marche pas",
         "items": [
-          "Commande couvre chaque ligne de marchandise. Produit, catégorie ou collection ne couvre que les cibles choisies.",
-          "Catégorie s’applique à n’importe quelle catégorie du produit. Collection utilise la même appartenance que celle affichée en boutique.",
-          "Sur la boutique plateforme, un panier avec plusieurs vendeurs ne peut pas utiliser le code d’un vendeur."
-        ]
-      },
-      {
-        "title": "Ce qui bloque un code",
-        "items": [
-          "Il doit être actif et dans ses dates de début et de fin ; sans date de fin, il n’expire jamais.",
-          "La limite d’utilisation l’arrête après ce nombre d’utilisations. La limite par client compte les commandes non annulées de ce client avec le code.",
-          "Montant minimum de commande et quantité minimum ne comptent que la marchandise, après les règles de tarification.",
-          "Les groupes de clients enregistrés sur la remise ne sont pas vérifiés quand le code est appliqué."
-        ]
-      },
-      {
-        "title": "Compter une utilisation",
-        "items": [
-          "Une utilisation est comptée quand la commande est passée, pas quand le code est saisi.",
-          "Si le code a cessé de s’appliquer pendant que l’acheteur payait par carte, la commande le garde (refuser bloquerait l’argent) et l’utilisation est quand même comptée. Les commandes non payées sont refusées à la place.",
-          "Activer et désactiver allument et éteignent le code. La suppression est douce et la remise peut être restaurée."
+          "En dehors de ses dates de début et de fin, ou après Désactiver.",
+          "Une fois sa limite d'utilisation atteinte, au total ou par client. Une utilisation compte quand la commande est passée.",
+          "Sous le montant minimum de commande ou la quantité minimale.",
+          "Les groupes de clients enregistrés sur une remise ne sont pas vérifiés."
         ]
       }
     ]

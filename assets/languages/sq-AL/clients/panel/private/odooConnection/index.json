@@ -3,24 +3,17 @@
   "title": "Lidhja Odoo",
   "description": "Ruaj serverin Odoo nga i cili kjo kompani importon. Çelësi API ose fjalëkalimi i llogarisë ruhet i kriptuar dhe nuk shfaqet më.",
   "help": {
-    "ariaLabel": "Rreth lidhjes Odoo",
-    "title": "Rreth lidhjes Odoo",
-    "overview": "Lidhja me Odoo ruan si e arrin kjo kompani serverin e saj Odoo. Ka një lidhje për kompani; importi nga Odoo e përdor për të lexuar të dhëna me JSON-RPC nga serveri i API-t.",
+    "ariaLabel": "Rreth lidhjes me Odoo",
+    "title": "Rreth lidhjes me Odoo",
+    "overview": "Si e arrin kjo kompani Odoo-n tuaj. Importi nga Odoo e përdor për të lexuar të dhënat tuaja; asgjë nuk shkruhet kurrë në Odoo.",
     "sections": [
       {
-        "title": "Çfarë të futni",
-        "body": "Përdorni të njëjtën URL, bazë të dhënash dhe hyrje që funksionojnë në Odoo.",
+        "title": "Çfarë të shkruani",
         "items": [
-          "URL është adresa e Odoo, për shembull https://your-company.odoo.com. Baza e të dhënave është emri i bazës së Odoo.",
-          "Emri i përdoruesit është hyrja në Odoo. Sekreti është një çelës API (i preferuar) ose fjalëkalimi i atij përdoruesi.",
-          "Sekreti është i detyrueshëm herën e parë dhe ruhet i enkriptuar. Lëreni bosh kur ruani sërish për të mbajtur atë të ruajtur."
-        ]
-      },
-      {
-        "title": "Për çfarë përdoret lidhja",
-        "items": [
-          "Vetëm importi lexon nga Odoo; asgjë nuk shkruhet kurrë mbrapsht në Odoo.",
-          "Importi identifikohet së pari, ndaj një URL, bazë ose sekret i gabuar shfaqet atje si gabim."
+          "URL e Odoo: adresa juaj e Odoo, si https://your-company.odoo.com. Baza e të dhënave: emri i bazës suaj në Odoo.",
+          "Hyrja e përdoruesit: emri i hyrjes në Odoo. Çelësi API ose fjalëkalimi: një çelës API i Odoo është më mirë se fjalëkalimi.",
+          "Çelësi kërkohet herën e parë dhe ruhet i enkriptuar. Lëreni bosh kur ruani sërish për ta mbajtur.",
+          "Një adresë, bazë ose çelës i gabuar shfaqet si gabim kur nisni importin."
         ]
       }
     ]

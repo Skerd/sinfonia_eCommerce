@@ -5,29 +5,16 @@
   "help": {
     "ariaLabel": "Rreth grupeve të klientëve",
     "title": "Rreth grupeve të klientëve",
-    "overview": "Grupet e klientëve i ndajnë blerësit, për shembull pakicë dhe shumicë, që rregullat e çmimeve t’i japin çdo grupi çmimet e veta. Një klient mund t’u përkasë disa grupeve.",
+    "overview": "Grupe klientësh, si pakicë dhe shumicë, që rregullat e çmimeve t'i japin secilit grup çmimet e veta. Një klient mund të jetë në disa grupe.",
     "sections": [
       {
-        "title": "Anëtarësia",
-        "body": "Anëtarësinë e menaxhon vetëm stafi, sepse ndryshon atë që paguajnë klientët.",
+        "title": "Çdo grup",
         "items": [
-          "Shto anëtar dhe hiq anëtar menaxhojnë një të dhënë për çdo klient në grup; një klient nuk mund të shtohet dy herë.",
-          "Numri i anëtarëve që tregohet te grupi ndjek këto të dhëna.",
-          "Cakto si të paracaktuar e bën një grup të paracaktuarin e kompanisë dhe heq të mëparshmin. Nuk shton askënd vetë."
-        ]
-      },
-      {
-        "title": "Si i lexojnë çmimet grupet",
-        "items": [
-          "Një rregull çmimi pa grupe vlen për çdo shportë. Një rregull që liston grupe vlen vetëm kur klienti i identifikuar është në njërin prej tyre.",
-          "Shportat e mysafirëve nuk i përkasin asnjë grupi.",
-          "Kodet e zbritjes nuk i kontrollojnë grupet kur zbatohen."
-        ]
-      },
-      {
-        "title": "Fshirja",
-        "items": [
-          "Fshirja e një grupi është fshirje e butë dhe heq bashkë me të anëtarësitë. Rikthimi i sjell përsëri, përveç klientëve të shtuar sërish ndërkohë."
+          "Menaxho anëtarët shton ose heq klientë. Vetëm ekipi juaj mund të ndryshojë kush është në një grup.",
+          "Një rregull çmimi që emërton grupe vlen vetëm për klientët e identifikuar që janë në to; vizitorët pa llogari nuk janë në asnjë grup.",
+          "Kodet e zbritjes nuk i kontrollojnë grupet.",
+          "Bëje të parazgjedhur e shënon grupin e parazgjedhur të kompanisë; nuk shton askënd vetë.",
+          "Fshirja e një grupi mbyll edhe anëtarësimet e tij; rikthimi i grupit i rikthen ato."
         ]
       }
     ]

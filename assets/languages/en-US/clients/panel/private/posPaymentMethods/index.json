@@ -3,34 +3,22 @@
   "title": "POS Payment Methods",
   "description": "Configure cash, card, and other till payment methods.",
   "help": {
-    "ariaLabel": "About POS Payment Methods",
-    "title": "About POS Payment Methods",
-    "overview": "A payment method is one button on the till: cash or card. Tills choose which methods they offer. Name and type are required; sequence is the order the buttons appear.",
+    "ariaLabel": "About payment methods",
+    "title": "About payment methods",
+    "overview": "Each payment method is one button on the till: cash or card. Each till chooses which ones it offers, and the sequence sets their order.",
     "sections": [
       {
-        "title": "Cash",
+        "title": "Cash and card",
         "items": [
-          "Quick amounts are comma-separated values, for example 0.5, 1, 5, 10, 20, shown as one-tap chips. An empty list uses the built-in chips.",
-          "Cash payments, change, cash refunds, and drawer moves update the session's expected cash."
+          "Cash: quick amounts are one-tap buttons, such as 5, 10, 20, separated by commas. Cash payments and change are counted in the drawer.",
+          "Card without a terminal: the cashier takes the card on a separate machine and records the payment.",
+          "Card with a terminal: the till asks the cashier to confirm on it (manual), or sends it the amount and waits for the answer (local HTTP). Test terminal connection checks it answers."
         ]
       },
       {
-        "title": "Card and payment terminals",
-        "body": "A card method can drive a bank terminal.",
+        "title": "Switching off",
         "items": [
-          "Terminal off: the cashier takes the card on a separate device and records the payment.",
-          "Manual provider: the till asks the cashier to confirm the charge on the external terminal.",
-          "Local HTTP provider: the till sends the amount to a terminal bridge at protocol, host, port, and path, with the terminal ID, and waits for approval, decline, or timeout.",
-          "Test connection checks that the bridge answers before you use it at the till."
-        ]
-      },
-      {
-        "title": "Activate, deactivate, delete",
-        "body": "A till must always keep at least one payment method.",
-        "items": [
-          "Deactivating hides the method from new payments and from the till assignment list.",
-          "Deactivating or deleting a method detaches it from every till; it is refused if a till would be left with no method.",
-          "Deleting is a soft delete and it can be restored."
+          "Deactivate hides a method from the till. A till must keep at least one method, so a till's last one can't be deactivated or deleted."
         ]
       }
     ]
