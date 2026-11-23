@@ -1,12 +1,14 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {ShopLegalPage, useShopLegalValues} from "@eCommerceModule/clients/client/public/legal/shopLegalPage.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/legal/privacy/index.tsx";
 
 function PrivacyPage({resolveLanguageKey}: WithLanguageType) {
     const values = useShopLegalValues();
+    usePortalTitle(resolveLanguageKey("title"));
     const sections = Array.from({length: 5}, (_, index) => {
         const n = index + 1;
         return {

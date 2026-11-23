@@ -18,6 +18,7 @@ import {
 } from "@eCommerceModule/clients/client/public/shared/shopCartContext.tsx";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {shopErrorCode} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
 import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
 import {ShopSignInPrompt} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
@@ -177,6 +178,7 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const {cart, loading: cartLoading, signInRequired, refresh: refreshCart} = useShopCart();
     const {config, formatMoney} = useShopConfig();
     const {user} = usePortalSession();
+    usePortalTitle(resolveLanguageKey("title"));
 
     const [checkout, setCheckout] = useState<Checkout | null>(null);
     // What is charged: the checkout's currency, or the cart's before the checkout exists

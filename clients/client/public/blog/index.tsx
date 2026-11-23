@@ -4,6 +4,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import ShopBlogCard from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import type {
@@ -60,6 +61,7 @@ function BlogPage({resolveLanguageKey}: WithLanguageType) {
 
     const selectCategory = (slug: string) => setSearchParams(slug ? {category: slug} : {});
     const activeCategory = categories.find(category => category.slug === categorySlug);
+    usePortalTitle(activeCategory?.name ?? resolveLanguageKey("title"));
     // The newest story leads the unfiltered first page
     const [lead, ...rest] = posts;
     const showLead = !categorySlug && Boolean(lead);

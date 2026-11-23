@@ -7,6 +7,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMedia.ts";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import ShopBlogCard, {blogMetaLine} from "@eCommerceModule/clients/client/public/shared/shopBlogCard.tsx";
 import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
 import type {
@@ -52,6 +53,7 @@ function BlogArticlePage({resolveLanguageKey}: WithLanguageType) {
         ? (relatedRequest.data?.posts ?? []).filter(item => item._id !== post._id).slice(0, MORE_STORIES)
         : [];
     const loading = postCount === 0 || postRequest.loading || relatedRequest.loading;
+    usePortalTitle(loading ? undefined : post ? post.title : resolveLanguageKey("notFound"));
     /** The photo open in the gallery dialog, by its place among the post's photos. */
     const [viewing, setViewing] = useState<number | null>(null);
 

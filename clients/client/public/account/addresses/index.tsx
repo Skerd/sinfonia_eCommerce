@@ -18,6 +18,7 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 import {FieldError} from "@coreModule/components/ui/field.tsx";
 import {Checkbox} from "@coreModule/components/ui/checkbox.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/addresses/index.tsx";
 
@@ -48,6 +49,7 @@ const COUNTRIES_REQUEST: HttpRequest = {method: "GET", url: "/api/portal/places/
 const CITIES_REQUEST: HttpRequest = {method: "POST", url: "/api/portal/places/cities", cache: true};
 
 function AddressPageInner({resolveLanguageKey, languageCode}: WithLanguageType) {
+    usePortalTitle(resolveLanguageKey("title"));
     const [editingId, setEditingId] = useState<string | null>(null);
     const [form, setForm] = useState<MyUserAddressCreateFormType>(EMPTY_FORM);
     const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});

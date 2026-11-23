@@ -7,6 +7,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig, type ShopMoneyCurrency} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/giftCards/index.tsx";
@@ -26,6 +27,7 @@ const LIST_REQUEST: HttpRequest = {method: "POST", url: "/api/finance/giftCard/m
 
 function GiftCardsPage({resolveLanguageKey}: WithLanguageType) {
     const {formatMoney} = useShopConfig();
+    usePortalTitle(resolveLanguageKey("title"));
 
     const list = useHttpRequest<{data: MyGiftCard[]}>(LIST_REQUEST, {}, 1);
     const cards: MyGiftCard[] = list.error ? [] : list.data?.data ?? [];

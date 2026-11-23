@@ -3,12 +3,14 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/notFound/index.tsx";
 
 function NotFoundPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
+    usePortalTitle(resolveLanguageKey("title"));
     return (
         <div className="py-20 text-center">
             <p className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">404</p>

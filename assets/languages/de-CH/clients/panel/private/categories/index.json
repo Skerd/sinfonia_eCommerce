@@ -23,7 +23,7 @@
   "fields": {
     "name": "Name",
     "slug": "Slug",
-    "order": "Auftrag",
+    "order": "Sortierreihenfolge",
     "parent": "Übergeordnete Kategorie",
     "createdBy": "Erstellt von",
     "company": "Firma",

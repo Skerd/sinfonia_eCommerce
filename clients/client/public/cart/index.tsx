@@ -11,6 +11,7 @@ import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopC
 import {useShopReasonMessage} from "@eCommerceModule/clients/client/public/shared/shopErrorMessages.ts";
 import ShopCartLine from "@eCommerceModule/clients/client/public/shared/shopCartLine.tsx";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {ShopSignInPrompt} from "@eCommerceModule/clients/client/public/shared/shopAuthChrome.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
@@ -63,6 +64,7 @@ function CartPage({resolveLanguageKey}: WithLanguageType) {
     const {cart, loading, signInRequired, itemCount, applyDiscount, removeDiscount, applyGiftCard, removeGiftCard} = useShopCart();
     const {formatMoney} = useShopConfig();
     const {reasonMessage} = useShopReasonMessage();
+    usePortalTitle(resolveLanguageKey("title"));
 
     const failed = (fallbackKey: string) => (err: unknown) =>
         handleError(err, {context: "Cart", showToast: true, fallbackMessage: resolveLanguageKey(fallbackKey)});

@@ -23,7 +23,7 @@
   "fields": {
     "name": "Nom",
     "slug": "Identifiant",
-    "order": "Commande",
+    "order": "Ordre de tri",
     "parent": "Catégorie parente",
     "createdBy": "Créé par",
     "company": "Entreprise",

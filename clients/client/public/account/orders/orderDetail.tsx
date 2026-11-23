@@ -12,6 +12,7 @@ import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopO
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import type {DigitalDelivery} from "armonia/src/modules/eCommerce/api/eCommerce/private/digitalDelivery/digitalDelivery.dto.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/orders/orderDetail.tsx";
@@ -38,6 +39,7 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
     const order: BuyerProductOrder | null = failed ? null : orderRequest.data?.data ?? null;
     const deliveries: DigitalDelivery[] = deliveriesRequest.data?.data ?? [];
     const loading = loadCount === 0 || orderRequest.loading || deliveriesRequest.loading;
+    usePortalTitle(loading ? undefined : order ? resolveLanguageKey("title").replace("{number}", order.orderNumber) : resolveLanguageKey("notFound"));
 
     if (loading) {
         return <div className="h-96 animate-pulse rounded-2xl bg-muted" aria-busy="true" aria-label={resolveLanguageKey("loading")} />;

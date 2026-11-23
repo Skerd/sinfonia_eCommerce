@@ -11,6 +11,7 @@ import {resolvePublicMediaUrl} from "@coreModule/clients/portal/shared/portalMed
 import ShopOrderStatus from "@eCommerceModule/clients/client/public/shared/shopOrderStatus.tsx";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {ORDERS_PAGE_SIZE, ORDERS_REQUEST, ordersRequestBody} from "./ordersRequest.ts";
 
@@ -20,6 +21,7 @@ const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/order
 function OrdersPage({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {formatMoney} = useShopConfig();
+    usePortalTitle(resolveLanguageKey("title"));
     const [searchParams, setSearchParams] = useSearchParams();
     const body = ordersRequestBody(searchParams);
     const {page} = body;
