@@ -1,6 +1,32 @@
 {
   "eCommerce": {
     "setup": {"product": "Add your first product", "shipping": "Add where you deliver", "shippingHint": "Checkout needs a shipping rate for the buyer's address."},
+    "guide": {
+      "productTitleTitle": "Product name",
+      "productTitleText": "What customers see in your shop and search for. Keep it short and clear.",
+      "productImageTitle": "Main image",
+      "productImageText": "The photo on the product's card in your shop. A clear photo sells better.",
+      "productPriceTitle": "Price",
+      "productPriceText": "What customers pay. A product can't go on sale without one.",
+      "productStockTitle": "Track inventory",
+      "productStockText": "When on, the shop sells only what you have in stock, which you keep under Inventory. Turn it off if you don't count stock for this item.",
+      "productPublishTitle": "When it goes on sale",
+      "productPublishText": "A new product starts as a draft that customers don't see. Pick a date to put it on sale then, or choose Publish in its menu after saving.",
+      "shippingNameTitle": "Zone name",
+      "shippingNameText": "Helps you tell your delivery areas apart, such as “Domestic” or “Europe”.",
+      "shippingCountriesTitle": "Countries",
+      "shippingCountriesText": "Checkout offers these rates only to buyers in the countries you pick. Add at least one.",
+      "shippingRegionsTitle": "Regions",
+      "shippingRegionsText": "Leave it empty to cover whole countries, or pick regions to give them their own rates.",
+      "shippingRatesTitle": "Shipping rates",
+      "shippingRatesText": "Add at least one, such as a flat price or free delivery over an amount. Buyers choose from them at checkout.",
+      "tour": {
+        "productorders": "Every order from your shop, with its payment and delivery status. A good page to start your day.",
+        "fulfillments": "The parcels you send. Shipping an order adds one here, with the carrier and tracking number.",
+        "inventories": "How much of each product you have, and how much is still free to sell.",
+        "products": "Your catalog. Change prices, photos and stock, and put drafts on sale."
+      }
+    },
     "title": "eCommerce",
     "pos": {
       "title": "Point of Sale"

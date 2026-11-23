@@ -1,6 +1,32 @@
 {
   "eCommerce": {
     "setup": {"product": "Aggiungi il tuo primo prodotto", "shipping": "Indica dove consegni", "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente."},
+    "guide": {
+      "productTitleTitle": "Nome del prodotto",
+      "productTitleText": "Ciò che i clienti vedono e cercano nel tuo negozio. Tienilo breve e chiaro.",
+      "productImageTitle": "Immagine principale",
+      "productImageText": "La foto sulla scheda del prodotto nel tuo negozio. Una foto nitida vende di più.",
+      "productPriceTitle": "Prezzo",
+      "productPriceText": "Quanto pagano i clienti. Senza prezzo un prodotto non può andare in vendita.",
+      "productStockTitle": "Tieni traccia dell'inventario",
+      "productStockText": "Se attivo, il negozio vende solo ciò che hai in magazzino, che gestisci in Inventario. Disattivalo se per questo articolo non conti le scorte.",
+      "productPublishTitle": "Quando va in vendita",
+      "productPublishText": "Un nuovo prodotto nasce come bozza che i clienti non vedono. Scegli una data per metterlo in vendita da quel giorno, oppure scegli «Pubblica» nel suo menu dopo averlo salvato.",
+      "shippingNameTitle": "Nome della zona",
+      "shippingNameText": "Ti aiuta a distinguere le aree di consegna, come «Italia» o «Europa».",
+      "shippingCountriesTitle": "Paesi",
+      "shippingCountriesText": "Il checkout offre queste tariffe solo agli acquirenti dei paesi che scegli. Aggiungine almeno uno.",
+      "shippingRegionsTitle": "Regioni",
+      "shippingRegionsText": "Lascia vuoto per coprire interi paesi, oppure scegli delle regioni per dar loro tariffe proprie.",
+      "shippingRatesTitle": "Tariffe di spedizione",
+      "shippingRatesText": "Aggiungine almeno una, come un prezzo fisso o la spedizione gratuita sopra un importo. Gli acquirenti scelgono tra queste al checkout.",
+      "tour": {
+        "productorders": "Ogni ordine del tuo negozio, con lo stato di pagamento e di consegna. Una buona pagina per iniziare la giornata.",
+        "fulfillments": "I pacchi che spedisci. Quando spedisci un ordine se ne aggiunge uno qui, con corriere e numero di tracciamento.",
+        "inventories": "Quanto hai di ogni prodotto, e quanto puoi ancora vendere.",
+        "products": "Il tuo catalogo. Cambia prezzi, foto e scorte, e metti in vendita le bozze."
+      }
+    },
     "title": "e-commerce",
     "pos": {
       "title": "Punto di vendita"

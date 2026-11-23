@@ -1,6 +1,32 @@
 {
   "eCommerce": {
     "setup": {"product": "Shtoni produktin tuaj të parë", "shipping": "Shtoni ku dërgoni", "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit."},
+    "guide": {
+      "productTitleTitle": "Emri i produktit",
+      "productTitleText": "Çfarë shohin dhe kërkojnë klientët në dyqanin tuaj. Mbajeni të shkurtër dhe të qartë.",
+      "productImageTitle": "Imazhi kryesor",
+      "productImageText": "Fotoja në kartën e produktit në dyqanin tuaj. Një foto e qartë shet më mirë.",
+      "productPriceTitle": "Çmimi",
+      "productPriceText": "Sa paguajnë klientët. Një produkt nuk mund të dalë në shitje pa çmim.",
+      "productStockTitle": "Gjurmo inventarin",
+      "productStockText": "Kur është aktiv, dyqani shet vetëm sa keni në stok, të cilin e mbani te Inventari. Çaktivizojeni nëse nuk e numëroni stokun e këtij artikulli.",
+      "productPublishTitle": "Kur del në shitje",
+      "productPublishText": "Një produkt i ri fillon si skicë që klientët nuk e shohin. Zgjidhni një datë që të dalë në shitje atëherë, ose zgjidhni Publiko në menunë e tij pasi ta ruani.",
+      "shippingNameTitle": "Emri i zonës",
+      "shippingNameText": "Ju ndihmon të dalloni zonat ku dërgoni, si “Brenda vendit” ose “Europa”.",
+      "shippingCountriesTitle": "Shtetet",
+      "shippingCountriesText": "Pagesa ua ofron këto tarifa vetëm blerësve në shtetet që zgjidhni. Shtoni të paktën një.",
+      "shippingRegionsTitle": "Rajonet",
+      "shippingRegionsText": "Lëreni bosh për të mbuluar gjithë shtetin, ose zgjidhni rajone që të kenë tarifat e tyre.",
+      "shippingRatesTitle": "Tarifat e dërgesës",
+      "shippingRatesText": "Shtoni të paktën një, si një çmim fiks ose dërgesë falas mbi një shumë. Blerësit zgjedhin prej tyre gjatë pagesës.",
+      "tour": {
+        "productorders": "Çdo porosi nga dyqani juaj, me statusin e pagesës dhe të dërgesës. Një faqe e mirë për të nisur ditën.",
+        "fulfillments": "Pakot që dërgoni. Kur dërgoni një porosi, shtohet një këtu, me korrierin dhe numrin e gjurmimit.",
+        "inventories": "Sa keni nga çdo produkt, dhe sa mund të shisni ende.",
+        "products": "Katalogu juaj. Ndryshoni çmimet, fotot dhe stokun, dhe nxirrni skicat në shitje."
+      }
+    },
     "title": "eCommerce",
     "pos": {
       "title": "Pika e Shitjes"

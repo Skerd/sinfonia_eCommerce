@@ -1,6 +1,32 @@
 {
   "eCommerce": {
     "setup": {"product": "Erstes Produkt hinzufügen", "shipping": "Liefergebiete erfassen", "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers."},
+    "guide": {
+      "productTitleTitle": "Produktname",
+      "productTitleText": "Was Kunden in Ihrem Shop sehen und suchen. Halten Sie ihn kurz und klar.",
+      "productImageTitle": "Hauptbild",
+      "productImageText": "Das Foto auf der Produktkarte in Ihrem Shop. Ein klares Foto verkauft besser.",
+      "productPriceTitle": "Preis",
+      "productPriceText": "Was Kunden bezahlen. Ohne Preis kann ein Produkt nicht in den Verkauf.",
+      "productStockTitle": "Lagerbestand verfolgen",
+      "productStockText": "Eingeschaltet verkauft der Shop nur, was Sie an Lager haben; das führen Sie unter Lagerbestand. Schalten Sie es aus, wenn Sie für diesen Artikel keinen Bestand zählen.",
+      "productPublishTitle": "Ab wann es verkauft wird",
+      "productPublishText": "Ein neues Produkt ist zuerst ein Entwurf, den Kunden nicht sehen. Wählen Sie ein Datum, ab dem es verkauft wird, oder wählen Sie nach dem Speichern «Veröffentlichen» in seinem Menü.",
+      "shippingNameTitle": "Name der Zone",
+      "shippingNameText": "Damit Sie Ihre Liefergebiete unterscheiden, etwa «Inland» oder «Europa».",
+      "shippingCountriesTitle": "Länder",
+      "shippingCountriesText": "Der Checkout bietet diese Tarife nur Käufern in den gewählten Ländern an. Wählen Sie mindestens eines.",
+      "shippingRegionsTitle": "Regionen",
+      "shippingRegionsText": "Leer lassen für ganze Länder, oder Regionen wählen, die eigene Tarife erhalten.",
+      "shippingRatesTitle": "Versandtarife",
+      "shippingRatesText": "Fügen Sie mindestens einen hinzu, etwa einen festen Preis oder Gratisversand ab einem Betrag. Käufer wählen im Checkout daraus.",
+      "tour": {
+        "productorders": "Jede Bestellung aus Ihrem Shop, mit Zahlungs- und Lieferstatus. Ein guter Start in den Tag.",
+        "fulfillments": "Die Pakete, die Sie verschicken. Wenn Sie eine Bestellung versenden, erscheint sie hier mit Versanddienst und Sendungsnummer.",
+        "inventories": "Wie viel Sie von jedem Produkt haben und wie viel noch verkauft werden kann.",
+        "products": "Ihr Katalog. Ändern Sie Preise, Fotos und Bestand, und bringen Sie Entwürfe in den Verkauf."
+      }
+    },
     "title": "E-Commerce",
     "pos": {
       "title": "Point of Sale"

@@ -1,6 +1,32 @@
 {
   "eCommerce": {
     "setup": {"product": "Ajoutez votre premier produit", "shipping": "Indiquez où vous livrez", "shippingHint": "Le paiement demande un tarif de livraison pour l'adresse de l'acheteur."},
+    "guide": {
+      "productTitleTitle": "Nom du produit",
+      "productTitleText": "Ce que les clients voient et cherchent dans votre boutique. Restez court et clair.",
+      "productImageTitle": "Image principale",
+      "productImageText": "La photo sur la fiche du produit dans votre boutique. Une photo nette fait vendre.",
+      "productPriceTitle": "Prix",
+      "productPriceText": "Ce que paient les clients. Un produit ne peut pas être mis en vente sans prix.",
+      "productStockTitle": "Suivre l'inventaire",
+      "productStockText": "Activé, la boutique ne vend que ce que vous avez en stock, que vous tenez dans Inventaire. Désactivez-le si vous ne comptez pas le stock de cet article.",
+      "productPublishTitle": "Mise en vente",
+      "productPublishText": "Un nouveau produit commence en brouillon, invisible pour les clients. Choisissez une date pour le mettre en vente à ce moment-là, ou choisissez « Publier » dans son menu après l'enregistrement.",
+      "shippingNameTitle": "Nom de la zone",
+      "shippingNameText": "Pour distinguer vos zones de livraison, comme « France » ou « Europe ».",
+      "shippingCountriesTitle": "Pays",
+      "shippingCountriesText": "Le paiement ne propose ces tarifs qu'aux acheteurs des pays choisis. Ajoutez-en au moins un.",
+      "shippingRegionsTitle": "Régions",
+      "shippingRegionsText": "Laissez vide pour couvrir des pays entiers, ou choisissez des régions pour leur donner leurs propres tarifs.",
+      "shippingRatesTitle": "Tarifs de livraison",
+      "shippingRatesText": "Ajoutez-en au moins un, comme un prix fixe ou la livraison offerte dès un montant. Les acheteurs choisissent parmi eux au paiement.",
+      "tour": {
+        "productorders": "Chaque commande de votre boutique, avec son statut de paiement et de livraison. Une bonne page pour commencer la journée.",
+        "fulfillments": "Les colis que vous envoyez. Expédier une commande en ajoute un ici, avec le transporteur et le numéro de suivi.",
+        "inventories": "Combien vous avez de chaque produit, et combien il en reste à vendre.",
+        "products": "Votre catalogue. Modifiez les prix, les photos et le stock, et mettez les brouillons en vente."
+      }
+    },
     "title": "Commerce électronique",
     "pos": {
       "title": "Point de vente"
