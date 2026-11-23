@@ -27,10 +27,8 @@
       "shippingRatesTitle": "Versandtarife",
       "shippingRatesText": "Fügen Sie mindestens einen hinzu, etwa einen festen Preis oder Gratisversand ab einem Betrag. Käufer wählen im Checkout daraus.",
       "tour": {
-        "productorders": "Jede Bestellung aus Ihrem Shop, mit Zahlungs- und Lieferstatus. Ein guter Start in den Tag.",
-        "fulfillments": "Die Pakete, die Sie verschicken. Wenn Sie eine Bestellung versenden, erscheint sie hier mit Versanddienst und Sendungsnummer.",
-        "inventories": "Wie viel Sie von jedem Produkt haben und wie viel noch verkauft werden kann.",
-        "products": "Ihr Katalog. Ändern Sie Preise, Fotos und Bestand, und bringen Sie Entwürfe in den Verkauf."
+        "introTitle": "Ihr Shop",
+        "introText": "Dieser Teil des Panels führt Ihren Shop: die Onlinebestellungen und ihren Versand, den Point of Sale, Ihre Produkte und das Lager, was Ihre Kunden sagen, Ihre Verkaufszahlen und die Einstellungen Ihres Shops. Als Nächstes öffnet die Tour jede Seite und erklärt sie. Das ⓘ neben dem Seitentitel zeigt dieselbe Hilfe jederzeit."
       }
     },
     "title": "E-Commerce",

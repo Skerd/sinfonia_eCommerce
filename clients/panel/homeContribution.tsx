@@ -3,7 +3,7 @@ import type {HomeContribution} from "@coreModule/helpers/types/homeContribution.
 /**
  * What a new shop company sets up before it can take customers (D178), in the order it needs them; each
  * step is done once its list has a row. Each step's guide points at the fields that matter most (D179), and the tour
- * shows the pages a shop uses every day. Texts are in this module's `menus.json` (`setup`, `guide`).
+ * walks every page of the module (D180). Texts are in this module's `menus.json` (`setup`, `guide`).
  */
 const contribution: HomeContribution = {
     id: "eCommerce",
@@ -58,21 +58,48 @@ const contribution: HomeContribution = {
             },
         ];
     },
-    // Each stop opens its page: most of these sidebar links sit in a group that stays closed until its page is open.
-    // A stop the person may not read is left out; the tour then ends at the last one's page help.
-    getTour: ({resolveLanguageKey: t}) => ([
-        ["productorders", "productorders"],
-        ["fulfillments", "fulfillments"],
-        ["inventories", "inventories"],
-        ["products", "products"],
-    ] as const).map(([page, accessModel]) => ({
-        target: `nav:/eCommerce/${page}`,
-        to: `/eCommerce/${page}`,
-        accessModel,
-        // Named as the sidebar names them.
-        title: t(`menus.eCommerce.${page}.title`),
-        text: t(`menus.eCommerce.guide.tour.${page}`),
-    })),
+    // Every page of the module, orders first, each explained by its own ⓘ help (D180); a page the person may not read is
+    // left out. Analytics and customer addresses read through the orders, so they need the orders. The Odoo connection
+    // and import are left out: a one-off move from Odoo, not part of running the shop.
+    getTour: ({resolveLanguageKey: t}) => [
+        {
+            target: "page.help",
+            to: "/eCommerce/productorders",
+            accessModel: "productorders",
+            title: t("menus.eCommerce.guide.tour.introTitle"),
+            text: t("menus.eCommerce.guide.tour.introText"),
+        },
+        ...([
+            ["/eCommerce/productorders", "productorders"],
+            ["/eCommerce/fulfillments", "fulfillments"],
+            ["/eCommerce/returnrequests", "returnrequests"],
+            ["/eCommerce/pos", "posorders"],
+            ["/eCommerce/posorders", "posorders"],
+            ["/eCommerce/possessions", "possessions"],
+            ["/eCommerce/products", "products"],
+            ["/eCommerce/inventories", "inventories"],
+            ["/eCommerce/inventorymovements", "inventorymovements"],
+            ["/eCommerce/stocktransfers", "stocktransfers"],
+            ["/eCommerce/stockcounts", "stockcounts"],
+            ["/eCommerce/productreviews", "productreviews"],
+            ["/eCommerce/savedsearches", "savedsearches"],
+            ["/eCommerce/analytics", "productorders"],
+            ["/tenancy/systemSettings/categories", "productcategories"],
+            ["/tenancy/systemSettings/productattributes", "productattributes"],
+            ["/tenancy/systemSettings/productvariants", "productvariants"],
+            ["/tenancy/systemSettings/collections", "productcollections"],
+            ["/tenancy/systemSettings/customergroups", "customergroups"],
+            ["/tenancy/systemSettings/customeraddresses", "productorders"],
+            ["/tenancy/systemSettings/discounts", "discounts"],
+            ["/tenancy/systemSettings/pricingrules", "pricingrules"],
+            ["/tenancy/systemSettings/taxzones", "taxzones"],
+            ["/tenancy/systemSettings/shippingzones", "shippingzones"],
+            ["/tenancy/systemSettings/warehouses", "warehouses"],
+            ["/tenancy/systemSettings/cmsblocks", "cmsblocks"],
+            ["/tenancy/systemSettings/posconfigs", "posconfigs"],
+            ["/tenancy/systemSettings/pospaymentmethods", "pospaymentmethods"],
+        ] as const).map(([page, accessModel]) => ({page, accessModel})),
+    ],
 };
 
 export default contribution;

@@ -27,10 +27,8 @@
       "shippingRatesTitle": "Tariffe di spedizione",
       "shippingRatesText": "Aggiungine almeno una, come un prezzo fisso o la spedizione gratuita sopra un importo. Gli acquirenti scelgono tra queste al checkout.",
       "tour": {
-        "productorders": "Ogni ordine del tuo negozio, con lo stato di pagamento e di consegna. Una buona pagina per iniziare la giornata.",
-        "fulfillments": "I pacchi che spedisci. Quando spedisci un ordine se ne aggiunge uno qui, con corriere e numero di tracciamento.",
-        "inventories": "Quanto hai di ogni prodotto, e quanto puoi ancora vendere.",
-        "products": "Il tuo catalogo. Cambia prezzi, foto e scorte, e metti in vendita le bozze."
+        "introTitle": "Il tuo negozio",
+        "introText": "Questa parte del pannello gestisce il tuo negozio: gli ordini online e le loro spedizioni, il punto vendita, i prodotti e il magazzino, cosa dicono i clienti, i numeri delle vendite e le impostazioni del negozio. Ora il tour apre ogni pagina e la spiega. La ⓘ accanto al titolo di una pagina mostra lo stesso aiuto in qualsiasi momento."
       }
     },
     "title": "e-commerce",

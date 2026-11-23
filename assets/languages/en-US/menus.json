@@ -27,10 +27,8 @@
       "shippingRatesTitle": "Shipping rates",
       "shippingRatesText": "Add at least one, such as a flat price or free delivery over an amount. Buyers choose from them at checkout.",
       "tour": {
-        "productorders": "Every order from your shop, with its payment and delivery status. A good page to start your day.",
-        "fulfillments": "The parcels you send. Shipping an order adds one here, with the carrier and tracking number.",
-        "inventories": "How much of each product you have, and how much is still free to sell.",
-        "products": "Your catalog. Change prices, photos and stock, and put drafts on sale."
+        "introTitle": "Your shop",
+        "introText": "This part of the panel runs your shop: online orders and their delivery, the point of sale, your products and stock, what customers say, your sales figures, and your shop's settings. Next, the tour opens each page and explains it. The ⓘ beside a page's title shows the same help any time."
       }
     },
     "title": "eCommerce",

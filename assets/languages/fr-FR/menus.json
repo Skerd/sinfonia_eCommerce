@@ -27,10 +27,8 @@
       "shippingRatesTitle": "Tarifs de livraison",
       "shippingRatesText": "Ajoutez-en au moins un, comme un prix fixe ou la livraison offerte dès un montant. Les acheteurs choisissent parmi eux au paiement.",
       "tour": {
-        "productorders": "Chaque commande de votre boutique, avec son statut de paiement et de livraison. Une bonne page pour commencer la journée.",
-        "fulfillments": "Les colis que vous envoyez. Expédier une commande en ajoute un ici, avec le transporteur et le numéro de suivi.",
-        "inventories": "Combien vous avez de chaque produit, et combien il en reste à vendre.",
-        "products": "Votre catalogue. Modifiez les prix, les photos et le stock, et mettez les brouillons en vente."
+        "introTitle": "Votre boutique",
+        "introText": "Cette partie du panneau fait tourner votre boutique : les commandes en ligne et leurs expéditions, le point de vente, vos produits et votre stock, ce que disent vos clients, vos chiffres de vente et les paramètres de votre boutique. La visite ouvre maintenant chaque page et l'explique. Le ⓘ à côté du titre d'une page affiche la même aide à tout moment."
       }
     },
     "title": "Commerce électronique",
