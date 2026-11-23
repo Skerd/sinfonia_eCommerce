@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/comingSoon/index.tsx",
+  "badge": "Bientôt",
+  "pos": {
+    "title": "Point de vente",
+    "description": "Vendez au comptoir depuis le navigateur ; chaque ticket est enregistré auprès de l'administration fiscale.",
+    "point1": "Vendez par produit, code-barres ou variante, et encaissez en espèces, par carte ou en addition partagée",
+    "point2": "Ouvrez et clôturez les sessions de caisse, avec entrées et sorties d'espèces et comptage à la clôture",
+    "point3": "Mettez des paniers en attente, remboursez des ventes et réimprimez des tickets",
+    "point4": "Configurez les caisses, les terminaux de paiement et les codes PIN des responsables"
+  },
+  "fiscal": {
+    "title": "Fiscal / Facture électronique",
+    "description": "Enregistrez automatiquement les tickets de caisse et les factures auprès de l'administration fiscale (CIS).",
+    "point1": "Chaque ticket reçoit son NIVF, son NSLF et un QR code de vérification",
+    "point2": "Les ventes aux entreprises peuvent aussi être envoyées en facture électronique",
+    "point3": "Les factures, comme celles de location de voitures, sont enregistrées dès leur émission",
+    "point4": "Votre certificat et votre caisse enregistreuse (TCR) au même endroit"
+  }
+}

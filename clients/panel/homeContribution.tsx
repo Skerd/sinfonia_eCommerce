@@ -1,4 +1,15 @@
 import type {HomeContribution} from "@coreModule/helpers/types/homeContribution.types.ts";
+import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fiscalAvailability.ts";
+
+/** The till's and fiscalization's pages: "Coming soon" until fiscalization is certified (D186), so the tour skips them. */
+const COMING_SOON_PAGES = new Set<string>([
+    "/eCommerce/pos",
+    "/eCommerce/posorders",
+    "/eCommerce/possessions",
+    "/tenancy/systemSettings/posconfigs",
+    "/tenancy/systemSettings/pospaymentmethods",
+    "/tenancy/systemSettings/fiscalconfigs",
+]);
 
 /**
  * What a new shop company sets up before it can take customers (D178), in the order it needs them; each
@@ -100,7 +111,9 @@ const contribution: HomeContribution = {
             ["/tenancy/systemSettings/posconfigs", "posconfigs"],
             ["/tenancy/systemSettings/pospaymentmethods", "pospaymentmethods"],
             ["/tenancy/systemSettings/fiscalconfigs", "fiscalconfigs"],
-        ] as const).map(([page, accessModel]) => ({page, accessModel})),
+        ] as const)
+            .filter(([page]) => FISCALIZATION_AVAILABLE || !COMING_SOON_PAGES.has(page))
+            .map(([page, accessModel]) => ({page, accessModel})),
     ],
 };
 

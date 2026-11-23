@@ -1,8 +1,9 @@
-import {IconShoppingBag, IconBoxMultiple, IconBuildingWarehouse, IconChartBar, IconPackageImport, IconArrowBackUp, IconStar, IconDeviceDesktop, IconReceipt, IconClock, IconArrowsLeftRight, IconBookmark, IconTruck, IconClipboardList} from "@tabler/icons-react";
+import {IconShoppingBag, IconBoxMultiple, IconBuildingWarehouse, IconChartBar, IconPackageImport, IconArrowBackUp, IconStar, IconDeviceDesktop, IconReceipt, IconClock, IconArrowsLeftRight, IconBookmark, IconTruck, IconClipboardList, IconFileCertificate} from "@tabler/icons-react";
 import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
 import type {NavGroup, NavItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {registerECommerceRefSelects} from "armonia/src/modules/eCommerce/database/filter/refSelect.ts";
+import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fiscalAvailability.ts";
 
 registerECommerceRefSelects();
 
@@ -31,7 +32,8 @@ const eCommerceSidebarContribution: SidebarContribution = {
                     {title: resolveLanguageKey("menus.eCommerce.returnrequests.title"), url: "/eCommerce/returnrequests", icon: IconArrowBackUp, permissions: ["returnRequests"], usersPermissions: [], atLeastOnePermission: true},
                 ],
             },
-            {
+            // The till waits for fiscalization's certification, under "Coming soon" below (D186)
+            ...(FISCALIZATION_AVAILABLE ? [{
                 title: resolveLanguageKey("menus.eCommerce.posGroup.title"),
                 icon: IconDeviceDesktop,
                 ...emptyGuard,
@@ -40,7 +42,7 @@ const eCommerceSidebarContribution: SidebarContribution = {
                     {title: resolveLanguageKey("menus.eCommerce.posorders.title"), url: "/eCommerce/posorders", icon: IconReceipt, permissions: ["posOrders"], usersPermissions: [], atLeastOnePermission: true},
                     {title: resolveLanguageKey("menus.eCommerce.possessions.title"), url: "/eCommerce/possessions", icon: IconClock, permissions: ["posSessions"], usersPermissions: [], atLeastOnePermission: true},
                 ],
-            },
+            }] : []),
             {
                 title: resolveLanguageKey("menus.eCommerce.stock.title"),
                 icon: IconBuildingWarehouse,
@@ -64,7 +66,7 @@ const eCommerceSidebarContribution: SidebarContribution = {
             },
         ];
 
-        return [
+        const groups: NavGroup[] = [
             {
                 title: resolveLanguageKey("menus.eCommerce.productCommerce.title"),
                 permissions: [],
@@ -73,6 +75,21 @@ const eCommerceSidebarContribution: SidebarContribution = {
                 items: productCommerceItems,
             },
         ];
+        if (!FISCALIZATION_AVAILABLE) {
+            // Both open once Arpeggio is certified as fiscal software (D186); each link shows what is coming
+            const soon = resolveLanguageKey("menus.eCommerce.comingSoon.badge");
+            groups.push({
+                title: resolveLanguageKey("menus.eCommerce.comingSoon.title"),
+                permissions: [],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+                items: [
+                    {title: resolveLanguageKey("menus.eCommerce.posGroup.title"), url: "/eCommerce/pos", icon: IconDeviceDesktop, badge: soon, permissions: ["posOrders", "posConfigs"], usersPermissions: [], atLeastOnePermission: true},
+                    {title: resolveLanguageKey("menus.tenancy.systemSettings.fiscalconfigs.title"), url: "/tenancy/systemSettings/fiscalconfigs", icon: IconFileCertificate, badge: soon, permissions: ["fiscalConfigs"], usersPermissions: [], atLeastOnePermission: true},
+                ],
+            });
+        }
+        return groups;
     },
 };
 

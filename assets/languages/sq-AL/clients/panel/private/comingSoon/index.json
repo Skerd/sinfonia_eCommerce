@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/comingSoon/index.tsx",
+  "badge": "Së shpejti",
+  "pos": {
+    "title": "Pika e shitjes",
+    "description": "Shitni në banak nga shfletuesi; çdo kupon regjistrohet në administratën tatimore.",
+    "point1": "Shitni sipas produktit, barkodit ose variantit dhe arkëtoni me para në dorë, me kartë ose me faturë të ndarë",
+    "point2": "Hapni dhe mbyllni turnet, me hyrje e dalje parash dhe numërim në mbyllje",
+    "point3": "Mbani shporta në pritje, ktheni shitje dhe ristamponi kupona",
+    "point4": "Konfiguroni arkat, terminalet e pagesës dhe PIN-et e menaxherëve"
+  },
+  "fiscal": {
+    "title": "Fiskale / E-faturë",
+    "description": "Regjistroni automatikisht kuponat e arkës dhe faturat në administratën tatimore (CIS).",
+    "point1": "Çdo kupon merr NIVF-në, NSLF-në dhe një kod QR verifikimi",
+    "point2": "Shitjet për bizneset mund të dërgohen edhe si e-faturë",
+    "point3": "Faturat, si ato të qirasë së makinave, regjistrohen kur lëshohen",
+    "point4": "Certifikata juaj dhe arka (TCR) në një vend"
+  }
+}

@@ -62,6 +62,10 @@
     "posGroup": {
       "title": "Punto di vendita"
     },
+    "comingSoon": {
+      "title": "Prossimamente",
+      "badge": "Presto"
+    },
     "stock": {
       "title": "Magazzino"
     },

@@ -1,7 +1,10 @@
-import {describe, expect, it} from "vitest";
+import {describe, expect, it, vi} from "vitest";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavLinkItem, NavSubCollapsible, NavSubItem} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import {buildECommerceTenancySettingsSubCollapsible} from "../eCommerceTenancyNav.ts";
+
+// The till's settings as they show once fiscalization is certified; `fiscalComingSoon.test.ts` covers them switched off (D186)
+vi.mock("armonia/src/modules/finance/helpers/fiscalAvailability.ts", () => ({FISCALIZATION_AVAILABLE: true}));
 
 /* TD-F151: each POS settings link asks for the permission of the page it opens. TD-F153: the shop lists gift cards and
    fiscal configs (finance's pages, used by shops only), so other businesses with finance no longer see them. */

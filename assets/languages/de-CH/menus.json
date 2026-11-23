@@ -62,6 +62,10 @@
     "posGroup": {
       "title": "Point of Sale"
     },
+    "comingSoon": {
+      "title": "Demnächst",
+      "badge": "Bald"
+    },
     "stock": {
       "title": "Lager"
     },

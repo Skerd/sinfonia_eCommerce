@@ -17,6 +17,7 @@ import ReprintPosOrderDialog from "@eCommerceModule/clients/panel/private/posOrd
 import PosOrderFiscalActions from "@eCommerceModule/clients/panel/private/posOrders/center/actions/posOrderFiscalActions.tsx";
 import RecordPosOrderFiscalCodesDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/recordPosOrderFiscalCodesDialog.tsx";
 import ResendPosOrderFiscalDialog from "@eCommerceModule/clients/panel/private/posOrders/center/dialogs/resendPosOrderFiscalDialog.tsx";
+import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fiscalAvailability.ts";
 
 export type PosOrderSheetViewOwnProps = {
     open: boolean;
@@ -94,12 +95,13 @@ function PosOrderSheetView({
                 hideDelete
                 hideRestore
                 actionMenuAllowCustomChildren
-                actionMenuChildren={
+                // Reprinting and the fiscal actions wait for fiscalization's certification (D186)
+                actionMenuChildren={FISCALIZATION_AVAILABLE ? (
                     <>
                         <ReprintPosOrder entity={asOrder} onAction={(a: string) => setAction(a)} />
                         <PosOrderFiscalActions entity={asOrder} onAction={(a: string) => setAction(a)} />
                     </>
-                }
+                ) : null}
             />
             {action === "reprintPosOrder" && (
                 <ReprintPosOrderDialog

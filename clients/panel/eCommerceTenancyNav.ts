@@ -1,6 +1,7 @@
 import {IconCategory2, IconPlug, IconCreditCard, IconCurrencyDollar, IconDownload, IconWorld, IconStack2, IconLayoutGrid, IconBooks, IconMapPin, IconDeviceDesktop, IconPercentage, IconAdjustments, IconShoppingBag, IconTag, IconTruck, IconUsers, IconBuildingWarehouse, IconGift, IconFileCertificate} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
+import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fiscalAvailability.ts";
 
 /** Nested under Tenancy → Configurations (owned by eCommerce). */
 export function buildECommerceTenancySettingsSubCollapsible(
@@ -144,7 +145,8 @@ export function buildECommerceTenancySettingsSubCollapsible(
                     },
                 ],
             },
-            {
+            // The till's setup waits for fiscalization's certification, under "Coming soon" in the sidebar (D186)
+            ...(FISCALIZATION_AVAILABLE ? [{
                 title: resolveLanguageKey("menus.tenancy.systemSettings.pos.title"),
                 icon: IconDeviceDesktop,
                 // Shown to whoever may open any page below (TD-F151).
@@ -178,7 +180,7 @@ export function buildECommerceTenancySettingsSubCollapsible(
                         atLeastOnePermission: true,
                     },
                 ],
-            },
+            }] : []),
         ],
     };
 }

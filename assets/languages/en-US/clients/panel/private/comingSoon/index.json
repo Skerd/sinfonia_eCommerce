@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/comingSoon/index.tsx",
+  "badge": "Coming soon",
+  "pos": {
+    "title": "Point of sale",
+    "description": "Sell at the counter from the browser, with every receipt registered with the tax authority.",
+    "point1": "Sell by product, barcode or variant, and take cash, card or a split bill",
+    "point2": "Open and close shifts, with cash in and out and a count at closing",
+    "point3": "Hold carts, refund sales and reprint receipts",
+    "point4": "Set up tills, payment terminals and manager PINs"
+  },
+  "fiscal": {
+    "title": "Fiscal / E-Invoice",
+    "description": "Register till receipts and invoices with the tax authority (CIS) automatically.",
+    "point1": "Every till receipt gets its NIVF, NSLF and a QR code to verify it",
+    "point2": "Sales to businesses can also be sent as e-invoices",
+    "point3": "Invoices, such as car rental invoices, are registered when they are issued",
+    "point4": "Your certificate and cash register (TCR) in one place"
+  }
+}

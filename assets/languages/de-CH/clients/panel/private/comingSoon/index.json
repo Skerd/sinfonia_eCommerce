@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/comingSoon/index.tsx",
+  "badge": "Demnächst",
+  "pos": {
+    "title": "Point of Sale",
+    "description": "Verkaufen Sie an der Kasse direkt im Browser; jede Quittung wird bei der Steuerbehörde registriert.",
+    "point1": "Nach Produkt, Barcode oder Variante verkaufen und bar, mit Karte oder mit geteilter Rechnung kassieren",
+    "point2": "Schichten öffnen und schliessen, mit Bareinlagen, Barentnahmen und Kassensturz beim Abschluss",
+    "point3": "Warenkörbe parkieren, Verkäufe zurückerstatten und Quittungen erneut drucken",
+    "point4": "Kassen, Zahlungsterminals und Manager-PINs einrichten"
+  },
+  "fiscal": {
+    "title": "Fiskal / E-Rechnung",
+    "description": "Kassenquittungen und Rechnungen automatisch bei der Steuerbehörde (CIS) registrieren.",
+    "point1": "Jede Kassenquittung erhält ihre NIVF, NSLF und einen QR-Code zur Prüfung",
+    "point2": "Verkäufe an Unternehmen können auch als E-Rechnung gesendet werden",
+    "point3": "Rechnungen, etwa für Mietwagen, werden bei der Ausstellung registriert",
+    "point4": "Ihr Zertifikat und Ihre Registrierkasse (TCR) an einem Ort"
+  }
+}

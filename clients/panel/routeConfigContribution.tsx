@@ -1,5 +1,6 @@
 import {lazy} from "react";
 import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/helpers/types/routeConfigContribution.types.ts";
+import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fiscalAvailability.ts";
 
 // Pages load on first visit (D21); the panel shell's Suspense boundary shows the loader.
 const AllCategories = lazy(() => import("@eCommerceModule/clients/panel/private/categories"));
@@ -75,6 +76,11 @@ const EditPosConfig = lazy(() => import("@eCommerceModule/clients/panel/private/
 const AllPosSessions = lazy(() => import("@eCommerceModule/clients/panel/private/posSessions/index.tsx"));
 const AllPosOrders = lazy(() => import("@eCommerceModule/clients/panel/private/posOrders/index.tsx"));
 const PosTill = lazy(() => import("@eCommerceModule/clients/panel/private/pos/index.tsx"));
+const ComingSoon = lazy(() => import("@eCommerceModule/clients/panel/private/comingSoon/index.tsx"));
+
+/** The till's and fiscalization's pages while fiscalization waits for certification (D186). */
+const POS_PAGES = new Set(["pos", "possessions", "posorders"]);
+const POS_SETTINGS = new Set(["posconfigs", "pospaymentmethods"]);
 
 function safeDecode(value: string | null): string | undefined {
     if (value == null || value === "") return undefined;
@@ -97,6 +103,11 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         if (menu === "tenancy" && subview === "systemSettings") {
             const resource = segments[2];
             const action = segments[3];
+            if (!FISCALIZATION_AVAILABLE) {
+                // Finance leaves the fiscal configs to this page while it is off
+                if (POS_SETTINGS.has(resource)) return <ComingSoon feature="pos" />;
+                if (resource === "fiscalconfigs") return <ComingSoon feature="fiscal" />;
+            }
             if (resource === "categories") {
                 const categoryId = searchParams.get("categoryId") || undefined;
                 const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;
@@ -206,6 +217,9 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
         const inventoryTitle = safeDecode(searchParams.get("inventoryTitle")) || undefined;
         if (resource === "systemmap") {
             return <SystemMap />;
+        }
+        if (!FISCALIZATION_AVAILABLE && !!resource && POS_PAGES.has(resource)) {
+            return <ComingSoon feature="pos" />;
         }
         if (resource === "pos") {
             return <PosTill />;

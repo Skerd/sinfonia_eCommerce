@@ -62,6 +62,10 @@
     "posGroup": {
       "title": "Point of sale"
     },
+    "comingSoon": {
+      "title": "Coming soon",
+      "badge": "Soon"
+    },
     "stock": {
       "title": "Stock"
     },

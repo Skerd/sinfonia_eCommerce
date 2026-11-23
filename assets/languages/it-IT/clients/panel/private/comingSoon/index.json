@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/comingSoon/index.tsx",
+  "badge": "Presto",
+  "pos": {
+    "title": "Punto di vendita",
+    "description": "Vendi al banco dal browser; ogni scontrino viene registrato presso l'autorità fiscale.",
+    "point1": "Vendi per prodotto, codice a barre o variante e incassa in contanti, con carta o con conto diviso",
+    "point2": "Apri e chiudi i turni, con entrate e uscite di cassa e conteggio alla chiusura",
+    "point3": "Metti in attesa i carrelli, rimborsa le vendite e ristampa gli scontrini",
+    "point4": "Configura casse, terminali di pagamento e PIN dei responsabili"
+  },
+  "fiscal": {
+    "title": "Fiscale/Fattura elettronica",
+    "description": "Registra automaticamente scontrini e fatture presso l'autorità fiscale (CIS).",
+    "point1": "Ogni scontrino riceve il suo NIVF, il suo NSLF e un codice QR di verifica",
+    "point2": "Le vendite alle aziende possono essere inviate anche come fattura elettronica",
+    "point3": "Le fatture, come quelle del noleggio auto, vengono registrate all'emissione",
+    "point4": "Il tuo certificato e il registratore di cassa (TCR) in un unico posto"
+  }
+}
