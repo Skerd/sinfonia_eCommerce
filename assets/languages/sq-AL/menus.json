@@ -1,5 +1,6 @@
 {
   "eCommerce": {
+    "setup": {"product": "Shtoni produktin tuaj të parë", "shipping": "Shtoni ku dërgoni", "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit."},
     "title": "eCommerce",
     "pos": {
       "title": "Pika e Shitjes"

@@ -1,5 +1,6 @@
 {
   "eCommerce": {
+    "setup": {"product": "Erstes Produkt hinzufügen", "shipping": "Liefergebiete erfassen", "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers."},
     "title": "E-Commerce",
     "pos": {
       "title": "Point of Sale"

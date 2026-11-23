@@ -22,7 +22,8 @@ import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {REVIEWS_REQUEST, reviewsRequestBody} from "./productRequest.ts";
 
 const MY_ORDERS_REQUEST: HttpRequest = {method: "POST", url: "/api/eCommerce/productOrder/my"};
-const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/productReview"};
+// The buyer's own review route: on the portal it finds the order at its seller and writes the review there (D178)
+const CREATE_REVIEW_REQUEST: HttpRequest = {method: "PUT", url: "/api/eCommerce/productReview/createMine"};
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/product/reviewsSection.tsx";
 
 const REVIEWABLE_PAYMENT_STATUSES = new Set(["paid", "partially_refunded"]);

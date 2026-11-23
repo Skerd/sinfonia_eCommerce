@@ -1,5 +1,6 @@
 {
   "eCommerce": {
+    "setup": {"product": "Aggiungi il tuo primo prodotto", "shipping": "Indica dove consegni", "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente."},
     "title": "e-commerce",
     "pos": {
       "title": "Punto di vendita"
