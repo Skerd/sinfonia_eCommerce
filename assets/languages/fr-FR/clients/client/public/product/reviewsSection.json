@@ -7,6 +7,7 @@
   "countOne": "1 avis",
   "empty": "Pas encore d'avis.",
   "writeTitle": "Donnez votre avis sur votre achat",
+  "reviewed": "Vous avez évalué ce produit.",
   "ratingLabel": "Votre note",
   "starsOption": "{count} étoiles sur 5",
   "titleLabel": "Titre (facultatif)",

@@ -7,6 +7,7 @@
   "countOne": "1 recensione",
   "empty": "Ancora nessuna recensione.",
   "writeTitle": "Recensisci il tuo acquisto",
+  "reviewed": "Hai recensito questo prodotto.",
   "ratingLabel": "Il tuo voto",
   "starsOption": "{count} stelle su 5",
   "titleLabel": "Titolo (facoltativo)",

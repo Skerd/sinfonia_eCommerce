@@ -37,6 +37,8 @@ type ReviewsSectionProps = WithLanguageType & {
 function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompanyId}: ReviewsSectionProps) {
     const {isAuthenticated: signedIn} = usePortalSession();
     const [reviewableOrderId, setReviewableOrderId] = useState<string | null>(null);
+    // Every paid line with this product already carries the buyer's review: say so instead of offering the form
+    const [reviewedAll, setReviewedAll] = useState(false);
     const [rating, setRating] = useState(5);
     const [title, setTitle] = useState("");
     const [comment, setComment] = useState("");
@@ -51,19 +53,24 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
     const total = reviewsRequest.data?.total ?? 0;
     const average = reviewsRequest.data?.ratingAverage;
 
-    // A signed-in buyer can review when they have a paid order containing this product
+    // A signed-in buyer can review when a paid order of theirs has this product on a line they have not reviewed (TD-F147)
     const [ordersCount, setOrdersCount] = useState(0);
     useEffect(() => {
         if (signedIn) setOrdersCount((count) => count + 1);
     }, [signedIn, productId]);
     useHttpRequest<{data: BuyerProductOrder[]}>(MY_ORDERS_REQUEST, {limit: 50}, ordersCount, true, {
         success: (response) => {
-            const match = (response.data ?? []).find(order =>
+            const paid = (response.data ?? []).filter(order =>
                 REVIEWABLE_PAYMENT_STATUSES.has(order.paymentStatus) && order.items?.some(item => item.product?._id === productId),
             );
-            setReviewableOrderId(match?._id ?? null);
+            const open = paid.find(order => order.items?.some(item => item.product?._id === productId && !item.reviewed));
+            setReviewableOrderId(open?._id ?? null);
+            setReviewedAll(paid.length > 0 && !open);
         },
-        error: () => setReviewableOrderId(null),
+        error: () => {
+            setReviewableOrderId(null);
+            setReviewedAll(false);
+        },
     });
 
     const [reviewCount, setReviewCount] = useState(0);
@@ -78,8 +85,9 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
             toast.success(resolveLanguageKey("thanks"));
             setTitle("");
             setComment("");
-            // One review per order line: the same order can't be reviewed again
+            // One review per order line: ask again, so another paid order with the product is offered, or the note shown
             setReviewableOrderId(null);
+            setOrdersCount((count) => count + 1);
             load();
         },
         error: (err) => handleError(err, {context: "Reviews", showToast: true, fallbackMessage: resolveLanguageKey("submitError")}),
@@ -110,6 +118,7 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
                         <p className="text-muted-foreground">{resolveLanguageKey("empty")}</p>
                     )}
 
+                    {reviewedAll && <p className="text-sm text-muted-foreground">{resolveLanguageKey("reviewed")}</p>}
                     {reviewableOrderId && (
                         <form onSubmit={submitReview} className="mt-2 flex flex-col gap-4 rounded-2xl bg-muted p-5">
                             <p className="font-semibold">{resolveLanguageKey("writeTitle")}</p>
