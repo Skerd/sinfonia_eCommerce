@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Produktbewertungen",
-  "description": "Bewertungen für bezahlte Aufträge erstellen, bearbeiten und moderieren.",
+  "description": "Was Kunden über die gekauften Produkte geschrieben haben.",
   "help": {
     "ariaLabel": "Über Produktbewertungen",
     "title": "Über Produktbewertungen",
@@ -11,7 +11,7 @@
         "title": "Jede Bewertung",
         "items": [
           "Nur der Kunde, der eine Bestellung bezahlt hat, kann ihre Produkte bewerten, einmal pro Produkt und Bestellung. Kassenverkäufe können nicht bewertet werden.",
-          "Note (1 bis 5), Titel und Kommentar lassen sich später ändern; Bestellung und Produkt nicht.",
+          "Note (1 bis 5), Titel und Kommentar kann nur der Kunde ändern, der die Bewertung geschrieben hat; Bestellung und Produkt nie.",
           "Nur eine Administratorin oder ein Administrator kann eine Bewertung löschen; sie fällt dann aus der Note des Produkts.",
           "Bewertungen Ihrer Dienstleistungen sind eine eigene Liste, unter Bewertungen im Marktplatz."
         ]

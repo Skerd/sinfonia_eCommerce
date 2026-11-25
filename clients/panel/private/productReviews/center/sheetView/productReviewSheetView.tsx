@@ -1,5 +1,6 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
@@ -8,6 +9,7 @@ import type {DeleteResponse} from "armonia/src/modules/core/types/shared.types.t
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 
 function productReviewEditPath(review: {_id: string; title?: string}) {
     const params = new URLSearchParams();
@@ -40,6 +42,7 @@ function ProductReviewSheetView({
         entityProp ?? {_id: fetchId},
     );
     const access = useAccess("productReviews");
+    const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const viewConfig = useViewConfig("productReviews", "sheet");
 
     useEffect(() => {
@@ -70,6 +73,8 @@ function ProductReviewSheetView({
             headerTitle={<SheetNameTitle name={reviewName} code={review.order?.orderNumber} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
             access={access}
             hideActions={hideActions}
+            // Only the buyer who wrote a review may change its words (the update route refuses anyone else).
+            hideEdit={review.reviewer?._id !== currentUserId}
             editPath={productReviewEditPath({
                 _id: entityId,
                 title: typeof sheetData.title === "string" ? sheetData.title : undefined,

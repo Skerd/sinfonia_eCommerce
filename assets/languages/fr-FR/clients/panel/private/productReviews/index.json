@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Avis sur les produits",
-  "description": "Créer et modifier les avis des commandes payées, puis les modérer.",
+  "description": "Ce que les clients ont écrit sur les produits achetés.",
   "help": {
     "ariaLabel": "À propos des avis sur les produits",
     "title": "À propos des avis sur les produits",
@@ -11,7 +11,7 @@
         "title": "Chaque avis",
         "items": [
           "Seul le client qui a payé une commande peut noter ses produits, une fois par produit et par commande. Les ventes en caisse ne peuvent pas être notées.",
-          "La note (de 1 à 5), le titre et le commentaire peuvent être modifiés ensuite ; la commande et le produit, non.",
+          "Seul le client qui a écrit un avis peut en modifier la note (de 1 à 5), le titre ou le commentaire ; la commande et le produit, jamais.",
           "Seul un administrateur peut supprimer un avis, qui sort alors de la note du produit.",
           "Les avis sur vos services sont une liste à part, dans Avis du Marketplace."
         ]

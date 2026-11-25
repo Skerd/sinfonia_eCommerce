@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Product reviews",
-  "description": "Create and edit reviews for paid orders, and moderate them.",
+  "description": "What customers wrote about the products they bought.",
   "help": {
     "ariaLabel": "About product reviews",
     "title": "About product reviews",
@@ -11,7 +11,7 @@
         "title": "Each review",
         "items": [
           "Only the customer who paid for an order can review its products, once per product per order. Till sales can't be reviewed.",
-          "The rating (1 to 5), title and comment can be edited later; the order and product can't.",
+          "Only the customer who wrote a review can change its rating (1 to 5), title or comment; the order and product never change.",
           "Only an administrator can delete a review, which takes it out of the product's rating.",
           "Reviews of your services are a separate list, under Reviews in Marketplace."
         ]

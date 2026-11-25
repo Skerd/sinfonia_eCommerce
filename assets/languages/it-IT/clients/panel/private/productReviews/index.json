@@ -1,7 +1,7 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/productReviews/index.tsx",
   "title": "Recensioni di prodotti",
-  "description": "Crea e modifica le recensioni degli ordini pagati, poi moderale.",
+  "description": "Cosa hanno scritto i clienti sui prodotti acquistati.",
   "help": {
     "ariaLabel": "Informazioni sulle recensioni di prodotti",
     "title": "Informazioni sulle recensioni di prodotti",
@@ -11,7 +11,7 @@
         "title": "Ogni recensione",
         "items": [
           "Solo il cliente che ha pagato un ordine può recensirne i prodotti, una volta per prodotto e ordine. Le vendite alla cassa non si recensiscono.",
-          "Il voto (da 1 a 5), il titolo e il commento si possono modificare dopo; l'ordine e il prodotto no.",
+          "Solo il cliente che ha scritto una recensione può modificarne il voto (da 1 a 5), il titolo o il commento; l'ordine e il prodotto mai.",
           "Solo un amministratore può eliminare una recensione, che esce così dal voto del prodotto.",
           "Le recensioni dei tuoi servizi sono un elenco a parte, in Recensioni del Marketplace."
         ]

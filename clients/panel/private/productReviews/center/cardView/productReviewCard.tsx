@@ -77,6 +77,7 @@ function ProductReviewCard({
     innerRef,
 }: ProductReviewCardProps) {
     const languageCode = useSelector((state: RootState) => state.language.languageCode);
+    const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     return (
         <EntityCard
             resource="productReviews"
@@ -88,6 +89,8 @@ function ProductReviewCard({
             hideActions={hideActions}
             sheetOnly={sheetOnly}
             editPath={productReviewEditPath}
+            // Only the buyer who wrote a review may change its words (the update route refuses anyone else).
+            hideEdit={(row) => row.reviewer?._id !== currentUserId}
             Sheet={ProductReviewSheetView}
             sheetEntityProp="entity"
             deleteUrl="/api/eCommerce/productReview"
