@@ -13,6 +13,7 @@
   "addressError": "Could not save the address",
   "shippingError": "Could not select the shipping option",
   "paymentMethodError": "That payment method isn't available",
+  "cardComingSoon": "Card payment is coming soon.",
   "loading": "Loading checkout",
   "emptyTitle": "Nothing to check out",
   "browse": "Browse products",

@@ -698,6 +698,7 @@
       "notes": "Shënime",
       "orderNumber": "Numri i porosisë",
       "paymentStatus": "Statusi i pagesës",
+      "paymentMethod": "Metoda e pagesës",
       "phone": "Telefoni",
       "productorders": "Porositë e produkteve",
       "shippingAddress": "Adresa e transportit",

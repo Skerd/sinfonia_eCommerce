@@ -20,7 +20,7 @@
         "items": [
           "Approva o Rifiuta. Approvando puoi fissare l'importo del rimborso. Il cliente viene avvisato in entrambi i casi.",
           "Segna come ricevuto quando la merce è tornata: gli articoli resi o cambiati rientrano in magazzino, dove erano partiti. Una richiesta di solo rimborso non ha nulla da ricevere; segnarla la fa avanzare.",
-          "Completa paga il rimborso, sulla carta per i pagamenti con carta. Uno scambio non restituisce soldi: spedisci il sostituto a parte."
+          "Completa registra il rimborso sull'ordine. Uno scambio non restituisce soldi: spedisci la sostituzione a parte."
         ]
       }
     ]

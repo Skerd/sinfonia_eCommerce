@@ -3,7 +3,8 @@
   "cancel": "Annuler",
   "refund": {
     "title": "Rembourser la commande",
-    "description": "Rembourse le paiement capturé via la passerelle de paiement.",
+    "description": "Enregistre le remboursement sur la commande. Remboursez vous-même le client, en espèces ou par virement ; le crédit de carte cadeau utilisé revient sur la carte cadeau.",
+    "descriptionCard": "Rembourse le paiement par carte sur la carte du client.",
     "amountLabel": "Montant",
     "amountHint": "Laissez vide pour un remboursement complet.",
     "reasonLabel": "Motif",

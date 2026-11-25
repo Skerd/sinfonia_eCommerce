@@ -11,7 +11,7 @@
         "title": "Stati",
         "items": [
           "Ogni ordine ha tre stati: quello dell'ordine, del pagamento e della spedizione. Un ordine può essere pagato ma non ancora spedito, oppure spedito e rimborsato in parte.",
-          "I pagamenti con carta arrivano già pagati. Gli ordini in contrassegno o con bonifico arrivano non pagati: usa Segna come pagato quando arrivano i soldi."
+          "Gli ordini in contrassegno o con bonifico arrivano non pagati: usa Segna come pagato quando arrivano i soldi."
         ]
       },
       {
@@ -20,7 +20,7 @@
           "Conferma ordine comunica al cliente che l'hai ricevuto; Contrassegna come in elaborazione indica che lo stai preparando.",
           "Spedisci l'ordine spedisce tutto ciò che non è ancora partito, con il corriere e il numero di tracciamento che riceve il cliente. Per spedire in più pacchi, creali in Evasioni.",
           "Annulla l'ordine rimette in vendita la merce che l'ordine aveva riservato. Non è possibile dopo la spedizione, e un ordine pagato va prima rimborsato.",
-          "Rimborsa ordine restituisce tutto o parte dell'importo; un pagamento con carta torna sulla carta. Un rimborso totale disattiva anche le carte regalo e i download dati dall'ordine."
+          "Rimborsa ordine registra tutto o parte dell'importo restituito al cliente. Un rimborso totale disattiva anche le carte regalo e i download dati dall'ordine."
         ]
       },
       {
@@ -50,6 +50,12 @@
         "partially_refunded": "Parzialmente rimborsato",
         "refunded": "Rimborsato",
         "voided": "Annullato"
+      },
+      "paymentMethod": {
+        "stripe": "Carta",
+        "paypal": "PayPal",
+        "cod": "Contrassegno",
+        "bank_transfer": "Bonifico bancario"
       },
       "fulfillmentStatus": {
         "unfulfilled": "Non evaso",
@@ -96,6 +102,7 @@
       "country": "Paese di fatturazione"
     },
     "paymentStatus": "Pagamento",
+    "paymentMethod": "Metodo di pagamento",
     "fulfillmentStatus": "Evasione",
     "status": "Stato",
     "appliedDiscounts": {

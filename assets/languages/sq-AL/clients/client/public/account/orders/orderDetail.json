@@ -6,6 +6,8 @@
   "placedTitle": "Faleminderit — porosia juaj u mor.",
   "placedPaid": "Pagesa u mor. Do t'ju njoftojmë me email për ecurinë e porosisë.",
   "placedPayLater": "Pagesa bëhet në dorëzim ose me transfertë bankare. Do t'ju njoftojmë me email për ecurinë.",
+  "placedPayByTransfer": "Paguani me transfertë bankare me të dhënat më poshtë. Do t'ju shkruajmë me email ndërsa porosia ecën përpara.",
+  "placedPayOnDelivery": "Paguani kur të mbërrijë porosia. Do t'ju shkruajmë me email ndërsa porosia ecën përpara.",
   "title": "Porosia {number}",
   "placedOn": "Bërë më {date}",
   "itemsTitle": "Artikujt",
@@ -40,5 +42,16 @@
   "giftCard": "Kartë dhuratë",
   "total": "Totali",
   "siblingsNotice": "Pagesa juaj krijoi edhe {count} porosi të tjera nga shitës të tjerë. Shikoni të gjitha porositë në llogarinë tuaj.",
-  "viewAllOrders": "Shiko të gjitha porositë"
+  "viewAllOrders": "Shiko të gjitha porositë",
+  "siblingsPayEachSeller": "Çdo shitës paguhet veçmas: hapni çdo porosi për të parë ku ta paguani.",
+  "bankTransfer": {
+    "title": "Paguani me transfertë bankare",
+    "accountHolder": "Mbajtësi i llogarisë",
+    "iban": "IBAN",
+    "bic": "BIC / SWIFT",
+    "bank": "Banka",
+    "amount": "Shuma",
+    "reference": "Referenca e pagesës",
+    "note": "Vendosni numrin e porosisë si referencë të pagesës, që shitësi ta njohë pagesën tuaj. Porosia përgatitet sapo të mbërrijnë paratë."
+  }
 }

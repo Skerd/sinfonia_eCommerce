@@ -25,6 +25,7 @@
   "orderNumber": "Numero dell'ordine",
   "status": "Stato",
   "paymentStatus": "Pagamento",
+  "paymentMethod": "Metodo di pagamento",
   "fulfillmentStatus": "Evasione",
   "customer": "Cliente",
   "company": "Azienda",
@@ -122,6 +123,12 @@
     "partially_refunded": "Parzialmente rimborsato",
     "refunded": "Rimborsato",
     "voided": "Annullato"
+  },
+  "productOrderPaymentMethod": {
+    "stripe": "Carta",
+    "paypal": "PayPal",
+    "cod": "Contrassegno",
+    "bank_transfer": "Bonifico bancario"
   },
   "productOrderStatus": {
     "cancelled": "Annullato",

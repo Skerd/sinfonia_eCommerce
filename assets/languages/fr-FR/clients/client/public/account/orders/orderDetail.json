@@ -6,6 +6,8 @@
   "placedTitle": "Merci, votre commande est enregistrée.",
   "placedPaid": "Votre paiement a été reçu. Nous vous tiendrons informé par e-mail.",
   "placedPayLater": "Le paiement se fait à la livraison ou par virement. Nous vous tiendrons informé par e-mail.",
+  "placedPayByTransfer": "Payez par virement bancaire avec les coordonnées ci-dessous. Nous vous écrirons à chaque étape de votre commande.",
+  "placedPayOnDelivery": "Payez à la réception de votre commande. Nous vous écrirons à chaque étape de votre commande.",
   "title": "Commande {number}",
   "placedOn": "Passée le {date}",
   "itemsTitle": "Articles",
@@ -40,5 +42,16 @@
   "giftCard": "Carte cadeau",
   "total": "Total",
   "siblingsNotice": "Votre paiement a également créé {count} autre(s) commande(s) auprès d'autres vendeurs. Consultez toutes vos commandes dans votre compte.",
-  "viewAllOrders": "Voir toutes les commandes"
+  "viewAllOrders": "Voir toutes les commandes",
+  "siblingsPayEachSeller": "Chaque vendeur est payé séparément : ouvrez chaque commande pour voir où la payer.",
+  "bankTransfer": {
+    "title": "Payer par virement bancaire",
+    "accountHolder": "Titulaire du compte",
+    "iban": "IBAN",
+    "bic": "BIC / SWIFT",
+    "bank": "Banque",
+    "amount": "Montant",
+    "reference": "Référence du paiement",
+    "note": "Indiquez le numéro de commande comme référence du paiement pour que le vendeur reconnaisse votre virement. Votre commande est préparée dès réception de l'argent."
+  }
 }

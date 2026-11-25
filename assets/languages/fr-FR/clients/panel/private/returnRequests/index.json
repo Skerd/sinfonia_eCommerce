@@ -20,7 +20,7 @@
         "items": [
           "Approuver ou Refuser. En approuvant, vous pouvez fixer le montant remboursé. Le client est prévenu dans les deux cas.",
           "Marquer reçu quand les articles sont revenus : les articles retournés ou échangés reviennent en stock, dans l'entrepôt d'où ils sont partis. Une demande de simple remboursement n'a rien à recevoir ; la marquer la fait avancer.",
-          "Terminer verse le remboursement, sur la carte pour les paiements par carte. Un échange ne rembourse rien : envoyez le remplacement à part."
+          "Terminer enregistre le remboursement sur la commande. Un échange ne rembourse rien : envoyez le remplacement à part."
         ]
       }
     ]

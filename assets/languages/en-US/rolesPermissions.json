@@ -698,6 +698,7 @@
       "notes": "Notes",
       "orderNumber": "Order number",
       "paymentStatus": "Payment status",
+      "paymentMethod": "Payment method",
       "phone": "Phone",
       "productorders": "Product orders",
       "shippingAddress": "Shipping address",

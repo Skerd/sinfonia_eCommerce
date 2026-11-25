@@ -13,6 +13,7 @@
   "addressError": "Impossible d'enregistrer l'adresse",
   "shippingError": "Impossible de choisir la livraison",
   "paymentMethodError": "Ce moyen de paiement n'est pas disponible",
+  "cardComingSoon": "Le paiement par carte arrive bientôt.",
   "loading": "Chargement du paiement",
   "emptyTitle": "Rien à payer",
   "browse": "Voir les produits",

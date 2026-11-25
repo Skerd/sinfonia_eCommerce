@@ -3,7 +3,8 @@
   "cancel": "Anulo",
   "refund": {
     "title": "Rimburso porosinë",
-    "description": "Rimburson pagesën e kapur përmes portës së pagesës.",
+    "description": "Regjistron rimbursimin te porosia. Kthejini vetë paratë klientit, në dorë ose me transfertë bankare; krediti i kartës dhuratë që përdori porosia kthehet në kartën dhuratë.",
+    "descriptionCard": "Rimburson pagesën me kartë në kartën e klientit.",
     "amountLabel": "Shuma",
     "amountHint": "Lëre bosh për rimbursim të plotë.",
     "reasonLabel": "Arsyeja",

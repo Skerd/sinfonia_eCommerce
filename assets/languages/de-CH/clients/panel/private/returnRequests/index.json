@@ -20,7 +20,7 @@
         "items": [
           "Genehmigen oder Ablehnen. Beim Genehmigen können Sie den Erstattungsbetrag festlegen. Der Kunde wird in beiden Fällen informiert.",
           "«Als erhalten markieren», wenn die Ware zurück ist: Zurückgegebene oder umgetauschte Artikel kommen wieder in den Bestand des Lagers, aus dem sie kamen. Eine reine Erstattung hat nichts zu empfangen; das Markieren bringt sie weiter.",
-          "Abschliessen zahlt die Erstattung aus, bei Kartenzahlung auf die Karte. Ein Umtausch zahlt nichts zurück: Senden Sie den Ersatz separat."
+          "Abschliessen erfasst die Erstattung auf der Bestellung. Ein Umtausch zahlt nichts zurück: Senden Sie den Ersatz separat."
         ]
       }
     ]

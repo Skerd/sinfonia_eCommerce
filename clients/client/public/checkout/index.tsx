@@ -29,6 +29,7 @@ import {confirmCheckoutFormSchema} from "armonia/src/modules/eCommerce/api/eComm
 import type {CheckoutPaymentMethodType} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkoutPayment.form.validator.ts";
 import type {BuyerProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {CARD_PAYMENTS_AVAILABLE} from "armonia/src/modules/finance/helpers/cardPaymentAvailability.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
@@ -439,11 +440,8 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
 
     const stepIndex = STEPS.indexOf(step);
     const fullyCovered = checkout != null && checkout.grandTotal <= 0 && (checkout.giftCard?.amount ?? 0) > 0;
-    const paymentMethods: {id: CheckoutPaymentMethodType; available: boolean}[] = [
-        {id: "stripe", available: Boolean(config?.stripePublishableKey)},
-        {id: "cod", available: true},
-        {id: "bank_transfer", available: true},
-    ];
+    // The server says which ways this checkout can be paid (D190); a card also needs the processor's key here
+    const paymentMethods = (checkout?.paymentMethods ?? []).filter((method) => method !== "stripe" || Boolean(config?.stripePublishableKey));
 
     const summary = (
         <div className="flex flex-col gap-4">
@@ -756,27 +754,30 @@ function CheckoutPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <RadioGroup
                                     value={checkout.paymentMethod ?? ""}
                                     onValueChange={(value) => {
-                                        const method = paymentMethods.find((candidate) => candidate.id === value);
-                                        if (method) void selectPaymentMethod(method.id);
+                                        const method = paymentMethods.find((candidate) => candidate === value);
+                                        if (method) void selectPaymentMethod(method);
                                     }}
                                     className="gap-3"
                                 >
-                                {paymentMethods.filter(method => method.available).map(method => (
+                                {paymentMethods.map(method => (
                                     <label
-                                        key={method.id}
+                                        key={method}
                                         className={cn(
                                             "flex cursor-pointer items-center gap-3 rounded-xl border p-4 transition-colors",
-                                            checkout.paymentMethod === method.id ? "border-foreground bg-muted/60" : "border-border hover:border-foreground/40",
+                                            checkout.paymentMethod === method ? "border-foreground bg-muted/60" : "border-border hover:border-foreground/40",
                                         )}
                                     >
-                                        <RadioGroupItem value={method.id} />
+                                        <RadioGroupItem value={method} />
                                         <span className="flex flex-col">
-                                            <span className="font-medium">{resolveLanguageKey(`methods.${method.id}.label`)}</span>
-                                            <span className="text-sm text-muted-foreground">{resolveLanguageKey(`methods.${method.id}.hint`)}</span>
+                                            <span className="font-medium">{resolveLanguageKey(`methods.${method}.label`)}</span>
+                                            <span className="text-sm text-muted-foreground">{resolveLanguageKey(`methods.${method}.hint`)}</span>
                                         </span>
                                     </label>
                                 ))}
                                 </RadioGroup>
+                                {!CARD_PAYMENTS_AVAILABLE && (
+                                    <p className="mt-1 text-sm text-muted-foreground">{resolveLanguageKey("cardComingSoon")}</p>
+                                )}
                             </fieldset>
 
                             {checkout.paymentMethod === "stripe" && checkout.stripeClientSecret && stripePromise && (

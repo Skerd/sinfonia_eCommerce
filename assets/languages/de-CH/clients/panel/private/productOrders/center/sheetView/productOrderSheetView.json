@@ -25,6 +25,7 @@
   "orderNumber": "Bestellnummer",
   "status": "Status",
   "paymentStatus": "Zahlung",
+  "paymentMethod": "Zahlungsart",
   "fulfillmentStatus": "Lieferung",
   "customer": "Kunde",
   "company": "Firma",
@@ -122,6 +123,12 @@
     "partially_refunded": "Teilweise erstattet",
     "refunded": "Erstattet",
     "voided": "Storniert"
+  },
+  "productOrderPaymentMethod": {
+    "stripe": "Karte",
+    "paypal": "PayPal",
+    "cod": "Barzahlung bei Lieferung",
+    "bank_transfer": "Banküberweisung"
   },
   "productOrderStatus": {
     "cancelled": "Storniert",

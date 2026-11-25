@@ -20,7 +20,7 @@
         "items": [
           "Approve or Reject. Approving can set the refund amount. The customer is told either way.",
           "Mark received when the goods are back: returned or exchanged items go back into stock in the warehouse they left from. A refund-only request has nothing to receive; marking it moves it on.",
-          "Complete pays the refund, back to the card for card payments. An exchange pays nothing back: send the replacement separately."
+          "Complete records the refund on the order. An exchange pays nothing back: send the replacement separately."
         ]
       }
     ]

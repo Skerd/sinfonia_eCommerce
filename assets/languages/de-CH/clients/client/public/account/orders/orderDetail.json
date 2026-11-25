@@ -6,6 +6,8 @@
   "placedTitle": "Danke – Ihre Bestellung ist eingegangen.",
   "placedPaid": "Ihre Zahlung ist eingegangen. Wir informieren Sie per E-Mail über den Fortschritt.",
   "placedPayLater": "Die Zahlung erfolgt bei Lieferung oder per Überweisung. Wir informieren Sie per E-Mail über den Fortschritt.",
+  "placedPayByTransfer": "Bezahlen Sie per Banküberweisung mit den Angaben unten. Wir informieren Sie per E-Mail über den Fortschritt Ihrer Bestellung.",
+  "placedPayOnDelivery": "Bezahlen Sie, wenn Ihre Bestellung ankommt. Wir informieren Sie per E-Mail über den Fortschritt Ihrer Bestellung.",
   "title": "Bestellung {number}",
   "placedOn": "Aufgegeben am {date}",
   "itemsTitle": "Artikel",
@@ -40,5 +42,16 @@
   "giftCard": "Geschenkkarte",
   "total": "Gesamt",
   "siblingsNotice": "Ihre Zahlung hat zudem {count} weitere Bestellung(en) bei anderen Verkäufern erstellt. Alle Bestellungen sehen Sie in Ihrem Konto.",
-  "viewAllOrders": "Alle Bestellungen anzeigen"
+  "viewAllOrders": "Alle Bestellungen anzeigen",
+  "siblingsPayEachSeller": "Jeder Verkäufer wird separat bezahlt: Öffnen Sie jede Bestellung, um zu sehen, wohin Sie zahlen.",
+  "bankTransfer": {
+    "title": "Per Banküberweisung bezahlen",
+    "accountHolder": "Kontoinhaber",
+    "iban": "IBAN",
+    "bic": "BIC / SWIFT",
+    "bank": "Bank",
+    "amount": "Betrag",
+    "reference": "Zahlungsreferenz",
+    "note": "Geben Sie die Bestellnummer als Zahlungsreferenz an, damit der Verkäufer Ihre Zahlung zuordnen kann. Ihre Bestellung wird vorbereitet, sobald das Geld eingeht."
+  }
 }

@@ -13,6 +13,7 @@
   "addressError": "Impossibile salvare l'indirizzo",
   "shippingError": "Impossibile scegliere la spedizione",
   "paymentMethodError": "Questo metodo di pagamento non è disponibile",
+  "cardComingSoon": "Il pagamento con carta arriverà presto.",
   "loading": "Caricamento checkout",
   "emptyTitle": "Niente da acquistare",
   "browse": "Sfoglia i prodotti",

@@ -11,7 +11,7 @@
         "title": "Statuses",
         "items": [
           "Each order has three statuses: the order, its payment and its delivery. An order can be paid but not shipped yet, or shipped and partly refunded.",
-          "Card payments arrive paid. Cash on delivery and bank transfer orders arrive unpaid: use Mark as paid when the money comes in."
+          "Cash on delivery and bank transfer orders arrive unpaid: use Mark as paid when the money comes in."
         ]
       },
       {
@@ -20,7 +20,7 @@
           "Confirm order tells the customer you have it; Mark as processing shows you are preparing it.",
           "Ship order sends everything not shipped yet, with the carrier and tracking number the customer receives. To send several parcels, create them under Fulfillments.",
           "Cancel order puts the stock it reserved back on sale. It isn't possible once the order has shipped, and a paid order must be refunded first.",
-          "Refund order returns all or part of the money; a card payment goes back to the card. A full refund also disables the gift cards and downloads the order gave out."
+          "Refund order records all or part of the money as paid back to the customer. A full refund also disables the gift cards and downloads the order gave out."
         ]
       },
       {
@@ -50,6 +50,12 @@
         "partially_refunded": "Partially refunded",
         "refunded": "Refunded",
         "voided": "Voided"
+      },
+      "paymentMethod": {
+        "stripe": "Card",
+        "paypal": "PayPal",
+        "cod": "Cash on delivery",
+        "bank_transfer": "Bank transfer"
       },
       "fulfillmentStatus": {
         "unfulfilled": "Unfulfilled",
@@ -96,6 +102,7 @@
       "country": "Billing country"
     },
     "paymentStatus": "Payment",
+    "paymentMethod": "Payment method",
     "fulfillmentStatus": "Fulfillment",
     "status": "Status",
     "appliedDiscounts": {

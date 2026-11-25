@@ -112,6 +112,7 @@ function AllProductOrders({resolveLanguageKey}: WithLanguageType) {
                         <RefundProductOrderAction
                             orderId={entity._id}
                             displayName={entity.orderNumber}
+                            paymentMethod={entity.paymentMethod}
                             openAlert
                             url="/api/eCommerce/productOrder/refund"
                             onSuccess={(fullRefund: boolean) => {

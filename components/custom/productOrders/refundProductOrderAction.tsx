@@ -21,6 +21,8 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ActionMessage} from "armonia/src/modules/core/types/shared.types.ts";
 import type {RefundProductOrderFormType} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/refundProductOrder.form.validator.ts";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
+import type {CheckoutPaymentMethod} from "armonia/src/modules/eCommerce/api/eCommerce/private/checkout/checkout.dto.ts";
+import {isCardPaymentMethod} from "armonia/src/modules/eCommerce/helpers/orderPayment.ts";
 
 function bindRefundAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): ResolveLanguageKeyImpl {
     return (key, returnUndefinedIfNeeded = false) => {
@@ -34,6 +36,8 @@ function bindRefundAxiosLanguageKey(resolveLanguageKey: ResolveLanguageKey): Res
 type RefundProductOrderActionPublicProps = {
     orderId: string;
     displayName?: string;
+    /** How the order was paid: a card payment goes back to the card, any other is paid back by staff and recorded. */
+    paymentMethod?: CheckoutPaymentMethod;
     openAlert?: boolean;
     url?: string;
     resolveLanguageKey: ResolveLanguageKey;
@@ -46,6 +50,7 @@ type RefundProductOrderActionProps = WithAxiosType<ActionMessage> & RefundProduc
 function RefundProductOrderAction({
     orderId,
     displayName,
+    paymentMethod,
     openAlert,
     resolveLanguageKey,
     innerRef,
@@ -97,7 +102,7 @@ function RefundProductOrderAction({
                         {displayName ? ` — ${displayName}` : ""}
                     </AlertDialogTitle>
                     <AlertDialogDescription>
-                        {resolveLanguageKey("refund.description")}
+                        {resolveLanguageKey(isCardPaymentMethod(paymentMethod) ? "refund.descriptionCard" : "refund.description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <div className="flex flex-col py-4 gap-y-3">

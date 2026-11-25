@@ -137,6 +137,7 @@ function ProductOrderSheetView({
                 <RefundProductOrderAction
                     orderId={String(asOrder._id)}
                     displayName={asOrder.orderNumber}
+                    paymentMethod={asOrder.paymentMethod}
                     openAlert
                     url="/api/eCommerce/productOrder/refund"
                     onSuccess={(fullRefund: boolean) => {

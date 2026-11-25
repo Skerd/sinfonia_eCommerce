@@ -11,7 +11,7 @@
         "title": "Statuts",
         "items": [
           "Chaque commande a trois statuts : celui de la commande, du paiement et de la livraison. Une commande peut être payée mais pas encore expédiée, ou expédiée et remboursée en partie.",
-          "Les paiements par carte arrivent payés. Les commandes en paiement à la livraison ou par virement arrivent impayées : utilisez Marquer comme payé quand l'argent arrive."
+          "Les commandes en paiement à la livraison ou par virement arrivent impayées : utilisez Marquer comme payé quand l'argent arrive."
         ]
       },
       {
@@ -20,7 +20,7 @@
           "Confirmer la commande prévient le client que vous l'avez reçue ; Marquer en préparation indique que vous la préparez.",
           "Expédier la commande envoie tout ce qui n'est pas encore parti, avec le transporteur et le numéro de suivi que reçoit le client. Pour envoyer plusieurs colis, créez-les dans Expéditions.",
           "Annuler la commande remet en vente le stock qu'elle avait réservé. Ce n'est plus possible une fois la commande expédiée, et une commande payée doit d'abord être remboursée.",
-          "Rembourser la commande rend tout ou partie de l'argent ; un paiement par carte revient sur la carte. Un remboursement total désactive aussi les cartes cadeaux et les téléchargements donnés par la commande."
+          "Rembourser la commande enregistre tout ou partie de l'argent rendu au client. Un remboursement total désactive aussi les cartes cadeaux et les téléchargements donnés par la commande."
         ]
       },
       {
@@ -50,6 +50,12 @@
         "partially_refunded": "Partiellement remboursé",
         "refunded": "Remboursé",
         "voided": "Annulée"
+      },
+      "paymentMethod": {
+        "stripe": "Carte",
+        "paypal": "PayPal",
+        "cod": "Paiement à la livraison",
+        "bank_transfer": "Virement bancaire"
       },
       "fulfillmentStatus": {
         "unfulfilled": "Non expédiée",
@@ -96,6 +102,7 @@
       "country": "Pays de facturation"
     },
     "paymentStatus": "Paiement",
+    "paymentMethod": "Mode de paiement",
     "fulfillmentStatus": "Expédition",
     "status": "Statut",
     "appliedDiscounts": {

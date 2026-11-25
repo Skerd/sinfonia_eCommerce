@@ -13,6 +13,7 @@
   "addressError": "Adresse konnte nicht gespeichert werden",
   "shippingError": "Versandoption konnte nicht gewählt werden",
   "paymentMethodError": "Diese Zahlungsart ist nicht verfügbar",
+  "cardComingSoon": "Kartenzahlung folgt in Kürze.",
   "loading": "Kasse wird geladen",
   "emptyTitle": "Nichts zum Bezahlen",
   "browse": "Produkte ansehen",

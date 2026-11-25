@@ -13,6 +13,7 @@
   "addressError": "Adresa nuk u ruajt",
   "shippingError": "Mënyra e transportit nuk u zgjodh",
   "paymentMethodError": "Kjo mënyrë pagese nuk ofrohet",
+  "cardComingSoon": "Pagesa me kartë vjen së shpejti.",
   "loading": "Po ngarkohet pagesa",
   "emptyTitle": "Asgjë për të paguar",
   "browse": "Shfleto produktet",

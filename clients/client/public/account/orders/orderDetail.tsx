@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import {Link, useParams, useSearchParams} from "react-router-dom";
 import {compose} from "redux";
-import {IconArrowLeft, IconCircleCheck, IconDownload} from "@tabler/icons-react";
+import {IconArrowLeft, IconBuildingBank, IconCircleCheck, IconDownload} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useShopConfig} from "@eCommerceModule/clients/client/public/shared/shopConfigContext.tsx";
@@ -14,6 +15,7 @@ import type {DigitalDelivery} from "armonia/src/modules/eCommerce/api/eCommerce/
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
 import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
+import {formatIban} from "armonia/src/modules/eCommerce/helpers/orderPayment.ts";
 
 const LANGUAGE_PATH = "src/modules/eCommerce/clients/client/public/account/orders/orderDetail.tsx";
 
@@ -56,6 +58,21 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
 
     const address = order.shippingAddress;
     const paidLater = order.paymentStatus === "unpaid";
+    const placedMessage = !paidLater
+        ? "placedPaid"
+        : order.paymentMethod === "bank_transfer" ? "placedPayByTransfer" : order.paymentMethod === "cod" ? "placedPayOnDelivery" : "placedPayLater";
+    // The seller's account while a bank-transfer order waits for its money (D190); the order number is the reference
+    const transfer = order.bankTransfer;
+    const transferRows = transfer?.iban
+        ? [
+            {key: "accountHolder", value: transfer.holder},
+            {key: "iban", value: formatIban(transfer.iban)},
+            {key: "bic", value: transfer.bic},
+            {key: "bank", value: transfer.bankName},
+            {key: "amount", value: formatMoney(order.grandTotal, order.currency)},
+            {key: "reference", value: order.orderNumber},
+        ].filter((row) => Boolean(row.value))
+        : [];
 
     return (
         <div className="flex flex-col gap-8">
@@ -70,13 +87,16 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
                     <div className="flex flex-col gap-1">
                         <p className="font-display text-xl font-semibold">{resolveLanguageKey("placedTitle")}</p>
                         <p className="text-muted-foreground">
-                            {resolveLanguageKey(paidLater ? "placedPayLater" : "placedPaid")}
+                            {resolveLanguageKey(placedMessage)}
                         </p>
                         {siblingCount > 0 && (
                             <p className="text-muted-foreground">
                                 {resolveLanguageKey("siblingsNotice").replace("{count}", String(siblingCount))}{" "}
                                 <Button asChild variant="link" className="h-auto p-0"><Link to={`${base}/account/orders`}>{resolveLanguageKey("viewAllOrders")}</Link></Button>
                             </p>
+                        )}
+                        {siblingCount > 0 && transferRows.length > 0 && (
+                            <p className="text-muted-foreground">{resolveLanguageKey("siblingsPayEachSeller")}</p>
                         )}
                     </div>
                 </div>
@@ -96,6 +116,24 @@ function OrderDetailPage({resolveLanguageKey}: WithLanguageType) {
 
             <div className="grid items-start gap-8 lg:grid-cols-[1fr_340px]">
                 <div className="flex flex-col gap-8">
+                    {transferRows.length > 0 && (
+                        <section aria-labelledby="shop-order-bank-transfer" className="flex flex-col gap-3 rounded-2xl border border-border p-5">
+                            <h2 id="shop-order-bank-transfer" className="flex items-center gap-2 font-semibold">
+                                <IconBuildingBank className="h-5 w-5" aria-hidden />
+                                {resolveLanguageKey("bankTransfer.title")}
+                            </h2>
+                            <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-[auto_1fr]">
+                                {transferRows.map((row) => (
+                                    <div key={row.key} className="contents">
+                                        <dt className="text-muted-foreground">{resolveLanguageKey(`bankTransfer.${row.key}`)}</dt>
+                                        <dd className={cn("font-medium", row.key === "iban" && "font-mono tabular-nums")}>{row.value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                            <p className="text-sm text-muted-foreground">{resolveLanguageKey("bankTransfer.note")}</p>
+                        </section>
+                    )}
+
                     <section aria-labelledby="shop-order-items">
                         <h2 id="shop-order-items" className="mb-2 font-semibold">{resolveLanguageKey("itemsTitle")}</h2>
                         <ul className="divide-y divide-border border-y border-border">

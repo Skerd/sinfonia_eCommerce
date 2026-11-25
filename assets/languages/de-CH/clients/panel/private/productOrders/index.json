@@ -11,7 +11,7 @@
         "title": "Status",
         "items": [
           "Jede Bestellung hat drei Status: den der Bestellung, der Zahlung und der Lieferung. Eine Bestellung kann bezahlt, aber noch nicht versandt sein, oder versandt und teilweise erstattet.",
-          "Kartenzahlungen kommen bezahlt an. Bestellungen per Nachnahme oder Banküberweisung kommen unbezahlt an: Nutzen Sie «Als bezahlt markieren», sobald das Geld eingeht."
+          "Bestellungen per Nachnahme oder Banküberweisung kommen unbezahlt an: Nutzen Sie «Als bezahlt markieren», sobald das Geld eingeht."
         ]
       },
       {
@@ -20,7 +20,7 @@
           "«Bestellung bestätigen» teilt dem Kunden mit, dass Sie sie erhalten haben; «Als in Bearbeitung markieren» zeigt, dass Sie sie vorbereiten.",
           "«Bestellung versenden» verschickt alles noch nicht Versandte, mit Spediteur und Sendungsnummer, die der Kunde erhält. Für mehrere Pakete erstellen Sie diese unter Lieferungen.",
           "«Auftrag stornieren» gibt den reservierten Bestand wieder zum Verkauf frei. Nach dem Versand geht das nicht mehr, und eine bezahlte Bestellung muss zuerst erstattet werden.",
-          "«Bestellung erstatten» zahlt das Geld ganz oder teilweise zurück; eine Kartenzahlung geht auf die Karte zurück. Eine volle Erstattung sperrt auch die Geschenkkarten und Downloads der Bestellung."
+          "«Bestellung erstatten» erfasst das ganz oder teilweise an den Kunden zurückgezahlte Geld. Eine volle Erstattung sperrt auch die Geschenkkarten und Downloads der Bestellung."
         ]
       },
       {
@@ -50,6 +50,12 @@
         "partially_refunded": "Teilweise erstattet",
         "refunded": "Erstattet",
         "voided": "Storniert"
+      },
+      "paymentMethod": {
+        "stripe": "Karte",
+        "paypal": "PayPal",
+        "cod": "Barzahlung bei Lieferung",
+        "bank_transfer": "Banküberweisung"
       },
       "fulfillmentStatus": {
         "unfulfilled": "Nicht erfüllt",
@@ -96,6 +102,7 @@
       "country": "Land (Rechnung)"
     },
     "paymentStatus": "Zahlung",
+    "paymentMethod": "Zahlungsart",
     "fulfillmentStatus": "Lieferung",
     "status": "Status",
     "appliedDiscounts": {

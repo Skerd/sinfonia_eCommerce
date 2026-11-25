@@ -698,6 +698,7 @@
       "notes": "Notes",
       "orderNumber": "Numéro de commande",
       "paymentStatus": "Statut de paiement",
+      "paymentMethod": "Mode de paiement",
       "phone": "Téléphone",
       "productorders": "Commandes de produits",
       "shippingAddress": "Adresse de livraison",

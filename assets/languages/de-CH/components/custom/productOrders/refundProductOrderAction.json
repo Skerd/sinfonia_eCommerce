@@ -3,7 +3,8 @@
   "cancel": "Abbrechen",
   "refund": {
     "title": "Bestellung erstatten",
-    "description": "Erstattet die erfasste Zahlung über den Zahlungsanbieter.",
+    "description": "Erfasst die Erstattung auf der Bestellung. Zahlen Sie das Geld dem Kunden selbst zurück, bar oder per Banküberweisung; verwendetes Geschenkkartenguthaben geht zurück auf die Geschenkkarte.",
+    "descriptionCard": "Erstattet die Kartenzahlung auf die Karte des Kunden.",
     "amountLabel": "Betrag",
     "amountHint": "Für eine vollständige Rückerstattung leer lassen.",
     "reasonLabel": "Grund",

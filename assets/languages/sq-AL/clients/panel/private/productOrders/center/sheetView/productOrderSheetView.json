@@ -25,6 +25,7 @@
   "orderNumber": "Numri i porosisë",
   "status": "Statusi",
   "paymentStatus": "Pagesa",
+  "paymentMethod": "Metoda e pagesës",
   "fulfillmentStatus": "Përmbushja",
   "customer": "Klienti",
   "company": "Kompania",
@@ -122,6 +123,12 @@
     "partially_refunded": "E rimbursuar pjesërisht",
     "refunded": "E rimbursuar",
     "voided": "E anuluar"
+  },
+  "productOrderPaymentMethod": {
+    "stripe": "Kartë",
+    "paypal": "PayPal",
+    "cod": "Para në dorëzim",
+    "bank_transfer": "Transfertë bankare"
   },
   "productOrderStatus": {
     "cancelled": "Anuluar",

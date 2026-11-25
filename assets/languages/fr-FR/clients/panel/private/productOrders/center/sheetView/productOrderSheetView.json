@@ -25,6 +25,7 @@
   "orderNumber": "Numéro de commande",
   "status": "Statut",
   "paymentStatus": "Paiement",
+  "paymentMethod": "Mode de paiement",
   "fulfillmentStatus": "Expédition",
   "customer": "Client",
   "company": "Entreprise",
@@ -122,6 +123,12 @@
     "partially_refunded": "Partiellement remboursé",
     "refunded": "Remboursé",
     "voided": "Annulée"
+  },
+  "productOrderPaymentMethod": {
+    "stripe": "Carte",
+    "paypal": "PayPal",
+    "cod": "Paiement à la livraison",
+    "bank_transfer": "Virement bancaire"
   },
   "productOrderStatus": {
     "cancelled": "Annulé",

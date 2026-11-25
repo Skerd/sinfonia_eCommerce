@@ -6,6 +6,8 @@ import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {ProductOrder} from "armonia/src/modules/eCommerce/api/eCommerce/private/productOrder/productOrder.dto.ts";
 import {IconRotate} from "@tabler/icons-react";
+import {CARD_PAYMENTS_AVAILABLE} from "armonia/src/modules/finance/helpers/cardPaymentAvailability.ts";
+import {isCardPaymentMethod} from "armonia/src/modules/eCommerce/helpers/orderPayment.ts";
 
 type RefundOrderDropdownProps = WithLanguageType & {
     order: ProductOrder;
@@ -17,7 +19,9 @@ function RefundOrderDropdown({order, onAction, resolveLanguageKey}: RefundOrderD
     const shortcut = "5";
     const {write} = useAccess("productOrders");
 
-    const canRun = !!write?.paymentStatus && ["paid", "partially_refunded"].includes(order.paymentStatus);
+    // A card payment goes back through the card processor, which the platform does not use until cards come (D190)
+    const canRun = !!write?.paymentStatus && ["paid", "partially_refunded"].includes(order.paymentStatus)
+        && (CARD_PAYMENTS_AVAILABLE || !isCardPaymentMethod(order.paymentMethod));
 
     const triggerAction = () => {
         if (!canRun) return;

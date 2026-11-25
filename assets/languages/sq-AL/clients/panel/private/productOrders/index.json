@@ -11,7 +11,7 @@
         "title": "Statuset",
         "items": [
           "Çdo porosi ka tre statuse: të porosisë, të pagesës dhe të dërgesës. Një porosi mund të jetë e paguar por ende e padërguar, ose e dërguar dhe e rimbursuar pjesërisht.",
-          "Pagesat me kartë vijnë të paguara. Porositë me para në dorëzim ose me transfertë bankare vijnë të papaguara: përdorni Shëno si të paguar kur të vijnë paratë."
+          "Porositë me para në dorëzim ose me transfertë bankare vijnë të papaguara: përdorni Shëno si të paguar kur të vijnë paratë."
         ]
       },
       {
@@ -20,7 +20,7 @@
           "Konfirmo porosinë i tregon klientit që e keni marrë; Shëno si në përpunim tregon që po e përgatitni.",
           "Dërgo porosinë dërgon gjithçka që nuk është dërguar ende, me transportuesin dhe numrin e gjurmimit që merr klienti. Për ta dërguar në disa pako, krijojini ato te Përmbushjet.",
           "Anulo porosinë e kthen në shitje stokun që porosia kishte rezervuar. Nuk lejohet pasi porosia është dërguar, dhe një porosi e paguar duhet rimbursuar më parë.",
-          "Rimburso porosinë kthen të gjitha paratë ose një pjesë të tyre; një pagesë me kartë kthehet në kartë. Një rimbursim i plotë çaktivizon edhe kartat dhuratë dhe shkarkimet që dha porosia."
+          "Rimburso porosinë regjistron të gjitha paratë ose një pjesë të tyre si të kthyera te klienti. Një rimbursim i plotë çaktivizon edhe kartat dhuratë dhe shkarkimet që dha porosia."
         ]
       },
       {
@@ -50,6 +50,12 @@
         "partially_refunded": "E rimbursuar pjesërisht",
         "refunded": "E rimbursuar",
         "voided": "E anuluar"
+      },
+      "paymentMethod": {
+        "stripe": "Kartë",
+        "paypal": "PayPal",
+        "cod": "Para në dorëzim",
+        "bank_transfer": "Transfertë bankare"
       },
       "fulfillmentStatus": {
         "unfulfilled": "E papërmbushur",
@@ -96,6 +102,7 @@
       "country": "Vendi i faturimit"
     },
     "paymentStatus": "Pagesa",
+    "paymentMethod": "Metoda e pagesës",
     "fulfillmentStatus": "Përmbushja",
     "status": "Statusi",
     "appliedDiscounts": {

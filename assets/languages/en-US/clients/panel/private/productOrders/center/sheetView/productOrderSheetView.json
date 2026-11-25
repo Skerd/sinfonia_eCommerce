@@ -25,6 +25,7 @@
   "orderNumber": "Order number",
   "status": "Status",
   "paymentStatus": "Payment",
+  "paymentMethod": "Payment method",
   "fulfillmentStatus": "Fulfillment",
   "customer": "Customer",
   "company": "Company",
@@ -122,6 +123,12 @@
     "partially_refunded": "Partially refunded",
     "refunded": "Refunded",
     "voided": "Voided"
+  },
+  "productOrderPaymentMethod": {
+    "stripe": "Card",
+    "paypal": "PayPal",
+    "cod": "Cash on delivery",
+    "bank_transfer": "Bank transfer"
   },
   "productOrderStatus": {
     "cancelled": "Cancelled",

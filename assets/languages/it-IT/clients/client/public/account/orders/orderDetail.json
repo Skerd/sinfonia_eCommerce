@@ -6,6 +6,8 @@
   "placedTitle": "Grazie: il tuo ordine è stato ricevuto.",
   "placedPaid": "Il pagamento è stato ricevuto. Ti aggiorneremo via email.",
   "placedPayLater": "Il pagamento avviene alla consegna o tramite bonifico. Ti aggiorneremo via email.",
+  "placedPayByTransfer": "Paga con bonifico bancario usando i dati qui sotto. Ti scriveremo via email a ogni passo del tuo ordine.",
+  "placedPayOnDelivery": "Paga quando arriva il tuo ordine. Ti scriveremo via email a ogni passo del tuo ordine.",
   "title": "Ordine {number}",
   "placedOn": "Effettuato il {date}",
   "itemsTitle": "Articoli",
@@ -40,5 +42,16 @@
   "giftCard": "Carta regalo",
   "total": "Totale",
   "siblingsNotice": "Il tuo pagamento ha creato anche {count} altro/i ordine/i da altri venditori. Visualizza tutti gli ordini nel tuo account.",
-  "viewAllOrders": "Visualizza tutti gli ordini"
+  "viewAllOrders": "Visualizza tutti gli ordini",
+  "siblingsPayEachSeller": "Ogni venditore si paga a parte: apri ogni ordine per vedere dove pagarlo.",
+  "bankTransfer": {
+    "title": "Paga con bonifico bancario",
+    "accountHolder": "Intestatario del conto",
+    "iban": "IBAN",
+    "bic": "BIC / SWIFT",
+    "bank": "Banca",
+    "amount": "Importo",
+    "reference": "Causale",
+    "note": "Indica il numero d'ordine come causale, così il venditore riconosce il tuo pagamento. L'ordine viene preparato appena arriva il denaro."
+  }
 }

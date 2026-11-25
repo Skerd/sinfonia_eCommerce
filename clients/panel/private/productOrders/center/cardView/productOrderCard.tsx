@@ -105,6 +105,7 @@ function ProductOrderCard({
                             <RefundProductOrderAction
                                 orderId={row._id}
                                 displayName={row.orderNumber}
+                                paymentMethod={row.paymentMethod}
                                 openAlert
                                 url="/api/eCommerce/productOrder/refund"
                                 onSuccess={(fullRefund: boolean) => {

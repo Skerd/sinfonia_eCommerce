@@ -3,7 +3,8 @@
   "cancel": "Cancel",
   "refund": {
     "title": "Refund order",
-    "description": "Refunds the captured payment through the payment gateway.",
+    "description": "Records the refund on the order. Pay the money back to the customer yourself, in cash or by bank transfer; gift card credit the order used goes back on the gift card.",
+    "descriptionCard": "Refunds the card payment to the customer's card.",
     "amountLabel": "Amount",
     "amountHint": "Leave empty for a full refund.",
     "reasonLabel": "Reason",

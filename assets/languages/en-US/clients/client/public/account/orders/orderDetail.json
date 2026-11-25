@@ -6,6 +6,8 @@
   "placedTitle": "Thank you — your order is in.",
   "placedPaid": "Your payment was received. We'll email you as your order moves along.",
   "placedPayLater": "Payment is due on delivery or by bank transfer. We'll email you as your order moves along.",
+  "placedPayByTransfer": "Pay by bank transfer using the details below. We'll email you as your order moves along.",
+  "placedPayOnDelivery": "Pay when your order arrives. We'll email you as your order moves along.",
   "title": "Order {number}",
   "placedOn": "Placed on {date}",
   "itemsTitle": "Items",
@@ -40,5 +42,16 @@
   "giftCard": "Gift card",
   "total": "Total",
   "siblingsNotice": "Your payment also created {count} more order(s) from other sellers. View all orders in your account.",
-  "viewAllOrders": "View all orders"
+  "viewAllOrders": "View all orders",
+  "siblingsPayEachSeller": "Each seller is paid separately: open each order to see where to pay it.",
+  "bankTransfer": {
+    "title": "Pay by bank transfer",
+    "accountHolder": "Account holder",
+    "iban": "IBAN",
+    "bic": "BIC / SWIFT",
+    "bank": "Bank",
+    "amount": "Amount",
+    "reference": "Payment reference",
+    "note": "Put the order number as the payment reference so the seller can match your payment. Your order is prepared once the money arrives."
+  }
 }
