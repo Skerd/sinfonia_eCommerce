@@ -51,6 +51,8 @@
   "reviewCount": "Bewertungen",
   "variantCount": "Varianten",
   "publishedAt": "Veröffentlicht",
+  "hiddenByPlatform": "Von der Plattform verborgen",
+  "hiddenByPlatformNote": "Die Plattform hat dieses Produkt nach einer Meldung verborgen. Es erscheint nicht mehr in Ihrem Shop, im Portal oder in der Suche und kann nicht gekauft werden. Wenden Sie sich an die Plattform, um es zu besprechen.",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",

@@ -21,5 +21,7 @@
   "updatedAt": "Updated at",
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
-  "sheetTypeLabel": "Product review"
+  "sheetTypeLabel": "Product review",
+  "hiddenByPlatform": "Hidden by the platform",
+  "hiddenByPlatformNote": "The platform hid this review after a report. It no longer shows in your shop or on the portal and does not count in the product's rating."
 }

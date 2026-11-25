@@ -12,7 +12,7 @@
         "items": [
           "Solo il cliente che ha pagato un ordine può recensirne i prodotti, una volta per prodotto e ordine. Le vendite alla cassa non si recensiscono.",
           "Solo il cliente che ha scritto una recensione può modificarne il voto (da 1 a 5), il titolo o il commento; l'ordine e il prodotto mai.",
-          "Solo un amministratore può eliminare una recensione, che esce così dal voto del prodotto.",
+          "Nessuno può eliminare una recensione. Se una viola le regole, segnalala alla piattaforma dal suo menu; solo la piattaforma può nasconderla, togliendola dalla valutazione del prodotto.",
           "Le recensioni dei tuoi servizi sono un elenco a parte, in Recensioni del Marketplace."
         ]
       }
@@ -26,6 +26,7 @@
     "title": "Titolo",
     "comment": "Commento",
     "reviewer": "Autore della recensione",
+    "hiddenByPlatform": "Nascosta dalla piattaforma",
     "createdBy": "Creato da",
     "company": "Azienda",
     "createdAt": "Creato il",

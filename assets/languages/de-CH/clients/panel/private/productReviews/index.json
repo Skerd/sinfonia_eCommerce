@@ -12,7 +12,7 @@
         "items": [
           "Nur der Kunde, der eine Bestellung bezahlt hat, kann ihre Produkte bewerten, einmal pro Produkt und Bestellung. Kassenverkäufe können nicht bewertet werden.",
           "Note (1 bis 5), Titel und Kommentar kann nur der Kunde ändern, der die Bewertung geschrieben hat; Bestellung und Produkt nie.",
-          "Nur eine Administratorin oder ein Administrator kann eine Bewertung löschen; sie fällt dann aus der Note des Produkts.",
+          "Niemand kann eine Bewertung löschen. Verstösst eine gegen die Regeln, melden Sie sie über ihr Menü der Plattform; nur die Plattform kann sie verbergen, womit sie nicht mehr zur Bewertung des Produkts zählt.",
           "Bewertungen Ihrer Dienstleistungen sind eine eigene Liste, unter Bewertungen im Marktplatz."
         ]
       }
@@ -26,6 +26,7 @@
     "title": "Bezeichnung",
     "comment": "Kommentar",
     "reviewer": "Bewerter/in",
+    "hiddenByPlatform": "Von der Plattform verborgen",
     "createdBy": "Erstellt von",
     "company": "Firma",
     "createdAt": "Erstellt am",

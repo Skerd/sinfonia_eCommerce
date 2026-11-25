@@ -12,7 +12,7 @@
         "items": [
           "Seul le client qui a payé une commande peut noter ses produits, une fois par produit et par commande. Les ventes en caisse ne peuvent pas être notées.",
           "Seul le client qui a écrit un avis peut en modifier la note (de 1 à 5), le titre ou le commentaire ; la commande et le produit, jamais.",
-          "Seul un administrateur peut supprimer un avis, qui sort alors de la note du produit.",
+          "Personne ne peut supprimer un avis. S'il enfreint les règles, signalez-le à la plateforme depuis son menu ; seule la plateforme peut le masquer, ce qui le retire de la note du produit.",
           "Les avis sur vos services sont une liste à part, dans Avis du Marketplace."
         ]
       }
@@ -26,6 +26,7 @@
     "title": "Titre",
     "comment": "Commentaire",
     "reviewer": "Auteur de l'avis",
+    "hiddenByPlatform": "Masqué par la plateforme",
     "createdBy": "Créé par",
     "company": "Entreprise",
     "createdAt": "Créé le",

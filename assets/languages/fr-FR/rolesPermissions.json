@@ -756,6 +756,7 @@
       "productreviews": "Avis sur les produits",
       "rating": "Note",
       "reviewer": "Auteur de l'avis",
+      "hiddenByPlatform": "Masqué par la plateforme",
       "title": "Titre",
       "updatedAt": "Mis à jour le"
     },
@@ -818,6 +819,7 @@
       "price": "Prix",
       "products": "Produits",
       "publishedAt": "Publié le",
+      "hiddenByPlatform": "Masqué par la plateforme",
       "ratingAverage": "Moyenne des notes",
       "ratingCount": "Nombre de notes",
       "relatedProducts": "Produits associés",

@@ -21,5 +21,7 @@
   "updatedAt": "Mis à jour le",
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
-  "sheetTypeLabel": "Avis produit"
+  "sheetTypeLabel": "Avis produit",
+  "hiddenByPlatform": "Masqué par la plateforme",
+  "hiddenByPlatformNote": "La plateforme a masqué cet avis après un signalement. Il n'apparaît plus dans votre boutique ni sur le portail et ne compte pas dans la note du produit."
 }

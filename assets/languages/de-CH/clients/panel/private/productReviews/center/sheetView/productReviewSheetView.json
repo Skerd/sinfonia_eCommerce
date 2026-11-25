@@ -21,5 +21,7 @@
   "updatedAt": "Aktualisiert am",
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
-  "sheetTypeLabel": "Produktbewertung"
+  "sheetTypeLabel": "Produktbewertung",
+  "hiddenByPlatform": "Von der Plattform verborgen",
+  "hiddenByPlatformNote": "Die Plattform hat diese Bewertung nach einer Meldung verborgen. Sie erscheint nicht mehr in Ihrem Shop oder im Portal und zählt nicht zur Bewertung des Produkts."
 }

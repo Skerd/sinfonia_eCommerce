@@ -16,6 +16,10 @@ import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx
 import type {RefObject} from "react";
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
+import {ReportDialog} from "@coreModule/components/custom/report/reportButton.tsx";
+import ReportMenuItem, {REPORT_TO_PLATFORM_ACTION} from "@coreModule/components/custom/report/reportMenuItem.tsx";
+import {PRODUCT_REVIEW_REPORT_KIND} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
+import PlatformHiddenBadge from "@coreModule/components/custom/report/platformHiddenBadge.tsx";
 
 function productReviewEditPath(review: ProductReview) {
     const params = new URLSearchParams();
@@ -100,8 +104,13 @@ function ProductReviewCard({
             titlePath={["title", "product.title", "rating"]}
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity}) => (
+                action === REPORT_TO_PLATFORM_ACTION ? (
+                    <ReportDialog kind={PRODUCT_REVIEW_REPORT_KIND} recordId={entity._id} open onOpenChange={(next) => { if (!next) setAction(""); }} />
+                ) : null
+            )}
         >
-            {({entity: row, read}) => {
+            {({entity: row, read, setAction}) => {
                 const rating = typeof row.rating === "number" ? row.rating : 0;
                 const reviewerName = getName({
                     name: childReadable(read, "reviewer", "name") ? row.reviewer?.name : "",
@@ -137,7 +146,11 @@ function ProductReviewCard({
                                     : undefined
                             }
                             subtitlePath="reviewer"
-                        />
+                            badgesBesideTitle
+                            badges=<PlatformHiddenBadge hidden={row.hiddenByPlatform} />
+                        >
+                            <ReportMenuItem hidden={row.hiddenByPlatform} onAction={setAction} />
+                        </EntityCard.Header>
                         <div className="flex flex-col gap-1.5">
                             <DisplayValue path="rating" value={rating}>
                                 {() => <Stars value={rating} />}

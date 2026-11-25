@@ -10,6 +10,7 @@ import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
 import {StarRow} from "@coreModule/clients/portal/shared/starRow.tsx";
+import ReportButton from "@coreModule/components/custom/report/reportButton.tsx";
 import type {
     ShopProductReview,
     ShopProductReviewsResponse,
@@ -172,7 +173,11 @@ function ReviewsSectionInner({resolveLanguageKey, productId, slug, sellerCompany
                                 </div>
                                 {review.title && <p className="font-semibold">{review.title}</p>}
                                 {review.comment && <p className="text-[15px] leading-relaxed text-muted-foreground">{review.comment}</p>}
-                                <p className="text-sm font-medium">{review.reviewerName}</p>
+                                <div className="flex flex-wrap items-center justify-between gap-2">
+                                    <p className="text-sm font-medium">{review.reviewerName}</p>
+                                    {/* A review that breaks the rules goes to the platform, not the shop (D191). */}
+                                    <ReportButton kind="eCommerce.productReview" recordId={review._id} variant="link" />
+                                </div>
                             </li>
                         ))}
                     </ul>

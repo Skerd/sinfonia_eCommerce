@@ -51,6 +51,8 @@
   "reviewCount": "Reviews",
   "variantCount": "Variants",
   "publishedAt": "Published",
+  "hiddenByPlatform": "Hidden by the platform",
+  "hiddenByPlatformNote": "The platform hid this product after a report. It no longer shows in your shop, on the portal or in search, and nobody can buy it. Contact the platform to talk it over.",
   "createdAt": "Created at",
   "updatedAt": "Updated at",
   "createdBy": "Created by",

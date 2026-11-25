@@ -51,6 +51,8 @@
   "reviewCount": "Vlerësime",
   "variantCount": "Variantet",
   "publishedAt": "Publikuar",
+  "hiddenByPlatform": "I fshehur nga platforma",
+  "hiddenByPlatformNote": "Platforma e fshehu këtë produkt pas një raportimi. Nuk shfaqet më në dyqanin tuaj, në portal as në kërkim dhe askush nuk mund ta blejë. Kontaktoni platformën për ta diskutuar.",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",

@@ -756,6 +756,7 @@
       "productreviews": "Product reviews",
       "rating": "Rating",
       "reviewer": "Reviewer",
+      "hiddenByPlatform": "Hidden by the platform",
       "title": "Title",
       "updatedAt": "Updated at"
     },
@@ -818,6 +819,7 @@
       "price": "Price",
       "products": "Products",
       "publishedAt": "Published at",
+      "hiddenByPlatform": "Hidden by the platform",
       "ratingAverage": "Rating average",
       "ratingCount": "Rating count",
       "relatedProducts": "Related products",

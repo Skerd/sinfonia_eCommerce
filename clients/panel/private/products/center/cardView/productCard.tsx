@@ -23,6 +23,7 @@ import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widg
 import {accessFieldPathExists} from "@coreModule/helpers/context/accessContext.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import PlatformHiddenBadge from "@coreModule/components/custom/report/platformHiddenBadge.tsx";
 
 const LIST_BASE = "/eCommerce/products";
 
@@ -281,9 +282,15 @@ function ProductCard({
                             titlePath="title"
                             title={row.title}
                             badgesBesideTitle
-                            badges={accessFieldPathExists(read, "status") ? (
-                                <StatusBadge tableConfigKey="products" field="status" value={row.status} label={String(resolveLanguageKey(`productStatus.${row.status}`))} />
-                            ) : undefined}
+                            badges={(
+                                <>
+                                    {accessFieldPathExists(read, "status") ? (
+                                        <StatusBadge tableConfigKey="products" field="status" value={row.status} label={String(resolveLanguageKey(`productStatus.${row.status}`))} />
+                                    ) : null}
+                                    {/* Hidden by the platform after a report (D191): gone from the shop whatever its status. */}
+                                    <PlatformHiddenBadge hidden={row.hiddenByPlatform} />
+                                </>
+                            )}
                         >
                             <PublishProduct entity={row} onAction={setAction} />
                             <ArchiveProduct entity={row} onAction={setAction} />

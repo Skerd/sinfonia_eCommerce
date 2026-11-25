@@ -13,6 +13,7 @@ import ShopProductCard, {ShopPrice} from "@eCommerceModule/clients/client/public
 import ShopQuantityStepper from "@eCommerceModule/clients/client/public/shared/shopQuantityStepper.tsx";
 import {PortalInlineSignIn} from "@coreModule/clients/portal/shared/portalInlineSignIn.tsx";
 import PortalSellerCard from "@coreModule/clients/portal/shared/portalSellerCard.tsx";
+import ReportButton from "@coreModule/components/custom/report/reportButton.tsx";
 import ReviewsSection from "./reviewsSection.tsx";
 import {shopProductHref} from "@eCommerceModule/clients/client/public/shared/shopProductHref.ts";
 import {PRODUCT_REQUEST, productRequestBody} from "./productRequest.ts";
@@ -290,6 +291,8 @@ function ProductPage({resolveLanguageKey}: WithLanguageType) {
                     <DetailSpecs rows={product.specifications} />
                 </DetailSection>
             ) : null}
+            {/* Something wrong with the product goes to the platform, not the shop (D191). */}
+            <ReportButton kind="eCommerce.product" recordId={product._id} className="self-start" />
         </DetailPage>
     );
 }

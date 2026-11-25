@@ -21,5 +21,7 @@
   "updatedAt": "Përditësuar më",
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
-  "sheetTypeLabel": "Vlerësim produkti"
+  "sheetTypeLabel": "Vlerësim produkti",
+  "hiddenByPlatform": "I fshehur nga platforma",
+  "hiddenByPlatformNote": "Platforma e fshehu këtë vlerësim pas një raportimi. Nuk shfaqet më në dyqanin tuaj as në portal dhe nuk llogaritet në vlerësimin e produktit."
 }

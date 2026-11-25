@@ -12,7 +12,7 @@
         "items": [
           "Vetëm klienti që pagoi një porosi mund të vlerësojë produktet e saj, një herë për çdo produkt të porosisë. Shitjet në arkë nuk vlerësohen.",
           "Vetëm klienti që e shkroi një vlerësim mund t'i ndryshojë notën (1 deri në 5), titullin ose komentin; porosia dhe produkti kurrë.",
-          "Vetëm një administrator mund ta fshijë një vlerësim, që atëherë del nga nota e produktit.",
+          "Askush nuk mund ta fshijë një vlerësim. Nëse një vlerësim shkel rregullat, raportojeni te platforma nga menyja e tij; vetëm platforma mund ta fshehë, duke e hequr nga vlerësimi i produktit.",
           "Vlerësimet e shërbimeve tuaja janë një listë më vete, te Vlerësimet e Tregut."
         ]
       }
@@ -26,6 +26,7 @@
     "title": "Titulli",
     "comment": "Komenti",
     "reviewer": "Vlerësuesi",
+    "hiddenByPlatform": "I fshehur nga platforma",
     "createdBy": "Krijuar nga",
     "company": "Kompania",
     "createdAt": "Krijuar më",

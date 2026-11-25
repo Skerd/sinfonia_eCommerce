@@ -51,6 +51,8 @@
   "reviewCount": "Avis",
   "variantCount": "Variantes",
   "publishedAt": "Publié",
+  "hiddenByPlatform": "Masqué par la plateforme",
+  "hiddenByPlatformNote": "La plateforme a masqué ce produit après un signalement. Il n'apparaît plus dans votre boutique, sur le portail ni dans la recherche, et personne ne peut l'acheter. Contactez la plateforme pour en discuter.",
   "createdAt": "Créé le",
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",

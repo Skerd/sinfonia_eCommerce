@@ -756,6 +756,7 @@
       "productreviews": "Vlerësimet e produkteve",
       "rating": "Vlerësimi",
       "reviewer": "Vlerësuesi",
+      "hiddenByPlatform": "I fshehur nga platforma",
       "title": "Titulli",
       "updatedAt": "Përditësuar më"
     },
@@ -818,6 +819,7 @@
       "price": "Çmimi",
       "products": "Produktet",
       "publishedAt": "Publikuar më",
+      "hiddenByPlatform": "I fshehur nga platforma",
       "ratingAverage": "Vlerësimi mesatar",
       "ratingCount": "Numri i vlerësimeve",
       "relatedProducts": "Produktet e lidhura",

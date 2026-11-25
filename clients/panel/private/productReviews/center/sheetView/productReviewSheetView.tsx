@@ -10,6 +10,9 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
+import {ReportDialog} from "@coreModule/components/custom/report/reportButton.tsx";
+import ReportMenuItem, {REPORT_TO_PLATFORM_ACTION} from "@coreModule/components/custom/report/reportMenuItem.tsx";
+import {PRODUCT_REVIEW_REPORT_KIND} from "armonia/src/modules/eCommerce/api/eCommerce/private/productReview/productReview.dto.ts";
 
 function productReviewEditPath(review: {_id: string; title?: string}) {
     const params = new URLSearchParams();
@@ -41,6 +44,7 @@ function ProductReviewSheetView({
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(
         entityProp ?? {_id: fetchId},
     );
+    const [action, setAction] = useState("");
     const access = useAccess("productReviews");
     const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const viewConfig = useViewConfig("productReviews", "sheet");
@@ -49,6 +53,10 @@ function ProductReviewSheetView({
         if (!entityProp) return;
         setSheetData(entityProp);
     }, [entityProp]);
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     const entityId = entityProp?._id ?? fetchId;
 
@@ -59,29 +67,36 @@ function ProductReviewSheetView({
     const reviewName = review.title?.trim() || [review.product?.title, typeof review.rating === "number" ? `★ ${review.rating}` : ""].filter(Boolean).join(" · ");
 
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/eCommerce/productReview/single"
-            fetchId={fetchId ?? entityProp?._id}
-            onDataFetched={(data) => {
-                setSheetData(data as ProductReview);
-            }}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            headerTitle={<SheetNameTitle name={reviewName} code={review.order?.orderNumber} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
-            access={access}
-            hideActions={hideActions}
-            // Only the buyer who wrote a review may change its words (the update route refuses anyone else).
-            hideEdit={review.reviewer?._id !== currentUserId}
-            editPath={productReviewEditPath({
-                _id: entityId,
-                title: typeof sheetData.title === "string" ? sheetData.title : undefined,
-            })}
-            onDelete={onDelete}
-            onRestore={onRestore}
-        />
+        <>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/eCommerce/productReview/single"
+                fetchId={fetchId ?? entityProp?._id}
+                onDataFetched={(data) => {
+                    setSheetData(data as ProductReview);
+                }}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
+                resolveLanguageKey={resolveLanguageKey}
+                headerTitle={<SheetNameTitle name={reviewName} code={review.order?.orderNumber} typeLabel={String(resolveLanguageKey("sheetTypeLabel"))} />}
+                access={access}
+                hideActions={hideActions}
+                // Only the buyer who wrote a review may change its words (the update route refuses anyone else).
+                hideEdit={review.reviewer?._id !== currentUserId}
+                editPath={productReviewEditPath({
+                    _id: entityId,
+                    title: typeof sheetData.title === "string" ? sheetData.title : undefined,
+                })}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                actionMenuAllowCustomChildren
+                actionMenuChildren={<ReportMenuItem hidden={review.hiddenByPlatform} onAction={setAction} />}
+            />
+            {action === REPORT_TO_PLATFORM_ACTION && (
+                <ReportDialog kind={PRODUCT_REVIEW_REPORT_KIND} recordId={entityId} open onOpenChange={(next) => { if (!next) setAction(""); }} />
+            )}
+        </>
     );
 }
 
