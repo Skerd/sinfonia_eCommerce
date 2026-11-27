@@ -1,20 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Kategorien",
-  "description": "Produktkategorien für die Kataloge Ihres Mandanten konfigurieren.",
+  "description": "Die Produktkategorien der Plattform, für jeden Shop gleich.",
   "help": {
     "ariaLabel": "Über Produktkategorien",
     "title": "Über Produktkategorien",
-    "overview": "Kategorien ordnen Ihre Produkte in einem Baum, etwa Kleidung › Hemden. Kunden durchsuchen und filtern Ihren Shop danach, und ein Produkt kann in mehreren sein.",
+    "overview": "Kategorien gehören der Plattform: ein detaillierter Baum, den alle Shops teilen, damit das Portal zum Beispiel die Kleider aller Shops zusammen zeigen kann. Wählen Sie die Kategorien, zu denen Ihre Produkte gehören; ein Produkt kann in mehreren sein.",
     "sections": [
       {
         "title": "Jede Kategorie",
         "items": [
-          "Lassen Sie «Übergeordnete Kategorie» leer für die oberste Ebene. Die Reihenfolge sortiert Kategorien derselben Ebene, die kleinste zuerst.",
-          "Ein Rabatt für eine Kategorie gilt, wenn irgendeine Kategorie des Produkts passt.",
-          "Eine Preisregel für eine Kategorie schaut nur auf die erste Kategorie des Produkts.",
-          "Das Löschen einer Kategorie löscht ihre Produkte nicht; sie behalten ihre anderen Kategorien.",
-          "Ihre Dienstleistungs-Inserate haben eigene Kategorien, unter Inseratkategorien."
+          "Nicht die passende gefunden? Nutzen Sie «Kategorie anfragen». Die Plattform prüft sie; bis dahin sieht nur Ihr Shop sie.",
+          "Ihre eigenen Gruppierungen, etwa eine Saison oder ein Ausverkauf, sind Kollektionen.",
+          "Das Menü Ihres Shops zeigt nur die Kategorien, in denen Ihre Produkte sind, und die Kategorien darüber.",
+          "Ein Rabatt für eine Kategorie gilt, wenn eine der Kategorien des Produkts passt.",
+          "Eine Preisregel für eine Kategorie berücksichtigt nur die erste Kategorie des Produkts.",
+          "Ihre Dienstleistungsangebote haben eigene Kategorien, unter Angebotskategorien."
         ]
       }
     ]

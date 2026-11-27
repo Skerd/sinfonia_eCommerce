@@ -10,7 +10,7 @@
       {
         "title": "Was Sie übernehmen können",
         "items": [
-          "Währungen, Kategorien, Produkte und Varianten, und Lager.",
+          "Währungen, Kategorien, Produkte und Varianten, und Lager. Die Kategorien aus Odoo werden zu Ihren Kollektionen, und jedes Produkt kommt zusätzlich in die passende Kategorie der Plattform, wenn es eine gibt; für die übrigen wählen Sie sie selbst.",
           "Bestand, Lagerbewegungen und interne Umlagerungen, so wie Odoo sie erfasst hat.",
           "Benutzer: Die internen Benutzer von Odoo werden in Ihre Firma eingeladen und können sich nach dem Annehmen anmelden.",
           "Ein erneuter Lauf aktualisiert, was er zuvor übernommen hat, ohne Kopien anzulegen."

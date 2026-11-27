@@ -15,7 +15,13 @@
     "editCategoryTitle": "Kategorie bearbeiten",
     "editCategoryDescription": "Kategorieinformationen aktualisieren.",
     "generalSectionTitle": "Allgemein",
-    "visibilitySectionTitle": "Sichtbarkeit"
+    "visibilitySectionTitle": "Sichtbarkeit",
+    "namesSectionTitle": "Name in jeder Sprache",
+    "nameEnLabel": "Englisch",
+    "nameSqLabel": "Albanisch",
+    "nameDeLabel": "Deutsch",
+    "nameFrLabel": "Französisch",
+    "nameItLabel": "Italienisch"
   },
   "axios": {
     "start": {

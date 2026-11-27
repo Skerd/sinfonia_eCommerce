@@ -1,20 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Catégories",
-  "description": "Configurez les catégories de produits des catalogues de votre espace.",
+  "description": "Les catégories de produits de la plateforme, communes à toutes les boutiques.",
   "help": {
     "ariaLabel": "À propos des catégories de produits",
     "title": "À propos des catégories de produits",
-    "overview": "Les catégories rangent vos produits en arbre, comme Vêtements › Chemises. Les clients parcourent et filtrent votre boutique par catégorie, et un produit peut être dans plusieurs.",
+    "overview": "Les catégories appartiennent à la plateforme : un arbre détaillé que toutes les boutiques partagent, pour que le portail puisse montrer, par exemple, les robes de toutes les boutiques ensemble. Choisissez les catégories de vos produits ; un produit peut en avoir plusieurs.",
     "sections": [
       {
         "title": "Chaque catégorie",
         "items": [
-          "Laissez Catégorie parente vide pour un premier niveau. L'ordre trie les catégories d'un même niveau, du plus petit au plus grand.",
+          "Vous ne trouvez pas la bonne ? Utilisez « Demander une catégorie ». La plateforme l'examine ; d'ici là, seule votre boutique la voit.",
+          "Vos propres regroupements, comme une saison ou des soldes, sont des collections.",
+          "Le menu de votre boutique ne montre que les catégories où se trouvent vos produits, et les catégories au-dessus.",
           "Une remise visant une catégorie s'applique quand l'une des catégories du produit correspond.",
-          "Une règle de tarification visant une catégorie ne regarde que la première catégorie du produit.",
-          "Supprimer une catégorie ne supprime pas ses produits ; ils gardent leurs autres catégories.",
-          "Vos annonces de services ont leurs propres catégories, dans Catégories d'annonces."
+          "Une règle de prix visant une catégorie ne regarde que la première catégorie du produit.",
+          "Vos offres de services utilisent leurs propres catégories, sous Catégories d'annonces."
         ]
       }
     ]

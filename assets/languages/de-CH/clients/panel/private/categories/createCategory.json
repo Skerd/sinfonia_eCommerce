@@ -10,7 +10,13 @@
     "createCategoryTitle": "Kategorie erstellen",
     "createCategoryDescription": "Fügen Sie eine Kategorie hinzu, um die Produkte in Ihrem Katalog zu ordnen.",
     "generalSectionTitle": "Allgemein",
-    "visibilitySectionTitle": "Sichtbarkeit"
+    "visibilitySectionTitle": "Sichtbarkeit",
+    "namesSectionTitle": "Name in jeder Sprache",
+    "nameEnLabel": "Englisch",
+    "nameSqLabel": "Albanisch",
+    "nameDeLabel": "Deutsch",
+    "nameFrLabel": "Französisch",
+    "nameItLabel": "Italienisch"
   },
   "axios": {
     "start": {

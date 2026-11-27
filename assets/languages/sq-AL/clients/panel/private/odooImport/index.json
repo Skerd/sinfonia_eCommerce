@@ -10,7 +10,7 @@
       {
         "title": "Çfarë mund të sillni",
         "items": [
-          "Monedhat, Kategoritë, Produktet dhe variantet, dhe Magazinat.",
+          "Monedhat, Kategoritë, Produktet dhe variantet, dhe Magazinat. Kategoritë e Odoo bëhen koleksionet tuaja, dhe çdo produkt vendoset edhe në kategorinë përkatëse të platformës kur gjendet një e tillë; për të tjerat e zgjidhni vetë.",
           "Stokun në gjendje, Lëvizjet e stokut dhe Transferet e brendshme, siç i regjistroi Odoo.",
           "Përdoruesit: përdoruesit e brendshëm të Odoo ftohen në kompaninë tuaj dhe mund të hyjnë pasi të pranojnë ftesën.",
           "Kur e nisni sërish, përditëson atë që solli më parë, pa krijuar kopje."

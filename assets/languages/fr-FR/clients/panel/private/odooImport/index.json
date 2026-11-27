@@ -10,7 +10,7 @@
       {
         "title": "Ce que vous pouvez importer",
         "items": [
-          "Devises, Catégories, Produits et variantes, et Entrepôts.",
+          "Devises, Catégories, Produits et variantes, et Entrepôts. Les catégories d'Odoo deviennent vos collections, et chaque produit est aussi placé dans la catégorie correspondante de la plateforme quand elle existe ; pour les autres, vous la choisissez vous-même.",
           "Stock disponible, Mouvements de stock et Transferts internes, tels qu'Odoo les a enregistrés.",
           "Utilisateurs : les utilisateurs internes d'Odoo sont invités dans votre entreprise et peuvent se connecter après avoir accepté.",
           "Le relancer met à jour ce qu'il avait importé, sans créer de doublons."

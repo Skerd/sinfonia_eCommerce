@@ -15,7 +15,13 @@
     "editCategoryTitle": "Edit category",
     "editCategoryDescription": "Update category information.",
     "generalSectionTitle": "General",
-    "visibilitySectionTitle": "Visibility"
+    "visibilitySectionTitle": "Visibility",
+    "namesSectionTitle": "Name in every language",
+    "nameEnLabel": "English",
+    "nameSqLabel": "Albanian",
+    "nameDeLabel": "German",
+    "nameFrLabel": "French",
+    "nameItLabel": "Italian"
   },
   "axios": {
     "start": {

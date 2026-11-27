@@ -1,20 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Kategoritë",
-  "description": "Konfiguroni kategoritë e produkteve për katalogët e kompanisë suaj.",
+  "description": "Kategoritë e produkteve të platformës, të përbashkëta për çdo dyqan.",
   "help": {
     "ariaLabel": "Rreth kategorive të produkteve",
     "title": "Rreth kategorive të produkteve",
-    "overview": "Kategoritë i rendisin produktet tuaja në një pemë, si Veshje › Këmisha. Klientët e shfletojnë dhe e filtrojnë dyqanin sipas tyre, dhe një produkt mund të jetë në disa.",
+    "overview": "Kategoritë janë të platformës: një pemë e detajuar që e ndajnë të gjitha dyqanet, që portali të tregojë, për shembull, fustanet e të gjitha dyqaneve bashkë. Zgjidhni kategoritë ku hyjnë produktet tuaja; një produkt mund të jetë në disa.",
     "sections": [
       {
         "title": "Çdo kategori",
         "items": [
-          "Lëreni bosh fushën Kategoria prind për një nivel të parë. Rendi rendit kategoritë e të njëjtit nivel, numri më i vogël i pari.",
-          "Një zbritje që synon një kategori vlen kur përputhet cilado nga kategoritë e produktit.",
-          "Një rregull çmimi që synon një kategori shikon vetëm kategorinë e parë të produktit.",
-          "Fshirja e një kategorie nuk i fshin produktet e saj; ato mbajnë kategoritë e tjera.",
-          "Listimet tuaja të shërbimeve kanë kategoritë e veta, te Kategoritë e listimeve."
+          "Nuk e gjeni atë që ju duhet? Përdorni Kërko një kategori. Platforma e shqyrton; deri atëherë e sheh vetëm dyqani juaj.",
+          "Grupimet tuaja, si një sezon ose një ulje, janë koleksione.",
+          "Menyja e dyqanit tuaj tregon vetëm kategoritë ku janë produktet tuaja, dhe kategoritë mbi to.",
+          "Një ulje për një kategori vlen kur përputhet cilado nga kategoritë e produktit.",
+          "Një rregull çmimi për një kategori shikon vetëm kategorinë e parë të produktit.",
+          "Shërbimet tuaja përdorin kategoritë e tyre, te Kategoritë e shërbimeve."
         ]
       }
     ]

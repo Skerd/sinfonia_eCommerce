@@ -1,20 +1,21 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Categorie",
-  "description": "Configura le categorie di prodotti per i cataloghi del tuo tenant.",
+  "description": "Le categorie di prodotto della piattaforma, comuni a ogni negozio.",
   "help": {
     "ariaLabel": "Informazioni sulle categorie di prodotti",
     "title": "Informazioni sulle categorie di prodotti",
-    "overview": "Le categorie ordinano i tuoi prodotti ad albero, come Abbigliamento › Camicie. I clienti sfogliano e filtrano il negozio per categoria, e un prodotto può stare in più categorie.",
+    "overview": "Le categorie sono della piattaforma: un albero dettagliato che tutti i negozi condividono, così il portale può mostrare, per esempio, gli abiti di tutti i negozi insieme. Scegli le categorie dei tuoi prodotti; un prodotto può stare in più categorie.",
     "sections": [
       {
         "title": "Ogni categoria",
         "items": [
-          "Lascia vuoto Categoria padre per un primo livello. Ordine ordina le categorie dello stesso livello, dal più basso.",
-          "Uno sconto rivolto a una categoria vale quando una qualsiasi delle categorie del prodotto corrisponde.",
-          "Una regola di prezzo rivolta a una categoria guarda solo la prima categoria del prodotto.",
-          "Eliminare una categoria non elimina i suoi prodotti; restano nelle altre categorie.",
-          "I tuoi annunci di servizi hanno categorie proprie, in Categorie di annunci."
+          "Non trovi quella giusta? Usa «Richiedi una categoria». La piattaforma la valuta; fino ad allora la vede solo il tuo negozio.",
+          "I tuoi raggruppamenti, come una stagione o i saldi, sono collezioni.",
+          "Il menu del tuo negozio mostra solo le categorie in cui ci sono i tuoi prodotti, e le categorie sopra di esse.",
+          "Uno sconto su una categoria si applica quando una qualsiasi delle categorie del prodotto corrisponde.",
+          "Una regola di prezzo su una categoria guarda solo la prima categoria del prodotto.",
+          "I tuoi servizi usano categorie proprie, in Categorie degli annunci."
         ]
       }
     ]

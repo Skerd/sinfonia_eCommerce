@@ -1,19 +1,20 @@
 {
   "path": "src/modules/eCommerce/clients/panel/private/categories/index.tsx",
   "title": "Categories",
-  "description": "Configure product categories for catalogs across your tenant.",
+  "description": "The platform's product categories, shared by every shop.",
   "help": {
     "ariaLabel": "About product categories",
     "title": "About product categories",
-    "overview": "Categories sort your products into a tree, such as Clothing › Shirts. Customers browse and filter your shop by them, and a product can be in several.",
+    "overview": "Categories are the platform's: one detailed tree every shop shares, so the portal can show, say, every shop's dresses together. Pick the categories your products belong to; a product can be in several.",
     "sections": [
       {
         "title": "Each category",
         "items": [
-          "Leave Parent category empty for a top level. Order sorts categories on the same level, lowest first.",
+          "Can't find the right one? Use Request a category. The platform reviews it; until then only your shop sees it.",
+          "Your own groupings, such as a season or a sale, are collections.",
+          "Your shop's menu shows only the categories your products are in, and the categories above them.",
           "A discount aimed at a category applies when any of the product's categories matches.",
           "A pricing rule aimed at a category looks only at the product's first category.",
-          "Deleting a category doesn't delete its products; they keep their other categories.",
           "Your service listings use their own categories, under Listing categories."
         ]
       }

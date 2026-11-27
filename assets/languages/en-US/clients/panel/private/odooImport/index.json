@@ -10,7 +10,7 @@
       {
         "title": "What you can bring in",
         "items": [
-          "Currencies, Categories, Products and variants, and Warehouses.",
+          "Currencies, Categories, Products and variants, and Warehouses. Odoo's categories become your collections, and each product also goes into the matching platform category when one is found; you choose it yourself for the rest.",
           "On-hand inventory, Stock movements and Internal transfers, as Odoo recorded them.",
           "Users: Odoo's internal users are invited into your company and can sign in once they accept.",
           "Running it again updates what it brought in before, without making copies."

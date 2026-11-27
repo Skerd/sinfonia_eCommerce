@@ -15,7 +15,13 @@
     "editCategoryTitle": "Redakto kategorinë",
     "editCategoryDescription": "Përditësoni të dhënat e kategorisë.",
     "generalSectionTitle": "Të përgjithshme",
-    "visibilitySectionTitle": "Shfaqja"
+    "visibilitySectionTitle": "Shfaqja",
+    "namesSectionTitle": "Emri në çdo gjuhë",
+    "nameEnLabel": "Anglisht",
+    "nameSqLabel": "Shqip",
+    "nameDeLabel": "Gjermanisht",
+    "nameFrLabel": "Frëngjisht",
+    "nameItLabel": "Italisht"
   },
   "axios": {
     "start": {
