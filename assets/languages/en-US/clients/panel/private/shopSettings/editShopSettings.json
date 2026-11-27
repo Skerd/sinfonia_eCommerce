@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shopSettings/editShopSettings.tsx",
+  "title": "What we sell",
+  "description": "The kinds of products your shop sells.",
+  "form": {
+    "whatWeSellSectionTitle": "What we sell",
+    "branchesLabel": "Branches you sell in",
+    "selectBranch": "Add a branch",
+    "removeBranch": "Remove"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not be saved. Check the form and try again.",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "What we sell",
+    "description": "The kinds of products your shop sells."
+  },
+  "help": {
+    "ariaLabel": "About What we sell",
+    "title": "About What we sell",
+    "overview": "Pick the top-level categories your shop sells in, such as Apparel & Accessories or Electronics. When you add a product, its category list offers only these branches; with none picked, it offers every category.",
+    "sections": [
+      {
+        "title": "What we sell",
+        "items": [
+          "We filled this in from the categories your products already use.",
+          "Selling something new? Add its branch here first, then pick its category on the product."
+        ]
+      }
+    ]
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

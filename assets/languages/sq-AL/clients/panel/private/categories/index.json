@@ -32,5 +32,10 @@
     "updatedAt": "Përditësuar më",
     "deletedAt": "Fshirë më",
     "deletedBy": "Fshirë nga"
+  },
+  "views": {
+    "label": "Pamjet",
+    "list": "Lista",
+    "hierarchy": "Hierarkia"
   }
 }

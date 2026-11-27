@@ -1,6 +1,12 @@
 {
   "eCommerce": {
-    "setup": {"product": "Shtoni produktin tuaj të parë", "shipping": "Shtoni ku dërgoni", "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit.", "warehouse": "Shtoni magazinën tuaj", "warehouseHint": "Stoku mbahet sipas magazinës, ndaj ju duhet një përpara se të shtoni stok për një produkt."},
+    "setup": {
+      "product": "Shtoni produktin tuaj të parë",
+      "shipping": "Shtoni ku dërgoni",
+      "shippingHint": "Pagesa kërkon një tarifë dërgese për adresën e blerësit.",
+      "warehouse": "Shtoni magazinën tuaj",
+      "warehouseHint": "Stoku mbahet sipas magazinës, ndaj ju duhet një përpara se të shtoni stok për një produkt."
+    },
     "guide": {
       "warehouseNameTitle": "Emri i magazinës",
       "warehouseNameText": "Çdo emër që ekipi juaj e njeh, si “Dyqani kryesor” ose “Depoja”.",
@@ -242,6 +248,9 @@
       },
       "listingpackages": {
         "title": "Paketat e listimeve"
+      },
+      "whatWeSell": {
+        "title": "Çfarë shesim"
       }
     }
   }

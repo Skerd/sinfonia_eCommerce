@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shopSettings/editShopSettings.tsx",
+  "title": "Was wir verkaufen",
+  "description": "Die Arten von Produkten, die Ihr Shop verkauft.",
+  "form": {
+    "whatWeSellSectionTitle": "Was wir verkaufen",
+    "branchesLabel": "Bereiche, in denen Sie verkaufen",
+    "selectBranch": "Bereich hinzufügen",
+    "removeBranch": "Entfernen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht gespeichert werden. Prüfen Sie das Formular und versuchen Sie es erneut.",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Was wir verkaufen",
+    "description": "Die Arten von Produkten, die Ihr Shop verkauft."
+  },
+  "help": {
+    "ariaLabel": "Über «Was wir verkaufen»",
+    "title": "Über «Was wir verkaufen»",
+    "overview": "Wählen Sie die Hauptkategorien, in denen Ihr Shop verkauft, etwa Bekleidung & Accessoires oder Elektronik. Wenn Sie ein Produkt hinzufügen, bietet die Kategorienliste nur diese Bereiche an; ohne Auswahl bietet sie alle Kategorien an.",
+    "sections": [
+      {
+        "title": "Was wir verkaufen",
+        "items": [
+          "Wir haben dies aus den Kategorien ausgefüllt, die Ihre Produkte bereits verwenden.",
+          "Verkaufen Sie etwas Neues? Fügen Sie zuerst hier den Bereich hinzu und wählen Sie dann die Kategorie beim Produkt."
+        ]
+      }
+    ]
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

@@ -32,5 +32,10 @@
     "updatedAt": "Aktualisiert am",
     "deletedAt": "Gelöscht am",
     "deletedBy": "Gelöscht von"
+  },
+  "views": {
+    "label": "Ansichten",
+    "list": "Liste",
+    "hierarchy": "Hierarchie"
   }
 }

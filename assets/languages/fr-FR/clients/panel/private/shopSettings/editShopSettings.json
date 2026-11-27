@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shopSettings/editShopSettings.tsx",
+  "title": "Ce que nous vendons",
+  "description": "Les types de produits que vend votre boutique.",
+  "form": {
+    "whatWeSellSectionTitle": "Ce que nous vendons",
+    "branchesLabel": "Branches où vous vendez",
+    "selectBranch": "Ajouter une branche",
+    "removeBranch": "Retirer"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'enregistrer. Vérifiez le formulaire et réessayez.",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ce que nous vendons",
+    "description": "Les types de produits que vend votre boutique."
+  },
+  "help": {
+    "ariaLabel": "À propos de Ce que nous vendons",
+    "title": "À propos de Ce que nous vendons",
+    "overview": "Choisissez les catégories principales où vend votre boutique, comme Vêtements et accessoires ou Électronique. Quand vous ajoutez un produit, sa liste de catégories ne propose que ces branches ; sans choix, elle les propose toutes.",
+    "sections": [
+      {
+        "title": "Ce que nous vendons",
+        "items": [
+          "Nous l'avons rempli à partir des catégories que vos produits utilisent déjà.",
+          "Vous vendez quelque chose de nouveau ? Ajoutez d'abord sa branche ici, puis choisissez sa catégorie sur le produit."
+        ]
+      }
+    ]
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

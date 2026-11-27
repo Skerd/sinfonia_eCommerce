@@ -32,7 +32,8 @@
     "Taxzones": "Tax zones",
     "Warehouses": "Warehouses",
     "Stocktransfers": "Stock transfers",
-    "Stockcounts": "Stock counts"
+    "Stockcounts": "Stock counts",
+    "Shopsettings": "Shop settings"
   },
   "permissions": {
     "Carts": {
@@ -1063,6 +1064,15 @@
       "deletedBy": "Deleted by",
       "apply": "Apply",
       "cancel": "Cancel"
+    },
+    "Shopsettings": {
+      "createdAt": "Created at",
+      "createdBy": "Created by",
+      "deletedAt": "Deleted at",
+      "deletedBy": "Deleted by",
+      "updatedAt": "Updated at",
+      "branches": "What we sell",
+      "shopsettings": "Shop settings"
     }
   }
 }

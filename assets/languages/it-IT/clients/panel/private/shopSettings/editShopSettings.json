@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shopSettings/editShopSettings.tsx",
+  "title": "Cosa vendiamo",
+  "description": "I tipi di prodotti che vende il tuo negozio.",
+  "form": {
+    "whatWeSellSectionTitle": "Cosa vendiamo",
+    "branchesLabel": "Rami in cui vendi",
+    "selectBranch": "Aggiungi un ramo",
+    "removeBranch": "Rimuovi"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile salvare. Controlla il modulo e riprova.",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Cosa vendiamo",
+    "description": "I tipi di prodotti che vende il tuo negozio."
+  },
+  "help": {
+    "ariaLabel": "Informazioni su Cosa vendiamo",
+    "title": "Informazioni su Cosa vendiamo",
+    "overview": "Scegli le categorie principali in cui vende il tuo negozio, come Abbigliamento e accessori o Elettronica. Quando aggiungi un prodotto, l'elenco delle categorie offre solo questi rami; senza scelta, le offre tutte.",
+    "sections": [
+      {
+        "title": "Cosa vendiamo",
+        "items": [
+          "L'abbiamo compilato dalle categorie che i tuoi prodotti usano già.",
+          "Vendi qualcosa di nuovo? Aggiungi prima qui il suo ramo, poi scegli la categoria sul prodotto."
+        ]
+      }
+    ]
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

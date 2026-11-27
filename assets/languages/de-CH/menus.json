@@ -1,6 +1,12 @@
 {
   "eCommerce": {
-    "setup": {"product": "Erstes Produkt hinzufügen", "shipping": "Liefergebiete erfassen", "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers.", "warehouse": "Lager hinzufügen", "warehouseHint": "Der Bestand wird pro Lager geführt. Sie brauchen also eines, bevor Sie einem Produkt Bestand geben können."},
+    "setup": {
+      "product": "Erstes Produkt hinzufügen",
+      "shipping": "Liefergebiete erfassen",
+      "shippingHint": "Der Checkout braucht einen Versandtarif für die Adresse des Käufers.",
+      "warehouse": "Lager hinzufügen",
+      "warehouseHint": "Der Bestand wird pro Lager geführt. Sie brauchen also eines, bevor Sie einem Produkt Bestand geben können."
+    },
     "guide": {
       "warehouseNameTitle": "Name des Lagers",
       "warehouseNameText": "Ein Name, den Ihr Team kennt, etwa «Hauptlager» oder «Hinterzimmer».",
@@ -242,6 +248,9 @@
       },
       "listingpackages": {
         "title": "Inseratpakete"
+      },
+      "whatWeSell": {
+        "title": "Was wir verkaufen"
       }
     }
   }

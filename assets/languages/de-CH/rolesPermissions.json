@@ -32,7 +32,8 @@
     "Taxzones": "Steuerzonen",
     "Warehouses": "Lager",
     "Stocktransfers": "Umlagerungen",
-    "Stockcounts": "Inventuren"
+    "Stockcounts": "Inventuren",
+    "Shopsettings": "Shop-Einstellungen"
   },
   "permissions": {
     "Carts": {
@@ -1063,6 +1064,15 @@
       "deletedBy": "Gelöscht von",
       "apply": "Anwenden",
       "cancel": "Stornieren"
+    },
+    "Shopsettings": {
+      "createdAt": "Erstellt am",
+      "createdBy": "Erstellt von",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von",
+      "updatedAt": "Aktualisiert am",
+      "branches": "Was wir verkaufen",
+      "shopsettings": "Shop-Einstellungen"
     }
   }
 }

@@ -1,6 +1,12 @@
 {
   "eCommerce": {
-    "setup": {"product": "Ajoutez votre premier produit", "shipping": "Indiquez où vous livrez", "shippingHint": "Le paiement demande un tarif de livraison pour l'adresse de l'acheteur.", "warehouse": "Ajoutez votre entrepôt", "warehouseHint": "Le stock est tenu par entrepôt : il vous en faut un avant de pouvoir stocker un produit."},
+    "setup": {
+      "product": "Ajoutez votre premier produit",
+      "shipping": "Indiquez où vous livrez",
+      "shippingHint": "Le paiement demande un tarif de livraison pour l'adresse de l'acheteur.",
+      "warehouse": "Ajoutez votre entrepôt",
+      "warehouseHint": "Le stock est tenu par entrepôt : il vous en faut un avant de pouvoir stocker un produit."
+    },
     "guide": {
       "warehouseNameTitle": "Nom de l'entrepôt",
       "warehouseNameText": "Un nom que votre équipe reconnaît, comme « Magasin principal » ou « Réserve ».",
@@ -242,6 +248,9 @@
       },
       "listingpackages": {
         "title": "Packages d'annonce"
+      },
+      "whatWeSell": {
+        "title": "Ce que nous vendons"
       }
     }
   }

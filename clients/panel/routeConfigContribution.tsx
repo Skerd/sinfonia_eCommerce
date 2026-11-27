@@ -4,6 +4,7 @@ import {FISCALIZATION_AVAILABLE} from "armonia/src/modules/finance/helpers/fisca
 
 // Pages load on first visit (D21); the panel shell's Suspense boundary shows the loader.
 const AllCategories = lazy(() => import("@eCommerceModule/clients/panel/private/categories"));
+const ShopSettings = lazy(() => import("@eCommerceModule/clients/panel/private/shopSettings/index.tsx"));
 const CreateCategory = lazy(() => import("@eCommerceModule/clients/panel/private/categories/createCategory.tsx"));
 const EditCategory = lazy(() => import("@eCommerceModule/clients/panel/private/categories/editCategory.tsx"));
 const SystemMap = lazy(() => import("@eCommerceModule/clients/panel/private/systemMap"));
@@ -108,6 +109,8 @@ const eCommerceRouteConfigContribution: RouteConfigContribution = {
                 if (POS_SETTINGS.has(resource)) return <ComingSoon feature="pos" />;
                 if (resource === "fiscalconfigs") return <ComingSoon feature="fiscal" />;
             }
+            // What we sell (P26.8): the shop's one settings record, edited in place.
+            if (resource === "whatWeSell") return <ShopSettings />;
             if (resource === "categories") {
                 const categoryId = searchParams.get("categoryId") || undefined;
                 const categoryName = safeDecode(searchParams.get("categoryName")) || undefined;

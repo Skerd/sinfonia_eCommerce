@@ -1,6 +1,12 @@
 {
   "eCommerce": {
-    "setup": {"product": "Add your first product", "shipping": "Add where you deliver", "shippingHint": "Checkout needs a shipping rate for the buyer's address.", "warehouse": "Add your warehouse", "warehouseHint": "Stock is kept per warehouse, so you need one before you can stock a product."},
+    "setup": {
+      "product": "Add your first product",
+      "shipping": "Add where you deliver",
+      "shippingHint": "Checkout needs a shipping rate for the buyer's address.",
+      "warehouse": "Add your warehouse",
+      "warehouseHint": "Stock is kept per warehouse, so you need one before you can stock a product."
+    },
     "guide": {
       "warehouseNameTitle": "Warehouse name",
       "warehouseNameText": "Any name your team will recognize, such as “Main store” or “Back room”.",
@@ -242,6 +248,9 @@
       },
       "listingpackages": {
         "title": "Listing packages"
+      },
+      "whatWeSell": {
+        "title": "What we sell"
       }
     }
   }

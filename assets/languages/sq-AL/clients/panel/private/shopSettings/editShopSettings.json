@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/eCommerce/clients/panel/private/shopSettings/editShopSettings.tsx",
+  "title": "Çfarë shesim",
+  "description": "Llojet e produkteve që shet dyqani juaj.",
+  "form": {
+    "whatWeSellSectionTitle": "Çfarë shesim",
+    "branchesLabel": "Degët ku shisni",
+    "selectBranch": "Shtoni një degë",
+    "removeBranch": "Hiqni"
+  },
+  "axios": {
+    "start": {
+      "title": "Po ruhet",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Nuk u ruajt. Kontrolloni formularin dhe provoni përsëri.",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Çfarë shesim",
+    "description": "Llojet e produkteve që shet dyqani juaj."
+  },
+  "help": {
+    "ariaLabel": "Rreth Çfarë shesim",
+    "title": "Rreth Çfarë shesim",
+    "overview": "Zgjidhni kategoritë kryesore ku shet dyqani juaj, si Veshje & aksesorë ose Elektronikë. Kur shtoni një produkt, lista e kategorive ofron vetëm këto degë; pa asnjë të zgjedhur, ofron të gjitha kategoritë.",
+    "sections": [
+      {
+        "title": "Çfarë shesim",
+        "items": [
+          "E plotësuam nga kategoritë që përdorin tashmë produktet tuaja.",
+          "Shisni diçka të re? Shtoni fillimisht degën e saj këtu, pastaj zgjidhni kategorinë te produkti."
+        ]
+      }
+    ]
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

@@ -15,6 +15,14 @@ export function buildECommerceTenancySettingsSubCollapsible(
         atLeastOnePermission: true,
         items: [
             {
+                title: resolveLanguageKey("menus.tenancy.systemSettings.whatWeSell.title"),
+                url: "/tenancy/systemSettings/whatWeSell",
+                icon: IconLayoutGrid,
+                permissions: ["shopsettings"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
                 title: resolveLanguageKey("menus.tenancy.systemSettings.categories.title"),
                 url: "/tenancy/systemSettings/categories",
                 icon: IconCategory2,

@@ -1,6 +1,12 @@
 {
   "eCommerce": {
-    "setup": {"product": "Aggiungi il tuo primo prodotto", "shipping": "Indica dove consegni", "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente.", "warehouse": "Aggiungi il tuo magazzino", "warehouseHint": "Le scorte sono tenute per magazzino, quindi te ne serve uno prima di dare scorte a un prodotto."},
+    "setup": {
+      "product": "Aggiungi il tuo primo prodotto",
+      "shipping": "Indica dove consegni",
+      "shippingHint": "Il checkout richiede una tariffa di spedizione per l'indirizzo dell'acquirente.",
+      "warehouse": "Aggiungi il tuo magazzino",
+      "warehouseHint": "Le scorte sono tenute per magazzino, quindi te ne serve uno prima di dare scorte a un prodotto."
+    },
     "guide": {
       "warehouseNameTitle": "Nome del magazzino",
       "warehouseNameText": "Un nome che il tuo team riconosce, come «Negozio principale» o «Retrobottega».",
@@ -242,6 +248,9 @@
       },
       "listingpackages": {
         "title": "Pacchetti degli annunci"
+      },
+      "whatWeSell": {
+        "title": "Cosa vendiamo"
       }
     }
   }
