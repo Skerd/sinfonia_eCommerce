@@ -95,6 +95,8 @@ function safeDecode(value: string | null): string | undefined {
 const eCommerceRouteConfigContribution: RouteConfigContribution = {
     id: "eCommerce",
     order: 40,
+    // The product categories are a platform list (D195): the platform company keeps them without running the shop.
+    platformListUrls: ["/tenancy/systemSettings/categories"],
     contributeRoutes({
         menu,
         subview,
